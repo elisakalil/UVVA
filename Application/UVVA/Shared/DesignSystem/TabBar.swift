@@ -1,0 +1,52 @@
+import SwiftUI
+
+enum AppTab: String, CaseIterable, Identifiable {
+    case home = "Home", learn = "Learn", cellar = "Cellar", friends = "Friends", you = "You"
+    var id: String { rawValue }
+}
+
+/// The floating glass tab bar from the design system (TabBar): text only, no icons.
+/// The active tab is a brighter glass capsule with cream text in 400; the others are cream in 300.
+struct UVVATabBar: View {
+    @Binding var active: AppTab
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(AppTab.allCases) { tab in
+                let isActive = tab == active
+                Button { active = tab } label: {
+                    Text(tab.rawValue)
+                        .font(UVVAFont.sans(11, isActive ? .regular : .light))
+                        .tracking(0.66)
+                        .lineLimit(1)
+                        .foregroundStyle(isActive ? UVVAColor.cream : UVVAColor.cream.opacity(0.72))
+                        .padding(.horizontal, 4)
+                        .frame(minWidth: 58, minHeight: 28)
+                        .background {
+                            if isActive {
+                                Capsule()
+                                    .fill(LinearGradient(colors: [.white.opacity(0.24), .white.opacity(0.1)],
+                                                         startPoint: .top, endPoint: .bottom))
+                                    .overlay(Capsule().strokeBorder(.white.opacity(0.3), lineWidth: 0.5))
+                                    .shadow(color: .black.opacity(0.12), radius: 4, y: 2)
+                            }
+                        }
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityAddTraits(isActive ? .isSelected : [])
+            }
+        }
+        .padding(.vertical, 2)
+        .padding(.horizontal, 4)
+        .background { FrostedGlass(radius: 20, dense: true) }
+    }
+}
+
+#Preview {
+    @Previewable @State var tab = AppTab.cellar
+    ZStack {
+        UVVAColor.moss.ignoresSafeArea()
+        UVVATabBar(active: $tab)
+    }
+}
