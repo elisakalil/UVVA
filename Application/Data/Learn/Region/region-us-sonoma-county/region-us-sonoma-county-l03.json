@@ -1,0 +1,72 @@
+{
+  "id": "region-us-sonoma-county-l03",
+  "moduleId": "region-us-sonoma-county",
+  "order": 3,
+  "title": "Russian River and the coast",
+  "subtitle": "Pinot Noir country",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Russian River Valley",
+    "Describe the Sonoma Coast",
+    "Explain the fog's role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Russian River Valley",
+      "body": "The Russian River Valley is one of California's coolest areas, thanks to morning fog that can last until noon. Goldridge, a fine sandy loam soil, drains well. Its Pinot Noir is ripe yet fresh, with red cherry, raspberry and spice; its Chardonnay rich with citrus and acidity. Producers include Williams Selyem, Rochioli and Kistler.",
+      "highlight": "Fog until noon, Goldridge soil"
+    },
+    {
+      "type": "concept",
+      "title": "Sonoma Coast",
+      "body": "The Sonoma Coast AVA is large; its truest coastal areas, near the Pacific, like the Fort Ross-Seaview AVA, sit above the fog line at 300 to 550 m, on ridges. They give lean, high-acid Pinot Noir and Chardonnay, among California's most elegant. The West Sonoma Coast AVA, created in 2022, defines the truly coastal zone.",
+      "highlight": "Above the fog line, on ridges"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes the Russian River Valley so cool?",
+      "options": [
+        "Morning fog that can last until noon",
+        "High altitude",
+        "Snow",
+        "Lake effect"
+      ],
+      "answer": 0,
+      "explanation": "Ocean fog flows up the river valley."
+    },
+    {
+      "type": "concept",
+      "title": "Fog and ripening",
+      "body": "Fog slows ripening by blocking morning sun and keeping temperatures low, then lifts to let afternoon sun ripen the grapes. This long, slow season builds flavour while keeping acidity. It's why Pinot Noir and Chardonnay, which need cool conditions, do so well here.",
+      "highlight": "Slow ripening keeps acidity"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Sonoma's cool coastal AVAs?",
+      "options": [
+        "Russian River Valley",
+        "Fort Ross-Seaview",
+        "West Sonoma Coast",
+        "Alexander Valley"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Alexander Valley is warm and inland."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Russian River Valley is cooled by long morning fog",
+        "True coastal Sonoma sits on ridges above the fog",
+        "Slow ripening gives fresh Pinot Noir and Chardonnay"
+      ]
+    }
+  ]
+}

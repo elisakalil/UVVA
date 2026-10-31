@@ -1,0 +1,67 @@
+{
+  "id": "region-es-jerez-l03",
+  "moduleId": "region-es-jerez",
+  "order": 3,
+  "title": "Flor and the solera",
+  "subtitle": "Biological ageing and blending",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain flor",
+    "Explain the solera system",
+    "Explain the classification of base wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Flor",
+      "body": "After fermentation, base wines are tasted and classified. The finest, palest are fortified to about 15 to 15.5% and put in barrels, botas, filled about five-sixths. A film of yeast, flor, grows on the surface. It protects the wine from oxygen and feeds on alcohol and glycerol, producing acetaldehyde: bready, nutty, saline aromas. This is biological ageing.",
+      "highlight": "Flor at 15%, biological ageing"
+    },
+    {
+      "type": "concept",
+      "title": "The solera",
+      "body": "Sherry ages in a solera: rows of barrels of different ages. Wine is drawn from the oldest, the solera, a process called saca, never more than about a third at a time; by law, no more than 40% a year. It's replaced from the next oldest, the first criadera, and so on, a process called rocío. Young wine enters the youngest criadera. The result is a consistent blend of many ages.",
+      "highlight": "Saca and rocío"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the solera's movements in order.",
+      "items": [
+        "Draw from the oldest tier, the saca",
+        "Refill it from the first criadera",
+        "Refill the first criadera from the second",
+        "Add young wine to the youngest tier"
+      ],
+      "explanation": "Wine moves step by step from young to old."
+    },
+    {
+      "type": "concept",
+      "title": "Classification",
+      "body": "Base wines are classified by taste. Light, delicate wines are marked for Fino and Manzanilla, fortified to 15%. Fuller wines go to Oloroso, fortified to 17%, where flor can't live. Some wines change paths during ageing, losing their flor and becoming Amontillado or Palo Cortado.",
+      "highlight": "15% for flor; 17% for Oloroso"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "At what strength can flor no longer survive?",
+      "options": [
+        "About 17%",
+        "About 12%",
+        "About 10%",
+        "About 5%"
+      ],
+      "answer": 0,
+      "explanation": "At 17%, flor dies; the wine ages with oxygen."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Flor protects Fino and adds bready, saline notes",
+        "The solera blends many ages through saca and rocío",
+        "Base wines are classified for Fino or Oloroso"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "path-03-l02",
+  "moduleId": "path-03",
+  "order": 2,
+  "title": "Chardonnay and Sauvignon Blanc",
+  "subtitle": "Two white grapes, two ways to be white",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chardonnay's typical flavours",
+    "Describe Sauvignon Blanc's typical flavours",
+    "Explain why Chardonnay changes so much with winemaking"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Chardonnay, the chameleon",
+      "body": "Chardonnay has a neutral character of its own, so it reflects where it grows and how it is made. In cool places like Chablis it tastes of green apple and lemon, lean and crisp. In warmer places it gives peach, pineapple and melon. It is also the main grape of many sparkling wines, including most Blanc de Blancs Champagne.",
+      "highlight": "Chardonnay mirrors place and winemaker"
+    },
+    {
+      "type": "concept",
+      "title": "Sauvignon Blanc, the aromatic one",
+      "body": "Sauvignon Blanc is intensely aromatic, with gooseberry, passion fruit, cut grass and green pepper. The green notes come from compounds called pyrazines, which survive best in cool climates. It is almost always made without oak to keep that freshness. Sancerre in France and Marlborough in New Zealand are its two best-known homes.",
+      "highlight": "Sauvignon Blanc: grass, gooseberry, high acidity"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is most typical of Sauvignon Blanc?",
+      "options": [
+        "Butter and toast",
+        "Cut grass and gooseberry",
+        "Blackcurrant and cedar",
+        "Rose and lychee"
+      ],
+      "answer": 1,
+      "explanation": "Grassy and gooseberry aromas come from pyrazines and thiols in Sauvignon Blanc. Butter and toast come from oak and winemaking, as in some Chardonnays."
+    },
+    {
+      "type": "concept",
+      "title": "What the winemaker adds",
+      "body": "Because Chardonnay is neutral, it takes winemaking well. Oak barrels add vanilla, toast and spice. Malolactic conversion, where bacteria turn sharp malic acid into softer lactic acid, gives a buttery note. Stirring the dead yeast, the lees, adds creaminess. Sauvignon Blanc rarely gets this treatment.",
+      "highlight": "Oak, malolactic and lees shape Chardonnay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each flavour to its likely source.",
+      "pairs": [
+        {
+          "left": "Green apple",
+          "right": "Cool-climate Chardonnay"
+        },
+        {
+          "left": "Butter",
+          "right": "Malolactic conversion"
+        },
+        {
+          "left": "Vanilla and toast",
+          "right": "Oak barrels"
+        },
+        {
+          "left": "Cut grass",
+          "right": "Sauvignon Blanc"
+        }
+      ],
+      "explanation": "Fruit comes from the grape and climate; butter, vanilla and toast come from the winery."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chardonnay is neutral and reflects climate and winemaking",
+        "Sauvignon Blanc is aromatic, grassy and crisp, usually unoaked",
+        "Oak, malolactic and lees give Chardonnay toast, butter and cream"
+      ]
+    }
+  ]
+}

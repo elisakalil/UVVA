@@ -1,0 +1,68 @@
+{
+  "id": "path-16-l03",
+  "moduleId": "path-16",
+  "order": 3,
+  "title": "Site: slope, aspect and water",
+  "subtitle": "Choosing where to plant",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how aspect affects sunlight",
+    "Explain how slopes and water reduce frost",
+    "Explain air drainage"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aspect",
+      "body": "Aspect is the direction a slope faces. In the northern hemisphere, south-facing slopes get the most sun, and south-east slopes catch the morning warmth. In the southern hemisphere it's the reverse. In cool regions like the Mosel, the right aspect can be the difference between ripe and unripe grapes.",
+      "highlight": "Face the sun in cool regions"
+    },
+    {
+      "type": "concept",
+      "title": "Air drainage and frost",
+      "body": "Cold air is heavier than warm air, so on still, clear nights it flows downhill and pools in valley floors. Slopes stay warmer and avoid spring frost. Growers fight frost with wind machines that mix in warmer air, heaters, or sprinklers that coat buds in ice, which releases heat as it freezes and holds them at about 0 degrees.",
+      "highlight": "Cold air flows down; slopes escape frost"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can sprinkling water on vines protect them from frost?",
+      "options": [
+        "Water is warmer than air",
+        "Freezing water releases heat, keeping buds near zero",
+        "It washes off the frost",
+        "It keeps the soil moist"
+      ],
+      "answer": 1,
+      "explanation": "As water freezes it releases latent heat, holding the bud at about 0 degrees and protecting it from colder temperatures."
+    },
+    {
+      "type": "concept",
+      "title": "Water nearby",
+      "body": "Rivers and lakes store heat and release it slowly, moderating temperatures and reducing frost. They also reflect light onto slopes. The Mosel, the Rhine and the Douro all temper their valleys; Lake Geneva and the Finger Lakes in New York do the same. Mist from water can also help noble rot develop, as on the Ciron in Sauternes.",
+      "highlight": "Water moderates and reflects"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In the southern hemisphere, the warmest slopes face ____.",
+      "options": [
+        "north",
+        "south",
+        "east",
+        "west"
+      ],
+      "answer": "north",
+      "explanation": "In the southern hemisphere the sun is to the north, so north-facing slopes get most light."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aspect controls how much sun a slope receives",
+        "Cold air drains downhill; slopes escape frost",
+        "Rivers and lakes moderate temperature and reflect light"
+      ]
+    }
+  ]
+}

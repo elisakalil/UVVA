@@ -1,0 +1,100 @@
+{
+  "id": "path-19-l08",
+  "moduleId": "path-19",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from Italy",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain Italy's quality system",
+    "Link Italy's regions to their grapes",
+    "Compare its key DOCG wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its grape.",
+      "pairs": [
+        {
+          "left": "Barolo",
+          "right": "Nebbiolo"
+        },
+        {
+          "left": "Brunello di Montalcino",
+          "right": "Sangiovese"
+        },
+        {
+          "left": "Amarone",
+          "right": "Corvina"
+        },
+        {
+          "left": "Taurasi",
+          "right": "Aglianico"
+        },
+        {
+          "left": "Soave",
+          "right": "Garganega"
+        }
+      ],
+      "explanation": "Italy's great wines are made from native grapes."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What led to the creation of the IGT category?",
+      "options": [
+        "Prosecco",
+        "The Super Tuscans",
+        "Etna",
+        "Sicily's Marsala"
+      ],
+      "answer": 1,
+      "explanation": "Super Tuscans made great wines outside DOC rules."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Piedmont grapes?",
+      "options": [
+        "Nebbiolo",
+        "Barbera",
+        "Dolcetto",
+        "Sangiovese"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sangiovese is Tuscany's grape."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vino Nobile di Montepulciano is made from the Montepulciano grape.",
+      "answer": false,
+      "explanation": "Not true. It's made mostly from Sangiovese in the Tuscan town of Montepulciano."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Etna's main red grape is Nerello ____.",
+      "options": [
+        "Mascalese",
+        "d'Avola",
+        "Cappuccio",
+        "Sangiovese"
+      ],
+      "answer": "Mascalese",
+      "explanation": "Nerello Mascalese gives Etna's pale, elegant reds."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "DOCG, DOC, IGT and Vino rank Italian wine",
+        "Piedmont and Tuscany lead with Nebbiolo and Sangiovese",
+        "The north-east is fresh and Alpine; the south is volcanic and warm",
+        "Italy's strength is its hundreds of native grapes"
+      ]
+    }
+  ]
+}

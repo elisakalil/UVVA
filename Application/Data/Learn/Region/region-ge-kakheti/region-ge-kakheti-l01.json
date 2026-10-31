@@ -1,0 +1,62 @@
+{
+  "id": "region-ge-kakheti-l01",
+  "moduleId": "region-ge-kakheti",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "The cradle of wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Kakheti's location",
+    "Explain its climate",
+    "Explain Georgia's ancient wine history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Eastern Georgia",
+      "body": "Kakheti is Georgia's main wine region, in the east, making about 70% of the country's wine. It lies in the Alazani valley, between the Greater Caucasus mountains to the north and the Gombori range. Its capital is Telavi; Sighnaghi is a famous hilltop town. Vineyards cover the valley and the foothills.",
+      "highlight": "Alazani valley, about 70% of Georgia's wine"
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "Kakheti's climate is moderately continental: hot summers, mild to cold winters and enough rain, with the Caucasus blocking cold northern air. The Alazani river and valley give fertile, varied soils. Long, warm autumns ripen grapes fully. Hail can be a risk.",
+      "highlight": "Caucasus shelter, warm autumns"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What protects Kakheti from cold northern air?",
+      "options": [
+        "The Greater Caucasus mountains",
+        "The Alps",
+        "The Black Sea",
+        "The Urals"
+      ],
+      "answer": 0,
+      "explanation": "The Caucasus blocks cold air from the north."
+    },
+    {
+      "type": "concept",
+      "title": "8,000 years",
+      "body": "Archaeologists have found grape residue in clay jars in Georgia dating to about 6000 BC, around 8,000 years ago, among the oldest evidence of winemaking in the world. Wine is central to Georgian culture: the supra, a traditional feast, is led by a toastmaster, the tamada, with many long toasts.",
+      "highlight": "Wine since about 6000 BC"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Georgia has some of the oldest evidence of winemaking in the world.",
+      "answer": true,
+      "explanation": "Yes, about 8,000 years old."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Kakheti, in eastern Georgia, makes about 70% of its wine",
+        "The Caucasus shelters it; autumns are warm",
+        "Georgia has made wine for about 8,000 years"
+      ]
+    }
+  ]
+}

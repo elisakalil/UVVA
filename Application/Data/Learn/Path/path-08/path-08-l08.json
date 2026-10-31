@@ -1,0 +1,96 @@
+{
+  "id": "path-08-l08",
+  "moduleId": "path-08",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from The Winery",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how whites, reds and rosés are made",
+    "Describe the effects of oak and maturation",
+    "Explain the final steps before bottling"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of making a red wine in order.",
+      "items": [
+        "Crushing",
+        "Fermentation on skins",
+        "Pressing",
+        "Maturation",
+        "Bottling"
+      ],
+      "explanation": "Reds ferment with skins first and are pressed afterwards."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each technique to its result.",
+      "pairs": [
+        {
+          "left": "Carbonic maceration",
+          "right": "Soft, fruity reds"
+        },
+        {
+          "left": "Saignée",
+          "right": "Rosé bled from reds"
+        },
+        {
+          "left": "Malolactic in oak",
+          "right": "Rounder, richer whites"
+        },
+        {
+          "left": "Skin-fermented whites",
+          "right": "Orange wine"
+        }
+      ],
+      "explanation": "Each method creates a different style from the same fruit."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does a new oak barrel add that oak chips do not?",
+      "options": [
+        "Vanilla flavour",
+        "Slow oxygen exchange",
+        "Toast flavour",
+        "Colour"
+      ],
+      "answer": 1,
+      "explanation": "Chips can add flavour, but only barrels let oxygen in slowly through the wood."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most white wines ferment at warmer temperatures than reds.",
+      "answer": false,
+      "explanation": "Not true. Whites ferment cool to keep aromas; reds ferment warmer to extract colour and tannin."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which steps prepare a wine for bottling?",
+      "options": [
+        "Fining",
+        "Filtration",
+        "Cold stabilisation",
+        "Punching down"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Punching down is part of red fermentation, not the bottling stage."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Whites are pressed before fermentation; reds after",
+        "Rosé is made with short skin contact; blending is rare in Europe",
+        "Oak and maturation add flavour, oxygen and complexity",
+        "Fining, filtering and closures prepare and protect the wine"
+      ]
+    }
+  ]
+}

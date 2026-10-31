@@ -1,0 +1,77 @@
+{
+  "id": "region-ge-kakheti-l02",
+  "moduleId": "region-ge-kakheti",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Native varieties",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rkatsiteli",
+    "Describe Saperavi",
+    "Name other Georgian grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rkatsiteli and Mtsvane",
+      "body": "Georgia has over 500 native grape varieties. Rkatsiteli, the most planted white, has high acidity and gives citrus, apple and quince in modern styles, or rich, tannic amber wine in qvevri. Mtsvane Kakhuri, green of Kakheti, is aromatic, with tropical fruit and flowers, often blended with Rkatsiteli. Kisi is another fine white.",
+      "highlight": "Rkatsiteli, Mtsvane, Kisi"
+    },
+    {
+      "type": "concept",
+      "title": "Saperavi",
+      "body": "Saperavi, meaning dye or colour, is Georgia's main red. It's a teinturier, with red flesh, giving very deep colour, high acidity and firm tannin, with blackberry, black cherry, plum and spice. It ages well. It makes dry reds, like Mukuzani, and semi-sweet reds, like Kindzmarauli.",
+      "highlight": "Saperavi: red flesh, deep colour"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its character.",
+      "pairs": [
+        {
+          "left": "Rkatsiteli",
+          "right": "High-acid white"
+        },
+        {
+          "left": "Mtsvane",
+          "right": "Aromatic white"
+        },
+        {
+          "left": "Saperavi",
+          "right": "Red-fleshed red"
+        },
+        {
+          "left": "Kisi",
+          "right": "Fine white grape"
+        }
+      ],
+      "explanation": "Georgia's grapes are native and diverse."
+    },
+    {
+      "type": "tip",
+      "body": "Saperavi's red flesh means even its juice is coloured. Its wines can be almost black."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Saperavi mean?",
+      "options": [
+        "Dye or colour",
+        "Sweet",
+        "Old",
+        "Green"
+      ],
+      "answer": 0,
+      "explanation": "For its intensely coloured juice."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Georgia has over 500 native grapes",
+        "Rkatsiteli and Mtsvane lead the whites",
+        "Saperavi is a red-fleshed, deeply coloured red"
+      ]
+    }
+  ]
+}

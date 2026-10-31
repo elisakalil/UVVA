@@ -1,0 +1,62 @@
+{
+  "id": "path-04-l02",
+  "moduleId": "path-04",
+  "order": 2,
+  "title": "Look",
+  "subtitle": "What the colour tells you",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Judge a wine's clarity and intensity",
+    "Read age from colour",
+    "Explain what tears in the glass mean"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Clarity, intensity, colour",
+      "body": "Tilt the glass over a white surface. Check that the wine is clear, not hazy. Then judge intensity, from pale to deep, by looking at the core. Finally name the colour: lemon, gold or amber for whites; purple, ruby, garnet or tawny for reds.",
+      "highlight": "Clear? How deep? What colour?"
+    },
+    {
+      "type": "concept",
+      "title": "Colour changes with age",
+      "body": "Young reds look purple, because their pigments are fresh. With time, pigments bind with tannins and drop out, so the wine turns ruby, then garnet with an orange rim, and finally tawny. Whites go the other way: they deepen from pale lemon to gold and amber as they oxidise slowly.",
+      "highlight": "Reds lose colour with age; whites gain it"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A red wine has a garnet core and an orange-brown rim. What does this suggest?",
+      "options": [
+        "It's very young",
+        "It has some age",
+        "It's a rosé",
+        "It's faulty"
+      ],
+      "answer": 1,
+      "explanation": "Purple means youth. Garnet with an orange rim shows years of development, when pigments slowly change and drop out."
+    },
+    {
+      "type": "concept",
+      "title": "Legs mean alcohol, not quality",
+      "body": "After swirling, drops called legs or tears run down the glass. They form because alcohol evaporates faster than water at the edge, changing surface tension. More and slower legs usually mean more alcohol or sugar. They tell you nothing about quality.",
+      "highlight": "Legs show alcohol or sugar, not quality"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Thick, slow legs on the glass show that a wine is of high quality.",
+      "answer": false,
+      "explanation": "Not true. Legs are physics: they come mostly from alcohol and sugar. A cheap, strong wine can have thicker legs than a great, lighter one."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Look for clarity, intensity and colour",
+        "Reds fade from purple to tawny; whites deepen to gold and amber",
+        "Legs show alcohol or sugar, never quality"
+      ]
+    }
+  ]
+}

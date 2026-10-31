@@ -1,0 +1,28 @@
+{
+  "id": "region-ar-mendoza",
+  "kind": "region",
+  "order": 38,
+  "country": "Argentina",
+  "countryCode": "AR",
+  "title": "Mendoza",
+  "grapes": [
+    "Malbec",
+    "Cabernet Sauvignon",
+    "Bonarda",
+    "Cabernet Franc"
+  ],
+  "points": "2 1 1 2 = 6",
+  "complexity": "B",
+  "description": "A high desert at the foot of the Andes, irrigated by snowmelt, where Malbec found its second home.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-ar-mendoza-l01",
+    "region-ar-mendoza-l02",
+    "region-ar-mendoza-l03",
+    "region-ar-mendoza-l04",
+    "region-ar-mendoza-l05",
+    "region-ar-mendoza-l06"
+  ]
+}

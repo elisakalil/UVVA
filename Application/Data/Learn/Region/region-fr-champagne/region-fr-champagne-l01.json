@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-champagne-l01",
+  "moduleId": "region-fr-champagne",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Chalk and cold",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Champagne's location and climate",
+    "Explain the role of chalk",
+    "Explain how sparkling Champagne began"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "At the northern limit",
+      "body": "Champagne lies about 150 km north-east of Paris, at around 49 degrees north, near the northern limit for ripening grapes. Average temperatures are around 11 degrees Celsius. Grapes ripen just enough, giving high acidity and low sugar: poor still wine, but perfect base wine for sparkling. The appellation covers about 34,000 hectares.",
+      "highlight": "Cold, high acid, low sugar"
+    },
+    {
+      "type": "concept",
+      "title": "Chalk",
+      "body": "Champagne's soils are chalk, often under a thin topsoil. Chalk drains well yet holds water like a sponge, feeding vines in dry summers. It reflects light and heat. The Romans dug chalk pits, crayères, that houses later used as cellars: Reims and Épernay have hundreds of kilometres of tunnels at a steady 10 to 12 degrees.",
+      "highlight": "Chalk: drainage, water and cellars"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Champagne's chalk so valuable?",
+      "options": [
+        "It drains well yet stores water, and its cellars stay cool",
+        "It's volcanic",
+        "It's very fertile",
+        "It warms quickly"
+      ],
+      "answer": 0,
+      "explanation": "Chalk regulates water, and its tunnels make ideal cellars."
+    },
+    {
+      "type": "concept",
+      "title": "From fault to fame",
+      "body": "In Champagne's cold winters, fermentation often stopped and restarted in spring, making wine fizzy by accident. The English, in the 17th century, bottled it in stronger glass and enjoyed the bubbles. Dom Pérignon, a monk at Hautvillers, didn't invent sparkling wine, but he improved blending and pressing. Houses developed the method in the 18th and 19th centuries.",
+      "highlight": "Bubbles began as an accident"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dom Pérignon invented sparkling Champagne.",
+      "answer": false,
+      "explanation": "Not true. He improved blending and pressing, but bubbles came from accidental refermentation, and the English first bottled it as sparkling."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Champagne is cold, giving high-acid base wine",
+        "Chalk regulates water and provides cool cellars",
+        "Bubbles began as an accident; houses refined the method"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "region-de-rheingau-l05",
+  "moduleId": "region-de-rheingau",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Rheingau and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Rheingau label",
+    "Pair Rheingau wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show producer, village plus vineyard, like Rüdesheimer Berg Rottland, the grape, the Prädikat or trocken, and the VDP eagle if a member. GG means dry top-site wine. Erstes Gewächs was the Rheingau's older term for top dry wines. Spätburgunder from Assmannshausen is labelled as red.",
+      "highlight": "Village, vineyard, VDP eagle"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Dry Rheingau Riesling suits pork, veal, river fish like trout and pike, white asparagus, a German spring favourite, and schnitzel. Off-dry and Spätlese suit spicy food and roast pork. Spätburgunder suits game birds and mushrooms. Serve Riesling at 8 to 11 degrees.",
+      "highlight": "White asparagus, trout, pork"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which German spring vegetable suits dry Rheingau Riesling?",
+      "options": [
+        "White asparagus",
+        "Sweet potato",
+        "Pumpkin",
+        "Aubergine"
+      ],
+      "answer": 0,
+      "explanation": "Spargel season is a German ritual."
+    },
+    {
+      "type": "tip",
+      "body": "Good Rheingau GG Riesling ages 10 to 20 years, developing honey, toast and petrol notes while keeping its acidity."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "GG wines from the VDP are sweet.",
+      "answer": false,
+      "explanation": "Not true. GG wines are dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show vineyard, Prädikat or trocken, and the VDP eagle",
+        "Dry Riesling suits asparagus, trout and pork",
+        "GG Riesling ages 10 to 20 years"
+      ]
+    }
+  ]
+}

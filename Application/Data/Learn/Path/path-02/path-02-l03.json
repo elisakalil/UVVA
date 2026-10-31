@@ -1,0 +1,68 @@
+{
+  "id": "path-02-l03",
+  "moduleId": "path-02",
+  "order": 3,
+  "title": "Red wine styles",
+  "subtitle": "Light, medium and full",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe light, medium and full-bodied reds",
+    "Explain where colour and tannin come from",
+    "Match a red style to its grape and climate"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three weights of red",
+      "body": "Light reds, like Beaujolais or many Pinot Noirs, are pale, juicy and low in tannin. Medium reds, like Chianti or a Merlot from Bordeaux, have more grip and flavour. Full reds, like Barossa Shiraz or Napa Cabernet, are deep in colour, high in tannin and often high in alcohol.",
+      "highlight": "Light, medium, full"
+    },
+    {
+      "type": "concept",
+      "title": "Skins make the red",
+      "body": "The pulp of almost every black grape is pale. Red wine gets its colour by fermenting the juice with the skins for days or weeks. The longer and warmer this contact, the more colour, tannin and flavour come out. Red fermentations run warmer than white, often 25 to 30 degrees Celsius, to help that extraction.",
+      "highlight": "Colour and tannin come from the skins"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Red wine takes its colour from the grape ____.",
+      "options": [
+        "skins",
+        "pulp",
+        "seeds",
+        "stems"
+      ],
+      "answer": "skins",
+      "explanation": "The colour is in the skins. The pulp of nearly all black grapes is pale, which is why a gentle press can make white juice from black grapes."
+    },
+    {
+      "type": "concept",
+      "title": "Thick skins, big reds",
+      "body": "Grapes with thick, dark skins, such as Cabernet Sauvignon or Syrah, give more colour and tannin than thin-skinned ones like Pinot Noir or Gamay. Warm climates add ripeness and alcohol. So a thick-skinned grape from a hot place usually makes the fullest red.",
+      "highlight": "Thick skin plus heat gives the fullest reds"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is most likely to be light-bodied?",
+      "options": [
+        "A Barossa Shiraz",
+        "A Napa Cabernet Sauvignon",
+        "A Beaujolais from Gamay",
+        "A Port"
+      ],
+      "answer": 2,
+      "explanation": "Gamay is thin-skinned and Beaujolais comes from a moderate climate, so the wine is pale and light. Shiraz and Cabernet from warm places are full-bodied."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Reds range from light and juicy to full and tannic",
+        "Colour and tannin come from fermenting with the skins",
+        "Thick skins and warm climates make the fullest reds"
+      ]
+    }
+  ]
+}

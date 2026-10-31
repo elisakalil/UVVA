@@ -1,0 +1,28 @@
+{
+  "id": "grape-gruner-veltliner",
+  "kind": "grape",
+  "order": 44,
+  "color": "white",
+  "title": "Grüner Veltliner",
+  "aliases": [
+    "Grüner",
+    "Weissgipfler"
+  ],
+  "origin": "Austria",
+  "countries": [
+    "Austria"
+  ],
+  "points": "1 1 1 1 = 4",
+  "complexity": "C",
+  "description": "Austria's signature grape: citrus, green apple and a twist of white pepper.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-gruner-veltliner-l01",
+    "grape-gruner-veltliner-l02",
+    "grape-gruner-veltliner-l03",
+    "grape-gruner-veltliner-l04",
+    "grape-gruner-veltliner-l05"
+  ]
+}

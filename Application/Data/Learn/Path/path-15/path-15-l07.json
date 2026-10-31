@@ -1,0 +1,85 @@
+{
+  "id": "path-15-l07",
+  "moduleId": "path-15",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything from Systematic Tasting",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Taste a wine systematically",
+    "Use precise scales for each element",
+    "Conclude on quality and readiness"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Put the stages of systematic tasting in order.",
+      "items": [
+        "Appearance",
+        "Nose",
+        "Palate",
+        "Conclusion"
+      ],
+      "explanation": "Each stage gathers evidence for the next."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A white is deep gold, with honey and dried apricot aromas and a long finish. What do these clues suggest?",
+      "options": [
+        "A young, unoaked white",
+        "A white with age or botrytis",
+        "A rosé",
+        "A faulty wine"
+      ],
+      "answer": 1,
+      "explanation": "Deep gold, honey and dried fruit point to age, oak or noble rot."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are criteria in the BLIC quality check?",
+      "options": [
+        "Balance",
+        "Length",
+        "Colour",
+        "Complexity",
+        "Price"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "BLIC is balance, length, intensity and complexity. Colour belongs to appearance, and price says nothing about what is in the glass."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "High acidity can make tannins feel harsher.",
+      "answer": true,
+      "explanation": "Yes. Acid and tannin together feel firmer; sugar and alcohol soften them."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A finish lasting under 5 seconds is ____.",
+      "options": [
+        "short",
+        "medium",
+        "long",
+        "complex"
+      ],
+      "answer": "short",
+      "explanation": "Short is under 5 seconds; medium about 5 to 10; long over 10."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Appearance, nose, palate and conclusion, every time",
+        "Use fixed scales for intensity, structure and finish",
+        "Aromas are evidence of grape, climate, winemaking and age",
+        "Quality comes from balance, length, intensity and complexity"
+      ]
+    }
+  ]
+}

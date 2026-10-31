@@ -1,0 +1,62 @@
+{
+  "id": "region-de-rheingau-l01",
+  "moduleId": "region-de-rheingau",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "The Rhine turns west",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Rheingau's geography",
+    "Explain its climate",
+    "Explain its monastic history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A south-facing bank",
+      "body": "The Rheingau lies where the Rhine, blocked by the Taunus hills, turns west for about 30 km between Wiesbaden and Rüdesheim. Vineyards face south across the wide river, catching full sun. The Taunus shelters them from cold northern winds. It's small, about 3,200 hectares. Assmannshausen and Lorch extend it north-west.",
+      "highlight": "30 km of south-facing slope"
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "The Rheingau is warmer than the Mosel. The wide Rhine, nearly a kilometre across, reflects light and moderates temperature; the Taunus blocks cold air. Soils vary: slate and quartzite on higher slopes, like Rüdesheim's Berg; loess and marl lower down. Wines are fuller and riper than the Mosel's, often dry.",
+      "highlight": "Warmer than the Mosel"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What shelters the Rheingau from cold northern winds?",
+      "options": [
+        "The Taunus hills",
+        "The Alps",
+        "The Vosges",
+        "The Black Forest"
+      ],
+      "answer": 0,
+      "explanation": "The Taunus blocks cold air."
+    },
+    {
+      "type": "concept",
+      "title": "Monks and estates",
+      "body": "Cistercian monks founded Kloster Eberbach in 1136 and planted the Steinberg, a walled vineyard like Burgundy's clos. Schloss Johannisberg, on a hill above the Rhine, was a Benedictine abbey. Noble families and monasteries owned most land for centuries, so the Rheingau has many large historic estates.",
+      "highlight": "Kloster Eberbach, 1136"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Kloster Eberbach was founded by Cistercian monks.",
+      "answer": true,
+      "explanation": "Yes, in 1136."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Rheingau faces south where the Rhine turns west",
+        "It's warmer than the Mosel, giving fuller wines",
+        "Monasteries like Kloster Eberbach shaped its history"
+      ]
+    }
+  ]
+}

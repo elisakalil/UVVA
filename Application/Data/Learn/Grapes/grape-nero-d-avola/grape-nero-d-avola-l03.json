@@ -1,0 +1,70 @@
+{
+  "id": "grape-nero-d-avola-l03",
+  "moduleId": "grape-nero-d-avola",
+  "order": 3,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Nero d'Avola",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Nero d'Avola with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sicilian food",
+      "body": "Nero d'Avola's juicy fruit and fresh acidity suit tomato-based pasta, pizza, grilled sausages and lamb. In Sicily, it goes with pasta alla Norma, made with aubergine, tomato and ricotta salata. Its soft tannins work with tuna or swordfish steaks too.",
+      "highlight": "Pasta alla Norma, grilled fish"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 15 to 17 degrees. Most Nero d'Avola is best within three to five years, when fruit is bright. Oaked, concentrated versions from top sites age 10 years or more. Cerasuolo di Vittoria can be served slightly cooler.",
+      "highlight": "Most within five years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can Nero d'Avola work with tuna or swordfish?",
+      "options": [
+        "Its soft tannins don't clash with meaty fish",
+        "It's very sweet",
+        "It's a white wine",
+        "It has no acidity"
+      ],
+      "answer": 0,
+      "explanation": "Soft tannins won't make firm fish taste metallic."
+    },
+    {
+      "type": "tip",
+      "body": "Try a lightly chilled Cerasuolo di Vittoria in summer. Its cherry fruit and freshness work like a light red or a serious rosé."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Nero d'Avola?",
+      "options": [
+        "Pasta alla Norma",
+        "Pizza",
+        "Grilled lamb",
+        "Lemon sorbet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sorbet would make the wine taste sour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nero d'Avola suits tomato pasta, pizza and meaty fish",
+        "Serve at 15 to 17 degrees",
+        "Most is best within five years"
+      ]
+    }
+  ]
+}

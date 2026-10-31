@@ -1,0 +1,79 @@
+{
+  "id": "grape-muscat-l03",
+  "moduleId": "grape-muscat",
+  "order": 3,
+  "title": "One family, many wines",
+  "subtitle": "From light to luscious",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Moscato d'Asti",
+    "Describe dry Muscat",
+    "Describe sweet Muscat styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Moscato d'Asti and Asti",
+      "body": "In Piedmont, Moscato Bianco makes Moscato d'Asti, lightly sparkling, frizzante, sweet and about 5.5% alcohol, and Asti, fully sparkling, around 7%. Fermentation in a pressure tank is stopped by chilling, leaving sugar and trapped bubbles. They smell of peach, grape and orange blossom.",
+      "highlight": "5.5% frizzante Moscato d'Asti"
+    },
+    {
+      "type": "concept",
+      "title": "Dry and sweet",
+      "body": "Alsace makes dry Muscat, intensely aromatic yet dry, a classic aperitif. Muscat de Beaumes-de-Venise and Muscat de Rivesaltes, in southern France, are fortified, sweet vins doux naturels. Samos, in Greece, makes sweet Muscats, some from sun-dried grapes. Austria makes dry Muskateller.",
+      "highlight": "Dry Alsace, sweet Beaumes-de-Venise"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Moscato d'Asti",
+          "right": "Sweet, lightly sparkling"
+        },
+        {
+          "left": "Alsace Muscat",
+          "right": "Dry and aromatic"
+        },
+        {
+          "left": "Beaumes-de-Venise",
+          "right": "Fortified, sweet"
+        },
+        {
+          "left": "Samos",
+          "right": "Greek sweet Muscat"
+        }
+      ],
+      "explanation": "Muscat covers almost every style."
+    },
+    {
+      "type": "concept",
+      "title": "Moscato's boom",
+      "body": "Since the 2000s, Moscato has become hugely popular worldwide, especially in the US, where sweet, light, fruity Moscatos from California and Australia are widely sold. They're often made in Asti's style but from Muscat of Alexandria or other varieties.",
+      "highlight": "A global sweet, light trend"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Moscato d'Asti usually has about ____% alcohol.",
+      "options": [
+        "5.5",
+        "13",
+        "18",
+        "9"
+      ],
+      "answer": "5.5",
+      "explanation": "Low alcohol and sweetness come from stopping fermentation early."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Moscato d'Asti is sweet, frizzante and about 5.5%",
+        "Alsace makes dry Muscat; southern France fortified sweet Muscat",
+        "Moscato has become a global trend"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "path-12-l05",
+  "moduleId": "path-12",
+  "order": 5,
+  "title": "Prosecco and Asti",
+  "subtitle": "Italy's lighter bubbles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Prosecco and its grape",
+    "Describe Asti and Moscato d'Asti",
+    "Explain how Asti keeps its sweetness"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Prosecco",
+      "body": "Prosecco comes from north-east Italy, in the Veneto and Friuli. It must be at least 85% Glera. Most is made by the tank method, giving pear, apple and white flower aromas, light body and fresh acidity. The top area is Conegliano Valdobbiadene, a DOCG of steep hills, with the single slope of Cartizze at its peak.",
+      "highlight": "Glera, tank method, pear and flowers"
+    },
+    {
+      "type": "concept",
+      "title": "Asti",
+      "body": "Asti and Moscato d'Asti come from Piedmont and are made from Moscato Bianco. Instead of a second fermentation, the juice is chilled and stored, then fermented once in a sealed tank. Fermentation is stopped by cooling and filtering, leaving sugar and only 5 to 7% alcohol. Asti is fully sparkling; Moscato d'Asti is gently fizzy, frizzante.",
+      "highlight": "One fermentation, stopped early"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Asti is made with a second fermentation, like Prosecco.",
+      "answer": false,
+      "explanation": "Not true. Asti uses a single fermentation in a sealed tank, stopped early to keep sugar and low alcohol."
+    },
+    {
+      "type": "concept",
+      "title": "Serving them",
+      "body": "Both are made to drink young and well chilled. Prosecco suits aperitifs and light dishes; Extra Dry is the most common style, slightly sweeter than Brut. Moscato d'Asti, sweet and low in alcohol, suits fruit desserts and, in Piedmont, sometimes breakfast pastries.",
+      "highlight": "Young and cold"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is the main grape of Prosecco?",
+      "options": [
+        "Moscato Bianco",
+        "Glera",
+        "Chardonnay",
+        "Pinot Grigio"
+      ],
+      "answer": 1,
+      "explanation": "Prosecco must be at least 85% Glera. Moscato Bianco is the grape of Asti."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Prosecco is mostly Glera, made by the tank method",
+        "Asti and Moscato d'Asti come from one fermentation, stopped early",
+        "Both are best young and chilled"
+      ]
+    }
+  ]
+}

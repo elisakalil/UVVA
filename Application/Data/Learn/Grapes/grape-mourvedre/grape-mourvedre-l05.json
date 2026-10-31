@@ -1,0 +1,60 @@
+{
+  "id": "grape-mourvedre-l05",
+  "moduleId": "grape-mourvedre",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Mourvèdre",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Mourvèdre with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Game and herbs",
+      "body": "Mourvèdre's gamey, herbal style suits Provençal and Mediterranean food: lamb with rosemary, beef daube, game, wild boar, grilled sausages. Bandol rosé is a classic with bouillabaisse, Marseille's fish stew. Spanish Monastrell suits roast lamb, chorizo and hearty stews.",
+      "highlight": "Lamb, daube, bouillabaisse"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve reds at 16 to 18 degrees. Young Bandol can be closed and reductive; decant it for an hour or two. Good Bandol ages 15 to 25 years, gaining leather, truffle and dried herbs. Most Spanish Monastrell is best within five years; premium examples age longer.",
+      "highlight": "Decant young Bandol"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a classic partner for Bandol rosé?",
+      "options": [
+        "Bouillabaisse",
+        "Chocolate cake",
+        "Sushi with wasabi",
+        "Ice cream"
+      ],
+      "answer": 0,
+      "explanation": "Bandol rosé's structure suits the rich, saffron-scented fish stew of Marseille."
+    },
+    {
+      "type": "tip",
+      "body": "If a young Mourvèdre smells of struck match, give it time in a decanter. That reductive note usually fades, revealing fruit and herbs."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Good Bandol red can age for 15 to 25 years.",
+      "answer": true,
+      "explanation": "Yes. Mourvèdre's tannin and resistance to oxidation help it age."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Mourvèdre suits lamb, game and Provençal dishes",
+        "Decant young Bandol; serve at 16 to 18 degrees",
+        "Good Bandol ages 15 to 25 years"
+      ]
+    }
+  ]
+}

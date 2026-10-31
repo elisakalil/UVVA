@@ -1,0 +1,77 @@
+{
+  "id": "region-it-campania-l02",
+  "moduleId": "region-it-campania",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Aglianico, Fiano and Greco",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Aglianico",
+    "Describe Fiano and Greco",
+    "Name Campania's other grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aglianico",
+      "body": "Aglianico is Campania's great red: dark, with high tannin and high acidity, black cherry, smoke and earth. It ripens very late. It makes Taurasi DOCG, often called the Barolo of the south, which must be at least 85% Aglianico and age three years, one in wood; Riserva four years. Mastroberardino kept the tradition alive after the Second World War.",
+      "highlight": "Taurasi: Aglianico, three years"
+    },
+    {
+      "type": "concept",
+      "title": "Fiano and Greco",
+      "body": "Fiano di Avellino DOCG gives textured, nutty whites with pear, hazelnut, honey and smoke, that can age 10 years or more. Greco di Tufo DOCG, from sulphur-rich volcanic soils around Tufo, gives firmer, mineral whites with peach and almond. Falanghina, near Naples and Benevento, gives fresh, floral whites; Piedirosso a light red.",
+      "highlight": "Fiano nutty; Greco mineral"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its grape.",
+      "pairs": [
+        {
+          "left": "Taurasi",
+          "right": "Aglianico"
+        },
+        {
+          "left": "Fiano di Avellino",
+          "right": "Fiano"
+        },
+        {
+          "left": "Greco di Tufo",
+          "right": "Greco"
+        },
+        {
+          "left": "Falanghina del Sannio",
+          "right": "Falanghina"
+        }
+      ],
+      "explanation": "Campania's three DOCGs are all in Irpinia."
+    },
+    {
+      "type": "tip",
+      "body": "Fiano di Avellino gains honey and smoky notes with age. A five-year-old bottle is often better than a young one."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which DOCG is often called the Barolo of the south?",
+      "options": [
+        "Taurasi",
+        "Greco di Tufo",
+        "Fiano di Avellino",
+        "Lacryma Christi"
+      ],
+      "answer": 0,
+      "explanation": "For Aglianico's tannin, acidity and ageing potential."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aglianico makes Taurasi, structured and long-lived",
+        "Fiano is nutty; Greco is mineral",
+        "Falanghina and Piedirosso complete Campania's grapes"
+      ]
+    }
+  ]
+}

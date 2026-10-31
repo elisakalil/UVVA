@@ -1,0 +1,60 @@
+{
+  "id": "region-es-ribera-del-duero-l03",
+  "moduleId": "region-es-ribera-del-duero",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Ribera and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Ribera label",
+    "Pair Ribera with food",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show Ribera del Duero DO, the producer, vintage and ageing category, with a back-label seal. Roble, oak, is an unofficial term for young wines with a few months in barrel. Many top wines don't use the categories at all, relying on the producer's name.",
+      "highlight": "DO, category, Roble"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Ribera's classic pairing is lechazo, roast suckling lamb, cooked in wood-fired clay ovens in Aranda de Duero. It also suits grilled steak, game, chorizo, Manchego and aged sheep's cheese. Serve at 16 to 18 degrees, decanted when young; good Ribera ages 10 to 20 years.",
+      "highlight": "Lechazo in Aranda de Duero"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is Ribera del Duero's classic match?",
+      "options": [
+        "Lechazo, roast suckling lamb",
+        "Sushi",
+        "Paella with seafood",
+        "Fruit salad"
+      ],
+      "answer": 0,
+      "explanation": "Roast suckling lamb in wood ovens."
+    },
+    {
+      "type": "tip",
+      "body": "Aranda de Duero has a network of medieval underground cellars, many still used for ageing wine."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Roble is an official Spanish ageing category.",
+      "answer": false,
+      "explanation": "Not true. It's an informal term for young wines with brief oak ageing."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the category; Roble is informal",
+        "Ribera's classic match is roast suckling lamb",
+        "Serve decanted; good wines age 10 to 20 years"
+      ]
+    }
+  ]
+}

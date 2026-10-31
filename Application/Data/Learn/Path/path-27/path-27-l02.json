@@ -1,0 +1,62 @@
+{
+  "id": "path-27-l02",
+  "moduleId": "path-27",
+  "order": 2,
+  "title": "Sauternes",
+  "subtitle": "Bordeaux's sweet gold",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sauternes' location and climate",
+    "Explain its grapes and ageing",
+    "Explain the 1855 classification of Sauternes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Mist from the Ciron",
+      "body": "Sauternes and Barsac lie in southern Graves, where the cool Ciron river meets the warmer Garonne. In autumn, this temperature difference creates morning mist, then sunny afternoons, ideal for noble rot. Barsac, on flatter limestone, can label its wines as Barsac or Sauternes.",
+      "highlight": "Cool Ciron, warm Garonne, mist"
+    },
+    {
+      "type": "concept",
+      "title": "Grapes and making",
+      "body": "Sémillon is about 80% of plantings: thin skins welcome botrytis and give body and honey. Sauvignon Blanc adds acidity and freshness; Muscadelle adds perfume. Wines ferment and age in barrels, often new, for 18 to 36 months. Alcohol is around 13 to 14%, sugar 100 to 150 g/l. Good Sauternes ages for decades.",
+      "highlight": "Sémillon, Sauvignon, Muscadelle"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape dominates Sauternes?",
+      "options": [
+        "Sauvignon Blanc",
+        "Sémillon",
+        "Muscadelle",
+        "Chardonnay"
+      ],
+      "answer": 1,
+      "explanation": "Sémillon's thin skins make it the ideal host for noble rot."
+    },
+    {
+      "type": "concept",
+      "title": "The 1855 classification",
+      "body": "In 1855, Sauternes and Barsac were classified alongside the Médoc. Château d'Yquem was given the unique rank of Premier Cru Supérieur. Below it are 11 Premiers Crus, like Climens and Suduiraut, and 15 Deuxièmes Crus. Yquem may not make Sauternes in poor years; it skipped 1992, for example.",
+      "highlight": "Yquem: Premier Cru Supérieur"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Château d'Yquem holds a unique rank in the 1855 classification.",
+      "answer": true,
+      "explanation": "Yes. It is the only Premier Cru Supérieur."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Ciron's mists bring noble rot to Sauternes and Barsac",
+        "Sémillon leads, with Sauvignon and Muscadelle, aged in oak",
+        "Yquem is the only Premier Cru Supérieur of 1855"
+      ]
+    }
+  ]
+}

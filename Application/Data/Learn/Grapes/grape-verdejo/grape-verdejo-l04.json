@@ -1,0 +1,96 @@
+{
+  "id": "grape-verdejo-l04",
+  "moduleId": "grape-verdejo",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Verdejo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Verdejo",
+    "Know Rueda",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which finish is typical of Verdejo?",
+      "options": [
+        "Bitter almond",
+        "Sweet vanilla",
+        "Tannic grip",
+        "Petrol"
+      ],
+      "answer": 0,
+      "explanation": "A slightly bitter, almond finish."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Verdejo.",
+      "pairs": [
+        {
+          "left": "Rueda",
+          "right": "Main region"
+        },
+        {
+          "left": "1972",
+          "right": "Marqués de Riscal's modern style"
+        },
+        {
+          "left": "Rueda Dorado",
+          "right": "Traditional oxidative style"
+        },
+        {
+          "left": "Fennel",
+          "right": "Typical aroma"
+        }
+      ],
+      "explanation": "Verdejo's story is old and new."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Verdejo is often blended with Sauvignon Blanc.",
+      "answer": true,
+      "explanation": "Yes, especially in plain Rueda."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Rueda?",
+      "options": [
+        "High plateau",
+        "Continental climate",
+        "Night harvesting",
+        "Coastal and humid"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Rueda is inland and dry."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Rueda Verdejo must contain at least ____% Verdejo.",
+      "options": [
+        "85",
+        "50",
+        "100",
+        "25"
+      ],
+      "answer": "85",
+      "explanation": "At least 85%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Verdejo is herbal, crisp, with a bitter almond finish",
+        "Rueda's high plateau keeps it fresh",
+        "Modern Verdejo began in 1972",
+        "It's a classic with tapas and seafood"
+      ]
+    }
+  ]
+}

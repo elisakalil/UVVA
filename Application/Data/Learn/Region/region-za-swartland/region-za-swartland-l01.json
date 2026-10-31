@@ -1,0 +1,62 @@
+{
+  "id": "region-za-swartland-l01",
+  "moduleId": "region-za-swartland",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "The black land",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Swartland's geography",
+    "Explain its dry climate",
+    "Explain the Swartland revolution"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "North of Cape Town",
+      "body": "Swartland, black land, lies about 65 km north of Cape Town, named after the dark renosterbos shrub that covers its hills. It's a large area of wheat fields and vineyards, around towns like Malmesbury and Riebeek-Kasteel, with the Paardeberg and Kasteelberg mountains. Soils include granite, schist and iron-rich clay.",
+      "highlight": "Black land, renosterbos"
+    },
+    {
+      "type": "concept",
+      "title": "Hot and dry",
+      "body": "Swartland is warmer and drier than Stellenbosch, with hot summers and about 300 to 600 mm of rain a year, mostly in winter. Many vines are bush vines, dry-farmed without irrigation, their deep roots finding water. That keeps yields low and fruit concentrated. Atlantic breezes cool some western areas.",
+      "highlight": "Dry-farmed bush vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Swartland yields low?",
+      "options": [
+        "Dry-farmed bush vines in a hot, dry climate",
+        "Too much rain",
+        "Frost every year",
+        "Volcanic ash"
+      ],
+      "answer": 0,
+      "explanation": "Without irrigation, old vines give small crops."
+    },
+    {
+      "type": "concept",
+      "title": "A revolution",
+      "body": "In the early 2000s, winemakers like Eben Sadie and Adi Badenhorst, then Chris and Andrea Mullineux, came to Swartland, drawn by old, forgotten vineyards. They made natural, low-intervention wines from old Chenin, Syrah and Grenache. In 2010, the Swartland Independent Producers set rules: no added yeast, no acidification, minimal sulphur, no new oak.",
+      "highlight": "Swartland Independent Producers, 2010"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Swartland's revival was led by young producers using old vineyards.",
+      "answer": true,
+      "explanation": "Yes, from the early 2000s."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Swartland, the black land, lies north of Cape Town",
+        "It's hot and dry, with dry-farmed bush vines",
+        "A wave of young producers revived it from the 2000s"
+      ]
+    }
+  ]
+}

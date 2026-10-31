@@ -1,0 +1,62 @@
+{
+  "id": "path-27-l04",
+  "moduleId": "path-27",
+  "order": 4,
+  "title": "German and Austrian sweet wines",
+  "subtitle": "Auslese to TBA",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Germany's sweet Prädikat wines",
+    "Describe Austria's Ausbruch",
+    "Explain how acidity balances sugar"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Germany",
+      "body": "Germany's Prädikat levels start with Kabinett and Spätlese, which can be dry or sweet. The sweet wines rise from there. Auslese comes from selected very ripe bunches, sometimes with botrytis. Beerenauslese, BA, uses individually selected overripe berries, usually botrytised. Trockenbeerenauslese, TBA, uses dried, shrivelled botrytis berries, with a minimum of 150 to 154 degrees Oechsle. Eiswein uses frozen grapes.",
+      "highlight": "Auslese, BA, TBA, Eiswein"
+    },
+    {
+      "type": "concept",
+      "title": "Acidity",
+      "body": "Riesling's acidity, often 8 to 12 g/l in TBA, balances sugar that can exceed 300 g/l. Alcohol can be as low as 5.5 to 8%. This tension between sugar and acid is what lets German sweet wines feel lively, and lets them age for decades. Without acidity, they'd be syrupy.",
+      "highlight": "High acidity balances high sugar"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Prädikat levels from least to most concentrated.",
+      "items": [
+        "Kabinett",
+        "Spätlese",
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese"
+      ],
+      "explanation": "Each level requires riper, more concentrated grapes. Only the top two rely on individually picked, usually botrytised berries."
+    },
+    {
+      "type": "concept",
+      "title": "Austria",
+      "body": "Austria's sweet wines centre on Burgenland's Neusiedlersee, a large, shallow lake whose humidity favours noble rot almost every year. Rust's Ausbruch, a historic style between BA and TBA, is revived as Ruster Ausbruch. Welschriesling, Chardonnay and Scheurebe are common grapes for TBA there.",
+      "highlight": "Neusiedlersee and Ruster Ausbruch"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Trockenbeerenauslese is a dry wine.",
+      "answer": false,
+      "explanation": "Not true. Trocken here refers to dried berries, not dryness. TBA is among the sweetest wines in the world."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Germany's sweet Prädikats rise from Auslese to TBA",
+        "Riesling's acidity balances sugar over 300 g/l",
+        "Austria's Neusiedlersee makes TBA and Ruster Ausbruch"
+      ]
+    }
+  ]
+}

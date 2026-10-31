@@ -1,0 +1,67 @@
+{
+  "id": "region-de-rheingau-l04",
+  "moduleId": "region-de-rheingau",
+  "order": 4,
+  "title": "The VDP classification",
+  "subtitle": "Germany's vineyard pyramid",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the VDP",
+    "Describe its four levels",
+    "Explain Grosses Gewächs"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The VDP",
+      "body": "The VDP, Verband Deutscher Prädikatsweingüter, is an association of about 200 top German estates, founded in 1910. Its emblem is an eagle with grapes on the bottle capsule. The Rheingau's Charta association, from 1984, pioneered dry, food-friendly Riesling and site classification, ideas the VDP adopted nationally.",
+      "highlight": "Founded 1910; eagle emblem"
+    },
+    {
+      "type": "concept",
+      "title": "Four levels",
+      "body": "The VDP's pyramid, like Burgundy's, has four levels: Gutswein, estate wine; Ortswein, village wine; Erste Lage, first-class site; and Grosse Lage, great site. Dry wines from Grosse Lage sites are called Grosses Gewächs, GG. Sweet wines from top sites still use Prädikat terms, like Spätlese or Auslese.",
+      "highlight": "Gutswein to Grosse Lage"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the VDP levels from broadest to most precise.",
+      "items": [
+        "Gutswein",
+        "Ortswein",
+        "Erste Lage",
+        "Grosse Lage"
+      ],
+      "explanation": "Each step narrows the origin and raises the standard."
+    },
+    {
+      "type": "concept",
+      "title": "Why it matters",
+      "body": "German wine law ranks wine by grape ripeness, not by site. The VDP's private classification brings site to the centre, as in Burgundy. Rheingau sites like Rüdesheimer Berg Schlossberg, Erbacher Marcobrunn and Hochheimer Hölle are Grosse Lage. Not all great producers are VDP members.",
+      "highlight": "Site, not just ripeness"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a Grosses Gewächs?",
+      "options": [
+        "A dry wine from a Grosse Lage site",
+        "A sweet wine",
+        "A sparkling wine",
+        "A red wine only"
+      ],
+      "answer": 0,
+      "explanation": "GG marks the VDP's top dry wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The VDP is an association of about 200 top estates",
+        "Its pyramid runs from Gutswein to Grosse Lage",
+        "Grosses Gewächs is a dry wine from a top site"
+      ]
+    }
+  ]
+}

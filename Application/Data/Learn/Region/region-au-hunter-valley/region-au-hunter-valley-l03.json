@@ -1,0 +1,60 @@
+{
+  "id": "region-au-hunter-valley-l03",
+  "moduleId": "region-au-hunter-valley",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Hunter and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Hunter label",
+    "Pair Hunter wines with food",
+    "Know when to drink them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape, Hunter Valley GI, sometimes Lower Hunter or Pokolbin, and the vintage. Some producers release Sémillon with five or more years of age as museum releases. Screw caps, standard since the 2000s, help Sémillon age freshly.",
+      "highlight": "GI, museum releases, screw caps"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Young Sémillon suits oysters, sashimi and light seafood. Aged Sémillon suits roast chicken, crab, lobster and creamy dishes. Hunter Shiraz suits lamb, roast beef and mushrooms. Serve Sémillon at 8 to 11 degrees, Shiraz at 15 to 17. Young Sémillon is crisp; wait 10 years for its toasty magic.",
+      "highlight": "Oysters with young Sémillon"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits young Hunter Sémillon?",
+      "options": [
+        "Oysters",
+        "Beef stew",
+        "Chocolate cake",
+        "Roast lamb"
+      ],
+      "answer": 0,
+      "explanation": "Its lean, lemony acidity suits oysters."
+    },
+    {
+      "type": "tip",
+      "body": "Buy a few bottles of young Hunter Sémillon and open one each year. You'll taste it change from lemon to toast and honey."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Hunter Shiraz is usually very high in alcohol, like Barossa Shiraz.",
+      "answer": false,
+      "explanation": "Not true. It's medium-bodied, around 13 to 13.5%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the GI; museum releases offer aged Sémillon",
+        "Young Sémillon suits oysters; aged suits chicken and crab",
+        "Hunter Shiraz suits lamb and mushrooms"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "path-08-l04",
+  "moduleId": "path-08",
+  "order": 4,
+  "title": "Making a rosé",
+  "subtitle": "Pink by design",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the main rosé methods",
+    "Explain how colour is controlled",
+    "Explain the rules on blending"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Short contact",
+      "body": "Most rosé is made from black grapes with skin contact of a few hours, then the juice is run off and fermented cool like a white. Direct pressing gives the palest colour, with juice just touched by the skins during the press. Longer maceration gives deeper colour and more fruit.",
+      "highlight": "Hours of contact, then made like a white"
+    },
+    {
+      "type": "concept",
+      "title": "Colour as a choice",
+      "body": "Rosé colour depends on grape, contact time and temperature. Thin-skinned Grenache gives pale pink quickly; thick-skinned Syrah colours fast. Provence's pale rosés, many with less than 6 hours of contact, now set the market fashion, so producers plan colour as carefully as flavour.",
+      "highlight": "Grape and contact time set the colour"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The rosé method that draws juice off a red wine tank is called ____.",
+      "options": [
+        "saignée",
+        "pigeage",
+        "remontage",
+        "dosage"
+      ],
+      "answer": "saignée",
+      "explanation": "Saignée means bleeding. Pigeage and remontage are cap management methods for reds; dosage belongs to sparkling wine."
+    },
+    {
+      "type": "concept",
+      "title": "Blending red and white",
+      "body": "In the EU, mixing red and white wine to make still rosé is not allowed. Champagne is the exception: most rosé Champagne is made by adding a small amount of still red wine to the white base. Outside Europe, blending is allowed in many countries.",
+      "highlight": "Blending is banned for most EU still rosé"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine can legally be made by blending red and white wine in the EU?",
+      "options": [
+        "Provence rosé",
+        "Rosé Champagne",
+        "Tavel",
+        "Any still rosé"
+      ],
+      "answer": 1,
+      "explanation": "Rosé Champagne is the exception. Still rosé in the EU must be made from skin contact or saignée."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Most rosé is made with a short skin contact, then fermented like a white",
+        "Grape and contact time set the colour",
+        "Blending red and white is banned for EU still rosé, except Champagne"
+      ]
+    }
+  ]
+}

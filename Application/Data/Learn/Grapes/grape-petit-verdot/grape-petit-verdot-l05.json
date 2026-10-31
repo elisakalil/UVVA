@@ -1,0 +1,96 @@
+{
+  "id": "grape-petit-verdot-l05",
+  "moduleId": "grape-petit-verdot",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Petit Verdot",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Petit Verdot",
+    "Know where it grows",
+    "Explain its role alone and in blends"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Petit Verdot add to Bordeaux blends?",
+      "options": [
+        "Sweetness",
+        "Colour, tannin and spice",
+        "Lower alcohol",
+        "White fruit aromas"
+      ],
+      "answer": 1,
+      "explanation": "Small amounts add colour, structure and a floral, spicy lift."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Petit Verdot ripens earlier than Cabernet Sauvignon.",
+      "answer": false,
+      "explanation": "Not true. It ripens very late, often after Cabernet."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Petit Verdot.",
+      "pairs": [
+        {
+          "left": "Little green one",
+          "right": "Meaning of its name"
+        },
+        {
+          "left": "Médoc",
+          "right": "Bordeaux home"
+        },
+        {
+          "left": "Virginia",
+          "right": "Signature grape"
+        },
+        {
+          "left": "Violet",
+          "right": "Typical aroma"
+        }
+      ],
+      "explanation": "Its story connects Bordeaux to new homes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which regions make varietal Petit Verdot?",
+      "options": [
+        "Australia",
+        "Virginia",
+        "Spain",
+        "Champagne"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Champagne grows Chardonnay, Pinot Noir and Meunier."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Petit Verdot needs a long, ____ season to ripen.",
+      "options": [
+        "warm",
+        "wet",
+        "short",
+        "cold"
+      ],
+      "answer": "warm",
+      "explanation": "As a late ripener, warmth is essential."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Petit Verdot is dark, tannic, acidic and floral",
+        "It seasons Bordeaux blends in small amounts",
+        "Warm regions make it as a varietal",
+        "It suits rich, herby meat dishes"
+      ]
+    }
+  ]
+}

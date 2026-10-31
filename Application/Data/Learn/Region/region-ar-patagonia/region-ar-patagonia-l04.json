@@ -1,0 +1,96 @@
+{
+  "id": "region-ar-patagonia-l04",
+  "moduleId": "region-ar-patagonia",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Patagonia",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Patagonia's land and grapes",
+    "Compare it with northern Argentina",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Patagonia.",
+      "pairs": [
+        {
+          "left": "Neuquén",
+          "right": "Newer desert vineyards"
+        },
+        {
+          "left": "Río Negro",
+          "right": "Old vines"
+        },
+        {
+          "left": "Chubut",
+          "right": "Far southern plantings"
+        },
+        {
+          "left": "Al asador",
+          "right": "Open-fire lamb"
+        }
+      ],
+      "explanation": "Patagonia's identity is southern and windy."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What thickens grape skins and keeps vines healthy in Patagonia?",
+      "options": [
+        "Constant wind",
+        "Heavy rain",
+        "Fog",
+        "Snow"
+      ],
+      "answer": 0,
+      "explanation": "The wind dries the canopy and thickens skins."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Patagonia is Argentina's largest wine region.",
+      "answer": false,
+      "explanation": "Not true. It's small; Mendoza is the largest."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes do well in Patagonia?",
+      "options": [
+        "Pinot Noir",
+        "Malbec",
+        "Sémillon",
+        "Torrontés from Cafayate"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cafayate is in Salta."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Patagonia's coolness comes mainly from ____, not altitude.",
+      "options": [
+        "latitude",
+        "fog",
+        "rain",
+        "forests"
+      ],
+      "answer": "latitude",
+      "explanation": "It lies far south."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Patagonia is cool from latitude and wind",
+        "Pinot Noir and fresher Malbec lead",
+        "Río Negro has old vines; Neuquén new ones",
+        "Its wines suit lamb and trout"
+      ]
+    }
+  ]
+}

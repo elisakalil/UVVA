@@ -1,0 +1,73 @@
+{
+  "id": "region-fr-burgundy-l04",
+  "moduleId": "region-fr-burgundy",
+  "order": 4,
+  "title": "The Côte d'Or",
+  "subtitle": "The golden slope",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Côte de Nuits and Côte de Beaune",
+    "Explain why mid-slope is best",
+    "Name key villages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Nuits and Beaune",
+      "body": "The Côte d'Or runs about 50 km from Dijon to Santenay. The northern half, the Côte de Nuits, is almost all Pinot Noir and has most of the red Grand Crus. The southern half, the Côte de Beaune, makes both reds and the great white Grand Crus, like Montrachet and Corton-Charlemagne.",
+      "highlight": "Nuits for red; Beaune for both"
+    },
+    {
+      "type": "concept",
+      "title": "Mid-slope",
+      "body": "The best vineyards lie mid-slope, at about 250 to 350 m. There, limestone and marl mix in thin, well-drained soils, the sun hits from the east, and cold air drains below. The slope's top is too thin and exposed; the bottom, richer and wetter, gives simpler wines. A road, the D974, roughly marks the border of good and lesser land.",
+      "highlight": "Mid-slope is best"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each village to its main wine.",
+      "pairs": [
+        {
+          "left": "Gevrey-Chambertin",
+          "right": "Powerful red"
+        },
+        {
+          "left": "Vosne-Romanée",
+          "right": "Silky, spicy red"
+        },
+        {
+          "left": "Meursault",
+          "right": "Rich white"
+        },
+        {
+          "left": "Puligny-Montrachet",
+          "right": "Elegant white"
+        }
+      ],
+      "explanation": "Each village has its own personality."
+    },
+    {
+      "type": "concept",
+      "title": "Famous names",
+      "body": "Vosne-Romanée is home to Romanée-Conti, one of the world's most expensive wines, a 1.8-hectare Grand Cru. Chambolle-Musigny is elegant; Nuits-Saint-Georges firm. In the Côte de Beaune, Pommard is sturdy, Volnay delicate, and Corton is the only red Grand Cru.",
+      "highlight": "Romanée-Conti and Corton"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Côte de Nuits is famous mainly for white wine.",
+      "answer": false,
+      "explanation": "Not true. It's almost all Pinot Noir; the great whites come from the Côte de Beaune."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Côte de Nuits makes reds; the Côte de Beaune both",
+        "Mid-slope vineyards give the best wines",
+        "Each village, like Vosne or Meursault, has its own style"
+      ]
+    }
+  ]
+}

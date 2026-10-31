@@ -1,0 +1,72 @@
+{
+  "id": "region-it-trentino-alto-adige-l03",
+  "moduleId": "region-it-trentino-alto-adige",
+  "order": 3,
+  "title": "Trentodoc",
+  "subtitle": "Mountain sparkling wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Trentodoc",
+    "Explain its rules",
+    "Name its key producer"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Mountain bubbles",
+      "body": "Trentodoc, created in 1993, was one of the first Italian DOCs for traditional method sparkling wine. It's made mainly from Chardonnay, with Pinot Noir, Pinot Bianco and Pinot Meunier, grown in Trentino's mountain vineyards, often at 300 to 800 m. Altitude gives high acidity, ideal for sparkling wine.",
+      "highlight": "Since 1993, mountain Chardonnay"
+    },
+    {
+      "type": "concept",
+      "title": "Rules",
+      "body": "Trentodoc must be made by the traditional method, with second fermentation in bottle. Minimum lees ageing: 15 months for non-vintage, 24 months for vintage, 36 months for Riserva. The styles range from Pas Dosé to Demi-Sec. The wines are crisp, fine and elegant, often compared with Champagne.",
+      "highlight": "15, 24 and 36 months on lees"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the minimum lees ageing for Trentodoc Riserva?",
+      "options": [
+        "36 months",
+        "15 months",
+        "6 months",
+        "10 years"
+      ],
+      "answer": 0,
+      "explanation": "Riserva needs 36 months."
+    },
+    {
+      "type": "concept",
+      "title": "Ferrari",
+      "body": "Giulio Ferrari founded his sparkling wine house in Trento in 1902, after studying in Champagne, and brought Chardonnay to the region. Ferrari, owned since 1952 by the Lunelli family, remains Trentodoc's leading producer. Its Giulio Ferrari Riserva del Fondatore is one of Italy's most acclaimed sparkling wines.",
+      "highlight": "Ferrari, since 1902"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are used in Trentodoc?",
+      "options": [
+        "Chardonnay",
+        "Pinot Noir",
+        "Pinot Bianco",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo isn't used."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Trentodoc is Trentino's traditional method sparkling wine",
+        "Altitude gives it high acidity",
+        "Ferrari, founded in 1902, leads the category"
+      ]
+    }
+  ]
+}

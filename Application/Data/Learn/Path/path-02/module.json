@@ -1,0 +1,20 @@
+{
+  "id": "path-02",
+  "kind": "path",
+  "order": 2,
+  "level": "Essentials",
+  "complexity": "C",
+  "title": "Types and Styles",
+  "description": "Still, sparkling and fortified, and the words that describe a wine's style: colour, sweetness, body.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-02-l01",
+    "path-02-l02",
+    "path-02-l03",
+    "path-02-l04",
+    "path-02-l05",
+    "path-02-l06"
+  ]
+}

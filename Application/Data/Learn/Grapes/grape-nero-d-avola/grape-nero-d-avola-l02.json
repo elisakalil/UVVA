@@ -1,0 +1,79 @@
+{
+  "id": "grape-nero-d-avola-l02",
+  "moduleId": "grape-nero-d-avola",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Across Sicily",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Nero d'Avola's main areas",
+    "Explain how Sicily's climate shapes it",
+    "Name its key wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "South-east and beyond",
+      "body": "Nero d'Avola grows all over Sicily, but the south-east, around Avola, Noto, Pachino and Vittoria, is its historic home. Limestone and sandy soils there give fresher, more elegant wines. Inland and western areas produce riper, fuller styles. It's also planted in Australia and California in small amounts.",
+      "highlight": "Noto, Pachino, Vittoria"
+    },
+    {
+      "type": "concept",
+      "title": "Sicilian climate",
+      "body": "Sicily is hot and dry, with sea breezes and altitude moderating it. Bush vines, called alberello, are traditional, shading the fruit. Many growers now use trellises. Nero d'Avola needs heat but can lose freshness in the hottest sites, so coastal and hillside vineyards are valued.",
+      "highlight": "Bush vines, sea breezes, hills"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Sicilian wine to its grapes.",
+      "pairs": [
+        {
+          "left": "Cerasuolo di Vittoria",
+          "right": "Nero d'Avola and Frappato"
+        },
+        {
+          "left": "Eloro",
+          "right": "South-east Nero d'Avola"
+        },
+        {
+          "left": "Sicilia DOC",
+          "right": "Island-wide appellation"
+        },
+        {
+          "left": "Etna Rosso",
+          "right": "Nerello Mascalese"
+        }
+      ],
+      "explanation": "Nero d'Avola is found across Sicily, but not on Etna."
+    },
+    {
+      "type": "concept",
+      "title": "Cerasuolo di Vittoria",
+      "body": "Sicily's only DOCG, Cerasuolo di Vittoria, blends 50 to 70% Nero d'Avola with Frappato. Nero gives structure and colour; Frappato gives perfume and lightness. The result is a bright, cherry-scented red, lighter than many Sicilian reds. Cerasuolo here means cherry-red.",
+      "highlight": "Sicily's only DOCG"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Cerasuolo di Vittoria blends Nero d'Avola with ____.",
+      "options": [
+        "Frappato",
+        "Sangiovese",
+        "Merlot",
+        "Nerello"
+      ],
+      "answer": "Frappato",
+      "explanation": "Frappato adds perfume and lightness to Nero d'Avola's depth."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nero d'Avola's historic home is south-east Sicily",
+        "Sea breezes and hills keep it fresh",
+        "Cerasuolo di Vittoria, Sicily's only DOCG, blends it with Frappato"
+      ]
+    }
+  ]
+}

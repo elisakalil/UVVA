@@ -1,0 +1,68 @@
+{
+  "id": "path-03-l03",
+  "moduleId": "path-03",
+  "order": 3,
+  "title": "Riesling and Pinot Grigio",
+  "subtitle": "Purity and lightness",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Riesling's acidity and range of sweetness",
+    "Describe Pinot Grigio and Pinot Gris",
+    "Explain how Riesling changes with age"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Riesling, the high-acid white",
+      "body": "Riesling comes from Germany and has very high acidity, flowery aromas and flavours from lime to peach. It is almost never oaked. It can be bone dry, as in much of Alsace and Austria, or lusciously sweet, as in German late-harvest wines. That acidity keeps even sweet Rieslings fresh.",
+      "highlight": "Riesling: high acidity, dry to sweet"
+    },
+    {
+      "type": "concept",
+      "title": "Why Riesling ages so well",
+      "body": "High acidity protects a wine as it ages. Good Riesling can develop for 20 years or more, gaining notes of honey, toast and a smell often called petrol. That petrol note comes from a compound called TDN, which forms more in grapes exposed to strong sun. Many lovers of Riesling look for it.",
+      "highlight": "Petrol in Riesling comes from TDN"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Riesling's ability to age comes mainly from its high ____.",
+      "options": [
+        "acidity",
+        "tannin",
+        "alcohol",
+        "sugar"
+      ],
+      "answer": "acidity",
+      "explanation": "Acidity acts as a preservative. Riesling has very little tannin and often modest alcohol, so acidity does the work."
+    },
+    {
+      "type": "concept",
+      "title": "One grape, two names",
+      "body": "Pinot Grigio and Pinot Gris are the same grape, with a greyish-pink skin. The Italian name usually signals a light, crisp, neutral wine picked early, as in north-east Italy. The French name, from Alsace, usually means a riper, rounder wine with notes of pear, spice and honey. Producers elsewhere borrow the name to signal the style.",
+      "highlight": "Grigio: light and crisp. Gris: rich and round."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A label says Pinot Gris and the wine comes from Alsace. Which style is most likely?",
+      "options": [
+        "Light, neutral and very crisp",
+        "Rich and round, with ripe pear and spice",
+        "Sparkling",
+        "Tannic and dark"
+      ],
+      "answer": 1,
+      "explanation": "Pinot Gris from Alsace is usually riper and fuller. The Italian name, Pinot Grigio, is the one linked to the light, crisp style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling has high acidity and ranges from bone dry to sweet",
+        "Pinot Grigio and Pinot Gris are one grape, named by style",
+        "Good Riesling ages for decades, developing honey and petrol notes"
+      ]
+    }
+  ]
+}

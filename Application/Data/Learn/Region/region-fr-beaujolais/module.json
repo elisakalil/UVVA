@@ -1,0 +1,24 @@
+{
+  "id": "region-fr-beaujolais",
+  "kind": "region",
+  "order": 8,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Beaujolais",
+  "grapes": [
+    "Gamay"
+  ],
+  "points": "1 1 1 1 = 4",
+  "complexity": "C",
+  "description": "Granite hills south of Burgundy, where Gamay makes everything from Nouveau to serious crus.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-fr-beaujolais-l01",
+    "region-fr-beaujolais-l02",
+    "region-fr-beaujolais-l03",
+    "region-fr-beaujolais-l04",
+    "region-fr-beaujolais-l05"
+  ]
+}

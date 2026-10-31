@@ -1,0 +1,96 @@
+{
+  "id": "grape-merlot-l06",
+  "moduleId": "grape-merlot",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Merlot",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Merlot",
+    "Compare its regions",
+    "Explain its reputation and potential"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Merlot suit Pomerol's clay?",
+      "options": [
+        "It ripens early and likes cool, water-retentive soils",
+        "It needs drought",
+        "It needs gravel",
+        "It ripens very late"
+      ],
+      "answer": 0,
+      "explanation": "Clay stays cool; early-ripening Merlot still ripens there."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine or place to Merlot.",
+      "pairs": [
+        {
+          "left": "Pétrus",
+          "right": "Pomerol icon"
+        },
+        {
+          "left": "Cheval Blanc",
+          "right": "Saint-Émilion, with Cabernet Franc"
+        },
+        {
+          "left": "Masseto",
+          "right": "Tuscan Merlot"
+        },
+        {
+          "left": "Ticino",
+          "right": "Swiss Merlot"
+        }
+      ],
+      "explanation": "Merlot makes famous wines in several countries."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Merlot ripens later than Cabernet Sauvignon.",
+      "answer": false,
+      "explanation": "Not true. It ripens one to two weeks earlier."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Merlot's typical aromas?",
+      "options": [
+        "Plum",
+        "Black cherry",
+        "Chocolate with oak",
+        "Lime"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Lime belongs to white wines like Riesling."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Merlot's name may come from merle, meaning ____.",
+      "options": [
+        "blackbird",
+        "black wine",
+        "small berry",
+        "river"
+      ],
+      "answer": "blackbird",
+      "explanation": "Blackbirds love its ripe grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot is plummy, soft and approachable",
+        "It's Bordeaux's most planted grape, king of the Right Bank",
+        "Its 1990s boom and Sideways hurt its image, not its potential",
+        "It's flexible at the table and the best age for decades"
+      ]
+    }
+  ]
+}

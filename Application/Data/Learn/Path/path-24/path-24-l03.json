@@ -1,0 +1,62 @@
+{
+  "id": "path-24-l03",
+  "moduleId": "path-24",
+  "order": 3,
+  "title": "New Zealand's North Island",
+  "subtitle": "Hawke's Bay and Martinborough",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe New Zealand's climate",
+    "Describe Hawke's Bay and Gimblett Gravels",
+    "Describe Martinborough"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A maritime country",
+      "body": "New Zealand's two islands stretch from about 36 to 46 degrees south, and no vineyard is far from the sea. The climate is cool and maritime, with high sunlight and strong ultraviolet levels. Rain can come at harvest, so site and vintage matter. Sauvignon Blanc is over 60% of production.",
+      "highlight": "Cool, maritime, bright sun"
+    },
+    {
+      "type": "concept",
+      "title": "Hawke's Bay",
+      "body": "Hawke's Bay, on the North Island's east coast, is New Zealand's second largest region and one of its warmest. Gimblett Gravels, an old riverbed of stony soils, stores heat and drains well. It makes Bordeaux blends and Syrah. Chardonnay is also important.",
+      "highlight": "Gimblett Gravels: Bordeaux blends and Syrah"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Gimblett Gravels good for red grapes?",
+      "options": [
+        "Clay soils that hold water",
+        "Stony soils that store heat and drain well",
+        "High altitude",
+        "Coastal fog"
+      ],
+      "answer": 1,
+      "explanation": "Old riverbed gravel stores warmth and drains, helping red grapes ripen."
+    },
+    {
+      "type": "concept",
+      "title": "Martinborough",
+      "body": "Martinborough, in the Wairarapa near Wellington, is small, dry and windy. In the 1980s, scientists identified its climate and soils as similar to Burgundy's. Its Pinot Noir is concentrated and savoury. Strong winds lower yields but keep grapes healthy.",
+      "highlight": "Martinborough: Pinot Noir"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sauvignon Blanc makes up over 60% of New Zealand's production.",
+      "answer": true,
+      "explanation": "Yes. It dominates exports, though Pinot Noir and Chardonnay are growing."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "New Zealand is cool, maritime and bright",
+        "Hawke's Bay's Gimblett Gravels makes Bordeaux blends and Syrah",
+        "Martinborough makes concentrated Pinot Noir"
+      ]
+    }
+  ]
+}

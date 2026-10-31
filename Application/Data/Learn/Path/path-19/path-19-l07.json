@@ -1,0 +1,73 @@
+{
+  "id": "path-19-l07",
+  "moduleId": "path-19",
+  "order": 7,
+  "title": "Sicily and Sardinia",
+  "subtitle": "Italy's islands",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sicily's key grapes and areas",
+    "Explain the rise of Etna",
+    "Describe Sardinia's grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sicily",
+      "body": "Sicily is Italy's largest island and one of its largest wine regions. Nero d'Avola is its signature red, dark and ripe. Grillo and Catarratto are its main whites, once used for Marsala, the fortified wine of the west. Since 2011, the Sicilia DOC covers the whole island, and Cerasuolo di Vittoria is its only DOCG.",
+      "highlight": "Nero d'Avola, Grillo, Marsala"
+    },
+    {
+      "type": "concept",
+      "title": "Etna",
+      "body": "Mount Etna is an active volcano, with vineyards from 400 to over 1,000 m. Altitude gives cool nights, and black volcanic soils, often with ungrafted old vines, give fine, savoury wines. Nerello Mascalese makes pale, elegant reds often compared with Pinot Noir and Nebbiolo; Carricante makes taut, citrus whites. Etna was among Italy's first DOCs, in 1968.",
+      "highlight": "Altitude and volcanic soil"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Etna's reds are mainly made from Nero d'Avola.",
+      "answer": false,
+      "explanation": "Not true. Etna's reds are based on Nerello Mascalese, a paler, more elegant grape. Nero d'Avola belongs to the warmer south-east."
+    },
+    {
+      "type": "concept",
+      "title": "Sardinia",
+      "body": "Sardinia's wines show Spanish influence from centuries of rule. Cannonau is Grenache, giving ripe, warm reds. Vermentino di Gallura, the island's only DOCG, is a crisp, salty white from granite soils in the north-east. Carignano del Sulcis comes from old Carignan vines near the sea.",
+      "highlight": "Cannonau is Grenache"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its island.",
+      "pairs": [
+        {
+          "left": "Nero d'Avola",
+          "right": "Sicily"
+        },
+        {
+          "left": "Cannonau",
+          "right": "Sardinia"
+        },
+        {
+          "left": "Nerello Mascalese",
+          "right": "Etna"
+        },
+        {
+          "left": "Vermentino di Gallura",
+          "right": "North-east Sardinia"
+        }
+      ],
+      "explanation": "Each island has grapes shaped by its history."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sicily grows Nero d'Avola, Grillo and Catarratto",
+        "Etna's altitude gives fine Nerello Mascalese and Carricante",
+        "Sardinia's Cannonau is Grenache; Vermentino di Gallura its DOCG"
+      ]
+    }
+  ]
+}

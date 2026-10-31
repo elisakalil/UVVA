@@ -1,0 +1,77 @@
+{
+  "id": "grape-furmint-l02",
+  "moduleId": "grape-furmint",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Tokaj and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Furmint's main region",
+    "Explain Tokaj's conditions",
+    "Name other places that grow it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tokaj",
+      "body": "Furmint covers about 60 to 70% of Tokaj's vineyards, in north-east Hungary. The region's volcanic soils, from clay and loess to rhyolite and andesite, give mineral, smoky wines. The Bodrog and Tisza rivers create autumn mists, ideal for noble rot. Hárslevelű and Sárgamuskotály, a Muscat, are its partners.",
+      "highlight": "About 60 to 70% of Tokaj"
+    },
+    {
+      "type": "concept",
+      "title": "Beyond Tokaj",
+      "body": "Furmint also grows in Somló, a tiny Hungarian volcanic hill known for powerful dry whites, and in Slovenia, as Šipon, in Štajerska. Austria's Burgenland, around Rust, has revived it. Small plantings exist in Croatia, South Africa and California.",
+      "highlight": "Somló, Slovenia, Austria"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place or name to Furmint.",
+      "pairs": [
+        {
+          "left": "Tokaj",
+          "right": "Main region"
+        },
+        {
+          "left": "Šipon",
+          "right": "Slovenian name"
+        },
+        {
+          "left": "Somló",
+          "right": "Volcanic Hungarian hill"
+        },
+        {
+          "left": "Hárslevelű",
+          "right": "Tokaj blending partner"
+        }
+      ],
+      "explanation": "Furmint is Hungary's grape, with neighbours."
+    },
+    {
+      "type": "tip",
+      "body": "Tokaj's soils change from hill to hill. Furmint from rhyolite tends to be more mineral and lean; from loess, rounder and fruitier."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What creates the mists that help noble rot in Tokaj?",
+      "options": [
+        "The Bodrog and Tisza rivers",
+        "The Atlantic",
+        "The Danube delta",
+        "Lake Balaton"
+      ],
+      "answer": 0,
+      "explanation": "The two rivers meet at Tokaj, bringing autumn mists."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Furmint is 60 to 70% of Tokaj's vineyards",
+        "Volcanic soils and river mists shape it",
+        "It also grows in Somló, Slovenia and Austria"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "path-01-l03",
+  "moduleId": "path-01",
+  "order": 3,
+  "title": "Where wine comes from",
+  "subtitle": "The places where vines grow well",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Locate the two bands where most wine is made",
+    "Explain why vines need a cool season and a warm one",
+    "Tell Old World from New World producers"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two bands around the world",
+      "body": "Most wine is made between roughly 30 and 50 degrees of latitude, north and south of the equator. Closer to the equator there is no winter for the vine to rest; further away the summer is too short to ripen the grapes. France, Italy and Spain sit in the northern band; Argentina, South Africa and Australia in the southern one.",
+      "highlight": "Most vineyards lie between 30 and 50 degrees latitude"
+    },
+    {
+      "type": "concept",
+      "title": "Why the vine needs seasons",
+      "body": "A vine sleeps through winter, buds in spring, flowers, sets fruit and ripens it through summer. Each step needs the right temperature. Below about 10 degrees Celsius the vine barely grows. Too much heat ripens sugar quickly but burns off acidity, so the best wines come from places with warm days and enough coolness to keep the fruit fresh.",
+      "highlight": "Warm enough to ripen, cool enough to stay fresh"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is little fine wine made very close to the equator?",
+      "options": [
+        "The soil is too poor",
+        "There is no cool season for the vine to rest",
+        "It rains too little",
+        "Grapes cannot grow in the tropics"
+      ],
+      "answer": 1,
+      "explanation": "The vine needs a dormant winter to regulate its yearly cycle. Near the equator it never rests. Grapes do grow there, but making balanced wine is much harder."
+    },
+    {
+      "type": "concept",
+      "title": "Old World and New World",
+      "body": "Old World means the countries where wine culture began, mainly in Europe, with centuries of rules tied to place. New World means the countries where Europeans planted vines from the 16th century on, such as the United States, Chile, Argentina, Australia, New Zealand and South Africa. The terms describe history, not quality.",
+      "highlight": "Old World and New World describe history, not quality"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these are New World wine countries?",
+      "options": [
+        "Portugal",
+        "Chile",
+        "Italy",
+        "New Zealand",
+        "Spain"
+      ],
+      "answers": [
+        1,
+        3
+      ],
+      "explanation": "Chile and New Zealand planted vines with European settlers. Portugal, Italy and Spain have made wine for over two thousand years."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Most wine comes from between 30 and 50 degrees latitude, north and south",
+        "The vine needs a winter rest and a summer warm enough to ripen fruit",
+        "Old World and New World describe history, not quality"
+      ]
+    }
+  ]
+}

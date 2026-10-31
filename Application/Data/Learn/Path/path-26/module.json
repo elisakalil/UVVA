@@ -1,0 +1,21 @@
+{
+  "id": "path-26",
+  "kind": "path",
+  "order": 26,
+  "level": "Expert",
+  "complexity": "B",
+  "title": "Fortified Wines in Depth",
+  "description": "Sherry, Port and Madeira in full: production, styles, ageing and how to read them.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "path-26-l01",
+    "path-26-l02",
+    "path-26-l03",
+    "path-26-l04",
+    "path-26-l05",
+    "path-26-l06",
+    "path-26-l07"
+  ]
+}

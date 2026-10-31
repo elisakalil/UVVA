@@ -1,0 +1,96 @@
+{
+  "id": "region-za-swartland-l04",
+  "moduleId": "region-za-swartland",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Swartland",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Swartland's land and grapes",
+    "Explain its revival",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Swartland.",
+      "pairs": [
+        {
+          "left": "Renosterbos",
+          "right": "Dark shrub, gives the name"
+        },
+        {
+          "left": "Eben Sadie",
+          "right": "Revival pioneer"
+        },
+        {
+          "left": "Paardeberg",
+          "right": "Granite mountain ward"
+        },
+        {
+          "left": "Columella",
+          "right": "Famous Syrah blend"
+        }
+      ],
+      "explanation": "Swartland's story is recent and bold."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Swartland mean?",
+      "options": [
+        "Black land",
+        "Sweet land",
+        "Old vine",
+        "Red earth"
+      ],
+      "answer": 0,
+      "explanation": "Named after the dark renosterbos shrub."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most of Swartland's best vines are heavily irrigated.",
+      "answer": false,
+      "explanation": "Not true. Many are dry-farmed bush vines."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are key in Swartland?",
+      "options": [
+        "Chenin Blanc",
+        "Syrah",
+        "Grenache",
+        "Pinot Noir"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pinot Noir prefers cooler regions."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Swartland Independent Producers set their rules in ____.",
+      "options": [
+        "2010",
+        "1973",
+        "1679",
+        "1925"
+      ],
+      "answer": "2010",
+      "explanation": "In 2010."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Swartland is hot, dry and full of old bush vines",
+        "Old-vine Chenin and Rhône reds define it",
+        "Young producers revived it from the 2000s",
+        "Its wines suit curries, lamb and the braai"
+      ]
+    }
+  ]
+}

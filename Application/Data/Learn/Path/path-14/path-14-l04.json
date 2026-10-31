@@ -1,0 +1,67 @@
+{
+  "id": "path-14-l04",
+  "moduleId": "path-14",
+  "order": 4,
+  "title": "Madeira",
+  "subtitle": "Heat, air and immortality",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Madeira is made",
+    "Name the noble grapes and their sweetness",
+    "Explain why Madeira lasts so long"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Heated wine",
+      "body": "Madeira comes from the Portuguese island of the same name, in the Atlantic. On long voyages through the tropics, merchants found the wine improved with heat and movement. Today producers recreate this in two ways: estufagem, heating the wine in tanks to 45 to 50 degrees for at least three months, and canteiro, ageing in casks in warm lofts for years.",
+      "highlight": "Estufagem: heated tanks. Canteiro: warm lofts."
+    },
+    {
+      "type": "concept",
+      "title": "The grapes and their sweetness",
+      "body": "Four noble white grapes name the main styles, from dry to sweet: Sercial, Verdelho, Boal, also spelled Bual, and Malvasia, or Malmsey. All keep striking acidity. Most Madeira, though, is made from Tinta Negra, a versatile black grape. Spirit is added during or after fermentation, depending on the sweetness wanted.",
+      "highlight": "Sercial, Verdelho, Boal, Malvasia"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the noble Madeira grapes from driest to sweetest.",
+      "items": [
+        "Sercial",
+        "Verdelho",
+        "Boal",
+        "Malvasia"
+      ],
+      "explanation": "Sercial is the driest style, Malvasia the richest."
+    },
+    {
+      "type": "concept",
+      "title": "Why it lasts",
+      "body": "Madeira has already been heated and exposed to oxygen, so it is almost impossible to spoil. Bottles from the 18th and 19th centuries are still sound. Its high acidity keeps even the sweetest styles fresh. Once opened, a bottle can last for months.",
+      "highlight": "Already oxidised: almost indestructible"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does an open bottle of Madeira last so long?",
+      "options": [
+        "It has added preservatives",
+        "It has already been heated and oxidised in its making",
+        "It's very low in alcohol",
+        "It's stored in the freezer"
+      ],
+      "answer": 1,
+      "explanation": "Madeira's making exposes it to heat and air, so further oxygen does little harm."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Madeira is heated by estufagem or aged by canteiro",
+        "Sercial, Verdelho, Boal and Malvasia run from dry to sweet",
+        "Heat and oxygen in its making make it nearly indestructible"
+      ]
+    }
+  ]
+}

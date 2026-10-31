@@ -1,0 +1,73 @@
+{
+  "id": "path-19-l03",
+  "moduleId": "path-19",
+  "order": 3,
+  "title": "The north-east",
+  "subtitle": "Veneto, Friuli and the Alps",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Veneto's key wines",
+    "Describe Friuli and Alto Adige",
+    "Explain how the Alps shape the north-east"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Veneto",
+      "body": "The Veneto makes more wine than almost any other Italian region. Valpolicella, near Verona, uses Corvina for light reds, Ripasso and Amarone. Soave, east of Verona, uses Garganega. Prosecco is made from Glera across the Veneto and Friuli. Lake Garda tempers the western side, where Bardolino and Lugana grow.",
+      "highlight": "Valpolicella, Soave, Prosecco"
+    },
+    {
+      "type": "concept",
+      "title": "The Alps' influence",
+      "body": "The Alps protect the north-east from cold northern winds, while their cool air flows down valleys at night, keeping acidity high. In Alto Adige, vineyards climb from 200 to over 1,000 m, growing Pinot Grigio, Gewürztraminer and the red Lagrein. Friuli, near Slovenia, makes crisp whites from Friulano, Pinot Grigio and Ribolla Gialla.",
+      "highlight": "Mountain air keeps the wines fresh"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its region.",
+      "pairs": [
+        {
+          "left": "Amarone",
+          "right": "Veneto"
+        },
+        {
+          "left": "Lagrein",
+          "right": "Alto Adige"
+        },
+        {
+          "left": "Friulano",
+          "right": "Friuli"
+        },
+        {
+          "left": "Soave",
+          "right": "Veneto, east of Verona"
+        }
+      ],
+      "explanation": "Each north-eastern region has its own grapes."
+    },
+    {
+      "type": "concept",
+      "title": "Orange wines and skin contact",
+      "body": "In Friuli, near the Slovenian border, producers like Josko Gravner revived long skin contact for white grapes in the 1990s, sometimes in Georgian qvevri. Ribolla Gialla and Friulano became amber, tannic wines. Friuli's Collio and Colli Orientali are now reference areas for this style, alongside Slovenia's Brda.",
+      "highlight": "Friuli: home of modern orange wine"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Alto Adige has vineyards above 1,000 metres.",
+      "answer": true,
+      "explanation": "Yes. Its mountain vineyards climb from about 200 m to over 1,000 m, keeping wines fresh and aromatic."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Veneto makes Valpolicella, Soave and Prosecco",
+        "The Alps keep Alto Adige and Friuli fresh",
+        "Friuli is a reference for modern orange wine"
+      ]
+    }
+  ]
+}

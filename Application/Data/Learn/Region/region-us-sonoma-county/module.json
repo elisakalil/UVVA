@@ -1,0 +1,26 @@
+{
+  "id": "region-us-sonoma-county",
+  "kind": "region",
+  "order": 35,
+  "country": "United States",
+  "countryCode": "US",
+  "title": "Sonoma County",
+  "grapes": [
+    "Pinot Noir",
+    "Chardonnay",
+    "Zinfandel"
+  ],
+  "points": "2 0 1 1 = 4",
+  "complexity": "C",
+  "description": "Napa's larger, more varied neighbour: cool coastal Pinot Noir, Chardonnay and old-vine Zinfandel.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-us-sonoma-county-l01",
+    "region-us-sonoma-county-l02",
+    "region-us-sonoma-county-l03",
+    "region-us-sonoma-county-l04",
+    "region-us-sonoma-county-l05"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "region-us-napa-valley-l05",
+  "moduleId": "region-us-napa-valley",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading Napa and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Napa label",
+    "Pair Napa wines with food",
+    "Serve and age them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the winery, the grape, at least 75% of it by US law, the AVA, at least 85%, and the vintage, at least 95% from that year. Estate Bottled means the winery grew and made the wine within the AVA. Reserve has no legal meaning. Cult wines, like Screaming Eagle and Harlan Estate, are made in tiny quantities and sell for very high prices.",
+      "highlight": "Grape 75%, AVA 85%, vintage 95%"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Napa Cabernet suits steak, especially grilled ribeye, lamb, beef short ribs and hard cheeses. Its ripe fruit and tannin need fat and protein. Napa Chardonnay suits lobster, crab and roast chicken. Serve Cabernet at 16 to 18 degrees, decanted when young. Top Napa Cabernet ages 15 to 30 years.",
+      "highlight": "Ribeye with Cabernet"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Reserve mean on a Napa label?",
+      "options": [
+        "It has no legal meaning",
+        "At least 10 years old",
+        "Estate grown",
+        "100% Cabernet"
+      ],
+      "answer": 0,
+      "explanation": "In the US, Reserve isn't regulated."
+    },
+    {
+      "type": "tip",
+      "body": "Napa's wineries welcome millions of visitors a year. Many tastings are by appointment, so book ahead."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Estate Bottled means the winery grew and made the wine within the AVA.",
+      "answer": true,
+      "explanation": "Yes, it's a regulated term."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels follow 75% grape, 85% AVA, 95% vintage rules",
+        "Napa Cabernet suits steak and lamb",
+        "Top Napa Cabernet ages 15 to 30 years"
+      ]
+    }
+  ]
+}

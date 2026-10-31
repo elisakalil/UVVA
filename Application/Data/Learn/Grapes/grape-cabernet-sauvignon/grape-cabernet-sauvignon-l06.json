@@ -1,0 +1,70 @@
+{
+  "id": "grape-cabernet-sauvignon-l06",
+  "moduleId": "grape-cabernet-sauvignon",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Cabernet",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Cabernet with food",
+    "Serve and decant it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Red meat",
+      "body": "Cabernet's firm tannin and dark fruit call for red meat: steak, roast beef, lamb. Fat and protein soften the tannin. Peppercorn sauce and mushrooms go well. Hard aged cheeses like Comté or aged Cheddar work too. Avoid delicate fish and very spicy food, which make it taste harsh.",
+      "highlight": "Steak and lamb"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees. Decant young, structured Cabernets for an hour or two. Top Bordeaux and Napa can age 20 to 40 years, gaining cedar, tobacco, leather and earth while tannins soften. Everyday Cabernets are best within three to five years.",
+      "highlight": "Top wines age 20 to 40 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Cabernet Sauvignon go so well with steak?",
+      "options": [
+        "Fat and protein soften its tannin",
+        "Steak adds sweetness",
+        "It hides the wine's colour",
+        "It lowers the alcohol"
+      ],
+      "answer": 0,
+      "explanation": "Tannin binds to protein and fat, so each softens the other."
+    },
+    {
+      "type": "tip",
+      "body": "Old Bordeaux and Napa throw sediment. Stand the bottle upright for a day before opening, then decant slowly in front of a light."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which aromas develop in Cabernet as it ages?",
+      "options": [
+        "Cedar",
+        "Tobacco",
+        "Leather",
+        "Fresh green apple"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Green apple is a young white wine aroma."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet suits steak, lamb and aged cheese",
+        "Serve at 16 to 18 degrees and decant young wines",
+        "Top examples age 20 to 40 years"
+      ]
+    }
+  ]
+}

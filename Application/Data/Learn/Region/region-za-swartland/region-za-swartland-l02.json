@@ -1,0 +1,77 @@
+{
+  "id": "region-za-swartland-l02",
+  "moduleId": "region-za-swartland",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Chenin and the Rhône",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Swartland Chenin Blanc",
+    "Describe its Rhône reds",
+    "Explain white blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Chenin Blanc",
+      "body": "Swartland is famous for old-vine Chenin Blanc, from dry-farmed bush vines, some over 50 years old. The wines are concentrated, textured and mineral, with quince, stone fruit, honey and fresh acidity, often fermented in old barrels or concrete. Chenin is often blended with other white grapes, like Grenache Blanc, Clairette, Roussanne and Viognier, in Cape white blends.",
+      "highlight": "Old-vine Chenin and white blends"
+    },
+    {
+      "type": "concept",
+      "title": "Syrah and Grenache",
+      "body": "Rhône grapes suit the heat and drought: Syrah gives peppery, savoury reds; Grenache gives red fruit and spice; Cinsault, light, fresh reds; Mourvèdre and Carignan add structure. Blends of these, inspired by the Rhône, are a Swartland signature. Sadie Family's Columella is a famous Syrah-led blend.",
+      "highlight": "Rhône-style reds"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Old-vine Chenin",
+          "right": "Textured, concentrated"
+        },
+        {
+          "left": "Cape white blend",
+          "right": "Chenin with Rhône whites"
+        },
+        {
+          "left": "Syrah",
+          "right": "Peppery, savoury"
+        },
+        {
+          "left": "Cinsault",
+          "right": "Light, fresh red"
+        }
+      ],
+      "explanation": "Swartland mixes Chenin and Rhône grapes."
+    },
+    {
+      "type": "tip",
+      "body": "Look for the Swartland Independent seal on the bottle. It marks wines made under the group's minimal-intervention rules."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which white grape is Swartland most famous for?",
+      "options": [
+        "Chenin Blanc",
+        "Riesling",
+        "Sauvignon Blanc",
+        "Albariño"
+      ],
+      "answer": 0,
+      "explanation": "Old-vine Chenin Blanc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Old-vine Chenin Blanc is Swartland's white signature",
+        "Cape white blends mix Chenin with Rhône whites",
+        "Syrah, Grenache and Cinsault lead the reds"
+      ]
+    }
+  ]
+}

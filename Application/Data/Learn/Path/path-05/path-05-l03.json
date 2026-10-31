@@ -1,0 +1,62 @@
+{
+  "id": "path-05-l03",
+  "moduleId": "path-05",
+  "order": 3,
+  "title": "Glasses and opening",
+  "subtitle": "The tools that help",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Choose a glass that helps a wine show well",
+    "Open still and sparkling wines safely",
+    "Decide when to decant"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The right glass",
+      "body": "A good glass has a bowl that narrows at the top, to gather aromas, and a stem so your hand doesn't warm the wine. Fill to about a third so you can swirl. Larger bowls suit aromatic reds; narrower ones keep whites cool. A tall flute keeps bubbles but hides aroma, so many prefer a white wine glass for Champagne.",
+      "highlight": "Bowl that narrows, a stem, a third full"
+    },
+    {
+      "type": "concept",
+      "title": "Why a sparkling cork flies",
+      "body": "A bottle of Champagne holds about 6 atmospheres of pressure. If the cork is released fast, it can leave at over 40 km/h. Keep a thumb on the cork, point it away from people, and twist the bottle, not the cork, letting the gas out with a sigh rather than a pop.",
+      "highlight": "Twist the bottle, not the cork"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps for opening a sparkling wine in order.",
+      "items": [
+        "Remove the foil",
+        "Loosen the wire cage, thumb on the cork",
+        "Tilt the bottle away from people",
+        "Twist the bottle slowly",
+        "Let the cork ease out with a sigh"
+      ],
+      "explanation": "Keeping the thumb on the cork from the moment the cage loosens is the key safety step."
+    },
+    {
+      "type": "concept",
+      "title": "Decanting",
+      "body": "Pouring a wine into a decanter does two jobs. It separates an old red or vintage Port from its sediment, the solids that form with age. And it gives a young, tight wine air, which can open up its aromas. Pour slowly in front of a light and stop when you see sediment reach the neck.",
+      "highlight": "Decant for sediment or for air"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Decanting is only useful for very old wines.",
+      "answer": false,
+      "explanation": "Not true. Old wines are decanted for sediment, but young, tannic reds are often decanted for air, which helps their aromas open."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A bowl that narrows, a stem and a third full help any wine",
+        "Open sparkling wine by holding the cork and twisting the bottle",
+        "Decant old wines for sediment and young ones for air"
+      ]
+    }
+  ]
+}

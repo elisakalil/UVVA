@@ -1,0 +1,62 @@
+{
+  "id": "path-17-l01",
+  "moduleId": "path-17",
+  "order": 1,
+  "title": "Hygiene and sulphur",
+  "subtitle": "Protecting the wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why hygiene matters in the winery",
+    "Explain what sulphur dioxide does",
+    "Explain free and total sulphur"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Clean first",
+      "body": "Most wine faults start with poor hygiene. Bacteria and wild yeasts like Brettanomyces live in dirty pipes, pumps and barrels. Wineries clean with hot water, steam, ozone and food-safe chemicals. Barrels are hardest to clean because microbes hide in the wood, which is one reason they are replaced every few years.",
+      "highlight": "Most faults start with dirty equipment"
+    },
+    {
+      "type": "concept",
+      "title": "Sulphur dioxide",
+      "body": "Sulphur dioxide, SO2, has been used since Roman times. It is an antioxidant, binding oxygen and preventing browning. It is antimicrobial, stopping unwanted bacteria and yeasts. Part of it binds to other compounds and stops working; the active part is called free SO2. The total, bound plus free, is regulated: in the EU 150 mg/l for dry reds and 200 mg/l for dry whites.",
+      "highlight": "Antioxidant and antimicrobial"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do winemakers measure free SO2 rather than total SO2 to judge protection?",
+      "options": [
+        "Free SO2 is the active, protective part",
+        "Free SO2 has no smell",
+        "Total SO2 is always zero",
+        "Free SO2 is added later"
+      ],
+      "answer": 0,
+      "explanation": "Bound SO2 no longer protects. Free SO2 is what fights oxygen and microbes."
+    },
+    {
+      "type": "concept",
+      "title": "pH and dose",
+      "body": "Sulphur's effect depends on pH. At low pH, more acidic wines, a much larger share of free SO2 is in its active molecular form. So a high-pH wine needs much more sulphur for the same protection. This is one reason low-acid wines from hot climates can be more fragile.",
+      "highlight": "Lower pH, more effective SO2"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A wine with higher pH needs more SO2 for the same level of protection.",
+      "answer": true,
+      "explanation": "Yes. At higher pH less free SO2 is in the active molecular form, so more must be added."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Clean equipment prevents most faults",
+        "SO2 is both antioxidant and antimicrobial",
+        "Free SO2 is the active part, and works better at low pH"
+      ]
+    }
+  ]
+}

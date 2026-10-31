@@ -1,0 +1,37 @@
+{
+  "id": "grape-muscat",
+  "kind": "grape",
+  "order": 38,
+  "color": "white",
+  "title": "Muscat",
+  "aliases": [
+    "Moscato",
+    "Moscatel",
+    "Muskateller",
+    "Zibibbo",
+    "Muscat Blanc à Petits Grains",
+    "Muscat of Alexandria"
+  ],
+  "origin": "Greece",
+  "countries": [
+    "Italy",
+    "Portugal",
+    "Spain",
+    "France",
+    "Greece"
+  ],
+  "points": "2 2 1 1 = 6",
+  "complexity": "B",
+  "description": "Also called Moscato, Moscatel and Muskateller. The family of grapes that actually taste of grapes.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-muscat-l01",
+    "grape-muscat-l02",
+    "grape-muscat-l03",
+    "grape-muscat-l04",
+    "grape-muscat-l05",
+    "grape-muscat-l06"
+  ]
+}

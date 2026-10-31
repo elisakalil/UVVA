@@ -1,0 +1,72 @@
+{
+  "id": "path-19-l04",
+  "moduleId": "path-19",
+  "order": 4,
+  "title": "Tuscany",
+  "subtitle": "Sangiovese and the Super Tuscans",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chianti and Chianti Classico",
+    "Compare Brunello and Vino Nobile",
+    "Explain the Super Tuscan movement"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Chianti",
+      "body": "Chianti covers a wide area between Florence and Siena. Chianti Classico is the historic heart, with its black rooster symbol; it's a separate DOCG and must be at least 80% Sangiovese. Since 2014, Gran Selezione sits at the top, from estate grapes with longer ageing. Galestro and alberese soils, rocky marl and limestone, give the best wines.",
+      "highlight": "Chianti Classico: at least 80% Sangiovese"
+    },
+    {
+      "type": "concept",
+      "title": "Montalcino and Montepulciano",
+      "body": "Brunello di Montalcino, south of Siena, is 100% Sangiovese, warmer and drier, with at least five years of ageing, two in oak. Vino Nobile di Montepulciano, from a different hill town, must be at least 70% Sangiovese, called Prugnolo Gentile there. It's not the same as Montepulciano d'Abruzzo, which is a grape and a different region.",
+      "highlight": "Brunello: 100%, five years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Montepulciano d'Abruzzo?",
+      "options": [
+        "A Tuscan Sangiovese",
+        "A wine from the Montepulciano grape, in Abruzzo",
+        "The same as Vino Nobile",
+        "A white wine"
+      ],
+      "answer": 1,
+      "explanation": "Montepulciano d'Abruzzo is made from the Montepulciano grape in Abruzzo. Vino Nobile di Montepulciano is Sangiovese from the Tuscan town."
+    },
+    {
+      "type": "concept",
+      "title": "Bolgheri and the coast",
+      "body": "On Tuscany's coast, Bolgheri became famous with Sassicaia, first sold in 1971, made from Cabernet Sauvignon. Bordeaux grapes thrive in the warm, maritime conditions. Bolgheri DOC now covers these blends, and Sassicaia has its own DOC. Inland, Tignanello blended Sangiovese with Cabernet.",
+      "highlight": "Bolgheri: Bordeaux grapes on the coast"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines are based on Sangiovese?",
+      "options": [
+        "Chianti Classico",
+        "Brunello di Montalcino",
+        "Vino Nobile di Montepulciano",
+        "Sassicaia"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sassicaia is mostly Cabernet Sauvignon."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chianti Classico is the historic heart, at least 80% Sangiovese",
+        "Brunello is 100% Sangiovese; Vino Nobile at least 70%",
+        "Bolgheri grows Bordeaux grapes on the coast"
+      ]
+    }
+  ]
+}

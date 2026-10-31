@@ -1,0 +1,96 @@
+{
+  "id": "grape-corvina-l06",
+  "moduleId": "grape-corvina",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Corvina",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Corvina",
+    "Explain appassimento and its wines",
+    "Pair and serve them"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its making.",
+      "pairs": [
+        {
+          "left": "Amarone",
+          "right": "Dried grapes, fermented dry"
+        },
+        {
+          "left": "Recioto",
+          "right": "Dried grapes, sweet"
+        },
+        {
+          "left": "Ripasso",
+          "right": "Refermented on Amarone skins"
+        },
+        {
+          "left": "Valpolicella",
+          "right": "Fresh grapes, light"
+        }
+      ],
+      "explanation": "One grape, four wines."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a fruttaio?",
+      "options": [
+        "A drying loft",
+        "A barrel",
+        "A grape",
+        "A pasta"
+      ],
+      "answer": 0,
+      "explanation": "The airy loft where grapes dry for appassimento."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Amarone means the big bitter one.",
+      "answer": true,
+      "explanation": "Yes, compared with sweet Recioto."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are used in Valpolicella blends?",
+      "options": [
+        "Corvina",
+        "Corvinone",
+        "Rondinella",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo belongs to Piedmont."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "During appassimento grapes lose about 30 to ____% of their weight.",
+      "options": [
+        "40",
+        "10",
+        "80",
+        "5"
+      ],
+      "answer": "40",
+      "explanation": "About a third of their weight, concentrating sugar and flavour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Corvina gives cherry, almond and freshness",
+        "Its thick skins and loose bunches suit drying",
+        "Amarone, Recioto and Ripasso come from appassimento",
+        "Each style matches a different course"
+      ]
+    }
+  ]
+}

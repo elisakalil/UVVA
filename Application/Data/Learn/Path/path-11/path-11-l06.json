@@ -1,0 +1,95 @@
+{
+  "id": "path-11-l06",
+  "moduleId": "path-11",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Reading the Label",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Read the compulsory information",
+    "Interpret European and New World systems",
+    "Understand ageing and style terms"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "In the EU, a stated vintage means at least what share of grapes from that year?",
+      "options": [
+        "51%",
+        "75%",
+        "85%",
+        "100%"
+      ],
+      "answer": 2,
+      "explanation": "85% in the EU, and in many New World countries too."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its country.",
+      "pairs": [
+        {
+          "left": "DOCG",
+          "right": "Italy"
+        },
+        {
+          "left": "AOC",
+          "right": "France"
+        },
+        {
+          "left": "DOCa",
+          "right": "Spain"
+        },
+        {
+          "left": "AVA",
+          "right": "United States"
+        }
+      ],
+      "explanation": "Every country has its own terms for protected places."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A PGI wine has stricter rules than a PDO wine.",
+      "answer": false,
+      "explanation": "Not true. PDO is stricter; PGI covers larger areas with looser rules."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these sparkling wine terms from driest to sweetest.",
+      "items": [
+        "Brut Nature",
+        "Brut",
+        "Extra Dry",
+        "Demi-Sec",
+        "Doux"
+      ],
+      "explanation": "Extra Dry is sweeter than Brut, which surprises many people."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these are usually defined by law?",
+      "options": [
+        "Rioja Gran Reserva",
+        "Organic",
+        "Old Vines",
+        "Reserve in the United States"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Gran Reserva and Organic are regulated. Old Vines and US Reserve generally aren't."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels must show producer, origin, abv, volume and allergens",
+        "PDO is stricter than PGI; each country names them differently",
+        "New World GIs define area only",
+        "Ageing and sweetness terms are regulated; many others are marketing"
+      ]
+    }
+  ]
+}

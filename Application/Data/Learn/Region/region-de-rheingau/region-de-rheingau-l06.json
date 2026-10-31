@@ -1,0 +1,91 @@
+{
+  "id": "region-de-rheingau-l06",
+  "moduleId": "region-de-rheingau",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about the Rheingau",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Rheingau's land and grapes",
+    "Explain the Spätlese story and VDP",
+    "Read and pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Schloss Johannisberg",
+          "right": "Birthplace of Spätlese"
+        },
+        {
+          "left": "Kloster Eberbach",
+          "right": "Cistercian abbey, 1136"
+        },
+        {
+          "left": "Assmannshausen",
+          "right": "Red wine village"
+        },
+        {
+          "left": "GG",
+          "right": "Dry top-site wine"
+        }
+      ],
+      "explanation": "The Rheingau's history is monastic and noble."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do Rheingau vineyards get so much sun?",
+      "options": [
+        "They face south across the Rhine",
+        "They're at very high altitude",
+        "They're near the equator",
+        "They're irrigated"
+      ],
+      "answer": 0,
+      "explanation": "The Rhine turns west, giving south-facing slopes."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Riesling covers about 78% of the Rheingau.",
+      "answer": true,
+      "explanation": "Yes, the highest share in Germany."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the VDP levels from broadest to most precise.",
+      "items": [
+        "Gutswein",
+        "Ortswein",
+        "Erste Lage",
+        "Grosse Lage"
+      ],
+      "explanation": "Grosse Lage is the top."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Spätlese was born at Schloss Johannisberg in ____.",
+      "options": [
+        "1775",
+        "1136",
+        "1910",
+        "1984"
+      ],
+      "answer": "1775",
+      "explanation": "When the harvest messenger arrived late."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Rheingau faces south where the Rhine turns west",
+        "Riesling dominates, with Spätburgunder in Assmannshausen",
+        "Spätlese was born at Schloss Johannisberg in 1775",
+        "The VDP classifies sites; GG means dry top wine"
+      ]
+    }
+  ]
+}

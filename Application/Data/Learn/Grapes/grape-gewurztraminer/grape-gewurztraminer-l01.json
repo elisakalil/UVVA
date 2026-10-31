@@ -1,0 +1,62 @@
+{
+  "id": "grape-gewurztraminer-l01",
+  "moduleId": "grape-gewurztraminer",
+  "order": 1,
+  "title": "Meet Gewürztraminer",
+  "subtitle": "Lychee, rose and spice",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Gewürztraminer's aromas and structure",
+    "Explain its name and origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Exotic perfume",
+      "body": "Gewürztraminer gives deep golden wines with intense aromas of lychee, rose petals, ginger, Turkish delight and sometimes smoke. It's full-bodied, low in acidity and high in alcohol, often 13.5 to 14.5%. Even dry versions can seem sweet because of the perfume. Few grapes are easier to recognise.",
+      "highlight": "Lychee, rose, low acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Spicy Traminer",
+      "body": "Gewürz means spice in German. The grape is an aromatic, pink-skinned mutation of Savagnin, the Traminer family, named after Tramin, or Termeno, in Alto Adige, Italy. Its pink to red skin gives white wines a deep golden colour. It buds early and ripens to high sugar.",
+      "highlight": "Gewürz: spice. Traminer: from Tramin"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Gewürz mean in German?",
+      "options": [
+        "Spice",
+        "Flower",
+        "Sweet",
+        "Rose"
+      ],
+      "answer": 0,
+      "explanation": "Gewürz means spice, for its spicy aromatic character."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep gold colour, an explosive nose of lychee and rose, and a full, oily palate with low acidity. A slight bitterness on the finish is common. If you smell lychee, it's almost certainly Gewürztraminer.",
+      "highlight": "Lychee is the giveaway"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Gewürztraminer usually has very high acidity.",
+      "answer": false,
+      "explanation": "Not true. It's typically low in acidity, which is why it can feel heavy."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gewürztraminer smells of lychee, rose and ginger",
+        "It's a pink-skinned mutation of the Traminer family from Tramin",
+        "It's full-bodied, low in acidity and high in alcohol"
+      ]
+    }
+  ]
+}

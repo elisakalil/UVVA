@@ -1,0 +1,77 @@
+{
+  "id": "region-es-rias-baixas-l02",
+  "moduleId": "region-es-rias-baixas",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Albariño",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Albariño",
+    "Name its blending partners",
+    "Explain lees ageing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Albariño",
+      "body": "Albariño is about 96% of Rías Baixas' vineyards. Its thick skins resist rot in the damp climate. It gives crisp, aromatic, dry whites with lemon, grapefruit, white peach, apricot and a saline, mineral edge. Wines labelled Rías Baixas Albariño must be 100% Albariño.",
+      "highlight": "About 96% Albariño"
+    },
+    {
+      "type": "concept",
+      "title": "Partners and styles",
+      "body": "In O Rosal and Condado do Tea, Albariño may be blended with Loureiro, floral, Treixadura, rounder, and Caíño Blanco. Most Albariño is fermented in steel and bottled young. Some producers age it on its lees for months or years, adding texture and allowing it to age; a few use oak. Rías Baixas also allows a little red wine.",
+      "highlight": "Loureiro, Treixadura, lees ageing"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Rías Baixas.",
+      "pairs": [
+        {
+          "left": "Albariño",
+          "right": "Main grape, thick skins"
+        },
+        {
+          "left": "Loureiro",
+          "right": "Floral blending partner"
+        },
+        {
+          "left": "Treixadura",
+          "right": "Rounder blending partner"
+        },
+        {
+          "left": "Lees ageing",
+          "right": "Texture and longevity"
+        }
+      ],
+      "explanation": "Albariño leads, with local partners."
+    },
+    {
+      "type": "tip",
+      "body": "Albariño aged on its lees for a year or more shows how serious it can be: creamy, saline and able to age five years or more."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What must a Rías Baixas Albariño contain?",
+      "options": [
+        "100% Albariño",
+        "At least 50% Albariño",
+        "Only Loureiro",
+        "Any white grape"
+      ],
+      "answer": 0,
+      "explanation": "The varietal label requires 100%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Albariño is about 96% of the vineyards",
+        "Its thick skins resist rot; it gives peach and salinity",
+        "Blends add Loureiro and Treixadura; lees ageing adds depth"
+      ]
+    }
+  ]
+}

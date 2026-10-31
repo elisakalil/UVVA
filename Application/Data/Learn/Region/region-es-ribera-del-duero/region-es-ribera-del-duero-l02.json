@@ -1,0 +1,77 @@
+{
+  "id": "region-es-ribera-del-duero-l02",
+  "moduleId": "region-es-ribera-del-duero",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Tinto Fino",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tinto Fino",
+    "Explain Ribera's grape rules",
+    "Explain its ageing categories"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tinto Fino",
+      "body": "Ribera's grape is Tempranillo, locally called Tinto Fino or Tinta del País. It has adapted to the extreme climate with thicker skins and smaller berries than in Rioja, giving darker, more concentrated wines with black fruit, liquorice and firm tannin. Reds must be at least 75% Tinto Fino; since 2019, rules allow 100% and blends with Cabernet, Merlot, Malbec, and white Albillo.",
+      "highlight": "Tinto Fino: thicker skins, darker wines"
+    },
+    {
+      "type": "concept",
+      "title": "Ageing",
+      "body": "Ribera uses Spain's ageing categories: Joven, Crianza, at least 24 months, 12 in oak; Reserva, 36 months, 12 in oak; Gran Reserva, 60 months, 24 in oak. Many wines use French oak and have a modern, powerful style. Since 2019, white wines from Albillo Mayor are also allowed as Ribera del Duero.",
+      "highlight": "Crianza to Gran Reserva"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Ribera.",
+      "pairs": [
+        {
+          "left": "Tinto Fino",
+          "right": "Local Tempranillo"
+        },
+        {
+          "left": "Albillo Mayor",
+          "right": "Local white grape"
+        },
+        {
+          "left": "Crianza",
+          "right": "24 months, 12 in oak"
+        },
+        {
+          "left": "Gran Reserva",
+          "right": "60 months, 24 in oak"
+        }
+      ],
+      "explanation": "Ribera's rules are close to Rioja's, with local names."
+    },
+    {
+      "type": "tip",
+      "body": "Vega Sicilia's Único blends Tinto Fino with some Cabernet Sauvignon and ages for about ten years before release."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does Ribera's Tinto Fino typically compare with Rioja's Tempranillo?",
+      "options": [
+        "Darker and more concentrated",
+        "Paler and lighter",
+        "Sweeter",
+        "Always white"
+      ],
+      "answer": 0,
+      "explanation": "Thicker skins and extreme climate give power."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tinto Fino is Ribera's Tempranillo, darker and more concentrated",
+        "Reds must be at least 75% Tinto Fino",
+        "Ribera uses Crianza, Reserva and Gran Reserva"
+      ]
+    }
+  ]
+}

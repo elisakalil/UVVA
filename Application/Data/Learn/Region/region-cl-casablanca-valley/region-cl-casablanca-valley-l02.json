@@ -1,0 +1,77 @@
+{
+  "id": "region-cl-casablanca-valley-l02",
+  "moduleId": "region-cl-casablanca-valley",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Cool-climate whites and Pinot",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Casablanca Sauvignon Blanc",
+    "Describe its Chardonnay and Pinot Noir",
+    "Explain why whites dominate"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sauvignon Blanc",
+      "body": "Sauvignon Blanc is Casablanca's leading grape, giving crisp wines with citrus, grapefruit, passion fruit, cut grass and a herbal, saline note. The cool climate keeps acidity high and green aromas fresh. It's often compared with New Zealand's style, though usually a little less pungent.",
+      "highlight": "Crisp, citrus, herbal"
+    },
+    {
+      "type": "concept",
+      "title": "Chardonnay and Pinot Noir",
+      "body": "Chardonnay gives fresh, citrus and stone fruit wines, often with some oak and lees. Pinot Noir gives light, fresh reds with red cherry and strawberry. Syrah, from cooler sites, gives peppery wines. About three-quarters of Casablanca's vineyards are white, which is unusual in red-dominated Chile.",
+      "highlight": "About three-quarters white"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its Casablanca style.",
+      "pairs": [
+        {
+          "left": "Sauvignon Blanc",
+          "right": "Crisp, citrus, herbal"
+        },
+        {
+          "left": "Chardonnay",
+          "right": "Fresh, citrus, some oak"
+        },
+        {
+          "left": "Pinot Noir",
+          "right": "Light, red cherry"
+        },
+        {
+          "left": "Syrah",
+          "right": "Cool, peppery"
+        }
+      ],
+      "explanation": "Casablanca focuses on cool-climate grapes."
+    },
+    {
+      "type": "tip",
+      "body": "Casablanca Sauvignon Blanc is often great value, with fresh, zesty fruit similar to New Zealand's."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do white grapes dominate Casablanca?",
+      "options": [
+        "The cool climate suits them",
+        "They're required by law",
+        "Red grapes are banned",
+        "The soil is chalk"
+      ],
+      "answer": 0,
+      "explanation": "Cool conditions keep whites fresh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sauvignon Blanc leads, crisp and herbal",
+        "Chardonnay and Pinot Noir also thrive",
+        "About three-quarters of vineyards are white"
+      ]
+    }
+  ]
+}

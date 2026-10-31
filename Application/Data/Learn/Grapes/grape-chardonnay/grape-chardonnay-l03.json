@@ -1,0 +1,79 @@
+{
+  "id": "grape-chardonnay-l03",
+  "moduleId": "grape-chardonnay",
+  "order": 3,
+  "title": "Chablis and the Côte de Beaune",
+  "subtitle": "Burgundy's white heart",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chablis",
+    "Describe the Côte de Beaune",
+    "Compare the two"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Chablis",
+      "body": "Chablis, in northern Burgundy, is cool and continental, with frost risk. Its Kimmeridgian soil, limestone and clay full of tiny oyster fossils, gives lean, mineral, high-acid wines with green apple, lemon and a flinty, saline edge. Most Chablis is unoaked; Grand Crus often see some oak. Levels: Petit Chablis, Chablis, Premier Cru and seven Grand Crus.",
+      "highlight": "Kimmeridgian soil, unoaked, mineral"
+    },
+    {
+      "type": "concept",
+      "title": "The Côte de Beaune",
+      "body": "In the Côte de Beaune, south of Beaune, Chardonnay makes some of the world's greatest whites. Meursault is rich, nutty and buttery; Puligny-Montrachet elegant and floral; Chassagne-Montrachet fuller. Grand Crus like Le Montrachet and Corton-Charlemagne are fermented and aged in oak, with great ageing potential.",
+      "highlight": "Meursault, Puligny, Chassagne"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is special about Chablis' Kimmeridgian soil?",
+      "options": [
+        "It contains tiny oyster fossils",
+        "It's volcanic",
+        "It's pure sand",
+        "It's red clay"
+      ],
+      "answer": 0,
+      "explanation": "Kimmeridgian limestone and clay are full of fossilised oyster shells."
+    },
+    {
+      "type": "concept",
+      "title": "Comparing them",
+      "body": "Chablis is cooler, leaner and more mineral, usually less oak. The Côte de Beaune is warmer, with riper fruit, more body and oak. Further south, the Mâconnais, with Pouilly-Fuissé, gives rounder, fruitier, good-value wines. All are 100% Chardonnay.",
+      "highlight": "Chablis lean; Côte de Beaune rich"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Chablis",
+          "right": "Lean, mineral, unoaked"
+        },
+        {
+          "left": "Meursault",
+          "right": "Rich, nutty, buttery"
+        },
+        {
+          "left": "Puligny-Montrachet",
+          "right": "Elegant and floral"
+        },
+        {
+          "left": "Pouilly-Fuissé",
+          "right": "Rounder, Mâconnais"
+        }
+      ],
+      "explanation": "Burgundy shows every side of Chardonnay."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chablis is lean and mineral on Kimmeridgian soil",
+        "The Côte de Beaune makes rich, oaked whites",
+        "The Mâconnais gives rounder, good-value wines"
+      ]
+    }
+  ]
+}

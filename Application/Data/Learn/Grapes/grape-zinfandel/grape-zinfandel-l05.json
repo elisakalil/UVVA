@@ -1,0 +1,60 @@
+{
+  "id": "grape-zinfandel-l05",
+  "moduleId": "grape-zinfandel",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Zinfandel",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Zinfandel with food",
+    "Explain White Zinfandel",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Barbecue",
+      "body": "Zinfandel's ripe fruit, spice and alcohol suit barbecue, smoked meats, burgers, sausages and sweet, spicy glazes. Its fruit handles a little sweetness in sauces. Primitivo suits Puglian food: orecchiette with sausage, grilled meats and aged cheeses. Avoid very hot chilli, which clashes with high alcohol.",
+      "highlight": "Barbecue and glazes"
+    },
+    {
+      "type": "concept",
+      "title": "White Zinfandel",
+      "body": "In 1975, Sutter Home's fermentation stuck, leaving a sweet pink wine. It was sold as White Zinfandel and became the best-selling wine in the US in the 1980s. Its success kept many old Zinfandel vines alive, though it's very different from red Zinfandel.",
+      "highlight": "Born from a stuck fermentation, 1975"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How was White Zinfandel born?",
+      "options": [
+        "A planned experiment",
+        "A stuck fermentation that left sugar",
+        "A frost",
+        "A new grape"
+      ],
+      "answer": 1,
+      "explanation": "Sutter Home's 1975 fermentation stopped, leaving a sweet pink wine that became a hit."
+    },
+    {
+      "type": "tip",
+      "body": "Serve big, high-alcohol Zinfandel slightly cool, around 16 degrees. A little chill keeps the alcohol from feeling hot."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "White Zinfandel's success helped keep old Zinfandel vines in the ground.",
+      "answer": true,
+      "explanation": "Yes. Demand for grapes saved many vineyards from being replanted."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Zinfandel suits barbecue and sweet, spicy glazes",
+        "White Zinfandel began with a stuck fermentation in 1975",
+        "Serve red Zinfandel slightly cool"
+      ]
+    }
+  ]
+}

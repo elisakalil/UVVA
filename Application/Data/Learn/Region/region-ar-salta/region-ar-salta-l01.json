@@ -1,0 +1,62 @@
+{
+  "id": "region-ar-salta-l01",
+  "moduleId": "region-ar-salta",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "The Calchaquí Valleys",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Salta's geography",
+    "Explain its high-altitude climate",
+    "Explain the role of Cafayate"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "High valleys",
+      "body": "Salta is a province in north-west Argentina, near Bolivia and Chile. Its vineyards lie in the Calchaquí Valleys, between Andean ranges, at about 1,700 to over 3,000 m, among the highest in the world. Cafayate, at about 1,700 m, is the main town and wine centre. Salta has about 3,300 hectares of vines.",
+      "highlight": "1,700 to over 3,000 m"
+    },
+    {
+      "type": "concept",
+      "title": "Altitude and light",
+      "body": "Salta is close to the tropics, at about 26 degrees south, but altitude makes it cool. Days are hot and very sunny, with intense ultraviolet light; nights are cold, with a day and night range of up to 20 degrees. Rainfall is very low, so vines are irrigated. Sandy, rocky soils drain well and limit disease.",
+      "highlight": "Intense sun, cold nights"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can grapes ripen in balance so close to the tropics in Salta?",
+      "options": [
+        "Altitude cools the air and nights",
+        "It's on the coast",
+        "It rains a lot",
+        "It's in a forest"
+      ],
+      "answer": 0,
+      "explanation": "Height offsets latitude."
+    },
+    {
+      "type": "concept",
+      "title": "Remote vineyards",
+      "body": "Some of the world's highest vineyards are in Salta's Molinos and Payogasta, above 2,500 m; Bodega Colomé has vines at about 3,100 m. The remoteness, dramatic red rock landscapes and old vines make Salta one of the most spectacular wine regions on earth. Many vines are old, trained on pergolas.",
+      "highlight": "Colomé, above 3,000 m"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Salta has some of the world's highest vineyards.",
+      "answer": true,
+      "explanation": "Yes, above 3,000 m in places."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Salta's Calchaquí Valleys reach over 3,000 m",
+        "Altitude offsets latitude, with intense sun and cold nights",
+        "Cafayate is its wine centre"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "path-17-l07",
+  "moduleId": "path-17",
+  "order": 7,
+  "title": "Clarifying and bottling",
+  "subtitle": "The final decisions",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare fining and filtration",
+    "Explain tartrate and protein stability",
+    "Explain bottling choices"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fining and filtration",
+      "body": "Fining agents bind unwanted particles or compounds, then settle out: bentonite clay removes proteins; egg white or gelatin softens tannins; PVPP removes browning compounds. Filtration physically removes particles; a sterile filter removes yeast and bacteria. Some producers avoid both, arguing they strip flavour.",
+      "highlight": "Fining binds; filtering strains"
+    },
+    {
+      "type": "concept",
+      "title": "Stability",
+      "body": "Whites can turn hazy in warm conditions if proteins are unstable; bentonite fixes it. Tartrate crystals form in cold; cold stabilisation chills the wine to about minus 4 degrees so crystals drop out before bottling. Microbial stability matters most for wines with sugar or no malolactic, which are usually sterile filtered.",
+      "highlight": "Bentonite for protein; cold for tartrates"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does bentonite remove from white wine?",
+      "options": [
+        "Tartrates",
+        "Unstable proteins",
+        "Sulphur",
+        "Alcohol"
+      ],
+      "answer": 1,
+      "explanation": "Bentonite, a clay, binds proteins that could otherwise cause haze in warm conditions."
+    },
+    {
+      "type": "concept",
+      "title": "Bottling",
+      "body": "Bottling is a risky moment: wine can pick up oxygen or microbes. Lines are sterilised, bottles flushed with inert gas, and dissolved oxygen measured. The closure is chosen for the wine's life: natural cork, technical cork, screw cap or glass. Many wines then rest in bottle before release.",
+      "highlight": "Protect from oxygen and microbes"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines are most likely to be sterile filtered?",
+      "options": [
+        "Wines with residual sugar",
+        "Whites that skipped malolactic",
+        "Unfined natural wines",
+        "Dry reds after malolactic"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Residual sugar and malic acid could feed microbes in the bottle. Dry reds after malolactic are more stable."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fining binds particles; filtration removes them",
+        "Bentonite fixes protein haze; cold stabilisation drops tartrates",
+        "Bottling must avoid oxygen and microbes"
+      ]
+    }
+  ]
+}

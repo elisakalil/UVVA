@@ -1,0 +1,96 @@
+{
+  "id": "region-au-barossa-valley-l06",
+  "moduleId": "region-au-barossa-valley",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about the Barossa",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Barossa's land and grapes",
+    "Explain its old vines",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to the Barossa.",
+      "pairs": [
+        {
+          "left": "Silesians",
+          "right": "1840s settlers"
+        },
+        {
+          "left": "Mataro",
+          "right": "Mourvèdre"
+        },
+        {
+          "left": "Hill of Grace",
+          "right": "Famous Eden Valley Shiraz"
+        },
+        {
+          "left": "Ancestor Vine",
+          "right": "125 years or older"
+        }
+      ],
+      "explanation": "The Barossa's history lives in its vines."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the Barossa's signature grape?",
+      "options": [
+        "Shiraz",
+        "Pinot Noir",
+        "Chardonnay",
+        "Nebbiolo"
+      ],
+      "answer": 0,
+      "explanation": "Rich, ripe Shiraz."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Eden Valley is warmer than the Barossa Valley.",
+      "answer": false,
+      "explanation": "Not true. It's higher and cooler."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes form a GSM blend?",
+      "options": [
+        "Grenache",
+        "Shiraz",
+        "Mourvèdre",
+        "Merlot"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "GSM is Grenache, Shiraz, Mourvèdre."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Barossa's Old Vine Charter was created in ____.",
+      "options": [
+        "2009",
+        "1840",
+        "1951",
+        "1860"
+      ],
+      "answer": "2009",
+      "explanation": "In 2009."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Barossa is warm and dry, settled by Silesians",
+        "Shiraz leads, with Grenache and Mataro",
+        "Phylloxera-free, it has some of the world's oldest vines",
+        "Eden Valley adds Riesling and elegant Shiraz"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "region-au-hunter-valley-l02",
+  "moduleId": "region-au-hunter-valley",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Sémillon and Shiraz",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Hunter Sémillon",
+    "Explain how it ages",
+    "Describe Hunter Shiraz"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sémillon",
+      "body": "Hunter Sémillon is picked early, at about 10 to 11% alcohol, to avoid harvest rain and keep acidity. It's fermented cool in steel, without oak or malolactic, and bottled early. Young, it's pale, lean and lemony, with grass and high acidity. With 5 to 10 years in bottle, it transforms, gaining toast, honey, lanolin and lemon curd, as if oaked.",
+      "highlight": "Picked early, unoaked, transforms with age"
+    },
+    {
+      "type": "concept",
+      "title": "Shiraz",
+      "body": "Hunter Shiraz is medium-bodied, unlike the Barossa's, with red fruit, earth and a savoury, leathery character, sometimes called sweaty saddle in older wines. It's lower in alcohol, around 13 to 13.5%, and ages well. Chardonnay is also grown. Tyrrell's Vat 1 Sémillon and Vat 9 Shiraz are famous examples.",
+      "highlight": "Medium-bodied, earthy Shiraz"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to the Hunter.",
+      "pairs": [
+        {
+          "left": "Sémillon",
+          "right": "Picked early, ages to toast"
+        },
+        {
+          "left": "Shiraz",
+          "right": "Medium-bodied, earthy"
+        },
+        {
+          "left": "Vat 1",
+          "right": "Tyrrell's Sémillon"
+        },
+        {
+          "left": "Pokolbin",
+          "right": "Main wine area"
+        }
+      ],
+      "explanation": "The Hunter's grapes have a distinct style."
+    },
+    {
+      "type": "tip",
+      "body": "Hunter Sémillon's toasty notes after ten years come entirely from bottle age, not oak. It's one of wine's great transformations."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Hunter Sémillon picked so early?",
+      "options": [
+        "To avoid harvest rain and keep acidity",
+        "To make it sweet",
+        "To add oak flavour",
+        "To raise alcohol"
+      ],
+      "answer": 0,
+      "explanation": "Early picking avoids rot and preserves freshness."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Hunter Sémillon is picked early, unoaked, and transforms with age",
+        "Hunter Shiraz is medium-bodied and earthy",
+        "Tyrrell's Vat 1 and Vat 9 are famous examples"
+      ]
+    }
+  ]
+}

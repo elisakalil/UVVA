@@ -1,0 +1,32 @@
+{
+  "id": "grape-carignan",
+  "kind": "grape",
+  "order": 20,
+  "color": "red",
+  "title": "Carignan",
+  "aliases": [
+    "Cariñena",
+    "Mazuelo",
+    "Samsó",
+    "Carignano"
+  ],
+  "origin": "Spain",
+  "countries": [
+    "France",
+    "Spain",
+    "Chile"
+  ],
+  "points": "0 2 0 1 = 3",
+  "complexity": "C",
+  "description": "Also called Cariñena, Mazuelo, Samsó and Carignano. Once a bulk grape, now prized from old vines.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-carignan-l01",
+    "grape-carignan-l02",
+    "grape-carignan-l03",
+    "grape-carignan-l04",
+    "grape-carignan-l05"
+  ]
+}

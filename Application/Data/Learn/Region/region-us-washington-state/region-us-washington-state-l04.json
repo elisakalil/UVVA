@@ -1,0 +1,60 @@
+{
+  "id": "region-us-washington-state-l04",
+  "moduleId": "region-us-washington-state",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Washington and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Washington label",
+    "Pair Washington wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the winery, grape, AVA and vintage. Washington uses US federal rules for AVAs, 85%, and vintage, 95%, but requires 85% for a named grape, stricter than the federal 75%. Columbia Valley is the broadest AVA; Red Mountain or Walla Walla are more specific. Many wineries are in Woodinville but source grapes from the east.",
+      "highlight": "Grape 85%, AVA 85%"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Washington Cabernet suits steak, lamb and burgers; Merlot suits roast pork and duck; Syrah suits barbecue, lamb and game; Riesling suits Asian food, seafood and spicy dishes. Pacific Northwest salmon suits lighter reds and Chardonnay. Serve reds at 16 to 18 degrees, Riesling at 7 to 10.",
+      "highlight": "Cabernet with steak, Riesling with spice"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Washington AVA is famous for savoury Syrah from cobblestones?",
+      "options": [
+        "The Rocks District of Milton-Freewater",
+        "Red Mountain",
+        "Yakima Valley",
+        "Horse Heaven Hills"
+      ],
+      "answer": 0,
+      "explanation": "Its cobblestones give distinctive Syrah."
+    },
+    {
+      "type": "tip",
+      "body": "Woodinville, near Seattle, has over 100 tasting rooms, but most grapes are grown three to four hours east, across the Cascades."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Washington requires 85% of a named grape on the label.",
+      "answer": true,
+      "explanation": "Yes, stricter than the federal 75%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels follow 85% rules for grape and AVA",
+        "Cabernet suits steak; Syrah suits barbecue; Riesling suits spice",
+        "Many wineries are near Seattle, but grapes grow east"
+      ]
+    }
+  ]
+}

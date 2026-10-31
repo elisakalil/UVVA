@@ -1,0 +1,96 @@
+{
+  "id": "grape-sangiovese-l07",
+  "moduleId": "grape-sangiovese",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Sangiovese",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Sangiovese",
+    "Compare its Tuscan wines",
+    "Explain the Super Tuscans"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its description.",
+      "pairs": [
+        {
+          "left": "Chianti Classico",
+          "right": "Black rooster DOCG"
+        },
+        {
+          "left": "Brunello",
+          "right": "100% Sangiovese, five years"
+        },
+        {
+          "left": "Vino Nobile",
+          "right": "Prugnolo Gentile, Montepulciano"
+        },
+        {
+          "left": "Tignanello",
+          "right": "Early Super Tuscan"
+        }
+      ],
+      "explanation": "Sangiovese has several great Tuscan expressions."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which soils are prized for Sangiovese in Chianti Classico?",
+      "options": [
+        "Galestro and alberese",
+        "Llicorella",
+        "Terra rossa",
+        "Slate"
+      ],
+      "answer": 0,
+      "explanation": "Galestro marl and alberese limestone."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The IGT category was created partly because of the Super Tuscans.",
+      "answer": true,
+      "explanation": "Yes, in 1992."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Sangiovese?",
+      "options": [
+        "High acidity",
+        "Sour cherry",
+        "Firm tannin",
+        "Lychee aromas"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Lychee is Gewürztraminer."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Brunello di Montalcino must age at least ____ years before release.",
+      "options": [
+        "five",
+        "two",
+        "ten",
+        "one"
+      ],
+      "answer": "five",
+      "explanation": "Five years, two of them in oak; Riserva needs six."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sangiovese is high in acidity, with sour cherry and firm tannin",
+        "Chianti Classico, Brunello and Vino Nobile are its great wines",
+        "Super Tuscans broke rules and changed Italian law",
+        "It's made for tomato and grilled meat"
+      ]
+    }
+  ]
+}

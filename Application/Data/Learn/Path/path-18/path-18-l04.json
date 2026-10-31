@@ -1,0 +1,77 @@
+{
+  "id": "path-18-l04",
+  "moduleId": "path-18",
+  "order": 4,
+  "title": "The Loire",
+  "subtitle": "Europe's longest wine valley",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Loire's four main areas",
+    "Name each area's key grapes",
+    "Explain why Loire wines are fresh"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Four areas",
+      "body": "The Loire runs about 1,000 km, with vineyards along much of it. Near the Atlantic, the Pays Nantais makes Muscadet from Melon. Anjou-Saumur makes Chenin Blanc, from dry to sweet, and Cabernet Franc. Touraine makes Vouvray Chenin and Chinon Cabernet Franc. Upstream, the Central Vineyards make Sancerre and Pouilly-Fumé from Sauvignon Blanc.",
+      "highlight": "Nantais, Anjou-Saumur, Touraine, Centre"
+    },
+    {
+      "type": "concept",
+      "title": "Cool and fresh",
+      "body": "The Loire is at the northern edge for many grapes. The west is maritime; the Centre is more continental. Cool conditions keep acidity high and alcohol moderate, often 11.5 to 13%. That freshness explains its whites, its sweet wines that never cloy and its sparkling Crémant de Loire and Saumur.",
+      "highlight": "Cool climate: high acidity"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Loire wine to its grape.",
+      "pairs": [
+        {
+          "left": "Muscadet",
+          "right": "Melon de Bourgogne"
+        },
+        {
+          "left": "Vouvray",
+          "right": "Chenin Blanc"
+        },
+        {
+          "left": "Chinon",
+          "right": "Cabernet Franc"
+        },
+        {
+          "left": "Sancerre",
+          "right": "Sauvignon Blanc"
+        }
+      ],
+      "explanation": "Each part of the Loire has its own grape."
+    },
+    {
+      "type": "tip",
+      "body": "Muscadet sur lie, aged on its lees until bottling, is one of the most reliable partners for oysters, and one of France's best bargains."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do Loire wines tend to have high acidity?",
+      "options": [
+        "Very hot summers",
+        "A cool, northern climate",
+        "Added acid by law",
+        "Volcanic soils everywhere"
+      ],
+      "answer": 1,
+      "explanation": "The Loire is cool, so grapes ripen slowly and keep their acidity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Loire has four areas, from Nantais to the Centre",
+        "Melon, Chenin Blanc, Cabernet Franc and Sauvignon Blanc lead",
+        "A cool climate keeps the wines fresh"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1240 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.xctest/Contents/MacOS/MatchPackageTests",
+      "packagePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match",
+      "productName" : "MatchPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Core-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/sources",
+      "importPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/LessonRef.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizExit.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Core",
+      "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule",
+      "objects" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Dish.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Friend.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/GlossaryTerm.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/LessonRef.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/MapChangeCause.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMap.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMapRepository.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizEntry.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizExit.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestion.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestionRepository.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Rating.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeIngredient.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Verdict.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx15.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/include/Core-Swift.h",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "core"
+      ],
+      "outputFileMapPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Dish.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Friend.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/GlossaryTerm.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/LessonRef.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/MapChangeCause.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMap.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMapRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizEntry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizExit.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestion.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestionRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Rating.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeIngredient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Verdict.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/LessonRef.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizExit.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift"
+      ],
+      "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.Match-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/sources",
+      "importPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Match",
+      "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Match.swiftmodule",
+      "objects" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx15.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/include/Match-Swift.h",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "match"
+      ],
+      "outputFileMapPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Match.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift"
+      ],
+      "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.MatchPackageTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/sources",
+      "importPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/MatchTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MatchPackageTests",
+      "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/MatchPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx15.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/include/MatchPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "match"
+      ],
+      "outputFileMapPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/MatchPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.MatchTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/sources",
+      "importPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/SimilarityTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Match.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "MatchTests",
+      "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/MatchTests.swiftmodule",
+      "objects" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx15.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "match"
+      ],
+      "outputFileMapPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/MatchTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/SimilarityTests.swift"
+      ],
+      "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Core" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Core",
+      "-package-name",
+      "core",
+      "-c",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/LessonRef.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizExit.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
+      "-I",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx15.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/include/Core-Swift.h",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "core",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "Match" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Match",
+      "-package-name",
+      "match",
+      "-c",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift",
+      "-I",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx15.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/include/Match-Swift.h",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "match",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "MatchPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MatchPackageTests",
+      "-package-name",
+      "match",
+      "-c",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx15.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/include/MatchPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "match",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "MatchTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "MatchTests",
+      "-package-name",
+      "match",
+      "-c",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/SimilarityTests.swift",
+      "-I",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx15.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "match",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Core" : [
+
+    ],
+    "Match" : [
+      "Core"
+    ],
+    "MatchPackageTests" : [
+      "MatchTests",
+      "Match",
+      "Core"
+    ],
+    "MatchTests" : [
+      "Match",
+      "Core"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/LessonRef.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizExit.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/sources"
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/sources"
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/sources"
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Dish.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Friend.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/GlossaryTerm.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/LessonRef.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/MapChangeCause.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMap.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMapRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizEntry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizExit.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestion.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestionRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Rating.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeIngredient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Verdict.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/SimilarityTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/sources"
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

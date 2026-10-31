@@ -1,0 +1,62 @@
+{
+  "id": "region-pt-alentejo-l01",
+  "moduleId": "region-pt-alentejo",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Plains, heat and cork",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Alentejo's geography",
+    "Explain its climate",
+    "Explain its sub-regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Beyond the Tagus",
+      "body": "Alentejo means beyond the Tagus, the river south of Lisbon. It covers about a third of Portugal, mostly rolling plains with cork oak and olive groves, and some hills like the São Mamede range near Portalegre. It has about 23,000 hectares of vines. Portugal produces about half the world's cork, much of it here.",
+      "highlight": "Plains, cork oaks, olives"
+    },
+    {
+      "type": "concept",
+      "title": "Hot and dry",
+      "body": "The climate is Mediterranean with continental influence: very hot, dry summers, often over 40 degrees, and mild winters. Rainfall is low. Irrigation is common, especially from the Alqueva reservoir, Europe's largest artificial lake, completed in 2002. Higher sites, like Portalegre, are cooler and fresher.",
+      "highlight": "Over 40 degrees in summer"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Alentejo mean?",
+      "options": [
+        "Beyond the Tagus",
+        "Hot land",
+        "Cork forest",
+        "Green hills"
+      ],
+      "answer": 0,
+      "explanation": "The region lies beyond, south of, the Tagus river."
+    },
+    {
+      "type": "concept",
+      "title": "Eight sub-regions",
+      "body": "The Alentejo DOC has eight sub-regions, including Reguengos, Borba, Redondo, Vidigueira and Portalegre. Vidigueira, sheltered by a fault escarpment, is known for whites; Portalegre, at up to 900 m, for fresh wines from old field blends. Much wine is sold as Vinho Regional Alentejano, with more flexible rules.",
+      "highlight": "Reguengos, Vidigueira, Portalegre"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Portalegre is one of the Alentejo's cooler sub-regions.",
+      "answer": true,
+      "explanation": "Yes. Altitude in the São Mamede hills keeps it fresh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Alentejo covers a third of Portugal, beyond the Tagus",
+        "It's very hot and dry, often irrigated",
+        "Portalegre and Vidigueira offer fresher styles"
+      ]
+    }
+  ]
+}

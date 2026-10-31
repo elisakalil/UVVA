@@ -1,0 +1,60 @@
+{
+  "id": "region-pt-madeira-l05",
+  "moduleId": "region-pt-madeira",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading Madeira and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Madeira label",
+    "Pair Madeira with food",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Madeira labels show the style, by sweetness or grape: Dry, Medium Dry, Medium Sweet, Sweet, or Sercial, Verdelho, Boal, Malvasia; and the age: 5, 10 or 15 Years Old, Colheita or Frasqueira. Canteiro may be noted. Tinta Negra can now be named. The IVBAM, the island's wine institute, certifies each bottle.",
+      "highlight": "Grape or sweetness, plus age"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Sercial suits consommé, olives, almonds and sushi; Verdelho suits mushroom soups and pâté; Boal suits cheese, nuts and fruit cake; Malvasia suits chocolate, coffee desserts and Christmas pudding. Madeira is also a classic in cooking, like Madeira sauce for beef. Serve at 12 to 16 degrees, drier styles slightly cooler.",
+      "highlight": "Consommé with Sercial; chocolate with Malmsey"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Madeira suits dark chocolate desserts?",
+      "options": [
+        "Malvasia",
+        "Sercial",
+        "Verdelho",
+        "Rainwater"
+      ],
+      "answer": 0,
+      "explanation": "Rich, sweet Malmsey matches chocolate."
+    },
+    {
+      "type": "tip",
+      "body": "An open bottle of Madeira keeps for months. It's the ideal wine to keep on hand for an occasional glass."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Madeira must be finished within a day of opening.",
+      "answer": false,
+      "explanation": "Not true. It's already oxidised, so it keeps for months."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show grape or sweetness, and age",
+        "Sercial suits soup; Malmsey suits chocolate",
+        "Opened Madeira keeps for months"
+      ]
+    }
+  ]
+}

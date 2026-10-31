@@ -1,0 +1,27 @@
+{
+  "id": "region-us-napa-valley",
+  "kind": "region",
+  "order": 34,
+  "country": "United States",
+  "countryCode": "US",
+  "title": "Napa Valley",
+  "grapes": [
+    "Cabernet Sauvignon",
+    "Merlot",
+    "Chardonnay"
+  ],
+  "points": "2 0 1 2 = 5",
+  "complexity": "B",
+  "description": "A small valley north of San Francisco that put American wine on the world map, built on Cabernet Sauvignon.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-us-napa-valley-l01",
+    "region-us-napa-valley-l02",
+    "region-us-napa-valley-l03",
+    "region-us-napa-valley-l04",
+    "region-us-napa-valley-l05",
+    "region-us-napa-valley-l06"
+  ]
+}

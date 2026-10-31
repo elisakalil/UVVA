@@ -1,0 +1,31 @@
+{
+  "id": "grape-malbec",
+  "kind": "grape",
+  "order": 2,
+  "color": "red",
+  "title": "Malbec",
+  "aliases": [
+    "Côt",
+    "Auxerrois"
+  ],
+  "origin": "France",
+  "countries": [
+    "Argentina",
+    "France",
+    "Chile"
+  ],
+  "points": "1 2 1 1 = 5",
+  "complexity": "B",
+  "description": "Also called Côt or Auxerrois in France. Born in Cahors, reborn at altitude in Mendoza.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-malbec-l01",
+    "grape-malbec-l02",
+    "grape-malbec-l03",
+    "grape-malbec-l04",
+    "grape-malbec-l05",
+    "grape-malbec-l06"
+  ]
+}

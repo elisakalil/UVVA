@@ -1,0 +1,72 @@
+{
+  "id": "path-22-l05",
+  "moduleId": "path-22",
+  "order": 5,
+  "title": "Washington and Canada",
+  "subtitle": "Desert vineyards and ice wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Washington State's climate",
+    "Describe Canada's wine regions",
+    "Explain how ice wine shaped Canada"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Washington",
+      "body": "Washington's vineyards lie east of the Cascade Mountains, which block Pacific rain. The Columbia Valley is a desert, with under 200 mm of rain a year, so all vines are irrigated from rivers. Long summer days at 46 degrees north give ripe fruit with fresh acidity. Cabernet Sauvignon, Merlot, Syrah, Riesling and Chardonnay lead.",
+      "highlight": "Rain shadow desert, irrigated"
+    },
+    {
+      "type": "concept",
+      "title": "Cold winters and sandy soils",
+      "body": "Winter can drop below minus 20 degrees, damaging vines. Growers plant on slopes for air drainage and bury canes in some cases. Sandy, wind-blown soils mean phylloxera struggles, so most vines grow on their own roots. Walla Walla, Red Mountain and Yakima Valley are top AVAs.",
+      "highlight": "Own-rooted vines, cold winters"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which statements about Washington are true?",
+      "options": [
+        "Most vineyards lie east of the Cascades",
+        "Vineyards are irrigated",
+        "Phylloxera is widespread",
+        "Many vines grow on their own roots"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Sandy soils keep phylloxera at bay, so own-rooted vines are common."
+    },
+    {
+      "type": "concept",
+      "title": "Canada",
+      "body": "Canada's main regions are Ontario's Niagara Peninsula, moderated by Lake Ontario, and British Columbia's Okanagan Valley, a dry, warm valley in the interior. Reliable hard winters made Canada the world's leading ice wine producer, especially from Vidal and Riesling. The VQA system sets quality and origin rules.",
+      "highlight": "Niagara, Okanagan, ice wine"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is widely used for Canadian ice wine?",
+      "options": [
+        "Vidal",
+        "Cabernet Sauvignon",
+        "Zinfandel",
+        "Chardonnay"
+      ],
+      "answer": 0,
+      "explanation": "Vidal, a hardy hybrid, and Riesling are the main ice wine grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Washington's vineyards are an irrigated desert east of the Cascades",
+        "Cold winters and sandy soils mean many own-rooted vines",
+        "Canada leads in ice wine from Niagara and the Okanagan"
+      ]
+    }
+  ]
+}

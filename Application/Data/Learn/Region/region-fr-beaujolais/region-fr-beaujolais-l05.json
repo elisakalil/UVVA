@@ -1,0 +1,96 @@
+{
+  "id": "region-fr-beaujolais-l05",
+  "moduleId": "region-fr-beaujolais",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Beaujolais",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Beaujolais' geography",
+    "Name its levels and crus",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Beaujolais.",
+      "pairs": [
+        {
+          "left": "Gamay",
+          "right": "Main grape"
+        },
+        {
+          "left": "Nouveau",
+          "right": "November release"
+        },
+        {
+          "left": "Moulin-à-Vent",
+          "right": "Powerful cru"
+        },
+        {
+          "left": "Pierres dorées",
+          "right": "Southern golden stones"
+        }
+      ],
+      "explanation": "Beaujolais has its own vocabulary."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which soil gives the best Beaujolais?",
+      "options": [
+        "Northern granite",
+        "Southern limestone",
+        "River sand",
+        "Volcanic ash"
+      ],
+      "answer": 0,
+      "explanation": "Granite in the north."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Beaujolais is made from Pinot Noir.",
+      "answer": false,
+      "explanation": "Not true. It's almost all Gamay."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Beaujolais crus?",
+      "options": [
+        "Morgon",
+        "Fleurie",
+        "Brouilly",
+        "Chablis"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Chablis is in Burgundy."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Beaujolais Nouveau is released on the third Thursday of ____.",
+      "options": [
+        "November",
+        "January",
+        "March",
+        "September"
+      ],
+      "answer": "November",
+      "explanation": "Weeks after harvest, made quickly to drink at once."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Beaujolais is Gamay on northern granite",
+        "Ten crus sit above Villages and Beaujolais",
+        "Carbonic maceration gives fruity, soft wines",
+        "Serve it cool with bistro food"
+      ]
+    }
+  ]
+}

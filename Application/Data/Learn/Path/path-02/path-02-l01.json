@@ -1,0 +1,73 @@
+{
+  "id": "path-02-l01",
+  "moduleId": "path-02",
+  "order": 1,
+  "title": "Still, sparkling, fortified",
+  "subtitle": "The three families of wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the three families of wine",
+    "Explain where bubbles come from",
+    "Explain what fortification adds"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three families",
+      "body": "Every wine belongs to one of three families. Still wine has no noticeable bubbles and is most of what you drink. Sparkling wine holds dissolved carbon dioxide. Fortified wine has had grape spirit added. Inside each family you'll find white, rosé and red, dry and sweet.",
+      "highlight": "Still, sparkling, fortified"
+    },
+    {
+      "type": "concept",
+      "title": "Where the differences come from",
+      "body": "Fermentation always makes carbon dioxide. Let it escape and the wine is still. Ferment in a sealed bottle or tank and the gas dissolves, building up to about 6 atmospheres in Champagne, roughly three times a car tyre. Add grape spirit and the wine rises to 15 to 22% alcohol; if that happens mid-fermentation, the yeast dies and the wine stays sweet.",
+      "highlight": "Trapped CO2 makes bubbles; added spirit makes fortified"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each family to what defines it.",
+      "pairs": [
+        {
+          "left": "Still",
+          "right": "Gas allowed to escape"
+        },
+        {
+          "left": "Sparkling",
+          "right": "Carbon dioxide trapped inside"
+        },
+        {
+          "left": "Fortified",
+          "right": "Grape spirit added"
+        },
+        {
+          "left": "Port",
+          "right": "Fortified during fermentation"
+        }
+      ],
+      "explanation": "The family depends on what happens to the gas and whether spirit is added."
+    },
+    {
+      "type": "concept",
+      "title": "Spirit added early or late",
+      "body": "When spirit goes in during fermentation, the yeast stops and natural sugar remains. That is how Port stays sweet. When spirit is added after a dry fermentation, the wine stays dry, as with Fino Sherry. Same idea, different moment, opposite results.",
+      "highlight": "Spirit during: sweet. Spirit after: dry."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Every fortified wine is sweet.",
+      "answer": false,
+      "explanation": "Not true. If the spirit is added after the yeast has eaten all the sugar, the wine stays dry. Fino Sherry is fortified and bone dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Wines are still, sparkling or fortified",
+        "Bubbles come from carbon dioxide trapped during fermentation",
+        "Fortified wines have added spirit, and timing decides if they are dry or sweet"
+      ]
+    }
+  ]
+}

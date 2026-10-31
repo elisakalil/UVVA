@@ -1,0 +1,70 @@
+{
+  "id": "region-ar-salta-l03",
+  "moduleId": "region-ar-salta",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Salta and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Salta label",
+    "Pair Salta wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape, Salta or Calchaquí Valleys, and often Cafayate and the vineyard's altitude. Many producers print altitude prominently, as it's central to the style. Argentina's 85% rule for named grapes applies.",
+      "highlight": "Grape, valley, altitude"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Torrontés suits Salta's empanadas salteñas, small, juicy beef pastries, as well as spicy food, ceviche, Thai and Indian dishes. Salta's reds suit grilled meat, goat, llama and humita, a corn dish. Serve Torrontés at 7 to 10 degrees, young; reds at 16 to 18.",
+      "highlight": "Empanadas salteñas with Torrontés"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a classic with Torrontés in Salta?",
+      "options": [
+        "Empanadas salteñas",
+        "Steak frites",
+        "Lasagne",
+        "Chocolate cake"
+      ],
+      "answer": 0,
+      "explanation": "Salta's juicy beef empanadas."
+    },
+    {
+      "type": "tip",
+      "body": "Torrontés is best young, within one or two years, while its floral perfume is fresh."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Torrontés?",
+      "options": [
+        "Empanadas",
+        "Ceviche",
+        "Thai dishes",
+        "Beef stew"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Beef stew needs a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show grape, valley and altitude",
+        "Torrontés suits empanadas and spicy food",
+        "Drink Torrontés young and cold"
+      ]
+    }
+  ]
+}

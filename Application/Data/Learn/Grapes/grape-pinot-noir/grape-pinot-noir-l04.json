@@ -1,0 +1,62 @@
+{
+  "id": "grape-pinot-noir-l04",
+  "moduleId": "grape-pinot-noir",
+  "order": 4,
+  "title": "Pinot in Champagne",
+  "subtitle": "Black grapes, white wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Pinot Noir's role in Champagne",
+    "Explain Blanc de Noirs",
+    "Explain still Pinot in Champagne"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Structure and body",
+      "body": "Pinot Noir is about 38% of Champagne's vineyards, the most planted grape there. It gives body, structure and red fruit aromas to blends. The Montagne de Reims, with Grand Crus like Aÿ, Bouzy and Verzenay, and the Côte des Bar, in the south, are its strongholds.",
+      "highlight": "Most planted grape in Champagne"
+    },
+    {
+      "type": "concept",
+      "title": "White from black",
+      "body": "Since the colour is in the skins, gentle pressing of whole bunches gives a pale, white juice from black grapes. Blanc de Noirs is white Champagne made only from Pinot Noir and/or Meunier. It's fuller and fruitier than Blanc de Blancs. For rosé Champagne, a little still red Pinot Noir is often blended in.",
+      "highlight": "Blanc de Noirs: white from black"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How can Champagne make white wine from Pinot Noir?",
+      "options": [
+        "By gentle pressing that keeps the colour out",
+        "By adding white wine",
+        "By bleaching the juice",
+        "By using white grapes only"
+      ],
+      "answer": 0,
+      "explanation": "Colour is in the skins; gentle whole-bunch pressing keeps it out of the juice."
+    },
+    {
+      "type": "concept",
+      "title": "Still Pinot",
+      "body": "Bouzy, in the Montagne de Reims, is famous for still red wine, sold as Coteaux Champenois rouge. In warmer years, more producers make it. Its light, crisp style shows Pinot Noir at the edge of ripeness, a reminder of how cool Champagne is.",
+      "highlight": "Coteaux Champenois rouge"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinot Noir is the most planted grape in Champagne.",
+      "answer": true,
+      "explanation": "Yes, about 38% of vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir is Champagne's most planted grape, giving body",
+        "Blanc de Noirs is white Champagne from black grapes",
+        "Bouzy makes still red Coteaux Champenois"
+      ]
+    }
+  ]
+}

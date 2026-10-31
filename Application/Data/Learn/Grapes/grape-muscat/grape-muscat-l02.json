@@ -1,0 +1,77 @@
+{
+  "id": "grape-muscat-l02",
+  "moduleId": "grape-muscat",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Around the Mediterranean and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the main Muscat varieties",
+    "Name its main regions",
+    "Explain the family's spread"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A family",
+      "body": "Muscat is a family of over 200 grapes. The finest is Muscat Blanc à Petits Grains, small-berried, used in Asti, Alsace, Beaumes-de-Venise and Rutherglen. Muscat of Alexandria, larger-berried and less refined, grows in Spain, Portugal's Setúbal, Sicily as Zibibbo, and Chile. Muscat Ottonel, lighter, grows in Alsace and Austria. Some Muscats are pink or black.",
+      "highlight": "Petits Grains, Alexandria, Ottonel"
+    },
+    {
+      "type": "concept",
+      "title": "Ancient roots",
+      "body": "Muscat is among the oldest grapes, probably from Greece or the eastern Mediterranean; the Greeks and Romans spread it. Muscat Blanc à Petits Grains is thought to be the oldest; Muscat of Alexandria is its offspring with a table grape. It grows in Greece, as Moschato on Samos, and across the Mediterranean.",
+      "highlight": "Spread by Greeks and Romans"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Muscat to its region.",
+      "pairs": [
+        {
+          "left": "Muscat Blanc à Petits Grains",
+          "right": "Asti, Alsace, Rutherglen"
+        },
+        {
+          "left": "Muscat of Alexandria",
+          "right": "Setúbal, Spain, Sicily"
+        },
+        {
+          "left": "Muscat Ottonel",
+          "right": "Alsace and Austria"
+        },
+        {
+          "left": "Moschato",
+          "right": "Samos, Greece"
+        }
+      ],
+      "explanation": "The Muscat family spreads around the Mediterranean."
+    },
+    {
+      "type": "tip",
+      "body": "Zibibbo, Sicily's name for Muscat of Alexandria, makes the famous Passito di Pantelleria from sun-dried grapes on a volcanic island south of Sicily."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Muscat is considered the finest?",
+      "options": [
+        "Muscat Blanc à Petits Grains",
+        "Muscat of Alexandria",
+        "Muscat Ottonel",
+        "Black Muscat"
+      ],
+      "answer": 0,
+      "explanation": "Its small berries give the most refined wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Muscat is a family of over 200 grapes",
+        "Muscat Blanc à Petits Grains is the finest",
+        "It spread from Greece across the Mediterranean"
+      ]
+    }
+  ]
+}

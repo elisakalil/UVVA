@@ -1,0 +1,73 @@
+{
+  "id": "path-30-l02",
+  "moduleId": "path-30",
+  "order": 2,
+  "title": "Identifying grapes",
+  "subtitle": "Fingerprints of the classics",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Recognise the main white grapes blind",
+    "Recognise the main red grapes blind",
+    "Use structure as much as aroma"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "White fingerprints",
+      "body": "Sauvignon Blanc: pronounced grass, gooseberry, high acidity, no oak. Riesling: lime, flowers, high acidity, sometimes sugar and petrol. Chardonnay: neutral fruit shaped by place and oak, often butter and toast. Gewürztraminer: lychee, rose, low acidity, high alcohol. Chenin Blanc: apple, quince, honey, high acidity.",
+      "highlight": "Aroma plus acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Red fingerprints",
+      "body": "Cabernet Sauvignon: blackcurrant, cedar, high tannin. Merlot: plum, softer tannin. Pinot Noir: pale, red fruit, low tannin. Syrah: blackberry, pepper, deep colour. Nebbiolo: pale but very tannic, rose and tar. Sangiovese: sour cherry, high acidity, tea-like tannin. Structure often reveals more than aroma.",
+      "highlight": "Tannin and acidity reveal the grape"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine description to its grape.",
+      "pairs": [
+        {
+          "left": "Pale, very tannic, rose, tar",
+          "right": "Nebbiolo"
+        },
+        {
+          "left": "Lychee, rose, low acidity",
+          "right": "Gewürztraminer"
+        },
+        {
+          "left": "Grass, gooseberry, high acidity",
+          "right": "Sauvignon Blanc"
+        },
+        {
+          "left": "Sour cherry, high acidity, tea tannin",
+          "right": "Sangiovese"
+        }
+      ],
+      "explanation": "Combining aroma and structure gives the clearest identification."
+    },
+    {
+      "type": "concept",
+      "title": "Common confusions",
+      "body": "Some grapes are easily confused. Pinot Noir and Gamay are both pale and red-fruited; Gamay is often juicier, with banana notes from carbonic maceration. Cabernet and Merlot blend so often it's hard to separate them. Albariño and Grüner Veltliner both show citrus and acidity; Grüner adds white pepper.",
+      "highlight": "Know the near neighbours"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A wine that is pale in colour must be low in tannin.",
+      "answer": false,
+      "explanation": "Not true. Nebbiolo is pale but very tannic, a classic blind tasting trap."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Each white grape has an aroma plus acidity fingerprint",
+        "Red grapes are often identified by tannin and acidity",
+        "Know the common confusions, like Pinot Noir and Gamay"
+      ]
+    }
+  ]
+}

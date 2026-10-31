@@ -1,0 +1,79 @@
+{
+  "id": "path-22-l04",
+  "moduleId": "path-22",
+  "order": 4,
+  "title": "Oregon",
+  "subtitle": "Pinot Noir in the north-west",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Willamette Valley",
+    "Explain why Pinot Noir suits Oregon",
+    "Explain Oregon's labelling and farming culture"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Willamette Valley",
+      "body": "Oregon's wine centre is the Willamette Valley, south of Portland, at about 45 degrees north, the same latitude as Burgundy. The climate is cool and maritime, with wet winters and dry summers. David Lett planted Pinot Noir there in 1965, and his 1975 wine did well against Burgundy in a 1979 Paris tasting.",
+      "highlight": "Cool, maritime, Burgundy's latitude"
+    },
+    {
+      "type": "concept",
+      "title": "Pinot's natural home",
+      "body": "Pinot Noir is over 60% of Oregon's plantings. The cool climate keeps acidity and red fruit, and long, dry autumns ripen it slowly. Volcanic Jory soil in the Dundee Hills and marine sediments in places like Yamhill-Carlton give different styles. Pinot Gris and, increasingly, Chardonnay are the main whites.",
+      "highlight": "Pinot Noir: over 60%"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Pinot Noir thrive in the Willamette Valley?",
+      "options": [
+        "Very hot summers",
+        "A cool climate and long, dry autumns",
+        "High altitude",
+        "Heavy irrigation"
+      ],
+      "answer": 1,
+      "explanation": "Cool conditions keep acidity and fruit purity, while dry autumns let grapes ripen slowly."
+    },
+    {
+      "type": "concept",
+      "title": "A small-producer culture",
+      "body": "Oregon wineries are mostly small and family-run. The state requires 90% of a named grape on the label, stricter than federal rules. Sustainable, organic and biodynamic farming are widespread. Burgundian houses like Maison Joseph Drouhin invested from 1987, a sign of respect for the region.",
+      "highlight": "Small, family-run, strict on varieties"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Oregon feature to its detail.",
+      "pairs": [
+        {
+          "left": "David Lett",
+          "right": "Planted Pinot Noir, 1965"
+        },
+        {
+          "left": "Dundee Hills",
+          "right": "Volcanic Jory soil"
+        },
+        {
+          "left": "Joseph Drouhin",
+          "right": "Burgundian investment, 1987"
+        },
+        {
+          "left": "Pinot Gris",
+          "right": "Main white grape"
+        }
+      ],
+      "explanation": "Oregon's history is short but focused."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Willamette Valley lies at Burgundy's latitude",
+        "Pinot Noir is over 60% of plantings",
+        "Oregon is mostly small producers, with strict labelling"
+      ]
+    }
+  ]
+}

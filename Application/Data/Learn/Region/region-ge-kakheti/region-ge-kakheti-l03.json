@@ -1,0 +1,72 @@
+{
+  "id": "region-ge-kakheti-l03",
+  "moduleId": "region-ge-kakheti",
+  "order": 3,
+  "title": "Qvevri",
+  "subtitle": "Buried clay vessels",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what a qvevri is",
+    "Explain how qvevri wine is made",
+    "Explain its UNESCO recognition"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Clay underground",
+      "body": "A qvevri is a large, egg-shaped clay vessel, from about 800 to several thousand litres, buried up to its neck in the ground. The inside is coated with beeswax. The earth keeps the temperature cool and stable, around 13 to 15 degrees, during fermentation and ageing. Qvevri are made by hand by a few master potters.",
+      "highlight": "Egg-shaped, buried, waxed"
+    },
+    {
+      "type": "concept",
+      "title": "The method",
+      "body": "Crushed grapes, often with skins, seeds and sometimes stems, chacha, go into the qvevri. Fermentation starts with native yeasts. The cap is punched down, then the qvevri is sealed with a stone or wooden lid and clay. The wine stays on the skins for months, often until spring. The egg shape helps solids settle at the bottom.",
+      "highlight": "Skins, stems, months of contact"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is the qvevri buried?",
+      "options": [
+        "The earth keeps the temperature cool and stable",
+        "To hide it",
+        "To add minerals",
+        "To make it sparkling"
+      ],
+      "answer": 0,
+      "explanation": "Underground, temperatures stay steady."
+    },
+    {
+      "type": "concept",
+      "title": "UNESCO",
+      "body": "In 2013, UNESCO added the ancient Georgian traditional qvevri winemaking method to its list of the Intangible Cultural Heritage of Humanity. The method inspired producers worldwide, especially in Friuli, where Josko Gravner began using qvevri in 2001, and in the natural wine movement.",
+      "highlight": "UNESCO intangible heritage, 2013"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe qvevri winemaking?",
+      "options": [
+        "Buried clay vessels",
+        "Long skin contact",
+        "Native yeasts",
+        "New French oak barriques"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Qvevri winemaking uses clay, not oak."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Qvevri are egg-shaped clay vessels buried in the ground",
+        "Grapes ferment with skins for months",
+        "UNESCO recognised the method in 2013"
+      ]
+    }
+  ]
+}

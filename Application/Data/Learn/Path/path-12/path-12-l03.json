@@ -1,0 +1,70 @@
+{
+  "id": "path-12-l03",
+  "moduleId": "path-12",
+  "order": 3,
+  "title": "The tank method",
+  "subtitle": "Fresh and fruity bubbles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how the tank method works",
+    "Explain why it suits aromatic grapes",
+    "Compare it with the traditional method"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "How it works",
+      "body": "In the tank method, also called Charmat or Martinotti, the base wine goes into a sealed, pressurised tank with sugar and yeast. The second fermentation takes days or weeks. The wine is then filtered under pressure and bottled. The whole process can take as little as a month.",
+      "highlight": "Second fermentation in a pressurised tank"
+    },
+    {
+      "type": "concept",
+      "title": "Why aromatic grapes suit it",
+      "body": "Glera, Muscat and similar grapes have delicate floral and fruit aromas. Long contact with yeast would cover them with bready notes. The tank method keeps them fresh. It is also cheaper and faster, so the wines are affordable, made to drink young, and usually show larger, softer bubbles than Champagne.",
+      "highlight": "Tank: fresh fruit, made to drink young"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is typically made by the tank method?",
+      "options": [
+        "Champagne",
+        "Cava",
+        "Prosecco",
+        "Franciacorta"
+      ],
+      "answer": 2,
+      "explanation": "Prosecco is made by the tank method. Champagne, Cava and Franciacorta use the traditional method."
+    },
+    {
+      "type": "tip",
+      "body": "Keep tank-method wines in a cool place and drink them within a year or two. Their charm is freshness, and it doesn't last."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What are typical features of tank-method sparkling wine?",
+      "options": [
+        "Fresh fruit and floral aromas",
+        "Strong bread and biscuit notes",
+        "Made to drink young",
+        "Lower cost"
+      ],
+      "answers": [
+        0,
+        2,
+        3
+      ],
+      "explanation": "Bread and biscuit notes come from long ageing on lees in bottle, typical of the traditional method."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The tank method ferments in sealed tanks, often in weeks",
+        "It preserves fresh fruit and floral aromas",
+        "It's faster and cheaper, and the wines are best young"
+      ]
+    }
+  ]
+}

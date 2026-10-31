@@ -1,0 +1,62 @@
+{
+  "id": "grape-touriga-nacional-l04",
+  "moduleId": "grape-touriga-nacional",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Touriga Nacional",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair dry Touriga Nacional with food",
+    "Pair Port with food",
+    "Serve and age it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dry wines",
+      "body": "Dry Touriga Nacional suits roast lamb, kid, game and Portuguese dishes like roast suckling pig from Bairrada or bacalhau with roasted potatoes. Its floral notes go well with herbs and its tannins with fat. Serve at 16 to 18 degrees, decanted when young.",
+      "highlight": "Lamb, kid, suckling pig"
+    },
+    {
+      "type": "concept",
+      "title": "Port",
+      "body": "Ruby and Vintage Ports suit dark chocolate, blue cheese like Stilton, and dried fruit. Serve Port slightly cool, about 16 degrees for ruby and vintage. Vintage Port needs decanting for sediment. Touriga Nacional's structure helps top Vintage Ports age 30 to 50 years.",
+      "highlight": "Stilton and chocolate"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is a classic partner for Vintage Port?",
+      "options": [
+        "Stilton cheese",
+        "Oysters",
+        "Green salad",
+        "Sushi"
+      ],
+      "answer": 0,
+      "explanation": "Salty blue cheese balances Port's sweetness and power."
+    },
+    {
+      "type": "concept",
+      "title": "Ageing",
+      "body": "Good dry Touriga Nacional from the Douro or Dão ages 10 to 20 years, gaining earthy, savoury notes while keeping its floral lift. Simpler versions are best young and fruity. Port's age depends on style: rubies are best young; vintages last decades.",
+      "highlight": "Dry reds: 10 to 20 years"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vintage Port usually needs decanting.",
+      "answer": true,
+      "explanation": "Yes. It ages in bottle and throws a heavy sediment."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Touriga Nacional suits lamb, kid and roast pork",
+        "Port suits blue cheese and dark chocolate",
+        "Good dry reds age 10 to 20 years; Vintage Port decades"
+      ]
+    }
+  ]
+}

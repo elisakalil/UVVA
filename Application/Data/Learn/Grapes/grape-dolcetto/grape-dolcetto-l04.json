@@ -1,0 +1,96 @@
+{
+  "id": "grape-dolcetto-l04",
+  "moduleId": "grape-dolcetto",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Dolcetto",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Dolcetto",
+    "Know its regions",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Dolcetto mean?",
+      "options": [
+        "Little sweet one",
+        "Black grape",
+        "Late harvest",
+        "Small hill"
+      ],
+      "answer": 0,
+      "explanation": "But the wine is dry."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Dolcetto.",
+      "pairs": [
+        {
+          "left": "Dogliani",
+          "right": "Spiritual home"
+        },
+        {
+          "left": "Bitter almond",
+          "right": "Typical finish"
+        },
+        {
+          "left": "Ormeasco",
+          "right": "Ligurian name"
+        },
+        {
+          "left": "Early",
+          "right": "Ripening time"
+        }
+      ],
+      "explanation": "Dolcetto is a simple, charming grape."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dolcetto has higher acidity than Barbera.",
+      "answer": false,
+      "explanation": "Not true. Barbera has much higher acidity."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Dolcetto DOCGs?",
+      "options": [
+        "Dogliani",
+        "Diano d'Alba",
+        "Ovada Superiore",
+        "Barolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Barolo is Nebbiolo."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Dolcetto is best served at about ____ degrees.",
+      "options": [
+        "14 to 16",
+        "6 to 8",
+        "20 to 22",
+        "0 to 2"
+      ],
+      "answer": "14 to 16",
+      "explanation": "Slightly cooler than big reds keeps its fruit fresh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dolcetto is dark, soft and dry, with an almond finish",
+        "It ripens early on Piedmont's cooler slopes",
+        "Dogliani is its heartland",
+        "It's best young, with everyday food"
+      ]
+    }
+  ]
+}

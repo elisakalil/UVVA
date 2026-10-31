@@ -1,0 +1,62 @@
+{
+  "id": "grape-pinot-meunier-l01",
+  "moduleId": "grape-pinot-meunier",
+  "order": 1,
+  "title": "Meet Pinot Meunier",
+  "subtitle": "The miller's grape",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Meunier's flavours",
+    "Explain its name",
+    "Recognise its role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fruity and supple",
+      "body": "Pinot Meunier, often simply Meunier, is a black grape giving fruity, supple wines with red apple, red berries, plum and spice. Acidity is fresh, tannins light. It ages faster than Pinot Noir and Chardonnay, so it's prized for fruitiness and roundness in young wines.",
+      "highlight": "Red fruit, supple, early-maturing"
+    },
+    {
+      "type": "concept",
+      "title": "The miller",
+      "body": "Meunier means miller in French. The underside of its leaves is covered in fine white hairs, as if dusted with flour. Genetically, it's a mutation of Pinot Noir, with a different outer cell layer. It buds late and ripens early, which helps it avoid spring frost and ripen in cool places.",
+      "highlight": "Meunier: floury leaves"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is the grape called Meunier, the miller?",
+      "options": [
+        "Its leaves look dusted with flour",
+        "It was grown by millers",
+        "It makes bread-like wine",
+        "It's grown near mills"
+      ],
+      "answer": 0,
+      "explanation": "Fine white hairs under the leaves look like flour."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "In Champagne blends, Meunier adds fruitiness, roundness and a slightly spicy, bready note, and makes the wine approachable young. On its own, still or sparkling, it's fruity and supple, with red apple and berry aromas. It's less structured and long-lived than Pinot Noir.",
+      "highlight": "Fruit and roundness in Champagne"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Meunier is a mutation of Pinot Noir.",
+      "answer": true,
+      "explanation": "Yes. It's genetically very close to Pinot Noir."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Meunier gives fruity, supple wines with red apple and berries",
+        "Its name comes from its floury-looking leaves",
+        "It's a mutation of Pinot Noir that buds late and ripens early"
+      ]
+    }
+  ]
+}

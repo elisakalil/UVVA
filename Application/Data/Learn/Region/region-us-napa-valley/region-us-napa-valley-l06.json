@@ -1,0 +1,96 @@
+{
+  "id": "region-us-napa-valley-l06",
+  "moduleId": "region-us-napa-valley",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Napa Valley",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Napa's land and grapes",
+    "Explain the Judgment of Paris",
+    "Read and pair Napa wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its role.",
+      "pairs": [
+        {
+          "left": "Robert Mondavi",
+          "right": "Founded winery in 1966"
+        },
+        {
+          "left": "Steven Spurrier",
+          "right": "Organised 1976 tasting"
+        },
+        {
+          "left": "Chateau Montelena",
+          "right": "Won 1976 whites"
+        },
+        {
+          "left": "Stag's Leap",
+          "right": "Won 1976 reds"
+        }
+      ],
+      "explanation": "Napa's history is full of famous names."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What cools Napa Valley?",
+      "options": [
+        "Fog and cool air from San Pablo Bay",
+        "Snow",
+        "Monsoon rain",
+        "The Atlantic"
+      ],
+      "answer": 0,
+      "explanation": "Fog moves up from the bay."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Napa Valley was California's first AVA, in 1981.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Napa mountain AVAs?",
+      "options": [
+        "Howell Mountain",
+        "Mount Veeder",
+        "Spring Mountain",
+        "Rutherford"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Rutherford is on the valley floor."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A Napa label naming an AVA must use at least ____% grapes from it.",
+      "options": [
+        "85",
+        "50",
+        "100",
+        "75"
+      ],
+      "answer": "85",
+      "explanation": "85%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Napa is small, foggy in the south and hot in the north",
+        "Cabernet Sauvignon is its star",
+        "The 1976 Judgment of Paris made it famous",
+        "Its 16 AVAs range from valley floor to mountain"
+      ]
+    }
+  ]
+}

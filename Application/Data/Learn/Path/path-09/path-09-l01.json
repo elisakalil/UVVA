@@ -1,0 +1,72 @@
+{
+  "id": "path-09-l01",
+  "moduleId": "path-09",
+  "order": 1,
+  "title": "Chardonnay around the world",
+  "subtitle": "From Chablis to California",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Chardonnay's classic regions in Burgundy",
+    "Compare cool and warm climate Chardonnay",
+    "Recognise the effect of oak and malolactic"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Burgundy, the template",
+      "body": "Chardonnay comes from Burgundy, where it makes almost all the white wine. Chablis, in the cool north, gives lean, steely wines with green apple and lemon, often unoaked. The Côte de Beaune, with Meursault and Puligny-Montrachet, gives richer, nutty wines fermented and aged in oak. The Mâconnais, further south, gives rounder, fruitier, good-value wines.",
+      "highlight": "Chablis: steely. Côte de Beaune: rich."
+    },
+    {
+      "type": "concept",
+      "title": "Beyond Burgundy",
+      "body": "Chardonnay grows almost everywhere. In warm places like California's Central Valley or parts of Australia it gives tropical fruit, high alcohol and often lots of oak. Cooler sites, like Sonoma Coast, Tasmania, Adelaide Hills or Limarí in Chile, now make tighter, fresher styles. Since the 2000s, many producers have cut back on new oak and malolactic.",
+      "highlight": "Cool sites: citrus. Warm sites: tropical."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Burgundy area is known for lean, steely, often unoaked Chardonnay?",
+      "options": [
+        "Meursault",
+        "Chablis",
+        "Mâconnais",
+        "Pouilly-Fuissé"
+      ],
+      "answer": 1,
+      "explanation": "Chablis is the coolest part of Burgundy, and its wines are typically crisp and mineral. Meursault is richer and oaked."
+    },
+    {
+      "type": "concept",
+      "title": "The winemaker's touch",
+      "body": "Chardonnay takes winemaking well. Barrel fermentation and new oak add vanilla and toast. Malolactic conversion turns sharp malic acid into soft lactic acid, adding a buttery note. Lees stirring gives a creamy texture. Unoaked versions are fresh and fruity. The label rarely tells you which, but the region and price are good clues.",
+      "highlight": "Oak, malolactic and lees shape the style"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which flavours suggest a warm-climate, oaked Chardonnay?",
+      "options": [
+        "Pineapple and mango",
+        "Vanilla and toast",
+        "Green apple and lime",
+        "Butter"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Tropical fruit comes from heat; vanilla, toast and butter from oak and malolactic. Green apple and lime point to a cool climate."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgundy is Chardonnay's home: Chablis lean, the Côte de Beaune rich",
+        "Cool sites give citrus; warm sites give tropical fruit",
+        "Oak, malolactic and lees add toast, butter and cream"
+      ]
+    }
+  ]
+}

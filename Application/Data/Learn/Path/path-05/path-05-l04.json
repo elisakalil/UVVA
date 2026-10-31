@@ -1,0 +1,66 @@
+{
+  "id": "path-05-l04",
+  "moduleId": "path-05",
+  "order": 4,
+  "title": "Leftover wine",
+  "subtitle": "Making an open bottle last",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what happens to an open bottle",
+    "Keep leftovers fresh longer",
+    "Know how long each style lasts once open"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Air is the enemy",
+      "body": "Once opened, wine meets oxygen. At first that can help, but over days it flattens fruit and turns the wine dull, nutty or vinegary. Bacteria can turn alcohol into acetic acid, the acid of vinegar. Cold slows all of this, so the fridge is the best place for any open bottle, red included.",
+      "highlight": "Oxygen flattens open wine"
+    },
+    {
+      "type": "concept",
+      "title": "How long each lasts",
+      "body": "Light whites and rosés usually stay pleasant for 2 to 3 days in the fridge with the cork back in. Reds, 3 to 5 days, because tannin protects them. Sparkling wine keeps its fizz for 1 to 3 days with a proper stopper. Fortified wines last longest: an opened tawny Port or Madeira can keep for weeks, Madeira for months.",
+      "highlight": "Fortified lasts longest once open"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which opened wine is likely to keep longest?",
+      "options": [
+        "A light rosé",
+        "A Prosecco",
+        "A Madeira",
+        "A Pinot Grigio"
+      ],
+      "answer": 2,
+      "explanation": "Madeira has already been exposed to heat and oxygen in its making, and its high acidity and alcohol protect it. It can last months once opened."
+    },
+    {
+      "type": "tip",
+      "body": "Pour leftovers into a smaller bottle so there's less air above the wine. Less air, slower decline. The spoon in the neck of a sparkling bottle is a myth; a hinged stopper works."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Leftover red wine keeps longer if stored in the ____.",
+      "options": [
+        "fridge",
+        "sun",
+        "cupboard above the oven",
+        "freezer door"
+      ],
+      "answer": "fridge",
+      "explanation": "Cold slows oxidation and bacteria. Take a red out half an hour before serving."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Oxygen slowly flattens an open wine",
+        "Keep open bottles closed and in the fridge, reds included",
+        "Fortified wines last longest; light whites and sparkling the least"
+      ]
+    }
+  ]
+}

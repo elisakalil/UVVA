@@ -1,0 +1,72 @@
+{
+  "id": "grape-tempranillo-l03",
+  "moduleId": "grape-tempranillo",
+  "order": 3,
+  "title": "Rioja and Ribera",
+  "subtitle": "Two great Spanish reds",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tempranillo in Rioja",
+    "Describe Tempranillo in Ribera del Duero",
+    "Compare the two styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rioja",
+      "body": "Rioja, along the Ebro, is Tempranillo's most famous home. It's usually blended with Garnacha, Graciano and Mazuelo. Rioja Alta and Rioja Alavesa, higher and cooler, give elegant, structured wines; Rioja Oriental, warmer, gives riper ones. Traditional Rioja ages long in American oak, giving vanilla, coconut and dill.",
+      "highlight": "Blends, American oak, elegance"
+    },
+    {
+      "type": "concept",
+      "title": "Ribera del Duero",
+      "body": "Ribera del Duero, on the high Meseta, makes mostly single-variety Tinto Fino. Vineyards at 750 to 1,000 m have hot days and very cold nights. The wines are darker, fuller and more powerful than Rioja, often aged in French oak. Vega Sicilia, since 1864, and Pingus are famous names.",
+      "highlight": "High altitude, dark and powerful"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does Ribera del Duero Tempranillo typically compare with Rioja?",
+      "options": [
+        "Darker and more powerful",
+        "Paler and lighter",
+        "Sweeter",
+        "Always white"
+      ],
+      "answer": 0,
+      "explanation": "High altitude and big diurnal range give Ribera its depth and power."
+    },
+    {
+      "type": "concept",
+      "title": "Comparing them",
+      "body": "Rioja is traditionally a blend, more about elegance and oak-aged complexity. Ribera is usually pure Tempranillo, more about fruit concentration and power. Both have modern producers using French oak and shorter ageing, and traditionalists using long ageing. Toro, further west, is even riper and more muscular.",
+      "highlight": "Rioja: elegance. Ribera: power."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are often blended with Tempranillo in Rioja?",
+      "options": [
+        "Garnacha",
+        "Graciano",
+        "Mazuelo",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Riesling isn't a Rioja grape."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rioja blends Tempranillo and often ages it in American oak",
+        "Ribera del Duero makes powerful, pure Tinto Fino at altitude",
+        "Rioja leans to elegance; Ribera and Toro to power"
+      ]
+    }
+  ]
+}

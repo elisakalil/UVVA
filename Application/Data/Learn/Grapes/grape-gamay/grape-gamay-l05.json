@@ -1,0 +1,96 @@
+{
+  "id": "grape-gamay-l05",
+  "moduleId": "grape-gamay",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Gamay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Gamay",
+    "Explain carbonic maceration",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Who banned Gamay from Burgundy in 1395?",
+      "options": [
+        "Philip the Bold",
+        "Napoleon",
+        "Louis XIV",
+        "Cosimo de' Medici"
+      ],
+      "answer": 0,
+      "explanation": "Philip the Bold, Duke of Burgundy, called it a very bad and disloyal plant."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Gamay.",
+      "pairs": [
+        {
+          "left": "Carbonic maceration",
+          "right": "Whole-berry fermentation"
+        },
+        {
+          "left": "Nouveau",
+          "right": "Released in November"
+        },
+        {
+          "left": "Granite",
+          "right": "Best soil"
+        },
+        {
+          "left": "Pinoter",
+          "right": "Ageing into Pinot-like wine"
+        }
+      ],
+      "explanation": "Gamay has its own vocabulary."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Gamay has high tannin.",
+      "answer": false,
+      "explanation": "Not true. It's low in tannin, especially with carbonic maceration."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Gamay?",
+      "options": [
+        "Juicy red fruit",
+        "Fresh acidity",
+        "Low tannin",
+        "Very deep colour"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gamay is pale to medium purple."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Gamay is best served at about ____ degrees.",
+      "options": [
+        "12 to 14",
+        "4 to 6",
+        "20 to 22",
+        "25"
+      ],
+      "answer": "12 to 14",
+      "explanation": "Slightly cool."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gamay is juicy, light and low in tannin",
+        "Beaujolais' granite gives its best wines",
+        "Carbonic maceration gives fruity, soft styles",
+        "Serve it slightly cool with bistro food"
+      ]
+    }
+  ]
+}

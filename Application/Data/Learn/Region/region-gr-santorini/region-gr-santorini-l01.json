@@ -1,0 +1,62 @@
+{
+  "id": "region-gr-santorini-l01",
+  "moduleId": "region-gr-santorini",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "A volcano in the Aegean",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Santorini's geography",
+    "Explain its volcanic soil",
+    "Explain its harsh climate"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A caldera",
+      "body": "Santorini is a Greek island in the southern Aegean, in the Cyclades. Around 1600 BC, one of the largest volcanic eruptions in human history blew out its centre, leaving a crescent-shaped island around a flooded caldera. Vineyards cover about 1,100 hectares, on the gentle outer slopes.",
+      "highlight": "Crescent around a caldera"
+    },
+    {
+      "type": "concept",
+      "title": "Aspa",
+      "body": "Santorini's soil, called aspa, is volcanic ash, pumice, lava and pieces of rock, with almost no clay or organic matter. It's very poor and drains instantly. Phylloxera can't survive in it, so vines are ungrafted and roots can be centuries old. The pumice holds a little moisture, helping roots through summer.",
+      "highlight": "Volcanic ash, no phylloxera"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Santorini's vines ungrafted?",
+      "options": [
+        "Phylloxera can't survive in volcanic aspa",
+        "Grafting is banned",
+        "Vines are replanted yearly",
+        "They're table grapes"
+      ],
+      "answer": 0,
+      "explanation": "The volcanic soil keeps phylloxera out."
+    },
+    {
+      "type": "concept",
+      "title": "Wind, sun and little rain",
+      "body": "Santorini is hot and very dry, with about 300 mm of rain a year, mostly in winter. Strong winds, including the meltemi in summer, blow constantly. Vines rely on night-time sea mist and dew for moisture. Yields are tiny, often 10 to 20 hl/ha, among the lowest in Europe.",
+      "highlight": "Dry, windy, sea mist"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Santorini gets heavy summer rain.",
+      "answer": false,
+      "explanation": "Not true. It's very dry; vines rely on sea mist and dew."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Santorini is a crescent around a volcanic caldera",
+        "Its aspa soil keeps phylloxera out; vines are ungrafted",
+        "It's dry and windy; vines rely on sea mist"
+      ]
+    }
+  ]
+}

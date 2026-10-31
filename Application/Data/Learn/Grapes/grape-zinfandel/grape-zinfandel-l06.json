@@ -1,0 +1,96 @@
+{
+  "id": "grape-zinfandel-l06",
+  "moduleId": "grape-zinfandel",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Zinfandel",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Zinfandel",
+    "Know its names and history",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its place.",
+      "pairs": [
+        {
+          "left": "Zinfandel",
+          "right": "California"
+        },
+        {
+          "left": "Primitivo",
+          "right": "Puglia"
+        },
+        {
+          "left": "Tribidrag",
+          "right": "Croatia"
+        },
+        {
+          "left": "Manduria",
+          "right": "Primitivo DOC"
+        }
+      ],
+      "explanation": "One grape, three identities."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Zinfandel's ripening tricky?",
+      "options": [
+        "It ripens unevenly",
+        "It never ripens",
+        "It ripens in spring",
+        "It has no sugar"
+      ],
+      "answer": 0,
+      "explanation": "Green and raisined berries can sit on the same bunch."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "DNA showed Zinfandel and Primitivo are the same grape.",
+      "answer": true,
+      "explanation": "Yes, in 1994."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are features of old Californian Zinfandel vineyards?",
+      "options": [
+        "Field blends",
+        "Head-trained vines",
+        "Low yields",
+        "Machine-trellised young vines"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Old vineyards are head-trained, not modern trellises."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "White Zinfandel was born from a stuck fermentation in ____.",
+      "options": [
+        "1975",
+        "1855",
+        "2001",
+        "1920"
+      ],
+      "answer": "1975",
+      "explanation": "At Sutter Home, in 1975."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Zinfandel is ripe, spicy and high in alcohol",
+        "It's Primitivo in Italy and came from Croatia",
+        "California's old vines and field blends are heritage",
+        "It suits barbecue; White Zinfandel is a separate style"
+      ]
+    }
+  ]
+}

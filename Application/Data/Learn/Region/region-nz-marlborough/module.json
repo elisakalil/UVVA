@@ -1,0 +1,26 @@
+{
+  "id": "region-nz-marlborough",
+  "kind": "region",
+  "order": 46,
+  "country": "New Zealand",
+  "countryCode": "NZ",
+  "title": "Marlborough",
+  "grapes": [
+    "Sauvignon Blanc",
+    "Pinot Noir",
+    "Chardonnay"
+  ],
+  "points": "1 0 1 2 = 4",
+  "complexity": "C",
+  "description": "Sunny days, cold nights and stony soils at the top of the South Island: the home of a world-famous Sauvignon Blanc.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-nz-marlborough-l01",
+    "region-nz-marlborough-l02",
+    "region-nz-marlborough-l03",
+    "region-nz-marlborough-l04",
+    "region-nz-marlborough-l05"
+  ]
+}

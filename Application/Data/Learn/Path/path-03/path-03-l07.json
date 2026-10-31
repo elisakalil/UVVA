@@ -1,0 +1,98 @@
+{
+  "id": "path-03-l07",
+  "moduleId": "path-03",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything from The Principal Grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise the eight principal grapes by their flavours",
+    "Explain how varieties are propagated and labelled",
+    "Predict a wine's style from grape and climate"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to a typical aroma.",
+      "pairs": [
+        {
+          "left": "Sauvignon Blanc",
+          "right": "Cut grass, gooseberry"
+        },
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Blackcurrant, cedar"
+        },
+        {
+          "left": "Syrah",
+          "right": "Black pepper, blackberry"
+        },
+        {
+          "left": "Pinot Noir",
+          "right": "Red cherry, raspberry"
+        },
+        {
+          "left": "Riesling",
+          "right": "Lime, flowers, petrol"
+        }
+      ],
+      "explanation": "Each grape has a signature you can learn to recognise."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are vineyards planted with cuttings rather than seeds?",
+      "options": [
+        "Seeds are too expensive",
+        "Vines don't breed true from seed",
+        "Seeds grow too slowly",
+        "The law forbids seeds"
+      ],
+      "answer": 1,
+      "explanation": "A seedling would be a new variety. Cuttings keep every vine identical to the parent."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinot Grigio and Pinot Gris are the same grape.",
+      "answer": true,
+      "explanation": "Yes. The Italian name usually signals a light, crisp style; the French name a richer, rounder one."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are normally deeply coloured and tannic?",
+      "options": [
+        "Cabernet Sauvignon",
+        "Syrah",
+        "Pinot Noir",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Cabernet and Syrah have thick skins. Pinot Noir is pale and low in tannin, and Riesling is white."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Merlot ripens ____ than Cabernet Sauvignon, which helps in cooler years.",
+      "options": [
+        "earlier",
+        "later",
+        "more slowly",
+        "less often"
+      ],
+      "answer": "earlier",
+      "explanation": "Merlot ripens about two weeks earlier, so it is the safer half of a Bordeaux blend in a cool year."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Eight grapes cover most wine: Chardonnay, Sauvignon Blanc, Riesling, Pinot Grigio, Cabernet, Merlot, Pinot Noir, Syrah",
+        "Varieties are copied by cuttings and named on varietal labels",
+        "Grape gives the character; climate gives the ripeness"
+      ]
+    }
+  ]
+}

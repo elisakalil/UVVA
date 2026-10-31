@@ -1,0 +1,79 @@
+{
+  "id": "path-22-l02",
+  "moduleId": "path-22",
+  "order": 2,
+  "title": "Napa and Sonoma",
+  "subtitle": "California's North Coast",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Napa Valley's climate and sub-AVAs",
+    "Describe Sonoma's diversity",
+    "Explain the role of fog"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Napa Valley",
+      "body": "Napa Valley, north of San Francisco, is about 50 km long. Cool air and fog come in from San Pablo Bay in the south, so the south, Carneros, is cool, and the north, Calistoga, is hot. Cabernet Sauvignon is the star. Sub-AVAs include Oakville, Rutherford and Stags Leap District on the valley floor, and Howell Mountain and Spring Mountain in the hills.",
+      "highlight": "Cool south, hot north, Cabernet"
+    },
+    {
+      "type": "concept",
+      "title": "Fog",
+      "body": "The cold California Current chills the Pacific. As inland valleys heat up, they draw cool, damp air and fog in through gaps in the coastal hills. Fog keeps mornings cool and preserves acidity; it burns off later, letting the sun ripen grapes. It explains why North Coast wines can be ripe yet balanced.",
+      "highlight": "Ocean fog cools the valleys"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Carneros cooler than Calistoga?",
+      "options": [
+        "Higher altitude",
+        "Closer to the cool bay and fog",
+        "More rain",
+        "Different soils"
+      ],
+      "answer": 1,
+      "explanation": "Carneros, at the southern end, gets more cool air and fog from San Pablo Bay."
+    },
+    {
+      "type": "concept",
+      "title": "Sonoma",
+      "body": "Sonoma, west of Napa, is larger and more varied. The Russian River Valley and Sonoma Coast, cooled by fog, make Pinot Noir and Chardonnay. Dry Creek Valley and Alexander Valley, warmer, make Zinfandel and Cabernet. Old-vine Zinfandel is a Sonoma speciality.",
+      "highlight": "Cool coast to warm inland valleys"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each AVA to its signature grape.",
+      "pairs": [
+        {
+          "left": "Oakville",
+          "right": "Cabernet Sauvignon"
+        },
+        {
+          "left": "Russian River Valley",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Dry Creek Valley",
+          "right": "Zinfandel"
+        },
+        {
+          "left": "Carneros",
+          "right": "Chardonnay and sparkling"
+        }
+      ],
+      "explanation": "Each part of the North Coast has its own climate and grape."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Napa runs from cool Carneros to hot Calistoga, with Cabernet the star",
+        "Pacific fog keeps North Coast wines fresh",
+        "Sonoma ranges from cool Pinot Noir to warm Zinfandel"
+      ]
+    }
+  ]
+}

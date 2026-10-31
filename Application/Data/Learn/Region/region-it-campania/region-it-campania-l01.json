@@ -1,0 +1,62 @@
+{
+  "id": "region-it-campania-l01",
+  "moduleId": "region-it-campania",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Volcanoes and ancient vines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Campania's geography",
+    "Explain the role of volcanic soils",
+    "Explain its long history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Around Naples",
+      "body": "Campania, in southern Italy, runs from the coast around Naples and the Amalfi coast inland to the hills of Irpinia. Its key wine areas are inland, around Avellino, at 300 to 700 m. Mount Vesuvius and the Campi Flegrei near Naples are volcanic; Irpinia has volcanic ash over clay and limestone.",
+      "highlight": "Irpinia's hills, Vesuvius"
+    },
+    {
+      "type": "concept",
+      "title": "Volcanic and cool",
+      "body": "Volcanic soils drain well and are rich in minerals; in sandy volcanic areas phylloxera struggled, so some ungrafted vines survive. Inland Irpinia, despite being in the south, has a cool, almost continental climate with snow in winter and late harvests, sometimes in November. That keeps acidity high.",
+      "highlight": "Inland Irpinia is surprisingly cool"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Irpinia make fresh wines in southern Italy?",
+      "options": [
+        "Altitude gives a cool, almost continental climate",
+        "It's on the coast",
+        "It's very rainy in summer",
+        "It's irrigated"
+      ],
+      "answer": 0,
+      "explanation": "Height and inland position cool it down."
+    },
+    {
+      "type": "concept",
+      "title": "Ancient wines",
+      "body": "Campania was a centre of Roman wine. Falernian, from northern Campania, was the most famous wine of ancient Rome. The Greeks brought vines here; Greco's name suggests that heritage. Pompeii, destroyed by Vesuvius in 79 AD, was a wine-trading town, and vines have been replanted inside its ruins.",
+      "highlight": "Falernian, Rome's famous wine"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Falernian, from Campania, was ancient Rome's most famous wine.",
+      "answer": true,
+      "explanation": "Yes. It was praised by Roman writers."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Campania's best wines come from Irpinia's hills",
+        "Volcanic soils and altitude give freshness",
+        "It was a centre of Roman wine"
+      ]
+    }
+  ]
+}

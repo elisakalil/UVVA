@@ -1,0 +1,77 @@
+{
+  "id": "region-cl-maipo-valley-l02",
+  "moduleId": "region-cl-maipo-valley",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Cabernet's Chilean home",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Maipo Cabernet Sauvignon",
+    "Explain Carmenère's story",
+    "Name other grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cabernet Sauvignon",
+      "body": "Cabernet Sauvignon is Maipo's signature: ripe blackcurrant and cherry, often with a distinctive mint or eucalyptus note, firm but ripe tannins and fresh acidity. Many Chilean icon wines, like Almaviva, a Concha y Toro and Mouton Rothschild partnership, and Don Melchor, are Maipo Cabernets.",
+      "highlight": "Blackcurrant with mint"
+    },
+    {
+      "type": "concept",
+      "title": "Carmenère",
+      "body": "Carmenère, brought from Bordeaux in the 19th century, was mixed with Merlot for over a century. In 1994, French ampelographer Jean-Michel Boursiquot identified it. It needs a long, warm season; in Maipo it gives dark fruit, spice and soft tannins, with a green pepper note if unripe. Merlot, Syrah and Cabernet Franc are also grown.",
+      "highlight": "Carmenère, identified in 1994"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to Maipo.",
+      "pairs": [
+        {
+          "left": "Almaviva",
+          "right": "Franco-Chilean icon"
+        },
+        {
+          "left": "Don Melchor",
+          "right": "Maipo Cabernet icon"
+        },
+        {
+          "left": "Carmenère",
+          "right": "Identified in 1994"
+        },
+        {
+          "left": "Concha y Toro",
+          "right": "Chile's largest wine company"
+        }
+      ],
+      "explanation": "Maipo's icons are mostly Cabernet."
+    },
+    {
+      "type": "tip",
+      "body": "The mint note in Maipo Cabernet is linked by some to eucalyptus trees nearby and by others to the grape's own compounds."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is Maipo's signature?",
+      "options": [
+        "Cabernet Sauvignon",
+        "Pinot Noir",
+        "Riesling",
+        "Torrontés"
+      ],
+      "answer": 0,
+      "explanation": "Its Cabernet built Chile's reputation."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Sauvignon is Maipo's signature, often minty",
+        "Carmenère was identified in 1994",
+        "Icons like Almaviva and Don Melchor are Maipo Cabernets"
+      ]
+    }
+  ]
+}

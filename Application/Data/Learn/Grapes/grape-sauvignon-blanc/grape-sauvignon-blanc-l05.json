@@ -1,0 +1,62 @@
+{
+  "id": "grape-sauvignon-blanc-l05",
+  "moduleId": "grape-sauvignon-blanc",
+  "order": 5,
+  "title": "Bordeaux and Fumé Blanc",
+  "subtitle": "Oaked and blended",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Bordeaux's white blends",
+    "Explain Fumé Blanc",
+    "Describe sweet Sauvignon"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bordeaux",
+      "body": "In Bordeaux, Sauvignon Blanc is blended with Sémillon, sometimes Muscadelle. Sauvignon brings acidity and aroma; Sémillon body and texture. Pessac-Léognan makes the finest dry whites, often fermented and aged in oak, which can age 20 years. Entre-Deux-Mers makes fresh, unoaked versions. Sauvignon is also part of sweet Sauternes.",
+      "highlight": "Pessac-Léognan: oaked blends"
+    },
+    {
+      "type": "concept",
+      "title": "Fumé Blanc",
+      "body": "In 1966, Robert Mondavi in California named his oak-aged Sauvignon Blanc Fumé Blanc, borrowing from Pouilly-Fumé, to sell a then-unpopular grape. It worked. Today Fumé Blanc in the US often, but not always, means an oaked Sauvignon. The term isn't legally defined.",
+      "highlight": "Mondavi's 1966 marketing idea"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Who created the name Fumé Blanc?",
+      "options": [
+        "Robert Mondavi",
+        "Didier Dagueneau",
+        "Cloudy Bay",
+        "Château d'Yquem"
+      ],
+      "answer": 0,
+      "explanation": "Mondavi borrowed from Pouilly-Fumé in 1966."
+    },
+    {
+      "type": "concept",
+      "title": "Sweet and other styles",
+      "body": "In Sauternes, Sauvignon adds acidity and freshness to botrytised Sémillon. In Styria, Austria, and Friuli, Italy, Sauvignon is made in a mineral, sometimes oak-aged style. Chile's Leyda and South Africa's Elgin give fresh, coastal versions.",
+      "highlight": "Sauternes, Styria, Friuli"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Fumé Blanc is a legally defined style.",
+      "answer": false,
+      "explanation": "Not true. It's a marketing term, often but not always meaning an oaked Sauvignon."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bordeaux blends Sauvignon with Sémillon, often oaked",
+        "Fumé Blanc was Mondavi's 1966 marketing name",
+        "Sauvignon adds freshness to Sauternes"
+      ]
+    }
+  ]
+}

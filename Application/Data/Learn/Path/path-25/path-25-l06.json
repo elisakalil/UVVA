@@ -1,0 +1,73 @@
+{
+  "id": "path-25-l06",
+  "moduleId": "path-25",
+  "order": 6,
+  "title": "Cava, crémant and the rest",
+  "subtitle": "Traditional method beyond Champagne",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cava's rules and grapes",
+    "Describe France's crémants",
+    "Name other leading sparkling regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cava",
+      "body": "Cava is Spain's traditional method wine, about 95% from Catalonia's Penedès. Macabeo, Xarel-lo and Parellada are the main grapes; Chardonnay and Pinot Noir are allowed. The 2020 rules created zones and a top tier, Cava de Paraje Calificado, from single estates aged at least 36 months. Corpinnat producers left the DO for stricter organic rules.",
+      "highlight": "Penedès, Xarel-lo, Paraje Calificado"
+    },
+    {
+      "type": "concept",
+      "title": "Crémant",
+      "body": "Crémant is France's traditional method wine outside Champagne, made in eight AOPs, including Alsace, Burgundy, Loire, Jura, Limoux and Bordeaux. Rules require whole bunch pressing, a limit on juice yield, and at least 9 months on lees. Each uses local grapes: Chenin Blanc in the Loire, Pinot Blanc and Riesling in Alsace, Chardonnay and Pinot Noir in Burgundy.",
+      "highlight": "Eight crémant AOPs, 9 months on lees"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each sparkling wine to its country.",
+      "pairs": [
+        {
+          "left": "Cava",
+          "right": "Spain"
+        },
+        {
+          "left": "Crémant de Loire",
+          "right": "France"
+        },
+        {
+          "left": "Franciacorta",
+          "right": "Italy"
+        },
+        {
+          "left": "Cap Classique",
+          "right": "South Africa"
+        }
+      ],
+      "explanation": "The traditional method is used worldwide under many names."
+    },
+    {
+      "type": "concept",
+      "title": "Other leaders",
+      "body": "Franciacorta, in Lombardy, needs 18 months on lees for non-vintage and is mainly Chardonnay and Pinot Noir. Trentodoc, in Trentino, is mountain-grown. England's south, on chalk similar to Champagne's, has become a serious producer. South Africa's Méthode Cap Classique and Tasmania also make fine examples.",
+      "highlight": "Franciacorta, Trentodoc, England, Tasmania"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Crémant must spend at least 9 months on its lees.",
+      "answer": true,
+      "explanation": "Yes. That's the minimum for all French crémants."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cava is mostly from Penedès, with a new single estate tier",
+        "Crémant is made in eight French AOPs with local grapes",
+        "Franciacorta, Trentodoc, England and Tasmania also excel"
+      ]
+    }
+  ]
+}

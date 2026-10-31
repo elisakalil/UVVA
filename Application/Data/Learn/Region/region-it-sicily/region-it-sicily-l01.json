@@ -1,0 +1,62 @@
+{
+  "id": "region-it-sicily-l01",
+  "moduleId": "region-it-sicily",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Sun, sea and a volcano",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sicily's geography",
+    "Explain its climate",
+    "Explain its transformation"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A large island",
+      "body": "Sicily is the largest island in the Mediterranean, at the toe of Italy, with about 98,000 hectares of vines, among Italy's largest wine regions. It has hills, plains, coasts and Mount Etna, Europe's highest active volcano, in the east. Smaller islands like Pantelleria and the Aeolian Islands also make wine.",
+      "highlight": "Largest Mediterranean island"
+    },
+    {
+      "type": "concept",
+      "title": "Hot, dry and windy",
+      "body": "The climate is Mediterranean: hot, dry summers, mild winters and plenty of sun. Constant winds and sea breezes keep vines healthy, so organic farming is common; Sicily has one of Italy's largest organic vineyard areas. Altitude, on Etna and inland hills, brings freshness. Drought is the main challenge.",
+      "highlight": "Wind and sun keep vines healthy"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is organic farming common in Sicily?",
+      "options": [
+        "Dry, windy conditions reduce disease",
+        "It's required by law",
+        "It rains constantly",
+        "There are no pests"
+      ],
+      "answer": 0,
+      "explanation": "Wind and dry air keep vines healthy, needing fewer sprays."
+    },
+    {
+      "type": "concept",
+      "title": "From bulk to quality",
+      "body": "For centuries, Sicily made bulk wine, often shipped north to blend, and Marsala, a fortified wine developed by English merchants from 1773. Since the 1990s, producers have focused on native grapes and quality. The Sicilia DOC, created in 2011, covers the whole island; Cerasuolo di Vittoria is its only DOCG.",
+      "highlight": "Sicilia DOC since 2011"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Marsala was developed by English merchants.",
+      "answer": true,
+      "explanation": "Yes, from 1773, by John Woodhouse."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sicily is the Mediterranean's largest island",
+        "Its dry, windy climate suits organic farming",
+        "It moved from bulk wine to quality native grapes"
+      ]
+    }
+  ]
+}

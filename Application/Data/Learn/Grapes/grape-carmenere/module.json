@@ -1,0 +1,27 @@
+{
+  "id": "grape-carmenere",
+  "kind": "grape",
+  "order": 10,
+  "color": "red",
+  "title": "Carmenère",
+  "aliases": [
+    "Grande Vidure"
+  ],
+  "origin": "France",
+  "countries": [
+    "Chile"
+  ],
+  "points": "0 1 0 2 = 3",
+  "complexity": "C",
+  "description": "A forgotten Bordeaux grape, rediscovered in Chile in 1994, with dark fruit, spice and a hint of green pepper.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-carmenere-l01",
+    "grape-carmenere-l02",
+    "grape-carmenere-l03",
+    "grape-carmenere-l04",
+    "grape-carmenere-l05"
+  ]
+}

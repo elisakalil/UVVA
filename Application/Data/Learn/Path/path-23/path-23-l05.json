@@ -1,0 +1,62 @@
+{
+  "id": "path-23-l05",
+  "moduleId": "path-23",
+  "order": 5,
+  "title": "Uruguay and Brazil",
+  "subtitle": "South America's Atlantic side",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Uruguay's climate and Tannat",
+    "Describe Brazil's wine regions",
+    "Compare them with the Andean countries"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Uruguay",
+      "body": "Uruguay has a humid, maritime climate influenced by the Atlantic and the Río de la Plata. Tannat, brought by Basque immigrants in the 1870s, is its national grape, giving dark, tannic reds that are often softer than in France's Madiran. Canelones, near Montevideo, is the main region; Maldonado, on the coast, makes fresh whites like Albariño.",
+      "highlight": "Tannat, humid and maritime"
+    },
+    {
+      "type": "concept",
+      "title": "Brazil",
+      "body": "Brazil's main region is Serra Gaúcha, in the far south, settled by Italian immigrants. It's wet and humid, which suits early-picked grapes for sparkling wine, now Brazil's strength. Vale dos Vinhedos was its first GI. In the north-east, the São Francisco Valley, near the equator, harvests twice a year with irrigation.",
+      "highlight": "Sparkling in Serra Gaúcha"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is sparkling wine well suited to Serra Gaúcha?",
+      "options": [
+        "High altitude only",
+        "Its humid climate suits early-picked, high-acid grapes",
+        "It's a desert",
+        "It has very hot, dry summers"
+      ],
+      "answer": 1,
+      "explanation": "Rain and humidity make full ripeness hard; early picking for sparkling wine keeps acidity and avoids rot."
+    },
+    {
+      "type": "concept",
+      "title": "Different from the Andes",
+      "body": "Unlike Chile and Argentina, Uruguay and southern Brazil have rain in the growing season, more like Bordeaux than Mendoza. Growers fight disease rather than drought. Their wines tend to be lower in alcohol and fresher, a counterpoint to the ripe, sunny Andean style.",
+      "highlight": "Rain instead of irrigation"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Uruguay's national grape is Tannat.",
+      "answer": true,
+      "explanation": "Yes. Basque immigrants brought it in the 1870s, and it covers about a quarter of the vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Uruguay's humid climate gives Tannat a softer style",
+        "Brazil's strength is sparkling wine from Serra Gaúcha",
+        "The Atlantic side fights rain, not drought"
+      ]
+    }
+  ]
+}

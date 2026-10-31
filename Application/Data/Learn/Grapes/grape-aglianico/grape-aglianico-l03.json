@@ -1,0 +1,79 @@
+{
+  "id": "grape-aglianico-l03",
+  "moduleId": "grape-aglianico",
+  "order": 3,
+  "title": "Taurasi and Vulture",
+  "subtitle": "The great Aglianico wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Taurasi",
+    "Describe Aglianico del Vulture",
+    "Compare the two"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Taurasi",
+      "body": "Taurasi, in Irpinia, Campania, became Southern Italy's first DOCG in 1993. It must be at least 85% Aglianico and age at least three years, one in wood; Riserva needs four years, 18 months in wood. The wines are powerful, tannic and long-lived, with black fruit, tar and earth. Mastroberardino kept the tradition alive after the war.",
+      "highlight": "First southern DOCG, 1993"
+    },
+    {
+      "type": "concept",
+      "title": "Aglianico del Vulture",
+      "body": "On Monte Vulture in Basilicata, vineyards sit at 200 to 800 m on volcanic tuff. Aglianico del Vulture is the DOC; Aglianico del Vulture Superiore became DOCG in 2010, with longer ageing. The style is often slightly fresher and more mineral than Taurasi, with the same firm structure.",
+      "highlight": "Vulture: volcanic and fresh"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its region.",
+      "pairs": [
+        {
+          "left": "Taurasi",
+          "right": "Irpinia, Campania"
+        },
+        {
+          "left": "Aglianico del Vulture",
+          "right": "Basilicata"
+        },
+        {
+          "left": "Aglianico del Taburno",
+          "right": "Benevento, Campania"
+        },
+        {
+          "left": "Mastroberardino",
+          "right": "Kept Taurasi alive"
+        }
+      ],
+      "explanation": "Aglianico's great wines come from inland hills."
+    },
+    {
+      "type": "concept",
+      "title": "Comparing them",
+      "body": "Both are serious, age-worthy wines. Taurasi is often fuller and more powerful, with more oak influence. Vulture can be leaner and more mineral, with high acidity. Both benefit from 10 years or more in bottle and are best decanted when young.",
+      "highlight": "Taurasi fuller; Vulture leaner"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Taurasi became southern Italy's first ____ in 1993.",
+      "options": [
+        "DOCG",
+        "IGT",
+        "DOC",
+        "PDO"
+      ],
+      "answer": "DOCG",
+      "explanation": "Taurasi was the first DOCG of Italy's south."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Taurasi is Campania's DOCG Aglianico, powerful and long-lived",
+        "Aglianico del Vulture grows on an extinct volcano",
+        "Both need years in bottle and suit decanting"
+      ]
+    }
+  ]
+}

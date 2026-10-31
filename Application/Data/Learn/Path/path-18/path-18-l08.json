@@ -1,0 +1,99 @@
+{
+  "id": "path-18-l08",
+  "moduleId": "path-18",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from France",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how French appellations work",
+    "Compare France's main regions",
+    "Link grapes to their French homes"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its main grape.",
+      "pairs": [
+        {
+          "left": "Chablis",
+          "right": "Chardonnay"
+        },
+        {
+          "left": "Sancerre",
+          "right": "Sauvignon Blanc"
+        },
+        {
+          "left": "Côte-Rôtie",
+          "right": "Syrah"
+        },
+        {
+          "left": "Pomerol",
+          "right": "Merlot"
+        },
+        {
+          "left": "Bandol",
+          "right": "Mourvèdre"
+        }
+      ],
+      "explanation": "French labels name the place; knowing the grapes unlocks them."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which French region usually names the grape on the label?",
+      "options": [
+        "Burgundy",
+        "Alsace",
+        "Bordeaux",
+        "Rhône"
+      ],
+      "answer": 1,
+      "explanation": "Alsace names the variety, like Germany."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are part of Burgundy?",
+      "options": [
+        "Chablis",
+        "Côte de Nuits",
+        "Mâconnais",
+        "Médoc"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Médoc is in Bordeaux."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Bordeaux's Left Bank favours Cabernet Sauvignon on gravel soils.",
+      "answer": true,
+      "explanation": "Yes. Gravel drains and stores heat, helping a late-ripening grape."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Loire areas from the Atlantic inland.",
+      "items": [
+        "Pays Nantais",
+        "Anjou-Saumur",
+        "Touraine",
+        "Central Vineyards"
+      ],
+      "explanation": "The Loire flows west to the Atlantic; the Central Vineyards are furthest upstream."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "AOC rules tie wine to place, with nested levels",
+        "Bordeaux blends; Burgundy ranks climats",
+        "The Loire, Alsace and the Rhône each have their own grapes",
+        "The south has shifted from bulk to quality, with Provence leading rosé"
+      ]
+    }
+  ]
+}

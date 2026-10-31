@@ -1,0 +1,70 @@
+{
+  "id": "grape-tempranillo-l06",
+  "moduleId": "grape-tempranillo",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Tempranillo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Tempranillo with food",
+    "Serve it well",
+    "Know how long it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Spanish table",
+      "body": "Tempranillo suits roast lamb, especially Castilian lechazo, suckling lamb, a classic with Ribera. Rioja goes with grilled lamb chops over vine cuttings, chorizo, jamón ibérico and Manchego cheese. Aged Gran Reserva suits mushrooms and game. Joven suits tapas.",
+      "highlight": "Lamb, jamón, Manchego"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees. Joven within two years; Crianza within five; Reserva five to fifteen; Gran Reserva 15 to 30 years or more. Old Rioja can throw sediment; decant gently. Ribera's big young wines benefit from air.",
+      "highlight": "Joven young; Gran Reserva decades"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Castilian dish is a classic with Ribera del Duero?",
+      "options": [
+        "Lechazo, roast suckling lamb",
+        "Sushi",
+        "Fish and chips",
+        "Thai green curry"
+      ],
+      "answer": 0,
+      "explanation": "Roast suckling lamb in wood ovens is Ribera's traditional match."
+    },
+    {
+      "type": "tip",
+      "body": "A Rioja Reserva with jamón ibérico is a simple, classic Spanish pairing. The ham's fat and salt soften the wine's tannin."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit aged Tempranillo?",
+      "options": [
+        "Roast lamb",
+        "Manchego cheese",
+        "Wild mushrooms",
+        "Lemon sorbet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sorbet is too sweet and acidic for a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tempranillo suits lamb, jamón and Manchego",
+        "Serve at 16 to 18 degrees",
+        "Gran Reservas age 15 to 30 years or more"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "path-05-l01",
+  "moduleId": "path-05",
+  "order": 1,
+  "title": "Storing a bottle",
+  "subtitle": "What wine needs while it waits",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the four conditions for good storage",
+    "Explain why bottles are stored on their side",
+    "Decide which wines are worth keeping"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cool, dark, still, steady",
+      "body": "Wine keeps best somewhere cool, ideally 10 to 15 degrees Celsius, dark, free of vibration and with a steady temperature. A cupboard away from the oven is better than the top of the fridge or a sunny shelf. Strong light, especially sunlight, can damage wine in days.",
+      "highlight": "Cool, dark, still, steady"
+    },
+    {
+      "type": "concept",
+      "title": "Why heat and swings hurt",
+      "body": "Heat speeds up the chemistry of ageing, so a wine kept at 25 degrees ages several times faster and can taste cooked. Swings in temperature make the wine expand and contract, pushing air past the cork. Light, especially ultraviolet, breaks down compounds in the wine and causes a fault called light strike, which smells of cabbage.",
+      "highlight": "Heat and light age wine too fast"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these are good conditions for storing wine?",
+      "options": [
+        "A steady 12 degrees",
+        "A sunny windowsill",
+        "Darkness",
+        "Above the oven",
+        "Little vibration"
+      ],
+      "answers": [
+        0,
+        2,
+        4
+      ],
+      "explanation": "Cool, steady, dark and still. Sun and the oven bring heat and light, the two main enemies."
+    },
+    {
+      "type": "concept",
+      "title": "Side or standing",
+      "body": "Bottles with natural cork are stored on their side so the wine keeps the cork moist; a dry cork shrinks and lets air in. Screw caps can stand up. And most wine is made to drink within a year or two. Only a small share, such as good Bordeaux or vintage Port, improves for decades.",
+      "highlight": "Cork on its side; screw cap any way"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most wines improve if you keep them for ten years.",
+      "answer": false,
+      "explanation": "Not true. Most wine is made to be drunk young, within a year or two. Only wines with enough concentration, acidity or tannin improve over many years."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Store wine cool, dark, still and at a steady temperature",
+        "Heat, light and temperature swings damage wine",
+        "Lay corked bottles on their side, and drink most wines young"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "grape-grenache",
+  "kind": "grape",
+  "order": 23,
+  "color": "red",
+  "title": "Grenache",
+  "aliases": [
+    "Garnacha",
+    "Cannonau",
+    "Garnatxa"
+  ],
+  "origin": "Spain",
+  "countries": [
+    "Spain",
+    "France",
+    "Australia"
+  ],
+  "points": "2 2 2 1 = 7",
+  "complexity": "A",
+  "description": "Also called Garnacha in Spain and Cannonau in Sardinia. Red fruit, spice and warmth, from Châteauneuf to Priorat.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-grenache-l01",
+    "grape-grenache-l02",
+    "grape-grenache-l03",
+    "grape-grenache-l04",
+    "grape-grenache-l05",
+    "grape-grenache-l06",
+    "grape-grenache-l07"
+  ]
+}

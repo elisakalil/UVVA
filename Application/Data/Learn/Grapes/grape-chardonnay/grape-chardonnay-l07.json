@@ -1,0 +1,95 @@
+{
+  "id": "grape-chardonnay-l07",
+  "moduleId": "grape-chardonnay",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Chardonnay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Chardonnay's styles",
+    "Compare its regions",
+    "Explain winemaking's effect"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Chablis",
+          "right": "Lean and mineral"
+        },
+        {
+          "left": "Meursault",
+          "right": "Rich and nutty"
+        },
+        {
+          "left": "Blanc de Blancs",
+          "right": "Sparkling, Chardonnay only"
+        },
+        {
+          "left": "Warm-climate Chardonnay",
+          "right": "Tropical fruit"
+        }
+      ],
+      "explanation": "Chardonnay takes many forms."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does malolactic conversion add to Chardonnay?",
+      "options": [
+        "Buttery notes and softer acidity",
+        "Tannin",
+        "Sweetness",
+        "Red colour"
+      ],
+      "answer": 0,
+      "explanation": "Lactic acid and diacetyl give butter and softness."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Chablis is aged in new oak.",
+      "answer": false,
+      "explanation": "Not true. Most Chablis is unoaked; some Grand Crus use oak."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Chardonnay's parents?",
+      "options": [
+        "Pinot Noir",
+        "Gouais Blanc",
+        "Sauvignon Blanc",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Chardonnay is a cross of Pinot Noir and Gouais Blanc."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Chablis' famous soil is called ____.",
+      "options": [
+        "Kimmeridgian",
+        "Llicorella",
+        "Terra rossa",
+        "Galestro"
+      ],
+      "answer": "Kimmeridgian",
+      "explanation": "Kimmeridgian limestone and clay with oyster fossils."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chardonnay is neutral, reflecting climate and winemaking",
+        "Chablis, the Côte de Beaune and Champagne are its benchmarks",
+        "Oak, malolactic and lees shape its richness",
+        "It suits everything from oysters to lobster"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "path-06-l06",
+  "moduleId": "path-06",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Food and Wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Predict how food changes wine",
+    "Avoid the main clashes",
+    "Build a pairing for a dish"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each food element to its effect on wine.",
+      "pairs": [
+        {
+          "left": "Sweetness",
+          "right": "Wine seems sourer"
+        },
+        {
+          "left": "Umami",
+          "right": "Wine seems more bitter"
+        },
+        {
+          "left": "Salt",
+          "right": "Wine seems softer"
+        },
+        {
+          "left": "Chilli",
+          "right": "Alcohol feels hotter"
+        }
+      ],
+      "explanation": "Sweetness, umami and chilli make wine harder; salt and acidity soften it."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is best with a sweet dessert?",
+      "options": [
+        "A brut Champagne",
+        "A wine at least as sweet as the dessert",
+        "A tannic red",
+        "A dry white"
+      ],
+      "answer": 1,
+      "explanation": "Sweet food makes dry wine taste thin and sour."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "High acidity and bubbles help cut through fried and fatty food.",
+      "answer": true,
+      "explanation": "Yes. They work like a squeeze of lemon, refreshing the palate."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines suit a spicy curry?",
+      "options": [
+        "Off-dry Riesling",
+        "Gewürztraminer",
+        "15% oaked Shiraz",
+        "Tannic young Cabernet"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Aromatic, off-dry, lower-alcohol whites calm heat. Big, tannic, high-alcohol reds burn."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "When choosing a wine, focus on the sauce more than the ____.",
+      "options": [
+        "protein",
+        "plate",
+        "glass",
+        "colour"
+      ],
+      "answer": "protein",
+      "explanation": "The sauce sets the dominant elements, like acid, fat or sweetness."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sweetness and umami harden wine; salt and acidity soften it",
+        "Chilli needs lower alcohol and a touch of sugar",
+        "Match weight, then match or contrast the dominant elements",
+        "Tannin and fat, acidity and frying, sweet and salty work well together"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "region-fr-southern-rhone-l02",
+  "moduleId": "region-fr-southern-rhone",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Grenache and its partners",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the southern Rhône's main grapes",
+    "Explain GSM blends",
+    "Name its white grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Grenache leads",
+      "body": "Grenache is the main red grape, loving heat and drought, giving red fruit, spice and high alcohol. Syrah adds colour and structure; Mourvèdre adds tannin and savoury, gamey notes; Cinsault adds perfume and lightness, especially in rosé. Carignan also appears. Blends of Grenache, Syrah and Mourvèdre are called GSM.",
+      "highlight": "Grenache, Syrah, Mourvèdre, Cinsault"
+    },
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "White grapes include Grenache Blanc, Clairette, Roussanne, Marsanne, Bourboulenc and Viognier. White wines are a small share, about 7%, but growing. They're rich, with stone fruit, herbs and moderate acidity. Châteauneuf-du-Pape Blanc is the most famous.",
+      "highlight": "Grenache Blanc, Clairette, Roussanne"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Grenache",
+          "right": "Red fruit and alcohol"
+        },
+        {
+          "left": "Syrah",
+          "right": "Colour and structure"
+        },
+        {
+          "left": "Mourvèdre",
+          "right": "Tannin and gamey notes"
+        },
+        {
+          "left": "Cinsault",
+          "right": "Perfume, rosé"
+        }
+      ],
+      "explanation": "Southern Rhône wines are blends."
+    },
+    {
+      "type": "tip",
+      "body": "Côtes du Rhône red must be mainly Grenache, Syrah and Mourvèdre. It's one of France's best everyday reds."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does GSM stand for?",
+      "options": [
+        "Grenache",
+        "Syrah",
+        "Mourvèdre",
+        "Sauvignon"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "GSM is Grenache, Syrah and Mourvèdre."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grenache leads, with Syrah, Mourvèdre and Cinsault",
+        "GSM blends balance fruit, colour and structure",
+        "Whites are a small, growing share"
+      ]
+    }
+  ]
+}

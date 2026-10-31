@@ -1,0 +1,73 @@
+{
+  "id": "region-fr-champagne-l04",
+  "moduleId": "region-fr-champagne",
+  "order": 4,
+  "title": "Houses and growers",
+  "subtitle": "Who makes Champagne",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the role of the houses",
+    "Explain grower Champagne",
+    "Read the label codes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The houses",
+      "body": "Large houses, or maisons, like Moët & Chandon, Veuve Clicquot, Bollinger and Krug, own some vineyards but buy most grapes from about 16,000 growers. They blend across villages and years for a consistent house style, especially in non-vintage. Houses make about two-thirds of Champagne's sales.",
+      "highlight": "Houses blend for consistency"
+    },
+    {
+      "type": "concept",
+      "title": "Growers",
+      "body": "Growers who make and sell their own Champagne are called récoltant-manipulants, labelled RM. Since the 1990s, grower Champagne has become popular for showing a single village or vineyard. Co-operatives, CM, pool members' grapes. Label codes tell you who made the wine.",
+      "highlight": "RM grower; NM house; CM co-op"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each label code to its meaning.",
+      "pairs": [
+        {
+          "left": "NM",
+          "right": "House buying grapes"
+        },
+        {
+          "left": "RM",
+          "right": "Grower's own wine"
+        },
+        {
+          "left": "CM",
+          "right": "Co-operative"
+        },
+        {
+          "left": "MA",
+          "right": "Buyer's own brand"
+        }
+      ],
+      "explanation": "The small code on the label reveals the producer type."
+    },
+    {
+      "type": "concept",
+      "title": "The échelle des crus",
+      "body": "Champagne's villages were once ranked on a scale, the échelle des crus, which set grape prices: 17 villages were Grand Cru, 100%, and 42 Premier Cru, 90 to 99%. The price system ended in 2010, but the names still appear on labels.",
+      "highlight": "17 Grand Cru villages"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Champagne is sold by large houses that buy grapes.",
+      "answer": true,
+      "explanation": "Yes. Houses account for about two-thirds of sales."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Houses blend grapes from many growers for a house style",
+        "Grower Champagne, RM, shows single villages",
+        "17 villages are Grand Cru"
+      ]
+    }
+  ]
+}

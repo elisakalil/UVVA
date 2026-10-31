@@ -1,0 +1,79 @@
+{
+  "id": "region-pt-madeira-l04",
+  "moduleId": "region-pt-madeira",
+  "order": 4,
+  "title": "The four noble grapes",
+  "subtitle": "From Sercial to Malmsey",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe each noble grape's style",
+    "Explain Madeira's age categories",
+    "Explain Frasqueira and Colheita"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Four styles",
+      "body": "Sercial, grown at higher, cooler sites, gives dry, high-acid wines with citrus and almonds. Verdelho gives medium dry wines, with dried fruit and smoke. Boal gives medium sweet wines, with caramel and raisin. Malvasia, or Malmsey, gives rich, sweet wines, with toffee, coffee and orange peel. All keep high acidity.",
+      "highlight": "Dry to rich, always acidic"
+    },
+    {
+      "type": "concept",
+      "title": "Age categories",
+      "body": "Madeira labels show age: 3 years, Finest; 5 years, Reserve; 10 years, Special Reserve; 15 years, Extra Reserve; and 20, 30, 40, 50 years and over. Colheita, or Harvest, comes from a single year, aged at least five years. Frasqueira, or Vintage, comes from a single noble grape and year, aged at least 20 years in cask.",
+      "highlight": "Frasqueira: at least 20 years"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its style.",
+      "pairs": [
+        {
+          "left": "Sercial",
+          "right": "Dry, citrus, almond"
+        },
+        {
+          "left": "Verdelho",
+          "right": "Medium dry, smoky"
+        },
+        {
+          "left": "Boal",
+          "right": "Medium sweet, caramel"
+        },
+        {
+          "left": "Malvasia",
+          "right": "Rich, toffee, coffee"
+        }
+      ],
+      "explanation": "Each noble grape has its style."
+    },
+    {
+      "type": "concept",
+      "title": "Old Madeira",
+      "body": "Some of the oldest wines still drinkable come from Madeira: Frasqueiras from the 19th century appear at auction and are often still vibrant. Producers like Blandy's, Barbeito, Henriques & Henriques and D'Oliveiras keep stocks of old wine. Rainwater, a lighter style, was popular in the US.",
+      "highlight": "19th century wines still alive"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A Frasqueira Madeira must age at least ____ years in cask.",
+      "options": [
+        "20",
+        "5",
+        "3",
+        "100"
+      ],
+      "answer": "20",
+      "explanation": "Twenty years, from a single grape and year."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sercial, Verdelho, Boal and Malvasia run from dry to rich",
+        "Labels show age from 3 years to Frasqueira",
+        "Old Madeira can stay vibrant for centuries"
+      ]
+    }
+  ]
+}

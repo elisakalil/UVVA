@@ -1,0 +1,77 @@
+{
+  "id": "region-za-stellenbosch-l02",
+  "moduleId": "region-za-stellenbosch",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Cabernet, Pinotage and Chenin",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Stellenbosch's reds",
+    "Describe its whites",
+    "Explain Cape blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Cabernet Sauvignon is Stellenbosch's most important red, giving structured wines with blackcurrant, cedar, herbs and fresh acidity, often compared with Bordeaux. Merlot, Cabernet Franc, Shiraz and Pinotage also thrive. Bordeaux-style blends are a strength; estates like Kanonkop, Meerlust and Rustenberg are famous.",
+      "highlight": "Cabernet and Bordeaux blends"
+    },
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "Chenin Blanc, called Steen locally, is widely planted, giving everything from fresh, fruity wines to rich, oaked old-vine wines. Sauvignon Blanc and Chardonnay thrive on cooler, higher sites. South Africa has more Chenin Blanc than any other country.",
+      "highlight": "Chenin Blanc, or Steen"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Most important red"
+        },
+        {
+          "left": "Pinotage",
+          "right": "South Africa's own cross"
+        },
+        {
+          "left": "Chenin Blanc",
+          "right": "Steen, widely planted"
+        },
+        {
+          "left": "Chardonnay",
+          "right": "Cooler, higher sites"
+        }
+      ],
+      "explanation": "Stellenbosch grows reds and whites."
+    },
+    {
+      "type": "tip",
+      "body": "Look for wards on labels, like Simonsberg-Stellenbosch or Helderberg. They help you find specific sites within the region."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Chenin Blanc's traditional South African name?",
+      "options": [
+        "Steen",
+        "Hermitage",
+        "Stein",
+        "Blanc"
+      ],
+      "answer": 0,
+      "explanation": "Steen."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Sauvignon and Bordeaux blends lead the reds",
+        "Chenin Blanc, or Steen, is widely planted",
+        "Sauvignon and Chardonnay thrive on cooler sites"
+      ]
+    }
+  ]
+}

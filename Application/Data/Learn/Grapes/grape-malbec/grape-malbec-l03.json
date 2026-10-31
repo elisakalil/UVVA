@@ -1,0 +1,71 @@
+{
+  "id": "grape-malbec-l03",
+  "moduleId": "grape-malbec",
+  "order": 3,
+  "title": "Cahors and Mendoza",
+  "subtitle": "Two homes, two styles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cahors Malbec",
+    "Describe Mendoza Malbec",
+    "Compare the two styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cahors",
+      "body": "Cahors, on the Lot river, must be at least 70% Malbec. Vineyards grow on river terraces and on the limestone plateau, the causse. The wines are dark, firm and often more tannic and savoury than Argentina's, with black fruit, earth and spice. In the Middle Ages they were called the black wine and shipped to London.",
+      "highlight": "At least 70% Malbec, firm and savoury"
+    },
+    {
+      "type": "concept",
+      "title": "Mendoza",
+      "body": "Mendoza Malbec is riper and plusher, with plum, black cherry and violet, softer tannins and often oak. Altitude shapes the style: lower Luján de Cuyo gives rich, round wines; higher Valle de Uco gives fresher, more floral wines with firmer structure. Many producers now use less new oak than in the 2000s.",
+      "highlight": "Ripe and plush; fresher at altitude"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each description to its region.",
+      "pairs": [
+        {
+          "left": "Cahors",
+          "right": "Firm, savoury, the black wine"
+        },
+        {
+          "left": "Luján de Cuyo",
+          "right": "Rich, round, lower altitude"
+        },
+        {
+          "left": "Valle de Uco",
+          "right": "Fresher, high altitude"
+        },
+        {
+          "left": "The causse",
+          "right": "Cahors' limestone plateau"
+        }
+      ],
+      "explanation": "The same grape gives a firmer style in France and a plusher one in Argentina."
+    },
+    {
+      "type": "tip",
+      "body": "Taste a Cahors next to a Mendoza Malbec. The colour will be similar, but the French one will feel more savoury and firm, the Argentine one riper and rounder."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cahors must contain at least 70% Malbec.",
+      "answer": true,
+      "explanation": "Yes. Merlot and Tannat can make up the rest."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cahors makes firm, savoury Malbec, once called the black wine",
+        "Mendoza makes riper, plusher Malbec",
+        "Altitude in the Valle de Uco brings freshness"
+      ]
+    }
+  ]
+}

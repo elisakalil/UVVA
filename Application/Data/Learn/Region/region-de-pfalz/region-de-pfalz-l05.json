@@ -1,0 +1,96 @@
+{
+  "id": "region-de-pfalz-l05",
+  "moduleId": "region-de-pfalz",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about the Pfalz",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Pfalz's land and grapes",
+    "Explain its dry Riesling",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to the Pfalz.",
+      "pairs": [
+        {
+          "left": "Haardt",
+          "right": "Sheltering mountains"
+        },
+        {
+          "left": "Mittelhaardt",
+          "right": "Famous northern villages"
+        },
+        {
+          "left": "Forst",
+          "right": "Basalt Riesling village"
+        },
+        {
+          "left": "Dubbeglas",
+          "right": "Dimpled wine glass"
+        }
+      ],
+      "explanation": "The Pfalz has a strong local identity."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which region does the Pfalz border to the south?",
+      "options": [
+        "Alsace",
+        "Burgundy",
+        "Champagne",
+        "Tuscany"
+      ],
+      "answer": 0,
+      "explanation": "Alsace, across the French border."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Pfalz is Germany's second largest wine region.",
+      "answer": true,
+      "explanation": "Yes, about 23,700 hectares."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes grow in the Pfalz?",
+      "options": [
+        "Riesling",
+        "Spätburgunder",
+        "Dornfelder",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is Italian."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Forst's top vineyards have volcanic ____ soils.",
+      "options": [
+        "basalt",
+        "chalk",
+        "slate",
+        "sand"
+      ],
+      "answer": "basalt",
+      "explanation": "Basalt gives spicy, mineral Riesling."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Pfalz is sunny and dry, sheltered by the Haardt",
+        "Riesling leads, with the Pinot family rising",
+        "It led the return to dry German Riesling",
+        "Its wines suit hearty regional food"
+      ]
+    }
+  ]
+}

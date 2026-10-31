@@ -1,0 +1,62 @@
+{
+  "id": "grape-riesling-l01",
+  "moduleId": "grape-riesling",
+  "order": 1,
+  "title": "Meet Riesling",
+  "subtitle": "Acidity and purity",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Riesling's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bright and pure",
+      "body": "Riesling gives whites with lime, lemon, green apple, peach, apricot and white flowers, with a mineral, sometimes smoky edge. Acidity is very high. It's almost never oaked or put through malolactic, so its fruit is pure and transparent. It ranges from bone dry to intensely sweet, and from light to full-bodied.",
+      "highlight": "Lime, peach, flowers, piercing acidity"
+    },
+    {
+      "type": "concept",
+      "title": "German origins",
+      "body": "Riesling comes from the Rhine valley in Germany, first recorded in 1435 near Rüsselsheim. DNA shows one parent is Gouais Blanc; the other was a Traminer crossed with a wild vine. It buds late and ripens late, so it needs a long season. Its hard wood resists winter cold well, ideal for northern vineyards.",
+      "highlight": "Recorded in 1435, cold-hardy"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Riesling's fruit so pure and transparent?",
+      "options": [
+        "It's rarely oaked or put through malolactic",
+        "It's always blended",
+        "It's aged in new oak",
+        "It's made from dried grapes"
+      ],
+      "answer": 0,
+      "explanation": "Without oak or malolactic, nothing masks its fruit or place."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon, sometimes green-tinged colour, intense lime, apple and flower aromas, and very high acidity. Sweet versions balance sugar with that acidity. Aged Riesling shows honey, toast and a petrol note. High acidity with floral, citrus fruit and no oak is the signature.",
+      "highlight": "High acid, floral, no oak"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Riesling buds and ripens early.",
+      "answer": false,
+      "explanation": "Not true. It buds and ripens late, needing a long season."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling gives lime, peach and flowers with very high acidity",
+        "It comes from the Rhine, recorded in 1435",
+        "It's rarely oaked, so it shows fruit and place clearly"
+      ]
+    }
+  ]
+}

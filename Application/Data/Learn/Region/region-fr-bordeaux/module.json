@@ -1,0 +1,30 @@
+{
+  "id": "region-fr-bordeaux",
+  "kind": "region",
+  "order": 1,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Bordeaux",
+  "grapes": [
+    "Cabernet Sauvignon",
+    "Merlot",
+    "Cabernet Franc",
+    "Sauvignon Blanc",
+    "Sémillon"
+  ],
+  "points": "2 2 2 2 = 8",
+  "complexity": "A",
+  "description": "Two rivers, an estuary and the Atlantic: the region that defined the red blend and the château.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-fr-bordeaux-l01",
+    "region-fr-bordeaux-l02",
+    "region-fr-bordeaux-l03",
+    "region-fr-bordeaux-l04",
+    "region-fr-bordeaux-l05",
+    "region-fr-bordeaux-l06",
+    "region-fr-bordeaux-l07"
+  ]
+}

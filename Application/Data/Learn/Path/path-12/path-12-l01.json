@@ -1,0 +1,73 @@
+{
+  "id": "path-12-l01",
+  "moduleId": "path-12",
+  "order": 1,
+  "title": "How the bubbles get there",
+  "subtitle": "Trapping carbon dioxide",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain where the bubbles come from",
+    "Name the main methods of making sparkling wine",
+    "Explain why method changes style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Second fermentation",
+      "body": "Most sparkling wines start as a dry, still base wine. Yeast and sugar are added, and a second fermentation takes place in a sealed vessel, a bottle or a pressurised tank. The carbon dioxide can't escape, so it dissolves in the wine. Champagne reaches about 6 atmospheres; Prosecco and other lighter styles often less.",
+      "highlight": "Second fermentation in a closed vessel"
+    },
+    {
+      "type": "concept",
+      "title": "The methods",
+      "body": "The traditional method makes the second fermentation in the bottle you buy. The transfer method ferments in bottle, then empties the wine into a tank to filter it. The tank method ferments in large pressurised tanks. The cheapest way is carbonation, injecting gas like soda, which gives large, short-lived bubbles.",
+      "highlight": "Bottle, transfer, tank, carbonation"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each method to how it works.",
+      "pairs": [
+        {
+          "left": "Traditional",
+          "right": "Second fermentation in this bottle"
+        },
+        {
+          "left": "Transfer",
+          "right": "Bottle, then emptied to tank"
+        },
+        {
+          "left": "Tank",
+          "right": "Fermentation in pressurised tank"
+        },
+        {
+          "left": "Carbonation",
+          "right": "Gas injected directly"
+        }
+      ],
+      "explanation": "Each method traps carbon dioxide in a different way."
+    },
+    {
+      "type": "concept",
+      "title": "Why method matters",
+      "body": "Fermenting in bottle leaves the wine in contact with dead yeast, the lees, for months or years. That adds bread, brioche and biscuit flavours and finer bubbles. Tank fermentation is fast, often weeks, and keeps fresh, fruity, floral aromas. Neither is better: they suit different grapes and styles.",
+      "highlight": "Bottle: toasty. Tank: fruity."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "All sparkling wines get their bubbles from a second fermentation.",
+      "answer": false,
+      "explanation": "Not true. The cheapest are carbonated, with gas injected directly. Their bubbles are coarser and fade faster."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bubbles come from carbon dioxide trapped during a second fermentation",
+        "Traditional, transfer, tank and carbonation are the main methods",
+        "Bottle fermentation adds toasty notes; tank keeps fresh fruit"
+      ]
+    }
+  ]
+}

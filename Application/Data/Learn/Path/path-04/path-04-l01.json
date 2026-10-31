@@ -1,0 +1,66 @@
+{
+  "id": "path-04-l01",
+  "moduleId": "path-04",
+  "order": 1,
+  "title": "Why taste with a method",
+  "subtitle": "Drinking versus tasting",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why a method helps you taste",
+    "Name the three steps of tasting",
+    "Set up good conditions for tasting"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tasting is paying attention",
+      "body": "Drinking is enjoying. Tasting is noticing what you're enjoying, in an order that lets you compare. The method is simple: look, smell, taste. Doing it the same way each time builds a memory of wines you can draw on later.",
+      "highlight": "Look, smell, taste"
+    },
+    {
+      "type": "concept",
+      "title": "Why the order matters",
+      "body": "Each step prepares the next. The look hints at age and body. The nose works before the palate because most of what we call flavour is smell: the tongue senses only sweet, sour, salty, bitter and umami. When you sip, aromas travel up the back of the throat to the nose, a route called retronasal smell.",
+      "highlight": "Most flavour is smell"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do you smell a wine before you taste it?",
+      "options": [
+        "The tongue detects most flavours",
+        "Most of what we call flavour is smell",
+        "Smelling cools the wine",
+        "It's only a tradition"
+      ],
+      "answer": 1,
+      "explanation": "The tongue registers five basic tastes. Everything else, from cherry to vanilla, is detected by smell, before and during the sip."
+    },
+    {
+      "type": "tip",
+      "body": "Taste in daylight or under white light, against a white background, with a clean, plain glass. Avoid perfume, coffee and toothpaste just before. Small changes like these make a bigger difference than expensive gear."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of tasting in order.",
+      "items": [
+        "Look",
+        "Swirl",
+        "Smell",
+        "Taste",
+        "Conclude"
+      ],
+      "explanation": "Swirling releases aromas between looking and smelling. The conclusion comes once you've taken everything in."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A method turns drinking into tasting you can compare",
+        "Most flavour is smell, so the nose comes before the palate",
+        "White light, a plain glass and no strong smells help"
+      ]
+    }
+  ]
+}

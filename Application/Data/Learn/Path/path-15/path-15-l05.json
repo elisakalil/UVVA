@@ -1,0 +1,60 @@
+{
+  "id": "path-15-l05",
+  "moduleId": "path-15",
+  "order": 5,
+  "title": "Palate: flavour and finish",
+  "subtitle": "Confirming the nose and measuring length",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare flavours on the palate with the nose",
+    "Judge flavour intensity",
+    "Measure the finish"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Flavour",
+      "body": "Flavour on the palate usually confirms the nose, but not always. Some wines show more on the palate than the nose, a sign of concentration. Judge flavour intensity from light to pronounced, and list the flavour families as for the nose. Retronasal smell, through the back of the throat, is doing most of the work.",
+      "highlight": "Flavour: retronasal smell"
+    },
+    {
+      "type": "concept",
+      "title": "The finish",
+      "body": "After swallowing or spitting, count how long the flavours stay: short, under 5 seconds; medium, about 5 to 10; long, above 10. Only pleasant flavours count; a lingering bitterness or burn doesn't. Length is closely linked to concentration and ripeness, and is a strong sign of quality.",
+      "highlight": "Count the seconds"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "After spitting, the fruit flavour lasts about 12 seconds. How would you describe the finish?",
+      "options": [
+        "Short",
+        "Medium",
+        "Long",
+        "Faulty"
+      ],
+      "answer": 2,
+      "explanation": "Above 10 seconds of pleasant flavour is a long finish, a sign of quality."
+    },
+    {
+      "type": "tip",
+      "body": "Count the finish silently with each wine you taste for a week. You'll quickly calibrate what short, medium and long really mean."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A lingering bitter aftertaste counts towards a long finish.",
+      "answer": false,
+      "explanation": "Not true. Only pleasant flavours count. Bitterness or alcoholic burn that lingers is a sign of imbalance, not length."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Palate flavours usually confirm the nose",
+        "Judge flavour intensity like aroma intensity",
+        "Count pleasant flavour after swallowing: over 10 seconds is long"
+      ]
+    }
+  ]
+}

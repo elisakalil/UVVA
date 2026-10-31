@@ -1,0 +1,62 @@
+{
+  "id": "region-au-barossa-valley-l01",
+  "moduleId": "region-au-barossa-valley",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "A warm valley north of Adelaide",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Barossa's geography",
+    "Explain its climate",
+    "Explain its German heritage"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "North-east of Adelaide",
+      "body": "The Barossa Valley lies about 60 km north-east of Adelaide, in South Australia. The valley floor is about 250 to 300 m; the hills to the east rise into the cooler Eden Valley. Together they form the Barossa zone. The Barossa Valley has about 13,000 hectares of vines. Soils range from sand to red-brown clay and ironstone.",
+      "highlight": "60 km from Adelaide"
+    },
+    {
+      "type": "concept",
+      "title": "Warm and dry",
+      "body": "The Barossa Valley has a warm, dry Mediterranean climate: hot summers, often over 35 degrees, and cool, wet winters. Most rain falls in winter. Many old vines are dry-grown, without irrigation, their deep roots finding water. Warmth gives ripe, full-bodied reds.",
+      "highlight": "Hot summers, dry-grown old vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What type of climate does the Barossa Valley have?",
+      "options": [
+        "Warm, dry Mediterranean",
+        "Cool, wet maritime",
+        "Tropical",
+        "Alpine"
+      ],
+      "answer": 0,
+      "explanation": "Hot summers and winter rain."
+    },
+    {
+      "type": "concept",
+      "title": "Silesian settlers",
+      "body": "In the 1840s, Lutheran settlers from Silesia, then in Prussia, now Poland, settled the Barossa, fleeing religious persecution. They brought farming skills, German food traditions like mettwurst and bienenstich, and Lutheran churches. Many wine families, like Henschke, Hentschke, and Seppelt, have German roots. The heritage is still visible today.",
+      "highlight": "Silesian Lutherans, 1840s"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Barossa was settled by Lutherans from Silesia in the 1840s.",
+      "answer": true,
+      "explanation": "Yes, fleeing religious persecution."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Barossa lies north-east of Adelaide",
+        "Its warm, dry climate gives ripe reds; old vines are dry-grown",
+        "Silesian settlers shaped its culture from the 1840s"
+      ]
+    }
+  ]
+}

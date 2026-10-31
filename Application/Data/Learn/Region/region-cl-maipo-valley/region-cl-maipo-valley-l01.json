@@ -1,0 +1,62 @@
+{
+  "id": "region-cl-maipo-valley-l01",
+  "moduleId": "region-cl-maipo-valley",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Around Santiago",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Maipo Valley's geography",
+    "Explain its climate",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Santiago's valley",
+      "body": "The Maipo Valley surrounds Chile's capital, Santiago, in the north of the Central Valley. It stretches from the Andes in the east toward the Coastal Range in the west, following the Maipo river. It's small by Chilean standards, about 11,000 hectares, but historically the most important for fine red wine.",
+      "highlight": "Around Santiago, along the Maipo river"
+    },
+    {
+      "type": "concept",
+      "title": "Mediterranean with Andean breezes",
+      "body": "Maipo has a warm, dry Mediterranean climate: hot summers, mild winters, rain mostly in winter. Cool air flows down from the Andes at night, giving a big day and night swing. Irrigation from the Maipo river, fed by Andean snowmelt, is essential. Like all Chile, it's free of phylloxera, so vines are ungrafted.",
+      "highlight": "Warm days, Andean night air"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What cools the Maipo Valley at night?",
+      "options": [
+        "Cold air flowing down from the Andes",
+        "Ocean fog",
+        "Snow",
+        "Rain"
+      ],
+      "answer": 0,
+      "explanation": "Mountain air drains into the valley."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "In the mid-19th century, wealthy Chilean families, inspired by Bordeaux, brought French grapes, mostly before phylloxera reached Europe's vineyards. They founded estates near Santiago, like Cousiño Macul, 1856, Santa Rita, 1880, and Concha y Toro, 1883, now Chile's largest wine company. Chilean Cabernet's reputation began here.",
+      "highlight": "Cousiño Macul, Santa Rita, Concha y Toro"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chile's vineyards are free of phylloxera.",
+      "answer": true,
+      "explanation": "Yes. Its natural barriers have kept it out, so vines are ungrafted."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Maipo surrounds Santiago, along the Maipo river",
+        "Warm days and cold Andean nights shape its wines",
+        "19th century estates brought Bordeaux grapes here"
+      ]
+    }
+  ]
+}

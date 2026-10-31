@@ -1,0 +1,60 @@
+{
+  "id": "region-us-sonoma-county-l04",
+  "moduleId": "region-us-sonoma-county",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Sonoma and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Sonoma label",
+    "Pair Sonoma wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show winery, grape, AVA and vintage. Sonoma County is the broadest appellation; Russian River Valley, Dry Creek Valley or Alexander Valley are more specific. Single-vineyard names, like Rochioli or Bacigalupi, are common. US rules apply: 75% grape, 85% AVA, 95% vintage.",
+      "highlight": "County, AVA, vineyard"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Russian River Pinot Noir suits salmon, duck, mushrooms and roast chicken. Chardonnay suits Dungeness crab, a local favourite, and lobster. Dry Creek Zinfandel suits barbecue, burgers and spicy sausages. Alexander Valley Cabernet suits steak. Serve Pinot at 14 to 16 degrees, Zinfandel at 16 to 17.",
+      "highlight": "Pinot with salmon, Zinfandel with barbecue"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which local seafood suits Sonoma Chardonnay?",
+      "options": [
+        "Dungeness crab",
+        "Sardines",
+        "Octopus",
+        "Salt cod"
+      ],
+      "answer": 0,
+      "explanation": "Dungeness crab is a West Coast favourite."
+    },
+    {
+      "type": "tip",
+      "body": "Sonoma's tasting rooms are often smaller and more relaxed than Napa's, with many family wineries."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dry Creek Zinfandel suits barbecue.",
+      "answer": true,
+      "explanation": "Yes. Its ripe fruit and spice match smoky, sweet sauces."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show AVA and often a single vineyard",
+        "Pinot suits salmon; Zinfandel suits barbecue",
+        "Serve Pinot slightly cooler than Zinfandel"
+      ]
+    }
+  ]
+}

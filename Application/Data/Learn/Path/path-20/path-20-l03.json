@@ -1,0 +1,73 @@
+{
+  "id": "path-20-l03",
+  "moduleId": "path-20",
+  "order": 3,
+  "title": "The Duero valley",
+  "subtitle": "Plateau reds and Rueda whites",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Ribera del Duero",
+    "Describe Toro and Rueda",
+    "Explain the role of altitude on the Meseta"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ribera del Duero",
+      "body": "Ribera del Duero sits on Spain's central plateau, the Meseta, at 750 to 1,000 m. Tempranillo, called Tinto Fino or Tinta del País, gives deep, powerful reds. Vega Sicilia, founded in 1864, made the name; the 1980s brought international fame. Hot days and very cold nights give ripe fruit with fresh acidity.",
+      "highlight": "Tinto Fino at high altitude"
+    },
+    {
+      "type": "concept",
+      "title": "Altitude and extremes",
+      "body": "The Meseta is high and continental. Summer days can reach 35 degrees, while nights drop below 15, a wide diurnal range that keeps acidity. Winters are harsh and spring frosts are a constant risk; Ribera lost much of its 2017 crop to frost. Old bush vines on poor soils give low yields.",
+      "highlight": "Hot days, cold nights, frost risk"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Duero wine to its grape.",
+      "pairs": [
+        {
+          "left": "Ribera del Duero",
+          "right": "Tinto Fino"
+        },
+        {
+          "left": "Toro",
+          "right": "Tinta de Toro"
+        },
+        {
+          "left": "Rueda",
+          "right": "Verdejo"
+        },
+        {
+          "left": "Douro, downstream",
+          "right": "Touriga Nacional"
+        }
+      ],
+      "explanation": "The same river crosses Spain and Portugal, with different grapes on each side."
+    },
+    {
+      "type": "concept",
+      "title": "Toro and Rueda",
+      "body": "Toro, further west and lower, makes very ripe, powerful reds from Tinta de Toro, a local form of Tempranillo. Rueda is the Duero's white wine region, making crisp, aromatic Verdejo with fennel, citrus and herbs, often blended with Sauvignon Blanc. Many Rueda grapes are picked at night to stay cool.",
+      "highlight": "Toro: power. Rueda: Verdejo."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Rueda is best known for red wines.",
+      "answer": false,
+      "explanation": "Not true. Rueda is the Duero's white wine region, built on Verdejo."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Ribera del Duero makes powerful Tinto Fino at high altitude",
+        "Hot days, cold nights and frost shape the Meseta",
+        "Toro makes ripe reds; Rueda makes Verdejo whites"
+      ]
+    }
+  ]
+}

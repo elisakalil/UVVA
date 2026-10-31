@@ -1,0 +1,96 @@
+{
+  "id": "grape-garganega-l05",
+  "moduleId": "grape-garganega",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Garganega",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Garganega",
+    "Know Soave's zones",
+    "Explain Recioto"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the minimum share of Garganega in Soave?",
+      "options": [
+        "70%",
+        "100%",
+        "50%",
+        "15%"
+      ],
+      "answer": 0,
+      "explanation": "Soave must be at least 70% Garganega."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Garganega.",
+      "pairs": [
+        {
+          "left": "Soave Classico",
+          "right": "Historic hill zone"
+        },
+        {
+          "left": "Recioto di Soave",
+          "right": "Sweet, dried grapes"
+        },
+        {
+          "left": "Grecanico",
+          "right": "Sicilian name"
+        },
+        {
+          "left": "Basalt",
+          "right": "Volcanic soil"
+        }
+      ],
+      "explanation": "Garganega's story centres on Soave."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Garganega is the same grape as Grecanico.",
+      "answer": true,
+      "explanation": "Yes. DNA confirmed it."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Garganega?",
+      "options": [
+        "Almond",
+        "Lemon",
+        "Mineral edge",
+        "Lychee"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Lychee belongs to Gewürztraminer."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Recioto di Soave became a DOCG in ____.",
+      "options": [
+        "1998",
+        "1855",
+        "2019",
+        "1970"
+      ],
+      "answer": "1998",
+      "explanation": "It was Soave's first DOCG."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Garganega gives lemon, almond and minerality",
+        "Soave Classico's volcanic hills give its best wines",
+        "Recioto di Soave is its sweet, dried-grape style",
+        "Soave has shed its cheap image"
+      ]
+    }
+  ]
+}

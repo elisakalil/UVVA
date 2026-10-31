@@ -1,0 +1,25 @@
+{
+  "id": "region-de-pfalz",
+  "kind": "region",
+  "order": 28,
+  "country": "Germany",
+  "countryCode": "DE",
+  "title": "Pfalz",
+  "grapes": [
+    "Riesling",
+    "Spätburgunder"
+  ],
+  "points": "1 1 1 1 = 4",
+  "complexity": "C",
+  "description": "Germany's sunniest wine region: rich, dry Riesling and rising Pinot Noir in the shelter of the Haardt.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-de-pfalz-l01",
+    "region-de-pfalz-l02",
+    "region-de-pfalz-l03",
+    "region-de-pfalz-l04",
+    "region-de-pfalz-l05"
+  ]
+}

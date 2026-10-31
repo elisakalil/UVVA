@@ -1,0 +1,70 @@
+{
+  "id": "grape-vermentino-l02",
+  "moduleId": "grape-vermentino",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Islands and coasts",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Vermentino's main regions",
+    "Name its DOCG",
+    "Explain its role in Provence rosé"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sardinia and Corsica",
+      "body": "Sardinia is Vermentino's stronghold. Vermentino di Gallura, in the granite north-east, is the island's only DOCG, since 1996, giving fuller, more structured, saline wines. Vermentino di Sardegna DOC covers the whole island. In Corsica, Vermentino, also called Vermentinu, makes Patrimonio and Ajaccio whites.",
+      "highlight": "Vermentino di Gallura DOCG"
+    },
+    {
+      "type": "concept",
+      "title": "Tuscany, Liguria and Provence",
+      "body": "Tuscany's coast, Bolgheri and the Maremma, makes fresh Vermentino. Liguria's Cinque Terre and Riviera Ligure di Ponente use it and Pigato. In Provence, Rolle is the main white grape and is often blended into rosé to add freshness and aroma. Australia is planting it as a heat-tolerant grape.",
+      "highlight": "Coastal Tuscany, Liguria, Provence"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Sardinia's only DOCG?",
+      "options": [
+        "Vermentino di Gallura",
+        "Cannonau di Sardegna",
+        "Carignano del Sulcis",
+        "Vernaccia di Oristano"
+      ],
+      "answer": 0,
+      "explanation": "Vermentino di Gallura, from the granite north-east, became DOCG in 1996."
+    },
+    {
+      "type": "tip",
+      "body": "In Provence rosé, a share of Rolle adds freshness and a floral, citrus lift. Check the back label: many pale rosés include it."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Where does Vermentino grow?",
+      "options": [
+        "Sardinia",
+        "Corsica",
+        "Provence",
+        "Mosel"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Mosel is too cold; it's Riesling country."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sardinia's Vermentino di Gallura is its DOCG",
+        "Corsica, coastal Tuscany and Liguria grow it",
+        "In Provence it's Rolle, often in rosé"
+      ]
+    }
+  ]
+}

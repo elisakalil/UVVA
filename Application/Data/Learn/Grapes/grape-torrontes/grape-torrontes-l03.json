@@ -1,0 +1,70 @@
+{
+  "id": "grape-torrontes-l03",
+  "moduleId": "grape-torrontes",
+  "order": 3,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Torrontés",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Torrontés with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aromatic food",
+      "body": "Torrontés suits aromatic, lightly spiced food: Thai, Indian, Vietnamese dishes, ceviche, and Argentine empanadas from Salta, filled with spiced beef. Its floral perfume and freshness suit coriander, ginger and lemongrass. Avoid heavy, rich sauces.",
+      "highlight": "Empanadas, ceviche, Asian food"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 7 to 10 degrees. Torrontés is best young, within one to two years, while its aromas are fresh. With age, it can turn bitter and lose its perfume.",
+      "highlight": "Cold and young"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a classic match for Torrontés in Salta?",
+      "options": [
+        "Spiced beef empanadas",
+        "Steak with red wine sauce",
+        "Chocolate cake",
+        "Blue cheese"
+      ],
+      "answer": 0,
+      "explanation": "Salta's empanadas and Torrontés are a regional pairing."
+    },
+    {
+      "type": "tip",
+      "body": "Torrontés is a good choice for sushi or Thai food at a restaurant, when you want something aromatic but dry."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which flavours in food suit Torrontés?",
+      "options": [
+        "Coriander",
+        "Ginger",
+        "Lemongrass",
+        "Heavy cream sauce"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Heavy cream overwhelms its freshness."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Torrontés suits empanadas, ceviche and Asian food",
+        "Serve at 7 to 10 degrees",
+        "Drink it within one to two years"
+      ]
+    }
+  ]
+}

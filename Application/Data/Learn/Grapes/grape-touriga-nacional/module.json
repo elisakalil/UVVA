@@ -1,0 +1,25 @@
+{
+  "id": "grape-touriga-nacional",
+  "kind": "grape",
+  "order": 5,
+  "color": "red",
+  "title": "Touriga Nacional",
+  "aliases": [],
+  "origin": "Portugal",
+  "countries": [
+    "Portugal"
+  ],
+  "points": "2 1 1 0 = 4",
+  "complexity": "C",
+  "description": "Portugal's finest red grape: floral, dark and structured, at the heart of Port and the Douro's dry reds.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-touriga-nacional-l01",
+    "grape-touriga-nacional-l02",
+    "grape-touriga-nacional-l03",
+    "grape-touriga-nacional-l04",
+    "grape-touriga-nacional-l05"
+  ]
+}

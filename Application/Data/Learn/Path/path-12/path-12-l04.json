@@ -1,0 +1,79 @@
+{
+  "id": "path-12-l04",
+  "moduleId": "path-12",
+  "order": 4,
+  "title": "Champagne and its rivals",
+  "subtitle": "Traditional method around the world",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Champagne region and its grapes",
+    "Name other traditional method wines",
+    "Explain what makes each distinct"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Champagne",
+      "body": "Champagne lies about 150 km north-east of Paris, one of the coolest wine regions in France. Grapes ripen barely, giving very high acidity, perfect for sparkling wine. The main grapes are Chardonnay, Pinot Noir and Pinot Meunier. Most Champagne is a blend of several years, called non-vintage, to keep a consistent house style.",
+      "highlight": "Cool climate, high acidity, three grapes"
+    },
+    {
+      "type": "concept",
+      "title": "Chalk and ageing",
+      "body": "Champagne's chalk soils drain well yet hold water deep, and the chalk cellars dug beneath Reims and Épernay stay at about 10 to 12 degrees all year, ideal for long ageing on lees. Non-vintage must age at least 15 months, vintage at least 3 years. That ageing gives the toasty, brioche notes.",
+      "highlight": "Non-vintage: 15 months; vintage: 3 years"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The three main grapes of Champagne are Chardonnay, Pinot Noir and Pinot ____.",
+      "options": [
+        "Meunier",
+        "Gris",
+        "Blanc",
+        "Grigio"
+      ],
+      "answer": "Meunier",
+      "explanation": "Pinot Meunier, often just Meunier, is the third main grape, giving fruit and roundness."
+    },
+    {
+      "type": "concept",
+      "title": "The rivals",
+      "body": "Cava, mostly from Catalonia, uses local grapes like Macabeo, Xarel-lo and Parellada, with 9 months minimum on lees. Crémant is made in eight French regions, like Alsace, Burgundy and the Loire. Franciacorta, in Lombardy, uses Chardonnay and Pinot Noir. England's south, on chalk like Champagne's, is a rising star.",
+      "highlight": "Cava, Crémant, Franciacorta, England"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each sparkling wine to its origin.",
+      "pairs": [
+        {
+          "left": "Cava",
+          "right": "Catalonia"
+        },
+        {
+          "left": "Franciacorta",
+          "right": "Lombardy"
+        },
+        {
+          "left": "Crémant d'Alsace",
+          "right": "Alsace"
+        },
+        {
+          "left": "Champagne",
+          "right": "North-east France"
+        }
+      ],
+      "explanation": "All of these use the traditional method, with different grapes and rules."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Champagne is cool and chalky, with three main grapes",
+        "Non-vintage ages at least 15 months on lees; vintage at least 3 years",
+        "Cava, Crémant, Franciacorta and English sparkling use the same method"
+      ]
+    }
+  ]
+}

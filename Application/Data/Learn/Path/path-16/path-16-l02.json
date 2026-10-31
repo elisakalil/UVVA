@@ -1,0 +1,83 @@
+{
+  "id": "path-16-l02",
+  "moduleId": "path-16",
+  "order": 2,
+  "title": "Climate and continentality",
+  "subtitle": "How the shape of the year matters",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain continental and maritime climates",
+    "Explain diurnal range",
+    "Describe how climate change affects vineyards"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Continental or maritime",
+      "body": "Continentality describes the difference between the hottest and coldest months. Continental climates, far from the sea, have hot summers and cold winters, short seasons and frost risk, like Burgundy or Germany. Maritime climates, near oceans, have mild winters and cooler summers, with more rain, like Bordeaux. Mediterranean climates have warm, dry summers.",
+      "highlight": "Continental, maritime, Mediterranean"
+    },
+    {
+      "type": "concept",
+      "title": "Diurnal range",
+      "body": "Diurnal range is the difference between day and night temperatures. A large range, common at altitude or in deserts, gives warm days for sugar and cool nights that slow the loss of acidity and keep aromas. Mendoza can see a 15 to 20 degree swing; Washington's Columbia Valley is similar.",
+      "highlight": "Warm days, cool nights: freshness"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its climate.",
+      "pairs": [
+        {
+          "left": "Burgundy",
+          "right": "Continental"
+        },
+        {
+          "left": "Bordeaux",
+          "right": "Maritime"
+        },
+        {
+          "left": "Provence",
+          "right": "Mediterranean"
+        },
+        {
+          "left": "Mendoza",
+          "right": "High-altitude, large diurnal range"
+        }
+      ],
+      "explanation": "Climate type shapes ripening and risk."
+    },
+    {
+      "type": "concept",
+      "title": "Climate change",
+      "body": "Average temperatures in many wine regions have risen by about 1 to 2 degrees since the 1980s. Harvests are earlier, sometimes by two or three weeks, alcohol levels higher and acidity lower. Growers respond with later-ripening grapes, higher sites, more shade and new regions, like southern England and Tasmania.",
+      "highlight": "Earlier harvests, riper wines, new regions"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are common effects of climate change in vineyards?",
+      "options": [
+        "Earlier harvests",
+        "Higher alcohol",
+        "Higher acidity",
+        "More extreme weather"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Heat raises sugar and lowers acidity. Hail, drought and fire have become more common."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Continental climates are extreme; maritime ones are mild and damp",
+        "A large diurnal range keeps acidity and aroma",
+        "Climate change brings earlier harvests and new regions"
+      ]
+    }
+  ]
+}

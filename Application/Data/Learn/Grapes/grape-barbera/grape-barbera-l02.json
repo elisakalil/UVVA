@@ -1,0 +1,77 @@
+{
+  "id": "grape-barbera-l02",
+  "moduleId": "grape-barbera",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Asti, Alba and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Barbera's main areas",
+    "Compare Barbera d'Asti and d'Alba",
+    "Name its other homes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Asti and Alba",
+      "body": "Barbera's two main zones are Asti and Alba. Barbera d'Asti, a DOCG since 2008, is the larger zone, often lighter and fresher, with Nizza, a DOCG since 2014, as its top area. Barbera d'Alba, a DOC, grows on sites not given to Nebbiolo, giving fuller, richer wines.",
+      "highlight": "Barbera d'Asti and Nizza; Barbera d'Alba"
+    },
+    {
+      "type": "concept",
+      "title": "Beyond Piedmont",
+      "body": "Barbera grows in Lombardy's Oltrepò Pavese and Emilia-Romagna, where it's sometimes made fizzy. Italian immigrants took it to California and Argentina. Australia has small plantings. Its high acidity makes it useful in hot climates, where it keeps freshness.",
+      "highlight": "Oltrepò, California, Argentina"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each zone to its Barbera.",
+      "pairs": [
+        {
+          "left": "Barbera d'Asti",
+          "right": "Larger zone, DOCG"
+        },
+        {
+          "left": "Nizza",
+          "right": "Top Asti subzone"
+        },
+        {
+          "left": "Barbera d'Alba",
+          "right": "Richer, sites near Nebbiolo"
+        },
+        {
+          "left": "Oltrepò Pavese",
+          "right": "Lombardy, sometimes fizzy"
+        }
+      ],
+      "explanation": "Each zone gives Barbera a different weight."
+    },
+    {
+      "type": "tip",
+      "body": "Nizza is Barbera's top tier: a minimum of 18 months' ageing, 6 in wood, and grapes from the hills around Nizza Monferrato."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Barbera useful in hot climates?",
+      "options": [
+        "It keeps high acidity",
+        "It's very tannic",
+        "It ripens late",
+        "It's white"
+      ],
+      "answer": 0,
+      "explanation": "Its natural acidity keeps wines fresh even in heat."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barbera d'Asti and Nizza are DOCGs; Barbera d'Alba is richer",
+        "It also grows in Lombardy, Emilia, California and Argentina",
+        "Its acidity is useful in warm regions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "grape-garganega",
+  "kind": "grape",
+  "order": 41,
+  "color": "white",
+  "title": "Garganega",
+  "aliases": [
+    "Grecanico"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "Soave's grape: almond, lemon and volcanic minerality, dry or sweet as Recioto.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-garganega-l01",
+    "grape-garganega-l02",
+    "grape-garganega-l03",
+    "grape-garganega-l04",
+    "grape-garganega-l05"
+  ]
+}

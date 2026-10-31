@@ -1,0 +1,81 @@
+{
+  "id": "grape-trebbiano-l02",
+  "moduleId": "grape-trebbiano",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Italy and France",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Trebbiano's main regions",
+    "Explain the Trebbiano family",
+    "Explain its role in French brandy"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Italy",
+      "body": "Trebbiano grows across central Italy. Trebbiano Toscano is used in Tuscany, Umbria and Lazio, often in blends like Orvieto and Frascati, and in Vin Santo. Trebbiano Romagnolo grows in Emilia-Romagna. Trebbiano d'Abruzzo is a separate variety. Lugana, near Lake Garda, uses Turbiana, once called Trebbiano di Lugana.",
+      "highlight": "Toscano, Romagnolo, d'Abruzzo"
+    },
+    {
+      "type": "concept",
+      "title": "France",
+      "body": "In France, Ugni Blanc is the main grape of Cognac, about 98% of plantings there, and Armagnac. In the south, it's used in Côtes de Gascogne IGP whites, often blended with Colombard. Local names include Saint-Émilion in Charente, unrelated to the Bordeaux village.",
+      "highlight": "Cognac's grape"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its place.",
+      "pairs": [
+        {
+          "left": "Ugni Blanc",
+          "right": "France"
+        },
+        {
+          "left": "Trebbiano Toscano",
+          "right": "Tuscany"
+        },
+        {
+          "left": "Turbiana",
+          "right": "Lugana"
+        },
+        {
+          "left": "Trebbiano d'Abruzzo",
+          "right": "Abruzzo"
+        }
+      ],
+      "explanation": "The Trebbiano family has many members."
+    },
+    {
+      "type": "tip",
+      "body": "In Cognac, Ugni Blanc's local name is Saint-Émilion. Don't confuse it with the Bordeaux appellation."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines or spirits use Trebbiano or Ugni Blanc?",
+      "options": [
+        "Cognac",
+        "Armagnac",
+        "Vin Santo",
+        "Barolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Barolo is Nebbiolo."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Trebbiano grows across central Italy in several varieties",
+        "Ugni Blanc is about 98% of Cognac",
+        "It's used in Gascony whites and Armagnac"
+      ]
+    }
+  ]
+}

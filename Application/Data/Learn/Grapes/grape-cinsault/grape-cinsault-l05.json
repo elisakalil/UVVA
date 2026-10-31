@@ -1,0 +1,96 @@
+{
+  "id": "grape-cinsault-l05",
+  "moduleId": "grape-cinsault",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Cinsault",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Cinsault",
+    "Know its regions and roles",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What gives Cinsault its pale colour?",
+      "options": [
+        "Thin skins",
+        "Thick skins",
+        "Long ageing",
+        "Added water"
+      ],
+      "answer": 0,
+      "explanation": "Thin skins and big berries."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Cinsault.",
+      "pairs": [
+        {
+          "left": "Pinotage",
+          "right": "Its famous offspring"
+        },
+        {
+          "left": "Hermitage",
+          "right": "Old South African name"
+        },
+        {
+          "left": "Château Musar",
+          "right": "Lebanese blend"
+        },
+        {
+          "left": "Provence",
+          "right": "Rosé partner"
+        }
+      ],
+      "explanation": "Cinsault connects many places."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cinsault is a parent of Pinotage.",
+      "answer": true,
+      "explanation": "Yes, with Pinot Noir."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Cinsault?",
+      "options": [
+        "Light",
+        "Floral",
+        "Low tannin",
+        "Very dark"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cinsault is pale."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Cinsault is best served slightly ____.",
+      "options": [
+        "cool",
+        "hot",
+        "frozen",
+        "warm"
+      ],
+      "answer": "cool",
+      "explanation": "About 13 to 15 degrees for reds."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cinsault is light, floral and soft",
+        "It's ideal for rosé and softens blends",
+        "It's a parent of Pinotage, with old vines in South Africa",
+        "Serve it slightly cool with light food"
+      ]
+    }
+  ]
+}

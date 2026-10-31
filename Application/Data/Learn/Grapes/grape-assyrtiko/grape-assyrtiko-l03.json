@@ -1,0 +1,72 @@
+{
+  "id": "grape-assyrtiko-l03",
+  "moduleId": "grape-assyrtiko",
+  "order": 3,
+  "title": "Santorini's basket vines",
+  "subtitle": "Kouloura",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the kouloura training system",
+    "Explain why it's used",
+    "Explain how it affects yields"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Baskets on the ground",
+      "body": "On Santorini, vines are trained into low baskets, called kouloura, woven from their own canes, lying on the ground. The grapes grow inside the basket. Each year the basket grows; after decades, growers cut it back and start again from the old roots. It's one of the oldest training systems in the world.",
+      "highlight": "Kouloura: woven baskets"
+    },
+    {
+      "type": "concept",
+      "title": "Why baskets",
+      "body": "The kouloura protects grapes from Santorini's strong winds, which can reach over 50 km/h, and from fierce sun and sand. Inside, the grapes catch night humidity from sea mist, the vines' main water source. The low shape keeps the vines close to the ground, where it's cooler and more humid.",
+      "highlight": "Protection from wind and sun"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does the kouloura protect against?",
+      "options": [
+        "Strong winds",
+        "Fierce sun",
+        "Blowing sand",
+        "Frost"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Santorini has mild winters; frost isn't the main concern."
+    },
+    {
+      "type": "concept",
+      "title": "Tiny yields",
+      "body": "Santorini's yields are among the lowest in Europe, often 10 to 20 hectolitres per hectare, compared with 50 or more elsewhere. Old roots, drought and wind keep them low. Combined with steep land prices from tourism, this makes Santorini expensive and its vineyards endangered.",
+      "highlight": "Very low yields"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a kouloura?",
+      "options": [
+        "A basket-shaped vine trained on the ground",
+        "A barrel",
+        "A type of grape",
+        "A sweet wine"
+      ],
+      "answer": 0,
+      "explanation": "Vines woven into baskets protect the fruit."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Kouloura vines are woven into baskets on the ground",
+        "They protect grapes from wind, sun and sand",
+        "Yields are tiny, among Europe's lowest"
+      ]
+    }
+  ]
+}

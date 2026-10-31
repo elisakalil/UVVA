@@ -1,0 +1,96 @@
+{
+  "id": "region-ge-kakheti-l06",
+  "moduleId": "region-ge-kakheti",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Kakheti",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Kakheti's land and grapes",
+    "Explain qvevri and amber wine",
+    "Read and pair Georgian wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Qvevri",
+          "right": "Buried clay vessel"
+        },
+        {
+          "left": "Chacha",
+          "right": "Skins, seeds and stems"
+        },
+        {
+          "left": "Tamada",
+          "right": "Toastmaster"
+        },
+        {
+          "left": "Supra",
+          "right": "Traditional feast"
+        }
+      ],
+      "explanation": "Georgia's wine vocabulary is ancient."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How old is the earliest evidence of Georgian winemaking?",
+      "options": [
+        "About 8,000 years",
+        "About 500 years",
+        "About 2,000 years",
+        "About 100 years"
+      ],
+      "answer": 0,
+      "explanation": "Around 6000 BC."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Saperavi has red flesh.",
+      "answer": true,
+      "explanation": "Yes. It's a teinturier."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Georgian grapes?",
+      "options": [
+        "Rkatsiteli",
+        "Saperavi",
+        "Mtsvane",
+        "Tempranillo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Tempranillo is Spanish."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "UNESCO recognised qvevri winemaking in ____.",
+      "options": [
+        "2013",
+        "1756",
+        "2001",
+        "1990"
+      ],
+      "answer": "2013",
+      "explanation": "As Intangible Cultural Heritage."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Kakheti is Georgia's main region, sheltered by the Caucasus",
+        "Rkatsiteli, Mtsvane and Saperavi are its key grapes",
+        "Qvevri and amber wine are ancient, UNESCO-recognised traditions",
+        "Its wines suit rich, spiced Georgian food"
+      ]
+    }
+  ]
+}

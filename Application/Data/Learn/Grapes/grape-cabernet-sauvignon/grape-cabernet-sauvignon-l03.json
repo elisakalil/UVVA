@@ -1,0 +1,79 @@
+{
+  "id": "grape-cabernet-sauvignon-l03",
+  "moduleId": "grape-cabernet-sauvignon",
+  "order": 3,
+  "title": "The Left Bank model",
+  "subtitle": "Bordeaux and the blend",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why Cabernet suits the Médoc",
+    "Describe the Left Bank blend",
+    "Name the key Left Bank appellations"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Gravel",
+      "body": "The Médoc and Graves, on the left bank of the Gironde and Garonne, have deep gravel soils left by ancient rivers. Gravel drains well and stores the sun's heat, releasing it at night. That helps Cabernet ripen in Bordeaux's moderate, maritime climate. The best châteaux sit on gravel mounds close to the estuary.",
+      "highlight": "Gravel drains and warms"
+    },
+    {
+      "type": "concept",
+      "title": "The blend",
+      "body": "Left Bank reds are usually led by Cabernet Sauvignon, often 60 to 80%, with Merlot to add flesh, and smaller amounts of Cabernet Franc and Petit Verdot. Blending also spreads risk: in a cool year, Merlot ripens when Cabernet struggles. The result is structured, cedar-scented wine that can age for decades.",
+      "highlight": "Cabernet-led, with Merlot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Merlot blended with Cabernet on the Left Bank?",
+      "options": [
+        "To add tannin",
+        "To add flesh and reduce risk in cool years",
+        "To add sweetness",
+        "To make it white"
+      ],
+      "answer": 1,
+      "explanation": "Merlot fills Cabernet's mid-palate and ripens earlier, which helps in cool vintages."
+    },
+    {
+      "type": "concept",
+      "title": "The appellations",
+      "body": "Pauillac, home to three of the five First Growths, makes powerful, cedar-scented wines. Margaux is more perfumed and elegant. Saint-Julien sits between them. Saint-Estèphe, further north, is firmer, with more clay. Pessac-Léognan, in the Graves, makes both reds and whites, including Haut-Brion.",
+      "highlight": "Pauillac, Margaux, Saint-Julien, Saint-Estèphe"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each appellation to its style.",
+      "pairs": [
+        {
+          "left": "Pauillac",
+          "right": "Powerful, three First Growths"
+        },
+        {
+          "left": "Margaux",
+          "right": "Perfumed and elegant"
+        },
+        {
+          "left": "Saint-Estèphe",
+          "right": "Firmer, more clay"
+        },
+        {
+          "left": "Pessac-Léognan",
+          "right": "Reds and whites"
+        }
+      ],
+      "explanation": "Small differences in soil and position shape each style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gravel helps Cabernet ripen in the Médoc",
+        "Left Bank blends are Cabernet-led, with Merlot",
+        "Pauillac, Margaux, Saint-Julien and Saint-Estèphe are key"
+      ]
+    }
+  ]
+}

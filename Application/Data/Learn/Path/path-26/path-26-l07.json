@@ -1,0 +1,96 @@
+{
+  "id": "path-26-l07",
+  "moduleId": "path-26",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything from Fortified Wines in Depth",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain fortification techniques",
+    "Compare Sherry, Port and Madeira styles",
+    "Read fortified wine labels"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its key process.",
+      "pairs": [
+        {
+          "left": "Fino",
+          "right": "Flor ageing"
+        },
+        {
+          "left": "Tawny Port",
+          "right": "Small cask oxidation"
+        },
+        {
+          "left": "Madeira",
+          "right": "Heating and canteiro"
+        },
+        {
+          "left": "Pedro Ximénez",
+          "right": "Sun-dried grapes"
+        }
+      ],
+      "explanation": "Each family relies on a distinctive process."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What strength of spirit is used to fortify Port?",
+      "options": [
+        "About 40%",
+        "About 77%",
+        "About 96%",
+        "About 15%"
+      ],
+      "answer": 1,
+      "explanation": "Port's aguardente is about 77%, carrying some flavour."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which Sherry styles involve oxidative ageing?",
+      "options": [
+        "Oloroso",
+        "Amontillado",
+        "Palo Cortado",
+        "Manzanilla"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Manzanilla ages under flor only."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "LBV Port is bottled earlier than Vintage Port.",
+      "answer": false,
+      "explanation": "Not true. LBV spends 4 to 6 years in wood; Vintage is bottled after two to three."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In Madeira, slow ageing in casks in warm lofts is called ____.",
+      "options": [
+        "canteiro",
+        "estufagem",
+        "solera",
+        "colheita"
+      ],
+      "answer": "canteiro",
+      "explanation": "Canteiro gives the finest Madeiras."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Spirit timing and strength shape each family",
+        "Sherry relies on flor, oxygen and the solera",
+        "Port divides into ruby, tawny and vintage",
+        "Madeira's heat and acidity make it nearly immortal"
+      ]
+    }
+  ]
+}

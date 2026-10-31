@@ -1,0 +1,70 @@
+{
+  "id": "grape-sangiovese-l06",
+  "moduleId": "grape-sangiovese",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Sangiovese",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Sangiovese with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Made for food",
+      "body": "Sangiovese's acidity makes it perfect with tomato: pasta al pomodoro, pizza, lasagne. Its tannin suits grilled meat, like bistecca alla fiorentina, a thick T-bone. Brunello suits wild boar, game and aged pecorino. It's one of the most food-dependent reds; it can taste austere alone.",
+      "highlight": "Tomato, bistecca, pecorino"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees. Chianti Classico Annata is best within five years. Riserva and Gran Selezione age 10 to 20 years. Brunello ages 15 to 30 years, gaining leather, tobacco and dried cherry. Decant young Brunello.",
+      "highlight": "Brunello ages 15 to 30 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is bistecca alla fiorentina?",
+      "options": [
+        "A thick grilled T-bone steak",
+        "A tomato soup",
+        "A pastry",
+        "A fish stew"
+      ],
+      "answer": 0,
+      "explanation": "A classic Tuscan match for Chianti or Brunello."
+    },
+    {
+      "type": "tip",
+      "body": "If a Sangiovese tastes austere on its own, try it with a bite of tomato pasta. Its acidity and tannin will suddenly make sense."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Sangiovese?",
+      "options": [
+        "Tomato-based pasta",
+        "Bistecca alla fiorentina",
+        "Aged pecorino",
+        "Sweet desserts"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sweet desserts make it taste sour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sangiovese's acidity loves tomato",
+        "Its tannin suits grilled meat and aged cheese",
+        "Brunello ages 15 to 30 years"
+      ]
+    }
+  ]
+}

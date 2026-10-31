@@ -1,0 +1,100 @@
+{
+  "id": "path-09-l08",
+  "moduleId": "path-09",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from White Grapes and Their Places",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise the main white grapes",
+    "Link each grape to its classic regions",
+    "Explain how place changes style"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its classic region.",
+      "pairs": [
+        {
+          "left": "Chardonnay",
+          "right": "Burgundy"
+        },
+        {
+          "left": "Sauvignon Blanc",
+          "right": "Sancerre"
+        },
+        {
+          "left": "Riesling",
+          "right": "Mosel"
+        },
+        {
+          "left": "Chenin Blanc",
+          "right": "Vouvray"
+        },
+        {
+          "left": "Albariño",
+          "right": "Rías Baixas"
+        }
+      ],
+      "explanation": "Every grape has a place that set its benchmark."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compounds give Sauvignon Blanc passion fruit aromas?",
+      "options": [
+        "Pyrazines",
+        "Thiols",
+        "Terpenes",
+        "Tannins"
+      ],
+      "answer": 1,
+      "explanation": "Thiols give tropical notes; pyrazines give green ones."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are usually made without oak?",
+      "options": [
+        "Riesling",
+        "Sauvignon Blanc from Marlborough",
+        "Albariño",
+        "Côte de Beaune Chardonnay"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Côte de Beaune Chardonnay is classically fermented and aged in oak."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sémillon's thin skins make it prone to noble rot.",
+      "answer": true,
+      "explanation": "Yes. That's why it is the main grape of Sauternes."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Pinot Grigio in Italy is usually light and crisp, while Pinot ____ in Alsace is richer.",
+      "options": [
+        "Gris",
+        "Blanc",
+        "Noir",
+        "Meunier"
+      ],
+      "answer": "Gris",
+      "explanation": "Same grape, Pinot Gris, with the French name linked to the richer style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chardonnay and Sauvignon Blanc change with climate and winemaking",
+        "Riesling and Chenin make every style from dry to sweet",
+        "Aromatic grapes like Gewürztraminer and Viognier need careful picking",
+        "Each grape has a benchmark region worth knowing"
+      ]
+    }
+  ]
+}

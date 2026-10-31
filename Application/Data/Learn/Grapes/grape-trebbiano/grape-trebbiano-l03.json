@@ -1,0 +1,67 @@
+{
+  "id": "grape-trebbiano-l03",
+  "moduleId": "grape-trebbiano",
+  "order": 3,
+  "title": "Cognac and distillation",
+  "subtitle": "From thin wine to great brandy",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why Cognac uses Ugni Blanc",
+    "Explain double distillation",
+    "Explain Cognac's age categories"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The base wine",
+      "body": "Cognac's base wine is made from Ugni Blanc picked early, at about 8 to 9% alcohol, with very high acidity. It's thin and sour to drink, but ideal for distillation: high acidity keeps it stable without added sulphur, which producers avoid because it would taint the spirit, and neutrality lets distillation and oak shape the spirit.",
+      "highlight": "Low alcohol, high acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Double distillation",
+      "body": "Cognac is distilled twice in copper pot stills, called alembic charentais. The first distillation gives brouillis, about 28 to 32%. The second gives the heart, la bonne chauffe, around 70%. It then ages in French oak, from Limousin or Tronçais, for years. Distillation must be finished by 31 March after harvest.",
+      "highlight": "Twice in copper pot stills"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put Cognac production in order.",
+      "items": [
+        "Ferment Ugni Blanc wine",
+        "First distillation",
+        "Second distillation",
+        "Age in oak"
+      ],
+      "explanation": "The thin wine is distilled twice, then aged."
+    },
+    {
+      "type": "concept",
+      "title": "Age categories",
+      "body": "Cognac is labelled by minimum age: VS, at least 2 years in oak; VSOP, at least 4 years; XO, at least 10 years since 2018. Cognac's crus, like Grande Champagne and Petite Champagne, on chalk, give the finest spirits. Armagnac, in Gascony, uses Ugni Blanc too, often with single, column distillation.",
+      "highlight": "VS, VSOP, XO"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the minimum oak age for XO Cognac since 2018?",
+      "options": [
+        "10 years",
+        "2 years",
+        "4 years",
+        "1 year"
+      ],
+      "answer": 0,
+      "explanation": "XO was raised from 6 to 10 years in 2018."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cognac uses thin, acidic Ugni Blanc wine",
+        "It's distilled twice in copper pot stills",
+        "VS, VSOP and XO mark minimum ages"
+      ]
+    }
+  ]
+}

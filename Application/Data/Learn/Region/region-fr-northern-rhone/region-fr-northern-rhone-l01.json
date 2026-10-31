@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-northern-rhone-l01",
+  "moduleId": "region-fr-northern-rhone",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Steep granite",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the northern Rhône's geography",
+    "Explain its continental climate",
+    "Explain why terraces matter"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A narrow valley",
+      "body": "The northern Rhône runs about 60 km along the Rhône river, from Vienne, south of Lyon, to Valence. Vineyards cling to steep slopes on both banks, mostly granite and schist, often on terraces held by dry-stone walls, called chaillées. It's small: about 5% of all Rhône wine.",
+      "highlight": "Vienne to Valence, about 5%"
+    },
+    {
+      "type": "concept",
+      "title": "Continental and steep",
+      "body": "The climate is continental, cooler than the south, with the Mistral wind blowing down the valley. Steep, south and south-east facing slopes catch the sun and drain cold air, letting Syrah ripen this far north. Terraces stop soil erosion. Work is by hand, sometimes with winches, making the wines costly.",
+      "highlight": "Steep slopes ripen Syrah"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do northern Rhône vineyards use terraces?",
+      "options": [
+        "To hold soil on steep slopes",
+        "To irrigate",
+        "To shade vines",
+        "To grow vegetables"
+      ],
+      "answer": 0,
+      "explanation": "Terraces prevent erosion and make work possible."
+    },
+    {
+      "type": "concept",
+      "title": "Ancient vineyards",
+      "body": "Vines have grown here since Roman times; Vienne was an important Roman city, and its wine was praised by Pliny. Hermitage takes its name from a 13th century knight, Gaspard de Stérimberg, who, legend says, lived there as a hermit after the Crusades.",
+      "highlight": "Roman vines; the hermit of Hermitage"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The northern Rhône makes most of the Rhône's wine.",
+      "answer": false,
+      "explanation": "Not true. It makes about 5%; the south makes over 90%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The northern Rhône runs 60 km on steep granite slopes",
+        "Steep, sunny slopes ripen Syrah in a continental climate",
+        "It's small, about 5% of Rhône wine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "path-13-l02",
+  "moduleId": "path-13",
+  "order": 2,
+  "title": "Noble rot",
+  "subtitle": "A fungus that makes great wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how noble rot works",
+    "Name the conditions it needs",
+    "Name the great noble rot wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Botrytis cinerea",
+      "body": "Noble rot is the fungus Botrytis cinerea. On ripe, healthy grapes in the right conditions, it pierces the skin, letting water evaporate. Berries shrivel, sugar and acidity concentrate, and new flavours appear: honey, marmalade, apricot and ginger. The same fungus in wet weather becomes grey rot, which ruins the crop.",
+      "highlight": "Botrytis: noble when dry, grey when wet"
+    },
+    {
+      "type": "concept",
+      "title": "Misty mornings, sunny afternoons",
+      "body": "Noble rot needs humid, misty mornings, often from rivers or lakes, to let the spores grow, followed by warm, dry afternoons that stop it turning into grey rot. Infection is uneven, so pickers pass through the vineyard several times, choosing only shrivelled berries. Yields can be tiny, sometimes a glass per vine.",
+      "highlight": "Mist then sun; picking in several passes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which conditions favour noble rot rather than grey rot?",
+      "options": [
+        "Constant rain",
+        "Misty mornings and dry, sunny afternoons",
+        "Hot, dry days and nights",
+        "Hard frost"
+      ],
+      "answer": 1,
+      "explanation": "Morning humidity lets the fungus grow; dry afternoons stop it becoming destructive grey rot."
+    },
+    {
+      "type": "concept",
+      "title": "The great wines",
+      "body": "Sauternes and Barsac, in Bordeaux, use Sémillon and Sauvignon Blanc, near the cool Ciron river. Tokaji Aszú, in Hungary, uses Furmint. In Germany and Austria, Beerenauslese and Trockenbeerenauslese are made from botrytised berries. The Loire's Coteaux du Layon and Quarts de Chaume use Chenin Blanc.",
+      "highlight": "Sauternes, Tokaji, TBA, Coteaux du Layon"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its main grape.",
+      "pairs": [
+        {
+          "left": "Sauternes",
+          "right": "Sémillon"
+        },
+        {
+          "left": "Tokaji Aszú",
+          "right": "Furmint"
+        },
+        {
+          "left": "Coteaux du Layon",
+          "right": "Chenin Blanc"
+        },
+        {
+          "left": "Mosel TBA",
+          "right": "Riesling"
+        }
+      ],
+      "explanation": "Each of these is made from noble rot grapes, with a high-acid grape at its heart."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Noble rot is Botrytis cinerea concentrating ripe grapes",
+        "It needs misty mornings and dry afternoons",
+        "Sauternes, Tokaji Aszú and TBA are its great wines"
+      ]
+    }
+  ]
+}

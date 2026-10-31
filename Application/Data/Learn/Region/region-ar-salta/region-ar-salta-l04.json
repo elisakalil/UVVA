@@ -1,0 +1,96 @@
+{
+  "id": "region-ar-salta-l04",
+  "moduleId": "region-ar-salta",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Salta",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Salta's land and grapes",
+    "Explain altitude's effect",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Calchaquí Valleys",
+          "right": "High Andean valleys"
+        },
+        {
+          "left": "Cafayate",
+          "right": "Wine centre"
+        },
+        {
+          "left": "Torrontés",
+          "right": "Floral white grape"
+        },
+        {
+          "left": "Humita",
+          "right": "Corn dish"
+        }
+      ],
+      "explanation": "Salta's vocabulary is Andean."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How high are Salta's highest vineyards?",
+      "options": [
+        "Over 3,000 m",
+        "About 300 m",
+        "About 1,000 m",
+        "Sea level"
+      ],
+      "answer": 0,
+      "explanation": "Among the highest in the world."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Torrontés is sweet.",
+      "answer": false,
+      "explanation": "Not true. It smells sweet, but most is dry."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Salta's climate?",
+      "options": [
+        "Intense sun",
+        "Cold nights",
+        "Very low rainfall",
+        "Constant fog"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Salta is sunny and dry, not foggy."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Torrontés is a cross of Muscat of Alexandria and ____ Chica.",
+      "options": [
+        "Criolla",
+        "Rosa",
+        "Blanca",
+        "Tinta"
+      ],
+      "answer": "Criolla",
+      "explanation": "Criolla Chica."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Salta has some of the world's highest vineyards",
+        "Torrontés is its floral, dry white",
+        "Altitude gives intense, dark reds",
+        "Its wines suit empanadas and spicy food"
+      ]
+    }
+  ]
+}

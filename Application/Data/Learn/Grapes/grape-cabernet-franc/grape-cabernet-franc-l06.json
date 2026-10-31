@@ -1,0 +1,96 @@
+{
+  "id": "grape-cabernet-franc-l06",
+  "moduleId": "grape-cabernet-franc",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Cabernet Franc",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Cabernet Franc",
+    "Compare the Loire and Bordeaux",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name or place to Cabernet Franc.",
+      "pairs": [
+        {
+          "left": "Breton",
+          "right": "Loire name"
+        },
+        {
+          "left": "Bouchet",
+          "right": "Saint-Émilion name"
+        },
+        {
+          "left": "Chinon",
+          "right": "Loire appellation"
+        },
+        {
+          "left": "Cheval Blanc",
+          "right": "Famous Bordeaux estate"
+        }
+      ],
+      "explanation": "Cabernet Franc has French names and famous homes."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grapes is Cabernet Franc a parent of?",
+      "options": [
+        "Cabernet Sauvignon and Merlot",
+        "Pinot Noir and Gamay",
+        "Syrah and Grenache",
+        "Nebbiolo and Barbera"
+      ],
+      "answer": 0,
+      "explanation": "It's the parent of both Bordeaux stars."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cabernet Franc ripens earlier than Cabernet Sauvignon.",
+      "answer": true,
+      "explanation": "Yes, which helps in cooler places."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which aromas are typical of Cabernet Franc?",
+      "options": [
+        "Raspberry",
+        "Violet",
+        "Leafy or green pepper",
+        "Lychee"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Lychee belongs to Gewürztraminer."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The soft white limestone of the Loire is called ____.",
+      "options": [
+        "tuffeau",
+        "llicorella",
+        "albariza",
+        "galestro"
+      ],
+      "answer": "tuffeau",
+      "explanation": "Tuffeau gives structured Cabernet Franc and built the Loire's châteaux."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Franc is aromatic, fresh and leafy",
+        "It's single-variety in the Loire and blended in Bordeaux",
+        "It's the parent of Cabernet Sauvignon and Merlot",
+        "It's food-friendly and can age well"
+      ]
+    }
+  ]
+}

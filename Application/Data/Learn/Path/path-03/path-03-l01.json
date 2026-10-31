@@ -1,0 +1,62 @@
+{
+  "id": "path-03-l01",
+  "moduleId": "path-03",
+  "order": 1,
+  "title": "What a grape variety is",
+  "subtitle": "Why the name of the grape tells you so much",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what a grape variety is",
+    "Explain how varieties are kept identical",
+    "Explain why a variety predicts a style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A variety is a recipe",
+      "body": "A grape variety is a distinct type of vine within Vitis vinifera, with its own berry size, skin thickness, acidity and aromas. Chardonnay, Merlot and Riesling are varieties. Knowing the variety tells you a lot about how the wine will taste before you open it.",
+      "highlight": "Variety: a type of vine with its own character"
+    },
+    {
+      "type": "concept",
+      "title": "Cuttings, not seeds",
+      "body": "A seed from a Chardonnay grape would grow into a new, different vine, because vines don't breed true. So growers plant cuttings, pieces of an existing vine, which are genetically identical to the parent. A Chardonnay vine in Chile is effectively a copy of one in Burgundy. Most vines today are also grafted onto American rootstocks to resist phylloxera, an insect that destroyed Europe's vineyards in the late 1800s.",
+      "highlight": "Vines are copied by cuttings, not grown from seed"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A vine grown from a Merlot seed will produce Merlot grapes.",
+      "answer": false,
+      "explanation": "Not true. Vines don't breed true from seed, so the seedling would be a new variety. That's why vineyards are planted with cuttings."
+    },
+    {
+      "type": "concept",
+      "title": "Single variety or blend",
+      "body": "A varietal wine is made mainly from one variety and often names it on the label, like a Chilean Sauvignon Blanc. A blend mixes varieties for balance, like Bordeaux, which combines Cabernet Sauvignon and Merlot. In the EU and many other places, a wine that names one variety must contain at least 85% of it.",
+      "highlight": "Varietal labels usually mean at least 85% of that grape"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A Chilean label names only Cabernet Sauvignon. What can you expect?",
+      "options": [
+        "It is 100% Cabernet Sauvignon by law",
+        "It is mostly Cabernet Sauvignon, possibly with a little of another grape",
+        "It is a blend with no main grape",
+        "It is Cabernet grown from seed"
+      ],
+      "answer": 1,
+      "explanation": "Naming one variety usually means at least 75 to 85% of it, depending on the country. A small share of another grape is allowed."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A variety is a type of vine with its own character",
+        "Vines are propagated by cuttings, so each variety stays identical",
+        "A varietal wine names the grape that makes up most of it"
+      ]
+    }
+  ]
+}

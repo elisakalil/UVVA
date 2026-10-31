@@ -1,0 +1,79 @@
+{
+  "id": "region-pt-douro-l03",
+  "moduleId": "region-pt-douro",
+  "order": 3,
+  "title": "Terraces and schist",
+  "subtitle": "Building a vineyard on rock",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the role of schist",
+    "Describe the Douro's terraces",
+    "Explain the vineyard classification"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Schist",
+      "body": "Douro soils are mostly schist, a layered rock that splits vertically. Roots follow the cracks deep, sometimes 10 metres or more, to find water in dry summers. Schist also stores heat. Granite appears at the edges, but the best Port vineyards are on schist; the boundary between schist and granite roughly marks the region.",
+      "highlight": "Vertical cracks for deep roots"
+    },
+    {
+      "type": "concept",
+      "title": "Terraces",
+      "body": "To plant on slopes up to 60 degrees, people built terraces by hand. Old terraces, socalcos, have dry-stone walls and narrow ledges. From the 1970s, patamares, wider terraces without walls, allowed some machines. Vinha ao alto, vertical planting up the slope, is used where it's less steep. All are labour-intensive.",
+      "highlight": "Socalcos, patamares, vinha ao alto"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Socalcos",
+          "right": "Old stone-walled terraces"
+        },
+        {
+          "left": "Patamares",
+          "right": "Wider earth terraces"
+        },
+        {
+          "left": "Vinha ao alto",
+          "right": "Vertical rows"
+        },
+        {
+          "left": "Schist",
+          "right": "Layered rock soil"
+        }
+      ],
+      "explanation": "The Douro's landscape is built by hand."
+    },
+    {
+      "type": "concept",
+      "title": "Classification",
+      "body": "Douro vineyards for Port are classified from A to F, based on factors like altitude, yield, soil, slope, exposure and vine age. A and B vineyards receive the most authorisation to make Port, the beneficio, and the highest grape prices. Cima Corgo has the highest share of top-graded vineyards.",
+      "highlight": "Graded A to F"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does schist suit the Douro?",
+      "options": [
+        "Roots follow its vertical cracks to find water",
+        "It's very fertile",
+        "It's waterproof",
+        "It's sandy"
+      ],
+      "answer": 0,
+      "explanation": "Deep roots survive dry summers."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Schist lets roots dig deep for water",
+        "Socalcos, patamares and vinha ao alto shape the slopes",
+        "Vineyards are graded A to F for Port"
+      ]
+    }
+  ]
+}

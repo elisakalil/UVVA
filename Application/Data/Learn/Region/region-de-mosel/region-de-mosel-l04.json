@@ -1,0 +1,68 @@
+{
+  "id": "region-de-mosel-l04",
+  "moduleId": "region-de-mosel",
+  "order": 4,
+  "title": "Prädikat and sweetness",
+  "subtitle": "Reading ripeness",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the Prädikat levels",
+    "Explain sweetness terms",
+    "Explain the Mosel's sweet tradition"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Prädikat",
+      "body": "German Prädikatswein is graded by grape sugar at harvest, measured in Oechsle: Kabinett, Spätlese, Auslese, Beerenauslese, BA, Eiswein and Trockenbeerenauslese, TBA. The levels show ripeness, not the wine's final sweetness. In the Mosel, Kabinett, Spätlese and Auslese are often made off-dry or sweet, by tradition.",
+      "highlight": "Kabinett to TBA"
+    },
+    {
+      "type": "concept",
+      "title": "Sweetness terms",
+      "body": "Trocken means dry, up to 9 g/l of sugar; halbtrocken, off-dry, up to 18 g/l; feinherb, an unofficial off-dry term. Without these words, a Mosel Prädikat wine is usually fruity-sweet, fruchtsüss. The high acidity, often 8 to 10 g/l, balances the sugar, so even sweet wines taste fresh.",
+      "highlight": "Trocken, halbtrocken, feinherb"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the Prädikat levels from least to most ripe.",
+      "items": [
+        "Kabinett",
+        "Spätlese",
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese"
+      ],
+      "explanation": "Each level demands riper grapes at harvest."
+    },
+    {
+      "type": "concept",
+      "title": "Sweet wines",
+      "body": "In great years, the Mosel makes Beerenauslese, Trockenbeerenauslese and Eiswein, from botrytised or frozen grapes, with intense sweetness and acidity. Auctions, like the Grosser Ring auction in Trier, sell rare sweet wines for high prices. These wines age for decades.",
+      "highlight": "BA, TBA and Eiswein in great years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does trocken on a German label mean?",
+      "options": [
+        "Dry, up to 9 g/l",
+        "Very sweet",
+        "Late harvest",
+        "Sparkling"
+      ],
+      "answer": 0,
+      "explanation": "Trocken means dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Prädikat levels show ripeness, from Kabinett to TBA",
+        "Trocken means dry; without it, Mosel Prädikats are often sweet",
+        "High acidity balances sugar"
+      ]
+    }
+  ]
+}

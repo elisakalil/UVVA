@@ -1,0 +1,79 @@
+{
+  "id": "grape-tannat-l02",
+  "moduleId": "grape-tannat",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Pyrenees and the River Plate",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Tannat's home in France",
+    "Explain how Tannat reached Uruguay",
+    "Compare the climates of both homes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Madiran",
+      "body": "Tannat's French home is Madiran, in Gascony, close to the Pyrenees. Madiran must be at least 60% Tannat, often blended with Cabernet Franc, Cabernet Sauvignon or Fer Servadou. The climate is mild and fairly wet, with Atlantic influence. Tannat also appears in Irouléguy, in the Basque Country, and in Saint-Mont.",
+      "highlight": "Madiran: at least 60% Tannat"
+    },
+    {
+      "type": "concept",
+      "title": "Uruguay",
+      "body": "Basque immigrants brought Tannat to Uruguay in the 1870s; one of them, Pascual Harriague, gave it its early local name, Harriague. Today it is Uruguay's national grape, about a quarter of the vineyard. Uruguay's humid, maritime climate on the River Plate and the Atlantic gives Tannat riper, rounder tannins than in Madiran.",
+      "highlight": "Brought by Basques in the 1870s"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Tannat connection.",
+      "pairs": [
+        {
+          "left": "Madiran",
+          "right": "French home, at least 60%"
+        },
+        {
+          "left": "Irouléguy",
+          "right": "Basque Country, France"
+        },
+        {
+          "left": "Canelones",
+          "right": "Uruguay's main region"
+        },
+        {
+          "left": "Pascual Harriague",
+          "right": "Brought it to Uruguay"
+        }
+      ],
+      "explanation": "Tannat travelled from the Basque Country to South America with emigrants."
+    },
+    {
+      "type": "concept",
+      "title": "Similar yet different",
+      "body": "Both homes are humid, with rain during the growing season, unlike the dry Andes. Growers must fight disease. Uruguay is warmer and gets more sun, so Tannat ripens more fully. Canelones, near Montevideo, makes most of it; Maldonado, near the sea, and Rivera, in the north, give new styles.",
+      "highlight": "Humid homes, warmer in Uruguay"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Tannat from Uruguay often softer than Madiran?",
+      "options": [
+        "It is made from different grapes",
+        "Uruguay's warmer, sunnier climate ripens the tannins more",
+        "It is always sweet",
+        "It is blended with white wine"
+      ],
+      "answer": 1,
+      "explanation": "More warmth and sun bring riper, rounder tannins."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Madiran, near the Pyrenees, is Tannat's French home",
+        "Basque immigrants took it to Uruguay in the 1870s",
+        "Uruguay's warmer climate gives softer, riper Tannat"
+      ]
+    }
+  ]
+}

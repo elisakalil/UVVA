@@ -1,0 +1,96 @@
+{
+  "id": "region-it-tuscany-l07",
+  "moduleId": "region-it-tuscany",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Tuscany",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Tuscany's geography and grapes",
+    "Compare its great wines",
+    "Read and pair them"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its area.",
+      "pairs": [
+        {
+          "left": "Chianti Classico",
+          "right": "Florence to Siena"
+        },
+        {
+          "left": "Brunello",
+          "right": "Montalcino"
+        },
+        {
+          "left": "Vino Nobile",
+          "right": "Montepulciano"
+        },
+        {
+          "left": "Sassicaia",
+          "right": "Bolgheri coast"
+        }
+      ],
+      "explanation": "Tuscany's wines map its hills and coast."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What was created in 1992 because of the Super Tuscans?",
+      "options": [
+        "The IGT category",
+        "The DOCG",
+        "Chianti Classico",
+        "The black rooster"
+      ],
+      "answer": 0,
+      "explanation": "IGT gave a home to quality wines outside DOC rules."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Brunello di Montalcino must be 100% Sangiovese.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Tuscan grapes or wines?",
+      "options": [
+        "Sangiovese",
+        "Vernaccia",
+        "Vin Santo",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is Piedmont's."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Chianti Classico's top level, since 2014, is ____ Selezione.",
+      "options": [
+        "Gran",
+        "Alta",
+        "Prima",
+        "Super"
+      ],
+      "answer": "Gran",
+      "explanation": "Gran Selezione."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tuscany is hilly, Mediterranean and Sangiovese-led",
+        "Chianti Classico, Brunello and Vino Nobile are its classics",
+        "Bolgheri's Super Tuscans changed Italian law",
+        "Its wines suit tomato, boar and bistecca"
+      ]
+    }
+  ]
+}

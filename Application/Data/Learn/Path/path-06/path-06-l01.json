@@ -1,0 +1,71 @@
+{
+  "id": "path-06-l01",
+  "moduleId": "path-06",
+  "order": 1,
+  "title": "How food changes wine",
+  "subtitle": "Why the same wine tastes different with dinner",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why food changes how wine tastes",
+    "Name the food elements that matter most",
+    "Explain the idea of matching weight"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Food changes the wine",
+      "body": "Taste a wine on its own, then with food, and it often changes. A red can turn harsh after a bite of something sweet, or soft after a bite of salty cheese. Pairing isn't about finding a perfect match; it's about avoiding clashes and finding combinations where both taste better.",
+      "highlight": "Avoid clashes, look for lifts"
+    },
+    {
+      "type": "concept",
+      "title": "The mechanism",
+      "body": "Your palate adapts to what it has just tasted. After sugar, the next thing tastes less sweet and more sour. After salt, it tastes less bitter and acidic. Fat coats the mouth, so tannin and acidity feel softer and cleaner. These effects are reliable enough to plan around.",
+      "highlight": "The palate adjusts to the last bite"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "After eating something salty, a wine is likely to seem:",
+      "options": [
+        "More bitter and acidic",
+        "Less bitter and acidic",
+        "Sweeter and heavier",
+        "More tannic"
+      ],
+      "answer": 1,
+      "explanation": "Salt reduces our sense of bitterness and acidity, which is why salty dishes make many wines seem softer and fruitier."
+    },
+    {
+      "type": "concept",
+      "title": "Weight with weight",
+      "body": "A simple rule that rarely fails: match the weight of the food to the body of the wine. A delicate fish needs a light white; a rich stew needs a fuller red. Big flavours overpower light wines, and big wines flatten delicate food. Colour matters far less than weight.",
+      "highlight": "Light with light, rich with rich"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these food elements make a wine seem harder, more bitter or more acidic?",
+      "options": [
+        "Sweetness",
+        "Umami",
+        "Salt",
+        "Acidity in the food"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Sweetness and umami make wine feel harsher. Salt and acidity in food make it feel softer."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Food changes how wine tastes, for better or worse",
+        "Sugar and umami harden wine; salt and acid soften it",
+        "Match the weight of the food to the body of the wine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "grape-sauvignon-blanc-l06",
+  "moduleId": "grape-sauvignon-blanc",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Sauvignon Blanc",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Sauvignon Blanc with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Green and fresh",
+      "body": "Sauvignon Blanc suits goat's cheese, a Loire classic with Sancerre, salads, green vegetables, asparagus, herbs, seafood, sushi and Thai dishes with lime and coriander. Its acidity cuts through fried food. Oaked Bordeaux whites suit richer fish and white meat.",
+      "highlight": "Goat's cheese, salads, herbs"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 7 to 10 degrees. Most Sauvignon Blanc is best within one to three years. Top Sancerre, Pouilly-Fumé and Pessac-Léognan can age 10 to 20 years, gaining honey, smoke and mineral notes.",
+      "highlight": "Mostly young; top wines age"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which cheese is a classic Loire match for Sancerre?",
+      "options": [
+        "Crottin de Chavignol goat's cheese",
+        "Stilton",
+        "Parmesan",
+        "Brie"
+      ],
+      "answer": 0,
+      "explanation": "Crottin de Chavignol comes from a village in Sancerre."
+    },
+    {
+      "type": "tip",
+      "body": "Sauvignon Blanc's green notes make it one of the few wines that pairs with asparagus and green salads."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Sauvignon Blanc?",
+      "options": [
+        "Goat's cheese",
+        "Green salad",
+        "Thai dishes with lime",
+        "Beef stew"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Beef stew needs a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sauvignon suits goat's cheese, greens and herbs",
+        "Serve at 7 to 10 degrees",
+        "Top Loire and Bordeaux wines age 10 to 20 years"
+      ]
+    }
+  ]
+}

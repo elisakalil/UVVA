@@ -1,0 +1,62 @@
+{
+  "id": "grape-trebbiano-l04",
+  "moduleId": "grape-trebbiano",
+  "order": 4,
+  "title": "Vin Santo",
+  "subtitle": "Tuscany's holy wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Vin Santo is made",
+    "Explain the caratelli",
+    "Describe Vin Santo's styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dried grapes",
+      "body": "Vin Santo, holy wine, is a Tuscan sweet wine made mainly from Trebbiano and Malvasia. Grapes are dried on straw mats or hung from rafters for months, until Christmas or later, concentrating sugar. They're pressed into a thick, sweet must, then sealed into small barrels.",
+      "highlight": "Dried for months"
+    },
+    {
+      "type": "concept",
+      "title": "Caratelli",
+      "body": "The must ferments slowly in small barrels called caratelli, often 50 to 100 litres, sealed for three to five years or more. Traditionally they're kept in attics, through hot summers and cold winters. Some caratelli keep a madre, mother, a deposit of old yeast and wine, which starts fermentation. The wine oxidises slowly, becoming amber.",
+      "highlight": "Small sealed barrels for years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a madre in Vin Santo?",
+      "options": [
+        "A deposit of old yeast and wine left in the barrel",
+        "A grape",
+        "A type of glass",
+        "A dessert"
+      ],
+      "answer": 0,
+      "explanation": "The madre helps start fermentation and adds character."
+    },
+    {
+      "type": "concept",
+      "title": "Styles",
+      "body": "Vin Santo ranges from dry to very sweet, amber to brown, with nuts, dried apricot, caramel, honey and a slightly oxidised note. Vin Santo del Chianti Classico and di Montepulciano are DOCs. Occhio di Pernice, partridge's eye, is a rare version made from Sangiovese.",
+      "highlight": "Amber, nutty, from dry to sweet"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vin Santo is always made from red grapes.",
+      "answer": false,
+      "explanation": "Not true. It's mainly Trebbiano and Malvasia; only Occhio di Pernice uses Sangiovese."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vin Santo is made from dried Trebbiano and Malvasia",
+        "It ages for years in small sealed caratelli",
+        "It's amber, nutty and from dry to sweet"
+      ]
+    }
+  ]
+}

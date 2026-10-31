@@ -1,0 +1,62 @@
+{
+  "id": "grape-pinot-noir-l01",
+  "moduleId": "grape-pinot-noir",
+  "order": 1,
+  "title": "Meet Pinot Noir",
+  "subtitle": "Why the palest red is the hardest to grow",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why Pinot Noir is pale",
+    "Recognise its typical aromas",
+    "Name its home region"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Red fruit and earth",
+      "body": "Pinot Noir gives pale to medium ruby wines with red cherry, raspberry, strawberry and, with age, earthy notes of mushroom, forest floor and game. Tannins are low to medium and silky, acidity high. Its delicacy and complexity make it one of the most prized grapes, and Burgundy is its home.",
+      "highlight": "Red fruit, silk, earth"
+    },
+    {
+      "type": "concept",
+      "title": "Thin skins, tight bunches",
+      "body": "Pinot Noir's skins are thin and low in colour pigments, so its wines are pale and low in tannin. Its tight bunches, shaped like a pine cone, which may give it its name, trap moisture and invite rot. It buds early, risking frost, and mutates easily, with hundreds of clones. It's one of the oldest known grapes, recorded in Burgundy in the 14th century.",
+      "highlight": "Thin skins, pine-cone bunches"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Pinot Noir usually pale in colour?",
+      "options": [
+        "Its skins are thin and low in pigment",
+        "It's blended with white grapes",
+        "It's aged in white oak",
+        "It's picked unripe"
+      ],
+      "answer": 0,
+      "explanation": "Thin skins with few pigments give pale colour and low tannin."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale ruby, translucent colour. On the nose, red cherry, raspberry and often earthy or floral notes. On the palate, high acidity, silky low tannin and a long, fine finish. If you can read a page through the wine and it smells of red fruit and earth, think Pinot Noir.",
+      "highlight": "Translucent, red fruit, silky"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinot Noir's tight bunches make it prone to rot.",
+      "answer": true,
+      "explanation": "Yes. Tight, compact bunches trap moisture, inviting rot in damp weather."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir is pale because of thin, low-pigment skins",
+        "It smells of red fruit and, with age, earth and mushroom",
+        "Burgundy is its historic home"
+      ]
+    }
+  ]
+}

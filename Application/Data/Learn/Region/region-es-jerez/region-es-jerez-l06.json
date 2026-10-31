@@ -1,0 +1,72 @@
+{
+  "id": "region-es-jerez-l06",
+  "moduleId": "region-es-jerez",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Sherry and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Sherry label",
+    "Serve Sherry correctly",
+    "Pair Sherry with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Sherry labels name the style: Fino, Manzanilla, Amontillado, Oloroso, Palo Cortado, Cream or PX. Look for en rama, an age statement like VOS or VORS, or 12 or 15 year old Sherry. Manzanilla always comes from Sanlúcar. Most Sherry has no vintage, being a solera blend; añada Sherries are rare single vintages.",
+      "highlight": "Style, age statement, en rama"
+    },
+    {
+      "type": "concept",
+      "title": "Serving",
+      "body": "Serve Fino and Manzanilla well chilled, 6 to 8 degrees, in a white wine glass; keep open bottles in the fridge and finish within a week. Amontillado and Palo Cortado at 12 to 14; Oloroso at 14 to 16; PX slightly cool. Oxidative styles keep for weeks once open.",
+      "highlight": "Fino cold; Oloroso cool"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How should Fino be served?",
+      "options": [
+        "Well chilled, and finished within a week",
+        "Warm, at room temperature",
+        "With ice and lemonade",
+        "After years in an open bottle"
+      ],
+      "answer": 0,
+      "explanation": "Fino is delicate; serve it cold and fresh."
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Fino and Manzanilla suit tapas: olives, almonds, jamón, fried fish, prawns. Amontillado suits soups, mushrooms and tricky vegetables like artichokes and asparagus. Oloroso suits stews, game and hard cheese. PX suits vanilla ice cream, blue cheese and chocolate.",
+      "highlight": "Tapas, soups, game, ice cream"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Fino or Manzanilla?",
+      "options": [
+        "Olives",
+        "Jamón",
+        "Fried fish",
+        "Chocolate cake"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Chocolate cake suits PX."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels name the style and sometimes an age",
+        "Serve Fino cold and fresh; Oloroso cool",
+        "Fino with tapas, Amontillado with soups, PX with ice cream"
+      ]
+    }
+  ]
+}

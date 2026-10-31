@@ -1,0 +1,79 @@
+{
+  "id": "grape-carmenere-l02",
+  "moduleId": "grape-carmenere",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "From Bordeaux to Chile",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Carmenère's history in Bordeaux",
+    "Explain why it almost disappeared",
+    "Name its main regions today"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A Bordeaux grape",
+      "body": "Carmenère was once widely planted in Bordeaux, especially in the Médoc, and valued for its colour. But it suffered from coulure, poor fruit set in cool, wet springs, giving low and irregular yields. After phylloxera destroyed Bordeaux's vineyards in the late 19th century, growers didn't replant it. It almost vanished from France.",
+      "highlight": "Lost from Bordeaux after phylloxera"
+    },
+    {
+      "type": "concept",
+      "title": "Chile today",
+      "body": "In the mid-19th century, Chilean growers brought Bordeaux cuttings, including Carmenère, before phylloxera struck. Chile's dry, warm climate suited it better than Bordeaux's. Today Chile grows about 95% of the world's Carmenère, around 10,000 hectares, especially in Colchagua, Cachapoal, Maipo and Peumo.",
+      "highlight": "Chile grows about 95%"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Carmenère role.",
+      "pairs": [
+        {
+          "left": "Médoc",
+          "right": "Former home"
+        },
+        {
+          "left": "Colchagua",
+          "right": "Leading Chilean region"
+        },
+        {
+          "left": "Peumo",
+          "right": "Renowned Carmenère site"
+        },
+        {
+          "left": "Northern Italy",
+          "right": "Mistaken for Cabernet Franc"
+        }
+      ],
+      "explanation": "Carmenère's map shifted from France to Chile."
+    },
+    {
+      "type": "concept",
+      "title": "Elsewhere",
+      "body": "Small plantings remain in Bordeaux, and some were rediscovered in northern Italy, where they had been mistaken for Cabernet Franc. China also grows a grape called Cabernet Gernischt, now thought to be Carmenère. Some is planted in California and Washington.",
+      "highlight": "Italy and China too"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why did Carmenère almost disappear from Bordeaux?",
+      "options": [
+        "It was banned",
+        "Poor fruit set and phylloxera led growers not to replant it",
+        "It was too productive",
+        "It turned white"
+      ],
+      "answer": 1,
+      "explanation": "Coulure made yields unreliable, so after phylloxera growers replanted other grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carmenère was a Bordeaux grape, lost after phylloxera",
+        "Chile grows about 95% of the world's Carmenère",
+        "Small plantings survive in Italy, China and Bordeaux"
+      ]
+    }
+  ]
+}

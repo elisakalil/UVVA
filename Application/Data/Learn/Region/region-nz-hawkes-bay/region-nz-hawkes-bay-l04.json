@@ -1,0 +1,60 @@
+{
+  "id": "region-nz-hawkes-bay-l04",
+  "moduleId": "region-nz-hawkes-bay",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Hawke's Bay and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Hawke's Bay label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape or blend, Hawke's Bay GI, and often Gimblett Gravels or Bridge Pa Triangle. Bordeaux blends may list grapes in order of share, like Merlot Cabernet. New Zealand's 85% rules apply. Screw caps are standard, even for reds.",
+      "highlight": "GI, sub-area, screw cap"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Hawke's Bay Bordeaux blends suit lamb, a New Zealand staple, beef and venison. Syrah suits lamb with rosemary, game and peppered steak. Chardonnay suits roast chicken, crayfish and creamy fish. Serve reds at 16 to 18 degrees; good blends age 10 to 15 years.",
+      "highlight": "Lamb with a Merlot blend"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which meat is a classic New Zealand match for Hawke's Bay reds?",
+      "options": [
+        "Lamb",
+        "Kangaroo",
+        "Bison",
+        "Reindeer"
+      ],
+      "answer": 0,
+      "explanation": "New Zealand lamb suits its Bordeaux blends and Syrah."
+    },
+    {
+      "type": "tip",
+      "body": "Hawke's Bay is also known for its Art Deco town of Napier, rebuilt after a 1931 earthquake."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Good Hawke's Bay red blends can age 10 to 15 years.",
+      "answer": true,
+      "explanation": "Yes, especially from Gimblett Gravels."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the GI and often Gimblett Gravels",
+        "Its reds suit lamb, beef and venison",
+        "Good blends age 10 to 15 years"
+      ]
+    }
+  ]
+}

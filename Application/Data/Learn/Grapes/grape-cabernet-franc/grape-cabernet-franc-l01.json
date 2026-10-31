@@ -1,0 +1,62 @@
+{
+  "id": "grape-cabernet-franc-l01",
+  "moduleId": "grape-cabernet-franc",
+  "order": 1,
+  "title": "Meet Cabernet Franc",
+  "subtitle": "Red fruit, violets and leaf",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cabernet Franc's flavours and structure",
+    "Explain its family role",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aromatic and fresh",
+      "body": "Cabernet Franc gives medium-bodied reds with raspberry, red currant, violet, graphite and a leafy or green pepper note. Tannins are finer and lighter than Cabernet Sauvignon's, acidity fresh. It's more aromatic and lighter, with a characteristic herbal edge.",
+      "highlight": "Raspberry, violet, leaf"
+    },
+    {
+      "type": "concept",
+      "title": "A parent",
+      "body": "DNA shows Cabernet Franc is a parent of Cabernet Sauvignon, with Sauvignon Blanc, of Merlot, with Magdeleine Noire des Charentes, and of Carmenère. It probably came from the Basque Country. It buds and ripens earlier than Cabernet Sauvignon, so it suits cooler places, but it still carries pyrazines, which give green notes when unripe.",
+      "highlight": "Parent of Cabernet Sauvignon and Merlot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is Cabernet Franc a parent of?",
+      "options": [
+        "Pinot Noir",
+        "Cabernet Sauvignon",
+        "Syrah",
+        "Tempranillo"
+      ],
+      "answer": 1,
+      "explanation": "Cabernet Franc crossed with Sauvignon Blanc to give Cabernet Sauvignon."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for medium ruby colour, red fruit with violet and a leafy, pencil-shaving or green pepper note. On the palate, fresh acidity and fine, medium tannins. It's lighter than Cabernet Sauvignon and less plummy than Merlot. A leafy, perfumed red with red fruit often means Cabernet Franc.",
+      "highlight": "Leafy, perfumed, red fruit"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cabernet Franc ripens later than Cabernet Sauvignon.",
+      "answer": false,
+      "explanation": "Not true. It ripens earlier, which is why it suits cooler places like the Loire."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Franc gives raspberry, violet and a leafy note",
+        "It's a parent of Cabernet Sauvignon, Merlot and Carmenère",
+        "It ripens earlier than Cabernet Sauvignon"
+      ]
+    }
+  ]
+}

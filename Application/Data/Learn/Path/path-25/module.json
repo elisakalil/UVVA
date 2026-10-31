@@ -1,0 +1,21 @@
+{
+  "id": "path-25",
+  "kind": "path",
+  "order": 25,
+  "level": "Expert",
+  "complexity": "B",
+  "title": "Sparkling Wines in Depth",
+  "description": "From base wine to dosage: every choice that defines a sparkling wine, and the regions that master them.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "path-25-l01",
+    "path-25-l02",
+    "path-25-l03",
+    "path-25-l04",
+    "path-25-l05",
+    "path-25-l06",
+    "path-25-l07"
+  ]
+}

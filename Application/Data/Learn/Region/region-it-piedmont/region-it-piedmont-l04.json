@@ -1,0 +1,62 @@
+{
+  "id": "region-it-piedmont-l04",
+  "moduleId": "region-it-piedmont",
+  "order": 4,
+  "title": "Barbaresco",
+  "subtitle": "The queen",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barbaresco's zone",
+    "Compare it with Barolo",
+    "Name its key producers"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three villages",
+      "body": "Barbaresco DOCG lies north-east of Alba, near the Tanaro river, mainly in three villages: Barbaresco, Neive and Treiso. It's smaller than Barolo, about 750 hectares compared with about 2,200. It's slightly lower and warmer, closer to the river, so Nebbiolo ripens a little earlier.",
+      "highlight": "Barbaresco, Neive, Treiso"
+    },
+    {
+      "type": "concept",
+      "title": "Rules and style",
+      "body": "Barbaresco must be 100% Nebbiolo, aged at least 26 months, 9 in wood; Riserva 50 months. It has 66 MGAs, like Asili, Rabajà and Montestefano. Its wines are often described as more elegant and approachable earlier than Barolo, with softer tannins, though site and producer matter more.",
+      "highlight": "26 months; 66 MGAs"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does Barbaresco's minimum ageing compare with Barolo's?",
+      "options": [
+        "Shorter: 26 months against 38",
+        "Longer",
+        "The same",
+        "Barbaresco has no ageing rule"
+      ],
+      "answer": 0,
+      "explanation": "Barbaresco needs 26 months; Barolo 38."
+    },
+    {
+      "type": "concept",
+      "title": "Producers",
+      "body": "Angelo Gaja, from the 1960s, raised Barbaresco's global prestige, with single-vineyard wines and new ideas. The Produttori del Barbaresco, a co-operative founded in 1958, makes some of the best-value fine wines in Italy, including single-vineyard Riservas. Bruno Giacosa was another legend.",
+      "highlight": "Gaja and the Produttori"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Barbaresco is larger than Barolo.",
+      "answer": false,
+      "explanation": "Not true. Barbaresco is about a third of Barolo's size."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barbaresco is smaller, lower and slightly warmer than Barolo",
+        "It ages at least 26 months and has 66 MGAs",
+        "Gaja and the Produttori raised its prestige"
+      ]
+    }
+  ]
+}

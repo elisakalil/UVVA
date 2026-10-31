@@ -1,0 +1,72 @@
+{
+  "id": "grape-aglianico-l01",
+  "moduleId": "grape-aglianico",
+  "order": 1,
+  "title": "Meet Aglianico",
+  "subtitle": "The Barolo of the south",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Aglianico's structure and flavours",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Firm and dark",
+      "body": "Aglianico gives deep-coloured wines with high tannin and high acidity, a rare combination in a southern grape. Aromas include black cherry, plum, leather, tar, smoke and dried herbs. Its power and ageing potential have earned it the nickname the Barolo of the south.",
+      "highlight": "High tannin, high acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Ancient roots",
+      "body": "Aglianico has grown in southern Italy for centuries. Its name was once linked to Hellenic, suggesting a Greek origin, but DNA hasn't confirmed this, and the name may come from a Spanish-era word. It ripens very late, often in November, which lets it keep acidity even in a warm region.",
+      "highlight": "Very late ripening keeps acidity"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Aglianico keep high acidity in the warm south of Italy?",
+      "options": [
+        "It's picked in summer",
+        "It ripens very late, in cooler autumn weather, often at altitude",
+        "Acid is added",
+        "It grows in shade"
+      ],
+      "answer": 1,
+      "explanation": "Late ripening at altitude, into cool autumn nights, preserves acidity."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "In the glass, Aglianico is dark ruby. On the nose, black cherry, plum, smoke and earth. On the palate, firm, sometimes rustic tannins, bright acidity and a long finish. Young wines can be severe; age brings leather, tobacco and dried fruit.",
+      "highlight": "Dark, smoky, firm"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which aromas are typical of Aglianico?",
+      "options": [
+        "Black cherry",
+        "Smoke",
+        "Leather with age",
+        "Lychee"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Lychee is typical of Gewürztraminer."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aglianico combines high tannin and high acidity",
+        "It ripens very late, keeping freshness in the south",
+        "It's called the Barolo of the south for its power and age"
+      ]
+    }
+  ]
+}

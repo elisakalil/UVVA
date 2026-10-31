@@ -1,0 +1,25 @@
+{
+  "id": "grape-montepulciano",
+  "kind": "grape",
+  "order": 11,
+  "color": "red",
+  "title": "Montepulciano",
+  "aliases": [],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "1 1 0 1 = 3",
+  "complexity": "C",
+  "description": "Central Italy's generous red grape, deep in colour and soft in tannin, from Abruzzo to the Marche.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-montepulciano-l01",
+    "grape-montepulciano-l02",
+    "grape-montepulciano-l03",
+    "grape-montepulciano-l04",
+    "grape-montepulciano-l05"
+  ]
+}

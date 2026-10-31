@@ -1,0 +1,62 @@
+{
+  "id": "path-23-l02",
+  "moduleId": "path-23",
+  "order": 2,
+  "title": "Chile's cool fringes",
+  "subtitle": "Coast, north and south",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the influence of the Humboldt Current",
+    "Describe Chile's coastal valleys",
+    "Describe the southern regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Humboldt Current",
+      "body": "The cold Humboldt Current runs north along Chile's coast, cooling the air and bringing morning fog. Coastal valleys like Casablanca, San Antonio and Leyda are among Chile's coolest, ideal for Sauvignon Blanc, Chardonnay and Pinot Noir. This east to west contrast matters more than north to south.",
+      "highlight": "Cold ocean, cool coast"
+    },
+    {
+      "type": "concept",
+      "title": "Costa, Entre Cordilleras, Andes",
+      "body": "In 2011 Chile added three descriptors to its regions: Costa, for coastal areas; Entre Cordilleras, between the mountain ranges; and Andes, for the foothills. A Costa wine is likely to be fresh and lower in alcohol; an Andes wine to have firm tannin and freshness from altitude.",
+      "highlight": "Costa, Entre Cordilleras, Andes"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In Chile, distance from the coast often matters more than latitude for climate.",
+      "answer": true,
+      "explanation": "Yes. The cold Humboldt Current cools coastal areas, while inland valleys get warmer before the Andes cool them again."
+    },
+    {
+      "type": "concept",
+      "title": "North and south",
+      "body": "In the north, Limarí and Elqui have limestone soils and coastal fog, making mineral Chardonnay and Syrah. In the south, Itata, Bío-Bío and Malleco are cooler and wetter, with old dry-farmed vines of País and Cinsault, and new plantings of Riesling and Pinot Noir.",
+      "highlight": "Limarí in the north; Itata in the south"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Chilean region is best known for cool, coastal Sauvignon Blanc?",
+      "options": [
+        "Maipo",
+        "Casablanca",
+        "Colchagua",
+        "Atacama"
+      ],
+      "answer": 1,
+      "explanation": "Casablanca's coastal location brings fog and cool air, perfect for crisp whites."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Humboldt Current cools Chile's coast",
+        "Costa, Entre Cordilleras and Andes describe position",
+        "Limarí and Itata extend Chile north and south"
+      ]
+    }
+  ]
+}

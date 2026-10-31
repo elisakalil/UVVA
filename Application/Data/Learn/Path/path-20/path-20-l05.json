@@ -1,0 +1,73 @@
+{
+  "id": "path-20-l05",
+  "moduleId": "path-20",
+  "order": 5,
+  "title": "Catalonia and the east",
+  "subtitle": "Cava, Priorat and Monastrell",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cava and Penedès",
+    "Describe Priorat and its llicorella",
+    "Name the main wines of the Levante"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cava and Penedès",
+      "body": "Most Cava comes from Penedès, near Barcelona, made by the traditional method. The main grapes are Macabeo, Xarel-lo and Parellada. Minimum ageing on lees is 9 months; Reserva needs 18 months and Gran Reserva 30. Some producers left the Cava DO to form Corpinnat and Clàssic Penedès, with stricter rules.",
+      "highlight": "Macabeo, Xarel-lo, Parellada"
+    },
+    {
+      "type": "concept",
+      "title": "Priorat",
+      "body": "Priorat, south-west of Barcelona, revived in the late 1980s when a group of producers, including René Barbier and Álvaro Palacios, made powerful reds from old Garnacha and Cariñena. Vines grow on steep slopes of llicorella, a dark slate that forces roots deep and keeps yields tiny. It became a DOCa in 2000.",
+      "highlight": "Llicorella slate, old Garnacha and Cariñena"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its grapes.",
+      "pairs": [
+        {
+          "left": "Cava",
+          "right": "Macabeo, Xarel-lo, Parellada"
+        },
+        {
+          "left": "Priorat",
+          "right": "Garnacha and Cariñena"
+        },
+        {
+          "left": "Jumilla",
+          "right": "Monastrell"
+        },
+        {
+          "left": "Rueda",
+          "right": "Verdejo"
+        }
+      ],
+      "explanation": "Each region of eastern Spain has its own grape identity."
+    },
+    {
+      "type": "concept",
+      "title": "The Levante",
+      "body": "South of Valencia, the Levante is hot and dry. Jumilla and Yecla make ripe, powerful reds from Monastrell, the same grape as Mourvèdre. Alicante makes reds and a rare sweet wine, Fondillón. Valencia makes everything from bulk wine to sweet Moscatel.",
+      "highlight": "Monastrell in Jumilla"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Priorat's llicorella is a dark slate soil.",
+      "answer": true,
+      "explanation": "Yes. It forces roots deep and keeps yields very low, giving concentrated wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cava is mostly from Penedès, made by the traditional method",
+        "Priorat grows old Garnacha and Cariñena on llicorella slate",
+        "The Levante makes ripe Monastrell reds"
+      ]
+    }
+  ]
+}

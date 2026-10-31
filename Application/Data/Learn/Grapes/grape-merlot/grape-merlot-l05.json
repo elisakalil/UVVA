@@ -1,0 +1,66 @@
+{
+  "id": "grape-merlot-l05",
+  "moduleId": "grape-merlot",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Merlot",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Merlot with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Versatile",
+      "body": "Merlot's soft tannins make it flexible: roast chicken, pork, duck, mushroom dishes, lasagne and medium-rich beef. It handles some umami better than very tannic reds. Lighter styles can even go with salmon or tuna. Avoid very spicy food, which clashes with alcohol.",
+      "highlight": "Roast chicken, duck, mushrooms"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 15 to 18 degrees. Simple Merlot is best within three years. Top Pomerol and Saint-Émilion age 20 to 40 years, gaining truffle, leather and earth. Merlot's softer tannins often make it approachable earlier than Cabernet-based wines of the same quality.",
+      "highlight": "Approachable earlier than Cabernet"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Merlot flexible with food?",
+      "options": [
+        "Its tannins are soft",
+        "It's very sweet",
+        "It has no alcohol",
+        "It's always light"
+      ],
+      "answer": 0,
+      "explanation": "Soft tannins clash less with a wide range of dishes."
+    },
+    {
+      "type": "tip",
+      "body": "An older Pomerol with a mushroom risotto or truffle pasta is a classic match. The earthy, truffle notes of mature Merlot echo the dish."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Top Pomerol can age for 20 to ____ years.",
+      "options": [
+        "40",
+        "5",
+        "3",
+        "100"
+      ],
+      "answer": "40",
+      "explanation": "Great Pomerol develops truffle and earth over decades."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot pairs widely, from chicken to mushrooms",
+        "Serve at 15 to 18 degrees",
+        "Top Right Bank wines age for decades"
+      ]
+    }
+  ]
+}

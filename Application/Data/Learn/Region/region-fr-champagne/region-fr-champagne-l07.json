@@ -1,0 +1,96 @@
+{
+  "id": "region-fr-champagne-l07",
+  "moduleId": "region-fr-champagne",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Champagne",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Champagne's climate, chalk and grapes",
+    "Explain the traditional method",
+    "Read and pair Champagne"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each area to its grape.",
+      "pairs": [
+        {
+          "left": "Côte des Blancs",
+          "right": "Chardonnay"
+        },
+        {
+          "left": "Montagne de Reims",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Vallée de la Marne",
+          "right": "Meunier"
+        },
+        {
+          "left": "Côte des Bar",
+          "right": "Southern Pinot Noir"
+        }
+      ],
+      "explanation": "Each area favours a grape."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the minimum ageing for vintage Champagne?",
+      "options": [
+        "3 years",
+        "15 months",
+        "6 months",
+        "10 years"
+      ],
+      "answer": 0,
+      "explanation": "Vintage needs at least 3 years."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Extra Dry Champagne is drier than Brut.",
+      "answer": false,
+      "explanation": "Not true. Extra Dry, 12 to 17 g/l, is sweeter than Brut."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Champagne's main grapes?",
+      "options": [
+        "Chardonnay",
+        "Pinot Noir",
+        "Meunier",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Riesling isn't a Champagne grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A grower who makes their own Champagne uses the code ____.",
+      "options": [
+        "RM",
+        "NM",
+        "CM",
+        "MA"
+      ],
+      "answer": "RM",
+      "explanation": "Récoltant-manipulant."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Champagne is cold and chalky, giving high-acid base wine",
+        "Pinot Noir, Meunier and Chardonnay are its grapes",
+        "The traditional method and lees ageing create its style",
+        "Labels show dosage, producer type and vintage"
+      ]
+    }
+  ]
+}

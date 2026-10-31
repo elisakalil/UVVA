@@ -1,0 +1,79 @@
+{
+  "id": "region-us-napa-valley-l04",
+  "moduleId": "region-us-napa-valley",
+  "order": 4,
+  "title": "AVAs within the valley",
+  "subtitle": "Napa's sub-regions",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain AVAs",
+    "Name key Napa AVAs",
+    "Compare valley floor and mountain sites"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "AVAs",
+      "body": "An AVA, American Viticultural Area, is a defined grape-growing area; a label naming one must use at least 85% of grapes from it. Napa Valley AVA was created in 1981, California's first. Within it are 16 smaller AVAs, each with distinct soils and climate. Napa County law also requires at least 75% Napa Valley grapes for wines naming a Napa sub-AVA.",
+      "highlight": "16 sub-AVAs"
+    },
+    {
+      "type": "concept",
+      "title": "Valley floor and mountains",
+      "body": "Valley floor AVAs include Oakville and Rutherford, with alluvial soils, famous for rich Cabernet; Rutherford is known for its dusty, earthy Rutherford dust; and Stags Leap District, with softer, elegant tannins. Mountain AVAs, like Howell Mountain, Mount Veeder, Spring Mountain and Diamond Mountain, sit above the fog, with thin, volcanic soils, giving more structured, tannic wines.",
+      "highlight": "Valley floor rich; mountains structured"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each AVA to its feature.",
+      "pairs": [
+        {
+          "left": "Rutherford",
+          "right": "Rutherford dust, earthy"
+        },
+        {
+          "left": "Stags Leap District",
+          "right": "Elegant tannins"
+        },
+        {
+          "left": "Howell Mountain",
+          "right": "Above the fog, structured"
+        },
+        {
+          "left": "Carneros",
+          "right": "Coolest, near the bay"
+        }
+      ],
+      "explanation": "Each AVA has its own character."
+    },
+    {
+      "type": "concept",
+      "title": "Why it matters",
+      "body": "Napa's AVAs show that even a small valley has big differences in soil and climate. Mountain sites, above the fog line, get more sun but cooler temperatures, and lower yields. Valley floor sites are warmer and more fertile. Many top wines blend from several AVAs; others come from single vineyards, like To Kalon in Oakville.",
+      "highlight": "To Kalon, a famous vineyard"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What must a wine contain to name an AVA on its label?",
+      "options": [
+        "At least 85% grapes from that AVA",
+        "100% from that AVA",
+        "At least 50%",
+        "Any amount"
+      ],
+      "answer": 0,
+      "explanation": "The federal rule is 85%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Napa Valley AVA, created in 1981, contains 16 sub-AVAs",
+        "Valley floor AVAs give rich wines; mountain AVAs structured ones",
+        "A label naming an AVA needs at least 85% of its grapes"
+      ]
+    }
+  ]
+}

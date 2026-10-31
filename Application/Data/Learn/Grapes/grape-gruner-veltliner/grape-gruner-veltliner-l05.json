@@ -1,0 +1,96 @@
+{
+  "id": "grape-gruner-veltliner-l05",
+  "moduleId": "grape-gruner-veltliner",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Grüner Veltliner",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Grüner",
+    "Know its regions and styles",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compound gives Grüner its pepper note?",
+      "options": [
+        "Rotundone",
+        "Pyrazine",
+        "Terpene",
+        "Tannin"
+      ],
+      "answer": 0,
+      "explanation": "Rotundone, as in Syrah."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Grüner.",
+      "pairs": [
+        {
+          "left": "Loess",
+          "right": "Wind-blown silt soil"
+        },
+        {
+          "left": "Weinviertel",
+          "right": "First DAC"
+        },
+        {
+          "left": "Heuriger",
+          "right": "Viennese wine tavern"
+        },
+        {
+          "left": "Smaragd",
+          "right": "Ripest Wachau style"
+        }
+      ],
+      "explanation": "Grüner's world is Austrian."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Grüner Veltliner is closely related to Roter Veltliner.",
+      "answer": false,
+      "explanation": "Not true. Despite the name, they're not closely related."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Grüner?",
+      "options": [
+        "White pepper",
+        "Citrus",
+        "Green apple",
+        "Lychee"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Lychee belongs to Gewürztraminer."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Grüner is about a ____ of Austria's vineyards.",
+      "options": [
+        "third",
+        "tenth",
+        "half",
+        "quarter"
+      ],
+      "answer": "third",
+      "explanation": "About a third."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grüner gives citrus, green apple and white pepper",
+        "Lower Austria's loess and rock shape its styles",
+        "DAC and Wachau terms describe its styles",
+        "It's one of the most food-friendly whites"
+      ]
+    }
+  ]
+}

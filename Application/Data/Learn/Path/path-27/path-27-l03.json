@@ -1,0 +1,79 @@
+{
+  "id": "path-27-l03",
+  "moduleId": "path-27",
+  "order": 3,
+  "title": "Tokaji",
+  "subtitle": "Aszú, Szamorodni and Eszencia",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Aszú is made in detail",
+    "Explain Szamorodni and Eszencia",
+    "Explain how Tokaji ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aszú",
+      "body": "Aszú berries, shrivelled by botrytis, are picked one by one and stored as a paste. They're added to a base wine or fermenting must, soaked for 12 to 60 hours, then pressed. Traditionally, sweetness was measured in puttonyos, the number of 25 kg baskets of aszú per 136-litre barrel. Since 2013, Aszú must have at least 120 g/l of sugar.",
+      "highlight": "Aszú: berries soaked in wine"
+    },
+    {
+      "type": "concept",
+      "title": "Szamorodni and Eszencia",
+      "body": "Szamorodni, meaning as it comes, is made from whole bunches with some aszú berries, not separated. It can be dry, aged under a flor-like yeast, or sweet. Eszencia is the free-run juice that drips from aszú berries under their own weight. It can have over 450 g/l of sugar, ferments for years, and rarely reaches 5% alcohol.",
+      "highlight": "Eszencia: over 450 g/l"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Tokaji to its making.",
+      "pairs": [
+        {
+          "left": "Aszú",
+          "right": "Berries soaked in base wine"
+        },
+        {
+          "left": "Szamorodni",
+          "right": "Whole bunches, some botrytis"
+        },
+        {
+          "left": "Eszencia",
+          "right": "Free-run juice of aszú"
+        },
+        {
+          "left": "Dry Furmint",
+          "right": "Healthy grapes, no botrytis"
+        }
+      ],
+      "explanation": "Tokaj makes several wines from the same harvest."
+    },
+    {
+      "type": "concept",
+      "title": "Ageing",
+      "body": "Tokaji Aszú ages at least 18 months in oak, traditionally small Gönci barrels of 136 litres, in cellars cut into volcanic rock, lined with a black mould, Zasmidium cellare, that regulates humidity. High acidity from Furmint lets these wines age for a century or more.",
+      "highlight": "Gönci barrels, mould-lined cellars"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Tokaji ____ is the free-run juice from aszú berries.",
+      "options": [
+        "Eszencia",
+        "Szamorodni",
+        "Aszú",
+        "Furmint"
+      ],
+      "answer": "Eszencia",
+      "explanation": "Eszencia is so sweet it ferments very slowly and stays very low in alcohol."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aszú berries are soaked in base wine, giving at least 120 g/l of sugar",
+        "Szamorodni uses whole bunches; Eszencia is pure free-run juice",
+        "Furmint's acidity lets Tokaji age for a century"
+      ]
+    }
+  ]
+}

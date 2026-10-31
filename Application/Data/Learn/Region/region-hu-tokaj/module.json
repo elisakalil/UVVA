@@ -1,0 +1,28 @@
+{
+  "id": "region-hu-tokaj",
+  "kind": "region",
+  "order": 31,
+  "country": "Hungary",
+  "countryCode": "HU",
+  "title": "Tokaj",
+  "grapes": [
+    "Furmint",
+    "Hárslevelű",
+    "Sárgamuskotály"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "Volcanic hills and river mists in north-east Hungary: the wine of kings, and the king of wines.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-hu-tokaj-l01",
+    "region-hu-tokaj-l02",
+    "region-hu-tokaj-l03",
+    "region-hu-tokaj-l04",
+    "region-hu-tokaj-l05",
+    "region-hu-tokaj-l06",
+    "region-hu-tokaj-l07"
+  ]
+}

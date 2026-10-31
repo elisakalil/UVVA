@@ -1,0 +1,96 @@
+{
+  "id": "region-es-priorat-l04",
+  "moduleId": "region-es-priorat",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Priorat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Priorat's land and grapes",
+    "Explain its revival",
+    "Read and pair it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Priorat.",
+      "pairs": [
+        {
+          "left": "Llicorella",
+          "right": "Slate soil"
+        },
+        {
+          "left": "Scala Dei",
+          "right": "Medieval priory"
+        },
+        {
+          "left": "Montsant",
+          "right": "Surrounding DO"
+        },
+        {
+          "left": "Gratallops",
+          "right": "Village"
+        }
+      ],
+      "explanation": "Priorat's story is ancient and modern."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "When did Priorat's modern revival begin?",
+      "options": [
+        "1989",
+        "1864",
+        "2009",
+        "1950"
+      ],
+      "answer": 0,
+      "explanation": "With five pioneering producers."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Priorat is Spain's largest wine region.",
+      "answer": false,
+      "explanation": "Not true. It's small, about 2,000 hectares."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Priorat's traditional grapes?",
+      "options": [
+        "Garnacha",
+        "Cariñena",
+        "Garnacha Blanca",
+        "Albariño"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Albariño grows in Galicia."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Priorat became a DOQ, or DOCa, in ____.",
+      "options": [
+        "2000",
+        "1991",
+        "1982",
+        "2009"
+      ],
+      "answer": "2000",
+      "explanation": "In 2000, Spain's second after Rioja."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Priorat is steep and dry, on llicorella slate",
+        "Old Garnacha and Cariñena give powerful, mineral reds",
+        "The 1989 revival led to DOQ status in 2000",
+        "Its village classification maps the best sites"
+      ]
+    }
+  ]
+}

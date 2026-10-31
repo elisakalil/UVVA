@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-southern-rhone-l01",
+  "moduleId": "region-fr-southern-rhone",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Sun, wind and stones",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the southern Rhône's geography",
+    "Explain its Mediterranean climate",
+    "Explain the Mistral"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A wide valley",
+      "body": "South of Montélimar, the Rhône valley opens into a wide plain dotted with hills, around Avignon and Orange. The southern Rhône makes over 90% of all Rhône wine. Soils vary: large round stones, galets roulés, sand, clay and limestone. Côtes du Rhône covers the whole region.",
+      "highlight": "Over 90% of Rhône wine"
+    },
+    {
+      "type": "concept",
+      "title": "Mediterranean and windy",
+      "body": "The climate is Mediterranean: hot, dry summers, mild winters and plenty of sun. The Mistral, a cold, dry wind from the north, blows often, sometimes over 90 km/h. It dries vines after rain, reducing disease, and cools them, but can break shoots. Organic farming is common because conditions are healthy.",
+      "highlight": "The Mistral dries and cools"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does the Mistral help vineyards?",
+      "options": [
+        "It dries vines after rain, reducing disease",
+        "It brings rain",
+        "It warms the vines",
+        "It adds salt"
+      ],
+      "answer": 0,
+      "explanation": "A dry wind keeps grapes healthy."
+    },
+    {
+      "type": "concept",
+      "title": "Popes and history",
+      "body": "In the 14th century, the popes moved to Avignon. They built a summer castle, the Châteauneuf-du-Pape, the pope's new castle, and planted vines. In 1923, Baron Le Roy of Châteauneuf drew up rules for the area's wine, which helped inspire France's AOC system, created in 1935.",
+      "highlight": "Popes at Avignon; AOC inspiration"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Châteauneuf-du-Pape's rules in the 1920s helped inspire the French AOC system.",
+      "answer": true,
+      "explanation": "Yes. Baron Le Roy's 1923 rules were a model."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The southern Rhône makes over 90% of Rhône wine",
+        "Its Mediterranean climate and the Mistral keep vines healthy",
+        "The popes at Avignon gave Châteauneuf its name"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "grape-pinot-noir-l05",
+  "moduleId": "grape-pinot-noir",
+  "order": 5,
+  "title": "Cool climates beyond Burgundy",
+  "subtitle": "Pinot Noir's new homes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Pinot Noir in Germany",
+    "Describe Oregon and California",
+    "Describe New Zealand's Pinot Noir"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Germany",
+      "body": "Germany is the world's third largest Pinot Noir producer, after France and the US, as Spätburgunder. Warmer vintages and better winemaking have transformed it since the 1990s. Baden, the Pfalz and the Ahr make elegant, increasingly respected wines, some rivalling good Burgundy.",
+      "highlight": "Spätburgunder: third largest producer"
+    },
+    {
+      "type": "concept",
+      "title": "Oregon and California",
+      "body": "Oregon's Willamette Valley, at Burgundy's latitude, makes Pinot Noir with bright fruit and earthy notes. In California, the Sonoma Coast, Russian River Valley, Santa Rita Hills and Anderson Valley, cooled by ocean fog and wind, give riper, fuller styles. The 2004 film Sideways boosted US Pinot sales.",
+      "highlight": "Willamette, Sonoma, Santa Rita Hills"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Pinot Noir.",
+      "pairs": [
+        {
+          "left": "Ahr",
+          "right": "Steep German red valley"
+        },
+        {
+          "left": "Willamette Valley",
+          "right": "Oregon, Burgundy's latitude"
+        },
+        {
+          "left": "Central Otago",
+          "right": "Southernmost, vivid fruit"
+        },
+        {
+          "left": "Sonoma Coast",
+          "right": "Fog-cooled California"
+        }
+      ],
+      "explanation": "Cool climates around the world grow fine Pinot."
+    },
+    {
+      "type": "concept",
+      "title": "New Zealand",
+      "body": "Pinot Noir is New Zealand's most planted red. Central Otago, the southernmost major wine region, gives vivid, fruity wines with fresh acidity. Martinborough gives savoury, structured wines; Marlborough lighter, fruit-driven ones. Australia's Yarra Valley, Mornington and Tasmania also excel.",
+      "highlight": "Central Otago, Martinborough, Marlborough"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Pinot Noir called in Germany?",
+      "options": [
+        "Spätburgunder",
+        "Grauburgunder",
+        "Weissburgunder",
+        "Riesling"
+      ],
+      "answer": 0,
+      "explanation": "Spätburgunder, the late Burgundian."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Germany's Spätburgunder is now respected worldwide",
+        "Oregon and coastal California make fine Pinot",
+        "New Zealand's Central Otago leads the southern hemisphere"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "region-it-veneto-l03",
+  "moduleId": "region-it-veneto",
+  "order": 3,
+  "title": "Valpolicella and Amarone",
+  "subtitle": "Dried grapes and power",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Valpolicella's styles",
+    "Explain appassimento and Amarone",
+    "Explain Ripasso and Recioto"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Valpolicella",
+      "body": "Valpolicella lies north of Verona, in valleys running down from the Lessini mountains. The Classico zone, around Fumane, Marano and Negrar, is the historic heart. Simple Valpolicella is light and cherry-fresh. Superiore has more alcohol and ageing.",
+      "highlight": "Light, cherry-fresh"
+    },
+    {
+      "type": "concept",
+      "title": "Amarone and Recioto",
+      "body": "For Amarone and Recioto, the best bunches are dried for about 100 to 120 days in airy lofts, fruttai, losing 30 to 40% of their weight. Recioto della Valpolicella ferments sweet. Amarone della Valpolicella, DOCG since 2010, ferments nearly dry, to 15 to 16% alcohol, with dried cherry, raisin, chocolate and spice. It ages at least two years.",
+      "highlight": "Appassimento: three to four months"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is Amarone made?",
+      "options": [
+        "From dried grapes fermented nearly dry",
+        "From frozen grapes",
+        "By adding spirit",
+        "From fresh grapes only"
+      ],
+      "answer": 0,
+      "explanation": "Appassimento concentrates the grapes; fermentation runs almost dry."
+    },
+    {
+      "type": "concept",
+      "title": "Ripasso",
+      "body": "Ripasso, re-passed, is Valpolicella refermented on the leftover skins of Amarone or Recioto, gaining body, colour and dried fruit flavour. It's sometimes called baby Amarone, sitting between simple Valpolicella and Amarone in weight and price.",
+      "highlight": "Refermented on Amarone skins"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which Valpolicella wines use dried grapes or their skins?",
+      "options": [
+        "Amarone",
+        "Recioto",
+        "Ripasso",
+        "Bardolino"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Bardolino uses fresh grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Valpolicella is light; Superiore fuller",
+        "Amarone and Recioto use dried grapes: dry and sweet",
+        "Ripasso is refermented on Amarone skins"
+      ]
+    }
+  ]
+}

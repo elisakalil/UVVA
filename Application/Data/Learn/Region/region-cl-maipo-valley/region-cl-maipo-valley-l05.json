@@ -1,0 +1,96 @@
+{
+  "id": "region-cl-maipo-valley-l05",
+  "moduleId": "region-cl-maipo-valley",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about the Maipo Valley",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Maipo's land and grapes",
+    "Explain Alto Maipo",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Maipo.",
+      "pairs": [
+        {
+          "left": "Puente Alto",
+          "right": "Famous Cabernet terrace"
+        },
+        {
+          "left": "Viñedo Chadwick",
+          "right": "Won Berlin 2004"
+        },
+        {
+          "left": "Cousiño Macul",
+          "right": "Estate from 1856"
+        },
+        {
+          "left": "Boursiquot",
+          "right": "Identified Carmenère"
+        }
+      ],
+      "explanation": "Maipo's history is Chile's wine history."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Chilean vines ungrafted?",
+      "options": [
+        "Phylloxera never reached Chile",
+        "Grafting is banned",
+        "Vines are replanted each year",
+        "They're table grapes"
+      ],
+      "answer": 0,
+      "explanation": "Chile's natural barriers kept phylloxera out."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Alto Maipo is on the coast.",
+      "answer": false,
+      "explanation": "Not true. It's in the Andean foothills."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Maipo Cabernet?",
+      "options": [
+        "Blackcurrant",
+        "Mint",
+        "Firm tannins",
+        "Very pale colour"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's deeply coloured."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Carmenère was identified in Chile in ____.",
+      "options": [
+        "1994",
+        "1856",
+        "2004",
+        "2011"
+      ],
+      "answer": "1994",
+      "explanation": "By Jean-Michel Boursiquot."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Maipo surrounds Santiago, between Andes and coast",
+        "Cabernet Sauvignon, often minty, is its signature",
+        "Alto Maipo gives structured, Bordeaux-like Cabernet",
+        "Chile is phylloxera-free; vines are ungrafted"
+      ]
+    }
+  ]
+}

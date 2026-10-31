@@ -1,0 +1,29 @@
+{
+  "id": "grape-merlot",
+  "kind": "grape",
+  "order": 14,
+  "color": "red",
+  "title": "Merlot",
+  "aliases": [],
+  "origin": "France",
+  "countries": [
+    "France",
+    "Italy",
+    "Chile",
+    "United States"
+  ],
+  "points": "1 2 2 1 = 6",
+  "complexity": "B",
+  "description": "Plum, softness and the clay of the Right Bank: the world's second most planted red grape.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-merlot-l01",
+    "grape-merlot-l02",
+    "grape-merlot-l03",
+    "grape-merlot-l04",
+    "grape-merlot-l05",
+    "grape-merlot-l06"
+  ]
+}

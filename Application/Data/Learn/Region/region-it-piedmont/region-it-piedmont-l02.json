@@ -1,0 +1,77 @@
+{
+  "id": "region-it-piedmont-l02",
+  "moduleId": "region-it-piedmont",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Nebbiolo and its neighbours",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Piedmont's main grapes",
+    "Explain each grape's role",
+    "Name its white grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Nebbiolo makes Barolo, Barbaresco and Roero: pale but powerful, with tar, roses and high tannin. Barbera, the most planted red, gives juicy, high-acid, low-tannin wines. Dolcetto gives soft, dark, early-drinking reds. Other reds include Freisa, Grignolino and Ruchè.",
+      "highlight": "Nebbiolo, Barbera, Dolcetto"
+    },
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "Moscato Bianco makes Asti and Moscato d'Asti, sweet and lightly sparkling. Arneis, revived in the Roero from the 1970s, gives fragrant, pear-scented whites. Cortese makes Gavi, crisp and mineral, in the south-east. Timorasso, near Tortona, is a rising white grape.",
+      "highlight": "Moscato, Arneis, Cortese"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its wine.",
+      "pairs": [
+        {
+          "left": "Nebbiolo",
+          "right": "Barolo"
+        },
+        {
+          "left": "Moscato Bianco",
+          "right": "Moscato d'Asti"
+        },
+        {
+          "left": "Cortese",
+          "right": "Gavi"
+        },
+        {
+          "left": "Arneis",
+          "right": "Roero Arneis"
+        }
+      ],
+      "explanation": "Each grape has its signature wine."
+    },
+    {
+      "type": "tip",
+      "body": "Langhe Nebbiolo, a DOC, offers Nebbiolo's tar and roses at a much lower price than Barolo, and is ready to drink younger."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Piedmont's most planted red grape?",
+      "options": [
+        "Barbera",
+        "Nebbiolo",
+        "Dolcetto",
+        "Freisa"
+      ],
+      "answer": 0,
+      "explanation": "Barbera covers the most area, though Nebbiolo is the most prestigious."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nebbiolo, Barbera and Dolcetto lead the reds",
+        "Moscato, Arneis and Cortese lead the whites",
+        "Barbera is the most planted; Nebbiolo the most prestigious"
+      ]
+    }
+  ]
+}

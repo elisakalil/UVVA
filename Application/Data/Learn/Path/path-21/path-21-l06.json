@@ -1,0 +1,92 @@
+{
+  "id": "path-21-l06",
+  "moduleId": "path-21",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Germany, Austria and Hungary",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Read German and Austrian labels",
+    "Compare the key regions",
+    "Explain Tokaj's sweet wines"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Order these Prädikat levels from least to most ripe.",
+      "items": [
+        "Kabinett",
+        "Spätlese",
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese"
+      ],
+      "explanation": "Each level demands riper grapes at harvest."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its country or region.",
+      "pairs": [
+        {
+          "left": "Grosses Gewächs",
+          "right": "Germany, VDP"
+        },
+        {
+          "left": "Smaragd",
+          "right": "Wachau"
+        },
+        {
+          "left": "Aszú",
+          "right": "Tokaj"
+        },
+        {
+          "left": "Ausbruch",
+          "right": "Rust, Austria"
+        }
+      ],
+      "explanation": "Each place has its own vocabulary."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Trocken on a German label means the wine is dry.",
+      "answer": true,
+      "explanation": "Yes. Trocken allows up to 9 g/l of sugar, usually balanced by acidity."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Austria's most planted white grape?",
+      "options": [
+        "Riesling",
+        "Grüner Veltliner",
+        "Furmint",
+        "Müller-Thurgau"
+      ],
+      "answer": 1,
+      "explanation": "Grüner Veltliner is Austria's signature and most planted grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Since 2013, Tokaji Aszú must contain at least ____ g/l of sugar.",
+      "options": [
+        "120",
+        "45",
+        "9",
+        "250"
+      ],
+      "answer": "120",
+      "explanation": "120 g/l, equal to the old 5 puttonyos."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "German Prädikats show ripeness; trocken means dry",
+        "The Mosel is light and steep; the Rhine fuller and drier",
+        "Austria's Wachau terms grade dry wines by alcohol",
+        "Tokaj's Aszú is one of the world's oldest classified sweet wines"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "path-06-l03",
+  "moduleId": "path-06",
+  "order": 3,
+  "title": "Acid, salt and bitterness",
+  "subtitle": "The elements that make wine softer",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why acidic food needs acidic wine",
+    "Explain why salt is wine-friendly",
+    "Avoid bitterness clashes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Acid in the food",
+      "body": "Acidic food, like a tomato salad or a dish with lemon, makes a wine taste less acidic, richer and fruitier. But if the wine has lower acidity than the dish, it can taste flat and flabby. So acidic food needs a wine with at least as much acidity, like Sauvignon Blanc or Chianti.",
+      "highlight": "Acidic food, acidic wine"
+    },
+    {
+      "type": "concept",
+      "title": "Salt and bitterness",
+      "body": "Salt makes wine feel softer and fruitier, which is why salty cheeses and charcuterie are so easy to pair. Bitterness works the other way: bitter food adds to bitterness in the wine. Grilled radicchio or very charred meat can make a tannic red taste harsh, because tannin itself tastes slightly bitter.",
+      "highlight": "Salt softens; bitter adds bitter"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each food element to its effect on wine.",
+      "pairs": [
+        {
+          "left": "Salt",
+          "right": "Softens, lifts fruit"
+        },
+        {
+          "left": "Acidity",
+          "right": "Wine seems less acidic"
+        },
+        {
+          "left": "Bitterness",
+          "right": "Adds to bitterness"
+        },
+        {
+          "left": "Sweetness",
+          "right": "Wine seems more acidic"
+        }
+      ],
+      "explanation": "Salt and acidity soften a wine. Sweetness and bitterness harden it."
+    },
+    {
+      "type": "tip",
+      "body": "Salty blue cheese with a sweet wine, like Roquefort with Sauternes, is one of the great pairings. Salt softens, sweetness balances salt, and the wine's acidity cuts the fat."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A tomato salad with lemon dressing needs a wine with high ____.",
+      "options": [
+        "acidity",
+        "tannin",
+        "alcohol",
+        "sweetness"
+      ],
+      "answer": "acidity",
+      "explanation": "Acidic food makes a wine seem less acidic, so the wine needs plenty of acidity to stay fresh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Acidic food needs wine with at least as much acidity",
+        "Salt is wine-friendly, softening and lifting fruit",
+        "Bitter food adds to the bitterness of tannic wines"
+      ]
+    }
+  ]
+}

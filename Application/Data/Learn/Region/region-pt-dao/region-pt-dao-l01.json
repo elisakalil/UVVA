@@ -1,0 +1,62 @@
+{
+  "id": "region-pt-dao-l01",
+  "moduleId": "region-pt-dao",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Granite ringed by mountains",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Dão's geography",
+    "Explain how mountains shape its climate",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A sheltered plateau",
+      "body": "The Dão lies in central-northern Portugal, south of the Douro, on a granite plateau at 200 to 900 m. It's surrounded by mountains: Caramulo to the west, Buçaco, and the Serra da Estrela, Portugal's highest mainland range, to the south-east. Vineyards are scattered among pine forests, about 15,000 hectares.",
+      "highlight": "Granite plateau, pine forests"
+    },
+    {
+      "type": "concept",
+      "title": "Protected climate",
+      "body": "The mountains block Atlantic rain from the west and continental heat from the east. Summers are warm and dry, winters cold and wet, with large day and night swings. Granite soils, sandy and poor, drain well. The result is wines with freshness, elegance and moderate alcohol, often compared with Burgundy in style.",
+      "highlight": "Mountains block rain and heat"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What shapes the Dão's protected climate?",
+      "options": [
+        "The surrounding mountains",
+        "The Atlantic coast",
+        "A large lake",
+        "A desert"
+      ],
+      "answer": 0,
+      "explanation": "Mountains on all sides moderate rain and heat."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "The Dão was demarcated in 1908, one of Portugal's oldest regions. For decades, co-operatives dominated, and quality declined. After Portugal joined the EU in 1986, private estates could make and sell their own wine again, and quality rose sharply. Today the Dão is known for elegance and age-worthy wines.",
+      "highlight": "Demarcated 1908; revival after 1986"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "After 1986, private estates helped lift the Dão's quality.",
+      "answer": true,
+      "explanation": "Yes, after co-operatives had dominated for decades."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Dão is a granite plateau ringed by mountains",
+        "Mountains give a fresh, balanced climate",
+        "Private estates revived quality after 1986"
+      ]
+    }
+  ]
+}

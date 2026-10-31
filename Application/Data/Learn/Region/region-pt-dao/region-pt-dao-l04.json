@@ -1,0 +1,60 @@
+{
+  "id": "region-pt-dao-l04",
+  "moduleId": "region-pt-dao",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Dão and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Dão label",
+    "Pair Dão wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show Dão DOC, sometimes Dão Nobre, a top category requiring higher quality and ageing, the producer, often a quinta, the grapes and Reserva or Garrafeira. Red Dão must include at least 20% Touriga Nacional. Many wines are blends with grapes listed on the back.",
+      "highlight": "Dão Nobre, Reserva, Garrafeira"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Dão reds suit roast kid, lamb, game, Portuguese rice dishes like arroz de pato, duck rice, and Serra da Estrela cheese, a creamy sheep's cheese from the nearby mountains. Encruzado suits bacalhau, grilled fish, roast chicken and creamy dishes. Serve reds at 16 to 17, whites at 10 to 12.",
+      "highlight": "Serra da Estrela cheese"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which cheese, from nearby mountains, suits Dão wines?",
+      "options": [
+        "Serra da Estrela",
+        "Parmesan",
+        "Roquefort",
+        "Cheddar"
+      ],
+      "answer": 0,
+      "explanation": "A creamy sheep's cheese from Portugal's highest mountains."
+    },
+    {
+      "type": "tip",
+      "body": "Dão reds age gracefully. A 10-year-old Dão Reserva often shows red fruit, pine and leather in perfect balance."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dão reds must include at least 20% Touriga Nacional.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show DOC, Dão Nobre and Reserva",
+        "Dão reds suit kid, lamb and Serra da Estrela cheese",
+        "Encruzado suits bacalhau and creamy dishes"
+      ]
+    }
+  ]
+}

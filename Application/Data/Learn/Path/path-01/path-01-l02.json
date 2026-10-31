@@ -1,0 +1,68 @@
+{
+  "id": "path-01-l02",
+  "moduleId": "path-01",
+  "order": 2,
+  "title": "From grape to glass",
+  "subtitle": "Fermentation in a few minutes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what yeast does to grape sugar",
+    "Put the main winemaking steps in order",
+    "Explain why riper grapes give stronger wine"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What yeast does",
+      "body": "Yeast is a single-celled fungus. In grape juice it eats sugar and gives off alcohol, carbon dioxide and heat. In a still wine the gas escapes into the air. When the sugar runs out, or the alcohol gets too high for the yeast, fermentation stops.",
+      "highlight": "Sugar plus yeast gives alcohol, CO2 and heat"
+    },
+    {
+      "type": "concept",
+      "title": "More sugar, more alcohol",
+      "body": "Roughly 17 grams of sugar per litre turn into 1% of alcohol. Juice with 230 g/l of sugar, typical of ripe grapes, can make a wine of about 13.5%. Warm, sunny places ripen grapes further, so their wines tend to be stronger; cool places give lighter, fresher wines.",
+      "highlight": "About 17 g/l of sugar makes 1% alcohol"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Unfermented grape juice on its way to becoming wine is called ____.",
+      "options": [
+        "must",
+        "lees",
+        "marc",
+        "cuvée"
+      ],
+      "answer": "must",
+      "explanation": "Must is the juice, with or without skins, before and during fermentation. Lees are the dead yeast left after it, and marc is the pressed skins and seeds."
+    },
+    {
+      "type": "concept",
+      "title": "The five steps",
+      "body": "Every wine follows the same basic path. The grapes are harvested, then crushed or pressed to free the juice. Yeast ferments it. The wine then rests for weeks or years in steel, concrete or oak, which is called maturation. Finally it is bottled.",
+      "highlight": "Harvest, press, ferment, mature, bottle"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of making a wine in order.",
+      "items": [
+        "Harvest",
+        "Crushing or pressing",
+        "Fermentation",
+        "Maturation",
+        "Bottling"
+      ],
+      "explanation": "The fruit is picked, the juice is freed, yeast turns it into wine, the wine rests, and only then is it bottled. Maturation always comes after fermentation."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Yeast turns grape sugar into alcohol, carbon dioxide and heat",
+        "Harvest, pressing, fermentation, maturation and bottling come in that order",
+        "Riper grapes hold more sugar, so they make stronger wine"
+      ]
+    }
+  ]
+}

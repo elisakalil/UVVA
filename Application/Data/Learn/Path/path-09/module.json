@@ -1,0 +1,22 @@
+{
+  "id": "path-09",
+  "kind": "path",
+  "order": 9,
+  "level": "Intermediate",
+  "complexity": "A",
+  "title": "White Grapes and Their Places",
+  "description": "The principal white grapes, the regions that made them famous and how place changes the wine.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-09-l01",
+    "path-09-l02",
+    "path-09-l03",
+    "path-09-l04",
+    "path-09-l05",
+    "path-09-l06",
+    "path-09-l07",
+    "path-09-l08"
+  ]
+}

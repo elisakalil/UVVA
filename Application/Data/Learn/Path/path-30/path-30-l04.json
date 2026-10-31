@@ -1,0 +1,81 @@
+{
+  "id": "path-30-l04",
+  "moduleId": "path-30",
+  "order": 4,
+  "title": "Pairing under pressure",
+  "subtitle": "Fast decisions at the table",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Apply pairing principles quickly",
+    "Pair difficult dishes",
+    "Choose wines for a full menu"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The quick rules",
+      "body": "When in doubt: match weight; wine as sweet as the food; acidic food needs acidic wine; salt and fat love acidity and bubbles; tannin needs fat or protein; chilli needs low alcohol and a touch of sugar; umami needs fruity, low-tannin wines. These rules cover most dishes.",
+      "highlight": "Weight, sweetness, acidity, tannin, heat"
+    },
+    {
+      "type": "concept",
+      "title": "Difficult dishes",
+      "body": "Artichokes and asparagus contain compounds that make wine taste sweet or metallic; choose crisp, unoaked whites like Grüner Veltliner or Sauvignon Blanc. Eggs coat the palate; try Champagne. Chocolate needs sweet, fortified wine, like Banyuls or tawny Port. Very spicy curries suit off-dry Riesling.",
+      "highlight": "Hard dishes, specific answers"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each dish to a strong choice.",
+      "pairs": [
+        {
+          "left": "Oysters",
+          "right": "Muscadet or Chablis"
+        },
+        {
+          "left": "Dark chocolate",
+          "right": "Banyuls"
+        },
+        {
+          "left": "Spicy Thai curry",
+          "right": "Off-dry Riesling"
+        },
+        {
+          "left": "Grilled steak",
+          "right": "Tannic red"
+        }
+      ],
+      "explanation": "These pairings follow the core principles."
+    },
+    {
+      "type": "tip",
+      "body": "For a menu with many dishes, a versatile wine like dry Champagne, Pinot Noir or a dry Riesling will rarely clash. Bubbles and acidity forgive a lot."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines are generally versatile across many dishes?",
+      "options": [
+        "Dry Champagne",
+        "Pinot Noir",
+        "Dry Riesling",
+        "Very tannic young Barolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Very tannic reds clash with many foods, especially fish, umami and chilli."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Remember the core rules: weight, sweetness, acidity, tannin, heat",
+        "Difficult dishes have specific answers",
+        "Versatile wines like Champagne and Pinot Noir suit mixed menus"
+      ]
+    }
+  ]
+}

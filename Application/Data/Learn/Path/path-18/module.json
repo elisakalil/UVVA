@@ -1,0 +1,22 @@
+{
+  "id": "path-18",
+  "kind": "path",
+  "order": 18,
+  "level": "Advanced",
+  "complexity": "A",
+  "title": "France",
+  "description": "The regions that set the templates everyone else adapted, and the appellation system built around place.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-18-l01",
+    "path-18-l02",
+    "path-18-l03",
+    "path-18-l04",
+    "path-18-l05",
+    "path-18-l06",
+    "path-18-l07",
+    "path-18-l08"
+  ]
+}

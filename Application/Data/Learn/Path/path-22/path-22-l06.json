@@ -1,0 +1,96 @@
+{
+  "id": "path-22-l06",
+  "moduleId": "path-22",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from North America",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain US labelling",
+    "Compare North America's regions",
+    "Link each region to its grapes"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its signature grape.",
+      "pairs": [
+        {
+          "left": "Napa Valley",
+          "right": "Cabernet Sauvignon"
+        },
+        {
+          "left": "Willamette Valley",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Paso Robles",
+          "right": "Rhône grapes"
+        },
+        {
+          "left": "Niagara Peninsula",
+          "right": "Ice wine grapes"
+        }
+      ],
+      "explanation": "Each region has found its grape in under a century."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does an AVA define?",
+      "options": [
+        "Grapes",
+        "Yields",
+        "Geographic boundaries",
+        "Ageing rules"
+      ],
+      "answer": 2,
+      "explanation": "AVAs are about place only."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Washington State vineyards rely on irrigation.",
+      "answer": true,
+      "explanation": "Yes. East of the Cascades, rainfall is too low for vines without it."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which help cool California's coastal vineyards?",
+      "options": [
+        "Pacific fog",
+        "East-west valleys",
+        "The cold California Current",
+        "High rainfall in summer"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "California summers are dry. Fog, ocean currents and valley orientation do the cooling."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Prohibition in the United States lasted from 1920 to ____.",
+      "options": [
+        "1933",
+        "1945",
+        "1966",
+        "1976"
+      ],
+      "answer": "1933",
+      "explanation": "1933. Fine wine only really grew again from the 1960s."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "AVAs define place; labels need 85% from the area",
+        "California's fog and valleys shape its styles",
+        "Oregon is Pinot Noir country; Washington an irrigated desert",
+        "Canada is the world's leader in ice wine"
+      ]
+    }
+  ]
+}

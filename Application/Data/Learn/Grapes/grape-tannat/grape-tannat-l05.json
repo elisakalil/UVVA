@@ -1,0 +1,96 @@
+{
+  "id": "grape-tannat-l05",
+  "moduleId": "grape-tannat",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Tannat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Tannat",
+    "Know its homes in France and Uruguay",
+    "Explain how it is softened and served"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Tannat so tannic?",
+      "options": [
+        "New oak",
+        "Thick skins and many seeds",
+        "Long sun exposure",
+        "Late harvesting"
+      ],
+      "answer": 1,
+      "explanation": "Skins and seeds carry tannin, and Tannat has plenty of both."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Tannat's story.",
+      "pairs": [
+        {
+          "left": "Madiran",
+          "right": "Its French home"
+        },
+        {
+          "left": "Uruguay",
+          "right": "Its national grape"
+        },
+        {
+          "left": "1991",
+          "right": "Micro-oxygenation invented"
+        },
+        {
+          "left": "Asado",
+          "right": "Classic pairing"
+        }
+      ],
+      "explanation": "Tannat's story spans two continents."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Basque immigrants brought Tannat to Uruguay.",
+      "answer": true,
+      "explanation": "Yes, in the 1870s."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which help soften Tannat?",
+      "options": [
+        "Micro-oxygenation",
+        "Blending with Merlot",
+        "Oak ageing",
+        "Serving it very cold"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cold makes tannin feel harder, not softer."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Madiran must contain at least ____% Tannat.",
+      "options": [
+        "60",
+        "85",
+        "100",
+        "25"
+      ],
+      "answer": "60",
+      "explanation": "At least 60%, often blended with Cabernet Franc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tannat is dark, highly tannic and acidic",
+        "Madiran is its French home; Uruguay its adopted one",
+        "Micro-oxygenation, oak and blending soften it",
+        "It's the wine for grilled meat and duck"
+      ]
+    }
+  ]
+}

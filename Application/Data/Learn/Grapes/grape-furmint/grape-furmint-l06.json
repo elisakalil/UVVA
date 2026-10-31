@@ -1,0 +1,96 @@
+{
+  "id": "grape-furmint-l06",
+  "moduleId": "grape-furmint",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Furmint",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Furmint",
+    "Explain Tokaji Aszú and dry Furmint",
+    "Pair and serve them"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Furmint's signature?",
+      "options": [
+        "Very high acidity",
+        "Low acidity",
+        "High tannin",
+        "Red colour"
+      ],
+      "answer": 0,
+      "explanation": "Acidity links all its styles."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Tokaj term to its meaning.",
+      "pairs": [
+        {
+          "left": "Aszú",
+          "right": "Botrytised berries"
+        },
+        {
+          "left": "Puttony",
+          "right": "25 kg basket"
+        },
+        {
+          "left": "Eszencia",
+          "right": "Free-run aszú juice"
+        },
+        {
+          "left": "Dűlő",
+          "right": "Single vineyard"
+        }
+      ],
+      "explanation": "Tokaj has its own vocabulary."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Since 2013, Tokaji Aszú needs at least 120 g/l of sugar.",
+      "answer": true,
+      "explanation": "Yes, equal to the old 5 puttonyos."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes grow in Tokaj?",
+      "options": [
+        "Furmint",
+        "Hárslevelű",
+        "Sárgamuskotály",
+        "Pinot Noir"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pinot Noir isn't a Tokaj grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Tokaj's vineyards were first classified from ____.",
+      "options": [
+        "1730",
+        "1855",
+        "1935",
+        "2013"
+      ],
+      "answer": "1730",
+      "explanation": "Among the earliest vineyard classifications."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Furmint has searing acidity, quince and smoke",
+        "It's Tokaj's grape, ideal for noble rot",
+        "Aszú and Eszencia are its great sweet wines",
+        "Dry Furmint is Hungary's modern white"
+      ]
+    }
+  ]
+}

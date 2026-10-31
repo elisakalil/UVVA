@@ -1,0 +1,60 @@
+{
+  "id": "path-22-l03",
+  "moduleId": "path-22",
+  "order": 3,
+  "title": "The Central Coast",
+  "subtitle": "Santa Barbara to Monterey",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Central Coast's climate",
+    "Explain the transverse valleys of Santa Barbara",
+    "Describe Paso Robles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A long coast",
+      "body": "The Central Coast runs from San Francisco Bay to Santa Barbara. Monterey's Salinas Valley is cool and windy, good for Chardonnay and Pinot Noir. Paso Robles is warmer, with large day and night swings, making Cabernet Sauvignon, Zinfandel and Rhône grapes, a movement known as the Rhône Rangers.",
+      "highlight": "Cool coast, warm Paso Robles"
+    },
+    {
+      "type": "concept",
+      "title": "Transverse valleys",
+      "body": "In Santa Barbara County, the Santa Ynez Valley runs east to west, unusual on the American coast. This lets cold Pacific air flow straight in. The Sta. Rita Hills, near the sea, are cool enough for fine Pinot Noir and Chardonnay; further inland, Happy Canyon is warm enough for Bordeaux grapes.",
+      "highlight": "East-west valleys bring in the ocean"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Santa Barbara's valleys run east to west, letting ocean air flow inland.",
+      "answer": true,
+      "explanation": "Yes. That orientation brings cool Pacific air deep into the valleys, making them ideal for Pinot Noir."
+    },
+    {
+      "type": "tip",
+      "body": "The film Sideways, set in Santa Barbara County in 2004, made Pinot Noir sales jump in the US, and hurt Merlot's reputation for years."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grapes are associated with the Rhône Rangers in Paso Robles?",
+      "options": [
+        "Syrah and Grenache",
+        "Riesling and Gewürztraminer",
+        "Nebbiolo and Barbera",
+        "Pinot Noir and Chardonnay"
+      ],
+      "answer": 0,
+      "explanation": "Rhône Rangers grow Rhône grapes like Syrah, Grenache, Mourvèdre and Viognier."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Central Coast runs from cool Monterey to Santa Barbara",
+        "Santa Barbara's east-west valleys let in cool Pacific air",
+        "Paso Robles grows Rhône grapes, Zinfandel and Cabernet"
+      ]
+    }
+  ]
+}

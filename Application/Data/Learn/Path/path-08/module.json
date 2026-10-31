@@ -1,0 +1,22 @@
+{
+  "id": "path-08",
+  "kind": "path",
+  "order": 8,
+  "level": "Intermediate",
+  "complexity": "A",
+  "title": "The Winery",
+  "description": "Fermentation, extraction, oak and time: the steps that turn the same fruit into very different wines.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-08-l01",
+    "path-08-l02",
+    "path-08-l03",
+    "path-08-l04",
+    "path-08-l05",
+    "path-08-l06",
+    "path-08-l07",
+    "path-08-l08"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "grape-chenin-blanc",
+  "kind": "grape",
+  "order": 37,
+  "color": "white",
+  "title": "Chenin Blanc",
+  "aliases": [
+    "Steen",
+    "Pineau de la Loire"
+  ],
+  "origin": "France",
+  "countries": [
+    "France",
+    "South Africa"
+  ],
+  "points": "2 2 2 1 = 7",
+  "complexity": "A",
+  "description": "Also called Steen in South Africa. The Loire's most versatile grape: dry, sweet or sparkling, always with high acidity.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-chenin-blanc-l01",
+    "grape-chenin-blanc-l02",
+    "grape-chenin-blanc-l03",
+    "grape-chenin-blanc-l04",
+    "grape-chenin-blanc-l05",
+    "grape-chenin-blanc-l06",
+    "grape-chenin-blanc-l07"
+  ]
+}

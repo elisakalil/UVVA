@@ -1,0 +1,96 @@
+{
+  "id": "grape-albarino-l05",
+  "moduleId": "grape-albarino",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Albariño",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Albariño",
+    "Compare Spain and Portugal",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Albariño.",
+      "pairs": [
+        {
+          "left": "Alvarinho",
+          "right": "Portuguese name"
+        },
+        {
+          "left": "Rías Baixas",
+          "right": "Spanish home"
+        },
+        {
+          "left": "Monção e Melgaço",
+          "right": "Portuguese home"
+        },
+        {
+          "left": "Parras",
+          "right": "High pergolas"
+        }
+      ],
+      "explanation": "One grape, two countries."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What helps Albariño resist rot?",
+      "options": [
+        "Thick skins",
+        "Thin skins",
+        "Low acidity",
+        "Red colour"
+      ],
+      "answer": 0,
+      "explanation": "Thick skins protect it in wet weather."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Rías Baixas is about 96% Albariño.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Albariño?",
+      "options": [
+        "Peach",
+        "Saline edge",
+        "High acidity",
+        "Heavy tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "White Albariño has little tannin."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In Portugal, Albariño is called ____.",
+      "options": [
+        "Alvarinho",
+        "Arinto",
+        "Loureiro",
+        "Encruzado"
+      ],
+      "answer": "Alvarinho",
+      "explanation": "Alvarinho, the star of Monção e Melgaço."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Albariño is crisp, peachy and saline",
+        "Thick skins suit Atlantic humidity",
+        "Rías Baixas and Monção e Melgaço are its homes",
+        "It's a natural seafood wine"
+      ]
+    }
+  ]
+}

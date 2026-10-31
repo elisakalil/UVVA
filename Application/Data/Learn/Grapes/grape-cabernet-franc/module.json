@@ -1,0 +1,31 @@
+{
+  "id": "grape-cabernet-franc",
+  "kind": "grape",
+  "order": 19,
+  "color": "red",
+  "title": "Cabernet Franc",
+  "aliases": [
+    "Bouchet",
+    "Breton"
+  ],
+  "origin": "France",
+  "countries": [
+    "France",
+    "United States",
+    "Argentina"
+  ],
+  "points": "1 2 2 1 = 6",
+  "complexity": "B",
+  "description": "Also called Bouchet in Saint-Émilion and Breton in the Loire. The aromatic parent of Cabernet Sauvignon and Merlot.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-cabernet-franc-l01",
+    "grape-cabernet-franc-l02",
+    "grape-cabernet-franc-l03",
+    "grape-cabernet-franc-l04",
+    "grape-cabernet-franc-l05",
+    "grape-cabernet-franc-l06"
+  ]
+}

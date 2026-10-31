@@ -1,0 +1,96 @@
+{
+  "id": "grape-semillon-l06",
+  "moduleId": "grape-semillon",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Sémillon",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Sémillon",
+    "Compare its dry and sweet styles",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Sémillon suit noble rot?",
+      "options": [
+        "Thin skins",
+        "Thick skins",
+        "Low sugar",
+        "Red colour"
+      ],
+      "answer": 0,
+      "explanation": "Thin skins let botrytis attack."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Sémillon.",
+      "pairs": [
+        {
+          "left": "Sauternes",
+          "right": "About 80% Sémillon"
+        },
+        {
+          "left": "Hunter Valley",
+          "right": "Unoaked, long-lived"
+        },
+        {
+          "left": "Château d'Yquem",
+          "right": "Premier Cru Supérieur"
+        },
+        {
+          "left": "Ciron",
+          "right": "River that brings mist"
+        }
+      ],
+      "explanation": "Sémillon's two great homes are Bordeaux and the Hunter."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Hunter Sémillon is picked very ripe, at 14% alcohol.",
+      "answer": false,
+      "explanation": "Not true. It's picked early, at 10 to 11%."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Sémillon?",
+      "options": [
+        "Waxy texture",
+        "Lemon and lanolin",
+        "Honey with age",
+        "High tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "White Sémillon has little tannin."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Sémillon is usually blended with Sauvignon ____ in Bordeaux.",
+      "options": [
+        "Blanc",
+        "Gris",
+        "Noir",
+        "Rouge"
+      ],
+      "answer": "Blanc",
+      "explanation": "Sauvignon Blanc adds acidity and aroma."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sémillon is waxy, lemony and ages beautifully",
+        "It's the heart of Sauternes, thanks to thin skins",
+        "Hunter Valley makes unoaked Sémillon that turns toasty",
+        "It pairs from oysters to foie gras"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-bordeaux-l04",
+  "moduleId": "region-fr-bordeaux",
+  "order": 4,
+  "title": "The 1855 classification",
+  "subtitle": "Ranking the châteaux",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the 1855 classification",
+    "Name the First Growths",
+    "Name Bordeaux's other classifications"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "For a world fair",
+      "body": "For the 1855 Exposition Universelle in Paris, Napoleon III asked Bordeaux's brokers to rank the region's wines. They used prices. The red list ranked 61 châteaux, all from the Médoc except Haut-Brion in Graves, into five growths, or crus. Sauternes and Barsac were ranked separately, with Yquem on top.",
+      "highlight": "Ranked by price in 1855"
+    },
+    {
+      "type": "concept",
+      "title": "Almost unchanged",
+      "body": "The 1855 classification has changed only twice: Cantemerle was added soon after in 1856, and in 1973 Mouton Rothschild was promoted from Second to First Growth. The five First Growths are Lafite Rothschild, Latour, Margaux, Haut-Brion and Mouton Rothschild. Some Fifth Growths now sell for more than some Seconds.",
+      "highlight": "Only changed in 1856 and 1973"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which château was promoted to First Growth in 1973?",
+      "options": [
+        "Mouton Rothschild",
+        "Lafite Rothschild",
+        "Pétrus",
+        "Cheval Blanc"
+      ],
+      "answer": 0,
+      "explanation": "Baron Philippe de Rothschild campaigned for decades for the promotion."
+    },
+    {
+      "type": "concept",
+      "title": "Other rankings",
+      "body": "Graves has its own classification, from 1953 and 1959. Saint-Émilion's classification, from 1955, is revised about every ten years and has been controversial. Pomerol has no official classification. The Crus Bourgeois of the Médoc, re-established in 2020, rank hundreds of other estates.",
+      "highlight": "Graves, Saint-Émilion, Crus Bourgeois"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are First Growths of 1855?",
+      "options": [
+        "Château Latour",
+        "Château Margaux",
+        "Château Haut-Brion",
+        "Pétrus"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pétrus, in Pomerol, was never classified; Pomerol has no classification."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The 1855 classification ranked Médoc reds and Sauternes by price",
+        "It has changed only twice, in 1856 and 1973",
+        "Graves, Saint-Émilion and the Crus Bourgeois have their own rankings"
+      ]
+    }
+  ]
+}

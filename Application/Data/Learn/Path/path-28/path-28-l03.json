@@ -1,0 +1,62 @@
+{
+  "id": "path-28-l03",
+  "moduleId": "path-28",
+  "order": 3,
+  "title": "Brett and volatile acidity",
+  "subtitle": "Microbial faults",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Recognise Brettanomyces",
+    "Recognise volatile acidity",
+    "Explain when each is a fault"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Brett",
+      "body": "Brettanomyces is a yeast that can grow in wine, especially in barrels and in reds with higher pH and low SO2. It produces 4-ethylphenol and 4-ethylguaiacol, smelling of barnyard, sticking plaster, sweat and smoked meat. In small amounts, some tasters find it adds complexity; at higher levels, it masks fruit.",
+      "highlight": "Barnyard, plaster, sweat"
+    },
+    {
+      "type": "concept",
+      "title": "Volatile acidity",
+      "body": "Volatile acidity, VA, is mainly acetic acid, made by acetic bacteria when wine meets air, or by stressed yeast. It smells of vinegar and often comes with ethyl acetate, smelling of nail polish remover. Small amounts lift aromas; too much is a fault. EU limits are about 1.2 g/l for reds and 1.08 g/l for whites, higher for sweet wines.",
+      "highlight": "Vinegar and nail polish"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which smell is typical of volatile acidity?",
+      "options": [
+        "Barnyard",
+        "Vinegar and nail polish remover",
+        "Damp cardboard",
+        "Cabbage"
+      ],
+      "answer": 1,
+      "explanation": "Acetic acid and ethyl acetate give vinegar and solvent aromas."
+    },
+    {
+      "type": "concept",
+      "title": "Fault or style",
+      "body": "The line between fault and character depends on level and context. Some famous wines, like older Châteauneuf-du-Pape, show a touch of Brett; some great sweet wines have higher VA. A fault is when the compound dominates and hides fruit and place. Personal sensitivity varies a lot.",
+      "highlight": "Level and context decide"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A small amount of volatile acidity can lift a wine's aromas.",
+      "answer": true,
+      "explanation": "Yes. At low levels VA can add lift; it becomes a fault when vinegar dominates."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Brett gives barnyard and plaster notes, mainly in reds",
+        "Volatile acidity smells of vinegar and nail polish",
+        "Level and context decide whether it's a fault or character"
+      ]
+    }
+  ]
+}

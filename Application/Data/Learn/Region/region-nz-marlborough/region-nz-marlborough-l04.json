@@ -1,0 +1,60 @@
+{
+  "id": "region-nz-marlborough-l04",
+  "moduleId": "region-nz-marlborough",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Marlborough and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Marlborough label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape, Marlborough GI and vintage, with New Zealand's 85% rules for grape, region and vintage. Some name a sub-region, like Wairau Valley, Awatere Valley or Southern Valleys. Almost all bottles use screw caps; New Zealand led the switch from cork in the early 2000s. Appellation Marlborough Wine is a producer certification for quality and origin.",
+      "highlight": "GI, sub-region, screw cap"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Marlborough Sauvignon suits green-lipped mussels, a local speciality, oysters, goat's cheese, salads, asparagus and Thai or Vietnamese food with herbs and lime. Pinot Noir suits salmon, duck and lamb. Serve Sauvignon at 7 to 9 degrees and drink within two years; Pinot at 14 to 16.",
+      "highlight": "Green-lipped mussels"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which local shellfish suits Marlborough Sauvignon Blanc?",
+      "options": [
+        "Green-lipped mussels",
+        "Lobster thermidor",
+        "Snails",
+        "Crayfish in cream"
+      ],
+      "answer": 0,
+      "explanation": "Marlborough is a major source of green-lipped mussels."
+    },
+    {
+      "type": "tip",
+      "body": "Drink Marlborough Sauvignon young. Its explosive aromas are at their best in the first year or two."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most New Zealand wine is sealed with screw caps.",
+      "answer": true,
+      "explanation": "Yes. New Zealand led the move away from cork."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the GI and often a sub-region; screw caps are standard",
+        "Sauvignon suits green-lipped mussels, goat's cheese and herbs",
+        "Drink Sauvignon young and cold"
+      ]
+    }
+  ]
+}

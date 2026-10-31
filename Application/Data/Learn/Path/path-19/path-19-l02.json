@@ -1,0 +1,79 @@
+{
+  "id": "path-19-l02",
+  "moduleId": "path-19",
+  "order": 2,
+  "title": "Piedmont",
+  "subtitle": "Nebbiolo and the Langhe",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Piedmont's climate and hills",
+    "Compare Barolo and Barbaresco",
+    "Name Piedmont's other grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "At the foot of the mountains",
+      "body": "Piedmont means foot of the mountains, surrounded by the Alps on three sides. The climate is continental, with autumn fog. The best vineyards are on the Langhe and Roero hills around Alba, on calcareous marl. South-facing slopes are kept for Nebbiolo, which ripens last; others go to Barbera, Dolcetto or Moscato.",
+      "highlight": "Langhe hills, fog, Nebbiolo on the best slopes"
+    },
+    {
+      "type": "concept",
+      "title": "Barolo and Barbaresco",
+      "body": "Barolo and Barbaresco are both 100% Nebbiolo DOCGs. Barolo must age at least 38 months, 18 in wood; Barbaresco at least 26 months, 9 in wood. Barbaresco is slightly warmer and lower, often a little earlier to approach. Since 2010, both list named vineyards, called MGA, such as Cannubi in Barolo.",
+      "highlight": "Barolo: 38 months. Barbaresco: 26."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the minimum total ageing for Barolo?",
+      "options": [
+        "12 months",
+        "26 months",
+        "38 months",
+        "62 months"
+      ],
+      "answer": 2,
+      "explanation": "Barolo needs 38 months, including 18 in wood. 62 months is for Barolo Riserva; 26 for Barbaresco."
+    },
+    {
+      "type": "concept",
+      "title": "Barbera, Dolcetto and Moscato",
+      "body": "Barbera is Piedmont's most planted red: deep colour, high acidity, low tannin, often from Asti or Alba. Dolcetto is softer and earlier-drinking, with dark fruit and bitter almond. Moscato Bianco makes Asti and Moscato d'Asti. In the Roero, Arneis is a fragrant white; in the south-east, Gavi is made from Cortese.",
+      "highlight": "Barbera, Dolcetto, Moscato, Arneis, Cortese"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its typical character.",
+      "pairs": [
+        {
+          "left": "Nebbiolo",
+          "right": "High tannin, pale colour"
+        },
+        {
+          "left": "Barbera",
+          "right": "High acidity, low tannin"
+        },
+        {
+          "left": "Dolcetto",
+          "right": "Soft, early-drinking"
+        },
+        {
+          "left": "Cortese",
+          "right": "White wine of Gavi"
+        }
+      ],
+      "explanation": "Piedmont's grapes divide the hills by ripening time."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Piedmont's best slopes, in the Langhe, go to Nebbiolo",
+        "Barolo and Barbaresco are 100% Nebbiolo with long ageing",
+        "Barbera, Dolcetto, Moscato, Arneis and Cortese fill out the region"
+      ]
+    }
+  ]
+}

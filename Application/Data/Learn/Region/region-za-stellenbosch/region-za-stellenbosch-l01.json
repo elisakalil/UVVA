@@ -1,0 +1,62 @@
+{
+  "id": "region-za-stellenbosch-l01",
+  "moduleId": "region-za-stellenbosch",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Mountains and two oceans",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Stellenbosch's geography",
+    "Explain its climate influences",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Near Cape Town",
+      "body": "Stellenbosch lies about 50 km east of Cape Town, in the Western Cape. It's surrounded by mountains, like the Simonsberg, Helderberg and Stellenbosch Mountain, with vineyards on slopes and valley floors. It has about 13,000 hectares of vines and around 150 wineries. Soils are mostly ancient granite and sandstone, among the oldest in the wine world.",
+      "highlight": "Mountains and ancient granite"
+    },
+    {
+      "type": "concept",
+      "title": "Mediterranean with ocean breezes",
+      "body": "Stellenbosch has a warm Mediterranean climate: dry summers, wet winters. False Bay, just to the south, sends cool sea breezes inland in the afternoon. The Cape Doctor, a strong south-easterly wind, cools vines and keeps them healthy. Mountain slopes add altitude and different exposures, so sites vary greatly.",
+      "highlight": "False Bay breezes and the Cape Doctor"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What cools Stellenbosch vineyards in the afternoon?",
+      "options": [
+        "Sea breezes from False Bay",
+        "Snow from the mountains",
+        "Monsoon rain",
+        "Desert winds"
+      ],
+      "answer": 0,
+      "explanation": "False Bay lies just south of the region."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "Stellenbosch was founded in 1679 by Simon van der Stel, the Dutch governor of the Cape, making it South Africa's second oldest town. French Huguenots arrived in the 1680s with winemaking skills. Stellenbosch University, home of the country's main wine science department, created Pinotage in 1925. The Wine of Origin system began in 1973.",
+      "highlight": "Founded 1679; Pinotage 1925"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Stellenbosch University created Pinotage.",
+      "answer": true,
+      "explanation": "Yes, Professor Abraham Perold, in 1925."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Stellenbosch lies among mountains east of Cape Town",
+        "False Bay breezes and the Cape Doctor cool it",
+        "Founded in 1679, it's the heart of South African wine"
+      ]
+    }
+  ]
+}

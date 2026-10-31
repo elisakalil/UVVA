@@ -1,0 +1,79 @@
+{
+  "id": "path-10-l06",
+  "moduleId": "path-10",
+  "order": 6,
+  "title": "Nebbiolo and Malbec",
+  "subtitle": "Tannin and altitude",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Nebbiolo in Barolo and Barbaresco",
+    "Describe Malbec in Cahors and Mendoza",
+    "Explain how altitude shapes Malbec"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Nebbiolo",
+      "body": "Nebbiolo, from Piedmont, is pale in colour but very high in tannin and acidity, with aromas of rose, tar, cherry and dried herbs. It ripens very late, often in October, in the fog, or nebbia, that may give it its name. Barolo and Barbaresco are its great wines, and both need long ageing to soften.",
+      "highlight": "Pale colour, huge tannin, rose and tar"
+    },
+    {
+      "type": "concept",
+      "title": "Malbec",
+      "body": "Malbec comes from south-west France, where Cahors makes dark, tannic wines once called black wine. In Argentina's Mendoza, at 800 to 1,500 m, it found new life. Strong sun and cool nights give deep purple colour, ripe plum and violet, and softer tannins. Argentina now grows more Malbec than anywhere else in the world.",
+      "highlight": "Malbec: Cahors and Mendoza"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is a Barolo pale in colour yet very tannic?",
+      "options": [
+        "It's made like a rosé",
+        "Nebbiolo has few colour pigments but lots of tannin",
+        "It's aged in white wine barrels",
+        "It's blended with white grapes"
+      ],
+      "answer": 1,
+      "explanation": "Nebbiolo's skins are low in stable colour pigments yet rich in tannin. Colour isn't a good guide to its power."
+    },
+    {
+      "type": "concept",
+      "title": "Altitude in Mendoza",
+      "body": "Every 100 m of altitude cools the air by about 0.6 degrees. In high vineyards like Valle de Uco, at up to 1,500 m, nights are cool, so grapes keep acidity. The intense ultraviolet light thickens skins, adding colour and tannin. That's why Mendoza Malbec is ripe and dark yet fresh.",
+      "highlight": "High altitude: cool nights, intense light"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its key region.",
+      "pairs": [
+        {
+          "left": "Barolo",
+          "right": "Nebbiolo, Piedmont"
+        },
+        {
+          "left": "Barbaresco",
+          "right": "Nebbiolo, near Alba"
+        },
+        {
+          "left": "Cahors",
+          "right": "Malbec, south-west France"
+        },
+        {
+          "left": "Valle de Uco",
+          "right": "High-altitude Malbec"
+        }
+      ],
+      "explanation": "Nebbiolo stays at home in Piedmont; Malbec has an Old World home in Cahors and a New World one in Mendoza."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nebbiolo is pale but very tannic, and makes Barolo and Barbaresco",
+        "Malbec comes from Cahors and found fame in Mendoza",
+        "Altitude gives Mendoza Malbec colour and freshness"
+      ]
+    }
+  ]
+}

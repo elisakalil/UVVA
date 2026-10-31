@@ -1,0 +1,72 @@
+{
+  "id": "region-it-tuscany-l06",
+  "moduleId": "region-it-tuscany",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Tuscany and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Tuscan label",
+    "Pair Tuscan wines with food",
+    "Serve and age them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the DOCG, like Chianti Classico, Brunello di Montalcino or Vino Nobile, or Toscana IGT for Super Tuscans, plus producer, vintage and sometimes Riserva, Gran Selezione or a UGA. The pink DOCG neck strip and, for Chianti Classico, the black rooster confirm origin.",
+      "highlight": "DOCG, IGT, Riserva"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Sangiovese's acidity loves tomato and olive oil: pasta with tomato sauce, pappardelle with wild boar ragù, ribollita, a bread and bean soup, and bistecca alla fiorentina, a thick grilled T-bone. Brunello suits game and aged pecorino. Vernaccia and Vermentino suit seafood. Vin Santo suits cantucci.",
+      "highlight": "Bistecca, ribollita, pecorino"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a Tuscan classic with Chianti Classico or Brunello?",
+      "options": [
+        "Bistecca alla fiorentina",
+        "Sushi",
+        "Pad Thai",
+        "Fish and chips"
+      ],
+      "answer": 0,
+      "explanation": "A thick grilled T-bone steak."
+    },
+    {
+      "type": "concept",
+      "title": "Service",
+      "body": "Serve Tuscan reds at 16 to 18 degrees. Chianti Classico Annata is best within five years; Riserva and Gran Selezione 10 to 20; Brunello 15 to 30. Decant young Brunello and Super Tuscans.",
+      "highlight": "Brunello ages 15 to 30 years"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Sangiovese?",
+      "options": [
+        "Tomato sauce",
+        "Wild boar ragù",
+        "Aged pecorino",
+        "Chocolate mousse"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Chocolate mousse needs a sweet wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show DOCG or IGT, with Riserva or Gran Selezione",
+        "Sangiovese suits tomato, boar and bistecca",
+        "Brunello ages 15 to 30 years"
+      ]
+    }
+  ]
+}

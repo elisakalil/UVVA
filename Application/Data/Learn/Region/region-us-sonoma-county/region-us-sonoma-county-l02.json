@@ -1,0 +1,77 @@
+{
+  "id": "region-us-sonoma-county-l02",
+  "moduleId": "region-us-sonoma-county",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "A grape for every climate",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Sonoma's main grapes",
+    "Link grapes to climates",
+    "Describe each style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cool-climate grapes",
+      "body": "Chardonnay is Sonoma's most planted grape, and Pinot Noir is close behind. Both thrive in the cool, foggy areas near the coast: the Russian River Valley, Sonoma Coast and Carneros. The wines are fresh, with red fruit and citrus, balanced by acidity.",
+      "highlight": "Chardonnay and Pinot Noir in cool areas"
+    },
+    {
+      "type": "concept",
+      "title": "Warm-climate grapes",
+      "body": "In warmer inland valleys, Cabernet Sauvignon thrives in Alexander Valley, giving soft, ripe wines. Zinfandel, often from old vines, thrives in Dry Creek Valley and Sonoma Valley, giving ripe, spicy, bramble wines. Sauvignon Blanc, Merlot and Syrah also grow.",
+      "highlight": "Cabernet and Zinfandel inland"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each AVA to its grape.",
+      "pairs": [
+        {
+          "left": "Russian River Valley",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Alexander Valley",
+          "right": "Cabernet Sauvignon"
+        },
+        {
+          "left": "Dry Creek Valley",
+          "right": "Zinfandel"
+        },
+        {
+          "left": "Sonoma Coast",
+          "right": "Cool Chardonnay"
+        }
+      ],
+      "explanation": "Sonoma's grapes follow its climates."
+    },
+    {
+      "type": "tip",
+      "body": "Old-vine Zinfandel from Dry Creek Valley, some over 100 years old, shows the grape at its most complex."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Sonoma's most planted grape?",
+      "options": [
+        "Chardonnay",
+        "Zinfandel",
+        "Merlot",
+        "Riesling"
+      ],
+      "answer": 0,
+      "explanation": "Chardonnay, with Pinot Noir close behind."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chardonnay and Pinot Noir thrive in cool coastal areas",
+        "Cabernet grows in Alexander Valley; Zinfandel in Dry Creek",
+        "Sonoma has a grape for every climate"
+      ]
+    }
+  ]
+}

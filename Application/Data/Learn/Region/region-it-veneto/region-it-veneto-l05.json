@@ -1,0 +1,79 @@
+{
+  "id": "region-it-veneto-l05",
+  "moduleId": "region-it-veneto",
+  "order": 5,
+  "title": "Prosecco",
+  "subtitle": "Hills and plains",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Prosecco's tiers",
+    "Explain the tank method",
+    "Describe Conegliano Valdobbiadene"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "DOC and DOCG",
+      "body": "Prosecco DOC covers nine provinces in the Veneto and Friuli, mostly on flat land, making large volumes; at least 85% Glera. Two DOCGs are on hills: Conegliano Valdobbiadene Prosecco Superiore, north of Treviso, and Asolo. The grape was renamed from Prosecco to Glera in 2009, to protect the place name.",
+      "highlight": "DOC on plains, DOCG on hills"
+    },
+    {
+      "type": "concept",
+      "title": "Tank method",
+      "body": "Most Prosecco is made by the tank method, also called Martinotti or Charmat: the second fermentation happens in a sealed, pressurised tank. This keeps Glera's fresh pear, apple and floral aromas, without the bready notes of long lees ageing. It's faster and cheaper than the traditional method.",
+      "highlight": "Tank method keeps freshness"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Prosecco term to its meaning.",
+      "pairs": [
+        {
+          "left": "Prosecco DOC",
+          "right": "Nine provinces, mostly flat"
+        },
+        {
+          "left": "Conegliano Valdobbiadene",
+          "right": "Hill DOCG"
+        },
+        {
+          "left": "Cartizze",
+          "right": "Top single hill"
+        },
+        {
+          "left": "Rive",
+          "right": "Village crus"
+        }
+      ],
+      "explanation": "Prosecco has a clear hierarchy."
+    },
+    {
+      "type": "concept",
+      "title": "The hills",
+      "body": "Conegliano Valdobbiadene's steep hills, a UNESCO site since 2019, are worked mostly by hand. Rive are 43 single-village crus. Cartizze, a 107-hectare hill near Valdobbiadene, is the most prized. Hill wines are more aromatic and complex than those from the plains.",
+      "highlight": "UNESCO since 2019"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why was the Prosecco grape renamed Glera?",
+      "options": [
+        "To protect Prosecco as a place name",
+        "Because it changed colour",
+        "Because it was banned",
+        "To honour a winemaker"
+      ],
+      "answer": 0,
+      "explanation": "A grape can grow anywhere; a protected place name can't be copied."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Prosecco DOC is large; Conegliano Valdobbiadene and Asolo are hill DOCGs",
+        "The tank method keeps Glera's fruit fresh",
+        "Rive and Cartizze are the hills' top crus"
+      ]
+    }
+  ]
+}

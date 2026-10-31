@@ -1,0 +1,79 @@
+{
+  "id": "grape-riesling-l02",
+  "moduleId": "grape-riesling",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Cool climates worldwide",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Riesling's main regions",
+    "Explain the climates it needs",
+    "Compare regional styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Germany and Europe",
+      "body": "Germany grows about 40% of the world's Riesling, in the Mosel, Rheingau, Pfalz, Nahe and Rheinhessen. Alsace makes dry, fuller Riesling. Austria's Wachau, Kamptal and Kremstal make dry, powerful versions on steep terraces. It's also grown in northern Italy and across central Europe.",
+      "highlight": "Germany about 40%"
+    },
+    {
+      "type": "concept",
+      "title": "The New World",
+      "body": "Australia's Clare and Eden Valleys make dry, lime-scented Riesling that ages toward toast. New Zealand's Marlborough and Central Otago, Washington State, New York's Finger Lakes and Canada's Niagara also excel. Riesling needs cool or moderate climates to keep its acidity and aromas.",
+      "highlight": "Clare, Eden, Finger Lakes"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Riesling style.",
+      "pairs": [
+        {
+          "left": "Mosel",
+          "right": "Light, often off-dry"
+        },
+        {
+          "left": "Alsace",
+          "right": "Dry and fuller"
+        },
+        {
+          "left": "Clare Valley",
+          "right": "Dry, lime, ages to toast"
+        },
+        {
+          "left": "Wachau",
+          "right": "Dry, powerful, terraced"
+        }
+      ],
+      "explanation": "Each region gives Riesling a different accent."
+    },
+    {
+      "type": "concept",
+      "title": "Site expression",
+      "body": "Because Riesling is unoaked and unblended, it shows soil and site clearly. Slate gives smoky, delicate wines; volcanic soils give spice; limestone gives tension; loess gives roundness. That's why Germany and Alsace name single vineyards on labels, like Burgundy.",
+      "highlight": "Slate, volcanic, limestone, loess"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What share of the world's Riesling does Germany grow?",
+      "options": [
+        "About 40%",
+        "About 5%",
+        "About 90%",
+        "About 15%"
+      ],
+      "answer": 0,
+      "explanation": "Germany is by far the largest producer."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Germany grows about 40% of the world's Riesling",
+        "Australia, Austria, Alsace and North America also excel",
+        "Riesling shows soil and site with unusual clarity"
+      ]
+    }
+  ]
+}

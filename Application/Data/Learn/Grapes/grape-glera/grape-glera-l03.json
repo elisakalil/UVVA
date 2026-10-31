@@ -1,0 +1,62 @@
+{
+  "id": "grape-glera-l03",
+  "moduleId": "grape-glera",
+  "order": 3,
+  "title": "Conegliano Valdobbiadene",
+  "subtitle": "Prosecco's hills",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Conegliano Valdobbiadene DOCG",
+    "Explain Rive and Cartizze",
+    "Explain why the hills give better wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The DOCG",
+      "body": "Conegliano Valdobbiadene Prosecco Superiore DOCG lies in the steep hills between the towns of Conegliano and Valdobbiadene, north of Venice. The hills, called hogbacks, are so steep that most work is by hand. The area became a UNESCO World Heritage Site in 2019. Asolo, nearby, is a second DOCG.",
+      "highlight": "Steep hills, UNESCO 2019"
+    },
+    {
+      "type": "concept",
+      "title": "Rive and Cartizze",
+      "body": "Rive are single-village or hamlet crus on the steepest slopes, 43 in total, picked by hand with lower yields. Cartizze, a single hill of about 107 hectares near Valdobbiadene, is the most prized, with some of Italy's most expensive vineyard land. Its wines are traditionally a little sweeter, often labelled Dry.",
+      "highlight": "43 Rive and Cartizze"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Cartizze?",
+      "options": [
+        "A prized single hill in Valdobbiadene",
+        "A grape",
+        "A sweetness level",
+        "A barrel"
+      ],
+      "answer": 0,
+      "explanation": "Cartizze is Prosecco's top cru, about 107 hectares."
+    },
+    {
+      "type": "concept",
+      "title": "Why the hills",
+      "body": "Hillside vineyards drain well, get more sun and cooler nights than the plains, and have lower yields. The wines are more aromatic, more complex and more mineral. Some producers in the hills also make Col Fondo, a traditional style refermented in bottle and left unfiltered, cloudy with lees.",
+      "highlight": "Hills: more aroma and complexity"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Conegliano Valdobbiadene hills are a UNESCO World Heritage Site.",
+      "answer": true,
+      "explanation": "Yes, since 2019."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Conegliano Valdobbiadene DOCG is Prosecco's hill heartland",
+        "Rive and Cartizze are its top crus",
+        "Col Fondo is a traditional, bottle-fermented style"
+      ]
+    }
+  ]
+}

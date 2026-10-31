@@ -1,0 +1,72 @@
+{
+  "id": "region-gr-santorini-l03",
+  "moduleId": "region-gr-santorini",
+  "order": 3,
+  "title": "Basket vines",
+  "subtitle": "Kouloura",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain kouloura training",
+    "Explain why it's used",
+    "Explain the threat to Santorini's vineyards"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Baskets",
+      "body": "Santorini's vines are trained into kouloura, low baskets woven from the vine's own canes, lying on the ground. The grapes grow inside the basket. Each year, new canes are woven in, so the basket grows. After 50 to 80 years, the basket is cut off, and a new one grows from the same old roots.",
+      "highlight": "Woven baskets on the ground"
+    },
+    {
+      "type": "concept",
+      "title": "Why baskets",
+      "body": "The kouloura protects grapes from strong winds, which can strip leaves and fruit, from fierce sun and from blowing volcanic sand. Inside, the grapes catch moisture from night sea mist and dew, the vines' main water source. The low shape keeps the vines close to the cooler, more humid ground.",
+      "highlight": "Shelter from wind, sun and sand"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does the kouloura protect against?",
+      "options": [
+        "Strong winds",
+        "Fierce sun",
+        "Blowing sand",
+        "Spring frost"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Santorini has mild winters; frost isn't the main concern."
+    },
+    {
+      "type": "concept",
+      "title": "Threats",
+      "body": "Santorini's vineyards are shrinking. Tourism has made land extremely valuable, and many vineyards have been built on. Low yields, drought and climate change add pressure. Producers like Hatzidakis, Gaia, Sigalas and Santo Wines work to protect the vines and their heritage.",
+      "highlight": "Tourism and drought threaten vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a kouloura?",
+      "options": [
+        "A basket-shaped vine trained on the ground",
+        "A barrel",
+        "A grape",
+        "A sweet wine"
+      ],
+      "answer": 0,
+      "explanation": "Woven from the vine's own canes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Kouloura vines are woven into baskets on the ground",
+        "They protect grapes from wind, sun and sand",
+        "Tourism and drought threaten Santorini's vineyards"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "grape-grenache-l03",
+  "moduleId": "grape-grenache",
+  "order": 3,
+  "title": "Châteauneuf and the south",
+  "subtitle": "Grenache in France",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Châteauneuf-du-Pape",
+    "Name other southern Rhône wines",
+    "Describe Grenache rosé"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Châteauneuf-du-Pape",
+      "body": "Châteauneuf-du-Pape, near Avignon, was named after the 14th century popes' summer castle. It allows 13 grape varieties, but Grenache usually leads, often 70% or more. Its famous galets roulés, large round stones, store heat and reflect light. In 1923, Baron Le Roy's rules there helped inspire France's AOC system.",
+      "highlight": "Galets, 13 grapes, Grenache-led"
+    },
+    {
+      "type": "concept",
+      "title": "The southern Rhône",
+      "body": "Gigondas and Vacqueyras, nearby, make powerful Grenache-led reds. Côtes du Rhône and Côtes du Rhône Villages offer more affordable versions. Château Rayas is a famous Châteauneuf made almost entirely from Grenache, on sandy soil, showing the grape's elegance.",
+      "highlight": "Gigondas, Vacqueyras, Côtes du Rhône"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are the galets roulés of Châteauneuf-du-Pape?",
+      "options": [
+        "Large round stones that store heat",
+        "A type of barrel",
+        "A grape",
+        "A local cheese"
+      ],
+      "answer": 0,
+      "explanation": "These river stones store heat by day and release it at night."
+    },
+    {
+      "type": "concept",
+      "title": "Rosé",
+      "body": "Grenache is the main grape of many rosés: Provence, Tavel and Navarra's rosado. Its thin skins give pale colour quickly, and its red fruit and body suit dry rosé. Tavel, in the southern Rhône, is a rosé-only appellation, fuller and darker than Provence.",
+      "highlight": "Provence, Tavel, Navarra"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Châteauneuf-du-Pape allows only Grenache.",
+      "answer": false,
+      "explanation": "Not true. It allows 13 varieties, though Grenache usually leads."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Châteauneuf-du-Pape is Grenache-led, with galets and 13 grapes",
+        "Gigondas, Vacqueyras and Côtes du Rhône follow",
+        "Grenache is key to Provence, Tavel and Navarra rosé"
+      ]
+    }
+  ]
+}

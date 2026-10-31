@@ -1,0 +1,80 @@
+{
+  "id": "grape-cabernet-franc-l02",
+  "moduleId": "grape-cabernet-franc",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Loire, Bordeaux and the New World",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Cabernet Franc's main regions",
+    "Explain the climates it suits",
+    "Name new regions for it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "France",
+      "body": "Cabernet Franc's two French homes are the Loire, where it makes single-variety reds, and Bordeaux, where it's a blending grape, especially on the Right Bank. It also grows in the south-west. In the Loire it's sometimes called Breton; in Saint-Émilion, Bouchet.",
+      "highlight": "Loire alone; Bordeaux in blends"
+    },
+    {
+      "type": "concept",
+      "title": "Cool and warm",
+      "body": "Cabernet Franc tolerates cold winters better than Cabernet Sauvignon, and ripens earlier. That suits the Loire, northern Italy and even Canada and New York. In warmer places, like Argentina's Valle de Uco, California, Virginia and Hungary's Villány, it gives riper, fuller wines, with fewer green notes.",
+      "highlight": "Cold-hardy, early ripening"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Cabernet Franc.",
+      "pairs": [
+        {
+          "left": "Chinon",
+          "right": "Loire single-variety"
+        },
+        {
+          "left": "Saint-Émilion",
+          "right": "Blended with Merlot"
+        },
+        {
+          "left": "Valle de Uco",
+          "right": "Ripe, Argentine style"
+        },
+        {
+          "left": "Villány",
+          "right": "Hungarian Franc"
+        }
+      ],
+      "explanation": "Cabernet Franc is gaining attention well beyond France."
+    },
+    {
+      "type": "tip",
+      "body": "Argentina's Cabernet Franc from the Valle de Uco has become one of the country's most exciting new wines, rivalling Malbec for critics' attention."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Why does Cabernet Franc suit cooler regions?",
+      "options": [
+        "It ripens earlier than Cabernet Sauvignon",
+        "It tolerates cold winters",
+        "It needs very hot summers",
+        "It buds very late"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "It doesn't need extreme heat, and it buds earlier, not later."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Franc is single-variety in the Loire and blended in Bordeaux",
+        "It's cold-hardy and ripens earlier than Cabernet Sauvignon",
+        "Argentina, California, Virginia and Hungary grow fine examples"
+      ]
+    }
+  ]
+}

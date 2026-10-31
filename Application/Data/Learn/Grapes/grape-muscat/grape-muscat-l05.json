@@ -1,0 +1,60 @@
+{
+  "id": "grape-muscat-l05",
+  "moduleId": "grape-muscat",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Muscat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair each Muscat style with food",
+    "Serve them well",
+    "Know how long to keep them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Match the style",
+      "body": "Dry Muscat suits asparagus, a classic in Alsace, and aperitifs. Moscato d'Asti suits fruit salads, panettone and light desserts, even brunch. Beaumes-de-Venise suits fruit tarts and melon. Rutherglen Muscat suits sticky toffee pudding, chocolate, coffee desserts and blue cheese.",
+      "highlight": "Asparagus to sticky toffee pudding"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve Moscato d'Asti and dry Muscat at 6 to 8 degrees, sweet fortified Muscat at 12 to 16. Moscato d'Asti and dry Muscat are best within a year or two; their aroma fades. Fortified Muscats, already aged, keep for weeks once opened.",
+      "highlight": "Moscato fresh; fortified keeps"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Rutherglen Muscat?",
+      "options": [
+        "Sticky toffee pudding",
+        "Raw oysters",
+        "Green salad",
+        "Grilled fish"
+      ],
+      "answer": 0,
+      "explanation": "Its toffee and raisin notes match rich desserts."
+    },
+    {
+      "type": "tip",
+      "body": "Dry Alsace Muscat with white asparagus in spring is one of the few successful asparagus pairings."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Moscato d'Asti is best drunk young.",
+      "answer": true,
+      "explanation": "Yes. Its fresh grape aroma is its charm, and it fades with time."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Muscat suits asparagus; Moscato suits fruit desserts",
+        "Rutherglen Muscat suits toffee and chocolate",
+        "Drink Moscato young; fortified Muscat keeps"
+      ]
+    }
+  ]
+}

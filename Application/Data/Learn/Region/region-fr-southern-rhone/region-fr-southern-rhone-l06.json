@@ -1,0 +1,96 @@
+{
+  "id": "region-fr-southern-rhone-l06",
+  "moduleId": "region-fr-southern-rhone",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about the southern Rhône",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the southern Rhône's climate and grapes",
+    "Explain Châteauneuf-du-Pape",
+    "Read and pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Châteauneuf-du-Pape",
+          "right": "Rich, Grenache-led red"
+        },
+        {
+          "left": "Tavel",
+          "right": "Full rosé"
+        },
+        {
+          "left": "Beaumes-de-Venise",
+          "right": "Fortified sweet Muscat"
+        },
+        {
+          "left": "Côtes du Rhône",
+          "right": "Everyday blend"
+        }
+      ],
+      "explanation": "The southern Rhône makes many styles."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does the Mistral bring?",
+      "options": [
+        "Cold, dry wind",
+        "Tropical rain",
+        "Fog",
+        "Snow"
+      ],
+      "answer": 0,
+      "explanation": "A cold, dry wind from the north."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The southern Rhône makes most of the Rhône's wine.",
+      "answer": true,
+      "explanation": "Yes, over 90%."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are common in southern Rhône reds?",
+      "options": [
+        "Grenache",
+        "Syrah",
+        "Mourvèdre",
+        "Pinot Noir"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pinot Noir isn't a Rhône grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Châteauneuf-du-Pape allows ____ grape varieties.",
+      "options": [
+        "13",
+        "3",
+        "1",
+        "30"
+      ],
+      "answer": "13",
+      "explanation": "Thirteen, though Grenache usually leads."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The southern Rhône is sunny, windy and Grenache-led",
+        "Châteauneuf-du-Pape uses galets and 13 grapes",
+        "Tavel and Beaumes-de-Venise add rosé and sweet styles",
+        "Côtes du Rhône Villages offer great value"
+      ]
+    }
+  ]
+}

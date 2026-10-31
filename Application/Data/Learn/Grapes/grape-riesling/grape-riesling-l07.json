@@ -1,0 +1,96 @@
+{
+  "id": "grape-riesling-l07",
+  "moduleId": "grape-riesling",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Riesling",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Riesling",
+    "Read Prädikat and sweetness terms",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Order the Prädikat levels from least to most ripe.",
+      "items": [
+        "Kabinett",
+        "Spätlese",
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese"
+      ],
+      "explanation": "Riper grapes at each step."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Trocken",
+          "right": "Dry"
+        },
+        {
+          "left": "GG",
+          "right": "Dry, top VDP site"
+        },
+        {
+          "left": "TDN",
+          "right": "Petrol aroma"
+        },
+        {
+          "left": "Feinherb",
+          "right": "Unofficial off-dry"
+        }
+      ],
+      "explanation": "Riesling's labels have their own vocabulary."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Riesling age so well?",
+      "options": [
+        "Its high acidity",
+        "Its tannin",
+        "New oak",
+        "Low acidity"
+      ],
+      "answer": 0,
+      "explanation": "Acidity preserves it for decades."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A Spätlese is always sweet.",
+      "answer": false,
+      "explanation": "Not true. Spätlese measures ripeness; it can be dry."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which regions are known for dry Riesling?",
+      "options": [
+        "Alsace",
+        "Clare Valley",
+        "Wachau",
+        "Sauternes"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sauternes is a sweet Sémillon-based wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling is pure, high-acid and unoaked",
+        "Prädikat levels measure ripeness, not sweetness",
+        "It ranges from dry to TBA, and ages for decades",
+        "Off-dry Riesling is a great match for spicy food"
+      ]
+    }
+  ]
+}

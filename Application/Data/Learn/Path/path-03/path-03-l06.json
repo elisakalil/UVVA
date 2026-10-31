@@ -1,0 +1,72 @@
+{
+  "id": "path-03-l06",
+  "moduleId": "path-03",
+  "order": 6,
+  "title": "Same grape, different places",
+  "subtitle": "How climate changes the wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how climate changes a grape's flavour",
+    "Compare cool and warm climate versions of one grape",
+    "Predict style from a grape and a place"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cool and warm",
+      "body": "Climate is the long-term pattern of a place. In a cool climate, grapes ripen slowly, keeping high acidity and giving lighter body and fresher, sometimes green, fruit. In a warm climate, grapes ripen fully, with more sugar, lower acidity and flavours of ripe or even jammy fruit.",
+      "highlight": "Cool: fresh, tart. Warm: ripe, full."
+    },
+    {
+      "type": "concept",
+      "title": "Why acidity falls in heat",
+      "body": "As grapes ripen, sugar rises and acidity falls. Heat speeds both up, and warm nights let the vine burn off malic acid, one of the grape's main acids. That's why a Chardonnay from Chablis may have 12% alcohol and sharp acidity, while one from a hot valley might reach 14.5% with soft acidity and tropical fruit.",
+      "highlight": "Heat raises sugar and burns off acid"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A Chardonnay is lean, with green apple and 12% alcohol. Where does it most likely come from?",
+      "options": [
+        "A cool climate, like Chablis",
+        "A hot inland valley",
+        "A warm, sunny plain",
+        "Anywhere, climate makes no difference"
+      ],
+      "answer": 0,
+      "explanation": "Green apple, high acidity and moderate alcohol are signs of slow ripening in a cool place. A hot valley would give riper fruit and more alcohol."
+    },
+    {
+      "type": "concept",
+      "title": "The grape and the place together",
+      "body": "Read a label as two clues. The grape tells you the basic character: aromas, skin, tannin. The place tells you how ripe it got. Sauvignon Blanc from the cool Loire tastes of grass and citrus; from warmer parts of Chile it leans towards passion fruit and melon. Same grape, different sun.",
+      "highlight": "Grape gives character; place gives ripeness"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are signs of a warm-climate wine?",
+      "options": [
+        "Higher alcohol",
+        "Riper, jammy fruit",
+        "Very high, sharp acidity",
+        "Lower acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Heat gives more sugar, so more alcohol and riper fruit, and it lowers acidity. Sharp acidity is a cool-climate sign."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cool climates give fresher, lighter wines; warm ones riper and fuller",
+        "Heat raises sugar and lowers acidity",
+        "Grape gives the character, place gives the ripeness"
+      ]
+    }
+  ]
+}

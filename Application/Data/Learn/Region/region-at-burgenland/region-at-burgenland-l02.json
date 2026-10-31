@@ -1,0 +1,77 @@
+{
+  "id": "region-at-burgenland-l02",
+  "moduleId": "region-at-burgenland",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Reds and sweet whites",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Burgenland's red grapes",
+    "Name its white grapes",
+    "Explain each grape's role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Blaufränkisch is the signature: dark cherry, blackberry, pepper and spice, with fresh acidity and firm tannin. Zweigelt, Austria's most planted red, a 1922 cross of Blaufränkisch and St. Laurent, gives soft, cherry reds. St. Laurent gives Pinot-like elegance. Pinot Noir, Merlot and Cabernet also appear in blends.",
+      "highlight": "Blaufränkisch, Zweigelt, St. Laurent"
+    },
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "Welschriesling, unrelated to Riesling, is widely grown, especially for sweet wines. Chardonnay, locally Morillon in parts of Austria, Pinot Blanc, Grüner Veltliner and Furmint, revived near Rust, also grow here. Sweet wines often blend several white grapes affected by noble rot.",
+      "highlight": "Welschriesling, Chardonnay, Furmint"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Blaufränkisch",
+          "right": "Signature red, spicy"
+        },
+        {
+          "left": "Zweigelt",
+          "right": "Soft, cherry red"
+        },
+        {
+          "left": "St. Laurent",
+          "right": "Elegant, Pinot-like"
+        },
+        {
+          "left": "Welschriesling",
+          "right": "Sweet wine white"
+        }
+      ],
+      "explanation": "Burgenland grows reds and sweet whites."
+    },
+    {
+      "type": "tip",
+      "body": "Welschriesling has nothing to do with Riesling. Despite the name, they're not related."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grapes were crossed to create Zweigelt?",
+      "options": [
+        "Blaufränkisch and St. Laurent",
+        "Riesling and Chardonnay",
+        "Pinot Noir and Gamay",
+        "Merlot and Cabernet"
+      ],
+      "answer": 0,
+      "explanation": "Created in 1922 by Fritz Zweigelt."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Blaufränkisch is Burgenland's signature red",
+        "Zweigelt and St. Laurent complete the reds",
+        "Welschriesling leads the sweet whites"
+      ]
+    }
+  ]
+}

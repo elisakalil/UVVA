@@ -1,0 +1,29 @@
+{
+  "id": "region-es-rioja",
+  "kind": "region",
+  "order": 16,
+  "country": "Spain",
+  "countryCode": "ES",
+  "title": "Rioja",
+  "grapes": [
+    "Tempranillo",
+    "Garnacha",
+    "Graciano",
+    "Viura"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "Spain's most famous region: Tempranillo, oak and an ageing system written into law.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-es-rioja-l01",
+    "region-es-rioja-l02",
+    "region-es-rioja-l03",
+    "region-es-rioja-l04",
+    "region-es-rioja-l05",
+    "region-es-rioja-l06",
+    "region-es-rioja-l07"
+  ]
+}

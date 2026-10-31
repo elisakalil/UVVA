@@ -1,0 +1,32 @@
+{
+  "id": "grape-sangiovese",
+  "kind": "grape",
+  "order": 21,
+  "color": "red",
+  "title": "Sangiovese",
+  "aliases": [
+    "Brunello",
+    "Prugnolo Gentile",
+    "Morellino",
+    "Nielluccio"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "Also called Brunello, Prugnolo Gentile and Morellino in Tuscany. Italy's most planted red: sour cherry, high acidity and firm tannin.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-sangiovese-l01",
+    "grape-sangiovese-l02",
+    "grape-sangiovese-l03",
+    "grape-sangiovese-l04",
+    "grape-sangiovese-l05",
+    "grape-sangiovese-l06",
+    "grape-sangiovese-l07"
+  ]
+}

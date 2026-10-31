@@ -1,0 +1,95 @@
+{
+  "id": "path-17-l08",
+  "moduleId": "path-17",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from Winemaking in Depth",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how winemakers protect wine",
+    "Compare extraction and texture tools",
+    "Explain oak and stabilisation choices"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the active, protective form of sulphur dioxide?",
+      "options": [
+        "Bound SO2",
+        "Free SO2",
+        "Total SO2",
+        "Sulphate"
+      ],
+      "answer": 1,
+      "explanation": "Free SO2 does the work; bound SO2 no longer protects."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each technique to its purpose.",
+      "pairs": [
+        {
+          "left": "Cold soak",
+          "right": "Colour and fruit"
+        },
+        {
+          "left": "Bâtonnage",
+          "right": "Creamy texture"
+        },
+        {
+          "left": "Bentonite",
+          "right": "Removes proteins"
+        },
+        {
+          "left": "Cold stabilisation",
+          "right": "Drops tartrates"
+        }
+      ],
+      "explanation": "Each tool solves a specific problem."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are common causes of a stuck fermentation?",
+      "options": [
+        "Low nitrogen",
+        "Very high temperatures",
+        "Very high sugar",
+        "Too much oxygen in the bottle"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Stress from nutrients, heat or sugar stops yeast."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Almost all red wines go through malolactic conversion.",
+      "answer": true,
+      "explanation": "Yes. It softens them and makes them more stable in bottle."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these barrels from strongest to weakest oak effect.",
+      "items": [
+        "New 225-litre barrique",
+        "Second-fill barrique",
+        "500-litre puncheon, used",
+        "2,000-litre old foudre"
+      ],
+      "explanation": "Smaller and newer means more flavour; larger and older means less."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Hygiene and SO2 protect wine from microbes and oxygen",
+        "Extraction and texture are shaped by temperature, time, lees and malolactic",
+        "Oak size, origin, age and toast decide its effect",
+        "Fining, filtration and stabilisation prepare wine for the bottle"
+      ]
+    }
+  ]
+}

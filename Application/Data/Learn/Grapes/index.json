@@ -1,0 +1,1071 @@
+{
+  "kind": "grape",
+  "modules": [
+    {
+      "id": "grape-tannat",
+      "kind": "grape",
+      "order": 1,
+      "color": "red",
+      "title": "Tannat",
+      "aliases": [],
+      "origin": "France",
+      "countries": [
+        "Uruguay",
+        "France"
+      ],
+      "points": "1 1 1 1 = 4",
+      "complexity": "C",
+      "description": "The most tannic grape of south-west France, which found a softer second home in Uruguay.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-malbec",
+      "kind": "grape",
+      "order": 2,
+      "color": "red",
+      "title": "Malbec",
+      "aliases": [
+        "Côt",
+        "Auxerrois"
+      ],
+      "origin": "France",
+      "countries": [
+        "Argentina",
+        "France",
+        "Chile"
+      ],
+      "points": "1 2 1 1 = 5",
+      "complexity": "B",
+      "description": "Also called Côt or Auxerrois in France. Born in Cahors, reborn at altitude in Mendoza.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-petit-verdot",
+      "kind": "grape",
+      "order": 3,
+      "color": "red",
+      "title": "Petit Verdot",
+      "aliases": [],
+      "origin": "France",
+      "countries": [
+        "France",
+        "Spain",
+        "Australia",
+        "United States"
+      ],
+      "points": "0 2 0 1 = 3",
+      "complexity": "C",
+      "description": "A late-ripening Bordeaux grape that adds colour and spice to blends, and shines alone in warm places.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-syrah",
+      "kind": "grape",
+      "order": 4,
+      "color": "red",
+      "title": "Syrah",
+      "aliases": [
+        "Shiraz"
+      ],
+      "origin": "France",
+      "countries": [
+        "France",
+        "Australia",
+        "United States",
+        "South Africa"
+      ],
+      "points": "2 2 2 1 = 7",
+      "complexity": "A",
+      "description": "Also called Shiraz. Pepper and smoke in the Rhône, ripe dark fruit in the Barossa.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-touriga-nacional",
+      "kind": "grape",
+      "order": 5,
+      "color": "red",
+      "title": "Touriga Nacional",
+      "aliases": [],
+      "origin": "Portugal",
+      "countries": [
+        "Portugal"
+      ],
+      "points": "2 1 1 0 = 4",
+      "complexity": "C",
+      "description": "Portugal's finest red grape: floral, dark and structured, at the heart of Port and the Douro's dry reds.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-cabernet-sauvignon",
+      "kind": "grape",
+      "order": 6,
+      "color": "red",
+      "title": "Cabernet Sauvignon",
+      "aliases": [],
+      "origin": "France",
+      "countries": [
+        "France",
+        "United States",
+        "Chile",
+        "Australia",
+        "Italy"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "The world's most planted red grape: blackcurrant, cedar and structure, from the Médoc to Napa.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-mourvedre",
+      "kind": "grape",
+      "order": 7,
+      "color": "red",
+      "title": "Mourvèdre",
+      "aliases": [
+        "Monastrell",
+        "Mataro"
+      ],
+      "origin": "Spain",
+      "countries": [
+        "Spain",
+        "France",
+        "Australia"
+      ],
+      "points": "1 2 1 1 = 5",
+      "complexity": "B",
+      "description": "Also called Monastrell in Spain and Mataro in Australia. A sun-loving grape of dark fruit, game and herbs.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-aglianico",
+      "kind": "grape",
+      "order": 8,
+      "color": "red",
+      "title": "Aglianico",
+      "aliases": [],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "0 1 1 1 = 3",
+      "complexity": "C",
+      "description": "Southern Italy's great red: late-ripening, tannic and acidic, grown on volcanic hills in Campania and Basilicata.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-pinotage",
+      "kind": "grape",
+      "order": 9,
+      "color": "red",
+      "title": "Pinotage",
+      "aliases": [],
+      "origin": "South Africa",
+      "countries": [
+        "South Africa"
+      ],
+      "points": "1 0 0 2 = 3",
+      "complexity": "C",
+      "description": "South Africa's own grape, a 1925 cross of Pinot Noir and Cinsault, in styles from fruity to smoky and serious.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-carmenere",
+      "kind": "grape",
+      "order": 10,
+      "color": "red",
+      "title": "Carmenère",
+      "aliases": [
+        "Grande Vidure"
+      ],
+      "origin": "France",
+      "countries": [
+        "Chile"
+      ],
+      "points": "0 1 0 2 = 3",
+      "complexity": "C",
+      "description": "A forgotten Bordeaux grape, rediscovered in Chile in 1994, with dark fruit, spice and a hint of green pepper.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-montepulciano",
+      "kind": "grape",
+      "order": 11,
+      "color": "red",
+      "title": "Montepulciano",
+      "aliases": [],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "1 1 0 1 = 3",
+      "complexity": "C",
+      "description": "Central Italy's generous red grape, deep in colour and soft in tannin, from Abruzzo to the Marche.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-nero-d-avola",
+      "kind": "grape",
+      "order": 12,
+      "color": "red",
+      "title": "Nero d'Avola",
+      "aliases": [
+        "Calabrese"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "0 0 0 1 = 1",
+      "complexity": "D",
+      "description": "Also called Calabrese. Sicily's signature red: dark, ripe and juicy, with fresh acidity.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "grape-zinfandel",
+      "kind": "grape",
+      "order": 13,
+      "color": "red",
+      "title": "Zinfandel",
+      "aliases": [
+        "Primitivo",
+        "Tribidrag",
+        "Crljenak Kaštelanski"
+      ],
+      "origin": "Croatia",
+      "countries": [
+        "United States",
+        "Italy"
+      ],
+      "points": "2 1 1 1 = 5",
+      "complexity": "B",
+      "description": "Also called Primitivo in Italy and Tribidrag in Croatia. Ripe bramble fruit, high alcohol and a long American story.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-merlot",
+      "kind": "grape",
+      "order": 14,
+      "color": "red",
+      "title": "Merlot",
+      "aliases": [],
+      "origin": "France",
+      "countries": [
+        "France",
+        "Italy",
+        "Chile",
+        "United States"
+      ],
+      "points": "1 2 2 1 = 6",
+      "complexity": "B",
+      "description": "Plum, softness and the clay of the Right Bank: the world's second most planted red grape.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-dolcetto",
+      "kind": "grape",
+      "order": 15,
+      "color": "red",
+      "title": "Dolcetto",
+      "aliases": [],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "0 1 0 0 = 1",
+      "complexity": "D",
+      "description": "Piedmont's everyday red: dark, fruity and soft, with a bitter almond finish.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "grape-barbera",
+      "kind": "grape",
+      "order": 16,
+      "color": "red",
+      "title": "Barbera",
+      "aliases": [],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "0 1 0 1 = 2",
+      "complexity": "D",
+      "description": "Piedmont's most planted red: deep colour, bright acidity, low tannin and a natural love of food.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "grape-tempranillo",
+      "kind": "grape",
+      "order": 17,
+      "color": "red",
+      "title": "Tempranillo",
+      "aliases": [
+        "Tinto Fino",
+        "Tinta del País",
+        "Tinta de Toro",
+        "Tinta Roriz",
+        "Aragonez",
+        "Cencibel"
+      ],
+      "origin": "Spain",
+      "countries": [
+        "Spain",
+        "Portugal"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "Also called Tinta Roriz and Aragonez in Portugal, Tinto Fino in Ribera. Spain's great red, shaped by oak and time.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-corvina",
+      "kind": "grape",
+      "order": 18,
+      "color": "red",
+      "title": "Corvina",
+      "aliases": [
+        "Corvina Veronese",
+        "Cruina"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "2 1 2 1 = 6",
+      "complexity": "B",
+      "description": "Valpolicella's leading grape: cherry-fresh when young, rich and raisined as Amarone.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-cabernet-franc",
+      "kind": "grape",
+      "order": 19,
+      "color": "red",
+      "title": "Cabernet Franc",
+      "aliases": [
+        "Bouchet",
+        "Breton"
+      ],
+      "origin": "France",
+      "countries": [
+        "France",
+        "United States",
+        "Argentina"
+      ],
+      "points": "1 2 2 1 = 6",
+      "complexity": "B",
+      "description": "Also called Bouchet in Saint-Émilion and Breton in the Loire. The aromatic parent of Cabernet Sauvignon and Merlot.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-carignan",
+      "kind": "grape",
+      "order": 20,
+      "color": "red",
+      "title": "Carignan",
+      "aliases": [
+        "Cariñena",
+        "Mazuelo",
+        "Samsó",
+        "Carignano"
+      ],
+      "origin": "Spain",
+      "countries": [
+        "France",
+        "Spain",
+        "Chile"
+      ],
+      "points": "0 2 0 1 = 3",
+      "complexity": "C",
+      "description": "Also called Cariñena, Mazuelo, Samsó and Carignano. Once a bulk grape, now prized from old vines.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-sangiovese",
+      "kind": "grape",
+      "order": 21,
+      "color": "red",
+      "title": "Sangiovese",
+      "aliases": [
+        "Brunello",
+        "Prugnolo Gentile",
+        "Morellino",
+        "Nielluccio"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "Also called Brunello, Prugnolo Gentile and Morellino in Tuscany. Italy's most planted red: sour cherry, high acidity and firm tannin.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-gamay",
+      "kind": "grape",
+      "order": 22,
+      "color": "red",
+      "title": "Gamay",
+      "aliases": [
+        "Gamay Noir"
+      ],
+      "origin": "France",
+      "countries": [
+        "France"
+      ],
+      "points": "1 1 1 1 = 4",
+      "complexity": "C",
+      "description": "Beaujolais' grape: light, juicy and fragrant, from fresh nouveau to serious crus.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-grenache",
+      "kind": "grape",
+      "order": 23,
+      "color": "red",
+      "title": "Grenache",
+      "aliases": [
+        "Garnacha",
+        "Cannonau",
+        "Garnatxa"
+      ],
+      "origin": "Spain",
+      "countries": [
+        "Spain",
+        "France",
+        "Australia"
+      ],
+      "points": "2 2 2 1 = 7",
+      "complexity": "A",
+      "description": "Also called Garnacha in Spain and Cannonau in Sardinia. Red fruit, spice and warmth, from Châteauneuf to Priorat.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-cinsault",
+      "kind": "grape",
+      "order": 24,
+      "color": "red",
+      "title": "Cinsault",
+      "aliases": [
+        "Cinsaut",
+        "Hermitage"
+      ],
+      "origin": "France",
+      "countries": [
+        "France",
+        "South Africa"
+      ],
+      "points": "1 1 0 1 = 3",
+      "complexity": "C",
+      "description": "Also spelled Cinsaut, once called Hermitage in South Africa. A light, perfumed southern grape for rosé and fresh reds.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-pinot-meunier",
+      "kind": "grape",
+      "order": 25,
+      "color": "red",
+      "title": "Pinot Meunier",
+      "aliases": [
+        "Meunier",
+        "Schwarzriesling",
+        "Müllerrebe"
+      ],
+      "origin": "France",
+      "countries": [
+        "France"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Also called Meunier, and Schwarzriesling in Germany. Champagne's third grape: fruity, early and frost-resistant.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-nebbiolo",
+      "kind": "grape",
+      "order": 26,
+      "color": "red",
+      "title": "Nebbiolo",
+      "aliases": [
+        "Spanna",
+        "Chiavennasca"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "Also called Spanna and Chiavennasca. Piedmont's noble grape: pale in colour, high in tannin, scented with roses and tar.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-nerello-mascalese",
+      "kind": "grape",
+      "order": 27,
+      "color": "red",
+      "title": "Nerello Mascalese",
+      "aliases": [],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Etna's red grape: pale, perfumed and firm, grown high on the slopes of an active volcano.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-pinot-noir",
+      "kind": "grape",
+      "order": 28,
+      "color": "red",
+      "title": "Pinot Noir",
+      "aliases": [
+        "Spätburgunder",
+        "Pinot Nero",
+        "Blauburgunder"
+      ],
+      "origin": "France",
+      "countries": [
+        "France",
+        "Germany",
+        "United States",
+        "New Zealand"
+      ],
+      "points": "2 2 2 2 = 8",
+      "complexity": "A",
+      "description": "Also called Spätburgunder in Germany and Pinot Nero in Italy. Thin skin, high acid and a talent for showing where it was grown.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-gewurztraminer",
+      "kind": "grape",
+      "order": 29,
+      "color": "white",
+      "title": "Gewürztraminer",
+      "aliases": [
+        "Traminer Aromatico",
+        "Savagnin Rose Aromatique"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "France",
+        "Germany",
+        "Italy"
+      ],
+      "points": "2 1 1 1 = 5",
+      "complexity": "B",
+      "description": "Also called Traminer Aromatico in Italy. Lychee, rose and ginger: the most recognisable aromatic white grape.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-viognier",
+      "kind": "grape",
+      "order": 30,
+      "color": "white",
+      "title": "Viognier",
+      "aliases": [],
+      "origin": "France",
+      "countries": [
+        "France",
+        "United States",
+        "Australia"
+      ],
+      "points": "1 1 1 1 = 4",
+      "complexity": "C",
+      "description": "A perfumed, full-bodied white that nearly vanished, saved by Condrieu and now grown worldwide.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-marsanne",
+      "kind": "grape",
+      "order": 31,
+      "color": "white",
+      "title": "Marsanne",
+      "aliases": [],
+      "origin": "France",
+      "countries": [
+        "France",
+        "Australia"
+      ],
+      "points": "1 1 1 0 = 3",
+      "complexity": "C",
+      "description": "A full-bodied Rhône white of honey, almond and pear, often with Roussanne, and capable of long ageing.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-chardonnay",
+      "kind": "grape",
+      "order": 32,
+      "color": "white",
+      "title": "Chardonnay",
+      "aliases": [],
+      "origin": "France",
+      "countries": [
+        "France",
+        "United States",
+        "Australia",
+        "Italy",
+        "Chile"
+      ],
+      "points": "2 2 2 2 = 8",
+      "complexity": "A",
+      "description": "The world's most famous white grape: a neutral canvas for place and winemaking, from Chablis to Champagne.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-semillon",
+      "kind": "grape",
+      "order": 33,
+      "color": "white",
+      "title": "Sémillon",
+      "aliases": [
+        "Semillon"
+      ],
+      "origin": "France",
+      "countries": [
+        "France",
+        "Australia"
+      ],
+      "points": "2 1 2 1 = 6",
+      "complexity": "B",
+      "description": "Bordeaux's golden grape: the heart of Sauternes and the secret of Hunter Valley's long-lived whites.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-pinot-gris",
+      "kind": "grape",
+      "order": 34,
+      "color": "white",
+      "title": "Pinot Gris",
+      "aliases": [
+        "Pinot Grigio",
+        "Grauburgunder",
+        "Ruländer",
+        "Szürkebarát"
+      ],
+      "origin": "France",
+      "countries": [
+        "Italy",
+        "France",
+        "United States",
+        "Germany"
+      ],
+      "points": "2 2 0 1 = 5",
+      "complexity": "B",
+      "description": "Also called Pinot Grigio in Italy and Grauburgunder in Germany. One grape, from light and crisp to rich and spicy.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-furmint",
+      "kind": "grape",
+      "order": 35,
+      "color": "white",
+      "title": "Furmint",
+      "aliases": [
+        "Šipon"
+      ],
+      "origin": "Hungary",
+      "countries": [
+        "Hungary"
+      ],
+      "points": "2 0 2 2 = 6",
+      "complexity": "B",
+      "description": "Tokaj's grape: searing acidity, noble rot and smoky, mineral dry wines.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-palomino",
+      "kind": "grape",
+      "order": 36,
+      "color": "white",
+      "title": "Palomino",
+      "aliases": [
+        "Palomino Fino",
+        "Listán Blanco"
+      ],
+      "origin": "Spain",
+      "countries": [
+        "Spain"
+      ],
+      "points": "2 0 2 2 = 6",
+      "complexity": "B",
+      "description": "Also called Palomino Fino and Listán Blanco. A neutral grape transformed by flor and the solera into Sherry.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-chenin-blanc",
+      "kind": "grape",
+      "order": 37,
+      "color": "white",
+      "title": "Chenin Blanc",
+      "aliases": [
+        "Steen",
+        "Pineau de la Loire"
+      ],
+      "origin": "France",
+      "countries": [
+        "France",
+        "South Africa"
+      ],
+      "points": "2 2 2 1 = 7",
+      "complexity": "A",
+      "description": "Also called Steen in South Africa. The Loire's most versatile grape: dry, sweet or sparkling, always with high acidity.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-muscat",
+      "kind": "grape",
+      "order": 38,
+      "color": "white",
+      "title": "Muscat",
+      "aliases": [
+        "Moscato",
+        "Moscatel",
+        "Muskateller",
+        "Zibibbo",
+        "Muscat Blanc à Petits Grains",
+        "Muscat of Alexandria"
+      ],
+      "origin": "Greece",
+      "countries": [
+        "Italy",
+        "Portugal",
+        "Spain",
+        "France",
+        "Greece"
+      ],
+      "points": "2 2 1 1 = 6",
+      "complexity": "B",
+      "description": "Also called Moscato, Moscatel and Muskateller. The family of grapes that actually taste of grapes.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-torrontes",
+      "kind": "grape",
+      "order": 39,
+      "color": "white",
+      "title": "Torrontés",
+      "aliases": [
+        "Torrontés Riojano"
+      ],
+      "origin": "Argentina",
+      "countries": [
+        "Argentina"
+      ],
+      "points": "0 0 0 1 = 1",
+      "complexity": "D",
+      "description": "Argentina's own white grape: intensely floral, grown at some of the world's highest vineyards.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "grape-trebbiano",
+      "kind": "grape",
+      "order": 40,
+      "color": "white",
+      "title": "Trebbiano",
+      "aliases": [
+        "Ugni Blanc",
+        "Trebbiano Toscano",
+        "Saint-Émilion"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy",
+        "France"
+      ],
+      "points": "2 2 0 1 = 5",
+      "complexity": "B",
+      "description": "Also called Ugni Blanc in France. A neutral, high-acid grape behind Cognac, Armagnac and Vin Santo.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-garganega",
+      "kind": "grape",
+      "order": 41,
+      "color": "white",
+      "title": "Garganega",
+      "aliases": [
+        "Grecanico"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Soave's grape: almond, lemon and volcanic minerality, dry or sweet as Recioto.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-vermentino",
+      "kind": "grape",
+      "order": 42,
+      "color": "white",
+      "title": "Vermentino",
+      "aliases": [
+        "Rolle",
+        "Pigato",
+        "Favorita"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy",
+        "France"
+      ],
+      "points": "0 2 0 0 = 2",
+      "complexity": "D",
+      "description": "Also called Rolle in Provence and Pigato in Liguria. A crisp, herbal, saline white of Mediterranean coasts and islands.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "grape-assyrtiko",
+      "kind": "grape",
+      "order": 43,
+      "color": "white",
+      "title": "Assyrtiko",
+      "aliases": [],
+      "origin": "Greece",
+      "countries": [
+        "Greece"
+      ],
+      "points": "2 0 1 2 = 5",
+      "complexity": "B",
+      "description": "Santorini's grape: bone-dry, steely and saline, keeping high acidity in fierce sun.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "grape-gruner-veltliner",
+      "kind": "grape",
+      "order": 44,
+      "color": "white",
+      "title": "Grüner Veltliner",
+      "aliases": [
+        "Grüner",
+        "Weissgipfler"
+      ],
+      "origin": "Austria",
+      "countries": [
+        "Austria"
+      ],
+      "points": "1 1 1 1 = 4",
+      "complexity": "C",
+      "description": "Austria's signature grape: citrus, green apple and a twist of white pepper.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-riesling",
+      "kind": "grape",
+      "order": 45,
+      "color": "white",
+      "title": "Riesling",
+      "aliases": [],
+      "origin": "Germany",
+      "countries": [
+        "Germany",
+        "Austria",
+        "France",
+        "Australia"
+      ],
+      "points": "2 2 2 2 = 8",
+      "complexity": "A",
+      "description": "Germany's great grape: piercing acidity, pure fruit and every sweetness level, from bone dry to luscious.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-verdejo",
+      "kind": "grape",
+      "order": 46,
+      "color": "white",
+      "title": "Verdejo",
+      "aliases": [],
+      "origin": "Spain",
+      "countries": [
+        "Spain"
+      ],
+      "points": "0 0 0 1 = 1",
+      "complexity": "D",
+      "description": "Rueda's grape: herbal, citrus and fennel, with a bitter almond finish.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "grape-albarino",
+      "kind": "grape",
+      "order": 47,
+      "color": "white",
+      "title": "Albariño",
+      "aliases": [
+        "Alvarinho"
+      ],
+      "origin": "Spain and Portugal",
+      "countries": [
+        "Spain",
+        "Portugal"
+      ],
+      "points": "1 1 1 1 = 4",
+      "complexity": "C",
+      "description": "Also called Alvarinho in Portugal. A crisp, saline, peach-scented white of the Atlantic north-west of Iberia.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "grape-sauvignon-blanc",
+      "kind": "grape",
+      "order": 48,
+      "color": "white",
+      "title": "Sauvignon Blanc",
+      "aliases": [
+        "Fumé Blanc",
+        "Blanc Fumé"
+      ],
+      "origin": "France",
+      "countries": [
+        "France",
+        "New Zealand",
+        "Chile",
+        "South Africa"
+      ],
+      "points": "2 2 2 2 = 8",
+      "complexity": "A",
+      "description": "Also called Fumé Blanc. Grass, gooseberry and passion fruit, from the Loire to Marlborough.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "grape-melon-de-bourgogne",
+      "kind": "grape",
+      "order": 49,
+      "color": "white",
+      "title": "Melon de Bourgogne",
+      "aliases": [
+        "Melon",
+        "Muscadet"
+      ],
+      "origin": "France",
+      "countries": [
+        "France"
+      ],
+      "points": "0 0 1 1 = 2",
+      "complexity": "D",
+      "description": "The grape of Muscadet: light, crisp and saline, made richer by ageing on its lees.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "grape-glera",
+      "kind": "grape",
+      "order": 50,
+      "color": "white",
+      "title": "Glera",
+      "aliases": [
+        "Prosecco"
+      ],
+      "origin": "Italy",
+      "countries": [
+        "Italy"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Once called Prosecco itself. The grape behind Italy's famous light, fruity sparkling wine.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    }
+  ]
+}

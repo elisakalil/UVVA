@@ -1,0 +1,96 @@
+{
+  "id": "grape-barbera-l04",
+  "moduleId": "grape-barbera",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Barbera",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Barbera",
+    "Know its zones",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Barbera's signature balance?",
+      "options": [
+        "High acidity and low tannin",
+        "Low acidity and high tannin",
+        "High sugar and low alcohol",
+        "Pale colour and high tannin"
+      ],
+      "answer": 0,
+      "explanation": "That balance makes it juicy and food-friendly."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Barbera.",
+      "pairs": [
+        {
+          "left": "Nizza",
+          "right": "Top DOCG subzone"
+        },
+        {
+          "left": "Giacomo Bologna",
+          "right": "Oak pioneer"
+        },
+        {
+          "left": "Bagna cauda",
+          "right": "Piedmont pairing"
+        },
+        {
+          "left": "Most planted",
+          "right": "Piedmont's red"
+        }
+      ],
+      "explanation": "Barbera's story is one of transformation."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Barbera d'Asti is a DOCG.",
+      "answer": true,
+      "explanation": "Yes, since 2008."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does new oak bring to Barbera?",
+      "options": [
+        "Tannin",
+        "Vanilla and spice",
+        "Softer acidity",
+        "Higher sugar"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Oak doesn't add sugar."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Barbera is Piedmont's most ____ red grape.",
+      "options": [
+        "planted",
+        "expensive",
+        "tannic",
+        "pale"
+      ],
+      "answer": "planted",
+      "explanation": "It covers more of Piedmont than Nebbiolo or Dolcetto."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barbera has high acidity and low tannin",
+        "Asti, Nizza and Alba are its key zones",
+        "Oak gives it structure",
+        "It's one of the most food-friendly reds"
+      ]
+    }
+  ]
+}

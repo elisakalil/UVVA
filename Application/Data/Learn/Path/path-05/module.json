@@ -1,0 +1,19 @@
+{
+  "id": "path-05",
+  "kind": "path",
+  "order": 5,
+  "level": "Essentials",
+  "complexity": "D",
+  "title": "Storing and Serving",
+  "description": "Keeping a bottle well, serving it at the right temperature and saving what's left.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "path-05-l01",
+    "path-05-l02",
+    "path-05-l03",
+    "path-05-l04",
+    "path-05-l05"
+  ]
+}

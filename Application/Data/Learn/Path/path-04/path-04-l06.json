@@ -1,0 +1,86 @@
+{
+  "id": "path-04-l06",
+  "moduleId": "path-04",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Tasting Basics",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Taste a wine in a consistent order",
+    "Read colour, aroma and structure",
+    "Describe a wine clearly"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Put the tasting steps in order.",
+      "items": [
+        "Look",
+        "Swirl",
+        "Smell",
+        "Taste",
+        "Conclude"
+      ],
+      "explanation": "Look, swirl to release aromas, smell, taste and only then conclude."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A white wine is deep gold. What is the most likely explanation?",
+      "options": [
+        "It's very young",
+        "It has some age or oak",
+        "It's a red",
+        "It's sparkling"
+      ],
+      "answer": 1,
+      "explanation": "Whites deepen in colour with age and time in oak. Very young, unoaked whites are pale lemon."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Aromas that come from age, like honey, leather and nuts, are called ____ aromas.",
+      "options": [
+        "tertiary",
+        "primary",
+        "secondary",
+        "varietal"
+      ],
+      "answer": "tertiary",
+      "explanation": "Primary aromas come from the grape, secondary from winemaking and tertiary from time."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are part of a wine's structure?",
+      "options": [
+        "Acidity",
+        "Tannin",
+        "Aroma of cherry",
+        "Alcohol",
+        "Colour"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Structure is what you feel: sweetness, acidity, tannin, alcohol, body. Aromas and colour are separate parts of the note."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Legs on a glass are a reliable sign of quality.",
+      "answer": false,
+      "explanation": "Not true. They show alcohol and sugar, nothing about quality. Length of finish and balance tell you much more."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Look, smell, taste and conclude, every time",
+        "Colour tells age; aromas tell grape, winemaking and time",
+        "Structure is felt: acidity waters, tannin dries, alcohol warms",
+        "Balance and length are the clearest signs of quality"
+      ]
+    }
+  ]
+}

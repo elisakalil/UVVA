@@ -1,0 +1,96 @@
+{
+  "id": "grape-vermentino-l04",
+  "moduleId": "grape-vermentino",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Vermentino",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Vermentino",
+    "Know its names and regions",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its region.",
+      "pairs": [
+        {
+          "left": "Rolle",
+          "right": "Provence"
+        },
+        {
+          "left": "Pigato",
+          "right": "Liguria"
+        },
+        {
+          "left": "Favorita",
+          "right": "Piedmont"
+        },
+        {
+          "left": "Vermentinu",
+          "right": "Corsica"
+        }
+      ],
+      "explanation": "Vermentino travels the western Mediterranean."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which flavours are typical of Vermentino?",
+      "options": [
+        "Citrus, herbs and a saline finish",
+        "Blackcurrant and cedar",
+        "Lychee and rose",
+        "Butter and toast"
+      ],
+      "answer": 0,
+      "explanation": "Its coastal, herbal character is its signature."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vermentino di Gallura is Sardinia's only DOCG.",
+      "answer": true,
+      "explanation": "Yes, since 1996."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Vermentino?",
+      "options": [
+        "Pesto pasta",
+        "Grilled fish",
+        "Fritto misto",
+        "Beef stew"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Beef stew needs a red."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Vermentino is best served at about ____ degrees.",
+      "options": [
+        "8 to 10",
+        "16 to 18",
+        "2 to 4",
+        "20"
+      ],
+      "answer": "8 to 10",
+      "explanation": "Well chilled."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vermentino is crisp, herbal and saline",
+        "It has many names: Rolle, Pigato, Favorita",
+        "Sardinia's Gallura is its DOCG",
+        "It's a Mediterranean seafood wine"
+      ]
+    }
+  ]
+}

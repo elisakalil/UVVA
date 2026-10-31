@@ -1,0 +1,62 @@
+{
+  "id": "path-25-l01",
+  "moduleId": "path-25",
+  "order": 1,
+  "title": "The base wine",
+  "subtitle": "Where quality starts",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what makes a good base wine",
+    "Explain pressing fractions",
+    "Explain the role of reserve wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "High acid, low alcohol",
+      "body": "A good base wine for sparkling is high in acidity, low in alcohol, around 10 to 11%, and neutral in flavour, so the second fermentation and lees can add character. Grapes are picked early, before sugar rises. Cool regions like Champagne, England and Tasmania give this naturally.",
+      "highlight": "Acidic, light and neutral"
+    },
+    {
+      "type": "concept",
+      "title": "Pressing fractions",
+      "body": "Whole bunches are pressed gently to avoid colour and bitterness from skins. In Champagne, 4,000 kg of grapes may give at most 2,550 litres. The first 2,050 litres, the cuvée, are the purest, with high acidity. The next 500 litres, the taille, are fruitier and less fine. Top houses often use only the cuvée.",
+      "highlight": "Cuvée first, then taille"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "In Champagne, what is the cuvée?",
+      "options": [
+        "The final blend",
+        "The first and purest pressing fraction",
+        "The sugar added at bottling",
+        "The yeast sediment"
+      ],
+      "answer": 1,
+      "explanation": "The cuvée is the first 2,050 litres from 4,000 kg of grapes, highest in acidity and finesse."
+    },
+    {
+      "type": "concept",
+      "title": "Reserve wines",
+      "body": "Houses keep reserve wines from earlier years to blend into their non-vintage, smoothing differences between vintages and adding depth. Some use 10 to 50% reserve wine, stored in tanks, barrels, or a perpetual solera-like system. This is how non-vintage Champagne keeps a consistent house style.",
+      "highlight": "Reserve wines keep the house style"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Grapes for sparkling base wine are usually picked later than grapes for still wine.",
+      "answer": false,
+      "explanation": "Not true. They're picked earlier, to keep high acidity and low sugar, since the second fermentation adds alcohol."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Base wines are acidic, low in alcohol and neutral",
+        "Gentle whole bunch pressing separates cuvée and taille",
+        "Reserve wines keep non-vintage blends consistent"
+      ]
+    }
+  ]
+}

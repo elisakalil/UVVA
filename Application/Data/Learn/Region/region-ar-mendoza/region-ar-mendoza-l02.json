@@ -1,0 +1,77 @@
+{
+  "id": "region-ar-mendoza-l02",
+  "moduleId": "region-ar-mendoza",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Malbec and more",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Malbec's role",
+    "Name Mendoza's other grapes",
+    "Explain Malbec's history in Argentina"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Malbec",
+      "body": "Malbec is Mendoza's signature, with about 70% of Argentina's Malbec. It gives deep purple wines with plum, blackberry, violet and cocoa, and soft, ripe tannins. It arrived in 1853 with French agronomist Michel Aimé Pouget, hired to found an agricultural school. April 17, the date of the school's founding law, is now World Malbec Day.",
+      "highlight": "Malbec arrived in 1853"
+    },
+    {
+      "type": "concept",
+      "title": "Others",
+      "body": "Bonarda, the same as Douce Noir from Savoie, not Italy's Bonarda, is Argentina's second most planted red, giving fruity, soft wines. Cabernet Sauvignon is important, often blended with Malbec. Cabernet Franc has become a rising star. Whites include Chardonnay, Torrontés and Sémillon. Criolla Grande and Cereza, pink-skinned, make bulk wine.",
+      "highlight": "Bonarda, Cabernet, Cabernet Franc"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Malbec",
+          "right": "Signature red"
+        },
+        {
+          "left": "Bonarda",
+          "right": "Second red, fruity"
+        },
+        {
+          "left": "Cabernet Franc",
+          "right": "Rising star"
+        },
+        {
+          "left": "Criolla Grande",
+          "right": "Bulk wine grape"
+        }
+      ],
+      "explanation": "Malbec leads, with partners."
+    },
+    {
+      "type": "tip",
+      "body": "Argentine Bonarda is not the same as Italian Bonarda. DNA shows it's Douce Noir, from France's Savoie."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "When is World Malbec Day?",
+      "options": [
+        "April 17",
+        "July 4",
+        "December 25",
+        "January 1"
+      ],
+      "answer": 0,
+      "explanation": "Marking the 1853 founding of Mendoza's agricultural school."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Malbec, from 1853, is Mendoza's signature",
+        "Bonarda, Cabernet Sauvignon and Cabernet Franc follow",
+        "World Malbec Day is April 17"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "path-29-l01",
+  "moduleId": "path-29",
+  "order": 1,
+  "title": "How wine is sold",
+  "subtitle": "From vineyard to glass",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the route from producer to consumer",
+    "Explain the three-tier system",
+    "Name the main sales channels"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The chain",
+      "body": "A bottle passes through several hands. The producer sells to an importer or distributor, who sells to retailers and restaurants, who sell to you. Each step adds a margin. Large producers may also sell directly through cellar doors, clubs and online, keeping more of the price.",
+      "highlight": "Producer, importer, retailer, consumer"
+    },
+    {
+      "type": "concept",
+      "title": "Three tiers",
+      "body": "In the United States, a law from 1933, after Prohibition, created the three-tier system: producers must sell to wholesalers, who sell to retailers or restaurants. Each state sets its own rules, and some sell alcohol only through state-run shops. In many other markets, importers and distributors play similar roles, but with fewer legal restrictions.",
+      "highlight": "US: producer, wholesaler, retailer"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does the US three-tier system require?",
+      "options": [
+        "Producers sell directly to consumers",
+        "Producers sell to wholesalers, who sell to retailers",
+        "Retailers make their own wine",
+        "Only state shops may sell wine"
+      ],
+      "answer": 1,
+      "explanation": "The system separates producers, wholesalers and retailers, though some states allow exceptions."
+    },
+    {
+      "type": "concept",
+      "title": "Channels",
+      "body": "Off-trade means shops and supermarkets, where most wine is sold. On-trade means restaurants and bars, with higher margins. Direct to consumer includes cellar doors, wine clubs and online sales. Supermarkets dominate volume in the UK and much of Europe; on-trade shapes a wine's image.",
+      "highlight": "Off-trade, on-trade, direct"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each channel to its description.",
+      "pairs": [
+        {
+          "left": "Off-trade",
+          "right": "Shops and supermarkets"
+        },
+        {
+          "left": "On-trade",
+          "right": "Restaurants and bars"
+        },
+        {
+          "left": "Direct to consumer",
+          "right": "Cellar door and clubs"
+        },
+        {
+          "left": "Importer",
+          "right": "Brings wine into a market"
+        }
+      ],
+      "explanation": "Each channel has different margins and roles."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Wine moves from producer through importers and retailers",
+        "The US uses a legal three-tier system",
+        "Off-trade, on-trade and direct sales are the main channels"
+      ]
+    }
+  ]
+}

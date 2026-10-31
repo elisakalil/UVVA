@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-bordeaux-l05",
+  "moduleId": "region-fr-bordeaux",
+  "order": 5,
+  "title": "Sauternes and Barsac",
+  "subtitle": "Bordeaux's sweet gold",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how noble rot forms in Sauternes",
+    "Describe its grapes and making",
+    "Compare Sauternes and Barsac"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Ciron's mist",
+      "body": "Sauternes and Barsac lie in southern Graves, where the cold Ciron river flows into the warmer Garonne. On autumn mornings, the difference in temperature creates mist, ideal for noble rot, Botrytis cinerea. Sunny afternoons dry the grapes, stopping grey rot. The fungus shrivels berries and concentrates their sugar and acidity.",
+      "highlight": "Mist in the morning, sun in the afternoon"
+    },
+    {
+      "type": "concept",
+      "title": "Making it",
+      "body": "Sémillon, about 80%, is the main grape, with Sauvignon Blanc and a little Muscadelle. Pickers pass through the vines several times, called tries, picking only botrytised berries. Yields are tiny. The wines ferment and age in oak, often new, reaching about 14% alcohol with 100 to 150 g/l of sugar.",
+      "highlight": "Sémillon, several tries, oak"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does the Ciron river matter for Sauternes?",
+      "options": [
+        "Its cold water creates autumn mist that favours noble rot",
+        "It irrigates the vines",
+        "It freezes the grapes",
+        "It brings salt"
+      ],
+      "answer": 0,
+      "explanation": "Mist plus afternoon sun is the recipe for noble rot."
+    },
+    {
+      "type": "concept",
+      "title": "Barsac",
+      "body": "Barsac, on flatter, limestone-based land next to Sauternes, can label its wines Barsac or Sauternes. Its wines are often slightly lighter and fresher. Climens and Coutet are famous Barsac estates. Nearby Cadillac, Loupiac and Sainte-Croix-du-Mont make lighter, cheaper sweet wines.",
+      "highlight": "Barsac: lighter, on limestone"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Barsac producers may label their wines as Sauternes.",
+      "answer": true,
+      "explanation": "Yes. Barsac can use either name."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Ciron's mists bring noble rot to Sauternes",
+        "Sémillon leads; pickers make several tries",
+        "Barsac is lighter and can use either name"
+      ]
+    }
+  ]
+}

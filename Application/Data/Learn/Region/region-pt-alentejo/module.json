@@ -1,0 +1,27 @@
+{
+  "id": "region-pt-alentejo",
+  "kind": "region",
+  "order": 24,
+  "country": "Portugal",
+  "countryCode": "PT",
+  "title": "Alentejo",
+  "grapes": [
+    "Aragonez",
+    "Trincadeira",
+    "Alicante Bouschet",
+    "Antão Vaz"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "Southern Portugal's hot plains: ripe, generous reds, cork forests and the Roman clay pots called talhas.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-pt-alentejo-l01",
+    "region-pt-alentejo-l02",
+    "region-pt-alentejo-l03",
+    "region-pt-alentejo-l04",
+    "region-pt-alentejo-l05"
+  ]
+}

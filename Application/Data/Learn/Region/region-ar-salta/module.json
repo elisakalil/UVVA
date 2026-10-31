@@ -1,0 +1,24 @@
+{
+  "id": "region-ar-salta",
+  "kind": "region",
+  "order": 39,
+  "country": "Argentina",
+  "countryCode": "AR",
+  "title": "Salta",
+  "grapes": [
+    "Torrontés",
+    "Malbec"
+  ],
+  "points": "0 0 1 1 = 2",
+  "complexity": "D",
+  "description": "Some of the world's highest vineyards, in the Calchaquí Valleys, home of floral Torrontés.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-ar-salta-l01",
+    "region-ar-salta-l02",
+    "region-ar-salta-l03",
+    "region-ar-salta-l04"
+  ]
+}

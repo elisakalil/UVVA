@@ -1,0 +1,77 @@
+{
+  "id": "path-05-l02",
+  "moduleId": "path-05",
+  "order": 2,
+  "title": "Serving temperatures",
+  "subtitle": "Why a few degrees change a wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the right temperature for each style",
+    "Explain how temperature changes taste",
+    "Chill or warm a wine quickly"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A rough guide",
+      "body": "Sparkling wines are best well chilled, 6 to 10 degrees Celsius. Light whites and rosés, 7 to 10. Fuller whites, 10 to 13. Light reds, 13 to 15. Medium and full reds, 15 to 18. Room temperature in a modern heated home, often 21 or more, is too warm for most reds.",
+      "highlight": "Sparkling coldest, full reds warmest"
+    },
+    {
+      "type": "concept",
+      "title": "What temperature does",
+      "body": "Cold hides aromas and makes tannin and bitterness feel harsher, but it lifts freshness and keeps bubbles fine. Warmth releases aromas and softens tannin, but too much makes alcohol taste hot and flabby. That's why light whites go cold and tannic reds go warmer.",
+      "highlight": "Cold sharpens; warmth releases"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is a tannic red usually served warmer than a white?",
+      "options": [
+        "Cold makes tannin feel harsher",
+        "Warmth adds colour",
+        "Cold adds alcohol",
+        "Reds go off when cold"
+      ],
+      "answer": 0,
+      "explanation": "Cold emphasises tannin and bitterness. A few degrees warmer and the red feels smoother and more aromatic."
+    },
+    {
+      "type": "tip",
+      "body": "Fifteen minutes in the fridge brings a red from a warm room down to cellar temperature. To chill a white fast, put it in a bucket of ice and water, not ice alone; water touches the whole bottle."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its serving temperature.",
+      "pairs": [
+        {
+          "left": "Champagne",
+          "right": "6 to 10 degrees"
+        },
+        {
+          "left": "Light-bodied white",
+          "right": "7 to 10 degrees"
+        },
+        {
+          "left": "Light red",
+          "right": "13 to 15 degrees"
+        },
+        {
+          "left": "Full-bodied red",
+          "right": "15 to 18 degrees"
+        }
+      ],
+      "explanation": "Bubbles coldest, full reds warmest, everything else in between."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Serve sparkling coldest and full reds warmest",
+        "Cold sharpens tannin and hides aroma; warmth releases aroma",
+        "Ice plus water chills fast; a short spell in the fridge helps reds"
+      ]
+    }
+  ]
+}

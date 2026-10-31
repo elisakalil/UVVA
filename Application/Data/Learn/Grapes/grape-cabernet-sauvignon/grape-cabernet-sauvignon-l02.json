@@ -1,0 +1,79 @@
+{
+  "id": "grape-cabernet-sauvignon-l02",
+  "moduleId": "grape-cabernet-sauvignon",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "A truly international grape",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Cabernet's main regions",
+    "Explain the climate it needs",
+    "Explain how it adapts to different places"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Everywhere warm enough",
+      "body": "Cabernet's classic home is Bordeaux's Left Bank. It's the leading red in Napa Valley, Chile's Maipo, Australia's Coonawarra and Margaret River, Washington State and South Africa's Stellenbosch. In Italy it's key to Bolgheri's Super Tuscans. It also grows in Argentina, China and Spain.",
+      "highlight": "Bordeaux, Napa, Maipo, Coonawarra"
+    },
+    {
+      "type": "concept",
+      "title": "Needing warmth",
+      "body": "As a late ripener, Cabernet needs a long, warm season. In cool places it can taste green, from pyrazines that only break down when fully ripe. Warm, dry sites with well-drained soils suit it best. That's why it does so well on gravel and in sunny, irrigated New World regions.",
+      "highlight": "Late ripener: warm, well-drained sites"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Cabernet character.",
+      "pairs": [
+        {
+          "left": "Pauillac",
+          "right": "Cedar and structure"
+        },
+        {
+          "left": "Napa Valley",
+          "right": "Ripe and powerful"
+        },
+        {
+          "left": "Coonawarra",
+          "right": "Mint and eucalyptus"
+        },
+        {
+          "left": "Bolgheri",
+          "right": "Super Tuscan blends"
+        }
+      ],
+      "explanation": "Place changes Cabernet's accent while its core stays."
+    },
+    {
+      "type": "concept",
+      "title": "Why it travels well",
+      "body": "Cabernet's thick skins resist rot, its late budding avoids frost, and it keeps its character in many soils and climates. Growers find it reliable, and consumers recognise the name. That's how it became the world's most planted wine grape, overtaking others in the 1990s.",
+      "highlight": "Reliable and recognisable"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can Cabernet taste green in cool climates?",
+      "options": [
+        "Too much oak",
+        "Pyrazines that only break down with full ripeness",
+        "Too much sugar",
+        "Malolactic conversion"
+      ],
+      "answer": 1,
+      "explanation": "Pyrazines give green pepper notes; full ripeness reduces them."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet grows in almost every wine country",
+        "It needs warmth and drainage to ripen fully",
+        "Its resistance and recognisability made it the most planted grape"
+      ]
+    }
+  ]
+}

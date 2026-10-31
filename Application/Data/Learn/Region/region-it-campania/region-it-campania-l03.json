@@ -1,0 +1,70 @@
+{
+  "id": "region-it-campania-l03",
+  "moduleId": "region-it-campania",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Campania and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read Campania's labels",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Campania's three DOCGs, Taurasi, Fiano di Avellino and Greco di Tufo, are all in Irpinia. Other names include Irpinia DOC, Falanghina del Sannio, Campi Flegrei, Lacryma Christi del Vesuvio, from Vesuvius' slopes, and Costa d'Amalfi. Riserva on Taurasi means at least four years of ageing.",
+      "highlight": "Three DOCGs, all in Irpinia"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Campania's food suits its wines: Fiano with buffalo mozzarella and seafood; Greco with fried fish and pasta with clams; Falanghina with pizza margherita; Taurasi with Neapolitan ragù, slow-cooked meat sauce, lamb and aged cheese. Serve whites at 10 to 12, Taurasi at 16 to 18, decanted.",
+      "highlight": "Mozzarella with Fiano, ragù with Taurasi"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Taurasi?",
+      "options": [
+        "Neapolitan ragù",
+        "Raw oysters",
+        "Lemon sorbet",
+        "Green salad"
+      ],
+      "answer": 0,
+      "explanation": "Slow-cooked meat sauce suits Aglianico's tannin."
+    },
+    {
+      "type": "tip",
+      "body": "Lacryma Christi, the tears of Christ, is a legendary name for wine from Vesuvius' slopes, red from Piedirosso and white from Coda di Volpe."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Campania's DOCGs?",
+      "options": [
+        "Taurasi",
+        "Fiano di Avellino",
+        "Greco di Tufo",
+        "Barolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Barolo is in Piedmont."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Campania's three DOCGs are all in Irpinia",
+        "Fiano suits mozzarella; Taurasi suits ragù",
+        "Serve Taurasi decanted"
+      ]
+    }
+  ]
+}

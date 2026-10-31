@@ -1,0 +1,66 @@
+{
+  "id": "grape-cabernet-sauvignon-l04",
+  "moduleId": "grape-cabernet-sauvignon",
+  "order": 4,
+  "title": "Pyrazines and ripeness",
+  "subtitle": "The green side of Cabernet",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what pyrazines are",
+    "Explain how ripeness affects them",
+    "Explain how growers manage them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What pyrazines are",
+      "body": "Methoxypyrazines are aromatic compounds that smell of green pepper, cut grass and leaves. Humans can detect them at a few parts per trillion. They are found in the Cabernet family: Cabernet Sauvignon, Cabernet Franc, Carmenère, Merlot and Sauvignon Blanc. In small amounts they add freshness; in excess, they taste unripe.",
+      "highlight": "Green pepper at parts per trillion"
+    },
+    {
+      "type": "concept",
+      "title": "Sun and ripeness",
+      "body": "Pyrazines form early in the berry and break down as it ripens, especially with sunlight on the bunches. Cool, cloudy seasons and shaded fruit keep them high. Warm, sunny sites reduce them. This is why a Cabernet from a cool year in Bordeaux may show green notes, while one from Napa rarely does.",
+      "highlight": "Sunlight breaks pyrazines down"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pyrazine levels in grapes rise steadily as they ripen.",
+      "answer": false,
+      "explanation": "Not true. Pyrazines are highest before veraison and fall as grapes ripen, especially in sunlight."
+    },
+    {
+      "type": "concept",
+      "title": "Managing them",
+      "body": "Growers reduce pyrazines by removing leaves around bunches early in the season, letting sunlight reach the fruit. They control vigour so the canopy isn't too dense. They pick later for riper flavour, but must watch sugar and alcohol rising. In the winery, careful sorting removes green material.",
+      "highlight": "Leaf removal and balanced vines"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which help lower pyrazine levels in Cabernet?",
+      "options": [
+        "Sunlight on the bunches",
+        "Removing leaves around the fruit",
+        "Very dense, shaded canopies",
+        "Riper fruit at harvest"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Shade keeps pyrazines high."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pyrazines smell of green pepper and grass",
+        "They fall as grapes ripen, especially in sunlight",
+        "Leaf removal and balanced canopies help manage them"
+      ]
+    }
+  ]
+}

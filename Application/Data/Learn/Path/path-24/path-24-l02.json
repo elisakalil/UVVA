@@ -1,0 +1,70 @@
+{
+  "id": "path-24-l02",
+  "moduleId": "path-24",
+  "order": 2,
+  "title": "Australia's cooler regions",
+  "subtitle": "Eden, Clare, Coonawarra and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Australia's cool-climate regions",
+    "Explain why Riesling thrives in Clare and Eden",
+    "Describe Margaret River, Yarra and Tasmania"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cool by altitude or sea",
+      "body": "Not all of Australia is hot. Eden Valley and Clare Valley, at higher altitude, make dry, lime-scented Riesling. Coonawarra's red terra rossa soil over limestone gives elegant Cabernet. Adelaide Hills, at up to 700 m, makes Sauvignon Blanc and Chardonnay. Margaret River, on the Indian Ocean, makes Bordeaux-style blends and Chardonnay.",
+      "highlight": "Altitude and ocean cool the south"
+    },
+    {
+      "type": "concept",
+      "title": "Victoria and Tasmania",
+      "body": "Victoria's Yarra Valley, near Melbourne, makes Pinot Noir, Chardonnay and sparkling wine. Mornington Peninsula, surrounded by sea, does the same. Tasmania, Australia's coolest state, has become the country's leading source of traditional method sparkling wine and fine Pinot Noir. The Hunter Valley, in New South Wales, makes unique Sémillon.",
+      "highlight": "Yarra, Mornington, Tasmania"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which Australian regions are known for cool-climate wines?",
+      "options": [
+        "Tasmania",
+        "Yarra Valley",
+        "Adelaide Hills",
+        "Riverland"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Riverland is hot, irrigated and high-volume."
+    },
+    {
+      "type": "tip",
+      "body": "Clare and Eden Valley Riesling sealed with screw caps since 2000 has shown how well these wines age. Ten-year-old bottles show toast and lime without losing freshness."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which region is famous for Cabernet Sauvignon on red terra rossa soil?",
+      "options": [
+        "Barossa",
+        "Coonawarra",
+        "Hunter Valley",
+        "Tasmania"
+      ],
+      "answer": 1,
+      "explanation": "Coonawarra's terra rossa over limestone gives elegant, minty Cabernet."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Clare and Eden Valley make dry Riesling",
+        "Coonawarra and Margaret River make fine Cabernet",
+        "Yarra, Mornington and Tasmania lead in cool Pinot and sparkling"
+      ]
+    }
+  ]
+}

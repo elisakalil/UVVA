@@ -1,0 +1,62 @@
+{
+  "id": "region-pt-douro-l01",
+  "moduleId": "region-pt-douro",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "A river valley carved in schist",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Douro's geography",
+    "Explain its climate",
+    "Explain its historic demarcation"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The valley",
+      "body": "The Douro river runs west from Spain to Porto and the Atlantic. Its wine region, in northern Portugal, starts about 100 km inland, behind the Marão mountains, which block Atlantic rain. Vineyards line the steep valley sides and tributaries. It's divided into three sub-regions: Baixo Corgo, Cima Corgo and Douro Superior.",
+      "highlight": "Behind the Marão mountains"
+    },
+    {
+      "type": "concept",
+      "title": "Heat and drought",
+      "body": "The Marão creates a rain shadow, so the Douro grows hotter and drier from west to east. Baixo Corgo, in the west, gets about 900 mm of rain; the Douro Superior, near Spain, about 400 mm. Summers often reach 40 degrees. Schist soil, which splits vertically, lets roots dig deep for water.",
+      "highlight": "Hotter and drier eastwards"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What protects the Douro from Atlantic rain?",
+      "options": [
+        "The Marão mountains",
+        "The Pyrenees",
+        "The Alps",
+        "The Gulf Stream"
+      ],
+      "answer": 0,
+      "explanation": "The Marão casts a rain shadow over the valley."
+    },
+    {
+      "type": "concept",
+      "title": "The first demarcation",
+      "body": "In 1756, the Marquis of Pombal demarcated the Douro and created a company to control Port's quality and trade, making it one of the world's first legally defined wine regions. Stone markers, marcos, set the boundaries. In 2001, the Alto Douro Wine Region became a UNESCO World Heritage Site.",
+      "highlight": "Demarcated in 1756; UNESCO 2001"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Douro was demarcated in 1756.",
+      "answer": true,
+      "explanation": "Yes, by the Marquis of Pombal."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Douro lies behind the Marão, in three sub-regions",
+        "It gets hotter and drier towards Spain",
+        "It was demarcated in 1756 and is a UNESCO site"
+      ]
+    }
+  ]
+}

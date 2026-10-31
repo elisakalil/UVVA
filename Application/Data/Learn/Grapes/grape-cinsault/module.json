@@ -1,0 +1,29 @@
+{
+  "id": "grape-cinsault",
+  "kind": "grape",
+  "order": 24,
+  "color": "red",
+  "title": "Cinsault",
+  "aliases": [
+    "Cinsaut",
+    "Hermitage"
+  ],
+  "origin": "France",
+  "countries": [
+    "France",
+    "South Africa"
+  ],
+  "points": "1 1 0 1 = 3",
+  "complexity": "C",
+  "description": "Also spelled Cinsaut, once called Hermitage in South Africa. A light, perfumed southern grape for rosé and fresh reds.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-cinsault-l01",
+    "grape-cinsault-l02",
+    "grape-cinsault-l03",
+    "grape-cinsault-l04",
+    "grape-cinsault-l05"
+  ]
+}

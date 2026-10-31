@@ -1,0 +1,96 @@
+{
+  "id": "grape-pinotage-l05",
+  "moduleId": "grape-pinotage",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Pinotage",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Pinotage",
+    "Know its history and styles",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Pinotage.",
+      "pairs": [
+        {
+          "left": "1925",
+          "right": "Year of the cross"
+        },
+        {
+          "left": "Abraham Perold",
+          "right": "Its creator"
+        },
+        {
+          "left": "Hermitage",
+          "right": "Old name for Cinsault"
+        },
+        {
+          "left": "Braai",
+          "right": "Classic pairing"
+        }
+      ],
+      "explanation": "Pinotage's story is South African from start to finish."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grapes are Pinotage's parents?",
+      "options": [
+        "Pinot Noir and Cinsault",
+        "Pinot Noir and Syrah",
+        "Cabernet and Merlot",
+        "Chenin and Pinot Noir"
+      ],
+      "answer": 0,
+      "explanation": "Perold crossed Pinot Noir with Cinsault."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A Cape blend contains a significant share of Pinotage.",
+      "answer": true,
+      "explanation": "Yes. Usually 30 to 70%, blended with Bordeaux grapes or Shiraz."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which styles of Pinotage exist?",
+      "options": [
+        "Light and fruity",
+        "Coffee style",
+        "Rosé",
+        "Botrytised sweet white"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pinotage is a black grape; it doesn't make botrytised white wine."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Pinotage's heartland region is ____.",
+      "options": [
+        "Stellenbosch",
+        "Constantia",
+        "Napa",
+        "Mendoza"
+      ],
+      "answer": "Stellenbosch",
+      "explanation": "Stellenbosch is home to the university where it was created, and its main region."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinotage is South Africa's own cross of Pinot Noir and Cinsault",
+        "It ranges from fruity to serious and oaked",
+        "Better winemaking fixed old faults",
+        "It's the wine of the braai"
+      ]
+    }
+  ]
+}

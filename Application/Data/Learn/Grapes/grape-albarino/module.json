@@ -1,0 +1,28 @@
+{
+  "id": "grape-albarino",
+  "kind": "grape",
+  "order": 47,
+  "color": "white",
+  "title": "Albariño",
+  "aliases": [
+    "Alvarinho"
+  ],
+  "origin": "Spain and Portugal",
+  "countries": [
+    "Spain",
+    "Portugal"
+  ],
+  "points": "1 1 1 1 = 4",
+  "complexity": "C",
+  "description": "Also called Alvarinho in Portugal. A crisp, saline, peach-scented white of the Atlantic north-west of Iberia.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-albarino-l01",
+    "grape-albarino-l02",
+    "grape-albarino-l03",
+    "grape-albarino-l04",
+    "grape-albarino-l05"
+  ]
+}

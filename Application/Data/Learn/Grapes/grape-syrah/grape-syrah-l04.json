@@ -1,0 +1,72 @@
+{
+  "id": "grape-syrah-l04",
+  "moduleId": "grape-syrah",
+  "order": 4,
+  "title": "Barossa Shiraz",
+  "subtitle": "Australia's icon",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barossa Shiraz",
+    "Explain the role of old vines",
+    "Explain how Penfolds Grange changed Australian wine"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ripe and rich",
+      "body": "The Barossa Valley, north-east of Adelaide, is warm and dry. Shiraz there is full-bodied, around 14.5 to 15% alcohol, with ripe blackberry, plum, chocolate, liquorice and often American oak's vanilla and coconut. Tannins are soft and ripe. It's the style that made Australian Shiraz famous worldwide.",
+      "highlight": "Full, ripe, chocolatey"
+    },
+    {
+      "type": "concept",
+      "title": "Old vines",
+      "body": "Phylloxera never reached South Australia, so the Barossa has some of the oldest Shiraz vines in the world, some planted in the 1840s by Silesian settlers. Old vines give low yields and concentrated fruit. The Barossa Old Vine Charter classifies Old Vines at 35 years and Ancestor vines at 125 years or more.",
+      "highlight": "Some vines from the 1840s"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does the Barossa have such old Shiraz vines?",
+      "options": [
+        "They were imported recently",
+        "Phylloxera never reached South Australia",
+        "They were replanted in 1990",
+        "They are grafted"
+      ],
+      "answer": 1,
+      "explanation": "Strict quarantine kept phylloxera out, so the original ungrafted vines survive."
+    },
+    {
+      "type": "concept",
+      "title": "Grange",
+      "body": "In 1951, Max Schubert, Penfolds' chief winemaker, made an experimental Shiraz after visiting Bordeaux. Penfolds Grange, aged in new American oak, was first mocked, then celebrated. It became Australia's most famous wine and showed that Shiraz could make world-class, long-lived wines.",
+      "highlight": "Grange: first made in 1951"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe classic Barossa Shiraz?",
+      "options": [
+        "Full-bodied",
+        "Ripe, chocolatey fruit",
+        "Very light and pale",
+        "Often American oak"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Barossa Shiraz is deeply coloured and full, not pale."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barossa Shiraz is ripe, full and chocolatey",
+        "Old ungrafted vines date back to the 1840s",
+        "Penfolds Grange, from 1951, made Australian Shiraz world-class"
+      ]
+    }
+  ]
+}

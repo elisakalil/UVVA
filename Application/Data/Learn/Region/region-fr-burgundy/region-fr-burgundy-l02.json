@@ -1,0 +1,77 @@
+{
+  "id": "region-fr-burgundy-l02",
+  "moduleId": "region-fr-burgundy",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Two great grapes and two more",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Burgundy's main grapes",
+    "Explain why they're grown alone",
+    "Name its lesser grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinot Noir and Chardonnay",
+      "body": "Burgundy's two great grapes are Pinot Noir, for reds, and Chardonnay, for whites. Unlike Bordeaux, Burgundy rarely blends: each wine is usually a single grape from a single place. The idea is that the climat, not the blend, gives the wine its character.",
+      "highlight": "Single grape, single place"
+    },
+    {
+      "type": "concept",
+      "title": "Aligoté and Gamay",
+      "body": "Aligoté, a sibling of Chardonnay, makes crisp, lemony whites; Bouzeron, in the Côte Chalonnaise, is its own appellation. Aligoté is the traditional base of the Kir, with blackcurrant liqueur. Gamay, banned from the Côte d'Or in 1395, grows mainly in Beaujolais, though it's allowed in some Burgundy blends like Coteaux Bourguignons.",
+      "highlight": "Aligoté: Bouzeron and the Kir"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Pinot Noir",
+          "right": "Burgundy's great red"
+        },
+        {
+          "left": "Chardonnay",
+          "right": "Burgundy's great white"
+        },
+        {
+          "left": "Aligoté",
+          "right": "Crisp white, Bouzeron"
+        },
+        {
+          "left": "Gamay",
+          "right": "Beaujolais, minor in Burgundy"
+        }
+      ],
+      "explanation": "Burgundy is a land of single grapes."
+    },
+    {
+      "type": "tip",
+      "body": "Order a Kir in Burgundy and you'll get Aligoté with crème de cassis, named after Félix Kir, a mayor of Dijon."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Burgundy rarely blend grapes?",
+      "options": [
+        "It aims to show the character of each climat",
+        "Blending is too expensive",
+        "It only has one grape",
+        "It's illegal everywhere in France"
+      ],
+      "answer": 0,
+      "explanation": "A single grape lets the site speak."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir and Chardonnay are Burgundy's great grapes",
+        "Wines usually come from one grape and one place",
+        "Aligoté and Gamay play smaller roles"
+      ]
+    }
+  ]
+}

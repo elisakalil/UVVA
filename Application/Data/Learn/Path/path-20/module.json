@@ -1,0 +1,22 @@
+{
+  "id": "path-20",
+  "kind": "path",
+  "order": 20,
+  "level": "Advanced",
+  "complexity": "A",
+  "title": "Spain and Portugal",
+  "description": "An ageing system written into law, high plateaus, a green Atlantic coast and Portugal's native grapes.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-20-l01",
+    "path-20-l02",
+    "path-20-l03",
+    "path-20-l04",
+    "path-20-l05",
+    "path-20-l06",
+    "path-20-l07",
+    "path-20-l08"
+  ]
+}

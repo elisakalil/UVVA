@@ -1,0 +1,96 @@
+{
+  "id": "region-de-mosel-l07",
+  "moduleId": "region-de-mosel",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about the Mosel",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Mosel's land and grape",
+    "Explain Prädikat and sweetness",
+    "Read and pair Mosel Riesling"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Order the Prädikat levels from least to most ripe.",
+      "items": [
+        "Kabinett",
+        "Spätlese",
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese"
+      ],
+      "explanation": "TBA requires shrivelled, botrytised berries."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Calmont",
+          "right": "Very steep vineyard"
+        },
+        {
+          "left": "Trocken",
+          "right": "Dry"
+        },
+        {
+          "left": "Scharzhofberg",
+          "right": "Famous Saar vineyard"
+        },
+        {
+          "left": "GG",
+          "right": "Dry VDP top wine"
+        }
+      ],
+      "explanation": "The Mosel's vocabulary is German."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which soil defines the Mosel's top vineyards?",
+      "options": [
+        "Slate",
+        "Chalk",
+        "Volcanic ash",
+        "Gravel"
+      ],
+      "answer": 0,
+      "explanation": "Devonian slate."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Mosel Riesling?",
+      "options": [
+        "Light",
+        "High acidity",
+        "Often off-dry",
+        "Heavily oaked"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Mosel Riesling is rarely oaked with new wood."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Mosel is one of the world's warmest wine regions.",
+      "answer": false,
+      "explanation": "Not true. It's one of the coolest, at about 50 degrees north."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Mosel is cool, steep and slate",
+        "Riesling dominates, light and racy",
+        "Prädikat levels show ripeness; trocken means dry",
+        "The Saar and Ruwer are its cool tributaries"
+      ]
+    }
+  ]
+}

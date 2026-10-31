@@ -1,0 +1,81 @@
+{
+  "id": "path-11-l03",
+  "moduleId": "path-11",
+  "order": 3,
+  "title": "European quality systems",
+  "subtitle": "AOC, DOCG, DO and Prädikat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the national terms for PDO and PGI",
+    "Explain the extra tiers in Italy and Spain",
+    "Explain Germany's ripeness-based system"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "National names",
+      "body": "Each EU country names its levels. France: AOC or AOP for PDO, IGP or Vin de Pays for PGI. Italy: DOCG and DOC for PDO, IGT for PGI. Spain: DOCa or DOQ and DO for PDO, Vino de la Tierra for PGI. Portugal: DOC for PDO, Vinho Regional for PGI.",
+      "highlight": "AOC, DOC, DO: the PDO family"
+    },
+    {
+      "type": "concept",
+      "title": "Extra steps",
+      "body": "Italy's DOCG is a top tier, with stricter rules and tasting approval; Barolo and Chianti Classico are DOCG. Spain's DOCa, for Rioja and Priorat, works similarly. Germany's PDO wines are graded partly by sugar in the grapes at harvest: Qualitätswein, then Prädikatswein with six levels, from Kabinett to Trockenbeerenauslese.",
+      "highlight": "DOCG and DOCa sit above DOC and DO"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its country.",
+      "pairs": [
+        {
+          "left": "AOC",
+          "right": "France"
+        },
+        {
+          "left": "DOCG",
+          "right": "Italy"
+        },
+        {
+          "left": "DOCa",
+          "right": "Spain"
+        },
+        {
+          "left": "Prädikatswein",
+          "right": "Germany"
+        },
+        {
+          "left": "Vinho Regional",
+          "right": "Portugal"
+        }
+      ],
+      "explanation": "Every EU country uses its own words for the same two levels, sometimes with extra tiers."
+    },
+    {
+      "type": "tip",
+      "body": "When a label from Europe names a region and nothing else, it's usually a PDO. Look up the rules once and you'll know the grape for life: Chablis is Chardonnay, Sancerre is Sauvignon Blanc, Barolo is Nebbiolo."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Germany's Prädikat levels from least to most ripe.",
+      "items": [
+        "Kabinett",
+        "Spätlese",
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese"
+      ],
+      "explanation": "Eiswein sits beside Beerenauslese in required ripeness, but is made from frozen grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Each EU country has its own names for PDO and PGI",
+        "Italy's DOCG and Spain's DOCa are top tiers",
+        "Germany grades Prädikatswein by ripeness at harvest"
+      ]
+    }
+  ]
+}

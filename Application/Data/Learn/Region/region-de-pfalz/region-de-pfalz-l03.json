@@ -1,0 +1,72 @@
+{
+  "id": "region-de-pfalz-l03",
+  "moduleId": "region-de-pfalz",
+  "order": 3,
+  "title": "Dry German Riesling",
+  "subtitle": "The Pfalz's speciality",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the rise of dry German Riesling",
+    "Describe the Pfalz style",
+    "Explain the role of trocken and GG"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A dry revolution",
+      "body": "For much of the 20th century, German Riesling abroad meant sweet. From the 1980s, Pfalz producers led a return to dry, trocken, Riesling, which had been traditional before. Today over two-thirds of German wine is dry or off-dry, and the Pfalz's warm climate makes balanced dry wines easier.",
+      "highlight": "Leading the return to dry"
+    },
+    {
+      "type": "concept",
+      "title": "The style",
+      "body": "Dry Pfalz Riesling is fuller and riper than Mosel or Rheingau Riesling, often 12.5 to 13.5% alcohol, with stone fruit, citrus, spice and minerality from sandstone, limestone or basalt. GG wines from top sites, like Forster Kirchenstück, Forster Jesuitengarten and Deidesheimer Hohenmorgen, can age 10 to 20 years.",
+      "highlight": "Riper, fuller, mineral"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does dry Pfalz Riesling typically compare with Mosel Riesling?",
+      "options": [
+        "Fuller and riper",
+        "Lighter and sweeter",
+        "Always sparkling",
+        "Lower in alcohol"
+      ],
+      "answer": 0,
+      "explanation": "A warmer climate gives more body and ripeness."
+    },
+    {
+      "type": "concept",
+      "title": "Basalt and sites",
+      "body": "Forst's top vineyards have basalt, volcanic rock, which absorbs heat and gives intense, spicy, mineral wines. Kirchenstück, a small walled site in Forst, is often considered one of Germany's finest dry Riesling vineyards. Labels name village and vineyard, like Forster Pechstein.",
+      "highlight": "Forst's basalt"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are top Pfalz vineyards?",
+      "options": [
+        "Forster Kirchenstück",
+        "Forster Jesuitengarten",
+        "Deidesheimer Hohenmorgen",
+        "Wehlener Sonnenuhr"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Wehlener Sonnenuhr is in the Mosel."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Pfalz led the return to dry German Riesling",
+        "Its dry Riesling is riper and fuller",
+        "Basalt sites in Forst give some of Germany's best"
+      ]
+    }
+  ]
+}

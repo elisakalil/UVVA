@@ -1,0 +1,81 @@
+{
+  "id": "grape-palomino-l04",
+  "moduleId": "grape-palomino",
+  "order": 4,
+  "title": "Fino to Oloroso",
+  "subtitle": "The styles of Sherry",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Fino and Manzanilla",
+    "Describe Amontillado and Palo Cortado",
+    "Describe Oloroso and sweet styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Biological",
+      "body": "Fino ages under flor, giving pale, bone-dry wines with almond, bread and salt, at about 15%. Manzanilla is Fino aged in Sanlúcar de Barrameda, where cooler, humid sea air keeps flor thick, adding a saline, chamomile freshness. Both are best fresh, soon after bottling.",
+      "highlight": "Fino and Manzanilla: under flor"
+    },
+    {
+      "type": "concept",
+      "title": "Oxidative and in between",
+      "body": "Oloroso, fortified to 17%, ages with oxygen, turning amber-brown with walnut, toffee and spice, yet dry. Amontillado starts as Fino, then loses its flor and ages oxidatively, combining both styles. Palo Cortado is rare: it loses flor early, giving Amontillado's aroma with Oloroso's body. Cream Sherry is sweetened, often with Pedro Ximénez.",
+      "highlight": "Oloroso, Amontillado, Palo Cortado"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Sherry to its ageing.",
+      "pairs": [
+        {
+          "left": "Fino",
+          "right": "Under flor"
+        },
+        {
+          "left": "Manzanilla",
+          "right": "Under flor, Sanlúcar"
+        },
+        {
+          "left": "Oloroso",
+          "right": "Oxidative only"
+        },
+        {
+          "left": "Amontillado",
+          "right": "Flor, then oxidative"
+        }
+      ],
+      "explanation": "The path of ageing defines the style."
+    },
+    {
+      "type": "tip",
+      "body": "An opened bottle of Fino or Manzanilla behaves like a white wine: keep it in the fridge and finish it within a week."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which Sherry styles are naturally dry?",
+      "options": [
+        "Fino",
+        "Manzanilla",
+        "Oloroso",
+        "Cream"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cream is sweetened."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fino and Manzanilla age under flor, pale and dry",
+        "Oloroso ages oxidatively, dark yet dry",
+        "Amontillado and Palo Cortado combine both paths"
+      ]
+    }
+  ]
+}

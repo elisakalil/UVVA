@@ -1,0 +1,60 @@
+{
+  "id": "path-13-l03",
+  "moduleId": "path-13",
+  "order": 3,
+  "title": "Late harvest and ice wine",
+  "subtitle": "Time and frost",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how late harvest wines are made",
+    "Explain how ice wine is made",
+    "Name the main regions for each"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Late harvest",
+      "body": "Leave grapes on the vine past normal ripeness and they keep gaining sugar, then start to shrivel, losing water. This is late harvest. Labels show it as Vendanges Tardives in Alsace, Spätlese and Auslese in Germany, or simply Late Harvest elsewhere. Some late harvest wines also have a share of noble rot.",
+      "highlight": "Late harvest: longer on the vine"
+    },
+    {
+      "type": "concept",
+      "title": "Ice wine",
+      "body": "Ice wine, Eiswein in Germany and Austria, is made from grapes left on the vine until they freeze, at minus 7 degrees Celsius or colder. They are picked and pressed while frozen. The water stays as ice, so only drops of very sweet, acidic juice flow. Canada's Niagara Peninsula and Okanagan, and Germany, are the main producers.",
+      "highlight": "Ice wine: picked frozen, at minus 7 or colder"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "For true ice wine, grapes must freeze naturally on the vine.",
+      "answer": true,
+      "explanation": "Yes. In Canada, Germany and Austria, the law requires natural freezing. Freezing grapes artificially, called cryoextraction, cannot be labelled ice wine there."
+    },
+    {
+      "type": "tip",
+      "body": "Ice wine tastes of pure fruit, like peach and lemon, because it rarely has noble rot. If you taste honey and marmalade, think botrytis instead."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is the juice of frozen grapes so sweet?",
+      "options": [
+        "Sugar is added after pressing",
+        "The water stays frozen, so only concentrated juice flows",
+        "The cold creates new sugar",
+        "Yeast is added before freezing"
+      ],
+      "answer": 1,
+      "explanation": "Pressing frozen grapes leaves most of the water behind as ice, so the juice that flows is rich in sugar and acid."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Late harvest grapes gain sugar and shrivel on the vine",
+        "Ice wine grapes are picked and pressed frozen",
+        "Canada, Germany and Austria are the main ice wine producers"
+      ]
+    }
+  ]
+}

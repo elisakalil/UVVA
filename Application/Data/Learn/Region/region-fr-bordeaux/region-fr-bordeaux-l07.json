@@ -1,0 +1,96 @@
+{
+  "id": "region-fr-bordeaux-l07",
+  "moduleId": "region-fr-bordeaux",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Bordeaux",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Bordeaux's geography and grapes",
+    "Explain its classifications",
+    "Read and pair Bordeaux"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its character.",
+      "pairs": [
+        {
+          "left": "Médoc",
+          "right": "Gravel, Cabernet-led"
+        },
+        {
+          "left": "Pomerol",
+          "right": "Clay, Merlot-led"
+        },
+        {
+          "left": "Sauternes",
+          "right": "Noble rot, sweet"
+        },
+        {
+          "left": "Entre-Deux-Mers",
+          "right": "Dry whites"
+        }
+      ],
+      "explanation": "Bordeaux's sub-regions each have a role."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How were châteaux ranked in 1855?",
+      "options": [
+        "By price",
+        "By tasting",
+        "By size",
+        "By age"
+      ],
+      "answer": 0,
+      "explanation": "Brokers used market prices."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Merlot is Bordeaux's most planted grape.",
+      "answer": true,
+      "explanation": "Yes, about 60% of red vines."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Left Bank communes?",
+      "options": [
+        "Pauillac",
+        "Margaux",
+        "Saint-Julien",
+        "Saint-Émilion"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Saint-Émilion is on the Right Bank."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Pickers in Sauternes make several passes, called ____.",
+      "options": [
+        "tries",
+        "crus",
+        "sacas",
+        "rives"
+      ],
+      "answer": "tries",
+      "explanation": "Each trie picks only the botrytised berries."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bordeaux is maritime, built on rivers and blends",
+        "The Left Bank favours Cabernet; the Right Bank Merlot",
+        "The 1855 classification still shapes prices",
+        "Sauternes is its noble rot gold"
+      ]
+    }
+  ]
+}

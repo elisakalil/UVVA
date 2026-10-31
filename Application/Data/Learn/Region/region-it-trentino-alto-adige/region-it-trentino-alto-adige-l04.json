@@ -1,0 +1,60 @@
+{
+  "id": "region-it-trentino-alto-adige-l04",
+  "moduleId": "region-it-trentino-alto-adige",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Alps and eating with them",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read bilingual labels",
+    "Pair the region's wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Alto Adige labels are often bilingual: Alto Adige or Südtirol, Pinot Grigio or Ruländer, Lagrein or Lagrein Dunkel. Most wines are varietal, named by grape. Trentino labels name the grape or Trentodoc. Kellerei or Cantina means a winery, often a co-operative.",
+      "highlight": "Bilingual, varietal labels"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "The region's food blends Italian and Austrian: speck, smoked ham; canederli, bread dumplings; strudel; polenta; and mountain cheeses. Pinot Bianco and Pinot Grigio suit speck and light dishes; Gewürztraminer suits spicy food and cheese; Lagrein suits game, goulash and grilled meat; Trentodoc suits aperitifs and fried food.",
+      "highlight": "Speck, canederli, mountain cheese"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine suits speck and light dishes?",
+      "options": [
+        "Pinot Bianco",
+        "Amarone",
+        "Port",
+        "Barolo"
+      ],
+      "answer": 0,
+      "explanation": "A crisp Alpine white suits the smoky ham."
+    },
+    {
+      "type": "tip",
+      "body": "Try Lagrein with goulash, a dish of Austrian heritage still common in Alto Adige."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Alto Adige wines are named by grape.",
+      "answer": true,
+      "explanation": "Yes, most are varietal wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels are often bilingual and varietal",
+        "Pinot Bianco suits speck; Lagrein suits game",
+        "Trentodoc suits aperitifs"
+      ]
+    }
+  ]
+}

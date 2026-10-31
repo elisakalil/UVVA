@@ -1,0 +1,72 @@
+{
+  "id": "grape-sauvignon-blanc-l04",
+  "moduleId": "grape-sauvignon-blanc",
+  "order": 4,
+  "title": "Marlborough",
+  "subtitle": "New Zealand's revolution",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Marlborough's climate",
+    "Explain the Marlborough style",
+    "Explain its global impact"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sun and cool nights",
+      "body": "Marlborough, at the north-east tip of New Zealand's South Island, has long, sunny days, high UV light and cold nights. That combination gives intensely aromatic Sauvignon with ripe tropical fruit and piercing acidity at the same time. Stony, free-draining soils in the Wairau Valley help.",
+      "highlight": "Sun by day, cold by night"
+    },
+    {
+      "type": "concept",
+      "title": "The style",
+      "body": "Marlborough Sauvignon Blanc is explosive: passion fruit, gooseberry, grapefruit, cut grass and green pepper, with high acidity. Cloudy Bay's 1985 vintage made it famous worldwide. Today Sauvignon Blanc is about 60% of New Zealand's vineyards and over 80% of its exports.",
+      "highlight": "Cloudy Bay, 1985"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Marlborough Sauvignon Blanc became world-famous with Cloudy Bay's ____ vintage.",
+      "options": [
+        "1985",
+        "1855",
+        "1976",
+        "2001"
+      ],
+      "answer": "1985",
+      "explanation": "Cloudy Bay's 1985 launched the Marlborough style."
+    },
+    {
+      "type": "concept",
+      "title": "Variations",
+      "body": "Marlborough isn't one style. The Wairau Valley gives classic tropical, aromatic wines; the Awatere Valley, cooler and windier, gives more herbal, mineral, saline wines. Some producers use barrel fermentation, wild yeast or lees ageing for more complex, textured versions.",
+      "highlight": "Wairau tropical; Awatere herbal"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe classic Marlborough Sauvignon?",
+      "options": [
+        "Passion fruit",
+        "Cut grass",
+        "High acidity",
+        "Heavy oak and butter"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Most Marlborough Sauvignon is unoaked and fresh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marlborough's sun and cold nights give intense, fresh Sauvignon",
+        "Cloudy Bay's 1985 made it world-famous",
+        "The Awatere gives a cooler, more herbal style"
+      ]
+    }
+  ]
+}

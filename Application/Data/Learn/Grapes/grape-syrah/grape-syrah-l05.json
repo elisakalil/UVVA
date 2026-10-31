@@ -1,0 +1,68 @@
+{
+  "id": "grape-syrah-l05",
+  "moduleId": "grape-syrah",
+  "order": 5,
+  "title": "Syrah or Shiraz",
+  "subtitle": "Two names, two styles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain where the name Shiraz came from",
+    "Explain what each name signals",
+    "Name cool-climate Shiraz regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The names",
+      "body": "Syrah and Shiraz are the same grape. Shiraz is the name used in Australia and South Africa, possibly from an old local spelling. A popular legend links it to the Persian city of Shiraz, but DNA proves the grape is French. James Busby brought cuttings to Australia in 1832.",
+      "highlight": "Same grape, different names"
+    },
+    {
+      "type": "concept",
+      "title": "Names as style signals",
+      "body": "Today, many producers choose the name to signal style. Syrah suggests a cooler, Rhône-like wine: peppery, savoury, medium-bodied. Shiraz suggests a riper, fuller, fruit-forward wine. Some cool-climate Australian producers now label their wines Syrah for this reason.",
+      "highlight": "Syrah: peppery. Shiraz: ripe."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "James Busby brought Syrah cuttings to Australia in ____.",
+      "options": [
+        "1832",
+        "1756",
+        "1951",
+        "1976"
+      ],
+      "answer": "1832",
+      "explanation": "Busby's collection in 1832 included Syrah, which became Australia's Shiraz."
+    },
+    {
+      "type": "concept",
+      "title": "Cool-climate Shiraz",
+      "body": "Australia isn't only warm. The Yarra Valley, Canberra District, Great Southern and Adelaide Hills make lighter, peppery Shiraz. Canberra is known for Shiraz co-fermented with Viognier, inspired by Côte-Rôtie. These wines show that Australia's Shiraz can be elegant as well as powerful.",
+      "highlight": "Yarra, Canberra, Adelaide Hills"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "An Australian wine is labelled Syrah instead of Shiraz. What does this most likely signal?",
+      "options": [
+        "It's a white wine",
+        "A cooler, more peppery style",
+        "A sweet wine",
+        "A blend with Cabernet"
+      ],
+      "answer": 1,
+      "explanation": "Many producers use Syrah to signal a cooler, Rhône-like style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Syrah and Shiraz are the same French grape",
+        "The name often signals style: peppery Syrah, ripe Shiraz",
+        "Australia's cooler regions make elegant, peppery Shiraz"
+      ]
+    }
+  ]
+}

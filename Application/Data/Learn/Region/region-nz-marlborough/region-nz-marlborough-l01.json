@@ -1,0 +1,62 @@
+{
+  "id": "region-nz-marlborough-l01",
+  "moduleId": "region-nz-marlborough",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Sun and cold nights",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Marlborough's geography",
+    "Explain its climate",
+    "Explain its rapid growth"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Top of the South Island",
+      "body": "Marlborough lies at the north-east tip of New Zealand's South Island, around the town of Blenheim. It's New Zealand's largest wine region by far, with about 30,000 hectares, around two-thirds of the country's vineyards. Its main valleys are the broad Wairau Valley and the smaller, higher Awatere Valley, separated by hills.",
+      "highlight": "About two-thirds of New Zealand's vines"
+    },
+    {
+      "type": "concept",
+      "title": "Bright and cool",
+      "body": "Marlborough is one of New Zealand's sunniest places, with long days and strong ultraviolet light, sheltered from westerly rain by mountains. Nights are cold, so the day and night range is wide. Grapes ripen slowly over a long season, keeping high acidity and intense aromas. Stony, free-draining alluvial soils from old riverbeds limit vigour. Spring frost is a risk.",
+      "highlight": "Sunny days, cold nights"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What gives Marlborough wines both ripeness and high acidity?",
+      "options": [
+        "Sunny days and cold nights",
+        "Heavy summer rain",
+        "High humidity",
+        "Volcanic soil"
+      ],
+      "answer": 0,
+      "explanation": "A wide day and night range keeps acidity while sun ripens the fruit."
+    },
+    {
+      "type": "concept",
+      "title": "Fast growth",
+      "body": "Commercial vines were first planted in Marlborough in 1973, by Montana, now Brancott Estate. In 1985, Cloudy Bay's first Sauvignon Blanc drew worldwide attention. From a few hundred hectares, the region grew to the largest in the country within 40 years, driven by export demand.",
+      "highlight": "First planted in 1973"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Marlborough is New Zealand's largest wine region.",
+      "answer": true,
+      "explanation": "Yes, with around two-thirds of the country's vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marlborough sits at the top of the South Island, around Blenheim",
+        "Sunny days and cold nights give ripe fruit and high acidity",
+        "Planted from 1973, it grew fast after Cloudy Bay's 1985 success"
+      ]
+    }
+  ]
+}

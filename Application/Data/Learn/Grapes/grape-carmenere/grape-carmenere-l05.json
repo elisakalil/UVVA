@@ -1,0 +1,96 @@
+{
+  "id": "grape-carmenere-l05",
+  "moduleId": "grape-carmenere",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Carmenère",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Carmenère",
+    "Know its history",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Who identified Carmenère in Chile in 1994?",
+      "options": [
+        "Jean-Michel Boursiquot",
+        "Robert Mondavi",
+        "Michel Rolland",
+        "Abraham Perold"
+      ],
+      "answer": 0,
+      "explanation": "Boursiquot, a French ampelographer, recognised it in vineyards thought to be Merlot."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Carmenère.",
+      "pairs": [
+        {
+          "left": "Carmin",
+          "right": "Crimson, for its leaves"
+        },
+        {
+          "left": "Merlot",
+          "right": "Grape it was mistaken for"
+        },
+        {
+          "left": "Coulure",
+          "right": "Problem in Bordeaux"
+        },
+        {
+          "left": "Peumo",
+          "right": "Renowned Chilean site"
+        }
+      ],
+      "explanation": "Its history is one of loss and rediscovery."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chile grows most of the world's Carmenère.",
+      "answer": true,
+      "explanation": "Yes, about 95%."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Carmenère?",
+      "options": [
+        "Soft tannins",
+        "Peppery notes",
+        "Ripens later than Merlot",
+        "Very high acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Its acidity is moderate."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Carmenère belongs to the ____ family of grapes.",
+      "options": [
+        "Cabernet",
+        "Pinot",
+        "Muscat",
+        "Syrah"
+      ],
+      "answer": "Cabernet",
+      "explanation": "It's related to Cabernet Franc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carmenère is soft, plummy and peppery",
+        "It vanished from Bordeaux after phylloxera",
+        "Chile rediscovered it in 1994 and made it its own",
+        "It suits grilled meat and mild spice"
+      ]
+    }
+  ]
+}

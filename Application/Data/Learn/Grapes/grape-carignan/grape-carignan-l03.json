@@ -1,0 +1,79 @@
+{
+  "id": "grape-carignan-l03",
+  "moduleId": "grape-carignan",
+  "order": 3,
+  "title": "Old vines from Priorat to Maule",
+  "subtitle": "Carignan's revival",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Carignan in Priorat",
+    "Describe Carignan in Chile's Maule",
+    "Explain why old vines matter"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Priorat",
+      "body": "In Priorat, Carignan, called Cariñena or Samsó, grows on steep slopes of llicorella, dark slate. Old vines, many over 80 years, give tiny yields and concentrated, mineral wines. When producers revived Priorat in the late 1980s, old Cariñena with Garnacha was their raw material.",
+      "highlight": "Old vines on llicorella"
+    },
+    {
+      "type": "concept",
+      "title": "Maule",
+      "body": "In Chile's Maule Valley, old, dry-farmed Carignan vines, some planted after the 1939 Chillán earthquake, were rediscovered. In 2009, producers founded VIGNO, Vignadores de Carignan, requiring at least 65% Carignan from dry-farmed vines over 30 years old, and two years' ageing. It became one of Chile's most exciting wines.",
+      "highlight": "VIGNO: old, dry-farmed Carignan"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does VIGNO require?",
+      "options": [
+        "Irrigated young vines",
+        "At least 65% Carignan from dry-farmed vines over 30 years old",
+        "Only white grapes",
+        "Sparkling wine"
+      ],
+      "answer": 1,
+      "explanation": "VIGNO is a growers' association protecting old, dry-farmed Maule Carignan."
+    },
+    {
+      "type": "concept",
+      "title": "Why old vines",
+      "body": "Old vines have deep roots that find water in dry soils, so they cope with drought without irrigation. Their naturally low yields concentrate the fruit, balancing Carignan's acidity and tannin. Young, high-yield Carignan is harsh and thin; old-vine Carignan is rich and complex.",
+      "highlight": "Deep roots, low yields, balance"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Carignan's revival.",
+      "pairs": [
+        {
+          "left": "Llicorella",
+          "right": "Priorat's slate"
+        },
+        {
+          "left": "VIGNO",
+          "right": "Maule growers' association"
+        },
+        {
+          "left": "Dry-farmed",
+          "right": "No irrigation"
+        },
+        {
+          "left": "Samsó",
+          "right": "Catalan name"
+        }
+      ],
+      "explanation": "Old vines turned Carignan's reputation around."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Priorat's old Cariñena on llicorella makes concentrated wines",
+        "Maule's VIGNO protects old, dry-farmed Carignan",
+        "Old vines balance Carignan's acidity and tannin"
+      ]
+    }
+  ]
+}

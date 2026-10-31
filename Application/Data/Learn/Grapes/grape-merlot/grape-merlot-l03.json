@@ -1,0 +1,62 @@
+{
+  "id": "grape-merlot-l03",
+  "moduleId": "grape-merlot",
+  "order": 3,
+  "title": "The Right Bank",
+  "subtitle": "Pomerol and Saint-Émilion",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Pomerol and its soils",
+    "Describe Saint-Émilion",
+    "Explain Saint-Émilion's classification"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pomerol",
+      "body": "Pomerol is small, about 800 hectares, with no official classification. Its plateau has gravel over clay; the centre has a unique blue clay, rich in smectite, that swells when wet and holds water. Merlot thrives there. Pétrus, almost pure Merlot, grows on this clay. Le Pin and Lafleur are other famous names.",
+      "highlight": "Blue clay and Pétrus"
+    },
+    {
+      "type": "concept",
+      "title": "Saint-Émilion",
+      "body": "Saint-Émilion, a UNESCO World Heritage town, has about 5,500 hectares. Its limestone plateau and slopes, the côtes, give elegant, long-lived wines; sandier soils below give softer ones. Merlot leads, with Cabernet Franc often important, as at Cheval Blanc and Ausone.",
+      "highlight": "Limestone plateau, Merlot and Cabernet Franc"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which famous Pomerol wine is almost pure Merlot?",
+      "options": [
+        "Château Margaux",
+        "Pétrus",
+        "Château Latour",
+        "Haut-Brion"
+      ],
+      "answer": 1,
+      "explanation": "Pétrus grows Merlot on Pomerol's blue clay."
+    },
+    {
+      "type": "concept",
+      "title": "Classification",
+      "body": "Saint-Émilion has its own classification, revised about every ten years: Premier Grand Cru Classé A, Premier Grand Cru Classé B and Grand Cru Classé. It's controversial and was challenged in court. Cheval Blanc, Ausone and Angélus withdrew from it before the 2022 edition. Pomerol has no classification at all.",
+      "highlight": "Revised about every ten years"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pomerol has an official classification like the Médoc's.",
+      "answer": false,
+      "explanation": "Not true. Pomerol has no official classification; reputation alone ranks its wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pomerol's blue clay gives Merlot like Pétrus",
+        "Saint-Émilion's limestone gives elegant Merlot and Cabernet Franc",
+        "Saint-Émilion's classification is revised; Pomerol has none"
+      ]
+    }
+  ]
+}

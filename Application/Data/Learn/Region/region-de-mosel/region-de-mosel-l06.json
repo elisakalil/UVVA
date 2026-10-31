@@ -1,0 +1,70 @@
+{
+  "id": "region-de-mosel-l06",
+  "moduleId": "region-de-mosel",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Mosel and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Mosel label",
+    "Pair Mosel Riesling with food",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "A Mosel label shows the producer, the village plus vineyard, like Bernkasteler Doctor, the grape, the Prädikat, like Spätlese, the vintage and sometimes trocken. VDP estates use their own classification: Gutswein, Ortswein, Erste Lage and Grosse Lage, with GG, Grosses Gewächs, for dry top wines. The AP number shows official testing.",
+      "highlight": "Village plus vineyard, Prädikat"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Off-dry Mosel Kabinett suits spicy Asian food, like Thai and Sichuan, and smoked fish. Dry Riesling suits trout, pork and sauerkraut. Spätlese suits roast pork with apples. Sweet Auslese and BA suit fruit desserts, foie gras and blue cheese. Serve at 7 to 10 degrees.",
+      "highlight": "Spicy food with Kabinett"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which food suits an off-dry Mosel Kabinett?",
+      "options": [
+        "Spicy Thai dishes",
+        "Grilled steak",
+        "Chocolate cake",
+        "Roast lamb"
+      ],
+      "answer": 0,
+      "explanation": "Sugar and acidity calm chilli heat."
+    },
+    {
+      "type": "tip",
+      "body": "Mosel Riesling ages remarkably. A 20-year-old Spätlese often tastes less sweet and more complex than a young one."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are VDP classification levels?",
+      "options": [
+        "Gutswein",
+        "Ortswein",
+        "Grosse Lage",
+        "Gran Reserva"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gran Reserva is Spanish."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show village, vineyard and Prädikat",
+        "Kabinett suits spicy food; Auslese suits desserts",
+        "Mosel Riesling ages remarkably well"
+      ]
+    }
+  ]
+}

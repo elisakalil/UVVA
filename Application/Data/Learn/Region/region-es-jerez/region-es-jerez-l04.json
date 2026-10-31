@@ -1,0 +1,72 @@
+{
+  "id": "region-es-jerez-l04",
+  "moduleId": "region-es-jerez",
+  "order": 4,
+  "title": "Fino and Manzanilla",
+  "subtitle": "Pale and bone dry",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Fino",
+    "Describe Manzanilla",
+    "Explain en rama and freshness"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fino",
+      "body": "Fino ages under flor, usually at least two years, often more, in Jerez or El Puerto. It's pale, bone dry, about 15%, with almond, bread dough, chamomile and a saline edge. El Puerto's Finos, closer to the sea, are often lighter. Fino is best fresh: once opened, drink within a few days.",
+      "highlight": "Pale, dry, almond, bread"
+    },
+    {
+      "type": "concept",
+      "title": "Manzanilla",
+      "body": "Manzanilla is Fino aged in Sanlúcar de Barrameda, at the mouth of the Guadalquivir. Cooler, more humid sea air keeps flor thicker all year, giving lighter, more saline, delicate wines with chamomile notes; manzanilla means chamomile in Spanish. Manzanilla Pasada is an older Manzanilla, with more nutty depth.",
+      "highlight": "Sanlúcar's saline Fino"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is flor thicker in Sanlúcar de Barrameda?",
+      "options": [
+        "Cooler, more humid sea air",
+        "Hotter weather",
+        "Less humidity",
+        "Higher fortification"
+      ],
+      "answer": 0,
+      "explanation": "Sea air at the river mouth keeps flor thriving."
+    },
+    {
+      "type": "concept",
+      "title": "En rama",
+      "body": "En rama, raw, means Sherry bottled with little or no filtration or fining, straight from the barrel. It's more intense and closer to the wine in the cask. Many bodegas release Fino and Manzanilla en rama seasonally, often in spring when flor is thickest. These are best drunk soon after bottling.",
+      "highlight": "En rama: unfiltered, from the cask"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Fino and Manzanilla?",
+      "options": [
+        "Pale",
+        "Bone dry",
+        "Saline",
+        "Dark and sweet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "They're pale and dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fino ages under flor: pale, dry, almond and bread",
+        "Manzanilla is Sanlúcar's lighter, more saline Fino",
+        "En rama Sherries are unfiltered and best fresh"
+      ]
+    }
+  ]
+}

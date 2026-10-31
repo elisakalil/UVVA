@@ -1,0 +1,60 @@
+{
+  "id": "grape-pinot-gris-l05",
+  "moduleId": "grape-pinot-gris",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Pinot Gris",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair each style with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Match the style",
+      "body": "Light Pinot Grigio suits aperitifs, salads, light seafood and simple pasta. Rich Pinot Gris suits roast pork, chicken, smoked fish, mushroom dishes and mildly spiced Asian food. Ramato suits charcuterie, risotto and grilled fish. Off-dry Alsace Pinot Gris suits foie gras.",
+      "highlight": "Grigio light; Gris with richer food"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve Pinot Grigio at 7 to 9 degrees, Pinot Gris and ramato at 10 to 12. Most Pinot Grigio is best within a year or two. Alsace Grand Cru Pinot Gris can age 10 years or more, developing honey and smoke.",
+      "highlight": "Grigio young; Grand Cru Gris ages"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits a rich Alsace Pinot Gris?",
+      "options": [
+        "Roast pork with apples",
+        "Raw oysters",
+        "Lemon sorbet",
+        "Green salad"
+      ],
+      "answer": 0,
+      "explanation": "Rich Pinot Gris matches pork and fruit."
+    },
+    {
+      "type": "tip",
+      "body": "An off-dry Alsace Pinot Gris with smoked salmon or a lightly spiced Thai dish brings out its ginger and smoky notes."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Pinot Grigio is made for long ageing.",
+      "answer": false,
+      "explanation": "Not true. It's best young and fresh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Grigio suits light food; Pinot Gris richer dishes",
+        "Serve Grigio colder than Gris",
+        "Grand Cru Pinot Gris can age 10 years or more"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "region-za-swartland",
+  "kind": "region",
+  "order": 50,
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "title": "Swartland",
+  "grapes": [
+    "Chenin Blanc",
+    "Syrah",
+    "Grenache"
+  ],
+  "points": "0 0 1 1 = 2",
+  "complexity": "D",
+  "description": "A dry, rugged land north of Cape Town where old bush vines sparked a South African wine revolution.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-za-swartland-l01",
+    "region-za-swartland-l02",
+    "region-za-swartland-l03",
+    "region-za-swartland-l04"
+  ]
+}

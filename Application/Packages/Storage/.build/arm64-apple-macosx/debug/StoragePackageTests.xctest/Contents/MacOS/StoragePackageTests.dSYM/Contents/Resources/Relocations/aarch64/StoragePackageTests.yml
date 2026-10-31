@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StoragePackageTests.xctest/Contents/MacOS/StoragePackageTests'
+relocations:     []
+...

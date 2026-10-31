@@ -1,0 +1,24 @@
+{
+  "id": "region-es-priorat",
+  "kind": "region",
+  "order": 19,
+  "country": "Spain",
+  "countryCode": "ES",
+  "title": "Priorat",
+  "grapes": [
+    "Garnacha",
+    "Cariñena"
+  ],
+  "points": "0 1 0 1 = 2",
+  "complexity": "D",
+  "description": "Steep slate slopes in Catalonia where old Garnacha and Cariñena make powerful, mineral reds.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-es-priorat-l01",
+    "region-es-priorat-l02",
+    "region-es-priorat-l03",
+    "region-es-priorat-l04"
+  ]
+}

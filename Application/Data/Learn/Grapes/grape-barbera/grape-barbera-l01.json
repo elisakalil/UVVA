@@ -1,0 +1,62 @@
+{
+  "id": "grape-barbera-l01",
+  "moduleId": "grape-barbera",
+  "order": 1,
+  "title": "Meet Barbera",
+  "subtitle": "Acidity without tannin",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barbera's flavours and structure",
+    "Explain its unusual balance",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bright and juicy",
+      "body": "Barbera gives deep ruby wines with sour and black cherry, plum, raspberry and dried herbs. Its signature is high acidity with low tannin, an unusual balance for a dark grape. That makes it juicy and refreshing. It's Piedmont's most planted red grape.",
+      "highlight": "High acidity, low tannin"
+    },
+    {
+      "type": "concept",
+      "title": "Why that balance",
+      "body": "Barbera's skins are rich in colour pigments but low in tannin. Its acidity stays high even when fully ripe, partly due to high levels of malic acid. In the 1980s, producers like Giacomo Bologna began ageing it in small new oak barrels; oak adds the tannin Barbera lacks and softens its acidity.",
+      "highlight": "Colourful skins, little tannin"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why did producers begin ageing Barbera in new oak?",
+      "options": [
+        "To add sweetness",
+        "To add the tannin it naturally lacks",
+        "To make it white",
+        "To lower its colour"
+      ],
+      "answer": 1,
+      "explanation": "Oak adds structure and tannin, balancing Barbera's high acidity."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep ruby colour, cherry fruit, a mouth-watering acidity and very little grip from tannin. Oaked versions add vanilla and spice. It's darker than Nebbiolo but much softer in tannin, and more acidic than Dolcetto.",
+      "highlight": "Dark, juicy, soft tannin"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Barbera is known for very high tannin.",
+      "answer": false,
+      "explanation": "Not true. Barbera is low in tannin; its acidity is what stands out."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barbera gives cherry fruit with high acidity and low tannin",
+        "Oak, since the 1980s, adds the tannin it lacks",
+        "It's Piedmont's most planted red"
+      ]
+    }
+  ]
+}

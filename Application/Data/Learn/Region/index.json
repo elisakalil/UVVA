@@ -1,0 +1,961 @@
+{
+  "kind": "region",
+  "modules": [
+    {
+      "id": "region-fr-bordeaux",
+      "kind": "region",
+      "order": 1,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Bordeaux",
+      "grapes": [
+        "Cabernet Sauvignon",
+        "Merlot",
+        "Cabernet Franc",
+        "Sauvignon Blanc",
+        "Sémillon"
+      ],
+      "points": "2 2 2 2 = 8",
+      "complexity": "A",
+      "description": "Two rivers, an estuary and the Atlantic: the region that defined the red blend and the château.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-fr-burgundy",
+      "kind": "region",
+      "order": 2,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Burgundy",
+      "grapes": [
+        "Pinot Noir",
+        "Chardonnay",
+        "Aligoté",
+        "Gamay"
+      ],
+      "points": "2 2 1 2 = 7",
+      "complexity": "A",
+      "description": "A narrow strip of limestone slopes where single vineyards, called climats, have been mapped for a thousand years.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-fr-champagne",
+      "kind": "region",
+      "order": 3,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Champagne",
+      "grapes": [
+        "Chardonnay",
+        "Pinot Noir",
+        "Pinot Meunier"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "A cold, chalky corner of northern France that turned a winemaking problem into the world's most famous sparkling wine.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-fr-loire-valley",
+      "kind": "region",
+      "order": 4,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Loire Valley",
+      "grapes": [
+        "Chenin Blanc",
+        "Sauvignon Blanc",
+        "Cabernet Franc",
+        "Melon de Bourgogne"
+      ],
+      "points": "2 0 2 1 = 5",
+      "complexity": "B",
+      "description": "France's longest river and its garden: crisp whites, fresh reds and every sweetness of Chenin.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-fr-southern-rhone",
+      "kind": "region",
+      "order": 5,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Southern Rhône",
+      "grapes": [
+        "Grenache",
+        "Syrah",
+        "Mourvèdre",
+        "Cinsault"
+      ],
+      "points": "1 1 2 1 = 5",
+      "complexity": "B",
+      "description": "Sun, stones and the Mistral: Grenache-led blends from Châteauneuf-du-Pape to Côtes du Rhône.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-fr-alsace",
+      "kind": "region",
+      "order": 6,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Alsace",
+      "grapes": [
+        "Riesling",
+        "Gewürztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "points": "1 1 2 1 = 5",
+      "complexity": "B",
+      "description": "Between the Vosges and the Rhine: aromatic whites named by grape, from dry to noble rot sweet.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-fr-northern-rhone",
+      "kind": "region",
+      "order": 7,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Northern Rhône",
+      "grapes": [
+        "Syrah",
+        "Viognier",
+        "Marsanne",
+        "Roussanne"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Steep granite slopes above the Rhône, home of Syrah and Viognier.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-fr-beaujolais",
+      "kind": "region",
+      "order": 8,
+      "country": "France",
+      "countryCode": "FR",
+      "title": "Beaujolais",
+      "grapes": [
+        "Gamay"
+      ],
+      "points": "1 1 1 1 = 4",
+      "complexity": "C",
+      "description": "Granite hills south of Burgundy, where Gamay makes everything from Nouveau to serious crus.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-it-piedmont",
+      "kind": "region",
+      "order": 9,
+      "country": "Italy",
+      "countryCode": "IT",
+      "title": "Piedmont",
+      "grapes": [
+        "Nebbiolo",
+        "Barbera",
+        "Dolcetto",
+        "Moscato"
+      ],
+      "points": "2 2 2 2 = 8",
+      "complexity": "A",
+      "description": "At the foot of the Alps: Barolo, Barbaresco and a hillside map as detailed as Burgundy's.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-it-tuscany",
+      "kind": "region",
+      "order": 10,
+      "country": "Italy",
+      "countryCode": "IT",
+      "title": "Tuscany",
+      "grapes": [
+        "Sangiovese",
+        "Cabernet Sauvignon",
+        "Merlot",
+        "Vermentino"
+      ],
+      "points": "2 2 2 2 = 8",
+      "complexity": "A",
+      "description": "Hills, cypresses and Sangiovese: Chianti, Brunello and the Super Tuscans that rewrote Italian law.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-it-veneto",
+      "kind": "region",
+      "order": 11,
+      "country": "Italy",
+      "countryCode": "IT",
+      "title": "Veneto",
+      "grapes": [
+        "Corvina",
+        "Rondinella",
+        "Garganega",
+        "Glera"
+      ],
+      "points": "2 1 2 2 = 7",
+      "complexity": "A",
+      "description": "Venice's hinterland: Amarone from dried grapes, Soave from volcanic hills and Prosecco from steep slopes.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-it-sicily",
+      "kind": "region",
+      "order": 12,
+      "country": "Italy",
+      "countryCode": "IT",
+      "title": "Sicily",
+      "grapes": [
+        "Nero d'Avola",
+        "Nerello Mascalese",
+        "Grillo",
+        "Carricante"
+      ],
+      "points": "1 0 2 1 = 4",
+      "complexity": "C",
+      "description": "The Mediterranean's largest island: sun-soaked Nero d'Avola, volcanic Etna and historic Marsala.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-it-trentino-alto-adige",
+      "kind": "region",
+      "order": 13,
+      "country": "Italy",
+      "countryCode": "IT",
+      "title": "Trentino-Alto Adige",
+      "grapes": [
+        "Pinot Grigio",
+        "Gewürztraminer",
+        "Lagrein",
+        "Chardonnay"
+      ],
+      "points": "1 0 2 1 = 4",
+      "complexity": "C",
+      "description": "Italy's Alpine north: fresh whites, Lagrein and the mountain sparkling wine Trentodoc.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-it-friuli-venezia-giulia",
+      "kind": "region",
+      "order": 14,
+      "country": "Italy",
+      "countryCode": "IT",
+      "title": "Friuli-Venezia Giulia",
+      "grapes": [
+        "Friulano",
+        "Ribolla Gialla",
+        "Pinot Grigio"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Between the Alps and the Adriatic: precise whites and the modern home of orange wine.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-it-campania",
+      "kind": "region",
+      "order": 15,
+      "country": "Italy",
+      "countryCode": "IT",
+      "title": "Campania",
+      "grapes": [
+        "Aglianico",
+        "Fiano",
+        "Greco"
+      ],
+      "points": "1 0 1 0 = 2",
+      "complexity": "D",
+      "description": "Volcanic hills around Naples: Taurasi, Fiano di Avellino and Greco di Tufo.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-es-rioja",
+      "kind": "region",
+      "order": 16,
+      "country": "Spain",
+      "countryCode": "ES",
+      "title": "Rioja",
+      "grapes": [
+        "Tempranillo",
+        "Garnacha",
+        "Graciano",
+        "Viura"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "Spain's most famous region: Tempranillo, oak and an ageing system written into law.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-es-jerez",
+      "kind": "region",
+      "order": 17,
+      "country": "Spain",
+      "countryCode": "ES",
+      "title": "Jerez",
+      "grapes": [
+        "Palomino",
+        "Pedro Ximénez",
+        "Moscatel"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "The Sherry triangle: white albariza soils, flor yeast and soleras that blend wines across generations.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-es-ribera-del-duero",
+      "kind": "region",
+      "order": 18,
+      "country": "Spain",
+      "countryCode": "ES",
+      "title": "Ribera del Duero",
+      "grapes": [
+        "Tinto Fino (Tempranillo)"
+      ],
+      "points": "0 1 0 1 = 2",
+      "complexity": "D",
+      "description": "Powerful Tempranillo from a high, cold plateau along the Duero river.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-es-priorat",
+      "kind": "region",
+      "order": 19,
+      "country": "Spain",
+      "countryCode": "ES",
+      "title": "Priorat",
+      "grapes": [
+        "Garnacha",
+        "Cariñena"
+      ],
+      "points": "0 1 0 1 = 2",
+      "complexity": "D",
+      "description": "Steep slate slopes in Catalonia where old Garnacha and Cariñena make powerful, mineral reds.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-es-rias-baixas",
+      "kind": "region",
+      "order": 20,
+      "country": "Spain",
+      "countryCode": "ES",
+      "title": "Rías Baixas",
+      "grapes": [
+        "Albariño"
+      ],
+      "points": "1 0 0 1 = 2",
+      "complexity": "D",
+      "description": "Green, wet Galicia: crisp, saline Albariño from granite and the Atlantic.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-pt-douro",
+      "kind": "region",
+      "order": 21,
+      "country": "Portugal",
+      "countryCode": "PT",
+      "title": "Douro",
+      "grapes": [
+        "Touriga Nacional",
+        "Touriga Franca",
+        "Tinta Roriz",
+        "Tinta Barroca",
+        "Tinto Cão"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "Terraced schist slopes above a river: the home of Port and of Portugal's great dry reds.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-pt-madeira",
+      "kind": "region",
+      "order": 22,
+      "country": "Portugal",
+      "countryCode": "PT",
+      "title": "Madeira",
+      "grapes": [
+        "Tinta Negra",
+        "Sercial",
+        "Verdelho",
+        "Boal",
+        "Malvasia"
+      ],
+      "points": "0 2 2 2 = 6",
+      "complexity": "B",
+      "description": "A volcanic Atlantic island whose wine is heated, oxidised and almost immortal.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-pt-vinho-verde",
+      "kind": "region",
+      "order": 23,
+      "country": "Portugal",
+      "countryCode": "PT",
+      "title": "Vinho Verde",
+      "grapes": [
+        "Alvarinho",
+        "Loureiro",
+        "Arinto",
+        "Avesso"
+      ],
+      "points": "2 0 1 1 = 4",
+      "complexity": "C",
+      "description": "Portugal's green north-west: light, fresh whites and the serious Alvarinho of Monção e Melgaço.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-pt-alentejo",
+      "kind": "region",
+      "order": 24,
+      "country": "Portugal",
+      "countryCode": "PT",
+      "title": "Alentejo",
+      "grapes": [
+        "Aragonez",
+        "Trincadeira",
+        "Alicante Bouschet",
+        "Antão Vaz"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Southern Portugal's hot plains: ripe, generous reds, cork forests and the Roman clay pots called talhas.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-pt-dao",
+      "kind": "region",
+      "order": 25,
+      "country": "Portugal",
+      "countryCode": "PT",
+      "title": "Dão",
+      "grapes": [
+        "Touriga Nacional",
+        "Jaen",
+        "Alfrocheiro",
+        "Encruzado"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "A granite plateau ringed by mountains: elegant reds and Portugal's finest white grape, Encruzado.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-de-mosel",
+      "kind": "region",
+      "order": 26,
+      "country": "Germany",
+      "countryCode": "DE",
+      "title": "Mosel",
+      "grapes": [
+        "Riesling"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "Some of the world's steepest vineyards: light, racy Riesling grown on slate above a winding river.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-de-rheingau",
+      "kind": "region",
+      "order": 27,
+      "country": "Germany",
+      "countryCode": "DE",
+      "title": "Rheingau",
+      "grapes": [
+        "Riesling",
+        "Spätburgunder"
+      ],
+      "points": "0 2 1 2 = 5",
+      "complexity": "B",
+      "description": "A south-facing slope along the Rhine where Spätlese was born and Riesling grew noble.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-de-pfalz",
+      "kind": "region",
+      "order": 28,
+      "country": "Germany",
+      "countryCode": "DE",
+      "title": "Pfalz",
+      "grapes": [
+        "Riesling",
+        "Spätburgunder"
+      ],
+      "points": "1 1 1 1 = 4",
+      "complexity": "C",
+      "description": "Germany's sunniest wine region: rich, dry Riesling and rising Pinot Noir in the shelter of the Haardt.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-at-burgenland",
+      "kind": "region",
+      "order": 29,
+      "country": "Austria",
+      "countryCode": "AT",
+      "title": "Burgenland",
+      "grapes": [
+        "Blaufränkisch",
+        "Zweigelt",
+        "Welschriesling"
+      ],
+      "points": "1 1 2 1 = 5",
+      "complexity": "B",
+      "description": "Austria's warm east: Blaufränkisch reds and the noble rot sweet wines of Lake Neusiedl.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-at-wachau",
+      "kind": "region",
+      "order": 30,
+      "country": "Austria",
+      "countryCode": "AT",
+      "title": "Wachau",
+      "grapes": [
+        "Grüner Veltliner",
+        "Riesling"
+      ],
+      "points": "0 2 1 1 = 4",
+      "complexity": "C",
+      "description": "Steep stone terraces above the Danube, with dry Grüner Veltliner and Riesling graded by ripeness.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-hu-tokaj",
+      "kind": "region",
+      "order": 31,
+      "country": "Hungary",
+      "countryCode": "HU",
+      "title": "Tokaj",
+      "grapes": [
+        "Furmint",
+        "Hárslevelű",
+        "Sárgamuskotály"
+      ],
+      "points": "1 2 2 2 = 7",
+      "complexity": "A",
+      "description": "Volcanic hills and river mists in north-east Hungary: the wine of kings, and the king of wines.",
+      "lessonCount": 7,
+      "xp": 105,
+      "estimatedMinutes": 21
+    },
+    {
+      "id": "region-gr-santorini",
+      "kind": "region",
+      "order": 32,
+      "country": "Greece",
+      "countryCode": "GR",
+      "title": "Santorini",
+      "grapes": [
+        "Assyrtiko",
+        "Athiri",
+        "Aidani"
+      ],
+      "points": "0 0 2 1 = 3",
+      "complexity": "C",
+      "description": "A volcanic island in the Aegean where vines grow in baskets and Assyrtiko keeps its acidity in fierce sun.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-ge-kakheti",
+      "kind": "region",
+      "order": 33,
+      "country": "Georgia",
+      "countryCode": "GE",
+      "title": "Kakheti",
+      "grapes": [
+        "Rkatsiteli",
+        "Saperavi",
+        "Mtsvane"
+      ],
+      "points": "1 0 2 2 = 5",
+      "complexity": "B",
+      "description": "The cradle of wine: eight thousand years of winemaking in buried clay qvevri.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-us-napa-valley",
+      "kind": "region",
+      "order": 34,
+      "country": "United States",
+      "countryCode": "US",
+      "title": "Napa Valley",
+      "grapes": [
+        "Cabernet Sauvignon",
+        "Merlot",
+        "Chardonnay"
+      ],
+      "points": "2 0 1 2 = 5",
+      "complexity": "B",
+      "description": "A small valley north of San Francisco that put American wine on the world map, built on Cabernet Sauvignon.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-us-sonoma-county",
+      "kind": "region",
+      "order": 35,
+      "country": "United States",
+      "countryCode": "US",
+      "title": "Sonoma County",
+      "grapes": [
+        "Pinot Noir",
+        "Chardonnay",
+        "Zinfandel"
+      ],
+      "points": "2 0 1 1 = 4",
+      "complexity": "C",
+      "description": "Napa's larger, more varied neighbour: cool coastal Pinot Noir, Chardonnay and old-vine Zinfandel.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-us-willamette-valley",
+      "kind": "region",
+      "order": 36,
+      "country": "United States",
+      "countryCode": "US",
+      "title": "Willamette Valley",
+      "grapes": [
+        "Pinot Noir",
+        "Pinot Gris",
+        "Chardonnay"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "Oregon's cool valley at Burgundy's latitude, where small family wineries made Pinot Noir world-class.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-us-washington-state",
+      "kind": "region",
+      "order": 37,
+      "country": "United States",
+      "countryCode": "US",
+      "title": "Washington State",
+      "grapes": [
+        "Cabernet Sauvignon",
+        "Merlot",
+        "Syrah",
+        "Riesling"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "America's second largest wine state: an irrigated desert east of the Cascades with ripe fruit and fresh acidity.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-ar-mendoza",
+      "kind": "region",
+      "order": 38,
+      "country": "Argentina",
+      "countryCode": "AR",
+      "title": "Mendoza",
+      "grapes": [
+        "Malbec",
+        "Cabernet Sauvignon",
+        "Bonarda",
+        "Cabernet Franc"
+      ],
+      "points": "2 1 1 2 = 6",
+      "complexity": "B",
+      "description": "A high desert at the foot of the Andes, irrigated by snowmelt, where Malbec found its second home.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-ar-salta",
+      "kind": "region",
+      "order": 39,
+      "country": "Argentina",
+      "countryCode": "AR",
+      "title": "Salta",
+      "grapes": [
+        "Torrontés",
+        "Malbec"
+      ],
+      "points": "0 0 1 1 = 2",
+      "complexity": "D",
+      "description": "Some of the world's highest vineyards, in the Calchaquí Valleys, home of floral Torrontés.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-ar-patagonia",
+      "kind": "region",
+      "order": 40,
+      "country": "Argentina",
+      "countryCode": "AR",
+      "title": "Patagonia",
+      "grapes": [
+        "Pinot Noir",
+        "Malbec"
+      ],
+      "points": "1 0 1 0 = 2",
+      "complexity": "D",
+      "description": "Argentina's southern frontier: wind, latitude and fresher Pinot Noir and Malbec.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-cl-maipo-valley",
+      "kind": "region",
+      "order": 41,
+      "country": "Chile",
+      "countryCode": "CL",
+      "title": "Maipo Valley",
+      "grapes": [
+        "Cabernet Sauvignon",
+        "Carmenère"
+      ],
+      "points": "1 0 0 2 = 3",
+      "complexity": "C",
+      "description": "Santiago's valley: the historic home of Chilean Cabernet Sauvignon, at the foot of the Andes.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-cl-casablanca-valley",
+      "kind": "region",
+      "order": 42,
+      "country": "Chile",
+      "countryCode": "CL",
+      "title": "Casablanca Valley",
+      "grapes": [
+        "Sauvignon Blanc",
+        "Chardonnay",
+        "Pinot Noir"
+      ],
+      "points": "0 0 1 1 = 2",
+      "complexity": "D",
+      "description": "Chile's cool coastal pioneer: crisp Sauvignon Blanc and Chardonnay cooled by the Pacific.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-au-barossa-valley",
+      "kind": "region",
+      "order": 43,
+      "country": "Australia",
+      "countryCode": "AU",
+      "title": "Barossa Valley",
+      "grapes": [
+        "Shiraz",
+        "Grenache",
+        "Mourvèdre"
+      ],
+      "points": "1 1 2 2 = 6",
+      "complexity": "B",
+      "description": "Australia's most famous region: rich Shiraz from some of the oldest vines in the world.",
+      "lessonCount": 6,
+      "xp": 90,
+      "estimatedMinutes": 18
+    },
+    {
+      "id": "region-au-margaret-river",
+      "kind": "region",
+      "order": 44,
+      "country": "Australia",
+      "countryCode": "AU",
+      "title": "Margaret River",
+      "grapes": [
+        "Cabernet Sauvignon",
+        "Chardonnay",
+        "Sémillon",
+        "Sauvignon Blanc"
+      ],
+      "points": "0 0 1 1 = 2",
+      "complexity": "D",
+      "description": "A maritime corner of Western Australia making elegant, Bordeaux-like Cabernet and world-class Chardonnay.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-au-hunter-valley",
+      "kind": "region",
+      "order": 45,
+      "country": "Australia",
+      "countryCode": "AU",
+      "title": "Hunter Valley",
+      "grapes": [
+        "Sémillon",
+        "Shiraz"
+      ],
+      "points": "0 0 1 1 = 2",
+      "complexity": "D",
+      "description": "Australia's oldest wine region: humid and hot, yet home to unoaked Sémillon that ages magically.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-nz-marlborough",
+      "kind": "region",
+      "order": 46,
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "title": "Marlborough",
+      "grapes": [
+        "Sauvignon Blanc",
+        "Pinot Noir",
+        "Chardonnay"
+      ],
+      "points": "1 0 1 2 = 4",
+      "complexity": "C",
+      "description": "Sunny days, cold nights and stony soils at the top of the South Island: the home of a world-famous Sauvignon Blanc.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-nz-hawkes-bay",
+      "kind": "region",
+      "order": 47,
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "title": "Hawke's Bay",
+      "grapes": [
+        "Merlot",
+        "Cabernet Sauvignon",
+        "Syrah",
+        "Chardonnay"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "New Zealand's warm east coast: Bordeaux blends, peppery Syrah and rich Chardonnay.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-nz-central-otago",
+      "kind": "region",
+      "order": 48,
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "title": "Central Otago",
+      "grapes": [
+        "Pinot Noir"
+      ],
+      "points": "1 0 0 1 = 2",
+      "complexity": "D",
+      "description": "The world's southernmost major wine region: mountains, schist and vivid Pinot Noir.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    },
+    {
+      "id": "region-za-stellenbosch",
+      "kind": "region",
+      "order": 49,
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "title": "Stellenbosch",
+      "grapes": [
+        "Cabernet Sauvignon",
+        "Pinotage",
+        "Chenin Blanc"
+      ],
+      "points": "1 0 1 1 = 3",
+      "complexity": "C",
+      "description": "South Africa's historic heart: mountain slopes, ocean breezes, Cabernet Sauvignon and Pinotage.",
+      "lessonCount": 5,
+      "xp": 75,
+      "estimatedMinutes": 15
+    },
+    {
+      "id": "region-za-swartland",
+      "kind": "region",
+      "order": 50,
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "title": "Swartland",
+      "grapes": [
+        "Chenin Blanc",
+        "Syrah",
+        "Grenache"
+      ],
+      "points": "0 0 1 1 = 2",
+      "complexity": "D",
+      "description": "A dry, rugged land north of Cape Town where old bush vines sparked a South African wine revolution.",
+      "lessonCount": 4,
+      "xp": 60,
+      "estimatedMinutes": 12
+    }
+  ]
+}

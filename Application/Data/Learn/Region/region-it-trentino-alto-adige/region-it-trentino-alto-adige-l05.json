@@ -1,0 +1,96 @@
+{
+  "id": "region-it-trentino-alto-adige-l05",
+  "moduleId": "region-it-trentino-alto-adige",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Trentino-Alto Adige",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the region's geography and grapes",
+    "Explain Trentodoc",
+    "Read and pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Südtirol",
+          "right": "Alto Adige in German"
+        },
+        {
+          "left": "Kellerei",
+          "right": "Winery, often co-operative"
+        },
+        {
+          "left": "Kretzer",
+          "right": "Lagrein rosé"
+        },
+        {
+          "left": "Trentodoc",
+          "right": "Traditional method sparkling"
+        }
+      ],
+      "explanation": "The region's vocabulary is bilingual."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What gives the region's wines their freshness?",
+      "options": [
+        "Cold mountain nights",
+        "Sea breezes",
+        "Heavy rain",
+        "Low sunshine"
+      ],
+      "answer": 0,
+      "explanation": "Altitude and mountain air."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "About two-thirds of the region's production is red.",
+      "answer": false,
+      "explanation": "Not true. About two-thirds is white."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are native red grapes of the region?",
+      "options": [
+        "Lagrein",
+        "Schiava",
+        "Teroldego",
+        "Sangiovese"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sangiovese is Tuscan."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Trentodoc was created in ____.",
+      "options": [
+        "1993",
+        "1902",
+        "1716",
+        "2011"
+      ],
+      "answer": "1993",
+      "explanation": "In 1993; Ferrari was founded in 1902."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Trentino-Alto Adige is Alpine, sunny by day and cold at night",
+        "Fresh whites dominate; Lagrein and Schiava are native reds",
+        "Trentodoc is its mountain sparkling wine",
+        "Its food mixes Italian and Austrian traditions"
+      ]
+    }
+  ]
+}

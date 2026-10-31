@@ -1,0 +1,60 @@
+{
+  "id": "path-07-l07",
+  "moduleId": "path-07",
+  "order": 7,
+  "title": "Harvest",
+  "subtitle": "Choosing the moment",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how growers decide when to pick",
+    "Compare hand and machine harvesting",
+    "Explain why picking time shapes style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "When to pick",
+      "body": "Growers measure sugar, acidity and pH, and taste the berries for flavour, seed ripeness and tannin. Pick early and the wine is fresh and lower in alcohol, but may taste green. Pick late and it is rich and riper, but can lose acidity and turn jammy. The date is one of the most important decisions of the year.",
+      "highlight": "Picking date is a style decision"
+    },
+    {
+      "type": "concept",
+      "title": "Hand or machine",
+      "body": "Hand picking is gentle and selective: pickers choose healthy bunches and can keep them whole, essential for Champagne and many fine wines. Machines shake the vine and collect berries, working fast and at night when it is cool, but they need flat, accessible vineyards and break the skins. Steep slopes like the Douro or the Mosel must be picked by hand.",
+      "highlight": "Hand: selective. Machine: fast and cool."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are grapes for Champagne picked by hand?",
+      "options": [
+        "Machines are banned everywhere in France",
+        "Whole bunches avoid colour and bitterness from broken skins",
+        "Hand picking is cheaper",
+        "It increases the yield"
+      ],
+      "answer": 1,
+      "explanation": "Champagne presses whole bunches of black and white grapes gently, so broken skins would release colour and harsh compounds. Hand picking is required there."
+    },
+    {
+      "type": "tip",
+      "body": "In hot regions, many growers harvest at night or before dawn. Cool fruit reaches the winery fresher, and less energy is spent cooling it down."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Picking grapes later in the season usually raises sugar and lowers acidity.",
+      "answer": true,
+      "explanation": "Yes. As grapes hang, sugar builds and acidity falls. That's why the harvest date shapes alcohol, freshness and style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Growers measure sugar and acid and taste for ripe flavour and tannin",
+        "Hand picking is selective; machines are fast and work at night",
+        "Earlier picking means fresher wine; later picking means riper wine"
+      ]
+    }
+  ]
+}

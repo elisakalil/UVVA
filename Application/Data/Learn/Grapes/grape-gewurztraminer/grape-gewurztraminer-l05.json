@@ -1,0 +1,60 @@
+{
+  "id": "grape-gewurztraminer-l05",
+  "moduleId": "grape-gewurztraminer",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Gewürztraminer",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Gewürztraminer with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Spice and cheese",
+      "body": "Gewürztraminer's perfume and body suit mildly spiced Asian dishes, especially Thai, Indian and Moroccan food, ideally with a touch of sweetness. In Alsace, it's the classic match for Munster, a pungent washed-rind cheese. It also suits foie gras, smoked salmon and ginger.",
+      "highlight": "Munster, mild spice, foie gras"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 10 to 12 degrees, not too cold, or the aromas close up. Most dry Gewürztraminer is best within three to five years. Grand Cru wines age 10 years or more; VT and SGN can age for decades, gaining honey and dried fruit.",
+      "highlight": "10 to 12 degrees"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which cheese is Alsace's classic match for Gewürztraminer?",
+      "options": [
+        "Munster",
+        "Mozzarella",
+        "Cheddar",
+        "Feta"
+      ],
+      "answer": 0,
+      "explanation": "Munster's pungency meets Gewürztraminer's perfume."
+    },
+    {
+      "type": "tip",
+      "body": "Pair an off-dry Gewürztraminer with Thai green curry. The touch of sugar calms the chilli, and the ginger and lime echo the wine."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Gewürztraminer should be served ice cold to bring out its aromas.",
+      "answer": false,
+      "explanation": "Not true. Too cold, its aromas close up. About 10 to 12 degrees is better."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gewürztraminer suits mild spice, Munster and foie gras",
+        "Serve at 10 to 12 degrees",
+        "Grand Crus and sweet styles age for decades"
+      ]
+    }
+  ]
+}

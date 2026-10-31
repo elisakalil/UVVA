@@ -1,0 +1,20 @@
+{
+  "id": "path-23",
+  "kind": "path",
+  "order": 23,
+  "level": "Advanced",
+  "complexity": "C",
+  "title": "South America",
+  "description": "Irrigation, altitude and the Andes: Chile, Argentina and their neighbours.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-23-l01",
+    "path-23-l02",
+    "path-23-l03",
+    "path-23-l04",
+    "path-23-l05",
+    "path-23-l06"
+  ]
+}

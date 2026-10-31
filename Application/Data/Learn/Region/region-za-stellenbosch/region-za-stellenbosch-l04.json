@@ -1,0 +1,60 @@
+{
+  "id": "region-za-stellenbosch-l04",
+  "moduleId": "region-za-stellenbosch",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Stellenbosch and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a South African label",
+    "Pair Stellenbosch wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "South Africa's Wine of Origin system, since 1973, has regions, districts and wards. Stellenbosch is a district; wards include Simonsberg-Stellenbosch, Jonkershoek Valley and Banghoek. A certification seal on the bottle guarantees origin, grape and vintage, each at least 85%. Estate wine must be grown and made on one property.",
+      "highlight": "Wine of Origin, wards, seal"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Stellenbosch Cabernet suits steak, lamb and game like springbok. Pinotage suits the braai, South African barbecue, especially boerewors sausage, and bobotie, a spiced Cape Malay mince dish. Chenin Blanc suits seafood, chicken and mild curries. Serve reds at 16 to 18 degrees.",
+      "highlight": "Braai, bobotie, game"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which South African dish suits Pinotage?",
+      "options": [
+        "Boerewors from the braai",
+        "Sushi",
+        "Lemon tart",
+        "Oysters"
+      ],
+      "answer": 0,
+      "explanation": "Smoky grilled sausage suits Pinotage's fruit and smoke."
+    },
+    {
+      "type": "tip",
+      "body": "Bobotie, a spiced, baked minced meat dish with a custard topping, also suits off-dry Chenin Blanc."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "South Africa's Wine of Origin seal certifies origin, grape and vintage.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Wine of Origin labels show district and ward",
+        "Cabernet suits steak and game; Pinotage suits the braai",
+        "Chenin suits seafood and mild curries"
+      ]
+    }
+  ]
+}

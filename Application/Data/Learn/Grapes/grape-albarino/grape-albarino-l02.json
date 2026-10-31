@@ -1,0 +1,79 @@
+{
+  "id": "grape-albarino-l02",
+  "moduleId": "grape-albarino",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Galicia and northern Portugal",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rías Baixas",
+    "Describe Monção e Melgaço",
+    "Explain pergola training"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rías Baixas",
+      "body": "Rías Baixas, in Galicia, Spain's Atlantic north-west, is about 96% Albariño. It's named after the rías, flooded river valleys. Rainfall is high, 1,600 mm or more a year. Five sub-zones include Val do Salnés, coolest and most Atlantic, and O Rosal and Condado do Tea, warmer, along the Miño river. Granite soils dominate.",
+      "highlight": "About 96% Albariño, granite"
+    },
+    {
+      "type": "concept",
+      "title": "Pergolas",
+      "body": "To fight humidity, vines are traditionally trained on high pergolas, called parras, on granite posts, two metres or more above the ground. Air circulates under the canopy, reducing rot; grapes stay away from damp soil. Some growers now use wire trellises, which allow more sun on the fruit.",
+      "highlight": "Parras: high pergolas"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Rías Baixas term to its meaning.",
+      "pairs": [
+        {
+          "left": "Rías",
+          "right": "Flooded river valleys"
+        },
+        {
+          "left": "Parras",
+          "right": "High pergolas"
+        },
+        {
+          "left": "Val do Salnés",
+          "right": "Coolest sub-zone"
+        },
+        {
+          "left": "Condado do Tea",
+          "right": "Warmer, inland sub-zone"
+        }
+      ],
+      "explanation": "Rías Baixas' landscape shapes its wine."
+    },
+    {
+      "type": "concept",
+      "title": "Portugal",
+      "body": "Across the Miño, called Minho in Portugal, Albariño is called Alvarinho. It grows in Vinho Verde, especially in Monção e Melgaço. Spain and Portugal share the grape, divided by a river.",
+      "highlight": "Alvarinho across the river"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Albariño vines trained on high pergolas?",
+      "options": [
+        "To let air circulate and reduce rot",
+        "To get more frost",
+        "To shade from snow",
+        "To make harvesting harder"
+      ],
+      "answer": 0,
+      "explanation": "Height and airflow fight humidity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rías Baixas is about 96% Albariño on granite",
+        "High pergolas fight humidity",
+        "Across the river, Portugal calls it Alvarinho"
+      ]
+    }
+  ]
+}

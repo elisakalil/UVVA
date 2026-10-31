@@ -1,0 +1,96 @@
+{
+  "id": "region-at-burgenland-l06",
+  "moduleId": "region-at-burgenland",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Burgenland",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Burgenland's land and grapes",
+    "Explain Blaufränkisch and sweet wines",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Burgenland.",
+      "pairs": [
+        {
+          "left": "Neusiedlersee",
+          "right": "Shallow lake"
+        },
+        {
+          "left": "Rust",
+          "right": "Ausbruch town"
+        },
+        {
+          "left": "Mittelburgenland",
+          "right": "Blaufränkischland"
+        },
+        {
+          "left": "Kracher",
+          "right": "Famous sweet wine maker"
+        }
+      ],
+      "explanation": "Burgenland's vocabulary mixes Austrian and Hungarian."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Burgenland's signature red grape?",
+      "options": [
+        "Blaufränkisch",
+        "Nebbiolo",
+        "Merlot",
+        "Grenache"
+      ],
+      "answer": 0,
+      "explanation": "Spicy and fresh."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Burgenland belonged to Hungary until 1921.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Austrian sweet wine categories?",
+      "options": [
+        "Beerenauslese",
+        "Trockenbeerenauslese",
+        "Schilfwein",
+        "Crianza"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Crianza is Spanish."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Zweigelt is a cross of Blaufränkisch and St. ____.",
+      "options": [
+        "Laurent",
+        "Martin",
+        "George",
+        "Emilion"
+      ],
+      "answer": "Laurent",
+      "explanation": "St. Laurent."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgenland is Austria's warm, Pannonian east",
+        "Blaufränkisch is its signature red",
+        "Lake Neusiedl brings reliable noble rot",
+        "Ruster Ausbruch is a historic sweet style"
+      ]
+    }
+  ]
+}

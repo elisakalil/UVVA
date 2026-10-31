@@ -1,0 +1,79 @@
+{
+  "id": "path-25-l05",
+  "moduleId": "path-25",
+  "order": 5,
+  "title": "Champagne in depth",
+  "subtitle": "Villages, houses and growers",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Champagne's main areas",
+    "Explain the échelle des crus",
+    "Compare houses and growers"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The areas",
+      "body": "Champagne's main areas are the Montagne de Reims, famous for Pinot Noir; the Vallée de la Marne, for Meunier; the Côte des Blancs, for Chardonnay; and the Côte des Bar, further south, for Pinot Noir. The Côte de Sézanne also grows Chardonnay. Chalk subsoils, especially in the Côte des Blancs, give finesse.",
+      "highlight": "Montagne, Vallée, Côte des Blancs, Côte des Bar"
+    },
+    {
+      "type": "concept",
+      "title": "The échelle des crus",
+      "body": "Champagne once ranked its 319 villages on a ladder, the échelle des crus, from 80% to 100%. Seventeen villages were Grand Cru at 100%, and 42 were Premier Cru, 90 to 99%. The percentage set the grape price. The pricing system ended in 2010, but the Grand Cru and Premier Cru names remain on labels.",
+      "highlight": "17 Grand Cru villages"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How many Champagne villages hold Grand Cru status?",
+      "options": [
+        "5",
+        "17",
+        "42",
+        "319"
+      ],
+      "answer": 1,
+      "explanation": "Seventeen villages are Grand Cru; 42 are Premier Cru."
+    },
+    {
+      "type": "concept",
+      "title": "Houses and growers",
+      "body": "Houses, or maisons, buy grapes from many growers and blend for a consistent style; they make most Champagne. Growers who make their own wine, called récoltant-manipulant and labelled RM, are a growing movement. Labels show these codes: NM for négociant-manipulant, RM for récoltant-manipulant, CM for co-operatives.",
+      "highlight": "NM for houses; RM for growers"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each label code to its meaning.",
+      "pairs": [
+        {
+          "left": "NM",
+          "right": "House buying grapes"
+        },
+        {
+          "left": "RM",
+          "right": "Grower making own wine"
+        },
+        {
+          "left": "CM",
+          "right": "Co-operative"
+        },
+        {
+          "left": "MA",
+          "right": "Buyer's own brand"
+        }
+      ],
+      "explanation": "The small letters on the label tell you who made the wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Champagne's areas each favour a grape",
+        "The échelle des crus ranked villages; 17 are Grand Cru",
+        "NM houses blend; RM growers make wine from their own vines"
+      ]
+    }
+  ]
+}

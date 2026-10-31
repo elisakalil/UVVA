@@ -1,0 +1,73 @@
+{
+  "id": "path-07-l01",
+  "moduleId": "path-07",
+  "order": 1,
+  "title": "Anatomy of a grape",
+  "subtitle": "What each part of the berry gives",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the parts of a grape berry",
+    "Explain what each part gives to wine",
+    "Explain why berry size matters"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Four parts",
+      "body": "A grape berry has skin, pulp, seeds and, around the bunch, stems. The pulp is mostly water, sugar and acid, and makes up most of the juice. The skin holds colour, tannin and most of the aroma. Seeds contain bitter, harsh tannins. Stems add tannin and a green note if they go into the fermenter.",
+      "highlight": "Pulp: sugar, acid. Skin: colour, tannin, aroma."
+    },
+    {
+      "type": "concept",
+      "title": "Why size matters",
+      "body": "Small berries have more skin compared with juice. Since colour, tannin and aroma sit in the skin, small-berried grapes like Cabernet Sauvignon give more concentrated wines than large-berried ones. This is also why drought years, which shrink berries, often produce deeper, more tannic reds.",
+      "highlight": "Smaller berries, more concentration"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each part of the grape to what it gives.",
+      "pairs": [
+        {
+          "left": "Pulp",
+          "right": "Sugar, acid, water"
+        },
+        {
+          "left": "Skin",
+          "right": "Colour, tannin, aroma"
+        },
+        {
+          "left": "Seeds",
+          "right": "Bitter, harsh tannin"
+        },
+        {
+          "left": "Stems",
+          "right": "Green, stalky tannin"
+        }
+      ],
+      "explanation": "Most of the character of a red wine comes from the skins; most of the juice from the pulp."
+    },
+    {
+      "type": "concept",
+      "title": "Crushing gently",
+      "body": "Winemakers crush gently to avoid breaking the seeds, which would release bitter tannins. Some keep whole bunches, stems and all, in red fermentations for extra structure and a fresh, herbal lift. This is common for Pinot Noir and Syrah in some cellars, but only works when the stems are ripe and brown, not green.",
+      "highlight": "Ripe stems can add freshness; seeds stay whole"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A grape with small berries tends to give a more concentrated red wine than one with large berries.",
+      "answer": true,
+      "explanation": "Yes. Small berries mean more skin compared with juice, so more colour, tannin and flavour per litre."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A grape has skin, pulp, seeds and stems",
+        "Pulp gives sugar and acid; skins give colour, tannin and aroma",
+        "Small berries give more concentrated wine"
+      ]
+    }
+  ]
+}

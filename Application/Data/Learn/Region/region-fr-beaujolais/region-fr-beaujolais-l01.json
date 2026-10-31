@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-beaujolais-l01",
+  "moduleId": "region-fr-beaujolais",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Granite hills",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Beaujolais' geography",
+    "Compare the north and south",
+    "Explain its link with Lyon"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "South of Burgundy",
+      "body": "Beaujolais lies just south of the Mâconnais, north of Lyon, in eastern France. It has about 13,000 hectares of vines on rolling hills. The climate is semi-continental, warmer than the Côte d'Or. Administratively it belongs to Burgundy, but its grape, soils and style are its own.",
+      "highlight": "North of Lyon, about 13,000 ha"
+    },
+    {
+      "type": "concept",
+      "title": "North and south",
+      "body": "Beaujolais divides in two. The north, the Haut-Beaujolais, has pink granite and schist hills, where the best wines grow: Beaujolais-Villages and the ten crus. The south, the Bas-Beaujolais, has clay and limestone, called pierres dorées, golden stones, and makes simpler Beaujolais, including much of the Nouveau.",
+      "highlight": "Granite north; limestone south"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where do Beaujolais' best wines grow?",
+      "options": [
+        "On the northern granite hills",
+        "On the southern limestone",
+        "On the river plain",
+        "By the sea"
+      ],
+      "answer": 0,
+      "explanation": "Granite in the north suits Gamay best."
+    },
+    {
+      "type": "concept",
+      "title": "Lyon's wine",
+      "body": "Beaujolais has long been the everyday wine of Lyon, France's food capital, served in its bouchons, traditional bistros, from a pot, a thick-bottomed bottle. The saying goes that Lyon is watered by three rivers: the Rhône, the Saône and the Beaujolais.",
+      "highlight": "Lyon's third river"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Beaujolais' northern hills are mainly granite.",
+      "answer": true,
+      "explanation": "Yes. Pink granite and schist dominate the north."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Beaujolais lies between the Mâconnais and Lyon",
+        "Northern granite gives the best wines; the south is limestone",
+        "It's Lyon's traditional everyday wine"
+      ]
+    }
+  ]
+}

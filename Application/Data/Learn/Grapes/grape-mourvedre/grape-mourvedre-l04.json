@@ -1,0 +1,79 @@
+{
+  "id": "grape-mourvedre-l04",
+  "moduleId": "grape-mourvedre",
+  "order": 4,
+  "title": "Monastrell in Spain",
+  "subtitle": "Power in the south-east",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Monastrell's main Spanish regions",
+    "Explain how heat and drought shape it",
+    "Describe modern Monastrell styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Jumilla, Yecla, Alicante",
+      "body": "In Spain, Monastrell dominates the hot, dry south-east. Jumilla, Yecla and Alicante are its main DOs. Vineyards sit at 400 to 800 m on poor, limestone soils, often as old bush vines, many ungrafted because phylloxera struggles in sandy soils. Rainfall is low, often 300 mm a year.",
+      "highlight": "Old bush vines in the dry south-east"
+    },
+    {
+      "type": "concept",
+      "title": "Heat and drought",
+      "body": "The heat gives ripe, dark fruit and high alcohol, often 14.5 to 15.5%. Drought keeps berries small and concentrated. Altitude brings cooler nights, preserving some freshness. Once known for bulk wines, these regions now make concentrated reds at good prices, and some powerful, oaked premium wines.",
+      "highlight": "Ripe, dark, often good value"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are many Monastrell vines in south-east Spain ungrafted?",
+      "options": [
+        "Phylloxera struggles in sandy soils",
+        "Grafting is banned",
+        "They were planted recently",
+        "They are white grapes"
+      ],
+      "answer": 0,
+      "explanation": "Sandy soils make it hard for phylloxera to move, so some old vines grow on their own roots."
+    },
+    {
+      "type": "concept",
+      "title": "Sweet Fondillón",
+      "body": "Alicante also makes Fondillón, a historic sweet wine from overripe Monastrell, fermented naturally and aged for at least 10 years in old casks, often in a solera. It reaches 16 to 18% alcohol without fortification. It was famous in the 17th and 18th centuries and is now a protected rarity.",
+      "highlight": "Fondillón: aged, naturally strong"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Spanish term to its meaning.",
+      "pairs": [
+        {
+          "left": "Monastrell",
+          "right": "Mourvèdre in Spain"
+        },
+        {
+          "left": "Jumilla",
+          "right": "Key Monastrell DO"
+        },
+        {
+          "left": "Fondillón",
+          "right": "Aged sweet Alicante wine"
+        },
+        {
+          "left": "Bush vines",
+          "right": "Free-standing old vines"
+        }
+      ],
+      "explanation": "South-east Spain is Monastrell's home ground."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Jumilla, Yecla and Alicante are Monastrell's heartland",
+        "Heat and drought give ripe, dark, powerful reds",
+        "Fondillón is Alicante's historic aged sweet wine"
+      ]
+    }
+  ]
+}

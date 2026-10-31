@@ -1,0 +1,20 @@
+{
+  "id": "path-28",
+  "kind": "path",
+  "order": 28,
+  "level": "Expert",
+  "complexity": "C",
+  "title": "Faults and Quality",
+  "description": "How to tell a faulty wine from one you simply don't like, and how to judge quality without bias.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-28-l01",
+    "path-28-l02",
+    "path-28-l03",
+    "path-28-l04",
+    "path-28-l05",
+    "path-28-l06"
+  ]
+}

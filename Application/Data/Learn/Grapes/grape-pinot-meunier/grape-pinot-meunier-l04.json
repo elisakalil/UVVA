@@ -1,0 +1,60 @@
+{
+  "id": "grape-pinot-meunier-l04",
+  "moduleId": "grape-pinot-meunier",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Meunier",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Meunier Champagne with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fruity bubbles",
+      "body": "Meunier-rich Champagnes suit food well: charcuterie, roast chicken, salmon, gougères and mild cheeses. Their red fruit and roundness handle slightly richer dishes than lean Blanc de Blancs. Still Meunier, like Coteaux Champenois rouge, suits light meats.",
+      "highlight": "Gougères, salmon, chicken"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve Champagne at 8 to 10 degrees, in a white wine glass rather than a narrow flute to let its aromas show. Meunier-led Champagnes are often best within a few years of release, though top ones from old vines age well.",
+      "highlight": "8 to 10 degrees, in a wine glass"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why might a white wine glass be better than a flute for Meunier Champagne?",
+      "options": [
+        "It shows more aroma",
+        "It keeps it colder",
+        "It makes more bubbles",
+        "It hides the colour"
+      ],
+      "answer": 0,
+      "explanation": "A wider bowl lets aromas gather."
+    },
+    {
+      "type": "tip",
+      "body": "Gougères, little cheese puffs from Burgundy, are a classic Champagne snack. Their richness suits a fruity, Meunier-led Champagne."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Meunier-led Champagnes are generally drunk younger than Chardonnay-led ones.",
+      "answer": true,
+      "explanation": "Yes. Meunier matures faster, though top examples can age."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Meunier Champagne suits gougères, salmon and chicken",
+        "Serve at 8 to 10 degrees, in a wine glass",
+        "Most are best within a few years"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "grape-gamay",
+  "kind": "grape",
+  "order": 22,
+  "color": "red",
+  "title": "Gamay",
+  "aliases": [
+    "Gamay Noir"
+  ],
+  "origin": "France",
+  "countries": [
+    "France"
+  ],
+  "points": "1 1 1 1 = 4",
+  "complexity": "C",
+  "description": "Beaujolais' grape: light, juicy and fragrant, from fresh nouveau to serious crus.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-gamay-l01",
+    "grape-gamay-l02",
+    "grape-gamay-l03",
+    "grape-gamay-l04",
+    "grape-gamay-l05"
+  ]
+}

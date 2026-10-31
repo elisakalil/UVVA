@@ -1,0 +1,70 @@
+{
+  "id": "grape-garganega-l03",
+  "moduleId": "grape-garganega",
+  "order": 3,
+  "title": "Soave and Recioto",
+  "subtitle": "Dry and sweet Garganega",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe dry Soave styles",
+    "Explain Recioto di Soave",
+    "Explain how quality improved"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Soave",
+      "body": "In the 1970s and 1980s, Soave was mass-produced and cheap, giving it a poor reputation. Better producers lowered yields, focused on hillside sites and made more serious wines. Soave Superiore DOCG and Soave Classico Superiore require lower yields and longer ageing. Top Soave can age 10 years or more.",
+      "highlight": "From cheap to serious"
+    },
+    {
+      "type": "concept",
+      "title": "Recioto di Soave",
+      "body": "Recioto di Soave, the region's first DOCG in 1998, is a sweet wine from dried Garganega. Grapes are dried for months on racks, appassimento, concentrating sugar, sometimes with noble rot. The wine is golden, honeyed and sweet, with apricot and almond, balanced by acidity.",
+      "highlight": "Sweet, from dried grapes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is Recioto di Soave made?",
+      "options": [
+        "From dried Garganega grapes",
+        "From frozen grapes",
+        "By adding spirit",
+        "From red grapes"
+      ],
+      "answer": 0,
+      "explanation": "Appassimento concentrates sugar in the grapes."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Soave Classico from named sub-areas, such as Foscarino or Calvarino. They often show the volcanic, saline side of Garganega."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Garganega wines?",
+      "options": [
+        "Soave Classico",
+        "Recioto di Soave",
+        "Gambellara",
+        "Amarone"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Amarone is made from Corvina."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Soave moved from cheap volume to serious quality",
+        "Recioto di Soave is sweet, from dried Garganega",
+        "Top Soave can age 10 years or more"
+      ]
+    }
+  ]
+}

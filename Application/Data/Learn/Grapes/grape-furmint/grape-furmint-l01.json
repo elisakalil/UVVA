@@ -1,0 +1,62 @@
+{
+  "id": "grape-furmint-l01",
+  "moduleId": "grape-furmint",
+  "order": 1,
+  "title": "Meet Furmint",
+  "subtitle": "Acid, smoke and quince",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Furmint's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "High acidity",
+      "body": "Furmint gives whites with very high acidity and flavours of lemon, green apple, quince, pear, smoke and a mineral, flinty edge. With age or botrytis, honey, apricot and marmalade appear. Body ranges from medium to full; alcohol can be high in dry styles.",
+      "highlight": "Searing acidity, quince, smoke"
+    },
+    {
+      "type": "concept",
+      "title": "Origins and noble rot",
+      "body": "Furmint is Hungary's signature grape, probably native to the Tokaj region; it's also grown in Slovenia as Šipon. It ripens late, which keeps acidity high. Its thin skins become thinner as it ripens, making it highly susceptible to noble rot, Botrytis cinerea. That's why it's the main grape of Tokaji Aszú.",
+      "highlight": "Late ripening, thin skins, botrytis"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Furmint so suited to noble rot?",
+      "options": [
+        "Its skins thin as it ripens",
+        "Its skins are very thick",
+        "It ripens very early",
+        "It has no acidity"
+      ],
+      "answer": 0,
+      "explanation": "Thin skins let botrytis attack."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Dry Furmint is pale lemon, with citrus, quince and smoky, flinty notes, high acidity and a firm, mineral palate. Sweet Tokaji is gold to amber, with apricot, marmalade and honey, balanced by vivid acidity. That acidity is the common thread.",
+      "highlight": "Acidity runs through every style"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Furmint has low acidity.",
+      "answer": false,
+      "explanation": "Not true. Its very high acidity is its signature."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Furmint has very high acidity, with quince and smoke",
+        "It's native to Tokaj and susceptible to noble rot",
+        "Its acidity links dry and sweet styles"
+      ]
+    }
+  ]
+}

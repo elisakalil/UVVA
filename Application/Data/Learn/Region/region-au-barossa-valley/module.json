@@ -1,0 +1,27 @@
+{
+  "id": "region-au-barossa-valley",
+  "kind": "region",
+  "order": 43,
+  "country": "Australia",
+  "countryCode": "AU",
+  "title": "Barossa Valley",
+  "grapes": [
+    "Shiraz",
+    "Grenache",
+    "Mourvèdre"
+  ],
+  "points": "1 1 2 2 = 6",
+  "complexity": "B",
+  "description": "Australia's most famous region: rich Shiraz from some of the oldest vines in the world.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-au-barossa-valley-l01",
+    "region-au-barossa-valley-l02",
+    "region-au-barossa-valley-l03",
+    "region-au-barossa-valley-l04",
+    "region-au-barossa-valley-l05",
+    "region-au-barossa-valley-l06"
+  ]
+}

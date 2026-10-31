@@ -1,0 +1,77 @@
+{
+  "id": "path-15-l02",
+  "moduleId": "path-15",
+  "order": 2,
+  "title": "Nose: intensity and development",
+  "subtitle": "How much, and how old",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Judge aroma intensity on a fixed scale",
+    "Judge development from youthful to tired",
+    "Check a wine is sound before tasting"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Condition and intensity",
+      "body": "First check the wine is clean, with no faults like cork taint or vinegar. Then judge intensity: light, medium minus, medium, medium plus or pronounced. Intensity depends on the grape, aromatic varieties like Muscat score high, and on concentration, which often reflects yield and vineyard quality.",
+      "highlight": "Clean? Then how intense?"
+    },
+    {
+      "type": "concept",
+      "title": "Development",
+      "body": "Development tells you where the wine is in its life. Youthful wines show mainly primary and secondary aromas. Developing wines start to show tertiary notes, like dried fruit or leather. Fully developed wines are dominated by tertiary aromas. Past its best, the wine smells tired, with fading fruit and oxidised notes.",
+      "highlight": "Youthful, developing, fully developed, tired"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each description to its stage of development.",
+      "pairs": [
+        {
+          "left": "Fresh fruit, vanilla",
+          "right": "Youthful"
+        },
+        {
+          "left": "Fruit plus some leather",
+          "right": "Developing"
+        },
+        {
+          "left": "Mainly mushroom, dried fruit",
+          "right": "Fully developed"
+        },
+        {
+          "left": "Faded fruit, flat, oxidised",
+          "right": "Tired"
+        }
+      ],
+      "explanation": "The balance between primary and tertiary aromas tells you how far along the wine is."
+    },
+    {
+      "type": "tip",
+      "body": "Smell the wine before swirling, then after. The first sniff catches the lightest aromas; swirling brings up the heavier ones. Comparing the two often reveals more."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A wine smells mostly of fresh blackberry and vanilla, with no tertiary notes. How would you describe its development?",
+      "options": [
+        "Youthful",
+        "Fully developed",
+        "Tired",
+        "Faulty"
+      ],
+      "answer": 0,
+      "explanation": "Fresh fruit and oak, without tertiary notes, signal a youthful wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Check the wine is clean before judging intensity",
+        "Intensity runs from light to pronounced",
+        "Development moves from youthful to fully developed, then tired"
+      ]
+    }
+  ]
+}

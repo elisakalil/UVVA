@@ -1,0 +1,29 @@
+{
+  "id": "region-it-piedmont",
+  "kind": "region",
+  "order": 9,
+  "country": "Italy",
+  "countryCode": "IT",
+  "title": "Piedmont",
+  "grapes": [
+    "Nebbiolo",
+    "Barbera",
+    "Dolcetto",
+    "Moscato"
+  ],
+  "points": "2 2 2 2 = 8",
+  "complexity": "A",
+  "description": "At the foot of the Alps: Barolo, Barbaresco and a hillside map as detailed as Burgundy's.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-it-piedmont-l01",
+    "region-it-piedmont-l02",
+    "region-it-piedmont-l03",
+    "region-it-piedmont-l04",
+    "region-it-piedmont-l05",
+    "region-it-piedmont-l06",
+    "region-it-piedmont-l07"
+  ]
+}

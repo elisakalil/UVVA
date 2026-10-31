@@ -1,0 +1,83 @@
+{
+  "id": "grape-grenache-l02",
+  "moduleId": "grape-grenache",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Mediterranean grape",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Grenache's main regions",
+    "Explain its role in blends",
+    "Explain why old bush vines matter"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A wide map",
+      "body": "Grenache is one of the world's most planted red grapes. In France, it leads the southern Rhône and much of the Languedoc-Roussillon and Provence rosé. In Spain, it grows in Aragón, Navarra, Priorat, Rioja and around Madrid. Sardinia's Cannonau, Australia's Barossa and McLaren Vale, and California also grow it.",
+      "highlight": "Rhône, Spain, Sardinia, Australia"
+    },
+    {
+      "type": "concept",
+      "title": "Bush vines",
+      "body": "Grenache has strong, upright wood, so it's often grown as free-standing bush vines, gobelet. They need no trellis and withstand wind. Old bush vines, some over 100 years, with deep roots, survive drought and give low yields of concentrated fruit. Many of Grenache's best wines come from them.",
+      "highlight": "Old bush vines, deep roots"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Grenache.",
+      "pairs": [
+        {
+          "left": "Châteauneuf-du-Pape",
+          "right": "Southern Rhône blends"
+        },
+        {
+          "left": "Priorat",
+          "right": "Old vines on slate"
+        },
+        {
+          "left": "Cannonau di Sardegna",
+          "right": "Sardinian name"
+        },
+        {
+          "left": "McLaren Vale",
+          "right": "Australian old vines"
+        }
+      ],
+      "explanation": "Grenache thrives across warm, dry regions."
+    },
+    {
+      "type": "concept",
+      "title": "Blending",
+      "body": "Grenache brings red fruit, body and alcohol to blends. Syrah adds colour and structure; Mourvèdre adds tannin and savoury notes; Carignan adds acidity. Rioja adds Garnacha to Tempranillo. Its low colour and tendency to oxidise make it a natural team player.",
+      "highlight": "The G in GSM"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Why is Grenache often blended?",
+      "options": [
+        "It has low colour",
+        "It oxidises easily",
+        "It has soft tannin",
+        "It's always unripe"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Grenache ripens easily; it's rarely unripe."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grenache is one of the most planted red grapes",
+        "Old bush vines give concentrated wines",
+        "It's a team player in GSM and Rioja blends"
+      ]
+    }
+  ]
+}

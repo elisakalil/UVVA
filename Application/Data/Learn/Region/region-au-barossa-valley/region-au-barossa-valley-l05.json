@@ -1,0 +1,60 @@
+{
+  "id": "region-au-barossa-valley-l05",
+  "moduleId": "region-au-barossa-valley",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Barossa and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read an Australian label",
+    "Pair Barossa wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Australian labels show the grape, the GI, like Barossa Valley or Eden Valley, and the vintage, each at least 85%. Blends list grapes in order of share, like GSM or Shiraz Cabernet. The Barossa zone covers both valleys. Old Vine Charter levels may appear. Wines are often sealed with screw caps.",
+      "highlight": "GI, 85% rules, screw caps"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Barossa Shiraz suits barbecued meat, lamb, beef, kangaroo and rich stews. Its ripe fruit handles sweet, smoky sauces. GSM suits roast lamb and game. Eden Valley Riesling suits seafood, Asian dishes and salads. Barossa's German heritage dishes, like mettwurst, a smoked sausage, suit Shiraz too. Serve Shiraz at 16 to 18 degrees.",
+      "highlight": "Barbecue, lamb, mettwurst"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How do Australian blend labels list the grapes?",
+      "options": [
+        "In order of share, largest first",
+        "Alphabetically",
+        "Smallest first",
+        "Randomly"
+      ],
+      "answer": 0,
+      "explanation": "Shiraz Cabernet means more Shiraz than Cabernet."
+    },
+    {
+      "type": "tip",
+      "body": "Sparkling Shiraz, a deep red sparkling wine, is an Australian tradition, often served at Christmas with turkey or ham."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Many Australian wines use screw caps.",
+      "answer": true,
+      "explanation": "Yes, very common for both whites and reds."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels follow 85% rules and list blends by share",
+        "Shiraz suits barbecue and lamb; Riesling suits seafood",
+        "Serve Shiraz at 16 to 18 degrees"
+      ]
+    }
+  ]
+}

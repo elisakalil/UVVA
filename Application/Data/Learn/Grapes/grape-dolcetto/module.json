@@ -1,0 +1,24 @@
+{
+  "id": "grape-dolcetto",
+  "kind": "grape",
+  "order": 15,
+  "color": "red",
+  "title": "Dolcetto",
+  "aliases": [],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "0 1 0 0 = 1",
+  "complexity": "D",
+  "description": "Piedmont's everyday red: dark, fruity and soft, with a bitter almond finish.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "grape-dolcetto-l01",
+    "grape-dolcetto-l02",
+    "grape-dolcetto-l03",
+    "grape-dolcetto-l04"
+  ]
+}

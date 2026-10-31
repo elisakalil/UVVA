@@ -1,0 +1,72 @@
+{
+  "id": "path-20-l04",
+  "moduleId": "path-20",
+  "order": 4,
+  "title": "Green Spain",
+  "subtitle": "The Atlantic north-west",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Galicia's climate and wines",
+    "Describe Rías Baixas and Albariño",
+    "Name other green Spain wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Wet and green",
+      "body": "North-west Spain, Galicia and the Basque Country, is Atlantic, with rainfall over 1,500 mm a year in places. It's called green Spain. Vines are often trained high on granite pergolas, called parras, to keep grapes away from damp ground. Wines are fresh, light and aromatic.",
+      "highlight": "Rain, granite and pergolas"
+    },
+    {
+      "type": "concept",
+      "title": "Rías Baixas",
+      "body": "Rías Baixas, on Galicia's coast, is built on Albariño, about 96% of plantings. Thick skins resist mildew. The wines have peach, citrus and a saline edge, usually unoaked. There are five sub-zones, including Val do Salnés, the coolest and wettest, and O Rosal, along the Miño river border with Portugal.",
+      "highlight": "Albariño: thick skins, saline edge"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Albariño well suited to Rías Baixas?",
+      "options": [
+        "It has thin skins",
+        "Its thick skins resist mildew in the damp climate",
+        "It needs drought",
+        "It ripens very late"
+      ],
+      "answer": 1,
+      "explanation": "Thick skins protect against rot and mildew in one of Spain's wettest regions."
+    },
+    {
+      "type": "concept",
+      "title": "Other wines",
+      "body": "Ribeira Sacra grows Mencía on steep, terraced slopes above the Sil river, giving fresh, floral reds. Valdeorras makes Godello, a textured, mineral white. In the Basque Country, Txakoli is a light, slightly sparkling white from Hondarrabi Zuri, traditionally poured from a height.",
+      "highlight": "Mencía, Godello, Txakoli"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines come from green Spain?",
+      "options": [
+        "Ribeira Sacra Mencía",
+        "Valdeorras Godello",
+        "Txakoli",
+        "Priorat"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Priorat is in Catalonia, in the dry north-east."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Green Spain is wet and Atlantic, with high-trained vines",
+        "Rías Baixas is built on thick-skinned Albariño",
+        "Mencía, Godello and Txakoli complete the north-west"
+      ]
+    }
+  ]
+}

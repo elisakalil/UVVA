@@ -1,0 +1,28 @@
+{
+  "id": "region-fr-alsace",
+  "kind": "region",
+  "order": 6,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Alsace",
+  "grapes": [
+    "Riesling",
+    "Gewürztraminer",
+    "Pinot Gris",
+    "Muscat"
+  ],
+  "points": "1 1 2 1 = 5",
+  "complexity": "B",
+  "description": "Between the Vosges and the Rhine: aromatic whites named by grape, from dry to noble rot sweet.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-fr-alsace-l01",
+    "region-fr-alsace-l02",
+    "region-fr-alsace-l03",
+    "region-fr-alsace-l04",
+    "region-fr-alsace-l05",
+    "region-fr-alsace-l06"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "region-us-willamette-valley-l05",
+  "moduleId": "region-us-willamette-valley",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about the Willamette Valley",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the valley's land and grapes",
+    "Explain the Dundee Hills",
+    "Read and pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "David Lett",
+          "right": "Planted Pinot in 1965"
+        },
+        {
+          "left": "Jory",
+          "right": "Red volcanic soil"
+        },
+        {
+          "left": "Van Duzer Corridor",
+          "right": "Cooling ocean wind"
+        },
+        {
+          "left": "Drouhin",
+          "right": "Burgundy house, 1987"
+        }
+      ],
+      "explanation": "The valley's story is short but rich."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is about two-thirds of the valley's vineyards?",
+      "options": [
+        "Pinot Noir",
+        "Cabernet Sauvignon",
+        "Zinfandel",
+        "Riesling"
+      ],
+      "answer": 0,
+      "explanation": "Pinot Noir."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Oregon requires 90% of a named grape on most labels.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Willamette Pinot Noir?",
+      "options": [
+        "Red cherry",
+        "Earthy notes",
+        "Fresh acidity",
+        "Very high tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Its tannins are silky, not very high."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Willamette Valley lies at about ____ degrees north.",
+      "options": [
+        "45",
+        "30",
+        "60",
+        "20"
+      ],
+      "answer": "45",
+      "explanation": "Burgundy's latitude."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Willamette Valley is cool, at Burgundy's latitude",
+        "Pinot Noir dominates, with Pinot Gris and Chardonnay",
+        "The Dundee Hills' Jory soil is its historic heart",
+        "Strict labels and small wineries define Oregon"
+      ]
+    }
+  ]
+}

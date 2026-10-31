@@ -1,0 +1,96 @@
+{
+  "id": "path-02-l06",
+  "moduleId": "path-02",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Types and Styles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Sort a wine into its family",
+    "Explain how colour and style are made",
+    "Describe a wine by sweetness and body"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its family or style.",
+      "pairs": [
+        {
+          "left": "Champagne",
+          "right": "Sparkling"
+        },
+        {
+          "left": "Port",
+          "right": "Fortified, sweet"
+        },
+        {
+          "left": "Fino Sherry",
+          "right": "Fortified, dry"
+        },
+        {
+          "left": "Provence rosé",
+          "right": "Still, pale and dry"
+        }
+      ],
+      "explanation": "Family first, then style. Port and Fino are both fortified, but the spirit goes in at different moments."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What decides whether a black grape gives a white, rosé or red wine?",
+      "options": [
+        "The pulp colour",
+        "How long the juice touches the skins",
+        "The yeast used",
+        "The barrel"
+      ],
+      "answer": 1,
+      "explanation": "No skin contact gives white juice, a few hours gives rosé, and days or weeks give red."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A dry wine can smell sweet.",
+      "answer": true,
+      "explanation": "Yes. Aromas of ripe fruit or honey can suggest sweetness, but dry is about sugar on the palate, not the nose."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are typical of a full-bodied red?",
+      "options": [
+        "Thick-skinned grapes",
+        "A warm climate",
+        "Very low alcohol",
+        "High tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Thick skins and warmth give colour, tannin and alcohol. Low alcohol points to a lighter wine."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The rosé method that bleeds juice from a red tank is called ____.",
+      "options": [
+        "saignée",
+        "direct press",
+        "maceration",
+        "dosage"
+      ],
+      "answer": "saignée",
+      "explanation": "Saignée means bleeding. It gives a rosé and a more concentrated red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Wine is still, sparkling or fortified",
+        "Skin contact decides white, rosé or red",
+        "Sweetness is sugar; body is weight",
+        "Climate and grape shape the style within each colour"
+      ]
+    }
+  ]
+}

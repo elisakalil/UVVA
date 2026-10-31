@@ -1,0 +1,22 @@
+{
+  "id": "path-16",
+  "kind": "path",
+  "order": 16,
+  "level": "Advanced",
+  "complexity": "A",
+  "title": "Viticulture in Depth",
+  "description": "The vine's life cycle, site, soil, threats and farming philosophies, in the detail a professional needs.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-16-l01",
+    "path-16-l02",
+    "path-16-l03",
+    "path-16-l04",
+    "path-16-l05",
+    "path-16-l06",
+    "path-16-l07",
+    "path-16-l08"
+  ]
+}

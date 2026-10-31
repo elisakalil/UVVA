@@ -1,0 +1,31 @@
+{
+  "id": "grape-gewurztraminer",
+  "kind": "grape",
+  "order": 29,
+  "color": "white",
+  "title": "Gewürztraminer",
+  "aliases": [
+    "Traminer Aromatico",
+    "Savagnin Rose Aromatique"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "France",
+    "Germany",
+    "Italy"
+  ],
+  "points": "2 1 1 1 = 5",
+  "complexity": "B",
+  "description": "Also called Traminer Aromatico in Italy. Lychee, rose and ginger: the most recognisable aromatic white grape.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-gewurztraminer-l01",
+    "grape-gewurztraminer-l02",
+    "grape-gewurztraminer-l03",
+    "grape-gewurztraminer-l04",
+    "grape-gewurztraminer-l05",
+    "grape-gewurztraminer-l06"
+  ]
+}

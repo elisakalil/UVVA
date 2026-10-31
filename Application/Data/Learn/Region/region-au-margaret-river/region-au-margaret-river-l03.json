@@ -1,0 +1,70 @@
+{
+  "id": "region-au-margaret-river-l03",
+  "moduleId": "region-au-margaret-river",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Margaret River and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Margaret River label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape or blend, Margaret River GI, and vintage, with Australia's 85% rules. Blends list grapes by share, like Cabernet Merlot. SBS or SSB indicates which white grape dominates. Screw caps are standard. Some producers name single vineyards or sub-regions, like Wilyabrup, an informal area home to several founding estates.",
+      "highlight": "GI, blends by share, screw caps"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Margaret River Cabernet suits lamb, beef and kangaroo; Chardonnay suits marron, a local freshwater crayfish, lobster and roast chicken; SBS suits oysters, fish and salads. The region is also known for surf, forests and seafood. Serve Cabernet at 16 to 18 degrees, Chardonnay at 10 to 12, SBS at 7 to 9.",
+      "highlight": "Marron, lamb, oysters"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is marron?",
+      "options": [
+        "A local freshwater crayfish",
+        "A grape",
+        "A wine style",
+        "A wind"
+      ],
+      "answer": 0,
+      "explanation": "A Western Australian delicacy that suits Chardonnay."
+    },
+    {
+      "type": "tip",
+      "body": "Margaret River Cabernet and Chardonnay age well: good examples develop for 10 to 20 years."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Margaret River Chardonnay?",
+      "options": [
+        "Marron",
+        "Lobster",
+        "Roast chicken",
+        "Chocolate cake"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Chocolate cake needs a sweet wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the GI and blend by share",
+        "Cabernet suits lamb; Chardonnay suits marron; SBS suits oysters",
+        "Top wines age 10 to 20 years"
+      ]
+    }
+  ]
+}

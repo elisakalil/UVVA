@@ -1,0 +1,77 @@
+{
+  "id": "grape-petit-verdot-l03",
+  "moduleId": "grape-petit-verdot",
+  "order": 3,
+  "title": "Beyond the Bordeaux blend",
+  "subtitle": "Petit Verdot on its own",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe varietal Petit Verdot",
+    "Name regions known for it",
+    "Explain how winemakers handle it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A varietal wine",
+      "body": "Made alone, Petit Verdot gives intense, dark wines with violet, blueberry, liquorice and spice, firm tannin and bright acidity. It can be austere young. Warm regions give rounder, riper styles. In Virginia, it has become a signature grape, ripening well in humid summers thanks to loose bunches that resist rot.",
+      "highlight": "Intense, floral, structured"
+    },
+    {
+      "type": "concept",
+      "title": "Handling it",
+      "body": "Winemakers often pick it late for full ripeness, use gentle extraction to avoid harshness, and age it in oak to soften tannins. Some blend in a little Cabernet or Shiraz to round it out. Its high acidity helps it age, and good examples develop for a decade or more.",
+      "highlight": "Ripe picking, gentle extraction, oak"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Petit Verdot role.",
+      "pairs": [
+        {
+          "left": "Médoc",
+          "right": "Small part of blends"
+        },
+        {
+          "left": "Virginia",
+          "right": "A signature grape"
+        },
+        {
+          "left": "Riverland",
+          "right": "Ripe varietal wines"
+        },
+        {
+          "left": "La Mancha",
+          "right": "Spanish varietal plantings"
+        }
+      ],
+      "explanation": "Petit Verdot plays different roles in different places."
+    },
+    {
+      "type": "tip",
+      "body": "If you find a varietal Petit Verdot, decant it. Its tannins open up with air, and the violet aromas become clearer."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Petit Verdot handle Virginia's humid summers?",
+      "options": [
+        "Thick skins and loose bunches resist rot",
+        "It ripens early",
+        "It's grown in greenhouses",
+        "It's sprayed with sugar"
+      ],
+      "answer": 0,
+      "explanation": "Loose bunches let air circulate, reducing rot in humid conditions."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Varietal Petit Verdot is intense, floral and firm",
+        "Ripe picking, gentle extraction and oak soften it",
+        "Virginia, Australia and Spain make notable examples"
+      ]
+    }
+  ]
+}

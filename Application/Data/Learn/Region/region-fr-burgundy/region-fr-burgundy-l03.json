@@ -1,0 +1,67 @@
+{
+  "id": "region-fr-burgundy-l03",
+  "moduleId": "region-fr-burgundy",
+  "order": 3,
+  "title": "The quality pyramid",
+  "subtitle": "Regional, village, Premier Cru, Grand Cru",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Burgundy's four levels",
+    "Read Grand Cru and Premier Cru labels",
+    "Explain the size of each level"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Four levels",
+      "body": "Burgundy's appellations form a pyramid. At the base, regional wines like Bourgogne, about half the production. Then village wines, named after a commune, like Gevrey-Chambertin. Then Premier Cru, named vineyards within a village, about 10%. At the top, 33 Grand Crus, about 1% of production.",
+      "highlight": "Regional, village, Premier Cru, Grand Cru"
+    },
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "A village wine names the village. A Premier Cru adds the vineyard, like Gevrey-Chambertin Premier Cru Clos Saint-Jacques. A Grand Cru names only the vineyard, like Chambertin or Montrachet. Many villages added their most famous Grand Cru to their name, so Gevrey became Gevrey-Chambertin. That can confuse: the village wine isn't the Grand Cru.",
+      "highlight": "Grand Crus name only the vineyard"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Burgundy's levels from broadest to most precise.",
+      "items": [
+        "Bourgogne",
+        "Village",
+        "Premier Cru",
+        "Grand Cru"
+      ],
+      "explanation": "Each level is smaller and more specific."
+    },
+    {
+      "type": "concept",
+      "title": "Domaines and négociants",
+      "body": "Because vineyards are split among many owners, a single climat can appear on many labels. Domaines grow and bottle their own grapes; négociants buy grapes or wine and bottle under their own name. Producer matters as much as appellation in Burgundy.",
+      "highlight": "Producer matters as much as place"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "About how many Grand Crus does Burgundy have?",
+      "options": [
+        "33",
+        "3",
+        "300",
+        "1,200"
+      ],
+      "answer": 0,
+      "explanation": "33 Grand Crus, about 1% of production."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgundy's pyramid: regional, village, Premier Cru, Grand Cru",
+        "Grand Crus name only the vineyard",
+        "Domaines and négociants both bottle; producer matters"
+      ]
+    }
+  ]
+}

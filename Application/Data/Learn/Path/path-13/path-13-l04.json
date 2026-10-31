@@ -1,0 +1,79 @@
+{
+  "id": "path-13-l04",
+  "moduleId": "path-13",
+  "order": 4,
+  "title": "Dried grapes",
+  "subtitle": "Raisins and passito",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how drying concentrates grapes",
+    "Name famous dried grape wines",
+    "Explain how dried grapes can make dry wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Drying after picking",
+      "body": "Grapes can be dried after harvest, on straw mats, in lofts or racks, or in the sun. Over weeks or months they lose 30 to 50% of their weight. The method is ancient and found all around the Mediterranean. In Italy it is called appassimento, and the wines are called passito.",
+      "highlight": "Dried after picking: passito"
+    },
+    {
+      "type": "concept",
+      "title": "Sweet and dry",
+      "body": "Most dried grape wines are sweet: Vin Santo from Tuscany, Recioto della Valpolicella, Sicily's Passito di Pantelleria, and Spain's Pedro Ximénez, dried in the sun. But fermentation can run to dryness too. Amarone della Valpolicella is made from dried Corvina grapes fermented nearly dry, giving a powerful red of around 15 to 16% alcohol.",
+      "highlight": "Amarone: dried grapes, dry wine"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Amarone is made from dried grapes, but fermented to be nearly ____.",
+      "options": [
+        "dry",
+        "sparkling",
+        "white",
+        "fortified"
+      ],
+      "answer": "dry",
+      "explanation": "Unlike Recioto, Amarone's fermentation continues until almost all the sugar is gone, giving a powerful, dry red."
+    },
+    {
+      "type": "concept",
+      "title": "Why drying changes flavour",
+      "body": "Drying doesn't just concentrate sugar. The berries start to oxidise and dry out, adding raisin, fig, dried cherry and chocolate notes. Some grapes get a touch of botrytis in drying lofts too. The result is rich, often high in alcohol, and long-lived.",
+      "highlight": "Raisin, fig and dried fruit"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its region.",
+      "pairs": [
+        {
+          "left": "Vin Santo",
+          "right": "Tuscany"
+        },
+        {
+          "left": "Amarone",
+          "right": "Valpolicella"
+        },
+        {
+          "left": "Pedro Ximénez",
+          "right": "Andalusia"
+        },
+        {
+          "left": "Passito di Pantelleria",
+          "right": "Sicily"
+        }
+      ],
+      "explanation": "Drying grapes is a Mediterranean tradition, from Spain to Sicily."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Drying grapes after picking concentrates sugar, acid and flavour",
+        "Vin Santo, Recioto and Pedro Ximénez are sweet dried grape wines",
+        "Amarone is made from dried grapes but fermented nearly dry"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "grape-muscat-l06",
+  "moduleId": "grape-muscat",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Muscat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Muscat",
+    "Compare its family members",
+    "Pair and serve its styles"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Muscat unique among wine grapes?",
+      "options": [
+        "Its wine smells of fresh grapes",
+        "It's always red",
+        "It has no aroma",
+        "It's always dry"
+      ],
+      "answer": 0,
+      "explanation": "Terpenes give it a grapey aroma."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its region.",
+      "pairs": [
+        {
+          "left": "Moscato",
+          "right": "Italy"
+        },
+        {
+          "left": "Moscatel",
+          "right": "Spain and Portugal"
+        },
+        {
+          "left": "Zibibbo",
+          "right": "Sicily"
+        },
+        {
+          "left": "Muskateller",
+          "right": "Austria and Germany"
+        }
+      ],
+      "explanation": "Muscat has many names."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Rutherglen Muscat is a light, sparkling wine.",
+      "answer": false,
+      "explanation": "Not true. It's dark, rich and fortified."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Muscat styles?",
+      "options": [
+        "Moscato d'Asti",
+        "Muscat de Beaumes-de-Venise",
+        "Rutherglen Muscat",
+        "Sancerre"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sancerre is Sauvignon Blanc."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Rutherglen's levels from youngest to oldest.",
+      "items": [
+        "Rutherglen",
+        "Classic",
+        "Grand",
+        "Rare"
+      ],
+      "explanation": "Rare is the oldest and most concentrated."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Muscat smells of grapes and orange blossom, thanks to terpenes",
+        "It's a large family, led by Muscat Blanc à Petits Grains",
+        "It makes dry, sparkling, sweet and fortified wines",
+        "Each style finds a match, from asparagus to toffee"
+      ]
+    }
+  ]
+}

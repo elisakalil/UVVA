@@ -1,0 +1,72 @@
+{
+  "id": "path-29-l03",
+  "moduleId": "path-29",
+  "order": 3,
+  "title": "The wine list",
+  "subtitle": "Reading a restaurant's offer",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how restaurants set prices",
+    "Read a wine list well",
+    "Explain the sommelier's role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Restaurant margins",
+      "body": "Restaurants usually mark wine up two to four times the shop price. Margins are often highest on the cheapest wines and lowest on expensive ones in percentage terms. Wine by the glass carries higher margins to cover waste. Some restaurants allow you to bring your own bottle, for a corkage fee.",
+      "highlight": "Two to four times the shop price"
+    },
+    {
+      "type": "concept",
+      "title": "Reading the list",
+      "body": "Good lists are organised by style or region, with vintages and producers. Look for lesser-known regions and grapes, which are often better value than famous names. The second cheapest wine is a classic choice, and restaurants know it, so it's not always the best value.",
+      "highlight": "Lesser-known regions are often better value"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where are you most likely to find value on a wine list?",
+      "options": [
+        "The most famous names",
+        "Lesser-known regions and grapes",
+        "The second cheapest wine",
+        "Champagne by the glass"
+      ],
+      "answer": 1,
+      "explanation": "Famous names carry a premium. Less familiar regions and grapes usually offer more quality for the price."
+    },
+    {
+      "type": "concept",
+      "title": "The sommelier",
+      "body": "A sommelier selects, stores and serves wine, and recommends pairings. Give them a price range and a style you like; it's their job to help. When a bottle is presented, check the label, then taste for faults, not preference. You can refuse a faulty bottle, but not one you simply don't like.",
+      "highlight": "Give a budget and a style"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What is the right thing to check when a sommelier pours a taste?",
+      "options": [
+        "That it's the wine you ordered",
+        "That it isn't faulty",
+        "That you love the taste",
+        "That it's at a sensible temperature"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "The tasting is to check for faults, not personal preference."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Restaurants mark wine up two to four times",
+        "Lesser-known regions often give the best value",
+        "Tell the sommelier your budget and style; taste for faults"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "path-09-l02",
+  "moduleId": "path-09",
+  "order": 2,
+  "title": "Sauvignon Blanc around the world",
+  "subtitle": "Loire, Marlborough and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare Loire and Marlborough Sauvignon Blanc",
+    "Explain where green and tropical aromas come from",
+    "Describe oaked Sauvignon from Bordeaux"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Loire",
+      "body": "Sauvignon Blanc's classic home is the Loire's Central Vineyards, mainly Sancerre and Pouilly-Fumé. Their cool climate and chalky or flinty soils give high acidity, citrus, green apple and a smoky, stony character. The wines are usually unoaked and restrained.",
+      "highlight": "Sancerre: citrus, stone, restraint"
+    },
+    {
+      "type": "concept",
+      "title": "Marlborough and the aroma chemistry",
+      "body": "Marlborough, in New Zealand, put Sauvignon on the world map in the 1980s with intense passion fruit, gooseberry and cut grass. Sunny days and cold nights give ripe fruit and high acidity together. The green notes come from pyrazines; the tropical notes from thiols, released during fermentation. Machine harvesting and skin contact can increase them.",
+      "highlight": "Pyrazines: green. Thiols: tropical."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compounds give Sauvignon Blanc its green, grassy aromas?",
+      "options": [
+        "Thiols",
+        "Pyrazines",
+        "Terpenes",
+        "Tannins"
+      ],
+      "answer": 1,
+      "explanation": "Pyrazines give grass and green pepper. Thiols give passion fruit and grapefruit. Terpenes are the floral compounds of Muscat and Riesling."
+    },
+    {
+      "type": "concept",
+      "title": "Bordeaux and Fumé Blanc",
+      "body": "In Bordeaux, Sauvignon is blended with Sémillon for dry whites, sometimes in oak, as in Pessac-Léognan. That gives fuller, waxy wines that can age. In California, Robert Mondavi named his oaked Sauvignon Fumé Blanc in the 1960s, borrowing from Pouilly-Fumé. Chile and South Africa also make fine examples from coastal sites.",
+      "highlight": "Bordeaux blends it with Sémillon"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Sauvignon Blanc style.",
+      "pairs": [
+        {
+          "left": "Sancerre",
+          "right": "Citrus, flint, restrained"
+        },
+        {
+          "left": "Marlborough",
+          "right": "Passion fruit and grass"
+        },
+        {
+          "left": "Pessac-Léognan",
+          "right": "Oaked, blended with Sémillon"
+        },
+        {
+          "left": "California Fumé Blanc",
+          "right": "Oaked, fuller style"
+        }
+      ],
+      "explanation": "The same grape gives very different wines, from restrained to exuberant."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Loire gives restrained, mineral Sauvignon",
+        "Marlborough gives intense passion fruit and grass",
+        "Bordeaux blends it with Sémillon, sometimes in oak"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "path-10-l05",
+  "moduleId": "path-10",
+  "order": 5,
+  "title": "Tempranillo and Sangiovese",
+  "subtitle": "Spain's and Italy's great reds",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tempranillo in Rioja and Ribera",
+    "Describe Sangiovese in Tuscany",
+    "Compare the two grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tempranillo",
+      "body": "Tempranillo is Spain's leading red grape, early-ripening, as its name, from temprano, suggests. In Rioja it is often blended with Garnacha and aged in oak, traditionally American, giving vanilla, coconut and red fruit. In Ribera del Duero, high on the plateau, it's called Tinto Fino and gives darker, more powerful wines. In Portugal it's Tinta Roriz or Aragonez.",
+      "highlight": "Tempranillo: red fruit and oak"
+    },
+    {
+      "type": "concept",
+      "title": "Sangiovese",
+      "body": "Sangiovese is Italy's most planted red. Its thin skins and high acidity give medium colour, firm tannin, sour cherry, tomato leaf and dried herbs. It's the grape of Chianti and Chianti Classico, of Brunello di Montalcino, which must be 100% Sangiovese, and of Vino Nobile di Montepulciano. Its acidity makes it great with tomato-based food.",
+      "highlight": "Sangiovese: sour cherry and high acidity"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its description.",
+      "pairs": [
+        {
+          "left": "Rioja",
+          "right": "Tempranillo, often American oak"
+        },
+        {
+          "left": "Ribera del Duero",
+          "right": "Tinto Fino, high plateau"
+        },
+        {
+          "left": "Brunello di Montalcino",
+          "right": "Pure Sangiovese by law"
+        },
+        {
+          "left": "Chianti Classico",
+          "right": "Sangiovese, other grapes allowed"
+        }
+      ],
+      "explanation": "Tempranillo leads in Spain; Sangiovese in central Italy."
+    },
+    {
+      "type": "tip",
+      "body": "When you taste a red with sour cherry and tea-like tannin that makes you crave pasta with tomato sauce, think Sangiovese. If it smells of vanilla, leather and strawberry, think Rioja."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Brunello di Montalcino must be made entirely from Sangiovese.",
+      "answer": true,
+      "explanation": "Yes. Brunello di Montalcino is 100% Sangiovese by law, unlike Chianti, which can include other grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tempranillo leads Rioja and Ribera del Duero, often with oak",
+        "Sangiovese gives Chianti and Brunello their sour cherry and acidity",
+        "Both have regional names and long ageing traditions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "region-nz-central-otago",
+  "kind": "region",
+  "order": 48,
+  "country": "New Zealand",
+  "countryCode": "NZ",
+  "title": "Central Otago",
+  "grapes": [
+    "Pinot Noir"
+  ],
+  "points": "1 0 0 1 = 2",
+  "complexity": "D",
+  "description": "The world's southernmost major wine region: mountains, schist and vivid Pinot Noir.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-nz-central-otago-l01",
+    "region-nz-central-otago-l02",
+    "region-nz-central-otago-l03",
+    "region-nz-central-otago-l04"
+  ]
+}

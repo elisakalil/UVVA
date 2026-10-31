@@ -1,0 +1,62 @@
+{
+  "id": "grape-cabernet-franc-l04",
+  "moduleId": "grape-cabernet-franc",
+  "order": 4,
+  "title": "Cabernet Franc in Bordeaux",
+  "subtitle": "A blending partner",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Cabernet Franc's role in Bordeaux blends",
+    "Name Bordeaux wines with high Cabernet Franc",
+    "Explain why it suits the Right Bank"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A supporting role",
+      "body": "In Bordeaux, Cabernet Franc is about 10% of red plantings. It adds aromatic lift, freshness and fine tannins to blends. On the Left Bank, it's a minor partner to Cabernet Sauvignon. On the Right Bank, in Saint-Émilion and Pomerol, it often plays a bigger role alongside Merlot.",
+      "highlight": "Aromatic lift in blends"
+    },
+    {
+      "type": "concept",
+      "title": "Cheval Blanc and Ausone",
+      "body": "Château Cheval Blanc, in Saint-Émilion, often uses over 50% Cabernet Franc, on gravel and clay near Pomerol. Château Ausone, on limestone slopes, also uses around half. These show Cabernet Franc can make some of the world's greatest wines, with perfume, freshness and longevity.",
+      "highlight": "Cheval Blanc: over half Cabernet Franc"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Saint-Émilion estate often uses over 50% Cabernet Franc?",
+      "options": [
+        "Pétrus",
+        "Château Cheval Blanc",
+        "Château Margaux",
+        "Château d'Yquem"
+      ],
+      "answer": 1,
+      "explanation": "Cheval Blanc is famous for its high share of Cabernet Franc."
+    },
+    {
+      "type": "concept",
+      "title": "Why the Right Bank",
+      "body": "The Right Bank's cooler clay and limestone suit early-ripening grapes. Cabernet Franc ripens before Cabernet Sauvignon, so it does well there. Limestone slopes give it freshness and structure, complementing Merlot's plumpness.",
+      "highlight": "Cool soils suit early ripening"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cabernet Franc is the most planted grape in Bordeaux.",
+      "answer": false,
+      "explanation": "Not true. Merlot is the most planted. Cabernet Franc is about 10%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Franc adds lift and freshness to Bordeaux blends",
+        "Cheval Blanc and Ausone use a high share",
+        "It suits the Right Bank's cooler soils"
+      ]
+    }
+  ]
+}

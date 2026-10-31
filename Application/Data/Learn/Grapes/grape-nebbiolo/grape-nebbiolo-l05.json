@@ -1,0 +1,65 @@
+{
+  "id": "grape-nebbiolo-l05",
+  "moduleId": "grape-nebbiolo",
+  "order": 5,
+  "title": "Tannin and time",
+  "subtitle": "Why Nebbiolo needs patience",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why Nebbiolo needs ageing",
+    "Describe how it changes with age",
+    "Know when to drink it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Built to last",
+      "body": "Nebbiolo's very high tannin and acidity make young Barolo and Barbaresco firm, even harsh. Over years, tannins polymerise, linking into longer chains that feel softer. Acidity preserves freshness. Traditionally, Barolo needed 10 years or more before it was ready.",
+      "highlight": "Tannins soften with years"
+    },
+    {
+      "type": "concept",
+      "title": "How it changes",
+      "body": "Young Nebbiolo shows red cherry, rose and fresh herbs. With age, it fades to garnet and brick, and develops tar, leather, truffle, dried roses, tobacco and forest floor. The finest can last 30 to 50 years. Modern winemaking has made many approachable sooner, but the best still reward patience.",
+      "highlight": "Garnet, truffle, dried roses"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What happens to Nebbiolo's tannins over time?",
+      "options": [
+        "They polymerise and feel softer",
+        "They disappear completely",
+        "They become sweet",
+        "They turn white"
+      ],
+      "answer": 0,
+      "explanation": "Tannins bind into longer chains that feel smoother."
+    },
+    {
+      "type": "tip",
+      "body": "Decant young Barolo for several hours before serving. Old Barolo needs only a short, gentle decant to remove sediment."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these colours as a Nebbiolo ages.",
+      "items": [
+        "Ruby",
+        "Garnet",
+        "Brick",
+        "Tawny"
+      ],
+      "explanation": "Nebbiolo starts pale and turns orange-brown with age."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nebbiolo's high tannin and acidity need time to soften",
+        "With age it develops truffle, tar and dried roses",
+        "The finest Barolo lasts 30 to 50 years"
+      ]
+    }
+  ]
+}

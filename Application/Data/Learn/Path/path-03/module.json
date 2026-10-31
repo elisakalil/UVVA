@@ -1,0 +1,21 @@
+{
+  "id": "path-03",
+  "kind": "path",
+  "order": 3,
+  "level": "Essentials",
+  "complexity": "B",
+  "title": "The Principal Grapes",
+  "description": "The eight grapes behind most of the wine you'll ever be offered, and what each one tastes like.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "path-03-l01",
+    "path-03-l02",
+    "path-03-l03",
+    "path-03-l04",
+    "path-03-l05",
+    "path-03-l06",
+    "path-03-l07"
+  ]
+}

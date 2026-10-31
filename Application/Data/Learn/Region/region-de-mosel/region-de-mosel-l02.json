@@ -1,0 +1,77 @@
+{
+  "id": "region-de-mosel-l02",
+  "moduleId": "region-de-mosel",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Riesling above all",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Riesling's dominance",
+    "Name the Mosel's other grapes",
+    "Describe Mosel Riesling's style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Riesling",
+      "body": "Riesling covers about 62% of the Mosel's vineyards, and almost all its fine wine. It buds and ripens late, tolerates cold winters, and keeps high acidity. On the Mosel's slate, it gives light, delicate wines with green apple, peach, citrus, flowers and a smoky, slatey mineral edge.",
+      "highlight": "About 62% Riesling"
+    },
+    {
+      "type": "concept",
+      "title": "Other grapes and style",
+      "body": "Müller-Thurgau, a cross created in 1882, is grown on flatter land. Elbling, an ancient grape, grows in the Upper Mosel, often for sparkling Sekt. Pinot Noir and Pinot Blanc are increasing. Mosel Riesling is famous for low alcohol, often 7.5 to 10%, with sugar balanced by fierce acidity; but dry styles are growing.",
+      "highlight": "Low alcohol, high acidity"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Riesling",
+          "right": "Main grape, fine wine"
+        },
+        {
+          "left": "Müller-Thurgau",
+          "right": "Flatter land, everyday"
+        },
+        {
+          "left": "Elbling",
+          "right": "Upper Mosel, Sekt"
+        },
+        {
+          "left": "Pinot Noir",
+          "right": "Growing red"
+        }
+      ],
+      "explanation": "Riesling dominates, with supporting grapes."
+    },
+    {
+      "type": "tip",
+      "body": "A Mosel Riesling Kabinett at 8% alcohol shows how wine can be intensely flavoured without weight."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Mosel Riesling often have low alcohol?",
+      "options": [
+        "Grapes ripen slowly, and some sugar is left in the wine",
+        "Water is added",
+        "It's distilled",
+        "It's made from unripe white grapes only"
+      ],
+      "answer": 0,
+      "explanation": "Cool ripening and residual sugar keep alcohol low."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling is about 62% of vineyards and most fine wine",
+        "Mosel Riesling is light, high in acidity, often off-dry",
+        "Müller-Thurgau and Elbling play supporting roles"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "grape-merlot-l01",
+  "moduleId": "grape-merlot",
+  "order": 1,
+  "title": "Meet Merlot",
+  "subtitle": "Plum and velvet",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Merlot's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Soft and plummy",
+      "body": "Merlot gives medium to full-bodied reds with plum, black cherry, blackberry and, with oak, chocolate and vanilla. Tannins are softer than Cabernet Sauvignon's, acidity medium. It's approachable young and can age well when grown on great sites. It's the second most planted red grape in the world.",
+      "highlight": "Plum, softer tannins"
+    },
+    {
+      "type": "concept",
+      "title": "Origins",
+      "body": "Merlot comes from Bordeaux, first recorded in 1784. Its name may come from merle, the French for blackbird, which loves its ripe grapes. DNA shows its parents are Cabernet Franc and Magdeleine Noire des Charentes, so it's a half-sibling of Cabernet Sauvignon. Its large, thinner-skinned berries explain its softer tannins.",
+      "highlight": "Named after the blackbird"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where may Merlot's name come from?",
+      "options": [
+        "A Bordeaux château",
+        "The French word for blackbird",
+        "A river",
+        "A winemaker"
+      ],
+      "answer": 1,
+      "explanation": "Merle means blackbird, a bird that loves its ripe grapes."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for medium to deep ruby colour, plum and black cherry aromas, and a rounder, softer palate than Cabernet, with less obvious blackcurrant. Cool-climate Merlot can show herbal or green notes; warm-climate Merlot is ripe and fruity, sometimes jammy.",
+      "highlight": "Round, plummy, softer than Cabernet"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Merlot has larger berries and thinner skins than Cabernet Sauvignon.",
+      "answer": true,
+      "explanation": "Yes. That's why its tannins are softer and its wines rounder."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot gives plum, black cherry and soft tannins",
+        "It comes from Bordeaux; its name may mean blackbird",
+        "It's a half-sibling of Cabernet Sauvignon"
+      ]
+    }
+  ]
+}

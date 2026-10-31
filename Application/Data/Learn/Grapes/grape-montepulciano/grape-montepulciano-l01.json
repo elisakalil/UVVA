@@ -1,0 +1,62 @@
+{
+  "id": "grape-montepulciano-l01",
+  "moduleId": "grape-montepulciano",
+  "order": 1,
+  "title": "Meet Montepulciano",
+  "subtitle": "Deep colour, soft heart",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Montepulciano's flavours and structure",
+    "Avoid the confusion with the Tuscan town",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Generous and dark",
+      "body": "Montepulciano gives deep-coloured reds with ripe black cherry, plum, blackberry and dried herbs, sometimes liquorice. Tannins are plentiful but soft and ripe, acidity moderate. It's one of Italy's most planted red grapes and often offers good value.",
+      "highlight": "Black cherry, soft tannin, deep colour"
+    },
+    {
+      "type": "concept",
+      "title": "Not the town",
+      "body": "Montepulciano the grape has nothing to do with Montepulciano the Tuscan town, which makes Vino Nobile di Montepulciano from Sangiovese. The grape is grown mainly on the Adriatic side of central Italy. The confusion is so common that it's worth remembering: grape plus region, as in Montepulciano d'Abruzzo.",
+      "highlight": "Grape in Abruzzo; town in Tuscany"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Vino Nobile di Montepulciano made from?",
+      "options": [
+        "Montepulciano grape",
+        "Mainly Sangiovese",
+        "Nebbiolo",
+        "Aglianico"
+      ],
+      "answer": 1,
+      "explanation": "Vino Nobile is a Tuscan wine made mainly from Sangiovese, named after the town."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep purple-ruby colour, ripe dark fruit and a soft, round texture with plenty of gentle tannin. It's less acidic than Sangiovese, rounder than Aglianico. A slightly bitter, herbal finish is common.",
+      "highlight": "Round, ripe, slightly bitter finish"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Montepulciano d'Abruzzo is made in the Tuscan town of Montepulciano.",
+      "answer": false,
+      "explanation": "Not true. It's made from the Montepulciano grape in Abruzzo, on the Adriatic coast."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Montepulciano gives deep, ripe, soft reds",
+        "The grape is unrelated to the Tuscan town",
+        "It's rounder and less acidic than Sangiovese"
+      ]
+    }
+  ]
+}

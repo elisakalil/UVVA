@@ -1,0 +1,60 @@
+{
+  "id": "region-de-pfalz-l04",
+  "moduleId": "region-de-pfalz",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Pfalz and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Pfalz label",
+    "Pair Pfalz wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show producer, village plus vineyard, like Forster Pechstein, the grape, and trocken or GG for dry wines. VDP estates use Gutswein, Ortswein, Erste Lage and Grosse Lage. Some producers use Prädikat terms only for sweet wines. The Pfalz also makes Sekt, sparkling wine.",
+      "highlight": "Village, vineyard, trocken, GG"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "The Pfalz's food is hearty: Saumagen, stuffed pig's stomach, a regional speciality; Flammkuchen, a thin bacon and onion tart; sausages and sauerkraut; and chestnuts. Dry Riesling suits pork, sausages and Flammkuchen; Spätburgunder suits game and duck; Scheurebe suits spicy food. Serve Riesling at 8 to 11 degrees.",
+      "highlight": "Saumagen, Flammkuchen"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which regional Pfalz dish is a classic with dry Riesling?",
+      "options": [
+        "Saumagen",
+        "Paella",
+        "Sushi",
+        "Pizza"
+      ],
+      "answer": 0,
+      "explanation": "Stuffed pig's stomach is a Pfalz speciality."
+    },
+    {
+      "type": "tip",
+      "body": "In the Pfalz, wine is often served in a Dubbeglas, a dimpled half-litre glass, at village wine festivals like the Dürkheimer Wurstmarkt."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Pfalz makes mostly sweet Riesling.",
+      "answer": false,
+      "explanation": "Not true. Most Pfalz Riesling is dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show village, vineyard and trocken or GG",
+        "Dry Riesling suits Saumagen, Flammkuchen and pork",
+        "Serve at 8 to 11 degrees"
+      ]
+    }
+  ]
+}

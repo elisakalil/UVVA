@@ -1,0 +1,96 @@
+{
+  "id": "region-it-piedmont-l07",
+  "moduleId": "region-it-piedmont",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Piedmont",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Piedmont's geography and grapes",
+    "Compare Barolo and Barbaresco",
+    "Read and pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its rule.",
+      "pairs": [
+        {
+          "left": "Barolo",
+          "right": "38 months' ageing"
+        },
+        {
+          "left": "Barbaresco",
+          "right": "26 months' ageing"
+        },
+        {
+          "left": "Nizza",
+          "right": "Top Barbera DOCG"
+        },
+        {
+          "left": "Moscato d'Asti",
+          "right": "About 5.5% alcohol"
+        }
+      ],
+      "explanation": "Piedmont has precise rules."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which slopes are reserved for Nebbiolo?",
+      "options": [
+        "The warmest, south-facing ones",
+        "The coolest",
+        "The valley floors",
+        "North-facing ones"
+      ],
+      "answer": 0,
+      "explanation": "Nebbiolo ripens last and needs the best sites."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Barolo must be 100% Nebbiolo.",
+      "answer": true,
+      "explanation": "Yes, like Barbaresco."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Piedmont grapes?",
+      "options": [
+        "Nebbiolo",
+        "Barbera",
+        "Arneis",
+        "Sangiovese"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sangiovese is Tuscany's grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Piedmont's official vineyard areas in Barolo are called ____.",
+      "options": [
+        "MGA",
+        "UGA",
+        "AVA",
+        "Rive"
+      ],
+      "answer": "MGA",
+      "explanation": "Menzioni Geografiche Aggiuntive."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Piedmont is foggy, hilly and all DOC or DOCG",
+        "Nebbiolo makes Barolo and Barbaresco on the best slopes",
+        "Barbera, Dolcetto and Moscato make everyday wines",
+        "Its rich food, from truffle to brasato, suits its wines"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "region-pt-vinho-verde-l01",
+  "moduleId": "region-pt-vinho-verde",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "The green Minho",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Vinho Verde's geography",
+    "Explain its Atlantic climate",
+    "Explain the meaning of its name"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Portugal's largest DOC",
+      "body": "Vinho Verde covers the Minho, Portugal's green north-west, between the Minho river, on the Spanish border, and the Douro, and from the Atlantic inland. It's Portugal's largest DOC, about 21,000 hectares, divided into nine sub-regions, like Monção e Melgaço, Lima, Cávado and Basto. Granite soils dominate.",
+      "highlight": "Nine sub-regions, granite"
+    },
+    {
+      "type": "concept",
+      "title": "Wet and green",
+      "body": "The climate is Atlantic: mild, humid and wet, often 1,200 to 2,000 mm of rain a year. That keeps the landscape green and the grapes fresh, but brings disease. Traditionally, vines grew high on trees, pergolas and tall trellises, called enforcado and ramada, letting air circulate and leaving land below for food crops.",
+      "highlight": "Rain, humidity, high-trained vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why were Vinho Verde vines traditionally trained high?",
+      "options": [
+        "To let air circulate and free land below for crops",
+        "To avoid the sun",
+        "To make harvest easier",
+        "To keep birds away"
+      ],
+      "answer": 0,
+      "explanation": "Height reduced rot and allowed farming underneath."
+    },
+    {
+      "type": "concept",
+      "title": "Green wine",
+      "body": "Verde means green, but it refers to youth, not colour: the wine is drunk young and fresh. The name also echoes the region's green landscape. Vinho Verde can be white, red or rosé, though white dominates today. The DOC was demarcated in 1908.",
+      "highlight": "Verde means young, not green in colour"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vinho Verde means the wine is green in colour.",
+      "answer": false,
+      "explanation": "Not true. Verde refers to youth and freshness, and to the green landscape."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vinho Verde is Portugal's largest DOC, in the green north-west",
+        "Its Atlantic climate is wet and humid",
+        "Verde means young and fresh, not green in colour"
+      ]
+    }
+  ]
+}

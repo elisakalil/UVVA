@@ -1,0 +1,77 @@
+{
+  "id": "region-es-rioja-l02",
+  "moduleId": "region-es-rioja",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Tempranillo and partners",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Rioja's red grapes",
+    "Name its white grapes",
+    "Explain blending in Rioja"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Tempranillo covers about 88% of Rioja's red vineyards: red cherry, strawberry, leather and tobacco, with moderate acidity. Garnacha adds body, alcohol and red fruit, especially in the warmer east. Graciano adds acidity, colour and aroma, but is low-yielding. Mazuelo, Carignan, adds acidity and tannin. Maturana Tinta is a revived native.",
+      "highlight": "Tempranillo, Garnacha, Graciano, Mazuelo"
+    },
+    {
+      "type": "concept",
+      "title": "Whites and rosés",
+      "body": "White Rioja is mainly Viura, Macabeo elsewhere, with Malvasía and Garnacha Blanca, and since 2007, some Tempranillo Blanco, Verdejo and others. Traditional white Rioja is aged long in oak, nutty and oxidative, as at López de Heredia. Rioja also makes rosado, mostly from Garnacha and Tempranillo.",
+      "highlight": "Viura for whites"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Tempranillo",
+          "right": "Backbone of most blends"
+        },
+        {
+          "left": "Garnacha",
+          "right": "Body and alcohol"
+        },
+        {
+          "left": "Graciano",
+          "right": "Acidity and aroma"
+        },
+        {
+          "left": "Viura",
+          "right": "Main white grape"
+        }
+      ],
+      "explanation": "Rioja blends grapes for balance."
+    },
+    {
+      "type": "tip",
+      "body": "Traditional white Rioja, aged for years in oak, is one of Spain's most distinctive wines, nutty and complex."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What share of Rioja's red vineyards is Tempranillo?",
+      "options": [
+        "About 88%",
+        "About 10%",
+        "100%",
+        "About 50%"
+      ],
+      "answer": 0,
+      "explanation": "Tempranillo dominates."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tempranillo is about 88% of Rioja's reds",
+        "Garnacha, Graciano and Mazuelo add body, acidity and colour",
+        "Viura leads the whites"
+      ]
+    }
+  ]
+}

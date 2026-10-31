@@ -1,0 +1,73 @@
+{
+  "id": "path-04-l03",
+  "moduleId": "path-04",
+  "order": 3,
+  "title": "Smell",
+  "subtitle": "Training your nose",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Judge the intensity of a wine's aromas",
+    "Sort aromas into primary, secondary and tertiary",
+    "Smell in a way that finds more aromas"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Intensity first",
+      "body": "Before naming aromas, judge how strong they are: light, medium or pronounced. Then ask what they remind you of. A young Sauvignon Blanc jumps out of the glass; a young Chardonnay from a cool place may be much quieter. Neither is better, but it tells you about the grape and style.",
+      "highlight": "Light, medium or pronounced"
+    },
+    {
+      "type": "concept",
+      "title": "Three families of aroma",
+      "body": "Primary aromas come from the grape and fermentation: fruit, flowers, herbs. Secondary aromas come from winemaking: vanilla and toast from oak, butter from malolactic, bread from lees. Tertiary aromas come from age: leather, mushroom, honey, nuts, dried fruit. Naming the family tells you how the wine was made and how old it is.",
+      "highlight": "Grape, winery, time"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Vanilla and toast in a wine usually come from:",
+      "options": [
+        "The grape itself",
+        "Oak, in the winery",
+        "Long bottle age",
+        "The soil"
+      ],
+      "answer": 1,
+      "explanation": "Vanilla and toast are secondary aromas from oak barrels. Bottle age gives tertiary notes like leather and honey instead."
+    },
+    {
+      "type": "concept",
+      "title": "How to smell",
+      "body": "Swirl to lift aromas, then take short sniffs rather than one long one; your nose tires within seconds. Start with broad groups, like fruit or flowers, then narrow down: red fruit, then strawberry or cherry. Smelling real fruit, herbs and spices at home is the fastest way to build your vocabulary.",
+      "highlight": "Short sniffs, broad to narrow"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these are tertiary aromas, from age?",
+      "options": [
+        "Dried fig",
+        "Leather",
+        "Fresh lime",
+        "Mushroom",
+        "Green apple"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Dried fruit, leather and mushroom develop with years in bottle or barrel. Fresh lime and green apple are primary fruit."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Judge intensity before naming aromas",
+        "Primary aromas come from the grape, secondary from winemaking, tertiary from age",
+        "Short sniffs, broad to narrow, build skill fastest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "region-us-washington-state-l03",
+  "moduleId": "region-us-washington-state",
+  "order": 3,
+  "title": "The Columbia Valley desert",
+  "subtitle": "Irrigated vineyards and own-rooted vines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain irrigation's role",
+    "Explain own-rooted vines",
+    "Name key sub-AVAs"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Irrigation",
+      "body": "Without irrigation, most of eastern Washington couldn't grow vines. Water from rivers and the Cascades' snowmelt is applied by drip, giving growers precise control. Mild water stress can be managed to keep berries small and concentrated. The desert air also limits disease, so fewer sprays are needed.",
+      "highlight": "Drip irrigation gives control"
+    },
+    {
+      "type": "concept",
+      "title": "Sandy soils and cold",
+      "body": "Soils are mostly wind-blown loess and sand, over basalt, left by the Missoula Floods at the end of the last ice age. Phylloxera struggles in sand, so most vines are planted on their own roots. The main risk is winter cold: temperatures can drop below minus 20 degrees, killing vines. Growers plant on slopes for air drainage.",
+      "highlight": "Own-rooted vines, winter freezes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are most Washington vines own-rooted?",
+      "options": [
+        "Sandy soils limit phylloxera",
+        "Grafting is illegal",
+        "There are no pests",
+        "Vines are replanted each year"
+      ],
+      "answer": 0,
+      "explanation": "Phylloxera struggles in sandy soils."
+    },
+    {
+      "type": "concept",
+      "title": "Sub-AVAs",
+      "body": "Washington has 20 AVAs. Red Mountain, small and warm, gives powerful Cabernet. Walla Walla Valley, straddling Oregon, gives Syrah and Cabernet; its Rocks District, of cobblestones, is famous for savoury Syrah. Yakima Valley, the oldest AVA, from 1983, grows many grapes. Horse Heaven Hills, near the Columbia, is large and windy.",
+      "highlight": "Red Mountain, Walla Walla, Yakima"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Washington AVAs?",
+      "options": [
+        "Red Mountain",
+        "Walla Walla Valley",
+        "Yakima Valley",
+        "Willamette Valley"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Willamette Valley is in Oregon."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Drip irrigation makes Washington's desert vineyards possible",
+        "Sandy soils let vines grow on their own roots",
+        "Red Mountain, Walla Walla and Yakima are key AVAs"
+      ]
+    }
+  ]
+}

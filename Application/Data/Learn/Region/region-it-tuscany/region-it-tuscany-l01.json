@@ -1,0 +1,62 @@
+{
+  "id": "region-it-tuscany-l01",
+  "moduleId": "region-it-tuscany",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Hills between Florence and the sea",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tuscany's geography",
+    "Explain its climate",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Hills and coast",
+      "body": "Tuscany, in central Italy, stretches from the Apennines in the east to the Tyrrhenian Sea in the west. Most vineyards are on hills between 150 and 600 m, among olive groves and cypresses. The heart is Chianti, between Florence and Siena. South are Montalcino and Montepulciano; on the coast, Bolgheri and the Maremma.",
+      "highlight": "Chianti, Montalcino, the coast"
+    },
+    {
+      "type": "concept",
+      "title": "Mediterranean with altitude",
+      "body": "Tuscany has a Mediterranean climate: hot, dry summers and mild winters. Inland, altitude and hills bring cool nights that preserve acidity. The coast is warmer, with sea breezes. Soils include galestro, a crumbly schist-like marl, and alberese, a hard limestone, both prized for Sangiovese.",
+      "highlight": "Galestro and alberese"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which soils are prized for Sangiovese in Tuscany?",
+      "options": [
+        "Galestro and alberese",
+        "Slate and quartz",
+        "Volcanic ash",
+        "Peat"
+      ],
+      "answer": 0,
+      "explanation": "Galestro marl and alberese limestone give fine Sangiovese."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "The Etruscans made wine here before the Romans. In 1716, Cosimo III de' Medici, Grand Duke of Tuscany, defined the boundaries of Chianti, Carmignano, Pomino and Valdarno, one of the earliest legal wine regions. In the 1870s, Baron Bettino Ricasoli set a Chianti formula led by Sangiovese.",
+      "highlight": "Cosimo III's 1716 boundaries"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chianti's borders were defined in 1716.",
+      "answer": true,
+      "explanation": "Yes, by Cosimo III de' Medici."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tuscany runs from the Apennines to the sea",
+        "Hills and altitude cool its Mediterranean climate",
+        "Cosimo III defined Chianti in 1716"
+      ]
+    }
+  ]
+}

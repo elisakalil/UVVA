@@ -1,0 +1,60 @@
+{
+  "id": "region-fr-beaujolais-l04",
+  "moduleId": "region-fr-beaujolais",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Beaujolais and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Beaujolais Nouveau",
+    "Pair Beaujolais with food",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Nouveau",
+      "body": "Beaujolais Nouveau is released on the third Thursday of November, weeks after harvest, made quickly by semi-carbonic maceration to be drunk at once. Its success from the 1970s to the 1990s made Beaujolais famous, but also hurt its image for serious wine. Today, crus and natural wine producers, like Marcel Lapierre, have restored its reputation.",
+      "highlight": "Third Thursday of November"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Beaujolais is one of the most food-friendly reds: charcuterie, saucisson, roast chicken, pâté, Lyon's bistro dishes, salads, even salmon. Crus suit duck, pork and coq au vin. Serve slightly cool, at 12 to 14 degrees. Nouveau within months; crus from 2 to 10 years.",
+      "highlight": "Charcuterie, bistro food"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "When is Beaujolais Nouveau released?",
+      "options": [
+        "The third Thursday of November",
+        "January 1",
+        "Easter",
+        "Summer solstice"
+      ],
+      "answer": 0,
+      "explanation": "Weeks after the harvest."
+    },
+    {
+      "type": "tip",
+      "body": "On a wine list, a cru Beaujolais is often the best-value red. Look for Morgon, Fleurie or Moulin-à-Vent."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Beaujolais is best served slightly cool.",
+      "answer": true,
+      "explanation": "Yes. A slight chill, 12 to 14 degrees, brings out its fruit."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nouveau is released the third Thursday of November",
+        "Beaujolais suits charcuterie and bistro food",
+        "Serve at 12 to 14 degrees"
+      ]
+    }
+  ]
+}

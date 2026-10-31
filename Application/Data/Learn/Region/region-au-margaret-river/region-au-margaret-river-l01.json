@@ -1,0 +1,62 @@
+{
+  "id": "region-au-margaret-river-l01",
+  "moduleId": "region-au-margaret-river",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Between two oceans",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Margaret River's location",
+    "Explain its maritime climate",
+    "Explain its rise"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A peninsula",
+      "body": "Margaret River lies in the far south-west of Western Australia, about 270 km south of Perth, on a peninsula between the Indian Ocean to the west and the Southern Ocean to the south. It's about 110 km long and narrow. It has about 5,500 hectares of vines, only around 3% of Australia's, but around 20% of its premium wine.",
+      "highlight": "Indian and Southern Oceans"
+    },
+    {
+      "type": "concept",
+      "title": "Maritime and mild",
+      "body": "Margaret River has a maritime, Mediterranean climate, among the most maritime in Australia. Oceans moderate temperatures: small differences between summer and winter, and between day and night. Most rain falls in winter. Summers are warm, not hot. Soils are gravelly, sandy loams over granite, draining well. Strong winds in spring can affect flowering.",
+      "highlight": "Mild, with little temperature range"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What moderates Margaret River's climate?",
+      "options": [
+        "The surrounding oceans",
+        "High mountains",
+        "A desert",
+        "A large lake"
+      ],
+      "answer": 0,
+      "explanation": "Two oceans keep temperatures mild."
+    },
+    {
+      "type": "concept",
+      "title": "Its rise",
+      "body": "In 1965, Dr John Gladstones, an agricultural scientist, published research suggesting the region's climate was similar to Bordeaux's. Doctors founded the first wineries: Vasse Felix in 1967, then Moss Wood and Cullen. Leeuwin Estate, from the 1970s, made world-class Chardonnay. In a few decades it became one of Australia's top regions.",
+      "highlight": "Gladstones, 1965; Vasse Felix, 1967"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Margaret River was compared to Bordeaux's climate in the 1960s.",
+      "answer": true,
+      "explanation": "Yes, by Dr John Gladstones."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Margaret River lies between two oceans in Western Australia",
+        "Its maritime climate is mild and stable",
+        "Research from 1965 led to its first wineries"
+      ]
+    }
+  ]
+}

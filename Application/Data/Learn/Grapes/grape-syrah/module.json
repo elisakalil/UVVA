@@ -1,0 +1,32 @@
+{
+  "id": "grape-syrah",
+  "kind": "grape",
+  "order": 4,
+  "color": "red",
+  "title": "Syrah",
+  "aliases": [
+    "Shiraz"
+  ],
+  "origin": "France",
+  "countries": [
+    "France",
+    "Australia",
+    "United States",
+    "South Africa"
+  ],
+  "points": "2 2 2 1 = 7",
+  "complexity": "A",
+  "description": "Also called Shiraz. Pepper and smoke in the Rhône, ripe dark fruit in the Barossa.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-syrah-l01",
+    "grape-syrah-l02",
+    "grape-syrah-l03",
+    "grape-syrah-l04",
+    "grape-syrah-l05",
+    "grape-syrah-l06",
+    "grape-syrah-l07"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-loire-valley-l01",
+  "moduleId": "region-fr-loire-valley",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "The garden of France",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Loire's geography",
+    "Explain how climate changes along the river",
+    "Explain the Loire's history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A long river",
+      "body": "The Loire is France's longest river, about 1,000 km. Vineyards line it for over 400 km, from the Atlantic near Nantes inland to Sancerre and Pouilly. The region is divided into four parts: the Pays Nantais, Anjou-Saumur, Touraine and the Central Vineyards. It's known as the garden of France.",
+      "highlight": "Four parts along 400 km"
+    },
+    {
+      "type": "concept",
+      "title": "From maritime to continental",
+      "body": "Near the Atlantic, the Pays Nantais is maritime: mild and damp. Inland, through Anjou and Touraine, the climate becomes gradually more continental: warmer summers, colder winters. The Central Vineyards, near the centre of France, are continental. Throughout, the Loire is cool, keeping acidity high and alcohol moderate.",
+      "highlight": "Maritime west, continental east"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does the climate change as you move up the Loire from the Atlantic?",
+      "options": [
+        "From maritime to continental",
+        "From continental to tropical",
+        "It stays the same",
+        "It becomes desert"
+      ],
+      "answer": 0,
+      "explanation": "Ocean influence fades inland."
+    },
+    {
+      "type": "concept",
+      "title": "Châteaux and kings",
+      "body": "The Loire was the playground of French kings in the Renaissance, who built châteaux like Chambord and Chenonceau. Many were built from tuffeau, a soft, white limestone. The caves dug to extract it now serve as cellars, especially in Saumur and Vouvray. The valley between Sully-sur-Loire and Chalonnes is a UNESCO site.",
+      "highlight": "Tuffeau châteaux and cellars"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are parts of the Loire wine region?",
+      "options": [
+        "Pays Nantais",
+        "Anjou-Saumur",
+        "Touraine",
+        "Médoc"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Médoc is in Bordeaux."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Loire has four parts along 400 km of river",
+        "The climate shifts from maritime to continental",
+        "Tuffeau built its châteaux and cellars"
+      ]
+    }
+  ]
+}

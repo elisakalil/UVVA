@@ -1,0 +1,30 @@
+{
+  "id": "region-pt-douro",
+  "kind": "region",
+  "order": 21,
+  "country": "Portugal",
+  "countryCode": "PT",
+  "title": "Douro",
+  "grapes": [
+    "Touriga Nacional",
+    "Touriga Franca",
+    "Tinta Roriz",
+    "Tinta Barroca",
+    "Tinto Cão"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "Terraced schist slopes above a river: the home of Port and of Portugal's great dry reds.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-pt-douro-l01",
+    "region-pt-douro-l02",
+    "region-pt-douro-l03",
+    "region-pt-douro-l04",
+    "region-pt-douro-l05",
+    "region-pt-douro-l06",
+    "region-pt-douro-l07"
+  ]
+}

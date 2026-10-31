@@ -1,0 +1,62 @@
+{
+  "id": "region-ge-kakheti-l04",
+  "moduleId": "region-ge-kakheti",
+  "order": 4,
+  "title": "Amber wine",
+  "subtitle": "White grapes, red method",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what amber wine is",
+    "Describe its taste",
+    "Compare Kakhetian and European styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Amber, not orange",
+      "body": "In Georgia, white wine made with long skin contact is called amber wine, karvisperi. In Kakheti, the tradition is full skin contact, with all the chacha, for about six months in qvevri. The result is deep amber, tannic and textured. Western Georgia, in Imereti, uses less chacha and shorter contact for lighter wines.",
+      "highlight": "Kakheti: full skins, six months"
+    },
+    {
+      "type": "concept",
+      "title": "Taste",
+      "body": "Amber Rkatsiteli tastes of dried apricot, quince, walnuts, honey, black tea and spice, with firm tannin and fresh acidity. It's dry. It's closer to a red wine in structure, so it's served at 12 to 16 degrees and pairs with food. The same grape can also make a fresh, European-style white, with no skin contact.",
+      "highlight": "Dried apricot, walnut, tea"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is amber wine?",
+      "options": [
+        "White wine made with long skin contact",
+        "Rosé",
+        "Red wine aged in oak",
+        "Sweet wine from dried grapes"
+      ],
+      "answer": 0,
+      "explanation": "In Georgia, karvisperi."
+    },
+    {
+      "type": "concept",
+      "title": "Two styles",
+      "body": "Today Georgia makes both traditional qvevri wines and European-style wines in steel and oak. Both use native grapes. Amber wines are a small but growing share, and exports have surged. They've inspired the orange wine category worldwide, though Georgians prefer the term amber.",
+      "highlight": "Qvevri and European styles"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Georgian amber wines are usually sweet.",
+      "answer": false,
+      "explanation": "Not true. They're dry, with tannin and acidity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Amber wine is white wine with long skin contact",
+        "Kakhetian amber wine uses full skins for about six months",
+        "It's dry, tannic, with dried apricot and walnut"
+      ]
+    }
+  ]
+}

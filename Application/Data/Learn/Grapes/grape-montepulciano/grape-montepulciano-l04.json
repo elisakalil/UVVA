@@ -1,0 +1,60 @@
+{
+  "id": "grape-montepulciano-l04",
+  "moduleId": "grape-montepulciano",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Montepulciano",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Montepulciano with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Everyday food",
+      "body": "Montepulciano d'Abruzzo is a classic pizza and pasta wine: its soft tannins and dark fruit suit tomato sauce, sausages and grilled meat. In Abruzzo, it goes with arrosticini, lamb skewers. Cerasuolo suits fish soups, charcuterie and summer food.",
+      "highlight": "Pizza, pasta, lamb skewers"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees; Cerasuolo chilled at 10 to 12. Simple Montepulciano is best within three years. Colline Teramane and Conero Riserva age 10 to 15 years; some traditional producers' wines last decades.",
+      "highlight": "Simple wines young; the best for decades"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a classic Abruzzo partner for Montepulciano?",
+      "options": [
+        "Arrosticini lamb skewers",
+        "Sushi",
+        "Lemon tart",
+        "Oysters"
+      ],
+      "answer": 0,
+      "explanation": "Grilled lamb skewers are Abruzzo's traditional match."
+    },
+    {
+      "type": "tip",
+      "body": "An everyday Montepulciano d'Abruzzo is one of Italy's best-value reds for pizza night."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cerasuolo d'Abruzzo is best served chilled.",
+      "answer": true,
+      "explanation": "Yes. As a rosé, it's served at 10 to 12 degrees."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Montepulciano suits pizza, pasta and grilled lamb",
+        "Serve reds at 16 to 18 degrees and Cerasuolo chilled",
+        "Top wines age 10 to 15 years or more"
+      ]
+    }
+  ]
+}

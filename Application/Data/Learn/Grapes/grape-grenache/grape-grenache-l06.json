@@ -1,0 +1,60 @@
+{
+  "id": "grape-grenache-l06",
+  "moduleId": "grape-grenache",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Grenache",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair dry Grenache with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Warm and savoury",
+      "body": "Grenache's ripe fruit and soft tannin suit roast lamb, Provençal stews, grilled sausages, roast pork and dishes with herbs and garlic. Lighter Gredos styles suit roast chicken and mushrooms. Its sweetness of fruit handles mildly spicy food, though high alcohol can clash with chilli.",
+      "highlight": "Lamb, stews, herbs"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 15 to 17 degrees; high alcohol feels hot if served too warm. Simple Côtes du Rhône and Garnacha are best within three years. Top Châteauneuf and Priorat age 15 to 25 years, though Grenache browns early, so colour isn't a reliable guide to age.",
+      "highlight": "Serve not too warm"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why should Grenache not be served too warm?",
+      "options": [
+        "Its high alcohol feels hot",
+        "It turns white",
+        "It loses colour",
+        "It becomes sweet"
+      ],
+      "answer": 0,
+      "explanation": "Warmth makes high alcohol more noticeable."
+    },
+    {
+      "type": "tip",
+      "body": "A slightly cool Grenache rosé from Provence is one of the most versatile summer wines, from salads to grilled fish."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Top Châteauneuf-du-Pape can age 15 to 25 years.",
+      "answer": true,
+      "explanation": "Yes, especially from top producers and vintages."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grenache suits lamb, stews and herby dishes",
+        "Serve at 15 to 17 degrees",
+        "Top Châteauneuf and Priorat age for decades"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "path-17-l02",
+  "moduleId": "path-17",
+  "order": 2,
+  "title": "Yeast and fermentation",
+  "subtitle": "Choosing the engine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare ambient and inoculated fermentations",
+    "Explain the risks of stuck fermentation",
+    "Explain how yeast affects aroma"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ambient or inoculated",
+      "body": "Ambient, or wild, fermentations start with yeasts from the vineyard and winery. Several species work at first; Saccharomyces cerevisiae takes over as alcohol rises. The result can be more complex, but slower and less predictable. Inoculated fermentations use a selected strain, giving speed, reliability and sometimes specific aromas.",
+      "highlight": "Wild: complexity. Selected: control."
+    },
+    {
+      "type": "concept",
+      "title": "Stuck fermentations",
+      "body": "A fermentation sticks when yeast stops before the sugar is gone. Causes include high sugar and alcohol, too high or too low temperatures, and low yeast nutrients, especially nitrogen. A stuck wine is open to spoilage. Winemakers add nutrients, control temperature and, if needed, restart with a strong yeast strain.",
+      "highlight": "Heat, sugar and hunger stop yeast"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which can cause a stuck fermentation?",
+      "options": [
+        "Very high sugar",
+        "Lack of yeast nutrients",
+        "Temperatures over 35 degrees",
+        "Too much acidity in the cellar air"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "High sugar and alcohol, nutrient shortage and extreme temperatures stress yeast."
+    },
+    {
+      "type": "concept",
+      "title": "Yeast and aroma",
+      "body": "Yeast does more than make alcohol. It releases aromatic compounds from the grape, like the thiols of Sauvignon Blanc, and creates esters, which smell of banana, pear drop and fruit, especially in cool fermentations. Some yeasts produce more glycerol, adding a smoother texture.",
+      "highlight": "Yeast creates and releases aroma"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is typical of esters from a cool fermentation?",
+      "options": [
+        "Leather",
+        "Pear drop and banana",
+        "Vanilla",
+        "Mushroom"
+      ],
+      "answer": 1,
+      "explanation": "Esters smell of fruit drops and banana, and are common in young, cool-fermented whites and rosés."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Ambient yeast adds complexity; selected yeast adds control",
+        "Stuck fermentations come from stress, often heat, sugar or lack of nitrogen",
+        "Yeast creates esters and releases grape aromas"
+      ]
+    }
+  ]
+}

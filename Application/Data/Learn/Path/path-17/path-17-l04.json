@@ -1,0 +1,72 @@
+{
+  "id": "path-17-l04",
+  "moduleId": "path-17",
+  "order": 4,
+  "title": "Whites: fruit or texture",
+  "subtitle": "Two paths for white wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare protective and oxidative white winemaking",
+    "Explain the role of skin contact and solids",
+    "Explain how texture is built"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Protective winemaking",
+      "body": "To keep fresh, primary fruit, winemakers work protectively: cold grapes, fast pressing, inert gas, SO2, clear juice, cool fermentation in steel. This suits aromatic varieties like Sauvignon Blanc and Riesling. The aim is purity and crispness.",
+      "highlight": "Cold, clean, closed"
+    },
+    {
+      "type": "concept",
+      "title": "Oxidative handling",
+      "body": "Some winemakers let the juice brown deliberately, called hyperoxidation, so unstable compounds drop out and the wine becomes more resistant to later oxidation. Others ferment cloudier juice with more solids, which adds texture and complexity. These choices suit Chardonnay and Chenin Blanc more than aromatic grapes.",
+      "highlight": "Some air early builds resilience"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is most likely to be made protectively to preserve its aromas?",
+      "options": [
+        "Sauvignon Blanc",
+        "Chardonnay for Meursault",
+        "Oxidative Jura Savagnin",
+        "Oloroso Palomino"
+      ],
+      "answer": 0,
+      "explanation": "Sauvignon Blanc relies on fresh, volatile aromas, so it is usually handled protectively."
+    },
+    {
+      "type": "concept",
+      "title": "Building texture",
+      "body": "Texture comes from several tools. Barrel fermentation adds richness. Lees contact, especially with stirring, called bâtonnage, releases compounds that add creaminess and protect against oxygen. Skin contact adds phenolics and grip. Malolactic conversion lowers acidity and rounds the wine.",
+      "highlight": "Barrel, lees, skins, malolactic"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which techniques add texture to a white wine?",
+      "options": [
+        "Lees stirring",
+        "Barrel fermentation",
+        "Very clear juice in steel",
+        "Malolactic conversion"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Very clear juice in steel keeps the wine crisp and pure, not textured."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Protective winemaking keeps aromatic whites fresh and pure",
+        "Oxidative handling and cloudy juice build resilience and complexity",
+        "Lees, barrels, skins and malolactic add texture"
+      ]
+    }
+  ]
+}

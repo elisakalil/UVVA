@@ -1,0 +1,77 @@
+{
+  "id": "region-at-wachau-l02",
+  "moduleId": "region-at-wachau",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Grüner and Riesling",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Grüner Veltliner in the Wachau",
+    "Describe Riesling in the Wachau",
+    "Explain where each grows"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Grüner Veltliner",
+      "body": "Grüner Veltliner, Austria's signature grape, covers over half the Wachau. It grows best on deeper loess soils on lower slopes, giving full, peppery wines with citrus, green apple, white pepper and, in riper styles, stone fruit and spice. Its pepper comes from rotundone.",
+      "highlight": "Grüner on loess"
+    },
+    {
+      "type": "concept",
+      "title": "Riesling",
+      "body": "Riesling covers about 20%, but makes many of the most prized wines. It's planted on the steepest, stoniest terraces of gneiss and granite, where Grüner would struggle. Wachau Riesling is dry, powerful and mineral, with peach, apricot and citrus. Famous vineyards include Achleiten, Kellerberg, Loibenberg and Singerriedel.",
+      "highlight": "Riesling on rock terraces"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its soil.",
+      "pairs": [
+        {
+          "left": "Grüner Veltliner",
+          "right": "Deep loess"
+        },
+        {
+          "left": "Riesling",
+          "right": "Gneiss and granite"
+        },
+        {
+          "left": "Loess",
+          "right": "Wind-blown silt"
+        },
+        {
+          "left": "Gneiss",
+          "right": "Primary rock"
+        }
+      ],
+      "explanation": "Grape follows soil in the Wachau."
+    },
+    {
+      "type": "tip",
+      "body": "Wachau Riesling and Grüner from the same producer and vintage make a great side-by-side tasting of grape and soil."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where is Riesling planted in the Wachau?",
+      "options": [
+        "On the steepest, stoniest terraces",
+        "On the river flats",
+        "On deep loess",
+        "In greenhouses"
+      ],
+      "answer": 0,
+      "explanation": "Rocky terraces suit Riesling."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grüner Veltliner covers over half, on loess",
+        "Riesling grows on steep rock terraces",
+        "Both are made dry and powerful"
+      ]
+    }
+  ]
+}

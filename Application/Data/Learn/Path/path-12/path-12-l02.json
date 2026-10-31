@@ -1,0 +1,69 @@
+{
+  "id": "path-12-l02",
+  "moduleId": "path-12",
+  "order": 2,
+  "title": "The traditional method",
+  "subtitle": "Champagne's way",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Put the steps of the traditional method in order",
+    "Explain riddling and disgorgement",
+    "Explain what dosage does"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The steps",
+      "body": "A dry base wine is blended, then bottled with sugar and yeast, the liqueur de tirage. The bottle is sealed with a crown cap. A second fermentation raises alcohol by about 1.2 to 1.5% and makes carbon dioxide. The wine then rests on its lees, from 15 months for non-vintage Champagne to many years for top wines.",
+      "highlight": "Tirage, second fermentation, ageing on lees"
+    },
+    {
+      "type": "concept",
+      "title": "Getting the yeast out",
+      "body": "Riddling, or remuage, slowly turns and tilts the bottles until the dead yeast slides into the neck. It once took weeks by hand; machines called gyropalettes now do it in about a week. The neck is frozen and the cap removed: pressure pushes out the plug of ice and yeast. This is disgorgement. Then sweetened wine, the dosage, is added.",
+      "highlight": "Riddle, freeze, disgorge, dose"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of the traditional method in order.",
+      "items": [
+        "Make the base wine",
+        "Add sugar and yeast, and seal",
+        "Second fermentation in bottle",
+        "Ageing on the lees",
+        "Riddling and disgorgement",
+        "Dosage and corking"
+      ],
+      "explanation": "The order ensures the yeast does its work, adds flavour, and is then removed cleanly."
+    },
+    {
+      "type": "concept",
+      "title": "Dosage",
+      "body": "Dosage is a mix of wine and sugar added after disgorgement. It balances the high acidity of the base wine and decides the final sweetness: most Champagne is Brut, with up to 12 g/l. Brut Nature has none added. The traditional method is used for Champagne, Cava, Crémant, Franciacorta and many others.",
+      "highlight": "Dosage sets the sweetness"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is disgorgement?",
+      "options": [
+        "Adding sugar and yeast",
+        "Removing the frozen plug of yeast from the neck",
+        "Turning the bottles",
+        "Blending base wines"
+      ],
+      "answer": 1,
+      "explanation": "Disgorgement removes the yeast sediment, using the wine's own pressure to push out a frozen plug."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The second fermentation happens in the bottle you buy",
+        "Riddling moves the yeast to the neck; disgorgement removes it",
+        "Dosage balances acidity and sets the sweetness"
+      ]
+    }
+  ]
+}

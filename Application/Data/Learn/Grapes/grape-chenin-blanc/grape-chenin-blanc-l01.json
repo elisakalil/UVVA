@@ -1,0 +1,62 @@
+{
+  "id": "grape-chenin-blanc-l01",
+  "moduleId": "grape-chenin-blanc",
+  "order": 1,
+  "title": "Meet Chenin Blanc",
+  "subtitle": "Apple, quince and acidity",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chenin Blanc's flavours and structure",
+    "Explain its versatility",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "High acid, many faces",
+      "body": "Chenin Blanc gives whites with green and red apple, quince, pear, lemon, chamomile and, with age or botrytis, honey, beeswax and lanolin. Its acidity is very high, even when ripe. It can be dry, off-dry, sweet or sparkling. Few grapes are as versatile.",
+      "highlight": "Quince, apple, honey; high acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Why so versatile",
+      "body": "Chenin ripens unevenly, so a single vineyard can give grapes at different stages, from just-ripe to shrivelled or botrytised. Growers make several passes, picking for each style. Its high acidity balances sugar in sweet wines, supports bubbles in sparkling wines, and lets dry wines age for decades.",
+      "highlight": "Uneven ripening, several passes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What lets Chenin Blanc make so many styles?",
+      "options": [
+        "High acidity and uneven ripening",
+        "Low acidity",
+        "Thick skins",
+        "Red colour"
+      ],
+      "answer": 0,
+      "explanation": "Acidity supports every style, and uneven ripening gives grapes for each."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for apple and quince, a honeyed or waxy note even in young wines, and a striking acidity. Dry Chenin can seem rich in texture yet sharp in acidity. A slight lanolin or wet wool note is typical. Compared with Riesling, it's less floral and more apple and honey.",
+      "highlight": "Apple, honey, wool, acidity"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chenin Blanc is a low-acid grape.",
+      "answer": false,
+      "explanation": "Not true. Its very high acidity is its defining feature."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chenin gives apple, quince and honey with high acidity",
+        "It makes dry, sweet and sparkling wines",
+        "Uneven ripening lets growers pick for each style"
+      ]
+    }
+  ]
+}

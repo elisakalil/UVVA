@@ -1,0 +1,79 @@
+{
+  "id": "path-18-l07",
+  "moduleId": "path-18",
+  "order": 7,
+  "title": "Languedoc, Roussillon and the south",
+  "subtitle": "France's Mediterranean arc",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Languedoc and Roussillon",
+    "Explain their shift from bulk to quality",
+    "Name Provence and the south-west's key wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A huge area",
+      "body": "Languedoc-Roussillon, along the Mediterranean, has about a third of France's vineyards. Once a source of cheap table wine, it now makes characterful blends from Grenache, Syrah, Mourvèdre, Carignan and Cinsault. Hot, dry summers and poor schist and limestone soils suit them. Appellations include Faugères, Saint-Chinian, Pic Saint-Loup and Corbières.",
+      "highlight": "A third of France's vineyards"
+    },
+    {
+      "type": "concept",
+      "title": "From bulk to quality",
+      "body": "Since the 1980s, growers pulled out high-yielding vines, planted better grapes and restored old Carignan. The IGP Pays d'Oc lets producers make varietal wines, like Chardonnay or Merlot, with fewer rules, a big export success. Roussillon is known for its vins doux naturels, such as Banyuls, Maury and Rivesaltes.",
+      "highlight": "Better grapes, old vines, flexible IGP"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is IGP Pays d'Oc known for?",
+      "options": [
+        "Strictly blended reds",
+        "Varietal wines with flexible rules",
+        "Only sweet wines",
+        "Champagne-style wines"
+      ],
+      "answer": 1,
+      "explanation": "Pays d'Oc allows producers to label and sell wines by grape, with fewer restrictions than the AOPs."
+    },
+    {
+      "type": "concept",
+      "title": "Provence and the south-west",
+      "body": "Provence is the world's reference for pale, dry rosé, mostly from Grenache, Cinsault and Syrah; Bandol makes powerful Mourvèdre reds. The south-west is varied: Cahors for Malbec, Madiran for Tannat, Jurançon for sweet and dry whites, and Bergerac next door to Bordeaux.",
+      "highlight": "Provence rosé, Bandol, Cahors, Madiran"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each appellation to its grape.",
+      "pairs": [
+        {
+          "left": "Bandol",
+          "right": "Mourvèdre"
+        },
+        {
+          "left": "Cahors",
+          "right": "Malbec"
+        },
+        {
+          "left": "Madiran",
+          "right": "Tannat"
+        },
+        {
+          "left": "Banyuls",
+          "right": "Grenache"
+        }
+      ],
+      "explanation": "The south of France is a patchwork of local grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Languedoc-Roussillon is France's largest vineyard area",
+        "It moved from bulk to quality, with IGP Pays d'Oc for varietals",
+        "Provence leads rosé; the south-west has Cahors, Madiran and Jurançon"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "region-pt-dao-l05",
+  "moduleId": "region-pt-dao",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about the Dão",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Dão's land and grapes",
+    "Explain Encruzado",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to the Dão.",
+      "pairs": [
+        {
+          "left": "Serra da Estrela",
+          "right": "Mountains and cheese"
+        },
+        {
+          "left": "Encruzado",
+          "right": "Native white grape"
+        },
+        {
+          "left": "Jaen",
+          "right": "Same as Mencía"
+        },
+        {
+          "left": "Dão Nobre",
+          "right": "Top category"
+        }
+      ],
+      "explanation": "The Dão has a clear identity."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where did Touriga Nacional probably originate?",
+      "options": [
+        "The Dão",
+        "The Douro",
+        "Alentejo",
+        "Madeira"
+      ],
+      "answer": 0,
+      "explanation": "It probably comes from the Dão."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Dão is a hot, flat plain.",
+      "answer": false,
+      "explanation": "Not true. It's a granite plateau ringed by mountains."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Dão red grapes?",
+      "options": [
+        "Touriga Nacional",
+        "Jaen",
+        "Alfrocheiro",
+        "Encruzado"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Encruzado is white."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Dão was demarcated in ____.",
+      "options": [
+        "1908",
+        "1756",
+        "1986",
+        "2010"
+      ],
+      "answer": "1908",
+      "explanation": "In 1908."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Dão is a granite plateau ringed by mountains",
+        "Touriga Nacional, Jaen and Alfrocheiro make elegant reds",
+        "Encruzado is Portugal's great white",
+        "Its wines age gracefully and suit roast meat and cheese"
+      ]
+    }
+  ]
+}

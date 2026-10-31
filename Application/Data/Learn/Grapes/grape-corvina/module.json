@@ -1,0 +1,29 @@
+{
+  "id": "grape-corvina",
+  "kind": "grape",
+  "order": 18,
+  "color": "red",
+  "title": "Corvina",
+  "aliases": [
+    "Corvina Veronese",
+    "Cruina"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "2 1 2 1 = 6",
+  "complexity": "B",
+  "description": "Valpolicella's leading grape: cherry-fresh when young, rich and raisined as Amarone.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-corvina-l01",
+    "grape-corvina-l02",
+    "grape-corvina-l03",
+    "grape-corvina-l04",
+    "grape-corvina-l05",
+    "grape-corvina-l06"
+  ]
+}

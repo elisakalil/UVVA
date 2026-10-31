@@ -1,0 +1,60 @@
+{
+  "id": "grape-gamay-l04",
+  "moduleId": "grape-gamay",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Gamay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Gamay with food",
+    "Serve it well",
+    "Know how the crus age"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Versatile and light",
+      "body": "Gamay's low tannin and fresh acidity make it very food-friendly. It suits charcuterie, roast chicken, salmon, pâté and Lyon's bistro food, like saucisson and andouillette. It handles light spice better than tannic reds. It's a great picnic wine.",
+      "highlight": "Charcuterie, chicken, bistro food"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve slightly cool, 12 to 14 degrees; a little chill brings out its fruit. Nouveau within months; Beaujolais and Villages within two or three years. Structured crus, like Morgon and Moulin-à-Vent, can age 10 years or more, becoming more like Pinot Noir, a process called pinoter.",
+      "highlight": "Serve slightly cool"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What temperature suits Gamay?",
+      "options": [
+        "Slightly cool, 12 to 14 degrees",
+        "Very warm, 22 degrees",
+        "Ice cold, 4 degrees",
+        "Hot"
+      ],
+      "answer": 0,
+      "explanation": "A slight chill keeps its fruit lively."
+    },
+    {
+      "type": "tip",
+      "body": "Aged Morgon and Moulin-à-Vent can taste surprisingly like Burgundy. Locals say the wine pinote, becomes Pinot-like, with age."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Some Beaujolais crus can age 10 years or more.",
+      "answer": true,
+      "explanation": "Yes. Morgon and Moulin-à-Vent are known for ageing well."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gamay suits charcuterie, chicken and bistro food",
+        "Serve slightly cool, 12 to 14 degrees",
+        "Morgon and Moulin-à-Vent can age 10 years or more"
+      ]
+    }
+  ]
+}

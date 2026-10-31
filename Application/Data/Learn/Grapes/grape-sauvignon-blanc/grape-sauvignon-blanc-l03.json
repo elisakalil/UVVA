@@ -1,0 +1,77 @@
+{
+  "id": "grape-sauvignon-blanc-l03",
+  "moduleId": "grape-sauvignon-blanc",
+  "order": 3,
+  "title": "Sancerre and Pouilly-Fumé",
+  "subtitle": "The Loire's benchmark",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sancerre",
+    "Describe Pouilly-Fumé",
+    "Explain the role of soils"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sancerre",
+      "body": "Sancerre, on the left bank of the upper Loire, makes 100% Sauvignon Blanc whites from hillside vineyards. Its style is crisp and restrained, with citrus, gooseberry, white flowers and a mineral, flinty edge. Sancerre also makes red and rosé from Pinot Noir. Nearby Menetou-Salon, Quincy and Reuilly make similar wines.",
+      "highlight": "Restrained, citrus, mineral"
+    },
+    {
+      "type": "concept",
+      "title": "Soils",
+      "body": "Three soils shape Sancerre: terres blanches, Kimmeridgian clay-limestone, giving full, structured wines; caillottes, stony limestone, giving fresh, aromatic wines; and silex, flint, giving smoky, mineral, long-lived wines. Pouilly-Fumé, across the river, is known for its flint and a smoky, gunflint character, hence fumé, smoky.",
+      "highlight": "Terres blanches, caillottes, silex"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each soil to its Sancerre style.",
+      "pairs": [
+        {
+          "left": "Terres blanches",
+          "right": "Full and structured"
+        },
+        {
+          "left": "Caillottes",
+          "right": "Fresh and aromatic"
+        },
+        {
+          "left": "Silex",
+          "right": "Smoky and mineral"
+        },
+        {
+          "left": "Pouilly-Fumé",
+          "right": "Across the river, flint"
+        }
+      ],
+      "explanation": "Soil shapes each Sancerre."
+    },
+    {
+      "type": "tip",
+      "body": "Didier Dagueneau, in Pouilly-Fumé, made some of the world's most celebrated Sauvignon Blanc, showing how long it can age from great sites."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does fumé in Pouilly-Fumé refer to?",
+      "options": [
+        "A smoky, gunflint character",
+        "Smoked grapes",
+        "A red wine",
+        "Sparkling wine"
+      ],
+      "answer": 0,
+      "explanation": "Fumé means smoky, linked to its flint soils and the grape's bloom."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sancerre is crisp, restrained and mineral",
+        "Terres blanches, caillottes and silex give different styles",
+        "Pouilly-Fumé is known for smoky, flinty wines"
+      ]
+    }
+  ]
+}

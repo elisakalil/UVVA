@@ -1,0 +1,77 @@
+{
+  "id": "region-fr-beaujolais-l03",
+  "moduleId": "region-fr-beaujolais",
+  "order": 3,
+  "title": "The ten crus",
+  "subtitle": "Beaujolais' best villages",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the ten crus",
+    "Explain how they differ",
+    "Explain the levels below them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three levels",
+      "body": "Beaujolais has three main levels. Beaujolais, mostly from the south, light and fruity. Beaujolais-Villages, from 38 villages in the north, with more depth. And the ten crus, named villages on granite, at the top. Crus labels often don't say Beaujolais at all, just the village name.",
+      "highlight": "Beaujolais, Villages, crus"
+    },
+    {
+      "type": "concept",
+      "title": "Light to structured",
+      "body": "The ten crus, north to south: Saint-Amour, Juliénas, Chénas, Moulin-à-Vent, Fleurie, Chiroubles, Morgon, Régnié, Brouilly and Côte de Brouilly. Fleurie, Chiroubles and Saint-Amour are light and floral. Morgon, on decomposed schist, and Moulin-à-Vent, on granite with manganese, are the most structured and age well.",
+      "highlight": "Fleurie floral; Morgon and Moulin-à-Vent firm"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each cru to its style.",
+      "pairs": [
+        {
+          "left": "Fleurie",
+          "right": "Light and floral"
+        },
+        {
+          "left": "Morgon",
+          "right": "Structured, ages well"
+        },
+        {
+          "left": "Moulin-à-Vent",
+          "right": "Most powerful, long-lived"
+        },
+        {
+          "left": "Chiroubles",
+          "right": "High, delicate"
+        }
+      ],
+      "explanation": "The crus range from light to structured."
+    },
+    {
+      "type": "tip",
+      "body": "Aged Morgon and Moulin-à-Vent can taste like Burgundy. Locals say the wine pinote, becomes Pinot-like, with age."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Beaujolais has ____ crus.",
+      "options": [
+        "ten",
+        "three",
+        "33",
+        "51"
+      ],
+      "answer": "ten",
+      "explanation": "Ten named villages on the northern granite."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Beaujolais has three levels: Beaujolais, Villages, crus",
+        "The ten crus range from light Fleurie to firm Moulin-à-Vent",
+        "Morgon and Moulin-à-Vent can age like Burgundy"
+      ]
+    }
+  ]
+}

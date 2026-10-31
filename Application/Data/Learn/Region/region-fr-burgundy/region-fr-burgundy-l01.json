@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-burgundy-l01",
+  "moduleId": "region-fr-burgundy",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Limestone, monks and climats",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Burgundy's geography",
+    "Explain its continental climate",
+    "Explain the role of the monks"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A long, narrow region",
+      "body": "Burgundy, Bourgogne, runs about 230 km from Chablis in the north to the Mâconnais in the south, in eastern France. Its heart is the Côte d'Or, a narrow, east-facing escarpment of limestone and marl. It has about 30,000 hectares of vines, smaller than Bordeaux, but over 1,200 named vineyard sites.",
+      "highlight": "Chablis to the Mâconnais"
+    },
+    {
+      "type": "concept",
+      "title": "Continental and risky",
+      "body": "Burgundy's climate is continental: cold winters, warm summers and risk at every stage. Spring frost can destroy buds, as in 2016 and 2021. Hail can strip vineyards in minutes. Rain at harvest brings rot. Slopes and east-facing exposure help: they catch morning sun and let cold air drain away.",
+      "highlight": "Frost, hail and rot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do Burgundy's best vineyards face east?",
+      "options": [
+        "They catch morning sun and drain cold air",
+        "They avoid sun",
+        "They face the sea",
+        "They're shaded"
+      ],
+      "answer": 0,
+      "explanation": "East-facing slopes warm early and avoid frost pockets."
+    },
+    {
+      "type": "concept",
+      "title": "Monks and climats",
+      "body": "From the 10th century, Benedictine monks of Cluny and Cistercians of Cîteaux studied Burgundy's slopes. They noticed that wines from small plots tasted consistently different and enclosed them with walls, called clos, like Clos de Vougeot. These named plots, the climats, were recognised by UNESCO as World Heritage in 2015.",
+      "highlight": "Climats: UNESCO, 2015"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Burgundy's climats were recognised by UNESCO in 2015.",
+      "answer": true,
+      "explanation": "Yes, as a World Heritage Site."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgundy runs from Chablis to the Mâconnais",
+        "Its continental climate brings frost, hail and rot",
+        "Monks mapped the climats, now UNESCO-listed"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "region-us-napa-valley-l03",
+  "moduleId": "region-us-napa-valley",
+  "order": 3,
+  "title": "The Judgment of Paris",
+  "subtitle": "1976",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the 1976 tasting",
+    "Explain its results",
+    "Explain its impact"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A blind tasting",
+      "body": "On 24 May 1976, British wine merchant Steven Spurrier organised a blind tasting in Paris. Nine French judges compared top Californian wines with top Bordeaux reds and Burgundy whites. Spurrier expected the French wines to win. A journalist from Time magazine, George Taber, was there.",
+      "highlight": "24 May 1976, Paris"
+    },
+    {
+      "type": "concept",
+      "title": "The results",
+      "body": "In the whites, Chateau Montelena's 1973 Chardonnay, from Napa, came first, ahead of Meursault and Puligny-Montrachet. In the reds, Stag's Leap Wine Cellars' 1973 Cabernet Sauvignon came first, ahead of Mouton Rothschild and Haut-Brion. Time reported it as the Judgment of Paris.",
+      "highlight": "Montelena and Stag's Leap won"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Napa Cabernet won the red section in 1976?",
+      "options": [
+        "Stag's Leap Wine Cellars",
+        "Opus One",
+        "Screaming Eagle",
+        "Chateau Montelena"
+      ],
+      "answer": 0,
+      "explanation": "Chateau Montelena won the whites with Chardonnay."
+    },
+    {
+      "type": "concept",
+      "title": "Impact",
+      "body": "The result shocked France and gave California, and the New World, credibility. Investment poured into Napa. A rematch in 2006, with the same wines aged 30 years, again placed Californian reds on top. The story became the film Bottle Shock in 2008. Bottles from the tasting are in the Smithsonian museum.",
+      "highlight": "New World credibility"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What were the effects of the Judgment of Paris?",
+      "options": [
+        "It gave California credibility",
+        "Investment poured into Napa",
+        "It inspired a 2006 rematch",
+        "It banned French wine in the US"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It didn't ban anything."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Steven Spurrier's 1976 blind tasting compared California and France",
+        "Chateau Montelena and Stag's Leap won",
+        "It gave the New World credibility"
+      ]
+    }
+  ]
+}

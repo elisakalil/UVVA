@@ -1,0 +1,67 @@
+{
+  "id": "region-fr-alsace-l04",
+  "moduleId": "region-fr-alsace",
+  "order": 4,
+  "title": "Late harvest and SGN",
+  "subtitle": "Alsace's sweet wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Vendanges Tardives",
+    "Explain Sélection de Grains Nobles",
+    "Explain sweetness on dry wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Vendanges Tardives",
+      "body": "Vendanges Tardives, VT, means late harvest. Grapes from the four noble varieties are left on the vine into late autumn, concentrating sugar. Minimum sugar levels are high and set by grape. VT wines can be dry, off-dry or sweet; they're rich, intense and long-lived.",
+      "highlight": "VT: late harvest, noble grapes"
+    },
+    {
+      "type": "concept",
+      "title": "Sélection de Grains Nobles",
+      "body": "Sélection de Grains Nobles, SGN, is made from berries affected by noble rot, Botrytis cinerea, picked one by one. Minimum sugar is even higher. SGN wines are lusciously sweet, with honey, dried apricot and candied citrus, balanced by acidity. They're made only in good years and can age for decades.",
+      "highlight": "SGN: noble rot berries"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Alsace styles from least to most concentrated.",
+      "items": [
+        "Dry Alsace",
+        "Off-dry Alsace",
+        "Vendanges Tardives",
+        "Sélection de Grains Nobles"
+      ],
+      "explanation": "Later picking and noble rot concentrate sugar."
+    },
+    {
+      "type": "concept",
+      "title": "Sweetness on dry wines",
+      "body": "Even regular Alsace wines can range from dry to off-dry, which confuses buyers. Many producers print a sweetness scale on the back label, and since 2021 rules encourage clearer terms like sec, demi-sec, moelleux and doux. Gewürztraminer and Pinot Gris are more often off-dry than Riesling.",
+      "highlight": "Check the back label"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is SGN made from?",
+      "options": [
+        "Noble rot berries picked individually",
+        "Frozen grapes",
+        "Dried grapes",
+        "Sparkling base wine"
+      ],
+      "answer": 0,
+      "explanation": "Sélection de Grains Nobles uses botrytised berries."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "VT is late harvest, from dry to sweet",
+        "SGN uses noble rot berries and is lusciously sweet",
+        "Check sweetness scales on regular Alsace wines"
+      ]
+    }
+  ]
+}

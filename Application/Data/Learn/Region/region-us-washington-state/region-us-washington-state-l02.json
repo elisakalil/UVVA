@@ -1,0 +1,77 @@
+{
+  "id": "region-us-washington-state-l02",
+  "moduleId": "region-us-washington-state",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Reds and Riesling",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Washington's main grapes",
+    "Explain the style they share",
+    "Explain why Riesling matters"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Cabernet Sauvignon is the most planted grape, giving ripe blackcurrant with firm structure and fresh acidity. Merlot, an early success, gives plush, structured wines. Syrah thrives, especially in Walla Walla and Yakima. Cabernet Franc, Malbec and Grenache also grow. Bordeaux-style blends are common.",
+      "highlight": "Cabernet, Merlot, Syrah"
+    },
+    {
+      "type": "concept",
+      "title": "Whites and style",
+      "body": "Chardonnay is the most planted white; Riesling is a speciality, from dry to sweet, made in large volume by Chateau Ste. Michelle, one of the world's largest Riesling producers. The common thread: long, sunny days give ripe fruit; cool nights keep acidity. Washington wines are often described as between Napa ripeness and Bordeaux freshness.",
+      "highlight": "Ripe fruit, fresh acidity"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Most planted"
+        },
+        {
+          "left": "Merlot",
+          "right": "Early success, plush"
+        },
+        {
+          "left": "Syrah",
+          "right": "Walla Walla, Yakima"
+        },
+        {
+          "left": "Riesling",
+          "right": "Large-volume speciality"
+        }
+      ],
+      "explanation": "Washington grows both reds and whites."
+    },
+    {
+      "type": "tip",
+      "body": "Washington Merlot is often more structured than California's, with fresh acidity and firm tannins, a good place to rediscover the grape."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What gives Washington wines ripe fruit and fresh acidity?",
+      "options": [
+        "Long sunny days and cool nights",
+        "Constant rain",
+        "Ocean fog",
+        "High humidity"
+      ],
+      "answer": 0,
+      "explanation": "Desert days and cool nights."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet, Merlot and Syrah lead the reds",
+        "Riesling and Chardonnay lead the whites",
+        "Long days and cool nights give ripe, fresh wines"
+      ]
+    }
+  ]
+}

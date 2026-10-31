@@ -1,0 +1,62 @@
+{
+  "id": "path-11-l04",
+  "moduleId": "path-11",
+  "order": 4,
+  "title": "New World labels",
+  "subtitle": "Grape and place, fewer rules",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how New World labels work",
+    "Describe the AVA and GI systems",
+    "Name common percentage rules"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Grape first",
+      "body": "New World labels usually lead with the grape variety and the brand. GIs exist but generally only define the area; they don't set grapes, yields or methods. A Napa Valley wine can be any variety, made any way, as long as the grapes come from Napa.",
+      "highlight": "GIs define area, not style"
+    },
+    {
+      "type": "concept",
+      "title": "Percentage rules",
+      "body": "Labelling rules set minimums. In the US, a varietal label needs 75% of the named grape, and an AVA name needs 85% of the grapes from that area. In Australia, Chile, New Zealand and South Africa, the figure is usually 85% for variety, vintage and region. A state or county name in the US needs 75%.",
+      "highlight": "US: 75% variety, 85% AVA"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A Californian wine labelled Cabernet Sauvignon must contain at least how much of that grape?",
+      "options": [
+        "51%",
+        "75%",
+        "85%",
+        "100%"
+      ],
+      "answer": 1,
+      "explanation": "US federal law requires 75% for a varietal label. Many other New World countries use 85%."
+    },
+    {
+      "type": "concept",
+      "title": "Reading the extras",
+      "body": "Terms like Reserve, Private Selection or Old Vines usually have no legal meaning in the New World. A few exceptions exist: in Washington, Reserve must be a small part of production, and South Africa's Wine of Origin seal certifies origin. Treat most extra words as marketing.",
+      "highlight": "Most extra terms are marketing"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "An AVA in the United States sets which grapes may be grown.",
+      "answer": false,
+      "explanation": "Not true. An AVA defines only the area. Growers can plant any grape and make wine as they choose."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "New World labels lead with grape and brand",
+        "GIs define area, not style or grapes",
+        "Percentage rules set minimums for variety, vintage and region"
+      ]
+    }
+  ]
+}

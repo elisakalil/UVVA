@@ -1,0 +1,73 @@
+{
+  "id": "path-18-l02",
+  "moduleId": "path-18",
+  "order": 2,
+  "title": "Bordeaux",
+  "subtitle": "Blends, banks and châteaux",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Bordeaux's climate and rivers",
+    "Compare Left and Right Bank reds",
+    "Name Bordeaux's white and sweet wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rivers and the Atlantic",
+      "body": "Bordeaux sits on the Garonne and Dordogne rivers, which meet in the Gironde estuary. Its maritime climate is moderate and damp, so vintages vary. The Landes pine forest shields it from Atlantic winds. Red blends dominate, about 85% of production, with Merlot the most planted grape.",
+      "highlight": "Maritime, moderate, blends"
+    },
+    {
+      "type": "concept",
+      "title": "Left and Right",
+      "body": "On the Left Bank, the Médoc and Graves, gravel soils drain and warm, favouring Cabernet Sauvignon; Pauillac, Margaux and Saint-Julien are the famous villages. On the Right Bank, in Saint-Émilion and Pomerol, cooler clay and limestone favour Merlot and Cabernet Franc. Between the rivers, Entre-Deux-Mers makes mostly dry whites.",
+      "highlight": "Left: Cabernet on gravel. Right: Merlot on clay."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each appellation to its bank or area.",
+      "pairs": [
+        {
+          "left": "Pauillac",
+          "right": "Left Bank"
+        },
+        {
+          "left": "Pomerol",
+          "right": "Right Bank"
+        },
+        {
+          "left": "Entre-Deux-Mers",
+          "right": "Between the rivers"
+        },
+        {
+          "left": "Sauternes",
+          "right": "Graves, by the Ciron"
+        }
+      ],
+      "explanation": "Geography shapes the grape mix in each area."
+    },
+    {
+      "type": "concept",
+      "title": "Whites and sweet wines",
+      "body": "Dry whites blend Sauvignon Blanc and Sémillon; Pessac-Léognan makes the finest, often oaked. Sauternes and Barsac make sweet wines from noble rot, helped by mists from the cool Ciron river. The 1855 classification ranked Médoc reds and Sauternes; Château d'Yquem was given its own top rank.",
+      "highlight": "Sauvignon and Sémillon, dry or sweet"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Merlot is the most planted grape in Bordeaux.",
+      "answer": true,
+      "explanation": "Yes. Cabernet Sauvignon is famous on the Left Bank, but Merlot covers more vineyard area across the region."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bordeaux is maritime, damp and built on blends",
+        "The Left Bank favours Cabernet; the Right Bank Merlot",
+        "Pessac-Léognan makes fine dry whites; Sauternes sweet ones"
+      ]
+    }
+  ]
+}

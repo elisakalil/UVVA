@@ -1,0 +1,62 @@
+{
+  "id": "region-hu-tokaj-l05",
+  "moduleId": "region-hu-tokaj",
+  "order": 5,
+  "title": "The first classified vineyards",
+  "subtitle": "Tokaj's historic map",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Tokaj's early classification",
+    "Name famous vineyards",
+    "Explain the region's history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Classified from 1730",
+      "body": "Tokaj's vineyards were classified from 1730, among the first in the world, into first, second and third class, based on soil, exposure and wine quality. In 1737, a royal decree defined the region's boundaries, making it one of the first closed, legally defined wine regions, before Portugal's Douro in 1756.",
+      "highlight": "1730 classification; 1737 decree"
+    },
+    {
+      "type": "concept",
+      "title": "Famous sites",
+      "body": "Top vineyards, dűlő, include Szarvas and Mézes Mály, once royal vineyards; Szent Tamás, Betsek and Úrágya. Labels increasingly name them, especially for dry Furmint and single-vineyard Aszú. The Hétszőlő and Disznókő estates are also famous names.",
+      "highlight": "Szarvas, Mézes Mály, Szent Tamás"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "When was Tokaj's wine region legally defined by royal decree?",
+      "options": [
+        "1737",
+        "1855",
+        "1935",
+        "2013"
+      ],
+      "answer": 0,
+      "explanation": "Earlier than the Douro's 1756 demarcation."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "Tokaji Aszú was served at European royal courts; Louis XIV of France is said to have called it the wine of kings, the king of wines. After 1945, communist state farms took over, and quality fell. From 1990, private and foreign investors, like Royal Tokaji, Disznókő and Oremus, revived it. Tokaj became a UNESCO World Heritage Site in 2002.",
+      "highlight": "Wine of kings; revival after 1990"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tokaj's vineyards were classified before Bordeaux's 1855 classification.",
+      "answer": true,
+      "explanation": "Yes, from 1730."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tokaj's vineyards were classified from 1730",
+        "A 1737 decree defined the region",
+        "Private estates revived it after 1990; UNESCO since 2002"
+      ]
+    }
+  ]
+}

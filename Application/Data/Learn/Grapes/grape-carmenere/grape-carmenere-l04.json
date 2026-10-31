@@ -1,0 +1,60 @@
+{
+  "id": "grape-carmenere-l04",
+  "moduleId": "grape-carmenere",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Carmenère",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Carmenère with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Spice and grill",
+      "body": "Carmenère's soft tannins and peppery spice suit grilled meat, roast pork, spicy sausages and dishes with paprika, cumin or roasted peppers. It handles mild spice better than tannic reds. In Chile, it goes with empanadas and pastel de choclo, a corn and beef pie.",
+      "highlight": "Grilled meat, peppers, mild spice"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees. Most Carmenère is best within five years, when fruit is fresh. Top examples from Peumo or Apalta, often blended with Cabernet, age 10 years or more. Decanting helps young, oaked examples.",
+      "highlight": "Most within five years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Carmenère handle mildly spicy dishes well?",
+      "options": [
+        "Its soft tannins clash less with spice",
+        "It's very sweet",
+        "It's very high in alcohol",
+        "It's a white wine"
+      ],
+      "answer": 0,
+      "explanation": "Firm tannins clash with chilli; Carmenère's soft tannins are more forgiving."
+    },
+    {
+      "type": "tip",
+      "body": "Try Carmenère with roasted red peppers or a dish with smoked paprika. The wine's own pepper and spice notes come forward."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Carmenère is made to age for decades.",
+      "answer": false,
+      "explanation": "Not true. Most is best within five years; only top examples age longer."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carmenère suits grilled meat, peppers and mild spice",
+        "Serve at 16 to 18 degrees",
+        "Most is best within five years"
+      ]
+    }
+  ]
+}

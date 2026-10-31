@@ -1,0 +1,79 @@
+{
+  "id": "path-10-l04",
+  "moduleId": "path-10",
+  "order": 4,
+  "title": "Syrah and Grenache",
+  "subtitle": "The Rhône pair",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare Syrah in the Rhône and Australia",
+    "Describe Grenache and its regions",
+    "Explain the GSM blend"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Syrah",
+      "body": "In the northern Rhône, Syrah grows on steep granite slopes in Côte-Rôtie and Hermitage, giving firm, peppery, blackberry wines. In Australia it's Shiraz, the country's most planted grape. The Barossa makes ripe, full wines with chocolate and spice; cooler sites, like the Yarra or Canberra, give peppery styles closer to the Rhône.",
+      "highlight": "Rhône: pepper. Barossa: chocolate and ripe fruit."
+    },
+    {
+      "type": "concept",
+      "title": "Grenache",
+      "body": "Grenache, from Spain, where it's called Garnacha, loves heat and drought. Its thin skins give paler wines with red fruit, spice and high alcohol, often 15%. Grown as bush vines on poor soils, it can live over 100 years. It is the main grape of Châteauneuf-du-Pape, Priorat and many rosés, and part of sweet fortified wines like Banyuls.",
+      "highlight": "Grenache: heat, red fruit, high alcohol"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which feature best describes Grenache?",
+      "options": [
+        "Thick skins and deep colour",
+        "Thin skins, red fruit and high alcohol",
+        "High acidity and low alcohol",
+        "Green pepper aromas"
+      ],
+      "answer": 1,
+      "explanation": "Grenache has thin skins and reaches high sugar levels. It's paler than Syrah but strong in alcohol."
+    },
+    {
+      "type": "concept",
+      "title": "GSM blends",
+      "body": "Grenache, Syrah and Mourvèdre, often called GSM, are blended across the southern Rhône and in Australia. Grenache brings red fruit and alcohol, Syrah brings colour and structure, Mourvèdre brings tannin, meaty notes and dark fruit. Châteauneuf-du-Pape allows 13 varieties, but most wines are led by Grenache.",
+      "highlight": "Grenache, Syrah, Mourvèdre"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to what it brings to a GSM blend.",
+      "pairs": [
+        {
+          "left": "Grenache",
+          "right": "Red fruit and alcohol"
+        },
+        {
+          "left": "Syrah",
+          "right": "Colour and structure"
+        },
+        {
+          "left": "Mourvèdre",
+          "right": "Tannin and meaty notes"
+        },
+        {
+          "left": "Viognier",
+          "right": "Floral lift, in Côte-Rôtie"
+        }
+      ],
+      "explanation": "Each grape fills a gap in the blend. Viognier belongs to the northern Rhône, co-fermented with Syrah."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Syrah is peppery in the Rhône and riper as Barossa Shiraz",
+        "Grenache gives red fruit, spice and high alcohol, and loves heat",
+        "GSM blends combine Grenache, Syrah and Mourvèdre"
+      ]
+    }
+  ]
+}

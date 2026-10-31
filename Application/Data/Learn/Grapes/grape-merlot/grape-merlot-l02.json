@@ -1,0 +1,81 @@
+{
+  "id": "grape-merlot-l02",
+  "moduleId": "grape-merlot",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Bordeaux and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Merlot's main regions",
+    "Explain why it suits clay and cool soils",
+    "Explain its vulnerabilities"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A wide map",
+      "body": "Merlot is the most planted grape in Bordeaux, about 60% of red plantings. It's important in Italy, especially Tuscany and Friuli, and in Switzerland's Ticino. In the New World it grows in California, Washington, Chile, Australia, South Africa and New Zealand's Hawke's Bay.",
+      "highlight": "Bordeaux's most planted grape"
+    },
+    {
+      "type": "concept",
+      "title": "Early and clay-loving",
+      "body": "Merlot buds and ripens one to two weeks before Cabernet Sauvignon. On cool, water-retentive clay soils, where Cabernet would struggle to ripen, Merlot thrives. But early budding exposes it to spring frost, and its thinner skins make it prone to rot in wet weather, and to coulure, poor fruit set.",
+      "highlight": "Early ripening on cool clay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Merlot role.",
+      "pairs": [
+        {
+          "left": "Pomerol",
+          "right": "Merlot-dominated Bordeaux"
+        },
+        {
+          "left": "Ticino",
+          "right": "Swiss Merlot heartland"
+        },
+        {
+          "left": "Bolgheri",
+          "right": "Merlot in Super Tuscans"
+        },
+        {
+          "left": "Hawke's Bay",
+          "right": "New Zealand Bordeaux blends"
+        }
+      ],
+      "explanation": "Merlot is grown widely, often in Bordeaux-style blends."
+    },
+    {
+      "type": "tip",
+      "body": "When a Bordeaux label says Bordeaux or Bordeaux Supérieur, without a famous commune, it's often Merlot-dominated and made to drink early."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What are Merlot's vulnerabilities in the vineyard?",
+      "options": [
+        "Spring frost",
+        "Rot in wet weather",
+        "Coulure",
+        "Failure to ripen in heat"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Merlot ripens easily; in heat it can overripen, not fail to ripen."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot is Bordeaux's most planted grape, grown worldwide",
+        "It ripens early and loves cool clay soils",
+        "Frost, rot and coulure are its weaknesses"
+      ]
+    }
+  ]
+}

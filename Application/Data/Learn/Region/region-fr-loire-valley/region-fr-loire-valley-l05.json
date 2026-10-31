@@ -1,0 +1,65 @@
+{
+  "id": "region-fr-loire-valley-l05",
+  "moduleId": "region-fr-loire-valley",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Loire and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read Loire labels",
+    "Know sweetness terms",
+    "Pair Loire wines with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading labels",
+      "body": "Most Loire labels name the appellation, not the grape. Sweetness terms help for Chenin: sec, dry; demi-sec, off-dry; moelleux, sweet; doux, very sweet. Sur lie marks lees-aged Muscadet. Crémant de Loire and Saumur Brut mark traditional method sparkling wine.",
+      "highlight": "Sec, demi-sec, moelleux, doux"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Muscadet suits oysters and mussels. Sancerre suits goat's cheese, like crottin de Chavignol, and fish. Vouvray demi-sec suits pork and spicy food. Chinon suits charcuterie, rillettes and roast chicken, served slightly cool. Sweet Layon suits fruit tarts and blue cheese.",
+      "highlight": "Oysters, goat's cheese, rillettes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Loire cheese is a classic match for Sancerre?",
+      "options": [
+        "Crottin de Chavignol",
+        "Roquefort",
+        "Parmesan",
+        "Brie"
+      ],
+      "answer": 0,
+      "explanation": "Crottin de Chavignol is a goat's cheese from a Sancerre village."
+    },
+    {
+      "type": "tip",
+      "body": "The Loire is one of France's best sources of value. Cabernet Franc from Chinon and Muscadet sur lie offer real character at modest prices."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Loire terms from driest to sweetest.",
+      "items": [
+        "Sec",
+        "Demi-sec",
+        "Moelleux",
+        "Doux"
+      ],
+      "explanation": "Doux is the sweetest."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Loire labels name places; learn the grapes",
+        "Sec to doux mark Chenin's sweetness",
+        "Muscadet with oysters, Sancerre with goat's cheese"
+      ]
+    }
+  ]
+}

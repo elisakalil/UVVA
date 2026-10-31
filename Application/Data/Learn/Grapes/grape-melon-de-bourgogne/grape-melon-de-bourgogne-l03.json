@@ -1,0 +1,70 @@
+{
+  "id": "grape-melon-de-bourgogne-l03",
+  "moduleId": "grape-melon-de-bourgogne",
+  "order": 3,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Muscadet",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain sur lie ageing",
+    "Pair Muscadet with food",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sur lie",
+      "body": "Muscadet sur lie stays on its fine lees, the dead yeast, through winter until bottling in spring. This adds bread and yeasty notes, a creamier texture and protection against oxidation, plus a slight spritz from retained CO2. It gives a neutral grape more depth and character.",
+      "highlight": "Lees until bottling"
+    },
+    {
+      "type": "concept",
+      "title": "Oysters",
+      "body": "Muscadet is the classic oyster wine: its high acidity, low alcohol and saline edge match shellfish perfectly. It also suits mussels, clams, crab, grilled sardines and beurre blanc, Nantes' butter sauce. Serve at 7 to 9 degrees. Most is best within three years; crus communaux age 10 years or more.",
+      "highlight": "Oysters, mussels, beurre blanc"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does sur lie ageing add to Muscadet?",
+      "options": [
+        "Bread notes, creaminess and a slight spritz",
+        "Sweetness",
+        "Red colour",
+        "Tannin"
+      ],
+      "answer": 0,
+      "explanation": "Lees contact adds texture and depth."
+    },
+    {
+      "type": "tip",
+      "body": "Muscadet is one of the best-value white wines in France. A good sur lie with a dozen oysters is a classic French pleasure."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Muscadet?",
+      "options": [
+        "Oysters",
+        "Mussels",
+        "Beurre blanc fish",
+        "Roast beef"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Roast beef needs a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sur lie ageing adds bread, cream and a slight spritz",
+        "Muscadet is the classic oyster wine",
+        "Serve at 7 to 9 degrees; crus communaux age longer"
+      ]
+    }
+  ]
+}

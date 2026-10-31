@@ -1,0 +1,62 @@
+{
+  "id": "path-07-l04",
+  "moduleId": "path-07",
+  "order": 4,
+  "title": "Heat, sunlight and water",
+  "subtitle": "What the vine needs to ripen",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the role of heat and sunlight",
+    "Explain how water stress affects quality",
+    "Name the natural influences that cool or warm a site"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Heat and sunlight",
+      "body": "The vine needs warmth to grow and to ripen sugar, tannin and aroma. Sunlight drives photosynthesis, the process that makes sugar in the leaves. Too little heat and grapes stay sour and green. Too much and sugar races ahead of flavour, while acidity drops. Balance is what growers look for.",
+      "highlight": "Warmth ripens; sunlight makes sugar"
+    },
+    {
+      "type": "concept",
+      "title": "Water: not too much, not too little",
+      "body": "A vine needs about 500 to 700 mm of water a year. Too much and it grows leaves instead of fruit, with large, diluted berries. Mild water stress after veraison is good: berries stay small and the vine focuses on ripening. Severe drought shuts the vine down. In dry regions, drip irrigation lets growers control the dose.",
+      "highlight": "Mild stress concentrates; drought stops ripening"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A small amount of water stress after veraison can improve grape quality.",
+      "answer": true,
+      "explanation": "Yes. Mild stress keeps berries small and pushes the vine to ripen fruit instead of growing more leaves."
+    },
+    {
+      "type": "concept",
+      "title": "Natural influences",
+      "body": "Large bodies of water moderate temperatures, keeping winters milder and summers cooler, like the Atlantic in Bordeaux. Cold ocean currents cool coastal regions, like the Humboldt current in Chile. Altitude cools a site by roughly 0.6 degrees per 100 m, which is why Mendoza's vineyards at 1,000 m keep their freshness. Fog does the same in Napa and Sonoma.",
+      "highlight": "Water, currents, altitude and fog cool a site"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Mendoza make fresh wines despite its warm, sunny latitude?",
+      "options": [
+        "It has very high rainfall",
+        "Its vineyards sit at high altitude",
+        "It is close to the equator",
+        "It has very fertile soils"
+      ],
+      "answer": 1,
+      "explanation": "Altitude cools the air, about 0.6 degrees per 100 m, so cool nights preserve acidity even in strong sun."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Heat ripens grapes and sunlight makes sugar",
+        "Mild water stress after veraison improves quality",
+        "Water, ocean currents, altitude and fog cool a site"
+      ]
+    }
+  ]
+}

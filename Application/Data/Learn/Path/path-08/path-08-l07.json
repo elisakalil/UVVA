@@ -1,0 +1,60 @@
+{
+  "id": "path-08-l07",
+  "moduleId": "path-08",
+  "order": 7,
+  "title": "Bottling and closures",
+  "subtitle": "The last steps",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why wine is clarified and stabilised",
+    "Compare cork, screw cap and other closures",
+    "Explain the effect of the closure on ageing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Clarifying and stabilising",
+      "body": "Before bottling, wine is made clear and stable. Fining adds an agent like bentonite clay or egg white that binds haze-causing particles. Filtration strains them out. Cold stabilisation chills the wine to drop tartrate crystals, the harmless wine diamonds sometimes found in bottles. Some producers skip these steps, accepting a little haze.",
+      "highlight": "Fining, filtering, cold stabilisation"
+    },
+    {
+      "type": "concept",
+      "title": "Closures and oxygen",
+      "body": "Natural cork lets in tiny amounts of oxygen, but about 1 to 3% of bottles can be tainted by TCA, which smells of damp cardboard. Screw caps let in very little oxygen and cannot cause cork taint, so they keep fruit fresh; they are standard in New Zealand and Australia. Technical corks and glass stoppers sit in between.",
+      "highlight": "Cork breathes a little; screw caps barely at all"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are the crystals sometimes found in a bottle of white wine?",
+      "options": [
+        "Sugar",
+        "Tartrate crystals",
+        "Broken glass",
+        "Salt"
+      ],
+      "answer": 1,
+      "explanation": "Tartrates are natural salts of tartaric acid. They are harmless and show the wine wasn't cold stabilised."
+    },
+    {
+      "type": "tip",
+      "body": "A screw cap isn't a sign of a cheap wine. Many top Rieslings, Sauvignon Blancs and even fine reds use them to keep the wine exactly as the winemaker intended."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Wines sealed with screw caps cannot suffer from cork taint.",
+      "answer": true,
+      "explanation": "Yes. TCA, the cause of cork taint, comes from natural cork. Screw caps avoid it, although other faults are still possible."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fining, filtration and cold stabilisation make wine clear and stable",
+        "Corks let in a little oxygen but risk TCA",
+        "Screw caps keep wine fresh and avoid cork taint"
+      ]
+    }
+  ]
+}

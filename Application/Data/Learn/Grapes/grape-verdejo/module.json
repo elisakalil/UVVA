@@ -1,0 +1,24 @@
+{
+  "id": "grape-verdejo",
+  "kind": "grape",
+  "order": 46,
+  "color": "white",
+  "title": "Verdejo",
+  "aliases": [],
+  "origin": "Spain",
+  "countries": [
+    "Spain"
+  ],
+  "points": "0 0 0 1 = 1",
+  "complexity": "D",
+  "description": "Rueda's grape: herbal, citrus and fennel, with a bitter almond finish.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "grape-verdejo-l01",
+    "grape-verdejo-l02",
+    "grape-verdejo-l03",
+    "grape-verdejo-l04"
+  ]
+}

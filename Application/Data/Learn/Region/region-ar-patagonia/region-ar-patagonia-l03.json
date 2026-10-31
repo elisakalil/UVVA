@@ -1,0 +1,60 @@
+{
+  "id": "region-ar-patagonia-l03",
+  "moduleId": "region-ar-patagonia",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Patagonia and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Patagonian label",
+    "Pair Patagonian wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape and the region: Patagonia, Neuquén, Río Negro or Chubut. Some note the latitude, like 45 degrees south, as a selling point, as altitude is in the north. Argentina's 85% rule applies.",
+      "highlight": "Grape, region, latitude"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Patagonian Pinot Noir suits lamb, Patagonian lamb roasted al asador, trout from Andean lakes, salmon and mushrooms. Malbec suits beef and game. Sémillon suits fish and poultry. Serve Pinot at 14 to 16 degrees, Malbec at 16 to 18.",
+      "highlight": "Patagonian lamb with Pinot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which regional dish suits Patagonian Pinot Noir?",
+      "options": [
+        "Lamb roasted al asador",
+        "Sushi",
+        "Pad Thai",
+        "Fish and chips"
+      ],
+      "answer": 0,
+      "explanation": "Patagonian lamb is a regional speciality."
+    },
+    {
+      "type": "tip",
+      "body": "Patagonian lamb is slow-roasted on an iron cross over an open fire, al asador, a perfect match for fresh Pinot or Malbec."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Patagonian Pinot Noir suits trout and salmon.",
+      "answer": true,
+      "explanation": "Yes. Its freshness and low tannin suit fish."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show grape, region and sometimes latitude",
+        "Pinot suits lamb and trout; Malbec suits beef",
+        "Serve Pinot slightly cooler than Malbec"
+      ]
+    }
+  ]
+}

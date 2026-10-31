@@ -1,0 +1,70 @@
+{
+  "id": "grape-touriga-nacional-l03",
+  "moduleId": "grape-touriga-nacional",
+  "order": 3,
+  "title": "Port and dry reds",
+  "subtitle": "Two wines, one grape",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Touriga Nacional's role in Port",
+    "Describe dry Douro reds",
+    "Compare the two styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "In Port",
+      "body": "Port is a blend of many grapes. Touriga Nacional brings colour, tannin, structure and its floral perfume, essential for Vintage Port, which must age for decades. It is usually a smaller share than Touriga Franca, the Douro's most planted grape, because of its lower yields. Most Port grapes are foot-trodden or machine-trodden in lagares.",
+      "highlight": "Structure and perfume in Port"
+    },
+    {
+      "type": "concept",
+      "title": "Dry reds",
+      "body": "Since the 1990s, the Douro has become famous for dry reds, often blends of Touriga Nacional, Touriga Franca and Tinta Roriz. Barca Velha, first made in 1952, showed the potential. Today single-varietal Touriga Nacional from the Douro and Dão is common, often aged in French oak.",
+      "highlight": "Barca Velha, since 1952"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does Touriga Nacional bring to Port?",
+      "options": [
+        "Colour",
+        "Structure",
+        "Floral aroma",
+        "Neutrality"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Touriga Nacional is aromatic, not neutral."
+    },
+    {
+      "type": "tip",
+      "body": "Try a Douro dry red and a ruby Port side by side. The violet and dark fruit of Touriga Nacional link both, though one is dry and the other sweet."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Barca Velha, an early Douro dry red, was first made in ____.",
+      "options": [
+        "1952",
+        "1756",
+        "1990",
+        "2008"
+      ],
+      "answer": "1952",
+      "explanation": "1952. It showed that the Douro could make great dry reds."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Touriga Nacional gives Port colour, structure and perfume",
+        "The Douro now makes famous dry reds, since Barca Velha in 1952",
+        "Dry and sweet styles share its violet and dark fruit"
+      ]
+    }
+  ]
+}

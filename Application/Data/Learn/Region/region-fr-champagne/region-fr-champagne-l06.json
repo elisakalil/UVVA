@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-champagne-l06",
+  "moduleId": "region-fr-champagne",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Champagne and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Champagne label",
+    "Serve Champagne well",
+    "Pair Champagne with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "A Champagne label shows the house or grower, the sweetness level, the producer code, NV or a vintage, and sometimes Grand Cru, Premier Cru, Blanc de Blancs or Blanc de Noirs. The word Champagne itself is protected: only wine from the region made by the traditional method can use it.",
+      "highlight": "Producer, dosage, code, vintage"
+    },
+    {
+      "type": "concept",
+      "title": "Serving",
+      "body": "Serve at 8 to 10 degrees; vintage and prestige cuvées a little warmer. A white wine glass shows the aromas better than a narrow flute. Open by holding the cork and turning the bottle slowly, letting the pressure out with a sigh, not a pop.",
+      "highlight": "8 to 10 degrees, in a wine glass"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why might a white wine glass suit Champagne better than a flute?",
+      "options": [
+        "It lets aromas gather and show",
+        "It keeps more bubbles",
+        "It's colder",
+        "It's traditional only in Spain"
+      ],
+      "answer": 0,
+      "explanation": "A wider bowl reveals the wine's aromas."
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Brut Champagne suits oysters, caviar, sushi, fried food and salty snacks; acidity and bubbles cut fat and salt. Blanc de Blancs suits shellfish; Blanc de Noirs and rosé suit poultry, salmon and charcuterie. Vintage and aged Champagne suit truffle and roast chicken. Demi-Sec suits fruit desserts.",
+      "highlight": "Oysters, fried food, roast chicken"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Brut Champagne?",
+      "options": [
+        "Oysters",
+        "Fried chicken",
+        "Salty snacks",
+        "Very sweet chocolate cake"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sweet cake makes Brut taste sour; choose Demi-Sec."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show producer, dosage, code and vintage",
+        "Serve at 8 to 10 degrees in a wine glass",
+        "Brut suits oysters and fried food; Demi-Sec suits desserts"
+      ]
+    }
+  ]
+}

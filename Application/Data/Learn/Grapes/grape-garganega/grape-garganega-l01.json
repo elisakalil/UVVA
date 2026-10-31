@@ -1,0 +1,62 @@
+{
+  "id": "grape-garganega-l01",
+  "moduleId": "grape-garganega",
+  "order": 1,
+  "title": "Meet Garganega",
+  "subtitle": "Almond, lemon and flowers",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Garganega's flavours",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Delicate and savoury",
+      "body": "Garganega gives light to medium-bodied whites with lemon, pear, white peach, almond, white flowers and a saline, mineral edge. Acidity is medium to high. It's the main grape of Soave, in the Veneto. With age, it gains honey and nutty notes.",
+      "highlight": "Lemon, almond, minerality"
+    },
+    {
+      "type": "concept",
+      "title": "An old Veneto grape",
+      "body": "Garganega is one of Italy's oldest white grapes, recorded around Verona since the 13th century. DNA shows it's identical to Sicily's Grecanico and related to many central Italian grapes, like Trebbiano Toscano. It's vigorous and late-ripening; yields must be controlled for quality.",
+      "highlight": "Same as Sicily's Grecanico"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Garganega called in Sicily?",
+      "options": [
+        "Grecanico",
+        "Grillo",
+        "Catarratto",
+        "Zibibbo"
+      ],
+      "answer": 0,
+      "explanation": "DNA shows Garganega and Grecanico are the same grape."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon colour, lemon and almond, a light floral note, and a crisp, slightly saline palate with a bitter almond finish. Better Soave has more body and texture. Compared with Pinot Grigio, Garganega has more almond and minerality.",
+      "highlight": "Almond finish, saline edge"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Garganega is the main grape of Soave.",
+      "answer": true,
+      "explanation": "Yes. Soave must be at least 70% Garganega."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Garganega gives lemon, almond and a mineral edge",
+        "It's an old Veneto grape, identical to Grecanico",
+        "It's the main grape of Soave"
+      ]
+    }
+  ]
+}

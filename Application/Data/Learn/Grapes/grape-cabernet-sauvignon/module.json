@@ -1,0 +1,31 @@
+{
+  "id": "grape-cabernet-sauvignon",
+  "kind": "grape",
+  "order": 6,
+  "color": "red",
+  "title": "Cabernet Sauvignon",
+  "aliases": [],
+  "origin": "France",
+  "countries": [
+    "France",
+    "United States",
+    "Chile",
+    "Australia",
+    "Italy"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "The world's most planted red grape: blackcurrant, cedar and structure, from the Médoc to Napa.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-cabernet-sauvignon-l01",
+    "grape-cabernet-sauvignon-l02",
+    "grape-cabernet-sauvignon-l03",
+    "grape-cabernet-sauvignon-l04",
+    "grape-cabernet-sauvignon-l05",
+    "grape-cabernet-sauvignon-l06",
+    "grape-cabernet-sauvignon-l07"
+  ]
+}

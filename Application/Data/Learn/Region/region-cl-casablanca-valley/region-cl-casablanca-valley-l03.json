@@ -1,0 +1,70 @@
+{
+  "id": "region-cl-casablanca-valley-l03",
+  "moduleId": "region-cl-casablanca-valley",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Casablanca and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Casablanca label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape and Valle de Casablanca, often with Costa, the coastal descriptor added in 2011. Casablanca is part of the larger Aconcagua region. Chile's 85% rules apply. Many large Chilean wineries have Casablanca vineyards for their whites.",
+      "highlight": "Valle de Casablanca, Costa"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Casablanca Sauvignon Blanc suits Chilean seafood: ceviche, machas, razor clams, congrio, conger eel, and goat's cheese and salads. Chardonnay suits crab, chicken and creamy fish; Pinot Noir suits salmon and duck. Serve whites at 7 to 10 degrees, Pinot at 14 to 15.",
+      "highlight": "Ceviche and Chilean seafood"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Casablanca Sauvignon Blanc?",
+      "options": [
+        "Ceviche",
+        "Beef stew",
+        "Chocolate mousse",
+        "Roast lamb"
+      ],
+      "answer": 0,
+      "explanation": "Citrus and acidity match the lime-cured fish."
+    },
+    {
+      "type": "tip",
+      "body": "Valparaíso, near Casablanca, is famous for seafood, a natural pairing with the valley's crisp whites."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Casablanca whites?",
+      "options": [
+        "Ceviche",
+        "Razor clams",
+        "Goat's cheese",
+        "Grilled steak"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Steak needs a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show Valle de Casablanca and often Costa",
+        "Sauvignon Blanc suits ceviche and seafood",
+        "Serve whites cold"
+      ]
+    }
+  ]
+}

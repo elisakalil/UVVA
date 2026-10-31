@@ -1,0 +1,96 @@
+{
+  "id": "region-gr-santorini-l05",
+  "moduleId": "region-gr-santorini",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Santorini",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Santorini's land and grapes",
+    "Explain kouloura",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Aspa",
+          "right": "Volcanic soil"
+        },
+        {
+          "left": "Kouloura",
+          "right": "Basket vines"
+        },
+        {
+          "left": "Vinsanto",
+          "right": "Sun-dried sweet wine"
+        },
+        {
+          "left": "Nykteri",
+          "right": "Night-harvested style"
+        }
+      ],
+      "explanation": "Santorini's vocabulary is unique."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where do Santorini's vines get most of their moisture?",
+      "options": [
+        "Night sea mist and dew",
+        "Irrigation",
+        "Summer rain",
+        "Rivers"
+      ],
+      "answer": 0,
+      "explanation": "Rain is scarce; mist and dew help."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Santorini's vines are ungrafted.",
+      "answer": true,
+      "explanation": "Yes. Phylloxera can't survive in its soil."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes grow on Santorini?",
+      "options": [
+        "Assyrtiko",
+        "Athiri",
+        "Aidani",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is Italian."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Santorini PDO white must be at least ____% Assyrtiko.",
+      "options": [
+        "75",
+        "50",
+        "100",
+        "20"
+      ],
+      "answer": "75",
+      "explanation": "At least 75%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Santorini is a dry, windy volcanic island",
+        "Assyrtiko keeps high acidity in fierce sun",
+        "Kouloura baskets protect the vines",
+        "Vinsanto and dry Assyrtiko suit Greek food"
+      ]
+    }
+  ]
+}

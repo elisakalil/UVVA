@@ -1,0 +1,21 @@
+{
+  "id": "path-24",
+  "kind": "path",
+  "order": 24,
+  "level": "Advanced",
+  "complexity": "B",
+  "title": "Australia, New Zealand and South Africa",
+  "description": "Three southern hemisphere countries, three very different stories of climate and style.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "path-24-l01",
+    "path-24-l02",
+    "path-24-l03",
+    "path-24-l04",
+    "path-24-l05",
+    "path-24-l06",
+    "path-24-l07"
+  ]
+}

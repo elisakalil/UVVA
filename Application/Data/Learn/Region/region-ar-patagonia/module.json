@@ -1,0 +1,24 @@
+{
+  "id": "region-ar-patagonia",
+  "kind": "region",
+  "order": 40,
+  "country": "Argentina",
+  "countryCode": "AR",
+  "title": "Patagonia",
+  "grapes": [
+    "Pinot Noir",
+    "Malbec"
+  ],
+  "points": "1 0 1 0 = 2",
+  "complexity": "D",
+  "description": "Argentina's southern frontier: wind, latitude and fresher Pinot Noir and Malbec.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-ar-patagonia-l01",
+    "region-ar-patagonia-l02",
+    "region-ar-patagonia-l03",
+    "region-ar-patagonia-l04"
+  ]
+}

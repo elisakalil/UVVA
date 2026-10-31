@@ -1,0 +1,96 @@
+{
+  "id": "region-us-sonoma-county-l05",
+  "moduleId": "region-us-sonoma-county",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Sonoma",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Sonoma's land and grapes",
+    "Compare its AVAs",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Sonoma.",
+      "pairs": [
+        {
+          "left": "Petaluma Gap",
+          "right": "Wind and fog corridor"
+        },
+        {
+          "left": "Buena Vista",
+          "right": "Oldest commercial winery"
+        },
+        {
+          "left": "Goldridge",
+          "right": "Sandy loam soil"
+        },
+        {
+          "left": "Dry Creek Valley",
+          "right": "Old-vine Zinfandel"
+        }
+      ],
+      "explanation": "Sonoma's vocabulary is varied."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Sonoma AVA is known for Cabernet Sauvignon?",
+      "options": [
+        "Alexander Valley",
+        "Russian River Valley",
+        "Fort Ross-Seaview",
+        "Carneros"
+      ],
+      "answer": 0,
+      "explanation": "It's warm and inland."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sonoma's coastal Pinot Noir benefits from Pacific fog.",
+      "answer": true,
+      "explanation": "Yes. Fog keeps it cool and fresh."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes thrive in Sonoma?",
+      "options": [
+        "Pinot Noir",
+        "Chardonnay",
+        "Zinfandel",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo isn't a Sonoma speciality."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Sonoma County has ____ AVAs.",
+      "options": [
+        "19",
+        "3",
+        "50",
+        "1"
+      ],
+      "answer": "19",
+      "explanation": "19 AVAs."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sonoma is larger and more varied than Napa",
+        "Pacific fog cools its coast",
+        "Pinot Noir and Chardonnay lead in cool areas; Zinfandel and Cabernet inland",
+        "Family wineries define its character"
+      ]
+    }
+  ]
+}

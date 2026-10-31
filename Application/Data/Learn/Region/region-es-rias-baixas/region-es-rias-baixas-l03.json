@@ -1,0 +1,60 @@
+{
+  "id": "region-es-rias-baixas-l03",
+  "moduleId": "region-es-rias-baixas",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Rías Baixas and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Rías Baixas label",
+    "Pair Albariño with food",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show Rías Baixas DO, sometimes a sub-zone like Val do Salnés, and the grape. Rías Baixas Albariño means 100% Albariño; Rías Baixas Salnés, Condado do Tea or Rosal may be blends. Barrica means oak-aged. Most wines are released young, within a year of harvest.",
+      "highlight": "Albariño, sub-zone, barrica"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Albariño is Galicia's seafood wine: pulpo a la gallega, octopus with paprika and olive oil, mussels, clams, scallops, razor clams, oysters and grilled fish. Galicia's seafood is famous across Spain. Serve at 8 to 10 degrees. Cambados holds an Albariño festival every August.",
+      "highlight": "Pulpo, shellfish, grilled fish"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Galician dish is a classic match for Albariño?",
+      "options": [
+        "Pulpo a la gallega",
+        "Roast beef",
+        "Chocolate cake",
+        "Lamb tagine"
+      ],
+      "answer": 0,
+      "explanation": "Octopus with paprika suits Albariño's acidity and salinity."
+    },
+    {
+      "type": "tip",
+      "body": "Across the Miño river, in Portugal, the same grape is called Alvarinho and makes the wines of Monção e Melgaço."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Rías Baixas Albariño is released young.",
+      "answer": true,
+      "explanation": "Yes, usually within a year of harvest."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the grape, sub-zone and sometimes barrica",
+        "Albariño suits octopus, shellfish and grilled fish",
+        "Serve at 8 to 10 degrees"
+      ]
+    }
+  ]
+}

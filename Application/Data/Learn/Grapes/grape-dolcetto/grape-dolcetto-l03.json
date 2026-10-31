@@ -1,0 +1,66 @@
+{
+  "id": "grape-dolcetto-l03",
+  "moduleId": "grape-dolcetto",
+  "order": 3,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Dolcetto",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Dolcetto with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Everyday food",
+      "body": "Dolcetto suits everyday Piedmontese food: salumi, vitello tonnato, agnolotti pasta, pizza, roast chicken and mild cheeses. Its soft acidity and moderate tannin make it easy with many dishes. Its bitter finish works well with fatty charcuterie.",
+      "highlight": "Salumi, agnolotti, pizza"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 14 to 16 degrees, slightly cooler than big reds. Most Dolcetto is best within two to three years of the vintage, when fruit is fresh. Dogliani Superiore can age five to eight years. It's usually made in steel, without much oak.",
+      "highlight": "Drink young, slightly cool"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Dolcetto?",
+      "options": [
+        "Salumi",
+        "Agnolotti pasta",
+        "Pizza",
+        "A sweet fruit tart"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sweet desserts make dry reds taste sour."
+    },
+    {
+      "type": "concept",
+      "title": "A mealtime wine",
+      "body": "In Piedmont, Dolcetto is often the wine on the table at lunch, while Barolo and Barbaresco wait for special occasions or long ageing. It's honest and fruity rather than complex, and that's its charm.",
+      "highlight": "Piedmont's lunch wine"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Dolcetto is best drunk within two to three years.",
+      "answer": true,
+      "explanation": "Yes. Its charm is fresh, dark fruit."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dolcetto suits salumi, pasta and pizza",
+        "Serve at 14 to 16 degrees, within two to three years",
+        "It's Piedmont's everyday lunch wine"
+      ]
+    }
+  ]
+}

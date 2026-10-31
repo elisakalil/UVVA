@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-southern-rhone-l03",
+  "moduleId": "region-fr-southern-rhone",
+  "order": 3,
+  "title": "Châteauneuf-du-Pape",
+  "subtitle": "The pope's new castle",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Châteauneuf's soils",
+    "Explain its 13 grapes",
+    "Describe its wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Galets roulés",
+      "body": "Châteauneuf-du-Pape's most famous soil is covered with galets roulés, large, round quartzite stones left by the ancient Rhône. They store heat by day and release it at night, helping ripening, and protect the soil from drying. But Châteauneuf also has sand, which gives elegant wines like Château Rayas, and limestone.",
+      "highlight": "Galets store heat"
+    },
+    {
+      "type": "concept",
+      "title": "Thirteen grapes",
+      "body": "Châteauneuf allows 13 grape varieties, counted as 18 including colour variants: red, white and pink. Grenache usually dominates, often 70% or more. Château de Beaucastel famously uses all 13. Yields are low, about 35 hl/ha. Wines are rich, warm, spicy, with red fruit, garrigue herbs and leather, often 14.5 to 15.5% alcohol.",
+      "highlight": "13 varieties, Grenache-led"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are galets roulés?",
+      "options": [
+        "Large round stones that store heat",
+        "A type of barrel",
+        "A grape",
+        "A cheese"
+      ],
+      "answer": 0,
+      "explanation": "These river stones warm the vines at night."
+    },
+    {
+      "type": "concept",
+      "title": "Bottles and age",
+      "body": "Many Châteauneuf bottles carry the papal coat of arms embossed on the glass. Most of the wine is red; about 7% is white. Good Châteauneuf ages 10 to 20 years, gaining leather, game and dried fruit. Neighbouring Gigondas and Vacqueyras offer similar, often more affordable wines.",
+      "highlight": "Papal arms on the bottle"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Châteauneuf-du-Pape may use 13 grape varieties.",
+      "answer": true,
+      "explanation": "Yes, though Grenache usually dominates."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Galets roulés store heat in Châteauneuf's vineyards",
+        "Châteauneuf allows 13 grapes, usually Grenache-led",
+        "Its rich, spicy reds age 10 to 20 years"
+      ]
+    }
+  ]
+}

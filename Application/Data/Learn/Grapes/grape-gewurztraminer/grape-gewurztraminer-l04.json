@@ -1,0 +1,67 @@
+{
+  "id": "grape-gewurztraminer-l04",
+  "moduleId": "grape-gewurztraminer",
+  "order": 4,
+  "title": "Late harvest",
+  "subtitle": "Sweet Gewürztraminer",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Vendanges Tardives",
+    "Explain Sélection de Grains Nobles",
+    "Explain why Gewürztraminer suits sweet styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Vendanges Tardives",
+      "body": "Alsace's Vendanges Tardives, VT, means late harvest. Grapes stay on the vine into late autumn, concentrating sugar. Gewürztraminer VT needs a minimum potential alcohol of about 15.3%, around 257 g/l of sugar at harvest. The wines can be dry, off-dry or sweet, rich and intensely perfumed.",
+      "highlight": "VT: late harvest"
+    },
+    {
+      "type": "concept",
+      "title": "Sélection de Grains Nobles",
+      "body": "Sélection de Grains Nobles, SGN, is made from berries affected by noble rot, picked one by one. Minimum sugar is higher, about 18.2% potential alcohol for Gewürztraminer. SGN wines are lusciously sweet, with honey, candied fruit and spice, and can age for decades.",
+      "highlight": "SGN: noble rot, very sweet"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Alsace Gewürztraminer styles from least to most concentrated.",
+      "items": [
+        "Dry Gewürztraminer",
+        "Off-dry Gewürztraminer",
+        "Vendanges Tardives",
+        "Sélection de Grains Nobles"
+      ],
+      "explanation": "Later picking and noble rot concentrate sugar further."
+    },
+    {
+      "type": "concept",
+      "title": "Why it suits sweetness",
+      "body": "Gewürztraminer's high natural sugar and intense aroma suit late harvest styles. Its weakness, low acidity, is a challenge: the best VT and SGN come from top sites and vintages where acidity is preserved. Without it, the wines can feel heavy.",
+      "highlight": "High sugar, but acidity is key"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Sélection de Grains Nobles made from?",
+      "options": [
+        "Noble rot berries picked individually",
+        "Frozen grapes",
+        "Dried grapes",
+        "Sparkling base wine"
+      ],
+      "answer": 0,
+      "explanation": "SGN uses botrytised berries, selected one by one."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vendanges Tardives is late harvest, dry to sweet",
+        "SGN uses noble rot berries and is lusciously sweet",
+        "Acidity decides the best sweet Gewürztraminer"
+      ]
+    }
+  ]
+}

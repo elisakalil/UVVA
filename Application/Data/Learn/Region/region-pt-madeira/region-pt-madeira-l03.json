@@ -1,0 +1,79 @@
+{
+  "id": "region-pt-madeira-l03",
+  "moduleId": "region-pt-madeira",
+  "order": 3,
+  "title": "Estufagem and canteiro",
+  "subtitle": "Heating the wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain estufagem",
+    "Explain canteiro",
+    "Compare the two"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fortification",
+      "body": "Madeira is fortified with grape spirit at 96%, to about 17 to 22% alcohol. For drier styles, like Sercial, spirit is added late, after more fermentation; for sweeter styles, like Malvasia, early. Then the wine is heated, recreating the effect of tropical voyages.",
+      "highlight": "Fortified, then heated"
+    },
+    {
+      "type": "concept",
+      "title": "Two methods",
+      "body": "Estufagem heats wine in stainless steel tanks, estufas, to 45 to 50 degrees for at least three months, then rests it. It's faster and cheaper, used for younger wines. Canteiro ages wine in wooden casks in warm lofts, armazéns, for years, sometimes decades, heated only by the sun. Canteiro is slower and gentler, giving finer wines. All top Madeiras are canteiro.",
+      "highlight": "Estufagem fast; canteiro slow"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each method to its feature.",
+      "pairs": [
+        {
+          "left": "Estufagem",
+          "right": "Heated tanks, months"
+        },
+        {
+          "left": "Canteiro",
+          "right": "Warm lofts, years"
+        },
+        {
+          "left": "Armazéns",
+          "right": "Ageing lodges"
+        },
+        {
+          "left": "Estufas",
+          "right": "Heating tanks"
+        }
+      ],
+      "explanation": "Heat is Madeira's signature."
+    },
+    {
+      "type": "concept",
+      "title": "Oxidation",
+      "body": "Madeira's ageing exposes it to heat and oxygen, deliberately. The wine turns amber to brown, with caramel, toffee, nuts, dried fruit, coffee and citrus peel. Because it's already oxidised and heated, it's almost indestructible: once opened, it lasts for months; old bottles from the 18th century can still be sound.",
+      "highlight": "Already oxidised, almost immortal"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which method gives Madeira's finest wines?",
+      "options": [
+        "Canteiro",
+        "Estufagem",
+        "Carbonic maceration",
+        "Flor ageing"
+      ],
+      "answer": 0,
+      "explanation": "Slow ageing in warm lofts."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Madeira is fortified, then heated",
+        "Estufagem heats tanks for months; canteiro ages casks for years",
+        "Heat and oxygen make it almost indestructible"
+      ]
+    }
+  ]
+}

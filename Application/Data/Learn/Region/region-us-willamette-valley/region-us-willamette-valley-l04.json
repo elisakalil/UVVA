@@ -1,0 +1,60 @@
+{
+  "id": "region-us-willamette-valley-l04",
+  "moduleId": "region-us-willamette-valley",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Oregon and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Willamette label",
+    "Pair Oregon wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the winery, grape, AVA, like Willamette Valley or Dundee Hills, and vintage. Oregon's rules are strict: 90% of a named grape, 95% from a named AVA, and no use of European place names like Burgundy. Most wineries are small and family-owned; many are certified sustainable, LIVE, or biodynamic.",
+      "highlight": "Strict rules, small wineries"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Willamette Pinot Noir suits salmon, especially Pacific Northwest grilled or cedar-plank salmon, duck, mushrooms, truffles, pork and roast chicken. Pinot Gris suits seafood, Dungeness crab and Asian food. Chardonnay suits halibut and creamy dishes. Serve Pinot at 14 to 16 degrees.",
+      "highlight": "Cedar-plank salmon with Pinot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which regional dish is a classic with Oregon Pinot Noir?",
+      "options": [
+        "Cedar-plank salmon",
+        "Paella",
+        "Steak tartare",
+        "Pad Thai"
+      ],
+      "answer": 0,
+      "explanation": "Salmon is a Pacific Northwest staple."
+    },
+    {
+      "type": "tip",
+      "body": "Oregon truffles, found in the Willamette Valley's forests, are a local match for aged Pinot Noir."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Oregon wineries may label wines with European place names like Burgundy.",
+      "answer": false,
+      "explanation": "Not true. Oregon forbids it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Oregon's labelling rules are among America's strictest",
+        "Pinot Noir suits salmon, duck and mushrooms",
+        "Serve Pinot at 14 to 16 degrees"
+      ]
+    }
+  ]
+}

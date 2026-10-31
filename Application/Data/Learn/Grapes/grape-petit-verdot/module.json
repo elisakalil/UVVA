@@ -1,0 +1,28 @@
+{
+  "id": "grape-petit-verdot",
+  "kind": "grape",
+  "order": 3,
+  "color": "red",
+  "title": "Petit Verdot",
+  "aliases": [],
+  "origin": "France",
+  "countries": [
+    "France",
+    "Spain",
+    "Australia",
+    "United States"
+  ],
+  "points": "0 2 0 1 = 3",
+  "complexity": "C",
+  "description": "A late-ripening Bordeaux grape that adds colour and spice to blends, and shines alone in warm places.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-petit-verdot-l01",
+    "grape-petit-verdot-l02",
+    "grape-petit-verdot-l03",
+    "grape-petit-verdot-l04",
+    "grape-petit-verdot-l05"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "grape-cinsault-l02",
+  "moduleId": "grape-cinsault",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Mediterranean and the Cape",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Cinsault's main regions",
+    "Explain its role in blends",
+    "Name its old-vine homes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "France and beyond",
+      "body": "Cinsault grows across the Languedoc, Provence and the southern Rhône, mainly as a blending grape and in rosé. It was widely planted in Algeria and Morocco, and Lebanon's Bekaa Valley uses it, notably at Château Musar. South Africa and Chile's Itata Valley have old plantings.",
+      "highlight": "Languedoc, Lebanon, South Africa, Chile"
+    },
+    {
+      "type": "concept",
+      "title": "In blends",
+      "body": "In Châteauneuf-du-Pape and Côtes du Rhône, Cinsault adds perfume and softness to Grenache and Syrah. In the Languedoc, it softens Carignan. Its low tannin and freshness make blends more approachable. It's one of 13 grapes allowed in Châteauneuf.",
+      "highlight": "Softness and perfume in blends"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Cinsault.",
+      "pairs": [
+        {
+          "left": "Provence",
+          "right": "Rosé blends"
+        },
+        {
+          "left": "Bekaa Valley",
+          "right": "Château Musar"
+        },
+        {
+          "left": "Itata",
+          "right": "Chilean old vines"
+        },
+        {
+          "left": "Châteauneuf-du-Pape",
+          "right": "One of 13 grapes"
+        }
+      ],
+      "explanation": "Cinsault spread around the Mediterranean and beyond."
+    },
+    {
+      "type": "tip",
+      "body": "Chile's Itata Valley has old, dry-farmed Cinsault vines planted long ago. Young producers there now make light, fresh, affordable reds from them."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does Cinsault add to blends?",
+      "options": [
+        "Softness",
+        "Perfume",
+        "Freshness",
+        "Heavy tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cinsault is low in tannin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cinsault grows across the south of France and beyond",
+        "It softens and perfumes blends",
+        "Lebanon, South Africa and Chile have notable plantings"
+      ]
+    }
+  ]
+}

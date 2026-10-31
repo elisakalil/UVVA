@@ -1,0 +1,62 @@
+{
+  "id": "region-nz-hawkes-bay-l01",
+  "moduleId": "region-nz-hawkes-bay",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Warm and sunny",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Hawke's Bay's geography",
+    "Explain its climate",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "East coast of the North Island",
+      "body": "Hawke's Bay lies on the east coast of New Zealand's North Island, around the towns of Napier and Hastings. It's New Zealand's second largest wine region, with about 5,000 hectares. Mountain ranges to the west block rain and wind, and the Pacific is to the east. Soils vary greatly, from river gravels to clay and limestone.",
+      "highlight": "Napier and Hastings"
+    },
+    {
+      "type": "concept",
+      "title": "One of the warmest regions",
+      "body": "Hawke's Bay is among New Zealand's warmest and sunniest wine regions, which lets later-ripening red grapes ripen. Its maritime climate keeps nights cool and summers moderate. Autumn rain and the occasional cyclone are risks; in 2023, Cyclone Gabrielle flooded many vineyards.",
+      "highlight": "Warm enough for Bordeaux grapes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can Hawke's Bay ripen Cabernet and Merlot?",
+      "options": [
+        "It's one of New Zealand's warmest, sunniest regions",
+        "It's at high altitude",
+        "It has no autumn",
+        "It's irrigated by glaciers"
+      ],
+      "answer": 0,
+      "explanation": "Warmth lets later-ripening reds ripen."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "Hawke's Bay is one of New Zealand's oldest wine regions: missionaries planted vines in 1851, and Mission Estate is the country's oldest winery still operating. Te Mata Estate, from 1896, helped show from the 1980s that New Zealand could make serious red wine with its Coleraine blend.",
+      "highlight": "Mission Estate, 1851"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Hawke's Bay is New Zealand's largest wine region.",
+      "answer": false,
+      "explanation": "Not true. It's the second largest; Marlborough is the largest."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Hawke's Bay is on the North Island's east coast",
+        "It's warm and sunny, sheltered by mountains",
+        "Mission Estate, from 1851, is New Zealand's oldest winery"
+      ]
+    }
+  ]
+}

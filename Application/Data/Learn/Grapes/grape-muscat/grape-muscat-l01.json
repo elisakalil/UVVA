@@ -1,0 +1,62 @@
+{
+  "id": "grape-muscat-l01",
+  "moduleId": "grape-muscat",
+  "order": 1,
+  "title": "Meet Muscat",
+  "subtitle": "The grape that tastes of grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Muscat's aromas",
+    "Explain why it smells of grapes",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Grapey and floral",
+      "body": "Muscat is one of the few wine grapes whose wine smells of fresh grapes. Add orange blossom, rose, elderflower, peach and orange peel. Muscat wines can be dry, sweet, sparkling or fortified, from light Moscato d'Asti to rich Rutherglen Muscat. It's one of the oldest known grape families.",
+      "highlight": "Fresh grapes and orange blossom"
+    },
+    {
+      "type": "concept",
+      "title": "Terpenes",
+      "body": "Muscat's aroma comes from high levels of terpenes, especially linalool, floral and citrus, and geraniol, rose. These compounds are present in the grape itself, which is why the wine smells like eating the fruit. Many Muscats are also table grapes and raisins.",
+      "highlight": "Linalool and geraniol"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compounds give Muscat its grapey, floral aroma?",
+      "options": [
+        "Terpenes, like linalool and geraniol",
+        "Pyrazines",
+        "Tannins",
+        "Rotundone"
+      ],
+      "answer": 0,
+      "explanation": "Terpenes, abundant in Muscat, give floral and grape aromas."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "If a wine smells exactly like fresh grapes, with orange blossom, it's almost certainly Muscat. Dry Muscat is a surprise: aromatic like a sweet wine, but dry on the palate. Compared with Gewürztraminer, Muscat is more grapey and floral, less lychee and spice.",
+      "highlight": "Smells like grapes"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "All Muscat wines are sweet.",
+      "answer": false,
+      "explanation": "Not true. Muscat is made dry, for example in Alsace, as well as sweet and fortified."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Muscat wines smell of fresh grapes and orange blossom",
+        "Terpenes like linalool and geraniol give its aroma",
+        "It's made dry, sweet, sparkling and fortified"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "path-26-l04",
+  "moduleId": "path-26",
+  "order": 4,
+  "title": "Port: ruby and tawny",
+  "subtitle": "Two ways of ageing",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the Douro's role in Port",
+    "Compare ruby and tawny families",
+    "Explain Port's quality categories"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Douro and Gaia",
+      "body": "Port grapes grow in the Douro's three sub-regions: the Baixo Corgo, coolest and wettest; the Cima Corgo, heart of quality; and the Douro Superior, hottest and driest. Vineyards are classified A to F. The wine traditionally travelled down to the lodges of Vila Nova de Gaia, across from Porto, for cool, humid ageing.",
+      "highlight": "Baixo Corgo, Cima Corgo, Douro Superior"
+    },
+    {
+      "type": "concept",
+      "title": "Ruby and tawny",
+      "body": "Ruby Ports age in large vats, with little oxygen, keeping colour and fruit. Reserve Ruby is a better selection. Tawny Ports age in small 550-litre casks, called pipes, where oxygen turns them brown and nutty. Aged tawny with an indication of age, 10, 20, 30, 40 or 50 years, is a blend tasted to match that style. Colheita is a single-vintage tawny.",
+      "highlight": "Vats for ruby; pipes for tawny"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a Colheita Port?",
+      "options": [
+        "A ruby from one year",
+        "A tawny from a single vintage",
+        "A white Port",
+        "A blend of 40-year-old wines"
+      ],
+      "answer": 1,
+      "explanation": "Colheita is a single-vintage tawny aged at least 7 years in cask."
+    },
+    {
+      "type": "concept",
+      "title": "White and rosé",
+      "body": "White Port, from white grapes like Malvasia Fina and Gouveio, ranges from dry to sweet; mixed with tonic, it's a classic aperitif in Porto. Rosé Port, approved in 2008, is made with short skin contact and drunk young and chilled. Aged white Ports, with age indications, also exist.",
+      "highlight": "White and rosé Port"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Port to its ageing.",
+      "pairs": [
+        {
+          "left": "Ruby",
+          "right": "Large vats, fruity"
+        },
+        {
+          "left": "Aged tawny",
+          "right": "Small casks, nutty"
+        },
+        {
+          "left": "Colheita",
+          "right": "Single-vintage tawny"
+        },
+        {
+          "left": "White Port",
+          "right": "White grapes, aperitif"
+        }
+      ],
+      "explanation": "Ageing in vat or cask defines the family."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Port grapes grow in the Douro's three sub-regions",
+        "Ruby ages in large vats; tawny in small casks",
+        "Colheita is a single-vintage tawny; white and rosé Ports exist"
+      ]
+    }
+  ]
+}

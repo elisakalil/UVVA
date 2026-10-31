@@ -1,0 +1,25 @@
+{
+  "id": "region-it-campania",
+  "kind": "region",
+  "order": 15,
+  "country": "Italy",
+  "countryCode": "IT",
+  "title": "Campania",
+  "grapes": [
+    "Aglianico",
+    "Fiano",
+    "Greco"
+  ],
+  "points": "1 0 1 0 = 2",
+  "complexity": "D",
+  "description": "Volcanic hills around Naples: Taurasi, Fiano di Avellino and Greco di Tufo.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-it-campania-l01",
+    "region-it-campania-l02",
+    "region-it-campania-l03",
+    "region-it-campania-l04"
+  ]
+}

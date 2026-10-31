@@ -1,0 +1,72 @@
+{
+  "id": "region-cl-maipo-valley-l03",
+  "moduleId": "region-cl-maipo-valley",
+  "order": 3,
+  "title": "Alto Maipo",
+  "subtitle": "The high Maipo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Alto Maipo",
+    "Explain its soils and climate",
+    "Name its key sites"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Foothills of the Andes",
+      "body": "Alto Maipo, upper Maipo, is the eastern part of the valley, in the Andean foothills, at about 600 to 900 m. Areas include Puente Alto, Pirque and Buin. It's cooler than the valley floor, with strong mountain breezes and a big day and night swing.",
+      "highlight": "Andean foothills, 600 to 900 m"
+    },
+    {
+      "type": "concept",
+      "title": "Soils and style",
+      "body": "Soils are alluvial, with stones, gravel and clay, washed down from the Andes by the Maipo river. They drain well and limit vigour. Alto Maipo Cabernet is more structured and elegant than the valley floor's, with blackcurrant, mint, graphite and fine tannins. It's often compared with Bordeaux's Left Bank.",
+      "highlight": "Stony alluvium, structured wines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Alto Maipo Cabernet more structured than valley floor Cabernet?",
+      "options": [
+        "Cooler foothill sites and stony soils",
+        "More rain",
+        "Volcanic ash",
+        "Sea breezes"
+      ],
+      "answer": 0,
+      "explanation": "Altitude and drainage give structure."
+    },
+    {
+      "type": "concept",
+      "title": "Puente Alto",
+      "body": "Puente Alto, on an ancient river terrace, is home to some of Chile's most famous Cabernet vineyards: Don Melchor's vineyard, Almaviva and Viñedo Chadwick. Viñedo Chadwick topped a 2004 Berlin tasting, a Chilean version of the Judgment of Paris, ahead of top Bordeaux.",
+      "highlight": "Berlin tasting, 2004"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are in Alto Maipo?",
+      "options": [
+        "Puente Alto",
+        "Pirque",
+        "Buin",
+        "Casablanca"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Casablanca is a separate coastal valley."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Alto Maipo sits in the Andean foothills",
+        "Stony soils and cool air give structured Cabernet",
+        "Puente Alto is home to Chile's icon Cabernets"
+      ]
+    }
+  ]
+}

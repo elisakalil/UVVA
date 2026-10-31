@@ -1,0 +1,77 @@
+{
+  "id": "region-it-veneto-l02",
+  "moduleId": "region-it-veneto",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Native grapes for distinct wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the Veneto's main grapes",
+    "Explain each grape's role",
+    "Name its international grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Corvina is the main grape of Valpolicella and Bardolino, giving sour cherry and almond, with thick skins ideal for drying. Corvinone, a separate, larger-berried grape, and Rondinella, which adds colour, are its partners. Molinara was once common; Oseleta is being revived.",
+      "highlight": "Corvina, Corvinone, Rondinella"
+    },
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "Garganega makes Soave, with lemon, almond and minerality. Glera makes Prosecco, light and floral. Turbiana makes Lugana on Lake Garda. The Veneto also produces huge amounts of Pinot Grigio, mostly under the Delle Venezie DOC, and international grapes like Merlot and Chardonnay.",
+      "highlight": "Garganega, Glera, Turbiana"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its wine.",
+      "pairs": [
+        {
+          "left": "Corvina",
+          "right": "Valpolicella"
+        },
+        {
+          "left": "Garganega",
+          "right": "Soave"
+        },
+        {
+          "left": "Glera",
+          "right": "Prosecco"
+        },
+        {
+          "left": "Turbiana",
+          "right": "Lugana"
+        }
+      ],
+      "explanation": "Native grapes make the Veneto's signature wines."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Lugana, from Turbiana on Lake Garda's southern shore. It's a textured, age-worthy white, less known than Soave."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is the backbone of Valpolicella?",
+      "options": [
+        "Corvina",
+        "Glera",
+        "Garganega",
+        "Merlot"
+      ],
+      "answer": 0,
+      "explanation": "Corvina leads Valpolicella and Amarone."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Corvina, Corvinone and Rondinella make Valpolicella",
+        "Garganega makes Soave; Glera makes Prosecco",
+        "The Veneto also makes lots of Pinot Grigio"
+      ]
+    }
+  ]
+}

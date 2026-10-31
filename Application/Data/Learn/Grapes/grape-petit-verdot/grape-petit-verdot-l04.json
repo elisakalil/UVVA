@@ -1,0 +1,62 @@
+{
+  "id": "grape-petit-verdot-l04",
+  "moduleId": "grape-petit-verdot",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Petit Verdot",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Petit Verdot with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rich food",
+      "body": "Petit Verdot's firm tannin and acidity suit rich, savoury food: lamb with herbs, venison, braised beef, hard aged cheeses. Its floral, spicy notes go well with rosemary, sage and black pepper. Avoid delicate fish and very spicy dishes, which clash with its tannin.",
+      "highlight": "Lamb, game, herbs"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees, ideally decanted. Young varietal Petit Verdot can be austere; three to five years in bottle softens it. Good examples age 10 to 15 years. In blends, it helps Bordeaux age longer by adding acidity and tannin.",
+      "highlight": "Decant; three to five years to soften"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Petit Verdot's floral notes pair well with herbs like rosemary and ____.",
+      "options": [
+        "sage",
+        "coriander",
+        "dill",
+        "mint sauce"
+      ],
+      "answer": "sage",
+      "explanation": "Sage and rosemary echo its savoury, floral side."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting quality",
+      "body": "Good Petit Verdot balances its tannin and acidity with ripe fruit; underripe examples taste green and harsh. Look for producers in warm regions or top Bordeaux estates. As a varietal, it's still niche, so it often offers value for its intensity.",
+      "highlight": "Balance of ripeness and structure"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Young varietal Petit Verdot can taste austere and benefits from time.",
+      "answer": true,
+      "explanation": "Yes. Its tannin and acidity soften with a few years in bottle or with decanting."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Petit Verdot suits lamb, game and herb-crusted meat",
+        "Serve at 16 to 18 degrees and decant",
+        "It softens with age; the best last 10 to 15 years"
+      ]
+    }
+  ]
+}

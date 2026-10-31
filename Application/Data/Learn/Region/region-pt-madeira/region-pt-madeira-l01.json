@@ -1,0 +1,62 @@
+{
+  "id": "region-pt-madeira-l01",
+  "moduleId": "region-pt-madeira",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "A volcano in the Atlantic",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Madeira's geography",
+    "Explain its climate",
+    "Explain its trading history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A steep island",
+      "body": "Madeira is a Portuguese volcanic island in the Atlantic, about 700 km off Morocco. Its mountains rise to over 1,800 m. Vineyards are small, on steep terraces called poios, mostly on the north and south coasts, from sea level to about 800 m. Volcanic basalt soils are fertile and acidic. There are only about 500 hectares of vines.",
+      "highlight": "Steep terraces, volcanic soil"
+    },
+    {
+      "type": "concept",
+      "title": "Subtropical and humid",
+      "body": "The climate is subtropical and humid, with mild temperatures all year. The south coast is warmer and drier; the north coast cooler and wetter. Humidity brings disease, so vines are often trained on low pergolas, latadas. Water is channelled from the mountains through levadas, ancient irrigation canals.",
+      "highlight": "Pergolas and levadas"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are Madeira's levadas?",
+      "options": [
+        "Irrigation canals from the mountains",
+        "A grape",
+        "A barrel",
+        "A wine style"
+      ],
+      "answer": 0,
+      "explanation": "Levadas bring water from the mountains to the terraces."
+    },
+    {
+      "type": "concept",
+      "title": "Shipped across the tropics",
+      "body": "From the 15th century, Madeira was a stop for ships to the Americas and India. Wine loaded as ballast crossed the tropics and came back improved by heat and movement, called vinho da roda, round-trip wine. Spirit was added to protect it. Madeira became the toast of the American colonies; it was used to toast the Declaration of Independence in 1776.",
+      "highlight": "Vinho da roda"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Madeira improved after crossing the tropics by ship.",
+      "answer": true,
+      "explanation": "Yes. Heat and movement transformed it, which producers now recreate."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Madeira is a steep, volcanic Atlantic island",
+        "Its humid, subtropical climate needs pergolas and levadas",
+        "Ship voyages through the tropics shaped its style"
+      ]
+    }
+  ]
+}

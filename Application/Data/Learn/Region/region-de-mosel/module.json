@@ -1,0 +1,26 @@
+{
+  "id": "region-de-mosel",
+  "kind": "region",
+  "order": 26,
+  "country": "Germany",
+  "countryCode": "DE",
+  "title": "Mosel",
+  "grapes": [
+    "Riesling"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "Some of the world's steepest vineyards: light, racy Riesling grown on slate above a winding river.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-de-mosel-l01",
+    "region-de-mosel-l02",
+    "region-de-mosel-l03",
+    "region-de-mosel-l04",
+    "region-de-mosel-l05",
+    "region-de-mosel-l06",
+    "region-de-mosel-l07"
+  ]
+}

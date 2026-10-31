@@ -1,0 +1,79 @@
+{
+  "id": "path-24-l01",
+  "moduleId": "path-24",
+  "order": 1,
+  "title": "Australia's warm south",
+  "subtitle": "Barossa, McLaren Vale and the Riverland",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe South Australia's warm regions",
+    "Explain the importance of old vines",
+    "Explain Australia's labelling system"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "South Australia",
+      "body": "South Australia makes about half of Australia's premium wine. The Barossa Valley, settled by Silesian Lutherans in the 1840s, is famous for rich Shiraz, Grenache and Mourvèdre. McLaren Vale, south of Adelaide, is warm but cooled by the Gulf St Vincent, with Shiraz and Grenache. Inland irrigated areas like the Riverland make large volumes.",
+      "highlight": "Barossa and McLaren Vale"
+    },
+    {
+      "type": "concept",
+      "title": "Old vines",
+      "body": "Phylloxera never reached South Australia, thanks to strict quarantine. So the Barossa has some of the world's oldest producing vines, some planted in the 1840s. Its Old Vine Charter classifies Old Vines at 35 years, Survivor at 70, Centenarian at 100 and Ancestor at 125. Old vines give low yields and concentrated fruit.",
+      "highlight": "Phylloxera-free, very old vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does the Barossa have vines over 150 years old?",
+      "options": [
+        "They were imported recently",
+        "Strict quarantine kept phylloxera out",
+        "The vines are grafted",
+        "They are irrigated"
+      ],
+      "answer": 1,
+      "explanation": "South Australia's quarantine rules have kept phylloxera away, so old ungrafted vines survive."
+    },
+    {
+      "type": "concept",
+      "title": "Labels",
+      "body": "Australia uses Geographical Indications: zones, regions and sub-regions. Labels need 85% from a named GI, grape or vintage. Blends list grapes in order of proportion, like Shiraz Cabernet. Large brands often use the broad South Eastern Australia GI, which allows blending across states.",
+      "highlight": "85% rule; South Eastern Australia for blends"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Barossa term to its minimum vine age.",
+      "pairs": [
+        {
+          "left": "Old Vine",
+          "right": "35 years"
+        },
+        {
+          "left": "Survivor",
+          "right": "70 years"
+        },
+        {
+          "left": "Centenarian",
+          "right": "100 years"
+        },
+        {
+          "left": "Ancestor",
+          "right": "125 years"
+        }
+      ],
+      "explanation": "The Barossa Old Vine Charter grades vineyards by age."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "South Australia's Barossa and McLaren Vale make rich Shiraz and Grenache",
+        "Quarantine kept phylloxera out, leaving very old vines",
+        "Labels follow an 85% rule; big brands use South Eastern Australia"
+      ]
+    }
+  ]
+}

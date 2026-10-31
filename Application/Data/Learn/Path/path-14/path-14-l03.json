@@ -1,0 +1,83 @@
+{
+  "id": "path-14-l03",
+  "moduleId": "path-14",
+  "order": 3,
+  "title": "Port",
+  "subtitle": "The Douro's sweet red",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe how Port is made",
+    "Compare ruby and tawny styles",
+    "Explain the main Port categories"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Making Port",
+      "body": "Port comes from the Douro valley in northern Portugal, from many local grapes, led by Touriga Nacional and Touriga Franca. Fermentation is fast and intense, often by foot treading in stone tanks, called lagares, or by machines. After two or three days, at about 6 to 9% alcohol, spirit is added, leaving around 90 to 110 g/l of sugar and about 19 to 22% alcohol.",
+      "highlight": "Short fermentation, then spirit"
+    },
+    {
+      "type": "concept",
+      "title": "Ruby and tawny",
+      "body": "Ruby styles age briefly in large vats, keeping dark colour and fresh black fruit. Tawny styles age for years in small casks, so oxygen turns them tawny brown, with nuts, caramel and dried fruit. Aged tawnies carry an indication of age: 10, 20, 30 or 40 years old, an average style, not an exact age.",
+      "highlight": "Ruby: fruit. Tawny: nuts and caramel."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Port style to its character.",
+      "pairs": [
+        {
+          "left": "Ruby",
+          "right": "Young, dark, fruity"
+        },
+        {
+          "left": "Tawny",
+          "right": "Cask aged, nutty, brown"
+        },
+        {
+          "left": "Vintage",
+          "right": "Single year, ages in bottle"
+        },
+        {
+          "left": "LBV",
+          "right": "Single year, ready earlier"
+        }
+      ],
+      "explanation": "How a Port ages, in vat, cask or bottle, defines its style."
+    },
+    {
+      "type": "concept",
+      "title": "Vintage and LBV",
+      "body": "Vintage Port comes from a single, exceptional year, declared by each house, about three times a decade. It is bottled after two years and ages for decades in bottle, throwing a heavy sediment. Late Bottled Vintage, or LBV, is from a single year but spends 4 to 6 years in wood, so it is ready to drink sooner.",
+      "highlight": "Vintage: bottle aged. LBV: wood aged longer."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which statements about Port are true?",
+      "options": [
+        "It comes from Portugal's Douro valley",
+        "Spirit is added during fermentation",
+        "Tawny styles age mainly in bottle",
+        "Vintage Port needs decanting"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Tawny Ports age in small casks, not bottle. Vintage Port throws a sediment and needs decanting."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Port is fortified during fermentation, leaving sweetness",
+        "Ruby styles are fruity; tawnies are nutty from cask ageing",
+        "Vintage Port ages in bottle; LBV is ready earlier"
+      ]
+    }
+  ]
+}

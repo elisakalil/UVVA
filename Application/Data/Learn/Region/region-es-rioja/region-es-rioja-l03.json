@@ -1,0 +1,67 @@
+{
+  "id": "region-es-rioja-l03",
+  "moduleId": "region-es-rioja",
+  "order": 3,
+  "title": "Crianza, Reserva, Gran Reserva",
+  "subtitle": "The ageing ladder",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Rioja's ageing categories",
+    "Explain the role of American oak",
+    "Explain the new label options"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rules",
+      "body": "Rioja's categories set minimum ageing for reds. Crianza: two years, at least one in barrel. Reserva: three years, at least one in barrel and six months in bottle. Gran Reserva: five years, at least two in barrel and two in bottle. Joven or Genérico wines have little or no barrel age. A coloured seal on the back label shows the category.",
+      "highlight": "Crianza, Reserva, Gran Reserva"
+    },
+    {
+      "type": "concept",
+      "title": "Oak",
+      "body": "Rioja's barrels are traditionally 225-litre barricas of American oak, giving vanilla, coconut and dill. Long ageing in old oak gives traditional Rioja its pale colour, mellow fruit and leather. Since the 1990s, many producers use French oak and shorter ageing for darker, fruitier wines. Both styles thrive.",
+      "highlight": "American oak: vanilla, coconut"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Rioja's categories by minimum ageing, shortest first.",
+      "items": [
+        "Genérico",
+        "Crianza",
+        "Reserva",
+        "Gran Reserva"
+      ],
+      "explanation": "Each category requires more time in barrel and bottle."
+    },
+    {
+      "type": "concept",
+      "title": "The seals",
+      "body": "Each bottle carries a back-label seal from the Consejo Regulador: green for Crianza, burgundy red for Reserva, blue for Gran Reserva, and white or no barrel indication for Genérico. This makes the category easy to spot even if the front label doesn't say it.",
+      "highlight": "Green, red, blue seals"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does American oak typically give Rioja?",
+      "options": [
+        "Vanilla, coconut and dill",
+        "Petrol",
+        "Lychee",
+        "Green pepper"
+      ],
+      "answer": 0,
+      "explanation": "American oak's lactones give these notes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Crianza, Reserva and Gran Reserva set minimum ageing",
+        "American oak gives vanilla and coconut; French oak is now common",
+        "Back-label seals show the category"
+      ]
+    }
+  ]
+}

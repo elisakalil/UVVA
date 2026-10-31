@@ -1,0 +1,33 @@
+{
+  "id": "grape-sauvignon-blanc",
+  "kind": "grape",
+  "order": 48,
+  "color": "white",
+  "title": "Sauvignon Blanc",
+  "aliases": [
+    "Fumé Blanc",
+    "Blanc Fumé"
+  ],
+  "origin": "France",
+  "countries": [
+    "France",
+    "New Zealand",
+    "Chile",
+    "South Africa"
+  ],
+  "points": "2 2 2 2 = 8",
+  "complexity": "A",
+  "description": "Also called Fumé Blanc. Grass, gooseberry and passion fruit, from the Loire to Marlborough.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-sauvignon-blanc-l01",
+    "grape-sauvignon-blanc-l02",
+    "grape-sauvignon-blanc-l03",
+    "grape-sauvignon-blanc-l04",
+    "grape-sauvignon-blanc-l05",
+    "grape-sauvignon-blanc-l06",
+    "grape-sauvignon-blanc-l07"
+  ]
+}

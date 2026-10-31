@@ -1,0 +1,27 @@
+{
+  "id": "region-ge-kakheti",
+  "kind": "region",
+  "order": 33,
+  "country": "Georgia",
+  "countryCode": "GE",
+  "title": "Kakheti",
+  "grapes": [
+    "Rkatsiteli",
+    "Saperavi",
+    "Mtsvane"
+  ],
+  "points": "1 0 2 2 = 5",
+  "complexity": "B",
+  "description": "The cradle of wine: eight thousand years of winemaking in buried clay qvevri.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-ge-kakheti-l01",
+    "region-ge-kakheti-l02",
+    "region-ge-kakheti-l03",
+    "region-ge-kakheti-l04",
+    "region-ge-kakheti-l05",
+    "region-ge-kakheti-l06"
+  ]
+}

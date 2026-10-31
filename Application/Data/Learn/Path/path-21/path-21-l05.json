@@ -1,0 +1,72 @@
+{
+  "id": "path-21-l05",
+  "moduleId": "path-21",
+  "order": 5,
+  "title": "Tokaj",
+  "subtitle": "Hungary's great sweet wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tokaj's grapes and conditions",
+    "Explain how Tokaji Aszú is made",
+    "Explain Tokaj's historic classification"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The place",
+      "body": "Tokaj is in north-east Hungary, where the Bodrog and Tisza rivers meet. Autumn mists rise from the rivers, then warm, dry afternoons follow, perfect for noble rot. The soils are volcanic. Furmint is the main grape, with high acidity, joined by Hárslevelű and Sárgamuskotály, a Muscat.",
+      "highlight": "Rivers, mists, volcanic soils, Furmint"
+    },
+    {
+      "type": "concept",
+      "title": "Aszú",
+      "body": "Aszú berries, shrivelled by noble rot, are picked one by one. They are mixed into a base wine or fermenting must, and soaked for a day or two to extract sugar and flavour. Since 2013, Tokaji Aszú must have at least 120 g/l of sugar, equal to the old 5 puttonyos. Wines age at least 18 months in oak.",
+      "highlight": "Aszú: at least 120 g/l"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Tokaj's main grape?",
+      "options": [
+        "Hárslevelű",
+        "Furmint",
+        "Riesling",
+        "Muscat"
+      ],
+      "answer": 1,
+      "explanation": "Furmint dominates Tokaj and gives the high acidity that balances the sugar."
+    },
+    {
+      "type": "concept",
+      "title": "The first classification",
+      "body": "Tokaj was among the first wine regions to classify its vineyards, from 1730, and was legally demarcated in 1737. Its sweet wines were served at European courts; Louis XIV is said to have called it the wine of kings and the king of wines. After decades of communist state control, private estates revived quality from the 1990s.",
+      "highlight": "Classified from 1730"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which statements about Tokaj are true?",
+      "options": [
+        "Furmint is the main grape",
+        "Its vineyards were classified from 1730",
+        "It makes only dry wines",
+        "Noble rot is helped by river mists"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Tokaj makes both sweet and dry wines, but Aszú is the most famous."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tokaj's river mists and volcanic soils suit noble rot",
+        "Aszú berries are soaked in base wine; at least 120 g/l of sugar",
+        "Tokaj was classified from 1730 and demarcated in 1737"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "path-20-l01",
+  "moduleId": "path-20",
+  "order": 1,
+  "title": "Spain's ageing system",
+  "subtitle": "Joven to Gran Reserva",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Spain's ageing terms",
+    "Explain Spain's quality levels",
+    "Explain why ageing is part of Spanish style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ageing in law",
+      "body": "Spain sets national minimum ageing for its terms. For reds: Crianza, at least 24 months, 6 in oak; Reserva, 36 months, 12 in oak; Gran Reserva, 60 months, 18 in oak. Some regions are stricter: in Rioja, Crianza needs 12 months in oak and Gran Reserva 24. Joven means young, with little or no oak.",
+      "highlight": "Crianza, Reserva, Gran Reserva"
+    },
+    {
+      "type": "concept",
+      "title": "Quality levels",
+      "body": "Spain's PDO wines include DO and the higher DOCa, only Rioja and Priorat, called DOQ in Catalan. Vino de Pago is for single estates with their own appellation. Vino de la Tierra is the PGI level. Since 2015, smaller areas like village wines can be named, and Rioja recognises single vineyards, called Viñedo Singular.",
+      "highlight": "DOCa, DO, Vino de Pago, Vino de la Tierra"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Spanish ageing terms from shortest to longest minimum ageing.",
+      "items": [
+        "Joven",
+        "Crianza",
+        "Reserva",
+        "Gran Reserva"
+      ],
+      "explanation": "Each step adds time in oak and bottle."
+    },
+    {
+      "type": "concept",
+      "title": "Why ageing matters",
+      "body": "Spanish bodegas long aged wine before release, so consumers got it ready to drink. Traditional Rioja spent years in American oak, giving vanilla, coconut and dill, with soft, mature fruit. Many modern producers use less time and more French oak, and the ageing terms are now only one style choice among many.",
+      "highlight": "Released ready to drink"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Spanish regions hold the top DOCa status?",
+      "options": [
+        "Rioja and Priorat",
+        "Ribera del Duero and Rueda",
+        "Jerez and Rías Baixas",
+        "Toro and Navarra"
+      ],
+      "answer": 0,
+      "explanation": "Only Rioja and Priorat have DOCa, written DOQ in Catalan for Priorat."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Crianza, Reserva and Gran Reserva set minimum ageing",
+        "DOCa is Spain's top level, held by Rioja and Priorat",
+        "Spanish wines were traditionally released ready to drink"
+      ]
+    }
+  ]
+}

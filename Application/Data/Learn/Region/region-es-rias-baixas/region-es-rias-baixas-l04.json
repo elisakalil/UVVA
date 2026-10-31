@@ -1,0 +1,96 @@
+{
+  "id": "region-es-rias-baixas-l04",
+  "moduleId": "region-es-rias-baixas",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Rías Baixas",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Rías Baixas' geography",
+    "Explain Albariño",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Rías",
+          "right": "Flooded river valleys"
+        },
+        {
+          "left": "Parras",
+          "right": "High pergolas"
+        },
+        {
+          "left": "Val do Salnés",
+          "right": "Cool, Atlantic heart"
+        },
+        {
+          "left": "Pulpo a la gallega",
+          "right": "Octopus dish"
+        }
+      ],
+      "explanation": "Rías Baixas' vocabulary is Galician."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Rías Baixas' main challenge?",
+      "options": [
+        "Humidity and fungal disease",
+        "Drought",
+        "Extreme heat",
+        "Frost"
+      ],
+      "answer": 0,
+      "explanation": "It's one of Spain's wettest regions."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Albariño has thin skins prone to rot.",
+      "answer": false,
+      "explanation": "Not true. Its thick skins resist rot."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes appear in Rías Baixas blends?",
+      "options": [
+        "Albariño",
+        "Loureiro",
+        "Treixadura",
+        "Tempranillo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Tempranillo isn't a Rías Baixas grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Rías Baixas became a DO in ____.",
+      "options": [
+        "1988",
+        "1932",
+        "2000",
+        "1756"
+      ],
+      "answer": "1988",
+      "explanation": "In 1988."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rías Baixas is wet, green and granite",
+        "Albariño dominates, crisp and saline",
+        "High pergolas fight humidity",
+        "It's a natural seafood wine"
+      ]
+    }
+  ]
+}

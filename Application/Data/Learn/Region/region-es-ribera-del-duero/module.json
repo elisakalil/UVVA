@@ -1,0 +1,23 @@
+{
+  "id": "region-es-ribera-del-duero",
+  "kind": "region",
+  "order": 18,
+  "country": "Spain",
+  "countryCode": "ES",
+  "title": "Ribera del Duero",
+  "grapes": [
+    "Tinto Fino (Tempranillo)"
+  ],
+  "points": "0 1 0 1 = 2",
+  "complexity": "D",
+  "description": "Powerful Tempranillo from a high, cold plateau along the Duero river.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-es-ribera-del-duero-l01",
+    "region-es-ribera-del-duero-l02",
+    "region-es-ribera-del-duero-l03",
+    "region-es-ribera-del-duero-l04"
+  ]
+}

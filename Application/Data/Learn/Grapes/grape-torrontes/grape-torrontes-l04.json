@@ -1,0 +1,96 @@
+{
+  "id": "grape-torrontes-l04",
+  "moduleId": "grape-torrontes",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Torrontés",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Torrontés",
+    "Know its regions",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Torrontés Riojano's parentage?",
+      "options": [
+        "Muscat of Alexandria and Criolla Chica",
+        "Riesling and Chardonnay",
+        "Pinot Noir and Gouais Blanc",
+        "Sauvignon Blanc and Sémillon"
+      ],
+      "answer": 0,
+      "explanation": "A natural Argentine cross."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Torrontés.",
+      "pairs": [
+        {
+          "left": "Cafayate",
+          "right": "Heart of production"
+        },
+        {
+          "left": "Rose and jasmine",
+          "right": "Typical aromas"
+        },
+        {
+          "left": "Empanadas",
+          "right": "Classic pairing"
+        },
+        {
+          "left": "Dry",
+          "right": "Usual style"
+        }
+      ],
+      "explanation": "Torrontés is Argentina's white signature."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Torrontés is best aged for many years.",
+      "answer": false,
+      "explanation": "Not true. It's best young, while fresh."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Torrontés?",
+      "options": [
+        "Floral",
+        "Usually dry",
+        "High-altitude vineyards",
+        "Heavily oaked"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Most Torrontés is unoaked."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Salta's vineyards reach up to about ____ metres.",
+      "options": [
+        "3,000",
+        "300",
+        "800",
+        "5,000"
+      ],
+      "answer": "3,000",
+      "explanation": "Among the highest vineyards in the world."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Torrontés is floral, dry and Argentine",
+        "Its parents include Muscat of Alexandria",
+        "Salta's altitude gives it freshness",
+        "It suits aromatic food and is best young"
+      ]
+    }
+  ]
+}

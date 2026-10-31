@@ -1,0 +1,62 @@
+{
+  "id": "region-at-burgenland-l04",
+  "moduleId": "region-at-burgenland",
+  "order": 4,
+  "title": "Neusiedlersee sweet wines",
+  "subtitle": "Noble rot by the lake",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how the lake creates noble rot",
+    "Describe Ruster Ausbruch",
+    "Name the sweet wine categories"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Noble rot every year",
+      "body": "Around Lake Neusiedl, autumn mists from the shallow water, followed by warm, sunny days, create ideal conditions for noble rot, Botrytis cinerea, almost every year. That makes the area one of the most reliable sources of sweet wine in the world. Illmitz and Apetlon, on the east shore, are famous for it.",
+      "highlight": "Reliable noble rot"
+    },
+    {
+      "type": "concept",
+      "title": "Categories",
+      "body": "Austria uses Prädikat categories similar to Germany's: Spätlese, Auslese, Beerenauslese, Eiswein, Strohwein or Schilfwein, from grapes dried on straw or reeds, and Trockenbeerenauslese. Ausbruch, between BA and TBA, is a historic style. Grapes include Welschriesling, Chardonnay, Scheurebe and Pinot Blanc. Alois Kracher made the area world-famous.",
+      "highlight": "BA, TBA, Schilfwein, Ausbruch"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Lake Neusiedl favour noble rot almost every year?",
+      "options": [
+        "Autumn mists followed by sunny days",
+        "Constant rain",
+        "Freezing temperatures",
+        "Sea breezes"
+      ],
+      "answer": 0,
+      "explanation": "Mist then sun is the recipe for noble rot."
+    },
+    {
+      "type": "concept",
+      "title": "Ruster Ausbruch",
+      "body": "The town of Rust, on the west shore, has made Ausbruch since at least the 17th century, a sweet wine from botrytised berries mixed with base wine, similar to Tokaji Aszú. Its fame earned Rust the status of a free town in 1681. Ruster Ausbruch DAC protects it today; Furmint is being revived here for it.",
+      "highlight": "Rust's historic Ausbruch"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Ruster Ausbruch is similar in method to Tokaji Aszú.",
+      "answer": true,
+      "explanation": "Yes. Botrytised berries are added to base wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Lake Neusiedl brings noble rot almost every year",
+        "BA, TBA and Schilfwein are key sweet categories",
+        "Ruster Ausbruch is a historic style, like Aszú"
+      ]
+    }
+  ]
+}

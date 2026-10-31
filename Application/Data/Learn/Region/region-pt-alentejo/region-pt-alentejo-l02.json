@@ -1,0 +1,77 @@
+{
+  "id": "region-pt-alentejo-l02",
+  "moduleId": "region-pt-alentejo",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Ripe reds and native whites",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the Alentejo's red grapes",
+    "Name its white grapes",
+    "Explain the role of Alicante Bouschet"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Aragonez, Tempranillo, gives red fruit and body. Trincadeira gives spice, herbs and freshness, but is sensitive to rot. Alicante Bouschet, a French red-fleshed grape, called a teinturier, gives deep colour and structure; it found its best home here. Castelão, Syrah and Touriga Nacional are also common. Reds are ripe, round and generous.",
+      "highlight": "Aragonez, Trincadeira, Alicante Bouschet"
+    },
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "Antão Vaz, from Vidigueira, is the main white: ripe tropical fruit and body, tolerant of heat. Arinto adds acidity; Roupeiro adds aroma. Blends of the three are common. White wines are a growing share, especially from cooler sites.",
+      "highlight": "Antão Vaz, Arinto, Roupeiro"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Alicante Bouschet",
+          "right": "Deep colour, red flesh"
+        },
+        {
+          "left": "Trincadeira",
+          "right": "Spice and freshness"
+        },
+        {
+          "left": "Antão Vaz",
+          "right": "Main white, tropical fruit"
+        },
+        {
+          "left": "Arinto",
+          "right": "Acidity in whites"
+        }
+      ],
+      "explanation": "Alentejo blends balance ripeness and freshness."
+    },
+    {
+      "type": "tip",
+      "body": "Alicante Bouschet is one of the few grapes with red flesh. That's why wines from it are so deeply coloured."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Alicante Bouschet unusual?",
+      "options": [
+        "Its flesh is red",
+        "It's white",
+        "It has no seeds",
+        "It ripens in winter"
+      ],
+      "answer": 0,
+      "explanation": "A teinturier, with coloured juice."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aragonez, Trincadeira and Alicante Bouschet lead the reds",
+        "Antão Vaz leads the whites, with Arinto for acidity",
+        "Wines are ripe and generous"
+      ]
+    }
+  ]
+}

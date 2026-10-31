@@ -1,0 +1,29 @@
+{
+  "id": "grape-semillon",
+  "kind": "grape",
+  "order": 33,
+  "color": "white",
+  "title": "Sémillon",
+  "aliases": [
+    "Semillon"
+  ],
+  "origin": "France",
+  "countries": [
+    "France",
+    "Australia"
+  ],
+  "points": "2 1 2 1 = 6",
+  "complexity": "B",
+  "description": "Bordeaux's golden grape: the heart of Sauternes and the secret of Hunter Valley's long-lived whites.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-semillon-l01",
+    "grape-semillon-l02",
+    "grape-semillon-l03",
+    "grape-semillon-l04",
+    "grape-semillon-l05",
+    "grape-semillon-l06"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "grape-montepulciano-l02",
+  "moduleId": "grape-montepulciano",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Adriatic side",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Montepulciano's main regions",
+    "Explain the climate it needs",
+    "Name its main wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Abruzzo and the Marche",
+      "body": "Montepulciano dominates Abruzzo, between the Apennines and the Adriatic. It's also important in the Marche, Molise and Puglia. In Abruzzo, the hills between mountains and sea give warm days and cool breezes. Vines are often trained on high pergolas, called tendone, which shade the fruit.",
+      "highlight": "Abruzzo, Marche, Molise"
+    },
+    {
+      "type": "concept",
+      "title": "Late and warm",
+      "body": "Montepulciano ripens late and needs warmth; in cooler years it can taste green and harsh. That's why it's rarely grown further north. Its thick skins give deep colour and resist disease. High yields are possible, so quality depends on controlling them.",
+      "highlight": "Late, warm, thick skins"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its region.",
+      "pairs": [
+        {
+          "left": "Montepulciano d'Abruzzo",
+          "right": "Abruzzo"
+        },
+        {
+          "left": "Rosso Cònero",
+          "right": "Marche"
+        },
+        {
+          "left": "Cerasuolo d'Abruzzo",
+          "right": "Abruzzo rosé"
+        },
+        {
+          "left": "Rosso Piceno",
+          "right": "Marche blend with Sangiovese"
+        }
+      ],
+      "explanation": "Montepulciano anchors the Adriatic side of central Italy."
+    },
+    {
+      "type": "tip",
+      "body": "In Abruzzo, look for Colline Teramane, a DOCG zone in the north of the region, for more structured Montepulciano."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Montepulciano rarely grown in northern Italy?",
+      "options": [
+        "It ripens late and needs warmth",
+        "It's banned there",
+        "It's a white grape",
+        "It needs very high rainfall"
+      ],
+      "answer": 0,
+      "explanation": "Cool climates leave it unripe and harsh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Montepulciano dominates Abruzzo and the Marche",
+        "It ripens late and needs warmth",
+        "Yield control decides quality"
+      ]
+    }
+  ]
+}

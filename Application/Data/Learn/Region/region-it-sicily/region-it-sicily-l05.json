@@ -1,0 +1,96 @@
+{
+  "id": "region-it-sicily-l05",
+  "moduleId": "region-it-sicily",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Sicily",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Sicily's geography and grapes",
+    "Explain Etna",
+    "Pair Sicilian wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its place.",
+      "pairs": [
+        {
+          "left": "Etna Rosso",
+          "right": "Volcano slopes"
+        },
+        {
+          "left": "Cerasuolo di Vittoria",
+          "right": "South-east DOCG"
+        },
+        {
+          "left": "Marsala",
+          "right": "Western fortified wine"
+        },
+        {
+          "left": "Passito di Pantelleria",
+          "right": "Small island sweet wine"
+        }
+      ],
+      "explanation": "Sicily has many distinct wines."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape makes Etna's reds?",
+      "options": [
+        "Nerello Mascalese",
+        "Nero d'Avola",
+        "Syrah",
+        "Sangiovese"
+      ],
+      "answer": 0,
+      "explanation": "Nerello Mascalese, with Nerello Cappuccio."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sicily has many DOCGs.",
+      "answer": false,
+      "explanation": "Not true. Cerasuolo di Vittoria is its only DOCG."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Sicilian white grapes?",
+      "options": [
+        "Grillo",
+        "Catarratto",
+        "Carricante",
+        "Glera"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Glera is Prosecco's grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Etna's local vineyard districts are called ____.",
+      "options": [
+        "contrade",
+        "crus",
+        "MGA",
+        "rive"
+      ],
+      "answer": "contrade",
+      "explanation": "Contrade, often defined by lava flows."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sicily is hot, dry and windy, with native grapes",
+        "Etna's volcanic slopes make its finest wines",
+        "Marsala and Pantelleria are its historic sweet wines",
+        "Sicily moved from bulk to quality"
+      ]
+    }
+  ]
+}

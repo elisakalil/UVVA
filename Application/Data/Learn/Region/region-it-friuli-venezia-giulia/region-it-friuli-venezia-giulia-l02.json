@@ -1,0 +1,77 @@
+{
+  "id": "region-it-friuli-venezia-giulia-l02",
+  "moduleId": "region-it-friuli-venezia-giulia",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Native and international whites",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Friuli's main white grapes",
+    "Name its red grapes",
+    "Explain the Friulano name change"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "About 80% of Friuli's wine is white. Friulano, formerly Tocai Friulano, gives full, almond-scented whites; it was renamed in 2008 after the EU protected Hungary's Tokaji name. Ribolla Gialla gives crisp, citrus whites and is key to orange wines. Pinot Grigio, Sauvignon Blanc and Chardonnay are widely grown.",
+      "highlight": "Friulano, Ribolla Gialla"
+    },
+    {
+      "type": "concept",
+      "title": "Reds and sweet wines",
+      "body": "Reds include Refosco dal Peduncolo Rosso, dark and tart; Schioppettino, peppery and fragrant; and Pignolo, tannic. Merlot and Cabernet Franc are also grown. Picolit, a sweet white, made from dried grapes, was once famous at European courts; Ramandolo is another sweet white, from Verduzzo.",
+      "highlight": "Refosco, Schioppettino, Picolit"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its style.",
+      "pairs": [
+        {
+          "left": "Friulano",
+          "right": "Almond-scented white"
+        },
+        {
+          "left": "Ribolla Gialla",
+          "right": "Crisp, key to orange wine"
+        },
+        {
+          "left": "Refosco",
+          "right": "Dark, tart red"
+        },
+        {
+          "left": "Picolit",
+          "right": "Sweet, dried grapes"
+        }
+      ],
+      "explanation": "Friuli grows native and international grapes."
+    },
+    {
+      "type": "tip",
+      "body": "Friulano was called Tocai until 2008. Old bottles and older Italian drinkers may still use the name."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why was Tocai Friulano renamed?",
+      "options": [
+        "The EU protected Hungary's Tokaji name",
+        "It changed colour",
+        "It was banned",
+        "A producer requested it"
+      ],
+      "answer": 0,
+      "explanation": "Renamed Friulano in 2008."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "About 80% of Friuli's wine is white",
+        "Friulano and Ribolla Gialla are key natives",
+        "Refosco, Schioppettino and Picolit add reds and sweet wines"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "grape-zinfandel-l01",
+  "moduleId": "grape-zinfandel",
+  "order": 1,
+  "title": "Meet Zinfandel",
+  "subtitle": "Bramble fruit and spice",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Zinfandel's flavours and structure",
+    "Explain its uneven ripening",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ripe and jammy",
+      "body": "Zinfandel gives ripe, often jammy wines with blackberry, raspberry, bramble, black pepper and sweet spice, sometimes dried fruit. Alcohol is often high, 14.5 to 16%. Tannins are moderate, acidity medium. The style can range from light rosé to rich, powerful reds and sweet wines.",
+      "highlight": "Bramble fruit, spice, high alcohol"
+    },
+    {
+      "type": "concept",
+      "title": "Uneven ripening",
+      "body": "Zinfandel's bunches ripen unevenly: some berries are still green while others shrivel into raisins. Growers must wait for most to ripen, by which time some are overripe. That raises sugar and alcohol, and gives the mix of fresh and dried fruit flavours. It's also why picking time is so critical.",
+      "highlight": "Green berries and raisins on one bunch"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Zinfandel often high in alcohol?",
+      "options": [
+        "Sugar is added",
+        "Uneven ripening means some berries shrivel and concentrate sugar",
+        "It's fortified",
+        "It's grown in cold climates"
+      ],
+      "answer": 1,
+      "explanation": "Waiting for the green berries to ripen leaves others overripe, raising sugar and alcohol."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for medium to deep colour, ripe bramble and jammy berry fruit, black pepper and sweet spice, a warm, high-alcohol feel and moderate tannin. A hint of dried fruit or raisin is typical. It's fruitier and less tannic than Cabernet, spicier than Merlot.",
+      "highlight": "Jammy, peppery, warm"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are typical of Zinfandel?",
+      "options": [
+        "Bramble fruit",
+        "High alcohol",
+        "Black pepper",
+        "Very pale colour"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Zinfandel is medium to deep in colour, not pale."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Zinfandel gives ripe bramble fruit, spice and high alcohol",
+        "Uneven ripening mixes fresh and raisined berries",
+        "It ranges from rosé to rich red and sweet styles"
+      ]
+    }
+  ]
+}

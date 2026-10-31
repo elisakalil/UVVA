@@ -1,0 +1,66 @@
+{
+  "id": "path-06-l05",
+  "moduleId": "path-06",
+  "order": 5,
+  "title": "Building a pairing",
+  "subtitle": "A method for any table",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Analyse a dish before choosing a wine",
+    "Use matching and contrasting",
+    "Pair with confidence for a full meal"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Start with the dish",
+      "body": "Look at the dominant elements, not the main ingredient. Chicken in cream sauce is about fat and richness; chicken with lemon and herbs is about acidity. The sauce, the cooking method and the seasoning often matter more than the meat or fish itself.",
+      "highlight": "Pair the sauce, not the protein"
+    },
+    {
+      "type": "concept",
+      "title": "Match or contrast",
+      "body": "You can match, like a rich oaked Chardonnay with lobster in butter, or contrast, like a crisp Champagne cutting through fried food. High acidity and bubbles act like a squeeze of lemon, cleaning the palate of fat and salt. Tannin works similarly with fatty red meat, which softens it.",
+      "highlight": "Acid and bubbles cut fat; tannin loves fat"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does a tannic red work well with a fatty steak?",
+      "options": [
+        "Fat makes tannin feel softer",
+        "Steak adds sugar",
+        "Tannin adds salt",
+        "Fat raises alcohol"
+      ],
+      "answer": 0,
+      "explanation": "Fat coats the mouth and tannin binds with protein and fat, so each softens the other."
+    },
+    {
+      "type": "tip",
+      "body": "When in doubt, ask where the dish comes from. Regional pairings grew up together over centuries, like Muscadet with oysters or Chianti with tomato-based pasta."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of choosing a wine for a dish in order.",
+      "items": [
+        "Identify the dominant elements",
+        "Check sweetness and umami",
+        "Match the weight",
+        "Decide to match or contrast",
+        "Choose the wine"
+      ],
+      "explanation": "Start with what's on the plate, rule out clashes, then fine-tune the style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pair the dominant elements, especially the sauce",
+        "Match richness or contrast with acidity and bubbles",
+        "Regional pairings are a safe starting point"
+      ]
+    }
+  ]
+}

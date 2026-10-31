@@ -1,0 +1,96 @@
+{
+  "id": "region-us-washington-state-l05",
+  "moduleId": "region-us-washington-state",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Washington State",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Washington's land and grapes",
+    "Explain irrigation and own-rooted vines",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Washington.",
+      "pairs": [
+        {
+          "left": "Cascades",
+          "right": "Mountains causing rain shadow"
+        },
+        {
+          "left": "Missoula Floods",
+          "right": "Shaped the soils"
+        },
+        {
+          "left": "Red Mountain",
+          "right": "Powerful Cabernet"
+        },
+        {
+          "left": "Woodinville",
+          "right": "Tasting rooms near Seattle"
+        }
+      ],
+      "explanation": "Washington's story is geological and young."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Washington's vineyards possible?",
+      "options": [
+        "Irrigation from rivers",
+        "Heavy rain",
+        "Ocean fog",
+        "Glaciers on the vines"
+      ],
+      "answer": 0,
+      "explanation": "It's a desert without irrigation."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Washington's main vineyard risk is winter freeze.",
+      "answer": true,
+      "explanation": "Yes, temperatures can drop below minus 20 degrees."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes grow well in Washington?",
+      "options": [
+        "Cabernet Sauvignon",
+        "Merlot",
+        "Riesling",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is rare there."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Washington's oldest AVA, from 1983, is ____ Valley.",
+      "options": [
+        "Yakima",
+        "Walla Walla",
+        "Columbia",
+        "Napa"
+      ],
+      "answer": "Yakima",
+      "explanation": "Yakima Valley."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Washington is a desert east of the Cascades, irrigated by rivers",
+        "Long days and cool nights give ripe, fresh wines",
+        "Own-rooted vines grow in sandy soils",
+        "Cabernet, Merlot, Syrah and Riesling lead"
+      ]
+    }
+  ]
+}

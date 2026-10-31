@@ -1,0 +1,71 @@
+{
+  "id": "grape-corvina-l05",
+  "moduleId": "grape-corvina",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Corvina",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair each Valpolicella style with food",
+    "Serve them well",
+    "Know their ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A wine for every course",
+      "body": "Light Valpolicella suits salumi, pizza and pasta, served slightly cool. Ripasso suits risotto, roast meats and polenta. Amarone suits braised beef, game, aged Parmigiano and Monte Veronese cheese; in Verona it flavours risotto all'Amarone. Recioto goes with dark chocolate and dry pastries.",
+      "highlight": "Light to rich, starter to dessert"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve Valpolicella at 14 to 16 degrees, Ripasso and Amarone at 16 to 18, Recioto slightly cooler. Valpolicella is best within three years; Ripasso within eight; Amarone ages 10 to 25 years. Decant young Amarone for its power and alcohol.",
+      "highlight": "Amarone ages 10 to 25 years"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to a pairing.",
+      "pairs": [
+        {
+          "left": "Valpolicella",
+          "right": "Salumi and pizza"
+        },
+        {
+          "left": "Ripasso",
+          "right": "Risotto and roasts"
+        },
+        {
+          "left": "Amarone",
+          "right": "Braised beef, aged cheese"
+        },
+        {
+          "left": "Recioto",
+          "right": "Dark chocolate"
+        }
+      ],
+      "explanation": "Corvina offers a wine for each course."
+    },
+    {
+      "type": "tip",
+      "body": "Amarone is high in alcohol. Serve it in a large glass, not too warm, and give it time to open."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Amarone can age for 10 to 25 years.",
+      "answer": true,
+      "explanation": "Yes. Its concentration, alcohol and structure help it age."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Valpolicella suits everyday food; Amarone rich dishes",
+        "Serve Amarone at 16 to 18 degrees, decanted",
+        "Amarone ages 10 to 25 years"
+      ]
+    }
+  ]
+}

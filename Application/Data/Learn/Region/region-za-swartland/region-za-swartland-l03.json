@@ -1,0 +1,60 @@
+{
+  "id": "region-za-swartland-l03",
+  "moduleId": "region-za-swartland",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Swartland and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Swartland label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show Wine of Origin Swartland, the producer, the grape or blend and sometimes a ward, like Paardeberg or Riebeekberg. The Certified Heritage Vineyards seal marks vines over 35 years old. The Swartland Independent seal marks minimal-intervention wines. Many producers are small.",
+      "highlight": "Wine of Origin, heritage and independent seals"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Old-vine Chenin suits roast chicken, pork, seafood, Cape Malay curries and bobotie. Syrah and Rhône blends suit lamb, game, the braai and mushroom dishes. Light Cinsault suits charcuterie and can be served slightly cool. Serve Chenin at 10 to 12 degrees, reds at 15 to 17.",
+      "highlight": "Chenin with curry, Syrah with lamb"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which food suits old-vine Swartland Chenin?",
+      "options": [
+        "Cape Malay curry",
+        "Chocolate mousse",
+        "Raw steak only",
+        "Ice cream"
+      ],
+      "answer": 0,
+      "explanation": "Its texture and acidity handle spiced dishes."
+    },
+    {
+      "type": "tip",
+      "body": "Riebeek-Kasteel, a small Swartland town, holds a popular wine festival, the Swartland Revolution, which helped make the region famous."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Light Swartland Cinsault can be served slightly cool.",
+      "answer": true,
+      "explanation": "Yes. Its freshness shows best around 13 to 15 degrees."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the Wine of Origin and quality seals",
+        "Chenin suits curries and pork; Syrah suits lamb and the braai",
+        "Serve Chenin at 10 to 12 degrees"
+      ]
+    }
+  ]
+}

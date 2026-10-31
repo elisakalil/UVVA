@@ -1,0 +1,62 @@
+{
+  "id": "grape-cabernet-sauvignon-l01",
+  "moduleId": "grape-cabernet-sauvignon",
+  "order": 1,
+  "title": "Meet Cabernet Sauvignon",
+  "subtitle": "Structure and blackcurrant",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cabernet Sauvignon's flavours and structure",
+    "Explain its parentage",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The king of structure",
+      "body": "Cabernet Sauvignon gives deep-coloured wines with blackcurrant, black cherry, cedar, mint and sometimes green pepper. It has high tannin and high acidity, so it ages well. It is the world's most planted wine grape, about 340,000 hectares, grown in almost every wine country.",
+      "highlight": "Blackcurrant, cedar, high tannin"
+    },
+    {
+      "type": "concept",
+      "title": "An accidental cross",
+      "body": "In 1996, DNA research at UC Davis showed that Cabernet Sauvignon is a natural cross of Cabernet Franc and Sauvignon Blanc, probably in 17th century Bordeaux. Its small, thick-skinned berries, with a high ratio of skin and seed to juice, explain its colour and tannin. It also resists rot and frost well, since it buds late.",
+      "highlight": "Cabernet Franc x Sauvignon Blanc"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which two grapes are the parents of Cabernet Sauvignon?",
+      "options": [
+        "Merlot and Malbec",
+        "Cabernet Franc and Sauvignon Blanc",
+        "Pinot Noir and Gouais Blanc",
+        "Syrah and Grenache"
+      ],
+      "answer": 1,
+      "explanation": "DNA testing in 1996 showed it was a cross of Cabernet Franc and Sauvignon Blanc."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep colour, a nose of blackcurrant with cedar, mint or pencil shavings, and a palate with firm tannin and fresh acidity. In cooler sites, a green pepper or leafy note. In warmer ones, ripe black fruit and sometimes eucalyptus. It often sits in oak, adding vanilla and toast.",
+      "highlight": "Blackcurrant plus firm tannin"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cabernet Sauvignon buds late, which helps it avoid spring frost.",
+      "answer": true,
+      "explanation": "Yes. Late budding protects it from frost, but late ripening means it needs a warm site."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Sauvignon gives blackcurrant, cedar and firm tannin",
+        "It's a 17th century cross of Cabernet Franc and Sauvignon Blanc",
+        "Small, thick-skinned berries give colour, tannin and ageing power"
+      ]
+    }
+  ]
+}

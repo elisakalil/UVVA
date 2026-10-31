@@ -1,0 +1,68 @@
+{
+  "id": "grape-riesling-l03",
+  "moduleId": "grape-riesling",
+  "order": 3,
+  "title": "Reading the Prädikat",
+  "subtitle": "Germany's ripeness ladder",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the Prädikat levels",
+    "Explain what they measure",
+    "Read a German label"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ripeness at harvest",
+      "body": "Germany's top quality level, Prädikatswein, is graded by the sugar in the grapes at harvest, measured in degrees Oechsle. The six levels: Kabinett, Spätlese, late harvest; Auslese, selected bunches; Beerenauslese, selected berries; Eiswein, frozen grapes; and Trockenbeerenauslese, dried, botrytised berries. Minimums vary by region.",
+      "highlight": "Six levels of ripeness"
+    },
+    {
+      "type": "concept",
+      "title": "Ripeness, not sweetness",
+      "body": "A Prädikat says how ripe the grapes were, not how sweet the wine is. A Spätlese can be fermented dry, labelled trocken, or left off-dry or sweet. Trocken means up to 9 g/l of sugar; halbtrocken up to 18 g/l; feinherb is an unofficial off-dry term. Beerenauslese, Eiswein and Trockenbeerenauslese are always sweet.",
+      "highlight": "Prädikat measures ripeness"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Prädikat levels from least to most ripe.",
+      "items": [
+        "Kabinett",
+        "Spätlese",
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese"
+      ],
+      "explanation": "Each level demands riper grapes; TBA requires shrivelled, botrytised berries."
+    },
+    {
+      "type": "concept",
+      "title": "The VDP",
+      "body": "Germany's VDP, an association of top estates, uses its own vineyard classification: Gutswein, Ortswein, Erste Lage and Grosse Lage. Its top dry wines are labelled Grosses Gewächs, GG, from Grosse Lage sites. Many VDP members use Prädikat terms only for sweeter wines.",
+      "highlight": "VDP and Grosses Gewächs"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does trocken on a German label mean?",
+      "options": [
+        "Dry, up to 9 g/l of sugar",
+        "Very sweet",
+        "Sparkling",
+        "Red wine"
+      ],
+      "answer": 0,
+      "explanation": "Trocken means dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Prädikat levels grade ripeness at harvest, from Kabinett to TBA",
+        "They show ripeness, not necessarily sweetness",
+        "The VDP's GG means dry wine from a top site"
+      ]
+    }
+  ]
+}

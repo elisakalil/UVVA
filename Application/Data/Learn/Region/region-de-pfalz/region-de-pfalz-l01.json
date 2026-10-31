@@ -1,0 +1,62 @@
+{
+  "id": "region-de-pfalz-l01",
+  "moduleId": "region-de-pfalz",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Germany's Tuscany",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Pfalz's geography",
+    "Explain its warm climate",
+    "Explain its sub-regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Along the Haardt",
+      "body": "The Pfalz, the Palatinate, lies in south-west Germany, a strip about 85 km long between the Haardt mountains, a continuation of France's Vosges, and the Rhine plain. It borders Alsace to the south. With about 23,700 hectares, it's Germany's second largest wine region. The German Wine Route, Deutsche Weinstrasse, runs through it.",
+      "highlight": "Haardt mountains, German Wine Route"
+    },
+    {
+      "type": "concept",
+      "title": "Warm and dry",
+      "body": "The Haardt shelters the Pfalz from westerly rain, as the Vosges do for Alsace. It's one of Germany's sunniest and driest regions, with almonds, figs and even lemons growing. That warmth gives riper grapes and fuller wines than further north. Soils vary: sandstone, limestone, loess, basalt and clay.",
+      "highlight": "Rain shadow, figs and almonds"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What shelters the Pfalz from rain?",
+      "options": [
+        "The Haardt mountains",
+        "The Alps",
+        "The Taunus",
+        "The Black Forest"
+      ],
+      "answer": 0,
+      "explanation": "The Haardt, a continuation of the Vosges."
+    },
+    {
+      "type": "concept",
+      "title": "Mittelhaardt and Südpfalz",
+      "body": "The Pfalz has two areas. The Mittelhaardt, in the north, has the most famous villages: Forst, Deidesheim, Wachenheim and Bad Dürkheim, home of historic estates like Bürklin-Wolf, von Buhl and Bassermann-Jordan. The Südliche Weinstrasse, in the south, near Alsace, is a source of exciting Pinot Noir and whites.",
+      "highlight": "Mittelhaardt and the south"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Pfalz is one of Germany's sunniest regions.",
+      "answer": true,
+      "explanation": "Yes. Figs and almonds grow there."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Pfalz runs along the Haardt, bordering Alsace",
+        "Its rain shadow makes it sunny and dry",
+        "The Mittelhaardt and the south each have their stars"
+      ]
+    }
+  ]
+}

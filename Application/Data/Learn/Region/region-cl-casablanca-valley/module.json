@@ -1,0 +1,25 @@
+{
+  "id": "region-cl-casablanca-valley",
+  "kind": "region",
+  "order": 42,
+  "country": "Chile",
+  "countryCode": "CL",
+  "title": "Casablanca Valley",
+  "grapes": [
+    "Sauvignon Blanc",
+    "Chardonnay",
+    "Pinot Noir"
+  ],
+  "points": "0 0 1 1 = 2",
+  "complexity": "D",
+  "description": "Chile's cool coastal pioneer: crisp Sauvignon Blanc and Chardonnay cooled by the Pacific.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-cl-casablanca-valley-l01",
+    "region-cl-casablanca-valley-l02",
+    "region-cl-casablanca-valley-l03",
+    "region-cl-casablanca-valley-l04"
+  ]
+}

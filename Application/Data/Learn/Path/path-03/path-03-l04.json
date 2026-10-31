@@ -1,0 +1,73 @@
+{
+  "id": "path-03-l04",
+  "moduleId": "path-03",
+  "order": 4,
+  "title": "Cabernet Sauvignon and Merlot",
+  "subtitle": "The Bordeaux pair",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cabernet Sauvignon's flavours and structure",
+    "Describe Merlot and how it differs",
+    "Explain why the two are often blended"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cabernet Sauvignon",
+      "body": "Cabernet Sauvignon has small, thick-skinned berries, which give deep colour, high tannin and high acidity. Its flavours are blackcurrant and black cherry, with mint, cedar and sometimes green pepper. It ripens late, so it needs a warm site. Bordeaux's Médoc made it famous, and Napa Valley made it a star of the New World.",
+      "highlight": "Cabernet: blackcurrant, high tannin"
+    },
+    {
+      "type": "concept",
+      "title": "Merlot",
+      "body": "Merlot has bigger, thinner-skinned berries and ripens about two weeks earlier than Cabernet. Its tannins are softer and its flavours are plum, red and black cherry, with a rounder feel. It suits cooler, clay soils that would leave Cabernet unripe, as on Bordeaux's Right Bank in Pomerol and Saint-Émilion.",
+      "highlight": "Merlot: plum, softer tannin, earlier ripening"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is more likely to give a wine with firm tannin and blackcurrant aromas?",
+      "options": [
+        "Merlot",
+        "Cabernet Sauvignon",
+        "Pinot Grigio",
+        "Gamay"
+      ],
+      "answer": 1,
+      "explanation": "Cabernet's small, thick-skinned berries give more tannin, and blackcurrant is its signature aroma. Merlot is softer, more plum and cherry."
+    },
+    {
+      "type": "concept",
+      "title": "Why blend them",
+      "body": "Cabernet brings structure and length; Merlot fills the middle with fleshy fruit. Together they make a more complete wine. Blending also spreads risk: if a cool year leaves Cabernet short of ripeness, Merlot, which ripens earlier, can make up the difference. That's the logic of most Bordeaux reds.",
+      "highlight": "Cabernet gives the frame; Merlot fills it in"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these describe Merlot rather than Cabernet Sauvignon?",
+      "options": [
+        "Ripens earlier",
+        "Plum and soft tannin",
+        "Thick skins, high tannin",
+        "Blackcurrant and cedar",
+        "Suits cool clay soils"
+      ],
+      "answers": [
+        0,
+        1,
+        4
+      ],
+      "explanation": "Merlot ripens earlier, is softer and plummy, and copes with cool clay. Thick skins, high tannin and blackcurrant are Cabernet's signature."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Sauvignon gives blackcurrant, high tannin and acidity",
+        "Merlot gives plum and softer tannins, ripening earlier",
+        "Blending them balances structure and fruit, and spreads risk"
+      ]
+    }
+  ]
+}

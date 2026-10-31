@@ -1,0 +1,26 @@
+{
+  "id": "grape-nero-d-avola",
+  "kind": "grape",
+  "order": 12,
+  "color": "red",
+  "title": "Nero d'Avola",
+  "aliases": [
+    "Calabrese"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "0 0 0 1 = 1",
+  "complexity": "D",
+  "description": "Also called Calabrese. Sicily's signature red: dark, ripe and juicy, with fresh acidity.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "grape-nero-d-avola-l01",
+    "grape-nero-d-avola-l02",
+    "grape-nero-d-avola-l03",
+    "grape-nero-d-avola-l04"
+  ]
+}

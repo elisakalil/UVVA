@@ -1,0 +1,72 @@
+{
+  "id": "grape-montepulciano-l03",
+  "moduleId": "grape-montepulciano",
+  "order": 3,
+  "title": "Abruzzo and Conero",
+  "subtitle": "Montepulciano's best wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Montepulciano d'Abruzzo and its DOCG",
+    "Describe Rosso Cònero and Conero",
+    "Describe Cerasuolo d'Abruzzo"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Abruzzo",
+      "body": "Montepulciano d'Abruzzo DOC is huge, from cheap and cheerful to serious. Montepulciano d'Abruzzo Colline Teramane became DOCG in 2003, requiring at least 90% Montepulciano and longer ageing. Producers like Valentini and Emidio Pepe have shown how long-lived it can be.",
+      "highlight": "Colline Teramane DOCG since 2003"
+    },
+    {
+      "type": "concept",
+      "title": "Conero",
+      "body": "Monte Conero is a limestone headland on the Adriatic, near Ancona in the Marche. Rosso Cònero DOC must be at least 85% Montepulciano. Conero DOCG, the Riserva, since 2004, requires two years of ageing. Sea breezes and limestone give structured, fresh, dark wines.",
+      "highlight": "Conero: limestone by the sea"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines are based on Montepulciano?",
+      "options": [
+        "Montepulciano d'Abruzzo",
+        "Conero",
+        "Cerasuolo d'Abruzzo",
+        "Vino Nobile di Montepulciano"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Vino Nobile is Sangiovese from the Tuscan town."
+    },
+    {
+      "type": "concept",
+      "title": "Cerasuolo d'Abruzzo",
+      "body": "Cerasuolo d'Abruzzo is a deep cherry-pink rosé from Montepulciano, its own DOC since 2010. Cerasuolo means cherry-like. Short skin contact with this deeply coloured grape gives a darker, fuller rosé than most, with cherry, strawberry and a savoury edge.",
+      "highlight": "Cerasuolo: cherry-coloured rosé"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Cerasuolo mean?",
+      "options": [
+        "Cherry-like",
+        "Sea breeze",
+        "Late harvest",
+        "Old vine"
+      ],
+      "answer": 0,
+      "explanation": "Its deep cherry colour gives Cerasuolo d'Abruzzo its name."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Colline Teramane is Abruzzo's DOCG Montepulciano",
+        "Conero, by the sea, makes structured Montepulciano",
+        "Cerasuolo d'Abruzzo is a deep cherry rosé"
+      ]
+    }
+  ]
+}

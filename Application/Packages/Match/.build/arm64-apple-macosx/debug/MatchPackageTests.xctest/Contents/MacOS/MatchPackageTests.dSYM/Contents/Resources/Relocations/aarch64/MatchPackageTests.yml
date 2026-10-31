@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.xctest/Contents/MacOS/MatchPackageTests'
+relocations:     []
+...

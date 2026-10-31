@@ -1,0 +1,77 @@
+{
+  "id": "region-gr-santorini-l02",
+  "moduleId": "region-gr-santorini",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Assyrtiko and partners",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Assyrtiko",
+    "Name its partners",
+    "Explain why Assyrtiko suits Santorini"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Assyrtiko",
+      "body": "Assyrtiko covers about 80% of Santorini's vineyards. It keeps very high acidity even when fully ripe in strong sun, a rare trait. It gives bone-dry whites with lemon, lime, flint, smoke and a saline edge, with high alcohol. Santorini PDO white must be at least 75% Assyrtiko.",
+      "highlight": "At least 75% Assyrtiko"
+    },
+    {
+      "type": "concept",
+      "title": "Partners",
+      "body": "Athiri adds citrus and floral softness; Aidani adds floral, honeyed aromas. Both are blended with Assyrtiko and used in Vinsanto. Red grapes, like Mandilaria and Mavrotragano, a rare local grape, are also grown, mainly for reds and some Vinsanto.",
+      "highlight": "Athiri, Aidani, Mavrotragano"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Assyrtiko",
+          "right": "Main grape, high acidity"
+        },
+        {
+          "left": "Athiri",
+          "right": "Citrus and floral"
+        },
+        {
+          "left": "Aidani",
+          "right": "Floral, honeyed"
+        },
+        {
+          "left": "Mavrotragano",
+          "right": "Rare local red"
+        }
+      ],
+      "explanation": "Assyrtiko leads Santorini's wines."
+    },
+    {
+      "type": "tip",
+      "body": "Nykteri, from the Greek for night, was traditionally made from grapes picked at night and oak-aged. It's a richer style of Santorini Assyrtiko."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Assyrtiko unusual?",
+      "options": [
+        "It keeps high acidity in hot sun",
+        "It's very low in acidity",
+        "It's always sweet",
+        "It's a red grape"
+      ],
+      "answer": 0,
+      "explanation": "Few grapes keep such acidity in heat."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Assyrtiko is about 80% of vineyards, at least 75% in PDO whites",
+        "It keeps high acidity in fierce sun",
+        "Athiri, Aidani and Mavrotragano complete the range"
+      ]
+    }
+  ]
+}

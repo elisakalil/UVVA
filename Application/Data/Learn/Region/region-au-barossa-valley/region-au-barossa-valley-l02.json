@@ -1,0 +1,77 @@
+{
+  "id": "region-au-barossa-valley-l02",
+  "moduleId": "region-au-barossa-valley",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Shiraz and friends",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barossa Shiraz",
+    "Describe Grenache and Mourvèdre",
+    "Explain GSM blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Shiraz",
+      "body": "Shiraz, Syrah, is the Barossa's signature, about half of the vineyards. It gives full-bodied, ripe wines with blackberry, plum, chocolate, liquorice and spice, often 14.5 to 15% alcohol, with soft, ripe tannins. Traditional examples use American oak, adding vanilla and coconut. Penfolds Grange, first made in 1951, often includes Barossa Shiraz.",
+      "highlight": "Rich Shiraz, about half the vines"
+    },
+    {
+      "type": "concept",
+      "title": "Grenache and Mourvèdre",
+      "body": "Grenache, often from old bush vines, gives red fruit and spice. Mourvèdre, called Mataro locally, adds tannin and savoury notes. Blends of Grenache, Shiraz and Mourvèdre, GSM, are a Barossa classic. Cabernet Sauvignon and Semillon also grow. Eden Valley adds Riesling.",
+      "highlight": "GSM blends"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Shiraz",
+          "right": "Signature, rich"
+        },
+        {
+          "left": "Grenache",
+          "right": "Red fruit, old bush vines"
+        },
+        {
+          "left": "Mataro",
+          "right": "Local name for Mourvèdre"
+        },
+        {
+          "left": "GSM",
+          "right": "Classic blend"
+        }
+      ],
+      "explanation": "Barossa blends three Rhône grapes."
+    },
+    {
+      "type": "tip",
+      "body": "Mataro, the Barossa's name for Mourvèdre, comes from the town of Mataró near Barcelona."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Barossa Shiraz typically like?",
+      "options": [
+        "Full-bodied, ripe and chocolatey",
+        "Pale and light",
+        "Sweet and sparkling",
+        "White and crisp"
+      ],
+      "answer": 0,
+      "explanation": "Warmth gives ripe, rich wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Shiraz is the Barossa's signature, rich and ripe",
+        "Grenache and Mataro join it in GSM blends",
+        "Penfolds Grange often includes Barossa Shiraz"
+      ]
+    }
+  ]
+}

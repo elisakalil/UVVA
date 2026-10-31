@@ -1,0 +1,62 @@
+{
+  "id": "path-08-l02",
+  "moduleId": "path-08",
+  "order": 2,
+  "title": "Making a white",
+  "subtitle": "From press to bottle",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the steps of white winemaking",
+    "Explain how winemakers protect freshness",
+    "Explain skin contact and its effect"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The steps",
+      "body": "White grapes are crushed and pressed, usually soon after picking. The juice settles to drop solids, then ferments cool, often in stainless steel. The new wine may rest on its lees, then is clarified, stabilised and bottled. Many aromatic whites are bottled within months to keep them fresh.",
+      "highlight": "Press, settle, ferment cool, clarify, bottle"
+    },
+    {
+      "type": "concept",
+      "title": "Protecting freshness",
+      "body": "Juice browns quickly in air, like a cut apple, and loses fruit. Winemakers use cold, inert gases like carbon dioxide and sulphur dioxide to protect it. Some leave skins and juice together for a few hours before pressing, called skin contact, to draw out aroma, but too long adds bitterness and colour.",
+      "highlight": "Cold, inert gas and sulphur protect the juice"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of making a white wine in order.",
+      "items": [
+        "Pressing",
+        "Settling the juice",
+        "Cool fermentation",
+        "Clarification",
+        "Bottling"
+      ],
+      "explanation": "White wines are pressed before fermentation, unlike reds."
+    },
+    {
+      "type": "concept",
+      "title": "Orange wines",
+      "body": "Ferment white grapes on their skins, like a red, for days or months, and you get an orange or amber wine. It has tannin, deeper colour and flavours of dried fruit, tea and nuts. The method is ancient in Georgia and returned in Friuli and elsewhere from the 1990s.",
+      "highlight": "White grapes, red method, orange wine"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In white winemaking, the grapes are usually pressed before fermentation.",
+      "answer": true,
+      "explanation": "Yes. For whites, the juice is separated from the skins first. Reds are pressed after fermentation, because skin contact is needed for colour and tannin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "White grapes are pressed first, then the juice ferments cool",
+        "Cold, inert gas and sulphur keep the juice fresh",
+        "Long skin contact turns white grapes into orange wine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "grape-syrah-l01",
+  "moduleId": "grape-syrah",
+  "order": 1,
+  "title": "Meet Syrah",
+  "subtitle": "Dark fruit and black pepper",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Syrah's colour, aromas and structure",
+    "Explain its origins",
+    "Recognise Syrah in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Deep and spicy",
+      "body": "Syrah is a thick-skinned black grape giving deep purple wines with blackberry, blueberry and plum, plus black pepper, smoked meat, olive and violet. Tannins are firm but usually ripe, acidity medium to high. Ripe examples add chocolate and liquorice. It's one of the world's most planted red grapes.",
+      "highlight": "Blackberry, pepper, smoked meat"
+    },
+    {
+      "type": "concept",
+      "title": "Origins and the pepper molecule",
+      "body": "DNA shows Syrah is a natural cross of two grapes from south-east France: Dureza, from the Ardèche, and Mondeuse Blanche, from Savoie. Its black pepper aroma comes from rotundone, a compound also found in peppercorns. Rotundone forms most in cooler sites and vintages; about one in five people can't smell it at all.",
+      "highlight": "Rotundone: the pepper note"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What compound gives Syrah its black pepper aroma?",
+      "options": [
+        "Pyrazine",
+        "Rotundone",
+        "TDN",
+        "Linalool"
+      ],
+      "answer": 1,
+      "explanation": "Rotundone is the same compound found in black peppercorns. Pyrazines give green pepper, not black."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep purple, almost opaque colour. On the nose, dark fruit with pepper or smoky, meaty notes suggests Syrah. On the palate, firm but ripe tannins and a savoury finish. Cooler examples are peppery and medium-bodied; warmer ones are fuller, sweeter-fruited and chocolatey.",
+      "highlight": "Dark colour plus pepper or smoke"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Syrah is a cross between two grapes from south-east France.",
+      "answer": true,
+      "explanation": "Yes. Its parents are Dureza and Mondeuse Blanche, both from the area around the Rhône and the Alps."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Syrah gives dark fruit, black pepper and smoky, meaty notes",
+        "It's a cross of Dureza and Mondeuse Blanche",
+        "Rotundone gives its pepper aroma, most in cooler sites"
+      ]
+    }
+  ]
+}

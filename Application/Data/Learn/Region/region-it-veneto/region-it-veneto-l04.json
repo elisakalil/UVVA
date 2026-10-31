@@ -1,0 +1,62 @@
+{
+  "id": "region-it-veneto-l04",
+  "moduleId": "region-it-veneto",
+  "order": 4,
+  "title": "Soave",
+  "subtitle": "Volcanic white",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Soave's zone and soils",
+    "Explain its levels",
+    "Describe Recioto di Soave"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Volcanic hills",
+      "body": "Soave lies east of Verona. Soave Classico, in the hills around Soave and Monteforte d'Alpone, has volcanic basalt and limestone soils. Soave must be at least 70% Garganega, with Trebbiano di Soave or Chardonnay. Vines are traditionally trained on pergolas, pergola veronese.",
+      "highlight": "Basalt hills, Garganega"
+    },
+    {
+      "type": "concept",
+      "title": "From volume to quality",
+      "body": "Soave was mass-produced in the 1970s, earning a poor reputation. Producers like Pieropan and Inama showed its real potential: mineral, almond-scented, age-worthy wines. Soave Superiore DOCG requires lower yields. Since 2019, 33 UGAs, named sub-areas like Foscarino and Calvarino, can appear on labels.",
+      "highlight": "33 named sub-areas since 2019"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What must Soave contain at least 70% of?",
+      "options": [
+        "Garganega",
+        "Glera",
+        "Corvina",
+        "Pinot Grigio"
+      ],
+      "answer": 0,
+      "explanation": "Garganega is Soave's main grape."
+    },
+    {
+      "type": "concept",
+      "title": "Recioto di Soave",
+      "body": "Recioto di Soave, DOCG since 1998, is a sweet wine from dried Garganega. Grapes dry for months, concentrating sugar, sometimes with noble rot. The wine is golden, honeyed and sweet, with apricot and almond, balanced by acidity.",
+      "highlight": "Sweet, from dried Garganega"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Recioto di Soave is a sweet wine made from dried grapes.",
+      "answer": true,
+      "explanation": "Yes. It's Soave's appassimento wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Soave Classico grows Garganega on volcanic hills",
+        "Quality rose from cheap volume to named sub-areas",
+        "Recioto di Soave is sweet, from dried grapes"
+      ]
+    }
+  ]
+}

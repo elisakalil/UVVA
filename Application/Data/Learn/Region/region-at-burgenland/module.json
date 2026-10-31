@@ -1,0 +1,27 @@
+{
+  "id": "region-at-burgenland",
+  "kind": "region",
+  "order": 29,
+  "country": "Austria",
+  "countryCode": "AT",
+  "title": "Burgenland",
+  "grapes": [
+    "Blaufränkisch",
+    "Zweigelt",
+    "Welschriesling"
+  ],
+  "points": "1 1 2 1 = 5",
+  "complexity": "B",
+  "description": "Austria's warm east: Blaufränkisch reds and the noble rot sweet wines of Lake Neusiedl.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-at-burgenland-l01",
+    "region-at-burgenland-l02",
+    "region-at-burgenland-l03",
+    "region-at-burgenland-l04",
+    "region-at-burgenland-l05",
+    "region-at-burgenland-l06"
+  ]
+}

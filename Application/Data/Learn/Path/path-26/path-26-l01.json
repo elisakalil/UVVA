@@ -1,0 +1,79 @@
+{
+  "id": "path-26-l01",
+  "moduleId": "path-26",
+  "order": 1,
+  "title": "Fortification",
+  "subtitle": "The spirit and the timing",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how fortification is done",
+    "Compare neutral and aromatic spirits",
+    "Explain the chemistry of stopping fermentation"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The spirit",
+      "body": "Fortifying spirit is grape spirit, usually distilled to between 77 and 96%. Port uses aguardente at about 77%, which carries some flavour of its own. Sherry and most vins doux naturels use neutral spirit at around 95 to 96%, which adds alcohol without flavour. Less spirit is needed when it's stronger.",
+      "highlight": "Port: 77%. Sherry: about 96%."
+    },
+    {
+      "type": "concept",
+      "title": "Stopping the yeast",
+      "body": "Yeast can't work above about 15 to 16% alcohol. Adding spirit mid-fermentation pushes the wine past that point, killing the yeast and keeping the remaining sugar. In Port, about 115 litres of spirit go into 435 litres of fermenting must, making the classic 550-litre pipe. The earlier the spirit goes in, the sweeter the wine.",
+      "highlight": "Above about 16%, yeast stops"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does adding spirit mid-fermentation keep a wine sweet?",
+      "options": [
+        "Spirit contains sugar",
+        "The higher alcohol kills the yeast before it finishes",
+        "Spirit converts alcohol into sugar",
+        "It cools the wine"
+      ],
+      "answer": 1,
+      "explanation": "Yeast stops working above about 15 to 16% alcohol, leaving the unfermented sugar."
+    },
+    {
+      "type": "concept",
+      "title": "Timing and style",
+      "body": "Spirit added early gives sweet, fruity wines: Port, vins doux naturels and sweet Madeira. Added late, after a dry fermentation, it gives dry wines: Fino, Manzanilla, Sercial Madeira. Each family also uses ageing, with or without oxygen, to shape the final style.",
+      "highlight": "Early: sweet. Late: dry."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to when spirit is added.",
+      "pairs": [
+        {
+          "left": "Ruby Port",
+          "right": "Aguardente mid-fermentation"
+        },
+        {
+          "left": "Fino",
+          "right": "After fermentation, to 15%"
+        },
+        {
+          "left": "Muscat de Rivesaltes",
+          "right": "Neutral spirit mid-fermentation"
+        },
+        {
+          "left": "Oloroso",
+          "right": "After fermentation, to 17%"
+        }
+      ],
+      "explanation": "Timing determines sweetness; strength determines whether flor can grow."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fortifying spirit ranges from 77% for Port to about 96% for Sherry",
+        "Spirit above about 16% alcohol stops the yeast",
+        "Early fortification keeps sugar; late fortification keeps the wine dry"
+      ]
+    }
+  ]
+}

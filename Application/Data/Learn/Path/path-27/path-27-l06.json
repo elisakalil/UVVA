@@ -1,0 +1,100 @@
+{
+  "id": "path-27-l06",
+  "moduleId": "path-27",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Sweet Wines of the World",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain botrytis and its wines",
+    "Compare the great sweet wine traditions",
+    "Recognise their key terms"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its country.",
+      "pairs": [
+        {
+          "left": "Sauternes",
+          "right": "France"
+        },
+        {
+          "left": "Tokaji Aszú",
+          "right": "Hungary"
+        },
+        {
+          "left": "Trockenbeerenauslese",
+          "right": "Germany"
+        },
+        {
+          "left": "Vin Santo",
+          "right": "Italy"
+        },
+        {
+          "left": "Icewine",
+          "right": "Canada"
+        }
+      ],
+      "explanation": "Each country has its own great sweet wine."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a trie in Sauternes?",
+      "options": [
+        "A barrel",
+        "A pass through the vineyard to pick botrytised grapes",
+        "A type of yeast",
+        "A blend of grapes"
+      ],
+      "answer": 1,
+      "explanation": "Pickers make several tries, taking only the berries that are ready."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines rely mainly on noble rot?",
+      "options": [
+        "Sauternes",
+        "Tokaji Aszú",
+        "Trockenbeerenauslese",
+        "Icewine"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Icewine relies on freezing, not botrytis."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Eszencia often reaches only around 5% alcohol or less.",
+      "answer": true,
+      "explanation": "Yes. With over 450 g/l of sugar, it ferments very slowly and stays very low in alcohol."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Château d'Yquem is the only ____ Cru Supérieur in the 1855 classification.",
+      "options": [
+        "Premier",
+        "Deuxième",
+        "Grand",
+        "Petit"
+      ],
+      "answer": "Premier",
+      "explanation": "Yquem holds the unique rank of Premier Cru Supérieur."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Botrytis concentrates sugar and adds honeyed aromas",
+        "Sauternes, Tokaji and German TBA are botrytis wines",
+        "Ice wine and passito use frost and drying",
+        "High acidity keeps all great sweet wines fresh"
+      ]
+    }
+  ]
+}

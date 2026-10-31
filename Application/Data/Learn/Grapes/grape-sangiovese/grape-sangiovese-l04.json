@@ -1,0 +1,79 @@
+{
+  "id": "grape-sangiovese-l04",
+  "moduleId": "grape-sangiovese",
+  "order": 4,
+  "title": "Brunello and Vino Nobile",
+  "subtitle": "Montalcino and Montepulciano",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Brunello di Montalcino",
+    "Describe Vino Nobile di Montepulciano",
+    "Compare them with Chianti Classico"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Brunello di Montalcino",
+      "body": "Montalcino, a hill town south of Siena, is warmer and drier than Chianti. Brunello di Montalcino, DOCG since 1980, must be 100% Sangiovese and age at least five years, two in oak, before release; Riserva six years. The Biondi-Santi family created the style in the late 19th century. Rosso di Montalcino is the younger, cheaper version.",
+      "highlight": "100% Sangiovese, five years' ageing"
+    },
+    {
+      "type": "concept",
+      "title": "Vino Nobile",
+      "body": "Montepulciano, east of Montalcino, makes Vino Nobile di Montepulciano DOCG from at least 70% Sangiovese, locally called Prugnolo Gentile. It ages at least two years. It's often softer than Brunello and more structured than Chianti. Not to be confused with Montepulciano d'Abruzzo, a different grape and region.",
+      "highlight": "At least 70% Prugnolo Gentile"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Brunello di Montalcino require?",
+      "options": [
+        "100% Sangiovese and five years' ageing",
+        "At least 70% Sangiovese",
+        "Cabernet blending",
+        "One year's ageing"
+      ],
+      "answer": 0,
+      "explanation": "Brunello is pure Sangiovese, aged at least five years before release."
+    },
+    {
+      "type": "concept",
+      "title": "Comparing",
+      "body": "Chianti Classico is often the freshest, with sour cherry and violet. Brunello, from a warmer place and with longer ageing, is fuller, more powerful and long-lived. Vino Nobile sits between them. All three show Sangiovese's acidity and tannin.",
+      "highlight": "Chianti fresh; Brunello powerful"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its rule.",
+      "pairs": [
+        {
+          "left": "Brunello",
+          "right": "100% Sangiovese"
+        },
+        {
+          "left": "Vino Nobile",
+          "right": "At least 70% Sangiovese"
+        },
+        {
+          "left": "Chianti Classico",
+          "right": "At least 80% Sangiovese"
+        },
+        {
+          "left": "Rosso di Montalcino",
+          "right": "Younger Montalcino wine"
+        }
+      ],
+      "explanation": "Each Tuscan wine sets its own rules."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Brunello is 100% Sangiovese, aged five years",
+        "Vino Nobile is at least 70% Prugnolo Gentile",
+        "Brunello is fullest; Chianti Classico freshest"
+      ]
+    }
+  ]
+}

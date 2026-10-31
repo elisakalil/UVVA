@@ -1,0 +1,26 @@
+{
+  "id": "grape-marsanne",
+  "kind": "grape",
+  "order": 31,
+  "color": "white",
+  "title": "Marsanne",
+  "aliases": [],
+  "origin": "France",
+  "countries": [
+    "France",
+    "Australia"
+  ],
+  "points": "1 1 1 0 = 3",
+  "complexity": "C",
+  "description": "A full-bodied Rhône white of honey, almond and pear, often with Roussanne, and capable of long ageing.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-marsanne-l01",
+    "grape-marsanne-l02",
+    "grape-marsanne-l03",
+    "grape-marsanne-l04",
+    "grape-marsanne-l05"
+  ]
+}

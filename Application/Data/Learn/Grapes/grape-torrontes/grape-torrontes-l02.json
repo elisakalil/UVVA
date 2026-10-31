@@ -1,0 +1,79 @@
+{
+  "id": "grape-torrontes-l02",
+  "moduleId": "grape-torrontes",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Salta and high altitude",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Torrontés' main regions",
+    "Explain the role of altitude",
+    "Explain how altitude shapes its style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Salta and Cafayate",
+      "body": "Torrontés Riojano grows best in the Calchaquí Valleys of Salta, in north-west Argentina, around Cafayate, at 1,700 to over 3,000 m, among the highest vineyards in the world. It's also grown in La Rioja, the province that gave it its name, and in Mendoza and San Juan.",
+      "highlight": "Cafayate, 1,700 to 3,000 m"
+    },
+    {
+      "type": "concept",
+      "title": "Altitude",
+      "body": "At such altitude, days are hot and sunny, with intense ultraviolet light, while nights are cold. Torrontés ripens fully, developing its aromas, but keeps acidity. The UV thickens skins, adding aroma compounds. Without altitude, in hot lowlands, Torrontés can be flabby, bitter and too alcoholic.",
+      "highlight": "Sun by day, cold at night"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to Torrontés.",
+      "pairs": [
+        {
+          "left": "Cafayate",
+          "right": "Heart of Salta Torrontés"
+        },
+        {
+          "left": "Calchaquí Valleys",
+          "right": "High-altitude valleys"
+        },
+        {
+          "left": "La Rioja",
+          "right": "Province that named it"
+        },
+        {
+          "left": "Mendoza",
+          "right": "Lower, larger region"
+        }
+      ],
+      "explanation": "Torrontés is at its best high in the north."
+    },
+    {
+      "type": "concept",
+      "title": "Making it",
+      "body": "Winemakers keep Torrontés fresh: cool fermentation in steel, no oak, early bottling. Some pick earlier to reduce alcohol and bitterness. A few producers make oaked, late harvest or sparkling versions, but the fresh, dry style dominates.",
+      "highlight": "Steel, cool, early bottling"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does altitude help Torrontés?",
+      "options": [
+        "Cold nights keep acidity while sun ripens aromas",
+        "It adds sugar",
+        "It makes it red",
+        "It removes alcohol"
+      ],
+      "answer": 0,
+      "explanation": "Altitude gives a large day and night swing, balancing ripeness and freshness."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Torrontés thrives in Salta's high valleys, around Cafayate",
+        "Altitude keeps acidity while sun ripens aromas",
+        "Fresh, unoaked, dry styles dominate"
+      ]
+    }
+  ]
+}

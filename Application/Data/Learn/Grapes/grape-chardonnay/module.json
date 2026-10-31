@@ -1,0 +1,31 @@
+{
+  "id": "grape-chardonnay",
+  "kind": "grape",
+  "order": 32,
+  "color": "white",
+  "title": "Chardonnay",
+  "aliases": [],
+  "origin": "France",
+  "countries": [
+    "France",
+    "United States",
+    "Australia",
+    "Italy",
+    "Chile"
+  ],
+  "points": "2 2 2 2 = 8",
+  "complexity": "A",
+  "description": "The world's most famous white grape: a neutral canvas for place and winemaking, from Chablis to Champagne.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-chardonnay-l01",
+    "grape-chardonnay-l02",
+    "grape-chardonnay-l03",
+    "grape-chardonnay-l04",
+    "grape-chardonnay-l05",
+    "grape-chardonnay-l06",
+    "grape-chardonnay-l07"
+  ]
+}

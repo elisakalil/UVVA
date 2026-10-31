@@ -1,0 +1,28 @@
+{
+  "id": "grape-furmint",
+  "kind": "grape",
+  "order": 35,
+  "color": "white",
+  "title": "Furmint",
+  "aliases": [
+    "Šipon"
+  ],
+  "origin": "Hungary",
+  "countries": [
+    "Hungary"
+  ],
+  "points": "2 0 2 2 = 6",
+  "complexity": "B",
+  "description": "Tokaj's grape: searing acidity, noble rot and smoky, mineral dry wines.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-furmint-l01",
+    "grape-furmint-l02",
+    "grape-furmint-l03",
+    "grape-furmint-l04",
+    "grape-furmint-l05",
+    "grape-furmint-l06"
+  ]
+}

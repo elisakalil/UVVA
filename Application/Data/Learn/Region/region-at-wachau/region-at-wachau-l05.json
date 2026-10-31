@@ -1,0 +1,96 @@
+{
+  "id": "region-at-wachau-l05",
+  "moduleId": "region-at-wachau",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about the Wachau",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Wachau's land and grapes",
+    "Explain its categories",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Steinfeder",
+          "right": "Lightest, up to 11.5%"
+        },
+        {
+          "left": "Federspiel",
+          "right": "Medium, 11.5 to 12.5%"
+        },
+        {
+          "left": "Smaragd",
+          "right": "Ripest, above 12.5%"
+        },
+        {
+          "left": "Ried",
+          "right": "Single vineyard"
+        }
+      ],
+      "explanation": "The Wachau has its own categories."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which soil suits Grüner Veltliner in the Wachau?",
+      "options": [
+        "Loess",
+        "Slate",
+        "Chalk",
+        "Volcanic ash"
+      ],
+      "answer": 0,
+      "explanation": "Deep loess on lower slopes."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Wachau's categories are for sweet wines.",
+      "answer": false,
+      "explanation": "Not true. They're for dry wines."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are famous Wachau Riesling vineyards?",
+      "options": [
+        "Achleiten",
+        "Kellerberg",
+        "Loibenberg",
+        "Scharzhofberg"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Scharzhofberg is in the Saar, Germany."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Wachau became a DAC in ____.",
+      "options": [
+        "2020",
+        "1983",
+        "2000",
+        "1756"
+      ],
+      "answer": "2020",
+      "explanation": "In 2020."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Wachau is a terraced stretch of the Danube",
+        "Grüner grows on loess; Riesling on rock",
+        "Steinfeder, Federspiel and Smaragd grade dry wines",
+        "Its wines suit schnitzel and richer Austrian food"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "region-gr-santorini-l04",
+  "moduleId": "region-gr-santorini",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Santorini and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Santorini label",
+    "Describe Vinsanto",
+    "Pair Santorini wines with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Labels and Vinsanto",
+      "body": "Labels show Santorini PDO, the producer and sometimes Nykteri or a single vineyard. Vinsanto, Santorini's sweet wine, is made from at least 51% Assyrtiko with Aidani, from grapes sun-dried for about 12 to 14 days, then fermented and aged at least two years in oak, often much longer. It's amber, with raisin, apricot, coffee and spice, balanced by acidity.",
+      "highlight": "Vinsanto: sun-dried, oak-aged"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Dry Assyrtiko suits Greek seafood: grilled octopus, sea bass, squid, shellfish, and local dishes like fava, a yellow split pea purée, tomatokeftedes, tomato fritters, and feta. Its acidity cuts through olive oil. Vinsanto suits dried fruit, nuts, blue cheese and chocolate. Serve Assyrtiko at 8 to 11 degrees.",
+      "highlight": "Octopus, fava, feta"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is Santorini's Vinsanto made?",
+      "options": [
+        "From sun-dried grapes, aged in oak",
+        "From frozen grapes",
+        "By adding spirit",
+        "From red grapes only"
+      ],
+      "answer": 0,
+      "explanation": "Sun-drying concentrates the grapes."
+    },
+    {
+      "type": "tip",
+      "body": "Top Santorini Assyrtiko ages well for 10 to 15 years, gaining smoky, honeyed notes while keeping its acidity."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dry Assyrtiko is a good match for grilled octopus.",
+      "answer": true,
+      "explanation": "Yes. Its acidity and saltiness suit grilled seafood."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show Santorini PDO and sometimes Nykteri",
+        "Vinsanto is sun-dried and oak-aged",
+        "Assyrtiko suits octopus, fava and feta"
+      ]
+    }
+  ]
+}

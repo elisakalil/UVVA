@@ -1,0 +1,62 @@
+{
+  "id": "region-ar-mendoza-l01",
+  "moduleId": "region-ar-mendoza",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "A desert under the Andes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Mendoza's geography",
+    "Explain its desert climate",
+    "Explain irrigation"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "At the foot of Aconcagua",
+      "body": "Mendoza lies in western Argentina, at the foot of the Andes, near Aconcagua, the highest mountain outside Asia, at 6,961 m. It makes about 70% of Argentina's wine, with around 150,000 hectares of vines. Vineyards range from about 600 to 1,600 m in altitude.",
+      "highlight": "About 70% of Argentina's wine"
+    },
+    {
+      "type": "concept",
+      "title": "High desert",
+      "body": "Mendoza is a high desert, with about 200 to 250 mm of rain a year, in the Andes' rain shadow. Summers are hot and sunny, nights cool, with a large day and night swing. Low humidity means little disease. Hail is the biggest threat; many vineyards use hail nets. The Zonda, a hot, dry wind, can damage vines in spring.",
+      "highlight": "Dry, sunny, hail and Zonda"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the biggest weather threat in Mendoza?",
+      "options": [
+        "Hail",
+        "Constant rain",
+        "Fog",
+        "Snow in summer"
+      ],
+      "answer": 0,
+      "explanation": "Summer hailstorms can destroy crops; nets protect vines."
+    },
+    {
+      "type": "concept",
+      "title": "Irrigation",
+      "body": "Without irrigation, Mendoza couldn't grow vines. Snowmelt from the Andes feeds rivers like the Mendoza and Tunuyán. The Huarpe people built channels before the Spanish arrived; the Spanish expanded them. Today, flood, furrow and drip irrigation all draw on this water. Water rights are precious, and drought years are a growing concern.",
+      "highlight": "Andean snowmelt, ancient channels"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Mendoza's vineyards depend on irrigation from Andean snowmelt.",
+      "answer": true,
+      "explanation": "Yes. It's a desert without it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Mendoza makes about 70% of Argentina's wine, under the Andes",
+        "It's a high, dry desert; hail is the main threat",
+        "Snowmelt irrigation, via ancient channels, makes it possible"
+      ]
+    }
+  ]
+}

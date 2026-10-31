@@ -1,0 +1,96 @@
+{
+  "id": "region-pt-alentejo-l05",
+  "moduleId": "region-pt-alentejo",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about the Alentejo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Alentejo's land and grapes",
+    "Explain talha wine",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Talha",
+          "right": "Clay fermentation pot"
+        },
+        {
+          "left": "Porco preto",
+          "right": "Black pork"
+        },
+        {
+          "left": "Alqueva",
+          "right": "Large reservoir"
+        },
+        {
+          "left": "Antão Vaz",
+          "right": "Main white grape"
+        }
+      ],
+      "explanation": "The Alentejo has its own vocabulary."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is the Alentejo's red-fleshed teinturier?",
+      "options": [
+        "Alicante Bouschet",
+        "Aragonez",
+        "Trincadeira",
+        "Touriga Nacional"
+      ],
+      "answer": 0,
+      "explanation": "It gives deep colour."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Alentejo has a cool, wet climate.",
+      "answer": false,
+      "explanation": "Not true. It's hot and dry."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Alentejo grapes?",
+      "options": [
+        "Aragonez",
+        "Trincadeira",
+        "Antão Vaz",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Riesling isn't grown there."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Talhas are traditionally opened around St ____'s Day.",
+      "options": [
+        "Martin",
+        "George",
+        "John",
+        "Vincent"
+      ],
+      "answer": "Martin",
+      "explanation": "November 11."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Alentejo is hot, dry and covers a third of Portugal",
+        "Ripe reds from Aragonez and Alicante Bouschet lead",
+        "Talha wine keeps a Roman clay-pot tradition",
+        "Its wines suit black pork and lamb"
+      ]
+    }
+  ]
+}

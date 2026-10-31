@@ -1,0 +1,60 @@
+{
+  "id": "grape-aglianico-l02",
+  "moduleId": "grape-aglianico",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Campania and Basilicata",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Aglianico's main regions",
+    "Explain the role of volcanic soils",
+    "Explain the role of altitude"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two regions",
+      "body": "Aglianico grows mainly in Campania, around Naples and inland in Irpinia, and in Basilicata, on the slopes of Monte Vulture. Smaller amounts grow in Puglia and Molise. There are some plantings in Australia and California, but it remains overwhelmingly Italian.",
+      "highlight": "Campania and Basilicata"
+    },
+    {
+      "type": "concept",
+      "title": "Volcanoes and height",
+      "body": "Both key areas are volcanic: Irpinia has volcanic ash over clay and limestone; Vulture is an extinct volcano. Volcanic soils drain well and give a smoky, mineral edge. Altitude, often 400 to 700 m, gives cool nights. Together they explain how a late grape ripens slowly and keeps freshness.",
+      "highlight": "Volcanic soils and altitude"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Monte Vulture, in Basilicata, is an extinct volcano.",
+      "answer": true,
+      "explanation": "Yes. Its volcanic slopes give Aglianico del Vulture its character."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Aglianico from Campania labelled Irpinia or Taburno. They're often cheaper than Taurasi and show the grape's character well."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What do volcanic soils give Aglianico?",
+      "options": [
+        "Sweetness",
+        "Good drainage and a smoky edge",
+        "Pale colour",
+        "Low acidity"
+      ],
+      "answer": 1,
+      "explanation": "Volcanic soils drain well and are often linked to smoky, mineral notes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aglianico grows mainly in Campania and Basilicata",
+        "Volcanic soils drain well and add a smoky edge",
+        "Altitude gives cool nights for slow ripening"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-burgundy-l06",
+  "moduleId": "region-fr-burgundy",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Burgundy and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Burgundy label",
+    "Explain the role of vintage",
+    "Pair Burgundy with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "A Burgundy label shows the appellation, from Bourgogne to Grand Cru, the producer, the vintage, and whether it's a domaine or négociant. Mis en bouteille au domaine means estate-bottled. Monopole means a single owner holds the whole vineyard, like La Romanée-Conti. Vieilles vignes means old vines, but it isn't legally defined.",
+      "highlight": "Appellation, producer, vintage"
+    },
+    {
+      "type": "concept",
+      "title": "Vintage",
+      "body": "Because Burgundy is continental and risky, vintage matters a lot. Frost, hail and rain can halve a crop or dilute it. Warm vintages give riper, rounder wines; cool ones leaner, fresher wines. Good producers make good wine even in difficult years.",
+      "highlight": "Vintage matters a lot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does monopole mean on a Burgundy label?",
+      "options": [
+        "A single owner holds the whole vineyard",
+        "It's a blend",
+        "It's sparkling",
+        "It's a négociant wine"
+      ],
+      "answer": 0,
+      "explanation": "A monopole belongs to one owner."
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Red Burgundy suits roast chicken, duck, game birds, boeuf bourguignon and coq au vin, two dishes cooked with the region's wine. Époisses cheese suits both reds and whites. Chablis suits oysters and snails, escargots de Bourgogne; Meursault suits lobster and creamy chicken. Serve reds at 14 to 16 degrees.",
+      "highlight": "Coq au vin, escargots, Époisses"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vieilles vignes is a legally defined term in Burgundy.",
+      "answer": false,
+      "explanation": "Not true. It means old vines, but there's no legal definition."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show appellation, producer and vintage",
+        "Vintage matters greatly in continental Burgundy",
+        "Red Burgundy suits coq au vin; Chablis suits oysters"
+      ]
+    }
+  ]
+}

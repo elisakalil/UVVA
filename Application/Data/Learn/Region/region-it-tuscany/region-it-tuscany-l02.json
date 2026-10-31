@@ -1,0 +1,77 @@
+{
+  "id": "region-it-tuscany-l02",
+  "moduleId": "region-it-tuscany",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Sangiovese and the international grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Tuscany's main grapes",
+    "Explain Sangiovese's character",
+    "Name its white grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sangiovese",
+      "body": "Sangiovese is Tuscany's grape: sour cherry, herbs and earth, high acidity and firm, tea-like tannin. It has local names and clones: Brunello in Montalcino, Prugnolo Gentile in Montepulciano, Morellino in Scansano. Native partners include Canaiolo, Colorino and Mammolo.",
+      "highlight": "Sangiovese and its local names"
+    },
+    {
+      "type": "concept",
+      "title": "International grapes and whites",
+      "body": "Cabernet Sauvignon, Merlot, Cabernet Franc and Syrah arrived in the 20th century, especially on the coast in Bolgheri. They're used in Super Tuscans and allowed in small amounts in Chianti Classico. White grapes include Vernaccia di San Gimignano, Tuscany's oldest DOCG white, Vermentino on the coast, and Trebbiano and Malvasia for Vin Santo.",
+      "highlight": "Bordeaux grapes, Vernaccia, Vermentino"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its place.",
+      "pairs": [
+        {
+          "left": "Brunello",
+          "right": "Montalcino"
+        },
+        {
+          "left": "Prugnolo Gentile",
+          "right": "Montepulciano"
+        },
+        {
+          "left": "Morellino",
+          "right": "Scansano"
+        },
+        {
+          "left": "Vernaccia",
+          "right": "San Gimignano"
+        }
+      ],
+      "explanation": "Tuscany's grapes have local identities."
+    },
+    {
+      "type": "tip",
+      "body": "Vin Santo, Tuscany's sweet wine from dried Trebbiano and Malvasia, is served with cantucci almond biscuits."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape dominates Tuscany?",
+      "options": [
+        "Sangiovese",
+        "Nebbiolo",
+        "Merlot",
+        "Vermentino"
+      ],
+      "answer": 0,
+      "explanation": "Sangiovese is Tuscany's main grape."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sangiovese leads, with local names like Brunello",
+        "Bordeaux grapes thrive on the coast",
+        "Vernaccia, Vermentino and Vin Santo complete the whites"
+      ]
+    }
+  ]
+}

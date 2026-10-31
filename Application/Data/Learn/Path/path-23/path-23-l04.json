@@ -1,0 +1,70 @@
+{
+  "id": "path-23-l04",
+  "moduleId": "path-23",
+  "order": 4,
+  "title": "Argentina beyond Mendoza",
+  "subtitle": "North and south",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Salta and Torrontés",
+    "Describe Patagonia",
+    "Name San Juan and other regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Salta",
+      "body": "In the far north, Salta's Calchaquí Valleys hold some of the world's highest vineyards, from 1,700 to over 3,000 m. Cafayate is the centre. Torrontés, a cross of Muscat of Alexandria and Criolla Chica, gives floral, aromatic whites. Malbec and Cabernet there are dark and intense, thanks to strong sun and cold nights.",
+      "highlight": "World's highest vineyards"
+    },
+    {
+      "type": "concept",
+      "title": "Patagonia",
+      "body": "In the south, Patagonia's Neuquén and Río Negro are low, about 300 m, but at 38 to 39 degrees south, cooled by latitude and strong winds. The wind keeps grapes healthy and thickens skins. Pinot Noir, Malbec and Merlot make fresher, more elegant wines than in Mendoza. Some Río Negro vines date from the early 20th century.",
+      "highlight": "Latitude and wind, not altitude"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What keeps Patagonia cool, compared with Salta?",
+      "options": [
+        "Very high altitude",
+        "Southern latitude and strong winds",
+        "Coastal fog",
+        "Heavy rainfall"
+      ],
+      "answer": 1,
+      "explanation": "Patagonia is low, so its coolness comes from latitude and constant wind."
+    },
+    {
+      "type": "tip",
+      "body": "The same grape, Malbec, from Salta, Mendoza and Patagonia makes a great tasting lesson. Altitude, latitude and wind each leave a mark."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which statements about Salta are true?",
+      "options": [
+        "It has vineyards above 3,000 metres",
+        "Torrontés is its signature white",
+        "It's Argentina's largest region",
+        "Cafayate is its centre"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Mendoza is by far Argentina's largest region."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Salta has vineyards up to 3,000 m and floral Torrontés",
+        "Patagonia is cooled by latitude and wind",
+        "Argentina's styles vary with altitude and latitude"
+      ]
+    }
+  ]
+}

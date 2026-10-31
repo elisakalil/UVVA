@@ -1,0 +1,62 @@
+{
+  "id": "path-16-l04",
+  "moduleId": "path-16",
+  "order": 4,
+  "title": "Soils and nutrition",
+  "subtitle": "What roots find",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how soil affects water and heat",
+    "Explain the main nutrients and vigour",
+    "Separate facts from myths about minerality"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Water and heat",
+      "body": "Soil texture controls water. Sand and gravel drain fast; clay holds water. Deep soils let roots explore. Stony surfaces radiate heat at night, as in Châteauneuf-du-Pape's galets. Dark soils absorb more heat; pale chalk reflects it. Drainage and water supply matter more for quality than chemistry.",
+      "highlight": "Water first, then heat"
+    },
+    {
+      "type": "concept",
+      "title": "Nutrients and vigour",
+      "body": "Vines need nitrogen, potassium, phosphorus and trace elements. Too much nitrogen gives vigour: dense leaves shade the fruit, and ripening suffers. Too little stunts the vine and can cause stuck fermentations, because yeast also needs nitrogen. Growers balance this with cover crops, compost and careful fertilising.",
+      "highlight": "Too much nitrogen: leaves over fruit"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What problem can too much nitrogen cause in a vineyard?",
+      "options": [
+        "Too little leaf growth",
+        "Excess vigour that shades the fruit",
+        "Higher acidity",
+        "Frost damage"
+      ],
+      "answer": 1,
+      "explanation": "High nitrogen pushes leaf and shoot growth, shading the fruit and slowing ripening."
+    },
+    {
+      "type": "concept",
+      "title": "Minerality",
+      "body": "Many tasters describe wines as mineral, saline or stony. But vines don't transfer the taste of rocks into the wine: minerals in wine are present in tiny amounts, far below what we can taste. The sensation probably comes from high acidity, low fruit intensity, reduction compounds and sometimes salt. Soil influences wine through water and heat, not by direct flavour.",
+      "highlight": "Soil shapes wine through water, not taste"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The flavour of slate in a Mosel Riesling comes directly from minerals absorbed by the vine.",
+      "answer": false,
+      "explanation": "Not true. Mineral levels in wine are far too low to taste. Slate influences the wine through heat and drainage, and the mineral sensation is likely linked to acidity and other compounds."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Soil matters mainly through water supply and heat",
+        "Nitrogen must be balanced: too much brings vigour, too little stresses yeast",
+        "Minerality is real as a sensation, but not a direct taste of rocks"
+      ]
+    }
+  ]
+}

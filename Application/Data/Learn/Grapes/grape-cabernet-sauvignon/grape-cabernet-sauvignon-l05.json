@@ -1,0 +1,79 @@
+{
+  "id": "grape-cabernet-sauvignon-l05",
+  "moduleId": "grape-cabernet-sauvignon",
+  "order": 5,
+  "title": "Napa and the New World",
+  "subtitle": "Cabernet's second home",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Napa Cabernet",
+    "Explain the Judgment of Paris",
+    "Compare other New World styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Napa Valley",
+      "body": "Napa Valley has a warm, dry Mediterranean climate, with fog cooling mornings. Cabernet Sauvignon is the leading grape and commands some of the world's highest grape prices. The style is ripe and powerful, with blackcurrant, cassis, chocolate and often new French oak, and alcohol of 14.5% or more.",
+      "highlight": "Ripe, powerful, high prices"
+    },
+    {
+      "type": "concept",
+      "title": "The Judgment of Paris",
+      "body": "In 1976, British merchant Steven Spurrier organised a blind tasting in Paris. French judges ranked a 1973 Stag's Leap Wine Cellars Cabernet ahead of top Bordeaux, including Mouton Rothschild and Haut-Brion. The result made headlines and showed the world that California could rival France.",
+      "highlight": "1976: Stag's Leap beat Bordeaux"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine won the red section of the 1976 Judgment of Paris?",
+      "options": [
+        "Château Mouton Rothschild",
+        "Stag's Leap Wine Cellars Cabernet Sauvignon",
+        "Penfolds Grange",
+        "Sassicaia"
+      ],
+      "answer": 1,
+      "explanation": "The 1973 Stag's Leap Cabernet topped the red wines, ahead of famous Bordeaux."
+    },
+    {
+      "type": "concept",
+      "title": "Other New World styles",
+      "body": "Chile's Maipo makes ripe Cabernet with a minty, herbal note, often good value. Coonawarra, in Australia, on terra rossa soil, gives elegant wines with mint and eucalyptus. Margaret River has a Bordeaux-like, maritime style. Washington State gives ripe fruit with fresh acidity. Stellenbosch blends power with freshness.",
+      "highlight": "Maipo, Coonawarra, Margaret River, Washington"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Cabernet note.",
+      "pairs": [
+        {
+          "left": "Napa Valley",
+          "right": "Ripe cassis and chocolate"
+        },
+        {
+          "left": "Maipo",
+          "right": "Ripe with mint"
+        },
+        {
+          "left": "Coonawarra",
+          "right": "Eucalyptus, terra rossa"
+        },
+        {
+          "left": "Margaret River",
+          "right": "Maritime, Bordeaux-like"
+        }
+      ],
+      "explanation": "Each New World region has its own Cabernet accent."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Napa makes ripe, powerful, expensive Cabernet",
+        "The 1976 Judgment of Paris put California on the map",
+        "Maipo, Coonawarra, Margaret River and Washington add their own styles"
+      ]
+    }
+  ]
+}

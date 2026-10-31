@@ -1,0 +1,71 @@
+{
+  "id": "path-08-l06",
+  "moduleId": "path-08",
+  "order": 6,
+  "title": "Maturation and blending",
+  "subtitle": "Time and assembly",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain oxidative and reductive maturation",
+    "Explain why winemakers blend",
+    "Describe bottle ageing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two ways to mature",
+      "body": "Reductive maturation keeps oxygen out, in steel tanks or full vessels, preserving fresh, primary fruit. Oxidative maturation lets some air in, in barrels or partly filled vessels, which softens tannin and adds notes of nut, caramel and dried fruit. Most wines sit between the two.",
+      "highlight": "Reductive: fresh. Oxidative: developed."
+    },
+    {
+      "type": "concept",
+      "title": "Why blend",
+      "body": "Blending combines wines to make a better whole. Grapes add different qualities: Cabernet for structure, Merlot for fruit. Plots add different notes. Vintages, in Champagne or Port, give consistency. Vessels, oak and steel, bring balance. A good blend is more than the sum of its parts.",
+      "highlight": "Blend grapes, plots, vintages or vessels"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these are common reasons to blend?",
+      "options": [
+        "To balance structure and fruit",
+        "To keep a house style consistent across years",
+        "To make every wine identical worldwide",
+        "To raise the legal alcohol limit"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Blending balances grapes, plots and vessels, and blending vintages keeps a house style steady, as in Champagne. It has nothing to do with legal limits or global uniformity."
+    },
+    {
+      "type": "concept",
+      "title": "Ageing in bottle",
+      "body": "Once bottled, a wine keeps changing slowly. Fruit fades, tannins soften and tertiary notes like leather, earth and honey develop. Only some wines gain from it, mainly those with high acidity, tannin or sugar and plenty of concentration. Some regions require bottle ageing before release, as Rioja Gran Reserva does.",
+      "highlight": "Bottle age softens and adds complexity"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is most likely to improve with ten years in bottle?",
+      "options": [
+        "A light, fruity rosé",
+        "A simple Pinot Grigio",
+        "A concentrated, tannic red from a top vineyard",
+        "A Prosecco"
+      ],
+      "answer": 2,
+      "explanation": "Long ageing needs concentration and structure, like tannin and acidity. Light, fruity wines are made to drink young."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Reductive maturation keeps fruit fresh; oxidative adds development",
+        "Blending combines grapes, plots, vintages or vessels for balance",
+        "Only structured, concentrated wines gain from long bottle age"
+      ]
+    }
+  ]
+}

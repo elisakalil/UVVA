@@ -1,0 +1,72 @@
+{
+  "id": "path-19-l06",
+  "moduleId": "path-19",
+  "order": 6,
+  "title": "Southern Italy",
+  "subtitle": "Campania, Puglia and Basilicata",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the main wines of Campania",
+    "Describe Puglia's grapes",
+    "Explain why volcanic soils matter in the south"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Campania",
+      "body": "Campania, around Naples, grows ancient grapes. Aglianico makes Taurasi, a powerful, tannic red often called the Barolo of the south. Fiano di Avellino and Greco di Tufo are DOCG whites, nutty and mineral. Vesuvius and the inland hills have volcanic soils, which drain well and resisted phylloxera in places.",
+      "highlight": "Aglianico, Fiano, Greco"
+    },
+    {
+      "type": "concept",
+      "title": "Puglia and Basilicata",
+      "body": "Puglia, the heel of Italy, is hot, flat and productive. Primitivo, the same grape as Zinfandel, gives ripe, high-alcohol reds, especially in Manduria. Negroamaro makes reds and rosés in Salento. In Basilicata, Aglianico del Vulture grows on the slopes of an extinct volcano, at up to 800 m, giving fresher Aglianico.",
+      "highlight": "Primitivo, Negroamaro, Vulture"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Taurasi made from?",
+      "options": [
+        "Primitivo",
+        "Aglianico",
+        "Negroamaro",
+        "Fiano"
+      ],
+      "answer": 1,
+      "explanation": "Taurasi is Campania's DOCG Aglianico, structured and long-lived."
+    },
+    {
+      "type": "concept",
+      "title": "Heat and altitude",
+      "body": "The south is hot, so the best wines come from altitude, sea breezes or volcanic slopes. Irpinia's vineyards, for Taurasi and Fiano, reach 400 to 700 m. Volcanic soils also give a distinctive savoury, smoky edge, and often ungrafted old vines.",
+      "highlight": "Altitude and volcanoes temper the heat"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines come from Campania?",
+      "options": [
+        "Taurasi",
+        "Fiano di Avellino",
+        "Greco di Tufo",
+        "Primitivo di Manduria"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Primitivo di Manduria comes from Puglia."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Campania's Aglianico makes Taurasi; Fiano and Greco are its whites",
+        "Puglia grows Primitivo and Negroamaro",
+        "Altitude and volcanic soils give freshness in the hot south"
+      ]
+    }
+  ]
+}

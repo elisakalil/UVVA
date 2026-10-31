@@ -1,0 +1,73 @@
+{
+  "id": "path-09-l03",
+  "moduleId": "path-09",
+  "order": 3,
+  "title": "Riesling around the world",
+  "subtitle": "Germany, Alsace, Austria, Australia",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe German Riesling's range",
+    "Compare Alsace, Austria and Australia",
+    "Explain why Riesling expresses place clearly"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Germany",
+      "body": "Riesling is Germany's great grape. In the cool Mosel, on steep slate slopes, it gives light wines, often 7.5 to 9% alcohol, with high acidity and some sweetness. In the Rheingau and Pfalz, warmer and broader, it gives fuller, more often dry wines. Labels may use Prädikat terms, like Kabinett or Spätlese, for ripeness at harvest.",
+      "highlight": "Mosel: light, often off-dry"
+    },
+    {
+      "type": "concept",
+      "title": "Why Riesling shows place",
+      "body": "Riesling is rarely oaked, rarely put through malolactic, and is almost never blended. With nothing to mask it, the vineyard speaks clearly: slate, granite and limestone sites give recognisably different wines. Its high acidity, often above 8 g/l, also keeps it fresh for decades, from dry to sweet.",
+      "highlight": "No oak, no blend: pure place"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most German Riesling labelled Kabinett is fermented in new oak.",
+      "answer": false,
+      "explanation": "Not true. Riesling is almost always made without new oak, to keep its pure fruit and acidity. Kabinett refers to ripeness at harvest, not winemaking."
+    },
+    {
+      "type": "concept",
+      "title": "Alsace, Austria, Australia",
+      "body": "In Alsace, Riesling is mostly dry, fuller and riper, from a dry, sunny valley sheltered by the Vosges. Austria's Wachau and Kamptal make dry, powerful versions on steep terraces above the Danube. Australia's Clare and Eden Valleys give dry, lime-scented wines that develop toast and petrol notes with age.",
+      "highlight": "Alsace, Austria, Australia: mostly dry"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Riesling.",
+      "pairs": [
+        {
+          "left": "Mosel",
+          "right": "Light, off-dry, slate"
+        },
+        {
+          "left": "Alsace",
+          "right": "Dry and fuller"
+        },
+        {
+          "left": "Wachau",
+          "right": "Dry, powerful, terraced"
+        },
+        {
+          "left": "Clare Valley",
+          "right": "Dry, lime, ages to toast"
+        }
+      ],
+      "explanation": "Each place gives a distinct style, from light and off-dry to powerful and dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Germany's Mosel gives light, high-acid, often off-dry Riesling",
+        "Alsace, Austria and Australia make mostly dry Riesling",
+        "Riesling shows place clearly because it's rarely oaked or blended"
+      ]
+    }
+  ]
+}

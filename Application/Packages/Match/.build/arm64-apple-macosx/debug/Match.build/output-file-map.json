@@ -1,0 +1,33 @@
+{
+  "": {
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/primary.swiftdeps"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.dia"
+  }
+}

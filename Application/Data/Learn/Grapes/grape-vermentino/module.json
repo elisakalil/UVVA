@@ -1,0 +1,29 @@
+{
+  "id": "grape-vermentino",
+  "kind": "grape",
+  "order": 42,
+  "color": "white",
+  "title": "Vermentino",
+  "aliases": [
+    "Rolle",
+    "Pigato",
+    "Favorita"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "Italy",
+    "France"
+  ],
+  "points": "0 2 0 0 = 2",
+  "complexity": "D",
+  "description": "Also called Rolle in Provence and Pigato in Liguria. A crisp, herbal, saline white of Mediterranean coasts and islands.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "grape-vermentino-l01",
+    "grape-vermentino-l02",
+    "grape-vermentino-l03",
+    "grape-vermentino-l04"
+  ]
+}

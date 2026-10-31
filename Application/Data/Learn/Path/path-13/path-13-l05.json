@@ -1,0 +1,96 @@
+{
+  "id": "path-13-l05",
+  "moduleId": "path-13",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything from Sweet Wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how sweet wines keep their sugar",
+    "Compare the four concentration methods",
+    "Recognise the great sweet wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each method to a wine.",
+      "pairs": [
+        {
+          "left": "Noble rot",
+          "right": "Sauternes"
+        },
+        {
+          "left": "Freezing on the vine",
+          "right": "Eiswein"
+        },
+        {
+          "left": "Drying after picking",
+          "right": "Vin Santo"
+        },
+        {
+          "left": "Late harvest",
+          "right": "Vendanges Tardives"
+        }
+      ],
+      "explanation": "Each method concentrates sugar in a different way."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What stops grey rot from developing instead of noble rot?",
+      "options": [
+        "Constant rain",
+        "Dry, sunny afternoons",
+        "Frost",
+        "Heavy irrigation"
+      ],
+      "answer": 1,
+      "explanation": "Dry afternoons stop the fungus from turning destructive."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Amarone is a sweet wine.",
+      "answer": false,
+      "explanation": "Not true. It is made from dried grapes but fermented nearly dry. Recioto is its sweet sibling."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are known for great sweet wines thanks to high acidity?",
+      "options": [
+        "Riesling",
+        "Chenin Blanc",
+        "Furmint",
+        "Gewürztraminer"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gewürztraminer can make sweet wines, but its naturally low acidity is a weakness, not a strength."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Ice wine grapes must freeze naturally at minus ____ degrees Celsius or colder.",
+      "options": [
+        "7",
+        "2",
+        "0",
+        "15"
+      ],
+      "answer": "7",
+      "explanation": "Minus 7 degrees is the common legal threshold in Canada and Germany."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sweet wines stop fermentation early or start with concentrated grapes",
+        "Noble rot, late harvest, freezing and drying concentrate sugar",
+        "High acidity keeps great sweet wines fresh",
+        "Amarone shows that dried grapes can also make dry wine"
+      ]
+    }
+  ]
+}

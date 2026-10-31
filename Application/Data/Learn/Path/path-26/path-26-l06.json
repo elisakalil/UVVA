@@ -1,0 +1,67 @@
+{
+  "id": "path-26-l06",
+  "moduleId": "path-26",
+  "order": 6,
+  "title": "Madeira",
+  "subtitle": "Heat, oxygen and acidity",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain estufagem and canteiro in detail",
+    "Explain Madeira's age categories",
+    "Explain Tinta Negra and the noble grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Estufagem and canteiro",
+      "body": "Estufagem heats wine in stainless steel tanks to 45 to 50 degrees for at least three months, then rests it; this is used mainly for younger wines. Canteiro ages wine in casks in warm lofts, called armazéns, for years, sometimes decades. Canteiro is slower and gentler, giving finer, more complex wines. The best Madeiras are all canteiro.",
+      "highlight": "Estufagem: fast heat. Canteiro: slow warmth."
+    },
+    {
+      "type": "concept",
+      "title": "Age categories",
+      "body": "Madeira labels show age: 5 years, called Reserve; 10 years, Special Reserve; 15 years, Extra Reserve; and 20, 30, 40 and 50 years. Colheita is a single vintage aged at least five years. Frasqueira, or Vintage, comes from a single noble grape and year, aged at least 20 years in cask.",
+      "highlight": "Frasqueira: at least 20 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is required for a Frasqueira Madeira?",
+      "options": [
+        "Estufagem heating",
+        "A single noble grape, a single year and 20 years in cask",
+        "A blend of all grapes",
+        "At least 5 years in bottle"
+      ],
+      "answer": 1,
+      "explanation": "Frasqueira is the top category: one grape, one vintage, 20 years minimum in cask."
+    },
+    {
+      "type": "concept",
+      "title": "Grapes",
+      "body": "The noble white grapes, Sercial, Verdelho, Boal and Malvasia, define sweetness when named on the label. Terrantez is a rare fifth. Tinta Negra, a black grape, makes most Madeira; since 2015 its name can appear on labels. Madeira keeps high acidity, with sugar ranging from under 50 g/l in Sercial to over 100 g/l in Malvasia.",
+      "highlight": "Acidity in every style"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Madeira age categories from youngest to oldest.",
+      "items": [
+        "Reserve, 5 years",
+        "Special Reserve, 10 years",
+        "Extra Reserve, 15 years",
+        "Frasqueira, 20 years or more"
+      ],
+      "explanation": "Each step requires longer ageing; Frasqueira also requires a single grape and year."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Estufagem heats quickly; canteiro ages slowly in warm lofts",
+        "Labels show age from 5 years to Frasqueira at 20 or more",
+        "Noble grapes define sweetness; Tinta Negra makes most Madeira"
+      ]
+    }
+  ]
+}

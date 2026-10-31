@@ -1,0 +1,65 @@
+{
+  "id": "region-fr-southern-rhone-l05",
+  "moduleId": "region-fr-southern-rhone",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Rhône and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a southern Rhône label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The ladder",
+      "body": "Labels run from Côtes du Rhône, the base, to Côtes du Rhône Villages, to Villages with a named village, like Séguret or Plan de Dieu, to the crus like Gigondas and Châteauneuf-du-Pape. Grapes are rarely named. Prices rise with each step, but good Villages wines are excellent value.",
+      "highlight": "Côtes du Rhône to crus"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Southern Rhône reds suit Provençal food: lamb with herbs, daube, a beef stew, ratatouille, grilled sausages and game. Tavel suits grilled fish, bouillabaisse and charcuterie. Muscat de Beaumes-de-Venise suits fruit tarts, melon and blue cheese. Serve reds at 16 to 17 degrees; high alcohol feels hot if served too warm.",
+      "highlight": "Lamb, daube, ratatouille"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these labels from broadest to most specific.",
+      "items": [
+        "Côtes du Rhône",
+        "Côtes du Rhône Villages",
+        "Côtes du Rhône Villages Séguret",
+        "Gigondas"
+      ],
+      "explanation": "Each step tightens the rules and the area."
+    },
+    {
+      "type": "tip",
+      "body": "Good Côtes du Rhône Villages from a top producer often tastes like a junior Châteauneuf-du-Pape at a fraction of the price."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits a Châteauneuf-du-Pape?",
+      "options": [
+        "Lamb with Provençal herbs",
+        "Raw oysters",
+        "Lemon sorbet",
+        "Sushi"
+      ],
+      "answer": 0,
+      "explanation": "Herbs and lamb echo its garrigue and spice."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels run from Côtes du Rhône to the crus",
+        "Reds suit lamb, daube and ratatouille",
+        "Serve not too warm; good Villages offer value"
+      ]
+    }
+  ]
+}

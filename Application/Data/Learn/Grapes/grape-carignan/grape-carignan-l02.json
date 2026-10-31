@@ -1,0 +1,70 @@
+{
+  "id": "grape-carignan-l02",
+  "moduleId": "grape-carignan",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Mediterranean and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Carignan's main regions",
+    "Explain its decline and revival",
+    "Explain its role in blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "France and Spain",
+      "body": "Carignan was once France's most planted grape, especially in the Languedoc, where it made cheap, high-yield table wine. EU vine-pull schemes from the 1980s cut plantings dramatically. In Spain it grows in Priorat, Montsant, Empordà and Rioja. In Italy, Sardinia's Carignano del Sulcis is its stronghold.",
+      "highlight": "Once France's most planted grape"
+    },
+    {
+      "type": "concept",
+      "title": "Blends",
+      "body": "In the Languedoc and Roussillon, Carignan blends with Grenache, Syrah and Mourvèdre, adding acidity and colour. In Priorat, it partners Garnacha. In Rioja, as Mazuelo, it's a minor partner to Tempranillo, adding acidity and colour. Carbonic maceration, the Beaujolais method, is sometimes used to soften it.",
+      "highlight": "Acid and colour in blends"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why were many Languedoc Carignan vineyards pulled out from the 1980s?",
+      "options": [
+        "Disease",
+        "EU schemes to reduce wine surplus",
+        "It was banned",
+        "Frost"
+      ],
+      "answer": 1,
+      "explanation": "Vine-pull schemes targeted high-yield, low-value vineyards, many planted with Carignan."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Vieilles Vignes, old vines, on Languedoc Carignan labels. Old-vine Carignan is far more concentrated than the bulk wine that gave it a poor reputation."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes does Carignan often blend with?",
+      "options": [
+        "Grenache",
+        "Syrah",
+        "Mourvèdre",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Riesling isn't a Mediterranean blending partner."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carignan was France's most planted grape; plantings fell sharply",
+        "It blends with Grenache, Syrah and Mourvèdre",
+        "Carbonic maceration can soften it"
+      ]
+    }
+  ]
+}

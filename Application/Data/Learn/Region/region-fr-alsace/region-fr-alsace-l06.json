@@ -1,0 +1,96 @@
+{
+  "id": "region-fr-alsace-l06",
+  "moduleId": "region-fr-alsace",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Alsace",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Alsace's geography and grapes",
+    "Explain Grand Cru, VT and SGN",
+    "Read and pair Alsace wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "VT",
+          "right": "Late harvest"
+        },
+        {
+          "left": "SGN",
+          "right": "Noble rot berries"
+        },
+        {
+          "left": "Flûte",
+          "right": "Tall Alsace bottle"
+        },
+        {
+          "left": "Edelzwicker",
+          "right": "Blend of grapes"
+        }
+      ],
+      "explanation": "Alsace has its own vocabulary."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Alsace dry and sunny?",
+      "options": [
+        "The Vosges block rain",
+        "It's near the sea",
+        "It's at very high altitude",
+        "It's in the tropics"
+      ],
+      "answer": 0,
+      "explanation": "The rain shadow of the Vosges."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Alsace labels usually name the grape.",
+      "answer": true,
+      "explanation": "Yes, unlike most French regions."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Alsace's noble grapes?",
+      "options": [
+        "Riesling",
+        "Gewürztraminer",
+        "Muscat",
+        "Chardonnay"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The fourth is Pinot Gris, not Chardonnay."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Alsace has ____ Grand Cru vineyards.",
+      "options": [
+        "51",
+        "33",
+        "17",
+        "100"
+      ],
+      "answer": "51",
+      "explanation": "51 Grand Crus."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Alsace is dry and sunny between the Vosges and the Rhine",
+        "Four noble grapes lead, named on labels",
+        "51 Grand Crus, plus VT and SGN sweet wines",
+        "Its wines suit choucroute, Munster and Asian food"
+      ]
+    }
+  ]
+}

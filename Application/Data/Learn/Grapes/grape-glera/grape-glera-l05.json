@@ -1,0 +1,96 @@
+{
+  "id": "grape-glera-l05",
+  "moduleId": "grape-glera",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Glera",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Glera and Prosecco",
+    "Know its tiers and crus",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Prosecco.",
+      "pairs": [
+        {
+          "left": "Glera",
+          "right": "The grape"
+        },
+        {
+          "left": "Cartizze",
+          "right": "Top single hill"
+        },
+        {
+          "left": "Rive",
+          "right": "Village crus"
+        },
+        {
+          "left": "Col Fondo",
+          "right": "Bottle-fermented, unfiltered"
+        }
+      ],
+      "explanation": "Prosecco has its own vocabulary."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is most Prosecco made?",
+      "options": [
+        "Tank method",
+        "Traditional method",
+        "Fortification",
+        "Carbonic maceration"
+      ],
+      "answer": 0,
+      "explanation": "The tank method keeps fresh fruit."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Prosecco improves with ten years of ageing.",
+      "answer": false,
+      "explanation": "Not true. It's best young, within 12 to 18 months."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Glera?",
+      "options": [
+        "Pear and apple",
+        "Floral aromas",
+        "Light body",
+        "High tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "White sparkling wines have little tannin."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Glera was renamed from Prosecco in ____.",
+      "options": [
+        "2009",
+        "1855",
+        "2019",
+        "1970"
+      ],
+      "answer": "2009",
+      "explanation": "To protect Prosecco as a place name."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Glera gives fresh pear, apple and flowers",
+        "Prosecco DOC is large; Conegliano Valdobbiadene is the hill DOCG",
+        "Most is tank-method and best young",
+        "It's the wine of aperitivo, Spritz and Bellini"
+      ]
+    }
+  ]
+}

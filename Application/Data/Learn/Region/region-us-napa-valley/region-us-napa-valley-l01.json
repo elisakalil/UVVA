@@ -1,0 +1,62 @@
+{
+  "id": "region-us-napa-valley-l01",
+  "moduleId": "region-us-napa-valley",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "A small, famous valley",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Napa Valley's geography",
+    "Explain its climate and fog",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Between two ranges",
+      "body": "Napa Valley lies about 80 km north of San Francisco, about 50 km long and a few kilometres wide, between the Mayacamas Mountains to the west and the Vaca Range to the east. It has about 18,000 hectares of vines, only about 4% of California's, but a large share of its value. Soils are extremely varied: over 30 types.",
+      "highlight": "50 km long, about 4% of California's vines"
+    },
+    {
+      "type": "concept",
+      "title": "Fog from the bay",
+      "body": "Napa has a Mediterranean climate: dry, warm summers and mild, wet winters. Cool air and fog come in from San Pablo Bay in the south each night and morning, so the southern end, Carneros, is coolest, and the northern end, Calistoga, hottest. The daily fog keeps acidity in grapes that ripen fully under strong sun.",
+      "highlight": "Cool south, hot north"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Carneros cooler than Calistoga?",
+      "options": [
+        "It's closer to San Pablo Bay and its fog",
+        "It's higher in altitude",
+        "It gets more rain",
+        "It faces north"
+      ],
+      "answer": 0,
+      "explanation": "Bay fog and cool air reach the south first."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "Vines were planted in Napa in the 1830s; by the 1880s, there were over 140 wineries. Phylloxera and Prohibition, from 1920 to 1933, nearly ended the industry. In 1966, Robert Mondavi founded the first major new winery since Prohibition, and modern Napa grew from there. In 1968, Napa created the Agricultural Preserve, protecting land from development.",
+      "highlight": "Mondavi 1966; Agricultural Preserve 1968"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Napa Valley makes most of California's wine by volume.",
+      "answer": false,
+      "explanation": "Not true. It has only about 4% of California's vineyards, though its wines are among the most valuable."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Napa is a small valley between two mountain ranges",
+        "Bay fog cools the south; the north is hotter",
+        "Mondavi's 1966 winery launched modern Napa"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "grape-nebbiolo",
+  "kind": "grape",
+  "order": 26,
+  "color": "red",
+  "title": "Nebbiolo",
+  "aliases": [
+    "Spanna",
+    "Chiavennasca"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "Also called Spanna and Chiavennasca. Piedmont's noble grape: pale in colour, high in tannin, scented with roses and tar.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-nebbiolo-l01",
+    "grape-nebbiolo-l02",
+    "grape-nebbiolo-l03",
+    "grape-nebbiolo-l04",
+    "grape-nebbiolo-l05",
+    "grape-nebbiolo-l06",
+    "grape-nebbiolo-l07"
+  ]
+}

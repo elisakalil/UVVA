@@ -1,0 +1,60 @@
+{
+  "id": "grape-palomino-l05",
+  "moduleId": "grape-palomino",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Sherry",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair each Sherry style with food",
+    "Serve Sherry well",
+    "Know how long it keeps"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A food wine",
+      "body": "Fino and Manzanilla suit tapas: olives, almonds, jamón, fried fish, prawns and anchovies. Amontillado suits soups, mushrooms, artichokes and asparagus, notoriously hard to pair. Oloroso suits game, stews and hard cheese. Sweet Pedro Ximénez is poured over vanilla ice cream.",
+      "highlight": "Tapas, soups, game"
+    },
+    {
+      "type": "concept",
+      "title": "Service",
+      "body": "Serve Fino and Manzanilla well chilled, 6 to 8 degrees, in a white wine glass, not a tiny copita. Amontillado at 12 to 14, Oloroso at 14 to 16. Fino and Manzanilla fade within a week once open; Oloroso lasts weeks. En rama Sherry, lightly filtered, is bottled for fresh drinking.",
+      "highlight": "Fino cold, Oloroso cool"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Sherry is the classic match for jamón and olives?",
+      "options": [
+        "Fino or Manzanilla",
+        "Cream",
+        "Pedro Ximénez",
+        "Oloroso dulce"
+      ],
+      "answer": 0,
+      "explanation": "Dry, saline Fino and Manzanilla suit salty tapas."
+    },
+    {
+      "type": "tip",
+      "body": "Amontillado is one of the few wines that handles asparagus and artichokes. Its nutty, savoury character doesn't clash with their bitter compounds."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Fino should be served at room temperature.",
+      "answer": false,
+      "explanation": "Not true. Fino and Manzanilla are best well chilled, at 6 to 8 degrees."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fino suits tapas; Amontillado tricky vegetables; Oloroso game",
+        "Serve Fino cold, Oloroso cool",
+        "Fino fades fast once open; Oloroso lasts"
+      ]
+    }
+  ]
+}

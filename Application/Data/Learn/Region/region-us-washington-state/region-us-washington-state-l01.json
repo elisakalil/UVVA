@@ -1,0 +1,62 @@
+{
+  "id": "region-us-washington-state-l01",
+  "moduleId": "region-us-washington-state",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "East of the Cascades",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Washington's geography",
+    "Explain the rain shadow",
+    "Explain its scale"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A dry east",
+      "body": "Washington is the second largest wine-producing US state, after California, with about 24,000 hectares. Almost all vineyards lie east of the Cascade Mountains, far from rainy Seattle. The Columbia Valley AVA covers about a third of the state and contains most other AVAs, like Yakima Valley, Walla Walla Valley and Red Mountain.",
+      "highlight": "Second largest US wine state"
+    },
+    {
+      "type": "concept",
+      "title": "Rain shadow",
+      "body": "The Cascades block Pacific rain, so eastern Washington is a desert or semi-desert, with as little as 150 to 200 mm of rain a year. Summers are hot and long, with up to 17 hours of daylight at about 46 degrees north. Nights are cool. Irrigation from the Columbia, Yakima and Snake rivers makes vineyards possible.",
+      "highlight": "Desert, long days, irrigation"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is eastern Washington so dry?",
+      "options": [
+        "The Cascade Mountains block Pacific rain",
+        "It's near the equator",
+        "It's at sea level",
+        "It has monsoons"
+      ],
+      "answer": 0,
+      "explanation": "A strong rain shadow."
+    },
+    {
+      "type": "concept",
+      "title": "Growth",
+      "body": "Washington's wine industry is young. In 1969, Chateau Ste. Michelle and Columbia Winery began serious winemaking. From about 20 wineries in 1981, there are now over 1,000. Walla Walla, Woodinville, near Seattle, where many wineries have tasting rooms, and the Yakima Valley are centres.",
+      "highlight": "From 20 wineries to over 1,000"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Washington vineyards are near rainy Seattle.",
+      "answer": false,
+      "explanation": "Not true. Almost all are east of the Cascades, in a dry desert."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Washington is America's second largest wine state",
+        "The Cascades create a desert east of the mountains",
+        "Its industry has grown fast since the 1970s"
+      ]
+    }
+  ]
+}

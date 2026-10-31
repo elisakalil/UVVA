@@ -1,0 +1,60 @@
+{
+  "id": "region-pt-douro-l05",
+  "moduleId": "region-pt-douro",
+  "order": 5,
+  "title": "Dry Douro reds",
+  "subtitle": "The new face of the Douro",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe dry Douro reds",
+    "Explain their rise",
+    "Describe Douro whites"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A new tradition",
+      "body": "For centuries, most Douro grapes went into Port. Barca Velha, first made in 1952 by Fernando Nicolau de Almeida at Ferreira, showed the Douro could make great dry reds. From the 1990s, producers like Niepoort, Quinta do Crasto and Quinta do Vale Meão built the modern dry Douro. Today dry wines rival Port in volume.",
+      "highlight": "Barca Velha, 1952"
+    },
+    {
+      "type": "concept",
+      "title": "Style",
+      "body": "Dry Douro reds are dark and structured, with black fruit, violet, rockrose and schist minerality, often blends of Touriga Nacional, Touriga Franca and Tinta Roriz. Top wines age in French oak and can age 15 to 20 years. Higher, cooler sites give fresher styles. Douro whites, from Rabigato and Viosinho, are crisp and mineral.",
+      "highlight": "Dark, floral, structured"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine showed in 1952 that the Douro could make great dry reds?",
+      "options": [
+        "Barca Velha",
+        "Vega Sicilia",
+        "Pétrus",
+        "Sassicaia"
+      ],
+      "answer": 0,
+      "explanation": "Barca Velha, from Ferreira."
+    },
+    {
+      "type": "tip",
+      "body": "Some Douro producers make both Port and dry wine from the same quinta, a chance to taste how fortification changes the same fruit."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dry wines now rival Port in volume in the Douro.",
+      "answer": true,
+      "explanation": "Yes. Dry Douro DOC wines have grown greatly since the 1990s."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barca Velha, 1952, began the dry Douro tradition",
+        "Dry reds are dark, floral and structured",
+        "Douro whites from high sites are crisp and mineral"
+      ]
+    }
+  ]
+}

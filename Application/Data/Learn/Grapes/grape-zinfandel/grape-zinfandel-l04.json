@@ -1,0 +1,83 @@
+{
+  "id": "grape-zinfandel-l04",
+  "moduleId": "grape-zinfandel",
+  "order": 4,
+  "title": "Old vines in California",
+  "subtitle": "Heritage vineyards",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why old Zinfandel vines matter",
+    "Describe field blends",
+    "Name the Historic Vineyard Society"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Old vines",
+      "body": "Some Californian Zinfandel vineyards date from the 1880s, having survived phylloxera and Prohibition. During Prohibition, from 1920 to 1933, Zinfandel was popular with home winemakers, so many vines were kept. Old, head-trained vines give low yields and concentrated, balanced fruit. Lodi and Sonoma have many.",
+      "highlight": "Vines from the 1880s survived"
+    },
+    {
+      "type": "concept",
+      "title": "Field blends",
+      "body": "Many old Zinfandel vineyards are field blends: Zinfandel interplanted with Petite Sirah, Carignan, Alicante Bouschet, Mourvèdre and others. Grapes are picked and fermented together. Petite Sirah adds colour and tannin, Carignan acidity. These mixed vineyards reflect how 19th century immigrants planted.",
+      "highlight": "Interplanted, co-fermented"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are often found in old Zinfandel field blends?",
+      "options": [
+        "Petite Sirah",
+        "Carignan",
+        "Alicante Bouschet",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Riesling isn't part of these red field blends."
+    },
+    {
+      "type": "concept",
+      "title": "Heritage",
+      "body": "The Historic Vineyard Society, founded in 2011, records Californian vineyards planted at least 50 years ago that still produce. It has helped protect old Zinfandel vineyards from being replanted with more profitable grapes. Producers like Ridge, Turley and Bedrock champion them.",
+      "highlight": "Historic Vineyard Society, 2011"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Field blend",
+          "right": "Mixed grapes, fermented together"
+        },
+        {
+          "left": "Head-trained",
+          "right": "Free-standing vines"
+        },
+        {
+          "left": "Historic Vineyard Society",
+          "right": "Records old vineyards"
+        },
+        {
+          "left": "Petite Sirah",
+          "right": "Adds colour and tannin"
+        }
+      ],
+      "explanation": "California's old vines are a living archive."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Many Californian Zinfandel vines date from the 1880s",
+        "Old vineyards are often field blends with Petite Sirah and Carignan",
+        "The Historic Vineyard Society protects them"
+      ]
+    }
+  ]
+}

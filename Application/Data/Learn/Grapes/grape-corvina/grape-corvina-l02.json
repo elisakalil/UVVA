@@ -1,0 +1,77 @@
+{
+  "id": "grape-corvina-l02",
+  "moduleId": "grape-corvina",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Valpolicella and Bardolino",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Corvina's main areas",
+    "Name its blending partners",
+    "Explain Valpolicella's zones"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Verona's hills",
+      "body": "Corvina grows almost only in the Veneto, around Verona. Valpolicella lies north of the city, in valleys running down from the Lessini mountains. The Classico zone, the historic heart, has valleys like Fumane, Marano and Negrar. Valpantena and the eastern zone extend it. Bardolino, on Lake Garda, also uses Corvina.",
+      "highlight": "Valpolicella Classico and Lake Garda"
+    },
+    {
+      "type": "concept",
+      "title": "Blending partners",
+      "body": "Valpolicella wines must be 45 to 95% Corvina, with Corvinone, a separate, larger-berried grape, allowed to replace up to half of it. Rondinella adds colour and resistance; Molinara, once common, adds acidity but is now less used. Oseleta, an old local grape, is being revived for its colour and tannin.",
+      "highlight": "Corvinone, Rondinella, Molinara"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Corvina",
+          "right": "Main grape, cherry fruit"
+        },
+        {
+          "left": "Corvinone",
+          "right": "Larger berries, separate grape"
+        },
+        {
+          "left": "Rondinella",
+          "right": "Colour and resistance"
+        },
+        {
+          "left": "Oseleta",
+          "right": "Revived, adds tannin"
+        }
+      ],
+      "explanation": "Valpolicella is a blend led by Corvina."
+    },
+    {
+      "type": "tip",
+      "body": "Bardolino, from Corvina on Lake Garda's shores, is lighter than Valpolicella. Its rosé, Chiaretto, is one of Italy's best pink wines."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Valpolicella must contain between 45 and ____% Corvina.",
+      "options": [
+        "95",
+        "60",
+        "100",
+        "20"
+      ],
+      "answer": "95",
+      "explanation": "Producers can use 45 to 95% Corvina, with Corvinone replacing up to half."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Corvina grows around Verona, in Valpolicella and Bardolino",
+        "Valpolicella blends Corvina with Corvinone and Rondinella",
+        "The Classico zone is the historic heart"
+      ]
+    }
+  ]
+}

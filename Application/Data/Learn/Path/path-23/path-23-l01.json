@@ -1,0 +1,79 @@
+{
+  "id": "path-23-l01",
+  "moduleId": "path-23",
+  "order": 1,
+  "title": "Chile's valleys",
+  "subtitle": "Between the Andes and the Pacific",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chile's geography",
+    "Explain the role of irrigation and the Andes",
+    "Name Chile's main central valleys"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A long, narrow country",
+      "body": "Chile is about 4,300 km long but rarely more than 180 km wide, between the Andes and the Pacific. Its isolation, protected by the Atacama desert in the north, the mountains, the ocean and Antarctic ice, has kept phylloxera out, so most vines grow on their own roots. The Central Valley holds most vineyards.",
+      "highlight": "Isolated, phylloxera-free"
+    },
+    {
+      "type": "concept",
+      "title": "Water from the Andes",
+      "body": "The Central Valley has a Mediterranean climate, with dry summers. Rivers fed by Andean snowmelt provide irrigation. Cold air flowing down from the mountains at night gives a wide day and night swing. Maipo, near Santiago, is Chile's historic Cabernet region; Colchagua and Cachapoal, in the Rapel Valley, make ripe reds.",
+      "highlight": "Snowmelt irrigation, cool nights"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are most Chilean vines grown on their own roots?",
+      "options": [
+        "The law forbids grafting",
+        "Phylloxera has never reached Chile",
+        "Rootstocks don't grow there",
+        "They are all very young"
+      ],
+      "answer": 1,
+      "explanation": "Natural barriers have kept phylloxera out, so grafting isn't needed."
+    },
+    {
+      "type": "concept",
+      "title": "Carmenère",
+      "body": "Carmenère came from Bordeaux in the 19th century and was mixed up with Merlot. In 1994 it was identified, and it became Chile's signature grape. It needs a long, warm season; when ripe it gives dark fruit, spice and soft tannin; when unripe, a strong green pepper note.",
+      "highlight": "Carmenère: identified in 1994"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Chilean valley to its focus.",
+      "pairs": [
+        {
+          "left": "Maipo",
+          "right": "Historic Cabernet Sauvignon"
+        },
+        {
+          "left": "Colchagua",
+          "right": "Ripe, full reds"
+        },
+        {
+          "left": "Casablanca",
+          "right": "Cool-climate whites"
+        },
+        {
+          "left": "Itata",
+          "right": "Old-vine País and Cinsault"
+        }
+      ],
+      "explanation": "Chile's valleys differ by distance from the sea and the Andes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chile is long, narrow and free of phylloxera",
+        "Andean snowmelt irrigates the dry Central Valley",
+        "Carmenère, identified in 1994, is Chile's signature grape"
+      ]
+    }
+  ]
+}

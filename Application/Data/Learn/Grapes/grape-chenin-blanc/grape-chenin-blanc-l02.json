@@ -1,0 +1,79 @@
+{
+  "id": "grape-chenin-blanc-l02",
+  "moduleId": "grape-chenin-blanc",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Loire and South Africa",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Chenin Blanc's main regions",
+    "Explain its history in South Africa",
+    "Name other countries that grow it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Loire",
+      "body": "Chenin Blanc's home is the Loire's Anjou-Saumur and Touraine. Key appellations: Vouvray and Montlouis in Touraine; Savennières, Saumur, Anjou, Coteaux du Layon, Bonnezeaux and Quarts de Chaume in Anjou. Tuffeau, a soft limestone, and schist give different styles. It's been grown there since at least the 9th century.",
+      "highlight": "Anjou and Touraine"
+    },
+    {
+      "type": "concept",
+      "title": "South Africa",
+      "body": "South Africa grows more Chenin than anywhere else, around 17,000 hectares, about 18% of its vineyards. Called Steen locally, it arrived with the first Dutch settlers in the 17th century. It was long used for brandy and bulk wine; now old bush vines in Swartland, Stellenbosch and Paarl make some of the country's finest whites.",
+      "highlight": "Most Chenin in the world"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Chenin.",
+      "pairs": [
+        {
+          "left": "Vouvray",
+          "right": "Touraine, all styles"
+        },
+        {
+          "left": "Savennières",
+          "right": "Anjou, dry and austere"
+        },
+        {
+          "left": "Swartland",
+          "right": "Old South African bush vines"
+        },
+        {
+          "left": "Coteaux du Layon",
+          "right": "Anjou, sweet"
+        }
+      ],
+      "explanation": "Chenin shines in the Loire and South Africa."
+    },
+    {
+      "type": "concept",
+      "title": "Elsewhere",
+      "body": "Chenin grows in California, once widely for bulk wine, Argentina, Australia, New Zealand and Mexico. A few cool-climate producers in the US and Australia now make serious dry Chenin. But the Loire and South Africa remain its two great homes.",
+      "highlight": "California, Argentina, Australia"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Chenin Blanc called in South Africa?",
+      "options": [
+        "Steen",
+        "Hermitage",
+        "Stein",
+        "Pinotage"
+      ],
+      "answer": 0,
+      "explanation": "Steen is the traditional South African name."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Loire's Anjou and Touraine are Chenin's home",
+        "South Africa grows the most, as Steen",
+        "Old bush vines make South Africa's finest Chenin"
+      ]
+    }
+  ]
+}

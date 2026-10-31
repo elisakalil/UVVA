@@ -1,0 +1,71 @@
+{
+  "id": "grape-tempranillo-l05",
+  "moduleId": "grape-tempranillo",
+  "order": 5,
+  "title": "Tempranillo in Portugal",
+  "subtitle": "Tinta Roriz and Aragonez",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tinta Roriz in the Douro",
+    "Describe Aragonez in the Alentejo",
+    "Explain its role in Portuguese blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Douro",
+      "body": "In the Douro, Tempranillo is called Tinta Roriz. It's one of the five recommended grapes for Port, with Touriga Nacional and Touriga Franca. In dry Douro reds, it adds red fruit, body and fine tannins to blends. It's one of the most planted grapes in the region.",
+      "highlight": "Tinta Roriz: Port and dry reds"
+    },
+    {
+      "type": "concept",
+      "title": "Alentejo",
+      "body": "In the hot Alentejo, Tempranillo is called Aragonez. It's often blended with Trincadeira and Alicante Bouschet, giving ripe, soft, fruity reds. The heat can make it lose acidity, so cooler sites near the São Mamede mountains are valued. Aragonez is among the region's most planted reds.",
+      "highlight": "Aragonez: ripe Alentejo blends"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its Portuguese role.",
+      "pairs": [
+        {
+          "left": "Tinta Roriz",
+          "right": "Douro, Port and dry reds"
+        },
+        {
+          "left": "Aragonez",
+          "right": "Alentejo blends"
+        },
+        {
+          "left": "Touriga Nacional",
+          "right": "Douro blending partner"
+        },
+        {
+          "left": "Trincadeira",
+          "right": "Alentejo blending partner"
+        }
+      ],
+      "explanation": "In Portugal, Tempranillo plays a supporting role in blends."
+    },
+    {
+      "type": "tip",
+      "body": "Portugal's Dão also grows Tinta Roriz, in elegant blends with Touriga Nacional and Jaen."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In Portugal, Tempranillo is mostly made as a single-variety wine.",
+      "answer": false,
+      "explanation": "Not true. It's mainly a blending partner, with Touriga Nacional in the Douro or Trincadeira in the Alentejo."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tinta Roriz is a key Douro grape, for Port and dry reds",
+        "Aragonez gives ripe Alentejo blends",
+        "In Portugal it's usually a blending partner"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "grape-nebbiolo-l03",
+  "moduleId": "grape-nebbiolo",
+  "order": 3,
+  "title": "Barolo",
+  "subtitle": "The king of wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barolo's zone and soils",
+    "Explain its ageing rules",
+    "Explain the MGA system and the Barolo wars"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Eleven villages",
+      "body": "Barolo DOCG covers 11 villages south-west of Alba. Two soil types matter: Tortonian marl, in the west around La Morra and Barolo, gives more perfumed, softer wines; Serravallian sandstone and marl, in the east around Serralunga and Monforte, gives more powerful, tannic wines. Barolo must be 100% Nebbiolo.",
+      "highlight": "Tortonian: perfumed. Serravallian: powerful."
+    },
+    {
+      "type": "concept",
+      "title": "Ageing and vineyards",
+      "body": "Barolo must age at least 38 months, 18 in wood; Riserva 62 months. Since 2010, labels can name 181 MGAs, Menzioni Geografiche Aggiuntive, the officially defined vineyard areas, like Cannubi, Brunate and Monprivato. They work like Burgundy's crus.",
+      "highlight": "38 months; 181 MGAs"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which part of Barolo gives the most powerful, tannic wines?",
+      "options": [
+        "Serralunga and Monforte, in the east",
+        "La Morra, in the west",
+        "Roero",
+        "Asti"
+      ],
+      "answer": 0,
+      "explanation": "Serravallian soils in the east give more structure."
+    },
+    {
+      "type": "concept",
+      "title": "The Barolo wars",
+      "body": "From the 1980s, modernists, like Elio Altare, used short maceration and new French barriques for softer, fruitier Barolo. Traditionalists, like Bartolo Mascarello, kept long maceration and large old Slavonian casks, called botti. The debate split the region. Today many producers blend both approaches.",
+      "highlight": "Barriques versus botti"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "MGA",
+          "right": "Official vineyard area"
+        },
+        {
+          "left": "Botti",
+          "right": "Large old casks"
+        },
+        {
+          "left": "Barrique",
+          "right": "Small new oak barrel"
+        },
+        {
+          "left": "Serralunga",
+          "right": "Powerful eastern village"
+        }
+      ],
+      "explanation": "Barolo has its own vocabulary."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barolo's 11 villages split into Tortonian and Serravallian soils",
+        "It ages at least 38 months; labels can name 181 MGAs",
+        "The Barolo wars pitted barriques against botti"
+      ]
+    }
+  ]
+}

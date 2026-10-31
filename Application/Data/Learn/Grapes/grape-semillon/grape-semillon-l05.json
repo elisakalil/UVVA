@@ -1,0 +1,73 @@
+{
+  "id": "grape-semillon-l05",
+  "moduleId": "grape-semillon",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Sémillon",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair dry Sémillon with food",
+    "Pair Sauternes with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dry Sémillon",
+      "body": "Young Hunter Sémillon suits oysters, sashimi and light seafood. Aged Hunter and dry Bordeaux blends suit roast chicken, crab, lobster, and creamy fish dishes. Margaret River Sémillon Sauvignon suits salads, goat's cheese and summer food.",
+      "highlight": "Seafood, chicken, crab"
+    },
+    {
+      "type": "concept",
+      "title": "Sauternes",
+      "body": "Sauternes suits foie gras, a Bordeaux classic, and blue cheese, especially Roquefort, whose salt balances the sweetness. It also suits fruit tarts, crème brûlée and spicy Asian dishes. Serve at 8 to 10 degrees. Avoid desserts much sweeter than the wine.",
+      "highlight": "Foie gras and Roquefort"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Sémillon to a pairing.",
+      "pairs": [
+        {
+          "left": "Young Hunter Sémillon",
+          "right": "Oysters"
+        },
+        {
+          "left": "Aged Hunter Sémillon",
+          "right": "Roast chicken"
+        },
+        {
+          "left": "Sauternes",
+          "right": "Roquefort"
+        },
+        {
+          "left": "Margaret River blend",
+          "right": "Goat's cheese salad"
+        }
+      ],
+      "explanation": "Each style finds its dish."
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve dry Sémillon at 8 to 11 degrees. Young Hunter is crisp and lean; wait 10 years for its magic. Dry white Bordeaux ages 10 to 20 years. Sauternes ages 20 to 50 years or more.",
+      "highlight": "Patience rewards Sémillon"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Roquefort and Sauternes is a classic pairing.",
+      "answer": true,
+      "explanation": "Yes. Salt balances sugar, and the wine's acidity cuts the cheese's fat."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Young dry Sémillon suits seafood; aged suits chicken and crab",
+        "Sauternes suits foie gras and Roquefort",
+        "Sémillon rewards ageing, dry or sweet"
+      ]
+    }
+  ]
+}

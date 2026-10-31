@@ -1,0 +1,81 @@
+{
+  "id": "grape-chardonnay-l04",
+  "moduleId": "grape-chardonnay",
+  "order": 4,
+  "title": "Oak, lees and malolactic",
+  "subtitle": "How winemaking shapes Chardonnay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the effect of oak",
+    "Explain malolactic conversion",
+    "Explain lees ageing and bâtonnage"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Oak",
+      "body": "Barrel fermentation and ageing add vanilla, toast, spice and a rounder texture. New oak adds more; older barrels mostly add texture and slow oxygen. Burgundy often uses 20 to 50% new oak for top wines. Oak needs ripe, concentrated fruit, or it overwhelms the wine.",
+      "highlight": "Vanilla, toast, texture"
+    },
+    {
+      "type": "concept",
+      "title": "Malolactic and lees",
+      "body": "Malolactic conversion turns sharp malic acid into softer lactic acid, adding a buttery note from diacetyl and lowering acidity. Lees ageing leaves the wine on dead yeast for months, adding creaminess and protecting it from oxidation. Bâtonnage, stirring the lees, increases these effects. Most Burgundy whites use all three.",
+      "highlight": "Butter from malolactic; cream from lees"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each technique to its effect.",
+      "pairs": [
+        {
+          "left": "New oak",
+          "right": "Vanilla and toast"
+        },
+        {
+          "left": "Malolactic conversion",
+          "right": "Buttery, softer acidity"
+        },
+        {
+          "left": "Bâtonnage",
+          "right": "Creamy texture"
+        },
+        {
+          "left": "Stainless steel",
+          "right": "Pure, fresh fruit"
+        }
+      ],
+      "explanation": "Each winemaking choice leaves its mark."
+    },
+    {
+      "type": "tip",
+      "body": "If a Chardonnay tastes of butter and popcorn, it went through malolactic. If it tastes of toast and vanilla, it saw new oak. If it's pure lemon and apple, it was probably made in steel."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which techniques make Chardonnay richer and rounder?",
+      "options": [
+        "Malolactic conversion",
+        "Barrel fermentation",
+        "Lees stirring",
+        "Early picking in steel"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Early picking and steel keep it lean and fresh."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Oak adds vanilla, toast and texture",
+        "Malolactic adds butter and softens acidity",
+        "Lees and bâtonnage add creaminess"
+      ]
+    }
+  ]
+}

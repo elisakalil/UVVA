@@ -1,0 +1,67 @@
+{
+  "id": "region-it-tuscany-l03",
+  "moduleId": "region-it-tuscany",
+  "order": 3,
+  "title": "Chianti Classico",
+  "subtitle": "The historic heart",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chianti Classico's zone",
+    "Explain its rules and levels",
+    "Compare it with Chianti"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The black rooster",
+      "body": "Chianti Classico DOCG covers the original zone between Florence and Siena, with villages like Greve, Radda, Gaiole and Castellina. Its symbol is the black rooster, gallo nero. It must be at least 80% Sangiovese, with native or international grapes for the rest; white grapes were banned in 2006.",
+      "highlight": "At least 80% Sangiovese"
+    },
+    {
+      "type": "concept",
+      "title": "Three levels",
+      "body": "Chianti Classico has three levels: Annata, at least 12 months' ageing; Riserva, 24 months; and Gran Selezione, introduced in 2014, from estate grapes, at least 30 months and, since 2021, at least 90% Sangiovese. Since 2021, labels can name 11 UGAs, Unità Geografiche Aggiuntive, villages like Panzano and Radda.",
+      "highlight": "Annata, Riserva, Gran Selezione"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Chianti wines by minimum ageing, shortest first.",
+      "items": [
+        "Chianti",
+        "Chianti Classico Annata",
+        "Chianti Classico Riserva",
+        "Chianti Classico Gran Selezione"
+      ],
+      "explanation": "Plain Chianti is a separate, broader DOCG with lower requirements; Gran Selezione is the top."
+    },
+    {
+      "type": "concept",
+      "title": "Chianti versus Classico",
+      "body": "Chianti DOCG is a separate, much larger area surrounding Chianti Classico, with seven sub-zones like Chianti Rufina and Colli Senesi. Rules are looser: at least 70% Sangiovese. Quality varies, from simple to excellent; Rufina, in the cool hills east of Florence, is often the best.",
+      "highlight": "Chianti is broader and looser"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the symbol of Chianti Classico?",
+      "options": [
+        "The black rooster",
+        "A lion",
+        "A fleur-de-lis",
+        "A grape bunch"
+      ],
+      "answer": 0,
+      "explanation": "The gallo nero."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chianti Classico is the historic heart, at least 80% Sangiovese",
+        "Annata, Riserva and Gran Selezione are its levels",
+        "Chianti DOCG is broader, with seven sub-zones"
+      ]
+    }
+  ]
+}

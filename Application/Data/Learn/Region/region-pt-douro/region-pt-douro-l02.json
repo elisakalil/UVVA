@@ -1,0 +1,77 @@
+{
+  "id": "region-pt-douro-l02",
+  "moduleId": "region-pt-douro",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "A field of natives",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the Douro's main grapes",
+    "Explain each grape's role",
+    "Explain field blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Five key reds",
+      "body": "The Douro allows over 100 grapes, but five are recommended for quality. Touriga Nacional: floral, dark, structured. Touriga Franca, the most planted: perfumed, elegant. Tinta Roriz, Tempranillo: red fruit and body. Tinta Barroca: soft, sweet fruit, early ripening. Tinto Cão: acidity and finesse, low yields.",
+      "highlight": "Five recommended reds"
+    },
+    {
+      "type": "concept",
+      "title": "Field blends",
+      "body": "Many old Douro vineyards are field blends, vinhas velhas, with dozens of grapes planted together, often over 80 years old. They're picked and fermented together, giving complexity. Whites, from Rabigato, Viosinho, Gouveio and Códega do Larinho, grow at higher, cooler sites and make dry whites and white Port.",
+      "highlight": "Old field blends, vinhas velhas"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Touriga Nacional",
+          "right": "Floral, structured"
+        },
+        {
+          "left": "Touriga Franca",
+          "right": "Most planted, perfumed"
+        },
+        {
+          "left": "Tinta Roriz",
+          "right": "Red fruit, body"
+        },
+        {
+          "left": "Tinto Cão",
+          "right": "Acidity and finesse"
+        }
+      ],
+      "explanation": "Douro blends draw on many natives."
+    },
+    {
+      "type": "tip",
+      "body": "Vinhas velhas, old vines, on a Douro label often means a field blend of many grapes, a living record of how the region was planted."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is the Douro's most planted grape?",
+      "options": [
+        "Touriga Franca",
+        "Touriga Nacional",
+        "Tinto Cão",
+        "Cabernet Sauvignon"
+      ],
+      "answer": 0,
+      "explanation": "Touriga Franca covers the most area."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Five recommended reds lead, from Touriga Nacional to Tinto Cão",
+        "Touriga Franca is the most planted",
+        "Old field blends give complexity"
+      ]
+    }
+  ]
+}

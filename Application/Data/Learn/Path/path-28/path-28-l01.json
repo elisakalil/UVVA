@@ -1,0 +1,60 @@
+{
+  "id": "path-28-l01",
+  "moduleId": "path-28",
+  "order": 1,
+  "title": "Cork taint",
+  "subtitle": "The musty fault",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Recognise cork taint by smell",
+    "Explain where TCA comes from",
+    "Explain what to do with a corked bottle"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "How it smells",
+      "body": "A corked wine smells of damp cardboard, wet dog or a musty cellar. In mild cases, it simply mutes the fruit, making the wine seem dull and flat. The cause is 2,4,6-trichloroanisole, or TCA. Humans can detect it at just a few parts per trillion.",
+      "highlight": "Damp cardboard, muted fruit"
+    },
+    {
+      "type": "concept",
+      "title": "Where it comes from",
+      "body": "TCA forms when fungi meet chlorine compounds, often in cork bark, but also in barrels, wooden beams or cardboard in wineries. Natural cork producers have cut taint rates by new cleaning methods and screening each cork. A whole winery can be contaminated, affecting wines under any closure.",
+      "highlight": "Fungi plus chlorine compounds"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What compound causes cork taint?",
+      "options": [
+        "Sulphur dioxide",
+        "TCA, 2,4,6-trichloroanisole",
+        "Acetic acid",
+        "Brettanomyces"
+      ],
+      "answer": 1,
+      "explanation": "TCA gives the musty smell. It can be detected in tiny amounts."
+    },
+    {
+      "type": "tip",
+      "body": "A corked wine isn't dangerous, just disappointing. In a restaurant or shop, it's normal to ask for a replacement. Smell first; don't judge by the cork itself, which can smell fine even when the wine doesn't."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Only wines sealed with natural cork can suffer from TCA.",
+      "answer": false,
+      "explanation": "Not true. TCA can contaminate a whole winery through barrels or wood, so wines under screw cap can be affected too, though much more rarely."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cork taint smells of damp cardboard and mutes fruit",
+        "TCA forms from fungi and chlorine compounds",
+        "It's harmless but a reason to replace the bottle"
+      ]
+    }
+  ]
+}

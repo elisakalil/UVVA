@@ -1,0 +1,60 @@
+{
+  "id": "grape-carignan-l04",
+  "moduleId": "grape-carignan",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Carignan",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Carignan with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Mediterranean food",
+      "body": "Carignan's acidity and tannin suit hearty Mediterranean food: cassoulet, grilled lamb, sausages, stews with olives and herbs, and roast vegetables. Its earthy, herbal notes match rosemary, thyme and garlic. Old-vine examples suit game and aged cheeses.",
+      "highlight": "Cassoulet, lamb, herbs"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees. Simple Carignan is best young. Old-vine wines from Priorat, Maule or the Languedoc can age 10 to 15 years, as acidity keeps them fresh. Decant young, firm examples.",
+      "highlight": "Old-vine wines age 10 to 15 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits an old-vine Carignan?",
+      "options": [
+        "Cassoulet",
+        "Sushi",
+        "Lemon sorbet",
+        "Fruit salad"
+      ],
+      "answer": 0,
+      "explanation": "Hearty, fatty dishes balance its acidity and tannin."
+    },
+    {
+      "type": "tip",
+      "body": "Carbonic maceration Carignan, light and juicy, is a good chilled red for summer barbecues."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Carignan's high acidity helps old-vine examples age.",
+      "answer": true,
+      "explanation": "Yes. Acidity preserves freshness over time."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carignan suits cassoulet, lamb and herby stews",
+        "Serve at 16 to 18 degrees; decant young wines",
+        "Old-vine Carignan ages 10 to 15 years"
+      ]
+    }
+  ]
+}

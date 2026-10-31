@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-burgundy-l05",
+  "moduleId": "region-fr-burgundy",
+  "order": 5,
+  "title": "Chablis and the Mâconnais",
+  "subtitle": "North and south",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chablis",
+    "Describe the Côte Chalonnaise and Mâconnais",
+    "Compare their whites"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Chablis",
+      "body": "Chablis, isolated in the north, about 130 km from Dijon, is cooler than the Côte d'Or. Chardonnay grows on Kimmeridgian soil, limestone and clay full of tiny oyster fossils. Wines are lean, mineral and high in acidity. Levels: Petit Chablis, Chablis, Premier Cru and seven Grand Cru climats, like Les Clos and Valmur, on one south-west facing slope.",
+      "highlight": "Kimmeridgian soil, seven Grand Crus"
+    },
+    {
+      "type": "concept",
+      "title": "Chalonnaise and Mâconnais",
+      "body": "South of the Côte d'Or, the Côte Chalonnaise has villages like Mercurey and Givry for reds, and Rully and Montagny for whites, offering good value. The Mâconnais, further south and warmer, makes rounder Chardonnay: Mâcon-Villages, and Pouilly-Fuissé, which gained Premier Cru vineyards in 2020, and Saint-Véran.",
+      "highlight": "Mercurey, Rully, Pouilly-Fuissé"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Chablis' Kimmeridgian soil distinctive?",
+      "options": [
+        "It's full of tiny oyster fossils",
+        "It's volcanic",
+        "It's red sand",
+        "It's slate"
+      ],
+      "answer": 0,
+      "explanation": "Kimmeridgian marl contains countless fossilised oyster shells."
+    },
+    {
+      "type": "concept",
+      "title": "Comparing whites",
+      "body": "Chablis is lean and mineral, usually unoaked or lightly oaked. The Côte de Beaune is richer, with oak. The Mâconnais is rounder, fruitier and more affordable. All are Chardonnay, showing how much place and climate change it.",
+      "highlight": "Chablis lean; Mâcon round"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Mâconnais or Chalonnaise wines?",
+      "options": [
+        "Pouilly-Fuissé",
+        "Mercurey",
+        "Rully",
+        "Pauillac"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pauillac is in Bordeaux."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chablis is lean and mineral on Kimmeridgian soil",
+        "The Côte Chalonnaise and Mâconnais offer value",
+        "Pouilly-Fuissé gained Premier Crus in 2020"
+      ]
+    }
+  ]
+}

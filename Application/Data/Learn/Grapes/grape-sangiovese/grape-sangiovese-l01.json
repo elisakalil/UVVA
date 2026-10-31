@@ -1,0 +1,62 @@
+{
+  "id": "grape-sangiovese-l01",
+  "moduleId": "grape-sangiovese",
+  "order": 1,
+  "title": "Meet Sangiovese",
+  "subtitle": "Sour cherry and tea leaf",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sangiovese's flavours and structure",
+    "Explain its name and origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bright and savoury",
+      "body": "Sangiovese gives medium-bodied reds with sour cherry, red plum, tomato leaf, dried herbs and, with age, leather and earth. Acidity is high, tannins firm and often slightly drying, like strong tea. Colour is medium ruby, fading early to garnet. It's Italy's most planted grape.",
+      "highlight": "Sour cherry, high acidity, tea-like tannin"
+    },
+    {
+      "type": "concept",
+      "title": "Blood of Jupiter",
+      "body": "Sangiovese may come from sanguis Jovis, Latin for the blood of Jupiter. DNA shows it's a cross of Ciliegiolo and Calabrese di Montenuovo, linking Tuscany and the south. It's genetically unstable, with many clones: Sangiovese Grosso, with bigger berries, is used in Montalcino, where it's called Brunello.",
+      "highlight": "Blood of Jupiter; many clones"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Sangiovese's name possibly mean?",
+      "options": [
+        "Blood of Jupiter",
+        "Little sweet one",
+        "The early one",
+        "Black grape"
+      ],
+      "answer": 0,
+      "explanation": "Sanguis Jovis, Latin for the blood of Jupiter."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for medium ruby or garnet colour, often with an orange tint even when quite young. On the nose, sour cherry, herbs and earth. On the palate, high acidity and grainy, drying tannin. That combination of sour cherry and tea-like tannin, plus the urge to eat something with tomato, is the clue.",
+      "highlight": "Sour cherry plus drying tannin"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sangiovese is usually deeply coloured and low in acidity.",
+      "answer": false,
+      "explanation": "Not true. It's medium in colour and high in acidity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sangiovese gives sour cherry, herbs and earth",
+        "It has high acidity and firm, tea-like tannin",
+        "It's Italy's most planted grape, with many clones"
+      ]
+    }
+  ]
+}

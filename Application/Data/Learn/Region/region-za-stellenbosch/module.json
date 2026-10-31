@@ -1,0 +1,26 @@
+{
+  "id": "region-za-stellenbosch",
+  "kind": "region",
+  "order": 49,
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "title": "Stellenbosch",
+  "grapes": [
+    "Cabernet Sauvignon",
+    "Pinotage",
+    "Chenin Blanc"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "South Africa's historic heart: mountain slopes, ocean breezes, Cabernet Sauvignon and Pinotage.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-za-stellenbosch-l01",
+    "region-za-stellenbosch-l02",
+    "region-za-stellenbosch-l03",
+    "region-za-stellenbosch-l04",
+    "region-za-stellenbosch-l05"
+  ]
+}

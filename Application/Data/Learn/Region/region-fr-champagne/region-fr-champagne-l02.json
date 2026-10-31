@@ -1,0 +1,77 @@
+{
+  "id": "region-fr-champagne-l02",
+  "moduleId": "region-fr-champagne",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Three grapes, three roles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Champagne's three main grapes",
+    "Explain each grape's role",
+    "Name the main areas for each"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three grapes",
+      "body": "Pinot Noir is about 38% of plantings, Meunier about 31%, Chardonnay about 31%. Pinot Noir gives body, structure and red fruit; Meunier gives fruit and roundness; Chardonnay gives finesse, acidity and ageing potential. Four other grapes, like Arbane and Petit Meslier, are allowed but rare.",
+      "highlight": "Pinot Noir, Meunier, Chardonnay"
+    },
+    {
+      "type": "concept",
+      "title": "Where each grows",
+      "body": "The Montagne de Reims, with Grand Crus like Aÿ, Bouzy and Verzenay, favours Pinot Noir. The Vallée de la Marne, with frost pockets and clay, suits late-budding Meunier. The Côte des Blancs, on pure chalk, with Cramant, Avize and Le Mesnil-sur-Oger, is Chardonnay country. The Côte des Bar, in the south, on Kimmeridgian marl, grows mainly Pinot Noir.",
+      "highlight": "Montagne, Vallée, Côte des Blancs, Côte des Bar"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each area to its main grape.",
+      "pairs": [
+        {
+          "left": "Montagne de Reims",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Vallée de la Marne",
+          "right": "Meunier"
+        },
+        {
+          "left": "Côte des Blancs",
+          "right": "Chardonnay"
+        },
+        {
+          "left": "Côte des Bar",
+          "right": "Southern Pinot Noir"
+        }
+      ],
+      "explanation": "Each area favours a grape."
+    },
+    {
+      "type": "tip",
+      "body": "Blanc de Blancs is made only from white grapes, usually Chardonnay; Blanc de Noirs only from black grapes, Pinot Noir and Meunier."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape brings finesse and ageing potential to Champagne?",
+      "options": [
+        "Chardonnay",
+        "Meunier",
+        "Gamay",
+        "Pinot Gris"
+      ],
+      "answer": 0,
+      "explanation": "Chardonnay gives acidity, finesse and longevity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir, Meunier and Chardonnay are Champagne's grapes",
+        "Each area favours one grape",
+        "Blanc de Blancs and Blanc de Noirs use only one colour"
+      ]
+    }
+  ]
+}

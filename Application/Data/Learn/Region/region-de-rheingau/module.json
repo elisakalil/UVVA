@@ -1,0 +1,26 @@
+{
+  "id": "region-de-rheingau",
+  "kind": "region",
+  "order": 27,
+  "country": "Germany",
+  "countryCode": "DE",
+  "title": "Rheingau",
+  "grapes": [
+    "Riesling",
+    "Spätburgunder"
+  ],
+  "points": "0 2 1 2 = 5",
+  "complexity": "B",
+  "description": "A south-facing slope along the Rhine where Spätlese was born and Riesling grew noble.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-de-rheingau-l01",
+    "region-de-rheingau-l02",
+    "region-de-rheingau-l03",
+    "region-de-rheingau-l04",
+    "region-de-rheingau-l05",
+    "region-de-rheingau-l06"
+  ]
+}

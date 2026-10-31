@@ -1,0 +1,96 @@
+{
+  "id": "grape-gewurztraminer-l06",
+  "moduleId": "grape-gewurztraminer",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Gewürztraminer",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Gewürztraminer",
+    "Explain its aromatics",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is Gewürztraminer's giveaway?",
+      "options": [
+        "Lychee",
+        "Gooseberry",
+        "Petrol",
+        "Butter"
+      ],
+      "answer": 0,
+      "explanation": "Lychee, with rose and ginger."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Gewürztraminer.",
+      "pairs": [
+        {
+          "left": "Gewürz",
+          "right": "Spice"
+        },
+        {
+          "left": "Tramin",
+          "right": "Village of origin"
+        },
+        {
+          "left": "SGN",
+          "right": "Noble rot, very sweet"
+        },
+        {
+          "left": "Munster",
+          "right": "Classic cheese pairing"
+        }
+      ],
+      "explanation": "Gewürztraminer has its own vocabulary."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Gewürztraminer has high natural acidity.",
+      "answer": false,
+      "explanation": "Not true. Its low acidity is its main challenge."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which compounds contribute to Gewürztraminer's aroma?",
+      "options": [
+        "Cis-rose oxide",
+        "Geraniol",
+        "Linalool",
+        "Pyrazines"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pyrazines are typical of Sauvignon Blanc and Cabernet."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Alsace's late harvest wines are labelled Vendanges ____.",
+      "options": [
+        "Tardives",
+        "Nobles",
+        "Blanches",
+        "Rouges"
+      ],
+      "answer": "Tardives",
+      "explanation": "Vendanges Tardives, VT."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gewürztraminer smells of lychee, rose and ginger",
+        "Terpenes give its intense perfume",
+        "Alsace makes it dry, late harvest and SGN",
+        "It suits mild spice and pungent cheese"
+      ]
+    }
+  ]
+}

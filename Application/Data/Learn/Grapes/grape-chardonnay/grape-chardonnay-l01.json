@@ -1,0 +1,62 @@
+{
+  "id": "grape-chardonnay-l01",
+  "moduleId": "grape-chardonnay",
+  "order": 1,
+  "title": "Meet Chardonnay",
+  "subtitle": "The winemaker's canvas",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chardonnay's range of flavours",
+    "Explain its parentage",
+    "Explain why it's called a canvas"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Many faces",
+      "body": "Chardonnay can taste of green apple and lemon, or peach and melon, or pineapple and mango, depending on climate. Winemaking adds butter, toast, vanilla, hazelnut or cream. Acidity ranges from high to medium, body from light to full. With Spain's Airén, it's one of the two most planted white grapes in the world.",
+      "highlight": "Climate sets fruit; winemaking adds the rest"
+    },
+    {
+      "type": "concept",
+      "title": "Parents and character",
+      "body": "DNA shows Chardonnay is a cross of Pinot Noir and Gouais Blanc, probably in Burgundy in the Middle Ages. It's named after the village of Chardonnay, in the Mâconnais. Its own aromas are fairly neutral, so it reflects site and winemaking clearly. It buds early, risking frost, but ripens reliably.",
+      "highlight": "Pinot Noir x Gouais Blanc"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Chardonnay called a winemaker's canvas?",
+      "options": [
+        "Its own aromas are neutral, so it reflects site and winemaking",
+        "It's very aromatic",
+        "It's always oaked",
+        "It's always sweet"
+      ],
+      "answer": 0,
+      "explanation": "Neutral fruit lets climate and winemaking choices show clearly."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Because it varies so much, look for clues: high acidity and green fruit with a chalky edge suggest cool Chablis; nutty, buttery richness with toast suggests oaked Burgundy or California; tropical fruit and soft acidity suggest a warm climate. A lack of strong aromatic signature is itself a clue.",
+      "highlight": "Few aromatics, many textures"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chardonnay is a cross of Pinot Noir and Gouais Blanc.",
+      "answer": true,
+      "explanation": "Yes. It's a sibling of Gamay, Aligoté and Melon."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chardonnay's fruit ranges from apple to pineapple with climate",
+        "It's a cross of Pinot Noir and Gouais Blanc from Burgundy",
+        "Its neutral character reflects site and winemaking"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "grape-trebbiano-l05",
+  "moduleId": "grape-trebbiano",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Trebbiano",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Trebbiano wines with food",
+    "Serve Vin Santo well",
+    "Know how long they keep"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Simple whites",
+      "body": "Dry Trebbiano suits light, simple food: salads, grilled fish, seafood pasta, fried food and antipasti. Its acidity and neutrality make it refreshing. Lugana, from Turbiana, suits lake fish. Trebbiano d'Abruzzo from top producers suits richer fish and white meat.",
+      "highlight": "Seafood pasta, antipasti"
+    },
+    {
+      "type": "concept",
+      "title": "Vin Santo",
+      "body": "In Tuscany, Vin Santo is served with cantucci, almond biscuits, dipped into the glass. It also suits blue cheese, nut tarts and dried fruit. Serve at 12 to 14 degrees. It keeps for weeks once opened.",
+      "highlight": "With cantucci"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Tuscan biscuits are traditionally dipped in Vin Santo?",
+      "options": [
+        "Cantucci",
+        "Macarons",
+        "Shortbread",
+        "Brownies"
+      ],
+      "answer": 0,
+      "explanation": "Almond cantucci are the classic match."
+    },
+    {
+      "type": "tip",
+      "body": "Serve dry Trebbiano well chilled and young. Its charm is freshness, not complexity."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Vin Santo?",
+      "options": [
+        "Cantucci",
+        "Blue cheese",
+        "Nut tarts",
+        "Raw oysters"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Oysters need a dry wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Trebbiano suits light seafood and antipasti",
+        "Vin Santo suits cantucci, blue cheese and nut tarts",
+        "Drink dry Trebbiano young; Vin Santo keeps"
+      ]
+    }
+  ]
+}

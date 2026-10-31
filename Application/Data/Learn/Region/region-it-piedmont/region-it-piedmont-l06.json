@@ -1,0 +1,72 @@
+{
+  "id": "region-it-piedmont-l06",
+  "moduleId": "region-it-piedmont",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Piedmont and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Piedmont label",
+    "Pair Piedmont's wines with food",
+    "Serve and age them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels name the DOC or DOCG, like Barolo or Barbera d'Asti, the producer, the vintage and often an MGA or vineyard name. Riserva marks longer ageing. Langhe Nebbiolo and Nebbiolo d'Alba are more affordable Nebbiolos. The DOCG strip on the neck guarantees origin.",
+      "highlight": "DOCG, MGA, Riserva"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Piedmont's food is rich: tajarin, thin egg pasta with butter and white truffle; vitello tonnato; brasato al Barolo, beef braised in Barolo; bagna cauda, a hot garlic and anchovy dip. Barolo suits truffles and braised meat; Barbera suits salumi and pasta; Dolcetto suits everyday dishes; Moscato suits hazelnut cake.",
+      "highlight": "Truffle with Barolo, salumi with Barbera"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Piedmont dish is cooked with Barolo?",
+      "options": [
+        "Brasato al Barolo",
+        "Pizza margherita",
+        "Risotto alla milanese",
+        "Pesto"
+      ],
+      "answer": 0,
+      "explanation": "Beef braised in Barolo."
+    },
+    {
+      "type": "concept",
+      "title": "Service",
+      "body": "Serve Barolo and Barbaresco at 17 to 18 degrees, in large glasses, decanted for hours when young. They're best from 10 years and can age 30 or more. Barbera and Dolcetto at 15 to 17, young. Moscato d'Asti well chilled, at 6 to 8.",
+      "highlight": "Decant Barolo; chill Moscato"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Barolo?",
+      "options": [
+        "White truffle",
+        "Braised beef",
+        "Aged cheese",
+        "Lemon sorbet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sorbet is too sweet and acidic."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show DOCG, MGA and Riserva",
+        "Barolo suits truffle and braised beef; Barbera suits salumi",
+        "Decant young Barolo; it ages 30 years or more"
+      ]
+    }
+  ]
+}

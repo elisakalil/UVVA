@@ -1,0 +1,28 @@
+{
+  "id": "region-fr-southern-rhone",
+  "kind": "region",
+  "order": 5,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Southern Rhône",
+  "grapes": [
+    "Grenache",
+    "Syrah",
+    "Mourvèdre",
+    "Cinsault"
+  ],
+  "points": "1 1 2 1 = 5",
+  "complexity": "B",
+  "description": "Sun, stones and the Mistral: Grenache-led blends from Châteauneuf-du-Pape to Côtes du Rhône.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-fr-southern-rhone-l01",
+    "region-fr-southern-rhone-l02",
+    "region-fr-southern-rhone-l03",
+    "region-fr-southern-rhone-l04",
+    "region-fr-southern-rhone-l05",
+    "region-fr-southern-rhone-l06"
+  ]
+}

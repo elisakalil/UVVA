@@ -1,0 +1,68 @@
+{
+  "id": "grape-viognier-l03",
+  "moduleId": "grape-viognier",
+  "order": 3,
+  "title": "Condrieu",
+  "subtitle": "Viognier's homeland",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Condrieu's landscape",
+    "Describe Château-Grillet",
+    "Explain Condrieu's styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Steep granite",
+      "body": "Condrieu is a small appellation in the northern Rhône, about 200 hectares, on steep granite terraces facing south and south-east above the river. The soil, a crumbly granite called arzelle, drains well. Condrieu must be 100% Viognier. The wines are rich, perfumed and dry, mostly drunk within five years.",
+      "highlight": "100% Viognier on granite terraces"
+    },
+    {
+      "type": "concept",
+      "title": "Château-Grillet",
+      "body": "Château-Grillet, within Condrieu, is one of France's smallest appellations, about 3.5 hectares, owned by one estate. It's a natural amphitheatre facing south. Its wines are more structured and age longer than most Condrieu. Since 2011, it has belonged to the Pinault family, owners of Château Latour.",
+      "highlight": "One of France's smallest appellations"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is unusual about Château-Grillet?",
+      "options": [
+        "It's one of France's smallest appellations, owned by one estate",
+        "It makes red wine only",
+        "It's in Bordeaux",
+        "It's sparkling"
+      ],
+      "answer": 0,
+      "explanation": "About 3.5 hectares, a single-estate appellation."
+    },
+    {
+      "type": "concept",
+      "title": "Styles",
+      "body": "Most Condrieu is dry, sometimes with oak for texture. Some producers make late harvest or sweet styles in warm years. Producers like Georges Vernay, who helped save the grape, and Yves Cuilleron are key names. Condrieu is usually expensive because of tiny yields and steep, hand-worked vineyards.",
+      "highlight": "Mostly dry, sometimes late harvest"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Condrieu must be 100% ____.",
+      "options": [
+        "Viognier",
+        "Marsanne",
+        "Roussanne",
+        "Chardonnay"
+      ],
+      "answer": "Viognier",
+      "explanation": "Condrieu is pure Viognier."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Condrieu is pure Viognier on steep granite",
+        "Château-Grillet is a tiny single-estate appellation",
+        "Most Condrieu is dry and best young"
+      ]
+    }
+  ]
+}

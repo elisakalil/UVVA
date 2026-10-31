@@ -1,0 +1,71 @@
+{
+  "id": "region-fr-alsace-l05",
+  "moduleId": "region-fr-alsace",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading Alsace and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read an Alsace label",
+    "Pair Alsace wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Alsace labels show the grape, the producer, and sometimes a Grand Cru, a commune, VT or SGN. Crémant d'Alsace marks traditional method sparkling wine, France's most produced crémant. The flûte bottle is required for still wines. A sweetness indicator often appears on the back.",
+      "highlight": "Grape, producer, Grand Cru"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Alsace wines suit its rich food: choucroute garnie, sauerkraut with sausages, goes with Riesling or Pinot Gris; Munster cheese with Gewürztraminer; tarte flambée, a thin bacon and onion tart, with Pinot Blanc or Riesling; foie gras with VT. They also suit Asian food, especially Gewürztraminer and off-dry Pinot Gris.",
+      "highlight": "Choucroute, Munster, tarte flambée"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each dish to an Alsace wine.",
+      "pairs": [
+        {
+          "left": "Choucroute garnie",
+          "right": "Riesling"
+        },
+        {
+          "left": "Munster cheese",
+          "right": "Gewürztraminer"
+        },
+        {
+          "left": "Tarte flambée",
+          "right": "Pinot Blanc"
+        },
+        {
+          "left": "Foie gras",
+          "right": "Vendanges Tardives"
+        }
+      ],
+      "explanation": "Alsace wines match its local food."
+    },
+    {
+      "type": "tip",
+      "body": "Crémant d'Alsace, often made from Pinot Blanc, Auxerrois and Riesling, is one of France's best-value sparkling wines."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Alsace still wines must be sold in the tall flûte bottle.",
+      "answer": true,
+      "explanation": "Yes, by law."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show grape, producer and sometimes Grand Cru",
+        "Alsace wines suit choucroute, Munster and tarte flambée",
+        "Crémant d'Alsace is great-value sparkling wine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "grape-viognier-l02",
+  "moduleId": "grape-viognier",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "From Condrieu to the world",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Viognier's main regions",
+    "Explain the climate it needs",
+    "Explain its role with Syrah"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rhône and beyond",
+      "body": "Viognier's home is the northern Rhône: Condrieu and Château-Grillet. It's grown in the Languedoc for IGP Pays d'Oc wines, and in California, Virginia, Australia's Eden Valley and Yalumba, and South Africa. Yalumba, in Australia, pioneered it there from 1980.",
+      "highlight": "Rhône, Languedoc, California, Australia"
+    },
+    {
+      "type": "concept",
+      "title": "Ripeness matters",
+      "body": "Viognier needs warmth to develop its perfume, but too much heat makes it flabby and alcoholic. It must be picked at full ripeness, when aromas peak; picked early, it tastes neutral; picked late, it loses acidity and gains bitterness. Like Gewürztraminer, the picking window is narrow.",
+      "highlight": "Narrow picking window"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What happens if Viognier is picked too early?",
+      "options": [
+        "It tastes neutral, lacking perfume",
+        "It becomes very sweet",
+        "It turns red",
+        "It ages for decades"
+      ],
+      "answer": 0,
+      "explanation": "Its aromas develop late in ripening."
+    },
+    {
+      "type": "concept",
+      "title": "With Syrah",
+      "body": "In Côte-Rôtie, up to 20% Viognier can be co-fermented with Syrah, though most use 2 to 5%. Co-fermentation stabilises colour, through a process called co-pigmentation, and adds floral lift. Australian producers adopted the idea for Shiraz Viognier.",
+      "highlight": "Co-fermented with Syrah"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does Viognier add when co-fermented with Syrah?",
+      "options": [
+        "Floral aroma",
+        "Colour stability",
+        "Lift",
+        "Tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Viognier is a white grape; it doesn't add tannin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Viognier's home is Condrieu in the northern Rhône",
+        "It needs warmth and precise picking",
+        "In Côte-Rôtie it's co-fermented with Syrah"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "grape-zinfandel-l02",
+  "moduleId": "grape-zinfandel",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "California and Puglia",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Zinfandel's main regions",
+    "Explain its role in California",
+    "Name its homes in Italy and Croatia"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "California",
+      "body": "Zinfandel reached the United States in the 1820s, from an Austrian nursery collection. It spread through California during the Gold Rush and became the state's most widely planted red for decades. Today it's grown in Lodi, Sonoma's Dry Creek Valley, Amador County in the Sierra Foothills, and Paso Robles.",
+      "highlight": "Lodi, Dry Creek, Amador"
+    },
+    {
+      "type": "concept",
+      "title": "Italy and Croatia",
+      "body": "In Italy it's called Primitivo, grown in Puglia, especially Manduria and Gioia del Colle. Primitivo means early one, because it ripens early. Its origin is Croatia, where it's called Tribidrag or Crljenak Kaštelanski, and today grows in small amounts on the Dalmatian coast.",
+      "highlight": "Primitivo in Puglia; origin in Croatia"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its country.",
+      "pairs": [
+        {
+          "left": "Zinfandel",
+          "right": "United States"
+        },
+        {
+          "left": "Primitivo",
+          "right": "Italy"
+        },
+        {
+          "left": "Tribidrag",
+          "right": "Croatia"
+        },
+        {
+          "left": "Lodi",
+          "right": "Californian Zinfandel region"
+        }
+      ],
+      "explanation": "One grape with three national identities."
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "Zinfandel likes warm, sunny climates with dry autumns, which help with its uneven ripening. Cool, damp weather causes rot in its tight bunches. Many of its best wines come from old, head-trained vines, grown without trellises, which give low yields and concentrated fruit.",
+      "highlight": "Warm, dry, old head-trained vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Primitivo mean?",
+      "options": [
+        "The early one",
+        "The old one",
+        "The black one",
+        "The sweet one"
+      ],
+      "answer": 0,
+      "explanation": "Primitivo refers to its early ripening."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Zinfandel is California's heritage red",
+        "It's Primitivo in Puglia and Tribidrag in Croatia",
+        "It likes warm, dry climates and old head-trained vines"
+      ]
+    }
+  ]
+}

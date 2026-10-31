@@ -1,0 +1,20 @@
+{
+  "id": "path-04",
+  "kind": "path",
+  "order": 4,
+  "level": "Essentials",
+  "complexity": "C",
+  "title": "Tasting Basics",
+  "description": "Look, smell, taste: a simple order that lets you describe any wine and compare two of them.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-04-l01",
+    "path-04-l02",
+    "path-04-l03",
+    "path-04-l04",
+    "path-04-l05",
+    "path-04-l06"
+  ]
+}

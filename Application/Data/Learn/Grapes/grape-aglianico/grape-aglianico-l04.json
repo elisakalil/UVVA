@@ -1,0 +1,60 @@
+{
+  "id": "grape-aglianico-l04",
+  "moduleId": "grape-aglianico",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Aglianico",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Aglianico with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rich, savoury food",
+      "body": "Aglianico's tannin and acidity suit rich, savoury dishes: slow-cooked ragù, braised lamb, roast pork, sausages and hard cheeses like aged pecorino. Its acidity also handles tomato-based sauces. Avoid delicate fish or very sweet sauces.",
+      "highlight": "Ragù, lamb, pecorino"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees. Young Taurasi and Vulture are firm and benefit from decanting for two hours. Good examples age 15 to 25 years, softening into leather, tobacco and dried cherry. Lighter Campania Aglianico is drinkable after two or three years.",
+      "highlight": "Top wines age 15 to 25 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Aglianico suit tomato-based sauces?",
+      "options": [
+        "Its high acidity matches the tomato's acidity",
+        "It's very sweet",
+        "It has no tannin",
+        "It's a white wine"
+      ],
+      "answer": 0,
+      "explanation": "Acidic food needs a wine with at least as much acidity."
+    },
+    {
+      "type": "tip",
+      "body": "Pair a mature Taurasi with a Neapolitan ragù simmered for hours. It's a regional match that's lasted generations."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Young Taurasi is best drunk immediately without decanting.",
+      "answer": false,
+      "explanation": "Not true. Its firm tannins benefit from air and, ideally, years in bottle."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aglianico suits ragù, lamb and aged pecorino",
+        "Its acidity handles tomato sauces",
+        "Decant young wines; the best age 15 to 25 years"
+      ]
+    }
+  ]
+}

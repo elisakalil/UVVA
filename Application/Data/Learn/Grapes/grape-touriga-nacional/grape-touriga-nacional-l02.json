@@ -1,0 +1,79 @@
+{
+  "id": "grape-touriga-nacional-l02",
+  "moduleId": "grape-touriga-nacional",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Douro, Dão and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Touriga Nacional's main regions",
+    "Explain how climate shapes it",
+    "Name countries that have adopted it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Douro and Dão",
+      "body": "Touriga Nacional is planted in most Portuguese regions, but the Douro and the Dão are its heartlands. In the hot, dry Douro, on schist, it gives powerful, concentrated wines. In the Dão, cooler and granite-based, it gives more elegant, floral wines with fresher acidity. It also grows in Alentejo, Lisboa and Bairrada.",
+      "highlight": "Douro power, Dão elegance"
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "Touriga Nacional handles heat and drought well thanks to deep roots and small berries. Strong sun develops its colour. In very hot sites it can lose some aromatic finesse, so higher or north-facing vineyards are valued. Its vigorous growth needs careful canopy management.",
+      "highlight": "Heat-tolerant, needs canopy care"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Portuguese region to its Touriga style.",
+      "pairs": [
+        {
+          "left": "Douro",
+          "right": "Powerful, on schist"
+        },
+        {
+          "left": "Dão",
+          "right": "Elegant, on granite"
+        },
+        {
+          "left": "Alentejo",
+          "right": "Ripe, in blends"
+        },
+        {
+          "left": "Bairrada",
+          "right": "Minor partner to Baga"
+        }
+      ],
+      "explanation": "Portugal's regions bring out different sides of the grape."
+    },
+    {
+      "type": "concept",
+      "title": "Abroad",
+      "body": "With warmer summers, other countries are interested. Bordeaux approved Touriga Nacional for trial in its AOCs in 2021, as a heat-tolerant option. It also grows in Spain, Australia, South Africa, where it's used for fortified wines, and California.",
+      "highlight": "Approved for trial in Bordeaux, 2021"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why did Bordeaux approve Touriga Nacional for trial in 2021?",
+      "options": [
+        "It ripens very early",
+        "It handles heat and drought well",
+        "It's a white grape",
+        "It's cheap to buy"
+      ],
+      "answer": 1,
+      "explanation": "Bordeaux is looking for grapes adapted to a warming climate."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Douro and Dão are Touriga Nacional's heartlands",
+        "It handles heat and drought well",
+        "Bordeaux, Spain, Australia and South Africa grow it too"
+      ]
+    }
+  ]
+}

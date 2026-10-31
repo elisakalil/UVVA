@@ -1,0 +1,67 @@
+{
+  "id": "grape-muscat-l04",
+  "moduleId": "grape-muscat",
+  "order": 4,
+  "title": "Fortified Muscat",
+  "subtitle": "Rutherglen and Setúbal",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rutherglen Muscat",
+    "Describe Moscatel de Setúbal",
+    "Explain how ageing changes fortified Muscat"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rutherglen",
+      "body": "Rutherglen, in north-east Victoria, Australia, makes some of the world's richest fortified wines from a dark-skinned Muscat Blanc à Petits Grains, called Brown Muscat. Grapes are picked very ripe, fortified, and aged for years in old casks in hot sheds, often in solera-like systems. The wines are dark, syrupy, with raisin, toffee, coffee and orange peel.",
+      "highlight": "Rutherglen: dark, syrupy, aged"
+    },
+    {
+      "type": "concept",
+      "title": "Classification and Setúbal",
+      "body": "Rutherglen Muscat has four levels: Rutherglen, Classic, Grand and Rare, each older and more concentrated. In Portugal, Moscatel de Setúbal, from Muscat of Alexandria near Lisbon, is fortified and macerated on skins for months, giving orange peel, apricot and honey. Aged versions reach 20 years or more.",
+      "highlight": "Rutherglen, Classic, Grand, Rare"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Rutherglen Muscat's levels from youngest to oldest.",
+      "items": [
+        "Rutherglen",
+        "Classic",
+        "Grand",
+        "Rare"
+      ],
+      "explanation": "Each level is older and more concentrated."
+    },
+    {
+      "type": "concept",
+      "title": "Age and oxygen",
+      "body": "As fortified Muscat ages in cask, it oxidises slowly and concentrates through evaporation. Fresh grape and orange blossom turn into raisin, fig, toffee, coffee and rancio, a nutty, complex character. Old Rare Rutherglen blends can include wines decades old.",
+      "highlight": "Grape becomes raisin and toffee"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where is Rutherglen?",
+      "options": [
+        "North-east Victoria, Australia",
+        "Portugal",
+        "Sicily",
+        "Alsace"
+      ],
+      "answer": 0,
+      "explanation": "Rutherglen is in Victoria, Australia."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rutherglen Muscat is dark, syrupy and long-aged",
+        "It has four levels: Rutherglen, Classic, Grand, Rare",
+        "Moscatel de Setúbal is Portugal's fortified Muscat"
+      ]
+    }
+  ]
+}

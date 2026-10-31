@@ -1,0 +1,71 @@
+{
+  "id": "path-02-l04",
+  "moduleId": "path-02",
+  "order": 4,
+  "title": "Rosé styles",
+  "subtitle": "Pink wine, three ways",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how rosé gets its colour",
+    "Describe the three ways to make rosé",
+    "Explain why blending red and white is rare"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pink from the skins",
+      "body": "Rosé is made from black grapes whose juice touches the skins only briefly, usually from 2 to 20 hours. That's enough for a little colour and fruit, but very little tannin. Most rosé is dry, like those of Provence, though some, like White Zinfandel, are sweet.",
+      "highlight": "Rosé: black grapes, short skin contact"
+    },
+    {
+      "type": "concept",
+      "title": "Three methods",
+      "body": "Direct pressing squeezes black grapes gently, giving the palest rosés. Short maceration leaves the juice on the skins for some hours, then runs it off to ferment like a white. Saignée, French for bleeding, draws juice off a red wine tank early; the rosé is a by-product and the remaining red becomes more concentrated.",
+      "highlight": "Direct press, short maceration, saignée"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each rosé method to how it works.",
+      "pairs": [
+        {
+          "left": "Direct press",
+          "right": "Grapes pressed gently at once"
+        },
+        {
+          "left": "Short maceration",
+          "right": "Juice left hours on skins"
+        },
+        {
+          "left": "Saignée",
+          "right": "Bled off a red tank"
+        },
+        {
+          "left": "Provence",
+          "right": "Pale, dry rosé"
+        }
+      ],
+      "explanation": "All three methods limit skin contact. Provence is the region most associated with pale, dry rosé."
+    },
+    {
+      "type": "tip",
+      "body": "Mixing red and white wine to make rosé is banned for most European wines. Rosé Champagne is the famous exception, where a little red wine is often blended in."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In saignée, the main goal of the producer is often the red wine, not the rosé.",
+      "answer": true,
+      "explanation": "Yes. Bleeding off some juice leaves a higher ratio of skins to juice in the tank, so the red becomes deeper. The rosé is a useful by-product."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rosé gets its colour from a short contact with black grape skins",
+        "It is made by direct press, short maceration or saignée",
+        "Blending red and white is banned for most European rosé, except Champagne"
+      ]
+    }
+  ]
+}

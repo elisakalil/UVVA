@@ -1,0 +1,68 @@
+{
+  "id": "region-fr-champagne-l05",
+  "moduleId": "region-fr-champagne",
+  "order": 5,
+  "title": "Dosage and styles",
+  "subtitle": "Sweetness and categories",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read Champagne's sweetness terms",
+    "Explain non-vintage, vintage and prestige cuvée",
+    "Explain rosé Champagne"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dosage",
+      "body": "Dosage, added after disgorgement, sets the sweetness. Brut Nature: 0 to 3 g/l, no sugar added. Extra Brut: up to 6. Brut, the most common: up to 12. Extra Dry: 12 to 17. Sec: 17 to 32. Demi-Sec: 32 to 50. Doux: over 50. Extra Dry is sweeter than Brut, a common confusion.",
+      "highlight": "Brut up to 12 g/l"
+    },
+    {
+      "type": "concept",
+      "title": "Categories",
+      "body": "Non-vintage, NV, blends several years for consistency, about 80% of production. Vintage comes from one exceptional year, aged at least 3 years. Prestige cuvées, like Dom Pérignon, Cristal or Krug Grande Cuvée, are a house's top wine. Rosé is made by blending a little still red wine, unusually allowed in Champagne, or by saignée.",
+      "highlight": "NV, vintage, prestige cuvée, rosé"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Champagne styles from driest to sweetest.",
+      "items": [
+        "Brut Nature",
+        "Extra Brut",
+        "Brut",
+        "Extra Dry",
+        "Demi-Sec"
+      ],
+      "explanation": "Extra Dry is sweeter than Brut."
+    },
+    {
+      "type": "concept",
+      "title": "Reading age",
+      "body": "Many producers now print the disgorgement date. A recently disgorged wine is fresher; one disgorged years ago has developed more toast and nuttiness. Some houses, like Bollinger with its R.D., release wines disgorged after very long lees ageing.",
+      "highlight": "Disgorgement date shows freshness"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is most rosé Champagne made?",
+      "options": [
+        "By blending in a little still red wine",
+        "By adding food colouring",
+        "By using only Chardonnay",
+        "By ageing in red barrels"
+      ],
+      "answer": 0,
+      "explanation": "Champagne is an exception that allows blending red into white."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dosage terms run from Brut Nature to Doux",
+        "NV, vintage and prestige cuvée are the main categories",
+        "Rosé Champagne is usually blended with red wine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "region-hu-tokaj-l03",
+  "moduleId": "region-hu-tokaj",
+  "order": 3,
+  "title": "Aszú and puttonyos",
+  "subtitle": "The great sweet wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Tokaji Aszú is made",
+    "Explain puttonyos",
+    "Explain the 2013 rules"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aszú berries",
+      "body": "Aszú berries are grapes shrivelled by noble rot, picked one by one, often in several passes. They're collected and kept as a paste or whole. Then they're soaked in fermenting must or a base wine for 12 to 60 hours, extracting sugar and flavour. The mixture is pressed and fermented slowly, sometimes for months.",
+      "highlight": "Botrytised berries soaked in base wine"
+    },
+    {
+      "type": "concept",
+      "title": "Puttonyos",
+      "body": "Traditionally, sweetness was measured in puttonyos: the number of puttony, 25 kg hods of aszú berries, added to a 136-litre Gönci barrel of base wine, from 3 to 6. Since 2013, Tokaji Aszú must have at least 120 g/l of sugar, equal to the old 5 puttonyos; puttonyos labels of 5 and 6 are optional. Aszú ages at least 18 months in oak.",
+      "highlight": "At least 120 g/l since 2013"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the making of Tokaji Aszú in order.",
+      "items": [
+        "Pick botrytised berries one by one",
+        "Collect them as a paste",
+        "Soak in base wine or must",
+        "Press and ferment slowly",
+        "Age in Gönci barrels"
+      ],
+      "explanation": "Selection, soaking and slow fermentation give Aszú."
+    },
+    {
+      "type": "concept",
+      "title": "Taste",
+      "body": "Tokaji Aszú is golden to amber, with apricot, orange marmalade, honey, saffron, ginger and tea. Sugar is balanced by Furmint's searing acidity, so it never feels cloying. It ages for decades, even a century or more.",
+      "highlight": "Apricot, marmalade, high acidity"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the minimum sugar for Tokaji Aszú since 2013?",
+      "options": [
+        "120 g/l",
+        "45 g/l",
+        "250 g/l",
+        "9 g/l"
+      ],
+      "answer": 0,
+      "explanation": "Equal to the old 5 puttonyos."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aszú berries are soaked in base wine, then fermented slowly",
+        "Puttonyos measured baskets per barrel",
+        "Since 2013, Aszú needs at least 120 g/l of sugar"
+      ]
+    }
+  ]
+}

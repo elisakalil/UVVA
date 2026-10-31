@@ -1,0 +1,60 @@
+{
+  "id": "region-it-friuli-venezia-giulia-l04",
+  "moduleId": "region-it-friuli-venezia-giulia",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Friuli and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Friuli label",
+    "Pair Friuli's wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Friuli labels usually name the grape and the DOC, like Collio Friulano or Friuli Colli Orientali Ribolla Gialla. Ramandolo and Colli Orientali del Friuli Picolit are DOCGs for sweet wines. Rosazzo is a small DOCG for white blends. Orange wines may say macerato or skin contact, or be labelled as table wine.",
+      "highlight": "Grape plus DOC"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Friulano is traditionally paired with prosciutto di San Daniele, Friuli's famous ham. Crisp whites suit seafood from the Adriatic; orange wines suit richer dishes, mushrooms, pork, aged cheese and spiced food. Refosco suits game and sausages; Picolit suits blue cheese and pastries.",
+      "highlight": "Prosciutto di San Daniele"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which ham is a classic match for Friulano?",
+      "options": [
+        "Prosciutto di San Daniele",
+        "Jamón ibérico",
+        "Black Forest ham",
+        "Bayonne ham"
+      ],
+      "answer": 0,
+      "explanation": "San Daniele is Friuli's own ham."
+    },
+    {
+      "type": "tip",
+      "body": "Orange wines' tannin and texture suit food that would overwhelm most whites, like roast pork or mushroom risotto."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Orange wines are usually served ice cold.",
+      "answer": false,
+      "explanation": "Not true. They're often served at 12 to 14 degrees, slightly warmer than most whites."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels name the grape and the DOC",
+        "Friulano suits San Daniele ham; orange wines suit richer food",
+        "Serve orange wines slightly warmer"
+      ]
+    }
+  ]
+}

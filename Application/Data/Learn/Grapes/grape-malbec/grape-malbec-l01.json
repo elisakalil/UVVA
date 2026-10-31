@@ -1,0 +1,79 @@
+{
+  "id": "grape-malbec-l01",
+  "moduleId": "grape-malbec",
+  "order": 1,
+  "title": "Meet Malbec",
+  "subtitle": "Dark, plush and violet-scented",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Malbec's colour and flavours",
+    "Explain its French origins and names",
+    "Recognise Malbec in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Deep purple",
+      "body": "Malbec is a black grape with thick skins and deep colour, often inky purple with a magenta rim. It smells of plum, blackberry, black cherry and violet, sometimes with cocoa. Its tannins are usually ripe and soft, its acidity medium. It's one of the most recognisable reds by colour alone.",
+      "highlight": "Inky purple, plum and violet"
+    },
+    {
+      "type": "concept",
+      "title": "A French grape",
+      "body": "Malbec comes from south-west France, around Cahors, where it's also called Côt or Auxerrois. DNA shows its parents are Prunelard and Magdeleine Noire des Charentes, the latter also a parent of Merlot. Once widespread in Bordeaux, it suffered badly in the 1956 frost and from rot, and was largely replaced by Merlot.",
+      "highlight": "Côt in Cahors; parents include a Merlot parent"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Malbec fact to its detail.",
+      "pairs": [
+        {
+          "left": "Côt",
+          "right": "French synonym"
+        },
+        {
+          "left": "Cahors",
+          "right": "French home"
+        },
+        {
+          "left": "Magdeleine Noire",
+          "right": "Shared parent with Merlot"
+        },
+        {
+          "left": "1956",
+          "right": "Frost that hurt Bordeaux plantings"
+        }
+      ],
+      "explanation": "Malbec has deep French roots, though it's now most famous in Argentina."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for very deep purple colour, almost opaque, with a bright violet rim. On the nose, ripe plum and violet. On the palate, plush, soft tannins and ripe fruit, with medium acidity. Compared with Cabernet Sauvignon, Malbec feels rounder and less gripping, with less blackcurrant and more plum.",
+      "highlight": "Plush, rounder than Cabernet"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is a classic sign of Malbec?",
+      "options": [
+        "Gooseberry",
+        "Violet",
+        "Lychee",
+        "Petrol"
+      ],
+      "answer": 1,
+      "explanation": "Violet, with plum, is Malbec's signature aroma."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Malbec is deep purple, with plum and violet",
+        "It comes from Cahors, where it's called Côt",
+        "It's rounder and softer than Cabernet Sauvignon"
+      ]
+    }
+  ]
+}

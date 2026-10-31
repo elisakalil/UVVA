@@ -1,0 +1,72 @@
+{
+  "id": "region-nz-hawkes-bay-l03",
+  "moduleId": "region-nz-hawkes-bay",
+  "order": 3,
+  "title": "Gimblett Gravels",
+  "subtitle": "An old riverbed",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Gimblett Gravels formed",
+    "Explain why it suits red grapes",
+    "Explain its winegrowers' district"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A river changed course",
+      "body": "Gimblett Gravels is an area of about 800 hectares west of Hastings. It's the old bed of the Ngaruroro River, which changed course after a flood in 1867, leaving deep, stony gravel. The land was once considered useless for farming and was nearly quarried for gravel.",
+      "highlight": "Old riverbed since 1867"
+    },
+    {
+      "type": "concept",
+      "title": "Warm, stony soil",
+      "body": "The gravel soils drain quickly and store the sun's heat, releasing it at night, making the area a few degrees warmer than its surroundings. Low fertility limits vigour. That helps Cabernet Sauvignon, Merlot and Syrah ripen fully, giving concentrated, structured wines. Irrigation is needed, as the gravel holds little water.",
+      "highlight": "Gravel stores heat"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Gimblett Gravels suit red grapes?",
+      "options": [
+        "Stony soil drains and stores heat",
+        "It's very fertile clay",
+        "It's shaded",
+        "It's frozen in summer"
+      ],
+      "answer": 0,
+      "explanation": "Warm gravel helps late-ripening reds."
+    },
+    {
+      "type": "concept",
+      "title": "A defined district",
+      "body": "In 2001, producers created the Gimblett Gravels Winegrowing District, defined by soil type rather than political boundaries, a rare approach. Wines labelled Gimblett Gravels must come at least 95% from the district. The Bridge Pa Triangle, nearby, is another warm, red-focused sub-area.",
+      "highlight": "Defined by soil, since 2001"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Gimblett Gravels?",
+      "options": [
+        "An old riverbed",
+        "Deep, stony soils",
+        "Warmer than nearby areas",
+        "Very fertile and wet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's low in fertility and drains fast."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gimblett Gravels is an old riverbed left by an 1867 flood",
+        "Stony soil drains and stores heat for red grapes",
+        "Its district, from 2001, is defined by soil"
+      ]
+    }
+  ]
+}

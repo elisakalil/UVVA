@@ -1,0 +1,60 @@
+{
+  "id": "path-14-l05",
+  "moduleId": "path-14",
+  "order": 5,
+  "title": "Sweet fortified wines of France",
+  "subtitle": "Vins doux naturels",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what a vin doux naturel is",
+    "Name the main Muscat and Grenache styles",
+    "Compare oxidative and fresh styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Vins doux naturels",
+      "body": "In the south of France, sweet fortified wines are called vins doux naturels. Spirit is added during fermentation, as for Port, keeping natural sugar and reaching 15 to 18% alcohol. They are made from Muscat or Grenache, mostly in the Roussillon and the southern Rhône.",
+      "highlight": "Fortified during fermentation, Muscat or Grenache"
+    },
+    {
+      "type": "concept",
+      "title": "Muscat and Grenache",
+      "body": "Muscat styles, like Muscat de Beaumes-de-Venise and Muscat de Rivesaltes, are bottled young and fresh, with grape, orange blossom and peach aromas. Grenache styles, like Banyuls and Maury, can be fresh and fruity, called rimage, or aged with oxygen, sometimes in glass jars left in the sun, giving rancio notes of nuts and dried fruit.",
+      "highlight": "Muscat fresh; Grenache can be oxidised"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is a sweet fortified Grenache from the Roussillon?",
+      "options": [
+        "Sauternes",
+        "Banyuls",
+        "Muscadet",
+        "Champagne"
+      ],
+      "answer": 1,
+      "explanation": "Banyuls, close to the Spanish border, is a vin doux naturel made mainly from Grenache."
+    },
+    {
+      "type": "tip",
+      "body": "Banyuls and Maury are among the few wines that work with dark chocolate. Their fruit, sweetness and gentle tannin match its bitterness."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vins doux naturels are fortified after a dry fermentation, like Fino Sherry.",
+      "answer": false,
+      "explanation": "Not true. The spirit goes in during fermentation, keeping the natural sweetness, as for Port."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vins doux naturels are fortified during fermentation",
+        "Muscat styles are fresh; Grenache styles can be oxidative",
+        "Banyuls, Maury and Beaumes-de-Venise are key examples"
+      ]
+    }
+  ]
+}

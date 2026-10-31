@@ -1,0 +1,68 @@
+{
+  "id": "path-07-l06",
+  "moduleId": "path-07",
+  "order": 6,
+  "title": "Vineyard choices",
+  "subtitle": "What the grower decides",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how yield affects quality",
+    "Describe how vines are trained",
+    "Explain what canopy management does"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Yield",
+      "body": "Yield is how much fruit a vineyard produces, usually measured in hectolitres per hectare. Lower yields often mean more concentrated fruit, because the vine's energy goes into fewer grapes. Many European appellations set a legal maximum: Grand Cru Burgundy reds are capped well below basic Bourgogne. But very low yields aren't automatically better; balance is the goal.",
+      "highlight": "Yield: hectolitres per hectare"
+    },
+    {
+      "type": "concept",
+      "title": "Training and canopy",
+      "body": "Training is how a vine is shaped: low bush vines without wires, common in hot, dry places, or vines trained along wires, which makes the work and the sun exposure more even. The canopy is the leaves and shoots. Growers trim, position and thin leaves to give the right amount of sun and air to the bunches, preventing rot and sunburn.",
+      "highlight": "Training shapes the vine; the canopy shades the fruit"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why might a grower remove some leaves around the bunches in a cool region?",
+      "options": [
+        "To increase yield",
+        "To improve sun exposure and airflow",
+        "To make the vine grow faster",
+        "To protect from sunburn"
+      ],
+      "answer": 1,
+      "explanation": "In a cool, damp place, more sun and air help ripening and reduce rot. In hot regions growers often keep leaves to shade the fruit."
+    },
+    {
+      "type": "concept",
+      "title": "Green harvest",
+      "body": "Some growers cut off bunches in summer, called green harvesting, to lower the yield and concentrate the rest. Others prune hard in winter for the same effect. The choice depends on the grape, the vintage and what the wine is for: a fresh, everyday wine needs a different vineyard from a long-ageing one.",
+      "highlight": "Fewer bunches, more focus"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Cutting off some bunches in summer to concentrate the rest is called green ____.",
+      "options": [
+        "harvesting",
+        "pruning",
+        "grafting",
+        "topping"
+      ],
+      "answer": "harvesting",
+      "explanation": "Green harvesting removes unripe bunches so the vine ripens the remaining fruit more fully."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Lower yields often concentrate flavour, within balance",
+        "Training and canopy work control sun and air on the fruit",
+        "Green harvesting and pruning adjust the crop to the goal"
+      ]
+    }
+  ]
+}

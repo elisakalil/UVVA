@@ -1,0 +1,62 @@
+{
+  "id": "path-14-l01",
+  "moduleId": "path-14",
+  "order": 1,
+  "title": "Adding the spirit",
+  "subtitle": "Why and when",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what fortification is",
+    "Explain how timing sets sweetness",
+    "Explain why fortification began"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What it is",
+      "body": "Fortification means adding grape spirit to wine, raising its alcohol to 15 to 22%. The spirit is usually neutral, around 77% for Port, or around 95% elsewhere. More alcohol kills yeast and bacteria, so fortified wines are very stable and last long once opened.",
+      "highlight": "Wine plus grape spirit: 15 to 22%"
+    },
+    {
+      "type": "concept",
+      "title": "Timing decides sweetness",
+      "body": "Add spirit during fermentation and the yeast dies, leaving natural sugar: Port, Banyuls and Muscat de Beaumes-de-Venise are made this way. Add it after the yeast has fermented the wine dry, and the wine stays dry: that's the starting point for Sherry. Some Sherries are sweetened later by blending.",
+      "highlight": "During: sweet. After: dry."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does Port keep its sweetness?",
+      "options": [
+        "Sugar is added at bottling",
+        "Spirit added during fermentation stops the yeast",
+        "Grapes are frozen",
+        "It ages in sweet barrels"
+      ],
+      "answer": 1,
+      "explanation": "Spirit added mid-fermentation kills the yeast, leaving natural grape sugar in the wine."
+    },
+    {
+      "type": "concept",
+      "title": "Why it began",
+      "body": "Fortification spread in the 17th and 18th centuries, when wine travelled by ship for months. Extra alcohol stopped it spoiling. British merchants shaped Port in the Douro, Sherry in Jerez and Madeira on its island. The trade explains why so many Port and Sherry houses have English names, like Taylor's, Graham's and Harveys.",
+      "highlight": "Born to survive the sea"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "All fortified wines are sweet.",
+      "answer": false,
+      "explanation": "Not true. Fino and Manzanilla Sherry are fortified after a dry fermentation and stay bone dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fortification adds grape spirit, raising alcohol to 15 to 22%",
+        "Spirit during fermentation keeps sugar; after, the wine stays dry",
+        "It began as a way to protect wine on long voyages"
+      ]
+    }
+  ]
+}

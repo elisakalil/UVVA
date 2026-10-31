@@ -1,0 +1,68 @@
+{
+  "id": "grape-semillon-l03",
+  "moduleId": "grape-semillon",
+  "order": 3,
+  "title": "Noble rot and Sauternes",
+  "subtitle": "Sémillon's sweet glory",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how noble rot affects Sémillon",
+    "Describe Sauternes",
+    "Explain how Sauternes ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Ciron's mist",
+      "body": "In Sauternes and Barsac, the cool Ciron river meets the warmer Garonne, creating autumn mists. Morning humidity lets Botrytis cinerea grow; sunny afternoons stop grey rot. On Sémillon's thin skins, the fungus shrivels berries, concentrating sugar, acid and flavour, and adding honey, apricot and marmalade.",
+      "highlight": "Mist, then sun"
+    },
+    {
+      "type": "concept",
+      "title": "Sauternes",
+      "body": "Pickers pass through the vineyard several times, called tries, choosing only botrytised berries. Yields can be tiny, a glass of wine per vine at Château d'Yquem. Wines are fermented and aged in oak for up to three years, reaching about 13 to 14% alcohol and 100 to 150 g/l of sugar.",
+      "highlight": "Several tries, tiny yields"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the making of Sauternes in order.",
+      "items": [
+        "Mist and sun bring noble rot",
+        "Pickers select botrytised berries",
+        "Slow fermentation in barrel",
+        "Ageing in oak",
+        "Bottling"
+      ],
+      "explanation": "Noble rot first, then careful selection, then slow fermentation and ageing."
+    },
+    {
+      "type": "concept",
+      "title": "Ageing",
+      "body": "Sauternes is one of the longest-lived wines. Over decades, it darkens from gold to amber, developing crème brûlée, saffron, dried apricot and marmalade. Good vintages last 50 years or more. Château d'Yquem, the only Premier Cru Supérieur of 1855, is the most famous.",
+      "highlight": "Gold to amber over decades"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a trie in Sauternes?",
+      "options": [
+        "A pass through the vineyard to pick botrytised berries",
+        "A barrel",
+        "A sweet dessert",
+        "A grape"
+      ],
+      "answer": 0,
+      "explanation": "Several tries pick only the berries that are ready."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Ciron's mists bring noble rot to Sémillon",
+        "Pickers make several tries; yields are tiny",
+        "Sauternes ages for decades, darkening to amber"
+      ]
+    }
+  ]
+}

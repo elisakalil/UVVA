@@ -1,0 +1,67 @@
+{
+  "id": "region-au-barossa-valley-l03",
+  "moduleId": "region-au-barossa-valley",
+  "order": 3,
+  "title": "Old vines",
+  "subtitle": "Living history",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why the Barossa has old vines",
+    "Explain the Old Vine Charter",
+    "Explain why old vines matter"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Phylloxera-free",
+      "body": "South Australia has never had phylloxera, thanks to strict quarantine laws. So the Barossa has some of the world's oldest producing vines, ungrafted, on their own roots. Some Shiraz vines were planted in the 1840s, like at Langmeil's Freedom vineyard and Turkey Flat; Grenache and Mourvèdre vines are similarly old.",
+      "highlight": "Vines from the 1840s"
+    },
+    {
+      "type": "concept",
+      "title": "The Old Vine Charter",
+      "body": "In 2009, the Barossa created the Old Vine Charter to register and protect old vineyards. It has four levels: Old Vine, at least 35 years; Survivor Vine, 70 years; Centenarian Vine, 100 years; and Ancestor Vine, 125 years or more. Producers can show these on labels.",
+      "highlight": "35, 70, 100, 125 years"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the Barossa Old Vine Charter levels from youngest to oldest.",
+      "items": [
+        "Old Vine",
+        "Survivor Vine",
+        "Centenarian Vine",
+        "Ancestor Vine"
+      ],
+      "explanation": "Each level marks older vines."
+    },
+    {
+      "type": "concept",
+      "title": "Why they matter",
+      "body": "Old vines have deep roots that find water in drought, so many are dry-grown. They give low yields of small, concentrated berries, with balance and complexity. They're also a living record of 19th century viticulture, and valuable genetic material, since Europe's original vines were mostly lost to phylloxera.",
+      "highlight": "Deep roots, low yields, history"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does the Barossa have such old vines?",
+      "options": [
+        "Phylloxera never reached South Australia",
+        "Vines were imported recently",
+        "Grafting is banned",
+        "It never rains"
+      ],
+      "answer": 0,
+      "explanation": "Quarantine kept phylloxera out."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "South Australia is phylloxera-free, so old vines survive",
+        "The Old Vine Charter registers vines from 35 to 125 years",
+        "Old vines give low, concentrated yields and living history"
+      ]
+    }
+  ]
+}

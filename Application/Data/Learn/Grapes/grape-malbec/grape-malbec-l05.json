@@ -1,0 +1,62 @@
+{
+  "id": "grape-malbec-l05",
+  "moduleId": "grape-malbec",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Malbec",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Malbec with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Beef and more",
+      "body": "In Argentina, Malbec is the partner of beef from the asado, from steak to chorizo. Its soft tannins and ripe fruit suit grilled meat, and its plushness handles chimichurri, a herb and garlic sauce. Cahors' firmer style suits duck, lamb and cassoulet. Mushroom dishes work well too.",
+      "highlight": "Asado, steak, chimichurri"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve Malbec at 16 to 18 degrees. Most Argentine Malbec is made to drink within five years. Top examples from high sites, and good Cahors, can age 10 to 20 years, gaining leather, tobacco and dried fruit. Decanting helps young, structured examples.",
+      "highlight": "Most within five years; the best for decades"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What sauce is a classic partner for Malbec and steak in Argentina?",
+      "options": [
+        "Hollandaise",
+        "Chimichurri",
+        "Soy sauce",
+        "Custard"
+      ],
+      "answer": 1,
+      "explanation": "Chimichurri's herbs, garlic and vinegar suit Malbec's ripe fruit."
+    },
+    {
+      "type": "concept",
+      "title": "Other styles",
+      "body": "Malbec also makes rosé, often bright pink and fruity, good with empanadas. Some Argentine producers make lighter, fresher, unoaked Malbecs, served slightly cool. In Cahors, some wines are blended with Merlot for softness. The range is wider than the classic plush red.",
+      "highlight": "Rosé and lighter styles too"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Argentine Malbec is made to be drunk within a few years.",
+      "answer": true,
+      "explanation": "Yes. Most is fruity and approachable, though top examples age well."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Malbec suits beef, chimichurri, duck and lamb",
+        "Serve at 16 to 18 degrees; most is best within five years",
+        "Rosé and lighter, fresher Malbecs widen the range"
+      ]
+    }
+  ]
+}

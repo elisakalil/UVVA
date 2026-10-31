@@ -1,0 +1,62 @@
+{
+  "id": "grape-viognier-l01",
+  "moduleId": "grape-viognier",
+  "order": 1,
+  "title": "Meet Viognier",
+  "subtitle": "Apricot and violets",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Viognier's aromas and structure",
+    "Explain its near extinction",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rich and perfumed",
+      "body": "Viognier gives full-bodied whites with apricot, peach, honeysuckle, violet and orange blossom. Acidity is low to medium, alcohol often high, 13.5 to 14.5%, and the texture oily and round. It's aromatic yet dry, a combination that can surprise first-time tasters.",
+      "highlight": "Apricot, honeysuckle, oily texture"
+    },
+    {
+      "type": "concept",
+      "title": "Nearly lost",
+      "body": "Viognier is difficult to grow: low and irregular yields, prone to coulure, poor fruit set, and powdery mildew. By the mid-1960s, only about 14 hectares remained, mostly in Condrieu. Interest grew from the 1980s, and plantings spread to the south of France, California, Australia and beyond. Today there are over 15,000 hectares worldwide.",
+      "highlight": "About 14 hectares in the 1960s"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why did Viognier almost disappear?",
+      "options": [
+        "Low, irregular yields made it unprofitable",
+        "It was banned",
+        "It was too productive",
+        "It turned red"
+      ],
+      "answer": 0,
+      "explanation": "Poor fruit set and disease gave low yields, so growers abandoned it."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for medium to deep lemon or gold colour, an intense apricot and floral nose, and a full, round, oily palate with low acidity and warmth from alcohol. Compared with Gewürztraminer, it's more apricot than lychee, and less spicy.",
+      "highlight": "Apricot more than lychee"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Viognier typically has very high acidity.",
+      "answer": false,
+      "explanation": "Not true. Its acidity is low to medium, which gives it a round, oily texture."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Viognier gives apricot, honeysuckle and violet",
+        "It nearly vanished, with about 14 hectares in the 1960s",
+        "It's full, round and low in acidity"
+      ]
+    }
+  ]
+}

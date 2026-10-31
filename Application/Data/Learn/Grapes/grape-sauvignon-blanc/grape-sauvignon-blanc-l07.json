@@ -1,0 +1,96 @@
+{
+  "id": "grape-sauvignon-blanc-l07",
+  "moduleId": "grape-sauvignon-blanc",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Sauvignon Blanc",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Sauvignon Blanc",
+    "Compare its regions",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its style.",
+      "pairs": [
+        {
+          "left": "Sancerre",
+          "right": "Restrained, mineral"
+        },
+        {
+          "left": "Marlborough",
+          "right": "Explosive, tropical"
+        },
+        {
+          "left": "Pessac-Léognan",
+          "right": "Oaked, with Sémillon"
+        },
+        {
+          "left": "Awatere Valley",
+          "right": "Cooler, herbal"
+        }
+      ],
+      "explanation": "Each place shows a different side."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compounds give Sauvignon its grassy, green pepper notes?",
+      "options": [
+        "Pyrazines",
+        "Thiols",
+        "Terpenes",
+        "TDN"
+      ],
+      "answer": 0,
+      "explanation": "Methoxypyrazines, highest in cool, shaded sites."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sauvignon Blanc is a parent of Cabernet Sauvignon.",
+      "answer": true,
+      "explanation": "Yes, with Cabernet Franc."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Sancerre's soils?",
+      "options": [
+        "Terres blanches",
+        "Caillottes",
+        "Silex",
+        "Llicorella"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Llicorella is Priorat's slate."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Cloudy Bay's 1985 vintage made ____ Sauvignon Blanc famous.",
+      "options": [
+        "Marlborough",
+        "Sancerre",
+        "Bordeaux",
+        "Chilean"
+      ],
+      "answer": "Marlborough",
+      "explanation": "Marlborough."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sauvignon Blanc is crisp, green and aromatic",
+        "Sancerre and Marlborough are its benchmarks",
+        "Bordeaux blends it with Sémillon",
+        "It suits goat's cheese, greens and herbs"
+      ]
+    }
+  ]
+}

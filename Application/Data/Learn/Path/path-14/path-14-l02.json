@@ -1,0 +1,67 @@
+{
+  "id": "path-14-l02",
+  "moduleId": "path-14",
+  "order": 2,
+  "title": "Sherry",
+  "subtitle": "Flor, solera and Palomino",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe where Sherry is made and from what",
+    "Explain the role of flor",
+    "Explain how the solera works"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Jerez and Palomino",
+      "body": "Sherry comes from the area around Jerez de la Frontera, Sanlúcar de Barrameda and El Puerto de Santa María, in Andalusia. The main grape is Palomino, which makes a neutral, low-acid base wine. The chalky white soil, called albariza, holds water through hot, dry summers. Sweet styles use Pedro Ximénez and Moscatel.",
+      "highlight": "Palomino on albariza"
+    },
+    {
+      "type": "concept",
+      "title": "Flor and the solera",
+      "body": "After fermentation the wine is fortified. Wines for Fino are taken to about 15%; at this level a layer of yeast called flor grows on the surface, protecting the wine from oxygen and adding notes of bread, almonds and salt. Wines for Oloroso go to 17%, which stops flor, so they age with oxygen. Most Sherry ages in a solera, a system of barrels where young wine tops up older wine.",
+      "highlight": "Flor at 15%; none at 17%"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does flor do to a Fino Sherry?",
+      "options": [
+        "Makes it sweet",
+        "Protects it from oxygen and adds bready, salty notes",
+        "Gives it red colour",
+        "Raises its alcohol to 20%"
+      ],
+      "answer": 1,
+      "explanation": "Flor is a layer of yeast that shields the wine from air and adds its own distinctive flavours."
+    },
+    {
+      "type": "concept",
+      "title": "How a solera works",
+      "body": "A solera is a set of barrels in tiers. Wine for bottling is drawn from the oldest tier, called the solera, but never more than about a third at a time. That tier is topped up from the next oldest, called the first criadera, and so on, with new wine entering at the youngest tier. The blend keeps a steady style and gains average age.",
+      "highlight": "Old tier drawn, refilled from younger"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the solera's movements in order, starting with bottling.",
+      "items": [
+        "Draw wine from the oldest tier",
+        "Refill it from the first criadera",
+        "Refill that from the second criadera",
+        "Add new wine to the youngest tier"
+      ],
+      "explanation": "Each tier passes some of its wine to the older one, so the style stays consistent year after year."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sherry is made from Palomino on the albariza soils of Jerez",
+        "Flor protects Fino from air; Oloroso ages without it",
+        "The solera blends wines of many ages for consistency"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "path-09-l06",
+  "moduleId": "path-09",
+  "order": 6,
+  "title": "Viognier and Albariño",
+  "subtitle": "Perfume and the Atlantic",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Viognier and its home in Condrieu",
+    "Describe Albariño in Rías Baixas",
+    "Compare the two styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Viognier",
+      "body": "Viognier comes from the northern Rhône, where Condrieu makes full-bodied whites with apricot, peach and violet aromas, low acidity and often 14% alcohol. By the 1960s barely 14 hectares were left; it has since spread to California, Australia and the south of France. In Côte-Rôtie, a little Viognier may be co-fermented with Syrah.",
+      "highlight": "Viognier: apricot and violet, full body"
+    },
+    {
+      "type": "concept",
+      "title": "Albariño",
+      "body": "Albariño grows in Rías Baixas, in Galicia, on Spain's wet Atlantic coast. Thick skins resist the damp, and vines are often trained high on pergolas to let air circulate. Its wines are crisp, light to medium-bodied, with lemon, peach and a salty edge. In Portugal it is called Alvarinho, the star grape of Monção e Melgaço in Vinho Verde.",
+      "highlight": "Albariño: crisp, citrus, salty edge"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its grape.",
+      "pairs": [
+        {
+          "left": "Condrieu",
+          "right": "Viognier's home"
+        },
+        {
+          "left": "Rías Baixas",
+          "right": "Albariño's home"
+        },
+        {
+          "left": "Monção e Melgaço",
+          "right": "Alvarinho in Portugal"
+        },
+        {
+          "left": "Côte-Rôtie",
+          "right": "Viognier with Syrah"
+        }
+      ],
+      "explanation": "Viognier belongs to the northern Rhône; Albariño and Alvarinho to the Atlantic north-west of Iberia."
+    },
+    {
+      "type": "concept",
+      "title": "Two opposite whites",
+      "body": "Viognier needs heat to develop its perfume, but must be picked before acidity falls too far. Albariño needs a cool, damp climate and thick skins to stay healthy and fresh. One is generous and soft; the other is bright and salty, a classic with Galician seafood.",
+      "highlight": "Viognier: warm and soft. Albariño: cool and bright."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Albariño vines often trained on high pergolas?",
+      "options": [
+        "To get more sun on the leaves",
+        "To let air circulate and reduce rot in a damp climate",
+        "To protect from heat",
+        "To increase alcohol"
+      ],
+      "answer": 1,
+      "explanation": "Rías Baixas is very wet. Raising the canopy lets air move through, keeping grapes healthy."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Viognier gives full, perfumed wines, at home in Condrieu",
+        "Albariño gives crisp, salty wines on the Atlantic coast",
+        "One needs warmth; the other thrives in cool, damp air"
+      ]
+    }
+  ]
+}

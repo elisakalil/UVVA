@@ -1,0 +1,60 @@
+{
+  "id": "grape-cinsault-l04",
+  "moduleId": "grape-cinsault",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Cinsault",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Cinsault with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Light food",
+      "body": "Cinsault's light body and soft tannin suit Mediterranean food: grilled fish, salads, charcuterie, roast chicken, mezze and tapas. Rosé suits seafood, salads and summer lunches. Its fruitiness handles mild spice, like Moroccan tagines or Lebanese dishes.",
+      "highlight": "Mezze, grilled fish, chicken"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve red Cinsault slightly cool, 13 to 15 degrees, and rosé at 8 to 10. Most is best young, within two to three years. Old-vine wines and blends like Château Musar can age much longer.",
+      "highlight": "Serve slightly cool"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What temperature suits a red Cinsault?",
+      "options": [
+        "13 to 15 degrees",
+        "4 degrees",
+        "22 degrees",
+        "30 degrees"
+      ],
+      "answer": 0,
+      "explanation": "Slightly cool brings out its fruit and freshness."
+    },
+    {
+      "type": "tip",
+      "body": "Château Musar, from Lebanon, blends Cinsault with Cabernet Sauvignon and Carignan, and can age for decades. It's a rare chance to taste old Cinsault."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Cinsault is made for long ageing.",
+      "answer": false,
+      "explanation": "Not true. Most is best young, though some blends and old-vine wines age."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cinsault suits Mediterranean food, mezze and grilled fish",
+        "Serve red slightly cool and rosé chilled",
+        "Most is best young"
+      ]
+    }
+  ]
+}

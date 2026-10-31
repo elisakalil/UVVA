@@ -1,0 +1,103 @@
+{
+  "id": "path-25-l07",
+  "moduleId": "path-25",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything from Sparkling Wines in Depth",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain each step of traditional method production",
+    "Read sparkling wine labels",
+    "Compare the main sparkling regions"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Put these stages of traditional method production in order.",
+      "items": [
+        "Pressing",
+        "Base wine blending",
+        "Tirage",
+        "Lees ageing",
+        "Disgorgement",
+        "Dosage"
+      ],
+      "explanation": "Each step builds on the previous one."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does autolysis give a sparkling wine?",
+      "options": [
+        "Higher alcohol",
+        "Bready, brioche notes and creaminess",
+        "Deeper colour",
+        "More sweetness"
+      ],
+      "answer": 1,
+      "explanation": "Breakdown of dead yeast adds these flavours and texture."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Cuvée",
+          "right": "First pressing fraction"
+        },
+        {
+          "left": "Taille",
+          "right": "Second pressing fraction"
+        },
+        {
+          "left": "Liqueur de tirage",
+          "right": "Sugar and yeast"
+        },
+        {
+          "left": "Liqueur d'expédition",
+          "right": "Dosage"
+        }
+      ],
+      "explanation": "Champagne has precise words for each step."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Champagne's main areas?",
+      "options": [
+        "Montagne de Reims",
+        "Côte des Blancs",
+        "Vallée de la Marne",
+        "Penedès"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Penedès is in Spain."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A grower who makes their own Champagne carries the code ____ on the label.",
+      "options": [
+        "RM",
+        "NM",
+        "CM",
+        "MA"
+      ],
+      "answer": "RM",
+      "explanation": "RM stands for récoltant-manipulant."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Base wines are acidic and light; pressing fractions matter",
+        "Tirage creates pressure; autolysis adds flavour",
+        "Dosage sets sweetness; label codes reveal the maker",
+        "Champagne, Cava, crémant and others each have their rules"
+      ]
+    }
+  ]
+}

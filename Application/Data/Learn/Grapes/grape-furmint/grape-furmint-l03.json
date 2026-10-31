@@ -1,0 +1,68 @@
+{
+  "id": "grape-furmint-l03",
+  "moduleId": "grape-furmint",
+  "order": 3,
+  "title": "Tokaji Aszú",
+  "subtitle": "The king of wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Tokaji Aszú is made",
+    "Explain puttonyos and the 2013 rules",
+    "Explain Eszencia"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aszú berries",
+      "body": "Aszú berries are individually picked, botrytised and shrivelled, almost raisins. They're stored as a paste, then soaked in fermenting must or a base wine for 12 to 60 hours, which extracts sugar and flavour. The mix is pressed and fermented slowly, then aged in small Gönci barrels in cold, damp cellars.",
+      "highlight": "Botrytised berries soaked in base wine"
+    },
+    {
+      "type": "concept",
+      "title": "Puttonyos",
+      "body": "Sweetness was measured in puttonyos: the number of 25 kg baskets, called puttony, of aszú berries added to a 136-litre Gönci barrel of base wine. From 3 to 6 puttonyos. Since 2013, Tokaji Aszú must have at least 120 g/l of sugar, equal to the old 5 puttonyos, and the term puttonyos is optional.",
+      "highlight": "At least 120 g/l since 2013"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What did puttonyos measure?",
+      "options": [
+        "Baskets of aszú berries per barrel",
+        "Years of ageing",
+        "Alcohol level",
+        "Barrel size"
+      ],
+      "answer": 0,
+      "explanation": "The number of 25 kg baskets added to a 136-litre barrel."
+    },
+    {
+      "type": "concept",
+      "title": "Eszencia",
+      "body": "Eszencia is the free-run juice that drips from aszú berries under their own weight. It can contain over 450 g/l of sugar, ferments for years and rarely exceeds 5% alcohol. It's one of the rarest, sweetest wines in the world, traditionally served by the spoon.",
+      "highlight": "Over 450 g/l, served by the spoon"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the making of Tokaji Aszú in order.",
+      "items": [
+        "Pick botrytised aszú berries",
+        "Make them into a paste",
+        "Soak in base wine or must",
+        "Press and ferment slowly",
+        "Age in Gönci barrels"
+      ],
+      "explanation": "Selection, soaking and slow fermentation give Aszú its depth."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aszú berries are soaked in base wine, then fermented slowly",
+        "Since 2013, Aszú needs at least 120 g/l of sugar",
+        "Eszencia is free-run juice with over 450 g/l"
+      ]
+    }
+  ]
+}

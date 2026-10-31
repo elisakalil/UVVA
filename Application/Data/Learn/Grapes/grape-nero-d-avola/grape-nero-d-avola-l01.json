@@ -1,0 +1,62 @@
+{
+  "id": "grape-nero-d-avola-l01",
+  "moduleId": "grape-nero-d-avola",
+  "order": 1,
+  "title": "Meet Nero d'Avola",
+  "subtitle": "Sicily's black grape",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Nero d'Avola's flavours and structure",
+    "Explain its name and origin",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dark and juicy",
+      "body": "Nero d'Avola means the black of Avola, a town in south-east Sicily. It gives deeply coloured wines with black cherry, plum, mulberry and sometimes chocolate and liquorice. Tannins are moderate and soft; acidity is surprisingly fresh for a hot-climate grape. It's Sicily's most planted red.",
+      "highlight": "Black cherry, plum, fresh acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Why it stays fresh",
+      "body": "Nero d'Avola keeps good natural acidity even in Sicily's heat, partly because of its genetics and partly because the best vineyards benefit from sea breezes and altitude. It's also called Calabrese, a name that may mean it came from Calabria, or from an old Sicilian dialect word. It was once shipped north to deepen paler wines.",
+      "highlight": "Fresh acidity in hot Sicily"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Nero d'Avola mean?",
+      "options": [
+        "The black of Avola",
+        "The night grape",
+        "Old vine",
+        "Sicilian gold"
+      ],
+      "answer": 0,
+      "explanation": "Avola is a town in south-east Sicily, the grape's historic home."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "In the glass, look for deep ruby-purple colour, ripe dark fruit, and a juicy, fresh palate with soft tannins. Unoaked versions are fruity and bright; oaked ones show vanilla and spice. The juiciness and freshness, despite the ripe fruit, are the clue.",
+      "highlight": "Ripe fruit, juicy freshness"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Nero d'Avola was once shipped north to add colour to paler wines.",
+      "answer": true,
+      "explanation": "Yes. Its deep colour made it a popular blending wine before it became known in its own right."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nero d'Avola gives dark, ripe fruit with fresh acidity",
+        "Its name means the black of Avola; it's also called Calabrese",
+        "It's Sicily's most planted red grape"
+      ]
+    }
+  ]
+}

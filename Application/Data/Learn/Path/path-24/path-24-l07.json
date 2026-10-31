@@ -1,0 +1,100 @@
+{
+  "id": "path-24-l07",
+  "moduleId": "path-24",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything from Australia, New Zealand and South Africa",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Compare three southern hemisphere countries",
+    "Link regions to grapes",
+    "Explain climate and labelling in each"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its signature grape.",
+      "pairs": [
+        {
+          "left": "Barossa Valley",
+          "right": "Shiraz"
+        },
+        {
+          "left": "Marlborough",
+          "right": "Sauvignon Blanc"
+        },
+        {
+          "left": "Central Otago",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Swartland",
+          "right": "Chenin Blanc"
+        },
+        {
+          "left": "Clare Valley",
+          "right": "Riesling"
+        }
+      ],
+      "explanation": "Each region has made one grape its signature."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does South Australia have very old ungrafted vines?",
+      "options": [
+        "Phylloxera never arrived thanks to quarantine",
+        "Grafting is illegal",
+        "Vines were replanted recently",
+        "Its soils are volcanic"
+      ],
+      "answer": 0,
+      "explanation": "Strict quarantine has kept phylloxera out."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which cool influences shape South Africa's Cape?",
+      "options": [
+        "The Benguela Current",
+        "The Cape Doctor wind",
+        "Altitude in places like Elgin",
+        "Monsoon rains"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Cape has a Mediterranean climate with dry summers, not monsoons."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Central Otago has a maritime climate.",
+      "answer": false,
+      "explanation": "Not true. It's New Zealand's only continental region."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Pinotage was created by crossing Pinot Noir with ____.",
+      "options": [
+        "Cinsault",
+        "Syrah",
+        "Cabernet",
+        "Chenin Blanc"
+      ],
+      "answer": "Cinsault",
+      "explanation": "Cinsault, then called Hermitage in South Africa."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Australia ranges from hot Barossa to cool Tasmania",
+        "New Zealand is maritime, except continental Central Otago",
+        "South Africa is cooled by ocean winds, with Chenin and Pinotage as signatures",
+        "Old vines matter in all three countries"
+      ]
+    }
+  ]
+}

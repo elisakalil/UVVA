@@ -1,0 +1,62 @@
+{
+  "id": "region-hu-tokaj-l01",
+  "moduleId": "region-hu-tokaj",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Volcanic hills where two rivers meet",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tokaj's geography",
+    "Explain its climate and mists",
+    "Explain its volcanic soils"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "North-east Hungary",
+      "body": "Tokaj lies in north-east Hungary, near the Slovak and Ukrainian borders, in the foothills of the Zemplén mountains. The region covers about 27 villages and roughly 5,500 hectares of vines. A small part extends into Slovakia, which also uses the name Tokaj. The town of Tokaj sits where the Bodrog river meets the Tisza.",
+      "highlight": "27 villages, two rivers"
+    },
+    {
+      "type": "concept",
+      "title": "Mist and sun",
+      "body": "Tokaj has a continental climate: cold winters and warm summers, with long, dry, sunny autumns. The Bodrog and Tisza create autumn mists in the mornings, which burn off into warm afternoons. That combination is perfect for noble rot, Botrytis cinerea, which shrivels grapes and concentrates sugar and acidity.",
+      "highlight": "Morning mist, afternoon sun"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What creates Tokaj's ideal conditions for noble rot?",
+      "options": [
+        "River mists in the morning and sunny afternoons",
+        "Constant rain",
+        "Sea breezes",
+        "Snow"
+      ],
+      "answer": 0,
+      "explanation": "The Bodrog and Tisza bring mist; the autumn sun dries the grapes."
+    },
+    {
+      "type": "concept",
+      "title": "Volcanic soils",
+      "body": "Tokaj's hills are extinct volcanoes. Soils include rhyolite, andesite, tuff and clay, often covered with loess. Volcanic soils drain well and give mineral, smoky wines. Different hills have different soils, which is why Tokaj's vineyards were classified so early. Its cellars, cut into volcanic rock, are lined with a black mould.",
+      "highlight": "Rhyolite, andesite, loess"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tokaj's hills are extinct volcanoes.",
+      "answer": true,
+      "explanation": "Yes, giving volcanic soils."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tokaj lies where the Bodrog meets the Tisza in north-east Hungary",
+        "River mists and sunny autumns favour noble rot",
+        "Volcanic soils give mineral, smoky wines"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "region-it-veneto-l07",
+  "moduleId": "region-it-veneto",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about the Veneto",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Veneto's geography and grapes",
+    "Explain Amarone, Soave and Prosecco",
+    "Read and pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its grape.",
+      "pairs": [
+        {
+          "left": "Amarone",
+          "right": "Corvina"
+        },
+        {
+          "left": "Soave",
+          "right": "Garganega"
+        },
+        {
+          "left": "Prosecco",
+          "right": "Glera"
+        },
+        {
+          "left": "Lugana",
+          "right": "Turbiana"
+        }
+      ],
+      "explanation": "Native grapes define the Veneto."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is appassimento?",
+      "options": [
+        "Drying grapes after harvest",
+        "Freezing grapes",
+        "Adding spirit",
+        "Ageing under flor"
+      ],
+      "answer": 0,
+      "explanation": "Drying concentrates sugar and flavour."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Prosecco is made by the traditional method.",
+      "answer": false,
+      "explanation": "Not true. Most is made by the tank method."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which use dried grapes?",
+      "options": [
+        "Amarone",
+        "Recioto della Valpolicella",
+        "Recioto di Soave",
+        "Prosecco"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Prosecco uses fresh grapes."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Amarone became a DOCG in ____.",
+      "options": [
+        "2010",
+        "1980",
+        "1716",
+        "2019"
+      ],
+      "answer": "2010",
+      "explanation": "In 2010."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Veneto runs from the Alps to the lagoon",
+        "Corvina makes Valpolicella and Amarone from dried grapes",
+        "Garganega makes Soave on volcanic hills",
+        "Glera makes Prosecco, best from the hills"
+      ]
+    }
+  ]
+}

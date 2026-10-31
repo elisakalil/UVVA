@@ -1,0 +1,62 @@
+{
+  "id": "grape-petit-verdot-l02",
+  "moduleId": "grape-petit-verdot",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "From Bordeaux to warmer places",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Petit Verdot's main regions",
+    "Explain why warm climates suit it",
+    "Explain its role in Bordeaux today"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bordeaux",
+      "body": "Petit Verdot is mainly a Left Bank grape, used in small amounts in the Médoc. Château Margaux and others use a few percent. Plantings fell in the 20th century, but warmer vintages since the 1990s have helped it ripen more reliably, and some estates have added more.",
+      "highlight": "A small part of Left Bank blends"
+    },
+    {
+      "type": "concept",
+      "title": "Warmer homes",
+      "body": "In warm, dry places, Petit Verdot ripens fully. Spain grows it in La Mancha and Castilla, sometimes as a single variety. Australia's Riverland and McLaren Vale, California, Virginia and Washington all make varietal Petit Verdot. Argentina and Chile use it in blends.",
+      "highlight": "Spain, Australia, US"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Petit Verdot do better in warm climates?",
+      "options": [
+        "It ripens very late",
+        "It needs a lot of rain",
+        "It ripens very early",
+        "It's resistant to frost"
+      ],
+      "answer": 0,
+      "explanation": "As a late ripener, it needs a long, warm season to reach full ripeness."
+    },
+    {
+      "type": "concept",
+      "title": "Climate change",
+      "body": "With warmer vintages, Petit Verdot is gaining interest in Bordeaux as a grape that keeps acidity in heat. Growers value its freshness and colour as other grapes ripen faster. It's one reason some see it as part of Bordeaux's future blend.",
+      "highlight": "Warmer years help it"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Petit Verdot is mainly a Right Bank grape in Bordeaux.",
+      "answer": false,
+      "explanation": "Not true. It's mostly found in small amounts on the Left Bank, in the Médoc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Petit Verdot is a minor Left Bank blending grape",
+        "Warm regions in Spain, Australia and the US ripen it fully",
+        "Climate change has renewed interest in Bordeaux"
+      ]
+    }
+  ]
+}

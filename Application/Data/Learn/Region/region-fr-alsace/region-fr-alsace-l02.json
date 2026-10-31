@@ -1,0 +1,77 @@
+{
+  "id": "region-fr-alsace-l02",
+  "moduleId": "region-fr-alsace",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Four noble grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Alsace's noble grapes",
+    "Name its other grapes",
+    "Explain varietal labelling"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The noble four",
+      "body": "Alsace's four noble grapes are Riesling, Gewürztraminer, Pinot Gris and Muscat. They're the only ones allowed in most Grand Cru wines. Riesling is the most planted, giving dry, mineral wines. Gewürztraminer gives lychee and rose; Pinot Gris rich, smoky pear; Muscat dry, grapey wines.",
+      "highlight": "Riesling, Gewürztraminer, Pinot Gris, Muscat"
+    },
+    {
+      "type": "concept",
+      "title": "The others",
+      "body": "Pinot Blanc and Auxerrois make soft, everyday whites and much of Crémant d'Alsace. Sylvaner gives light, fresh wines. Pinot Noir is the only red, increasingly serious. Edelzwicker and Gentil are blends of several grapes. Most Alsace wines are single-variety, unoaked or aged in old, large foudres.",
+      "highlight": "Pinot Blanc, Sylvaner, Pinot Noir"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its character.",
+      "pairs": [
+        {
+          "left": "Riesling",
+          "right": "Dry, mineral"
+        },
+        {
+          "left": "Gewürztraminer",
+          "right": "Lychee and rose"
+        },
+        {
+          "left": "Pinot Gris",
+          "right": "Rich, smoky pear"
+        },
+        {
+          "left": "Pinot Noir",
+          "right": "Alsace's only red"
+        }
+      ],
+      "explanation": "Alsace names each wine by grape."
+    },
+    {
+      "type": "tip",
+      "body": "Alsace Muscat is usually dry, a surprise for those who know sweet Muscats. It's a classic with asparagus in spring."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Alsace's most planted noble grape?",
+      "options": [
+        "Riesling",
+        "Muscat",
+        "Pinot Noir",
+        "Sylvaner"
+      ],
+      "answer": 0,
+      "explanation": "Riesling covers the most area of the four."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling, Gewürztraminer, Pinot Gris and Muscat are noble",
+        "Pinot Blanc, Sylvaner and Pinot Noir complete the range",
+        "Most wines are single-variety and named by grape"
+      ]
+    }
+  ]
+}

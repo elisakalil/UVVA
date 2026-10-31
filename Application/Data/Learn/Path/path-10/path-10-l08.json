@@ -1,0 +1,100 @@
+{
+  "id": "path-10-l08",
+  "moduleId": "path-10",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from Black Grapes and Their Places",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise the main black grapes",
+    "Link each grape to its classic regions",
+    "Explain how climate and soil shape each"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its classic region.",
+      "pairs": [
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Médoc"
+        },
+        {
+          "left": "Merlot",
+          "right": "Pomerol"
+        },
+        {
+          "left": "Pinot Noir",
+          "right": "Côte d'Or"
+        },
+        {
+          "left": "Nebbiolo",
+          "right": "Barolo"
+        },
+        {
+          "left": "Malbec",
+          "right": "Mendoza"
+        }
+      ],
+      "explanation": "Each grape has a benchmark place."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is pale in colour yet very tannic?",
+      "options": [
+        "Syrah",
+        "Nebbiolo",
+        "Malbec",
+        "Cabernet Sauvignon"
+      ],
+      "answer": 1,
+      "explanation": "Nebbiolo has few stable pigments but lots of tannin and acidity."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are part of a classic GSM blend?",
+      "options": [
+        "Grenache",
+        "Syrah",
+        "Mourvèdre",
+        "Merlot"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "GSM stands for Grenache, Syrah and Mourvèdre."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Merlot ripens earlier than Cabernet Sauvignon.",
+      "answer": true,
+      "explanation": "Yes. That's why Merlot suits the cooler clay of the Right Bank."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In Spain's Ribera del Duero, Tempranillo is called Tinto ____.",
+      "options": [
+        "Fino",
+        "Roriz",
+        "Negro",
+        "Cão"
+      ],
+      "answer": "Fino",
+      "explanation": "Tinto Fino is the local name. Tinta Roriz is the Douro's name, and Tinto Cão is a different Portuguese grape."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet and Merlot shape Bordeaux's two banks",
+        "Pinot Noir and Nebbiolo need special sites and time",
+        "Syrah, Grenache, Tempranillo and Sangiovese lead their regions",
+        "Malbec, Zinfandel, Pinotage and Carmenère define New World countries"
+      ]
+    }
+  ]
+}

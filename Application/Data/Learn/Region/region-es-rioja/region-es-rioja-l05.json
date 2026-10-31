@@ -1,0 +1,72 @@
+{
+  "id": "region-es-rioja-l05",
+  "moduleId": "region-es-rioja",
+  "order": 5,
+  "title": "Single vineyards",
+  "subtitle": "Rioja's new map",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Viñedo Singular",
+    "Explain village wines",
+    "Name key producers of the movement"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Viñedo Singular",
+      "body": "In 2017, Rioja created Viñedo Singular, single vineyard, for wines from specific, registered plots. Rules include vines at least 35 years old, low yields, hand harvesting and tasting approval. It aims to recognise the best sites, as in Burgundy. Labels can also name a village, Vino de Municipio, or a zone, Vino de Zona.",
+      "highlight": "Viñedo Singular since 2017"
+    },
+    {
+      "type": "concept",
+      "title": "Why it matters",
+      "body": "For a century, Rioja focused on ageing and blending, not site. Producers like Remírez de Ganuza, Artadi, Contino and Telmo Rodríguez pushed for place-based classification. Some, like Artadi, left the DOCa in 2015 in protest before the new rules. The debate continues about how far Rioja should go towards a Burgundian model.",
+      "highlight": "From ageing to site"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is a requirement for Viñedo Singular?",
+      "options": [
+        "Vines at least 35 years old",
+        "Only white grapes",
+        "Machine harvesting",
+        "No ageing"
+      ],
+      "answer": 0,
+      "explanation": "Old vines, low yields and hand harvesting are required."
+    },
+    {
+      "type": "concept",
+      "title": "Old classics",
+      "body": "Some historic Rioja wines were single vineyard long before the rules: Viña Tondonia, from López de Heredia, since 1913; Contino, the first single-estate Rioja in the 1970s. These show that site has always mattered, even under the blending tradition.",
+      "highlight": "Viña Tondonia and Contino"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Rioja's place-based label categories?",
+      "options": [
+        "Viñedo Singular",
+        "Vino de Municipio",
+        "Vino de Zona",
+        "Vino de Pago Francés"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The last one doesn't exist."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Viñedo Singular, since 2017, names single vineyards",
+        "Village and zone wines show place",
+        "Historic wines like Viña Tondonia were early single vineyards"
+      ]
+    }
+  ]
+}

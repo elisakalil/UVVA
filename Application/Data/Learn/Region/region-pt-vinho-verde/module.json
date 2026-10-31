@@ -1,0 +1,27 @@
+{
+  "id": "region-pt-vinho-verde",
+  "kind": "region",
+  "order": 23,
+  "country": "Portugal",
+  "countryCode": "PT",
+  "title": "Vinho Verde",
+  "grapes": [
+    "Alvarinho",
+    "Loureiro",
+    "Arinto",
+    "Avesso"
+  ],
+  "points": "2 0 1 1 = 4",
+  "complexity": "C",
+  "description": "Portugal's green north-west: light, fresh whites and the serious Alvarinho of Monção e Melgaço.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-pt-vinho-verde-l01",
+    "region-pt-vinho-verde-l02",
+    "region-pt-vinho-verde-l03",
+    "region-pt-vinho-verde-l04",
+    "region-pt-vinho-verde-l05"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "path-15-l04",
+  "moduleId": "path-15",
+  "order": 4,
+  "title": "Palate: structure",
+  "subtitle": "Measuring what you feel",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Judge sweetness, acidity, tannin, alcohol and body",
+    "Describe tannin by level and nature",
+    "Explain how structure elements interact"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The five measures",
+      "body": "On the palate, judge sweetness from dry to luscious; acidity from low to high; tannin from low to high; alcohol from low to high; body from light to full. For still wines, alcohol is low below 11%, medium from 11 to 13.9%, high from 14%. Each measure stands on its own, so judge them separately.",
+      "highlight": "Sweetness, acidity, tannin, alcohol, body"
+    },
+    {
+      "type": "concept",
+      "title": "The nature of tannin",
+      "body": "Tannin has a level and a nature. Ripe tannins feel soft, fine-grained and velvety. Unripe tannins feel green, coarse and astringent. Oak tannins can feel dry and grainy. Tannin also interacts: high acidity makes tannin feel harsher; sugar and alcohol make it feel softer.",
+      "highlight": "Ripe tannin is soft; unripe tannin is coarse"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which element tends to make tannin feel harsher?",
+      "options": [
+        "High alcohol",
+        "High acidity",
+        "Residual sugar",
+        "Fuller body"
+      ],
+      "answer": 1,
+      "explanation": "Acidity sharpens the perception of tannin. Sugar and alcohol soften it."
+    },
+    {
+      "type": "concept",
+      "title": "Interactions",
+      "body": "Sweetness can mask acidity, so a sweet Riesling may seem less acidic than it is. Alcohol adds body and can taste sweet. Carbon dioxide adds freshness. Judge each element on its own scale, then consider balance: do they support each other, or does one stick out?",
+      "highlight": "Elements mask and support each other"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "For still wines, alcohol of 14% or more is described as ____.",
+      "options": [
+        "high",
+        "medium",
+        "low",
+        "medium minus"
+      ],
+      "answer": "high",
+      "explanation": "14% and above is high; 11 to 13.9% medium; below 11% low."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Judge sweetness, acidity, tannin, alcohol and body separately",
+        "Tannin has a level and a nature, ripe or green",
+        "Elements interact: sugar masks acid, acid sharpens tannin"
+      ]
+    }
+  ]
+}

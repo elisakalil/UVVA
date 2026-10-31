@@ -1,0 +1,70 @@
+{
+  "id": "grape-assyrtiko-l05",
+  "moduleId": "grape-assyrtiko",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Assyrtiko",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair dry Assyrtiko with food",
+    "Pair Vinsanto with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Greek seafood",
+      "body": "Dry Assyrtiko suits Greek food: grilled octopus, sea bass, shellfish, fava, Santorini's yellow split pea purée, tomato fritters and feta. Its acidity cuts through olive oil and fried food. Its saline edge suits oysters and sushi too.",
+      "highlight": "Octopus, fava, grilled fish"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve dry Assyrtiko at 8 to 11 degrees. It ages surprisingly well thanks to its acidity: top Santorini wines develop over 10 to 15 years, gaining smoky, honeyed notes. Vinsanto, served at 12 to 14, suits dried fruit, nuts, blue cheese and chocolate.",
+      "highlight": "Ages 10 to 15 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Santorini Assyrtiko?",
+      "options": [
+        "Grilled octopus",
+        "Beef stew",
+        "Chocolate cake",
+        "Spicy curry"
+      ],
+      "answer": 0,
+      "explanation": "Its acidity and salinity suit grilled seafood."
+    },
+    {
+      "type": "tip",
+      "body": "Fava, Santorini's yellow split pea purée with olive oil and onions, is a local classic with Assyrtiko."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Vinsanto?",
+      "options": [
+        "Dried fruit",
+        "Blue cheese",
+        "Dark chocolate",
+        "Raw oysters"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Oysters need a dry wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Assyrtiko suits grilled octopus, fava and seafood",
+        "Top Santorini Assyrtiko ages 10 to 15 years",
+        "Vinsanto suits dried fruit, cheese and chocolate"
+      ]
+    }
+  ]
+}

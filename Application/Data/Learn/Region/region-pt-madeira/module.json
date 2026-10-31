@@ -1,0 +1,29 @@
+{
+  "id": "region-pt-madeira",
+  "kind": "region",
+  "order": 22,
+  "country": "Portugal",
+  "countryCode": "PT",
+  "title": "Madeira",
+  "grapes": [
+    "Tinta Negra",
+    "Sercial",
+    "Verdelho",
+    "Boal",
+    "Malvasia"
+  ],
+  "points": "0 2 2 2 = 6",
+  "complexity": "B",
+  "description": "A volcanic Atlantic island whose wine is heated, oxidised and almost immortal.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-pt-madeira-l01",
+    "region-pt-madeira-l02",
+    "region-pt-madeira-l03",
+    "region-pt-madeira-l04",
+    "region-pt-madeira-l05",
+    "region-pt-madeira-l06"
+  ]
+}

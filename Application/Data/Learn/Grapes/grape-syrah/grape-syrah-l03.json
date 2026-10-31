@@ -1,0 +1,71 @@
+{
+  "id": "grape-syrah-l03",
+  "moduleId": "grape-syrah",
+  "order": 3,
+  "title": "The Northern Rhône",
+  "subtitle": "Syrah's original home",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the northern Rhône's landscape",
+    "Compare its main appellations",
+    "Explain why it makes such distinct Syrah"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Steep and narrow",
+      "body": "The northern Rhône runs about 60 km along the river, from Vienne to Valence. Vineyards cling to steep granite slopes, often on terraces held by stone walls. The climate is continental, cooler than the south. Syrah is the only red grape allowed, sometimes with a little white Viognier, Marsanne or Roussanne.",
+      "highlight": "Steep granite, Syrah only"
+    },
+    {
+      "type": "concept",
+      "title": "The appellations",
+      "body": "Côte-Rôtie, meaning roasted slope, makes perfumed, elegant Syrah. Hermitage, a single hill facing south, makes powerful, long-lived wines. Cornas makes dark, rustic, firm wines. Saint-Joseph and Crozes-Hermitage are larger, more affordable areas. Crozes-Hermitage is the biggest, with flatter vineyards.",
+      "highlight": "Côte-Rôtie, Hermitage, Cornas"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each appellation to its style.",
+      "pairs": [
+        {
+          "left": "Côte-Rôtie",
+          "right": "Perfumed and elegant"
+        },
+        {
+          "left": "Hermitage",
+          "right": "Powerful, long-lived"
+        },
+        {
+          "left": "Cornas",
+          "right": "Dark and rustic"
+        },
+        {
+          "left": "Crozes-Hermitage",
+          "right": "Larger, more affordable"
+        }
+      ],
+      "explanation": "Each northern Rhône appellation shows a different face of Syrah."
+    },
+    {
+      "type": "tip",
+      "body": "Crozes-Hermitage and Saint-Joseph offer a taste of northern Rhône Syrah at a fraction of Hermitage's price. Look for producers who also make wines from the famous hills."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In the northern Rhône, Syrah is often blended with Grenache.",
+      "answer": false,
+      "explanation": "Not true. Syrah is the only red grape in the northern Rhône. Grenache belongs to the southern Rhône."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The northern Rhône grows Syrah on steep granite slopes",
+        "Côte-Rôtie is perfumed; Hermitage powerful; Cornas rustic",
+        "Crozes-Hermitage and Saint-Joseph are more affordable"
+      ]
+    }
+  ]
+}

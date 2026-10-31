@@ -1,0 +1,62 @@
+{
+  "id": "path-26-l02",
+  "moduleId": "path-26",
+  "order": 2,
+  "title": "Sherry: flor and solera",
+  "subtitle": "The engines of Jerez",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how flor works",
+    "Explain the solera system in detail",
+    "Explain the Sherry triangle"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Flor",
+      "body": "Flor is a film of Saccharomyces yeasts that grows on wine in barrels filled only to about five-sixths, leaving air space. It needs 15 to 15.5% alcohol, cool, humid cellars and nutrients. It consumes oxygen, alcohol and glycerol, and produces acetaldehyde, which gives Fino its tangy, nutty, bready aroma. Flor is thickest in spring and autumn.",
+      "highlight": "Flor feeds on air, alcohol and glycerol"
+    },
+    {
+      "type": "concept",
+      "title": "The solera",
+      "body": "The solera system blends wines of different ages. Wine for bottling, the saca, is taken from the oldest scale, the solera. It is refilled from the first criadera, which is refilled from the second, and so on, an operation called rocío. By law, no more than 40% can be drawn per year. Older wine educates the younger; the average age rises over time.",
+      "highlight": "Saca, rocío, criaderas"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Flor needs barrels to be completely full to grow.",
+      "answer": false,
+      "explanation": "Not true. Barrels are left about five-sixths full so flor has air on the surface to grow."
+    },
+    {
+      "type": "concept",
+      "title": "The Sherry triangle",
+      "body": "Sherry must be aged in Jerez de la Frontera, El Puerto de Santa María or Sanlúcar de Barrameda. Sanlúcar, by the mouth of the Guadalquivir, is coolest and most humid, so flor grows thickest there; its Fino is called Manzanilla. Albariza soil, up to 40% chalk, stores winter rain for dry summers.",
+      "highlight": "Jerez, El Puerto, Sanlúcar"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is flor thickest in Sanlúcar de Barrameda?",
+      "options": [
+        "It's the hottest town",
+        "Its cool, humid sea air favours flor",
+        "It uses more sugar",
+        "Its barrels are bigger"
+      ],
+      "answer": 1,
+      "explanation": "Coastal humidity and cooler temperatures keep flor thick, giving Manzanilla its saline freshness."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Flor needs air space, 15% alcohol and humid cellars",
+        "The solera draws from the oldest scale and refills from younger ones",
+        "Sanlúcar's sea air makes Manzanilla"
+      ]
+    }
+  ]
+}

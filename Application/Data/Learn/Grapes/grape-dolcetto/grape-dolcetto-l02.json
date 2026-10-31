@@ -1,0 +1,77 @@
+{
+  "id": "grape-dolcetto-l02",
+  "moduleId": "grape-dolcetto",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Piedmont's hills",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Dolcetto's main areas",
+    "Explain its place in Piedmont's vineyards",
+    "Name its DOCGs"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Piedmont",
+      "body": "Dolcetto grows almost only in Piedmont and nearby Liguria, where it's called Ormeasco. Main zones are Alba, Dogliani, Ovada and Diano d'Alba. Because it ripens early, growers plant it on cooler, higher or north-facing slopes, leaving the warmest sites for Nebbiolo.",
+      "highlight": "Alba, Dogliani, Ovada"
+    },
+    {
+      "type": "concept",
+      "title": "DOCGs",
+      "body": "Three Dolcetto zones are DOCG: Dogliani, Diano d'Alba and Ovada Superiore. Dogliani, south of Barolo, is considered its spiritual home, where Dolcetto is the main grape rather than a sideline. Dogliani wines are fuller and can age a little more.",
+      "highlight": "Dogliani: Dolcetto's home"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to Dolcetto.",
+      "pairs": [
+        {
+          "left": "Dogliani",
+          "right": "Dolcetto's spiritual home"
+        },
+        {
+          "left": "Ormeasco",
+          "right": "Ligurian name"
+        },
+        {
+          "left": "Diano d'Alba",
+          "right": "DOCG zone"
+        },
+        {
+          "left": "Nebbiolo",
+          "right": "Gets the warmest slopes"
+        }
+      ],
+      "explanation": "Dolcetto fills the cooler sites of Piedmont."
+    },
+    {
+      "type": "tip",
+      "body": "In Piedmont, Dolcetto has lost ground to Barbera and Nebbiolo, which fetch higher prices. A good Dolcetto d'Alba or Dogliani is often a bargain."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Dolcetto planted on cooler slopes?",
+      "options": [
+        "It ripens early",
+        "It needs shade",
+        "It's a white grape",
+        "It's frost-proof"
+      ],
+      "answer": 0,
+      "explanation": "Early ripening means it doesn't need the warmest sites."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dolcetto grows in Piedmont, mainly Alba, Dogliani and Ovada",
+        "It takes cooler slopes, leaving warm ones for Nebbiolo",
+        "Dogliani is its spiritual home and a DOCG"
+      ]
+    }
+  ]
+}

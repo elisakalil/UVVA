@@ -1,0 +1,72 @@
+{
+  "id": "path-07-l03",
+  "moduleId": "path-07",
+  "order": 3,
+  "title": "Climate and weather",
+  "subtitle": "Long-term patterns and single years",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Tell climate from weather",
+    "Describe cool, moderate and hot climates",
+    "Explain why vintages differ"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Climate versus weather",
+      "body": "Climate is the average pattern of a place over decades. Weather is what happens in a single year. Climate decides which grapes can ripen in a region; weather decides how good a particular vintage will be. Burgundy's climate suits Pinot Noir every year, but a wet, cold summer can still make a thin vintage.",
+      "highlight": "Climate decides the grape; weather decides the vintage"
+    },
+    {
+      "type": "concept",
+      "title": "Measuring climate",
+      "body": "One common measure is the average temperature of the growing season. Below about 16 degrees Celsius is cool, 16 to 18.5 is moderate, 18.5 to 21 is warm, and above that is hot. Champagne and the Mosel are cool; Bordeaux is moderate; the Barossa and much of southern Spain are warm to hot.",
+      "highlight": "Growing season averages define climate"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which statement describes weather, not climate?",
+      "options": [
+        "Champagne is a cool region",
+        "Southern Spain has hot summers",
+        "2021 was a wet, cold year in France",
+        "Bordeaux has a moderate maritime climate"
+      ],
+      "answer": 2,
+      "explanation": "A single year's conditions are weather. The other statements describe long-term patterns."
+    },
+    {
+      "type": "concept",
+      "title": "Vintage variation",
+      "body": "In cool and moderate regions, weather swings a lot from year to year, so vintages vary. That's why vintage charts matter in Bordeaux or Germany. In warm, dry, irrigated regions, conditions are more reliable, so vintages differ less. Wines that blend several years, like most Champagne, smooth out these differences.",
+      "highlight": "Vintages vary most in marginal climates"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Where are vintages likely to vary the most?",
+      "options": [
+        "Champagne",
+        "The Mosel",
+        "A hot, irrigated inland valley",
+        "Bordeaux"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Cool and moderate regions depend on weather to ripen grapes, so years differ. Hot, irrigated regions are more consistent."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Climate is the long-term pattern; weather is a single year",
+        "Climates are cool, moderate, warm or hot by season temperature",
+        "Vintages vary most in cool and moderate regions"
+      ]
+    }
+  ]
+}

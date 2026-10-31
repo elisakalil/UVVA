@@ -1,0 +1,72 @@
+{
+  "id": "region-it-piedmont-l03",
+  "moduleId": "region-it-piedmont",
+  "order": 3,
+  "title": "Barolo",
+  "subtitle": "The king of wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barolo's zone and soils",
+    "Explain its ageing rules",
+    "Explain the MGAs"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Eleven villages",
+      "body": "Barolo DOCG covers 11 villages south-west of Alba. The main ones are Barolo, La Morra, Castiglione Falletto, Serralunga d'Alba and Monforte d'Alba. Western villages, on Tortonian marl, like La Morra, give more perfumed, approachable wines. Eastern villages, on Serravallian sandstone and marl, like Serralunga, give more powerful, tannic wines.",
+      "highlight": "11 villages, two soil types"
+    },
+    {
+      "type": "concept",
+      "title": "Rules",
+      "body": "Barolo must be 100% Nebbiolo and age at least 38 months, 18 in wood, before release; Riserva at least 62 months. Since 2010, labels can name one of 181 MGAs, Menzioni Geografiche Aggiuntive, official vineyard areas like Cannubi, Brunate and Rocche dell'Annunziata, similar to Burgundy's crus.",
+      "highlight": "38 months; 181 MGAs"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which part of Barolo gives the most powerful wines?",
+      "options": [
+        "The east, like Serralunga",
+        "The west, like La Morra",
+        "The river plain",
+        "Asti"
+      ],
+      "answer": 0,
+      "explanation": "Serravallian soils in the east give more structure."
+    },
+    {
+      "type": "concept",
+      "title": "Traditional and modern",
+      "body": "From the 1980s, the Barolo wars split producers: modernists used short maceration and new French barriques for softer, fruitier wines; traditionalists kept long maceration and large old casks, botti. Bartolo Mascarello and Giacomo Conterno are traditionalist icons; Elio Altare a modernist. Today, many blend both approaches.",
+      "highlight": "Barriques versus botti"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Barolo villages?",
+      "options": [
+        "La Morra",
+        "Serralunga d'Alba",
+        "Monforte d'Alba",
+        "Neive"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Neive is in Barbaresco."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barolo's 11 villages split into perfumed west and powerful east",
+        "It's 100% Nebbiolo, aged at least 38 months",
+        "181 MGAs name its vineyards"
+      ]
+    }
+  ]
+}

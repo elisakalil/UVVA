@@ -1,0 +1,62 @@
+{
+  "id": "region-ar-patagonia-l01",
+  "moduleId": "region-ar-patagonia",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Wind and latitude",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Patagonia's wine regions",
+    "Explain its climate",
+    "Compare it with Mendoza"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The south",
+      "body": "Patagonia's wine regions lie in southern Argentina, mainly in Neuquén and Río Negro, around 38 to 39 degrees south, with smaller plantings further south in Chubut, near 43 to 45 degrees. Vineyards are low, about 300 m, in river valleys. It has about 3,500 hectares, a small share of Argentina's total.",
+      "highlight": "Neuquén and Río Negro"
+    },
+    {
+      "type": "concept",
+      "title": "Cool by latitude, not altitude",
+      "body": "Unlike Mendoza and Salta, Patagonia is cool because of latitude, not altitude. Summers are sunny with long days, nights are cold, and strong, constant winds blow from the west. The wind keeps grapes healthy, reduces disease and thickens skins. Rainfall is low; irrigation comes from the Limay, Neuquén and Río Negro rivers.",
+      "highlight": "Latitude and wind"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Patagonia cool, unlike Mendoza?",
+      "options": [
+        "Southern latitude, not altitude",
+        "Very high altitude",
+        "Ocean fog",
+        "Heavy rain"
+      ],
+      "answer": 0,
+      "explanation": "It's low but far south."
+    },
+    {
+      "type": "concept",
+      "title": "History and growth",
+      "body": "Río Negro has grown grapes since the early 20th century, with some old vines, like Malbec and Sémillon planted in the 1930s and 1940s. Neuquén's vineyards were mostly planted from the early 2000s, in the desert, with modern irrigation. Producers like Bodega Chacra, Noemía and Familia Schroeder show its potential.",
+      "highlight": "Old Río Negro vines; new Neuquén"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Patagonia's vineyards are at very high altitude, like Salta's.",
+      "answer": false,
+      "explanation": "Not true. They're low, about 300 m; coolness comes from latitude."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Patagonia's main regions are Neuquén and Río Negro",
+        "Latitude and constant wind keep it cool",
+        "Río Negro has old vines; Neuquén is newer"
+      ]
+    }
+  ]
+}

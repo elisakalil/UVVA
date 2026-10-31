@@ -1,0 +1,62 @@
+{
+  "id": "region-cl-casablanca-valley-l01",
+  "moduleId": "region-cl-casablanca-valley",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Cooled by the Pacific",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Casablanca's geography",
+    "Explain the Humboldt Current's effect",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Between Santiago and the sea",
+      "body": "The Casablanca Valley lies between Santiago and the port of Valparaíso, about 30 km from the Pacific. It runs east to west, opening to the ocean, which lets cool sea air and fog flow in. It has about 6,000 hectares of vines, mostly on gentle slopes and valley floors.",
+      "highlight": "30 km from the Pacific"
+    },
+    {
+      "type": "concept",
+      "title": "The Humboldt Current",
+      "body": "The cold Humboldt Current runs north along Chile's coast, chilling the ocean. Each morning, fog and cool air move into Casablanca, burning off by midday. Summers are much cooler than in the Central Valley. Spring frost is a major risk; growers use wind machines and sprinklers. Water is scarce, as there's no big river.",
+      "highlight": "Cold current, morning fog, frost"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What cools the Casablanca Valley?",
+      "options": [
+        "The cold Humboldt Current and morning fog",
+        "Andean snow",
+        "Altitude",
+        "Heavy rain"
+      ],
+      "answer": 0,
+      "explanation": "Ocean air and fog cool the valley."
+    },
+    {
+      "type": "concept",
+      "title": "A pioneer",
+      "body": "Before the late 1980s, Chile's vineyards were mostly in the warm Central Valley. In 1982, Pablo Morandé planted vines in Casablanca, then thought too cold. Its success with white wines opened the way for other cool coastal valleys, like San Antonio, Leyda and Limarí. Casablanca showed Chile could make cool-climate wine.",
+      "highlight": "Pablo Morandé, 1982"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Casablanca was planted before the warm Central Valley.",
+      "answer": false,
+      "explanation": "Not true. It was planted from the 1980s, after the Central Valley."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Casablanca lies between Santiago and the Pacific",
+        "The Humboldt Current brings fog and cool air",
+        "Its success from the 1980s opened Chile's cool coast"
+      ]
+    }
+  ]
+}

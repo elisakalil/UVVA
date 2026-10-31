@@ -1,0 +1,62 @@
+{
+  "id": "region-us-sonoma-county-l01",
+  "moduleId": "region-us-sonoma-county",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "From the Pacific to the Mayacamas",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sonoma's geography",
+    "Explain its varied climate",
+    "Explain the Petaluma Gap"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A large, varied county",
+      "body": "Sonoma County lies west of Napa, between the Pacific Ocean and the Mayacamas Mountains, about 80 km north of San Francisco. It has about 24,000 hectares of vines, more than Napa, spread over a much more varied landscape: coast, valleys and hills. It has 19 AVAs.",
+      "highlight": "Larger and more varied than Napa"
+    },
+    {
+      "type": "concept",
+      "title": "Ocean influence",
+      "body": "Sonoma's climate ranges from cool and foggy on the coast to warm inland. The cold Pacific creates fog that flows inland through gaps in the coastal hills, especially the Petaluma Gap, cooling valleys like the Russian River. Inland valleys, like Alexander Valley and Dry Creek, are much warmer.",
+      "highlight": "Fog through coastal gaps"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the Petaluma Gap?",
+      "options": [
+        "A gap in the hills that lets cool ocean air in",
+        "A valley in Napa",
+        "A type of grape",
+        "A winery"
+      ],
+      "answer": 0,
+      "explanation": "It funnels wind and fog inland."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "Russian settlers planted vines at Fort Ross on the coast in 1812. Agoston Haraszthy, a Hungarian, founded Buena Vista winery in 1857, California's oldest commercial winery, and brought many European vine cuttings. Italian immigrants later planted Zinfandel. Sonoma is known for family wineries and a relaxed, rural feel.",
+      "highlight": "Buena Vista, 1857"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sonoma County has fewer vineyards than Napa.",
+      "answer": false,
+      "explanation": "Not true. Sonoma has more vineyard area than Napa."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sonoma is larger and more varied than Napa",
+        "Ocean fog cools the coast; inland valleys are warm",
+        "Buena Vista, from 1857, is California's oldest commercial winery"
+      ]
+    }
+  ]
+}

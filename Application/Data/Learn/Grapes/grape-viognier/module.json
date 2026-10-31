@@ -1,0 +1,27 @@
+{
+  "id": "grape-viognier",
+  "kind": "grape",
+  "order": 30,
+  "color": "white",
+  "title": "Viognier",
+  "aliases": [],
+  "origin": "France",
+  "countries": [
+    "France",
+    "United States",
+    "Australia"
+  ],
+  "points": "1 1 1 1 = 4",
+  "complexity": "C",
+  "description": "A perfumed, full-bodied white that nearly vanished, saved by Condrieu and now grown worldwide.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-viognier-l01",
+    "grape-viognier-l02",
+    "grape-viognier-l03",
+    "grape-viognier-l04",
+    "grape-viognier-l05"
+  ]
+}

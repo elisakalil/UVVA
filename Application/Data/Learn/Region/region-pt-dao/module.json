@@ -1,0 +1,27 @@
+{
+  "id": "region-pt-dao",
+  "kind": "region",
+  "order": 25,
+  "country": "Portugal",
+  "countryCode": "PT",
+  "title": "Dão",
+  "grapes": [
+    "Touriga Nacional",
+    "Jaen",
+    "Alfrocheiro",
+    "Encruzado"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "A granite plateau ringed by mountains: elegant reds and Portugal's finest white grape, Encruzado.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-pt-dao-l01",
+    "region-pt-dao-l02",
+    "region-pt-dao-l03",
+    "region-pt-dao-l04",
+    "region-pt-dao-l05"
+  ]
+}

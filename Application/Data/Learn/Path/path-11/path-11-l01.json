@@ -1,0 +1,62 @@
+{
+  "id": "path-11-l01",
+  "moduleId": "path-11",
+  "order": 1,
+  "title": "What a label must say",
+  "subtitle": "The compulsory information",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "List the information most labels must show",
+    "Explain what the vintage means",
+    "Explain allergen and sulphite warnings"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The essentials",
+      "body": "Most wine labels must show the producer or bottler, the country of origin, the alcohol by volume, the volume of the bottle and allergen warnings. Wines with a geographical indication must name it. Since December 2023, EU labels must also give nutrition and ingredient information, often through a QR code.",
+      "highlight": "Producer, origin, abv, volume, allergens"
+    },
+    {
+      "type": "concept",
+      "title": "Vintage and sulphites",
+      "body": "The vintage is the year the grapes were picked. In the EU, if it is stated, at least 85% of the grapes must be from that year. Wines with over 10 mg/l of sulphur dioxide must say contains sulphites. Almost all wines do, since sulphur dioxide protects against oxygen and bacteria, and yeast makes a little naturally.",
+      "highlight": "Vintage: at least 85% from that year in the EU"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does the vintage on a European label mean?",
+      "options": [
+        "The year the wine was bottled",
+        "The year at least 85% of the grapes were harvested",
+        "The year the vineyard was planted",
+        "The year the wine was released"
+      ],
+      "answer": 1,
+      "explanation": "Vintage is the harvest year. In the EU, at least 85% of the grapes must come from the stated year."
+    },
+    {
+      "type": "concept",
+      "title": "Allergens",
+      "body": "Wines fined with egg or milk products must say so if any residue remains. Many vegans look for wines fined with bentonite clay or pea protein instead, or unfined wines. Some producers now state vegan on the label, but that term isn't regulated everywhere.",
+      "highlight": "Egg and milk fining must be declared"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A wine labelled contains sulphites has had unusually large amounts of chemicals added.",
+      "answer": false,
+      "explanation": "Not true. The warning applies above 10 mg/l, which covers almost every wine. Yeast produces some sulphur dioxide itself."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels must show producer, origin, abv, volume and allergens",
+        "In the EU, a stated vintage means at least 85% of grapes from that year",
+        "Contains sulphites applies to almost all wines"
+      ]
+    }
+  ]
+}

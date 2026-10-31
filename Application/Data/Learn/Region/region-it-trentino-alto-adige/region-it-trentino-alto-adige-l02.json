@@ -1,0 +1,77 @@
+{
+  "id": "region-it-trentino-alto-adige-l02",
+  "moduleId": "region-it-trentino-alto-adige",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Whites and mountain reds",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the region's main white grapes",
+    "Name its native reds",
+    "Explain the variety of grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "About two-thirds of production is white. Pinot Grigio, Chardonnay, Pinot Bianco, Sauvignon Blanc, Müller-Thurgau and Gewürztraminer are common. Gewürztraminer takes its name from Tramin, or Termeno, a village in Alto Adige. Alto Adige's whites are crisp, aromatic and precise.",
+      "highlight": "Two-thirds white"
+    },
+    {
+      "type": "concept",
+      "title": "Native reds",
+      "body": "Lagrein gives deep, dark reds with plum, chocolate and firm tannins, and a rosé called Kretzer. Schiava, or Vernatsch, gives light, pale, fruity reds, like Santa Maddalena. Teroldego, in Trentino's Rotaliano plain, gives dark, juicy reds. Marzemino is another Trentino red. Pinot Noir, called Blauburgunder, is increasingly serious.",
+      "highlight": "Lagrein, Schiava, Teroldego"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its character.",
+      "pairs": [
+        {
+          "left": "Lagrein",
+          "right": "Dark, plummy red"
+        },
+        {
+          "left": "Schiava",
+          "right": "Light, pale red"
+        },
+        {
+          "left": "Teroldego",
+          "right": "Dark Trentino red"
+        },
+        {
+          "left": "Gewürztraminer",
+          "right": "Aromatic white from Tramin"
+        }
+      ],
+      "explanation": "The region grows many grapes in a small space."
+    },
+    {
+      "type": "tip",
+      "body": "Schiava is one of the few red wines that's great lightly chilled. Its low tannin and fresh fruit suit summer."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Gewürztraminer takes its name from which Alto Adige village?",
+      "options": [
+        "Tramin",
+        "Bolzano",
+        "Trento",
+        "Merano"
+      ],
+      "answer": 0,
+      "explanation": "Tramin, or Termeno, is the grape's namesake."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "About two-thirds of the region's wine is white",
+        "Lagrein, Schiava and Teroldego are native reds",
+        "Gewürztraminer is named after the village of Tramin"
+      ]
+    }
+  ]
+}

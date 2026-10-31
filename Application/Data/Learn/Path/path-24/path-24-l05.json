@@ -1,0 +1,79 @@
+{
+  "id": "path-24-l05",
+  "moduleId": "path-24",
+  "order": 5,
+  "title": "South Africa's Cape",
+  "subtitle": "Ocean winds and old soils",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Cape's climate",
+    "Name the main districts",
+    "Explain the Wine of Origin scheme"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Between two oceans",
+      "body": "South Africa's wine regions lie in the Western Cape, at about 34 degrees south. The climate is Mediterranean. The cold Benguela Current and the Cape Doctor, a strong south-easterly wind, cool the vineyards and keep them healthy. The soils are among the world's oldest: granite, sandstone and shale.",
+      "highlight": "Benguela Current and the Cape Doctor"
+    },
+    {
+      "type": "concept",
+      "title": "The districts",
+      "body": "Stellenbosch, near Cape Town, is the historic heart, known for Cabernet Sauvignon and blends. Paarl and Franschhoek are warmer, with Huguenot history. Swartland, to the north, is dry, with old bush vines of Chenin Blanc, Syrah and Grenache. Elgin, Walker Bay and Constantia are cool and coastal. Constantia's sweet wine was famous in the 18th century.",
+      "highlight": "Stellenbosch, Swartland, Constantia"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the Cape Doctor?",
+      "options": [
+        "A wine judge",
+        "A strong south-easterly wind",
+        "A vine disease",
+        "A type of soil"
+      ],
+      "answer": 1,
+      "explanation": "The Cape Doctor blows from the south-east, cooling vines and blowing away disease."
+    },
+    {
+      "type": "concept",
+      "title": "Wine of Origin",
+      "body": "The Wine of Origin scheme, since 1973, defines regions, districts and wards. Wines are certified with a seal on the bottle. A named grape, vintage or origin requires 85%. Producers can also make single-vineyard wines from registered sites.",
+      "highlight": "Wine of Origin since 1973"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each district to its feature.",
+      "pairs": [
+        {
+          "left": "Stellenbosch",
+          "right": "Historic heart, Cabernet"
+        },
+        {
+          "left": "Swartland",
+          "right": "Old bush vines, dry"
+        },
+        {
+          "left": "Constantia",
+          "right": "Historic sweet wine"
+        },
+        {
+          "left": "Elgin",
+          "right": "Cool, coastal, high"
+        }
+      ],
+      "explanation": "The Cape's districts vary with distance from the sea."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Benguela Current and Cape Doctor cool the Western Cape",
+        "Stellenbosch, Swartland and Constantia are key districts",
+        "Wine of Origin certifies origin, grape and vintage"
+      ]
+    }
+  ]
+}

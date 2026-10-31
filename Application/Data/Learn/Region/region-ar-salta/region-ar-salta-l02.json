@@ -1,0 +1,77 @@
+{
+  "id": "region-ar-salta-l02",
+  "moduleId": "region-ar-salta",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Torrontés and high-altitude reds",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Torrontés",
+    "Describe Salta's reds",
+    "Explain how altitude shapes them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Torrontés",
+      "body": "Torrontés Riojano, a cross of Muscat of Alexandria and Criolla Chica, is Argentina's own white grape and Salta's signature. In Cafayate, it gives intensely floral, aromatic wines with rose, jasmine, orange blossom and peach, yet usually dry, with fresh acidity. Altitude helps it keep acidity and avoid bitterness.",
+      "highlight": "Floral, aromatic, dry"
+    },
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Malbec and Cabernet Sauvignon thrive too. Intense UV light thickens skins, giving very deep colour, firm tannins and concentrated dark fruit, often with spice and herbs. Tannat also does well. Salta's reds are bold and intense, quite different from Mendoza's.",
+      "highlight": "Dark, intense, firm reds"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Salta.",
+      "pairs": [
+        {
+          "left": "Torrontés",
+          "right": "Floral white signature"
+        },
+        {
+          "left": "Cafayate",
+          "right": "Wine centre"
+        },
+        {
+          "left": "Colomé",
+          "right": "Very high vineyards"
+        },
+        {
+          "left": "UV light",
+          "right": "Thickens skins"
+        }
+      ],
+      "explanation": "Salta's grapes are shaped by altitude."
+    },
+    {
+      "type": "tip",
+      "body": "Torrontés smells sweet, but taste it: most are dry. That contrast is part of its charm."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Salta's reds so deeply coloured?",
+      "options": [
+        "Intense UV light thickens skins",
+        "Colour is added",
+        "Long oak ageing",
+        "Cool, cloudy weather"
+      ],
+      "answer": 0,
+      "explanation": "Grapes protect themselves with thicker, darker skins."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Torrontés is Salta's floral, dry signature white",
+        "Malbec and Cabernet give dark, intense reds",
+        "Altitude and UV light shape both"
+      ]
+    }
+  ]
+}

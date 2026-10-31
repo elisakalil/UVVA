@@ -1,0 +1,62 @@
+{
+  "id": "path-16-l06",
+  "moduleId": "path-16",
+  "order": 6,
+  "title": "Training and canopy",
+  "subtitle": "Shaping the vine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare bush vines and trellised systems",
+    "Explain cane and spur pruning",
+    "Explain canopy management decisions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Training systems",
+      "body": "Bush vines, or gobelet, stand alone without wires, shading their fruit; they suit hot, dry, windy places like southern Spain or Barossa's old vineyards. Trellised systems hold shoots along wires, giving even sun exposure and making mechanisation possible. Vertical shoot positioning, or VSP, is the most common trellis in cool regions.",
+      "highlight": "Bush in heat; trellis for control"
+    },
+    {
+      "type": "concept",
+      "title": "Pruning",
+      "body": "In winter, growers prune to decide how many buds, and so how many bunches, each vine carries. Cane pruning leaves one or two long canes of last year's wood, each with 8 to 15 buds; common in Bordeaux and New Zealand. Spur pruning leaves short spurs of 2 or 3 buds along a permanent arm, called a cordon; easier to mechanise.",
+      "highlight": "Canes are long; spurs are short"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are bush vines common in hot, dry regions?",
+      "options": [
+        "They need more water",
+        "Their leaves shade the fruit and they need no wires",
+        "They are easy to machine harvest",
+        "They produce higher yields"
+      ],
+      "answer": 1,
+      "explanation": "The open, low shape shades the grapes from harsh sun and suits poor, dry soils without the cost of trellising."
+    },
+    {
+      "type": "concept",
+      "title": "Canopy decisions",
+      "body": "Canopy management balances leaves and fruit. About 1 to 1.5 m2 of leaf area per kilo of fruit ripens it well. In cool, damp places, growers remove leaves around bunches for sun and airflow. In hot ones, they keep leaves to prevent sunburn, or use shade netting. Hedging, topping and shoot thinning fine-tune the canopy.",
+      "highlight": "Enough leaves to ripen, enough air to stay healthy"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In very hot regions, growers often remove all leaves around the bunches to maximise sunlight.",
+      "answer": false,
+      "explanation": "Not true. In hot regions, exposed bunches can sunburn. Growers usually keep leaves for shade; leaf removal is more common in cool, damp places."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bush vines suit heat and drought; trellises give control",
+        "Cane pruning keeps long canes; spur pruning short spurs",
+        "Canopy management balances sunlight, airflow and ripening"
+      ]
+    }
+  ]
+}

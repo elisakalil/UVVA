@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-alsace-l01",
+  "moduleId": "region-fr-alsace",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "In the rain shadow of the Vosges",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Alsace's geography",
+    "Explain the Vosges rain shadow",
+    "Explain its French and German history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A narrow strip",
+      "body": "Alsace lies in north-east France, a narrow strip about 120 km long between the Vosges mountains to the west and the Rhine river to the east, on the border with Germany. Vineyards run along the lower slopes of the Vosges, from 200 to 450 m. Soils are a mosaic: granite, limestone, schist, sandstone, volcanic and marl.",
+      "highlight": "Vosges foothills, many soils"
+    },
+    {
+      "type": "concept",
+      "title": "Rain shadow",
+      "body": "The Vosges block wet westerly winds, so Alsace is one of France's driest regions; Colmar gets only about 500 mm of rain a year. Summers are warm and sunny, autumns long and dry. That lets grapes ripen fully in a northern latitude, around 48 degrees, giving ripe, aromatic wines with good acidity.",
+      "highlight": "One of France's driest regions"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Alsace so dry and sunny for its latitude?",
+      "options": [
+        "The Vosges block rain from the west",
+        "It's on the Mediterranean",
+        "It's at high altitude",
+        "It's irrigated"
+      ],
+      "answer": 0,
+      "explanation": "The mountains cast a rain shadow."
+    },
+    {
+      "type": "concept",
+      "title": "Between two countries",
+      "body": "Alsace changed hands between France and Germany several times: German from 1871 to 1918, and occupied again in 1940 to 1944. Its culture, architecture and grape names show both influences. It uses the tall, slim flûte bottle, required by law, and names grapes on labels, unlike most of France.",
+      "highlight": "French and German heritage"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which show Alsace's German influence?",
+      "options": [
+        "Grape names on labels",
+        "Tall flûte bottles",
+        "Riesling as a main grape",
+        "Blending 13 grapes"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Blending 13 grapes is a southern Rhône practice."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Alsace lies between the Vosges and the Rhine",
+        "The Vosges rain shadow makes it dry and sunny",
+        "Its French and German history shows in labels and bottles"
+      ]
+    }
+  ]
+}

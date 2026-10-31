@@ -1,0 +1,79 @@
+{
+  "id": "path-23-l03",
+  "moduleId": "path-23",
+  "order": 3,
+  "title": "Mendoza",
+  "subtitle": "Malbec at altitude",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Mendoza's climate and irrigation",
+    "Explain the effect of altitude",
+    "Name Mendoza's main sub-regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A desert at the foot of the Andes",
+      "body": "Mendoza produces about 70% of Argentina's wine. It is a high desert with under 250 mm of rain a year, sitting in the Andes' rain shadow. Irrigation comes from rivers fed by snowmelt, historically through channels built by the Huarpe people and later the Spanish. Hail is a constant threat; nets protect many vineyards.",
+      "highlight": "Desert, snowmelt irrigation, hail"
+    },
+    {
+      "type": "concept",
+      "title": "Altitude",
+      "body": "Mendoza's vineyards lie from about 700 to 1,500 m. Higher sites have cooler nights, preserving acidity, and stronger ultraviolet light, which thickens skins for more colour and tannin. That's why Malbec there is dark and ripe yet fresh. The Zonda, a hot, dry wind, can harm flowering in spring.",
+      "highlight": "Altitude: freshness and colour"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What protects many Mendoza vineyards from a frequent hazard?",
+      "options": [
+        "Frost fans",
+        "Hail nets",
+        "Sea walls",
+        "Greenhouses"
+      ],
+      "answer": 1,
+      "explanation": "Summer hailstorms are common in Mendoza; nets shield the grapes."
+    },
+    {
+      "type": "concept",
+      "title": "Sub-regions",
+      "body": "Luján de Cuyo, south of Mendoza city, was the first DOC in Argentina, in 1989, known for old-vine Malbec. Maipú is nearby and historic. The Valle de Uco, at 900 to 1,500 m, has Argentina's most acclaimed new sites, like Gualtallary, Paraje Altamira and Los Chacayes, now recognised as geographical indications.",
+      "highlight": "Luján de Cuyo and the Valle de Uco"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Mendoza area to its feature.",
+      "pairs": [
+        {
+          "left": "Luján de Cuyo",
+          "right": "Argentina's first DOC"
+        },
+        {
+          "left": "Valle de Uco",
+          "right": "High, acclaimed new sites"
+        },
+        {
+          "left": "Gualtallary",
+          "right": "High-altitude Uco GI"
+        },
+        {
+          "left": "Maipú",
+          "right": "Historic, near the city"
+        }
+      ],
+      "explanation": "Mendoza's quality grows with altitude and site detail."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Mendoza is a high, irrigated desert making 70% of Argentina's wine",
+        "Altitude gives cool nights and strong light",
+        "Luján de Cuyo and the Valle de Uco are key sub-regions"
+      ]
+    }
+  ]
+}

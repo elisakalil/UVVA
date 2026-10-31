@@ -1,0 +1,60 @@
+{
+  "id": "grape-pinotage-l04",
+  "moduleId": "grape-pinotage",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Pinotage",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Pinotage with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The braai",
+      "body": "In South Africa, Pinotage is the wine of the braai, the national barbecue: sausages, called boerewors, lamb chops and steak. Its smoky, fruity side suits charred meat and spicy sauces. It also goes with bobotie, a lightly spiced Cape Malay minced meat dish.",
+      "highlight": "Braai and bobotie"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 15 to 17 degrees; fruity styles can be slightly cooler. Most Pinotage is best within five years. Old-vine, structured examples can age 10 to 15 years, gaining earthy, savoury notes. Rosé Pinotage is best young and chilled.",
+      "highlight": "Most within five years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a classic South African partner for Pinotage?",
+      "options": [
+        "Boerewors from the braai",
+        "Oysters",
+        "Lemon sorbet",
+        "Sashimi"
+      ],
+      "answer": 0,
+      "explanation": "Smoky grilled sausage suits Pinotage's fruit and smoke."
+    },
+    {
+      "type": "tip",
+      "body": "Coffee-style Pinotage is a fun match for barbecue ribs with a sweet, smoky glaze. Its mocha notes echo the char."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Pinotage is made for long ageing of 20 years or more.",
+      "answer": false,
+      "explanation": "Not true. Most is best within five years; only top examples age 10 to 15 years."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinotage suits the braai and bobotie",
+        "Serve at 15 to 17 degrees",
+        "Most is best young; old-vine wines age 10 to 15 years"
+      ]
+    }
+  ]
+}

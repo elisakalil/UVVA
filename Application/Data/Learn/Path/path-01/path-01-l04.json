@@ -1,0 +1,60 @@
+{
+  "id": "path-01-l04",
+  "moduleId": "path-01",
+  "order": 4,
+  "title": "Drinking responsibly",
+  "subtitle": "How to enjoy wine and stay well",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Work out how much alcohol is in a glass",
+    "Explain why food and water change the effect of wine",
+    "Explain why tasters spit"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A unit of alcohol",
+      "body": "In the UK, one unit is 10 ml of pure alcohol. A 175 ml glass of 13% wine holds about 2.3 units, and a 750 ml bottle about 10. UK health guidance suggests no more than 14 units a week, spread over several days. Other countries use different measures, but the idea is the same: know how much is in your glass.",
+      "highlight": "Units = volume in ml x abv / 1000"
+    },
+    {
+      "type": "concept",
+      "title": "Why food and water help",
+      "body": "Alcohol is absorbed mostly through the small intestine. A meal slows the stomach, so alcohol reaches the blood more slowly and the peak is lower. The liver breaks down roughly one unit an hour, whatever you do; coffee and cold showers don't speed it up. Water doesn't change that rate, but it helps with thirst and pacing.",
+      "highlight": "The liver clears about one unit an hour"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Drinking a strong coffee makes the liver clear alcohol faster.",
+      "answer": false,
+      "explanation": "Not true. Coffee can make you feel more alert, but the liver works at roughly the same speed, about one unit an hour. Only time lowers the alcohol in your blood."
+    },
+    {
+      "type": "tip",
+      "body": "At a tasting, professionals spit. It isn't rude: it lets you taste thirty wines and still judge the last one clearly. Most of what matters, aroma and structure, you get without swallowing."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Roughly how many units are in a 750 ml bottle of 13.5% wine?",
+      "options": [
+        "About 5",
+        "About 10",
+        "About 15",
+        "About 20"
+      ],
+      "answer": 1,
+      "explanation": "750 multiplied by 13.5 and divided by 1000 gives just over 10 units. That's why a bottle shared by two is already a lot for one evening."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A unit is 10 ml of pure alcohol; a bottle of wine holds about 10",
+        "Food slows absorption, and only time clears alcohol from the blood",
+        "Spitting lets you taste many wines and keep your judgement"
+      ]
+    }
+  ]
+}

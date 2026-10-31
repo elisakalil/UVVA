@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-bordeaux-l01",
+  "moduleId": "region-fr-bordeaux",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Rivers, gravel and the Atlantic",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Bordeaux's geography",
+    "Explain its maritime climate",
+    "Explain its history as a trading port"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two rivers and an estuary",
+      "body": "Bordeaux lies in south-west France, around the Garonne and Dordogne rivers, which meet to form the Gironde estuary before reaching the Atlantic. It has about 110,000 hectares of vines, one of the largest fine wine regions in the world. Soils vary: gravel on the Left Bank, clay and limestone on the Right.",
+      "highlight": "Garonne, Dordogne, Gironde"
+    },
+    {
+      "type": "concept",
+      "title": "Maritime and variable",
+      "body": "The climate is maritime: mild winters, warm summers and rain throughout the year. The Atlantic and the Gulf Stream moderate temperatures; the Landes pine forest shelters vineyards from ocean winds. Rain at flowering or harvest can hurt a vintage, which is why vintage quality varies so much, and why blending several grapes spreads the risk.",
+      "highlight": "Maritime, so vintages vary"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do Bordeaux vintages vary so much?",
+      "options": [
+        "Its maritime climate brings rain at key moments",
+        "It never rains",
+        "It's at very high altitude",
+        "It's irrigated"
+      ],
+      "answer": 0,
+      "explanation": "Rain at flowering or harvest can change a year's quality."
+    },
+    {
+      "type": "concept",
+      "title": "A trading port",
+      "body": "Bordeaux's wealth came from trade. From 1152 to 1453, when Aquitaine belonged to the English crown, its light red wine, called claret, flowed to England. Later, Dutch merchants drained the Médoc's marshes in the 17th century, creating the great Left Bank estates. Négociants still sell most of Bordeaux's wine through the Place de Bordeaux.",
+      "highlight": "Claret, the English and the Dutch"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which shaped Bordeaux's history?",
+      "options": [
+        "English rule from 1152 to 1453",
+        "Dutch drainage of the Médoc",
+        "The négociant trade",
+        "Volcanic eruptions"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Bordeaux's soils are gravel, clay and limestone, not volcanic."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bordeaux sits on the Garonne, Dordogne and Gironde",
+        "Its maritime climate makes vintages vary",
+        "Trade with England and the Dutch shaped its history"
+      ]
+    }
+  ]
+}

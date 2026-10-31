@@ -1,0 +1,72 @@
+{
+  "id": "region-pt-alentejo-l03",
+  "moduleId": "region-pt-alentejo",
+  "order": 3,
+  "title": "Talha wine",
+  "subtitle": "Roman clay pots",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what talha wine is",
+    "Explain how it's made",
+    "Explain its legal recognition"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Roman tradition",
+      "body": "Talhas are large clay pots, some holding over 1,000 litres, used in the Alentejo since Roman times. Wine was fermented and stored in them, especially around Vidigueira, Cuba and Vila de Frades. The tradition survived in family cellars, adegas, even as modern wineries took over.",
+      "highlight": "Clay pots since Roman times"
+    },
+    {
+      "type": "concept",
+      "title": "How it's made",
+      "body": "Crushed grapes, with skins and sometimes stems, ferment in the talha. The inside is coated with pez, a resin mixture, to seal it. Skins sink to the bottom and act as a natural filter. The wine stays on its skins until about St Martin's Day, November 11, when talhas are traditionally opened and the wine is drawn from a tap at the base.",
+      "highlight": "Fermented on skins, opened in November"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "When are talhas traditionally opened?",
+      "options": [
+        "Around St Martin's Day, November 11",
+        "At Easter",
+        "In midsummer",
+        "At the harvest"
+      ],
+      "answer": 0,
+      "explanation": "St Martin's Day marks the opening of the new talha wine."
+    },
+    {
+      "type": "concept",
+      "title": "Recognition",
+      "body": "In 2010, the Alentejo DOC created the category DOC Alentejo Vinho de Talha for wines made this way, fermented and stored in clay until at least November 11. Whites, reds, orange wines and rosés can all be made. The style links to the global interest in amphora and skin-contact wines, like Georgia's qvevri.",
+      "highlight": "DOC Vinho de Talha since 2010"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe talha wine?",
+      "options": [
+        "Fermented in clay pots",
+        "Roman tradition",
+        "Skins act as a filter",
+        "Aged under flor"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Flor is a Sherry process."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Talhas are Roman clay pots still used in the Alentejo",
+        "Wine ferments on skins until St Martin's Day",
+        "DOC Vinho de Talha was created in 2010"
+      ]
+    }
+  ]
+}

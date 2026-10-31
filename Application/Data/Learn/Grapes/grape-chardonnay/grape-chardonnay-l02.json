@@ -1,0 +1,79 @@
+{
+  "id": "grape-chardonnay-l02",
+  "moduleId": "grape-chardonnay",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Everywhere wine is made",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Chardonnay's main regions",
+    "Explain how climate changes it",
+    "Explain the ABC backlash and revival"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A world grape",
+      "body": "Chardonnay's home is Burgundy and Champagne. It grows in almost every wine country: California, Australia, Chile, South Africa, New Zealand, Italy, Oregon, Argentina and England. It adapts to cool and warm climates and many soils, though limestone and chalk are prized.",
+      "highlight": "Burgundy, Champagne and the world"
+    },
+    {
+      "type": "concept",
+      "title": "Climate and style",
+      "body": "Cool climates, like Chablis, Tasmania or Sonoma Coast, give lean, citrus Chardonnay with high acidity. Moderate climates, like the Côte de Beaune or Margaret River, give stone fruit and balance. Warm climates, like inland California or Australia's Riverland, give tropical fruit and lower acidity.",
+      "highlight": "Cool: citrus. Warm: tropical."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each climate to its Chardonnay.",
+      "pairs": [
+        {
+          "left": "Cool",
+          "right": "Green apple, lemon"
+        },
+        {
+          "left": "Moderate",
+          "right": "Peach, white flowers"
+        },
+        {
+          "left": "Warm",
+          "right": "Pineapple, mango"
+        },
+        {
+          "left": "Very hot, irrigated",
+          "right": "Simple, soft, bulk"
+        }
+      ],
+      "explanation": "Climate is the first key to Chardonnay's style."
+    },
+    {
+      "type": "concept",
+      "title": "Backlash and revival",
+      "body": "In the 1990s, heavily oaked, buttery Chardonnays became so common that some drinkers turned away, a trend called ABC, Anything But Chardonnay. Since the 2000s, producers have picked earlier, used less new oak and blocked malolactic more often, giving fresher, more elegant wines.",
+      "highlight": "ABC, then a leaner style"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What did ABC stand for in the 1990s?",
+      "options": [
+        "Anything But Chardonnay",
+        "Always Buy Chardonnay",
+        "Australian Barrel Chardonnay",
+        "A Bottle of Chablis"
+      ],
+      "answer": 0,
+      "explanation": "A backlash against heavily oaked Chardonnay."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chardonnay grows almost everywhere, from Burgundy to Chile",
+        "Climate shifts it from citrus to tropical",
+        "After the ABC backlash, many styles became leaner"
+      ]
+    }
+  ]
+}

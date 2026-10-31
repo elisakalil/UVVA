@@ -1,0 +1,22 @@
+{
+  "id": "path-17",
+  "kind": "path",
+  "order": 17,
+  "level": "Advanced",
+  "complexity": "A",
+  "title": "Winemaking in Depth",
+  "description": "Every decision in the winery, from sulphur and yeast to extraction, oak and stabilisation.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-17-l01",
+    "path-17-l02",
+    "path-17-l03",
+    "path-17-l04",
+    "path-17-l05",
+    "path-17-l06",
+    "path-17-l07",
+    "path-17-l08"
+  ]
+}

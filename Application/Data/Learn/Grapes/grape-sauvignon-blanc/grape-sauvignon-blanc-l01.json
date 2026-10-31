@@ -1,0 +1,62 @@
+{
+  "id": "grape-sauvignon-blanc-l01",
+  "moduleId": "grape-sauvignon-blanc",
+  "order": 1,
+  "title": "Meet Sauvignon Blanc",
+  "subtitle": "Green, zesty and aromatic",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sauvignon Blanc's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pungent and fresh",
+      "body": "Sauvignon Blanc gives crisp, aromatic whites with gooseberry, lime, grapefruit, passion fruit, cut grass, green pepper, elderflower and sometimes a flinty or smoky note. Acidity is high, body light to medium. Most is unoaked and drunk young. It's one of the most recognisable white grapes.",
+      "highlight": "Gooseberry, grass, passion fruit"
+    },
+    {
+      "type": "concept",
+      "title": "Origins",
+      "body": "Sauvignon Blanc probably comes from the Loire or Bordeaux; its name may come from sauvage, wild, for its vigorous growth. DNA shows a close link to Savagnin, of the Traminer family. Crossed with Cabernet Franc, it gave Cabernet Sauvignon in 17th century Bordeaux. It buds late and ripens early.",
+      "highlight": "Parent of Cabernet Sauvignon"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which famous red grape is Sauvignon Blanc a parent of?",
+      "options": [
+        "Cabernet Sauvignon",
+        "Merlot",
+        "Pinot Noir",
+        "Syrah"
+      ],
+      "answer": 0,
+      "explanation": "Sauvignon Blanc crossed with Cabernet Franc gave Cabernet Sauvignon."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon-green colour, an intense nose of gooseberry, grass and citrus, sometimes tropical fruit, and a crisp, mouth-watering palate. Compared with Riesling, it's more green and herbal, less floral; compared with Chardonnay, much more aromatic and usually unoaked.",
+      "highlight": "Green, herbal, zesty"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Sauvignon Blanc is aged in new oak.",
+      "answer": false,
+      "explanation": "Not true. Most is unoaked, to keep its fresh aromas."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sauvignon Blanc gives gooseberry, grass and citrus",
+        "It's a parent of Cabernet Sauvignon",
+        "It's crisp, aromatic and usually unoaked"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "region-fr-loire-valley-l02",
+  "moduleId": "region-fr-loire-valley",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Four grapes, many styles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the Loire's main grapes",
+    "Link each grape to its area",
+    "Explain the range of styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Four grapes",
+      "body": "Melon de Bourgogne makes Muscadet in the Pays Nantais. Chenin Blanc dominates Anjou and Touraine whites, dry to sweet. Cabernet Franc makes most of the reds, in Chinon, Bourgueil and Saumur-Champigny. Sauvignon Blanc leads the Central Vineyards and Touraine. Others include Gamay, Pinot Noir and Grolleau.",
+      "highlight": "Melon, Chenin, Cabernet Franc, Sauvignon"
+    },
+    {
+      "type": "concept",
+      "title": "Every style",
+      "body": "The Loire makes almost every style of wine: crisp dry whites, sweet botrytised whites, light reds, rosés, including Rosé d'Anjou, and sparkling wine, Crémant de Loire and Saumur. Cool climate and high acidity link them all. Chenin Blanc alone makes dry, sweet and sparkling.",
+      "highlight": "Dry, sweet, red, rosé, sparkling"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its main area.",
+      "pairs": [
+        {
+          "left": "Melon de Bourgogne",
+          "right": "Pays Nantais"
+        },
+        {
+          "left": "Chenin Blanc",
+          "right": "Anjou and Touraine"
+        },
+        {
+          "left": "Cabernet Franc",
+          "right": "Chinon and Bourgueil"
+        },
+        {
+          "left": "Sauvignon Blanc",
+          "right": "Central Vineyards"
+        }
+      ],
+      "explanation": "Each part of the Loire has its grape."
+    },
+    {
+      "type": "tip",
+      "body": "Most Loire wines are named after the place, not the grape. Learn the four grapes and their areas, and the labels open up."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Loire makes only white wine.",
+      "answer": false,
+      "explanation": "Not true. It also makes reds, rosés and sparkling wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Melon, Chenin, Cabernet Franc and Sauvignon lead the Loire",
+        "Each area has its own grape",
+        "High acidity links every style"
+      ]
+    }
+  ]
+}

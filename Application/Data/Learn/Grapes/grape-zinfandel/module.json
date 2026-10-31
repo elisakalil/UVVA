@@ -1,0 +1,31 @@
+{
+  "id": "grape-zinfandel",
+  "kind": "grape",
+  "order": 13,
+  "color": "red",
+  "title": "Zinfandel",
+  "aliases": [
+    "Primitivo",
+    "Tribidrag",
+    "Crljenak Kaštelanski"
+  ],
+  "origin": "Croatia",
+  "countries": [
+    "United States",
+    "Italy"
+  ],
+  "points": "2 1 1 1 = 5",
+  "complexity": "B",
+  "description": "Also called Primitivo in Italy and Tribidrag in Croatia. Ripe bramble fruit, high alcohol and a long American story.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-zinfandel-l01",
+    "grape-zinfandel-l02",
+    "grape-zinfandel-l03",
+    "grape-zinfandel-l04",
+    "grape-zinfandel-l05",
+    "grape-zinfandel-l06"
+  ]
+}

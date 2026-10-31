@@ -1,0 +1,77 @@
+{
+  "id": "region-us-willamette-valley-l02",
+  "moduleId": "region-us-willamette-valley",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Pinot first",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Pinot Noir's dominance",
+    "Describe Pinot Gris and Chardonnay",
+    "Explain Oregon's labelling rules"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinot Noir",
+      "body": "Pinot Noir is about two-thirds of the Willamette Valley's vineyards. It gives bright red cherry, raspberry, cranberry and earthy, forest floor notes, with fresh acidity and silky tannins. It's often described as between Burgundy and California in style: riper than Burgundy, fresher than California.",
+      "highlight": "About two-thirds Pinot Noir"
+    },
+    {
+      "type": "concept",
+      "title": "Whites and rules",
+      "body": "Pinot Gris, planted by David Lett in 1966, became Oregon's signature white: richer than Italian Pinot Grigio, with pear and spice. Chardonnay, once a struggle, is now excellent, using Dijon clones. Oregon requires 90% of a named grape on the label, stricter than the US federal 75%, for most varieties.",
+      "highlight": "Pinot Gris, Chardonnay; 90% rule"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Oregon.",
+      "pairs": [
+        {
+          "left": "Pinot Noir",
+          "right": "About two-thirds of vines"
+        },
+        {
+          "left": "Pinot Gris",
+          "right": "Signature white"
+        },
+        {
+          "left": "Dijon clones",
+          "right": "Improved Chardonnay"
+        },
+        {
+          "left": "90%",
+          "right": "Varietal label rule"
+        }
+      ],
+      "explanation": "Oregon focuses on Pinot."
+    },
+    {
+      "type": "tip",
+      "body": "Oregon's 90% rule means a bottle labelled Pinot Noir is almost entirely Pinot Noir, unlike the 75% minimum elsewhere in the US."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What share of a named grape does Oregon require on most labels?",
+      "options": [
+        "90%",
+        "75%",
+        "50%",
+        "100%"
+      ],
+      "answer": 0,
+      "explanation": "Stricter than the federal 75%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir is about two-thirds of vineyards",
+        "Pinot Gris and Chardonnay are its key whites",
+        "Oregon requires 90% of a named grape"
+      ]
+    }
+  ]
+}

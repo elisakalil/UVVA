@@ -1,0 +1,96 @@
+{
+  "id": "region-nz-hawkes-bay-l05",
+  "moduleId": "region-nz-hawkes-bay",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Hawke's Bay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Hawke's Bay's land and grapes",
+    "Explain Gimblett Gravels",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Hawke's Bay.",
+      "pairs": [
+        {
+          "left": "Mission Estate",
+          "right": "Oldest winery, 1851"
+        },
+        {
+          "left": "Gimblett Gravels",
+          "right": "Old riverbed"
+        },
+        {
+          "left": "Te Mata",
+          "right": "Coleraine blend"
+        },
+        {
+          "left": "Napier",
+          "right": "Art Deco town"
+        }
+      ],
+      "explanation": "Hawke's Bay mixes history and terroir."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is the most planted red grape in Hawke's Bay?",
+      "options": [
+        "Merlot",
+        "Pinot Noir",
+        "Zinfandel",
+        "Grenache"
+      ],
+      "answer": 0,
+      "explanation": "Merlot ripens more reliably than Cabernet here."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Gimblett Gravels is defined by soil type.",
+      "answer": true,
+      "explanation": "Yes, since 2001."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes do well in Hawke's Bay?",
+      "options": [
+        "Merlot",
+        "Syrah",
+        "Chardonnay",
+        "Riesling from the Mosel"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Mosel is in Germany."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Ngaruroro River changed course after a flood in ____.",
+      "options": [
+        "1867",
+        "1931",
+        "1851",
+        "2001"
+      ],
+      "answer": "1867",
+      "explanation": "Leaving the Gimblett Gravels."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Hawke's Bay is warm, sunny and historic",
+        "Merlot blends and Syrah lead its reds; Chardonnay its whites",
+        "Gimblett Gravels' warm stony soil suits reds",
+        "Its wines suit New Zealand lamb"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "region-ar-mendoza-l05",
+  "moduleId": "region-ar-mendoza",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading Mendoza and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Mendoza label",
+    "Pair Mendoza wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape, often Malbec, the region, Mendoza, and increasingly a sub-region or GI, like Valle de Uco, Luján de Cuyo or Gualtallary. Altitude is often printed. Argentina requires 85% of a named grape. Reserva and Gran Reserva have minimum ageing rules for reds: 12 and 24 months.",
+      "highlight": "Grape, GI, altitude"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Malbec is the wine of the asado, Argentina's barbecue: beef ribs, steak, chorizo and morcilla, blood sausage, with chimichurri, a herb and garlic sauce. Cabernet Franc suits lamb and herbs; Bonarda suits pizza and pasta; Torrontés suits empanadas. Serve Malbec at 16 to 18 degrees.",
+      "highlight": "Asado and chimichurri"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which sauce is a classic with Malbec and steak?",
+      "options": [
+        "Chimichurri",
+        "Hollandaise",
+        "Soy sauce",
+        "Custard"
+      ],
+      "answer": 0,
+      "explanation": "Herbs, garlic and vinegar suit Malbec's fruit."
+    },
+    {
+      "type": "tip",
+      "body": "Many Mendoza labels print the vineyard's altitude. Higher usually means fresher, more floral and more structured."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Argentina requires 85% of a named grape on the label.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show grape, sub-region and often altitude",
+        "Malbec is the wine of the asado",
+        "Serve Malbec at 16 to 18 degrees"
+      ]
+    }
+  ]
+}

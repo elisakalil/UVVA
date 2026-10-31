@@ -1,0 +1,60 @@
+{
+  "id": "grape-vermentino-l03",
+  "moduleId": "grape-vermentino",
+  "order": 3,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Vermentino",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Vermentino with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Mediterranean seafood",
+      "body": "Vermentino suits seafood and Mediterranean food: grilled fish, shellfish, fritto misto, pasta with clams, and pesto, Liguria's basil sauce. Its herbal notes echo basil, rosemary and thyme. Its saline edge suits oysters and anchovies.",
+      "highlight": "Pesto, seafood, herbs"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 8 to 10 degrees. Most Vermentino is best within two years. Vermentino di Gallura Superiore and some oaked versions can age three to five years, gaining honey and almond notes.",
+      "highlight": "Cold and young"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Ligurian sauce is a classic match for Vermentino?",
+      "options": [
+        "Pesto",
+        "Bolognese",
+        "Béarnaise",
+        "Hollandaise"
+      ],
+      "answer": 0,
+      "explanation": "Basil and pine nuts echo Vermentino's herbal, nutty character."
+    },
+    {
+      "type": "tip",
+      "body": "On a Sardinian beach, Vermentino di Gallura with grilled fish is a simple, perfect regional match."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Vermentino is made for long ageing.",
+      "answer": false,
+      "explanation": "Not true. It's best young, within two years."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vermentino suits seafood, pesto and herbs",
+        "Serve at 8 to 10 degrees",
+        "Most is best within two years"
+      ]
+    }
+  ]
+}

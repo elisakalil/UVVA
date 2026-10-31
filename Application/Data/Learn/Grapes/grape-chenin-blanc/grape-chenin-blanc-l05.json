@@ -1,0 +1,72 @@
+{
+  "id": "grape-chenin-blanc-l05",
+  "moduleId": "grape-chenin-blanc",
+  "order": 5,
+  "title": "South African Chenin",
+  "subtitle": "Old vines and new energy",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe South African Chenin styles",
+    "Explain the role of old vines",
+    "Name key regions and producers"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Styles",
+      "body": "South African Chenin ranges from crisp, fruity, unoaked wines with tropical and apple notes to rich, oaked, textured wines from old vines. The Chenin Blanc Association classifies styles: fresh and fruity, rich and ripe unwooded, rich and ripe wooded, and rich and ripe sweet.",
+      "highlight": "Fresh to rich, unoaked to oaked"
+    },
+    {
+      "type": "concept",
+      "title": "Old vines",
+      "body": "Many South African Chenin vineyards are old, dry-farmed bush vines, some planted in the 1960s and earlier. The Old Vine Project certifies vineyards over 35 years. Swartland, with granite and schist soils, became the centre of a revival from the early 2000s, led by producers like Eben Sadie and Chris and Andrea Mullineux.",
+      "highlight": "Swartland revival"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which South African region led the Chenin revival from the early 2000s?",
+      "options": [
+        "Swartland",
+        "Constantia",
+        "Robertson",
+        "Durbanville"
+      ],
+      "answer": 0,
+      "explanation": "Swartland's old bush vines and young producers drove the revival."
+    },
+    {
+      "type": "concept",
+      "title": "Why it suits the Cape",
+      "body": "Chenin's high acidity is valuable in the Cape's warm climate, keeping wines fresh as they ripen fully. Old bush vines, deep-rooted, cope with drought without irrigation. The result is concentrated wine with acidity, giving South Africa a world-class white style of its own.",
+      "highlight": "Acidity keeps freshness in heat"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What makes old-vine Chenin special in South Africa?",
+      "options": [
+        "Deep roots for drought",
+        "Low yields",
+        "Concentrated fruit",
+        "Very high yields"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Old vines give low, not high, yields."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "South African Chenin ranges from fresh to rich and oaked",
+        "Old dry-farmed bush vines drive quality",
+        "Swartland led the revival from the early 2000s"
+      ]
+    }
+  ]
+}

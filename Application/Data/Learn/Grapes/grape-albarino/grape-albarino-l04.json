@@ -1,0 +1,60 @@
+{
+  "id": "grape-albarino-l04",
+  "moduleId": "grape-albarino",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Albariño",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Albariño with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Seafood",
+      "body": "Albariño is Galicia's seafood wine: pulpo a la gallega, octopus with paprika, mussels, scallops, clams, oysters and grilled fish. Its acidity and saline edge match the sea. It also suits ceviche, sushi and light Asian dishes.",
+      "highlight": "Pulpo, shellfish, ceviche"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 8 to 10 degrees. Most is best within two to three years. Lees-aged and top examples can age five to ten years. In Galicia, it's often served in a white ceramic cup, a cunca, for local wines.",
+      "highlight": "8 to 10 degrees"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Galician dish is a classic match for Albariño?",
+      "options": [
+        "Pulpo a la gallega",
+        "Roast beef",
+        "Chocolate cake",
+        "Lamb tagine"
+      ],
+      "answer": 0,
+      "explanation": "Octopus with paprika and olive oil suits Albariño's acidity and salinity."
+    },
+    {
+      "type": "tip",
+      "body": "Albariño with a plate of mussels or oysters is about as close to a perfect pairing as it gets."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Albariño is best drunk within two to three years.",
+      "answer": true,
+      "explanation": "Yes, though top examples can age longer."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Albariño suits octopus, shellfish and ceviche",
+        "Serve at 8 to 10 degrees",
+        "Most is best young; top wines age"
+      ]
+    }
+  ]
+}

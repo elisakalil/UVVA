@@ -1,0 +1,62 @@
+{
+  "id": "grape-cinsault-l01",
+  "moduleId": "grape-cinsault",
+  "order": 1,
+  "title": "Meet Cinsault",
+  "subtitle": "Light, floral and soft",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cinsault's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Soft and perfumed",
+      "body": "Cinsault gives pale to medium red wines with strawberry, raspberry, red cherry and floral notes, sometimes herbs. Tannins are low, acidity moderate. It's light, juicy and fragrant, often used to soften blends and in rosé. It's also a parent of Pinotage.",
+      "highlight": "Strawberry, flowers, low tannin"
+    },
+    {
+      "type": "concept",
+      "title": "Heat-tolerant",
+      "body": "Cinsault, also spelled Cinsaut, probably comes from southern France, Languedoc or Provence. It tolerates heat and drought well, with large, juicy berries and thin skins. That gives high yields and pale colour, which is why it was used for bulk wine. From old, low-yielding vines, it gives perfumed, elegant reds.",
+      "highlight": "Heat-tolerant, thin skins, big berries"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Cinsault often give pale wines?",
+      "options": [
+        "Thin skins and large berries",
+        "It's a white grape",
+        "It's aged for decades",
+        "It's blended with water"
+      ],
+      "answer": 0,
+      "explanation": "Thin skins and a high juice ratio give pale colour and low tannin."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale ruby colour, bright red fruit and floral aromas, and a soft, light, juicy palate with little tannin. In blends, it brings perfume and softness. It's often compared with Pinot Noir or Gamay for its lightness, but it's warmer and more southern in feel.",
+      "highlight": "Pale, floral, soft"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cinsault tolerates heat and drought well.",
+      "answer": true,
+      "explanation": "Yes. That's why it's common in the south of France, North Africa and South Africa."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cinsault gives light, perfumed, soft red wine",
+        "It's heat-tolerant, with thin skins and big berries",
+        "Old vines give its most elegant wines"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": "path-20-l08",
+  "moduleId": "path-20",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from Spain and Portugal",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain Spain's ageing and quality system",
+    "Link Iberian regions to their grapes",
+    "Compare north and south in both countries"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Order Spain's red ageing categories from youngest to oldest.",
+      "items": [
+        "Joven",
+        "Crianza",
+        "Reserva",
+        "Gran Reserva"
+      ],
+      "explanation": "Each category requires more time in oak and bottle."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its main grape.",
+      "pairs": [
+        {
+          "left": "Rías Baixas",
+          "right": "Albariño"
+        },
+        {
+          "left": "Ribera del Duero",
+          "right": "Tinto Fino"
+        },
+        {
+          "left": "Priorat",
+          "right": "Garnacha and Cariñena"
+        },
+        {
+          "left": "Bairrada",
+          "right": "Baga"
+        },
+        {
+          "left": "Rueda",
+          "right": "Verdejo"
+        }
+      ],
+      "explanation": "Iberia's regions each have their own identity."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What soil defines Priorat?",
+      "options": [
+        "Chalk",
+        "Llicorella slate",
+        "Sand",
+        "Volcanic ash"
+      ],
+      "answer": 1,
+      "explanation": "Llicorella forces roots deep and keeps yields tiny."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are regions of Portugal?",
+      "options": [
+        "Dão",
+        "Douro",
+        "Alentejo",
+        "Rioja"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Rioja is in Spain."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In the Alentejo, Tempranillo is called Aragonez.",
+      "answer": true,
+      "explanation": "Yes. In the Douro it's Tinta Roriz; in Spain, Tempranillo or Tinto Fino."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Spain's ageing terms run from Joven to Gran Reserva",
+        "Rioja and Priorat are Spain's DOCa regions",
+        "Green Iberia makes fresh whites; the plateau and the south make ripe reds",
+        "Portugal's native grapes give it a unique identity"
+      ]
+    }
+  ]
+}

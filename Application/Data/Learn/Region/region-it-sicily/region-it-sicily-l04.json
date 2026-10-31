@@ -1,0 +1,60 @@
+{
+  "id": "region-it-sicily-l04",
+  "moduleId": "region-it-sicily",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Sicily and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read Sicilian labels",
+    "Describe Marsala",
+    "Pair Sicilian wines with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Labels and Marsala",
+      "body": "Labels show Sicilia DOC, Etna DOC, Cerasuolo di Vittoria DOCG, or Terre Siciliane IGT. Marsala, in the west, is a fortified wine from Grillo, Catarratto and Inzolia; styles range from Fine, a year old, to Vergine, dry, aged at least five years, often in a solera. It's Sicily's historic wine.",
+      "highlight": "Marsala: from Fine to Vergine"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Nero d'Avola suits pasta alla Norma, with aubergine and ricotta, grilled meat and pizza. Etna Rosso suits tuna, swordfish, mushrooms and lamb. Grillo and Carricante suit seafood, raw fish and caponata. Passito di Pantelleria suits cannoli, Sicily's ricotta pastries. Dry Marsala Vergine suits aged cheese.",
+      "highlight": "Pasta alla Norma, tuna, cannoli"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is a classic with cannoli?",
+      "options": [
+        "Passito di Pantelleria",
+        "Etna Rosso",
+        "Grillo",
+        "Nero d'Avola"
+      ],
+      "answer": 0,
+      "explanation": "Sweet Zibibbo from Pantelleria suits ricotta pastries."
+    },
+    {
+      "type": "tip",
+      "body": "Marsala Vergine, dry and nutty, is very different from the cooking Marsala many people know. Try it as an aperitif with almonds."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Marsala Vergine is a dry style.",
+      "answer": true,
+      "explanation": "Yes, aged at least five years."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show Sicilia DOC, Etna DOC or Terre Siciliane IGT",
+        "Marsala ranges from young Fine to dry Vergine",
+        "Pair Nero d'Avola with pasta alla Norma; Pantelleria with cannoli"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "path-18-l01",
+  "moduleId": "path-18",
+  "order": 1,
+  "title": "How French appellations work",
+  "subtitle": "Place as the organising idea",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the AOC system",
+    "Explain how appellations nest",
+    "Explain what an appellation controls"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Origin with rules",
+      "body": "France created the Appellation d'Origine Contrôlée, AOC, in 1935, after decades of fraud and phylloxera. Today it's called AOP in EU terms, though AOC is still used. Each appellation defines the area, grapes, yields, minimum alcohol and some winemaking. INAO, the national institute, manages them.",
+      "highlight": "AOC since 1935, managed by INAO"
+    },
+    {
+      "type": "concept",
+      "title": "Nesting",
+      "body": "Appellations nest from broad to precise. In Burgundy: the regional Bourgogne, then village names like Gevrey-Chambertin, then Premier Cru and Grand Cru vineyards. The smaller the area, the stricter the rules and the higher the expected quality. Below AOP sits IGP, like Pays d'Oc, with looser rules; below that, Vin de France.",
+      "highlight": "Region, village, vineyard"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Burgundy levels from broadest to most precise.",
+      "items": [
+        "Bourgogne",
+        "Gevrey-Chambertin",
+        "Gevrey-Chambertin Premier Cru",
+        "Chambertin Grand Cru"
+      ],
+      "explanation": "Each step narrows the area and tightens the rules."
+    },
+    {
+      "type": "concept",
+      "title": "What it controls",
+      "body": "Appellation rules can set maximum yields, minimum ripeness, permitted grapes, planting density and even pruning. They don't usually require grapes to be named on the label, which is why French labels rarely mention them. The idea is that place, not grape, defines the wine.",
+      "highlight": "Rules on grapes, yields and methods"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do most French labels not name the grape?",
+      "options": [
+        "It's illegal to name it",
+        "The appellation implies the grapes",
+        "French wines are always blends",
+        "Grapes are secret"
+      ],
+      "answer": 1,
+      "explanation": "The appellation's rules define the grapes, so the place name tells informed drinkers what's in the bottle."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The AOC system, since 1935, ties wine to place with rules",
+        "Appellations nest from region to village to vineyard",
+        "Rules cover grapes, yields and methods; labels lead with place"
+      ]
+    }
+  ]
+}

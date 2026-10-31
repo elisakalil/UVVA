@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-beaujolais-l02",
+  "moduleId": "region-fr-beaujolais",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Gamay's home",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Gamay",
+    "Explain carbonic maceration",
+    "Name Beaujolais' white wine"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Gamay",
+      "body": "Almost all Beaujolais is Gamay, fully Gamay Noir à Jus Blanc. It gives light to medium-bodied reds with red cherry, raspberry, violet and fresh acidity, and low tannin. Beaujolais has nearly all the world's Gamay. Pruned in gobelet, bush style, on the hills, it suits granite's poor, well-drained soils.",
+      "highlight": "Gamay: red fruit, low tannin"
+    },
+    {
+      "type": "concept",
+      "title": "Carbonic maceration",
+      "body": "Much Beaujolais uses semi-carbonic maceration. Whole bunches go into a tank; the bottom ones are crushed and ferment, releasing carbon dioxide. The upper berries ferment inside their skins, giving fruity aromas like banana, bubblegum and cherry, with little tannin. Some crus use more traditional methods for structure.",
+      "highlight": "Whole bunches, fruity aromas"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does semi-carbonic maceration give Beaujolais?",
+      "options": [
+        "Fruity aromas and low tannin",
+        "High tannin",
+        "Sweetness",
+        "Oxidised notes"
+      ],
+      "answer": 0,
+      "explanation": "Whole-berry fermentation gives fruity, soft wines."
+    },
+    {
+      "type": "concept",
+      "title": "Beaujolais Blanc",
+      "body": "A small amount of Beaujolais Blanc is made from Chardonnay, mostly in the north, near the Mâconnais. It's fresh and fruity, similar to Mâcon. Rosé is also made from Gamay. But red Gamay is over 95% of production.",
+      "highlight": "A little Chardonnay"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are features of Gamay in Beaujolais?",
+      "options": [
+        "Red fruit",
+        "Low tannin",
+        "Fresh acidity",
+        "Very high tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gamay is low in tannin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Beaujolais is almost all Gamay",
+        "Semi-carbonic maceration gives fruity, soft wines",
+        "A little Chardonnay makes Beaujolais Blanc"
+      ]
+    }
+  ]
+}

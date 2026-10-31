@@ -1,0 +1,62 @@
+{
+  "id": "region-it-piedmont-l01",
+  "moduleId": "region-it-piedmont",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "At the foot of the mountains",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Piedmont's geography",
+    "Explain its continental climate and fog",
+    "Explain why slopes matter"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Surrounded by mountains",
+      "body": "Piedmont, Piemonte, means foot of the mountains. It's in north-west Italy, bordered by the Alps on the north and west and the Apennines to the south. The key wine areas are the Langhe and Roero hills around Alba, and Monferrato around Asti. Piedmont has no IGT wines: everything is DOC or DOCG, with 19 DOCGs.",
+      "highlight": "Langhe, Roero, Monferrato"
+    },
+    {
+      "type": "concept",
+      "title": "Continental with fog",
+      "body": "The mountains create a continental climate: cold winters, hot summers and autumn fog, nebbia, rising from the Tanaro valley. Fog may give Nebbiolo its name. The Alps block cold northern winds, and a rain shadow keeps the region fairly dry. Hail is a risk. Long, cool autumns suit late-ripening grapes.",
+      "highlight": "Fog, nebbia, and long autumns"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Piedmont mean?",
+      "options": [
+        "Foot of the mountains",
+        "Fog valley",
+        "Hillside",
+        "Northern land"
+      ],
+      "answer": 0,
+      "explanation": "Piemonte: at the foot of the mountains."
+    },
+    {
+      "type": "concept",
+      "title": "A hillside hierarchy",
+      "body": "In the Langhe, grape choice follows the slope. The warmest, south-facing slopes, called sorì, go to Nebbiolo, which ripens last. Cooler slopes take Barbera; the coolest, highest sites take Dolcetto or Moscato. This hierarchy is old and practical, and the vineyard landscapes of Langhe-Roero and Monferrato became a UNESCO site in 2014.",
+      "highlight": "Best slopes for Nebbiolo"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Piedmont makes many IGT wines.",
+      "answer": false,
+      "explanation": "Not true. Piedmont has no IGT; its wines are DOC or DOCG."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Piedmont lies at the foot of the Alps, around Alba and Asti",
+        "Its continental climate has autumn fog and long ripening",
+        "The warmest slopes are kept for Nebbiolo"
+      ]
+    }
+  ]
+}

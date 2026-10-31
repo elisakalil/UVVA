@@ -1,0 +1,62 @@
+{
+  "id": "region-es-priorat-l01",
+  "moduleId": "region-es-priorat",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Slate and steep slopes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Priorat's landscape",
+    "Explain llicorella",
+    "Explain its revival"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rugged hills",
+      "body": "Priorat lies in Catalonia, about 100 km south-west of Barcelona, in rugged hills surrounded by the Montsant mountains. Vineyards climb steep terraces and slopes from 100 to 750 m. It's small, about 2,000 hectares. The climate is Mediterranean but with continental influence: hot, dry summers, cold winters and very little rain.",
+      "highlight": "Small, steep, dry"
+    },
+    {
+      "type": "concept",
+      "title": "Llicorella",
+      "body": "Priorat's signature soil is llicorella, a dark slate and quartz that glitters in the sun. It's poor, holds little water and forces roots to dig deep, sometimes 15 metres or more. Yields are tiny, often under 1 kg per vine on old vines. The result is concentrated wine with a mineral, sometimes graphite edge.",
+      "highlight": "Dark slate, deep roots, tiny yields"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is llicorella?",
+      "options": [
+        "A dark slate and quartz soil",
+        "A grape",
+        "A barrel",
+        "A wind"
+      ],
+      "answer": 0,
+      "explanation": "Priorat's famous slate soil."
+    },
+    {
+      "type": "concept",
+      "title": "The revival",
+      "body": "Carthusian monks founded the Scala Dei monastery here in the 12th century, which gave Priorat its name, priory. After phylloxera, the region emptied. In 1989, a group of five producers, including René Barbier, Álvaro Palacios and Carles Pastrana, made wines that stunned critics. Priorat became Spain's second DOCa in 2000, called DOQ in Catalan.",
+      "highlight": "The 1989 revival; DOQ since 2000"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Priorat is named after a medieval priory.",
+      "answer": true,
+      "explanation": "Yes, the Carthusian priory of Scala Dei."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Priorat is steep, dry and small, in Catalonia",
+        "Llicorella slate forces deep roots and tiny yields",
+        "A 1989 revival led to DOQ status in 2000"
+      ]
+    }
+  ]
+}

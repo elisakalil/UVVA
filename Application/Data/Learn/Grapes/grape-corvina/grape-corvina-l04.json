@@ -1,0 +1,67 @@
+{
+  "id": "grape-corvina-l04",
+  "moduleId": "grape-corvina",
+  "order": 4,
+  "title": "Amarone, Ripasso and Recioto",
+  "subtitle": "Valpolicella's family of wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Amarone",
+    "Describe Recioto",
+    "Explain how Ripasso is made"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Amarone and Recioto",
+      "body": "Recioto della Valpolicella is the oldest style: dried grapes fermented to leave sweetness. Amarone della Valpolicella, DOCG since 2010, is fermented almost dry, reaching 15 to 16% alcohol. Amarone means the big bitter one, compared with Recioto's sweetness. Legend says it was born when a Recioto fermented too far.",
+      "highlight": "Recioto sweet; Amarone dry"
+    },
+    {
+      "type": "concept",
+      "title": "Ripasso",
+      "body": "Ripasso, meaning re-passed, is made by refermenting young Valpolicella on the leftover skins of Amarone or Recioto. The skins add sugar, colour, tannin and dried fruit flavour, plus a few degrees of alcohol. The result sits between simple Valpolicella and Amarone, sometimes called baby Amarone.",
+      "highlight": "Valpolicella refermented on Amarone skins"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of making a Ripasso in order.",
+      "items": [
+        "Dry grapes for Amarone",
+        "Ferment and press the Amarone",
+        "Keep the leftover skins",
+        "Referment young Valpolicella on them"
+      ],
+      "explanation": "Ripasso borrows the skins left after Amarone is pressed, so Amarone comes first."
+    },
+    {
+      "type": "concept",
+      "title": "Ageing Amarone",
+      "body": "Amarone must age at least two years from January after harvest; Riserva at least four. Traditionally, it aged in large Slavonian oak casks; many producers now use French barriques. Producers like Quintarelli and Dal Forno made it famous worldwide.",
+      "highlight": "Two years minimum; Riserva four"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is Ripasso made?",
+      "options": [
+        "By drying grapes for six months",
+        "By refermenting Valpolicella on Amarone skins",
+        "By adding spirit",
+        "By blending with white wine"
+      ],
+      "answer": 1,
+      "explanation": "The leftover skins add body and flavour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Recioto is sweet; Amarone is dry and powerful, at 15 to 16%",
+        "Ripasso is Valpolicella refermented on Amarone skins",
+        "Amarone ages at least two years; Riserva four"
+      ]
+    }
+  ]
+}

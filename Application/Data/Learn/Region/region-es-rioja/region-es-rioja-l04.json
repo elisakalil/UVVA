@@ -1,0 +1,73 @@
+{
+  "id": "region-es-rioja-l04",
+  "moduleId": "region-es-rioja",
+  "order": 4,
+  "title": "The three sub-zones",
+  "subtitle": "Alta, Alavesa and Oriental",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rioja's three sub-zones",
+    "Explain their climates and soils",
+    "Explain blending across zones"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rioja Alta and Alavesa",
+      "body": "Rioja Alta, in the west, south of the Ebro, is higher, cooler and Atlantic-influenced, with clay-limestone, ferrous clay and alluvial soils; Haro is its historic centre. Rioja Alavesa, north of the Ebro, in the Basque Country, has chalky clay-limestone on terraces. Both give elegant, fresh, structured Tempranillo.",
+      "highlight": "Alta and Alavesa: cool and elegant"
+    },
+    {
+      "type": "concept",
+      "title": "Rioja Oriental",
+      "body": "Rioja Oriental, formerly Rioja Baja, renamed in 2018, is the eastern zone, lower, warmer and drier, Mediterranean. Alluvial and clay soils suit Garnacha, which thrives there. Wines are riper and fuller. Since 2017, labels can name the zone, and from 2018 municipalities, if the grapes come from there.",
+      "highlight": "Oriental: warm, Garnacha"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each sub-zone to its feature.",
+      "pairs": [
+        {
+          "left": "Rioja Alta",
+          "right": "Cool, west, Atlantic"
+        },
+        {
+          "left": "Rioja Alavesa",
+          "right": "Basque, chalky terraces"
+        },
+        {
+          "left": "Rioja Oriental",
+          "right": "Warm, east, Garnacha"
+        },
+        {
+          "left": "Haro",
+          "right": "Historic railway town"
+        }
+      ],
+      "explanation": "Each zone gives Rioja a different character."
+    },
+    {
+      "type": "concept",
+      "title": "Blending and place",
+      "body": "Traditionally, Rioja houses blended grapes from all three zones for balance and consistency. Today, more producers make wines from a single zone, village or vineyard, showing place. This shift from house style to terroir is the biggest change in modern Rioja.",
+      "highlight": "From blends to place"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Rioja Oriental was formerly called Rioja Baja.",
+      "answer": true,
+      "explanation": "Yes, renamed in 2018."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rioja Alta and Alavesa are cool and elegant",
+        "Rioja Oriental is warm and suits Garnacha",
+        "Rioja is moving from blends to place-specific wines"
+      ]
+    }
+  ]
+}

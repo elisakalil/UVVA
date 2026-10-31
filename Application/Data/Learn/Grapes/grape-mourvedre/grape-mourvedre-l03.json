@@ -1,0 +1,62 @@
+{
+  "id": "grape-mourvedre-l03",
+  "moduleId": "grape-mourvedre",
+  "order": 3,
+  "title": "Bandol",
+  "subtitle": "Mourvèdre's French masterpiece",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Bandol's landscape",
+    "Explain Bandol's rules",
+    "Describe Bandol's red and rosé"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Terraces by the sea",
+      "body": "Bandol lies on the Mediterranean coast of Provence, between Marseille and Toulon. Vineyards climb an amphitheatre of terraces, called restanques, facing south to the sea. Hot, sunny days and sea breezes ripen Mourvèdre fully. Limestone and sandy marl soils keep the vines healthy.",
+      "highlight": "Terraces facing the sea"
+    },
+    {
+      "type": "concept",
+      "title": "Rules",
+      "body": "Bandol red must be at least 50% Mourvèdre, with Grenache and Cinsault, and age at least 18 months in oak before release. Most top producers use 75 to 95% Mourvèdre. The wines are dark, structured, gamey and herbal, and can age 20 years or more.",
+      "highlight": "At least 50% Mourvèdre, 18 months in oak"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Bandol red must age at least ____ months in oak.",
+      "options": [
+        "18",
+        "6",
+        "36",
+        "3"
+      ],
+      "answer": "18",
+      "explanation": "Eighteen months in wood softens Mourvèdre's firm tannins."
+    },
+    {
+      "type": "concept",
+      "title": "Rosé and white",
+      "body": "Bandol's rosé is among Provence's most serious: more structured than most, often with Mourvèdre at its core, and able to age a few years. The small amount of white wine uses Clairette, Ugni Blanc and Bourboulenc. Domaine Tempier, a family estate, helped define Bandol's modern reputation.",
+      "highlight": "Serious, age-worthy rosé"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Bandol rosé is often more structured than typical Provence rosé.",
+      "answer": true,
+      "explanation": "Yes. Mourvèdre gives it more body and ageing potential."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bandol's terraces face the sea, ripening Mourvèdre fully",
+        "Reds need at least 50% Mourvèdre and 18 months in oak",
+        "Bandol rosé is structured and can age"
+      ]
+    }
+  ]
+}

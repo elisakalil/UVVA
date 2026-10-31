@@ -1,0 +1,23 @@
+{
+  "id": "region-es-rias-baixas",
+  "kind": "region",
+  "order": 20,
+  "country": "Spain",
+  "countryCode": "ES",
+  "title": "Rías Baixas",
+  "grapes": [
+    "Albariño"
+  ],
+  "points": "1 0 0 1 = 2",
+  "complexity": "D",
+  "description": "Green, wet Galicia: crisp, saline Albariño from granite and the Atlantic.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-es-rias-baixas-l01",
+    "region-es-rias-baixas-l02",
+    "region-es-rias-baixas-l03",
+    "region-es-rias-baixas-l04"
+  ]
+}

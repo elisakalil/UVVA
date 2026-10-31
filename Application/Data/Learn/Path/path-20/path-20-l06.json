@@ -1,0 +1,79 @@
+{
+  "id": "path-20-l06",
+  "moduleId": "path-20",
+  "order": 6,
+  "title": "Portugal's north",
+  "subtitle": "Vinho Verde, Douro and Dão",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Vinho Verde",
+    "Describe the Douro and its two wines",
+    "Describe the Dão"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Vinho Verde",
+      "body": "Vinho Verde, in the green north-west, has heavy rainfall and granite soils. It makes light, fresh, sometimes slightly spritzy whites from Loureiro, Arinto, Avesso and Alvarinho. Monção e Melgaço, along the Minho river, is the home of Alvarinho, making fuller, more serious whites. Verde means green, for youth and the landscape.",
+      "highlight": "Light, fresh whites"
+    },
+    {
+      "type": "concept",
+      "title": "The Douro",
+      "body": "The Douro valley, upstream, is hot and dry, with schist soils and terraces carved into steep slopes. It was demarcated in 1756, among the world's first wine regions to be legally defined. It makes Port and, increasingly, dry reds from Touriga Nacional, Touriga Franca and Tinta Roriz. UNESCO listed it as World Heritage in 2001.",
+      "highlight": "Schist terraces, demarcated in 1756"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "When was the Douro demarcated as a wine region?",
+      "options": [
+        "1756",
+        "1855",
+        "1935",
+        "1986"
+      ],
+      "answer": 0,
+      "explanation": "The Marquis of Pombal demarcated the Douro in 1756, among the earliest legal wine regions."
+    },
+    {
+      "type": "concept",
+      "title": "Dão",
+      "body": "The Dão, south of the Douro, is ringed by mountains that block both Atlantic rain and continental heat. Granite soils and altitude, 200 to 900 m, give fresh, elegant wines. Touriga Nacional, Jaen and Alfrocheiro make the reds, and Encruzado makes fine, age-worthy whites.",
+      "highlight": "Mountains, granite, elegance"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its signature wine.",
+      "pairs": [
+        {
+          "left": "Vinho Verde",
+          "right": "Light, fresh whites"
+        },
+        {
+          "left": "Monção e Melgaço",
+          "right": "Alvarinho"
+        },
+        {
+          "left": "Douro",
+          "right": "Port and dry reds"
+        },
+        {
+          "left": "Dão",
+          "right": "Encruzado and Touriga"
+        }
+      ],
+      "explanation": "Portugal's north moves from green and rainy to hot and dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vinho Verde makes fresh whites; Monção e Melgaço is Alvarinho's home",
+        "The Douro makes Port and dry reds on schist terraces",
+        "The Dão is mountain-ringed, granite and elegant"
+      ]
+    }
+  ]
+}

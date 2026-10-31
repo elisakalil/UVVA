@@ -1,0 +1,70 @@
+{
+  "id": "region-au-barossa-valley-l04",
+  "moduleId": "region-au-barossa-valley",
+  "order": 4,
+  "title": "Barossa and Eden Valley",
+  "subtitle": "Warm valley, cool hills",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Eden Valley",
+    "Compare it with the Barossa Valley",
+    "Explain Eden Valley Riesling"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Eden Valley",
+      "body": "Eden Valley lies in the hills east of the Barossa Valley, at about 400 to 600 m. It's cooler, windier and wetter, with granite and schist soils. It's part of the Barossa zone but a separate GI. Its wines are fresher and more elegant than the valley floor's.",
+      "highlight": "Higher, cooler, granite"
+    },
+    {
+      "type": "concept",
+      "title": "Riesling and Shiraz",
+      "body": "Eden Valley is famous for dry Riesling: lime, lemon and floral when young, developing toast and honey with age. Its Shiraz is more peppery and elegant than Barossa Valley Shiraz. Henschke's Hill of Grace, from Shiraz vines planted around 1860, is one of Australia's most famous wines.",
+      "highlight": "Riesling and elegant Shiraz"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Eden Valley cooler than the Barossa Valley?",
+      "options": [
+        "Higher altitude in the hills",
+        "Ocean fog",
+        "Snow",
+        "Lake effect"
+      ],
+      "answer": 0,
+      "explanation": "Altitude of 400 to 600 m."
+    },
+    {
+      "type": "tip",
+      "body": "Hill of Grace takes its name from the Lutheran church across the road, Gnadenberg, meaning hill of grace."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Eden Valley?",
+      "options": [
+        "Cooler than the Barossa Valley",
+        "Famous for dry Riesling",
+        "Home of Hill of Grace",
+        "Very hot and flat"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Eden Valley is cool and hilly."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Eden Valley is higher and cooler, in the eastern hills",
+        "It's famous for dry Riesling and elegant Shiraz",
+        "Henschke's Hill of Grace comes from 1860 vines"
+      ]
+    }
+  ]
+}

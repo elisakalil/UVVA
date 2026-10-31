@@ -1,0 +1,79 @@
+{
+  "id": "grape-sauvignon-blanc-l02",
+  "moduleId": "grape-sauvignon-blanc",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "From the Loire to the world",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Sauvignon Blanc's main regions",
+    "Explain the climates it needs",
+    "Compare styles by climate"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A wide map",
+      "body": "Sauvignon Blanc's French homes are the Loire, especially Sancerre and Pouilly-Fumé, and Bordeaux, blended with Sémillon. New Zealand's Marlborough made it world-famous. Chile's coastal valleys, like Casablanca and Leyda, South Africa's Elgin and Durbanville, California, Austria's Styria and north-east Italy also grow it.",
+      "highlight": "Loire, Bordeaux, Marlborough, Chile"
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "Sauvignon Blanc needs a cool or moderate climate to keep its acidity and aromas. Cool sites give green, grassy, citrus styles; warmer ones give tropical, passion fruit and melon. Too much heat makes it flat and loses its aromas. Coastal influence and altitude help in warmer countries.",
+      "highlight": "Cool for green; warmer for tropical"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Sauvignon style.",
+      "pairs": [
+        {
+          "left": "Sancerre",
+          "right": "Citrus, flint, restrained"
+        },
+        {
+          "left": "Marlborough",
+          "right": "Intense passion fruit and grass"
+        },
+        {
+          "left": "Pessac-Léognan",
+          "right": "Oaked, with Sémillon"
+        },
+        {
+          "left": "Styria",
+          "right": "Austrian, mineral and fresh"
+        }
+      ],
+      "explanation": "Climate and tradition shape each style."
+    },
+    {
+      "type": "concept",
+      "title": "Pyrazines and thiols",
+      "body": "Sauvignon's green notes come from methoxypyrazines, highest in cool sites and shaded fruit. Its tropical notes come from thiols, like 3MH, smelling of passion fruit and grapefruit, released from precursors during fermentation. Winemakers can boost thiols with machine harvesting, skin contact and specific yeasts.",
+      "highlight": "Pyrazines green; thiols tropical"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compounds give Sauvignon's passion fruit aroma?",
+      "options": [
+        "Thiols",
+        "Pyrazines",
+        "Terpenes",
+        "Tannins"
+      ],
+      "answer": 0,
+      "explanation": "Thiols like 3MH, released during fermentation."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sauvignon grows in the Loire, Bordeaux, New Zealand and beyond",
+        "Cool sites give green notes; warmer ones tropical",
+        "Pyrazines give grass; thiols give passion fruit"
+      ]
+    }
+  ]
+}

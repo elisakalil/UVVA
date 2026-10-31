@@ -1,0 +1,72 @@
+{
+  "id": "region-es-ribera-del-duero-l01",
+  "moduleId": "region-es-ribera-del-duero",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "High on the Meseta",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Ribera del Duero's geography",
+    "Explain its extreme climate",
+    "Explain its rise to fame"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Along the Duero",
+      "body": "Ribera del Duero follows the Duero river for about 115 km across Castilla y León, in north-central Spain. Vineyards sit on the Meseta, the high central plateau, at 750 to over 1,000 m, among the highest in Europe. Soils mix limestone, clay, sand and chalky marl. It has about 26,000 hectares of vines.",
+      "highlight": "Meseta, 750 to 1,000 m"
+    },
+    {
+      "type": "concept",
+      "title": "Extreme continental",
+      "body": "The climate is extreme continental: long, cold winters, short, hot summers and a huge day and night range, sometimes 20 degrees. Hot days ripen the grapes; cold nights keep acidity and colour. Frost is a constant danger, even in late spring or early autumn; 2017 lost over half the crop to frost.",
+      "highlight": "Huge day and night swings, frost"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Ribera's Tempranillo keep its freshness?",
+      "options": [
+        "Cold nights on the high plateau",
+        "Sea breezes",
+        "Heavy summer rain",
+        "It's picked very early"
+      ],
+      "answer": 0,
+      "explanation": "Altitude gives cold nights that preserve acidity."
+    },
+    {
+      "type": "concept",
+      "title": "Vega Sicilia and Pesquera",
+      "body": "Vega Sicilia, founded in 1864, made Ribera's greatest wine, Único, for over a century before the region was known. Alejandro Fernández's Pesquera, praised by critics in the 1980s, made the region famous. The DO was created in 1982 with only a handful of wineries; today there are over 300. Dominio de Pingus, since 1995, is another icon.",
+      "highlight": "Vega Sicilia, Pesquera, Pingus"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are famous Ribera del Duero producers?",
+      "options": [
+        "Vega Sicilia",
+        "Pesquera",
+        "Dominio de Pingus",
+        "Château Margaux"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Château Margaux is in Bordeaux."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Ribera del Duero sits on the high Meseta along the Duero",
+        "Its extreme climate brings heat, cold nights and frost",
+        "Vega Sicilia and Pesquera made it famous; DO since 1982"
+      ]
+    }
+  ]
+}

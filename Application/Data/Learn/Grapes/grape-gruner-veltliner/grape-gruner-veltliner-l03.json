@@ -1,0 +1,72 @@
+{
+  "id": "grape-gruner-veltliner-l03",
+  "moduleId": "grape-gruner-veltliner",
+  "order": 3,
+  "title": "White pepper and loess",
+  "subtitle": "Why Grüner tastes as it does",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain rotundone in Grüner",
+    "Explain the role of loess soils",
+    "Compare light and powerful styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rotundone",
+      "body": "Grüner's white pepper note comes from rotundone, the same compound that gives Syrah its black pepper aroma and is found in peppercorns. It forms in the skins, especially in cooler sites and years. Like in Syrah, about one in five people can't smell it at all.",
+      "highlight": "Rotundone: the pepper molecule"
+    },
+    {
+      "type": "concept",
+      "title": "Loess",
+      "body": "Grüner grows best on loess, a fine, wind-blown, yellowish silt deposited after the last ice age. Loess is deep, holds water and warms easily, giving full-bodied, rounder Grüner. In the Wachau and Kamptal, loess terraces sit beside primary rock, gneiss and granite, which give leaner, more mineral Grüner, often used for Riesling.",
+      "highlight": "Loess: rich. Rock: mineral."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The compound that gives Grüner its white pepper note is ____.",
+      "options": [
+        "rotundone",
+        "pyrazine",
+        "linalool",
+        "TDN"
+      ],
+      "answer": "rotundone",
+      "explanation": "Rotundone, also found in Syrah and peppercorns."
+    },
+    {
+      "type": "concept",
+      "title": "Light to powerful",
+      "body": "Light Grüner, like many Weinviertel and Steinfeder wines, is crisp, peppery and best young. Powerful Grüner, like Wachau Smaragd or Kamptal Reserve from loess, is rich, with stone fruit, spice and a creamy texture, and can age 10 to 20 years, gaining honey and toast.",
+      "highlight": "Everyday to age-worthy"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does loess give Grüner?",
+      "options": [
+        "Fuller body",
+        "Rounder texture",
+        "Good water supply",
+        "Very lean, austere wines"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Primary rock, not loess, gives leaner wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rotundone gives Grüner its white pepper",
+        "Loess gives full, round Grüner; rock gives mineral wines",
+        "Styles range from light to powerful and age-worthy"
+      ]
+    }
+  ]
+}

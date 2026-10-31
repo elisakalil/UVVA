@@ -1,0 +1,96 @@
+{
+  "id": "region-nz-marlborough-l05",
+  "moduleId": "region-nz-marlborough",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Marlborough",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Marlborough's land and grapes",
+    "Explain its style",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Marlborough.",
+      "pairs": [
+        {
+          "left": "Wairau Valley",
+          "right": "Broad, classic tropical style"
+        },
+        {
+          "left": "Awatere Valley",
+          "right": "Higher, herbal, saline"
+        },
+        {
+          "left": "Cloudy Bay",
+          "right": "Famous 1985 launch"
+        },
+        {
+          "left": "Blenheim",
+          "right": "Main town"
+        }
+      ],
+      "explanation": "Marlborough's map is simple and famous."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Marlborough's signature grape?",
+      "options": [
+        "Sauvignon Blanc",
+        "Shiraz",
+        "Malbec",
+        "Nebbiolo"
+      ],
+      "answer": 0,
+      "explanation": "About 80% of vineyards."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Classic Marlborough Sauvignon is aged in new oak.",
+      "answer": false,
+      "explanation": "Not true. It's usually unoaked to keep its aromas."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which aromas are typical of Marlborough Sauvignon?",
+      "options": [
+        "Passion fruit",
+        "Cut grass",
+        "Grapefruit",
+        "Vanilla and toast"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Vanilla and toast come from oak."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Commercial vines were first planted in Marlborough in ____.",
+      "options": [
+        "1973",
+        "1985",
+        "1840",
+        "2001"
+      ],
+      "answer": "1973",
+      "explanation": "By Montana, now Brancott Estate."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marlborough is sunny by day and cold at night",
+        "Sauvignon Blanc dominates, pungent and zesty",
+        "Thiols and pyrazines explain its intensity",
+        "It suits seafood, goat's cheese and herbs"
+      ]
+    }
+  ]
+}

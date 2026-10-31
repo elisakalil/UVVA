@@ -1,0 +1,62 @@
+{
+  "id": "path-29-l04",
+  "moduleId": "path-29",
+  "order": 4,
+  "title": "Fine wine and collecting",
+  "subtitle": "Wine as an asset",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what makes a fine wine collectable",
+    "Explain en primeur",
+    "Explain provenance and storage"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What is collected",
+      "body": "Collectable wines age well and have a track record of price growth. Top Bordeaux, Burgundy, Champagne, Barolo, vintage Port and a few others dominate. The Liv-ex index tracks prices of these wines like a stock market. Only a tiny share of the world's wine, well under 1%, trades this way.",
+      "highlight": "A tiny share, mainly a few regions"
+    },
+    {
+      "type": "concept",
+      "title": "En primeur",
+      "body": "En primeur, or futures, is a way of buying Bordeaux and some other wines before they are bottled. Châteaux release a share of the wine in spring after the harvest, through négociants. Buyers pay in advance and receive bottles about two years later. The idea is to secure scarce wine at a lower price, but recent prices have often risen little after release.",
+      "highlight": "Pay now, receive in two years"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Buying Bordeaux before it is bottled is called en ____.",
+      "options": [
+        "primeur",
+        "rama",
+        "cave",
+        "vrac"
+      ],
+      "answer": "primeur",
+      "explanation": "En primeur lets buyers secure wine early, through the Bordeaux négociant system."
+    },
+    {
+      "type": "concept",
+      "title": "Provenance and storage",
+      "body": "A collectable bottle's value depends on provenance: where it has been stored and by whom. Professional bonded warehouses keep wine at steady temperatures and record each movement. Wine fraud exists: the 2012 case of Rudy Kurniawan, who faked old Burgundies, showed how hard verification can be.",
+      "highlight": "Provenance protects value"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Provenance, the record of how a bottle was stored, affects its value.",
+      "answer": true,
+      "explanation": "Yes. Buyers pay more for wine with a clear, professional storage history."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A few regions dominate fine wine collecting",
+        "En primeur lets buyers pay early for Bordeaux",
+        "Provenance and storage protect value, and fraud exists"
+      ]
+    }
+  ]
+}

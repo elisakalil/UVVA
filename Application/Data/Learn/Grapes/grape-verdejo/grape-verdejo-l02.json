@@ -1,0 +1,77 @@
+{
+  "id": "grape-verdejo-l02",
+  "moduleId": "grape-verdejo",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Rueda",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rueda's climate and soils",
+    "Explain night harvesting",
+    "Explain Rueda's labelling"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "High plateau",
+      "body": "Rueda lies on Spain's central Meseta, at 700 to 850 m. Its climate is continental: hot days, cold nights, harsh winters. Soils are stony, sandy and gravelly, with lime. The large day and night swing preserves Verdejo's acidity and aroma. Old ungrafted vines still grow in sandy soils.",
+      "highlight": "Meseta, 700 to 850 m"
+    },
+    {
+      "type": "concept",
+      "title": "Night harvesting",
+      "body": "Because Verdejo oxidises easily, many producers harvest at night, by machine, when temperatures are cooler. Cool grapes reach the winery fresh, keeping aromas. Skin contact and lees ageing can add texture. Most is made in steel; some top wines use oak or concrete eggs.",
+      "highlight": "Picked at night to stay fresh"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Rueda term to its meaning.",
+      "pairs": [
+        {
+          "left": "Rueda Verdejo",
+          "right": "At least 85% Verdejo"
+        },
+        {
+          "left": "Rueda",
+          "right": "Blend, at least 50% Verdejo"
+        },
+        {
+          "left": "Meseta",
+          "right": "High central plateau"
+        },
+        {
+          "left": "Night harvest",
+          "right": "Keeps grapes cool"
+        }
+      ],
+      "explanation": "Rueda's rules and practices protect Verdejo's freshness."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Rueda Verdejo on the label for a wine made mainly from Verdejo. Plain Rueda may include more Sauvignon Blanc or Viura."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Verdejo often harvested at night?",
+      "options": [
+        "To keep grapes cool and avoid oxidation",
+        "Because it's illegal by day",
+        "To add colour",
+        "To raise sugar"
+      ],
+      "answer": 0,
+      "explanation": "Cool grapes keep their fresh aromas."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rueda's high plateau gives hot days and cold nights",
+        "Night harvesting keeps Verdejo fresh",
+        "Rueda Verdejo must be at least 85% Verdejo"
+      ]
+    }
+  ]
+}

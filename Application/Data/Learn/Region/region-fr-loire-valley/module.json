@@ -1,0 +1,28 @@
+{
+  "id": "region-fr-loire-valley",
+  "kind": "region",
+  "order": 4,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Loire Valley",
+  "grapes": [
+    "Chenin Blanc",
+    "Sauvignon Blanc",
+    "Cabernet Franc",
+    "Melon de Bourgogne"
+  ],
+  "points": "2 0 2 1 = 5",
+  "complexity": "B",
+  "description": "France's longest river and its garden: crisp whites, fresh reds and every sweetness of Chenin.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "region-fr-loire-valley-l01",
+    "region-fr-loire-valley-l02",
+    "region-fr-loire-valley-l03",
+    "region-fr-loire-valley-l04",
+    "region-fr-loire-valley-l05",
+    "region-fr-loire-valley-l06"
+  ]
+}

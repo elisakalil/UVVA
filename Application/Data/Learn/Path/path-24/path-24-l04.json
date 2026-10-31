@@ -1,0 +1,83 @@
+{
+  "id": "path-24-l04",
+  "moduleId": "path-24",
+  "order": 4,
+  "title": "Marlborough and Central Otago",
+  "subtitle": "The South Island",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Marlborough's climate and style",
+    "Describe Central Otago",
+    "Compare the two regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Marlborough",
+      "body": "Marlborough, at the north-east of the South Island, makes about 75% of New Zealand's wine. Long, sunny days and cold nights give Sauvignon Blanc its intense passion fruit and gooseberry with high acidity. The Wairau Valley is the heart; the Awatere Valley, cooler and higher, gives more herbal styles. Montana planted the first vines in 1973.",
+      "highlight": "Sunny days, cold nights, Sauvignon Blanc"
+    },
+    {
+      "type": "concept",
+      "title": "Central Otago",
+      "body": "Central Otago, around 45 degrees south, is the world's southernmost major wine region. It is New Zealand's only continental climate: hot, dry summers, cold winters, frost risk. Vineyards at up to 400 m, on schist and gravel, make Pinot Noir with vivid fruit and fresh acidity. Bannockburn and Gibbston are key sub-regions.",
+      "highlight": "Continental, southernmost, Pinot Noir"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its signature.",
+      "pairs": [
+        {
+          "left": "Marlborough",
+          "right": "Sauvignon Blanc"
+        },
+        {
+          "left": "Central Otago",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Awatere Valley",
+          "right": "Herbal, cool Sauvignon"
+        },
+        {
+          "left": "Wairau Valley",
+          "right": "Marlborough's heart"
+        }
+      ],
+      "explanation": "The South Island has two very different strengths."
+    },
+    {
+      "type": "concept",
+      "title": "Contrasts",
+      "body": "Marlborough is maritime and broad, with large-scale production. Central Otago is inland, continental and small, with mostly boutique producers. Both depend on high sunlight and cool nights. Frost fans and helicopters are used in both to protect vines on cold spring nights.",
+      "highlight": "Maritime and large; continental and small"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which features describe Central Otago?",
+      "options": [
+        "Continental climate",
+        "World's southernmost major wine region",
+        "Most of New Zealand's production",
+        "Pinot Noir focus"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Marlborough, not Central Otago, makes most of New Zealand's wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marlborough makes about 75% of New Zealand's wine, mostly Sauvignon Blanc",
+        "Central Otago is continental and focused on Pinot Noir",
+        "Both rely on bright sun and cool nights"
+      ]
+    }
+  ]
+}

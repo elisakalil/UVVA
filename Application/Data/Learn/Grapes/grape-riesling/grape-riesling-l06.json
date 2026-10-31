@@ -1,0 +1,70 @@
+{
+  "id": "grape-riesling-l06",
+  "moduleId": "grape-riesling",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Riesling",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Riesling styles with food",
+    "Serve it well",
+    "Use Riesling with spicy food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Versatile",
+      "body": "Dry Riesling suits fish, shellfish, pork, sushi and Alsace's choucroute. Off-dry Riesling suits spicy Asian food: Thai, Sichuan, Indian; its sugar and low alcohol calm chilli. Sweet Riesling suits fruit desserts, blue cheese and foie gras. Riesling's acidity cuts fat and salt.",
+      "highlight": "Choucroute, Thai, fruit desserts"
+    },
+    {
+      "type": "concept",
+      "title": "Service",
+      "body": "Serve Riesling at 7 to 10 degrees; aged and sweet styles a little warmer, 10 to 12. Use a white wine glass with a narrowing rim to focus the aromas. Riesling under screw cap ages well and avoids cork taint.",
+      "highlight": "7 to 10 degrees"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does off-dry Riesling suit spicy food?",
+      "options": [
+        "Its sugar and low alcohol calm chilli heat",
+        "It's very tannic",
+        "It's high in alcohol",
+        "It's red"
+      ],
+      "answer": 0,
+      "explanation": "Sweetness soothes, and low alcohol doesn't amplify the burn."
+    },
+    {
+      "type": "tip",
+      "body": "Mosel Kabinett with a spicy Thai salad is one of the great wine and food matches. The wine's lime and sweetness echo the dish."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Riesling?",
+      "options": [
+        "Thai curry",
+        "Choucroute",
+        "Sushi",
+        "Steak with red wine sauce"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Steak suits a red wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Riesling suits fish, pork and choucroute",
+        "Off-dry Riesling is a top match for spicy food",
+        "Serve at 7 to 10 degrees in a narrowing glass"
+      ]
+    }
+  ]
+}

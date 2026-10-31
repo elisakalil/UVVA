@@ -1,0 +1,62 @@
+{
+  "id": "grape-marsanne-l01",
+  "moduleId": "grape-marsanne",
+  "order": 1,
+  "title": "Meet Marsanne",
+  "subtitle": "Body, honey and almond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Marsanne's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rich and subtle",
+      "body": "Marsanne gives full-bodied whites with pear, quince, honeysuckle, almond and, with age, honey and nuts. Acidity is low to medium, alcohol moderate to high, texture waxy and rich. It's less aromatic than Viognier, more about texture than perfume.",
+      "highlight": "Pear, almond, waxy texture"
+    },
+    {
+      "type": "concept",
+      "title": "Origins",
+      "body": "Marsanne takes its name from the village of Marsanne, near Montélimar in the Rhône. It's a northern Rhône grape, closely linked to Roussanne, its frequent blending partner. It's more productive and reliable than Roussanne, but can be flabby if overcropped or picked too late.",
+      "highlight": "Named after a Rhône village"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Marsanne's typical texture?",
+      "options": [
+        "Waxy and rich",
+        "Light and lean",
+        "Tannic and grippy",
+        "Sparkling"
+      ],
+      "answer": 0,
+      "explanation": "Marsanne is full-bodied and waxy, more about texture than aroma."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for medium lemon to gold colour, a subtle nose of pear, almond and flowers, and a full, waxy palate with low to moderate acidity. Young, it can seem quiet; with age, it develops honey and nutty notes. Compared with Viognier, it's less perfumed and less apricot.",
+      "highlight": "Quiet nose, full palate"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Marsanne is more aromatic than Viognier.",
+      "answer": false,
+      "explanation": "Not true. Viognier is far more perfumed. Marsanne is about texture."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marsanne gives pear, almond and a waxy texture",
+        "It's named after a Rhône village and pairs with Roussanne",
+        "It's subtle young and honeyed with age"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "grape-cabernet-franc-l05",
+  "moduleId": "grape-cabernet-franc",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Cabernet Franc",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Cabernet Franc with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Versatile",
+      "body": "Cabernet Franc's fresh acidity and moderate tannin make it food-friendly. Light Loire styles suit charcuterie, pork rillettes, roast chicken and goat's cheese. Fuller styles suit lamb, duck and dishes with herbs and roasted peppers, which echo its own green notes.",
+      "highlight": "Rillettes, roast chicken, herbs"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve light Loire Cabernet Franc slightly cool, about 14 to 15 degrees. Fuller versions at 16 to 17. Simple Loire reds are best within three years. Top Chinon and Bourgueil from tuffeau age 10 to 20 years. Cheval Blanc ages for decades.",
+      "highlight": "Light styles slightly cool"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Cabernet Franc suit dishes with herbs and roasted peppers?",
+      "options": [
+        "They echo its own leafy notes",
+        "They hide its colour",
+        "They make it sweet",
+        "They raise its alcohol"
+      ],
+      "answer": 0,
+      "explanation": "Herbal food echoes the wine's leafy, green side."
+    },
+    {
+      "type": "tip",
+      "body": "Try a young Chinon slightly chilled with pork rillettes on bread. It's a classic Loire combination."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Light Loire Cabernet Franc is best served at about ____ degrees.",
+      "options": [
+        "14 to 15",
+        "6 to 8",
+        "20 to 22",
+        "10 to 11"
+      ],
+      "answer": "14 to 15",
+      "explanation": "Slightly cool brings out its fresh fruit."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Franc suits charcuterie, poultry and herb dishes",
+        "Serve light styles slightly cool",
+        "Top Loire and Bordeaux examples age for decades"
+      ]
+    }
+  ]
+}

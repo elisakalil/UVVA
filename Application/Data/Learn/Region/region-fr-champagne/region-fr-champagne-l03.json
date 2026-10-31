@@ -1,0 +1,69 @@
+{
+  "id": "region-fr-champagne-l03",
+  "moduleId": "region-fr-champagne",
+  "order": 3,
+  "title": "The traditional method",
+  "subtitle": "How Champagne is made",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Put the steps of the traditional method in order",
+    "Explain lees ageing rules",
+    "Explain riddling and disgorgement"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "From base wine to bubbles",
+      "body": "Grapes are hand-picked and pressed whole and gently. The base wines are fermented, then blended, often with reserve wines from earlier years. The blend is bottled with sugar and yeast, the liqueur de tirage, and sealed with a crown cap. A second fermentation in the bottle creates about 6 atmospheres of pressure.",
+      "highlight": "Second fermentation in the bottle"
+    },
+    {
+      "type": "concept",
+      "title": "Lees and riddling",
+      "body": "The wine then ages on its lees, dead yeast: at least 15 months for non-vintage, at least 3 years for vintage. Autolysis adds brioche, biscuit and nutty notes. Riddling moves the yeast to the neck. Disgorgement freezes the neck and removes the plug. Dosage, wine with sugar, tops up the bottle before corking.",
+      "highlight": "15 months non-vintage; 3 years vintage"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the traditional method steps in order.",
+      "items": [
+        "Blend the base wines",
+        "Add sugar and yeast, and seal",
+        "Second fermentation in bottle",
+        "Ageing on lees",
+        "Riddling and disgorgement",
+        "Dosage and corking"
+      ],
+      "explanation": "Each step builds on the one before."
+    },
+    {
+      "type": "concept",
+      "title": "Why hand-picking",
+      "body": "Champagne requires hand harvesting. Whole bunches are pressed gently, so black grapes give white juice without colour or bitterness. Pressing is limited: from 4,000 kg of grapes, only 2,550 litres of juice may be used. The first 2,050 litres, the cuvée, are the finest; the next 500, the taille, are fruitier.",
+      "highlight": "Hand-picked, gently pressed"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the minimum lees ageing for non-vintage Champagne?",
+      "options": [
+        "15 months",
+        "3 months",
+        "5 years",
+        "None"
+      ],
+      "answer": 0,
+      "explanation": "Non-vintage needs 15 months in total, with at least 12 on lees; vintage needs 3 years."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Champagne's second fermentation happens in the bottle",
+        "Non-vintage ages 15 months; vintage 3 years",
+        "Hand-picking and gentle pressing give white juice"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "path-12-l06",
+  "moduleId": "path-12",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Sparkling Wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how bubbles are made",
+    "Compare the traditional and tank methods",
+    "Recognise the main sparkling wines"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Put these traditional method steps in order.",
+      "items": [
+        "Base wine",
+        "Second fermentation in bottle",
+        "Ageing on lees",
+        "Riddling",
+        "Disgorgement",
+        "Dosage"
+      ],
+      "explanation": "Yeast first does its work, then is moved and removed, and the wine is topped up."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its method.",
+      "pairs": [
+        {
+          "left": "Champagne",
+          "right": "Traditional method"
+        },
+        {
+          "left": "Prosecco",
+          "right": "Tank method"
+        },
+        {
+          "left": "Asti",
+          "right": "Single, stopped fermentation"
+        },
+        {
+          "left": "Cheap fizz",
+          "right": "Carbonation"
+        }
+      ],
+      "explanation": "Method shapes flavour, bubble and price."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What gives traditional method wines their bready, toasty notes?",
+      "options": [
+        "Oak barrels",
+        "Ageing on the lees",
+        "High alcohol",
+        "Dosage"
+      ],
+      "answer": 1,
+      "explanation": "Long contact with dead yeast in the bottle releases those flavours."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are traditional method sparkling wines?",
+      "options": [
+        "Cava",
+        "Franciacorta",
+        "Crémant de Loire",
+        "Prosecco"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Prosecco is mostly made by the tank method."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Moscato d'Asti is fermented to dryness and then sweetened.",
+      "answer": false,
+      "explanation": "Not true. Its fermentation is stopped early, leaving natural sugar and low alcohol."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bubbles come from a second fermentation in a closed vessel",
+        "The traditional method gives toasty, fine bubbles; tank keeps fruit fresh",
+        "Champagne, Cava, Crémant and Franciacorta use the traditional method",
+        "Prosecco uses the tank method; Asti a single, stopped fermentation"
+      ]
+    }
+  ]
+}

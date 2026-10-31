@@ -1,0 +1,62 @@
+{
+  "id": "grape-pinot-gris-l01",
+  "moduleId": "grape-pinot-gris",
+  "order": 1,
+  "title": "Meet Pinot Gris",
+  "subtitle": "The grey Pinot",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Pinot Gris' flavours",
+    "Explain its link to Pinot Noir",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pear and spice",
+      "body": "Pinot Gris gives white wines with pear, apple, white peach, lemon and, in richer styles, honey, spice and smoke. Acidity ranges from fresh to moderate, body from light to full. Its pinkish-grey skins can give a coppery tint. It's one of the world's most popular white grapes.",
+      "highlight": "Pear, apple, spice"
+    },
+    {
+      "type": "concept",
+      "title": "A Pinot mutation",
+      "body": "Pinot Gris is a colour mutation of Pinot Noir: the same DNA, but with less pigment in the skin, which is greyish-pink. Gris means grey in French; Grigio in Italian. It ripens early and reaches high sugar, so it can give fairly high alcohol, with lowish acidity if picked late.",
+      "highlight": "Grey-pink skin, a Pinot Noir mutation"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Pinot Gris genetically?",
+      "options": [
+        "A colour mutation of Pinot Noir",
+        "A cross of Riesling and Chardonnay",
+        "A Muscat",
+        "Unrelated to any Pinot"
+      ],
+      "answer": 0,
+      "explanation": "It shares Pinot Noir's DNA, with lighter skin."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Light Pinot Grigio is pale, with neutral apple and lemon and crisp acidity. Richer Pinot Gris is deeper lemon or slightly copper, with pear, spice and honey, and a fuller, oilier texture. If you see a faint pink tint in a white, consider Pinot Gris.",
+      "highlight": "Pale and crisp, or rich and spicy"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinot Gris skins are greyish-pink.",
+      "answer": true,
+      "explanation": "Yes. That's why Gris, grey, is in its name."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Gris gives pear, apple and, when rich, spice and honey",
+        "It's a colour mutation of Pinot Noir",
+        "Its pink-grey skins can tint the wine"
+      ]
+    }
+  ]
+}

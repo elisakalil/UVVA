@@ -1,0 +1,62 @@
+{
+  "id": "grape-torrontes-l01",
+  "moduleId": "grape-torrontes",
+  "order": 1,
+  "title": "Meet Torrontés",
+  "subtitle": "Argentina's floral white",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Torrontés' aromas and structure",
+    "Explain its parentage",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Perfumed and dry",
+      "body": "Torrontés gives intensely aromatic whites with rose, jasmine, orange blossom, peach, lemon and lychee. Most are dry, with medium acidity and medium to high alcohol, and sometimes a slightly bitter finish. Its perfume makes it seem sweet, but it's usually dry.",
+      "highlight": "Rose, jasmine, peach"
+    },
+    {
+      "type": "concept",
+      "title": "An Argentine cross",
+      "body": "There are three Torrontés: Riojano, the finest and most planted, Sanjuanino and Mendocino. DNA shows Torrontés Riojano is a cross of Muscat of Alexandria and Criolla Chica, also called Listán Prieto or País, brought by Spanish colonists. That explains its Muscat-like perfume. It's Argentina's own grape, born there.",
+      "highlight": "Muscat of Alexandria x Criolla Chica"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Torrontés smell like Muscat?",
+      "options": [
+        "Muscat of Alexandria is one of its parents",
+        "It's blended with Muscat",
+        "It's aged in Muscat barrels",
+        "It's a red grape"
+      ],
+      "answer": 0,
+      "explanation": "Its parentage gives it Muscat-like terpenes."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon colour and an explosive floral nose of rose and orange blossom, then a dry palate with medium acidity and warm alcohol. A slight bitterness at the end is typical. Compared with Muscat, it's often drier and spicier; compared with Gewürztraminer, fresher.",
+      "highlight": "Floral nose, dry palate"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Torrontés is sweet.",
+      "answer": false,
+      "explanation": "Not true. Its perfume suggests sweetness, but most is dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Torrontés is intensely floral but usually dry",
+        "Torrontés Riojano is a cross of Muscat of Alexandria and Criolla Chica",
+        "It's Argentina's own grape"
+      ]
+    }
+  ]
+}

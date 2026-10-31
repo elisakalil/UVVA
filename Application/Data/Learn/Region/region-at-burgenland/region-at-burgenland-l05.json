@@ -1,0 +1,70 @@
+{
+  "id": "region-at-burgenland-l05",
+  "moduleId": "region-at-burgenland",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading Burgenland and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Burgenland label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the producer, grape, DAC, like Mittelburgenland DAC or Leithaberg DAC, and Reserve for riper wines. Sweet wines show the Prädikat, like TBA or Ausbruch. Austria's red, white and red stripe on the capsule, the Banderole, shows the wine has passed official testing.",
+      "highlight": "DAC, Reserve, Banderole"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Blaufränkisch suits roast duck, goose, venison and goulash, a Hungarian-Austrian dish with paprika. Zweigelt suits Wiener Schnitzel and grilled meat. Sweet wines from Neusiedlersee suit foie gras, blue cheese, strudel and fruit desserts. Serve Blaufränkisch at 16 to 18 degrees.",
+      "highlight": "Duck, goulash, strudel"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Blaufränkisch?",
+      "options": [
+        "Goulash",
+        "Raw oysters",
+        "Lemon sorbet",
+        "Sushi"
+      ],
+      "answer": 0,
+      "explanation": "Paprika and rich meat suit its spice and acidity."
+    },
+    {
+      "type": "tip",
+      "body": "St. Martin's Day, November 11, is when Burgenland celebrates the new wine with roast goose. A perfect match for Blaufränkisch."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Neusiedlersee sweet wines?",
+      "options": [
+        "Foie gras",
+        "Blue cheese",
+        "Apple strudel",
+        "Grilled steak"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Steak suits a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show DAC, Reserve and the Banderole",
+        "Blaufränkisch suits duck and goulash",
+        "Sweet wines suit foie gras and strudel"
+      ]
+    }
+  ]
+}

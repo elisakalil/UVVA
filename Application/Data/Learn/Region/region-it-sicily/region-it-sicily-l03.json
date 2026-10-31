@@ -1,0 +1,72 @@
+{
+  "id": "region-it-sicily-l03",
+  "moduleId": "region-it-sicily",
+  "order": 3,
+  "title": "Etna",
+  "subtitle": "Wine on a volcano",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Etna's conditions",
+    "Explain its contrade",
+    "Describe its wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Altitude and lava",
+      "body": "Etna's vineyards climb its slopes from about 400 to over 1,000 m, mostly on the north, east and south sides. Altitude gives cool nights and late harvests into October. Soils are volcanic sand, ash and lava, poor and well-drained. Phylloxera can't survive easily, so many old vines are ungrafted bush vines, alberello, on terraces.",
+      "highlight": "400 to 1,000 m, ungrafted vines"
+    },
+    {
+      "type": "concept",
+      "title": "Contrade",
+      "body": "Etna's vineyards are divided into contrade, local districts often defined by different lava flows. Since 2011, 133 contrade can appear on labels, like Burgundy's crus. Etna DOC, one of Italy's first, from 1968, covers red, white, rosé and sparkling. Etna Rosso must be at least 80% Nerello Mascalese; Etna Bianco at least 60% Carricante.",
+      "highlight": "133 contrade on labels"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are Etna's contrade?",
+      "options": [
+        "Local districts often defined by lava flows",
+        "Grapes",
+        "Barrels",
+        "Sweet wines"
+      ],
+      "answer": 0,
+      "explanation": "Each contrada has its own soil and character."
+    },
+    {
+      "type": "concept",
+      "title": "The revival",
+      "body": "Etna's modern revival began around 2000, when producers like Frank Cornelissen, Andrea Franchetti and Marc de Grazia arrived, and local families like Benanti invested. Its reds, pale and perfumed, are often compared with Burgundy and Barolo. Its whites, from Carricante, are mineral and long-lived.",
+      "highlight": "Revival since 2000"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Etna's vineyards?",
+      "options": [
+        "Volcanic soils",
+        "High altitude",
+        "Many ungrafted old vines",
+        "Flat, fertile plains"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Etna's vineyards are steep and poor, not flat and fertile."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Etna's vineyards climb to over 1,000 m on volcanic soils",
+        "133 contrade name its districts",
+        "Its revival since 2000 made Nerello and Carricante famous"
+      ]
+    }
+  ]
+}

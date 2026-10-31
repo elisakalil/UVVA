@@ -1,0 +1,72 @@
+{
+  "id": "path-20-l02",
+  "moduleId": "path-20",
+  "order": 2,
+  "title": "Rioja and Navarra",
+  "subtitle": "Spain's classic region",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rioja's sub-zones and grapes",
+    "Compare traditional and modern Rioja",
+    "Describe Navarra"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three sub-zones",
+      "body": "Rioja runs along the Ebro river in northern Spain. It has three sub-zones: Rioja Alta and Rioja Alavesa, cooler and higher, with Atlantic influence, and Rioja Oriental, formerly Rioja Baja, warmer and Mediterranean. Tempranillo leads, with Garnacha, Graciano and Mazuelo, which is Carignan. Whites use Viura.",
+      "highlight": "Alta, Alavesa, Oriental"
+    },
+    {
+      "type": "concept",
+      "title": "Traditional and modern",
+      "body": "Traditional Rioja blends grapes from across sub-zones and ages them long in used American oak, giving pale, mellow wines with vanilla and dried fruit. Since the 1990s, modern producers have used French oak, riper fruit, shorter ageing and single vineyards, giving darker, fruitier wines. Both styles thrive today.",
+      "highlight": "American oak and time, or French oak and fruit"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which sub-zone of Rioja is warmest and most Mediterranean?",
+      "options": [
+        "Rioja Alta",
+        "Rioja Alavesa",
+        "Rioja Oriental",
+        "All are the same"
+      ],
+      "answer": 2,
+      "explanation": "Rioja Oriental, to the east, is warmer and drier, suiting Garnacha."
+    },
+    {
+      "type": "concept",
+      "title": "Navarra",
+      "body": "Navarra, just north-east of Rioja, was long known for Garnacha rosado. Today it makes reds from Tempranillo, Garnacha and Bordeaux grapes, and fresh whites. Its climate runs from Atlantic in the north to dry Mediterranean in the south.",
+      "highlight": "Navarra: rosado and flexible blends"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are permitted in red Rioja?",
+      "options": [
+        "Tempranillo",
+        "Garnacha",
+        "Graciano",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is a Piedmont grape. Rioja's reds use Tempranillo, Garnacha, Graciano and Mazuelo."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rioja has three sub-zones and is led by Tempranillo",
+        "Traditional Rioja uses American oak and long ageing; modern uses French oak",
+        "Navarra moved from rosado to varied reds and whites"
+      ]
+    }
+  ]
+}

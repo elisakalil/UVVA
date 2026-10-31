@@ -1,0 +1,66 @@
+{
+  "id": "grape-nebbiolo-l04",
+  "moduleId": "grape-nebbiolo",
+  "order": 4,
+  "title": "Barbaresco and beyond",
+  "subtitle": "The queen and other Nebbiolos",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barbaresco",
+    "Compare it with Barolo",
+    "Describe Langhe Nebbiolo and northern styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Barbaresco",
+      "body": "Barbaresco DOCG covers three main villages, Barbaresco, Neive and Treiso, north-east of Alba, near the Tanaro river. It's slightly lower and warmer, so Nebbiolo ripens earlier. Barbaresco must age at least 26 months, 9 in wood; Riserva 50 months. It has 66 MGAs, like Rabajà and Asili.",
+      "highlight": "Three villages, 26 months"
+    },
+    {
+      "type": "concept",
+      "title": "Compared with Barolo",
+      "body": "Barbaresco is often described as more elegant and approachable earlier, with softer tannins, while Barolo is more powerful. In practice, site and producer matter more than the name. Angelo Gaja, from the 1960s, raised Barbaresco's prestige worldwide. The Produttori del Barbaresco co-operative is renowned for quality.",
+      "highlight": "Often more elegant, earlier"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Barbaresco must age longer than Barolo.",
+      "answer": false,
+      "explanation": "Not true. Barbaresco needs 26 months; Barolo 38."
+    },
+    {
+      "type": "concept",
+      "title": "Other Nebbiolos",
+      "body": "Langhe Nebbiolo and Nebbiolo d'Alba offer younger, fruitier versions. Roero gives perfumed wines on sand. Gattinara and Ghemme in the north are fresher, more mineral. Valtellina's Sforzato is made from dried grapes, like Amarone. Together they show Nebbiolo's range.",
+      "highlight": "Langhe, Roero, Gattinara, Sforzato"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Nebbiolo-based wines?",
+      "options": [
+        "Barbaresco",
+        "Gattinara",
+        "Sforzato di Valtellina",
+        "Barbera d'Asti"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Barbera d'Asti is made from Barbera."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barbaresco ages 26 months and is often more elegant",
+        "Gaja and the Produttori raised its prestige",
+        "Langhe, Roero, Gattinara and Valtellina show Nebbiolo's range"
+      ]
+    }
+  ]
+}

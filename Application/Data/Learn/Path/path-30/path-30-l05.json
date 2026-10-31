@@ -1,0 +1,98 @@
+{
+  "id": "path-30-l05",
+  "moduleId": "path-30",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything from the path",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Bring together tasting, regions and pairing",
+    "Reason from evidence to conclusion",
+    "Use the vocabulary of the whole path"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "A white wine is deep gold, honey and apricot aromas, sweet, high acidity, long finish. What is it most likely?",
+      "options": [
+        "A young Muscadet",
+        "A botrytised sweet wine like Sauternes",
+        "A Fino Sherry",
+        "A New Zealand Sauvignon Blanc"
+      ],
+      "answer": 1,
+      "explanation": "Gold colour, honey, apricot and sweetness balanced by acidity point to noble rot."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its key process.",
+      "pairs": [
+        {
+          "left": "Champagne",
+          "right": "Second fermentation in bottle"
+        },
+        {
+          "left": "Fino",
+          "right": "Flor"
+        },
+        {
+          "left": "Port",
+          "right": "Fortified during fermentation"
+        },
+        {
+          "left": "Amarone",
+          "right": "Dried grapes"
+        },
+        {
+          "left": "Beaujolais",
+          "right": "Carbonic maceration"
+        }
+      ],
+      "explanation": "Every great wine style comes from a process you've learned."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which label terms show minimum ageing?",
+      "options": [
+        "Rioja Gran Reserva",
+        "Barolo Riserva",
+        "Brut",
+        "Aged tawny, 20 years old"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Brut is about sweetness; an aged tawny's indication is an average style, not a strict minimum age."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A pale red with high tannin and rose and tar aromas is most likely Nebbiolo.",
+      "answer": true,
+      "explanation": "Yes. Pale colour with high tannin is Nebbiolo's signature."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the steps of a systematic tasting.",
+      "items": [
+        "Appearance",
+        "Nose",
+        "Palate",
+        "Conclusion"
+      ],
+      "explanation": "Every module started from this method."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Taste systematically and reason from evidence",
+        "Grapes, places and processes all leave fingerprints",
+        "Labels, pairing and quality judgements follow clear principles",
+        "You now have the full path; keep tasting"
+      ]
+    }
+  ]
+}

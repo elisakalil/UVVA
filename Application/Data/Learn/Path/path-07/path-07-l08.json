@@ -1,0 +1,96 @@
+{
+  "id": "path-07-l08",
+  "moduleId": "path-07",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from The Vineyard",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how the grape and the vine's year shape wine",
+    "Describe the effects of climate, soil and site",
+    "Explain the grower's main choices"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Put the vine's yearly stages in order.",
+      "items": [
+        "Budburst",
+        "Flowering",
+        "Fruit set",
+        "Veraison",
+        "Harvest"
+      ],
+      "explanation": "Buds, flowers, berries, colour change and then the harvest."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each factor to its effect.",
+      "pairs": [
+        {
+          "left": "Altitude",
+          "right": "Cooler, fresher wines"
+        },
+        {
+          "left": "Gravel soil",
+          "right": "Stores and releases heat"
+        },
+        {
+          "left": "South-facing slope",
+          "right": "More sun in the north"
+        },
+        {
+          "left": "Cold ocean current",
+          "right": "Cools coastal vineyards"
+        }
+      ],
+      "explanation": "Each of these changes the temperature and so the ripening."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does the skin of a black grape mainly give the wine?",
+      "options": [
+        "Sugar and acid",
+        "Colour, tannin and aroma",
+        "Water",
+        "Alcohol"
+      ],
+      "answer": 1,
+      "explanation": "Skins hold most of the colour, tannin and aroma; pulp holds sugar, acid and water."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Very fertile soils usually give the best quality grapes.",
+      "answer": false,
+      "explanation": "Not true. Fertile soils push the vine to grow leaves. Poorer, well-drained soils focus it on the fruit."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which choices tend to increase concentration in the fruit?",
+      "options": [
+        "Lower yields",
+        "Green harvesting",
+        "Heavy irrigation",
+        "Mild water stress after veraison"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Lower yields, removing bunches and mild stress all help. Heavy irrigation dilutes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Skins give colour, tannin and aroma; small berries concentrate them",
+        "Climate sets the grape; weather sets the vintage",
+        "Soil, slope and altitude shape heat and water",
+        "Yield, canopy and picking date are the grower's key decisions"
+      ]
+    }
+  ]
+}

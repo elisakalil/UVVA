@@ -1,0 +1,79 @@
+{
+  "id": "grape-nerello-mascalese-l02",
+  "moduleId": "grape-nerello-mascalese",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Etna and north-east Sicily",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Nerello Mascalese's main area",
+    "Explain the role of altitude",
+    "Name its blending partners"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Etna",
+      "body": "Nerello Mascalese grows mainly on the slopes of Mount Etna, Europe's highest active volcano, at 400 to over 1,000 m. Most vineyards are on the north side, around villages like Passopisciaro, Randazzo and Solicchiata. Smaller amounts grow elsewhere in north-east Sicily, like Faro near Messina.",
+      "highlight": "North slope of Etna"
+    },
+    {
+      "type": "concept",
+      "title": "Altitude",
+      "body": "Altitude cools Etna's vineyards: nights can be 15 to 20 degrees cooler than days, keeping acidity and aroma. Etna receives more rain than the rest of Sicily, and harvest can run into late October. It's one of the few places in southern Italy with an almost Alpine climate.",
+      "highlight": "Cool nights at altitude"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Nerello Mascalese.",
+      "pairs": [
+        {
+          "left": "Etna",
+          "right": "Main home"
+        },
+        {
+          "left": "Nerello Cappuccio",
+          "right": "Blending partner"
+        },
+        {
+          "left": "Faro",
+          "right": "Messina DOC"
+        },
+        {
+          "left": "Passopisciaro",
+          "right": "North-slope village"
+        }
+      ],
+      "explanation": "Nerello Mascalese belongs to north-east Sicily."
+    },
+    {
+      "type": "concept",
+      "title": "Partners",
+      "body": "Etna Rosso DOC must be at least 80% Nerello Mascalese. The rest can be Nerello Cappuccio, which adds colour and softness. Old Etna vineyards are often field blends, with white grapes mixed in. Carricante is Etna's main white grape.",
+      "highlight": "At least 80% Mascalese"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Etna Rosso require?",
+      "options": [
+        "At least 80% Nerello Mascalese",
+        "100% Nero d'Avola",
+        "At least 50% Syrah",
+        "Only white grapes"
+      ],
+      "answer": 0,
+      "explanation": "Nerello Cappuccio can make up the rest."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nerello Mascalese grows mainly on Etna's north slope",
+        "Altitude gives cool nights and late harvests",
+        "Etna Rosso is at least 80% Nerello Mascalese"
+      ]
+    }
+  ]
+}

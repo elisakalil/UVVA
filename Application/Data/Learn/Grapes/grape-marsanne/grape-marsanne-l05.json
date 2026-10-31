@@ -1,0 +1,96 @@
+{
+  "id": "grape-marsanne-l05",
+  "moduleId": "grape-marsanne",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Marsanne",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Marsanne",
+    "Know its regions and partner",
+    "Explain white Hermitage"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Roussanne add to Marsanne?",
+      "options": [
+        "Aroma and acidity",
+        "Tannin",
+        "Red colour",
+        "Sweetness"
+      ],
+      "answer": 0,
+      "explanation": "Roussanne brings perfume and freshness."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Marsanne.",
+      "pairs": [
+        {
+          "left": "Hermitage",
+          "right": "Granite hill, Rhône"
+        },
+        {
+          "left": "Tahbilk",
+          "right": "1927 vines, Australia"
+        },
+        {
+          "left": "Saint-Péray",
+          "right": "Sparkling version"
+        },
+        {
+          "left": "Roussanne",
+          "right": "Blending partner"
+        }
+      ],
+      "explanation": "Marsanne connects the Rhône and Victoria."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Marsanne is known for intense, explosive aromas.",
+      "answer": false,
+      "explanation": "Not true. It's subtle, more about texture."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Marsanne?",
+      "options": [
+        "Full body",
+        "Waxy texture",
+        "Pear and almond",
+        "Very high acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Its acidity is low to medium."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "White Hermitage can age for 20 to ____ years.",
+      "options": [
+        "50",
+        "2",
+        "5",
+        "100"
+      ],
+      "answer": "50",
+      "explanation": "The best last decades."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marsanne is full, waxy and subtle",
+        "It leads Rhône whites, often with Roussanne",
+        "White Hermitage ages for decades after a closed phase",
+        "Australia's Tahbilk shows old-vine Marsanne"
+      ]
+    }
+  ]
+}

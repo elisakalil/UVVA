@@ -1,0 +1,34 @@
+{
+  "id": "grape-pinot-noir",
+  "kind": "grape",
+  "order": 28,
+  "color": "red",
+  "title": "Pinot Noir",
+  "aliases": [
+    "Spätburgunder",
+    "Pinot Nero",
+    "Blauburgunder"
+  ],
+  "origin": "France",
+  "countries": [
+    "France",
+    "Germany",
+    "United States",
+    "New Zealand"
+  ],
+  "points": "2 2 2 2 = 8",
+  "complexity": "A",
+  "description": "Also called Spätburgunder in Germany and Pinot Nero in Italy. Thin skin, high acid and a talent for showing where it was grown.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-pinot-noir-l01",
+    "grape-pinot-noir-l02",
+    "grape-pinot-noir-l03",
+    "grape-pinot-noir-l04",
+    "grape-pinot-noir-l05",
+    "grape-pinot-noir-l06",
+    "grape-pinot-noir-l07"
+  ]
+}

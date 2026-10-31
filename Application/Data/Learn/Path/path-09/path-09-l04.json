@@ -1,0 +1,66 @@
+{
+  "id": "path-09-l04",
+  "moduleId": "path-09",
+  "order": 4,
+  "title": "Pinot Grigio and Gewürztraminer",
+  "subtitle": "Pink-skinned, very different",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare Pinot Grigio and Pinot Gris styles",
+    "Describe Gewürztraminer's aromas",
+    "Explain the challenges of aromatic grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinot Grigio and Pinot Gris",
+      "body": "Pinot Gris has pinkish-grey skin. In north-east Italy it is picked early for light, neutral, crisp Pinot Grigio, one of the world's best-selling whites. In Alsace it is picked riper for fuller, richer wines with pear, honey and spice, sometimes off-dry. Oregon makes a middle style. The name on the label usually signals the style.",
+      "highlight": "Grigio: crisp. Gris: rich."
+    },
+    {
+      "type": "concept",
+      "title": "Gewürztraminer",
+      "body": "Gewürztraminer, from the Traminer family of north Italy, has pink skin and intense aromas of lychee, rose and ginger, from compounds called terpenes. It ripens to high sugar and often reaches 14% alcohol with low acidity, which can make it feel heavy. Alsace is its home, from dry to late-harvest sweet.",
+      "highlight": "Lychee and rose, low acidity, high alcohol"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is most typical of Gewürztraminer?",
+      "options": [
+        "Gooseberry",
+        "Lychee and rose",
+        "Green apple",
+        "Blackcurrant"
+      ],
+      "answer": 1,
+      "explanation": "Lychee and rose are Gewürztraminer's signature, from terpenes. Gooseberry points to Sauvignon Blanc."
+    },
+    {
+      "type": "tip",
+      "body": "Gewürztraminer is a classic with Munster cheese in Alsace, and its exotic perfume suits mildly spiced dishes, especially when a touch of sweetness balances the heat."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Gewürztraminer's main challenge is its naturally low ____.",
+      "options": [
+        "acidity",
+        "alcohol",
+        "colour",
+        "sugar"
+      ],
+      "answer": "acidity",
+      "explanation": "It ripens to high sugar and alcohol but loses acidity, so growers must pick carefully to keep balance."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Grigio is light and crisp; Pinot Gris is riper and richer",
+        "Gewürztraminer smells of lychee and rose",
+        "Aromatic grapes like Gewürztraminer need care to keep acidity"
+      ]
+    }
+  ]
+}

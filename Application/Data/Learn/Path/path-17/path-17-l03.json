@@ -1,0 +1,79 @@
+{
+  "id": "path-17-l03",
+  "moduleId": "path-17",
+  "order": 3,
+  "title": "Extraction in red wines",
+  "subtitle": "Colour, tannin and flavour",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the methods of extraction",
+    "Explain cold soak and extended maceration",
+    "Explain whole bunch fermentation"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Before, during, after",
+      "body": "Extraction can happen before fermentation, as cold soak, where crushed grapes sit cool for days to draw out colour and fruit in water, not alcohol. During fermentation, cap management does the work. After fermentation, extended maceration keeps wine on skins for days or weeks, softening and polymerising tannins.",
+      "highlight": "Cold soak, cap management, extended maceration"
+    },
+    {
+      "type": "concept",
+      "title": "Temperature and tannin",
+      "body": "Alcohol dissolves tannin more easily than water, so most tannin is extracted later in fermentation. Higher temperatures, 28 to 32 degrees, extract more. Extended maceration, often used for Bordeaux and Barolo, lets short tannins bind into longer chains, which feel softer on the palate.",
+      "highlight": "Heat and alcohol extract tannin"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is a cold soak done before fermentation?",
+      "options": [
+        "To extract tannin quickly",
+        "To extract colour and fruit without much tannin",
+        "To kill bacteria",
+        "To raise alcohol"
+      ],
+      "answer": 1,
+      "explanation": "Cold soak happens in water, not alcohol, so it extracts colour and fruit aromas but little tannin."
+    },
+    {
+      "type": "concept",
+      "title": "Whole bunches",
+      "body": "Some winemakers ferment with whole bunches, stems included. Part of the fermentation happens inside intact berries, giving fresh, floral, spicy notes. Ripe stems add tannin and structure and can lower colour and acidity slightly. It is common in Burgundy, the northern Rhône and among many modern producers of Pinot Noir and Syrah.",
+      "highlight": "Stems add spice and freshness"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each technique to its timing.",
+      "pairs": [
+        {
+          "left": "Cold soak",
+          "right": "Before fermentation"
+        },
+        {
+          "left": "Pumping over",
+          "right": "During fermentation"
+        },
+        {
+          "left": "Extended maceration",
+          "right": "After fermentation"
+        },
+        {
+          "left": "Pressing",
+          "right": "End of skin contact"
+        }
+      ],
+      "explanation": "Extraction is planned across the whole process."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Extraction happens before, during and after fermentation",
+        "Heat and alcohol extract more tannin",
+        "Whole bunches add freshness, spice and structure"
+      ]
+    }
+  ]
+}

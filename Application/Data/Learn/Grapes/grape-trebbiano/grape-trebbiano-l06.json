@@ -1,0 +1,95 @@
+{
+  "id": "grape-trebbiano-l06",
+  "moduleId": "grape-trebbiano",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Trebbiano",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Trebbiano",
+    "Explain its role in brandy",
+    "Explain Vin Santo"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its use.",
+      "pairs": [
+        {
+          "left": "Ugni Blanc",
+          "right": "Cognac base wine"
+        },
+        {
+          "left": "Trebbiano Toscano",
+          "right": "Vin Santo"
+        },
+        {
+          "left": "Caratelli",
+          "right": "Small Vin Santo barrels"
+        },
+        {
+          "left": "Alembic charentais",
+          "right": "Cognac still"
+        }
+      ],
+      "explanation": "Trebbiano is a grape of transformation."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Ugni Blanc ideal for Cognac?",
+      "options": [
+        "Neutral, acidic, low-alcohol wine",
+        "Very aromatic",
+        "Very sweet",
+        "Deep red"
+      ],
+      "answer": 0,
+      "explanation": "Distillers want neutral, acidic base wine."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "XO Cognac must age at least 10 years since 2018.",
+      "answer": true,
+      "explanation": "Yes, raised from 6 years."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Trebbiano?",
+      "options": [
+        "High acidity",
+        "Neutral aroma",
+        "Productive",
+        "Low acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Its acidity is high."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put Cognac production in order.",
+      "items": [
+        "Ferment base wine",
+        "First distillation",
+        "Second distillation",
+        "Age in oak"
+      ],
+      "explanation": "Double distillation, then oak."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Trebbiano is neutral, crisp and productive",
+        "As Ugni Blanc, it's the base of Cognac and Armagnac",
+        "Vin Santo dries and ages it in sealed barrels",
+        "Dry Trebbiano is a simple, fresh food wine"
+      ]
+    }
+  ]
+}

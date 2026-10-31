@@ -1,0 +1,86 @@
+{
+  "id": "path-01-l05",
+  "moduleId": "path-01",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything from What Wine Is",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Define wine and its alcohol range",
+    "Describe how wine is made and where it grows",
+    "Drink and taste with judgement"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes a drink wine in the strict, legal sense?",
+      "options": [
+        "Any fermented fruit juice",
+        "The fermentation of fresh grapes or must",
+        "Any drink between 11 and 14.5% alcohol",
+        "Distilled grape juice"
+      ],
+      "answer": 1,
+      "explanation": "Wine is the fermentation of fresh grapes or grape must. The alcohol level describes most wines but doesn't define them, and distillation makes spirit, not wine."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the winemaking steps in order.",
+      "items": [
+        "Harvest",
+        "Pressing",
+        "Fermentation",
+        "Maturation",
+        "Bottling"
+      ],
+      "explanation": "Fermentation turns juice into wine; maturation is the rest that follows, before bottling."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Grapes from a warmer place usually make a wine with more alcohol.",
+      "answer": true,
+      "explanation": "Yes. More heat and sun means more sugar in the berry, and more sugar becomes more alcohol, about 1% for every 17 g/l."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these are New World wine countries?",
+      "options": [
+        "Argentina",
+        "Spain",
+        "South Africa",
+        "Australia",
+        "Germany"
+      ],
+      "answers": [
+        0,
+        2,
+        3
+      ],
+      "explanation": "Argentina, South Africa and Australia planted vines with European settlers. Spain and Germany are part of the Old World, where wine culture began."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The liver clears roughly ____ unit of alcohol per hour.",
+      "options": [
+        "one",
+        "two",
+        "three",
+        "half a"
+      ],
+      "answer": "one",
+      "explanation": "About one unit an hour. Coffee, water and fresh air don't change that speed."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Wine is fermented fresh grape juice, usually 11 to 14.5% alcohol",
+        "Harvest, pressing, fermentation, maturation and bottling make every wine",
+        "Most wine grows between 30 and 50 degrees latitude, in the Old and New Worlds",
+        "Know the units in your glass, eat, and spit when tasting"
+      ]
+    }
+  ]
+}

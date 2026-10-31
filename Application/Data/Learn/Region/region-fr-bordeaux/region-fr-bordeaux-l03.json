@@ -1,0 +1,79 @@
+{
+  "id": "region-fr-bordeaux-l03",
+  "moduleId": "region-fr-bordeaux",
+  "order": 3,
+  "title": "Left Bank, Right Bank",
+  "subtitle": "Two sides of the river",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare the Left and Right Banks",
+    "Name key appellations of each",
+    "Explain how soil drives the difference"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Left Bank",
+      "body": "The Left Bank, west of the Garonne and Gironde, includes the Médoc and Graves. Deep gravel soils drain well and store heat, favouring Cabernet Sauvignon. The Haut-Médoc's famous communes are Saint-Estèphe, Pauillac, Saint-Julien and Margaux. Graves and Pessac-Léognan, further south, make both reds and whites.",
+      "highlight": "Médoc and Graves: Cabernet on gravel"
+    },
+    {
+      "type": "concept",
+      "title": "The Right Bank",
+      "body": "The Right Bank, north of the Dordogne, includes Saint-Émilion, Pomerol and their satellites, Fronsac and the Côtes. Cooler clay and limestone suit Merlot and Cabernet Franc. Estates are smaller and often family-run. Between the rivers, Entre-Deux-Mers makes mostly dry whites.",
+      "highlight": "Saint-Émilion and Pomerol: Merlot on clay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each appellation to its bank.",
+      "pairs": [
+        {
+          "left": "Pauillac",
+          "right": "Left Bank"
+        },
+        {
+          "left": "Pomerol",
+          "right": "Right Bank"
+        },
+        {
+          "left": "Entre-Deux-Mers",
+          "right": "Between the rivers"
+        },
+        {
+          "left": "Pessac-Léognan",
+          "right": "Graves, Left Bank"
+        }
+      ],
+      "explanation": "Geography decides grape and style."
+    },
+    {
+      "type": "concept",
+      "title": "Soil and style",
+      "body": "Left Bank wines are often more structured, with blackcurrant, cedar and firm tannins, built for long ageing. Right Bank wines are often rounder, plummier and softer young. Saint-Émilion's limestone plateau gives freshness; Pomerol's clay gives richness. These are tendencies, not rules.",
+      "highlight": "Left: structured. Right: round."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Cabernet Sauvignon dominate on the Left Bank?",
+      "options": [
+        "Gravel soils drain and store heat, helping it ripen",
+        "It's the only grape allowed",
+        "Clay keeps it cool",
+        "It ripens early"
+      ],
+      "answer": 0,
+      "explanation": "Gravel's warmth helps a late-ripening grape."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Left Bank's gravel favours Cabernet Sauvignon",
+        "The Right Bank's clay and limestone favour Merlot",
+        "Left Bank wines are more structured; Right Bank rounder"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "grape-malbec-l04",
+  "moduleId": "grape-malbec",
+  "order": 4,
+  "title": "Altitude and colour",
+  "subtitle": "Why high vineyards make dark wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how altitude affects temperature",
+    "Explain how ultraviolet light affects skins",
+    "Link altitude to Malbec's style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cooler with height",
+      "body": "Air cools by about 0.6 degrees for every 100 m of altitude. Mendoza's vineyards lie from about 700 to 1,500 m; in Salta, some reach 3,000 m. Higher sites have cooler nights, so grapes keep acidity and aroma while still ripening in strong daytime sun.",
+      "highlight": "About 0.6 degrees cooler per 100 m"
+    },
+    {
+      "type": "concept",
+      "title": "Ultraviolet light",
+      "body": "At altitude, the atmosphere is thinner, and ultraviolet radiation is stronger, rising by roughly 10% for every 1,000 m. Grapes respond by producing more anthocyanins and tannins in their skins, as a natural sunscreen. Skins thicken. That's why high-altitude Malbec is so deeply coloured and structured.",
+      "highlight": "More UV, thicker, darker skins"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does high-altitude Malbec have deeper colour?",
+      "options": [
+        "Grapes are picked later",
+        "Stronger UV light makes skins produce more pigment",
+        "Colour is added",
+        "Altitude adds sugar"
+      ],
+      "answer": 1,
+      "explanation": "Grapes protect themselves from UV by producing more anthocyanins, the pigments that colour wine."
+    },
+    {
+      "type": "concept",
+      "title": "The style it gives",
+      "body": "The combination of strong light, cool nights and dry air gives Malbec its signature: dark colour, ripe fruit, fresh acidity and fine tannins. In the Valle de Uco, sites like Gualtallary and Paraje Altamira, at 1,100 to 1,500 m, now have their own geographical indications for this reason.",
+      "highlight": "Dark, ripe and fresh"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are effects of altitude on Malbec?",
+      "options": [
+        "Cooler nights",
+        "Stronger UV light",
+        "Deeper colour",
+        "Higher rainfall in summer"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Mendoza is dry at every altitude; rain doesn't increase much with height there."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Altitude cools the air by about 0.6 degrees per 100 m",
+        "Stronger UV thickens skins and deepens colour",
+        "Cool nights keep acidity, giving dark yet fresh Malbec"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "path-14-l06",
+  "moduleId": "path-14",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Fortified Wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how fortification works",
+    "Compare Sherry, Port and Madeira",
+    "Recognise the French sweet fortified wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its region.",
+      "pairs": [
+        {
+          "left": "Sherry",
+          "right": "Jerez"
+        },
+        {
+          "left": "Port",
+          "right": "Douro"
+        },
+        {
+          "left": "Madeira",
+          "right": "Atlantic island"
+        },
+        {
+          "left": "Banyuls",
+          "right": "Roussillon"
+        }
+      ],
+      "explanation": "Each fortified family belongs to one place."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What protects Fino Sherry from oxygen during ageing?",
+      "options": [
+        "A wax seal",
+        "A layer of flor yeast",
+        "Constant topping up with spirit",
+        "Cold cellars"
+      ],
+      "answer": 1,
+      "explanation": "Flor grows at around 15% alcohol and shields the wine."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the noble Madeira grapes from driest to sweetest.",
+      "items": [
+        "Sercial",
+        "Verdelho",
+        "Boal",
+        "Malvasia"
+      ],
+      "explanation": "Sercial is driest, Malvasia richest."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which wines are fortified during fermentation, keeping sweetness?",
+      "options": [
+        "Ruby Port",
+        "Banyuls",
+        "Fino Sherry",
+        "Muscat de Beaumes-de-Venise"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Fino is fortified after a dry fermentation."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tawny Port gets its colour and nutty flavour from years in small casks.",
+      "answer": true,
+      "explanation": "Yes. Oxygen through the wood slowly turns the wine brown and adds nuts and caramel."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Spirit during fermentation keeps sugar; after it, the wine stays dry",
+        "Sherry relies on flor and the solera",
+        "Port divides into ruby and tawny families",
+        "Madeira is heated and oxidised, and lasts almost forever"
+      ]
+    }
+  ]
+}

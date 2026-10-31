@@ -1,0 +1,60 @@
+{
+  "id": "path-29-l02",
+  "moduleId": "path-29",
+  "order": 2,
+  "title": "Price and value",
+  "subtitle": "Where the money goes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how a bottle's price is built",
+    "Explain why cheap wine has little wine value",
+    "Explain what drives high prices"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Building a price",
+      "body": "A bottle's price includes grapes, winemaking, packaging, transport, duty, tax, and the margins of each seller. In the UK, duty on a 750 ml bottle at 11 to 14.5% was about 2.67 pounds in 2023, plus 20% VAT. On a 6 pound bottle, the wine itself may be worth less than 1 pound. Fixed costs weigh most on cheap wine.",
+      "highlight": "Fixed costs weigh on cheap wine"
+    },
+    {
+      "type": "concept",
+      "title": "Why some wine costs more",
+      "body": "Higher prices reflect lower yields, hand labour, steep slopes, oak barrels, long ageing and scarcity. Above a certain level, prices follow reputation and demand rather than cost. A Grand Cru Burgundy costs hundreds of pounds because the vineyard is tiny and global demand is high, not because it costs that much to make.",
+      "highlight": "Cost up to a point, then scarcity"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "On a cheap bottle, most of the price is the wine itself.",
+      "answer": false,
+      "explanation": "Not true. Duty, tax, packaging and margins are fixed or proportional, so on cheap bottles they make up most of the price."
+    },
+    {
+      "type": "tip",
+      "body": "Spending a little more often buys a lot more wine. Moving from 6 to 12 pounds can more than triple the value of the liquid in the bottle, since fixed costs stay the same."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What mainly drives the price of the most expensive wines?",
+      "options": [
+        "Production costs",
+        "Scarcity and demand",
+        "Bottle weight",
+        "Transport"
+      ],
+      "answer": 1,
+      "explanation": "At the top, prices follow reputation, scarcity and demand."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Price includes grapes, making, packaging, duty, tax and margins",
+        "Fixed costs dominate the price of cheap wine",
+        "Top prices follow scarcity and demand"
+      ]
+    }
+  ]
+}

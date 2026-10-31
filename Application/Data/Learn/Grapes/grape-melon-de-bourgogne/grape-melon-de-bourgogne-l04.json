@@ -1,0 +1,96 @@
+{
+  "id": "grape-melon-de-bourgogne-l04",
+  "moduleId": "grape-melon-de-bourgogne",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Melon de Bourgogne",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Melon",
+    "Know Muscadet's appellations",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is made from Melon de Bourgogne?",
+      "options": [
+        "Muscadet",
+        "Muscat",
+        "Meursault",
+        "Moscato"
+      ],
+      "answer": 0,
+      "explanation": "Muscadet, despite the name, isn't Muscat."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Muscadet.",
+      "pairs": [
+        {
+          "left": "Sur lie",
+          "right": "Aged on lees"
+        },
+        {
+          "left": "Sèvre et Maine",
+          "right": "Main appellation"
+        },
+        {
+          "left": "Clisson",
+          "right": "Granite cru"
+        },
+        {
+          "left": "1709",
+          "right": "Winter that brought Melon"
+        }
+      ],
+      "explanation": "Muscadet's story is maritime."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Muscadet is made from the Muscat grape.",
+      "answer": false,
+      "explanation": "Not true. It's made from Melon de Bourgogne."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Muscadet?",
+      "options": [
+        "Light",
+        "Crisp",
+        "Saline",
+        "Heavily oaked"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Muscadet is rarely oaked."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Muscadet is the classic match for ____.",
+      "options": [
+        "oysters",
+        "steak",
+        "chocolate",
+        "curry"
+      ],
+      "answer": "oysters",
+      "explanation": "Its acidity and salinity suit shellfish."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Melon makes Muscadet: light, crisp and saline",
+        "It came from Burgundy after the 1709 freeze",
+        "Sur lie ageing and crus communaux add depth",
+        "It's the classic oyster wine"
+      ]
+    }
+  ]
+}

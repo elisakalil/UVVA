@@ -1,0 +1,19 @@
+{
+  "id": "path-30",
+  "kind": "path",
+  "order": 30,
+  "level": "Expert",
+  "complexity": "D",
+  "title": "Final Review",
+  "description": "Blind tasting, label reading and pairing: everything the previous twenty-nine modules taught.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "path-30-l01",
+    "path-30-l02",
+    "path-30-l03",
+    "path-30-l04",
+    "path-30-l05"
+  ]
+}

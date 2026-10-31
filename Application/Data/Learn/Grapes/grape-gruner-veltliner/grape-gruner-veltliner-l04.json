@@ -1,0 +1,60 @@
+{
+  "id": "grape-gruner-veltliner-l04",
+  "moduleId": "grape-gruner-veltliner",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Grüner",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Grüner with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Versatile",
+      "body": "Grüner is famous for being food-friendly. It handles tricky vegetables like asparagus and artichokes, and suits Wiener Schnitzel, a Viennese classic, fried chicken, sushi, Vietnamese and Thai dishes, salads and fresh cheeses. Its pepper suits peppery food.",
+      "highlight": "Schnitzel, asparagus, Asian food"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve light Grüner at 7 to 9 degrees, richer styles at 10 to 12. Light styles are best within two years. Smaragd and Reserve can age 10 to 20 years. In Vienna, young Grüner is drunk in Heurigen, wine taverns serving the latest vintage.",
+      "highlight": "Heurigen: Vienna's taverns"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Viennese dish is a classic match for Grüner?",
+      "options": [
+        "Wiener Schnitzel",
+        "Beef Wellington",
+        "Paella",
+        "Chilli con carne"
+      ],
+      "answer": 0,
+      "explanation": "Breaded veal and Grüner's freshness are a Vienna staple."
+    },
+    {
+      "type": "tip",
+      "body": "Grüner Veltliner is a safe choice at a restaurant when the table orders very different dishes. It rarely clashes."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Grüner Veltliner handles asparagus well.",
+      "answer": true,
+      "explanation": "Yes. It's one of the few wines that does."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grüner suits schnitzel, asparagus and Asian food",
+        "Serve light styles at 7 to 9 degrees",
+        "Smaragd and Reserve age 10 to 20 years"
+      ]
+    }
+  ]
+}

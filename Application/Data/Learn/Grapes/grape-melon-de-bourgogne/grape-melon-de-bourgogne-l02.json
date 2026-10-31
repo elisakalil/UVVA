@@ -1,0 +1,77 @@
+{
+  "id": "grape-melon-de-bourgogne-l02",
+  "moduleId": "grape-melon-de-bourgogne",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Pays Nantais",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Muscadet's appellations",
+    "Explain the maritime climate",
+    "Name its crus communaux"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Muscadet",
+      "body": "Melon grows almost only in the Pays Nantais, near Nantes, where the Loire meets the Atlantic. Muscadet Sèvre et Maine, the largest and most important appellation, sits south-east of Nantes. Muscadet Coteaux de la Loire and Muscadet Côtes de Grandlieu are smaller. The climate is maritime: mild, damp, with sea breezes.",
+      "highlight": "Muscadet Sèvre et Maine"
+    },
+    {
+      "type": "concept",
+      "title": "Crus communaux",
+      "body": "Since 2011, Muscadet has recognised crus communaux, village crus, with specific soils and longer lees ageing, from 17 months to several years. Examples include Clisson, on granite, Gorges, on gabbro, and Le Pallet, on gneiss and gabbro. They show Melon's capacity for complex, age-worthy wines.",
+      "highlight": "Clisson, Gorges, Le Pallet"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each cru to its soil.",
+      "pairs": [
+        {
+          "left": "Clisson",
+          "right": "Granite"
+        },
+        {
+          "left": "Gorges",
+          "right": "Gabbro"
+        },
+        {
+          "left": "Le Pallet",
+          "right": "Gneiss and gabbro"
+        },
+        {
+          "left": "Sèvre et Maine",
+          "right": "Largest appellation"
+        }
+      ],
+      "explanation": "Soils shape Muscadet's crus."
+    },
+    {
+      "type": "tip",
+      "body": "Look for a cru communal name on a Muscadet label. These wines spend much longer on their lees and show how serious Melon can be."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are Muscadet's crus communaux?",
+      "options": [
+        "Village crus with specific soils and long lees ageing",
+        "Sweet wines",
+        "Red wines",
+        "Sparkling wines"
+      ],
+      "answer": 0,
+      "explanation": "They require specific soils and extended lees ageing."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Melon grows in the Pays Nantais, mainly Sèvre et Maine",
+        "The climate is maritime and mild",
+        "Crus communaux, since 2011, show its complexity"
+      ]
+    }
+  ]
+}

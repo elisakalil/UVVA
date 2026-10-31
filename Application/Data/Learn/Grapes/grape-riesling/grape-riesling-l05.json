@@ -1,0 +1,60 @@
+{
+  "id": "grape-riesling-l05",
+  "moduleId": "grape-riesling",
+  "order": 5,
+  "title": "Petrol and age",
+  "subtitle": "How Riesling develops",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the petrol note",
+    "Describe how Riesling ages",
+    "Know when to drink it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "TDN",
+      "body": "Aged Riesling often smells of petrol, kerosene or rubber. The compound is TDN, 1,1,6-trimethyl-1,2-dihydronaphthalene. It forms from carotenoids in the grape skins, more so with strong sunlight, heat, drought and low yields. Australian Riesling, under intense sun, often shows it early. Some love it; others find it a flaw in excess.",
+      "highlight": "TDN: the petrol molecule"
+    },
+    {
+      "type": "concept",
+      "title": "How it ages",
+      "body": "Young Riesling shows fresh lime, apple and flowers. With 5 to 10 years, it gains honey, toast, beeswax and dried apricot, and colour deepens to gold. High acidity preserves it: good dry Riesling ages 15 to 20 years; sweet Auslese and TBA can age 50 years or more.",
+      "highlight": "Honey, toast, gold"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What favours the formation of TDN in Riesling?",
+      "options": [
+        "Strong sunlight on the grapes",
+        "Shade and cold",
+        "Oak barrels",
+        "Early picking"
+      ],
+      "answer": 0,
+      "explanation": "Sun exposure increases carotenoids, which become TDN."
+    },
+    {
+      "type": "tip",
+      "body": "If you dislike strong petrol notes, look for Riesling from cooler sites, like the Mosel. Hotter, sunnier regions tend to show more TDN."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Good sweet Riesling can age for 50 years or more.",
+      "answer": true,
+      "explanation": "Yes. Sugar and high acidity preserve it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "TDN gives aged Riesling its petrol note, more with sun",
+        "With age, Riesling gains honey, toast and beeswax",
+        "Dry Riesling ages 15 to 20 years; sweet styles 50 or more"
+      ]
+    }
+  ]
+}

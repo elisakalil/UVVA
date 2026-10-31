@@ -1,0 +1,25 @@
+{
+  "id": "region-at-wachau",
+  "kind": "region",
+  "order": 30,
+  "country": "Austria",
+  "countryCode": "AT",
+  "title": "Wachau",
+  "grapes": [
+    "Grüner Veltliner",
+    "Riesling"
+  ],
+  "points": "0 2 1 1 = 4",
+  "complexity": "C",
+  "description": "Steep stone terraces above the Danube, with dry Grüner Veltliner and Riesling graded by ripeness.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-at-wachau-l01",
+    "region-at-wachau-l02",
+    "region-at-wachau-l03",
+    "region-at-wachau-l04",
+    "region-at-wachau-l05"
+  ]
+}

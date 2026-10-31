@@ -1,0 +1,73 @@
+{
+  "id": "path-18-l06",
+  "moduleId": "path-18",
+  "order": 6,
+  "title": "The Rhône",
+  "subtitle": "North and south",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare the northern and southern Rhône",
+    "Name the main appellations of each",
+    "Explain the role of the Mistral"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two regions",
+      "body": "The northern Rhône is narrow and steep, with granite slopes along the river and a continental climate. Syrah is the only red grape, with Viognier, Marsanne and Roussanne for whites. The southern Rhône is wide and Mediterranean, with Grenache leading blends. More than 90% of Rhône wine comes from the south.",
+      "highlight": "North: Syrah, steep. South: Grenache, wide."
+    },
+    {
+      "type": "concept",
+      "title": "The Mistral",
+      "body": "The Mistral, a cold, dry northerly wind, blows down the Rhône valley often, sometimes over 90 km/h. It dries vines after rain, reducing disease, but can damage shoots and lower yields. Vines are often planted low or trained against it. Sunny, dry conditions with the Mistral explain why organic farming is common here.",
+      "highlight": "Cold, dry wind that keeps vines healthy"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each appellation to its main wine.",
+      "pairs": [
+        {
+          "left": "Côte-Rôtie",
+          "right": "Syrah, sometimes with Viognier"
+        },
+        {
+          "left": "Hermitage",
+          "right": "Syrah, or Marsanne whites"
+        },
+        {
+          "left": "Condrieu",
+          "right": "Viognier"
+        },
+        {
+          "left": "Châteauneuf-du-Pape",
+          "right": "Grenache-led blends"
+        }
+      ],
+      "explanation": "The north is about single grapes and steep sites; the south about blends."
+    },
+    {
+      "type": "concept",
+      "title": "Southern appellations",
+      "body": "Côtes du Rhône covers the whole region. Côtes du Rhône Villages, and named villages like Cairanne, are a step up. The crus include Châteauneuf-du-Pape, with its large round stones called galets, Gigondas and Vacqueyras for reds, Tavel for rosé only, and Beaumes-de-Venise for sweet Muscat.",
+      "highlight": "Côtes du Rhône, Villages, then crus"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Rhône wine comes from the northern Rhône.",
+      "answer": false,
+      "explanation": "Not true. The southern Rhône makes more than 90% of the total. The north is small and steep."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The north grows Syrah on steep granite; the south blends Grenache",
+        "The Mistral dries vines and limits disease",
+        "Crus include Côte-Rôtie, Hermitage, Châteauneuf-du-Pape and Tavel"
+      ]
+    }
+  ]
+}

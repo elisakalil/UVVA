@@ -1,0 +1,96 @@
+{
+  "id": "region-za-stellenbosch-l05",
+  "moduleId": "region-za-stellenbosch",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Stellenbosch",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Stellenbosch's land and grapes",
+    "Explain Pinotage and Cape blends",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Stellenbosch.",
+      "pairs": [
+        {
+          "left": "Simon van der Stel",
+          "right": "Founded the town, 1679"
+        },
+        {
+          "left": "Kanonkop",
+          "right": "Famous for Pinotage"
+        },
+        {
+          "left": "Cape Doctor",
+          "right": "Cooling south-east wind"
+        },
+        {
+          "left": "Steen",
+          "right": "Chenin Blanc"
+        }
+      ],
+      "explanation": "Stellenbosch's vocabulary is South African."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is Stellenbosch's most important red?",
+      "options": [
+        "Cabernet Sauvignon",
+        "Pinot Noir",
+        "Nebbiolo",
+        "Tempranillo"
+      ],
+      "answer": 0,
+      "explanation": "It's South Africa's Cabernet capital."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinotage is a cross of Pinot Noir and Cabernet Sauvignon.",
+      "answer": false,
+      "explanation": "Not true. It's Pinot Noir and Cinsault."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which cool Stellenbosch's vineyards?",
+      "options": [
+        "False Bay breezes",
+        "The Cape Doctor",
+        "Mountain altitude",
+        "Desert heat"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Desert heat doesn't cool anything."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "South Africa's Wine of Origin system began in ____.",
+      "options": [
+        "1973",
+        "1679",
+        "1925",
+        "2016"
+      ],
+      "answer": "1973",
+      "explanation": "In 1973."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Stellenbosch is mountainous, cooled by False Bay",
+        "Cabernet Sauvignon and Bordeaux blends lead",
+        "Pinotage and Cape blends are its own styles",
+        "Its wines suit the braai and game"
+      ]
+    }
+  ]
+}

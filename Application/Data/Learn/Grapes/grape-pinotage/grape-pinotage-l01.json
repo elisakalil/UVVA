@@ -1,0 +1,62 @@
+{
+  "id": "grape-pinotage-l01",
+  "moduleId": "grape-pinotage",
+  "order": 1,
+  "title": "Meet Pinotage",
+  "subtitle": "South Africa's signature red",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Pinotage's flavours",
+    "Explain its parentage",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dark and fruity",
+      "body": "Pinotage gives deep-coloured wines with red and black fruit: plum, mulberry, cherry and blackberry. Many show smoky, earthy notes, and some a hint of banana or coffee. It's medium to full-bodied, with medium tannin and fairly high alcohol. It is uniquely South African.",
+      "highlight": "Mulberry, plum, smoke"
+    },
+    {
+      "type": "concept",
+      "title": "A deliberate cross",
+      "body": "In 1925, Professor Abraham Perold, at Stellenbosch University, crossed Pinot Noir with Cinsault, then called Hermitage in South Africa, hence the name. He hoped to combine Pinot's quality with Cinsault's robustness and yield. The first commercial wine was released in 1961. It inherited Cinsault's vigour and Pinot's red fruit.",
+      "highlight": "Pinot Noir x Cinsault, 1925"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is it called Pinotage?",
+      "options": [
+        "It's a type of Pinot Noir",
+        "Cinsault was called Hermitage in South Africa",
+        "It's grown in Hermitage",
+        "It's named after a person"
+      ],
+      "answer": 1,
+      "explanation": "Pinot plus Hermitage, the local name for Cinsault, gave Pinotage."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep colour and ripe dark fruit with a smoky or earthy edge. Some styles show a sweet, coffee or chocolate note, from heavily toasted oak. Poorly made examples can show acetone or burnt rubber, from volatile compounds, which gave it a bad reputation in the 1990s.",
+      "highlight": "Ripe fruit, smoke, sometimes coffee"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinotage was created by crossing Pinot Noir and Cabernet Sauvignon.",
+      "answer": false,
+      "explanation": "Not true. Its parents are Pinot Noir and Cinsault."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinotage gives plum, mulberry and smoky notes",
+        "It's a 1925 cross of Pinot Noir and Cinsault",
+        "It's South Africa's unique grape"
+      ]
+    }
+  ]
+}

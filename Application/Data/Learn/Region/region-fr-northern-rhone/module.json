@@ -1,0 +1,27 @@
+{
+  "id": "region-fr-northern-rhone",
+  "kind": "region",
+  "order": 7,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Northern Rhône",
+  "grapes": [
+    "Syrah",
+    "Viognier",
+    "Marsanne",
+    "Roussanne"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "Steep granite slopes above the Rhône, home of Syrah and Viognier.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-fr-northern-rhone-l01",
+    "region-fr-northern-rhone-l02",
+    "region-fr-northern-rhone-l03",
+    "region-fr-northern-rhone-l04",
+    "region-fr-northern-rhone-l05"
+  ]
+}

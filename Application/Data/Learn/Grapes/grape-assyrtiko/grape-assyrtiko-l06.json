@@ -1,0 +1,96 @@
+{
+  "id": "grape-assyrtiko-l06",
+  "moduleId": "grape-assyrtiko",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Assyrtiko",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Assyrtiko",
+    "Explain Santorini's conditions",
+    "Explain Vinsanto"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Assyrtiko's standout feature?",
+      "options": [
+        "High acidity in hot climates",
+        "Low acidity",
+        "High tannin",
+        "Red colour"
+      ],
+      "answer": 0,
+      "explanation": "It keeps acidity under fierce sun."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Santorini.",
+      "pairs": [
+        {
+          "left": "Kouloura",
+          "right": "Basket vines"
+        },
+        {
+          "left": "Aspa",
+          "right": "Volcanic soil"
+        },
+        {
+          "left": "Vinsanto",
+          "right": "Sun-dried sweet wine"
+        },
+        {
+          "left": "Nykteri",
+          "right": "Night-harvested style"
+        }
+      ],
+      "explanation": "Santorini has its own vocabulary."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Santorini's vines are mostly ungrafted.",
+      "answer": true,
+      "explanation": "Yes. Phylloxera can't survive in its volcanic sand."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are used on Santorini?",
+      "options": [
+        "Assyrtiko",
+        "Athiri",
+        "Aidani",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is from Piedmont."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Santorini PDO must be at least ____% Assyrtiko.",
+      "options": [
+        "75",
+        "50",
+        "100",
+        "20"
+      ],
+      "answer": "75",
+      "explanation": "At least 75%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Assyrtiko is steely, saline and high in acidity",
+        "Santorini's volcanic soil and kouloura vines are unique",
+        "Vinsanto is its sun-dried sweet wine",
+        "It suits Greek seafood and ages well"
+      ]
+    }
+  ]
+}

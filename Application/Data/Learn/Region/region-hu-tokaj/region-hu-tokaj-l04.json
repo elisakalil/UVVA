@@ -1,0 +1,83 @@
+{
+  "id": "region-hu-tokaj-l04",
+  "moduleId": "region-hu-tokaj",
+  "order": 4,
+  "title": "Szamorodni and Eszencia",
+  "subtitle": "Other Tokaj wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Szamorodni",
+    "Describe Eszencia",
+    "Describe dry Furmint"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Szamorodni",
+      "body": "Szamorodni, a Polish word meaning as it comes, is made from whole bunches with some botrytised berries, not separated. It can be édes, sweet, or száraz, dry. Dry Szamorodni ages under a film of yeast, like Sherry's flor, in barrels not completely filled, giving nutty, oxidative notes. Sweet Szamorodni is lighter than Aszú.",
+      "highlight": "As it comes: sweet or dry"
+    },
+    {
+      "type": "concept",
+      "title": "Eszencia",
+      "body": "Eszencia, or Esszencia, is the free-run juice that drips from aszú berries under their own weight, before soaking. It's extraordinarily sweet, often 450 to 800 g/l of sugar, and ferments for years, reaching only 3 to 5% alcohol. Tiny quantities are made. It's traditionally served by the spoon and was believed to have healing powers.",
+      "highlight": "Free-run juice, up to 800 g/l"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its making.",
+      "pairs": [
+        {
+          "left": "Aszú",
+          "right": "Berries soaked in base wine"
+        },
+        {
+          "left": "Szamorodni",
+          "right": "Whole bunches, as it comes"
+        },
+        {
+          "left": "Eszencia",
+          "right": "Free-run aszú juice"
+        },
+        {
+          "left": "Dry Furmint",
+          "right": "Healthy grapes, no botrytis"
+        }
+      ],
+      "explanation": "Tokaj makes several wines from one harvest."
+    },
+    {
+      "type": "concept",
+      "title": "Dry Furmint",
+      "body": "Since the 2000s, Tokaj has made more dry wine, mainly from Furmint, from healthy grapes. It's mineral, smoky, with quince and citrus, and can be rich and textured, often compared with white Burgundy. Single-vineyard dry Furmint is now a major part of Tokaj's identity, especially as botrytis doesn't come every year.",
+      "highlight": "Dry Furmint since the 2000s"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Tokaj wines?",
+      "options": [
+        "Szamorodni",
+        "Eszencia",
+        "Dry Furmint",
+        "Amarone"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Amarone is Italian."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Szamorodni uses whole bunches, sweet or dry",
+        "Eszencia is free-run juice, extraordinarily sweet",
+        "Dry Furmint is Tokaj's modern style"
+      ]
+    }
+  ]
+}

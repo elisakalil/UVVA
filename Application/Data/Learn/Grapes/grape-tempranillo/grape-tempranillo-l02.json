@@ -1,0 +1,83 @@
+{
+  "id": "grape-tempranillo-l02",
+  "moduleId": "grape-tempranillo",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Spain, Portugal and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Tempranillo's main regions",
+    "Name its local synonyms",
+    "Explain the climate it needs"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Many names",
+      "body": "Tempranillo grows across Spain: Rioja, Ribera del Duero, Toro, Navarra, La Mancha, Valdepeñas. Each has a local name: Tinto Fino or Tinta del País in Ribera, Tinta de Toro in Toro, Cencibel in La Mancha, Ull de Llebre in Catalonia. In Portugal it's Tinta Roriz in the Douro and Aragonez in the Alentejo.",
+      "highlight": "Same grape, many names"
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "Tempranillo needs warmth to ripen but cool nights to keep acidity. That's why it thrives on high plateaus, like Ribera del Duero at 750 to 1,000 m, and in Rioja Alta with Atlantic influence. In very hot places it can lose acidity and turn flat. It's also grown in Argentina, Australia and the US.",
+      "highlight": "Warm days, cool nights"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its region.",
+      "pairs": [
+        {
+          "left": "Tinto Fino",
+          "right": "Ribera del Duero"
+        },
+        {
+          "left": "Tinta de Toro",
+          "right": "Toro"
+        },
+        {
+          "left": "Tinta Roriz",
+          "right": "Douro"
+        },
+        {
+          "left": "Aragonez",
+          "right": "Alentejo"
+        },
+        {
+          "left": "Cencibel",
+          "right": "La Mancha"
+        }
+      ],
+      "explanation": "Tempranillo changes names as it crosses Iberia."
+    },
+    {
+      "type": "concept",
+      "title": "Thick skins",
+      "body": "Tempranillo's thick skins give good colour and resistance to rot, but make it sensitive to drought and pests. Its early ripening suits continental climates with short seasons. Higher, cooler sites have become popular as summers grow warmer.",
+      "highlight": "Thick skins, early ripening"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do high plateaus suit Tempranillo?",
+      "options": [
+        "Cool nights keep its modest acidity",
+        "They're very rainy",
+        "They're frost-free",
+        "They're very fertile"
+      ],
+      "answer": 0,
+      "explanation": "Cool nights balance warm days and preserve freshness."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tempranillo grows across Spain and Portugal under many names",
+        "It needs warm days and cool nights",
+        "High plateaus like Ribera suit it well"
+      ]
+    }
+  ]
+}

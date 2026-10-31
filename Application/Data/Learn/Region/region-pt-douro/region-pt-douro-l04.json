@@ -1,0 +1,83 @@
+{
+  "id": "region-pt-douro-l04",
+  "moduleId": "region-pt-douro",
+  "order": 4,
+  "title": "Port, style by style",
+  "subtitle": "From ruby to tawny",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Port is made",
+    "Compare ruby and tawny styles",
+    "Describe Vintage, LBV and Colheita"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Making Port",
+      "body": "Port grapes are crushed, traditionally by foot in stone tanks, lagares, now often by machine or robotic pistons. After two or three days of fermentation, at about 6 to 9% alcohol, aguardente, grape spirit at about 77%, is added, stopping fermentation. The result: about 19 to 22% alcohol and 90 to 110 g/l of sugar. Wine ages in Vila Nova de Gaia or the Douro.",
+      "highlight": "Fortified mid-fermentation"
+    },
+    {
+      "type": "concept",
+      "title": "Ruby and tawny",
+      "body": "Ruby styles age briefly in large vats, keeping dark colour and fresh fruit: Ruby, Reserve, Late Bottled Vintage, LBV, a single year bottled after 4 to 6 years in wood, and Vintage. Tawny styles age in small casks, pipes, where oxygen gives nutty, caramel notes: Tawny, Reserve Tawny, aged tawnies with 10, 20, 30, 40 or 50 years, and Colheita, a single-vintage tawny.",
+      "highlight": "Vats for ruby; casks for tawny"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Port to its ageing.",
+      "pairs": [
+        {
+          "left": "Vintage",
+          "right": "Bottle-aged, single year"
+        },
+        {
+          "left": "LBV",
+          "right": "Longer in wood, then bottled"
+        },
+        {
+          "left": "20 Year Old Tawny",
+          "right": "Cask-aged blend"
+        },
+        {
+          "left": "Colheita",
+          "right": "Single-vintage tawny"
+        }
+      ],
+      "explanation": "How Port ages defines its style."
+    },
+    {
+      "type": "concept",
+      "title": "Vintage Port",
+      "body": "Vintage Port is made only in exceptional years, declared by each house, about three times a decade. It's bottled after two to three years and ages for decades in bottle, throwing a sediment. Single quinta Vintages come from one estate in good, undeclared years. White and rosé Ports add lighter styles.",
+      "highlight": "Declared about three times a decade"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are ruby-style Ports?",
+      "options": [
+        "Ruby",
+        "LBV",
+        "Vintage",
+        "20 Year Old Tawny"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Aged tawny is cask-aged, a tawny style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Port is fortified with aguardente mid-fermentation",
+        "Ruby styles age in vats or bottle; tawnies in casks",
+        "Vintage Port is declared in exceptional years"
+      ]
+    }
+  ]
+}

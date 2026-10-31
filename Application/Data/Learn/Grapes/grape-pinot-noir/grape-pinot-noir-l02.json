@@ -1,0 +1,72 @@
+{
+  "id": "grape-pinot-noir-l02",
+  "moduleId": "grape-pinot-noir",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Cool climates around the world",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Pinot Noir's main regions",
+    "Explain why it needs a cool climate",
+    "Explain the role of clones"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cool climates",
+      "body": "Pinot Noir needs a cool climate. In heat, it ripens too fast, losing its delicate aromas and acidity and turning jammy. A long, cool season builds complexity. Its main homes are Burgundy, Champagne, Germany, Oregon, California's coast, New Zealand, Chile's coast, Australia's Victoria and Tasmania.",
+      "highlight": "Cool climates only"
+    },
+    {
+      "type": "concept",
+      "title": "Clones",
+      "body": "Pinot Noir mutates easily, so there are hundreds of clones, each with different berry size, yield and flavour. Dijon clones, like 115, 667 and 777, developed in Burgundy, spread worldwide from the 1980s. California's Pommard and Wädenswil clones are also widely planted. Many growers plant several clones for complexity.",
+      "highlight": "Dijon clones spread worldwide"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What happens to Pinot Noir in a hot climate?",
+      "options": [
+        "It ripens too fast, losing aroma and turning jammy",
+        "It becomes more delicate",
+        "It becomes white",
+        "It stops ripening"
+      ],
+      "answer": 0,
+      "explanation": "Heat speeds ripening, losing the delicacy Pinot is prized for."
+    },
+    {
+      "type": "concept",
+      "title": "Mutations",
+      "body": "Pinot Noir is the parent or ancestor of many grapes. Pinot Gris and Pinot Blanc are colour mutations; Meunier is another mutation. Crossed with Gouais Blanc, it gave Chardonnay, Gamay, Aligoté and Melon. That makes it one of the most important grapes in the history of wine.",
+      "highlight": "Ancestor of Chardonnay and Gamay"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are mutations of Pinot Noir?",
+      "options": [
+        "Pinot Gris",
+        "Pinot Blanc",
+        "Meunier",
+        "Cabernet Franc"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cabernet Franc is unrelated."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir needs a cool climate",
+        "Hundreds of clones, like the Dijon clones, exist",
+        "It's the ancestor of Chardonnay, Gamay and others"
+      ]
+    }
+  ]
+}

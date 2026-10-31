@@ -1,0 +1,60 @@
+{
+  "id": "region-es-rioja-l06",
+  "moduleId": "region-es-rioja",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Rioja and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Rioja label",
+    "Pair Rioja with food",
+    "Serve and age it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Rioja labels show the producer, the vintage, the category, Crianza, Reserva or Gran Reserva, and sometimes the zone, village or Viñedo Singular. The back label carries the Consejo Regulador seal. Cosecha or Genérico wines don't follow the ageing ladder and may be young or modern.",
+      "highlight": "Category, seal, place"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Rioja suits lamb, especially chuletillas, small lamb chops grilled over vine cuttings; roast suckling pig; chorizo; jamón ibérico; and Manchego. Gran Reserva suits mushrooms, game and stews. Crianza suits tapas. White Rioja suits fish and oxidative styles suit aged cheese.",
+      "highlight": "Lamb chops over vine cuttings"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a Rioja classic?",
+      "options": [
+        "Lamb chops grilled over vine cuttings",
+        "Sushi",
+        "Thai curry",
+        "Chocolate mousse"
+      ],
+      "answer": 0,
+      "explanation": "Chuletillas al sarmiento."
+    },
+    {
+      "type": "tip",
+      "body": "An old Gran Reserva may throw sediment. Stand it up for a day and decant gently; its pale colour is normal."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A pale, garnet colour in old Gran Reserva is a fault.",
+      "answer": false,
+      "explanation": "Not true. Long oak and bottle ageing naturally lighten the colour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show category, seal and sometimes place",
+        "Rioja suits lamb, jamón and Manchego",
+        "Old Gran Reservas are pale, mellow and best decanted gently"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "grape-corvina-l01",
+  "moduleId": "grape-corvina",
+  "order": 1,
+  "title": "Meet Corvina",
+  "subtitle": "Cherry and almond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Corvina's flavours and structure",
+    "Explain why it suits drying",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Light and bright",
+      "body": "Corvina, or Corvina Veronese, is the main grape of Valpolicella, near Verona. On its own, it gives light to medium-bodied wines with sour cherry, red berries, almond and herbs. Colour is moderate, tannins are low, acidity is fresh. It's a very different wine before and after drying.",
+      "highlight": "Sour cherry, almond, fresh"
+    },
+    {
+      "type": "concept",
+      "title": "Built for drying",
+      "body": "Corvina has thick skins, loose bunches and good resistance to rot, which make it ideal for drying grapes after harvest. During drying, it develops a compound profile rich in aromatic precursors, and its skins help resist mould. That's why it's the backbone of Amarone and Recioto.",
+      "highlight": "Thick skins and loose bunches for drying"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Corvina well suited to drying?",
+      "options": [
+        "Thin skins and tight bunches",
+        "Thick skins and loose bunches that resist rot",
+        "It's a white grape",
+        "It has no sugar"
+      ],
+      "answer": 1,
+      "explanation": "Loose bunches let air circulate, and thick skins resist mould during months of drying."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "A simple Valpolicella is pale to medium ruby, with bright cherry and a slightly bitter almond finish. Amarone is deep, with dried cherry, raisin, chocolate and spice, and high alcohol. That bitter cherry and almond note links them all.",
+      "highlight": "Cherry with a bitter almond finish"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Corvina naturally gives deep-coloured, very tannic wines.",
+      "answer": false,
+      "explanation": "Not true. Fresh Corvina is moderately coloured with low tannin. Drying gives Amarone its concentration."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Corvina gives sour cherry, almond and fresh acidity",
+        "Thick skins and loose bunches make it ideal for drying",
+        "Valpolicella's styles all share its cherry and almond"
+      ]
+    }
+  ]
+}

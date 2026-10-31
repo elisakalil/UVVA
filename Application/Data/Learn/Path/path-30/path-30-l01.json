@@ -1,0 +1,66 @@
+{
+  "id": "path-30-l01",
+  "moduleId": "path-30",
+  "order": 1,
+  "title": "Blind tasting",
+  "subtitle": "Reasoning from the glass",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how to approach a blind tasting",
+    "Use evidence from appearance, nose and palate",
+    "Reach a logical conclusion"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Evidence first",
+      "body": "Blind tasting is reasoning, not guessing. Gather evidence: colour, aroma intensity and families, structure. Then ask what it suggests. Deep colour suggests thick skins or warmth. High acidity suggests a cool climate or a high-acid grape. Oak suggests ambition and price. Each clue narrows the options.",
+      "highlight": "Evidence before conclusions"
+    },
+    {
+      "type": "concept",
+      "title": "Narrowing down",
+      "body": "Build the argument in steps. Is it Old World or New World? Fruit-forward and ripe suggests New World or warm sites; earthy, savoury and restrained suggests Old World or cool sites. Then climate: cool, moderate or warm. Then grape. Then region and age. Stop when the evidence runs out, rather than forcing an answer.",
+      "highlight": "World, climate, grape, region, age"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A red is pale ruby, high acidity, low tannin, red cherry and earthy notes. What is the most likely conclusion?",
+      "options": [
+        "Barossa Shiraz",
+        "Burgundy Pinot Noir",
+        "Napa Cabernet",
+        "Malbec from Mendoza"
+      ],
+      "answer": 1,
+      "explanation": "Pale colour, low tannin, high acidity and earthiness point to a cool-climate Pinot Noir, like Burgundy."
+    },
+    {
+      "type": "tip",
+      "body": "In blind tasting, the first impression is often right, but say why. If you can't justify a guess with evidence from the glass, keep looking."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the steps of a blind conclusion in order.",
+      "items": [
+        "Gather evidence from the glass",
+        "Decide Old World or New World",
+        "Judge the climate",
+        "Identify the grape",
+        "Name the region and age"
+      ],
+      "explanation": "Each step narrows the possibilities using the evidence before it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Blind tasting is reasoning from evidence",
+        "Narrow from world to climate, grape, region and age",
+        "Stop when the evidence runs out"
+      ]
+    }
+  ]
+}

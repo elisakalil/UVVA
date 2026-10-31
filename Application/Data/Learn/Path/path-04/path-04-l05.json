@@ -1,0 +1,60 @@
+{
+  "id": "path-04-l05",
+  "moduleId": "path-04",
+  "order": 5,
+  "title": "Describing what you find",
+  "subtitle": "Turning impressions into words",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Write a short, useful tasting note",
+    "Judge a wine's balance",
+    "Compare two wines with the same words"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A note in four lines",
+      "body": "A useful tasting note has four parts. Look: clarity, intensity, colour. Nose: intensity and main aromas. Palate: sweetness, acidity, tannin, alcohol, body, flavours, finish. Conclusion: is it good, and is it ready to drink? Short, specific words beat long poetic ones.",
+      "highlight": "Look, nose, palate, conclusion"
+    },
+    {
+      "type": "concept",
+      "title": "Balance",
+      "body": "A wine is balanced when no element sticks out. Fruit should carry the acidity, tannin should be supported by fruit, alcohol shouldn't burn. Sweet wines need high acidity, or they feel cloying. A Sauternes can have 130 g/l of sugar and still feel fresh because its acidity is high.",
+      "highlight": "Balance: no element sticks out"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A very sweet wine can feel balanced if its acidity is high enough.",
+      "answer": true,
+      "explanation": "Yes. Acidity cuts sugar, which is why great sweet wines feel fresh rather than syrupy."
+    },
+    {
+      "type": "tip",
+      "body": "Compare two wines side by side, using the same order and the same words. Differences that you'd miss in one glass become obvious next to another."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which of these is the most useful line in a tasting note?",
+      "options": [
+        "Lovely, a real joy to drink",
+        "Medium acidity, high tannin, blackcurrant and cedar, long finish",
+        "Tastes like a holiday in the sun",
+        "Better than last night's wine"
+      ],
+      "answer": 1,
+      "explanation": "Specific words about structure and flavour let you, and anyone else, picture the wine and compare it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A good note covers look, nose, palate and a conclusion",
+        "Balance means no single element sticks out",
+        "Comparing side by side with the same words sharpens your judgement"
+      ]
+    }
+  ]
+}

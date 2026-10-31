@@ -1,0 +1,26 @@
+{
+  "id": "grape-assyrtiko",
+  "kind": "grape",
+  "order": 43,
+  "color": "white",
+  "title": "Assyrtiko",
+  "aliases": [],
+  "origin": "Greece",
+  "countries": [
+    "Greece"
+  ],
+  "points": "2 0 1 2 = 5",
+  "complexity": "B",
+  "description": "Santorini's grape: bone-dry, steely and saline, keeping high acidity in fierce sun.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-assyrtiko-l01",
+    "grape-assyrtiko-l02",
+    "grape-assyrtiko-l03",
+    "grape-assyrtiko-l04",
+    "grape-assyrtiko-l05",
+    "grape-assyrtiko-l06"
+  ]
+}

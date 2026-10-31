@@ -1,0 +1,72 @@
+{
+  "id": "region-za-stellenbosch-l03",
+  "moduleId": "region-za-stellenbosch",
+  "order": 3,
+  "title": "Cabernet and Pinotage",
+  "subtitle": "Stellenbosch's two reds",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Stellenbosch Cabernet",
+    "Describe Pinotage",
+    "Explain Cape blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cabernet Sauvignon",
+      "body": "Stellenbosch Cabernet, especially from the slopes of the Simonsberg and Helderberg, combines ripe dark fruit with herbal, savoury notes and firm structure. Wards like Simonsberg-Stellenbosch and Jonkershoek Valley are known for it. Good examples age 15 to 20 years. Many call Stellenbosch South Africa's Cabernet capital.",
+      "highlight": "South Africa's Cabernet capital"
+    },
+    {
+      "type": "concept",
+      "title": "Pinotage",
+      "body": "Pinotage, a 1925 cross of Pinot Noir and Cinsault, then called Hermitage, gives dark fruit, plum, mulberry and smoky notes. Kanonkop, in Simonsberg-Stellenbosch, is famous for it. A Cape blend is a red blend with a significant share of Pinotage, usually 30 to 70%, with Bordeaux grapes or Shiraz, giving South Africa its own blend style.",
+      "highlight": "Pinotage and Cape blends"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a Cape blend?",
+      "options": [
+        "A red blend with a significant share of Pinotage",
+        "A white blend of Chenin and Sauvignon",
+        "A sparkling wine",
+        "A sweet wine"
+      ],
+      "answer": 0,
+      "explanation": "Usually 30 to 70% Pinotage."
+    },
+    {
+      "type": "concept",
+      "title": "Old vines",
+      "body": "South Africa's Old Vine Project, started in 2016, certifies vineyards over 35 years old with a Certified Heritage Vineyards seal. Stellenbosch has old Chenin, Cinsault and Pinotage vines whose low yields give concentrated wines. The project has helped save many old vineyards from being replanted.",
+      "highlight": "Certified Heritage Vineyards"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Pinotage's parents and partners?",
+      "options": [
+        "Pinot Noir",
+        "Cinsault",
+        "Bordeaux grapes in Cape blends",
+        "Riesling"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Riesling isn't involved."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Stellenbosch is South Africa's Cabernet capital",
+        "Pinotage and Cape blends are its own styles",
+        "The Old Vine Project protects old vineyards"
+      ]
+    }
+  ]
+}

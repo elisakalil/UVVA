@@ -1,0 +1,67 @@
+{
+  "id": "path-19-l01",
+  "moduleId": "path-19",
+  "order": 1,
+  "title": "The Italian system",
+  "subtitle": "DOCG, DOC and IGT",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Italy's quality levels",
+    "Explain why IGT matters",
+    "Read Classico, Superiore and Riserva"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Four levels",
+      "body": "Italy's system has DOCG at the top, with 77 wines, then DOC, then IGT, Indicazione Geografica Tipica, then Vino. DOCG wines must pass a tasting panel and carry a numbered strip on the neck. Italy has wine in all 20 regions and hundreds of native grapes, more than any other country.",
+      "highlight": "DOCG, DOC, IGT, Vino"
+    },
+    {
+      "type": "concept",
+      "title": "Why IGT matters",
+      "body": "In the 1970s, some Tuscan producers made wines with Cabernet Sauvignon or in small new barrels, which broke DOC rules. They had to sell them as simple table wine, yet charged more than any Chianti. These Super Tuscans, like Sassicaia and Tignanello, led to the IGT category in 1992, giving room for wines outside the rules.",
+      "highlight": "Super Tuscans created IGT"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why was the IGT category created?",
+      "options": [
+        "To protect old DOCs",
+        "To give a home to quality wines outside DOC rules",
+        "To replace DOCG",
+        "To label sparkling wine"
+      ],
+      "answer": 1,
+      "explanation": "Super Tuscans broke DOC rules, so IGT gave them, and similar wines, a proper category."
+    },
+    {
+      "type": "concept",
+      "title": "Label words",
+      "body": "Classico marks the historic heart of a zone, like Chianti Classico or Soave Classico. Superiore usually means higher minimum alcohol and sometimes longer ageing. Riserva means longer minimum ageing, set for each wine; Barolo Riserva needs at least 62 months. These words have legal meaning in each DOC.",
+      "highlight": "Classico: historic core. Riserva: longer ageing."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Italy's quality levels from highest to lowest.",
+      "items": [
+        "DOCG",
+        "DOC",
+        "IGT",
+        "Vino"
+      ],
+      "explanation": "DOCG is the strictest, Vino the most open."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Italy has DOCG, DOC, IGT and Vino",
+        "Super Tuscans led to the IGT category",
+        "Classico, Superiore and Riserva carry legal meaning"
+      ]
+    }
+  ]
+}

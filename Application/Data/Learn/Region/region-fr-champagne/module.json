@@ -1,0 +1,28 @@
+{
+  "id": "region-fr-champagne",
+  "kind": "region",
+  "order": 3,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Champagne",
+  "grapes": [
+    "Chardonnay",
+    "Pinot Noir",
+    "Pinot Meunier"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "A cold, chalky corner of northern France that turned a winemaking problem into the world's most famous sparkling wine.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-fr-champagne-l01",
+    "region-fr-champagne-l02",
+    "region-fr-champagne-l03",
+    "region-fr-champagne-l04",
+    "region-fr-champagne-l05",
+    "region-fr-champagne-l06",
+    "region-fr-champagne-l07"
+  ]
+}

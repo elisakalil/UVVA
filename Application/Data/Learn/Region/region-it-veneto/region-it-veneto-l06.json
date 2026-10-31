@@ -1,0 +1,70 @@
+{
+  "id": "region-it-veneto-l06",
+  "moduleId": "region-it-veneto",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Veneto and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read Veneto labels",
+    "Pair Veneto wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show DOC or DOCG, like Amarone della Valpolicella or Soave Classico, plus Classico for the historic zone, Superiore for higher ripeness or ageing, and Ripasso. For Prosecco, look for Superiore, Rive or Cartizze, and the sweetness: Brut, Extra Dry, which is sweeter than Brut, and Dry.",
+      "highlight": "Classico, Superiore, Ripasso"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Valpolicella suits salumi and pasta; Ripasso suits risotto and roasts; Amarone suits braised beef, game and aged cheese, and flavours risotto all'Amarone. Soave suits risotto, seafood and antipasti. Prosecco suits cicchetti, Venetian small bites, and makes the Spritz and the Bellini. Recioto suits pandoro.",
+      "highlight": "Cicchetti, risotto, Amarone with beef"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which cocktail uses Prosecco and white peach?",
+      "options": [
+        "Bellini",
+        "Negroni",
+        "Mojito",
+        "Martini"
+      ],
+      "answer": 0,
+      "explanation": "Invented at Harry's Bar, Venice."
+    },
+    {
+      "type": "tip",
+      "body": "In Venice, a glass of Prosecco with cicchetti at a bàcaro, a small wine bar, is the local way to start an evening."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Amarone?",
+      "options": [
+        "Braised beef",
+        "Aged cheese",
+        "Game",
+        "Raw oysters"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Oysters need a crisp white."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show Classico, Superiore and Ripasso",
+        "Amarone suits braised beef; Soave suits risotto",
+        "Prosecco suits cicchetti and makes the Spritz"
+      ]
+    }
+  ]
+}

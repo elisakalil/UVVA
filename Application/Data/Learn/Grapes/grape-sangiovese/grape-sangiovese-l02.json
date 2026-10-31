@@ -1,0 +1,79 @@
+{
+  "id": "grape-sangiovese-l02",
+  "moduleId": "grape-sangiovese",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Tuscany and central Italy",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Sangiovese's main regions",
+    "Explain the climate and soils it needs",
+    "Name its regional names"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tuscany and beyond",
+      "body": "Sangiovese is the soul of Tuscany: Chianti, Montalcino, Montepulciano, Carmignano and Morellino di Scansano. It also grows in Umbria, Romagna, the Marche and Lazio. Outside Italy, it's planted in Corsica, as Nielluccio, California, Argentina and Australia, but rarely with the same success.",
+      "highlight": "Tuscany is its soul"
+    },
+    {
+      "type": "concept",
+      "title": "Site-sensitive",
+      "body": "Sangiovese ripens late and needs warmth, but too much heat makes it flat and jammy. It shows best on hillsides at 250 to 600 m, with good sun and cool nights. Galestro, a crumbly marl schist, and alberese, a hard limestone, give its finest wines. It's prone to rot in wet autumns because of its thin skins.",
+      "highlight": "Hillsides, galestro and alberese"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each regional name to its place.",
+      "pairs": [
+        {
+          "left": "Brunello",
+          "right": "Montalcino"
+        },
+        {
+          "left": "Prugnolo Gentile",
+          "right": "Montepulciano"
+        },
+        {
+          "left": "Morellino",
+          "right": "Scansano"
+        },
+        {
+          "left": "Nielluccio",
+          "right": "Corsica"
+        }
+      ],
+      "explanation": "Sangiovese takes local names in its best zones."
+    },
+    {
+      "type": "concept",
+      "title": "Romagna",
+      "body": "Across the Apennines, Romagna makes Sangiovese di Romagna, now Romagna Sangiovese DOC, often fruitier and softer. Its sub-zones, like Predappio and Modigliana, are making more serious wines. It shows that Sangiovese isn't only Tuscan.",
+      "highlight": "Romagna Sangiovese"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which soils give Sangiovese's finest wines in Tuscany?",
+      "options": [
+        "Galestro and alberese",
+        "Sand and peat",
+        "Volcanic ash",
+        "Slate"
+      ],
+      "answer": 0,
+      "explanation": "Galestro marl and alberese limestone are prized in Chianti Classico."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sangiovese is the soul of Tuscany, also grown across central Italy",
+        "It needs warm hillsides and cool nights",
+        "Galestro and alberese give its finest wines"
+      ]
+    }
+  ]
+}

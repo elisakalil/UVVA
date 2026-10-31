@@ -1,0 +1,31 @@
+{
+  "id": "grape-trebbiano",
+  "kind": "grape",
+  "order": 40,
+  "color": "white",
+  "title": "Trebbiano",
+  "aliases": [
+    "Ugni Blanc",
+    "Trebbiano Toscano",
+    "Saint-Émilion"
+  ],
+  "origin": "Italy",
+  "countries": [
+    "Italy",
+    "France"
+  ],
+  "points": "2 2 0 1 = 5",
+  "complexity": "B",
+  "description": "Also called Ugni Blanc in France. A neutral, high-acid grape behind Cognac, Armagnac and Vin Santo.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-trebbiano-l01",
+    "grape-trebbiano-l02",
+    "grape-trebbiano-l03",
+    "grape-trebbiano-l04",
+    "grape-trebbiano-l05",
+    "grape-trebbiano-l06"
+  ]
+}

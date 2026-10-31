@@ -1,0 +1,62 @@
+{
+  "id": "grape-albarino-l01",
+  "moduleId": "grape-albarino",
+  "order": 1,
+  "title": "Meet Albariño",
+  "subtitle": "Peach and sea salt",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Albariño's flavours",
+    "Explain its thick skins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bright and saline",
+      "body": "Albariño gives crisp whites with lemon, grapefruit, white peach, apricot, white flowers and a saline, mineral edge. Acidity is high, body light to medium. It's aromatic yet dry. Its home is the Atlantic coast of north-west Spain and northern Portugal.",
+      "highlight": "Peach, citrus, saline"
+    },
+    {
+      "type": "concept",
+      "title": "Thick skins",
+      "body": "Albariño has small berries with thick skins, which resist mildew and rot in its wet, humid homeland. Thick skins also hold aromatic compounds, giving its perfume, and can add a slightly bitter, phenolic finish. Some producers use skin contact or lees ageing for extra texture.",
+      "highlight": "Thick skins for a wet climate"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Albariño suit its wet, Atlantic home?",
+      "options": [
+        "Its thick skins resist mildew and rot",
+        "It needs drought",
+        "It ripens in winter",
+        "It's a red grape"
+      ],
+      "answer": 0,
+      "explanation": "Thick skins protect against humidity."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon colour, peach and citrus aromas, and a crisp, saline, mineral palate. Compared with Sauvignon Blanc, it's more stone fruit and less green; compared with Viognier, lighter and much fresher.",
+      "highlight": "Peach plus salt"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Albariño has thin skins that make it prone to rot.",
+      "answer": false,
+      "explanation": "Not true. Its thick skins help it resist rot."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Albariño gives peach, citrus and a saline edge",
+        "Thick skins resist rot in a wet climate",
+        "It's crisp, aromatic and dry"
+      ]
+    }
+  ]
+}

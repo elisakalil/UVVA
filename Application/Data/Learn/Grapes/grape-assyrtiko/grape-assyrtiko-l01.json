@@ -1,0 +1,62 @@
+{
+  "id": "grape-assyrtiko-l01",
+  "moduleId": "grape-assyrtiko",
+  "order": 1,
+  "title": "Meet Assyrtiko",
+  "subtitle": "Acid in the sun",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Assyrtiko's flavours and structure",
+    "Explain its acidity",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Steely and saline",
+      "body": "Assyrtiko gives bone-dry whites with lemon, lime, grapefruit, flint and a saline, smoky mineral edge. Acidity is very high, often with pH around 3, and alcohol can be high, 13.5 to 14.5%. Body is medium to full. It's Greece's most famous white grape.",
+      "highlight": "Lemon, flint, salt"
+    },
+    {
+      "type": "concept",
+      "title": "Acid in heat",
+      "body": "Most grapes lose acidity in hot climates. Assyrtiko is unusual: it keeps very high acidity even when fully ripe under intense Aegean sun. Its tartaric acid is especially stable. This makes it valuable as the climate warms, and it's been planted in Australia, South Africa and the US.",
+      "highlight": "Keeps acidity in heat"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Assyrtiko unusual?",
+      "options": [
+        "It keeps high acidity even in hot climates",
+        "It's very low in acidity",
+        "It's always sweet",
+        "It only grows in cold places"
+      ],
+      "answer": 0,
+      "explanation": "Few grapes keep such acidity under strong sun."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon colour, citrus, flint and a sea-salt character, a firm, steely palate with high acidity and fairly high alcohol, and a long, mineral finish. Compared with Riesling, it's less floral and more saline and smoky.",
+      "highlight": "Steely, saline, smoky"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Assyrtiko loses most of its acidity in hot climates.",
+      "answer": false,
+      "explanation": "Not true. It keeps high acidity even in intense heat."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Assyrtiko is bone-dry, steely and saline",
+        "It keeps high acidity even in fierce sun",
+        "It's Greece's most famous white grape"
+      ]
+    }
+  ]
+}

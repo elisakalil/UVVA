@@ -1,0 +1,20 @@
+{
+  "id": "path-29",
+  "kind": "path",
+  "order": 29,
+  "level": "Expert",
+  "complexity": "C",
+  "title": "The Business of Wine",
+  "description": "How wine is made into a product, priced, sold and collected, and what climate change means for all of it.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-29-l01",
+    "path-29-l02",
+    "path-29-l03",
+    "path-29-l04",
+    "path-29-l05",
+    "path-29-l06"
+  ]
+}

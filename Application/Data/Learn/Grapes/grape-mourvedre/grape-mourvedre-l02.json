@@ -1,0 +1,72 @@
+{
+  "id": "grape-mourvedre-l02",
+  "moduleId": "grape-mourvedre",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "From Bandol to the Barossa",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Mourvèdre's main regions",
+    "Explain its role in blends",
+    "Explain the climate it needs"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Main regions",
+      "body": "Spain has the most, mainly in Jumilla, Yecla, Alicante and Valencia, as Monastrell. In France, it's the star of Bandol in Provence and a partner in the southern Rhône and Languedoc. Australia grows it in the Barossa and McLaren Vale; California in Contra Costa and Paso Robles.",
+      "highlight": "Spain, Provence, Australia, California"
+    },
+    {
+      "type": "concept",
+      "title": "Blending",
+      "body": "Mourvèdre is the M in GSM blends, with Grenache and Syrah. Grenache brings red fruit and alcohol, Syrah colour and spice, Mourvèdre tannin, dark fruit and a savoury frame that helps the blend age. In Châteauneuf-du-Pape, some estates use a high share, like Château de Beaucastel.",
+      "highlight": "The M in GSM"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Mourvèdre bring to a GSM blend?",
+      "options": [
+        "Red fruit and alcohol",
+        "Tannin, dark fruit and savouriness",
+        "Floral aroma",
+        "Lower colour"
+      ],
+      "answer": 1,
+      "explanation": "Mourvèdre adds structure and savoury depth; Grenache brings red fruit."
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "Mourvèdre needs a long, hot season, often harvested in October. It likes sea breezes and some water near the roots, which is why coastal Bandol suits it. It's drought-tolerant once established, and resists oxidation in winemaking. On its own roots in sandy soils, it survives in parts of Spain.",
+      "highlight": "Heat, sea breeze, late harvest"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Mourvèdre's needs?",
+      "options": [
+        "A long, hot season",
+        "Late harvest",
+        "Sea breezes help",
+        "A cool, short season"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "In cool, short seasons it won't ripen."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Spain grows the most, as Monastrell",
+        "Mourvèdre is the M in GSM, adding structure",
+        "It needs heat, a long season and likes the sea"
+      ]
+    }
+  ]
+}

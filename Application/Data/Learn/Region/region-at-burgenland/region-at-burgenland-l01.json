@@ -1,0 +1,62 @@
+{
+  "id": "region-at-burgenland-l01",
+  "moduleId": "region-at-burgenland",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Austria's warm east",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Burgenland's geography",
+    "Explain its Pannonian climate",
+    "Explain the role of Lake Neusiedl"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "On the Hungarian border",
+      "body": "Burgenland is Austria's easternmost state, a long strip along the Hungarian border, south-east of Vienna. It belonged to Hungary until 1921. It has about 11,700 hectares of vines. Key areas include Neusiedlersee, around the lake; Leithaberg, on the hills to the west; Mittelburgenland; and Eisenberg in the south.",
+      "highlight": "Former Hungary, until 1921"
+    },
+    {
+      "type": "concept",
+      "title": "Pannonian climate",
+      "body": "Burgenland has a warm, dry Pannonian climate, influenced by the Hungarian plain: hot summers, cold winters and plenty of sun. It's Austria's warmest wine region, which is why it's the country's red wine heartland. Soils vary: limestone and schist on the Leithaberg, clay in Mittelburgenland, gravel and sand by the lake.",
+      "highlight": "Austria's warmest region"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Burgenland Austria's red wine heartland?",
+      "options": [
+        "Its warm Pannonian climate ripens red grapes",
+        "It's very cold",
+        "It's at high altitude",
+        "It's on the coast"
+      ],
+      "answer": 0,
+      "explanation": "Warmth from the Hungarian plain helps reds ripen."
+    },
+    {
+      "type": "concept",
+      "title": "Lake Neusiedl",
+      "body": "Lake Neusiedl, Neusiedlersee, is a large, shallow steppe lake, about 320 km2 but only about 1 to 2 m deep, on the border with Hungary. It warms the area and, in autumn, creates mist and humidity that favour noble rot. The lake and its reed beds are a UNESCO World Heritage Site and a national park.",
+      "highlight": "Shallow lake, autumn mist"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Lake Neusiedl is very deep.",
+      "answer": false,
+      "explanation": "Not true. It's large but only about 1 to 2 m deep."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgenland is Austria's warm east, part of Hungary until 1921",
+        "Its Pannonian climate makes it Austria's red heartland",
+        "Shallow Lake Neusiedl brings warmth and autumn mist"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "grape-viognier-l04",
+  "moduleId": "grape-viognier",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Viognier",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Viognier with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rich and aromatic dishes",
+      "body": "Viognier's body and perfume suit rich dishes: roast chicken with apricots, pork, lobster, crab, creamy sauces, and mildly spiced Asian or Moroccan food. Apricot and ginger in dishes echo it. Avoid very acidic or delicate dishes, which make it seem heavy.",
+      "highlight": "Apricot chicken, lobster, mild spice"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 10 to 13 degrees, not too cold, or its aromas close. Most Viognier is best within three years, when the perfume is fresh. With age, it loses aroma quickly. Château-Grillet and top Condrieu can age a little longer.",
+      "highlight": "Drink young, not too cold"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is most Viognier best drunk young?",
+      "options": [
+        "Its perfume fades quickly",
+        "It needs decades to open",
+        "It's too tannic",
+        "It turns red"
+      ],
+      "answer": 0,
+      "explanation": "Its fresh aromas are its charm, and they fade."
+    },
+    {
+      "type": "tip",
+      "body": "Try Viognier with a Moroccan chicken tagine with apricots. The fruit and spice match the wine's perfume."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Viognier generally ages as long as Riesling.",
+      "answer": false,
+      "explanation": "Not true. Low acidity means most Viognier fades within a few years."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Viognier suits rich, aromatic dishes and apricots",
+        "Serve at 10 to 13 degrees",
+        "Most is best within three years"
+      ]
+    }
+  ]
+}

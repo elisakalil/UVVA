@@ -1,0 +1,79 @@
+{
+  "id": "region-ar-mendoza-l04",
+  "moduleId": "region-ar-mendoza",
+  "order": 4,
+  "title": "Valle de Uco",
+  "subtitle": "High-altitude Malbec",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Valle de Uco",
+    "Explain the effect of altitude",
+    "Name its geographical indications"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "High and cool",
+      "body": "The Valle de Uco lies about 100 km south-west of Mendoza city, at 900 to over 1,600 m, right against the Andes. Its three departments are Tupungato, Tunuyán and San Carlos. Since the 1990s, it's become Argentina's most acclaimed area for fine wine, with major investment, including from French and American producers.",
+      "highlight": "900 to 1,600 m, against the Andes"
+    },
+    {
+      "type": "concept",
+      "title": "Altitude",
+      "body": "Altitude cools the air by about 0.6 degrees per 100 m and strengthens ultraviolet light. Cool nights preserve acidity and aroma; strong UV thickens skins, adding colour and tannin. Valle de Uco Malbec is fresher, more floral and more structured than in Luján. Soils, alluvial with stones and limestone, vary greatly.",
+      "highlight": "Fresher, more floral Malbec"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does Valle de Uco Malbec usually compare with Luján de Cuyo's?",
+      "options": [
+        "Fresher and more structured",
+        "Riper and softer",
+        "Sweeter",
+        "Paler and lighter"
+      ],
+      "answer": 0,
+      "explanation": "Altitude brings freshness and structure."
+    },
+    {
+      "type": "concept",
+      "title": "Geographical indications",
+      "body": "Since 2013, the Valle de Uco has recognised smaller GIs: Paraje Altamira, in San Carlos, with limestone-rich alluvial soils; Gualtallary, in Tupungato, high up to 1,600 m with limestone; Los Chacayes, in Tunuyán; and San Pablo, very high and cool. These help show terroir in Argentine wine.",
+      "highlight": "Paraje Altamira, Gualtallary, Los Chacayes"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each GI to its department.",
+      "pairs": [
+        {
+          "left": "Gualtallary",
+          "right": "Tupungato"
+        },
+        {
+          "left": "Paraje Altamira",
+          "right": "San Carlos"
+        },
+        {
+          "left": "Los Chacayes",
+          "right": "Tunuyán"
+        },
+        {
+          "left": "San Pablo",
+          "right": "Very high, cool"
+        }
+      ],
+      "explanation": "The Valle de Uco has a growing map of GIs."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Valle de Uco is high, against the Andes",
+        "Altitude gives fresher, more structured Malbec",
+        "GIs like Gualtallary and Paraje Altamira show terroir"
+      ]
+    }
+  ]
+}

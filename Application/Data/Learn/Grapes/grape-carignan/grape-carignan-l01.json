@@ -1,0 +1,73 @@
+{
+  "id": "grape-carignan-l01",
+  "moduleId": "grape-carignan",
+  "order": 1,
+  "title": "Meet Carignan",
+  "subtitle": "High acid, high tannin, old vines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Carignan's flavours and structure",
+    "Explain its origins and names",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A rustic grape",
+      "body": "Carignan gives deep-coloured wines with red and black fruit, dried herbs, liquorice and earthy, sometimes meaty notes. It has high acidity, high tannin and can be rustic and astringent when young or overcropped. From old, low-yielding vines, it becomes concentrated and complex.",
+      "highlight": "Dark fruit, herbs, high acid and tannin"
+    },
+    {
+      "type": "concept",
+      "title": "Spanish roots",
+      "body": "Carignan comes from Aragón, in Spain, near the town of Cariñena. In Spain it's also called Mazuelo, in Rioja, and Samsó, in Catalonia. In Italy, mainly Sardinia, it's Carignano. It buds late and ripens very late, so it needs heat. It's vigorous and can yield heavily, which is why it became a bulk grape.",
+      "highlight": "From Cariñena in Aragón"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to where it's used.",
+      "pairs": [
+        {
+          "left": "Carignan",
+          "right": "France"
+        },
+        {
+          "left": "Mazuelo",
+          "right": "Rioja"
+        },
+        {
+          "left": "Samsó",
+          "right": "Catalonia"
+        },
+        {
+          "left": "Carignano",
+          "right": "Sardinia"
+        }
+      ],
+      "explanation": "Carignan takes a new name in each region."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Carignan often appears in blends, adding colour, acidity and structure. On its own, look for deep colour, bright acidity, firm tannin and earthy, herbal notes. Old-vine examples are richer, with dark fruit and spice. Its high acidity sets it apart from Grenache, its usual partner.",
+      "highlight": "Bright acid, firm tannin, earthy"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Carignan buds and ripens early.",
+      "answer": false,
+      "explanation": "Not true. It buds and ripens late, so it needs a hot climate."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carignan has high acidity, high tannin and earthy notes",
+        "It comes from Cariñena in Aragón and has many names",
+        "It ripens late and needs heat"
+      ]
+    }
+  ]
+}

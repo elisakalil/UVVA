@@ -1,0 +1,62 @@
+{
+  "id": "path-10-l02",
+  "moduleId": "path-10",
+  "order": 2,
+  "title": "Merlot around the world",
+  "subtitle": "Softness and the Right Bank",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Merlot on Bordeaux's Right Bank",
+    "Explain why Merlot suits clay",
+    "Name Merlot's other important regions"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Right Bank",
+      "body": "Merlot is the most planted grape in Bordeaux. On the Right Bank, in Pomerol and Saint-Émilion, it leads the blend. Clay and limestone soils hold water and stay cool, suiting an early-ripening grape. The wines show plum, black cherry and a velvety texture; Pétrus, in Pomerol, is almost pure Merlot.",
+      "highlight": "Pomerol and Saint-Émilion: Merlot-led"
+    },
+    {
+      "type": "concept",
+      "title": "Why Merlot suits cooler soils",
+      "body": "Merlot buds and ripens about one to two weeks before Cabernet Sauvignon. That lets it ripen on cool clay where Cabernet would struggle. But early budding brings frost risk, and its thin skin makes it sensitive to rot. In warm places it can overripen fast, losing freshness and turning jammy.",
+      "highlight": "Early ripener, clay-friendly"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Merlot ripens later than Cabernet Sauvignon.",
+      "answer": false,
+      "explanation": "Not true. Merlot ripens one to two weeks earlier, which is why it suits cooler clay soils."
+    },
+    {
+      "type": "concept",
+      "title": "Beyond Bordeaux",
+      "body": "Merlot is grown widely: in Italy, notably in Tuscany's Bolgheri and in Friuli; in Chile and California for soft, fruity reds; in Washington State for structured, fresh versions; and in New Zealand's Hawke's Bay. The 2004 film Sideways hurt its reputation in the United States, though great Merlot never went away.",
+      "highlight": "Bolgheri, Washington, Hawke's Bay"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is famous for being made almost entirely from Merlot?",
+      "options": [
+        "Château Margaux",
+        "Pétrus",
+        "Sassicaia",
+        "Vega Sicilia"
+      ],
+      "answer": 1,
+      "explanation": "Pétrus, in Pomerol, is almost pure Merlot. Margaux is Cabernet-led; Sassicaia is Cabernet-based; Vega Sicilia is Tempranillo-led."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot leads the Right Bank blends of Pomerol and Saint-Émilion",
+        "It ripens early, suiting cool clay soils",
+        "It's grown widely, from Italy to Washington and New Zealand"
+      ]
+    }
+  ]
+}

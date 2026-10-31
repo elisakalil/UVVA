@@ -1,0 +1,20 @@
+{
+  "id": "path-14",
+  "kind": "path",
+  "order": 14,
+  "level": "Intermediate",
+  "complexity": "C",
+  "title": "Fortified Wine",
+  "description": "Spirit added before or after fermentation, and the families that follow.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-14-l01",
+    "path-14-l02",
+    "path-14-l03",
+    "path-14-l04",
+    "path-14-l05",
+    "path-14-l06"
+  ]
+}

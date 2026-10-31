@@ -1,0 +1,35 @@
+{
+  "id": "grape-tempranillo",
+  "kind": "grape",
+  "order": 17,
+  "color": "red",
+  "title": "Tempranillo",
+  "aliases": [
+    "Tinto Fino",
+    "Tinta del País",
+    "Tinta de Toro",
+    "Tinta Roriz",
+    "Aragonez",
+    "Cencibel"
+  ],
+  "origin": "Spain",
+  "countries": [
+    "Spain",
+    "Portugal"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "Also called Tinta Roriz and Aragonez in Portugal, Tinto Fino in Ribera. Spain's great red, shaped by oak and time.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-tempranillo-l01",
+    "grape-tempranillo-l02",
+    "grape-tempranillo-l03",
+    "grape-tempranillo-l04",
+    "grape-tempranillo-l05",
+    "grape-tempranillo-l06",
+    "grape-tempranillo-l07"
+  ]
+}

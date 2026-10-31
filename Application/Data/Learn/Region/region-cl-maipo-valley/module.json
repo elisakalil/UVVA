@@ -1,0 +1,25 @@
+{
+  "id": "region-cl-maipo-valley",
+  "kind": "region",
+  "order": 41,
+  "country": "Chile",
+  "countryCode": "CL",
+  "title": "Maipo Valley",
+  "grapes": [
+    "Cabernet Sauvignon",
+    "Carmenère"
+  ],
+  "points": "1 0 0 2 = 3",
+  "complexity": "C",
+  "description": "Santiago's valley: the historic home of Chilean Cabernet Sauvignon, at the foot of the Andes.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-cl-maipo-valley-l01",
+    "region-cl-maipo-valley-l02",
+    "region-cl-maipo-valley-l03",
+    "region-cl-maipo-valley-l04",
+    "region-cl-maipo-valley-l05"
+  ]
+}

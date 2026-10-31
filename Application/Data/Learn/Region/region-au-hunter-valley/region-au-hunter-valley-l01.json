@@ -1,0 +1,62 @@
+{
+  "id": "region-au-hunter-valley-l01",
+  "moduleId": "region-au-hunter-valley",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Hot, humid and historic",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Hunter Valley's location",
+    "Explain its unusual climate",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "North of Sydney",
+      "body": "The Hunter Valley lies about 160 km north of Sydney, in New South Wales, along the Hunter River. It's divided into the Lower Hunter, around Pokolbin, the main wine area, and the Upper Hunter. It has about 2,500 hectares of vines. Soils include sandy alluvial flats, good for Sémillon, and red clay on slopes, for Shiraz.",
+      "highlight": "Lower Hunter around Pokolbin"
+    },
+    {
+      "type": "concept",
+      "title": "Hot and humid",
+      "body": "The Hunter is one of Australia's hottest, most humid wine regions, and unusually, much rain falls in summer and at harvest, from February to March. Afternoon cloud and sea breezes moderate the heat. The risk of rot at harvest is high, so grapes are often picked early. It's a challenging, sub-tropical climate for vines.",
+      "highlight": "Summer rain, rot risk"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is unusual about the Hunter's rainfall?",
+      "options": [
+        "Much of it falls in summer and at harvest",
+        "It never rains",
+        "It rains only in winter",
+        "It snows"
+      ],
+      "answer": 0,
+      "explanation": "Harvest rain brings rot risk."
+    },
+    {
+      "type": "concept",
+      "title": "History",
+      "body": "The Hunter is Australia's oldest continuously operating wine region. James Busby, the father of Australian wine, planted vines there in the 1820s and brought hundreds of cuttings from Europe in 1832. Families like Tyrrell, Tulloch and McWilliam's, with Mount Pleasant, have made wine for generations.",
+      "highlight": "Vines since the 1820s"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Hunter Valley is Australia's oldest wine region still in operation.",
+      "answer": true,
+      "explanation": "Yes, with vines since the 1820s."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Hunter lies north of Sydney, around Pokolbin",
+        "It's hot and humid, with rain at harvest",
+        "It's Australia's oldest wine region"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "grape-melon-de-bourgogne-l01",
+  "moduleId": "grape-melon-de-bourgogne",
+  "order": 1,
+  "title": "Meet Melon de Bourgogne",
+  "subtitle": "The grape of Muscadet",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Melon's flavours",
+    "Explain its history",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Light and crisp",
+      "body": "Melon de Bourgogne, often just Melon, gives light, very dry whites with lemon, green apple, pear, white flowers and a saline, mineral note. Acidity is high, alcohol moderate, often 12% or less; Muscadet is legally capped at 12% for most wines. It's neutral in aroma, which makes lees ageing important.",
+      "highlight": "Lemon, apple, saline"
+    },
+    {
+      "type": "concept",
+      "title": "From Burgundy to the sea",
+      "body": "As its name says, Melon came from Burgundy. It's a cross of Pinot Noir and Gouais Blanc, a sibling of Chardonnay. After the harsh winter of 1709 killed many vines near Nantes, growers replanted with frost-resistant Melon. It became the grape of Muscadet, near the Loire's mouth. Burgundy later banned it.",
+      "highlight": "Replanted near Nantes after 1709"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why was Melon planted near Nantes?",
+      "options": [
+        "It survived the harsh winter of 1709",
+        "It was banned in Bordeaux",
+        "It's very sweet",
+        "It's a red grape"
+      ],
+      "answer": 0,
+      "explanation": "After the 1709 freeze, frost-resistant Melon replaced lost vines."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for very pale colour, a subtle nose of lemon, apple and sea air, and a light, crisp, saline palate. Lees-aged versions add bread and a slight creaminess, and sometimes a tiny spritz. Compared with Pinot Grigio, it's more saline and mineral.",
+      "highlight": "Pale, saline, crisp"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Melon de Bourgogne is a sibling of Chardonnay.",
+      "answer": true,
+      "explanation": "Yes. Both are crosses of Pinot Noir and Gouais Blanc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Melon gives light, crisp, saline whites",
+        "It came from Burgundy and replaced vines near Nantes after 1709",
+        "It's a sibling of Chardonnay"
+      ]
+    }
+  ]
+}

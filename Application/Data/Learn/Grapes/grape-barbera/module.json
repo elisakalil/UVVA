@@ -1,0 +1,24 @@
+{
+  "id": "grape-barbera",
+  "kind": "grape",
+  "order": 16,
+  "color": "red",
+  "title": "Barbera",
+  "aliases": [],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "0 1 0 1 = 2",
+  "complexity": "D",
+  "description": "Piedmont's most planted red: deep colour, bright acidity, low tannin and a natural love of food.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "grape-barbera-l01",
+    "grape-barbera-l02",
+    "grape-barbera-l03",
+    "grape-barbera-l04"
+  ]
+}

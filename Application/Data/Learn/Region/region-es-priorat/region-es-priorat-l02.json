@@ -1,0 +1,77 @@
+{
+  "id": "region-es-priorat-l02",
+  "moduleId": "region-es-priorat",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Garnacha and Cariñena",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Priorat's main grapes",
+    "Explain the role of old vines",
+    "Name its international grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Old natives",
+      "body": "Garnacha and Cariñena, Carignan, are Priorat's traditional grapes, many from old bush vines over 50 or 80 years old. Garnacha gives ripe red fruit, spice and warmth; Cariñena gives acidity, colour and structure. Together, on llicorella, they make powerful, dark, mineral reds, often 14.5 to 15.5% alcohol.",
+      "highlight": "Garnacha warmth, Cariñena structure"
+    },
+    {
+      "type": "concept",
+      "title": "International partners",
+      "body": "The 1989 pioneers also planted Cabernet Sauvignon, Syrah and Merlot, adding structure and colour to blends. Today many producers focus on the native grapes, especially old Garnacha and Cariñena, and on single vineyards. Whites, from Garnacha Blanca and Macabeo, are rare.",
+      "highlight": "Cabernet and Syrah in blends"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Garnacha",
+          "right": "Red fruit and warmth"
+        },
+        {
+          "left": "Cariñena",
+          "right": "Acidity and structure"
+        },
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Added by 1989 pioneers"
+        },
+        {
+          "left": "Garnacha Blanca",
+          "right": "Rare white"
+        }
+      ],
+      "explanation": "Old natives lead; international grapes support."
+    },
+    {
+      "type": "tip",
+      "body": "Neighbouring Montsant, which surrounds Priorat, makes similar Garnacha and Cariñena blends at lower prices, on more varied soils."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What do old vines give Priorat's wines?",
+      "options": [
+        "Concentration from tiny yields",
+        "High yields",
+        "Pale colour",
+        "Sweetness"
+      ],
+      "answer": 0,
+      "explanation": "Old vines on llicorella give very low yields and concentration."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Garnacha and Cariñena are Priorat's traditional grapes",
+        "Old bush vines give concentrated, mineral wines",
+        "International grapes support some blends"
+      ]
+    }
+  ]
+}

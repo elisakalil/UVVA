@@ -1,0 +1,96 @@
+{
+  "id": "grape-montepulciano-l05",
+  "moduleId": "grape-montepulciano",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Montepulciano",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Montepulciano",
+    "Know its regions and wines",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Where is Montepulciano the grape mainly grown?",
+      "options": [
+        "Abruzzo and the Marche",
+        "Piedmont",
+        "Sicily",
+        "Tuscany's Montepulciano town"
+      ],
+      "answer": 0,
+      "explanation": "The Adriatic side of central Italy."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its description.",
+      "pairs": [
+        {
+          "left": "Colline Teramane",
+          "right": "Abruzzo DOCG"
+        },
+        {
+          "left": "Conero",
+          "right": "Limestone headland, Marche"
+        },
+        {
+          "left": "Cerasuolo d'Abruzzo",
+          "right": "Cherry-pink rosé"
+        },
+        {
+          "left": "Vino Nobile",
+          "right": "Tuscan Sangiovese"
+        }
+      ],
+      "explanation": "Only the first three are Montepulciano."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Montepulciano has soft, ripe tannins.",
+      "answer": true,
+      "explanation": "Yes. That gives it a round, generous feel."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are true of Montepulciano?",
+      "options": [
+        "Deep colour",
+        "Ripens late",
+        "Very high acidity",
+        "Good value"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Its acidity is moderate."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Montepulciano d'Abruzzo Colline Teramane became DOCG in ____.",
+      "options": [
+        "2003",
+        "1963",
+        "1993",
+        "2020"
+      ],
+      "answer": "2003",
+      "explanation": "2003, with stricter rules."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Montepulciano is deep, ripe and soft",
+        "It's unrelated to the Tuscan town",
+        "Abruzzo and Conero make its best wines",
+        "It's an excellent everyday food wine"
+      ]
+    }
+  ]
+}

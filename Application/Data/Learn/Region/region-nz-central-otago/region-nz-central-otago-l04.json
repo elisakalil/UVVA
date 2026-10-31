@@ -1,0 +1,96 @@
+{
+  "id": "region-nz-central-otago-l04",
+  "moduleId": "region-nz-central-otago",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Central Otago",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Central Otago's land and grape",
+    "Explain its climate",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Central Otago.",
+      "pairs": [
+        {
+          "left": "Schist",
+          "right": "Common soil"
+        },
+        {
+          "left": "Rippon",
+          "right": "Lake Wanaka pioneer"
+        },
+        {
+          "left": "Féraud",
+          "right": "Planted vines in the 1860s"
+        },
+        {
+          "left": "Queenstown",
+          "right": "Nearby town"
+        }
+      ],
+      "explanation": "Central Otago's story runs from gold to Pinot."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Central Otago's main grape?",
+      "options": [
+        "Pinot Noir",
+        "Sauvignon Blanc",
+        "Merlot",
+        "Shiraz"
+      ],
+      "answer": 0,
+      "explanation": "About 80% of vineyards."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Frost is a major risk in Central Otago.",
+      "answer": true,
+      "explanation": "Yes, in spring and autumn."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Central Otago?",
+      "options": [
+        "Continental climate",
+        "World's southernmost major region",
+        "Low rainfall",
+        "Tropical humidity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's dry and continental."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Central Otago lies at about ____ degrees south.",
+      "options": [
+        "45",
+        "30",
+        "20",
+        "60"
+      ],
+      "answer": "45",
+      "explanation": "About 45 degrees south."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Central Otago is the world's southernmost major wine region",
+        "It's continental: hot days, cold nights, frost",
+        "Pinot Noir dominates, vivid and fresh",
+        "Its wines suit lamb and venison"
+      ]
+    }
+  ]
+}

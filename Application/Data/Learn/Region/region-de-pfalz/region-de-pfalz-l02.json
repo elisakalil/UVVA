@@ -1,0 +1,77 @@
+{
+  "id": "region-de-pfalz-l02",
+  "moduleId": "region-de-pfalz",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Riesling and many more",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Riesling's role",
+    "Name the Pfalz's other grapes",
+    "Explain the Pinot family's rise"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Riesling",
+      "body": "Riesling is the most planted grape, about 25% of the Pfalz, one of the world's largest Riesling areas. The warm climate gives ripe peach, apricot and citrus, with fuller body and good acidity. Most is dry. The Mittelhaardt villages make some of Germany's greatest Rieslings.",
+      "highlight": "Riesling: about 25%"
+    },
+    {
+      "type": "concept",
+      "title": "The Pinot family and others",
+      "body": "Spätburgunder, Pinot Noir, has grown fast in the south, alongside Weissburgunder, Pinot Blanc, and Grauburgunder, Pinot Gris. Dornfelder, a dark red cross, is popular for everyday wine. Müller-Thurgau, Silvaner, Scheurebe and Gewürztraminer also grow here. The Pfalz is Germany's most diverse region.",
+      "highlight": "Pinots, Dornfelder, Scheurebe"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each German name to its grape.",
+      "pairs": [
+        {
+          "left": "Spätburgunder",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Weissburgunder",
+          "right": "Pinot Blanc"
+        },
+        {
+          "left": "Grauburgunder",
+          "right": "Pinot Gris"
+        },
+        {
+          "left": "Dornfelder",
+          "right": "Dark red cross"
+        }
+      ],
+      "explanation": "The Pfalz grows a wide range of grapes."
+    },
+    {
+      "type": "tip",
+      "body": "The Südpfalz, near Alsace, is a source of excellent Spätburgunder. Producers like Friedrich Becker grow vines right on the French border."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is the Pfalz's most planted grape?",
+      "options": [
+        "Riesling",
+        "Dornfelder",
+        "Chardonnay",
+        "Merlot"
+      ],
+      "answer": 0,
+      "explanation": "Riesling, about a quarter of vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling leads, ripe and mostly dry",
+        "The Pinot family is rising, especially in the south",
+        "Dornfelder and Scheurebe add variety"
+      ]
+    }
+  ]
+}

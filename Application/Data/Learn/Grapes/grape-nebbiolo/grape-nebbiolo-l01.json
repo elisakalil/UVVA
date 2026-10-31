@@ -1,0 +1,62 @@
+{
+  "id": "grape-nebbiolo-l01",
+  "moduleId": "grape-nebbiolo",
+  "order": 1,
+  "title": "Meet Nebbiolo",
+  "subtitle": "Tar and roses",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Nebbiolo's flavours and structure",
+    "Explain its name",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pale but powerful",
+      "body": "Nebbiolo gives pale ruby to garnet wines with aromas of rose, violet, red cherry, tar, liquorice and dried herbs, often summed up as tar and roses. It has very high tannin and high acidity, with medium to high alcohol. Its pale colour hides its power, a classic surprise in blind tasting.",
+      "highlight": "Tar and roses, high tannin and acid"
+    },
+    {
+      "type": "concept",
+      "title": "Fog and late ripening",
+      "body": "Nebbiolo's name may come from nebbia, fog, which covers the Langhe hills in autumn when it's harvested, often in October. Or from the white bloom on its berries, like a fog. It's one of the first grapes to bud and the last to ripen, so it needs the warmest, best-exposed slopes. Its skins are low in stable colour pigments, hence the pale colour.",
+      "highlight": "Early budding, late ripening"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Nebbiolo pale despite being very tannic?",
+      "options": [
+        "Its skins are low in stable colour pigments",
+        "It's blended with white grapes",
+        "It's made like a rosé",
+        "It's aged in white barrels"
+      ],
+      "answer": 0,
+      "explanation": "Nebbiolo has plenty of tannin but few stable pigments, so the colour is light."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale ruby with an orange or brick rim, even when quite young. On the nose, rose, cherry, tar and herbs. On the palate, a striking grip of tannin with high acidity. A pale red that grips like Cabernet is almost certainly Nebbiolo.",
+      "highlight": "Pale colour, huge grip"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Nebbiolo is one of the first grapes to ripen.",
+      "answer": false,
+      "explanation": "Not true. It buds early but ripens very late, often in October."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nebbiolo smells of tar and roses, with very high tannin and acidity",
+        "Its name may come from nebbia, the autumn fog",
+        "Pale colour hides its power"
+      ]
+    }
+  ]
+}

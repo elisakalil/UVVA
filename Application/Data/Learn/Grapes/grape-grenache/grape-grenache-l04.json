@@ -1,0 +1,77 @@
+{
+  "id": "grape-grenache-l04",
+  "moduleId": "grape-grenache",
+  "order": 4,
+  "title": "Garnacha in Spain",
+  "subtitle": "Home and revival",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Garnacha in Aragón",
+    "Describe Garnacha in Priorat",
+    "Describe the Gredos revival"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aragón",
+      "body": "In Aragón, Garnacha's likely birthplace, Campo de Borja, Calatayud and Cariñena have many old bush vines on poor, stony soils. Campo de Borja calls itself the empire of Garnacha. These areas once made bulk wine but now offer concentrated, good-value Garnacha.",
+      "highlight": "Campo de Borja, Calatayud"
+    },
+    {
+      "type": "concept",
+      "title": "Priorat and Gredos",
+      "body": "In Priorat, old Garnacha and Cariñena on llicorella slate make powerful, mineral wines. In the Sierra de Gredos, west of Madrid, old Garnacha vines on granite at 600 to 1,200 m were rediscovered in the 2000s. Gredos Garnacha is pale, fragrant and fresh, often compared with Burgundy.",
+      "highlight": "Priorat power; Gredos elegance"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Spanish area to its Garnacha.",
+      "pairs": [
+        {
+          "left": "Campo de Borja",
+          "right": "Empire of Garnacha"
+        },
+        {
+          "left": "Priorat",
+          "right": "Powerful, on slate"
+        },
+        {
+          "left": "Gredos",
+          "right": "Fragrant, on granite"
+        },
+        {
+          "left": "Navarra",
+          "right": "Rosado tradition"
+        }
+      ],
+      "explanation": "Spain shows every side of Garnacha."
+    },
+    {
+      "type": "tip",
+      "body": "Gredos Garnacha shows a lighter, more elegant face of the grape. Try one next to a Châteauneuf to see how much altitude and granite change it."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Gredos Garnacha often fresher than other Garnachas?",
+      "options": [
+        "High altitude and granite soils",
+        "It's picked unripe",
+        "It's blended with white",
+        "It's from the coast"
+      ],
+      "answer": 0,
+      "explanation": "Altitude up to 1,200 m and granite give freshness and perfume."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aragón is Garnacha's homeland, with old bush vines",
+        "Priorat makes powerful Garnacha on slate",
+        "Gredos makes fragrant, fresh Garnacha at altitude"
+      ]
+    }
+  ]
+}

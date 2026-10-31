@@ -1,0 +1,67 @@
+{
+  "id": "grape-chenin-blanc-l03",
+  "moduleId": "grape-chenin-blanc",
+  "order": 3,
+  "title": "From dry to sweet",
+  "subtitle": "Reading a Chenin label",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the sweetness terms on Loire labels",
+    "Explain how botrytis affects sweet Chenin",
+    "Describe sparkling Chenin"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sweetness terms",
+      "body": "Loire Chenin labels may say sec, dry; demi-sec, off-dry; moelleux, sweet; or doux, very sweet. Vouvray and Montlouis can be any of these, depending on the vintage: in warm years with botrytis, more sweet wine; in cool years, more dry and sparkling. If no term appears, check the back label or producer.",
+      "highlight": "Sec, demi-sec, moelleux, doux"
+    },
+    {
+      "type": "concept",
+      "title": "Botrytis",
+      "body": "In Anjou's Layon valley, autumn mists bring noble rot. Coteaux du Layon, and its top crus Bonnezeaux and Quarts de Chaume, make sweet wines from botrytised Chenin. Quarts de Chaume became the Loire's first Grand Cru in 2011. Chenin's acidity keeps them fresh, and they can age for 50 years or more.",
+      "highlight": "Quarts de Chaume: first Loire Grand Cru"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Loire terms from driest to sweetest.",
+      "items": [
+        "Sec",
+        "Demi-sec",
+        "Moelleux",
+        "Doux"
+      ],
+      "explanation": "Sec is dry; doux is the sweetest."
+    },
+    {
+      "type": "concept",
+      "title": "Sparkling",
+      "body": "Chenin's high acidity makes excellent sparkling wine. Vouvray and Montlouis make pétillant and mousseux; Saumur Brut and Crémant de Loire use Chenin with Chardonnay and Cabernet Franc. They're made by the traditional method, with honeyed, apple flavours.",
+      "highlight": "Saumur Brut, Crémant de Loire"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Loire appellation became the first Grand Cru in 2011?",
+      "options": [
+        "Quarts de Chaume",
+        "Vouvray",
+        "Sancerre",
+        "Muscadet"
+      ],
+      "answer": 0,
+      "explanation": "Quarts de Chaume makes sweet, botrytised Chenin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sec, demi-sec, moelleux and doux mark sweetness",
+        "Coteaux du Layon and Quarts de Chaume are sweet botrytis wines",
+        "Chenin's acidity makes fine sparkling wine"
+      ]
+    }
+  ]
+}

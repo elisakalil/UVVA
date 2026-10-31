@@ -1,0 +1,77 @@
+{
+  "id": "region-pt-vinho-verde-l02",
+  "moduleId": "region-pt-vinho-verde",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Native whites",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Vinho Verde's main grapes",
+    "Explain each grape's character",
+    "Explain the region's red wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "White grapes",
+      "body": "Alvarinho, the same as Spain's Albariño, gives the fullest, most aromatic wines, especially in Monção e Melgaço. Loureiro gives floral, laurel-scented, citrus wines, mainly in Lima. Arinto, called Pedernã here, gives crisp, lemony acidity. Avesso, in Baião, gives fuller, nuttier wines. Trajadura adds body and softness.",
+      "highlight": "Alvarinho, Loureiro, Arinto, Avesso"
+    },
+    {
+      "type": "concept",
+      "title": "Reds and styles",
+      "body": "Red Vinho Verde, mainly from Vinhão, is deeply coloured, tart and tannic, traditionally served chilled in white bowls with grilled sardines; it's popular locally but rare abroad. Most white Vinho Verde is light, about 9 to 11.5% alcohol, crisp, often with a slight spritz from added carbon dioxide. Single-grape and single-estate wines are more serious.",
+      "highlight": "Light, spritzy, or serious single-grape"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its character.",
+      "pairs": [
+        {
+          "left": "Alvarinho",
+          "right": "Fullest, most aromatic"
+        },
+        {
+          "left": "Loureiro",
+          "right": "Floral, laurel"
+        },
+        {
+          "left": "Arinto",
+          "right": "Crisp, lemony"
+        },
+        {
+          "left": "Vinhão",
+          "right": "Dark, tart red"
+        }
+      ],
+      "explanation": "Vinho Verde's grapes each bring something different."
+    },
+    {
+      "type": "tip",
+      "body": "A traditional Vinho Verde's slight spritz once came from malolactic fermentation in bottle; today most producers add carbon dioxide."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Alvarinho called in Spain?",
+      "options": [
+        "Albariño",
+        "Verdejo",
+        "Godello",
+        "Macabeo"
+      ],
+      "answer": 0,
+      "explanation": "The same grape across the Minho river."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Alvarinho, Loureiro, Arinto and Avesso are the key whites",
+        "Most Vinho Verde is light and slightly spritzy",
+        "Red Vinhão is a local, tart, dark speciality"
+      ]
+    }
+  ]
+}

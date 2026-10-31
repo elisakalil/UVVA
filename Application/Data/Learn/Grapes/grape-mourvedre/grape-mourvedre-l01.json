@@ -1,0 +1,73 @@
+{
+  "id": "grape-mourvedre-l01",
+  "moduleId": "grape-mourvedre",
+  "order": 1,
+  "title": "Meet Mourvèdre",
+  "subtitle": "Dark, meaty and late",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Mourvèdre's flavours and structure",
+    "Explain its origins and names",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dark and savoury",
+      "body": "Mourvèdre gives deep-coloured wines with blackberry and plum, plus savoury notes of game, leather, black pepper and the wild herbs of the Mediterranean garrigue. Tannins are high and firm; acidity is moderate. Young, it can be reductive and closed; with age, it opens into meaty, earthy complexity.",
+      "highlight": "Black fruit, game, garrigue"
+    },
+    {
+      "type": "concept",
+      "title": "Spanish origins",
+      "body": "Mourvèdre comes from Spain, where it's called Monastrell, probably from the region of Valencia or Murcia. In France the name may come from Murviedro, near Valencia. In Australia and California it's often called Mataro, after the town of Mataró near Barcelona. It needs lots of heat and ripens very late.",
+      "highlight": "Monastrell in Spain, Mataro in Australia"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to where it's used.",
+      "pairs": [
+        {
+          "left": "Mourvèdre",
+          "right": "France"
+        },
+        {
+          "left": "Monastrell",
+          "right": "Spain"
+        },
+        {
+          "left": "Mataro",
+          "right": "Australia"
+        },
+        {
+          "left": "Murviedro",
+          "right": "Valencian town, possible origin"
+        }
+      ],
+      "explanation": "One grape, three names, all pointing back to eastern Spain."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep colour, dark fruit with a gamey, meaty or herbal edge, and firm tannin. In blends, it adds structure and savouriness. A young Mourvèdre may smell slightly reductive, of struck match or rubber, which usually fades with air. It's often described as the head on its feet and tail in the sun, needing heat but some moisture.",
+      "highlight": "Gamey, herbal, firm"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Mourvèdre ripens early, so it suits cool climates.",
+      "answer": false,
+      "explanation": "Not true. It ripens very late and needs a hot, sunny climate."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Mourvèdre gives dark fruit, game and garrigue",
+        "It comes from Spain as Monastrell; Australia calls it Mataro",
+        "It needs heat and ripens very late"
+      ]
+    }
+  ]
+}

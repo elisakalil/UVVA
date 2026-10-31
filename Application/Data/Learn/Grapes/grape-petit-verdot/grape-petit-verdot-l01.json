@@ -1,0 +1,72 @@
+{
+  "id": "grape-petit-verdot-l01",
+  "moduleId": "grape-petit-verdot",
+  "order": 1,
+  "title": "Meet Petit Verdot",
+  "subtitle": "Small berries, deep colour",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Petit Verdot's colour and flavours",
+    "Explain its name and role",
+    "Recognise it in a blend"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A dark spice",
+      "body": "Petit Verdot is a black grape from Bordeaux. Its small, thick-skinned berries give very deep colour, high tannin and high acidity. It smells of violet, blackberry, blueberry, and spices like clove and sage. In a blend, a few percent is enough to add colour, structure and a floral, spicy lift.",
+      "highlight": "Deep colour, violet, spice"
+    },
+    {
+      "type": "concept",
+      "title": "Why little green",
+      "body": "Its name means little green one, because in Bordeaux it often failed to ripen fully. It buds early and ripens very late, often after Cabernet Sauvignon. In cool years, it stayed green and harsh. That's why Bordeaux planted little of it, and used it only as a seasoning in the blend.",
+      "highlight": "Name: the little green one"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Petit Verdot mean?",
+      "options": [
+        "Little red one",
+        "Little green one",
+        "Small vineyard",
+        "Late harvest"
+      ],
+      "answer": 1,
+      "explanation": "It means little green one, because in Bordeaux it often stayed unripe."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "In a Bordeaux blend, you may not notice Petit Verdot directly, but it deepens the colour and adds a violet and spice note, and firmer tannin on the finish. Alone, it is inky purple, intense, with violets and dark fruit, firm tannin and fresh acidity.",
+      "highlight": "A seasoning in blends"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does Petit Verdot add to a blend?",
+      "options": [
+        "Colour",
+        "Tannin",
+        "Floral and spicy aromas",
+        "Lower acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Petit Verdot adds acidity, not lowers it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Petit Verdot gives deep colour, tannin, acidity and spice",
+        "Its name means little green one, from struggling to ripen",
+        "It seasons Bordeaux blends and can stand alone"
+      ]
+    }
+  ]
+}

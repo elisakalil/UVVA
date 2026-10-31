@@ -1,0 +1,70 @@
+{
+  "id": "region-es-priorat-l03",
+  "moduleId": "region-es-priorat",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Priorat and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Priorat label",
+    "Explain its village classification",
+    "Pair Priorat with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show DOQ Priorat or DOCa Priorat. Since 2009, Priorat has a place-based classification: Vi de Vila, village wine, from one of 12 villages, like Gratallops or Porrera; Vinya Classificada, classified vineyard; and Gran Vinya Classificada, the top level. It was among the first in Spain to classify by place.",
+      "highlight": "Vi de Vila to Gran Vinya Classificada"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Priorat's power suits rich, savoury food: grilled lamb, wild boar, beef stews, Catalan dishes like duck with pears, and aged cheese. Serve at 16 to 18 degrees, decanted. Good Priorat ages 10 to 20 years, softening its alcohol and tannin into dried fruit and earth.",
+      "highlight": "Lamb, boar, duck with pears"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Vi de Vila in Priorat?",
+      "options": [
+        "A village wine from one of 12 villages",
+        "A sweet wine",
+        "A white wine",
+        "A sparkling wine"
+      ],
+      "answer": 0,
+      "explanation": "Part of Priorat's place-based classification."
+    },
+    {
+      "type": "tip",
+      "body": "Decant young Priorat for an hour or two. Its high alcohol and concentration open up with air."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are levels of Priorat's classification?",
+      "options": [
+        "Vi de Vila",
+        "Vinya Classificada",
+        "Gran Vinya Classificada",
+        "Gran Reserva Especial"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gran Reserva Especial isn't a Priorat term."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Priorat classifies villages and vineyards since 2009",
+        "Its power suits lamb, boar and stews",
+        "Decant young Priorat; it ages 10 to 20 years"
+      ]
+    }
+  ]
+}

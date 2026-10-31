@@ -1,0 +1,96 @@
+{
+  "id": "path-16-l08",
+  "moduleId": "path-16",
+  "order": 8,
+  "title": "Module review",
+  "subtitle": "Everything from Viticulture in Depth",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain the vine's life and protection",
+    "Analyse climate and site",
+    "Compare farming approaches"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What was the solution to phylloxera?",
+      "options": [
+        "Spraying copper",
+        "Grafting onto American rootstocks",
+        "Planting in clay",
+        "Moving vineyards uphill"
+      ],
+      "answer": 1,
+      "explanation": "American rootstocks resist the root-eating aphid."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each site factor to its effect.",
+      "pairs": [
+        {
+          "left": "South-facing slope",
+          "right": "More sun in the north"
+        },
+        {
+          "left": "Valley floor",
+          "right": "Frost pocket"
+        },
+        {
+          "left": "Nearby river",
+          "right": "Moderates temperature"
+        },
+        {
+          "left": "High diurnal range",
+          "right": "Keeps acidity"
+        }
+      ],
+      "explanation": "Site choice shapes ripening and risk."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are common responses to downy mildew?",
+      "options": [
+        "Copper sprays",
+        "Open canopies for airflow",
+        "Adding nitrogen",
+        "Weather-based spray timing"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Extra nitrogen would increase vigour and dampness, making disease worse."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Organic wines in the EU have lower maximum sulphite levels than conventional ones.",
+      "answer": true,
+      "explanation": "Yes. For dry reds, the limit is 100 mg/l instead of 150 mg/l."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Pruning that leaves short spurs of two or three buds is called ____ pruning.",
+      "options": [
+        "spur",
+        "cane",
+        "bush",
+        "cordon"
+      ],
+      "answer": "spur",
+      "explanation": "Spur pruning leaves short spurs on a permanent arm. Cane pruning keeps long canes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grafting saves vines from phylloxera; old vines give concentration",
+        "Continentality, diurnal range and site shape ripening",
+        "Fungal diseases need sulphur, copper and good canopies",
+        "Organic, biodynamic and sustainable farming each set different rules"
+      ]
+    }
+  ]
+}

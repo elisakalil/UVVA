@@ -1,0 +1,72 @@
+{
+  "id": "grape-tannat-l03",
+  "moduleId": "grape-tannat",
+  "order": 3,
+  "title": "Taming the tannin",
+  "subtitle": "How winemakers soften Tannat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain micro-oxygenation and its origin",
+    "Describe other ways to soften Tannat",
+    "Explain how blending helps"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Born in Madiran",
+      "body": "In 1991, Madiran winemaker Patrick Ducournau developed micro-oxygenation: tiny, controlled doses of oxygen bubbled into the wine. It helps tannins link into longer chains, which feel softer, and stabilises colour. Born to tame Tannat, the technique is now used all over the world.",
+      "highlight": "Micro-oxygenation began in Madiran"
+    },
+    {
+      "type": "concept",
+      "title": "Other tools",
+      "body": "Winemakers also soften Tannat by picking when skins and seeds are fully ripe, by gentle extraction, avoiding crushed seeds, by shorter maceration and by ageing in oak, where slow oxygen through the wood helps. In Uruguay, some producers make lighter, fresher Tannat with little oak to drink young.",
+      "highlight": "Ripe seeds, gentle extraction, oak"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does micro-oxygenation do to Tannat?",
+      "options": [
+        "Adds sugar",
+        "Helps tannins soften and stabilises colour",
+        "Removes alcohol",
+        "Makes it sparkling"
+      ],
+      "answer": 1,
+      "explanation": "Small, controlled doses of oxygen help tannins polymerise, so they feel softer, and fix colour."
+    },
+    {
+      "type": "concept",
+      "title": "Blending",
+      "body": "Blending is the oldest solution. In Madiran, Cabernet Franc adds perfume and lightness. In Uruguay, Tannat is often blended with Merlot or Pinot Noir to soften it, or with Marselan. Some producers even co-ferment a little white Viognier, adding aroma and helping colour.",
+      "highlight": "Blending brings softness"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which methods help soften Tannat?",
+      "options": [
+        "Micro-oxygenation",
+        "Ageing in oak",
+        "Crushing the seeds hard",
+        "Blending with Merlot"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Crushing seeds releases harsh tannin, the opposite of what you want."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Micro-oxygenation was invented in Madiran in 1991 for Tannat",
+        "Ripe picking, gentle extraction and oak soften it",
+        "Blending with Cabernet Franc or Merlot adds softness"
+      ]
+    }
+  ]
+}

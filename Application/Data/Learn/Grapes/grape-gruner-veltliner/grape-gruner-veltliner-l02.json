@@ -1,0 +1,79 @@
+{
+  "id": "grape-gruner-veltliner-l02",
+  "moduleId": "grape-gruner-veltliner",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Lower Austria and the Danube",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Grüner's main regions",
+    "Explain Austria's DAC system",
+    "Name regions abroad"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Lower Austria",
+      "body": "Grüner grows mainly in Niederösterreich, Lower Austria, along the Danube and to the north. Weinviertel, the largest region, makes peppery, fresh Grüner; it was Austria's first DAC, in 2003. The Wachau, Kremstal and Kamptal make powerful, structured versions on steep terraces. Vienna also grows it.",
+      "highlight": "Weinviertel, Wachau, Kamptal"
+    },
+    {
+      "type": "concept",
+      "title": "DAC",
+      "body": "Austria's DAC system, Districtus Austriae Controllatus, ties regions to typical grapes and styles. A Weinviertel DAC is Grüner Veltliner; Kamptal DAC and Kremstal DAC are Grüner or Riesling. Labels can add Reserve for riper, fuller wines. The Wachau uses its own terms: Steinfeder, Federspiel and Smaragd.",
+      "highlight": "DAC links region to style"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Austrian term to its meaning.",
+      "pairs": [
+        {
+          "left": "Weinviertel DAC",
+          "right": "First DAC, 2003"
+        },
+        {
+          "left": "Smaragd",
+          "right": "Wachau's ripest style"
+        },
+        {
+          "left": "Federspiel",
+          "right": "Wachau's medium style"
+        },
+        {
+          "left": "Steinfeder",
+          "right": "Wachau's lightest style"
+        }
+      ],
+      "explanation": "Austria labels by region and style."
+    },
+    {
+      "type": "concept",
+      "title": "Abroad",
+      "body": "Grüner Veltliner is spreading: Slovakia and Czech Republic grow it, and New Zealand, Australia's Adelaide Hills, the US and England have new plantings. Cool to moderate climates suit it best, keeping its freshness and pepper.",
+      "highlight": "New Zealand, Adelaide Hills"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Austria's DAC system?",
+      "options": [
+        "A system linking regions to typical grapes and styles",
+        "A grape",
+        "A barrel",
+        "A sweet wine"
+      ],
+      "answer": 0,
+      "explanation": "DAC labels tell you region and expected style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grüner grows mainly in Lower Austria",
+        "Weinviertel was Austria's first DAC, in 2003",
+        "It's spreading to cool climates abroad"
+      ]
+    }
+  ]
+}

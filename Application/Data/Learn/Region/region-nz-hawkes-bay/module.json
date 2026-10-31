@@ -1,0 +1,27 @@
+{
+  "id": "region-nz-hawkes-bay",
+  "kind": "region",
+  "order": 47,
+  "country": "New Zealand",
+  "countryCode": "NZ",
+  "title": "Hawke's Bay",
+  "grapes": [
+    "Merlot",
+    "Cabernet Sauvignon",
+    "Syrah",
+    "Chardonnay"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "New Zealand's warm east coast: Bordeaux blends, peppery Syrah and rich Chardonnay.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-nz-hawkes-bay-l01",
+    "region-nz-hawkes-bay-l02",
+    "region-nz-hawkes-bay-l03",
+    "region-nz-hawkes-bay-l04",
+    "region-nz-hawkes-bay-l05"
+  ]
+}

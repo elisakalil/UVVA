@@ -1,0 +1,62 @@
+{
+  "id": "region-nz-central-otago-l01",
+  "moduleId": "region-nz-central-otago",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Mountains in the far south",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Central Otago's geography",
+    "Explain its continental climate",
+    "Explain its gold rush history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Inland and southern",
+      "body": "Central Otago lies in the south of New Zealand's South Island, around 45 degrees south, near Queenstown. It's the world's southernmost major wine region. Vineyards sit in valleys and on slopes between mountains, at about 200 to 450 m, on schist, gravel and loess. Sub-regions include Gibbston, Bannockburn, Cromwell Basin, Bendigo and Wanaka.",
+      "highlight": "About 45 degrees south"
+    },
+    {
+      "type": "concept",
+      "title": "Continental",
+      "body": "Unlike the rest of New Zealand, Central Otago has a continental climate, far from the sea and sheltered by mountains: hot, dry summer days, cold nights, cold winters and low rainfall, about 350 mm a year in some areas. Frost is a major risk in spring and autumn; growers use wind machines and helicopters. Irrigation is common.",
+      "highlight": "New Zealand's only continental region"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What makes Central Otago's climate unusual for New Zealand?",
+      "options": [
+        "It's continental, far from the sea",
+        "It's tropical",
+        "It's very wet",
+        "It's at sea level"
+      ],
+      "answer": 0,
+      "explanation": "Mountains and distance from the coast make it continental."
+    },
+    {
+      "type": "concept",
+      "title": "Gold and wine",
+      "body": "In the 1860s, a gold rush brought miners to Central Otago, and a French miner, Jean Désiré Féraud, planted vines around 1864. The industry faded. Modern winemaking began in the 1980s, with pioneers like Rolfe and Lois Mills at Rippon, on Lake Wanaka, and Alan Brady at Gibbston Valley. Bannockburn's old gold sluicings now sit among vineyards.",
+      "highlight": "Gold rush, 1860s; revival, 1980s"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Central Otago has a maritime climate.",
+      "answer": false,
+      "explanation": "Not true. It's New Zealand's only continental wine region."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Central Otago is the world's southernmost major wine region",
+        "Its continental climate brings hot days, cold nights and frost",
+        "Gold rush roots, modern revival from the 1980s"
+      ]
+    }
+  ]
+}

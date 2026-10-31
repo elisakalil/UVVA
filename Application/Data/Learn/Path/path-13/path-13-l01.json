@@ -1,0 +1,72 @@
+{
+  "id": "path-13-l01",
+  "moduleId": "path-13",
+  "order": 1,
+  "title": "Keeping the sugar",
+  "subtitle": "How a wine ends up sweet",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the two routes to a sweet wine",
+    "Name the four main techniques",
+    "Explain why acidity matters in sweet wine"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two routes",
+      "body": "A wine is sweet when sugar remains after fermentation. There are two routes. Stop fermentation before the yeast has eaten all the sugar, by chilling, filtering or adding spirit. Or concentrate the sugar in the grapes so much that yeast can't finish, stopping naturally at around 11 to 14% alcohol with plenty of sugar left.",
+      "highlight": "Stop the yeast, or overload it with sugar"
+    },
+    {
+      "type": "concept",
+      "title": "Concentrating sugar",
+      "body": "Grapes can be concentrated in four main ways: by noble rot, a fungus that dries the berries; by late harvesting, leaving grapes on the vine; by freezing them on the vine, for ice wine; or by drying them after picking. Each removes water, so sugar, acid and flavour all become more intense.",
+      "highlight": "Noble rot, late harvest, freezing, drying"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which methods concentrate sugar in the grape before fermentation?",
+      "options": [
+        "Noble rot",
+        "Drying the grapes after picking",
+        "Adding grape spirit",
+        "Freezing on the vine"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Adding spirit stops fermentation; it doesn't concentrate the grape. That's how fortified wines like Port keep their sugar."
+    },
+    {
+      "type": "concept",
+      "title": "Balance with acidity",
+      "body": "Sugar without acidity tastes cloying, like syrup. The great sweet wines have high acidity to balance it: Riesling, Chenin Blanc, Furmint and Sémillon blended with Sauvignon are typical. That's why a Mosel Auslese or a Tokaji can feel fresh despite 100 g/l of sugar or more.",
+      "highlight": "Acidity keeps sweet wines fresh"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do the best sweet wines not taste cloying?",
+      "options": [
+        "They have very high alcohol",
+        "They have high acidity to balance the sugar",
+        "They have no sugar at all",
+        "They are served warm"
+      ],
+      "answer": 1,
+      "explanation": "High acidity cuts through sugar, keeping the wine fresh and lively."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sweet wines either stop fermentation early or start with concentrated grapes",
+        "Noble rot, late harvest, freezing and drying concentrate sugar",
+        "High acidity keeps sweet wines from tasting cloying"
+      ]
+    }
+  ]
+}

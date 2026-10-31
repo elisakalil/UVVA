@@ -1,0 +1,62 @@
+{
+  "id": "grape-furmint-l04",
+  "moduleId": "grape-furmint",
+  "order": 4,
+  "title": "Dry Furmint",
+  "subtitle": "Hungary's modern white",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe dry Furmint",
+    "Explain its rise since the 2000s",
+    "Explain how it's made"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A modern style",
+      "body": "Since the early 2000s, Tokaj producers have made more dry Furmint, partly because botrytis doesn't come every year, and partly to show the grape's quality. Dry Furmint has high acidity, citrus, quince, pear, smoky and mineral notes, and can be rich and textured, often compared with white Burgundy or Chenin Blanc.",
+      "highlight": "Compared with Burgundy and Chenin"
+    },
+    {
+      "type": "concept",
+      "title": "Making it",
+      "body": "Dry Furmint comes from healthy, non-botrytised grapes, often from single vineyards, called dűlő. Some ferment in oak, which adds texture; others in steel for purity. Its acidity lets it age 10 years or more. Producers like Királyudvar, Oremus and Szepsy helped establish its reputation.",
+      "highlight": "Single vineyards, oak or steel"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dry Furmint is made from healthy grapes without noble rot.",
+      "answer": true,
+      "explanation": "Yes. Botrytised grapes are kept for sweet wines."
+    },
+    {
+      "type": "concept",
+      "title": "Vineyard classification",
+      "body": "Tokaj's vineyards were classified from 1730, among the first in the world, into first, second and third class. Single-vineyard names like Szent Tamás, Betsek and Mézes Mály are used again on labels, especially for dry Furmint, like Burgundy's crus.",
+      "highlight": "Classified from 1730"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a dűlő in Tokaj?",
+      "options": [
+        "A single vineyard",
+        "A barrel",
+        "A grape",
+        "A type of sweet wine"
+      ],
+      "answer": 0,
+      "explanation": "Dűlő names, like Szent Tamás, mark single vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Furmint has grown since the 2000s",
+        "It's made from healthy grapes, often single vineyards",
+        "Tokaj's vineyards were classified from 1730"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "region-fr-burgundy-l07",
+  "moduleId": "region-fr-burgundy",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Burgundy",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Burgundy's geography and grapes",
+    "Explain its quality pyramid",
+    "Read and pair Burgundy"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Order Burgundy's levels from broadest to most precise.",
+      "items": [
+        "Bourgogne",
+        "Village",
+        "Premier Cru",
+        "Grand Cru"
+      ],
+      "explanation": "Grand Cru is the top, about 1% of production."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each area to its wine.",
+      "pairs": [
+        {
+          "left": "Chablis",
+          "right": "Lean Chardonnay"
+        },
+        {
+          "left": "Côte de Nuits",
+          "right": "Pinot Noir Grand Crus"
+        },
+        {
+          "left": "Côte de Beaune",
+          "right": "Great whites and reds"
+        },
+        {
+          "left": "Mâconnais",
+          "right": "Rounder Chardonnay"
+        }
+      ],
+      "explanation": "Burgundy runs north to south."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Who first mapped Burgundy's climats?",
+      "options": [
+        "Benedictine and Cistercian monks",
+        "Napoleon",
+        "Dutch merchants",
+        "The English"
+      ],
+      "answer": 0,
+      "explanation": "Monks studied and enclosed the plots."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Burgundy usually blends many grapes in each wine.",
+      "answer": false,
+      "explanation": "Not true. Wines are usually one grape from one place."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Burgundy's main grapes?",
+      "options": [
+        "Pinot Noir",
+        "Chardonnay",
+        "Aligoté",
+        "Cabernet Sauvignon"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cabernet belongs to Bordeaux."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgundy is continental, east-facing and limestone",
+        "Pinot Noir and Chardonnay express each climat",
+        "The pyramid runs from Bourgogne to 33 Grand Crus",
+        "Producer and vintage matter as much as place"
+      ]
+    }
+  ]
+}

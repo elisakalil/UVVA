@@ -1,0 +1,72 @@
+{
+  "id": "region-it-friuli-venezia-giulia-l03",
+  "moduleId": "region-it-friuli-venezia-giulia",
+  "order": 3,
+  "title": "Skin-contact whites",
+  "subtitle": "The orange wine revival",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how orange wine is made",
+    "Explain Friuli's role in its revival",
+    "Describe its taste"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "White grapes, red method",
+      "body": "Orange, or amber, wine is made from white grapes fermented on their skins, like a red, for days, weeks or months. Skins give the wine an amber colour, tannin, texture and flavours of dried fruit, tea, nuts and orange peel. It's an ancient method, preserved in Georgia, with its clay qvevri.",
+      "highlight": "White grapes fermented on skins"
+    },
+    {
+      "type": "concept",
+      "title": "Friuli's pioneers",
+      "body": "In the late 1990s, Friuli producers like Josko Gravner and Stanko Radikon, in Oslavia in the Collio, began making long skin-contact whites, mainly from Ribolla Gialla. Gravner travelled to Georgia and from 2001 fermented in buried qvevri. Their wines inspired a worldwide orange wine movement.",
+      "highlight": "Gravner and Radikon in Oslavia"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is central to Friuli's orange wines?",
+      "options": [
+        "Ribolla Gialla",
+        "Nebbiolo",
+        "Sangiovese",
+        "Glera"
+      ],
+      "answer": 0,
+      "explanation": "Ribolla Gialla's thick skins suit long maceration."
+    },
+    {
+      "type": "concept",
+      "title": "Taste and style",
+      "body": "Orange wines are dry, with tannin and texture unusual for white wine, and flavours of apricot, orange peel, tea, honey and nuts. Many are made with minimal intervention, little or no sulphur, and natural yeasts. They're often served slightly warmer than whites, around 12 to 14 degrees, in larger glasses.",
+      "highlight": "Dry, textured, tannic"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What do skins give an orange wine?",
+      "options": [
+        "Amber colour",
+        "Tannin",
+        "Texture",
+        "Sweetness"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Orange wines are dry; skins don't add sugar."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Orange wine ferments white grapes on their skins",
+        "Gravner and Radikon in Friuli revived it from the late 1990s",
+        "It's dry, tannic and textured, served a little warmer"
+      ]
+    }
+  ]
+}

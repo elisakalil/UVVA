@@ -1,0 +1,83 @@
+{
+  "id": "path-28-l02",
+  "moduleId": "path-28",
+  "order": 2,
+  "title": "Oxidation and reduction",
+  "subtitle": "Too much air, too little",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Recognise oxidation",
+    "Recognise reduction",
+    "Explain how each happens"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Oxidation",
+      "body": "An oxidised wine has lost its fresh fruit, smelling of bruised apple, sherry or nuts, with browning colour. It comes from too much contact with oxygen, through a faulty closure, poor storage or careless winemaking. It's a fault in a fresh white, but a deliberate style in Oloroso or tawny Port. Acetaldehyde is the main compound.",
+      "highlight": "Bruised apple, browning, flat fruit"
+    },
+    {
+      "type": "concept",
+      "title": "Reduction",
+      "body": "Reduction is the opposite: too little oxygen, in a wine with sulphur compounds. It smells of rotten egg, struck match, rubber or cabbage. Hydrogen sulphide, the rotten egg smell, forms when stressed yeast lacks nutrients. Light reduction, struck match, can add complexity in some whites; strong reduction is a fault.",
+      "highlight": "Rotten egg, rubber, cabbage"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each smell to its cause.",
+      "pairs": [
+        {
+          "left": "Bruised apple, brown colour",
+          "right": "Oxidation"
+        },
+        {
+          "left": "Rotten egg",
+          "right": "Hydrogen sulphide"
+        },
+        {
+          "left": "Damp cardboard",
+          "right": "TCA"
+        },
+        {
+          "left": "Struck match",
+          "right": "Light reduction"
+        }
+      ],
+      "explanation": "Each fault has a typical smell."
+    },
+    {
+      "type": "concept",
+      "title": "What to do",
+      "body": "Some reduction can be fixed by air: decanting or swirling may blow off struck match or rubber. Persistent rotten egg can sometimes be cleared by a clean copper coin, which binds sulphides. Oxidation can't be undone. Screw caps, which let in little oxygen, can sometimes favour reduction; corks can favour oxidation.",
+      "highlight": "Air can help reduction, not oxidation"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which could be signs of oxidation in a young white?",
+      "options": [
+        "Deep gold to brown colour",
+        "Bruised apple aroma",
+        "Fresh lime and green apple",
+        "Loss of fruit"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Fresh lime and green apple are signs of a sound, youthful white."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Oxidation brings bruised apple, browning and loss of fruit",
+        "Reduction brings rotten egg, rubber or struck match",
+        "Air can fix mild reduction; oxidation is permanent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "region-de-rheingau-l03",
+  "moduleId": "region-de-rheingau",
+  "order": 3,
+  "title": "The birth of Spätlese",
+  "subtitle": "A late messenger",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Tell the Spätlese story",
+    "Explain the role of noble rot",
+    "Describe Schloss Johannisberg"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The late messenger",
+      "body": "In 1775, the monks of Schloss Johannisberg needed permission from the Prince-Bishop of Fulda to start the harvest. The messenger returned weeks late. By then, the grapes had shrivelled with noble rot. The monks made wine anyway, and it was remarkable. That late harvest, Spätlese, became a recognised style.",
+      "highlight": "1775: the late harvest"
+    },
+    {
+      "type": "concept",
+      "title": "Noble rot",
+      "body": "The story shows the role of Botrytis cinerea: when grapes are left on the vine in misty autumn weather, noble rot concentrates sugar and acidity and adds honeyed aromas. From Spätlese came Auslese, selected bunches, and later Beerenauslese and Trockenbeerenauslese, picked berry by berry.",
+      "highlight": "Late picking, noble rot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why was the 1775 harvest at Schloss Johannisberg late?",
+      "options": [
+        "The messenger with permission arrived weeks late",
+        "There was frost",
+        "The monks were ill",
+        "There was a war"
+      ],
+      "answer": 0,
+      "explanation": "The delay let noble rot develop, creating Spätlese."
+    },
+    {
+      "type": "concept",
+      "title": "Schloss Johannisberg",
+      "body": "Schloss Johannisberg sits on a hill above the Rhine, on the 50th parallel, with vineyards on a steep slope. It's one of the first estates planted entirely with Riesling, from 1720. A statue of the messenger, the Spätlesereiter, stands in its courtyard. Its wines use coloured capsules to mark quality levels.",
+      "highlight": "All Riesling since 1720"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which developed from the Spätlese tradition?",
+      "options": [
+        "Auslese",
+        "Beerenauslese",
+        "Trockenbeerenauslese",
+        "Prosecco"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Prosecco is Italian sparkling wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Spätlese was born at Schloss Johannisberg in 1775",
+        "Noble rot concentrated the late-picked grapes",
+        "Schloss Johannisberg was planted entirely with Riesling from 1720"
+      ]
+    }
+  ]
+}

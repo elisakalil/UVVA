@@ -1,0 +1,62 @@
+{
+  "id": "region-us-willamette-valley-l01",
+  "moduleId": "region-us-willamette-valley",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Oregon's cool valley",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Willamette Valley's geography",
+    "Explain its climate",
+    "Explain its pioneers"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Between two ranges",
+      "body": "The Willamette Valley runs about 240 km south from Portland, Oregon, between the Coast Range to the west and the Cascade Mountains to the east. It's Oregon's largest and most important wine region, with over 70% of the state's vineyards, about 11,000 hectares, and at about 45 degrees north, Burgundy's latitude.",
+      "highlight": "45 degrees north, like Burgundy"
+    },
+    {
+      "type": "concept",
+      "title": "Cool and wet",
+      "body": "The climate is cool and maritime: wet, mild winters and warm, dry summers, with long, cool autumns. The Coast Range blocks much Pacific rain and cold air, but the Van Duzer Corridor, a gap in the range, lets cool ocean winds in each afternoon, preserving acidity. Autumn rain at harvest is a risk.",
+      "highlight": "Coast Range shelter, Van Duzer winds"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the Van Duzer Corridor?",
+      "options": [
+        "A gap that lets cool ocean wind into the valley",
+        "A river",
+        "A grape",
+        "A winery"
+      ],
+      "answer": 0,
+      "explanation": "It cools vineyards in the afternoon."
+    },
+    {
+      "type": "concept",
+      "title": "Pioneers",
+      "body": "In 1965, David Lett planted Pinot Noir in the Dundee Hills, believing the cool climate suited it; others told him it was too cold and wet. His Eyrie Vineyards 1975 Pinot Noir placed highly in a 1979 Paris tasting against Burgundy. In 1987, Burgundy's Maison Joseph Drouhin bought land in the Dundee Hills, a vote of confidence.",
+      "highlight": "David Lett, 1965"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Willamette Valley lies at about the same latitude as Burgundy.",
+      "answer": true,
+      "explanation": "Yes, about 45 degrees north."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Willamette Valley is Oregon's main region, at Burgundy's latitude",
+        "Its cool, maritime climate suits Pinot Noir",
+        "David Lett planted Pinot Noir there in 1965"
+      ]
+    }
+  ]
+}

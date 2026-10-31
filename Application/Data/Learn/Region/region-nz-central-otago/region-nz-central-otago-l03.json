@@ -1,0 +1,60 @@
+{
+  "id": "region-nz-central-otago-l03",
+  "moduleId": "region-nz-central-otago",
+  "order": 3,
+  "title": "Labels and the table",
+  "subtitle": "Reading Central Otago and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Central Otago label",
+    "Pair its wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape, Central Otago GI and often a sub-region, like Bannockburn or Gibbston. New Zealand's 85% rules apply, and screw caps are standard. Many producers are small and family-owned; some make single-vineyard wines.",
+      "highlight": "GI and sub-region"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Central Otago Pinot Noir suits lamb, especially New Zealand lamb, venison, duck, salmon and mushrooms. Its herbal, thyme notes suit herb-crusted meat. Pinot Gris and Riesling suit seafood and Asian food. Serve Pinot at 14 to 16 degrees; good examples age 8 to 12 years.",
+      "highlight": "Lamb, venison, salmon"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Central Otago Pinot Noir?",
+      "options": [
+        "Herb-crusted lamb",
+        "Chocolate mousse",
+        "Raw oysters",
+        "Thai green curry"
+      ],
+      "answer": 0,
+      "explanation": "Its fruit and thyme notes suit herbed lamb."
+    },
+    {
+      "type": "tip",
+      "body": "Queenstown, the nearby adventure-sports capital, makes Central Otago one of New Zealand's most visited wine regions."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Central Otago Pinot Noir suits venison.",
+      "answer": true,
+      "explanation": "Yes. Its fruit and acidity suit lean game."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the GI and often a sub-region",
+        "Pinot suits lamb, venison and salmon",
+        "Serve at 14 to 16 degrees"
+      ]
+    }
+  ]
+}

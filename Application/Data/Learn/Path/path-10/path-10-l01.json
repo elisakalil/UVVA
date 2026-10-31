@@ -1,0 +1,79 @@
+{
+  "id": "path-10-l01",
+  "moduleId": "path-10",
+  "order": 1,
+  "title": "Cabernet Sauvignon around the world",
+  "subtitle": "The grape that travelled furthest",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Cabernet in Bordeaux's Left Bank",
+    "Compare Napa, Chile and Australia",
+    "Explain why Cabernet needs warmth"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Left Bank",
+      "body": "Cabernet Sauvignon is a cross of Cabernet Franc and Sauvignon Blanc, born in Bordeaux in the 17th century. On the gravel soils of the Médoc, which drain well and store heat, it leads the blend in wines like Pauillac and Margaux. The style: blackcurrant, cedar, high tannin and acidity, built to age.",
+      "highlight": "Gravel plus Cabernet: the Médoc"
+    },
+    {
+      "type": "concept",
+      "title": "Late ripening",
+      "body": "Cabernet buds and ripens late. In cool years it can keep a green pepper note, from pyrazines that only break down with full ripeness. That's why it needs warm, well-drained sites. Warm regions like Napa Valley give riper blackcurrant, softer tannins and 14.5% alcohol or more.",
+      "highlight": "Late ripener: needs warmth"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Cabernet Sauvignon thrive on the gravel of the Médoc?",
+      "options": [
+        "Gravel is very fertile",
+        "Gravel drains and stores heat, helping a late ripener",
+        "Gravel keeps vines cool",
+        "Gravel adds sugar to grapes"
+      ],
+      "answer": 1,
+      "explanation": "Gravel warms the roots and drains water, both helping a late-ripening grape in a moderate climate."
+    },
+    {
+      "type": "concept",
+      "title": "Napa, Chile and Australia",
+      "body": "Napa Valley made Cabernet famous in the New World after the Judgment of Paris in 1976. Chile's Maipo gives ripe blackcurrant with a minty note. Australia's Coonawarra, on red terra rossa soil, gives eucalyptus and mint; Margaret River gives an elegant, Bordeaux-like style.",
+      "highlight": "Napa, Maipo, Coonawarra, Margaret River"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Cabernet character.",
+      "pairs": [
+        {
+          "left": "Pauillac",
+          "right": "Cedar, firm tannin"
+        },
+        {
+          "left": "Napa Valley",
+          "right": "Ripe, rich, high alcohol"
+        },
+        {
+          "left": "Coonawarra",
+          "right": "Mint and eucalyptus"
+        },
+        {
+          "left": "Maipo",
+          "right": "Ripe fruit, minty note"
+        }
+      ],
+      "explanation": "Cabernet keeps its blackcurrant core while place changes the rest."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet leads the blends of Bordeaux's gravelly Left Bank",
+        "As a late ripener it needs warmth, or it tastes green",
+        "Napa, Maipo, Coonawarra and Margaret River each give a distinct style"
+      ]
+    }
+  ]
+}

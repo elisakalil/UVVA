@@ -1,0 +1,68 @@
+{
+  "id": "path-04-l04",
+  "moduleId": "path-04",
+  "order": 4,
+  "title": "Taste",
+  "subtitle": "Structure on the palate",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Identify sweetness, acidity and tannin",
+    "Judge body and alcohol",
+    "Judge the length of the finish"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Structure",
+      "body": "On the palate you judge the wine's structure: sweetness, acidity, tannin, alcohol and body. Sweetness is felt on the tip of the tongue. Acidity makes your mouth water. Tannin dries your gums, like strong tea. Alcohol gives warmth at the back of the throat.",
+      "highlight": "Sweet, sour, dry, warm"
+    },
+    {
+      "type": "concept",
+      "title": "What each one is",
+      "body": "Tannins are compounds from skins, seeds and oak that bind to proteins in your saliva. That's why your mouth feels dry and rough. Acidity, mainly tartaric and malic acid in wine, triggers saliva, which is why acidic wines feel refreshing. Alcohol above about 14% starts to feel hot.",
+      "highlight": "Tannin binds saliva; acid makes it flow"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "After a sip, your mouth waters for several seconds. Which element are you tasting?",
+      "options": [
+        "Tannin",
+        "Acidity",
+        "Alcohol",
+        "Sugar"
+      ],
+      "answer": 1,
+      "explanation": "Acidity triggers saliva. Tannin does the opposite, drying the mouth."
+    },
+    {
+      "type": "concept",
+      "title": "The finish",
+      "body": "After you swallow or spit, notice how long the flavours last. A short finish fades in a few seconds. A long finish lingers for 10 seconds or more. Length is one of the clearest signs of quality, because only concentrated, well-balanced wines hold their flavour that long.",
+      "highlight": "Long finish, higher quality"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A wine that makes your gums feel dry and rough is high in ____.",
+      "options": [
+        "tannin",
+        "acidity",
+        "sugar",
+        "alcohol"
+      ],
+      "answer": "tannin",
+      "explanation": "Tannin binds to proteins in saliva, leaving that drying, gripping feel. Acidity would make your mouth water instead."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sweetness, acidity, tannin, alcohol and body make up structure",
+        "Acid makes the mouth water; tannin dries it",
+        "A long finish is one of the clearest signs of quality"
+      ]
+    }
+  ]
+}

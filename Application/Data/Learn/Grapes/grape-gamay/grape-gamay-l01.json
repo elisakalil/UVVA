@@ -1,0 +1,62 @@
+{
+  "id": "grape-gamay-l01",
+  "moduleId": "grape-gamay",
+  "order": 1,
+  "title": "Meet Gamay",
+  "subtitle": "Juicy red fruit",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Gamay's flavours and structure",
+    "Explain its history",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Light and juicy",
+      "body": "Gamay, fully Gamay Noir à Jus Blanc, gives light to medium-bodied reds with red cherry, raspberry, strawberry, violet and sometimes banana or bubblegum from winemaking. Tannins are low, acidity fresh. It's pale to medium purple and made to be fresh and drinkable.",
+      "highlight": "Red fruit, low tannin, fresh"
+    },
+    {
+      "type": "concept",
+      "title": "Banned by a duke",
+      "body": "Gamay is a cross of Pinot Noir and Gouais Blanc, from Burgundy. In 1395, Duke Philip the Bold banned it from Burgundy, calling it a very bad and disloyal plant, to protect Pinot Noir. Gamay moved south to Beaujolais, where granite soils suit it far better than Burgundy's limestone.",
+      "highlight": "Banned from Burgundy in 1395"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why did Gamay move to Beaujolais?",
+      "options": [
+        "It was banned from Burgundy in 1395",
+        "Beaujolais paid more",
+        "It was a white grape",
+        "It needed sea air"
+      ],
+      "answer": 0,
+      "explanation": "Philip the Bold banned it to protect Pinot Noir; it found a better home on Beaujolais granite."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for a bright purple colour, juicy red fruit, often floral notes, and a light, fresh palate with low tannin. Carbonic maceration adds banana or bubblegum. Compared with Pinot Noir, Gamay is usually juicier and simpler, with more purple in the colour.",
+      "highlight": "Purple, juicy, floral"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Gamay is a cross of Pinot Noir and Gouais Blanc.",
+      "answer": true,
+      "explanation": "Yes. It shares the same parents as Chardonnay."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Gamay gives juicy red fruit, low tannin and fresh acidity",
+        "It was banned from Burgundy in 1395 and moved to Beaujolais",
+        "It's a cross of Pinot Noir and Gouais Blanc"
+      ]
+    }
+  ]
+}

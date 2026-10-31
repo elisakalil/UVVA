@@ -1,0 +1,79 @@
+{
+  "id": "grape-marsanne-l02",
+  "moduleId": "grape-marsanne",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Rhône and Victoria",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Marsanne's main regions",
+    "Explain its partnership with Roussanne",
+    "Describe Marsanne in Australia"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The northern Rhône",
+      "body": "Marsanne is the main white grape of the northern Rhône's Hermitage, Crozes-Hermitage, Saint-Joseph and Saint-Péray, where it also makes sparkling wine. It's often blended with Roussanne, which adds aroma, acidity and finesse. In the south, it appears in Côtes du Rhône blends.",
+      "highlight": "Hermitage, Crozes, Saint-Joseph"
+    },
+    {
+      "type": "concept",
+      "title": "Roussanne",
+      "body": "Roussanne, its partner, has russet skins, from roux, and gives more aromatic, herbal, elegant wines, with better acidity. But it's harder to grow, prone to disease and irregular yields. Marsanne gives body and reliability; Roussanne gives perfume and freshness. Together they make balanced blends.",
+      "highlight": "Marsanne for body; Roussanne for freshness"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its contribution.",
+      "pairs": [
+        {
+          "left": "Marsanne",
+          "right": "Body and reliability"
+        },
+        {
+          "left": "Roussanne",
+          "right": "Aroma and acidity"
+        },
+        {
+          "left": "Viognier",
+          "right": "Apricot perfume"
+        },
+        {
+          "left": "Saint-Péray",
+          "right": "Sparkling Marsanne"
+        }
+      ],
+      "explanation": "Rhône whites are built from complementary grapes."
+    },
+    {
+      "type": "concept",
+      "title": "Victoria",
+      "body": "Australia's Victoria has some of the world's oldest Marsanne vines, at Tahbilk, in the Nagambie Lakes, planted in 1927. Tahbilk's Marsanne is unoaked, lean and citrus when young, turning honeyed and toasty after 10 years. It shows how well Marsanne can age.",
+      "highlight": "Tahbilk's 1927 vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where are some of the oldest Marsanne vines in the world?",
+      "options": [
+        "Tahbilk, in Victoria, Australia",
+        "Napa",
+        "Champagne",
+        "Mosel"
+      ],
+      "answer": 0,
+      "explanation": "Tahbilk's Marsanne vines date from 1927."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marsanne leads the whites of Hermitage and Saint-Joseph",
+        "Roussanne adds aroma and acidity",
+        "Australia's Tahbilk has vines from 1927"
+      ]
+    }
+  ]
+}

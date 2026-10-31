@@ -1,0 +1,79 @@
+{
+  "id": "grape-garganega-l02",
+  "moduleId": "grape-garganega",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Veneto",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Garganega's main areas",
+    "Explain Soave's zones",
+    "Explain the role of volcanic soils"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Soave",
+      "body": "Garganega grows mainly in the Veneto, east of Verona, around Soave. Soave DOC must be at least 70% Garganega, with Trebbiano di Soave or Chardonnay. Soave Classico, in the hills around Soave and Monteforte d'Alpone, is the historic core. Gambellara, next door, also uses it.",
+      "highlight": "Soave Classico in the hills"
+    },
+    {
+      "type": "concept",
+      "title": "Volcanic hills",
+      "body": "Soave Classico's hills have volcanic basalt soils, dark and mineral-rich, as well as limestone. Volcanic soils give wines with more structure, saline notes and ageing potential. Vineyards are traditionally trained on pergolas, called pergola veronese, which shade the fruit. Flat land below makes simpler Soave.",
+      "highlight": "Basalt and limestone hills"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Soave.",
+      "pairs": [
+        {
+          "left": "Soave Classico",
+          "right": "Historic hill zone"
+        },
+        {
+          "left": "Basalt",
+          "right": "Volcanic soil"
+        },
+        {
+          "left": "Pergola veronese",
+          "right": "Traditional training"
+        },
+        {
+          "left": "Monteforte d'Alpone",
+          "right": "Classico village"
+        }
+      ],
+      "explanation": "Soave's hills give its best wines."
+    },
+    {
+      "type": "concept",
+      "title": "Crus",
+      "body": "Since 2019, Soave recognises 33 Unità Geografiche Aggiuntive, named sub-areas, like Foscarino, Calvarino and Monte Fiorentine. These help consumers find the best sites. Producers like Pieropan and Inama helped show Soave's potential.",
+      "highlight": "33 named sub-areas"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What soils give Soave Classico its structure?",
+      "options": [
+        "Volcanic basalt and limestone",
+        "Pure sand",
+        "Slate",
+        "Peat"
+      ],
+      "answer": 0,
+      "explanation": "Basalt and limestone give mineral, structured wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Garganega grows around Soave, east of Verona",
+        "Soave Classico's volcanic hills give its best wines",
+        "Soave now names 33 sub-areas"
+      ]
+    }
+  ]
+}

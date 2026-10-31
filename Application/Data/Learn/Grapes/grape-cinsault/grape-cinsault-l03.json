@@ -1,0 +1,68 @@
+{
+  "id": "grape-cinsault-l03",
+  "moduleId": "grape-cinsault",
+  "order": 3,
+  "title": "Rosé and the Cape",
+  "subtitle": "Two strengths",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why Cinsault suits rosé",
+    "Describe its South African story",
+    "Explain its role in Pinotage"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rosé",
+      "body": "Cinsault's thin skins, low tannin and fresh red fruit make it ideal for rosé. It gives pale colour fast, with strawberry and floral notes. In Provence, it's a key partner to Grenache in pale, dry rosé. Tavel and Languedoc rosés use it too.",
+      "highlight": "Ideal for pale rosé"
+    },
+    {
+      "type": "concept",
+      "title": "South Africa",
+      "body": "Cinsault, called Hermitage there in the past, was South Africa's most planted red grape until the 1970s, used for bulk wine and brandy. In 1925, Abraham Perold crossed it with Pinot Noir to create Pinotage. Today, young producers make fresh, light Cinsault from old bush vines, a revival of a forgotten grape.",
+      "highlight": "Parent of Pinotage, revived from old vines"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape did Perold create by crossing Cinsault with Pinot Noir?",
+      "options": [
+        "Pinotage",
+        "Carmenère",
+        "Gamay",
+        "Shiraz"
+      ],
+      "answer": 0,
+      "explanation": "Pinotage, in 1925 at Stellenbosch."
+    },
+    {
+      "type": "concept",
+      "title": "Old vines",
+      "body": "South Africa's Old Vine Project certifies vineyards over 35 years old, many of them Cinsault. Some, in Wellington and Darling, were planted in the early 20th century. Their low yields give concentration to a grape known for lightness. The wines are pale yet complex.",
+      "highlight": "Certified old vines"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In South Africa, Cinsault was once called ____.",
+      "options": [
+        "Hermitage",
+        "Shiraz",
+        "Steen",
+        "Pinotage"
+      ],
+      "answer": "Hermitage",
+      "explanation": "Hence the name Pinotage, from Pinot plus Hermitage."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cinsault's thin skins make it ideal for rosé",
+        "It's a parent of Pinotage, created in 1925",
+        "South Africa's old Cinsault vines are being revived"
+      ]
+    }
+  ]
+}

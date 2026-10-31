@@ -1,0 +1,60 @@
+{
+  "id": "region-pt-alentejo-l04",
+  "moduleId": "region-pt-alentejo",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Alentejo and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read an Alentejo label",
+    "Pair Alentejo wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show Alentejo DOC, sometimes a sub-region like Reguengos or Portalegre, or Vinho Regional Alentejano. Reserva in Portugal means higher alcohol and approval by a tasting panel; Garrafeira means longer ageing. Vinho de Talha marks clay-pot wines. Blends are common; grapes may be listed on the back.",
+      "highlight": "DOC, Regional, Reserva"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Alentejo food is rustic: black pork, porco preto, from acorn-fed pigs; lamb; migas, bread with pork; açorda, bread soup; and sheep's cheese like Serpa. Reds suit pork and lamb; Antão Vaz whites suit bacalhau and grilled fish. Serve reds at 16 to 18, slightly cool in summer.",
+      "highlight": "Porco preto, lamb, Serpa"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Alentejo meat is a classic with its reds?",
+      "options": [
+        "Porco preto, black pork",
+        "Raw fish",
+        "Duck confit",
+        "Kangaroo"
+      ],
+      "answer": 0,
+      "explanation": "Acorn-fed black pork suits ripe Alentejo reds."
+    },
+    {
+      "type": "tip",
+      "body": "Alentejo reds offer ripe fruit and soft tannins at modest prices, among Portugal's most popular wines at home."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In Portugal, Garrafeira means longer ageing.",
+      "answer": true,
+      "explanation": "Yes, longer than Reserva."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show DOC or Regional, and Reserva or Garrafeira",
+        "Reds suit black pork and lamb",
+        "Serve reds slightly cool in hot weather"
+      ]
+    }
+  ]
+}

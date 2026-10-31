@@ -1,0 +1,70 @@
+{
+  "id": "grape-pinot-meunier-l03",
+  "moduleId": "grape-pinot-meunier",
+  "order": 3,
+  "title": "Meunier in Champagne",
+  "subtitle": "From supporting role to star",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Meunier's role in Champagne blends",
+    "Describe single-variety Meunier Champagne",
+    "Explain the change in its reputation"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The blend",
+      "body": "In Champagne blends, Chardonnay gives finesse and acidity, Pinot Noir gives structure and body, and Meunier gives fruit and roundness. Because it matures faster, it's especially useful in non-vintage Champagne, to drink younger. Krug is one famous house that has long valued it in its blends.",
+      "highlight": "Fruit and roundness for non-vintage"
+    },
+    {
+      "type": "concept",
+      "title": "A new star",
+      "body": "Meunier was long seen as the lesser grape, excluded from Grand Cru village status in the past. Since the 2000s, grower Champagnes made only from Meunier, often from old vines in the Marne, have shown its depth and character. Producers like Jérôme Prévost and Egly-Ouriet helped change minds.",
+      "highlight": "Grower Champagne revived its reputation"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does each Champagne grape bring?",
+      "options": [
+        "Chardonnay: finesse and acidity",
+        "Pinot Noir: structure and body",
+        "Meunier: fruit and roundness",
+        "Meunier: long ageing and austerity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Meunier is known for fruit and early approachability, not austerity."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Blanc de Noirs made from 100% Meunier. It's a chance to taste the grape's red apple and spice without Chardonnay or Pinot Noir."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which style can be made from 100% Meunier?",
+      "options": [
+        "Blanc de Blancs",
+        "Blanc de Noirs",
+        "Rosé only",
+        "None"
+      ],
+      "answer": 1,
+      "explanation": "Blanc de Noirs uses only black grapes, which includes Meunier."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Meunier brings fruit and roundness to Champagne blends",
+        "It's key for non-vintage, approachable young",
+        "Pure Meunier Champagnes have raised its reputation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "region-it-piedmont-l05",
+  "moduleId": "region-it-piedmont",
+  "order": 5,
+  "title": "Barbera, Dolcetto and Moscato",
+  "subtitle": "Piedmont's everyday wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Barbera's main wines",
+    "Describe Dolcetto's wines",
+    "Describe Asti and Moscato d'Asti"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Barbera",
+      "body": "Barbera d'Asti, a DOCG, and Barbera d'Alba, a DOC, are its main wines. Nizza, a DOCG since 2014, is Barbera's top area, in the hills around Nizza Monferrato. Barbera is juicy, high in acidity and low in tannin. Since the 1980s, producers like Giacomo Bologna have aged it in small oak for more structure.",
+      "highlight": "Barbera d'Asti, Nizza, Alba"
+    },
+    {
+      "type": "concept",
+      "title": "Dolcetto and Moscato",
+      "body": "Dolcetto makes soft, dark wines to drink young; Dogliani is its DOCG heartland. Moscato Bianco makes Asti, fully sparkling, and Moscato d'Asti, gently fizzy, frizzante. Both are sweet and low in alcohol: Moscato d'Asti about 5.5%. Fermentation in a sealed tank is stopped by chilling, keeping sugar and bubbles.",
+      "highlight": "Dogliani; Moscato d'Asti at 5.5%"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its grape.",
+      "pairs": [
+        {
+          "left": "Nizza",
+          "right": "Top Barbera DOCG"
+        },
+        {
+          "left": "Dogliani",
+          "right": "Dolcetto heartland"
+        },
+        {
+          "left": "Asti",
+          "right": "Fully sparkling Moscato"
+        },
+        {
+          "left": "Moscato d'Asti",
+          "right": "Gently fizzy, 5.5%"
+        }
+      ],
+      "explanation": "Piedmont's everyday wines are just as distinctive."
+    },
+    {
+      "type": "tip",
+      "body": "Moscato d'Asti, at 5.5% alcohol and lightly sweet, is a classic with fresh fruit or hazelnut cake, another Piedmont speciality."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does Moscato d'Asti keep its sweetness and bubbles?",
+      "options": [
+        "Fermentation in a sealed tank is stopped by chilling",
+        "Sugar is added",
+        "Spirit is added",
+        "It's carbonated"
+      ],
+      "answer": 0,
+      "explanation": "Stopping fermentation keeps sugar; the sealed tank traps CO2."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barbera d'Asti, Nizza and Barbera d'Alba are juicy, acidic reds",
+        "Dogliani is Dolcetto's DOCG",
+        "Asti and Moscato d'Asti are sweet and low in alcohol"
+      ]
+    }
+  ]
+}

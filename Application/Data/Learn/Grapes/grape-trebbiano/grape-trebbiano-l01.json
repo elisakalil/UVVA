@@ -1,0 +1,62 @@
+{
+  "id": "grape-trebbiano-l01",
+  "moduleId": "grape-trebbiano",
+  "order": 1,
+  "title": "Meet Trebbiano",
+  "subtitle": "Neutral, crisp and prolific",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Trebbiano's flavours and structure",
+    "Explain why it's so widely planted",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Light and neutral",
+      "body": "Trebbiano, called Ugni Blanc in France, gives light, crisp whites with lemon, green apple, almond and herbs. It has high acidity and moderate alcohol, and is fairly neutral in aroma. It's one of the most planted white grapes in the world, mostly for brandy and simple wines.",
+      "highlight": "Lemon, almond, high acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Why so widespread",
+      "body": "Trebbiano is vigorous, productive and resistant to disease, and keeps high acidity even when yields are high. That makes it ideal for distillation, where neutral, acidic, low-alcohol wine is needed. Its many clones and relatives, like Trebbiano Toscano and Trebbiano Romagnolo, share the family name.",
+      "highlight": "Productive and keeps acidity"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Trebbiano valued for brandy?",
+      "options": [
+        "It gives neutral, acidic, low-alcohol wine",
+        "It's very aromatic",
+        "It's very sweet",
+        "It's red"
+      ],
+      "answer": 0,
+      "explanation": "Distillers want neutral, acidic base wine."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "As a still wine, Trebbiano is pale, light, crisp and neutral, with lemon and almond. It's often blended to add freshness. Trebbiano d'Abruzzo, a distinct variety, can be more serious, especially from top producers like Valentini.",
+      "highlight": "Pale, crisp, neutral"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Trebbiano is a low-yielding, delicate grape.",
+      "answer": false,
+      "explanation": "Not true. It's vigorous and productive."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Trebbiano gives light, crisp, neutral whites",
+        "It's productive and keeps high acidity",
+        "It's one of the most planted white grapes"
+      ]
+    }
+  ]
+}

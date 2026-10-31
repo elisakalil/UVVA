@@ -1,0 +1,79 @@
+{
+  "id": "path-30-l03",
+  "moduleId": "path-30",
+  "order": 3,
+  "title": "Identifying regions",
+  "subtitle": "Place in the glass",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Link styles to regions",
+    "Use climate clues to identify regions",
+    "Use labels and winemaking clues"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Climate clues",
+      "body": "Regions leave marks through climate. Chablis Chardonnay is lean and steely; Californian Chardonnay is riper with more oak. Mosel Riesling is light and off-dry; Clare Valley Riesling is dry with lime. Bordeaux Cabernet is cedar and restraint; Napa is ripe and powerful.",
+      "highlight": "Same grape, different place"
+    },
+    {
+      "type": "concept",
+      "title": "Winemaking clues",
+      "body": "Winemaking traditions also point to regions. American oak's coconut and vanilla suggest traditional Rioja. Long lees ageing and toast suggest Champagne. Carbonic maceration's banana suggests Beaujolais. Dried grape character with high alcohol suggests Amarone. Flor's tangy, nutty character means Fino or Manzanilla.",
+      "highlight": "Traditions leave fingerprints"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each clue to its likely region.",
+      "pairs": [
+        {
+          "left": "Coconut and vanilla oak",
+          "right": "Traditional Rioja"
+        },
+        {
+          "left": "Banana, light red",
+          "right": "Beaujolais"
+        },
+        {
+          "left": "Dried fruit, 15%, dry red",
+          "right": "Amarone"
+        },
+        {
+          "left": "Tangy, nutty, saline",
+          "right": "Manzanilla"
+        }
+      ],
+      "explanation": "Regional traditions shape flavour as much as grape."
+    },
+    {
+      "type": "concept",
+      "title": "Putting it together",
+      "body": "A lean, mineral, unoaked Chardonnay at 12.5% points to Chablis. A powerful, ripe Cabernet at 14.5% with sweet oak points to Napa. A Sauvignon Blanc with pronounced passion fruit points to Marlborough; with restraint and flint, to Sancerre. Use every clue: climate, grape, winemaking and structure.",
+      "highlight": "Combine every clue"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A Sauvignon Blanc with intense passion fruit and grass, very high acidity and no oak. Which region is most likely?",
+      "options": [
+        "Sancerre",
+        "Marlborough",
+        "Pessac-Léognan",
+        "Napa Valley"
+      ],
+      "answer": 1,
+      "explanation": "Pronounced passion fruit and grass with high acidity is classic Marlborough. Sancerre is more restrained; Pessac-Léognan is often oaked."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Climate leaves its mark on the same grape",
+        "Winemaking traditions point to regions",
+        "Combine climate, grape, winemaking and structure"
+      ]
+    }
+  ]
+}

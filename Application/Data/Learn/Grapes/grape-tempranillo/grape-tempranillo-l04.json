@@ -1,0 +1,67 @@
+{
+  "id": "grape-tempranillo-l04",
+  "moduleId": "grape-tempranillo",
+  "order": 4,
+  "title": "The ageing ladder",
+  "subtitle": "Crianza, Reserva, Gran Reserva",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Spain's ageing categories",
+    "Explain Rioja's stricter rules",
+    "Explain how ageing changes Tempranillo"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "National rules",
+      "body": "Spain's law sets minimum ageing for reds. Crianza: 24 months, at least 6 in oak. Reserva: 36 months, at least 12 in oak. Gran Reserva: 60 months, at least 18 in oak. Joven, young, has little or no oak. These terms appear on the back label, often with a seal.",
+      "highlight": "Crianza, Reserva, Gran Reserva"
+    },
+    {
+      "type": "concept",
+      "title": "Rioja's rules",
+      "body": "Rioja sets stricter oak rules. Crianza needs at least 12 months in barrel. Reserva needs 12 months in barrel and 36 months in total. Gran Reserva needs 24 months in barrel and 60 months in total. Tempranillo's thick skins and moderate tannins suit long oak ageing, which softens it and adds vanilla, spice and leather.",
+      "highlight": "Rioja: longer oak"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the Rioja categories by minimum ageing.",
+      "items": [
+        "Joven",
+        "Crianza",
+        "Reserva",
+        "Gran Reserva"
+      ],
+      "explanation": "Each step demands more time in barrel and bottle."
+    },
+    {
+      "type": "concept",
+      "title": "Time and taste",
+      "body": "Long ageing changes Tempranillo: fruit shifts from fresh red cherry to dried fig and prune, colour fades from ruby to garnet and brick, and tertiary notes of leather, tobacco, mushroom and cedar appear. Traditional Gran Reservas, from producers like López de Heredia, can be drunk 30 years later.",
+      "highlight": "From fresh fruit to leather and tobacco"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How long must a Rioja Gran Reserva spend in barrel at minimum?",
+      "options": [
+        "6 months",
+        "12 months",
+        "24 months",
+        "60 months"
+      ],
+      "answer": 2,
+      "explanation": "24 months in barrel, within 60 months of total ageing."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Spain's law sets Crianza, Reserva and Gran Reserva ageing",
+        "Rioja requires longer barrel ageing than the national minimum",
+        "Ageing turns Tempranillo's fruit into leather and tobacco"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "region-it-tuscany",
+  "kind": "region",
+  "order": 10,
+  "country": "Italy",
+  "countryCode": "IT",
+  "title": "Tuscany",
+  "grapes": [
+    "Sangiovese",
+    "Cabernet Sauvignon",
+    "Merlot",
+    "Vermentino"
+  ],
+  "points": "2 2 2 2 = 8",
+  "complexity": "A",
+  "description": "Hills, cypresses and Sangiovese: Chianti, Brunello and the Super Tuscans that rewrote Italian law.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-it-tuscany-l01",
+    "region-it-tuscany-l02",
+    "region-it-tuscany-l03",
+    "region-it-tuscany-l04",
+    "region-it-tuscany-l05",
+    "region-it-tuscany-l06",
+    "region-it-tuscany-l07"
+  ]
+}

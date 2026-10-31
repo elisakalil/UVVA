@@ -1,0 +1,68 @@
+{
+  "id": "path-25-l02",
+  "moduleId": "path-25",
+  "order": 2,
+  "title": "Second fermentation",
+  "subtitle": "Tirage and pressure",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the liqueur de tirage",
+    "Explain how pressure builds",
+    "Compare full and lower pressure styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tirage",
+      "body": "After blending, the base wine is mixed with the liqueur de tirage: sugar, about 24 g/l, selected yeast and riddling aids that help the sediment slide later. The bottle is closed with a crown cap. The yeast ferments the sugar, adding about 1.2 to 1.5% alcohol and producing carbon dioxide.",
+      "highlight": "About 24 g/l sugar makes 6 atmospheres"
+    },
+    {
+      "type": "concept",
+      "title": "Pressure",
+      "body": "Each 4 grams of sugar per litre gives about 1 atmosphere of pressure. So 24 g/l produces about 6 atmospheres, typical of Champagne. Crémant has around 4 to 5; Pétillant naturel or frizzante wines much less. Cooler fermentation, around 12 degrees, gives finer bubbles and better integration.",
+      "highlight": "About 4 g/l per atmosphere"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In the second fermentation, about ____ grams of sugar per litre produce one atmosphere of pressure.",
+      "options": [
+        "4",
+        "1",
+        "10",
+        "24"
+      ],
+      "answer": "4",
+      "explanation": "About 4 g/l per atmosphere, so 24 g/l gives around 6 atmospheres."
+    },
+    {
+      "type": "concept",
+      "title": "Pétillant naturel",
+      "body": "Pétillant naturel, or pét-nat, uses the ancestral method: wine is bottled before the first fermentation ends, so it finishes in bottle, trapping the gas. There's no added sugar or yeast, and often no disgorgement, leaving the wine cloudy. Bubbles are softer. Some appellations, like Gaillac and Limoux, have historic versions.",
+      "highlight": "One fermentation, finished in bottle"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is the ancestral method different from the traditional method?",
+      "options": [
+        "It uses a tank",
+        "There is only one fermentation, finished in bottle",
+        "It adds gas by injection",
+        "It adds spirit"
+      ],
+      "answer": 1,
+      "explanation": "The ancestral method bottles the wine while it is still fermenting, so there's no second fermentation."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Liqueur de tirage adds sugar and yeast for the second fermentation",
+        "About 4 g/l of sugar makes one atmosphere",
+        "Pét-nat finishes its single fermentation in bottle"
+      ]
+    }
+  ]
+}

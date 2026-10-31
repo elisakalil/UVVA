@@ -1,0 +1,73 @@
+{
+  "id": "path-09-l07",
+  "moduleId": "path-09",
+  "order": 7,
+  "title": "Other whites to know",
+  "subtitle": "Five grapes that matter",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Grüner Veltliner and Assyrtiko",
+    "Describe Muscat and Torrontés",
+    "Name a classic region for each grape"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Grüner Veltliner and Assyrtiko",
+      "body": "Grüner Veltliner is Austria's signature grape: crisp, with citrus, green apple and white pepper, from light to powerful in the Wachau. Assyrtiko, from Santorini in Greece, keeps very high acidity even in hot sun, and grows on volcanic soil, giving firm, mineral, citrus wines.",
+      "highlight": "Grüner: white pepper. Assyrtiko: acid and volcanic."
+    },
+    {
+      "type": "concept",
+      "title": "Muscat and Torrontés",
+      "body": "Muscat is a family of grapes that tastes like fresh grapes, thanks to terpenes like linalool and geraniol. It makes light, sweet Moscato d'Asti at 5.5% and rich, fortified wines in southern France. Torrontés, Argentina's white grape, a cross that includes Muscat of Alexandria, gives floral wines in high Salta, up to 3,000 m.",
+      "highlight": "Muscat smells of grapes"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its home.",
+      "pairs": [
+        {
+          "left": "Grüner Veltliner",
+          "right": "Austria"
+        },
+        {
+          "left": "Assyrtiko",
+          "right": "Santorini"
+        },
+        {
+          "left": "Torrontés",
+          "right": "Salta"
+        },
+        {
+          "left": "Moscato",
+          "right": "Asti"
+        }
+      ],
+      "explanation": "Each grape has a region where it shows best."
+    },
+    {
+      "type": "concept",
+      "title": "Melon and Garganega",
+      "body": "Melon de Bourgogne makes Muscadet, near the Loire's mouth: light, crisp and often aged on its lees, labelled sur lie, which adds texture and a slight spritz. Garganega is the main grape of Soave, in the Veneto, giving almond, lemon and a light texture, and sweet Recioto di Soave from dried grapes.",
+      "highlight": "Muscadet sur lie; Soave from Garganega"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Muscadet is made from the Muscat grape.",
+      "answer": false,
+      "explanation": "Not true. Despite the name, Muscadet is made from Melon de Bourgogne. Muscat is a different, aromatic family."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grüner Veltliner and Assyrtiko are crisp, high-acid whites",
+        "Muscat and Torrontés are floral, grape-scented whites",
+        "Muscadet comes from Melon; Soave from Garganega"
+      ]
+    }
+  ]
+}

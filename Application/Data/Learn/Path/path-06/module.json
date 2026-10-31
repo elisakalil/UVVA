@@ -1,0 +1,20 @@
+{
+  "id": "path-06",
+  "kind": "path",
+  "order": 6,
+  "level": "Essentials",
+  "complexity": "C",
+  "title": "Food and Wine",
+  "description": "What food does to wine, and the few rules that make a pairing work.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-06-l01",
+    "path-06-l02",
+    "path-06-l03",
+    "path-06-l04",
+    "path-06-l05",
+    "path-06-l06"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "region-ge-kakheti-l05",
+  "moduleId": "region-ge-kakheti",
+  "order": 5,
+  "title": "Labels and the table",
+  "subtitle": "Reading Georgia and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read Georgian labels",
+    "Pair Georgian wines with food",
+    "Explain the supra"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Georgian wines often name a protected place, like Tsinandali, a white blend of Rkatsiteli and Mtsvane; Mukuzani, dry Saperavi; Kindzmarauli, semi-sweet Saperavi; or Napareuli. Labels may say qvevri, amber or the grape. Georgia has about 29 protected appellations. Labels may be in the Georgian alphabet, which is unique.",
+      "highlight": "Tsinandali, Mukuzani, Kindzmarauli"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Georgian food is rich and spiced: khachapuri, cheese bread; khinkali, dumplings; mtsvadi, grilled meat; dishes with walnuts, pomegranate and herbs. Amber wines suit walnut sauces, grilled meat and cheese. Saperavi suits lamb and grilled pork. The supra feast, with its tamada and many toasts, is central to Georgian wine culture.",
+      "highlight": "Khachapuri, khinkali, walnuts"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Who leads the toasts at a Georgian supra?",
+      "options": [
+        "The tamada",
+        "The sommelier",
+        "The chef",
+        "The host's child"
+      ],
+      "answer": 0,
+      "explanation": "The tamada is the toastmaster."
+    },
+    {
+      "type": "tip",
+      "body": "Kindzmarauli, a semi-sweet Saperavi, is a popular Georgian style; it pairs with spicy food and desserts."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Tsinandali",
+          "right": "White blend"
+        },
+        {
+          "left": "Mukuzani",
+          "right": "Dry Saperavi"
+        },
+        {
+          "left": "Kindzmarauli",
+          "right": "Semi-sweet Saperavi"
+        },
+        {
+          "left": "Karvisperi",
+          "right": "Amber wine"
+        }
+      ],
+      "explanation": "Georgian names identify styles."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels name places like Tsinandali and Mukuzani",
+        "Amber wine suits walnuts and grilled meat; Saperavi suits lamb",
+        "The supra feast is central to Georgian wine"
+      ]
+    }
+  ]
+}

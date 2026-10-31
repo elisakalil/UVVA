@@ -1,0 +1,62 @@
+{
+  "id": "grape-palomino-l01",
+  "moduleId": "grape-palomino",
+  "order": 1,
+  "title": "Meet Palomino",
+  "subtitle": "The neutral heart of Sherry",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Palomino's character",
+    "Explain why neutrality is useful",
+    "Recognise its role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A blank page",
+      "body": "Palomino, or Palomino Fino, is a white grape with low acidity, low sugar and neutral flavours: a little apple, almond and salt. As a table wine, it's simple and soft. But as a base for Sherry, its neutrality is perfect: flor yeast, oxygen and the solera write the flavour onto it.",
+      "highlight": "Neutral, low acid, low sugar"
+    },
+    {
+      "type": "concept",
+      "title": "Why neutral works",
+      "body": "Sherry's flavours come from how it's aged, not from the grape. A strongly aromatic grape would compete with flor's bready, saline notes or with the nutty notes of oxidation. Palomino's low sugar means base wines at 11 to 12.5% alcohol, easy to fortify to the levels needed for each style.",
+      "highlight": "Ageing writes the flavour"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Palomino's neutrality an advantage for Sherry?",
+      "options": [
+        "Ageing, not the grape, creates Sherry's flavours",
+        "It makes Sherry sweet",
+        "It adds colour",
+        "It adds tannin"
+      ],
+      "answer": 0,
+      "explanation": "Flor and oxidation create the flavours; a neutral grape lets them show."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "As an unfortified table wine, Palomino is pale, soft and neutral. In Sherry, its flavour is hidden under flor's bread, almond and salt in Fino, or the walnut and caramel of Oloroso. Palomino's real identity is the Sherry family.",
+      "highlight": "Its identity is Sherry"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Palomino is a highly aromatic grape.",
+      "answer": false,
+      "explanation": "Not true. It's very neutral, which is why it suits Sherry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Palomino is neutral, low in acidity and sugar",
+        "Sherry's flavours come from ageing, not the grape",
+        "Its base wines are easy to fortify"
+      ]
+    }
+  ]
+}

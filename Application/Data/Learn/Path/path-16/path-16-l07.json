@@ -1,0 +1,79 @@
+{
+  "id": "path-16-l07",
+  "moduleId": "path-16",
+  "order": 7,
+  "title": "Organic, biodynamic, sustainable",
+  "subtitle": "Farming philosophies",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what organic viticulture means",
+    "Explain biodynamics and its practices",
+    "Compare sustainable certifications"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Organic",
+      "body": "Organic viticulture bans synthetic fertilisers, herbicides and most synthetic pesticides. Copper and sulphur are allowed, though copper is limited in the EU to 28 kg per hectare over 7 years. In the EU, organic wine also has lower sulphite limits: 100 mg/l for dry reds compared with 150 mg/l for conventional ones. Conversion takes three years.",
+      "highlight": "No synthetic chemicals; three-year conversion"
+    },
+    {
+      "type": "concept",
+      "title": "Biodynamic",
+      "body": "Biodynamics, based on Rudolf Steiner's 1924 lectures, goes further. The farm is treated as a self-sustaining organism. Growers use preparations, such as cow manure buried in a horn over winter, in tiny doses, and time work by a lunar and astrological calendar. Certification is by Demeter or Biodyvin. Scientific evidence for the preparations is limited, but many top producers follow it.",
+      "highlight": "A farm as an organism, with preparations and a calendar"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its focus.",
+      "pairs": [
+        {
+          "left": "Organic",
+          "right": "No synthetic chemicals"
+        },
+        {
+          "left": "Biodynamic",
+          "right": "Preparations and lunar calendar"
+        },
+        {
+          "left": "Sustainable",
+          "right": "Environment, society, economics"
+        },
+        {
+          "left": "Demeter",
+          "right": "Biodynamic certifier"
+        }
+      ],
+      "explanation": "Each approach has its own rules and certifiers."
+    },
+    {
+      "type": "concept",
+      "title": "Sustainable",
+      "body": "Sustainable programmes look at the whole business: water and energy use, biodiversity, workers' welfare and economic viability. They allow some synthetic inputs when justified. Examples include Sustainable Winegrowing New Zealand, the California Certified Sustainable Winegrowing programme and France's HVE, Haute Valeur Environnementale.",
+      "highlight": "Whole business, environment and people"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which of these is allowed in organic viticulture?",
+      "options": [
+        "Synthetic herbicides",
+        "Copper sprays, within limits",
+        "Synthetic nitrogen fertiliser",
+        "Systemic pesticides"
+      ],
+      "answer": 1,
+      "explanation": "Copper and sulphur are allowed in organic farming, with copper limited by law."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Organic bans synthetic chemicals and lowers sulphite limits",
+        "Biodynamics adds preparations and a calendar, with limited scientific evidence",
+        "Sustainable programmes cover environment, people and economics"
+      ]
+    }
+  ]
+}

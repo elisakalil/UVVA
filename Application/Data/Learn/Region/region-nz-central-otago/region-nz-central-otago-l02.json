@@ -1,0 +1,77 @@
+{
+  "id": "region-nz-central-otago-l02",
+  "moduleId": "region-nz-central-otago",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Pinot Noir country",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Central Otago Pinot Noir",
+    "Explain why it suits the region",
+    "Name its other grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinot Noir",
+      "body": "Pinot Noir covers about 80% of Central Otago's vineyards. Its style is vivid: deep for Pinot, with dark cherry, plum, raspberry, thyme and spice, fresh acidity and silky tannins. Intense sunshine and UV light give colour and ripe fruit; cold nights keep acidity. Sub-regions differ: Bannockburn is warm and rich, Gibbston cooler and more delicate.",
+      "highlight": "About 80% Pinot Noir"
+    },
+    {
+      "type": "concept",
+      "title": "Others",
+      "body": "Pinot Gris, Riesling and Chardonnay are the main whites, with high acidity and purity. Some producers make traditional method sparkling wine from Pinot Noir and Chardonnay. Wild thyme, which grows on the hillsides, is often noted in the wines' aromas.",
+      "highlight": "Pinot Gris, Riesling, Chardonnay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each sub-region to its feature.",
+      "pairs": [
+        {
+          "left": "Bannockburn",
+          "right": "Warm, rich Pinot"
+        },
+        {
+          "left": "Gibbston",
+          "right": "Cooler, more delicate"
+        },
+        {
+          "left": "Wanaka",
+          "right": "Lakeside, Rippon"
+        },
+        {
+          "left": "Cromwell Basin",
+          "right": "Largest area"
+        }
+      ],
+      "explanation": "Each Central Otago sub-region has its style."
+    },
+    {
+      "type": "tip",
+      "body": "Wild thyme grows across Central Otago's hills, and many tasters find a herbal, thyme note in its Pinot Noir."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Central Otago Pinot Noir so deeply coloured for Pinot?",
+      "options": [
+        "Intense sun and UV light",
+        "Added colour",
+        "Blending with Syrah",
+        "Long oak ageing only"
+      ],
+      "answer": 0,
+      "explanation": "Strong light thickens skins and deepens colour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir is about 80% of vineyards, vivid and fresh",
+        "Sun and cold nights give colour, ripeness and acidity",
+        "Bannockburn is rich; Gibbston more delicate"
+      ]
+    }
+  ]
+}

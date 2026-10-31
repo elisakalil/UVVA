@@ -1,0 +1,96 @@
+{
+  "id": "grape-nerello-mascalese-l05",
+  "moduleId": "grape-nerello-mascalese",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Nerello Mascalese",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Nerello Mascalese",
+    "Know Etna's features",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Where does Nerello Mascalese mainly grow?",
+      "options": [
+        "Mount Etna",
+        "Piedmont",
+        "Tuscany",
+        "Puglia"
+      ],
+      "answer": 0,
+      "explanation": "On Etna's slopes, especially the north side."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Etna.",
+      "pairs": [
+        {
+          "left": "Contrade",
+          "right": "Local districts"
+        },
+        {
+          "left": "Alberello",
+          "right": "Bush vines"
+        },
+        {
+          "left": "Carricante",
+          "right": "White grape"
+        },
+        {
+          "left": "Nerello Cappuccio",
+          "right": "Blending partner"
+        }
+      ],
+      "explanation": "Etna has its own vocabulary."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Many Etna vines are ungrafted.",
+      "answer": true,
+      "explanation": "Yes, volcanic sand limits phylloxera."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Nerello Mascalese?",
+      "options": [
+        "Pale colour",
+        "High acidity",
+        "Firm tannin",
+        "Very sweet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Etna Rosso is dry."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Etna Rosso must be at least ____% Nerello Mascalese.",
+      "options": [
+        "80",
+        "50",
+        "100",
+        "20"
+      ],
+      "answer": "80",
+      "explanation": "At least 80%, with Nerello Cappuccio allowed."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nerello Mascalese is pale, perfumed and firm",
+        "It grows high on Etna's volcanic slopes",
+        "Contrade name its vineyard districts",
+        "It's a fresh, versatile food wine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "grape-verdejo-l03",
+  "moduleId": "grape-verdejo",
+  "order": 3,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Verdejo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Verdejo with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tapas and seafood",
+      "body": "Verdejo suits tapas, grilled fish, prawns, salads, goat's cheese and dishes with herbs. Its herbal notes match green sauces and fennel; its acidity handles fried food like calamari. In Castilla, it's the everyday white with lunch.",
+      "highlight": "Tapas, prawns, herbs"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 7 to 9 degrees. Most Verdejo is best within one to two years. Oak- or lees-aged versions, and Rueda Dorado, a traditional oxidative fortified style, can age longer.",
+      "highlight": "Cold and young"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Verdejo?",
+      "options": [
+        "Fried calamari",
+        "Beef stew",
+        "Chocolate tart",
+        "Roast lamb"
+      ],
+      "answer": 0,
+      "explanation": "Its acidity cuts through fried food."
+    },
+    {
+      "type": "tip",
+      "body": "Rueda Dorado, a rare traditional style aged in glass demijohns in the sun and then in barrel, shows Verdejo's oxidative past."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Verdejo's food matches?",
+      "options": [
+        "Seafood",
+        "Herbs",
+        "Goat's cheese",
+        "Rich red meat"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Rich red meat needs a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Verdejo suits tapas, seafood and herbal dishes",
+        "Serve at 7 to 9 degrees",
+        "Most is best within two years"
+      ]
+    }
+  ]
+}

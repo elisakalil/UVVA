@@ -1,0 +1,72 @@
+{
+  "id": "grape-carmenere-l03",
+  "moduleId": "grape-carmenere",
+  "order": 3,
+  "title": "The lost grape of Bordeaux",
+  "subtitle": "Rediscovery in Chile",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the 1994 rediscovery",
+    "Explain why it was confused with Merlot",
+    "Explain how this changed Chilean wine"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Mistaken identity",
+      "body": "For over a century, Chilean growers thought much of their Merlot was Merlot. Vineyards often mixed the two. The wines tasted different, and some vines ripened weeks later. In 1994, French ampelographer Jean-Michel Boursiquot, studying vine leaves and shapes, identified many of these vines as Carmenère.",
+      "highlight": "1994: Boursiquot identified it"
+    },
+    {
+      "type": "concept",
+      "title": "Why the confusion",
+      "body": "Carmenère and Merlot have similar leaves and bunches. But Carmenère ripens two to three weeks later. When the two were picked together, the Carmenère was often unripe, giving the green, vegetal notes that marked some Chilean Merlot. Separating them improved both wines.",
+      "highlight": "Picked too early with Merlot"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Carmenère was rediscovered in Chile in ____.",
+      "options": [
+        "1994",
+        "1855",
+        "1976",
+        "2010"
+      ],
+      "answer": "1994",
+      "explanation": "Jean-Michel Boursiquot identified it in 1994."
+    },
+    {
+      "type": "concept",
+      "title": "A new identity",
+      "body": "Chile adopted Carmenère as its signature grape. Producers learned to pick it later, manage the canopy to expose bunches to sun and reduce pyrazines, and lower yields. In 1998, Chile officially recognised it. Today many premium Chilean wines are Carmenère or blends with Cabernet Sauvignon.",
+      "highlight": "Later picking, more sun"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "How do Chilean producers avoid green notes in Carmenère?",
+      "options": [
+        "Picking later",
+        "Exposing bunches to sun",
+        "Lowering yields",
+        "Picking it with Merlot"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Picking with Merlot, earlier, caused the green notes in the first place."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chile's Merlot was often Carmenère, identified in 1994",
+        "Carmenère ripens later, so early picking gave green notes",
+        "Chile adopted it as its signature grape"
+      ]
+    }
+  ]
+}

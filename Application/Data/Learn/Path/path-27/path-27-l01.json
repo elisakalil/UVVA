@@ -1,0 +1,72 @@
+{
+  "id": "path-27-l01",
+  "moduleId": "path-27",
+  "order": 1,
+  "title": "Botrytis in depth",
+  "subtitle": "The science of noble rot",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how botrytis changes the grape",
+    "Explain why botrytis wines are hard to make",
+    "Explain the effect on fermentation"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What the fungus does",
+      "body": "Botrytis cinerea pierces the grape skin with fine filaments. Water evaporates, concentrating sugar and acid. The fungus also consumes some acid and sugar, and produces glycerol, which adds viscosity, and gluconic acid. It creates new aromas: honey, apricot, marmalade, saffron and ginger. Laccase, an enzyme it produces, makes the juice prone to oxidation.",
+      "highlight": "Concentration plus new aromas"
+    },
+    {
+      "type": "concept",
+      "title": "Why it's hard",
+      "body": "Infection is uneven and weather-dependent. In bad years, botrytis doesn't come, or grey rot does. Pickers make several passes, called tries, taking only affected berries. Yields can fall to 10 hl/ha or less. Fermentation of such sweet juice is slow, sometimes months, and stops naturally around 13 to 14% alcohol, leaving 100 g/l or more of sugar.",
+      "highlight": "Several passes, tiny yields, slow fermentation"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do pickers pass through botrytis vineyards several times?",
+      "options": [
+        "To prune the vines",
+        "Infection is uneven, so only affected berries are picked each time",
+        "To spray chemicals",
+        "To pick green grapes"
+      ],
+      "answer": 1,
+      "explanation": "Botrytis spreads unevenly. Each pass, or trie, takes only the berries that are ready."
+    },
+    {
+      "type": "concept",
+      "title": "Fermenting it",
+      "body": "Botrytised juice is low in yeast nutrients and high in sugar, stressing the yeast. It produces more volatile acidity than normal, so legal limits are higher for these wines. SO2 is needed to protect against laccase and to stop fermentation at the right moment. Many wines then age in oak for 18 to 36 months.",
+      "highlight": "High sugar stresses the yeast"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are effects of noble rot on grapes?",
+      "options": [
+        "Water loss",
+        "Higher glycerol",
+        "New honeyed aromas",
+        "Thicker skins"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Botrytis weakens and pierces skins rather than thickening them."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Botrytis concentrates the grape and adds new aromas",
+        "Uneven infection means several passes and tiny yields",
+        "Fermentation is slow, stressed and needs SO2 to stop it"
+      ]
+    }
+  ]
+}

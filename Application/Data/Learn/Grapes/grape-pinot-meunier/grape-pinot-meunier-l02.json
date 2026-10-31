@@ -1,0 +1,79 @@
+{
+  "id": "grape-pinot-meunier-l02",
+  "moduleId": "grape-pinot-meunier",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Champagne and Germany",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Meunier's main regions",
+    "Explain why it suits cool, frosty places",
+    "Name its German names"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Champagne",
+      "body": "Meunier is about 30% of Champagne's vineyards, mainly in the Vallée de la Marne, where clay soils and frost-prone valleys suit it. It's also grown in the Aisne and the Aube. Outside Champagne, it's found in England, Germany, Australia's Great Western and California, mostly for sparkling wine.",
+      "highlight": "About 30% of Champagne"
+    },
+    {
+      "type": "concept",
+      "title": "Frost and cold",
+      "body": "Meunier buds late, after the main spring frost risk, and ripens early. On cold, clay soils and in frost pockets, where Chardonnay and Pinot Noir struggle, Meunier gives reliable crops. That's why growers in the Marne valley rely on it.",
+      "highlight": "Late budding avoids frost"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Meunier suit Champagne's Vallée de la Marne?",
+      "options": [
+        "It buds late, avoiding frost",
+        "It needs heat",
+        "It thrives on chalk only",
+        "It ripens very late"
+      ],
+      "answer": 0,
+      "explanation": "Late budding avoids spring frost in the valley's cold pockets."
+    },
+    {
+      "type": "concept",
+      "title": "Germany",
+      "body": "In Germany, Meunier is called Schwarzriesling, black Riesling, or Müllerrebe, though it's unrelated to Riesling. It's grown mainly in Württemberg, for light reds and rosés. Some German producers also make sparkling Sekt with it.",
+      "highlight": "Schwarzriesling in Württemberg"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its meaning or place.",
+      "pairs": [
+        {
+          "left": "Meunier",
+          "right": "Miller, in French"
+        },
+        {
+          "left": "Schwarzriesling",
+          "right": "German name"
+        },
+        {
+          "left": "Vallée de la Marne",
+          "right": "Champagne stronghold"
+        },
+        {
+          "left": "Württemberg",
+          "right": "German region"
+        }
+      ],
+      "explanation": "Meunier has names and homes in France and Germany."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Meunier is about 30% of Champagne, mainly in the Marne",
+        "It buds late and ripens early, avoiding frost",
+        "In Germany it's Schwarzriesling, grown in Württemberg"
+      ]
+    }
+  ]
+}

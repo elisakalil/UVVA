@@ -1,0 +1,83 @@
+{
+  "id": "grape-semillon-l02",
+  "moduleId": "grape-semillon",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Bordeaux and Australia",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Sémillon's main regions",
+    "Explain the Sauvignon partnership",
+    "Name other homes for Sémillon"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bordeaux",
+      "body": "Sémillon is Bordeaux's most planted white grape. It's blended with Sauvignon Blanc and a little Muscadelle in dry whites, from Entre-Deux-Mers to Pessac-Léognan, and in sweet wines, from Sauternes, Barsac, Loupiac and Cadillac. Bergerac and Monbazillac, nearby, also use it.",
+      "highlight": "Bordeaux's most planted white"
+    },
+    {
+      "type": "concept",
+      "title": "Australia and beyond",
+      "body": "Australia is Sémillon's other great home: the Hunter Valley for unoaked, long-lived dry wines; Margaret River for Sémillon Sauvignon Blanc blends; the Barossa for richer, oaked styles. South Africa once had over 90% Sémillon in the 19th century; now old vines remain. Chile and Argentina grow it too.",
+      "highlight": "Hunter, Margaret River, Barossa"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Sémillon.",
+      "pairs": [
+        {
+          "left": "Sauternes",
+          "right": "Sweet, noble rot"
+        },
+        {
+          "left": "Pessac-Léognan",
+          "right": "Dry, often oaked"
+        },
+        {
+          "left": "Hunter Valley",
+          "right": "Unoaked, long-lived"
+        },
+        {
+          "left": "Margaret River",
+          "right": "Blended with Sauvignon"
+        }
+      ],
+      "explanation": "Sémillon shines dry and sweet."
+    },
+    {
+      "type": "concept",
+      "title": "With Sauvignon",
+      "body": "Sémillon and Sauvignon Blanc complement each other: Sémillon gives body, texture and ageing potential; Sauvignon gives aroma and acidity. In dry Bordeaux, the blend can age for decades. In Sauternes, Sémillon usually makes up about 80%, with Sauvignon adding freshness.",
+      "highlight": "Body plus freshness"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What does Sémillon add to a blend with Sauvignon Blanc?",
+      "options": [
+        "Body",
+        "Texture",
+        "Ageing potential",
+        "High acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sauvignon adds the acidity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sémillon is Bordeaux's most planted white",
+        "Australia's Hunter and Margaret River are key homes",
+        "With Sauvignon, it balances body and freshness"
+      ]
+    }
+  ]
+}

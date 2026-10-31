@@ -1,0 +1,24 @@
+import Core
+import Foundation
+import SwiftData
+
+/// `PalateMapRepository` on the Personal store.
+@ModelActor
+public actor PalateMapStore: PalateMapRepository {
+    public func currentMap() throws -> PalateMap? {
+        var descriptor = FetchDescriptor<PalateMapEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
+        descriptor.fetchLimit = 1
+        return try modelContext.fetch(descriptor).first?.map
+    }
+
+    /// The new map replaces the old one completely; its history starts again with the Quiz (QUIZ-R18a).
+    /// Ratings live in their own table and are not touched.
+    public func saveQuizMap(_ map: PalateMap, at date: Date) throws {
+        for old in try modelContext.fetch(FetchDescriptor<PalateMapEntity>()) {
+            modelContext.delete(old)
+        }
+        let history = [MapChange(date: date, cause: .quiz, values: map.values)]
+        modelContext.insert(PalateMapEntity(map: map, createdAt: date, history: history))
+        try modelContext.save()
+    }
+}

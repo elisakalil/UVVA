@@ -1,0 +1,95 @@
+{
+  "id": "grape-pinot-noir-l07",
+  "moduleId": "grape-pinot-noir",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Pinot Noir",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Pinot Noir",
+    "Compare its regions",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Pinot Noir hard to grow?",
+      "options": [
+        "Thin skins, tight bunches and early budding",
+        "It needs extreme heat",
+        "It never ripens",
+        "It has very thick skins"
+      ],
+      "answer": 0,
+      "explanation": "Its thin skins and tight bunches invite rot, and early budding risks frost."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its place.",
+      "pairs": [
+        {
+          "left": "Spätburgunder",
+          "right": "Germany"
+        },
+        {
+          "left": "Pinot Nero",
+          "right": "Italy"
+        },
+        {
+          "left": "Blauburgunder",
+          "right": "Austria and Switzerland"
+        },
+        {
+          "left": "Blanc de Noirs",
+          "right": "Champagne style"
+        }
+      ],
+      "explanation": "Pinot Noir has many names."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinot Noir is a parent of Chardonnay.",
+      "answer": true,
+      "explanation": "Yes, crossed with Gouais Blanc."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are major cool-climate homes of Pinot Noir?",
+      "options": [
+        "Burgundy",
+        "Willamette Valley",
+        "Central Otago",
+        "Barossa Valley"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Barossa is hot, Shiraz country."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Burgundy's levels from broadest to most precise.",
+      "items": [
+        "Bourgogne",
+        "Village",
+        "Premier Cru",
+        "Grand Cru"
+      ],
+      "explanation": "Grand Cru is the top."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir is pale, silky, with red fruit and earth",
+        "It needs cool climates; Burgundy is its home",
+        "It's key in Champagne and thrives in Germany, Oregon and New Zealand",
+        "It's one of the most food-friendly reds"
+      ]
+    }
+  ]
+}

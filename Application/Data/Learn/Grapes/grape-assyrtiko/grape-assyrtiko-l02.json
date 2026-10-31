@@ -1,0 +1,79 @@
+{
+  "id": "grape-assyrtiko-l02",
+  "moduleId": "grape-assyrtiko",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Santorini and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Santorini's conditions",
+    "Name other Greek regions for Assyrtiko",
+    "Name new regions abroad"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Santorini",
+      "body": "Assyrtiko's home is Santorini, a volcanic island in the Aegean, formed by a huge eruption around 1600 BC. Its soil, called aspa, is volcanic ash, pumice and lava, with almost no clay or organic matter. Rainfall is very low, about 300 mm a year; vines rely on night sea mist for moisture. Strong winds blow constantly.",
+      "highlight": "Volcanic aspa soil, sea mist"
+    },
+    {
+      "type": "concept",
+      "title": "Phylloxera-free",
+      "body": "Santorini's volcanic sand doesn't let phylloxera survive, so the vines are ungrafted. Some root systems are over 400 years old: growers cut old vines back and let new shoots grow from the same roots. Assyrtiko also grows in mainland Greece, Macedonia and Crete, and in Australia's Clare Valley.",
+      "highlight": "Ungrafted roots, centuries old"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Santorini.",
+      "pairs": [
+        {
+          "left": "Aspa",
+          "right": "Volcanic soil"
+        },
+        {
+          "left": "Sea mist",
+          "right": "Main source of moisture"
+        },
+        {
+          "left": "Ungrafted",
+          "right": "Phylloxera can't survive"
+        },
+        {
+          "left": "1600 BC",
+          "right": "Great volcanic eruption"
+        }
+      ],
+      "explanation": "Santorini's conditions are extreme."
+    },
+    {
+      "type": "concept",
+      "title": "Partners",
+      "body": "On Santorini, Assyrtiko is often blended with Athiri and Aidani, two aromatic local grapes. Santorini PDO must be at least 75% Assyrtiko. Single-vineyard and old-vine bottlings, like Nykteri, made from grapes picked at night, are increasingly common.",
+      "highlight": "Athiri and Aidani"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Santorini's vines ungrafted?",
+      "options": [
+        "Phylloxera can't survive in its volcanic soil",
+        "Grafting is illegal",
+        "Vines are replanted every year",
+        "They're table grapes"
+      ],
+      "answer": 0,
+      "explanation": "Phylloxera can't survive in Santorini's volcanic sand."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Santorini's volcanic aspa soil and sea mist shape Assyrtiko",
+        "Ungrafted roots can be over 400 years old",
+        "It also grows in mainland Greece, Crete and Australia"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "region-it-veneto-l01",
+  "moduleId": "region-it-veneto",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "From the Alps to the lagoon",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Veneto's geography",
+    "Explain its climate",
+    "Explain its scale"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Mountains, lake and lagoon",
+      "body": "The Veneto, in north-east Italy, runs from the Dolomites and the Lessini mountains down to the plains and the Venetian lagoon. Lake Garda borders it on the west. Key areas: Valpolicella and Soave, near Verona; Conegliano and Valdobbiadene, north of Venice, for Prosecco.",
+      "highlight": "Verona and the Prosecco hills"
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "The climate is moderate continental, with warm summers and cold winters. Lake Garda moderates the west, and the Alps protect from northern winds. Hillsides give cooler nights and better drainage than the fertile, flat plains, where much simple wine is made.",
+      "highlight": "Hills for quality, plains for volume"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do the Veneto's best wines come from hills?",
+      "options": [
+        "Cooler nights and better drainage",
+        "More fertile soil",
+        "More rain",
+        "More shade"
+      ],
+      "answer": 0,
+      "explanation": "Hills give freshness and drainage; plains favour volume."
+    },
+    {
+      "type": "concept",
+      "title": "Volume and quality",
+      "body": "The Veneto is Italy's largest wine region by volume, thanks to Prosecco and Pinot Grigio. But it also makes some of Italy's most distinctive wines. Venice's merchants traded wine for centuries, and the tradition of drying grapes, appassimento, has ancient roots here.",
+      "highlight": "Italy's largest producer"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Veneto is Italy's largest wine region by volume.",
+      "answer": true,
+      "explanation": "Yes, thanks largely to Prosecco and Pinot Grigio."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Veneto runs from the Alps to the Venetian lagoon",
+        "Hills give its best wines; plains give volume",
+        "It's Italy's largest wine region by volume"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "grape-chenin-blanc-l07",
+  "moduleId": "grape-chenin-blanc",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Chenin Blanc",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Chenin Blanc",
+    "Compare the Loire and South Africa",
+    "Read sweetness terms"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Savennières",
+          "right": "Dry and austere"
+        },
+        {
+          "left": "Quarts de Chaume",
+          "right": "Sweet, botrytised"
+        },
+        {
+          "left": "Saumur Brut",
+          "right": "Sparkling"
+        },
+        {
+          "left": "Swartland Chenin",
+          "right": "Old-vine South African"
+        }
+      ],
+      "explanation": "Chenin makes every style."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these terms from driest to sweetest.",
+      "items": [
+        "Sec",
+        "Demi-sec",
+        "Moelleux",
+        "Doux"
+      ],
+      "explanation": "Doux is the sweetest."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Chenin's defining feature?",
+      "options": [
+        "High acidity",
+        "Low acidity",
+        "High tannin",
+        "Red colour"
+      ],
+      "answer": 0,
+      "explanation": "Acidity supports every style."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "South Africa grows more Chenin than France.",
+      "answer": true,
+      "explanation": "Yes, about 17,000 hectares."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Loire Chenin appellations?",
+      "options": [
+        "Vouvray",
+        "Savennières",
+        "Coteaux du Layon",
+        "Sancerre"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sancerre is Sauvignon Blanc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chenin is high in acidity, with apple, quince and honey",
+        "It makes dry, sweet and sparkling wines",
+        "The Loire and South Africa are its homes",
+        "It ages for decades"
+      ]
+    }
+  ]
+}

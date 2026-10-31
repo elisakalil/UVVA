@@ -1,0 +1,72 @@
+{
+  "id": "path-21-l03",
+  "moduleId": "path-21",
+  "order": 3,
+  "title": "The Rhine",
+  "subtitle": "Rheingau, Pfalz and Rheinhessen",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Rheingau",
+    "Describe the Pfalz and Rheinhessen",
+    "Compare their styles with the Mosel"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Rheingau",
+      "body": "Where the Rhine turns west for about 30 km, the Rheingau faces south across the river, sheltered by the Taunus hills. Riesling covers about 80% of plantings, with Spätburgunder, Germany's Pinot Noir, at Assmannshausen. The wines are fuller and drier than the Mosel's. Schloss Johannisberg claims the discovery of Spätlese in 1775, when the harvest messenger arrived late.",
+      "highlight": "South-facing, Riesling, fuller"
+    },
+    {
+      "type": "concept",
+      "title": "Pfalz and Rheinhessen",
+      "body": "The Pfalz, south of Rheinhessen, is Germany's warmest and sunniest region, sheltered by the Haardt mountains, an extension of the Vosges. It makes rich dry Rieslings, Pinot Noir and many other grapes. Rheinhessen is Germany's largest region, once known for cheap Liebfraumilch, now a source of exciting dry wines from young producers.",
+      "highlight": "Pfalz: warm and dry. Rheinhessen: large and reborn."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which statements about the Pfalz are true?",
+      "options": [
+        "It is one of Germany's warmest regions",
+        "It is sheltered by the Haardt mountains",
+        "It makes mainly sweet Riesling",
+        "It continues the Alsace landscape north"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "The Pfalz makes mainly dry wines; its mountains are an extension of the Vosges."
+    },
+    {
+      "type": "concept",
+      "title": "Compared with the Mosel",
+      "body": "Rhine wines are generally riper and fuller than Mosel wines, with more alcohol and more often dry. The Mosel's slate gives a lighter, more delicate style; the Rheingau and Pfalz, with warmer sites and varied soils, give broader wines. Pinot Noir is increasingly important in the Pfalz and Baden.",
+      "highlight": "Rhine: fuller and drier"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which region claims the discovery of Spätlese?",
+      "options": [
+        "Pfalz",
+        "Rheingau",
+        "Mosel",
+        "Rheinhessen"
+      ],
+      "answer": 1,
+      "explanation": "Schloss Johannisberg in the Rheingau tells the story of the late messenger in 1775."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Rheingau makes fuller Riesling on south-facing slopes",
+        "The Pfalz is warm and dry; Rheinhessen is large and revived",
+        "Rhine wines are generally riper and drier than the Mosel's"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "path-16-l05",
+  "moduleId": "path-16",
+  "order": 5,
+  "title": "Pests and diseases",
+  "subtitle": "The grower's enemies",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the main fungal diseases",
+    "Describe the main pests",
+    "Explain how growers protect vines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fungal diseases",
+      "body": "Powdery mildew, or oidium, covers leaves and berries with grey powder; it likes warm, shady conditions. Downy mildew, or peronospora, spreads in warm, wet weather. Botrytis bunch rot ruins grapes in wet harvests. All three came, or spread, in the 19th century. Sulphur sprays control powdery mildew; copper sprays, like Bordeaux mixture, control downy mildew.",
+      "highlight": "Powdery: sulphur. Downy: copper."
+    },
+    {
+      "type": "concept",
+      "title": "Pests and viruses",
+      "body": "Phylloxera attacks roots; grafting is the defence. Insects like grape moths damage berries and open the door to rot. Birds and wild boar eat ripe grapes. Viruses, like leafroll, spread through cuttings and insects; they reduce yield and delay ripening, and the only cure is replanting with clean material. Trunk diseases slowly kill old vines.",
+      "highlight": "Grafting for phylloxera; clean stock for viruses"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each problem to its main control.",
+      "pairs": [
+        {
+          "left": "Powdery mildew",
+          "right": "Sulphur sprays"
+        },
+        {
+          "left": "Downy mildew",
+          "right": "Copper sprays"
+        },
+        {
+          "left": "Phylloxera",
+          "right": "Grafted rootstocks"
+        },
+        {
+          "left": "Leafroll virus",
+          "right": "Clean planting material"
+        }
+      ],
+      "explanation": "Each threat has its own defence."
+    },
+    {
+      "type": "concept",
+      "title": "Integrated protection",
+      "body": "Modern growers combine methods: canopy management for airflow, resistant rootstocks, weather-based spraying only when risk is high, and natural predators. Pheromone traps confuse grape moths so they can't mate. New disease-resistant varieties, called PIWI, are being planted to cut spraying.",
+      "highlight": "Prevent first, spray when needed"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which conditions favour downy mildew?",
+      "options": [
+        "Warm temperatures",
+        "Wet weather",
+        "Dry heat",
+        "Dense, damp canopies"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Downy mildew needs warmth and moisture. Dry heat discourages it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Powdery and downy mildew and botrytis are the main fungal threats",
+        "Grafting stops phylloxera; clean stock limits viruses",
+        "Integrated protection combines canopy work, timing and natural tools"
+      ]
+    }
+  ]
+}

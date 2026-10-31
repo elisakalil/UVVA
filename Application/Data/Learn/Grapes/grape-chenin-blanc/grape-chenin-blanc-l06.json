@@ -1,0 +1,60 @@
+{
+  "id": "grape-chenin-blanc-l06",
+  "moduleId": "grape-chenin-blanc",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Chenin Blanc",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair dry and sweet Chenin with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dry and sweet",
+      "body": "Dry Chenin suits pork, chicken, river fish with butter sauce, goat's cheese and mildly spiced dishes. Off-dry Vouvray suits Thai food, pork with apples and spicy Asian dishes. Sweet Layon and Quarts de Chaume suit fruit tarts, blue cheese and foie gras. Sparkling Chenin suits aperitifs.",
+      "highlight": "Pork, goat's cheese, fruit tarts"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve dry Chenin at 10 to 12 degrees, sweet at 8 to 10. Fresh styles are best young. Top dry Vouvray and Savennières age 20 years or more; sweet Chenin from great vintages 50 years or more, thanks to acidity.",
+      "highlight": "Sweet Chenin ages 50 years or more"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits an off-dry Vouvray?",
+      "options": [
+        "Thai green curry",
+        "Steak",
+        "Raw oysters with vinegar",
+        "Chocolate cake"
+      ],
+      "answer": 0,
+      "explanation": "A touch of sweetness and high acidity calm the spice."
+    },
+    {
+      "type": "tip",
+      "body": "Chenin and goat's cheese is a Loire classic. Try a dry Vouvray or Saumur with crottin de Chavignol or Sainte-Maure."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sweet Loire Chenin can age for 50 years or more.",
+      "answer": true,
+      "explanation": "Yes. Its high acidity and sugar preserve it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Chenin suits pork and goat's cheese; off-dry suits spice",
+        "Serve dry at 10 to 12 degrees, sweet at 8 to 10",
+        "Top Chenin ages for decades"
+      ]
+    }
+  ]
+}

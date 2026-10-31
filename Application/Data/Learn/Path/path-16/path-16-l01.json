@@ -1,0 +1,62 @@
+{
+  "id": "path-16-l01",
+  "moduleId": "path-16",
+  "order": 1,
+  "title": "The vine's life cycle",
+  "subtitle": "From planting to old age",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe a vine's life from planting to old age",
+    "Explain grafting and rootstocks",
+    "Explain why old vines are prized"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A long life",
+      "body": "A vine produces its first useful crop in its third or fourth year. It reaches full production around year 5 to 7 and can stay productive for 30 to 50 years. Older vines yield less but are often prized. Some vineyards, like in Barossa or parts of Spain, have vines over 100 years old.",
+      "highlight": "First crop in year 3; full by 5 to 7"
+    },
+    {
+      "type": "concept",
+      "title": "Grafting",
+      "body": "In the late 1800s phylloxera, a root-eating aphid from North America, destroyed most of Europe's vines. The solution was grafting European Vitis vinifera onto rootstocks of American species, whose roots resist the insect. Today almost all vineyards are grafted. Rootstocks are chosen for vigour, drought tolerance and soil type. Ungrafted vines survive in sandy soils and isolated places like Chile.",
+      "highlight": "Vinifera on American roots"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are most vines today grafted onto American rootstocks?",
+      "options": [
+        "To grow faster",
+        "To resist phylloxera",
+        "To change the grape variety",
+        "To produce more sugar"
+      ],
+      "answer": 1,
+      "explanation": "American species evolved with phylloxera and resist it. Grafting lets Vitis vinifera grow safely on top."
+    },
+    {
+      "type": "concept",
+      "title": "Old vines",
+      "body": "Old vines have deep roots and naturally low yields, so they often give concentrated, balanced fruit and cope better with drought. But there is no legal definition of old vines in most countries. South Africa's Old Vine Project certifies vines over 35 years old, and Barossa has a charter that grades old, survivor, centenarian and ancestor vines.",
+      "highlight": "Deep roots, low yields, balance"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Ungrafted vines still grow in Chile.",
+      "answer": true,
+      "explanation": "Yes. Chile's isolation, protected by the Andes, the Pacific and the Atacama desert, has kept phylloxera out, so many vines grow on their own roots."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A vine crops from year 3 and can produce for decades",
+        "Grafting onto American rootstocks protects against phylloxera",
+        "Old vines give lower yields and often more concentrated fruit"
+      ]
+    }
+  ]
+}

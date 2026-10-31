@@ -1,0 +1,66 @@
+{
+  "id": "grape-sangiovese-l05",
+  "moduleId": "grape-sangiovese",
+  "order": 5,
+  "title": "Super Tuscans",
+  "subtitle": "Breaking the rules",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how the Super Tuscans began",
+    "Name key Super Tuscan wines",
+    "Explain their effect on Italian law"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The rebels",
+      "body": "In the 1960s and 1970s, Chianti rules required white grapes in the blend and limited international grapes. Some producers wanted to make the best wine they could instead. Sassicaia, first sold in 1971, used Cabernet Sauvignon. Tignanello, in 1971, blended Sangiovese with Cabernet in small barrels, with no white grapes.",
+      "highlight": "Sassicaia and Tignanello, 1971"
+    },
+    {
+      "type": "concept",
+      "title": "Table wine prices",
+      "body": "Because they broke DOC rules, these wines had to be sold as Vino da Tavola, the lowest category, yet sold for more than any Chianti. The press named them Super Tuscans. In 1992, Italy created IGT to give them a category; Sassicaia got its own DOC in 2013. Chianti Classico's rules changed too.",
+      "highlight": "IGT created in 1992"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The first Super Tuscans had to be labelled as simple table wine.",
+      "answer": true,
+      "explanation": "Yes. Breaking DOC rules meant they could only be sold as Vino da Tavola."
+    },
+    {
+      "type": "concept",
+      "title": "Today",
+      "body": "Super Tuscans include Sangiovese-based wines, like Flaccianello and Pergole Torte, which is pure Sangiovese, and Bordeaux blends from Bolgheri, like Ornellaia. Many use small French oak. Since Chianti Classico now allows 100% Sangiovese, some producers have returned to the DOCG.",
+      "highlight": "Sangiovese and Bordeaux styles"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Super Tuscans?",
+      "options": [
+        "Sassicaia",
+        "Tignanello",
+        "Ornellaia",
+        "Barolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Barolo is a Piedmont DOCG made from Nebbiolo."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Super Tuscans broke DOC rules in the 1970s",
+        "They led to the IGT category in 1992",
+        "They include Sangiovese and Bordeaux-style wines"
+      ]
+    }
+  ]
+}

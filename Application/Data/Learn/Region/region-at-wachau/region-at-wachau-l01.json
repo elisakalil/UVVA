@@ -1,0 +1,62 @@
+{
+  "id": "region-at-wachau-l01",
+  "moduleId": "region-at-wachau",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Terraces above the Danube",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Wachau's landscape",
+    "Explain its climate",
+    "Explain its terraces"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A river valley",
+      "body": "The Wachau is a narrow, 30 km stretch of the Danube valley in Lower Austria, about 80 km west of Vienna, between Melk and Krems. Vineyards climb steep, mostly south-facing slopes on stone terraces. It's small, about 1,300 hectares. Its landscape is a UNESCO World Heritage Site since 2000.",
+      "highlight": "30 km of the Danube"
+    },
+    {
+      "type": "concept",
+      "title": "Two climates meet",
+      "body": "The Wachau sits where cool air from the west, the Waldviertel forest, meets warm Pannonian air from the east. Cool nights from the forest keep acidity and aroma; warm days ripen the grapes. The Danube moderates temperatures. The result: ripe, powerful wines with fresh acidity.",
+      "highlight": "Cool forest air meets Pannonian warmth"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What gives the Wachau's wines both ripeness and freshness?",
+      "options": [
+        "Warm Pannonian days and cool forest nights",
+        "Sea breezes",
+        "Very high altitude only",
+        "Irrigation"
+      ],
+      "answer": 0,
+      "explanation": "Two air masses meet over the valley."
+    },
+    {
+      "type": "concept",
+      "title": "Terraces",
+      "body": "The terraces, held by dry-stone walls, were built over centuries, many by monks. They prevent erosion and create flat strips on slopes too steep to work otherwise. Soils on the terraces are primary rock, gneiss and granite, while lower slopes have loess. Maintaining them is costly; work is by hand.",
+      "highlight": "Dry-stone walls, gneiss and loess"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Wachau's landscape is a UNESCO World Heritage Site.",
+      "answer": true,
+      "explanation": "Yes, since 2000."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Wachau is a 30 km stretch of the Danube",
+        "Cool forest nights meet warm Pannonian days",
+        "Steep stone terraces hold its vines"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "grape-palomino-l02",
+  "moduleId": "grape-palomino",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Jerez and the Canaries",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Palomino's main region",
+    "Explain albariza soil",
+    "Name other places that grow it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Jerez",
+      "body": "Palomino is about 95% of the vineyards of Jerez, in Andalusia, around Jerez de la Frontera, El Puerto de Santa María and Sanlúcar de Barrameda, the Sherry triangle. The climate is hot, with over 300 sunny days a year, and two winds: the humid Poniente from the Atlantic and the hot, dry Levante from the east.",
+      "highlight": "About 95% of Jerez"
+    },
+    {
+      "type": "concept",
+      "title": "Albariza",
+      "body": "The best vineyards are on albariza, a brilliant white soil with up to 40% chalk, formed from marine diatoms. It absorbs winter rain like a sponge and holds it for the dry summer, then forms a hard crust that reduces evaporation. Its white surface reflects sunlight. Pagos, named vineyard areas, like Macharnudo and Carrascal, sit on albariza.",
+      "highlight": "Albariza: chalky, water-holding"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Jerez.",
+      "pairs": [
+        {
+          "left": "Albariza",
+          "right": "White chalky soil"
+        },
+        {
+          "left": "Poniente",
+          "right": "Humid Atlantic wind"
+        },
+        {
+          "left": "Levante",
+          "right": "Hot, dry east wind"
+        },
+        {
+          "left": "Pago",
+          "right": "Named vineyard area"
+        }
+      ],
+      "explanation": "Jerez has its own vocabulary of land and wind."
+    },
+    {
+      "type": "concept",
+      "title": "Elsewhere",
+      "body": "Palomino is also grown in the Canary Islands, as Listán Blanco, where it makes dry table wines on volcanic soil. Galicia, South Africa, Australia and California grow some, once for fortified wines. Today, a few Jerez producers make unfortified Palomino table wines, showing the albariza in a new way.",
+      "highlight": "Listán Blanco in the Canaries"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is special about albariza soil?",
+      "options": [
+        "It stores winter rain for summer",
+        "It's volcanic",
+        "It's red clay",
+        "It's pure sand"
+      ],
+      "answer": 0,
+      "explanation": "Its chalky structure holds water deep for the dry summer."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Palomino is about 95% of Jerez",
+        "Albariza stores water and reflects sun",
+        "It's Listán Blanco in the Canaries"
+      ]
+    }
+  ]
+}

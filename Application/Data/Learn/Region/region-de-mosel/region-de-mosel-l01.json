@@ -1,0 +1,62 @@
+{
+  "id": "region-de-mosel-l01",
+  "moduleId": "region-de-mosel",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "A winding river",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Mosel's geography",
+    "Explain its cool climate",
+    "Explain its sections"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The river",
+      "body": "The Mosel river rises in France and winds north-east through western Germany to join the Rhine at Koblenz. Its German wine region follows about 240 km of loops and bends, with vineyards on the steep banks. It has about 8,700 hectares. It includes two tributaries, the Saar and the Ruwer.",
+      "highlight": "240 km of loops"
+    },
+    {
+      "type": "concept",
+      "title": "Cool, northern climate",
+      "body": "The Mosel lies at about 50 degrees north, one of the coolest quality wine regions in the world. Average growing season temperatures are low, and ripening is a challenge. The river helps: it moderates temperature, reflects sunlight onto the slopes, and its loops create south-facing banks that catch every hour of sun.",
+      "highlight": "About 50 degrees north"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does the river help Mosel vineyards?",
+      "options": [
+        "It moderates temperature and reflects sunlight",
+        "It irrigates them",
+        "It brings sea air",
+        "It cools them in summer"
+      ],
+      "answer": 0,
+      "explanation": "Water stores heat and reflects light onto the slopes."
+    },
+    {
+      "type": "concept",
+      "title": "Three sections",
+      "body": "The Mosel is often divided into the Upper Mosel, near Luxembourg, on limestone, growing Elbling; the Middle Mosel, Mittelmosel, the heart, with famous villages like Piesport, Bernkastel, Graach, Wehlen and Ürzig; and the Lower Mosel, Terrassenmosel, near Koblenz, with very steep terraces. The Saar and Ruwer join in the south.",
+      "highlight": "Upper, Middle and Lower Mosel"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Middle Mosel is home to villages like Bernkastel and Wehlen.",
+      "answer": true,
+      "explanation": "Yes. It's the heart of the region."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Mosel winds 240 km through western Germany",
+        "It's very cool, at about 50 degrees north",
+        "The river and its loops help ripening on south-facing banks"
+      ]
+    }
+  ]
+}

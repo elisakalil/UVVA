@@ -1,0 +1,77 @@
+{
+  "id": "path-19-l05",
+  "moduleId": "path-19",
+  "order": 5,
+  "title": "Central Italy",
+  "subtitle": "Marche, Abruzzo, Umbria and Lazio",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the main wines of central Italy",
+    "Name key grapes of the Adriatic coast",
+    "Explain the role of Verdicchio and Montepulciano"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Adriatic side",
+      "body": "On the Adriatic coast, Marche and Abruzzo dominate. Marche's Verdicchio, from Castelli di Jesi and Matelica, gives crisp, almond-scented whites that can age well. Abruzzo's Montepulciano gives deep, soft, plummy reds, and its rosé is called Cerasuolo d'Abruzzo. Conero, near Ancona, makes structured Montepulciano reds.",
+      "highlight": "Verdicchio and Montepulciano"
+    },
+    {
+      "type": "concept",
+      "title": "Umbria and Lazio",
+      "body": "Umbria, landlocked, has Orvieto, a white blend led by Grechetto and Trebbiano, and Montefalco Sagrantino, one of the most tannic red grapes in the world. Lazio, around Rome, is known for Frascati, a light white from Malvasia and Trebbiano. Altitude and volcanic soils help keep these wines fresh.",
+      "highlight": "Sagrantino: Italy's most tannic red"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its region.",
+      "pairs": [
+        {
+          "left": "Verdicchio",
+          "right": "Marche"
+        },
+        {
+          "left": "Montepulciano d'Abruzzo",
+          "right": "Abruzzo"
+        },
+        {
+          "left": "Montefalco Sagrantino",
+          "right": "Umbria"
+        },
+        {
+          "left": "Frascati",
+          "right": "Lazio"
+        }
+      ],
+      "explanation": "Central Italy offers distinct wines on both sides of the Apennines."
+    },
+    {
+      "type": "tip",
+      "body": "Verdicchio is one of Italy's best-value whites. Good ones, like Castelli di Jesi Riserva, gain honey and almond notes with five years in bottle."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Cerasuolo d'Abruzzo is a rosé made from the ____ grape.",
+      "options": [
+        "Montepulciano",
+        "Sangiovese",
+        "Verdicchio",
+        "Sagrantino"
+      ],
+      "answer": "Montepulciano",
+      "explanation": "Montepulciano's deep colour gives Cerasuolo its cherry-red hue."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marche's Verdicchio is a crisp, age-worthy white",
+        "Abruzzo's Montepulciano gives soft reds and Cerasuolo rosé",
+        "Umbria has Sagrantino and Orvieto; Lazio has Frascati"
+      ]
+    }
+  ]
+}

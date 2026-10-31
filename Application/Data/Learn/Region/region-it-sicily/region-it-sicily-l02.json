@@ -1,0 +1,77 @@
+{
+  "id": "region-it-sicily-l02",
+  "moduleId": "region-it-sicily",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Native grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Sicily's main red grapes",
+    "Name its main white grapes",
+    "Explain the role of international grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Nero d'Avola is Sicily's most planted red: dark, juicy, with black cherry, plum and fresh acidity. Nerello Mascalese, on Etna, gives pale, perfumed, firm wines; Nerello Cappuccio is its partner. Frappato, in the south-east, gives light, floral reds and blends with Nero d'Avola in Cerasuolo di Vittoria.",
+      "highlight": "Nero d'Avola, Nerello, Frappato"
+    },
+    {
+      "type": "concept",
+      "title": "Whites",
+      "body": "Catarratto is Sicily's most planted grape, used for everyday whites and Marsala. Grillo, a cross of Catarratto and Muscat of Alexandria, gives fresh, citrus whites and is a Marsala grape. Carricante, on Etna, gives taut, citrus, age-worthy whites. Zibibbo, Muscat of Alexandria, makes sweet Passito di Pantelleria.",
+      "highlight": "Catarratto, Grillo, Carricante, Zibibbo"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Nero d'Avola",
+          "right": "Main red, dark and juicy"
+        },
+        {
+          "left": "Nerello Mascalese",
+          "right": "Etna's red"
+        },
+        {
+          "left": "Carricante",
+          "right": "Etna's white"
+        },
+        {
+          "left": "Zibibbo",
+          "right": "Pantelleria sweet wine"
+        }
+      ],
+      "explanation": "Sicily's grapes are native and varied."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Grillo from western Sicily. It's a fresh, citrus white that offers great value."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Sicily's most planted grape?",
+      "options": [
+        "Catarratto",
+        "Nero d'Avola",
+        "Syrah",
+        "Chardonnay"
+      ],
+      "answer": 0,
+      "explanation": "Catarratto, a white grape, covers the most area."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nero d'Avola, Nerello Mascalese and Frappato lead the reds",
+        "Catarratto, Grillo and Carricante lead the whites",
+        "Zibibbo makes Pantelleria's sweet wine"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "region-pt-madeira-l06",
+  "moduleId": "region-pt-madeira",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Madeira",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Madeira's island and grapes",
+    "Explain its heating methods",
+    "Read and pair Madeira"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Order the noble grapes from driest to sweetest.",
+      "items": [
+        "Sercial",
+        "Verdelho",
+        "Boal",
+        "Malvasia"
+      ],
+      "explanation": "Malvasia is the richest."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Canteiro",
+          "right": "Slow ageing in lofts"
+        },
+        {
+          "left": "Estufagem",
+          "right": "Heating in tanks"
+        },
+        {
+          "left": "Levadas",
+          "right": "Irrigation canals"
+        },
+        {
+          "left": "Frasqueira",
+          "right": "Single grape, single year"
+        }
+      ],
+      "explanation": "Madeira's vocabulary is unique."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Madeira last so long once opened?",
+      "options": [
+        "It's already heated and oxidised",
+        "It's frozen",
+        "It has no alcohol",
+        "It's sealed with wax"
+      ],
+      "answer": 0,
+      "explanation": "Further air does little harm."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Madeira's noble grapes?",
+      "options": [
+        "Sercial",
+        "Verdelho",
+        "Boal",
+        "Tinta Roriz"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Tinta Roriz is a Douro grape; the fourth noble grape is Malvasia."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tinta Negra makes most Madeira.",
+      "answer": true,
+      "explanation": "Yes, about 80%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Madeira is a volcanic Atlantic island with steep terraces",
+        "It's fortified, then heated by estufagem or canteiro",
+        "Noble grapes run from dry Sercial to rich Malvasia",
+        "It's almost indestructible and keeps for months"
+      ]
+    }
+  ]
+}

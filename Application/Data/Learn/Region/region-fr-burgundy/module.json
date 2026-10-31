@@ -1,0 +1,29 @@
+{
+  "id": "region-fr-burgundy",
+  "kind": "region",
+  "order": 2,
+  "country": "France",
+  "countryCode": "FR",
+  "title": "Burgundy",
+  "grapes": [
+    "Pinot Noir",
+    "Chardonnay",
+    "Aligoté",
+    "Gamay"
+  ],
+  "points": "2 2 1 2 = 7",
+  "complexity": "A",
+  "description": "A narrow strip of limestone slopes where single vineyards, called climats, have been mapped for a thousand years.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-fr-burgundy-l01",
+    "region-fr-burgundy-l02",
+    "region-fr-burgundy-l03",
+    "region-fr-burgundy-l04",
+    "region-fr-burgundy-l05",
+    "region-fr-burgundy-l06",
+    "region-fr-burgundy-l07"
+  ]
+}

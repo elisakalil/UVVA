@@ -1,0 +1,62 @@
+{
+  "id": "grape-malbec-l02",
+  "moduleId": "grape-malbec",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "From Cahors to the Andes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Malbec's main regions",
+    "Explain why Argentina became its home",
+    "Name other countries that grow it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Argentina's grape",
+      "body": "Malbec arrived in Argentina in 1853, brought by French agronomist Michel Aimé Pouget for Mendoza's new agricultural school. It thrived in the dry, sunny climate, free of the rot that troubled it in France. Today Argentina grows over 75% of the world's Malbec, about 45,000 hectares. April 17 is celebrated as World Malbec Day.",
+      "highlight": "Arrived in 1853; Argentina has over 75%"
+    },
+    {
+      "type": "concept",
+      "title": "Why it thrives there",
+      "body": "Mendoza is a high desert. Little rain means little rot. Strong sun ripens Malbec fully, giving soft tannins and ripe fruit. Cool nights at altitude keep acidity. Irrigation lets growers control water. In France's wetter climate, Malbec suffers from coulure, poor fruit set, which lowers yields.",
+      "highlight": "Dry, sunny, few diseases"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most of the world's Malbec is grown in France.",
+      "answer": false,
+      "explanation": "Not true. Argentina grows over 75% of it. France has a small area, mainly in Cahors."
+    },
+    {
+      "type": "concept",
+      "title": "Other homes",
+      "body": "Beyond Argentina and Cahors, Malbec grows in Chile, often blended; in Bordeaux, where it's a minor blending grape; in the Loire, as Côt; and in California, Washington and Australia. Argentina's Salta and Patagonia also make distinct styles: very intense at altitude in Salta, fresher in Patagonia's cool wind.",
+      "highlight": "Chile, Bordeaux, Loire, US"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Who brought Malbec to Argentina?",
+      "options": [
+        "Basque immigrants",
+        "Michel Aimé Pouget",
+        "Robert Mondavi",
+        "Spanish missionaries"
+      ],
+      "answer": 1,
+      "explanation": "Pouget, a French agronomist, brought cuttings to Mendoza in 1853."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Argentina grows over 75% of the world's Malbec",
+        "Mendoza's dry, sunny climate keeps it healthy",
+        "It also grows in Cahors, Chile, Bordeaux and the US"
+      ]
+    }
+  ]
+}

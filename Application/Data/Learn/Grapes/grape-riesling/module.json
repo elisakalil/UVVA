@@ -1,0 +1,30 @@
+{
+  "id": "grape-riesling",
+  "kind": "grape",
+  "order": 45,
+  "color": "white",
+  "title": "Riesling",
+  "aliases": [],
+  "origin": "Germany",
+  "countries": [
+    "Germany",
+    "Austria",
+    "France",
+    "Australia"
+  ],
+  "points": "2 2 2 2 = 8",
+  "complexity": "A",
+  "description": "Germany's great grape: piercing acidity, pure fruit and every sweetness level, from bone dry to luscious.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "grape-riesling-l01",
+    "grape-riesling-l02",
+    "grape-riesling-l03",
+    "grape-riesling-l04",
+    "grape-riesling-l05",
+    "grape-riesling-l06",
+    "grape-riesling-l07"
+  ]
+}

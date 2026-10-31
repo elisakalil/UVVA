@@ -1,0 +1,77 @@
+{
+  "id": "path-21-l02",
+  "moduleId": "path-21",
+  "order": 2,
+  "title": "The Mosel",
+  "subtitle": "Slate, slopes and Riesling",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Mosel's slopes and soils",
+    "Explain the Mosel style",
+    "Name the Saar and Ruwer"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Steep slate",
+      "body": "The Mosel winds through western Germany at about 50 degrees north, one of the coolest regions for quality wine. The best vineyards rise on steep, south-facing slopes above the river, some over 60 degrees, like the Bremmer Calmont. Dark slate soils absorb heat and the river reflects light, helping Riesling ripen.",
+      "highlight": "Slopes, slate and the river"
+    },
+    {
+      "type": "concept",
+      "title": "The Mosel style",
+      "body": "Mosel Riesling is light, often 7.5 to 10% alcohol, with high acidity, green apple, peach and floral notes. Many are off-dry or sweet, with sugar balancing fierce acidity. They age for decades. Working these slopes is mostly by hand and costs several times more than on flat land.",
+      "highlight": "Light, high acid, often off-dry"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Mosel feature to its effect.",
+      "pairs": [
+        {
+          "left": "Steep slopes",
+          "right": "More sun, by hand"
+        },
+        {
+          "left": "Slate soil",
+          "right": "Absorbs and releases heat"
+        },
+        {
+          "left": "The river",
+          "right": "Reflects light, moderates"
+        },
+        {
+          "left": "High acidity",
+          "right": "Balances sweetness"
+        }
+      ],
+      "explanation": "Every feature helps a cool region ripen Riesling."
+    },
+    {
+      "type": "tip",
+      "body": "A Mosel Kabinett at 8% alcohol is one of the best lunchtime wines in the world. Light, refreshing and great with spicy food."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can Riesling ripen in a region as cool as the Mosel?",
+      "options": [
+        "It is irrigated",
+        "Steep south-facing slate slopes capture heat and light",
+        "It is harvested in summer",
+        "The region is very dry"
+      ],
+      "answer": 1,
+      "explanation": "Slope, aspect, slate and the river all add warmth and light."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Mosel's steep slate slopes help Riesling ripen at 50 degrees north",
+        "Mosel Riesling is light, high in acidity and often off-dry",
+        "Its tributaries, the Saar and Ruwer, are even cooler"
+      ]
+    }
+  ]
+}

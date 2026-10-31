@@ -1,0 +1,20 @@
+{
+  "id": "path-12",
+  "kind": "path",
+  "order": 12,
+  "level": "Intermediate",
+  "complexity": "C",
+  "title": "Sparkling Wine",
+  "description": "Where the bubbles come from, and how each method gives a different wine.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-12-l01",
+    "path-12-l02",
+    "path-12-l03",
+    "path-12-l04",
+    "path-12-l05",
+    "path-12-l06"
+  ]
+}

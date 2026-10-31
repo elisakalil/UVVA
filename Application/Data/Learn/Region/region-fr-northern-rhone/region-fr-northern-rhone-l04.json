@@ -1,0 +1,60 @@
+{
+  "id": "region-fr-northern-rhone-l04",
+  "moduleId": "region-fr-northern-rhone",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading the northern Rhône and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a northern Rhône label",
+    "Pair Syrah and Viognier with food",
+    "Serve and age them"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels name the appellation, like Côte-Rôtie or Crozes-Hermitage, the producer and sometimes a lieu-dit, a named vineyard. Grapes aren't usually named, but every red is Syrah. Négociants like Guigal, Chapoutier and Jaboulet are important, alongside small domaines.",
+      "highlight": "Appellation means Syrah"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Northern Rhône Syrah suits lamb with herbs and black pepper, game, duck and grilled beef; its pepper echoes peppercorn sauces. Condrieu suits lobster, crab and dishes with apricot or mild spice. White Hermitage suits rich fish and truffles. Serve reds at 16 to 18 degrees; decant young Hermitage and Cornas.",
+      "highlight": "Lamb, game, peppercorn sauce"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits a Cornas or Hermitage?",
+      "options": [
+        "Venison with peppercorn sauce",
+        "Raw oysters",
+        "Lemon sorbet",
+        "Green salad"
+      ],
+      "answer": 0,
+      "explanation": "Rich game and pepper suit Syrah's power and spice."
+    },
+    {
+      "type": "tip",
+      "body": "Crozes-Hermitage and Saint-Joseph from good producers offer a taste of northern Rhône Syrah at a fraction of Hermitage prices."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Great Hermitage can age for decades.",
+      "answer": true,
+      "explanation": "Yes, both red and white."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels name the appellation; reds are Syrah",
+        "Syrah suits lamb, game and peppercorn sauce",
+        "Hermitage and Cornas benefit from decanting and age"
+      ]
+    }
+  ]
+}

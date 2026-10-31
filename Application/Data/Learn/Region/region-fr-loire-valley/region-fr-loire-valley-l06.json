@@ -1,0 +1,96 @@
+{
+  "id": "region-fr-loire-valley-l06",
+  "moduleId": "region-fr-loire-valley",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about the Loire",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Loire's areas",
+    "Link grapes to places",
+    "Read and pair Loire wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each area to its signature wine.",
+      "pairs": [
+        {
+          "left": "Pays Nantais",
+          "right": "Muscadet"
+        },
+        {
+          "left": "Anjou",
+          "right": "Savennières and Layon"
+        },
+        {
+          "left": "Touraine",
+          "right": "Vouvray and Chinon"
+        },
+        {
+          "left": "Central Vineyards",
+          "right": "Sancerre"
+        }
+      ],
+      "explanation": "Four areas, four signatures."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What soil gives Pouilly-Fumé its smoky character?",
+      "options": [
+        "Flint, silex",
+        "Granite",
+        "Clay",
+        "Sand"
+      ],
+      "answer": 0,
+      "explanation": "Silex, or flint."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Saumur makes traditional method sparkling wine.",
+      "answer": true,
+      "explanation": "Yes, Saumur Brut, mainly from Chenin Blanc."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes lead the Loire?",
+      "options": [
+        "Chenin Blanc",
+        "Sauvignon Blanc",
+        "Cabernet Franc",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is Italian."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Muscadet aged on its lees until bottling is labelled ____ lie.",
+      "options": [
+        "sur",
+        "sous",
+        "sans",
+        "avec"
+      ],
+      "answer": "sur",
+      "explanation": "Sur lie."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Loire runs from maritime Nantes to continental Sancerre",
+        "Melon, Chenin, Cabernet Franc and Sauvignon lead",
+        "It makes every style, always with high acidity",
+        "It offers some of France's best value"
+      ]
+    }
+  ]
+}

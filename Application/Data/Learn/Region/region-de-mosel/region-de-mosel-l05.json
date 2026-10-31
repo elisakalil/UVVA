@@ -1,0 +1,62 @@
+{
+  "id": "region-de-mosel-l05",
+  "moduleId": "region-de-mosel",
+  "order": 5,
+  "title": "Saar and Ruwer",
+  "subtitle": "The cool tributaries",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Saar",
+    "Describe the Ruwer",
+    "Explain their style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Saar",
+      "body": "The Saar joins the Mosel near Trier. It's cooler and windier than the Middle Mosel, and for centuries grapes ripened fully only in good years. In warm years, its Rieslings are among the most precise and electric in the world, with steely acidity. Scharzhofberg, owned largely by Egon Müller, is its most famous vineyard.",
+      "highlight": "Scharzhofberg and Egon Müller"
+    },
+    {
+      "type": "concept",
+      "title": "The Ruwer",
+      "body": "The Ruwer is a small tributary near Trier, with only a few estates. Its wines are delicate, floral and racy. Maximin Grünhaus and Karthäuserhofberg are famous estates, both former monastic properties. Like the Saar, it was officially part of the Mosel-Saar-Ruwer region until 2007, when the region was renamed simply Mosel.",
+      "highlight": "Maximin Grünhaus, Karthäuserhof"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How do the Saar and Ruwer differ from the Middle Mosel?",
+      "options": [
+        "They're cooler, giving racier wines",
+        "They're much warmer",
+        "They're flat",
+        "They grow mainly red grapes"
+      ],
+      "answer": 0,
+      "explanation": "Cooler conditions give steely, precise Riesling."
+    },
+    {
+      "type": "concept",
+      "title": "Climate change",
+      "body": "Warmer summers since the 1990s have helped the Saar and Ruwer ripen grapes more reliably. What was once a marginal climate now gives balanced wines more often. This has made these cool tributaries even more prized for freshness.",
+      "highlight": "Warmer summers help"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The region was renamed from Mosel-Saar-Ruwer to Mosel in 2007.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Saar is cool and windy, home of Scharzhofberg",
+        "The Ruwer is small, delicate and floral",
+        "Warmer summers have helped them ripen more reliably"
+      ]
+    }
+  ]
+}

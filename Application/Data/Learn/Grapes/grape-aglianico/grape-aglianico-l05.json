@@ -1,0 +1,96 @@
+{
+  "id": "grape-aglianico-l05",
+  "moduleId": "grape-aglianico",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Aglianico",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Aglianico",
+    "Know its regions and wines",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which combination makes Aglianico distinctive?",
+      "options": [
+        "Low tannin and low acidity",
+        "High tannin and high acidity",
+        "Pale colour and sweetness",
+        "High sugar and low alcohol"
+      ],
+      "answer": 1,
+      "explanation": "It's rare for a southern red to keep such high acidity."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Aglianico.",
+      "pairs": [
+        {
+          "left": "Taurasi",
+          "right": "First southern DOCG"
+        },
+        {
+          "left": "Vulture",
+          "right": "Extinct volcano"
+        },
+        {
+          "left": "November",
+          "right": "Typical harvest"
+        },
+        {
+          "left": "Ragù",
+          "right": "Classic pairing"
+        }
+      ],
+      "explanation": "Aglianico's story is volcanic and late-ripening."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Aglianico is grown mainly in northern Italy.",
+      "answer": false,
+      "explanation": "Not true. Its heartland is Campania and Basilicata, in the south."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which help Aglianico keep freshness?",
+      "options": [
+        "Altitude",
+        "Late ripening into autumn",
+        "Cool nights",
+        "Very hot nights"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Hot nights would burn off acidity."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Aglianico is nicknamed the ____ of the south.",
+      "options": [
+        "Barolo",
+        "Champagne",
+        "Bordeaux",
+        "Rioja"
+      ],
+      "answer": "Barolo",
+      "explanation": "For its structure, acidity and ageing potential, like Nebbiolo's Barolo."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Aglianico is tannic, acidic and late-ripening",
+        "Campania's Taurasi and Basilicata's Vulture are its great wines",
+        "Volcanic soils and altitude shape its style",
+        "It ages well and suits rich, savoury food"
+      ]
+    }
+  ]
+}

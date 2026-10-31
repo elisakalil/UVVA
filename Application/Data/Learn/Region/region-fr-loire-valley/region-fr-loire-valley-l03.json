@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-loire-valley-l03",
+  "moduleId": "region-fr-loire-valley",
+  "order": 3,
+  "title": "The western Loire",
+  "subtitle": "Muscadet, Anjou and Saumur",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Muscadet",
+    "Describe Anjou's whites and sweet wines",
+    "Describe Saumur"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Muscadet",
+      "body": "In the Pays Nantais, Muscadet is made from Melon de Bourgogne: light, crisp and saline. Muscadet Sèvre et Maine is the main appellation. Sur lie wines rest on their lees until bottling, gaining texture and a slight spritz. Since 2011, crus communaux, like Clisson and Gorges, show longer-aged, serious Muscadet.",
+      "highlight": "Melon, sur lie, crus communaux"
+    },
+    {
+      "type": "concept",
+      "title": "Anjou",
+      "body": "Anjou makes Chenin Blanc in every style. Savennières, on schist, gives dry, powerful, long-lived whites. The Layon valley, with autumn mists, gives sweet botrytised wines: Coteaux du Layon, Bonnezeaux and Quarts de Chaume, the Loire's first Grand Cru, in 2011. Anjou also makes rosés like Rosé d'Anjou and Cabernet d'Anjou.",
+      "highlight": "Savennières dry; Layon sweet"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Loire appellation became the first Grand Cru, in 2011?",
+      "options": [
+        "Quarts de Chaume",
+        "Sancerre",
+        "Muscadet",
+        "Chinon"
+      ],
+      "answer": 0,
+      "explanation": "Quarts de Chaume makes sweet, botrytised Chenin."
+    },
+    {
+      "type": "concept",
+      "title": "Saumur",
+      "body": "Saumur, with tuffeau soils and cellars, makes Saumur Brut, a traditional method sparkling wine, mainly from Chenin Blanc, and Saumur-Champigny, a fresh, fruity Cabernet Franc red. Many sparkling houses, like Bouvet-Ladubay and Gratien & Meyer, are based there, ageing wine in tuffeau caves.",
+      "highlight": "Sparkling and Saumur-Champigny"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are western Loire wines?",
+      "options": [
+        "Muscadet",
+        "Savennières",
+        "Saumur-Champigny",
+        "Sancerre"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sancerre is in the Central Vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Muscadet is crisp Melon, often sur lie",
+        "Anjou makes dry Savennières and sweet Layon Chenin",
+        "Saumur makes sparkling wine and Cabernet Franc reds"
+      ]
+    }
+  ]
+}

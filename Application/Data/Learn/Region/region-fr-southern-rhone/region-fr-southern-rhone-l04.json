@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-southern-rhone-l04",
+  "moduleId": "region-fr-southern-rhone",
+  "order": 4,
+  "title": "Tavel and the sweet wines",
+  "subtitle": "Rosé and fortified Muscat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tavel",
+    "Describe Beaumes-de-Venise and Rasteau",
+    "Explain vins doux naturels"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tavel",
+      "body": "Tavel, across the river from Châteauneuf, is France's only appellation for rosé alone. Its rosé is darker and fuller than Provence's, made from Grenache, Cinsault and others with longer skin contact. It's a rosé for food, able to age a few years. Lirac, nearby, makes red, white and rosé.",
+      "highlight": "Rosé-only appellation"
+    },
+    {
+      "type": "concept",
+      "title": "Sweet wines",
+      "body": "Beaumes-de-Venise makes Muscat de Beaumes-de-Venise, a vin doux naturel: fermentation is stopped by adding grape spirit, keeping natural sugar, at 15% or more alcohol. It's golden, with orange blossom, peach and grape. Rasteau also makes a fortified Grenache vin doux naturel, red or amber.",
+      "highlight": "Muscat de Beaumes-de-Venise"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is a vin doux naturel?",
+      "options": [
+        "A wine fortified during fermentation to keep sugar",
+        "A dry rosé",
+        "A sparkling wine",
+        "A wine from dried grapes"
+      ],
+      "answer": 0,
+      "explanation": "Spirit stops the yeast, leaving natural sweetness."
+    },
+    {
+      "type": "concept",
+      "title": "The crus",
+      "body": "Besides Châteauneuf and Tavel, the southern Rhône crus include Gigondas, Vacqueyras, Rasteau, Cairanne, Vinsobres, Lirac and Beaumes-de-Venise. Below them sit Côtes du Rhône Villages, sometimes with a village name, and then Côtes du Rhône. Each step up means stricter rules and usually more character.",
+      "highlight": "Crus, Villages, Côtes du Rhône"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are southern Rhône crus?",
+      "options": [
+        "Gigondas",
+        "Vacqueyras",
+        "Tavel",
+        "Hermitage"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Hermitage is in the northern Rhône."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tavel is France's rosé-only appellation",
+        "Beaumes-de-Venise makes fortified sweet Muscat",
+        "Crus sit above Villages and Côtes du Rhône"
+      ]
+    }
+  ]
+}

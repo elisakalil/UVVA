@@ -1,0 +1,77 @@
+{
+  "id": "grape-gewurztraminer-l02",
+  "moduleId": "grape-gewurztraminer",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Alsace and the cool north",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Gewürztraminer's main regions",
+    "Explain the climate it needs",
+    "Explain its role in Alsace"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Alsace",
+      "body": "Gewürztraminer's most famous home is Alsace, where it's about 20% of plantings and one of the four noble grapes allowed in Grand Cru wines. Alsace's dry, sunny autumns, in the rain shadow of the Vosges, ripen it fully. Germany, Alto Adige, Austria, New Zealand and Oregon also grow it.",
+      "highlight": "Alsace: one of four noble grapes"
+    },
+    {
+      "type": "concept",
+      "title": "Cool climate needed",
+      "body": "Gewürztraminer needs a cool climate: in heat, it ripens too fast, losing what little acidity it has and becoming flabby and oily. It buds early, so it's sensitive to spring frost, and it's prone to disease. Picking time is critical: too early, the aromas are weak; too late, the acidity disappears.",
+      "highlight": "Picking time is critical"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Gewürztraminer.",
+      "pairs": [
+        {
+          "left": "Alsace",
+          "right": "Noble grape, Grand Crus"
+        },
+        {
+          "left": "Alto Adige",
+          "right": "Traminer Aromatico, Tramin"
+        },
+        {
+          "left": "Pfalz",
+          "right": "German Gewürztraminer"
+        },
+        {
+          "left": "Gisborne",
+          "right": "New Zealand plantings"
+        }
+      ],
+      "explanation": "Gewürztraminer thrives in cool regions."
+    },
+    {
+      "type": "tip",
+      "body": "In Alsace, a dry Gewürztraminer and a sweet one can look identical. Some producers use a sweetness scale on the back label; check it before you buy."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why must Gewürztraminer be picked at exactly the right time?",
+      "options": [
+        "Too early, aromas are weak; too late, acidity disappears",
+        "It's frost-proof",
+        "It never ripens",
+        "It's always sweet"
+      ],
+      "answer": 0,
+      "explanation": "The window between aromatic ripeness and flabbiness is narrow."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Alsace is Gewürztraminer's most famous home",
+        "It needs a cool climate to keep balance",
+        "Picking time decides aroma and freshness"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "grape-nerello-mascalese-l04",
+  "moduleId": "grape-nerello-mascalese",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Nerello Mascalese",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Etna Rosso with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Versatile and fresh",
+      "body": "Etna Rosso's freshness and fine tannin suit a wide range: grilled tuna and swordfish, pasta with tomato and aubergine, roast pork, lamb with herbs and mushrooms. Its acidity handles tomato; its moderate weight doesn't overwhelm fish.",
+      "highlight": "Tuna, pasta, mushrooms"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 15 to 17 degrees. Simple Etna Rosso is good within five years; contrada wines from old vines can age 10 to 20 years, gaining earth and dried flowers. A short decant helps young, tannic examples.",
+      "highlight": "Contrada wines age 10 to 20 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can Etna Rosso pair with grilled tuna?",
+      "options": [
+        "Its moderate weight and fine tannin don't overwhelm the fish",
+        "It's very sweet",
+        "It's a white wine",
+        "It's very high in alcohol"
+      ],
+      "answer": 0,
+      "explanation": "Lighter body and fine tannin suit meaty fish."
+    },
+    {
+      "type": "tip",
+      "body": "Try an Etna Rosso with pasta alla Norma, Sicily's aubergine, tomato and ricotta salata pasta. The wine's freshness meets the tomato."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Contrada wines from Etna can age 10 to 20 years.",
+      "answer": true,
+      "explanation": "Yes. Their acidity and tannin let them develop."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Etna Rosso suits tuna, tomato pasta and mushrooms",
+        "Serve at 15 to 17 degrees",
+        "Contrada wines can age 10 to 20 years"
+      ]
+    }
+  ]
+}

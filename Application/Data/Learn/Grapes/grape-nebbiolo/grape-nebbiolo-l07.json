@@ -1,0 +1,96 @@
+{
+  "id": "grape-nebbiolo-l07",
+  "moduleId": "grape-nebbiolo",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Nebbiolo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Nebbiolo",
+    "Compare Barolo and Barbaresco",
+    "Explain its ageing"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aromas define Nebbiolo?",
+      "options": [
+        "Tar and roses",
+        "Lychee and ginger",
+        "Grass and gooseberry",
+        "Butter and toast"
+      ],
+      "answer": 0,
+      "explanation": "Tar and roses is its classic description."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its rule or place.",
+      "pairs": [
+        {
+          "left": "Barolo",
+          "right": "38 months' ageing"
+        },
+        {
+          "left": "Barbaresco",
+          "right": "26 months' ageing"
+        },
+        {
+          "left": "Gattinara",
+          "right": "Northern Piedmont Spanna"
+        },
+        {
+          "left": "Sforzato",
+          "right": "Dried grapes, Valtellina"
+        }
+      ],
+      "explanation": "Nebbiolo has many expressions."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A pale colour in Nebbiolo means low tannin.",
+      "answer": false,
+      "explanation": "Not true. Nebbiolo is pale yet very tannic."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which develop in Nebbiolo with age?",
+      "options": [
+        "Truffle",
+        "Leather",
+        "Dried roses",
+        "Fresh green apple"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Green apple is a young white wine note."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Barolo labels can name official vineyard areas called ____.",
+      "options": [
+        "MGA",
+        "UGA",
+        "AVA",
+        "DOC"
+      ],
+      "answer": "MGA",
+      "explanation": "Menzioni Geografiche Aggiuntive, since 2010."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nebbiolo is pale but highly tannic and acidic",
+        "Barolo and Barbaresco are its great wines",
+        "It needs time; the best age for decades",
+        "It suits truffle, braised beef and aged cheese"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "region-es-jerez-l01",
+  "moduleId": "region-es-jerez",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "The Sherry triangle",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Jerez's location",
+    "Explain albariza soil",
+    "Explain the role of the two winds"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three towns",
+      "body": "Sherry comes from the area around three towns in Andalusia, south-west Spain: Jerez de la Frontera, El Puerto de Santa María and Sanlúcar de Barrameda, the Sherry triangle. The DO is Jerez-Xérès-Sherry, Spain's oldest, from 1933. Wines must age in one of the three towns; Sanlúcar's is called Manzanilla.",
+      "highlight": "Jerez, El Puerto, Sanlúcar"
+    },
+    {
+      "type": "concept",
+      "title": "Albariza",
+      "body": "The best vineyards sit on albariza, a brilliant white soil with up to 40% chalk, formed from ancient marine algae. It soaks up winter rain like a sponge and forms a crust in summer that slows evaporation. Its whiteness reflects sunlight onto the vines. Named vineyard areas, pagos, like Macharnudo, Carrascal and Miraflores, sit on it.",
+      "highlight": "White, chalky, water-holding"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is special about albariza?",
+      "options": [
+        "It stores winter rain and reflects sunlight",
+        "It's volcanic",
+        "It's dark slate",
+        "It's pure sand"
+      ],
+      "answer": 0,
+      "explanation": "Its chalk holds water and its whiteness reflects light."
+    },
+    {
+      "type": "concept",
+      "title": "Two winds",
+      "body": "Jerez is hot, with over 300 sunny days a year. Two winds matter. The Poniente, from the Atlantic, is cool and humid, favouring flor yeast in the cellars. The Levante, from the east, is hot and dry, concentrating grapes but stressing flor. Bodegas are built with high ceilings and thick walls, often facing the Poniente.",
+      "highlight": "Humid Poniente, hot Levante"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "The Poniente wind brings humidity that helps flor grow.",
+      "answer": true,
+      "explanation": "Yes. It's cool and humid, from the Atlantic."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sherry comes from the triangle of Jerez, El Puerto and Sanlúcar",
+        "Albariza stores water and reflects light",
+        "The humid Poniente and dry Levante shape vineyard and cellar"
+      ]
+    }
+  ]
+}

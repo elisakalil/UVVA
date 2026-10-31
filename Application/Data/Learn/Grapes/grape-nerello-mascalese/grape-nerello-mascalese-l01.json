@@ -1,0 +1,62 @@
+{
+  "id": "grape-nerello-mascalese-l01",
+  "moduleId": "grape-nerello-mascalese",
+  "order": 1,
+  "title": "Meet Nerello Mascalese",
+  "subtitle": "Sicily's mountain red",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Nerello Mascalese's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pale and perfumed",
+      "body": "Nerello Mascalese gives pale ruby wines with red cherry, raspberry, wild herbs, flowers, smoke and a mineral, volcanic edge. Tannins are firm and fine, acidity high. It's often compared to Pinot Noir for its paleness and perfume, and to Nebbiolo for its tannin and structure.",
+      "highlight": "Red cherry, herbs, smoke"
+    },
+    {
+      "type": "concept",
+      "title": "Origins",
+      "body": "Nerello Mascalese is named after the Mascali plain, below Mount Etna, in eastern Sicily. DNA suggests it's a cross of Sangiovese and Mantonico Bianco. It ripens late, often in October, which suits Etna's altitude: cool nights and long autumns preserve acidity and aroma.",
+      "highlight": "Named after Mascali, near Etna"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grapes is Nerello Mascalese often compared with?",
+      "options": [
+        "Pinot Noir and Nebbiolo",
+        "Cabernet and Merlot",
+        "Syrah and Malbec",
+        "Riesling and Chardonnay"
+      ],
+      "answer": 0,
+      "explanation": "It shares Pinot's paleness and perfume and Nebbiolo's tannin."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale ruby colour, red fruit, herbs and a smoky, stony edge, with firm, fine tannins and fresh acidity. It's paler than most southern reds and more structured than you'd guess from its colour.",
+      "highlight": "Pale yet structured"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Nerello Mascalese is deeply coloured and low in acidity.",
+      "answer": false,
+      "explanation": "Not true. It's pale and has high acidity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nerello Mascalese is pale, perfumed and firm",
+        "It's named after the Mascali plain below Etna",
+        "It's compared with Pinot Noir and Nebbiolo"
+      ]
+    }
+  ]
+}

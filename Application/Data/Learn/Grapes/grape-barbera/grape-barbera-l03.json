@@ -1,0 +1,72 @@
+{
+  "id": "grape-barbera-l03",
+  "moduleId": "grape-barbera",
+  "order": 3,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Barbera",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Barbera with food",
+    "Serve it well",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A food wine",
+      "body": "Barbera's high acidity and low tannin make it one of the most food-friendly reds. It suits tomato sauces, pizza, lasagne, salumi, fatty meats and even mushrooms. It cuts through richness without clashing. In Piedmont, it goes with bagna cauda, a warm garlic and anchovy dip.",
+      "highlight": "Tomato sauce, bagna cauda"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 15 to 17 degrees. Unoaked Barbera is best within three years. Oaked Barbera d'Alba, d'Asti Superiore and Nizza can age five to ten years. Its acidity helps it keep, but fruit fades before structure develops.",
+      "highlight": "Unoaked young; oaked five to ten years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Barbera suit tomato-based dishes?",
+      "options": [
+        "Its high acidity matches tomato's acidity",
+        "It's sweet",
+        "It's very tannic",
+        "It's low in alcohol"
+      ],
+      "answer": 0,
+      "explanation": "Acidic food needs acidic wine."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting quality",
+      "body": "Good Barbera balances its acidity with ripe fruit. Overcropped Barbera tastes thin and sour. Lower yields, older vines and good sites give more depth. In the 1980s, producers' new focus turned it from a peasant wine into a respected one.",
+      "highlight": "Ripe fruit balancing acidity"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Barbera?",
+      "options": [
+        "Pizza",
+        "Lasagne",
+        "Bagna cauda",
+        "A sweet chocolate dessert"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sweet desserts make dry red taste sour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Barbera's acidity makes it very food-friendly",
+        "Serve at 15 to 17 degrees",
+        "Unoaked is best young; oaked lasts five to ten years"
+      ]
+    }
+  ]
+}

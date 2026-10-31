@@ -1,0 +1,70 @@
+{
+  "id": "grape-nebbiolo-l06",
+  "moduleId": "grape-nebbiolo",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Nebbiolo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Nebbiolo with food",
+    "Serve it well",
+    "Choose the right Nebbiolo for the occasion"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Piedmont's table",
+      "body": "Nebbiolo suits Piedmont's rich food: tajarin pasta with butter and white truffle, brasato al Barolo, beef braised in Barolo, roast game, and aged cheeses like Castelmagno. Truffle and Nebbiolo share earthy aromas. Its tannin and acidity cut through richness.",
+      "highlight": "White truffle, brasato, game"
+    },
+    {
+      "type": "concept",
+      "title": "Service",
+      "body": "Serve at 17 to 18 degrees in a large glass. Decant young wines for hours. Langhe Nebbiolo can be drunk young, within five years. Barbaresco often from 7 to 20 years, Barolo from 10 to 30 years or more. Choose the younger styles for everyday meals.",
+      "highlight": "Large glass, long decant"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish is a Piedmont classic with Barolo?",
+      "options": [
+        "Tajarin with white truffle",
+        "Sushi",
+        "Fish and chips",
+        "Lemon tart"
+      ],
+      "answer": 0,
+      "explanation": "Earthy truffle echoes Nebbiolo's aromas."
+    },
+    {
+      "type": "tip",
+      "body": "White truffles from Alba are in season from October to December, the same time Nebbiolo is harvested. That's no coincidence for Piedmont's cooking."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Nebbiolo?",
+      "options": [
+        "White truffle",
+        "Braised beef",
+        "Aged cheese",
+        "Delicate white fish"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Delicate fish would clash with its tannin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nebbiolo suits truffle, braised beef and aged cheese",
+        "Serve at 17 to 18 degrees in a large glass",
+        "Choose Langhe Nebbiolo for youth, Barolo for patience"
+      ]
+    }
+  ]
+}

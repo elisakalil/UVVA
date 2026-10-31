@@ -1,0 +1,95 @@
+{
+  "id": "grape-touriga-nacional-l05",
+  "moduleId": "grape-touriga-nacional",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Touriga Nacional",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Touriga Nacional",
+    "Know its regions",
+    "Explain its roles in Port and dry wine"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is Touriga Nacional's signature?",
+      "options": [
+        "Violet",
+        "Lychee",
+        "Grass",
+        "Butter"
+      ],
+      "answer": 0,
+      "explanation": "Violet, often with bergamot."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Touriga Nacional.",
+      "pairs": [
+        {
+          "left": "Dão",
+          "right": "Probable origin"
+        },
+        {
+          "left": "Douro",
+          "right": "Port and dry reds"
+        },
+        {
+          "left": "Barca Velha",
+          "right": "Pioneering dry red"
+        },
+        {
+          "left": "2021",
+          "right": "Approved for Bordeaux trial"
+        }
+      ],
+      "explanation": "Its story runs from Portugal to Bordeaux."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Touriga Nacional is the most planted grape in the Douro.",
+      "answer": false,
+      "explanation": "Not true. Touriga Franca is more planted, partly because Touriga Nacional has low yields."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which regions are Touriga Nacional's heartlands?",
+      "options": [
+        "Douro",
+        "Dão",
+        "Rioja",
+        "Mosel"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Rioja and the Mosel grow Tempranillo and Riesling."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Touriga Nacional naturally gives ____ yields.",
+      "options": [
+        "low",
+        "very high",
+        "average",
+        "double"
+      ],
+      "answer": "low",
+      "explanation": "Low yields concentrate its colour and aroma."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Touriga Nacional is floral, dark and structured",
+        "The Douro and Dão are its heartlands",
+        "It's key in Port and the Douro's dry reds",
+        "It handles heat, drawing interest from abroad"
+      ]
+    }
+  ]
+}

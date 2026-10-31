@@ -1,0 +1,70 @@
+{
+  "id": "region-hu-tokaj-l06",
+  "moduleId": "region-hu-tokaj",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Tokaj and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Tokaji label",
+    "Pair Tokaj wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show Tokaji, the style, Aszú, Szamorodni, Eszencia or dry Furmint, sometimes puttonyos, 5 or 6, the vintage, the producer and often a vineyard, dűlő. Késői szüretelésű means late harvest, a lighter sweet style. Tokaji Aszú usually comes in a 50 cl bottle.",
+      "highlight": "Style, puttonyos, dűlő"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Tokaji Aszú suits foie gras, blue cheese, apricot tarts and fruit desserts; its acidity also works with spicy Asian food and Hungarian dishes with paprika. Dry Furmint suits fish, poultry, pork and goose. Dry Szamorodni suits nuts and aged cheese, like a Sherry. Serve sweet wines at 10 to 12 degrees.",
+      "highlight": "Foie gras, blue cheese, apricot tart"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which food suits Tokaji Aszú?",
+      "options": [
+        "Foie gras",
+        "Raw oysters",
+        "Grilled steak",
+        "Green salad"
+      ],
+      "answer": 0,
+      "explanation": "Rich foie gras suits Aszú's sweetness and acidity."
+    },
+    {
+      "type": "tip",
+      "body": "An open bottle of Tokaji Aszú keeps for weeks in the fridge, thanks to its sugar and acidity."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Tokaj label terms?",
+      "options": [
+        "Aszú",
+        "Szamorodni",
+        "Dűlő",
+        "Crianza"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Crianza is Spanish."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the style, puttonyos and vineyard",
+        "Aszú suits foie gras and fruit desserts",
+        "Dry Furmint suits fish, poultry and pork"
+      ]
+    }
+  ]
+}

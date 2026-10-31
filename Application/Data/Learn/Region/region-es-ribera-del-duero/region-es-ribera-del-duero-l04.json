@@ -1,0 +1,96 @@
+{
+  "id": "region-es-ribera-del-duero-l04",
+  "moduleId": "region-es-ribera-del-duero",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Ribera del Duero",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Ribera's place and grape",
+    "Explain its rules",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Ribera.",
+      "pairs": [
+        {
+          "left": "Meseta",
+          "right": "High central plateau"
+        },
+        {
+          "left": "Vega Sicilia",
+          "right": "Historic estate, 1864"
+        },
+        {
+          "left": "Lechazo",
+          "right": "Roast suckling lamb"
+        },
+        {
+          "left": "Tinto Fino",
+          "right": "Local Tempranillo"
+        }
+      ],
+      "explanation": "Ribera's identity is high, cold and powerful."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the main risk in Ribera's vineyards?",
+      "options": [
+        "Frost",
+        "Hurricanes",
+        "Excess humidity",
+        "Sea salt"
+      ],
+      "answer": 0,
+      "explanation": "Frost, even in late spring and early autumn."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Ribera's reds must contain at least 75% Tinto Fino.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Ribera's climate?",
+      "options": [
+        "Extreme continental",
+        "High altitude",
+        "Big day and night swings",
+        "Tropical"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's cold and continental."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Ribera del Duero became a DO in ____.",
+      "options": [
+        "1982",
+        "1864",
+        "1991",
+        "2019"
+      ],
+      "answer": "1982",
+      "explanation": "In 1982."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Ribera sits high on the Meseta, with an extreme climate",
+        "Tinto Fino gives dark, powerful Tempranillo",
+        "Vega Sicilia and Pesquera made it famous",
+        "Pair it with roast suckling lamb"
+      ]
+    }
+  ]
+}

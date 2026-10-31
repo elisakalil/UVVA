@@ -1,0 +1,62 @@
+{
+  "id": "path-22-l01",
+  "moduleId": "path-22",
+  "order": 1,
+  "title": "The American system",
+  "subtitle": "AVAs and labelling",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what an AVA is",
+    "Explain US labelling rules",
+    "Explain the effect of Prohibition"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "AVAs",
+      "body": "An American Viticultural Area, or AVA, is a defined grape-growing area with distinct geography. There are over 270. AVAs set boundaries only, not grapes, yields or methods. They can nest: Oakville sits inside Napa Valley, which sits inside the larger North Coast AVA.",
+      "highlight": "AVA: boundaries only"
+    },
+    {
+      "type": "concept",
+      "title": "Labelling",
+      "body": "A wine naming an AVA needs at least 85% of grapes from it. A varietal name needs 75% of that grape, though Oregon requires 90% for most varieties. A vintage needs 95% from that year when an AVA is named. A state name, like California, needs 100% from that state.",
+      "highlight": "AVA 85%, grape 75%, vintage 95%"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does an AVA control?",
+      "options": [
+        "Grape varieties",
+        "Maximum yields",
+        "The geographic boundary",
+        "Minimum ageing"
+      ],
+      "answer": 2,
+      "explanation": "An AVA only defines where the grapes grow. Producers choose grapes and methods freely."
+    },
+    {
+      "type": "concept",
+      "title": "After Prohibition",
+      "body": "From 1920 to 1933, Prohibition banned the sale of alcohol in the US. Most wineries closed, vineyards were replanted with table grapes or thick-skinned varieties for home winemaking. The industry restarted slowly. Modern fine wine in California really grew from the 1960s, with Robert Mondavi founding his Napa winery in 1966.",
+      "highlight": "Prohibition, 1920 to 1933"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In Oregon, a wine labelled Pinot Noir must contain at least 90% of that grape.",
+      "answer": true,
+      "explanation": "Yes. Oregon sets a stricter rule than the federal 75% for most varieties."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "An AVA defines a place, not grapes or methods",
+        "Labels need 85% from an AVA and 75% of a named grape",
+        "Prohibition set American wine back by decades"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "grape-glera-l01",
+  "moduleId": "grape-glera",
+  "order": 1,
+  "title": "Meet Glera",
+  "subtitle": "Pear, apple and flowers",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Glera's flavours",
+    "Explain the name change",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Light and fruity",
+      "body": "Glera gives light, delicate wines with pear, green apple, white peach, melon, acacia and wisteria flowers. Acidity is medium to high, body light. Its fresh fruit and floral aromas are best preserved in sparkling wine made by the tank method. It's the main grape of Prosecco.",
+      "highlight": "Pear, apple, white flowers"
+    },
+    {
+      "type": "concept",
+      "title": "Prosecco to Glera",
+      "body": "Until 2009, the grape itself was called Prosecco, after a village near Trieste. When Prosecco became a protected DOC and DOCG in 2009, the grape was renamed Glera, an old local synonym, so that only wines from the defined area could use the name Prosecco. Anyone could plant a grape; no one else can use the place name.",
+      "highlight": "Renamed in 2009 to protect the name"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why was the Prosecco grape renamed Glera in 2009?",
+      "options": [
+        "To protect Prosecco as a place name",
+        "Because it changed colour",
+        "Because it was banned",
+        "To honour a winemaker"
+      ],
+      "answer": 0,
+      "explanation": "A grape name can be used anywhere; a protected place name can't."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Prosecco is pale lemon, with light, frothy bubbles, aromas of pear, green apple and flowers, and a fresh, light palate. Compared with Champagne, it's fruitier and less bready, with larger, softer bubbles. Most is Extra Dry or Brut.",
+      "highlight": "Fruity, frothy, floral"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Glera was called Prosecco until 2009.",
+      "answer": true,
+      "explanation": "Yes. It was renamed to protect Prosecco as a geographical name."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Glera gives pear, apple and floral aromas",
+        "It was called Prosecco until 2009",
+        "It's the main grape of Prosecco"
+      ]
+    }
+  ]
+}

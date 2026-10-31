@@ -1,0 +1,67 @@
+{
+  "id": "grape-palomino-l03",
+  "moduleId": "grape-palomino",
+  "order": 3,
+  "title": "Flor and the solera",
+  "subtitle": "How Palomino becomes Sherry",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain flor",
+    "Explain the solera system",
+    "Explain fortification levels"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Flor",
+      "body": "After fermentation, base wines are classified. The most delicate are fortified to about 15 to 15.5% and put into barrels left about five-sixths full. A layer of yeast called flor grows on the surface, protecting the wine from oxygen and feeding on alcohol and glycerol. It adds bready, almond, saline aromas, from acetaldehyde.",
+      "highlight": "Flor at about 15%"
+    },
+    {
+      "type": "concept",
+      "title": "The solera",
+      "body": "Sherry ages in a solera: tiers of barrels of different ages. Wine for bottling is drawn from the oldest tier, the solera, which is refilled from the next oldest, the first criadera, and so on. New wine enters the youngest. By law, no more than 40% can be drawn per year. The blend stays consistent and gains average age.",
+      "highlight": "Old tier drawn, refilled from younger"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Sherry barrels left partly empty?",
+      "options": [
+        "To give flor air to grow on the surface",
+        "To save wine",
+        "To make it sparkling",
+        "To add sugar"
+      ],
+      "answer": 0,
+      "explanation": "Flor needs air at the surface to live."
+    },
+    {
+      "type": "concept",
+      "title": "Fortification",
+      "body": "Wines chosen for oxidative ageing are fortified to about 17%. At that strength flor can't survive, so oxygen ages the wine, giving nutty, darker Oloroso. The classification and fortification level decide whether a wine follows the biological path, under flor, or the oxidative one.",
+      "highlight": "15% for flor; 17% for Oloroso"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the solera's movements in order, starting with bottling.",
+      "items": [
+        "Draw wine from the oldest tier",
+        "Refill it from the first criadera",
+        "Refill the first criadera from the second",
+        "Add new wine to the youngest tier"
+      ],
+      "explanation": "Each tier passes wine to the older tier."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Flor grows on wines fortified to about 15%, protecting them",
+        "The solera blends wines of many ages",
+        "At 17% flor dies and the wine ages oxidatively"
+      ]
+    }
+  ]
+}

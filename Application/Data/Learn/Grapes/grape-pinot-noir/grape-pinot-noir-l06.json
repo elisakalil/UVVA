@@ -1,0 +1,70 @@
+{
+  "id": "grape-pinot-noir-l06",
+  "moduleId": "grape-pinot-noir",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Pinot Noir",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Pinot Noir with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Versatile",
+      "body": "Pinot Noir's low tannin and high acidity make it one of the most food-friendly reds. It suits roast chicken, duck, salmon, tuna, mushrooms and game birds. Burgundy matches boeuf bourguignon and coq au vin. Its low tannin even works with some fish.",
+      "highlight": "Duck, salmon, mushrooms"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 14 to 16 degrees, slightly cooler than big reds, in a large bowl glass. Simple Pinot is best within five years. Top Burgundy ages 10 to 30 years, developing mushroom, truffle, game and forest floor. Decanting isn't always needed; it can lose delicate aromas.",
+      "highlight": "Slightly cool, large glass"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Pinot Noir pair well with salmon?",
+      "options": [
+        "Its low tannin doesn't clash with fish",
+        "It's very sweet",
+        "It's very tannic",
+        "It's white"
+      ],
+      "answer": 0,
+      "explanation": "High tannin can make fish taste metallic; Pinot's low tannin avoids that."
+    },
+    {
+      "type": "tip",
+      "body": "Mushroom risotto with an older Pinot Noir is a near-perfect match. The earthy notes in both bring each other forward."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which dishes suit Pinot Noir?",
+      "options": [
+        "Roast duck",
+        "Salmon",
+        "Mushroom risotto",
+        "Very hot curry"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Very hot curry clashes with most reds."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir suits duck, salmon and mushrooms",
+        "Serve at 14 to 16 degrees in a large glass",
+        "Top Burgundy ages 10 to 30 years"
+      ]
+    }
+  ]
+}

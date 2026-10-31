@@ -1,0 +1,20 @@
+{
+  "id": "path-11",
+  "kind": "path",
+  "order": 11,
+  "level": "Intermediate",
+  "complexity": "C",
+  "title": "Reading the Label",
+  "description": "What a label must tell you, what it only implies and how quality systems differ between Europe and the rest of the world.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-11-l01",
+    "path-11-l02",
+    "path-11-l03",
+    "path-11-l04",
+    "path-11-l05",
+    "path-11-l06"
+  ]
+}

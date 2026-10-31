@@ -1,0 +1,72 @@
+{
+  "id": "grape-cabernet-franc-l03",
+  "moduleId": "grape-cabernet-franc",
+  "order": 3,
+  "title": "Chinon and the Loire",
+  "subtitle": "Cabernet Franc on its own",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Loire's Cabernet Franc appellations",
+    "Explain the role of soil",
+    "Describe Loire Cabernet Franc styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The appellations",
+      "body": "In the Loire's Touraine and Anjou-Saumur, Cabernet Franc makes most of the red wine. Chinon, Bourgueil and Saint-Nicolas-de-Bourgueil, in Touraine, and Saumur-Champigny, in Saumur, are the key appellations. The wines are medium-bodied, fresh and perfumed, with raspberry, violet and graphite.",
+      "highlight": "Chinon, Bourgueil, Saumur-Champigny"
+    },
+    {
+      "type": "concept",
+      "title": "Soil matters",
+      "body": "Soils shape the style. Sandy and gravel soils near the rivers give light, fruity wines to drink young. Tuffeau, a soft, white limestone, and clay-limestone on the slopes give more structured wines that can age 10 to 20 years. The same tuffeau was used to build the Loire's châteaux.",
+      "highlight": "Gravel: light. Tuffeau: structured."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which soil in Chinon gives the most structured, age-worthy Cabernet Franc?",
+      "options": [
+        "Sand near the river",
+        "Tuffeau limestone slopes",
+        "Volcanic ash",
+        "Peat"
+      ],
+      "answer": 1,
+      "explanation": "Limestone slopes give firmer, longer-lived wines than riverside sand and gravel."
+    },
+    {
+      "type": "concept",
+      "title": "Styles",
+      "body": "Loire Cabernet Franc ranges from light, juicy wines, served cool in Paris bistros, to serious, oaked wines from old vines. Rosé de Loire and Cabernet d'Anjou, a rosé often off-dry, also use it. Cooler vintages can show more green notes; warmer ones, riper fruit.",
+      "highlight": "Bistro reds to serious wines"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Loire Cabernet Franc appellations?",
+      "options": [
+        "Chinon",
+        "Bourgueil",
+        "Saumur-Champigny",
+        "Sancerre Blanc"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sancerre Blanc is Sauvignon Blanc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chinon, Bourgueil and Saumur-Champigny are key appellations",
+        "Gravel gives light wines; tuffeau gives structured ones",
+        "Styles range from bistro reds to age-worthy wines"
+      ]
+    }
+  ]
+}

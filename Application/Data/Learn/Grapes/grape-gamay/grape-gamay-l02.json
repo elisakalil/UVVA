@@ -1,0 +1,80 @@
+{
+  "id": "grape-gamay-l02",
+  "moduleId": "grape-gamay",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Beaujolais and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Gamay's main regions",
+    "Explain why granite suits it",
+    "Name other places it grows"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Beaujolais",
+      "body": "Beaujolais, just south of Burgundy, grows almost all of the world's Gamay. In the south, on clay and limestone, it makes simple Beaujolais. In the north, on pink granite and schist, it makes Beaujolais-Villages and the ten crus. Granite drains well and is poor, giving Gamay its best structure and perfume.",
+      "highlight": "Granite in the north"
+    },
+    {
+      "type": "concept",
+      "title": "Elsewhere",
+      "body": "Gamay grows in the Loire, in Touraine and Anjou, often for light reds and rosés, and in the Côte Roannaise. Switzerland blends it with Pinot Noir to make Dôle. It's appearing in Oregon, Canada's Niagara and Australia. Burgundy's Coteaux Bourguignons can include it.",
+      "highlight": "Loire, Switzerland, Oregon"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Gamay.",
+      "pairs": [
+        {
+          "left": "Beaujolais crus",
+          "right": "Northern granite"
+        },
+        {
+          "left": "Touraine",
+          "right": "Loire light reds"
+        },
+        {
+          "left": "Dôle",
+          "right": "Swiss blend with Pinot"
+        },
+        {
+          "left": "Southern Beaujolais",
+          "right": "Clay and limestone"
+        }
+      ],
+      "explanation": "Beaujolais dominates, but Gamay travels."
+    },
+    {
+      "type": "tip",
+      "body": "Look for cru Beaujolais rather than plain Beaujolais. The ten crus, on granite, show what Gamay can really do, often at modest prices."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Why does granite suit Gamay?",
+      "options": [
+        "It drains well",
+        "It's poor, limiting vigour",
+        "It retains heat",
+        "It's very fertile"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Granite is poor, not fertile, and that helps."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Beaujolais grows almost all the world's Gamay",
+        "Northern granite gives the best wines",
+        "The Loire, Switzerland and Oregon grow some too"
+      ]
+    }
+  ]
+}

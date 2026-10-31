@@ -1,0 +1,62 @@
+{
+  "id": "path-06-l02",
+  "moduleId": "path-06",
+  "order": 2,
+  "title": "Sweetness and umami",
+  "subtitle": "The two that make wine harder",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain why sweet food clashes with dry wine",
+    "Explain umami's effect on wine",
+    "Fix a sweet or umami pairing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sweet food, dry wine",
+      "body": "Sweetness in food makes a dry wine taste more acidic, more bitter and less fruity. A dry Champagne with a sweet dessert often tastes thin and sour. The rule: the wine should be at least as sweet as the food. That's why sweet wines are served with dessert.",
+      "highlight": "Wine at least as sweet as the food"
+    },
+    {
+      "type": "concept",
+      "title": "Umami, the savoury taste",
+      "body": "Umami is the savoury taste of glutamates, found in mushrooms, ripe tomatoes, aged cheese, soy sauce and cured meat. Like sweetness, it makes wine taste more bitter, astringent and acidic, and less fruity. Asparagus and eggs are tricky for the same reason. Salt counteracts it, which is why salty umami dishes are easier to match.",
+      "highlight": "Umami hardens wine; salt helps"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A dry sparkling wine is the ideal match for a very sweet chocolate dessert.",
+      "answer": false,
+      "explanation": "Not true. The sweetness of the dessert makes the dry wine taste sour and thin. A wine at least as sweet as the dessert works far better."
+    },
+    {
+      "type": "concept",
+      "title": "Fixing it",
+      "body": "With sweet dishes, choose wines like Sauternes, Tokaji or tawny Port. With umami, reach for fruity, lower-tannin wines, such as Pinot Noir, and add salt or acidity to the dish, like a squeeze of lemon or a little soy. The dish and the wine can both be adjusted.",
+      "highlight": "Sweet wine for sweet; salt for umami"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "You're serving mushroom risotto. Which wine is the safest choice?",
+      "options": [
+        "A very tannic young Cabernet",
+        "A fruity, low-tannin Pinot Noir",
+        "A very dry, light Muscadet",
+        "A dry fino Sherry served warm"
+      ],
+      "answer": 1,
+      "explanation": "Umami in mushrooms makes tannin feel harsher, so a fruity, low-tannin red like Pinot Noir handles it best."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sweet food needs a wine at least as sweet",
+        "Umami makes wine more bitter and astringent",
+        "Fruity, low-tannin wines and a little salt help with umami"
+      ]
+    }
+  ]
+}

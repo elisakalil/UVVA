@@ -1,0 +1,79 @@
+{
+  "id": "path-11-l02",
+  "moduleId": "path-11",
+  "order": 2,
+  "title": "Geographical indications",
+  "subtitle": "Place as a legal promise",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what a geographical indication is",
+    "Compare PDO and PGI",
+    "Explain why place names are protected"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What a GI is",
+      "body": "A geographical indication, or GI, is a legally defined area whose name can only be used by wines from there. Champagne, Rioja and Napa Valley are all GIs. Using the name promises origin, and often more: in Europe, rules may set grapes, yields and winemaking.",
+      "highlight": "A GI is a protected place name"
+    },
+    {
+      "type": "concept",
+      "title": "PDO and PGI",
+      "body": "The EU has two levels. PDO, Protected Designation of Origin, is stricter: grapes must all come from the area, and rules cover varieties, yields, methods and ageing. PGI, Protected Geographical Indication, covers larger areas with looser rules: at least 85% of grapes from the area, and wider grape choices. Each country has its own names for them.",
+      "highlight": "PDO stricter; PGI broader"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "GI",
+          "right": "Protected place name"
+        },
+        {
+          "left": "PDO",
+          "right": "Strict EU origin category"
+        },
+        {
+          "left": "PGI",
+          "right": "Broader EU origin category"
+        },
+        {
+          "left": "Wine without GI",
+          "right": "Only country of origin"
+        }
+      ],
+      "explanation": "Each step down the ladder gives producers more freedom and the consumer less information about place."
+    },
+    {
+      "type": "concept",
+      "title": "Why protection matters",
+      "body": "Place names became valuable, so others copied them. Before protection, sparkling wines worldwide called themselves Champagne. Today, EU agreements protect GIs in many countries. In the US, some older semi-generic names like California Champagne can still appear on bottles approved before 2006, but no new ones.",
+      "highlight": "Protection stops others using famous names"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does PDO require that PGI does not?",
+      "options": [
+        "The wine must be red",
+        "All grapes from the defined area",
+        "No sulphites",
+        "At least 15% alcohol"
+      ],
+      "answer": 1,
+      "explanation": "PDO requires all grapes from the area and stricter rules. PGI requires at least 85%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "A GI is a legally protected place name",
+        "PDO is stricter than PGI",
+        "Protection stops famous names being copied"
+      ]
+    }
+  ]
+}

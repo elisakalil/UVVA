@@ -1,0 +1,72 @@
+{
+  "id": "grape-grenache-l05",
+  "moduleId": "grape-grenache",
+  "order": 5,
+  "title": "Sweet Grenache",
+  "subtitle": "Vins doux naturels",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how sweet Grenache is made",
+    "Describe Banyuls and Maury",
+    "Explain rancio"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fortified Grenache",
+      "body": "In Roussillon, Grenache makes vins doux naturels: spirit is added during fermentation, stopping it and keeping natural sugar. Grenache's high sugar and red fruit suit this. Banyuls and Maury are the most famous red ones, also Rivesaltes. They have 15 to 18% alcohol.",
+      "highlight": "Fortified mid-fermentation"
+    },
+    {
+      "type": "concept",
+      "title": "Oxidative or fresh",
+      "body": "Banyuls and Maury are made in two styles. Rimage or grenat styles are bottled young, keeping red fruit, like ruby Port. Traditional styles age with oxygen for years, in barrels or in glass demijohns left in the sun, giving notes of nuts, coffee, dried fruit and rancio, a complex, nutty, oxidative character.",
+      "highlight": "Rimage fresh; traditional oxidised"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is rancio?",
+      "options": [
+        "A nutty, oxidative character from long ageing",
+        "A type of grape",
+        "A sweet dessert",
+        "A rosé style"
+      ],
+      "answer": 0,
+      "explanation": "Rancio develops in wines aged with oxygen and heat."
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Banyuls and Maury are among the few wines that match dark chocolate. Rimage styles suit red fruit desserts; aged styles suit coffee, walnut and caramel desserts, and blue cheese. Serve slightly cool, around 14 to 16 degrees.",
+      "highlight": "Dark chocolate's partner"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are sweet fortified Grenache wines?",
+      "options": [
+        "Banyuls",
+        "Maury",
+        "Rivesaltes",
+        "Tavel"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Tavel is a dry rosé."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Banyuls and Maury are fortified Grenache from Roussillon",
+        "Rimage is fresh; traditional styles age with oxygen",
+        "They're rare partners for dark chocolate"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "region-it-tuscany-l05",
+  "moduleId": "region-it-tuscany",
+  "order": 5,
+  "title": "Bolgheri and the Super Tuscans",
+  "subtitle": "Breaking the rules",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the Super Tuscan story",
+    "Describe Bolgheri",
+    "Explain the creation of IGT"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The rebels",
+      "body": "In the 1960s and 1970s, Chianti rules forced producers to include white grapes and limited new ideas. Some made wine their own way: Sassicaia, from Cabernet Sauvignon at Bolgheri, first sold in 1971; Tignanello, from Antinori, in 1971, a Sangiovese and Cabernet blend in small barrels. Sold as simple table wine, they cost more than any Chianti.",
+      "highlight": "Sassicaia and Tignanello"
+    },
+    {
+      "type": "concept",
+      "title": "Bolgheri",
+      "body": "Bolgheri, on the coast, has gravelly soils and a warm, maritime climate, with sea breezes, close to Bordeaux's conditions. Bordeaux grapes thrive: Cabernet Sauvignon, Merlot, Cabernet Franc. Ornellaia, Masseto and Sassicaia are its icons. Bolgheri DOC came in 1994; Sassicaia got its own DOC, Bolgheri Sassicaia, in 2013, the only single-estate DOC in Italy.",
+      "highlight": "Coastal gravel, Bordeaux grapes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What made Sassicaia unusual in 1971?",
+      "options": [
+        "It was Cabernet Sauvignon sold as table wine",
+        "It was white",
+        "It was sparkling",
+        "It was Sangiovese from Chianti"
+      ],
+      "answer": 0,
+      "explanation": "A Cabernet from the coast, outside DOC rules."
+    },
+    {
+      "type": "concept",
+      "title": "IGT",
+      "body": "The Super Tuscans' success led Italy to create the IGT category, Indicazione Geografica Tipica, in 1992, for quality wines outside DOC rules. Toscana IGT now includes many top wines. Chianti Classico's rules also changed, allowing 100% Sangiovese and some international grapes.",
+      "highlight": "IGT since 1992"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sassicaia has its own DOC.",
+      "answer": true,
+      "explanation": "Yes, Bolgheri Sassicaia, since 2013."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Super Tuscans broke DOC rules in the 1970s",
+        "Bolgheri's coastal gravel suits Bordeaux grapes",
+        "They led to IGT in 1992"
+      ]
+    }
+  ]
+}

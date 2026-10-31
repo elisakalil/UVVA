@@ -1,0 +1,72 @@
+{
+  "id": "grape-merlot-l04",
+  "moduleId": "grape-merlot",
+  "order": 4,
+  "title": "Merlot's reputation",
+  "subtitle": "From fashion to backlash",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Merlot's rise in the 1990s",
+    "Explain the Sideways effect",
+    "Explain why great Merlot endures"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A boom",
+      "body": "In the 1990s, Merlot became the fashionable red in the US: soft, fruity and easy to pronounce. Plantings grew fast, often in hot, high-yield sites, giving bland, simple wines. Quality became uneven, and the name grew associated with mass-market wine.",
+      "highlight": "1990s boom, uneven quality"
+    },
+    {
+      "type": "concept",
+      "title": "Sideways",
+      "body": "In the 2004 film Sideways, the main character declares he won't drink Merlot. US Merlot sales growth slowed, while Pinot Noir sales rose. Ironically, his treasured bottle is a 1961 Cheval Blanc, a Saint-Émilion with a large share of Merlot alongside Cabernet Franc.",
+      "highlight": "Sideways hurt Merlot's image"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What wine does the main character of Sideways treasure?",
+      "options": [
+        "A Napa Cabernet",
+        "A 1961 Cheval Blanc, partly Merlot",
+        "A Burgundy Pinot Noir",
+        "A Barolo"
+      ],
+      "answer": 1,
+      "explanation": "The irony is that Cheval Blanc contains a large share of Merlot."
+    },
+    {
+      "type": "concept",
+      "title": "Great Merlot endures",
+      "body": "Merlot makes some of the world's most expensive wines: Pétrus, Le Pin, Masseto in Tuscany. Washington State, Hawke's Bay and parts of Chile make excellent, fresh Merlot. Quality depends on site, yield and picking time, like any grape. The backlash was about overproduction, not the grape.",
+      "highlight": "Pétrus, Masseto, Washington"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are great Merlot-based wines?",
+      "options": [
+        "Pétrus",
+        "Masseto",
+        "Le Pin",
+        "Sancerre"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sancerre is Sauvignon Blanc from the Loire."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot boomed in the 1990s, often overproduced",
+        "Sideways, in 2004, hurt its image",
+        "Great Merlot, from Pétrus to Masseto, endures"
+      ]
+    }
+  ]
+}

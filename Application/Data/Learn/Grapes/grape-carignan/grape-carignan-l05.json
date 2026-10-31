@@ -1,0 +1,96 @@
+{
+  "id": "grape-carignan-l05",
+  "moduleId": "grape-carignan",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Carignan",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Carignan",
+    "Know its names and regions",
+    "Explain its revival"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its region.",
+      "pairs": [
+        {
+          "left": "Mazuelo",
+          "right": "Rioja"
+        },
+        {
+          "left": "Samsó",
+          "right": "Catalonia"
+        },
+        {
+          "left": "Carignano",
+          "right": "Sardinia"
+        },
+        {
+          "left": "Cariñena",
+          "right": "Aragón town"
+        }
+      ],
+      "explanation": "Carignan's names follow its map."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why did Carignan get a bad reputation?",
+      "options": [
+        "It was overcropped for bulk wine",
+        "It's a white grape",
+        "It's very sweet",
+        "It ripens too early"
+      ],
+      "answer": 0,
+      "explanation": "High yields gave thin, harsh wines."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "VIGNO protects old Carignan in Chile's Maule Valley.",
+      "answer": true,
+      "explanation": "Yes, since 2009."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Carignan?",
+      "options": [
+        "High acidity",
+        "High tannin",
+        "Late ripening",
+        "Very pale colour"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Carignan is deeply coloured."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Priorat's dark slate soil is called ____.",
+      "options": [
+        "llicorella",
+        "albariza",
+        "tuffeau",
+        "galets"
+      ],
+      "answer": "llicorella",
+      "explanation": "Llicorella forces deep roots and low yields."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carignan has high acidity, tannin and colour",
+        "It has many names across the Mediterranean",
+        "Old vines in Priorat and Maule revived its reputation",
+        "It suits hearty, herby food"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "grape-nero-d-avola-l04",
+  "moduleId": "grape-nero-d-avola",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Nero d'Avola",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Nero d'Avola",
+    "Know its regions",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Where is Nero d'Avola's historic home?",
+      "options": [
+        "South-east Sicily",
+        "Piedmont",
+        "Tuscany",
+        "Etna"
+      ],
+      "answer": 0,
+      "explanation": "Around Avola, Noto and Pachino."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Nero d'Avola is the main grape of Etna Rosso.",
+      "answer": false,
+      "explanation": "Not true. Etna Rosso is made from Nerello Mascalese."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Nero d'Avola.",
+      "pairs": [
+        {
+          "left": "Calabrese",
+          "right": "Other name"
+        },
+        {
+          "left": "Frappato",
+          "right": "Blending partner"
+        },
+        {
+          "left": "Alberello",
+          "right": "Bush vine training"
+        },
+        {
+          "left": "Pasta alla Norma",
+          "right": "Sicilian pairing"
+        }
+      ],
+      "explanation": "Nero d'Avola is deeply Sicilian."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Nero d'Avola?",
+      "options": [
+        "Deep colour",
+        "Fresh acidity",
+        "Soft tannins",
+        "Pale and light"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's dark, not pale."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Sicily's only DOCG is Cerasuolo di ____.",
+      "options": [
+        "Vittoria",
+        "Abruzzo",
+        "Etna",
+        "Noto"
+      ],
+      "answer": "Vittoria",
+      "explanation": "Cerasuolo di Vittoria blends Nero d'Avola with Frappato."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nero d'Avola is dark, juicy and fresh",
+        "It's Sicily's most planted red",
+        "Cerasuolo di Vittoria blends it with Frappato",
+        "It suits Sicilian pasta, pizza and grilled fish"
+      ]
+    }
+  ]
+}

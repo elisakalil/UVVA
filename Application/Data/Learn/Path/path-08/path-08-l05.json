@@ -1,0 +1,73 @@
+{
+  "id": "path-08-l05",
+  "moduleId": "path-08",
+  "order": 5,
+  "title": "Oak and its alternatives",
+  "subtitle": "Flavour, texture and oxygen",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what oak adds to wine",
+    "Compare new and old, French and American oak",
+    "Name the cheaper alternatives to barrels"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What oak adds",
+      "body": "Oak does two things. It adds flavour: vanilla, toast, clove, smoke and coconut. And, in barrels, it lets a little oxygen in slowly, which softens tannins and helps the wine develop. Small barrels, like the 225-litre Bordeaux barrique, have more effect than large casks.",
+      "highlight": "Flavour plus slow oxygen"
+    },
+    {
+      "type": "concept",
+      "title": "New or old, French or American",
+      "body": "New barrels give the most flavour; after three or four uses they add little but still allow oxygen. Toasting the inside over fire changes flavours from vanilla to smoke. French oak, Quercus petraea and robur, gives subtle spice and fine tannin. American oak, Quercus alba, gives stronger vanilla and coconut, typical of traditional Rioja.",
+      "highlight": "American oak: coconut and vanilla"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each oak choice to its effect.",
+      "pairs": [
+        {
+          "left": "New barrel",
+          "right": "Most oak flavour"
+        },
+        {
+          "left": "Old barrel",
+          "right": "Oxygen, little flavour"
+        },
+        {
+          "left": "American oak",
+          "right": "Coconut and sweet vanilla"
+        },
+        {
+          "left": "Heavy toast",
+          "right": "Smoke and coffee"
+        }
+      ],
+      "explanation": "The age, origin and toast of a barrel decide what it adds."
+    },
+    {
+      "type": "concept",
+      "title": "Cheaper alternatives",
+      "body": "Barrels are expensive, around 1,000 euros each for French oak. For wines at lower prices, winemakers add oak chips or staves to a steel tank. They give oak flavour quickly but not the slow oxygen of a barrel. Micro-oxygenation can supply that separately.",
+      "highlight": "Chips and staves: flavour without the barrel"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Oak chips give a wine both oak flavour and the slow oxygen exchange of a barrel.",
+      "answer": false,
+      "explanation": "Not true. Chips and staves add flavour, but in a sealed steel tank there's no slow oxygen through the wood. That's why barrels remain prized."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Oak adds flavour and, in barrels, slow oxygen",
+        "New, small, toasted barrels add the most",
+        "Chips and staves are cheaper and add flavour only"
+      ]
+    }
+  ]
+}

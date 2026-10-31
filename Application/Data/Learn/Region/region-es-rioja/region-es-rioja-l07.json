@@ -1,0 +1,95 @@
+{
+  "id": "region-es-rioja-l07",
+  "moduleId": "region-es-rioja",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Rioja",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Rioja's geography and grapes",
+    "Explain its ageing and place categories",
+    "Read and pair Rioja"
+  ],
+  "steps": [
+    {
+      "type": "ordering",
+      "prompt": "Order Rioja's categories by ageing.",
+      "items": [
+        "Genérico",
+        "Crianza",
+        "Reserva",
+        "Gran Reserva"
+      ],
+      "explanation": "Gran Reserva needs five years."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Viñedo Singular",
+          "right": "Single vineyard"
+        },
+        {
+          "left": "Rioja Oriental",
+          "right": "Warm eastern zone"
+        },
+        {
+          "left": "Blue seal",
+          "right": "Gran Reserva"
+        },
+        {
+          "left": "Viura",
+          "right": "Main white grape"
+        }
+      ],
+      "explanation": "Rioja has its own vocabulary."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape dominates Rioja?",
+      "options": [
+        "Tempranillo",
+        "Garnacha",
+        "Monastrell",
+        "Cabernet"
+      ],
+      "answer": 0,
+      "explanation": "About 88% of red vineyards."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Rioja's sub-zones?",
+      "options": [
+        "Rioja Alta",
+        "Rioja Alavesa",
+        "Rioja Oriental",
+        "Rioja Atlántica"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "There's no Rioja Atlántica."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Rioja became Spain's first DOCa in 1991.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rioja follows the Ebro, between Atlantic and Mediterranean",
+        "Tempranillo leads, with Garnacha and Graciano",
+        "Its ageing ladder runs from Crianza to Gran Reserva",
+        "Single vineyards and villages are reshaping its map"
+      ]
+    }
+  ]
+}

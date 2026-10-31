@@ -1,0 +1,96 @@
+{
+  "id": "grape-syrah-l07",
+  "moduleId": "grape-syrah",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Syrah",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Syrah and Shiraz",
+    "Compare the Rhône and the Barossa",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What gives Syrah its black pepper aroma?",
+      "options": [
+        "Rotundone",
+        "Pyrazine",
+        "Oak",
+        "Brett"
+      ],
+      "answer": 0,
+      "explanation": "Rotundone, also found in peppercorns."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its Syrah.",
+      "pairs": [
+        {
+          "left": "Hermitage",
+          "right": "Powerful, long-lived Rhône"
+        },
+        {
+          "left": "Barossa Valley",
+          "right": "Ripe, chocolatey Shiraz"
+        },
+        {
+          "left": "Côte-Rôtie",
+          "right": "Perfumed, with Viognier"
+        },
+        {
+          "left": "Canberra District",
+          "right": "Cool, co-fermented Shiraz"
+        }
+      ],
+      "explanation": "Each region shows a different side of the grape."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Shiraz came originally from the Persian city of Shiraz.",
+      "answer": false,
+      "explanation": "Not true. DNA shows it comes from south-east France."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are typical Syrah aromas?",
+      "options": [
+        "Black pepper",
+        "Blackberry",
+        "Smoked meat",
+        "Lychee"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Lychee is typical of Gewürztraminer."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Penfolds Grange was first made in ____.",
+      "options": [
+        "1951",
+        "1832",
+        "1976",
+        "2001"
+      ],
+      "answer": "1951",
+      "explanation": "Max Schubert's 1951 experiment became Australia's most famous wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Syrah gives dark fruit, pepper and smoky notes",
+        "The northern Rhône is its home; the Barossa its Australian icon",
+        "The names Syrah and Shiraz often signal style",
+        "It pairs with lamb, game and barbecue"
+      ]
+    }
+  ]
+}

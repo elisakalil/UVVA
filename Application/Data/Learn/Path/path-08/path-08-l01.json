@@ -1,0 +1,79 @@
+{
+  "id": "path-08-l01",
+  "moduleId": "path-08",
+  "order": 1,
+  "title": "Fermentation",
+  "subtitle": "Yeast, temperature and vessels",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how temperature changes a fermentation",
+    "Compare natural and cultured yeast",
+    "Name the main fermentation vessels"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Controlling the process",
+      "body": "Fermentation is yeast turning sugar into alcohol, carbon dioxide and heat. The winemaker's main tool is temperature. Cool fermentations, 12 to 18 degrees Celsius, keep fresh, fruity aromas in whites. Warmer ones, 25 to 32, extract colour and tannin in reds. Above about 35 degrees, yeast can die and fermentation may stop.",
+      "highlight": "Temperature is the winemaker's main dial"
+    },
+    {
+      "type": "concept",
+      "title": "Which yeast",
+      "body": "Wild or ambient yeasts live on grapes and in the winery. Many winemakers rely on them, saying they add complexity, but they are less predictable. Cultured yeasts are selected strains, chosen for reliability, speed or particular aromas. Either way, the dominant species is Saccharomyces cerevisiae.",
+      "highlight": "Ambient for complexity, cultured for control"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are most white wines fermented cool?",
+      "options": [
+        "To extract more tannin",
+        "To preserve fresh, fruity aromas",
+        "To raise the alcohol",
+        "To kill the yeast"
+      ],
+      "answer": 1,
+      "explanation": "Low temperatures keep delicate aromas. Warmer fermentations suit reds, which need colour and tannin."
+    },
+    {
+      "type": "concept",
+      "title": "Vessels",
+      "body": "Stainless steel is inert and easy to cool, keeping pure fruit. Concrete holds a stable temperature and allows a little air. Oak barrels add flavour and let small amounts of oxygen in. Clay vessels, like amphorae or Georgian qvevri, are ancient and returning to fashion.",
+      "highlight": "Steel, concrete, oak, clay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each vessel to its main effect.",
+      "pairs": [
+        {
+          "left": "Stainless steel",
+          "right": "Pure fruit, precise control"
+        },
+        {
+          "left": "Oak barrel",
+          "right": "Flavour and slow oxygen"
+        },
+        {
+          "left": "Concrete",
+          "right": "Stable temperature, some air"
+        },
+        {
+          "left": "Qvevri",
+          "right": "Buried clay vessel"
+        }
+      ],
+      "explanation": "The vessel shapes texture and flavour as much as the yeast does."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Temperature controls the speed and style of fermentation",
+        "Ambient yeasts add complexity; cultured yeasts add reliability",
+        "Steel, concrete, oak and clay each shape the wine differently"
+      ]
+    }
+  ]
+}

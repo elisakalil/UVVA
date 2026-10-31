@@ -1,0 +1,96 @@
+{
+  "id": "region-pt-vinho-verde-l05",
+  "moduleId": "region-pt-vinho-verde",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Vinho Verde",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Vinho Verde's geography and grapes",
+    "Explain Monção e Melgaço",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Verde",
+          "right": "Young and fresh"
+        },
+        {
+          "left": "Monção e Melgaço",
+          "right": "Alvarinho heartland"
+        },
+        {
+          "left": "Vinhão",
+          "right": "Dark red grape"
+        },
+        {
+          "left": "Ramada",
+          "right": "High pergola training"
+        }
+      ],
+      "explanation": "Vinho Verde's vocabulary is northern Portuguese."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Vinho Verde's main challenge?",
+      "options": [
+        "Humidity and rain",
+        "Drought",
+        "Extreme heat",
+        "Hail only"
+      ],
+      "answer": 0,
+      "explanation": "It's very wet."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vinho Verde is Portugal's largest DOC.",
+      "answer": true,
+      "explanation": "Yes, about 21,000 hectares."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe typical white Vinho Verde?",
+      "options": [
+        "Light",
+        "Crisp",
+        "Often slightly spritzy",
+        "Very high alcohol"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's usually 9 to 11.5%."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In Spain, Alvarinho is called ____.",
+      "options": [
+        "Albariño",
+        "Verdejo",
+        "Godello",
+        "Airén"
+      ],
+      "answer": "Albariño",
+      "explanation": "Albariño, across the Minho river."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vinho Verde is Portugal's green, wet north-west",
+        "Light, spritzy whites dominate",
+        "Monção e Melgaço makes fuller, age-worthy Alvarinho",
+        "Its wines suit sardines and seafood"
+      ]
+    }
+  ]
+}

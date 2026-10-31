@@ -1,0 +1,62 @@
+{
+  "id": "path-01-l01",
+  "moduleId": "path-01",
+  "order": 1,
+  "title": "What is wine?",
+  "subtitle": "The simplest definition, and why it matters",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Define wine in one sentence",
+    "Explain why wine is made from Vitis vinifera",
+    "Place a wine's alcohol within the normal range"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fermented grape juice",
+      "body": "Wine is the drink you get when yeast ferments the juice of fresh grapes. Drinks made from other fruit, or from rice, can be delicious, but in law they are not simply called wine: in the EU the word on its own is reserved for fermented fresh grapes or grape must.",
+      "highlight": "Grapes plus fermentation equals wine"
+    },
+    {
+      "type": "concept",
+      "title": "One species, thousands of varieties",
+      "body": "Almost every wine comes from one species of vine, Vitis vinifera, native to the area between the Black Sea and the Caspian. Within that species there are thousands of varieties, such as Chardonnay or Merlot. Grapes suit wine because a ripe berry holds 20 to 25% sugar, enough acid to stay fresh and the yeast it needs on its own skin.",
+      "highlight": "Species: Vitis vinifera. Variety: the type within it."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which of these drinks is wine, in the strict sense?",
+      "options": [
+        "Fermented apple juice",
+        "Fermented fresh grape juice",
+        "Distilled grape spirit",
+        "Pasteurised grape juice"
+      ],
+      "answer": 1,
+      "explanation": "Fermented fresh grape juice is the definition. Fermented apple juice is cider, distilled grape spirit is brandy, and pasteurised juice never fermented, so it has no alcohol."
+    },
+    {
+      "type": "concept",
+      "title": "How strong is wine?",
+      "body": "Most still wines sit between 11 and 14.5% alcohol by volume. Light styles such as Moscato d'Asti can be around 5.5%, while fortified wines like Port reach 19 or 20% because grape spirit is added. The number is always on the label as abv.",
+      "highlight": "Most still wines: 11 to 14.5% abv"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A wine labelled 13.5% abv is most likely a fortified wine.",
+      "answer": false,
+      "explanation": "Not true. 13.5% sits comfortably inside the range of ordinary still wine. Fortified wines usually start at 15% and often reach 20%, because spirit is added."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Wine is the fermented juice of fresh grapes",
+        "Nearly all wine comes from varieties of Vitis vinifera",
+        "Most still wines have 11 to 14.5% alcohol"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "region-fr-bordeaux-l06",
+  "moduleId": "region-fr-bordeaux",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading Bordeaux and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Bordeaux label",
+    "Explain the hierarchy of appellations",
+    "Pair Bordeaux with food"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Bordeaux labels show the château, the appellation, the vintage and often a classification, like Grand Cru Classé en 1855. Appellations run from broad to precise: Bordeaux, Bordeaux Supérieur, then district appellations like Haut-Médoc, then communes like Pauillac. Mis en bouteille au château means estate-bottled. Many châteaux also make a cheaper second wine.",
+      "highlight": "Château, appellation, vintage, classification"
+    },
+    {
+      "type": "concept",
+      "title": "Second wines and value",
+      "body": "Second wines, like Carruades de Lafite or Pavillon Rouge de Château Margaux, use younger vines or lots not chosen for the main wine. They offer a taste of a great estate at a lower price. Côtes de Bordeaux and Bordeaux Supérieur from good producers are often excellent value.",
+      "highlight": "Second wines and Côtes for value"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these appellations from broadest to most precise.",
+      "items": [
+        "Bordeaux",
+        "Haut-Médoc",
+        "Pauillac",
+        "Château Latour"
+      ],
+      "explanation": "Each step narrows the origin."
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Left Bank reds suit lamb, especially roast leg of lamb, and steak. Right Bank Merlot suits duck, mushrooms and beef. Dry whites from Pessac-Léognan suit fish in butter sauce. Sauternes suits foie gras, Roquefort and fruit tarts. Serve reds at 16 to 18 degrees, decanted when young.",
+      "highlight": "Lamb with Pauillac, foie gras with Sauternes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does mis en bouteille au château mean?",
+      "options": [
+        "Bottled at the estate",
+        "Aged in oak",
+        "Sweet wine",
+        "A second wine"
+      ],
+      "answer": 0,
+      "explanation": "Estate-bottled, a sign the château controlled the whole process."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show château, appellation, vintage and classification",
+        "Second wines and the Côtes offer value",
+        "Lamb suits Left Bank reds; foie gras suits Sauternes"
+      ]
+    }
+  ]
+}

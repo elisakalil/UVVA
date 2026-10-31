@@ -1,0 +1,62 @@
+{
+  "id": "grape-marsanne-l03",
+  "moduleId": "grape-marsanne",
+  "order": 3,
+  "title": "White Hermitage",
+  "subtitle": "A white that ages for decades",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe white Hermitage",
+    "Explain how it ages",
+    "Explain the role of oak"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The hill",
+      "body": "Hermitage is a single granite hill above Tain-l'Hermitage, facing south. About a quarter of its wine is white, mostly Marsanne with some Roussanne. The granite and loess, with full southern sun, give rich, powerful whites. Chapoutier and Jean-Louis Chave are famous producers.",
+      "highlight": "Mostly Marsanne on granite"
+    },
+    {
+      "type": "concept",
+      "title": "A strange ageing curve",
+      "body": "White Hermitage is rich and fruity when young, then often closes up for several years, from about year 3 to 10, showing little aroma. After that, it opens again with honey, nuts, beeswax and dried fruit. The best can age 20 to 50 years, despite modest acidity, thanks to their concentration and phenolics.",
+      "highlight": "Closes, then reopens"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "White Hermitage often goes through a closed, quiet phase before opening again with age.",
+      "answer": true,
+      "explanation": "Yes. Many go quiet for several years, then develop honey and nutty complexity."
+    },
+    {
+      "type": "concept",
+      "title": "Oak and style",
+      "body": "Producers make white Hermitage in different ways: some ferment and age in oak barrels for richness; others use old wood or steel to keep purity. Some sweet vin de paille, from dried grapes, is made in tiny amounts. Crozes-Hermitage whites are lighter and more affordable.",
+      "highlight": "Oaked or pure; sweet vin de paille"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why can white Hermitage age for decades?",
+      "options": [
+        "Concentration and phenolics",
+        "Very high acidity",
+        "Added sugar",
+        "Sparkling pressure"
+      ],
+      "answer": 0,
+      "explanation": "Its acidity is modest; concentration and phenolic structure carry it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "White Hermitage is mostly Marsanne from a granite hill",
+        "It often closes up, then reopens with honey and nuts",
+        "The best age 20 to 50 years"
+      ]
+    }
+  ]
+}

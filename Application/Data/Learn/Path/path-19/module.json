@@ -1,0 +1,22 @@
+{
+  "id": "path-19",
+  "kind": "path",
+  "order": 19,
+  "level": "Advanced",
+  "complexity": "A",
+  "title": "Italy",
+  "description": "Twenty regions and hundreds of native grapes, read through the places that explain the rest.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-19-l01",
+    "path-19-l02",
+    "path-19-l03",
+    "path-19-l04",
+    "path-19-l05",
+    "path-19-l06",
+    "path-19-l07",
+    "path-19-l08"
+  ]
+}

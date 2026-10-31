@@ -1,0 +1,77 @@
+{
+  "id": "region-au-margaret-river-l02",
+  "moduleId": "region-au-margaret-river",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Cabernet and Chardonnay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Margaret River Cabernet",
+    "Describe its Chardonnay",
+    "Describe its white blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cabernet Sauvignon",
+      "body": "Margaret River Cabernet Sauvignon, often blended with Merlot, is elegant and structured, with blackcurrant, cedar, herbs and fine tannins. It's frequently compared with Bordeaux. Producers like Cullen, Moss Wood, Vasse Felix and Cape Mentelle are famous. Cabernet is the region's most important red.",
+      "highlight": "Elegant, Bordeaux-like Cabernet"
+    },
+    {
+      "type": "concept",
+      "title": "Chardonnay and SBS",
+      "body": "Margaret River Chardonnay is among Australia's best: rich yet fresh, with stone fruit, citrus, nuts and oak. Leeuwin Estate's Art Series Chardonnay is iconic. Sémillon and Sauvignon Blanc blends, called SBS or SSB, are a local speciality: crisp, herbal, citrus and fresh, inspired by Bordeaux whites.",
+      "highlight": "Chardonnay and SBS blends"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its style.",
+      "pairs": [
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Elegant, cedar, Bordeaux-like"
+        },
+        {
+          "left": "Chardonnay",
+          "right": "Rich yet fresh"
+        },
+        {
+          "left": "SBS",
+          "right": "Sémillon Sauvignon blend"
+        },
+        {
+          "left": "Leeuwin Art Series",
+          "right": "Iconic Chardonnay"
+        }
+      ],
+      "explanation": "Margaret River's wines draw on Bordeaux and Burgundy."
+    },
+    {
+      "type": "tip",
+      "body": "Margaret River Sémillon Sauvignon Blanc is a refreshing, affordable everyday white, great with seafood."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which white blend is a Margaret River speciality?",
+      "options": [
+        "Sémillon and Sauvignon Blanc",
+        "Riesling and Gewürztraminer",
+        "Chardonnay and Pinot Grigio",
+        "Viognier and Marsanne"
+      ],
+      "answer": 0,
+      "explanation": "SBS, inspired by Bordeaux whites."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Margaret River Cabernet is elegant and Bordeaux-like",
+        "Its Chardonnay is among Australia's best",
+        "Sémillon Sauvignon Blanc blends are a speciality"
+      ]
+    }
+  ]
+}

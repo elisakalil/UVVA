@@ -1,0 +1,60 @@
+{
+  "id": "grape-chardonnay-l06",
+  "moduleId": "grape-chardonnay",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Chardonnay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair different Chardonnay styles with food",
+    "Serve it well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Match the style",
+      "body": "Lean Chablis suits oysters, shellfish and goat's cheese. Rich, oaked Chardonnay suits lobster, roast chicken, creamy sauces and pork. Tropical, warm-climate Chardonnay suits grilled chicken and mildly spiced dishes. Blanc de Blancs suits sushi, caviar and fried food.",
+      "highlight": "Chablis with oysters; oaked with lobster"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve lean Chardonnay at 8 to 10 degrees, rich oaked styles at 10 to 13. Most New World Chardonnay is best within three to five years. Grand Cru Chablis and Côte de Beaune age 10 to 20 years, developing honey, nuts and mushroom. Premature oxidation, or premox, affected some Burgundy from the 1990s.",
+      "highlight": "Top Burgundy ages 10 to 20 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Chardonnay style suits oysters best?",
+      "options": [
+        "Lean, unoaked Chablis",
+        "Rich, buttery California",
+        "Sweet late harvest",
+        "Oaked Meursault"
+      ],
+      "answer": 0,
+      "explanation": "Chablis' acidity and saline edge match oysters."
+    },
+    {
+      "type": "tip",
+      "body": "Serve rich, oaked Chardonnay slightly warmer than other whites. Too cold, its texture and aromas close up."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Some Burgundy whites from the 1990s suffered from premature oxidation.",
+      "answer": true,
+      "explanation": "Yes. Premox affected some vintages, with wines browning and losing fruit early."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Match the Chardonnay style to the dish",
+        "Serve lean styles colder, rich ones a little warmer",
+        "Top Burgundy ages 10 to 20 years"
+      ]
+    }
+  ]
+}

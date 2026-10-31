@@ -1,0 +1,77 @@
+{
+  "id": "region-es-jerez-l02",
+  "moduleId": "region-es-jerez",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Three white grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Sherry's grapes",
+    "Explain why Palomino suits Sherry",
+    "Explain the sweet grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Palomino",
+      "body": "Palomino Fino is about 95% of the vineyards. It's neutral, low in acidity and sugar, giving base wines of about 11 to 12.5%. Its neutrality is a strength: Sherry's flavours come from ageing, flor and oxygen, not from the grape.",
+      "highlight": "Palomino: neutral base"
+    },
+    {
+      "type": "concept",
+      "title": "Sweet grapes",
+      "body": "Pedro Ximénez, PX, and Moscatel are used for sweet wines and for sweetening blends. They're often dried in the sun on mats, asoleo, for one to three weeks, becoming almost raisins. Much PX comes from nearby Montilla-Moriles, which is allowed in Sherry. Fermentation is stopped early by fortification, keeping huge sugar levels.",
+      "highlight": "PX and Moscatel, sun-dried"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its use.",
+      "pairs": [
+        {
+          "left": "Palomino",
+          "right": "Dry Sherries"
+        },
+        {
+          "left": "Pedro Ximénez",
+          "right": "Very sweet, dark wine"
+        },
+        {
+          "left": "Moscatel",
+          "right": "Sweet, aromatic Sherry"
+        },
+        {
+          "left": "Asoleo",
+          "right": "Drying grapes in the sun"
+        }
+      ],
+      "explanation": "Three grapes, many styles."
+    },
+    {
+      "type": "tip",
+      "body": "Pedro Ximénez is one of the sweetest wines in the world, often over 400 g/l of sugar. Pour it over vanilla ice cream."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Palomino ideal for Sherry?",
+      "options": [
+        "Its neutrality lets ageing create the flavours",
+        "It's very aromatic",
+        "It's very sweet",
+        "It's red"
+      ],
+      "answer": 0,
+      "explanation": "Flor and oxygen write the flavour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Palomino, about 95%, gives neutral base wines",
+        "PX and Moscatel are dried in the sun for sweet wines",
+        "Sherry's flavour comes from ageing, not the grape"
+      ]
+    }
+  ]
+}

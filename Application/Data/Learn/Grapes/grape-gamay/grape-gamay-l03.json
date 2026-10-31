@@ -1,0 +1,68 @@
+{
+  "id": "grape-gamay-l03",
+  "moduleId": "grape-gamay",
+  "order": 3,
+  "title": "Carbonic maceration",
+  "subtitle": "Fermenting inside the berry",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how carbonic maceration works",
+    "Explain semi-carbonic maceration",
+    "Explain Beaujolais Nouveau"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Whole berries",
+      "body": "In carbonic maceration, whole, uncrushed bunches go into a tank filled with carbon dioxide. Without oxygen, enzymes inside each berry start fermenting sugar into alcohol, up to about 2%, and create aromas like banana, bubblegum and kirsch. Then berries burst, and yeast finishes the job. Colour comes out, but little tannin.",
+      "highlight": "Fermentation starts inside the berry"
+    },
+    {
+      "type": "concept",
+      "title": "Semi-carbonic",
+      "body": "Most Beaujolais uses semi-carbonic maceration. Whole bunches go into the tank; the weight crushes the bottom ones, which ferment normally, producing CO2 that fills the tank. The upper berries undergo carbonic maceration. The result: fruity, soft wines with low tannin. Some crus use traditional crushing for more structure.",
+      "highlight": "Bottom crushed, top whole"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does carbonic maceration typically produce?",
+      "options": [
+        "Very tannic wines",
+        "Fruity, soft wines with banana or bubblegum notes",
+        "Sweet wines",
+        "Oxidised wines"
+      ],
+      "answer": 1,
+      "explanation": "Intracellular fermentation gives fruity aromas and little tannin."
+    },
+    {
+      "type": "concept",
+      "title": "Beaujolais Nouveau",
+      "body": "Beaujolais Nouveau is made fast, by semi-carbonic maceration, and released on the third Thursday of November, weeks after harvest. It's light, fruity and meant for immediate drinking. Its fame in the 1980s and 1990s made Beaujolais a household name, but also hurt its reputation for serious wine.",
+      "highlight": "Third Thursday of November"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Beaujolais Nouveau is released on the third ____ of November.",
+      "options": [
+        "Thursday",
+        "Monday",
+        "Saturday",
+        "Sunday"
+      ],
+      "answer": "Thursday",
+      "explanation": "The third Thursday of November, weeks after harvest."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carbonic maceration ferments whole berries in CO2",
+        "It gives fruity, soft wines with banana and bubblegum notes",
+        "Beaujolais Nouveau is released on the third Thursday of November"
+      ]
+    }
+  ]
+}

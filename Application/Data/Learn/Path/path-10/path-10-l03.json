@@ -1,0 +1,68 @@
+{
+  "id": "path-10-l03",
+  "moduleId": "path-10",
+  "order": 3,
+  "title": "Pinot Noir around the world",
+  "subtitle": "The cool-climate red",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Pinot Noir in Burgundy",
+    "Name its key New World regions",
+    "Explain why Pinot needs a cool climate"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Burgundy",
+      "body": "Pinot Noir is Burgundy's red grape. On the Côte d'Or's limestone and marl slopes, it gives wines that can be light in colour yet intense in aroma: red cherry, raspberry, and with age, earth, game and forest floor. Gevrey-Chambertin, Vosne-Romanée and Pommard are famous villages.",
+      "highlight": "Côte d'Or: Pinot's home"
+    },
+    {
+      "type": "concept",
+      "title": "Why cool climates",
+      "body": "Pinot's thin skins and early ripening make it fragile. In heat, it ripens too fast, losing its delicate aromas and acidity, and turns jammy. In cool places, the long, slow season builds complexity. It is also prone to rot, frost and virus, and mutates easily; Pinot Gris and Pinot Blanc are colour mutations of it.",
+      "highlight": "Thin skins, early ripening, cool sites"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Pinot Gris and Pinot Blanc are colour ____ of Pinot Noir.",
+      "options": [
+        "mutations",
+        "crosses",
+        "clones of Gamay",
+        "blends"
+      ],
+      "answer": "mutations",
+      "explanation": "They arose as natural mutations of the skin colour. Genetically, they are almost identical to Pinot Noir."
+    },
+    {
+      "type": "concept",
+      "title": "Beyond Burgundy",
+      "body": "Pinot thrives in Oregon's Willamette Valley, California's Sonoma Coast and Santa Barbara, New Zealand's Central Otago and Martinborough, Germany, where it's called Spätburgunder, and in Champagne as part of the blend. Each gives a different balance of fruit, earth and spice.",
+      "highlight": "Willamette, Sonoma, Central Otago, Germany"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which region is NOT a well-known home of Pinot Noir?",
+      "options": [
+        "Willamette Valley",
+        "Central Otago",
+        "Barossa Valley",
+        "Sonoma Coast"
+      ],
+      "answer": 2,
+      "explanation": "The Barossa is hot and best known for Shiraz. The others are cool regions famous for Pinot Noir."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgundy's Côte d'Or is Pinot Noir's benchmark",
+        "Thin skins and early ripening need a cool climate",
+        "Oregon, Sonoma, Central Otago and Germany grow fine Pinot"
+      ]
+    }
+  ]
+}

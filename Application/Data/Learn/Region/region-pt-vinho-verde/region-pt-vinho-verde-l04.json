@@ -1,0 +1,70 @@
+{
+  "id": "region-pt-vinho-verde-l04",
+  "moduleId": "region-pt-vinho-verde",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Vinho Verde and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Vinho Verde label",
+    "Pair Vinho Verde with food",
+    "Serve it well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show Vinho Verde DOC, sometimes a sub-region like Monção e Melgaço or Lima, and often a grape: Alvarinho, Loureiro, Avesso. Regional wines may use Vinho Regional Minho. A sticker seal on the bottle certifies the DOC. Single-estate wines, from a quinta, are usually more serious than branded blends.",
+      "highlight": "DOC, sub-region, grape"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Vinho Verde suits light, fresh food: grilled sardines, clams, octopus, salads and sushi. Alvarinho suits richer seafood, bacalhau, grilled fish and white meat. Loureiro suits aperitifs and Asian food. Serve at 7 to 10 degrees. Most is best within a year; Alvarinho from Monção e Melgaço can age.",
+      "highlight": "Sardines, clams, bacalhau"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits a light Vinho Verde?",
+      "options": [
+        "Grilled sardines",
+        "Roast beef",
+        "Chocolate cake",
+        "Lamb stew"
+      ],
+      "answer": 0,
+      "explanation": "Light, crisp wine suits simple grilled fish."
+    },
+    {
+      "type": "tip",
+      "body": "In Portugal's summer festivals, grilled sardines and chilled Vinho Verde are a classic combination."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Vinho Verde grapes?",
+      "options": [
+        "Alvarinho",
+        "Loureiro",
+        "Avesso",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo is Italian."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the DOC, sub-region and often a grape",
+        "Vinho Verde suits sardines and seafood",
+        "Serve cold; most is best young"
+      ]
+    }
+  ]
+}

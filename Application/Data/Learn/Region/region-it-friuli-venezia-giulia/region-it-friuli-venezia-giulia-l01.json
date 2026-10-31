@@ -1,0 +1,62 @@
+{
+  "id": "region-it-friuli-venezia-giulia-l01",
+  "moduleId": "region-it-friuli-venezia-giulia",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Between Alps and sea",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Friuli's geography",
+    "Explain its climate",
+    "Explain its border culture"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A border region",
+      "body": "Friuli-Venezia Giulia is Italy's north-eastern corner, bordered by Austria to the north and Slovenia to the east, with the Adriatic to the south. The best vineyards are in the eastern hills: Collio and Colli Orientali del Friuli, on the Slovenian border. The flat Grave plain, in the centre, makes larger volumes.",
+      "highlight": "Collio and Colli Orientali"
+    },
+    {
+      "type": "concept",
+      "title": "Alpine and Adriatic",
+      "body": "The climate is shaped by both the Alps, which protect from cold northern winds, and the Adriatic, which brings warm, humid air. The meeting creates a good day and night range and plenty of rain. The hills' soil, ponca, a layered marl and sandstone, drains well and gives mineral, structured whites.",
+      "highlight": "Ponca: marl and sandstone"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is ponca?",
+      "options": [
+        "A layered marl and sandstone soil",
+        "A grape",
+        "A wine style",
+        "A wind"
+      ],
+      "answer": 0,
+      "explanation": "Ponca gives Friuli's hill whites their structure."
+    },
+    {
+      "type": "concept",
+      "title": "A crossroads",
+      "body": "Friuli has been Roman, Venetian, Austrian and Italian, and its eastern hills continue into Slovenia's Brda. Collio and Brda share grapes, soils and traditions, divided by a border drawn after the Second World War. That crossroads culture shows in its food and in its openness to new and old winemaking.",
+      "highlight": "Collio and Slovenia's Brda"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Friuli's Collio continues across the border into Slovenia.",
+      "answer": true,
+      "explanation": "Yes, as Brda, with similar soils and grapes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Friuli is Italy's north-eastern corner, near Slovenia",
+        "The Alps and Adriatic shape its climate",
+        "Ponca soils give its hill whites structure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "grape-melon-de-bourgogne",
+  "kind": "grape",
+  "order": 49,
+  "color": "white",
+  "title": "Melon de Bourgogne",
+  "aliases": [
+    "Melon",
+    "Muscadet"
+  ],
+  "origin": "France",
+  "countries": [
+    "France"
+  ],
+  "points": "0 0 1 1 = 2",
+  "complexity": "D",
+  "description": "The grape of Muscadet: light, crisp and saline, made richer by ageing on its lees.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "grape-melon-de-bourgogne-l01",
+    "grape-melon-de-bourgogne-l02",
+    "grape-melon-de-bourgogne-l03",
+    "grape-melon-de-bourgogne-l04"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "region-es-rias-baixas-l01",
+  "moduleId": "region-es-rias-baixas",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Green Spain",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rías Baixas' geography",
+    "Explain its Atlantic climate",
+    "Name its sub-zones"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The rías",
+      "body": "Rías Baixas is in Galicia, Spain's north-west corner, on the Atlantic coast. It takes its name from the rías, flooded river valleys like fjords, that cut into the coast. Granite dominates the soils. It's green and lush, very different from the rest of Spain. The DO was created in 1988.",
+      "highlight": "Flooded valleys, granite"
+    },
+    {
+      "type": "concept",
+      "title": "Wet and mild",
+      "body": "The climate is maritime: mild temperatures, high humidity and lots of rain, often 1,600 mm or more a year, among Spain's wettest regions. The main challenge is fungal disease. Growers use high pergolas, parras, on granite posts, to keep grapes away from damp ground and let air flow.",
+      "highlight": "Over 1,600 mm of rain"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Rías Baixas vines trained on high pergolas?",
+      "options": [
+        "To let air circulate and reduce rot",
+        "To get more frost",
+        "To avoid the sun",
+        "To make harvesting harder"
+      ],
+      "answer": 0,
+      "explanation": "Height and airflow fight humidity."
+    },
+    {
+      "type": "concept",
+      "title": "Five sub-zones",
+      "body": "Rías Baixas has five sub-zones. Val do Salnés, the coolest and most Atlantic, is Albariño's historic heart, around Cambados. O Rosal and Condado do Tea, along the Miño river on the Portuguese border, are warmer, and blend Albariño with Loureiro and Treixadura. Soutomaior and Ribeira do Ulla complete them.",
+      "highlight": "Val do Salnés, O Rosal, Condado do Tea"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Rías Baixas sub-zones?",
+      "options": [
+        "Val do Salnés",
+        "O Rosal",
+        "Condado do Tea",
+        "Rioja Alta"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Rioja Alta is in Rioja."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rías Baixas lies on Galicia's Atlantic coast, on granite",
+        "It's wet and mild, fighting rot with high pergolas",
+        "Val do Salnés is the cool heart; the Miño zones are warmer"
+      ]
+    }
+  ]
+}

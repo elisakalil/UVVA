@@ -1,0 +1,62 @@
+{
+  "id": "grape-touriga-nacional-l01",
+  "moduleId": "grape-touriga-nacional",
+  "order": 1,
+  "title": "Meet Touriga Nacional",
+  "subtitle": "Portugal's floral red",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Touriga Nacional's aromas and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Violets and dark fruit",
+      "body": "Touriga Nacional is a black grape native to Portugal. It gives deep-coloured wines with intense aromas of violet, bergamot, blackberry and black cherry, often with rockrose, a wild herb of the Douro hills. Tannins are firm and ripe, acidity fresh. It's considered the country's finest red grape.",
+      "highlight": "Violet, bergamot, dark fruit"
+    },
+    {
+      "type": "concept",
+      "title": "Small berries, low yields",
+      "body": "Touriga Nacional probably comes from the Dão, where it was once called Tourigo. Its small berries and thick skins concentrate colour, tannin and aroma. Its natural yields are low, often under 1 kg per vine, which once made growers reluctant to plant it. Clonal selection since the 1970s raised yields and helped it spread.",
+      "highlight": "Low yields, concentrated fruit"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is most typical of Touriga Nacional?",
+      "options": [
+        "Violet",
+        "Grass",
+        "Petrol",
+        "Banana"
+      ],
+      "answer": 0,
+      "explanation": "Violet is Touriga Nacional's signature, often with bergamot and dark fruit."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "In the glass, look for deep purple colour and a strongly floral nose, like violets and citrus peel, with dark fruit. On the palate, firm, fine tannins and fresh acidity, with a long finish. In blends, it adds perfume and structure that you can often pick out.",
+      "highlight": "Floral nose, firm tannin"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Touriga Nacional naturally gives high yields.",
+      "answer": false,
+      "explanation": "Not true. Its yields are naturally low, which is part of why its wines are so concentrated."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Touriga Nacional gives violet, bergamot and dark fruit",
+        "It probably comes from the Dão and has naturally low yields",
+        "It's deep, floral and firm, Portugal's finest red"
+      ]
+    }
+  ]
+}

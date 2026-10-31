@@ -1,0 +1,96 @@
+{
+  "id": "region-au-margaret-river-l04",
+  "moduleId": "region-au-margaret-river",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Margaret River",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Margaret River's land and grapes",
+    "Explain its history",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Margaret River.",
+      "pairs": [
+        {
+          "left": "John Gladstones",
+          "right": "1965 climate research"
+        },
+        {
+          "left": "Vasse Felix",
+          "right": "First winery, 1967"
+        },
+        {
+          "left": "Leeuwin Estate",
+          "right": "Iconic Chardonnay"
+        },
+        {
+          "left": "SBS",
+          "right": "White blend"
+        }
+      ],
+      "explanation": "Margaret River's history is recent."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Margaret River's climate like?",
+      "options": [
+        "Mild and maritime",
+        "Hot and continental",
+        "Tropical",
+        "Alpine"
+      ],
+      "answer": 0,
+      "explanation": "Two oceans keep it mild."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Margaret River makes about 3% of Australia's wine but around 20% of its premium wine.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes lead Margaret River?",
+      "options": [
+        "Cabernet Sauvignon",
+        "Chardonnay",
+        "Sémillon",
+        "Nebbiolo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Nebbiolo isn't a key grape there."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Margaret River's first winery, Vasse Felix, was founded in ____.",
+      "options": [
+        "1967",
+        "1840",
+        "1951",
+        "2009"
+      ],
+      "answer": "1967",
+      "explanation": "In 1967."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Margaret River is maritime, between two oceans",
+        "Cabernet is elegant; Chardonnay world-class",
+        "SBS blends are a local speciality",
+        "It rose from 1960s research to Australian icon"
+      ]
+    }
+  ]
+}

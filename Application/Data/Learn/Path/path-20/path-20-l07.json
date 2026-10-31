@@ -1,0 +1,62 @@
+{
+  "id": "path-20-l07",
+  "moduleId": "path-20",
+  "order": 7,
+  "title": "Portugal's centre and south",
+  "subtitle": "Lisboa, Bairrada and Alentejo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Bairrada and Lisboa",
+    "Describe the Alentejo",
+    "Explain the importance of native grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bairrada and Lisboa",
+      "body": "Bairrada, near the coast, has clay and limestone soils and makes tannic reds from Baga, and traditional method sparkling wines. Lisboa, north of the capital, is Atlantic and productive, with Bucelas for Arinto whites and Colares, where vines grow ungrafted in sand dunes by the sea, protected from phylloxera.",
+      "highlight": "Baga in Bairrada; Colares in the sand"
+    },
+    {
+      "type": "concept",
+      "title": "The Alentejo",
+      "body": "The Alentejo covers much of southern Portugal: hot, dry, with wide plains. Its reds are ripe and fruity, from Aragonez, Trincadeira and Alicante Bouschet, a red-fleshed grape. Whites use Antão Vaz. Some producers still ferment in talhas, large clay pots, a Roman tradition that the DOC now recognises as Vinho de Talha.",
+      "highlight": "Hot plains, clay talhas"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Colares vines grow ungrafted because phylloxera cannot survive in sandy soils.",
+      "answer": true,
+      "explanation": "Yes. Phylloxera struggles to move through sand, so Colares vines grow on their own roots."
+    },
+    {
+      "type": "concept",
+      "title": "Native grapes",
+      "body": "Portugal has around 250 native grapes, and few international ones. Many are known by different names: Tempranillo is Tinta Roriz in the Douro and Aragonez in the Alentejo. Field blends, with many varieties mixed in old vineyards, are common. This diversity gives Portugal a distinct identity.",
+      "highlight": "About 250 native grapes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is unusual about Alicante Bouschet?",
+      "options": [
+        "It is a white grape",
+        "Its flesh is red",
+        "It only grows in Spain",
+        "It makes only sparkling wine"
+      ],
+      "answer": 1,
+      "explanation": "Alicante Bouschet is a teinturier, with red flesh, giving very deep colour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Bairrada makes Baga reds and sparkling wines; Colares grows ungrafted in sand",
+        "The Alentejo makes ripe reds and keeps the talha tradition",
+        "Portugal has around 250 native grapes"
+      ]
+    }
+  ]
+}

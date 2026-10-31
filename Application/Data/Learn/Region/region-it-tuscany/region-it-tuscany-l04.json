@@ -1,0 +1,77 @@
+{
+  "id": "region-it-tuscany-l04",
+  "moduleId": "region-it-tuscany",
+  "order": 4,
+  "title": "Montalcino and Montepulciano",
+  "subtitle": "Southern Tuscany's great reds",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Brunello di Montalcino",
+    "Describe Vino Nobile di Montepulciano",
+    "Compare them with Chianti Classico"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Brunello di Montalcino",
+      "body": "Montalcino, a hill town about 40 km south of Siena, is warmer and drier than Chianti. Brunello di Montalcino, DOCG since 1980, must be 100% Sangiovese, aged at least five years, two in oak; Riserva six years. The Biondi-Santi family created it in the late 19th century. Rosso di Montalcino is a younger, lighter version.",
+      "highlight": "100% Sangiovese, five years"
+    },
+    {
+      "type": "concept",
+      "title": "Vino Nobile di Montepulciano",
+      "body": "Montepulciano, east of Montalcino, makes Vino Nobile di Montepulciano DOCG from at least 70% Sangiovese, here called Prugnolo Gentile, aged at least two years. It's often softer than Brunello and more structured than Chianti. Since 2021, Pieve, a top tier from defined sub-areas, has been introduced.",
+      "highlight": "At least 70% Prugnolo Gentile"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its rule.",
+      "pairs": [
+        {
+          "left": "Brunello",
+          "right": "100% Sangiovese, five years"
+        },
+        {
+          "left": "Rosso di Montalcino",
+          "right": "Younger Montalcino"
+        },
+        {
+          "left": "Vino Nobile",
+          "right": "At least 70% Sangiovese"
+        },
+        {
+          "left": "Chianti Classico",
+          "right": "At least 80% Sangiovese"
+        }
+      ],
+      "explanation": "Each Tuscan red has its own rules."
+    },
+    {
+      "type": "tip",
+      "body": "Don't confuse Vino Nobile di Montepulciano, a Tuscan Sangiovese, with Montepulciano d'Abruzzo, a different grape from another region."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Who created Brunello di Montalcino?",
+      "options": [
+        "The Biondi-Santi family",
+        "The Medici",
+        "Angelo Gaja",
+        "Piero Antinori"
+      ],
+      "answer": 0,
+      "explanation": "Biondi-Santi in the late 19th century."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Brunello is 100% Sangiovese, aged five years",
+        "Vino Nobile is at least 70% Prugnolo Gentile",
+        "Montalcino is warmer and drier than Chianti"
+      ]
+    }
+  ]
+}

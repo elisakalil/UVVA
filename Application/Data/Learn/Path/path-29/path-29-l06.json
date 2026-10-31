@@ -1,0 +1,96 @@
+{
+  "id": "path-29-l06",
+  "moduleId": "path-29",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from The Business of Wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how wine is sold and priced",
+    "Read wine lists and value",
+    "Explain collecting and climate challenges"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Off-trade",
+          "right": "Shops and supermarkets"
+        },
+        {
+          "left": "On-trade",
+          "right": "Restaurants and bars"
+        },
+        {
+          "left": "En primeur",
+          "right": "Buying before bottling"
+        },
+        {
+          "left": "Provenance",
+          "right": "Storage history"
+        }
+      ],
+      "explanation": "These terms describe how wine is sold and valued."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why do cheap wines have little liquid value?",
+      "options": [
+        "They use expensive grapes",
+        "Fixed costs like duty and packaging make up most of the price",
+        "They are always imported",
+        "Restaurants control their price"
+      ],
+      "answer": 1,
+      "explanation": "Duty, tax, packaging and margins weigh heavily on cheap bottles."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "When tasting a wine in a restaurant, you may send it back if you simply dislike it.",
+      "answer": false,
+      "explanation": "Not true. The tasting checks for faults. Disliking a sound wine isn't grounds to refuse it."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are effects of climate change in vineyards?",
+      "options": [
+        "Earlier harvests",
+        "Higher alcohol",
+        "More frost after early budburst",
+        "Higher acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Acidity tends to fall, not rise, with heat."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In the US, the system separating producers, wholesalers and retailers is called the three-____ system.",
+      "options": [
+        "tier",
+        "level",
+        "step",
+        "channel"
+      ],
+      "answer": "tier",
+      "explanation": "The three-tier system dates from the end of Prohibition in 1933."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Wine moves through producers, importers and retailers",
+        "Price reflects costs at first, then scarcity",
+        "Fine wine relies on provenance; en primeur sells it early",
+        "Climate change pushes new grapes, sites and packaging"
+      ]
+    }
+  ]
+}

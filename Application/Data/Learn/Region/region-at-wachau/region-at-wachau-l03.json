@@ -1,0 +1,67 @@
+{
+  "id": "region-at-wachau-l03",
+  "moduleId": "region-at-wachau",
+  "order": 3,
+  "title": "Steinfeder, Federspiel, Smaragd",
+  "subtitle": "The Wachau's own categories",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the three Wachau categories",
+    "Explain what they measure",
+    "Explain the Vinea Wachau association"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three levels",
+      "body": "The Vinea Wachau, a growers' association founded in 1983, created three categories for dry wines. Steinfeder, named after a feather grass, is light, up to 11.5% alcohol. Federspiel, named after a falconry lure, is medium, 11.5 to 12.5%. Smaragd, named after an emerald-green lizard, is the ripest, above 12.5%.",
+      "highlight": "Steinfeder, Federspiel, Smaragd"
+    },
+    {
+      "type": "concept",
+      "title": "Rules",
+      "body": "All three are dry, made only from Wachau grapes, without chaptalisation or concentration. Smaragd comes from the ripest grapes, often from top terraces, and can age 10 to 20 years. Unlike Germany's Prädikat, which measures sugar at harvest, these categories reflect alcohol in the finished dry wine.",
+      "highlight": "All dry, graded by alcohol"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the Wachau categories from lightest to fullest.",
+      "items": [
+        "Steinfeder",
+        "Federspiel",
+        "Smaragd",
+        "Smaragd from a top terrace"
+      ],
+      "explanation": "Riper grapes from the best sites give the fullest wines."
+    },
+    {
+      "type": "concept",
+      "title": "Wachau DAC",
+      "body": "In 2020, the Wachau became a DAC, with three levels of origin: Gebietswein, regional; Ortswein, village; and Riedenwein, single vineyard, with Ried on the label. The Vinea Wachau categories continue alongside. Labels may show both, like Ried Achleiten Riesling Smaragd.",
+      "highlight": "Wachau DAC since 2020"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Smaragd refer to?",
+      "options": [
+        "An emerald-green lizard",
+        "A grape",
+        "A barrel",
+        "A sweet wine"
+      ],
+      "answer": 0,
+      "explanation": "The lizard basks on the terraces in the sun."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Steinfeder, Federspiel and Smaragd grade dry wines by alcohol",
+        "Smaragd is the ripest and can age 10 to 20 years",
+        "Wachau DAC, since 2020, adds village and vineyard levels"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "path-23-l06",
+  "moduleId": "path-23",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from South America",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain how the Andes and oceans shape the region",
+    "Compare Chile's and Argentina's regions",
+    "Link each country to its grapes"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each country to its signature grape.",
+      "pairs": [
+        {
+          "left": "Chile",
+          "right": "Carmenère"
+        },
+        {
+          "left": "Argentina",
+          "right": "Malbec"
+        },
+        {
+          "left": "Uruguay",
+          "right": "Tannat"
+        },
+        {
+          "left": "Salta, Argentina",
+          "right": "Torrontés"
+        }
+      ],
+      "explanation": "Each country built an identity on one grape."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Mendoza's main source of water for vines?",
+      "options": [
+        "Summer rain",
+        "Snowmelt rivers from the Andes",
+        "Underground seawater",
+        "Coastal fog"
+      ],
+      "answer": 1,
+      "explanation": "Mendoza is a desert; Andean snowmelt feeds the irrigation."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chilean coastal valleys are warmer than inland ones.",
+      "answer": false,
+      "explanation": "Not true. The cold Humboldt Current makes coastal valleys cooler."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Patagonia's vineyards?",
+      "options": [
+        "Low altitude",
+        "Strong winds",
+        "Southern latitude",
+        "Above 3,000 metres"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Patagonia is low; Salta has the very high vineyards."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Chile's three regional descriptors are Costa, Entre Cordilleras and ____.",
+      "options": [
+        "Andes",
+        "Pacífico",
+        "Valle",
+        "Norte"
+      ],
+      "answer": "Andes",
+      "explanation": "Andes marks foothill vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Andes provide water, altitude and cool nights",
+        "The Humboldt Current cools Chile's coast",
+        "Argentina ranges from high Salta to windy Patagonia",
+        "Uruguay and Brazil face rain on the Atlantic side"
+      ]
+    }
+  ]
+}

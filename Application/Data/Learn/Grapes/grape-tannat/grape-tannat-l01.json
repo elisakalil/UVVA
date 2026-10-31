@@ -1,0 +1,62 @@
+{
+  "id": "grape-tannat-l01",
+  "moduleId": "grape-tannat",
+  "order": 1,
+  "title": "Meet Tannat",
+  "subtitle": "A grape named for its grip",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tannat's colour, tannin and flavours",
+    "Explain where Tannat comes from",
+    "Recognise Tannat in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dark and grippy",
+      "body": "Tannat is a black grape from south-west France, near the Pyrenees. Its name likely comes from the same root as tannin, and it has more than almost any other grape. In the glass it is deep purple, almost black, with blackberry, plum, liquorice and smoky, spicy notes. Acidity is high too.",
+      "highlight": "Very high tannin, very dark colour"
+    },
+    {
+      "type": "concept",
+      "title": "Why so tannic",
+      "body": "Tannat has small berries with thick skins, and unusually many seeds: often five per berry, where most grapes have two to three. Skins and seeds both carry tannin. Tannat is also very rich in procyanidins, a family of antioxidant compounds, and studies have found it among the highest of all red grapes.",
+      "highlight": "Thick skins and many seeds"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Tannat have so much tannin?",
+      "options": [
+        "It ages in new oak",
+        "Its berries have thick skins and many seeds",
+        "It is picked unripe",
+        "It is blended with white grapes"
+      ],
+      "answer": 1,
+      "explanation": "Tannin comes from skins and seeds. Tannat has thick skins and often five seeds per berry."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "A young Tannat is almost opaque, with a purple rim. On the palate, the tannin grips the gums firmly, more than Cabernet Sauvignon. The fruit is dark, the finish often slightly bitter and spicy. With a few years in bottle, the tannins soften and leather and tobacco notes appear.",
+      "highlight": "Opaque, gripping, dark fruit"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A young Tannat usually has more tannin than a young Cabernet Sauvignon.",
+      "answer": true,
+      "explanation": "Yes. Tannat is one of the most tannic grapes in the world, firmer than most Cabernet."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tannat is very dark and very tannic, with high acidity",
+        "Thick skins and many seeds give it that grip",
+        "It shows blackberry, liquorice and smoke, softening with age"
+      ]
+    }
+  ]
+}

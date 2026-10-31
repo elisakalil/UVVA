@@ -1,0 +1,29 @@
+{
+  "id": "grape-palomino",
+  "kind": "grape",
+  "order": 36,
+  "color": "white",
+  "title": "Palomino",
+  "aliases": [
+    "Palomino Fino",
+    "Listán Blanco"
+  ],
+  "origin": "Spain",
+  "countries": [
+    "Spain"
+  ],
+  "points": "2 0 2 2 = 6",
+  "complexity": "B",
+  "description": "Also called Palomino Fino and Listán Blanco. A neutral grape transformed by flor and the solera into Sherry.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-palomino-l01",
+    "grape-palomino-l02",
+    "grape-palomino-l03",
+    "grape-palomino-l04",
+    "grape-palomino-l05",
+    "grape-palomino-l06"
+  ]
+}

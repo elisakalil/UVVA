@@ -1,0 +1,77 @@
+{
+  "id": "region-fr-northern-rhone-l02",
+  "moduleId": "region-fr-northern-rhone",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Syrah and the whites",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the northern Rhône's grapes",
+    "Explain Syrah's role",
+    "Explain co-fermentation with white grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Syrah only",
+      "body": "Syrah is the only red grape allowed in the northern Rhône. It gives deep, peppery wines with blackberry, violet, olive and smoked meat. Some appellations let small amounts of white grapes be co-fermented with it: up to 20% Viognier in Côte-Rôtie, 15% Marsanne and Roussanne in Hermitage, though most use much less.",
+      "highlight": "Syrah only for reds"
+    },
+    {
+      "type": "concept",
+      "title": "White grapes",
+      "body": "Viognier makes Condrieu and Château-Grillet: rich, apricot and violet. Marsanne and Roussanne make white Hermitage, Crozes-Hermitage, Saint-Joseph and Saint-Péray, where they also make sparkling wine. Marsanne gives body; Roussanne gives aroma and freshness.",
+      "highlight": "Viognier, Marsanne, Roussanne"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its main use.",
+      "pairs": [
+        {
+          "left": "Syrah",
+          "right": "All northern Rhône reds"
+        },
+        {
+          "left": "Viognier",
+          "right": "Condrieu"
+        },
+        {
+          "left": "Marsanne",
+          "right": "White Hermitage"
+        },
+        {
+          "left": "Roussanne",
+          "right": "Freshness in white blends"
+        }
+      ],
+      "explanation": "The northern Rhône has a short grape list."
+    },
+    {
+      "type": "tip",
+      "body": "Co-fermenting a little Viognier with Syrah helps fix colour and adds a floral lift. In Côte-Rôtie, it's typically 2 to 5%."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is the only red grape allowed in the northern Rhône?",
+      "options": [
+        "Syrah",
+        "Grenache",
+        "Mourvèdre",
+        "Pinot Noir"
+      ],
+      "answer": 0,
+      "explanation": "Syrah alone."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Syrah is the northern Rhône's only red grape",
+        "Viognier makes Condrieu; Marsanne and Roussanne white Hermitage",
+        "Small amounts of white grapes can be co-fermented with Syrah"
+      ]
+    }
+  ]
+}

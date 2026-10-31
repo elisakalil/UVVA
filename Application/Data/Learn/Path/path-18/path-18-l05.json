@@ -1,0 +1,73 @@
+{
+  "id": "path-18-l05",
+  "moduleId": "path-18",
+  "order": 5,
+  "title": "Alsace",
+  "subtitle": "German grapes, French style",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Alsace's location and climate",
+    "Name its noble grapes",
+    "Explain its grand cru and sweet wine rules"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rain shadow",
+      "body": "Alsace lies between the Vosges mountains and the Rhine, on France's border with Germany. The Vosges block rain from the west, so Colmar is one of France's driest cities. Long, sunny, dry autumns let grapes ripen fully. The region switched between France and Germany several times, which shaped its grapes and bottles.",
+      "highlight": "Vosges rain shadow, dry and sunny"
+    },
+    {
+      "type": "concept",
+      "title": "Grapes on the label",
+      "body": "Unlike most of France, Alsace labels name the grape. The four noble grapes are Riesling, Gewürztraminer, Pinot Gris and Muscat. Most wines are single-variety and unoaked, or aged in old foudres. Pinot Noir is the only red. Alsace is one of the few French regions that uses a tall, slim bottle called a flûte, by law.",
+      "highlight": "Grapes on the label, tall bottles"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Unlike most French regions, Alsace labels usually name the ____.",
+      "options": [
+        "grape",
+        "village",
+        "barrel",
+        "winemaker's family"
+      ],
+      "answer": "grape",
+      "explanation": "Alsace names the variety, a habit shared with Germany."
+    },
+    {
+      "type": "concept",
+      "title": "Grand crus and late harvests",
+      "body": "Alsace has 51 Grand Cru vineyards, mostly limited to the four noble grapes. Late harvest wines are labelled Vendanges Tardives; wines from noble rot berries are Sélection de Grains Nobles, with higher minimum sugar. Crémant d'Alsace is France's most produced crémant.",
+      "highlight": "51 Grand Crus; VT and SGN"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are noble grapes of Alsace?",
+      "options": [
+        "Riesling",
+        "Gewürztraminer",
+        "Sauvignon Blanc",
+        "Chardonnay",
+        "Muscat"
+      ],
+      "answers": [
+        0,
+        1,
+        4
+      ],
+      "explanation": "The four noble grapes are Riesling, Gewürztraminer, Pinot Gris and Muscat. Chardonnay is grown in Alsace, mainly for Crémant, but isn't one of them, and Sauvignon Blanc plays almost no role."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Alsace is dry and sunny in the rain shadow of the Vosges",
+        "Labels name the grape; Riesling, Gewürztraminer, Pinot Gris and Muscat are noble",
+        "51 Grand Crus, plus VT and SGN for late harvest and noble rot"
+      ]
+    }
+  ]
+}

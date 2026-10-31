@@ -1,0 +1,62 @@
+{
+  "id": "grape-dolcetto-l01",
+  "moduleId": "grape-dolcetto",
+  "order": 1,
+  "title": "Meet Dolcetto",
+  "subtitle": "The little sweet one, made dry",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Dolcetto's flavours and structure",
+    "Explain its name",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dark and soft",
+      "body": "Dolcetto is a Piedmont grape giving deep purple wines with black cherry, plum, liquorice and a typical bitter almond finish. Acidity is low for Piedmont, tannins moderate. It's made to drink young, a daily wine for the Piedmontese while Barolo ages.",
+      "highlight": "Black cherry, liquorice, bitter almond"
+    },
+    {
+      "type": "concept",
+      "title": "Why little sweet",
+      "body": "Dolcetto means little sweet one, but the wine is dry. The name probably refers to the grapes' sweetness when eaten, or to their low acidity compared with Barbera and Nebbiolo. Dolcetto ripens early, up to four weeks before Nebbiolo, so it grows on cooler, higher sites that Nebbiolo couldn't ripen.",
+      "highlight": "Dry wine, early ripening"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Dolcetto wines are usually sweet.",
+      "answer": false,
+      "explanation": "Not true. The name means little sweet one, but the wines are dry. The name refers to the grape, not the wine."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for deep purple colour, dark fruit and a soft, round palate with low acidity and moderate tannin, ending in a slightly bitter, almond note. Compared with Barbera, it has less acidity and more tannin; compared with Nebbiolo, much less tannin and darker colour.",
+      "highlight": "Dark, soft, almond finish"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Compared with Barbera, Dolcetto has:",
+      "options": [
+        "Lower acidity and more tannin",
+        "Higher acidity and less tannin",
+        "Much paler colour",
+        "More sugar"
+      ],
+      "answer": 0,
+      "explanation": "Barbera is high in acidity and low in tannin; Dolcetto the reverse."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dolcetto gives dark, soft wines with a bitter almond finish",
+        "Its name means little sweet one, but the wine is dry",
+        "It ripens early, on cooler sites than Nebbiolo"
+      ]
+    }
+  ]
+}

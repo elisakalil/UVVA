@@ -1,0 +1,77 @@
+{
+  "id": "region-us-napa-valley-l02",
+  "moduleId": "region-us-napa-valley",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Cabernet first",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Cabernet Sauvignon's role",
+    "Name Napa's other grapes",
+    "Describe the Napa style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Cabernet Sauvignon",
+      "body": "Cabernet Sauvignon is Napa's star, about 40% of vineyards and most of its value. Napa Cabernet is ripe and powerful, with blackcurrant, black cherry, cassis, chocolate and mint, ripe tannins and often 14.5% alcohol or more, aged in new French oak. Bordeaux-style blends are called Meritage, a trademarked term.",
+      "highlight": "Cabernet: about 40%"
+    },
+    {
+      "type": "concept",
+      "title": "Others",
+      "body": "Merlot, Cabernet Franc, Petit Verdot and Malbec join Cabernet in blends. Chardonnay is the main white, especially in cooler Carneros. Sauvignon Blanc, sometimes called Fumé Blanc, a name Mondavi coined, and Zinfandel also grow. Pinot Noir thrives in Carneros.",
+      "highlight": "Bordeaux grapes, Chardonnay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Napa.",
+      "pairs": [
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Napa's star"
+        },
+        {
+          "left": "Meritage",
+          "right": "Bordeaux-style blend"
+        },
+        {
+          "left": "Fumé Blanc",
+          "right": "Mondavi's Sauvignon name"
+        },
+        {
+          "left": "Carneros",
+          "right": "Cool, Chardonnay and Pinot"
+        }
+      ],
+      "explanation": "Cabernet leads, with Bordeaux partners."
+    },
+    {
+      "type": "tip",
+      "body": "Napa Cabernet grapes are among the most expensive in the world, often over 10,000 dollars per tonne for top vineyards."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is Napa's star?",
+      "options": [
+        "Cabernet Sauvignon",
+        "Zinfandel",
+        "Riesling",
+        "Tempranillo"
+      ],
+      "answer": 0,
+      "explanation": "About 40% of vineyards and most of the value."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet Sauvignon is Napa's star",
+        "Bordeaux grapes join it in blends called Meritage",
+        "Chardonnay and Pinot Noir thrive in cool Carneros"
+      ]
+    }
+  ]
+}

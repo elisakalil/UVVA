@@ -1,0 +1,62 @@
+{
+  "id": "grape-sangiovese-l03",
+  "moduleId": "grape-sangiovese",
+  "order": 3,
+  "title": "Chianti Classico",
+  "subtitle": "The historic heart",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the difference between Chianti and Chianti Classico",
+    "Describe its rules and quality levels",
+    "Explain the black rooster"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two different wines",
+      "body": "Chianti covers a large area across Tuscany, with seven sub-zones like Rufina and Colli Senesi. Chianti Classico is a separate DOCG, the original zone between Florence and Siena, defined in 1716 by Cosimo III de' Medici. Classico must be at least 80% Sangiovese; white grapes were banned in 2006.",
+      "highlight": "Chianti Classico: a separate, original zone"
+    },
+    {
+      "type": "concept",
+      "title": "Quality levels",
+      "body": "Chianti Classico has three levels: Annata, the basic wine; Riserva, aged at least 24 months; and Gran Selezione, created in 2014, from estate-grown grapes aged at least 30 months. Since 2021, Gran Selezione needs at least 90% Sangiovese, and labels can name 11 villages, called UGAs, like Radda and Panzano.",
+      "highlight": "Annata, Riserva, Gran Selezione"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Chianti Classico's top level, created in 2014, is called ____.",
+      "options": [
+        "Gran Selezione",
+        "Riserva",
+        "Annata",
+        "Superiore"
+      ],
+      "answer": "Gran Selezione",
+      "explanation": "Gran Selezione sits above Riserva and Annata, with estate grapes and at least 30 months of ageing."
+    },
+    {
+      "type": "concept",
+      "title": "The black rooster",
+      "body": "The black rooster, gallo nero, is Chianti Classico's symbol. Legend says Florence and Siena settled their border with a race: riders left at the first cockcrow. Florence's black rooster, starved, crowed early, so its rider got further. Every Chianti Classico bottle carries it on the neck.",
+      "highlight": "Gallo nero on every bottle"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chianti and Chianti Classico are the same DOCG.",
+      "answer": false,
+      "explanation": "Not true. Chianti Classico is a separate DOCG, the original historic zone."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chianti Classico is a separate DOCG, defined in 1716",
+        "It has Annata, Riserva and Gran Selezione",
+        "The black rooster marks every bottle"
+      ]
+    }
+  ]
+}

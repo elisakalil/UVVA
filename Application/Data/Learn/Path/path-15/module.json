@@ -1,0 +1,21 @@
+{
+  "id": "path-15",
+  "kind": "path",
+  "order": 15,
+  "level": "Advanced",
+  "complexity": "B",
+  "title": "Systematic Tasting",
+  "description": "A full, repeatable tasting method that ends in a conclusion about quality and readiness to drink.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "path-15-l01",
+    "path-15-l02",
+    "path-15-l03",
+    "path-15-l04",
+    "path-15-l05",
+    "path-15-l06",
+    "path-15-l07"
+  ]
+}

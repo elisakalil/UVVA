@@ -1,0 +1,73 @@
+{
+  "id": "grape-vermentino-l01",
+  "moduleId": "grape-vermentino",
+  "order": 1,
+  "title": "Meet Vermentino",
+  "subtitle": "Citrus, herbs and sea salt",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Vermentino's flavours",
+    "Explain its names",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A coastal white",
+      "body": "Vermentino gives light to medium-bodied whites with lemon, grapefruit, green apple, white flowers, Mediterranean herbs and a saline, almond finish. Acidity is medium to high. It's at home by the sea, and its salty, herbal character is often linked to coastal winds and soils.",
+      "highlight": "Citrus, herbs, saline finish"
+    },
+    {
+      "type": "concept",
+      "title": "Many names",
+      "body": "Vermentino probably spread around the western Mediterranean centuries ago. It's called Rolle in Provence and the Languedoc, Pigato in Liguria and Favorita in Piedmont; DNA shows they're the same grape. It likes heat, sun and drought, and tolerates poor, sandy or granite soils, typical of Mediterranean coasts.",
+      "highlight": "Rolle, Pigato, Favorita"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its region.",
+      "pairs": [
+        {
+          "left": "Vermentino",
+          "right": "Sardinia and Tuscany"
+        },
+        {
+          "left": "Rolle",
+          "right": "Provence"
+        },
+        {
+          "left": "Pigato",
+          "right": "Liguria"
+        },
+        {
+          "left": "Favorita",
+          "right": "Piedmont"
+        }
+      ],
+      "explanation": "One grape, several Mediterranean names."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon colour, citrus and herbs like rosemary and thyme, a crisp palate and a slightly bitter, saline almond finish. Compared with Sauvignon Blanc, it's less pungent and green; compared with Pinot Grigio, more herbal and saline.",
+      "highlight": "Herbal, saline, bitter almond"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Rolle and Vermentino are the same grape.",
+      "answer": true,
+      "explanation": "Yes. Rolle is its name in Provence and the Languedoc."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vermentino gives citrus, herbs and a saline finish",
+        "It's Rolle in Provence, Pigato in Liguria, Favorita in Piedmont",
+        "It loves heat, sun and coastal soils"
+      ]
+    }
+  ]
+}

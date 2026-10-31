@@ -1,0 +1,62 @@
+{
+  "id": "grape-carmenere-l01",
+  "moduleId": "grape-carmenere",
+  "order": 1,
+  "title": "Meet Carmenère",
+  "subtitle": "Dark fruit and green spice",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Carmenère's flavours and structure",
+    "Explain its name",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Soft and spicy",
+      "body": "Carmenère gives deep purple-red wines with blackberry, plum and red pepper, plus spice, paprika, tobacco and sometimes chocolate. Tannins are soft and acidity moderate, so it feels round and smooth. When not fully ripe, it shows a strong green pepper note.",
+      "highlight": "Plum, red pepper, soft tannin"
+    },
+    {
+      "type": "concept",
+      "title": "Crimson leaves",
+      "body": "Its name comes from carmin, the French for crimson, because its leaves turn bright red in autumn before falling. Carmenère is part of the Cabernet family; DNA shows it's a cross of Cabernet Franc and Gros Cabernet. Like its relatives, it has methoxypyrazines, which give green notes when grapes aren't fully ripe.",
+      "highlight": "Named for crimson autumn leaves"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where does Carmenère's name come from?",
+      "options": [
+        "A Chilean town",
+        "The crimson colour of its autumn leaves",
+        "A French winemaker",
+        "Its red pulp"
+      ],
+      "answer": 1,
+      "explanation": "Carmin means crimson; the leaves turn red in autumn."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Carmenère is deep coloured with a purple rim. On the nose, ripe plum and blackberry with a distinctive spicy, green or red pepper note. On the palate, it's smoother and softer than Cabernet Sauvignon, with less grip. That combination of soft tannin and peppery spice is the clue.",
+      "highlight": "Soft tannin plus pepper"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Carmenère usually has firmer tannins than Cabernet Sauvignon.",
+      "answer": false,
+      "explanation": "Not true. Carmenère is softer and rounder, with gentler tannins."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Carmenère gives plum, spice and a peppery note",
+        "Its name comes from its crimson autumn leaves",
+        "It's softer than Cabernet, with a green edge when unripe"
+      ]
+    }
+  ]
+}

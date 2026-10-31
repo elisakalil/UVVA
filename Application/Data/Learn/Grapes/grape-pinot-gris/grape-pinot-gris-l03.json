@@ -1,0 +1,60 @@
+{
+  "id": "grape-pinot-gris-l03",
+  "moduleId": "grape-pinot-gris",
+  "order": 3,
+  "title": "Grigio or Gris",
+  "subtitle": "Two names, two styles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what Pinot Grigio usually means",
+    "Explain what Pinot Gris usually means",
+    "Describe Alsace Pinot Gris"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinot Grigio",
+      "body": "Pinot Grigio, in the Italian style, is light-bodied, crisp and neutral, with lemon, green apple and almond. It's usually picked early, fermented cool in steel and bottled young. Its simplicity and freshness made it one of the best-selling white wines in the UK and US. Producers elsewhere use the name to signal this style.",
+      "highlight": "Light, crisp, neutral"
+    },
+    {
+      "type": "concept",
+      "title": "Pinot Gris",
+      "body": "Pinot Gris, in the Alsace style, is fuller and richer, with ripe pear, honey, ginger, smoke and spice, sometimes off-dry. It's picked riper, often from low-yield sites. Alsace's dry, sunny autumns and Grand Cru vineyards give some of the most concentrated versions. Oregon and New Zealand often use the name for richer styles.",
+      "highlight": "Rich, spicy, sometimes off-dry"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A New Zealand label says Pinot Gris rather than Pinot Grigio. What does it most likely signal?",
+      "options": [
+        "A richer, riper style",
+        "A red wine",
+        "A sparkling wine",
+        "A lighter, crisper style"
+      ],
+      "answer": 0,
+      "explanation": "Producers use Gris to signal the fuller Alsace style."
+    },
+    {
+      "type": "tip",
+      "body": "When choosing, read the name as a style guide: Grigio for a light aperitif, Gris for a fuller wine with food."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Alsace Pinot Gris can be off-dry.",
+      "answer": true,
+      "explanation": "Yes. Ripe Alsace Pinot Gris sometimes has some residual sugar."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Grigio means light, crisp and neutral",
+        "Pinot Gris means rich, spicy and riper",
+        "Alsace makes the most concentrated Pinot Gris"
+      ]
+    }
+  ]
+}

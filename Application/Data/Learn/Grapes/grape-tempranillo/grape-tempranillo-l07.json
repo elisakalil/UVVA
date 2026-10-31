@@ -1,0 +1,95 @@
+{
+  "id": "grape-tempranillo-l07",
+  "moduleId": "grape-tempranillo",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Tempranillo",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Tempranillo",
+    "Know its regions and names",
+    "Explain its ageing and pairing"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each synonym to its region.",
+      "pairs": [
+        {
+          "left": "Tinto Fino",
+          "right": "Ribera del Duero"
+        },
+        {
+          "left": "Tinta Roriz",
+          "right": "Douro"
+        },
+        {
+          "left": "Aragonez",
+          "right": "Alentejo"
+        },
+        {
+          "left": "Cencibel",
+          "right": "La Mancha"
+        }
+      ],
+      "explanation": "One grape, many names."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Spanish ageing categories from youngest to oldest.",
+      "items": [
+        "Joven",
+        "Crianza",
+        "Reserva",
+        "Gran Reserva"
+      ],
+      "explanation": "Each requires more time."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does American oak typically add to Rioja?",
+      "options": [
+        "Coconut, vanilla and dill",
+        "Petrol",
+        "Lychee",
+        "Green pepper"
+      ],
+      "answer": 0,
+      "explanation": "American oak's lactones give coconut and vanilla."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Ribera del Duero is usually darker and more powerful than Rioja.",
+      "answer": true,
+      "explanation": "Yes. Altitude and pure Tinto Fino give it depth."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Tempranillo?",
+      "options": [
+        "Ripens early",
+        "Thick skins",
+        "Very high acidity",
+        "Red fruit and leather"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Its acidity is moderate."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tempranillo gives red fruit, leather and tobacco",
+        "Rioja, Ribera and Toro are its Spanish homes; Tinta Roriz its Portuguese name",
+        "Spain's ageing ladder shapes its style",
+        "It suits lamb, jamón and Manchego"
+      ]
+    }
+  ]
+}

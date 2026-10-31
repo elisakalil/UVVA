@@ -1,0 +1,71 @@
+{
+  "id": "grape-chenin-blanc-l04",
+  "moduleId": "grape-chenin-blanc",
+  "order": 4,
+  "title": "Vouvray and Savennières",
+  "subtitle": "Chenin's great Loire appellations",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Vouvray",
+    "Describe Savennières",
+    "Compare the two"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Vouvray",
+      "body": "Vouvray, near Tours, grows Chenin on tuffeau limestone and flint-clay, perruches, above the Loire. It makes every style, from sparkling to sweet. Vineyards with aubuis, clay-limestone, give rich wines. Producers like Huet, biodynamic since 1990, made it famous. Montlouis, across the river, is similar but often slightly lighter.",
+      "highlight": "Every style, on tuffeau"
+    },
+    {
+      "type": "concept",
+      "title": "Savennières",
+      "body": "Savennières, west of Angers, on schist and volcanic rock, is famous for dry Chenin: powerful, austere, mineral and long-lived. It has two famous crus: La Coulée de Serrant, a monopole of Nicolas Joly, a biodynamic pioneer, and La Roche aux Moines. Young Savennières can be closed; it needs 10 years to open.",
+      "highlight": "Dry, austere, on schist"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its Loire meaning.",
+      "pairs": [
+        {
+          "left": "Tuffeau",
+          "right": "Soft limestone, Vouvray"
+        },
+        {
+          "left": "Perruches",
+          "right": "Flint-clay soils"
+        },
+        {
+          "left": "Coulée de Serrant",
+          "right": "Savennières monopole"
+        },
+        {
+          "left": "Montlouis",
+          "right": "Across the river from Vouvray"
+        }
+      ],
+      "explanation": "Each appellation has its own soils and names."
+    },
+    {
+      "type": "tip",
+      "body": "Decant a young Savennières. Like a red wine, it opens with air, revealing quince, honey and chamomile."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Savennières is best known for sweet wines.",
+      "answer": false,
+      "explanation": "Not true. Savennières is famous for powerful, dry Chenin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vouvray makes every style on tuffeau and flint",
+        "Savennières makes powerful, dry Chenin on schist",
+        "Coulée de Serrant is a famous biodynamic monopole"
+      ]
+    }
+  ]
+}

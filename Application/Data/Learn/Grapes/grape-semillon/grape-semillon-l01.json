@@ -1,0 +1,62 @@
+{
+  "id": "grape-semillon-l01",
+  "moduleId": "grape-semillon",
+  "order": 1,
+  "title": "Meet Sémillon",
+  "subtitle": "Wax, lemon and honey",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sémillon's flavours and structure",
+    "Explain its thin skins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Subtle and textured",
+      "body": "Sémillon gives medium to full-bodied whites with lemon, lanolin, beeswax, grass and, with age, honey, toast and nuts. Acidity is low to medium, texture waxy and oily. Young, it can seem neutral; its strength is texture and ageing. It's Bordeaux's most planted white grape.",
+      "highlight": "Lemon, lanolin, waxy texture"
+    },
+    {
+      "type": "concept",
+      "title": "Thin skins",
+      "body": "Sémillon's thin, golden skins make it prone to rot, including noble rot, Botrytis cinerea. That's a weakness in wet years but a gift for sweet wine. It's vigorous and productive. In Bordeaux it's often blended with Sauvignon Blanc, which adds acidity and aroma to Sémillon's body.",
+      "highlight": "Thin skins, prone to noble rot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Sémillon so suited to noble rot?",
+      "options": [
+        "Its thin skins",
+        "Its thick skins",
+        "Its high acidity",
+        "Its red colour"
+      ],
+      "answer": 0,
+      "explanation": "Thin skins let Botrytis cinerea attack easily."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale to medium lemon colour, a subtle nose of lemon, lanolin and sometimes grass, and a waxy, round palate. In blends with Sauvignon, Sémillon adds weight and texture. Aged Sémillon is unmistakable: toast, honey and lemon curd, even without oak.",
+      "highlight": "Waxy, lemony, honeyed with age"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sémillon has very thick skins.",
+      "answer": false,
+      "explanation": "Not true. Its thin skins make it prone to rot and noble rot."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sémillon gives lemon, lanolin and a waxy texture",
+        "Thin skins make it prone to noble rot",
+        "It's often blended with Sauvignon Blanc"
+      ]
+    }
+  ]
+}

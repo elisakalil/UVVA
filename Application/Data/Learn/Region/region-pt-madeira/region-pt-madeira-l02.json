@@ -1,0 +1,65 @@
+{
+  "id": "region-pt-madeira-l02",
+  "moduleId": "region-pt-madeira",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Noble whites and Tinta Negra",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Madeira's grapes",
+    "Explain the noble grapes' sweetness",
+    "Explain Tinta Negra's role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Tinta Negra",
+      "body": "Tinta Negra is a black grape making about 80% of Madeira. It's versatile, used for every sweetness level. Until 2015, it couldn't be named on labels; now it can. Most Madeira labelled by age, like 5 Years Old, is Tinta Negra, unless a noble grape is named.",
+      "highlight": "Tinta Negra: about 80%"
+    },
+    {
+      "type": "concept",
+      "title": "The noble grapes",
+      "body": "Four white grapes are called noble, and each traditionally gives a level of sweetness: Sercial, driest; Verdelho, medium dry; Boal, or Bual, medium sweet; Malvasia, or Malmsey, sweetest. A wine named after a noble grape must contain at least 85% of it. Terrantez, rare, is a fifth noble grape, medium dry to medium sweet.",
+      "highlight": "Sercial, Verdelho, Boal, Malvasia"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the noble grapes from driest to sweetest.",
+      "items": [
+        "Sercial",
+        "Verdelho",
+        "Boal",
+        "Malvasia"
+      ],
+      "explanation": "Sercial is driest; Malvasia richest."
+    },
+    {
+      "type": "tip",
+      "body": "All Madeira keeps striking acidity, even the sweetest Malmsey. That's what makes it so fresh and long-lived."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape makes most Madeira?",
+      "options": [
+        "Tinta Negra",
+        "Sercial",
+        "Malvasia",
+        "Touriga Nacional"
+      ],
+      "answer": 0,
+      "explanation": "About 80%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tinta Negra makes about 80% of Madeira",
+        "Sercial, Verdelho, Boal and Malvasia run from dry to sweet",
+        "Named noble grape wines need at least 85% of that grape"
+      ]
+    }
+  ]
+}

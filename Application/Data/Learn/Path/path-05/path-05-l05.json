@@ -1,0 +1,95 @@
+{
+  "id": "path-05-l05",
+  "moduleId": "path-05",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything from Storing and Serving",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Store bottles well",
+    "Serve each style at the right temperature",
+    "Open, decant and keep wine properly"
+  ],
+  "steps": [
+    {
+      "type": "selectMultiple",
+      "prompt": "Which conditions damage a stored wine?",
+      "options": [
+        "Strong light",
+        "High heat",
+        "Big temperature swings",
+        "Darkness"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Light, heat and swings age or damage wine. Darkness is what it needs."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its best temperature.",
+      "pairs": [
+        {
+          "left": "Sparkling",
+          "right": "Well chilled"
+        },
+        {
+          "left": "Light white",
+          "right": "Chilled"
+        },
+        {
+          "left": "Light red",
+          "right": "Slightly cool"
+        },
+        {
+          "left": "Full red",
+          "right": "Cellar temperature"
+        }
+      ],
+      "explanation": "Bubbles coldest, full reds warmest."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are corked bottles stored on their side?",
+      "options": [
+        "To save space",
+        "To keep the cork moist",
+        "To mix the sediment",
+        "To show the label"
+      ],
+      "answer": 1,
+      "explanation": "A moist cork stays tight. A dry one shrinks and lets air in."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Young, tannic reds can benefit from decanting.",
+      "answer": true,
+      "explanation": "Yes. Air helps a tight young red open up. Old wines are decanted mainly for sediment."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these opened wines from shortest to longest life in the fridge.",
+      "items": [
+        "Sparkling",
+        "Light white",
+        "Red",
+        "Madeira"
+      ],
+      "explanation": "Bubbles fade first, then light whites. Tannin helps reds, and Madeira's making leaves it almost immune to air."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Store wine cool, dark, still and steady",
+        "Serve sparkling coldest and full reds warmest",
+        "Decant for sediment or for air",
+        "Recork and refrigerate leftovers; fortified wines last longest"
+      ]
+    }
+  ]
+}

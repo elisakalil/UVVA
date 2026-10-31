@@ -1,0 +1,72 @@
+{
+  "id": "grape-pinot-gris-l04",
+  "moduleId": "grape-pinot-gris",
+  "order": 4,
+  "title": "Ramato",
+  "subtitle": "The copper-coloured tradition",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what ramato is",
+    "Explain where it comes from",
+    "Explain how it's made"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Copper colour",
+      "body": "Ramato means copper-coloured in Italian. It's a traditional style of Pinot Grigio from Friuli and Veneto, made with skin contact. Because Pinot Gris has pink-grey skins, leaving the juice on them for hours or days gives a copper or salmon hue, plus more body, texture and flavour.",
+      "highlight": "Ramato: copper-coloured"
+    },
+    {
+      "type": "concept",
+      "title": "A Venetian tradition",
+      "body": "Ramato was traditional in the Republic of Venice, where Pinot Grigio was made this way. Modern, pale Pinot Grigio, pressed quickly, became popular from the 1960s. Since the 2000s, producers have revived ramato, sometimes with longer skin contact, linking it to the orange wine movement.",
+      "highlight": "Revived since the 2000s"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does ramato have a copper colour?",
+      "options": [
+        "Skin contact with Pinot Gris' pink-grey skins",
+        "Added red wine",
+        "Oak ageing",
+        "Oxidation only"
+      ],
+      "answer": 0,
+      "explanation": "The skins' pigment tints the juice."
+    },
+    {
+      "type": "concept",
+      "title": "Taste",
+      "body": "Ramato is fuller and more textured than standard Pinot Grigio, with red apple, peach, dried herbs, and a light tannic grip. It's dry, and works well with food. Its colour sits between rosé and orange wine.",
+      "highlight": "Fuller, textured, light grip"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe ramato?",
+      "options": [
+        "Copper colour",
+        "Skin contact",
+        "Light tannic grip",
+        "Very sweet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Ramato is dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Ramato is copper-coloured Pinot Grigio made with skin contact",
+        "It's a Venetian tradition revived since the 2000s",
+        "It's fuller and more textured than standard Pinot Grigio"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "grape-chardonnay-l05",
+  "moduleId": "grape-chardonnay",
+  "order": 5,
+  "title": "Chardonnay in sparkling wine",
+  "subtitle": "The finesse of bubbles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Chardonnay's role in Champagne",
+    "Describe Blanc de Blancs",
+    "Name other sparkling regions using it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Champagne",
+      "body": "Chardonnay is about 30% of Champagne's vineyards, concentrated in the Côte des Blancs, on chalk. It brings finesse, acidity, citrus and floral notes, and the ability to age long. Grand Cru villages like Cramant, Avize, Le Mesnil-sur-Oger and Oger give some of its finest sparkling wines.",
+      "highlight": "Côte des Blancs, chalk"
+    },
+    {
+      "type": "concept",
+      "title": "Blanc de Blancs",
+      "body": "Blanc de Blancs, white from whites, is Champagne made only from white grapes, almost always Chardonnay. It's lean and citrus when young, developing brioche, hazelnut and toast with age. Salon, which makes only vintage Blanc de Blancs from Le Mesnil, and Krug's Clos du Mesnil are famous examples.",
+      "highlight": "Blanc de Blancs: white from whites"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Blanc de Blancs Champagne made from?",
+      "options": [
+        "Only white grapes, usually Chardonnay",
+        "Only Pinot Noir",
+        "Only Meunier",
+        "Red and white wine blended"
+      ],
+      "answer": 0,
+      "explanation": "Blanc de Blancs means white from whites."
+    },
+    {
+      "type": "concept",
+      "title": "Beyond Champagne",
+      "body": "Chardonnay is key in traditional method wines worldwide: Franciacorta, Trentodoc, Crémant de Bourgogne, English sparkling wine, Tasmania and California. Its high acidity in cool climates and neutral fruit take on the bready, toasty notes of lees ageing well.",
+      "highlight": "Franciacorta, England, Tasmania"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are known for Chardonnay-based sparkling wine?",
+      "options": [
+        "Côte des Blancs",
+        "Franciacorta",
+        "Tasmania",
+        "Mosel"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The Mosel is known for still Riesling."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chardonnay is about 30% of Champagne, mostly in the Côte des Blancs",
+        "Blanc de Blancs is made only from white grapes",
+        "Franciacorta, England and Tasmania also use it"
+      ]
+    }
+  ]
+}

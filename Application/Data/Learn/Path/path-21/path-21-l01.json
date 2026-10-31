@@ -1,0 +1,62 @@
+{
+  "id": "path-21-l01",
+  "moduleId": "path-21",
+  "order": 1,
+  "title": "German wine law",
+  "subtitle": "Ripeness on the label",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Germany's quality levels",
+    "Read Prädikat terms",
+    "Explain the VDP classification"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Graded by ripeness",
+      "body": "German law grades wine partly by the sugar level of the grapes at harvest, measured in degrees Oechsle. Deutscher Wein and Landwein are the basic levels. Qualitätswein comes from one of 13 regions. Prädikatswein, the top level, adds a ripeness term: Kabinett, Spätlese, Auslese, Beerenauslese, Eiswein or Trockenbeerenauslese.",
+      "highlight": "Oechsle measures ripeness"
+    },
+    {
+      "type": "concept",
+      "title": "Ripeness, not sweetness",
+      "body": "A Prädikat says how ripe the grapes were, not how sweet the wine is. A Spätlese can be fermented dry, with trocken on the label, or left off-dry. Trocken means up to 9 g/l of sugar, halbtrocken up to 18 g/l. Feinherb is an unofficial term for off-dry. Beerenauslese and Trockenbeerenauslese are always sweet.",
+      "highlight": "Prädikat: ripeness at harvest"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Spätlese on a German label tell you?",
+      "options": [
+        "The wine is always sweet",
+        "The grapes were picked at a higher ripeness level",
+        "The wine aged in oak",
+        "The wine is sparkling"
+      ],
+      "answer": 1,
+      "explanation": "Spätlese means late harvest, a ripeness level. The wine can be dry or sweet."
+    },
+    {
+      "type": "concept",
+      "title": "The VDP",
+      "body": "The VDP, an association of about 200 leading estates, created its own vineyard classification, much like Burgundy: Gutswein, Ortswein, Erste Lage and Grosse Lage. Dry wines from Grosse Lage sites are labelled Grosses Gewächs, or GG. This system is private, but widely respected.",
+      "highlight": "VDP: Grosse Lage and GG"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A Grosses Gewächs from the VDP is always a sweet wine.",
+      "answer": false,
+      "explanation": "Not true. Grosses Gewächs is the VDP's term for a dry wine from a top vineyard."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "German law grades Prädikatswein by ripeness at harvest",
+        "Prädikat terms show ripeness, not sweetness",
+        "The VDP ranks vineyards; GG means dry wine from a top site"
+      ]
+    }
+  ]
+}

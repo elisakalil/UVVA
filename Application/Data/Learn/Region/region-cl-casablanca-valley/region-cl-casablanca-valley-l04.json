@@ -1,0 +1,96 @@
+{
+  "id": "region-cl-casablanca-valley-l04",
+  "moduleId": "region-cl-casablanca-valley",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Casablanca",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Casablanca's land and grapes",
+    "Explain its cool climate",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Casablanca.",
+      "pairs": [
+        {
+          "left": "Humboldt Current",
+          "right": "Cold ocean current"
+        },
+        {
+          "left": "Pablo Morandé",
+          "right": "Pioneer, 1982"
+        },
+        {
+          "left": "Costa",
+          "right": "Coastal descriptor"
+        },
+        {
+          "left": "Valparaíso",
+          "right": "Nearby port"
+        }
+      ],
+      "explanation": "Casablanca's story is coastal."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Casablanca's main weather risk?",
+      "options": [
+        "Spring frost",
+        "Hurricanes",
+        "Extreme heat",
+        "Monsoon"
+      ],
+      "answer": 0,
+      "explanation": "Cool nights bring frost risk in spring."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "About three-quarters of Casablanca's vineyards are white.",
+      "answer": true,
+      "explanation": "Yes, unusual for Chile."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes thrive in Casablanca?",
+      "options": [
+        "Sauvignon Blanc",
+        "Chardonnay",
+        "Pinot Noir",
+        "Carmenère"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Carmenère needs more warmth."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The cold current along Chile's coast is the ____ Current.",
+      "options": [
+        "Humboldt",
+        "Benguela",
+        "Gulf",
+        "California"
+      ],
+      "answer": "Humboldt",
+      "explanation": "The Humboldt Current."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Casablanca is cooled by the Pacific and the Humboldt Current",
+        "It pioneered Chile's cool coastal wines from the 1980s",
+        "Sauvignon Blanc, Chardonnay and Pinot Noir lead",
+        "Its whites suit Chilean seafood"
+      ]
+    }
+  ]
+}

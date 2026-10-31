@@ -1,0 +1,62 @@
+{
+  "id": "grape-zinfandel-l03",
+  "moduleId": "grape-zinfandel",
+  "order": 3,
+  "title": "One grape, two names",
+  "subtitle": "DNA and identity",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Zinfandel and Primitivo were linked",
+    "Explain how its Croatian origin was found",
+    "Explain labelling rules"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The DNA story",
+      "body": "For years, Zinfandel was thought to be an American grape. In the 1970s, a professor noticed Primitivo in Puglia looked similar; in 1994, DNA showed they were identical. Dr Carole Meredith of UC Davis then searched Croatia; in 2001 she confirmed Crljenak Kaštelanski as the same grape, and later found an older name, Tribidrag, recorded in the 15th century.",
+      "highlight": "DNA confirmed in 1994 and 2001"
+    },
+    {
+      "type": "concept",
+      "title": "Labelling",
+      "body": "Since the EU and the US recognised them as the same, Italian producers can label Primitivo as Zinfandel when exporting to the US, and US producers can call theirs Primitivo. Still, the two are made in different styles: Puglian Primitivo tends to be softer and more rustic; Californian Zinfandel bolder and fruitier.",
+      "highlight": "Same grape, different styles"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Who confirmed Zinfandel's Croatian origin?",
+      "options": [
+        "Robert Parker",
+        "Carole Meredith",
+        "Abraham Perold",
+        "Michel Aimé Pouget"
+      ],
+      "answer": 1,
+      "explanation": "Dr Carole Meredith of UC Davis led the DNA research in Croatia."
+    },
+    {
+      "type": "concept",
+      "title": "Tribidrag",
+      "body": "Tribidrag was mentioned in Croatian documents from the 1400s. Phylloxera and neglect almost wiped it out there. Since the DNA discovery, Croatian producers have replanted it on the Dalmatian coast. It's a reminder that wine grapes travel and change names along the way.",
+      "highlight": "Documented in the 1400s"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Zinfandel was originally an American grape.",
+      "answer": false,
+      "explanation": "Not true. DNA shows it came from Croatia, where it was known as Tribidrag."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "DNA showed Zinfandel and Primitivo are identical in 1994",
+        "Its Croatian origin, Tribidrag, was confirmed in 2001",
+        "Labelling rules allow both names, though styles differ"
+      ]
+    }
+  ]
+}

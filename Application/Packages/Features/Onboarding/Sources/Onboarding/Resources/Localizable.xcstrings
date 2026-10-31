@@ -1,0 +1,186 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "‹" : {
+
+    },
+    "›" : {
+
+    },
+    "%lld of your contacts are on UVVA" : {
+
+    },
+    "1 of your contacts is on UVVA" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add your closest friends to start comparing palates." : {
+
+    },
+    "And what should we call you?" : {
+
+    },
+    "At least two letters" : {
+
+    },
+    "Back" : {
+
+    },
+    "By continuing you agree to the [Terms](uvva-legal://terms) and the [Privacy Policy](uvva-legal://privacy)." : {
+
+    },
+    "Changes" : {
+
+    },
+    "Contacts" : {
+
+    },
+    "Content" : {
+
+    },
+    "Continue" : {
+
+    },
+    "Continue with Apple" : {
+
+    },
+    "Could not reach Apple. Check your connection and try again." : {
+
+    },
+    "Country, %@" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Find friends" : {
+
+    },
+    "I understand" : {
+
+    },
+    "If you add your number, we publish a code made from it, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA." : {
+
+    },
+    "In your own iCloud. Your name and, if you choose, your map are public to the people you add as friends." : {
+
+    },
+    "Invite" : {
+
+    },
+    "Invite contacts who aren't on UVVA" : {
+
+    },
+    "Invited" : {
+
+    },
+    "Last updated 12 August 2026" : {
+
+    },
+    "Legal" : {
+
+    },
+    "Lessons, illustrations and texts belong to UVVA. Your tasting notes belong to you. Do not redistribute the lessons." : {
+
+    },
+    "Map your taste in wine with me on UVVA." : {
+
+    },
+    "Next" : {
+
+    },
+    "Nice to meet you" : {
+
+    },
+    "None of your contacts are on UVVA yet" : {
+
+    },
+    "One account per person, signed in with Apple and kept in your iCloud. Anything done from your account is your responsibility." : {
+
+    },
+    "Optional. You can still add friends with your invite link." : {
+
+    },
+    "Privacy" : {
+
+    },
+    "Privacy Policy" : {
+
+    },
+    "Requested" : {
+
+    },
+    "Sharing" : {
+
+    },
+    "Skip for now" : {
+
+    },
+    "So friends who have you in their contacts can find you here. We never send you a code or a message." : {
+
+    },
+    "Terms" : {
+
+    },
+    "Terms of Use" : {
+
+    },
+    "The service" : {
+
+    },
+    "UVVA" : {
+
+    },
+    "UVVA gives you wine lessons, a map of your palate and a place to keep tasting notes. Everything in the app is free." : {
+
+    },
+    "UVVA is better with friends. Add them now and, once they accept, you will see where your palates meet and what to open together." : {
+
+    },
+    "UVVA keeps your account in iCloud. Sign in to iCloud in Settings, then come back." : {
+
+    },
+    "We do not sell your data and we have no servers of our own." : {
+
+    },
+    "We may update these terms. If a change is material, we tell you in the app before it takes effect." : {
+
+    },
+    "We will never do anything creepy like spam or auto-add your friends." : {
+
+    },
+    "Welcome. Let's find the wines you'll love." : {
+
+    },
+    "What is your phone number?" : {
+
+    },
+    "What we collect" : {
+
+    },
+    "Where it lives" : {
+
+    },
+    "Your account" : {
+
+    },
+    "Your account could not be saved. Try again." : {
+
+    },
+    "Your first name is enough. We took it from your account; change it if you like." : {
+
+    },
+    "Your first name, your phone number if you add it, your palate map, the lessons you open and the tasting notes you write. Nothing else." : {
+
+    },
+    "Your phone" : {
+
+    }
+  },
+  "version" : "1.0"
+}

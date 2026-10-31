@@ -1,0 +1,257 @@
+{
+  "": {
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/primary.swiftdeps"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/AppStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/AppStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/AppStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/AppStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/AppStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/AppStore.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Cloud/Array+Chunked.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Cloud/CloudKitSocialService.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Cloud/ContactKey.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContactKey.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContactKey.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContactKey~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContactKey.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContactKey.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Cloud/ICloudAccountStatus.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ICloudAccountStatus.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ICloudAccountStatus.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ICloudAccountStatus~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ICloudAccountStatus.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ICloudAccountStatus.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/ContentStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentStore.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Import/ContentImportStage.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImportStage.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImportStage.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImportStage~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImportStage.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImportStage.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Import/ContentImporter.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImporter.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImporter.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImporter~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImporter.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImporter.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Import/ContentSource.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentSource.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentSource.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentSource~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentSource.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentSource.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Models/GlossaryTermEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/GlossaryTermEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/GlossaryTermEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/GlossaryTermEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/GlossaryTermEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/GlossaryTermEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Models/LessonEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/LessonEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/LessonEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/LessonEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/LessonEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/LessonEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Models/ModuleEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ModuleEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ModuleEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ModuleEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ModuleEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ModuleEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Models/QuizQuestionEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Models/RecipeEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/RecipeEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/RecipeEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/RecipeEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/RecipeEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/RecipeEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Models/WineEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/WineEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/WineEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/WineEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/WineEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/WineEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/ContentManifest.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentManifest.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentManifest.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentManifest~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentManifest.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentManifest.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/JSONValue.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/JSONValue.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/JSONValue.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/JSONValue~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/JSONValue.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/JSONValue.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedAxes.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedAxes.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedAxes.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedAxes~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedAxes.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedAxes.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedGlossaryFile.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryFile.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryFile.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryFile~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryFile.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryFile.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedGlossaryTerm.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryTerm.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryTerm.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryTerm~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryTerm.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryTerm.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedLearnFile.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLearnFile.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLearnFile.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLearnFile~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLearnFile.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLearnFile.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedLesson.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLesson.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLesson.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLesson~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLesson.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedLesson.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedModule.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedModule.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedModule.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedModule~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedModule.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedModule.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedQuizFile.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizFile.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizFile.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizFile~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizFile.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizFile.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedQuizQuestion.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizQuestion.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizQuestion.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizQuestion~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizQuestion.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedQuizQuestion.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedRecipe.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipe.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipe.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipe~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipe.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipe.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedRecipesFile.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipesFile.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipesFile.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipesFile~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipesFile.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedRecipesFile.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedServingTemperature.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedServingTemperature.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedServingTemperature.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedServingTemperature~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedServingTemperature.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedServingTemperature.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWine.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWine.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWine.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWine~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWine.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWine.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWinesFile.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ProfileEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/PalateMapStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.dia"
+  }
+}

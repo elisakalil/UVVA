@@ -1,0 +1,96 @@
+{
+  "id": "grape-pinot-gris-l06",
+  "moduleId": "grape-pinot-gris",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Pinot Gris",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Pinot Gris and Grigio",
+    "Explain ramato",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Pinot Grigio",
+          "right": "Light, crisp style"
+        },
+        {
+          "left": "Pinot Gris",
+          "right": "Rich, spicy style"
+        },
+        {
+          "left": "Ramato",
+          "right": "Copper, skin contact"
+        },
+        {
+          "left": "Grauburgunder",
+          "right": "German name"
+        }
+      ],
+      "explanation": "Names signal style."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Pinot Gris' relationship to Pinot Noir?",
+      "options": [
+        "A colour mutation",
+        "A cross with Riesling",
+        "Unrelated",
+        "Its parent"
+      ],
+      "answer": 0,
+      "explanation": "Same DNA, lighter skin."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Italy is the largest producer of Pinot Grigio.",
+      "answer": true,
+      "explanation": "Yes, mostly in the north-east."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which give a richer Pinot Gris?",
+      "options": [
+        "Low yields",
+        "Later picking",
+        "Alsace's dry autumns",
+        "Early picking"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Early picking gives the light style."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Ramato means ____ in Italian.",
+      "options": [
+        "copper-coloured",
+        "grey",
+        "sweet",
+        "old"
+      ],
+      "answer": "copper-coloured",
+      "explanation": "For its copper hue from skin contact."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Gris is a pink-skinned mutation of Pinot Noir",
+        "Grigio means light and crisp; Gris rich and spicy",
+        "Ramato is copper-coloured skin-contact Grigio",
+        "Match the style to the food"
+      ]
+    }
+  ]
+}

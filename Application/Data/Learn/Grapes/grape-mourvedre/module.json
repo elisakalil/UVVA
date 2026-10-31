@@ -1,0 +1,31 @@
+{
+  "id": "grape-mourvedre",
+  "kind": "grape",
+  "order": 7,
+  "color": "red",
+  "title": "Mourvèdre",
+  "aliases": [
+    "Monastrell",
+    "Mataro"
+  ],
+  "origin": "Spain",
+  "countries": [
+    "Spain",
+    "France",
+    "Australia"
+  ],
+  "points": "1 2 1 1 = 5",
+  "complexity": "B",
+  "description": "Also called Monastrell in Spain and Mataro in Australia. A sun-loving grape of dark fruit, game and herbs.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "grape-mourvedre-l01",
+    "grape-mourvedre-l02",
+    "grape-mourvedre-l03",
+    "grape-mourvedre-l04",
+    "grape-mourvedre-l05",
+    "grape-mourvedre-l06"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "grape-albarino-l03",
+  "moduleId": "grape-albarino",
+  "order": 3,
+  "title": "Albariño and Alvarinho",
+  "subtitle": "One grape, two countries",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Compare Spanish and Portuguese styles",
+    "Describe Monção e Melgaço",
+    "Explain the role of lees ageing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two styles",
+      "body": "Spanish Albariño from Rías Baixas is crisp, peachy and saline, usually unoaked, around 12.5 to 13%. Portuguese Alvarinho from Monção e Melgaço, a warmer, sheltered sub-region of Vinho Verde, is often fuller and riper, with tropical notes. Both share the grape's acidity and perfume.",
+      "highlight": "Rías Baixas saline; Monção riper"
+    },
+    {
+      "type": "concept",
+      "title": "Monção e Melgaço",
+      "body": "Monção e Melgaço, on the south bank of the Minho, is protected from the Atlantic by hills, so it's warmer and drier than the rest of Vinho Verde. Alvarinho there reaches higher ripeness and gives Vinho Verde's most serious whites. Unlike most Vinho Verde, they're rarely spritzy.",
+      "highlight": "Sheltered, warmer, serious"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Monção e Melgaço warmer than the rest of Vinho Verde?",
+      "options": [
+        "Hills shelter it from the Atlantic",
+        "It's at very high altitude",
+        "It's on the coast",
+        "It's in Spain"
+      ],
+      "answer": 0,
+      "explanation": "Shelter from Atlantic winds and rain gives more warmth."
+    },
+    {
+      "type": "concept",
+      "title": "Lees and ageing",
+      "body": "Many producers age Albariño on its lees for months, adding texture and creaminess. Some use oak or concrete. Though usually drunk young, good Albariño and Alvarinho can age five to ten years, gaining honey and toasted notes while keeping their acidity.",
+      "highlight": "Lees for texture; can age"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Monção e Melgaço Alvarinho?",
+      "options": [
+        "Fuller and riper",
+        "Sheltered location",
+        "Vinho Verde's most serious whites",
+        "Always very spritzy"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Monção e Melgaço Alvarinho is rarely spritzy."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rías Baixas Albariño is crisp and saline",
+        "Monção e Melgaço Alvarinho is riper and fuller",
+        "Lees ageing adds texture; good examples age"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "grape-nebbiolo-l02",
+  "moduleId": "grape-nebbiolo",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Piedmont and the north",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Nebbiolo's main regions",
+    "Explain why it's so site-specific",
+    "Name its northern Italian homes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Piedmont",
+      "body": "Nebbiolo's heart is the Langhe and Roero, around Alba, in Piedmont. Barolo and Barbaresco are its great wines. Roero, across the Tanaro river, makes lighter, more perfumed Nebbiolo on sandy soils. Langhe Nebbiolo and Nebbiolo d'Alba are more affordable regional wines.",
+      "highlight": "Langhe and Roero"
+    },
+    {
+      "type": "concept",
+      "title": "Northern Piedmont and Lombardy",
+      "body": "In northern Piedmont, Nebbiolo is called Spanna and grows in Gattinara, Ghemme, Boca and Lessona, on volcanic and acidic soils, giving fresher, more mineral wines. In Lombardy's Valtellina, it's called Chiavennasca and grows on steep Alpine terraces. Valle d'Aosta's Donnas also uses it.",
+      "highlight": "Spanna and Chiavennasca"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name or place to Nebbiolo.",
+      "pairs": [
+        {
+          "left": "Spanna",
+          "right": "Northern Piedmont name"
+        },
+        {
+          "left": "Chiavennasca",
+          "right": "Valtellina name"
+        },
+        {
+          "left": "Gattinara",
+          "right": "Northern Piedmont DOCG"
+        },
+        {
+          "left": "Roero",
+          "right": "Sandy, perfumed Nebbiolo"
+        }
+      ],
+      "explanation": "Nebbiolo has several homes in northern Italy."
+    },
+    {
+      "type": "concept",
+      "title": "Hard to transplant",
+      "body": "Nebbiolo is very site-specific: it needs warm, sunny slopes, often south-facing, and calcareous marl to show its best. Plantings in California, Australia and Argentina exist, but few match Piedmont. It's one of the least travelled great grapes.",
+      "highlight": "Rarely successful abroad"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Nebbiolo called in Valtellina?",
+      "options": [
+        "Chiavennasca",
+        "Spanna",
+        "Brunello",
+        "Prugnolo"
+      ],
+      "answer": 0,
+      "explanation": "Chiavennasca grows on Valtellina's steep Alpine terraces."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Nebbiolo's heart is the Langhe and Roero",
+        "It's Spanna in northern Piedmont and Chiavennasca in Valtellina",
+        "It's very site-specific and rarely succeeds abroad"
+      ]
+    }
+  ]
+}

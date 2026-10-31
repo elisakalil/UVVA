@@ -20,6 +20,230 @@
                ReferencedContainer = "container:UVVA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "StorageTests"
+               BuildableName = "StorageTests"
+               BlueprintName = "StorageTests"
+               ReferencedContainer = "container:Packages/Storage">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "QuizzTests"
+               BuildableName = "QuizzTests"
+               BlueprintName = "QuizzTests"
+               ReferencedContainer = "container:Packages/Features/Quizz">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "StorageTests"
+               BuildableName = "StorageTests"
+               BlueprintName = "StorageTests"
+               ReferencedContainer = "container:Packages/Storage">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OnboardingTests"
+               BuildableName = "OnboardingTests"
+               BlueprintName = "OnboardingTests"
+               ReferencedContainer = "container:Packages/Features/Onboarding">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -29,14 +253,163 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A10000000000000000000015"
-               BuildableName = "UVVATests.xctest"
-               BlueprintName = "UVVATests"
-               ReferencedContainer = "container:UVVA.xcodeproj">
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "StorageTests"
+               BuildableName = "StorageTests"
+               BlueprintName = "StorageTests"
+               ReferencedContainer = "container:Packages/Storage">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "QuizzTests"
+               BuildableName = "QuizzTests"
+               BlueprintName = "QuizzTests"
+               ReferencedContainer = "container:Packages/Features/Quizz">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "StorageTests"
+               BuildableName = "StorageTests"
+               BlueprintName = "StorageTests"
+               ReferencedContainer = "container:Packages/Storage">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "MatchTests"
+               BuildableName = "MatchTests"
+               BlueprintName = "MatchTests"
+               ReferencedContainer = "container:Packages/Match">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "HomeTests"
+               BuildableName = "HomeTests"
+               BlueprintName = "HomeTests"
+               ReferencedContainer = "container:Packages/Features/Home">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OnboardingTests"
+               BuildableName = "OnboardingTests"
+               BlueprintName = "OnboardingTests"
+               ReferencedContainer = "container:Packages/Features/Onboarding">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,13 +426,13 @@
       allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A10000000000000000000010"
-            BuildableName = "UVVA.app"
-            BlueprintName = "UVVA"
-            ReferencedContainer = "container:UVVA.xcodeproj">
-         </BuildableReference>
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A10000000000000000000010"
+               BuildableName = "UVVA.app"
+               BlueprintName = "UVVA"
+               ReferencedContainer = "container:UVVA.xcodeproj">
+            </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
@@ -70,13 +443,13 @@
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A10000000000000000000010"
-            BuildableName = "UVVA.app"
-            BlueprintName = "UVVA"
-            ReferencedContainer = "container:UVVA.xcodeproj">
-         </BuildableReference>
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A10000000000000000000010"
+               BuildableName = "UVVA.app"
+               BlueprintName = "UVVA"
+               ReferencedContainer = "container:UVVA.xcodeproj">
+            </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction

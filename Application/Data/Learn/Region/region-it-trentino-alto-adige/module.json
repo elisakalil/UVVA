@@ -1,0 +1,27 @@
+{
+  "id": "region-it-trentino-alto-adige",
+  "kind": "region",
+  "order": 13,
+  "country": "Italy",
+  "countryCode": "IT",
+  "title": "Trentino-Alto Adige",
+  "grapes": [
+    "Pinot Grigio",
+    "Gewürztraminer",
+    "Lagrein",
+    "Chardonnay"
+  ],
+  "points": "1 0 2 1 = 4",
+  "complexity": "C",
+  "description": "Italy's Alpine north: fresh whites, Lagrein and the mountain sparkling wine Trentodoc.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-it-trentino-alto-adige-l01",
+    "region-it-trentino-alto-adige-l02",
+    "region-it-trentino-alto-adige-l03",
+    "region-it-trentino-alto-adige-l04",
+    "region-it-trentino-alto-adige-l05"
+  ]
+}

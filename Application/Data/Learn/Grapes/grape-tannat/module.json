@@ -1,0 +1,26 @@
+{
+  "id": "grape-tannat",
+  "kind": "grape",
+  "order": 1,
+  "color": "red",
+  "title": "Tannat",
+  "aliases": [],
+  "origin": "France",
+  "countries": [
+    "Uruguay",
+    "France"
+  ],
+  "points": "1 1 1 1 = 4",
+  "complexity": "C",
+  "description": "The most tannic grape of south-west France, which found a softer second home in Uruguay.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-tannat-l01",
+    "grape-tannat-l02",
+    "grape-tannat-l03",
+    "grape-tannat-l04",
+    "grape-tannat-l05"
+  ]
+}

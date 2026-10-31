@@ -1,0 +1,26 @@
+{
+  "id": "region-it-friuli-venezia-giulia",
+  "kind": "region",
+  "order": 14,
+  "country": "Italy",
+  "countryCode": "IT",
+  "title": "Friuli-Venezia Giulia",
+  "grapes": [
+    "Friulano",
+    "Ribolla Gialla",
+    "Pinot Grigio"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "Between the Alps and the Adriatic: precise whites and the modern home of orange wine.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-it-friuli-venezia-giulia-l01",
+    "region-it-friuli-venezia-giulia-l02",
+    "region-it-friuli-venezia-giulia-l03",
+    "region-it-friuli-venezia-giulia-l04",
+    "region-it-friuli-venezia-giulia-l05"
+  ]
+}

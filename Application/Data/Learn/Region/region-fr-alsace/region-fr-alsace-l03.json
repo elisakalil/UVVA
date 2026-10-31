@@ -1,0 +1,62 @@
+{
+  "id": "region-fr-alsace-l03",
+  "moduleId": "region-fr-alsace",
+  "order": 3,
+  "title": "Grands crus",
+  "subtitle": "Alsace's best sites",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the Alsace Grand Cru system",
+    "Name famous Grand Crus",
+    "Explain the role of soil"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "51 Grand Crus",
+      "body": "Alsace has 51 Grand Cru vineyards, classified from 1975 to 2007. They cover about 4% of production. Most are limited to the four noble grapes, though some allow Sylvaner or Pinot Noir. Each has its own soil, exposure and rules. Labels show the Grand Cru's name and the grape.",
+      "highlight": "51 sites, about 4%"
+    },
+    {
+      "type": "concept",
+      "title": "Soils and sites",
+      "body": "Each Grand Cru has a distinct soil: Rangen, on steep volcanic rock, gives powerful wines; Schlossberg, on granite, gives fine Riesling; Hengst and Zotzenberg on marl and limestone; Brand, granite. Producers argue that site matters more than grape, as in Burgundy, and some top estates don't use the Grand Cru label.",
+      "highlight": "Rangen, Schlossberg, Brand"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How many Grand Cru vineyards does Alsace have?",
+      "options": [
+        "51",
+        "5",
+        "33",
+        "200"
+      ],
+      "answer": 0,
+      "explanation": "51 Grand Crus, classified between 1975 and 2007."
+    },
+    {
+      "type": "concept",
+      "title": "Premier Cru",
+      "body": "In 2021, Alsace began recognising communal and Premier Cru levels, aiming to create a Burgundy-style pyramid. Communal appellations, like Bergheim or Ottrott, sit between regional Alsace and the Grand Crus. The system is still developing.",
+      "highlight": "A new pyramid is forming"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most Alsace Grand Crus are limited to the four noble grapes.",
+      "answer": true,
+      "explanation": "Yes, with a few exceptions."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Alsace has 51 Grand Crus, about 4% of production",
+        "Each Grand Cru has its own soil and character",
+        "A communal and Premier Cru level is emerging"
+      ]
+    }
+  ]
+}

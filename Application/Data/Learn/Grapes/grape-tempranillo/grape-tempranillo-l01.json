@@ -1,0 +1,62 @@
+{
+  "id": "grape-tempranillo-l01",
+  "moduleId": "grape-tempranillo",
+  "order": 1,
+  "title": "Meet Tempranillo",
+  "subtitle": "The early one",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Tempranillo's flavours and structure",
+    "Explain its name and origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Red fruit and leather",
+      "body": "Tempranillo gives medium to full-bodied wines with red cherry, strawberry, plum and dried fig, plus tobacco, leather and earth with age. Tannin is medium to high, acidity medium. Its fruit is fairly neutral, so oak and ageing shape it a lot. It's the third or fourth most planted red grape in the world.",
+      "highlight": "Cherry, leather, tobacco"
+    },
+    {
+      "type": "concept",
+      "title": "The early one",
+      "body": "Tempranillo comes from temprano, Spanish for early, because it ripens earlier than other Spanish grapes. DNA shows it's a cross of Albillo Mayor and Benedicto, probably from the Ebro valley. It has thick skins, giving deep colour, but naturally modest acidity, so it suits places with cool nights.",
+      "highlight": "Temprano: early"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Tempranillo's name refer to?",
+      "options": [
+        "Its early ripening",
+        "Its red colour",
+        "Its tannin",
+        "A town"
+      ],
+      "answer": 0,
+      "explanation": "Temprano means early in Spanish."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Young Tempranillo is ruby, with red fruit and soft tannin. Aged Rioja is paler, garnet, with dried fruit, leather, and vanilla, coconut or dill from American oak. Ribera del Duero is darker and more powerful. The combination of red fruit with leather and oak is a classic clue.",
+      "highlight": "Red fruit plus leather and oak"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tempranillo has naturally very high acidity.",
+      "answer": false,
+      "explanation": "Not true. Its acidity is medium to modest, which is why cool nights or high sites help."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tempranillo gives red fruit, leather and tobacco",
+        "Its name means early; it's a cross from the Ebro valley",
+        "Oak and ageing shape its style"
+      ]
+    }
+  ]
+}

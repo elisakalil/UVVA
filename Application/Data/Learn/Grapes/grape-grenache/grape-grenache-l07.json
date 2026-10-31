@@ -1,0 +1,96 @@
+{
+  "id": "grape-grenache-l07",
+  "moduleId": "grape-grenache",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Grenache",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Grenache",
+    "Compare its French and Spanish wines",
+    "Explain its sweet styles"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its place.",
+      "pairs": [
+        {
+          "left": "Garnacha",
+          "right": "Spain"
+        },
+        {
+          "left": "Cannonau",
+          "right": "Sardinia"
+        },
+        {
+          "left": "Grenache",
+          "right": "France"
+        },
+        {
+          "left": "Garnatxa",
+          "right": "Catalonia"
+        }
+      ],
+      "explanation": "One grape, many names."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What leads most Châteauneuf-du-Pape blends?",
+      "options": [
+        "Grenache",
+        "Cabernet",
+        "Pinot Noir",
+        "Merlot"
+      ],
+      "answer": 0,
+      "explanation": "Grenache, often 70% or more."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Gredos Garnacha is known for being heavy and jammy.",
+      "answer": false,
+      "explanation": "Not true. Altitude and granite make it fragrant and fresh."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Grenache?",
+      "options": [
+        "Red fruit",
+        "High alcohol",
+        "Soft tannin",
+        "Thick skins"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Grenache has thin skins."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Banyuls and Maury are vins doux ____.",
+      "options": [
+        "naturels",
+        "rouges",
+        "secs",
+        "mousseux"
+      ],
+      "answer": "naturels",
+      "explanation": "Vins doux naturels: fortified sweet wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grenache gives red fruit, spice and high alcohol",
+        "It leads Châteauneuf-du-Pape and much of Spain",
+        "Old bush vines give its best wines",
+        "Banyuls and Maury are its sweet fortified styles"
+      ]
+    }
+  ]
+}

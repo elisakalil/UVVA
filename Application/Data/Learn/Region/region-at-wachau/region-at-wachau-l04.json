@@ -1,0 +1,60 @@
+{
+  "id": "region-at-wachau-l04",
+  "moduleId": "region-at-wachau",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Wachau and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Wachau label",
+    "Pair Wachau wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "A Wachau label shows producer, grape, the Vinea Wachau category, like Federspiel, and since 2020 the DAC level: Wachau DAC, village name, or Ried plus vineyard name. Famous producers include F.X. Pichler, Prager, Hirtzberger, Knoll and the Domäne Wachau co-operative.",
+      "highlight": "Category plus Ried"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Steinfeder and Federspiel suit light dishes: salads, river fish, asparagus, Wiener Schnitzel. Smaragd suits richer food: roast pork, chicken in cream, Asian dishes with spice and fish with butter sauce. Wachau apricots, Marillen, are famous; apricot dumplings suit off-dry wines. Serve at 9 to 12 degrees, Smaragd a little warmer.",
+      "highlight": "Schnitzel with Federspiel, pork with Smaragd"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Wachau fruit is famous?",
+      "options": [
+        "Apricots, Marillen",
+        "Mangoes",
+        "Lemons",
+        "Bananas"
+      ],
+      "answer": 0,
+      "explanation": "Wachau apricots are a protected local speciality."
+    },
+    {
+      "type": "tip",
+      "body": "A Smaragd Grüner Veltliner with Wiener Schnitzel is a classic Austrian match. The wine's pepper and body handle the fried crust."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "All Wachau Steinfeder, Federspiel and Smaragd wines are dry.",
+      "answer": true,
+      "explanation": "Yes. The categories are for dry wines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show category, DAC and Ried",
+        "Federspiel suits schnitzel; Smaragd suits richer dishes",
+        "Serve at 9 to 12 degrees"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "path-28-l05",
+  "moduleId": "path-28",
+  "order": 5,
+  "title": "Judging quality",
+  "subtitle": "Objective and personal",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Separate quality from personal preference",
+    "Use structured criteria",
+    "Avoid common biases"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Quality is not preference",
+      "body": "You may dislike a perfectly made wine, or love a simple one. Quality judgement asks whether the wine is well made and expressive of its style and origin. Preference asks whether you enjoy it. Professionals separate the two: a great Fino can be outstanding even for someone who prefers fruity reds.",
+      "highlight": "Quality is not the same as liking"
+    },
+    {
+      "type": "concept",
+      "title": "Criteria and bias",
+      "body": "Use balance, length, intensity and complexity, plus typicity: does it taste like its grape and place? Bias creeps in through price, label, reputation, glass colour and even music. In blind tests, wine experts have rated the same wine differently when told it was expensive. Tasting blind removes much of this.",
+      "highlight": "BLIC plus typicity, tasted blind"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each bias to its source.",
+      "pairs": [
+        {
+          "left": "Price bias",
+          "right": "Knowing the price"
+        },
+        {
+          "left": "Label bias",
+          "right": "Seeing the label"
+        },
+        {
+          "left": "Order bias",
+          "right": "Wine tasted first or last"
+        },
+        {
+          "left": "Mood bias",
+          "right": "Your own state"
+        }
+      ],
+      "explanation": "Biases are natural; tasting blind and in a fixed order reduce them."
+    },
+    {
+      "type": "tip",
+      "body": "Taste the same wine twice in a flight without knowing. If your notes differ a lot, you've just measured your own consistency, a humbling and useful exercise."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is the best way to reduce label and price bias?",
+      "options": [
+        "Drink more expensive wine",
+        "Taste blind",
+        "Always read reviews first",
+        "Taste only one wine at a time"
+      ],
+      "answer": 1,
+      "explanation": "Tasting blind removes the influence of label, price and reputation."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Quality and personal preference are different questions",
+        "Judge with balance, length, intensity, complexity and typicity",
+        "Blind tasting reduces price and label bias"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "": {
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/primary.swiftdeps"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/MapChangeTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/PalateMapTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PalateMapTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PalateMapTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PalateMapTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PalateMapTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PalateMapTests.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/PhoneNumberTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PhoneNumberTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PhoneNumberTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PhoneNumberTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PhoneNumberTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PhoneNumberTests.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/QuizExitTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/QuizExitTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/QuizExitTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/QuizExitTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/QuizExitTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/QuizExitTests.dia"
+  }
+}

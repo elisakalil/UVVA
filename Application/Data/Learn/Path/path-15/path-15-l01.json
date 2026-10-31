@@ -1,0 +1,62 @@
+{
+  "id": "path-15-l01",
+  "moduleId": "path-15",
+  "order": 1,
+  "title": "Appearance",
+  "subtitle": "What the eye can conclude",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Assess clarity, intensity and colour precisely",
+    "Use colour to estimate age and grape",
+    "Recognise visual signs of faults"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A precise scale",
+      "body": "Systematic tasting uses fixed words so notes can be compared. Clarity: clear or hazy. Intensity: pale, medium or deep. Colour: for whites, lemon-green, lemon, gold, amber or brown; for rosés, pink, salmon or orange; for reds, purple, ruby, garnet, tawny or brown. Look at the core and the rim separately.",
+      "highlight": "Clear or hazy; pale, medium, deep"
+    },
+    {
+      "type": "concept",
+      "title": "Reading the evidence",
+      "body": "Deep colour in a young red suggests thick skins, like Syrah or Cabernet, or a warm climate. Pale colour suggests Pinot Noir, Grenache or Nebbiolo. A wide watery rim in a red shows age. In whites, gold can mean age, oak or sweetness; amber or brown suggests oxidation or deliberate oxidative ageing, as in Oloroso.",
+      "highlight": "Colour hints at grape, climate and age"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A young red is deep purple and nearly opaque. Which grape is most likely?",
+      "options": [
+        "Pinot Noir",
+        "Nebbiolo",
+        "Syrah",
+        "Grenache"
+      ],
+      "answer": 2,
+      "explanation": "Syrah's thick skins give deep, dark colour. Pinot Noir, Nebbiolo and Grenache are all naturally paler."
+    },
+    {
+      "type": "concept",
+      "title": "Faults you can see",
+      "body": "Haze in a wine that should be clear can mean a protein or microbial problem, though some unfiltered wines are naturally slightly cloudy. Bubbles in a still wine may mean refermentation in bottle. Brown tones in a young white suggest oxidation. Tartrate crystals and red sediment are harmless.",
+      "highlight": "Haze or browning can warn of faults"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A gold colour in a white wine always means the wine is old.",
+      "answer": false,
+      "explanation": "Not true. Gold can come from age, but also from oak ageing, a warm climate, sweetness or long skin contact. Look for other clues."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Use fixed terms for clarity, intensity and colour",
+        "Deep colour suggests thick skins or warmth; pale suggests thin skins",
+        "Haze, browning or bubbles in a still wine can signal a fault"
+      ]
+    }
+  ]
+}

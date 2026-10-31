@@ -1,0 +1,70 @@
+{
+  "id": "grape-marsanne-l04",
+  "moduleId": "grape-marsanne",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Marsanne",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Marsanne with food",
+    "Serve it well",
+    "Know when to drink it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Rich dishes",
+      "body": "Marsanne's body and texture suit rich dishes: roast chicken, veal in cream sauce, lobster, crab, scallops, and dishes with butter or almonds. Aged white Hermitage suits truffle, mushrooms and hard cheeses like Comté. Avoid very acidic or very spicy food.",
+      "highlight": "Lobster, veal, Comté"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 11 to 13 degrees, not too cold. Simple Marsanne is good young. White Hermitage is best either within two to three years or after ten. Tahbilk's aged Marsanne shows how unoaked versions develop too.",
+      "highlight": "Young, or after ten years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits an aged white Hermitage?",
+      "options": [
+        "Roast chicken with mushrooms",
+        "Lemon sorbet",
+        "Spicy Thai curry",
+        "Raw oysters"
+      ],
+      "answer": 0,
+      "explanation": "Rich, earthy dishes match its honeyed, nutty development."
+    },
+    {
+      "type": "tip",
+      "body": "Decant an older white Hermitage. Like a red, it benefits from air, opening its nutty, honeyed aromas."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Marsanne?",
+      "options": [
+        "Lobster",
+        "Veal in cream sauce",
+        "Comté cheese",
+        "Very acidic vinaigrette"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Acidic dressings make low-acid wines taste flat."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Marsanne suits lobster, veal and Comté",
+        "Serve at 11 to 13 degrees",
+        "Drink white Hermitage young or after ten years"
+      ]
+    }
+  ]
+}

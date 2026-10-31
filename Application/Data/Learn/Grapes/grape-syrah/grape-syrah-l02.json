@@ -1,0 +1,79 @@
+{
+  "id": "grape-syrah-l02",
+  "moduleId": "grape-syrah",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "From the Rhône to the world",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Syrah's main regions",
+    "Explain the climates it suits",
+    "Name its main blending partners"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A wide map",
+      "body": "Syrah's classic home is the northern Rhône, on steep granite slopes. It is also a key grape in the southern Rhône and the Languedoc, blended with Grenache and Mourvèdre. As Shiraz, it is Australia's most planted grape. It grows in South Africa, California, Washington, Chile, Argentina and New Zealand's Hawke's Bay.",
+      "highlight": "Rhône, Australia, the New World"
+    },
+    {
+      "type": "concept",
+      "title": "Climate",
+      "body": "Syrah needs warmth to ripen, but not extreme heat: too hot, and it loses acidity and turns jammy. Moderate climates give the most aromatic wines, with pepper and violet. Warm climates give richer, fuller, more alcoholic wines. It tolerates drought reasonably well, but its shoots can break in strong wind, like the Mistral.",
+      "highlight": "Moderate for pepper; warm for richness"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each region to its Syrah style.",
+      "pairs": [
+        {
+          "left": "Côte-Rôtie",
+          "right": "Perfumed, peppery, steep granite"
+        },
+        {
+          "left": "Barossa Valley",
+          "right": "Ripe, rich, chocolatey"
+        },
+        {
+          "left": "Hawke's Bay",
+          "right": "Cool, peppery New Zealand"
+        },
+        {
+          "left": "Languedoc",
+          "right": "Blended with Grenache"
+        }
+      ],
+      "explanation": "The same grape shifts style with climate and tradition."
+    },
+    {
+      "type": "concept",
+      "title": "Blending partners",
+      "body": "In the southern Rhône and Australia, Syrah joins Grenache and Mourvèdre in GSM blends, adding colour and structure. In Côte-Rôtie, a little white Viognier may be co-fermented with it, lifting aroma and stabilising colour. In Australia, a Shiraz Cabernet blend is a classic, invented there.",
+      "highlight": "GSM, Viognier, Cabernet"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which white grape is sometimes co-fermented with Syrah in Côte-Rôtie?",
+      "options": [
+        "Chardonnay",
+        "Viognier",
+        "Riesling",
+        "Sauvignon Blanc"
+      ],
+      "answer": 1,
+      "explanation": "Up to 20% Viognier is allowed in Côte-Rôtie, though most use far less."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Syrah grows in the Rhône, Australia and much of the New World",
+        "Moderate climates give pepper; warm ones give richness",
+        "It blends with Grenache, Mourvèdre, Viognier and Cabernet"
+      ]
+    }
+  ]
+}

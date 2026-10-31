@@ -1,0 +1,73 @@
+{
+  "id": "region-fr-loire-valley-l04",
+  "moduleId": "region-fr-loire-valley",
+  "order": 4,
+  "title": "Sancerre and the Centre",
+  "subtitle": "Sauvignon's home",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Sancerre and Pouilly-Fumé",
+    "Describe Touraine",
+    "Explain the role of soil"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Touraine",
+      "body": "Touraine, around Tours, makes Vouvray and Montlouis from Chenin Blanc, dry to sweet and sparkling. Chinon, Bourgueil and Saint-Nicolas-de-Bourgueil make Cabernet Franc reds, from light to structured. Touraine Sauvignon Blanc offers good value.",
+      "highlight": "Vouvray, Chinon, Bourgueil"
+    },
+    {
+      "type": "concept",
+      "title": "The Central Vineyards",
+      "body": "Far upstream, the Central Vineyards are nearer Burgundy than the Atlantic. Sancerre and Pouilly-Fumé make crisp, mineral Sauvignon Blanc. Sancerre's soils: terres blanches, Kimmeridgian marl, for full wines; caillottes, limestone pebbles, for fresh ones; silex, flint, for smoky wines. Sancerre also makes red and rosé from Pinot Noir.",
+      "highlight": "Sauvignon on chalk and flint"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its grape.",
+      "pairs": [
+        {
+          "left": "Vouvray",
+          "right": "Chenin Blanc"
+        },
+        {
+          "left": "Chinon",
+          "right": "Cabernet Franc"
+        },
+        {
+          "left": "Sancerre",
+          "right": "Sauvignon Blanc"
+        },
+        {
+          "left": "Sancerre rouge",
+          "right": "Pinot Noir"
+        }
+      ],
+      "explanation": "The Centre and Touraine use different grapes."
+    },
+    {
+      "type": "concept",
+      "title": "Pouilly-Fumé and neighbours",
+      "body": "Pouilly-Fumé, on the opposite bank from Sancerre, is known for flint and a smoky, gunflint character. Menetou-Salon, Quincy, Reuilly and Coteaux du Giennois make similar Sauvignon at lower prices. Don't confuse Pouilly-Fumé with Pouilly-Fuissé, a Chardonnay from Burgundy's Mâconnais.",
+      "highlight": "Not Pouilly-Fuissé"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pouilly-Fumé and Pouilly-Fuissé are made from the same grape.",
+      "answer": false,
+      "explanation": "Not true. Pouilly-Fumé is Loire Sauvignon Blanc; Pouilly-Fuissé is Burgundy Chardonnay."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Touraine makes Vouvray Chenin and Chinon Cabernet Franc",
+        "Sancerre and Pouilly-Fumé make mineral Sauvignon",
+        "Soils like silex and caillottes shape Sancerre"
+      ]
+    }
+  ]
+}

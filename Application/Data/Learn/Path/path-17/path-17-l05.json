@@ -1,0 +1,68 @@
+{
+  "id": "path-17-l05",
+  "moduleId": "path-17",
+  "order": 5,
+  "title": "Malolactic and lees",
+  "subtitle": "Two secondary processes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain malolactic conversion",
+    "Explain when it is used or blocked",
+    "Explain the effect of lees ageing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Malolactic conversion",
+      "body": "Malolactic conversion, often called malolactic fermentation, is carried out by lactic acid bacteria, mainly Oenococcus oeni. They turn sharp malic acid, found in green apples, into softer lactic acid, found in milk. Acidity falls and the wine feels rounder. A by-product, diacetyl, smells of butter.",
+      "highlight": "Malic to lactic: softer, buttery"
+    },
+    {
+      "type": "concept",
+      "title": "When to use it",
+      "body": "Almost all red wines go through malolactic, making them softer and more stable, since bacteria can't later restart in the bottle. For whites, it is a choice. Burgundy Chardonnay usually goes through it; aromatic whites like Riesling and Sauvignon Blanc usually don't. Winemakers block it with SO2, cold temperatures or filtration.",
+      "highlight": "Reds: almost always. Whites: a choice."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Malolactic conversion turns malic acid into ____ acid.",
+      "options": [
+        "lactic",
+        "tartaric",
+        "citric",
+        "acetic"
+      ],
+      "answer": "lactic",
+      "explanation": "Lactic acid is softer than malic acid. Acetic acid is vinegar, a fault."
+    },
+    {
+      "type": "concept",
+      "title": "Lees ageing",
+      "body": "Lees are dead yeast cells. Left in contact with the wine, they break down, a process called autolysis, releasing compounds that add creamy texture, bready flavours and protection against oxidation. Muscadet sur lie, white Burgundy and traditional method sparkling wines all rely on it.",
+      "highlight": "Lees: cream, bread and protection"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why might a winemaker block malolactic conversion in a Riesling?",
+      "options": [
+        "To keep its sharp acidity and pure fruit",
+        "To add buttery flavours",
+        "To raise the alcohol",
+        "To deepen the colour"
+      ],
+      "answer": 0,
+      "explanation": "Riesling relies on crisp acidity and pure fruit. Malolactic would soften it and add buttery notes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Malolactic turns malic acid into softer lactic acid",
+        "It's standard in reds and a choice in whites",
+        "Lees ageing adds creaminess, bready notes and protection"
+      ]
+    }
+  ]
+}

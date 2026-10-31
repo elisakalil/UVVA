@@ -1,0 +1,29 @@
+{
+  "id": "region-it-veneto",
+  "kind": "region",
+  "order": 11,
+  "country": "Italy",
+  "countryCode": "IT",
+  "title": "Veneto",
+  "grapes": [
+    "Corvina",
+    "Rondinella",
+    "Garganega",
+    "Glera"
+  ],
+  "points": "2 1 2 2 = 7",
+  "complexity": "A",
+  "description": "Venice's hinterland: Amarone from dried grapes, Soave from volcanic hills and Prosecco from steep slopes.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-it-veneto-l01",
+    "region-it-veneto-l02",
+    "region-it-veneto-l03",
+    "region-it-veneto-l04",
+    "region-it-veneto-l05",
+    "region-it-veneto-l06",
+    "region-it-veneto-l07"
+  ]
+}

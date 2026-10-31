@@ -1,0 +1,73 @@
+{
+  "id": "path-02-l05",
+  "moduleId": "path-02",
+  "order": 5,
+  "title": "Sweetness and body",
+  "subtitle": "Two words for any wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Define dry, off-dry and sweet",
+    "Explain what gives a wine body",
+    "Describe any wine by sweetness and body"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sweetness is sugar",
+      "body": "Sweetness measures residual sugar, the grape sugar left when fermentation stops. Dry wines have so little you can't taste it, usually under 4 g/l. Off-dry wines have a touch. Sweet wines can have over 100 g/l. Fruit aromas are not sweetness: a wine can smell of ripe peach and be completely dry.",
+      "highlight": "Dry means no perceptible sugar"
+    },
+    {
+      "type": "concept",
+      "title": "Body is weight",
+      "body": "Body is how heavy the wine feels in your mouth, like the difference between skimmed milk, whole milk and cream. Alcohol is the biggest contributor, because it is more viscous than water. Sugar, tannin and extract add to it. A 14.5% Chardonnay feels much fuller than an 11% Riesling.",
+      "highlight": "Alcohol is the main source of body"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A wine smells of ripe peaches and honey, but there is no sugar on the palate. How would you describe its sweetness?",
+      "options": [
+        "Sweet",
+        "Off-dry",
+        "Dry",
+        "Medium"
+      ],
+      "answer": 2,
+      "explanation": "Sweetness is about sugar you taste, not aromas you smell. Ripe fruit aromas can make a dry wine seem sweet before you sip it."
+    },
+    {
+      "type": "concept",
+      "title": "Putting it together",
+      "body": "With two words you can describe almost any wine. Muscadet is dry and light. Oaked Chardonnay is dry and full. Moscato d'Asti is sweet and light. Sauternes is sweet and full. Use the colour, then sweetness, then body, and you have a sketch that anyone can picture.",
+      "highlight": "Colour, sweetness, body"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these make a wine feel fuller-bodied?",
+      "options": [
+        "Higher alcohol",
+        "Residual sugar",
+        "Higher acidity",
+        "More tannin",
+        "Lower alcohol"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Alcohol, sugar and tannin all add weight. Acidity makes a wine feel fresher and lighter, not heavier."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sweetness is residual sugar; dry wines have almost none",
+        "Body is the weight of the wine, driven mostly by alcohol",
+        "Colour, sweetness and body sketch any wine"
+      ]
+    }
+  ]
+}

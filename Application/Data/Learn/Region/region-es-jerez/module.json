@@ -1,0 +1,28 @@
+{
+  "id": "region-es-jerez",
+  "kind": "region",
+  "order": 17,
+  "country": "Spain",
+  "countryCode": "ES",
+  "title": "Jerez",
+  "grapes": [
+    "Palomino",
+    "Pedro Ximénez",
+    "Moscatel"
+  ],
+  "points": "1 2 2 2 = 7",
+  "complexity": "A",
+  "description": "The Sherry triangle: white albariza soils, flor yeast and soleras that blend wines across generations.",
+  "lessonCount": 7,
+  "xp": 105,
+  "estimatedMinutes": 21,
+  "lessons": [
+    "region-es-jerez-l01",
+    "region-es-jerez-l02",
+    "region-es-jerez-l03",
+    "region-es-jerez-l04",
+    "region-es-jerez-l05",
+    "region-es-jerez-l06",
+    "region-es-jerez-l07"
+  ]
+}

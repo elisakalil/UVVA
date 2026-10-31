@@ -1,0 +1,60 @@
+{
+  "id": "path-03-l05",
+  "moduleId": "path-03",
+  "order": 5,
+  "title": "Pinot Noir and Syrah",
+  "subtitle": "Elegance and spice",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Pinot Noir's style and its demands",
+    "Describe Syrah and Shiraz",
+    "Tell the two apart by colour and flavour"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinot Noir",
+      "body": "Pinot Noir has thin skins, so it gives pale, low-tannin reds with red cherry, raspberry and, with age, earthy and mushroom notes. It needs a cool climate; in heat it loses its delicacy. It is fragile in the vineyard, prone to rot and sensitive to frost. Burgundy is its home, and it is also a key grape of Champagne.",
+      "highlight": "Pinot Noir: pale, red fruit, cool climate"
+    },
+    {
+      "type": "concept",
+      "title": "Syrah and Shiraz",
+      "body": "Syrah is a thick-skinned grape from the northern Rhône, giving deep colour, firm tannin and flavours of blackberry, black pepper and smoked meat. In Australia it is called Shiraz, and the warmer climate of places like the Barossa gives riper, sweeter fruit, chocolate and more alcohol. The pepper note comes from rotundone, more common in cooler sites.",
+      "highlight": "Syrah: black fruit and black pepper"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Syrah and Shiraz are two different grape varieties.",
+      "answer": false,
+      "explanation": "Not true. They are the same grape. The name often hints at style: Syrah for a cooler, peppery wine, Shiraz for a riper, fuller one."
+    },
+    {
+      "type": "tip",
+      "body": "Hold the glass over a white page. If you can read print through a red wine, you're likely looking at Pinot Noir or another thin-skinned grape. If it's nearly opaque, think Syrah or Cabernet."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "A red is pale, with raspberry and a light earthiness, and gentle tannin. Which grape is most likely?",
+      "options": [
+        "Syrah",
+        "Cabernet Sauvignon",
+        "Pinot Noir",
+        "Shiraz"
+      ],
+      "answer": 2,
+      "explanation": "Pale colour, red fruit and low tannin point to Pinot Noir. Syrah, Shiraz and Cabernet are all deeply coloured and more tannic."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinot Noir is pale, low in tannin and needs a cool climate",
+        "Syrah gives deep colour, black fruit and pepper; in Australia it's Shiraz",
+        "Colour and tannin help you tell the two apart"
+      ]
+    }
+  ]
+}

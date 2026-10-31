@@ -1,0 +1,96 @@
+{
+  "id": "grape-mourvedre-l06",
+  "moduleId": "grape-mourvedre",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Mourvèdre",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Mourvèdre",
+    "Know its names and regions",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name or place to Mourvèdre.",
+      "pairs": [
+        {
+          "left": "Monastrell",
+          "right": "Spanish name"
+        },
+        {
+          "left": "Mataro",
+          "right": "Australian name"
+        },
+        {
+          "left": "Bandol",
+          "right": "French masterpiece"
+        },
+        {
+          "left": "Jumilla",
+          "right": "Spanish heartland"
+        }
+      ],
+      "explanation": "One grape with many names and homes."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What must Bandol red contain?",
+      "options": [
+        "At least 50% Mourvèdre",
+        "At least 85% Grenache",
+        "Only Syrah",
+        "Any grape"
+      ],
+      "answer": 0,
+      "explanation": "At least 50% Mourvèdre, and top producers use much more."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Mourvèdre ripens early and suits cool regions.",
+      "answer": false,
+      "explanation": "Not true. It needs heat and ripens very late."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which aromas are typical of Mourvèdre?",
+      "options": [
+        "Game",
+        "Garrigue herbs",
+        "Blackberry",
+        "Passion fruit"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Passion fruit belongs to Sauvignon Blanc."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "In GSM blends, the M stands for ____.",
+      "options": [
+        "Mourvèdre",
+        "Merlot",
+        "Malbec",
+        "Muscat"
+      ],
+      "answer": "Mourvèdre",
+      "explanation": "Grenache, Syrah, Mourvèdre."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Mourvèdre is dark, gamey, herbal and firm",
+        "It's Monastrell in Spain and Mataro in Australia",
+        "Bandol is its finest French expression",
+        "It loves heat and suits Mediterranean food"
+      ]
+    }
+  ]
+}

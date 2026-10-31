@@ -1,0 +1,77 @@
+{
+  "id": "path-27-l05",
+  "moduleId": "path-27",
+  "order": 5,
+  "title": "Ice wine and passito",
+  "subtitle": "Frozen and dried grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain ice wine production",
+    "Explain passito methods",
+    "Name key regions for each"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ice wine",
+      "body": "Ice wine grapes must freeze naturally on the vine, usually at minus 7 to minus 13 degrees, often in December or January. Picking happens at night while frozen. The press releases only small amounts of concentrated juice, sometimes 15% of normal. Canada uses Vidal and Riesling; Germany and Austria use mainly Riesling.",
+      "highlight": "Natural freezing, night picking"
+    },
+    {
+      "type": "concept",
+      "title": "Passito",
+      "body": "Passito wines are made from grapes dried after harvest. Methods vary: on straw mats, in ventilated lofts, or hanging. Vin Santo is dried for months, then aged for years in small, sealed barrels called caratelli, with some oxidation. Passito di Pantelleria uses Zibibbo, a Muscat, dried in the sun.",
+      "highlight": "Dried on mats, lofts or racks"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each wine to its method.",
+      "pairs": [
+        {
+          "left": "Eiswein",
+          "right": "Frozen on the vine"
+        },
+        {
+          "left": "Vin Santo",
+          "right": "Dried, aged in caratelli"
+        },
+        {
+          "left": "Passito di Pantelleria",
+          "right": "Sun-dried Zibibbo"
+        },
+        {
+          "left": "Recioto della Valpolicella",
+          "right": "Dried Corvina, sweet"
+        }
+      ],
+      "explanation": "Different traditions concentrate sugar in different ways."
+    },
+    {
+      "type": "tip",
+      "body": "Vin Santo with cantucci biscuits is a Tuscan ritual: dip the biscuit in the wine. The wine's nutty, dried fruit notes match the almonds."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is ice wine picked at night?",
+      "options": [
+        "Pickers prefer it",
+        "To keep the grapes frozen",
+        "To avoid birds",
+        "It's required for vintage labelling"
+      ],
+      "answer": 1,
+      "explanation": "Grapes must stay frozen until pressed so the water remains as ice."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Ice wine grapes freeze naturally and are pressed while frozen",
+        "Passito grapes are dried after picking",
+        "Vin Santo, Recioto and Pantelleria are classic passito wines"
+      ]
+    }
+  ]
+}

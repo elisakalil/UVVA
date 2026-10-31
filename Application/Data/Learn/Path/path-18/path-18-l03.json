@@ -1,0 +1,72 @@
+{
+  "id": "path-18-l03",
+  "moduleId": "path-18",
+  "order": 3,
+  "title": "Burgundy",
+  "subtitle": "Pinot Noir, Chardonnay and the climat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Burgundy's areas from north to south",
+    "Explain the climat and the cru hierarchy",
+    "Explain how Burgundy's vineyards are owned"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "North to south",
+      "body": "Burgundy runs from Chablis in the north, through the Côte d'Or, divided into Côte de Nuits for reds and Côte de Beaune for both colours, then the Côte Chalonnaise, the Mâconnais and, often grouped with it, Beaujolais. The climate is continental, with frost and hail risks. Pinot Noir and Chardonnay are the main grapes.",
+      "highlight": "Chablis, Côte d'Or, Chalonnaise, Mâconnais"
+    },
+    {
+      "type": "concept",
+      "title": "Climats and crus",
+      "body": "A climat is a named, precisely bounded vineyard site, recognised by UNESCO since 2015. Burgundy ranks them: 33 Grand Crus, such as Romanée-Conti or Montrachet, at the top, then hundreds of Premier Crus, then village wines. The best sites lie mid-slope, facing east or south-east, on limestone and marl.",
+      "highlight": "33 Grand Crus at the top"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where are Burgundy's best vineyards usually found?",
+      "options": [
+        "On the flat valley floor",
+        "Mid-slope, facing east or south-east",
+        "On the hilltops",
+        "Near the river banks"
+      ],
+      "answer": 1,
+      "explanation": "Mid-slope sites have good drainage, sun exposure and soils, and avoid frost pockets."
+    },
+    {
+      "type": "concept",
+      "title": "Divided ownership",
+      "body": "After the French Revolution, Church land was sold and Napoleonic inheritance laws split vineyards among heirs. The Clos de Vougeot's 50 hectares now have about 80 owners. So a single vineyard name can appear on many labels. Négociants buy grapes or wine from growers and bottle under their own name; domaines bottle their own.",
+      "highlight": "One vineyard, many owners"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which statements about Burgundy are true?",
+      "options": [
+        "It has 33 Grand Crus",
+        "Vineyards are often split among many owners",
+        "Most wines are blends of many grapes",
+        "Pinot Noir and Chardonnay dominate"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Burgundy's reds and whites are usually single-variety: Pinot Noir and Chardonnay."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Burgundy runs from Chablis to the Mâconnais",
+        "Climats are ranked as Grand Cru, Premier Cru and village",
+        "Vineyards are split among many owners; domaines and négociants both bottle"
+      ]
+    }
+  ]
+}

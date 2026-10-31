@@ -1,0 +1,71 @@
+{
+  "id": "path-28-l04",
+  "moduleId": "path-28",
+  "order": 4,
+  "title": "Heat damage and other faults",
+  "subtitle": "When storage goes wrong",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Recognise heat damage",
+    "Recognise light strike and refermentation",
+    "Separate faults from harmless deposits"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Heat damage",
+      "body": "A wine stored too warm, or left in a hot car, can taste cooked: stewed, jammy fruit, flat and dull. The cork may push out or wine may leak around it. The damage is permanent. Even a few hours above 30 degrees can harm a delicate wine.",
+      "highlight": "Stewed fruit, pushed cork"
+    },
+    {
+      "type": "concept",
+      "title": "Light strike and refermentation",
+      "body": "Light strike happens when light, especially ultraviolet, reacts with riboflavin and amino acids in wine, creating sulphur compounds that smell of cabbage or wet wool. Clear glass offers no protection; Champagne in clear bottles is especially at risk. Refermentation, when yeast restarts in a bottle with sugar, gives unwanted fizz and cloudiness.",
+      "highlight": "Light: cabbage. Refermentation: fizz."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are clear glass bottles risky for wine?",
+      "options": [
+        "They break easily",
+        "They let in light that can cause light strike",
+        "They let in oxygen",
+        "They make wine warmer"
+      ],
+      "answer": 1,
+      "explanation": "Clear glass doesn't filter ultraviolet light, which can create cabbage-like sulphur compounds."
+    },
+    {
+      "type": "concept",
+      "title": "Not faults",
+      "body": "Some things look alarming but are harmless: tartrate crystals, called wine diamonds; sediment in old reds or vintage Port; a slight haze in unfiltered wines; small bubbles in young whites bottled with some carbon dioxide on purpose. Learning these prevents rejecting good bottles.",
+      "highlight": "Crystals and sediment are harmless"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are harmless rather than faults?",
+      "options": [
+        "Tartrate crystals",
+        "Sediment in old red wine",
+        "Cabbage smell from light strike",
+        "A pushed-out cork from heat"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Light strike and heat damage are real faults."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Heat damage gives cooked fruit and pushed corks",
+        "Light strike gives cabbage smells; refermentation gives fizz",
+        "Crystals, sediment and slight haze are harmless"
+      ]
+    }
+  ]
+}

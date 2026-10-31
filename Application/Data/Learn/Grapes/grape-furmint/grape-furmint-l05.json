@@ -1,0 +1,81 @@
+{
+  "id": "grape-furmint-l05",
+  "moduleId": "grape-furmint",
+  "order": 5,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Furmint",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair dry Furmint with food",
+    "Pair Tokaji Aszú with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dry Furmint",
+      "body": "Dry Furmint's acidity and texture suit rich fish, roast chicken, pork, goose, and creamy Hungarian dishes like chicken paprikash. Its smoky, mineral side suits smoked fish and mushrooms. Serve at 10 to 12 degrees.",
+      "highlight": "Paprikash, pork, smoked fish"
+    },
+    {
+      "type": "concept",
+      "title": "Tokaji Aszú",
+      "body": "Aszú suits foie gras, blue cheese, fruit tarts, apricot desserts and even spicy Asian food. Its acidity keeps it fresh with rich food. Serve at 10 to 12 degrees. It ages for decades: Aszú from the 18th century has been found still drinkable.",
+      "highlight": "Foie gras, blue cheese, apricot tarts"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Furmint wine to a pairing.",
+      "pairs": [
+        {
+          "left": "Dry Furmint",
+          "right": "Chicken paprikash"
+        },
+        {
+          "left": "Tokaji Aszú",
+          "right": "Foie gras"
+        },
+        {
+          "left": "Eszencia",
+          "right": "By the spoon, alone"
+        },
+        {
+          "left": "Late harvest Furmint",
+          "right": "Fruit desserts"
+        }
+      ],
+      "explanation": "Furmint offers a wine for many courses."
+    },
+    {
+      "type": "tip",
+      "body": "Louis XIV is said to have called Tokaji the wine of kings and the king of wines. It was served at European courts for centuries."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Tokaji Aszú?",
+      "options": [
+        "Foie gras",
+        "Blue cheese",
+        "Apricot tart",
+        "Raw oysters"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Oysters need a dry wine."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Dry Furmint suits paprikash, pork and smoked fish",
+        "Aszú suits foie gras, blue cheese and fruit desserts",
+        "Both are served at 10 to 12 degrees and age well"
+      ]
+    }
+  ]
+}

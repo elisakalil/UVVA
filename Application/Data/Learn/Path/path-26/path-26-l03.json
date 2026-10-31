@@ -1,0 +1,83 @@
+{
+  "id": "path-26-l03",
+  "moduleId": "path-26",
+  "order": 3,
+  "title": "Sherry styles",
+  "subtitle": "From Fino to Pedro Ximénez",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe biological and oxidative Sherries",
+    "Explain Amontillado and Palo Cortado",
+    "Explain sweet and blended styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Biological and oxidative",
+      "body": "Fino and Manzanilla age under flor, biological ageing, giving pale, dry, tangy wines at 15%. Oloroso is fortified to 17%, never has flor and ages oxidatively, turning dark brown with walnut, toffee and spice, yet stays dry. As water evaporates, Olorosos concentrate, reaching 20% or more.",
+      "highlight": "Fino under flor; Oloroso with air"
+    },
+    {
+      "type": "concept",
+      "title": "Between the two",
+      "body": "Amontillado starts as Fino under flor, then the flor dies or is killed by fortifying to about 17%, and the wine ages oxidatively. It combines Fino's tang with Oloroso's nuttiness. Palo Cortado is rare: it starts under flor but loses it early, then ages oxidatively, giving Amontillado's aroma with Oloroso's body.",
+      "highlight": "Amontillado: flor, then air"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Sherry to its ageing.",
+      "pairs": [
+        {
+          "left": "Fino",
+          "right": "Under flor only"
+        },
+        {
+          "left": "Oloroso",
+          "right": "Oxidative only"
+        },
+        {
+          "left": "Amontillado",
+          "right": "Flor, then oxidative"
+        },
+        {
+          "left": "Pedro Ximénez",
+          "right": "Sun-dried, very sweet"
+        }
+      ],
+      "explanation": "Biological and oxidative ageing create the range of dry Sherries."
+    },
+    {
+      "type": "concept",
+      "title": "Sweet Sherries",
+      "body": "Pedro Ximénez grapes are dried in the sun until almost raisins, then fortified, giving black, syrupy wines with over 400 g/l of sugar. Moscatel is made similarly. Cream Sherry blends Oloroso with sweet wine; Pale Cream blends Fino with sweetening. These blends are sweet; the dry styles are not.",
+      "highlight": "PX: over 400 g/l"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which Sherry styles are dry?",
+      "options": [
+        "Fino",
+        "Oloroso",
+        "Amontillado",
+        "Cream"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cream Sherry is sweetened. Fino, Oloroso and Amontillado are naturally dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Fino and Manzanilla age under flor; Oloroso ages with air",
+        "Amontillado and Palo Cortado combine both",
+        "Pedro Ximénez and Cream are sweet styles"
+      ]
+    }
+  ]
+}

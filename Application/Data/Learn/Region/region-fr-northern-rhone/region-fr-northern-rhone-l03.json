@@ -1,0 +1,72 @@
+{
+  "id": "region-fr-northern-rhone-l03",
+  "moduleId": "region-fr-northern-rhone",
+  "order": 3,
+  "title": "Côte-Rôtie and Hermitage",
+  "subtitle": "The great appellations",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Côte-Rôtie",
+    "Describe Hermitage",
+    "Name the other appellations"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Côte-Rôtie",
+      "body": "Côte-Rôtie, the roasted slope, lies at the northern end, on very steep schist slopes facing south-east. Its two famous slopes are the Côte Brune, darker, more structured, and the Côte Blonde, lighter, more perfumed. Wines are elegant, floral and peppery. Guigal's single-vineyard La Mouline, La Landonne and La Turque made it famous.",
+      "highlight": "Roasted slope: Brune and Blonde"
+    },
+    {
+      "type": "concept",
+      "title": "Hermitage",
+      "body": "Hermitage is a single, south-facing granite hill above Tain-l'Hermitage. Its reds are powerful, tannic and long-lived, among France's greatest. About a quarter is white, mostly Marsanne, also long-lived. Famous producers include Chapoutier, Jaboulet, with La Chapelle, and Jean-Louis Chave. In the 19th century, Bordeaux was sometimes hermitagé, strengthened with it.",
+      "highlight": "A single hill, powerful and long-lived"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are the Côte Brune and Côte Blonde?",
+      "options": [
+        "Two famous slopes of Côte-Rôtie",
+        "Two grapes",
+        "Two wine colours",
+        "Two villages in Burgundy"
+      ],
+      "answer": 0,
+      "explanation": "Brune is darker and firmer; Blonde lighter and perfumed."
+    },
+    {
+      "type": "concept",
+      "title": "The others",
+      "body": "Cornas makes dark, rustic, powerful Syrah on granite. Saint-Joseph, a long strip on the west bank, makes lighter, fruitier reds. Crozes-Hermitage, the largest appellation, on flatter land around Hermitage, offers good value. Condrieu and Château-Grillet make Viognier; Saint-Péray, whites and sparkling.",
+      "highlight": "Cornas, Saint-Joseph, Crozes"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are northern Rhône appellations?",
+      "options": [
+        "Côte-Rôtie",
+        "Cornas",
+        "Crozes-Hermitage",
+        "Gigondas"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gigondas is in the southern Rhône."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Côte-Rôtie is elegant, on Brune and Blonde slopes",
+        "Hermitage is a powerful, long-lived single hill",
+        "Cornas, Saint-Joseph and Crozes complete the reds"
+      ]
+    }
+  ]
+}

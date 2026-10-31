@@ -1,0 +1,72 @@
+{
+  "id": "region-pt-douro-l06",
+  "moduleId": "region-pt-douro",
+  "order": 6,
+  "title": "Labels and the table",
+  "subtitle": "Reading the Douro and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read Douro and Port labels",
+    "Pair Douro wines with food",
+    "Serve Port well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Dry wines are labelled Douro DOC; fortified wines Porto DOC. Port labels show the style: Ruby, Tawny, LBV, Vintage, Colheita, or an age like 20 Years Old. Quinta means estate. The IVDP, the Douro and Port institute, seals each bottle. Vinhas velhas means old vines.",
+      "highlight": "Douro DOC and Porto DOC"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Dry Douro reds suit roast kid, lamb, bacalhau with roasted potatoes, and game. Ruby and Vintage Port suit Stilton and dark chocolate. Tawny suits crème brûlée, nuts, caramel desserts and Portuguese pastries like pastéis de nata. White Port with tonic is Porto's aperitif. Serve tawny slightly cool.",
+      "highlight": "Stilton with Vintage; nuts with tawny"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Porto's classic aperitif?",
+      "options": [
+        "White Port and tonic",
+        "Vintage Port with ice",
+        "Tawny with cola",
+        "Ruby with soda"
+      ],
+      "answer": 0,
+      "explanation": "Porto tónico, white Port and tonic."
+    },
+    {
+      "type": "concept",
+      "title": "Serving Port",
+      "body": "Serve ruby and Vintage Port at about 16 degrees, tawnies at 10 to 14, white Port chilled. Decant Vintage Port and unfiltered LBV for sediment. Opened tawnies last weeks; Vintage Port is best within a day or two.",
+      "highlight": "Decant Vintage; tawnies keep"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which foods suit Vintage Port?",
+      "options": [
+        "Stilton",
+        "Dark chocolate",
+        "Walnuts",
+        "Raw oysters"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Oysters need a dry white."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Douro DOC is dry; Porto DOC is fortified",
+        "Dry reds suit lamb; Vintage Port suits Stilton",
+        "Decant Vintage Port; tawnies keep after opening"
+      ]
+    }
+  ]
+}

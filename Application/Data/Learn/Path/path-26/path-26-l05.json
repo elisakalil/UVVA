@@ -1,0 +1,60 @@
+{
+  "id": "path-26-l05",
+  "moduleId": "path-26",
+  "order": 5,
+  "title": "Vintage Port",
+  "subtitle": "Port's greatest wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how a vintage is declared",
+    "Compare Vintage, single quinta and LBV",
+    "Explain how to serve Vintage Port"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Declaring a vintage",
+      "body": "Vintage Port is made only in exceptional years, declared by each house, typically about three times a decade. The wine must be approved by the IVDP, the Port institute, and bottled after two to three years. It then ages in bottle for decades. Classic declared years include 1963, 1977, 1994, 2011 and 2017.",
+      "highlight": "Declared only in great years"
+    },
+    {
+      "type": "concept",
+      "title": "Single quinta and LBV",
+      "body": "In good but not great years, houses may release single quinta vintage Ports from one estate, like Quinta do Vesuvio. Late Bottled Vintage, LBV, comes from a single year, bottled after 4 to 6 years in wood, so it's ready earlier. Unfiltered LBV can age further and throw a sediment.",
+      "highlight": "Single quinta and LBV"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Vintage Port is bottled after two to three years and ages mainly in bottle.",
+      "answer": true,
+      "explanation": "Yes. That's why it keeps dark colour and fruit for decades and throws a heavy sediment."
+    },
+    {
+      "type": "tip",
+      "body": "Stand a Vintage Port upright for a day, then decant it slowly. Young vintages benefit from a few hours of air; very old ones should be drunk soon after decanting."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What distinguishes LBV from Vintage Port?",
+      "options": [
+        "LBV comes from several years",
+        "LBV spends 4 to 6 years in wood before bottling",
+        "LBV is a white Port",
+        "LBV is never filtered"
+      ],
+      "answer": 1,
+      "explanation": "Longer time in wood makes LBV ready earlier, unlike Vintage, which ages in bottle."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Vintage Port is declared only in exceptional years",
+        "Single quinta Ports come from one estate in good years",
+        "LBV is aged longer in wood and ready earlier"
+      ]
+    }
+  ]
+}

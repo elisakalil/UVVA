@@ -1,0 +1,77 @@
+{
+  "id": "region-nz-hawkes-bay-l02",
+  "moduleId": "region-nz-hawkes-bay",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Reds and Chardonnay",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Hawke's Bay's main grapes",
+    "Explain Bordeaux blends here",
+    "Describe its Syrah and Chardonnay"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Bordeaux grapes",
+      "body": "Merlot is the most planted red, with Cabernet Sauvignon, Cabernet Franc and Malbec, mostly in Bordeaux-style blends. They give medium to full-bodied wines with blackcurrant, plum, cedar and fresh acidity, more elegant than warmer New World examples. Merlot ripens more reliably than Cabernet here.",
+      "highlight": "Merlot-led Bordeaux blends"
+    },
+    {
+      "type": "concept",
+      "title": "Syrah and Chardonnay",
+      "body": "Syrah does very well: peppery, floral and medium-bodied, closer to the northern Rhône than to Barossa Shiraz. Chardonnay is Hawke's Bay's most planted grape overall, giving ripe yet fresh wines with stone fruit and citrus, often barrel-fermented. Sauvignon Blanc and Pinot Gris also grow.",
+      "highlight": "Peppery Syrah, rich Chardonnay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its style.",
+      "pairs": [
+        {
+          "left": "Merlot",
+          "right": "Most planted red"
+        },
+        {
+          "left": "Syrah",
+          "right": "Peppery, Rhône-like"
+        },
+        {
+          "left": "Chardonnay",
+          "right": "Ripe, often barrel-fermented"
+        },
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Blackcurrant, in blends"
+        }
+      ],
+      "explanation": "Hawke's Bay is New Zealand's red heartland."
+    },
+    {
+      "type": "tip",
+      "body": "Hawke's Bay Syrah is a good alternative to northern Rhône Syrah, with similar black pepper and violet."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How is Hawke's Bay Syrah usually described?",
+      "options": [
+        "Peppery and medium-bodied, Rhône-like",
+        "Very sweet",
+        "Jammy and 16% alcohol",
+        "White"
+      ],
+      "answer": 0,
+      "explanation": "Its moderate climate gives a cooler style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot leads Bordeaux-style blends",
+        "Syrah is peppery and Rhône-like",
+        "Chardonnay is the most planted grape overall"
+      ]
+    }
+  ]
+}

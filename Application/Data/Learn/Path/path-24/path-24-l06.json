@@ -1,0 +1,60 @@
+{
+  "id": "path-24-l06",
+  "moduleId": "path-24",
+  "order": 6,
+  "title": "Pinotage and Chenin Blanc",
+  "subtitle": "South Africa's two signatures",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Pinotage was created",
+    "Describe South African Chenin Blanc",
+    "Explain the old vine movement"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinotage",
+      "body": "Pinotage was created in 1925 by Professor Abraham Perold at Stellenbosch University, crossing Pinot Noir with Cinsault, which was then called Hermitage. It gives dark, red-fruited wines, sometimes with smoky or banana notes. Some modern versions are lighter and fresher; others are oaked and rich. It is South Africa's own grape.",
+      "highlight": "Pinot Noir x Cinsault, 1925"
+    },
+    {
+      "type": "concept",
+      "title": "Chenin Blanc",
+      "body": "South Africa has more Chenin Blanc than any other country, about 17,000 hectares. Once used for bulk and brandy, it now makes fine dry whites from old bush vines, especially in Swartland, Stellenbosch and Paarl. Styles range from fresh and unoaked to rich and barrel-fermented. The Old Vine Project certifies vineyards over 35 years old.",
+      "highlight": "Most Chenin in the world"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Pinotage is a cross of Pinot Noir and Cinsault.",
+      "answer": true,
+      "explanation": "Yes. Cinsault was called Hermitage in South Africa, which explains the name Pinotage."
+    },
+    {
+      "type": "tip",
+      "body": "Look for the Certified Heritage Vineyards seal on South African labels. It shows the wine comes from a registered vineyard over 35 years old."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which country grows the most Chenin Blanc?",
+      "options": [
+        "France",
+        "South Africa",
+        "Australia",
+        "Argentina"
+      ],
+      "answer": 1,
+      "explanation": "South Africa has more Chenin than France, its homeland."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinotage, created in 1925, is South Africa's own grape",
+        "South Africa grows the most Chenin Blanc in the world",
+        "Old vines are certified and drive quality"
+      ]
+    }
+  ]
+}

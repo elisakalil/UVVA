@@ -1,0 +1,96 @@
+{
+  "id": "grape-pinot-meunier-l05",
+  "moduleId": "grape-pinot-meunier",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Pinot Meunier",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Meunier",
+    "Know its regions and role",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Meunier bring to Champagne blends?",
+      "options": [
+        "Fruit and roundness",
+        "Austerity",
+        "High tannin",
+        "Sweetness"
+      ],
+      "answer": 0,
+      "explanation": "Fruit and roundness, especially in non-vintage."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Meunier.",
+      "pairs": [
+        {
+          "left": "Miller",
+          "right": "Meaning of its name"
+        },
+        {
+          "left": "Schwarzriesling",
+          "right": "German name"
+        },
+        {
+          "left": "Vallée de la Marne",
+          "right": "Champagne stronghold"
+        },
+        {
+          "left": "Late budding",
+          "right": "Avoids frost"
+        }
+      ],
+      "explanation": "Meunier has a distinct identity."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Meunier is related to Riesling.",
+      "answer": false,
+      "explanation": "Not true. Despite its German name, it's a mutation of Pinot Noir."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Champagne's three main grapes?",
+      "options": [
+        "Chardonnay",
+        "Pinot Noir",
+        "Meunier",
+        "Gamay"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gamay is Beaujolais' grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Meunier makes up about ____% of Champagne's vineyards.",
+      "options": [
+        "30",
+        "5",
+        "80",
+        "50"
+      ],
+      "answer": "30",
+      "explanation": "About 30%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Meunier is a fruity, supple mutation of Pinot Noir",
+        "It's about 30% of Champagne, mainly in the Marne",
+        "It buds late and ripens early, avoiding frost",
+        "Pure Meunier Champagnes have raised its profile"
+      ]
+    }
+  ]
+}

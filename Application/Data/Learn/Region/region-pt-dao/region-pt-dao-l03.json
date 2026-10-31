@@ -1,0 +1,72 @@
+{
+  "id": "region-pt-dao-l03",
+  "moduleId": "region-pt-dao",
+  "order": 3,
+  "title": "Encruzado",
+  "subtitle": "Portugal's great white",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Encruzado",
+    "Explain how it's made",
+    "Explain its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A Dão native",
+      "body": "Encruzado is a white grape native to the Dão, and grown almost nowhere else. It gives medium to full-bodied whites with citrus, white peach, pear, flowers and a mineral, sometimes smoky edge, with fresh acidity. It's often compared with white Burgundy for its texture and complexity.",
+      "highlight": "Compared with white Burgundy"
+    },
+    {
+      "type": "concept",
+      "title": "Making and ageing",
+      "body": "Encruzado takes well to barrel fermentation and lees ageing, which add creaminess and nutty notes without masking its fruit. It resists oxidation well. Good Encruzado ages 10 years or more, developing honey, nuts and toast. It's also blended with Malvasia Fina, Bical and Cerceal-Branco in Dão whites.",
+      "highlight": "Barrel fermentation, long ageing"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which white wine style is Encruzado often compared with?",
+      "options": [
+        "White Burgundy",
+        "Moscato d'Asti",
+        "Fino Sherry",
+        "Marlborough Sauvignon Blanc"
+      ],
+      "answer": 0,
+      "explanation": "For its texture, complexity and response to oak."
+    },
+    {
+      "type": "concept",
+      "title": "Why it matters",
+      "body": "Encruzado shows that Portugal, known for reds and Port, can make world-class whites. It needs careful handling in the vineyard, as it's prone to some diseases, and yields must be controlled. Producers like Quinta dos Roques and Quinta da Pellada helped establish its reputation.",
+      "highlight": "Proof of Portuguese whites"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Encruzado?",
+      "options": [
+        "Native to the Dão",
+        "Responds well to oak",
+        "Can age 10 years or more",
+        "Very sweet"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Encruzado is usually dry."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Encruzado is the Dão's native white",
+        "Barrel fermentation and lees add texture",
+        "It can age 10 years or more"
+      ]
+    }
+  ]
+}

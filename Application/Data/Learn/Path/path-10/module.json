@@ -1,0 +1,22 @@
+{
+  "id": "path-10",
+  "kind": "path",
+  "order": 10,
+  "level": "Intermediate",
+  "complexity": "A",
+  "title": "Black Grapes and Their Places",
+  "description": "The principal black grapes, the regions that made them famous and how place changes the wine.",
+  "lessonCount": 8,
+  "xp": 120,
+  "estimatedMinutes": 24,
+  "lessons": [
+    "path-10-l01",
+    "path-10-l02",
+    "path-10-l03",
+    "path-10-l04",
+    "path-10-l05",
+    "path-10-l06",
+    "path-10-l07",
+    "path-10-l08"
+  ]
+}

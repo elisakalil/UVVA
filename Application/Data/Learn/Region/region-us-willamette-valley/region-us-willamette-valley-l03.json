@@ -1,0 +1,72 @@
+{
+  "id": "region-us-willamette-valley-l03",
+  "moduleId": "region-us-willamette-valley",
+  "order": 3,
+  "title": "The Dundee Hills",
+  "subtitle": "Red volcanic soil",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Dundee Hills",
+    "Explain Jory soil",
+    "Name the valley's other AVAs"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Dundee Hills",
+      "body": "The Dundee Hills AVA, created in 2005, is the Willamette Valley's historic heart, where David Lett and others first planted. The hills rise to about 300 m, facing south and east, above the valley's fog and frost. Famous producers include Eyrie, Domaine Drouhin Oregon, Domaine Serene and Archery Summit.",
+      "highlight": "The historic heart, since 2005 AVA"
+    },
+    {
+      "type": "concept",
+      "title": "Jory soil",
+      "body": "The Dundee Hills' soil is Jory, a deep, red, iron-rich clay loam formed from ancient volcanic basalt. It drains well and holds moderate water. Its Pinot Noir is known for red fruit, elegance and silky texture. Other AVAs have different soils: marine sediments in Yamhill-Carlton give darker fruit, and loess in Chehalem Mountains.",
+      "highlight": "Jory: red volcanic clay"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Jory soil?",
+      "options": [
+        "A red, iron-rich clay from volcanic basalt",
+        "White chalk",
+        "Slate",
+        "Sand"
+      ],
+      "answer": 0,
+      "explanation": "It gives the Dundee Hills' elegant Pinot."
+    },
+    {
+      "type": "concept",
+      "title": "Other AVAs",
+      "body": "The Willamette Valley has 11 nested AVAs, including Eola-Amity Hills, cooled by the Van Duzer winds, Yamhill-Carlton, Ribbon Ridge, McMinnville, Chehalem Mountains and Laurelwood District. Each has distinct soils, volcanic, marine sediment or loess, giving different Pinot styles.",
+      "highlight": "11 nested AVAs"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Willamette Valley AVAs?",
+      "options": [
+        "Dundee Hills",
+        "Eola-Amity Hills",
+        "Yamhill-Carlton",
+        "Napa Valley"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Napa Valley is in California."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Dundee Hills are the historic heart",
+        "Jory, red volcanic clay, gives elegant Pinot",
+        "Eleven AVAs show different soils and styles"
+      ]
+    }
+  ]
+}

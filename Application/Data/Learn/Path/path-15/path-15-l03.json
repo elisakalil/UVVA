@@ -1,0 +1,84 @@
+{
+  "id": "path-15-l03",
+  "moduleId": "path-15",
+  "order": 3,
+  "title": "Aroma families",
+  "subtitle": "A structured vocabulary",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Sort aromas into clear families",
+    "Link aromas to grapes, climate and winemaking",
+    "Describe a wine's aromas precisely"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Primary families",
+      "body": "Primary aromas come from the grape and fermentation. Group them: floral, like rose and violet; green fruit, like apple and pear; citrus; stone fruit, like peach; tropical; red fruit; black fruit; dried fruit; herbaceous, like grass and green pepper; herbal, like mint and eucalyptus; spice, like black pepper; and others, like wet stone.",
+      "highlight": "Families before specifics"
+    },
+    {
+      "type": "concept",
+      "title": "What they reveal",
+      "body": "Fruit families point to ripeness: green and citrus fruit for cool climates, tropical and jammy black fruit for warm ones. Herbaceous notes from pyrazines suggest Sauvignon Blanc or Cabernet family grapes. Black pepper from rotundone suggests Syrah. Secondary aromas, like butter or vanilla, reveal winemaking; tertiary ones reveal age.",
+      "highlight": "Aromas are evidence"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each aroma to what it most likely reveals.",
+      "pairs": [
+        {
+          "left": "Green pepper",
+          "right": "Pyrazines, Cabernet family"
+        },
+        {
+          "left": "Black pepper",
+          "right": "Rotundone, Syrah"
+        },
+        {
+          "left": "Butter",
+          "right": "Malolactic conversion"
+        },
+        {
+          "left": "Pineapple and mango",
+          "right": "Warm climate"
+        }
+      ],
+      "explanation": "Each aroma is a clue about grape, place or process."
+    },
+    {
+      "type": "concept",
+      "title": "Being precise",
+      "body": "Start broad, then narrow. Fruit? Black fruit? Blackcurrant or blackberry? Fresh, ripe or cooked? Precise words help: fresh blackcurrant suggests a cooler Cabernet; jammy blackberry suggests a warmer region. Note several families, not just one.",
+      "highlight": "Broad, then narrow, then ripe or fresh"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which aromas suggest a cool climate?",
+      "options": [
+        "Green apple",
+        "Lime",
+        "Jammy black fruit",
+        "Fresh red cherry",
+        "Dried fig"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Fresh, tart fruit suggests cool conditions. Jammy and dried fruit point to heat or age."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sort aromas into families before naming specifics",
+        "Fruit families reveal ripeness; specific aromas reveal grapes",
+        "Precise words, like fresh or jammy, add evidence"
+      ]
+    }
+  ]
+}

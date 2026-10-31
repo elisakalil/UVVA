@@ -1,0 +1,72 @@
+{
+  "id": "path-09-l05",
+  "moduleId": "path-09",
+  "order": 5,
+  "title": "Chenin Blanc and Sémillon",
+  "subtitle": "Two grapes, many styles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Chenin Blanc's range in the Loire",
+    "Describe Chenin in South Africa",
+    "Explain Sémillon's styles in Bordeaux and Australia"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Chenin Blanc",
+      "body": "Chenin Blanc has very high acidity and flavours of apple, quince and honey. In the Loire's Anjou and Touraine it makes every style: dry, off-dry, sweet and sparkling. Vouvray can be any of these; Savennières is dry and long-lived; Coteaux du Layon is sweet, often from noble rot. South Africa grows more Chenin than any other country.",
+      "highlight": "Chenin: high acid, dry to sweet"
+    },
+    {
+      "type": "concept",
+      "title": "Sémillon",
+      "body": "Sémillon has thin skins, low acidity and a waxy, lemony texture. Thin skins make it prone to noble rot, the fungus Botrytis cinerea, which shrivels berries and concentrates sugar. That's why it is the main grape of Sauternes. In Australia's Hunter Valley, picked early at about 10 to 11%, it makes lean whites that turn toasty and honeyed after ten years, without oak.",
+      "highlight": "Thin skins, noble rot, Sauternes"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which styles can Chenin Blanc make in the Loire?",
+      "options": [
+        "Dry",
+        "Sweet",
+        "Sparkling",
+        "Fortified"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Chenin is made dry, off-dry, sweet and sparkling in the Loire. Fortified wines aren't a Loire tradition."
+    },
+    {
+      "type": "concept",
+      "title": "Blends and roles",
+      "body": "In Bordeaux, Sémillon is blended with Sauvignon Blanc: Sémillon gives body and texture, Sauvignon gives acidity and aroma. South Africa's Chenin often comes from old bush vines in Swartland and Stellenbosch, giving concentrated dry wines, sometimes oaked, that now rank among the country's best.",
+      "highlight": "Sémillon for body, Sauvignon for lift"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Sémillon so suited to making Sauternes?",
+      "options": [
+        "Its thick skins resist rot",
+        "Its thin skins are prone to noble rot",
+        "It has very high acidity",
+        "It ripens very early"
+      ],
+      "answer": 1,
+      "explanation": "Thin skins let Botrytis cinerea attack, concentrating sugar. That's what makes Sauternes sweet."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chenin Blanc makes dry, sweet and sparkling wines in the Loire",
+        "South Africa grows the most Chenin, often from old vines",
+        "Sémillon gives body, ages well in the Hunter and suits noble rot"
+      ]
+    }
+  ]
+}

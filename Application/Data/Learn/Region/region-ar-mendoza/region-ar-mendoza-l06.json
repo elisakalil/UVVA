@@ -1,0 +1,96 @@
+{
+  "id": "region-ar-mendoza-l06",
+  "moduleId": "region-ar-mendoza",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Mendoza",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Mendoza's land and grapes",
+    "Compare Luján de Cuyo and Valle de Uco",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Mendoza.",
+      "pairs": [
+        {
+          "left": "Aconcagua",
+          "right": "Highest mountain outside Asia"
+        },
+        {
+          "left": "Zonda",
+          "right": "Hot, dry wind"
+        },
+        {
+          "left": "Pouget",
+          "right": "Brought Malbec in 1853"
+        },
+        {
+          "left": "Asado",
+          "right": "Argentine barbecue"
+        }
+      ],
+      "explanation": "Mendoza's vocabulary is Andean."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where does Mendoza's irrigation water come from?",
+      "options": [
+        "Andean snowmelt",
+        "The Atlantic",
+        "Rainfall",
+        "Underground seawater"
+      ],
+      "answer": 0,
+      "explanation": "Rivers fed by snowmelt."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Valle de Uco vineyards are lower than Luján de Cuyo's.",
+      "answer": false,
+      "explanation": "Not true. They're higher, up to 1,600 m."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Valle de Uco departments?",
+      "options": [
+        "Tupungato",
+        "Tunuyán",
+        "San Carlos",
+        "Maipú"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Maipú is near Mendoza city."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Luján de Cuyo became Argentina's first DOC in ____.",
+      "options": [
+        "1989",
+        "1853",
+        "2013",
+        "1990"
+      ],
+      "answer": "1989",
+      "explanation": "In 1989."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Mendoza is an irrigated high desert under the Andes",
+        "Malbec leads, with Cabernet, Bonarda and Cabernet Franc",
+        "Luján de Cuyo is historic; the Valle de Uco high and fresh",
+        "Malbec is the wine of the asado"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "grape-nerello-mascalese-l03",
+  "moduleId": "grape-nerello-mascalese",
+  "order": 3,
+  "title": "Wines of Etna",
+  "subtitle": "The volcano's wines",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Etna's volcanic soils",
+    "Explain old vines and contrade",
+    "Explain Etna's revival"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Volcanic soils",
+      "body": "Etna's soils are made of volcanic sand, ash and lava, of different ages. They're poor, well-drained and rich in minerals. Each lava flow created different soils, so neighbouring vineyards can taste different. Phylloxera struggles in volcanic sand, so many old vines are ungrafted, trained as alberello, bush vines, on terraces.",
+      "highlight": "Lava flows, ungrafted vines"
+    },
+    {
+      "type": "concept",
+      "title": "Contrade",
+      "body": "Etna's vineyards are divided into contrade, local districts, often defined by lava flows. In 2011, Etna DOC recognised 133 contrade, which can appear on labels, like Burgundy's crus. Producers like Frank Cornelissen, Andrea Franchetti of Passopisciaro and Marc de Grazia drove Etna's revival from the early 2000s.",
+      "highlight": "133 contrade on labels"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Why are many Etna vines ungrafted?",
+      "options": [
+        "Phylloxera struggles in volcanic sand",
+        "Grafting is banned",
+        "The vines are very old",
+        "The vines are white"
+      ],
+      "answers": [
+        0,
+        2
+      ],
+      "explanation": "Sandy volcanic soils protect against phylloxera, so many old vines survive on their own roots."
+    },
+    {
+      "type": "tip",
+      "body": "Look for a contrada name on an Etna label, such as Rampante or Feudo di Mezzo. Like a Burgundy cru, it tells you exactly where the grapes grew."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What are contrade on Etna?",
+      "options": [
+        "Local vineyard districts",
+        "A grape",
+        "A barrel",
+        "A fortified wine"
+      ],
+      "answer": 0,
+      "explanation": "Contrade are local districts, often defined by lava flows."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Etna's volcanic soils vary with each lava flow",
+        "Many old vines are ungrafted bush vines on terraces",
+        "133 contrade can appear on labels"
+      ]
+    }
+  ]
+}

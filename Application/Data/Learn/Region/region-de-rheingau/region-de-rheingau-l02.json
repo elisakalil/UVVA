@@ -1,0 +1,77 @@
+{
+  "id": "region-de-rheingau-l02",
+  "moduleId": "region-de-rheingau",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Riesling and Spätburgunder",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Riesling's role",
+    "Describe Spätburgunder in Assmannshausen",
+    "Describe the Rheingau style"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Riesling",
+      "body": "Riesling covers about 78% of the Rheingau, the highest share of any German region. It gives fuller, riper wines than the Mosel's, with peach, apricot, citrus and spice, firm acidity and often more alcohol. Most top Rheingau Riesling today is dry.",
+      "highlight": "About 78% Riesling"
+    },
+    {
+      "type": "concept",
+      "title": "Spätburgunder",
+      "body": "Spätburgunder, Pinot Noir, covers about 12%, mostly in Assmannshausen, on red slate, famous for red wine since the Middle Ages. The wines are elegant, with red cherry and spice. Assmannshäuser Höllenberg is the most famous red vineyard.",
+      "highlight": "Assmannshausen's red slate"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to the Rheingau.",
+      "pairs": [
+        {
+          "left": "Riesling",
+          "right": "About 78% of vines"
+        },
+        {
+          "left": "Spätburgunder",
+          "right": "Pinot Noir"
+        },
+        {
+          "left": "Assmannshausen",
+          "right": "Famous for red wine"
+        },
+        {
+          "left": "Höllenberg",
+          "right": "Top red vineyard"
+        }
+      ],
+      "explanation": "The Rheingau is Riesling with a red exception."
+    },
+    {
+      "type": "tip",
+      "body": "Rheingau Riesling is often described as a little more serious and structured than Mosel Riesling, with more body and spice."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What share of the Rheingau's vineyards is Riesling?",
+      "options": [
+        "About 78%",
+        "About 10%",
+        "About 40%",
+        "100%"
+      ],
+      "answer": 0,
+      "explanation": "The highest share in Germany."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling covers about 78%, fuller than the Mosel's",
+        "Spätburgunder makes elegant reds in Assmannshausen",
+        "Most top Rheingau Riesling is dry"
+      ]
+    }
+  ]
+}

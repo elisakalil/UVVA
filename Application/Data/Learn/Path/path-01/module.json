@@ -1,0 +1,19 @@
+{
+  "id": "path-01",
+  "kind": "path",
+  "order": 1,
+  "level": "Essentials",
+  "complexity": "D",
+  "title": "What Wine Is",
+  "description": "What wine is, how it is made in the simplest terms, where it comes from and how to drink it well.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "path-01-l01",
+    "path-01-l02",
+    "path-01-l03",
+    "path-01-l04",
+    "path-01-l05"
+  ]
+}

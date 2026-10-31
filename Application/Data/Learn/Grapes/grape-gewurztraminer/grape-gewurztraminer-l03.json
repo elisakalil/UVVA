@@ -1,0 +1,72 @@
+{
+  "id": "grape-gewurztraminer-l03",
+  "moduleId": "grape-gewurztraminer",
+  "order": 3,
+  "title": "Aromatics, explained",
+  "subtitle": "Where the perfume comes from",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain terpenes",
+    "Explain why Gewürztraminer is so aromatic",
+    "Compare it with other aromatic grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Terpenes",
+      "body": "Gewürztraminer's perfume comes mainly from terpenes, aromatic compounds also found in flowers and citrus. Geraniol smells of rose, linalool of flowers, and cis-rose oxide, found at high levels in Gewürztraminer, of lychee and rose. These compounds sit mostly in the skins and grow as the grape ripens.",
+      "highlight": "Terpenes: rose oxide, geraniol"
+    },
+    {
+      "type": "concept",
+      "title": "Why so strong",
+      "body": "Gewürztraminer has some of the highest terpene levels of any grape, along with Muscat. Unlike thiols in Sauvignon Blanc, which form during fermentation, terpenes are present in the grape itself. Some are free and smell immediately; others are bound to sugars and released slowly by enzymes, during fermentation and ageing.",
+      "highlight": "Free and bound terpenes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compound gives Gewürztraminer its lychee aroma?",
+      "options": [
+        "Cis-rose oxide",
+        "Pyrazine",
+        "Rotundone",
+        "TDN"
+      ],
+      "answer": 0,
+      "explanation": "Cis-rose oxide is found at high levels in Gewürztraminer, smelling of lychee and rose."
+    },
+    {
+      "type": "concept",
+      "title": "Skin contact",
+      "body": "Because terpenes sit in the skins, some winemakers give Gewürztraminer a few hours of skin contact before pressing to extract more aroma. Too much, though, adds bitterness and phenolic grip. Muscat, Torrontés and Viognier are other terpene-rich grapes, with their own aroma profiles.",
+      "highlight": "Skin contact for aroma, carefully"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which grapes are rich in terpenes?",
+      "options": [
+        "Gewürztraminer",
+        "Muscat",
+        "Torrontés",
+        "Cabernet Sauvignon"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cabernet's aromas come mostly from pyrazines and esters, not terpenes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Terpenes like cis-rose oxide and geraniol give its perfume",
+        "They sit in the skins, free or bound to sugars",
+        "Muscat and Torrontés are other terpene-rich grapes"
+      ]
+    }
+  ]
+}

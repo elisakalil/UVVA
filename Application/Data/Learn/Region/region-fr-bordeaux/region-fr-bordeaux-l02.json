@@ -1,0 +1,71 @@
+{
+  "id": "region-fr-bordeaux-l02",
+  "moduleId": "region-fr-bordeaux",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Blends of five grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Bordeaux's red and white grapes",
+    "Explain why Bordeaux blends",
+    "Explain each grape's role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Bordeaux's reds blend Merlot, the most planted grape, about 60% of red vines, Cabernet Sauvignon, Cabernet Franc, and small amounts of Petit Verdot, Malbec and Carmenère. Since 2021, a few heat-tolerant grapes like Touriga Nacional can be used in small amounts, under trial rules.",
+      "highlight": "Merlot, Cabernet Sauvignon, Cabernet Franc"
+    },
+    {
+      "type": "concept",
+      "title": "Why blend",
+      "body": "Each grape ripens at a different time and suits different soils. Merlot ripens early and likes cool clay; Cabernet Sauvignon ripens late and needs warm gravel; Cabernet Franc adds perfume. In a difficult year, blending lets the winemaker lean on whichever grape did best. Whites blend Sauvignon Blanc and Sémillon, sometimes Muscadelle.",
+      "highlight": "Blending spreads risk"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Merlot",
+          "right": "Flesh, early ripening"
+        },
+        {
+          "left": "Cabernet Sauvignon",
+          "right": "Structure, late ripening"
+        },
+        {
+          "left": "Cabernet Franc",
+          "right": "Perfume and freshness"
+        },
+        {
+          "left": "Sémillon",
+          "right": "Body in whites"
+        }
+      ],
+      "explanation": "Each grape fills a gap in the blend."
+    },
+    {
+      "type": "tip",
+      "body": "Bordeaux labels rarely name grapes. The appellation tells you: Left Bank wines lean on Cabernet Sauvignon, Right Bank wines on Merlot."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Cabernet Sauvignon is Bordeaux's most planted red grape.",
+      "answer": false,
+      "explanation": "Not true. Merlot is the most planted, about 60% of red vines."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Merlot, Cabernet Sauvignon and Cabernet Franc lead the reds",
+        "Blending spreads risk and balances flavour",
+        "Whites blend Sauvignon Blanc and Sémillon"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "grape-grenache-l01",
+  "moduleId": "grape-grenache",
+  "order": 1,
+  "title": "Meet Grenache",
+  "subtitle": "Red fruit and warmth",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Grenache's flavours and structure",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Ripe and spicy",
+      "body": "Grenache gives medium to full-bodied reds with strawberry, raspberry, red cherry, white pepper, dried herbs and, with age, leather and toffee. Colour is often paler than expected. Tannins are soft to medium, acidity low to medium, and alcohol high, often 14.5 to 16%.",
+      "highlight": "Strawberry, spice, high alcohol"
+    },
+    {
+      "type": "concept",
+      "title": "Spanish origins",
+      "body": "Grenache, Garnacha in Spain, probably comes from Aragón, in north-east Spain; some argue for Sardinia, where it's called Cannonau. It loves heat and drought, and accumulates sugar fast, which explains its high alcohol. Thin skins mean paler colour and softer tannin. It oxidises easily, so it browns early.",
+      "highlight": "Heat-loving, high sugar"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Grenache often high in alcohol?",
+      "options": [
+        "It accumulates sugar quickly in heat",
+        "Spirit is added",
+        "It's grown in cold places",
+        "It has thick skins"
+      ],
+      "answer": 0,
+      "explanation": "Grenache ripens to high sugar levels, which become alcohol."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for medium ruby colour, often with an orange rim early, ripe red fruit, white pepper and herbs, a warm, high-alcohol feel and soft tannins. Compared with Syrah, it's paler and redder-fruited; compared with Pinot Noir, warmer and riper.",
+      "highlight": "Pale, red-fruited, warm"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Grenache usually gives deeply coloured, tannic wines.",
+      "answer": false,
+      "explanation": "Not true. Its thin skins give paler colour and softer tannin."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grenache gives strawberry, spice and high alcohol",
+        "It comes from Spain and loves heat and drought",
+        "Thin skins mean paler colour and soft tannin"
+      ]
+    }
+  ]
+}

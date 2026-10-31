@@ -1,0 +1,29 @@
+{
+  "id": "grape-pinot-meunier",
+  "kind": "grape",
+  "order": 25,
+  "color": "red",
+  "title": "Pinot Meunier",
+  "aliases": [
+    "Meunier",
+    "Schwarzriesling",
+    "Müllerrebe"
+  ],
+  "origin": "France",
+  "countries": [
+    "France"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "Also called Meunier, and Schwarzriesling in Germany. Champagne's third grape: fruity, early and frost-resistant.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-pinot-meunier-l01",
+    "grape-pinot-meunier-l02",
+    "grape-pinot-meunier-l03",
+    "grape-pinot-meunier-l04",
+    "grape-pinot-meunier-l05"
+  ]
+}

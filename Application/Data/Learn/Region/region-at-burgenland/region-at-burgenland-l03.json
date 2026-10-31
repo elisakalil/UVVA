@@ -1,0 +1,72 @@
+{
+  "id": "region-at-burgenland-l03",
+  "moduleId": "region-at-burgenland",
+  "order": 3,
+  "title": "Blaufränkisch",
+  "subtitle": "Austria's great red",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Blaufränkisch",
+    "Name its key areas",
+    "Explain how soil changes it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Spicy and fresh",
+      "body": "Blaufränkisch, called Kékfrankos in Hungary and Lemberger in Germany, gives dark, spicy reds with black cherry, blackberry, black pepper and a mineral edge. Its acidity is high, its tannin firm but fine. It's often compared to Pinot Noir for transparency and to Syrah for spice. It ripens late and needs warm sites.",
+      "highlight": "Black cherry, pepper, fresh acidity"
+    },
+    {
+      "type": "concept",
+      "title": "Areas and soils",
+      "body": "Mittelburgenland, called Blaufränkischland, around Deutschkreutz and Horitschon, has heavy clay, giving full, dark wines. Leithaberg, on limestone and schist, gives fresh, mineral, elegant wines. Eisenberg, in the south, on iron-rich schist, gives spicy, firm wines. Each has a DAC for Blaufränkisch.",
+      "highlight": "Mittelburgenland, Leithaberg, Eisenberg"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Blaufränkisch called in Germany?",
+      "options": [
+        "Lemberger",
+        "Spätburgunder",
+        "Dornfelder",
+        "Trollinger"
+      ],
+      "answer": 0,
+      "explanation": "Lemberger in Württemberg; Kékfrankos in Hungary."
+    },
+    {
+      "type": "concept",
+      "title": "DACs",
+      "body": "Austria's DAC system links regions to typical grapes. Mittelburgenland DAC, created in 2005, was Burgenland's first, for Blaufränkisch. Leithaberg DAC allows Blaufränkisch for reds and Pinot Blanc, Chardonnay, Grüner Veltliner and Neuburger for whites. Eisenberg DAC is Blaufränkisch. Reserve marks riper, longer-aged wines.",
+      "highlight": "Mittelburgenland DAC, 2005"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Blaufränkisch DACs?",
+      "options": [
+        "Mittelburgenland",
+        "Leithaberg",
+        "Eisenberg",
+        "Wachau"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Wachau is for Grüner Veltliner and Riesling."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Blaufränkisch is spicy, dark and fresh",
+        "Mittelburgenland is full; Leithaberg mineral; Eisenberg spicy",
+        "DACs link each area to Blaufränkisch"
+      ]
+    }
+  ]
+}

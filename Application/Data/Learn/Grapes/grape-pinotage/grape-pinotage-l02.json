@@ -1,0 +1,70 @@
+{
+  "id": "grape-pinotage-l02",
+  "moduleId": "grape-pinotage",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "The Cape's own grape",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Pinotage's main regions",
+    "Explain how it suits the Cape",
+    "Name other countries that grow it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Cape",
+      "body": "Pinotage is about 7% of South Africa's vineyards. Stellenbosch is its heartland, with Paarl, Swartland and Malmesbury also important. Bush vines on dryland, without irrigation, are valued for concentration. Old Pinotage vineyards, some from the 1950s, are now prized.",
+      "highlight": "Stellenbosch is the heartland"
+    },
+    {
+      "type": "concept",
+      "title": "Suited to the Cape",
+      "body": "Pinotage buds and ripens early, accumulating sugar fast. That's useful in warm Cape summers, but growers must pick carefully to avoid jammy fruit and high alcohol. It's vigorous and productive, so yields need control. Its thick skins give colour and resist rot.",
+      "highlight": "Early, vigorous, needs control"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Pinotage in the vineyard?",
+      "options": [
+        "Early ripening",
+        "Vigorous",
+        "Very low sugar",
+        "Thick skins"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Pinotage accumulates sugar quickly, often reaching high alcohol."
+    },
+    {
+      "type": "tip",
+      "body": "Look for Pinotage from old bush vines in Stellenbosch or Swartland. They often show more depth and less of the burnt rubber note that hurt the grape's reputation."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where else is Pinotage grown, in small amounts?",
+      "options": [
+        "New Zealand and the US",
+        "Only France",
+        "Nowhere else",
+        "Only Italy"
+      ],
+      "answer": 0,
+      "explanation": "Small plantings exist in New Zealand, the US, Germany and Zimbabwe, but South Africa dominates."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Stellenbosch is Pinotage's heartland",
+        "It ripens early and needs yield control",
+        "Small plantings exist abroad, but it's essentially South African"
+      ]
+    }
+  ]
+}

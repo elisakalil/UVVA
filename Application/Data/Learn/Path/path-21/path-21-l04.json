@@ -1,0 +1,68 @@
+{
+  "id": "path-21-l04",
+  "moduleId": "path-21",
+  "order": 4,
+  "title": "Austria",
+  "subtitle": "Grüner, Blaufränkisch and the Danube",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Austria's main regions",
+    "Explain the Wachau's own classification",
+    "Name Austria's key red grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Lower Austria",
+      "body": "Most Austrian wine comes from Niederösterreich, Lower Austria, along the Danube. Grüner Veltliner, Austria's signature grape, gives peppery, citrus whites. The Wachau, Kamptal and Kremstal make powerful dry Rieslings and Grüners on terraces of granite, gneiss and loess. The DAC system now labels regions by their typical style.",
+      "highlight": "Grüner Veltliner on the Danube"
+    },
+    {
+      "type": "concept",
+      "title": "The Wachau's terms",
+      "body": "The Wachau uses its own terms through the Vinea Wachau association. Steinfeder is light, up to 11.5% alcohol. Federspiel is medium, 11.5 to 12.5%. Smaragd, named after an emerald lizard, is the ripest, over 12.5%. All are dry. These terms are by alcohol, unlike Germany's ripeness at harvest.",
+      "highlight": "Steinfeder, Federspiel, Smaragd"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The ripest and fullest of the Wachau's dry styles is called ____.",
+      "options": [
+        "Smaragd",
+        "Steinfeder",
+        "Federspiel",
+        "Ausbruch"
+      ],
+      "answer": "Smaragd",
+      "explanation": "Smaragd is over 12.5% alcohol. Steinfeder is the lightest, Federspiel sits in the middle, and Ausbruch is a sweet wine from Rust."
+    },
+    {
+      "type": "concept",
+      "title": "Reds and sweet wines",
+      "body": "Burgenland, in the east, is warmer, near the Hungarian border. Blaufränkisch gives structured, peppery reds; Zweigelt, a cross of Blaufränkisch and St. Laurent, gives soft, cherry reds. Around the shallow Neusiedlersee lake, mists favour noble rot, and Rust is famous for sweet Ausbruch.",
+      "highlight": "Blaufränkisch, Zweigelt, Neusiedlersee"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which is Austria's signature white grape?",
+      "options": [
+        "Riesling",
+        "Grüner Veltliner",
+        "Chardonnay",
+        "Welschriesling"
+      ],
+      "answer": 1,
+      "explanation": "Grüner Veltliner covers about a third of Austria's vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Austria's Danube regions make Grüner Veltliner and dry Riesling",
+        "The Wachau uses Steinfeder, Federspiel and Smaragd",
+        "Burgenland makes Blaufränkisch reds and noble rot sweet wines"
+      ]
+    }
+  ]
+}

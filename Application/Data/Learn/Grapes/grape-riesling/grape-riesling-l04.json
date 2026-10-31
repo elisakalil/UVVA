@@ -1,0 +1,72 @@
+{
+  "id": "grape-riesling-l04",
+  "moduleId": "grape-riesling",
+  "order": 4,
+  "title": "Dry to sweet",
+  "subtitle": "Riesling's full range",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe dry Riesling",
+    "Describe off-dry and sweet Riesling",
+    "Explain the balance of sugar and acidity"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Dry and off-dry",
+      "body": "Dry Riesling, from Alsace, Austria, Australia and Germany's trocken and GG wines, is crisp and mineral, with citrus and stone fruit. Off-dry Riesling, like many Mosel Kabinetts, balances a little sugar with high acidity, often at only 7.5 to 9% alcohol, tasting fresh rather than sweet.",
+      "highlight": "Dry, or off-dry and light"
+    },
+    {
+      "type": "concept",
+      "title": "Sugar and acidity",
+      "body": "The balance between sugar and acidity defines Riesling. High acidity, often 8 to 10 g/l, makes even 40 or 50 g/l of sugar taste only slightly sweet. The International Riesling Foundation created a taste profile scale, from dry to sweet, that some producers print on the back label to help buyers.",
+      "highlight": "Acidity masks sugar"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does an off-dry Mosel Kabinett taste fresh rather than sweet?",
+      "options": [
+        "High acidity balances the sugar",
+        "It has no sugar",
+        "It's very high in alcohol",
+        "It's aged in oak"
+      ],
+      "answer": 0,
+      "explanation": "Acidity counters the perception of sweetness."
+    },
+    {
+      "type": "concept",
+      "title": "Sweet Riesling",
+      "body": "Auslese, Beerenauslese, Eiswein and Trockenbeerenauslese are sweet, sometimes extremely so: TBA can exceed 300 g/l of sugar, with only 6 to 8% alcohol. Riesling's acidity keeps them lively. These are among the longest-lived wines in the world.",
+      "highlight": "TBA: over 300 g/l"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which Riesling styles are usually dry?",
+      "options": [
+        "Alsace Riesling",
+        "German Grosses Gewächs",
+        "Clare Valley Riesling",
+        "Trockenbeerenauslese"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "TBA is among the sweetest wines in the world."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Riesling ranges from bone dry to intensely sweet",
+        "High acidity balances sugar, making off-dry wines taste fresh",
+        "Sweet Riesling can exceed 300 g/l and live for decades"
+      ]
+    }
+  ]
+}

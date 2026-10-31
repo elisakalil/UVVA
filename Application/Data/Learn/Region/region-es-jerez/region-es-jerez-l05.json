@@ -1,0 +1,78 @@
+{
+  "id": "region-es-jerez-l05",
+  "moduleId": "region-es-jerez",
+  "order": 5,
+  "title": "Amontillado to Pedro Ximénez",
+  "subtitle": "Oxidative and sweet styles",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Amontillado and Palo Cortado",
+    "Describe Oloroso",
+    "Describe sweet styles"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Amontillado and Palo Cortado",
+      "body": "Amontillado starts as a Fino under flor, then the flor fades or is killed by fortifying to about 17%, and the wine ages oxidatively. It's amber, dry, with hazelnut, toffee and saline notes. Palo Cortado is rare: a wine that loses its flor early, combining Amontillado's delicate aroma with Oloroso's richer body.",
+      "highlight": "Amontillado: flor, then oxygen"
+    },
+    {
+      "type": "concept",
+      "title": "Oloroso",
+      "body": "Oloroso, fragrant, is fortified to about 17% from the start, never has flor, and ages with oxygen for years. It darkens to mahogany, with walnut, leather, dried fruit and spice. It's naturally dry, despite seeming rich. As water evaporates, alcohol can rise to 20% or more.",
+      "highlight": "Oloroso: oxidative, dry, walnut"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Sherry to its ageing.",
+      "pairs": [
+        {
+          "left": "Fino",
+          "right": "Under flor only"
+        },
+        {
+          "left": "Amontillado",
+          "right": "Flor, then oxygen"
+        },
+        {
+          "left": "Oloroso",
+          "right": "Oxygen only"
+        },
+        {
+          "left": "Palo Cortado",
+          "right": "Loses flor early"
+        }
+      ],
+      "explanation": "Ageing paths define styles."
+    },
+    {
+      "type": "concept",
+      "title": "Sweet styles",
+      "body": "Pedro Ximénez Sherry is black, syrupy and very sweet, with raisin, fig, coffee and liquorice. Moscatel is sweet and floral. Cream Sherry blends Oloroso with sweet wine; Pale Cream blends Fino with sweetening. Age statements, VOS, 20 years, and VORS, 30 years, mark very old Sherries.",
+      "highlight": "PX, Cream, VOS and VORS"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Sherries from palest to darkest.",
+      "items": [
+        "Manzanilla",
+        "Amontillado",
+        "Oloroso",
+        "Pedro Ximénez"
+      ],
+      "explanation": "Biological ageing keeps wine pale; oxidation and dried grapes darken it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Amontillado and Palo Cortado combine flor and oxygen",
+        "Oloroso ages oxidatively and stays dry",
+        "PX and Cream are sweet; VOS and VORS mark old Sherry"
+      ]
+    }
+  ]
+}

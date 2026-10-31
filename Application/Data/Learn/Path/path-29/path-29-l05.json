@@ -1,0 +1,72 @@
+{
+  "id": "path-29-l05",
+  "moduleId": "path-29",
+  "order": 5,
+  "title": "Climate and the future",
+  "subtitle": "Adapting the vineyard",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the effects of climate change on wine",
+    "Describe how producers adapt",
+    "Explain sustainability in the business"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What's changing",
+      "body": "Harvests in many regions are two to three weeks earlier than in the 1980s. Alcohol has risen and acidity fallen. Extreme events, like frost after early budburst, hail, heatwaves, drought and wildfire, are more common. Smoke taint from fires affected California and Australia in 2020.",
+      "highlight": "Earlier harvests, extreme events"
+    },
+    {
+      "type": "concept",
+      "title": "Adapting",
+      "body": "Producers plant later-ripening grapes, higher or cooler sites, change canopy management for shade, and use drought-tolerant rootstocks. Regulations are changing too: in 2021, Bordeaux approved six new grapes, including Touriga Nacional, for trial in its AOCs. New regions like southern England, Tasmania and Denmark are rising.",
+      "highlight": "New grapes, sites and rules"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are adaptations to a warming climate?",
+      "options": [
+        "Planting at higher altitude",
+        "Using later-ripening grapes",
+        "Removing all shading leaves",
+        "Drought-tolerant rootstocks"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "In heat, growers usually keep leaves to shade grapes, not remove them."
+    },
+    {
+      "type": "concept",
+      "title": "Sustainability and packaging",
+      "body": "Glass bottles are the biggest part of wine's carbon footprint, often around 40%. Lighter bottles, bag-in-box, cans and paper bottles cut emissions. Shipping wine in bulk and bottling near the market also helps. Many producers now measure their footprint and seek certification.",
+      "highlight": "Glass is the largest footprint"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is usually the largest part of wine's carbon footprint?",
+      "options": [
+        "Grape growing",
+        "Glass bottles",
+        "Corks",
+        "Labels"
+      ],
+      "answer": 1,
+      "explanation": "Heavy glass bottles account for a large share of emissions, often around 40%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Climate change brings earlier harvests and more extreme weather",
+        "Producers adapt with new grapes, sites and rules",
+        "Lighter packaging cuts wine's biggest footprint, glass"
+      ]
+    }
+  ]
+}

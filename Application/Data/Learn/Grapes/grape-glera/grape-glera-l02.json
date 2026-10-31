@@ -1,0 +1,79 @@
+{
+  "id": "grape-glera-l02",
+  "moduleId": "grape-glera",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Veneto and Friuli",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Glera's main areas",
+    "Explain Prosecco's tiers",
+    "Explain the tank method's role"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Prosecco DOC",
+      "body": "Glera grows mainly in the Veneto and Friuli-Venezia Giulia, in north-east Italy. Prosecco DOC covers a large area across nine provinces and must be at least 85% Glera. It's mostly flat land, giving large volumes of fresh, affordable wine. Prosecco Rosé, with Pinot Noir, was allowed from 2020.",
+      "highlight": "Nine provinces, at least 85% Glera"
+    },
+    {
+      "type": "concept",
+      "title": "Tank method",
+      "body": "Most Prosecco is made by the tank method, also called Martinotti or Charmat: the second fermentation happens in large pressurised tanks, often over a few weeks. This keeps Glera's fresh fruit and floral aromas, without the bready notes of long lees ageing. It's also faster and cheaper than the traditional method.",
+      "highlight": "Tank method keeps the fruit"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each Prosecco term to its meaning.",
+      "pairs": [
+        {
+          "left": "Prosecco DOC",
+          "right": "Large, nine-province area"
+        },
+        {
+          "left": "Prosecco Rosé",
+          "right": "With Pinot Noir, since 2020"
+        },
+        {
+          "left": "Martinotti method",
+          "right": "Tank fermentation"
+        },
+        {
+          "left": "Extra Dry",
+          "right": "Common sweetness level"
+        }
+      ],
+      "explanation": "Prosecco has its own rules and words."
+    },
+    {
+      "type": "concept",
+      "title": "Sweetness",
+      "body": "Prosecco is labelled by sweetness: Brut, up to 12 g/l; Extra Dry, 12 to 17 g/l; Dry, 17 to 32 g/l. Confusingly, Extra Dry is sweeter than Brut. Extra Dry is the traditional style, with a soft touch of sweetness balancing the acidity.",
+      "highlight": "Extra Dry is sweeter than Brut"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which Prosecco is sweeter: Brut or Extra Dry?",
+      "options": [
+        "Extra Dry",
+        "Brut",
+        "They're the same",
+        "Neither has sugar"
+      ],
+      "answer": 0,
+      "explanation": "Extra Dry has 12 to 17 g/l; Brut up to 12."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Prosecco DOC covers nine provinces, at least 85% Glera",
+        "The tank method keeps Glera's fruit fresh",
+        "Extra Dry is sweeter than Brut"
+      ]
+    }
+  ]
+}

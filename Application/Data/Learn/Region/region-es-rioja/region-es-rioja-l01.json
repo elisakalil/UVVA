@@ -1,0 +1,62 @@
+{
+  "id": "region-es-rioja-l01",
+  "moduleId": "region-es-rioja",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Along the Ebro",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Rioja's geography",
+    "Explain its climate influences",
+    "Explain its history"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The Ebro valley",
+      "body": "Rioja lies in northern Spain, along the Ebro river and its tributaries, including the small Oja river that may give Rioja its name. It spans three regions: La Rioja, the Basque Country, Álava, and Navarra. Vineyards cover about 66,000 hectares, from about 300 to over 700 m. The Sierra de Cantabria shelters it from the north.",
+      "highlight": "Ebro valley, three regions"
+    },
+    {
+      "type": "concept",
+      "title": "Atlantic meets Mediterranean",
+      "body": "Rioja sits where Atlantic and Mediterranean influences meet. The west is cooler and wetter, with Atlantic air; the east is warmer and drier, Mediterranean. The Sierra de Cantabria blocks cold, wet winds from the Bay of Biscay. This range of climates lets growers blend grapes from different areas for balance.",
+      "highlight": "Cooler west, warmer east"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What shelters Rioja from cold northern winds?",
+      "options": [
+        "The Sierra de Cantabria",
+        "The Pyrenees only",
+        "The Mediterranean",
+        "The Ebro river"
+      ],
+      "answer": 0,
+      "explanation": "The mountains block Atlantic winds from the north."
+    },
+    {
+      "type": "concept",
+      "title": "The French connection",
+      "body": "In the 1860s and 1870s, when phylloxera and mildew ruined Bordeaux, French merchants came to Rioja looking for wine. They brought Bordeaux techniques, like ageing in small oak barrels, and the railway linked Rioja to France. Houses like Marqués de Riscal, 1858, and Marqués de Murrieta founded modern Rioja. Rioja became Spain's first DOCa in 1991.",
+      "highlight": "Bordeaux influence; DOCa since 1991"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "French merchants brought barrel ageing to Rioja in the 19th century.",
+      "answer": true,
+      "explanation": "Yes, after phylloxera hit Bordeaux."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Rioja follows the Ebro across three regions",
+        "Atlantic and Mediterranean influences meet there",
+        "Bordeaux merchants shaped modern Rioja; DOCa since 1991"
+      ]
+    }
+  ]
+}

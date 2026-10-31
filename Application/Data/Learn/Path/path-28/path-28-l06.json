@@ -1,0 +1,100 @@
+{
+  "id": "path-28-l06",
+  "moduleId": "path-28",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything from Faults and Quality",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise the main wine faults",
+    "Separate faults from style",
+    "Judge quality without bias"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fault to its typical smell.",
+      "pairs": [
+        {
+          "left": "Cork taint",
+          "right": "Damp cardboard"
+        },
+        {
+          "left": "Brett",
+          "right": "Barnyard, plaster"
+        },
+        {
+          "left": "Volatile acidity",
+          "right": "Vinegar"
+        },
+        {
+          "left": "Light strike",
+          "right": "Cabbage"
+        },
+        {
+          "left": "Oxidation",
+          "right": "Bruised apple"
+        }
+      ],
+      "explanation": "Each fault has a fingerprint."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What causes hydrogen sulphide in wine?",
+      "options": [
+        "Too much oxygen",
+        "Stressed yeast lacking nutrients",
+        "Hot storage",
+        "Cork mould"
+      ],
+      "answer": 1,
+      "explanation": "Yeast short of nitrogen produces rotten egg smells."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tartrate crystals in a white wine are a fault.",
+      "answer": false,
+      "explanation": "Not true. They're harmless salts of tartaric acid."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which help reduce bias when judging quality?",
+      "options": [
+        "Tasting blind",
+        "Using fixed criteria",
+        "Knowing the price first",
+        "Tasting in a consistent order"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Knowing the price adds bias."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Cork taint is caused by the compound ____.",
+      "options": [
+        "TCA",
+        "H2S",
+        "SO2",
+        "VA"
+      ],
+      "answer": "TCA",
+      "explanation": "TCA, 2,4,6-trichloroanisole, gives the musty smell."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "TCA, oxidation, reduction, Brett and VA are the main faults",
+        "Heat and light damage come from poor storage",
+        "Level and context decide fault or character",
+        "Quality is judged with criteria, ideally blind"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "path-07-l02",
+  "moduleId": "path-07",
+  "order": 2,
+  "title": "The growing year",
+  "subtitle": "From winter to harvest",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Put the stages of the vine's year in order",
+    "Explain the risks at each stage",
+    "Explain veraison"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The cycle",
+      "body": "In the northern hemisphere, the vine rests in winter. Buds break in March or April. Shoots and leaves grow, then the vine flowers in late May or June. Flowers that are pollinated become berries, called fruit set. In late summer the berries soften and change colour. Harvest comes from September to October.",
+      "highlight": "Budburst, flowering, fruit set, veraison, harvest"
+    },
+    {
+      "type": "concept",
+      "title": "Veraison and ripening",
+      "body": "Veraison is the moment berries soften and change colour: black grapes turn from green to purple, white grapes become translucent. From then on, sugar rises fast, acidity falls, tannins and aromas mature. This takes about 6 to 8 weeks, depending on the weather and the grape.",
+      "highlight": "Veraison starts ripening"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put the stages of the vine's year in order.",
+      "items": [
+        "Dormancy",
+        "Budburst",
+        "Flowering",
+        "Fruit set",
+        "Veraison",
+        "Harvest"
+      ],
+      "explanation": "Rest in winter, then buds, flowers, berries, colour change and finally harvest."
+    },
+    {
+      "type": "concept",
+      "title": "Risks along the way",
+      "body": "Spring frost can kill young shoots after budburst. Cold, wet weather at flowering leads to poor fruit set, called coulure, or uneven berries, called millerandage. Hail can shred leaves and fruit. Rain near harvest can swell berries and cause rot. Each stage has its danger.",
+      "highlight": "Frost, poor set, hail, rot"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is veraison?",
+      "options": [
+        "When buds first open",
+        "When the vine flowers",
+        "When berries soften and change colour",
+        "When grapes are picked"
+      ],
+      "answer": 2,
+      "explanation": "Veraison is the start of ripening, marked by colour change and softening. Budburst and flowering come months earlier."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The vine moves from dormancy to budburst, flowering, fruit set, veraison and harvest",
+        "Veraison marks the start of ripening, when sugar rises and acidity falls",
+        "Frost, poor fruit set, hail and rot threaten each stage"
+      ]
+    }
+  ]
+}

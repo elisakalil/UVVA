@@ -1,0 +1,62 @@
+{
+  "id": "region-pt-vinho-verde-l03",
+  "moduleId": "region-pt-vinho-verde",
+  "order": 3,
+  "title": "Monção e Melgaço",
+  "subtitle": "Alvarinho's home",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Monção e Melgaço's location",
+    "Explain why it's warmer",
+    "Describe its wines"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "On the Minho",
+      "body": "Monção e Melgaço is the northernmost sub-region, along the south bank of the Minho river, facing Spain's Rías Baixas. Hills to the west shelter it from Atlantic winds and rain, so it's warmer and drier in summer than the rest of Vinho Verde. Granite and alluvial soils dominate.",
+      "highlight": "Sheltered from the Atlantic"
+    },
+    {
+      "type": "concept",
+      "title": "Alvarinho",
+      "body": "Monção e Melgaço is Alvarinho's heartland. Until 2021, it was the only sub-region allowed to label a wine Alvarinho on the front. The wines are fuller, riper and more aromatic than typical Vinho Verde, around 12.5 to 13.5%, with peach, citrus, tropical fruit and minerality, rarely spritzy. They can age five to ten years.",
+      "highlight": "Fuller, riper, age-worthy"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Monção e Melgaço warmer than the rest of Vinho Verde?",
+      "options": [
+        "Hills shelter it from Atlantic winds",
+        "It's at high altitude",
+        "It's near the Mediterranean",
+        "It's in the Douro"
+      ],
+      "answer": 0,
+      "explanation": "Shelter makes it warmer and drier."
+    },
+    {
+      "type": "concept",
+      "title": "Styles",
+      "body": "Producers make Alvarinho in several styles: fresh and unoaked, lees-aged for texture, oak-fermented, and even sparkling, Espumante. Soalheiro, founded in 1974, was a pioneer of quality Alvarinho here. Alvarinho Superior and single-vineyard wines show its potential.",
+      "highlight": "Fresh, lees-aged, oaked, sparkling"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Monção e Melgaço Alvarinho is usually light and spritzy.",
+      "answer": false,
+      "explanation": "Not true. It's fuller, riper and rarely spritzy."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Monção e Melgaço is sheltered and warmer",
+        "It's Alvarinho's heartland in Portugal",
+        "Its wines are fuller and can age five to ten years"
+      ]
+    }
+  ]
+}

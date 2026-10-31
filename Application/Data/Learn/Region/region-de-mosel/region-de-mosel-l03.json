@@ -1,0 +1,72 @@
+{
+  "id": "region-de-mosel-l03",
+  "moduleId": "region-de-mosel",
+  "order": 3,
+  "title": "Steep slate",
+  "subtitle": "The world's steepest vineyards",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the Mosel's slopes",
+    "Explain the role of slate",
+    "Name famous vineyards"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Steep slopes",
+      "body": "The Mosel has some of the steepest vineyards in the world. The Bremmer Calmont, in the Lower Mosel, reaches about 65 degrees, often called Europe's steepest. Vines are trained on single poles, Einzelpfahl, and work is by hand, sometimes with monorails. Steepness gives more sun and drainage, but costs are high.",
+      "highlight": "Calmont: about 65 degrees"
+    },
+    {
+      "type": "concept",
+      "title": "Slate",
+      "body": "Most top vineyards are on Devonian slate, grey, blue or red. Slate drains well, absorbs heat by day and releases it at night, helping ripening. Broken slate on the surface reflects light. Many link slate to the Mosel's mineral, smoky character, though the science is debated; its effect on heat and drainage is clear.",
+      "highlight": "Slate stores heat and drains well"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How does slate help Mosel vineyards?",
+      "options": [
+        "It absorbs and releases heat and drains well",
+        "It holds water like a sponge",
+        "It's very fertile",
+        "It cools the vines"
+      ],
+      "answer": 0,
+      "explanation": "Heat storage and drainage help ripening."
+    },
+    {
+      "type": "concept",
+      "title": "Famous sites",
+      "body": "Famous vineyards include Wehlener Sonnenuhr, with its sundial; Bernkasteler Doctor, among Germany's most expensive; Ürziger Würzgarten, on red slate; Graacher Himmelreich; and Piesporter Goldtröpfchen. Labels name the village plus the vineyard, like Wehlener Sonnenuhr, from Wehlen.",
+      "highlight": "Sonnenuhr, Doctor, Würzgarten"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are famous Mosel vineyards?",
+      "options": [
+        "Wehlener Sonnenuhr",
+        "Bernkasteler Doctor",
+        "Ürziger Würzgarten",
+        "Clos de Vougeot"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Clos de Vougeot is in Burgundy."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Mosel has some of the world's steepest vineyards",
+        "Slate stores heat and drains well",
+        "Labels name village plus vineyard, like Wehlener Sonnenuhr"
+      ]
+    }
+  ]
+}

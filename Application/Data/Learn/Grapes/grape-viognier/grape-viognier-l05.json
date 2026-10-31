@@ -1,0 +1,96 @@
+{
+  "id": "grape-viognier-l05",
+  "moduleId": "grape-viognier",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Viognier",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Viognier",
+    "Know Condrieu",
+    "Pair and serve it"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma is typical of Viognier?",
+      "options": [
+        "Apricot",
+        "Gooseberry",
+        "Green apple",
+        "Blackcurrant"
+      ],
+      "answer": 0,
+      "explanation": "Apricot, peach and honeysuckle."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Viognier.",
+      "pairs": [
+        {
+          "left": "Condrieu",
+          "right": "Its homeland"
+        },
+        {
+          "left": "Château-Grillet",
+          "right": "Tiny single-estate appellation"
+        },
+        {
+          "left": "Côte-Rôtie",
+          "right": "Co-fermented with Syrah"
+        },
+        {
+          "left": "Yalumba",
+          "right": "Australian pioneer"
+        }
+      ],
+      "explanation": "Viognier's story runs from the Rhône to Australia."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "In the 1960s only about 14 hectares of Viognier remained.",
+      "answer": true,
+      "explanation": "Yes. It was close to extinction."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Viognier?",
+      "options": [
+        "Full body",
+        "Low acidity",
+        "Apricot and floral aromas",
+        "Very high tannin"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "White wines like Viognier have little tannin."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Viognier is best served at about ____ degrees.",
+      "options": [
+        "10 to 13",
+        "2 to 4",
+        "18 to 20",
+        "25"
+      ],
+      "answer": "10 to 13",
+      "explanation": "Not too cold, to keep the aromas open."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Viognier is full, perfumed and low in acidity",
+        "It nearly vanished and was saved by Condrieu",
+        "It lifts Syrah in Côte-Rôtie",
+        "It's best young, with rich, aromatic food"
+      ]
+    }
+  ]
+}

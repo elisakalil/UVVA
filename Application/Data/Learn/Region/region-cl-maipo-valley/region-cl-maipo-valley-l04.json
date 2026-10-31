@@ -1,0 +1,60 @@
+{
+  "id": "region-cl-maipo-valley-l04",
+  "moduleId": "region-cl-maipo-valley",
+  "order": 4,
+  "title": "Labels and the table",
+  "subtitle": "Reading Maipo and eating with it",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Read a Chilean label",
+    "Pair Maipo wines with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reading the label",
+      "body": "Labels show the grape, the valley, like Valle del Maipo, and sometimes Alto Maipo, Costa, Entre Cordilleras or Andes, descriptors added in 2011 to show position. Chile requires 85% of a named grape, valley and vintage. Reserva and Gran Reserva indicate minimum alcohol, and Gran Reserva some oak, but rules are loose.",
+      "highlight": "Valley plus Andes, Costa or Entre Cordilleras"
+    },
+    {
+      "type": "concept",
+      "title": "At the table",
+      "body": "Maipo Cabernet suits grilled beef, lamb and Chilean dishes like pastel de choclo, a corn and beef pie, and asado. Carmenère suits spicy dishes, grilled pork and dishes with roasted peppers. Serve at 16 to 18 degrees. Top Maipo Cabernet ages 10 to 20 years.",
+      "highlight": "Beef, lamb, pastel de choclo"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What does Andes on a Chilean label indicate?",
+      "options": [
+        "The vineyard is in the Andean foothills",
+        "The wine is sweet",
+        "The wine is from Argentina",
+        "The wine is sparkling"
+      ],
+      "answer": 0,
+      "explanation": "One of three position descriptors since 2011."
+    },
+    {
+      "type": "tip",
+      "body": "Carmenère's peppery spice works well with Chilean food seasoned with merkén, a smoked chilli spice."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Chile requires 85% of a named grape on the label.",
+      "answer": true,
+      "explanation": "Yes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Labels show the valley and a position descriptor like Andes",
+        "Maipo Cabernet suits beef and lamb; Carmenère suits spice",
+        "Top Maipo Cabernet ages 10 to 20 years"
+      ]
+    }
+  ]
+}

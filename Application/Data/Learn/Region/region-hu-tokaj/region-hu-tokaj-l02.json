@@ -1,0 +1,77 @@
+{
+  "id": "region-hu-tokaj-l02",
+  "moduleId": "region-hu-tokaj",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Furmint and its partners",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Furmint",
+    "Describe Hárslevelű",
+    "Name the other permitted grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Furmint",
+      "body": "Furmint covers about 60 to 70% of Tokaj's vineyards. It has very high acidity, thin skins that become thinner as it ripens, and late ripening, all ideal for noble rot. It gives quince, apple, lemon, smoke and minerality when dry; honey, apricot and marmalade when sweet.",
+      "highlight": "Furmint: acidity and noble rot"
+    },
+    {
+      "type": "concept",
+      "title": "Hárslevelű and others",
+      "body": "Hárslevelű, linden leaf, about 20 to 25%, adds perfume, honey and spice, with softer acidity. Sárgamuskotály, yellow Muscat, adds floral aromas in small amounts. Kövérszőlő, Zéta and Kabar are also allowed. Most Tokaji blends Furmint with Hárslevelű.",
+      "highlight": "Hárslevelű: perfume and honey"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Furmint",
+          "right": "Acidity, main grape"
+        },
+        {
+          "left": "Hárslevelű",
+          "right": "Perfume and honey"
+        },
+        {
+          "left": "Sárgamuskotály",
+          "right": "Floral Muscat"
+        },
+        {
+          "left": "Zéta",
+          "right": "Minor permitted grape"
+        }
+      ],
+      "explanation": "Furmint leads Tokaj's blends."
+    },
+    {
+      "type": "tip",
+      "body": "Hárslevelű's name means linden leaf. Its wines often smell of linden blossom and honey."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape dominates Tokaj?",
+      "options": [
+        "Furmint",
+        "Riesling",
+        "Chardonnay",
+        "Pinot Gris"
+      ],
+      "answer": 0,
+      "explanation": "About 60 to 70% of vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Furmint, about 60 to 70%, gives acidity and noble rot",
+        "Hárslevelű adds perfume and honey",
+        "Sárgamuskotály and others play minor roles"
+      ]
+    }
+  ]
+}

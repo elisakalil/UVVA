@@ -1,0 +1,20 @@
+{
+  "id": "path-21",
+  "kind": "path",
+  "order": 21,
+  "level": "Advanced",
+  "complexity": "C",
+  "title": "Germany, Austria and Hungary",
+  "description": "Steep slopes, cold rivers, labels that measure ripeness and the oldest classified sweet wine in the world.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-21-l01",
+    "path-21-l02",
+    "path-21-l03",
+    "path-21-l04",
+    "path-21-l05",
+    "path-21-l06"
+  ]
+}

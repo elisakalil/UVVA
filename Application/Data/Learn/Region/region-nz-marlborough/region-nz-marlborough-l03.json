@@ -1,0 +1,72 @@
+{
+  "id": "region-nz-marlborough-l03",
+  "moduleId": "region-nz-marlborough",
+  "order": 3,
+  "title": "The Marlborough style",
+  "subtitle": "Why it tastes so intense",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the aroma chemistry",
+    "Explain the role of winemaking",
+    "Compare Wairau and Awatere"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Thiols and pyrazines",
+      "body": "Marlborough Sauvignon's tropical notes come from thiols, like 3MH and 3MHA, which smell of passion fruit and grapefruit; they're released during fermentation. Green notes, grass and green pepper, come from methoxypyrazines, kept by cool nights. Marlborough grapes have unusually high levels of both, which explains the intensity.",
+      "highlight": "Thiols tropical; pyrazines green"
+    },
+    {
+      "type": "concept",
+      "title": "Winemaking",
+      "body": "Machine harvesting at night breaks some skins, releasing thiol precursors; cool, protective fermentation in steel with selected yeasts keeps them. No oak and early bottling preserve freshness. Some producers make wild-yeast, barrel-fermented or lees-aged versions for texture, but the classic style is pure and pungent.",
+      "highlight": "Machine harvest, steel, no oak"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which compounds give Marlborough Sauvignon its passion fruit aroma?",
+      "options": [
+        "Thiols",
+        "Pyrazines",
+        "Terpenes",
+        "Tannins"
+      ],
+      "answer": 0,
+      "explanation": "Thiols, released during fermentation."
+    },
+    {
+      "type": "concept",
+      "title": "Wairau and Awatere",
+      "body": "The Wairau Valley, broad and warmer, on stony and silty soils, gives the classic ripe, tropical style. The Awatere Valley, to the south-east, higher, drier, cooler and windier, gives more herbal, mineral, saline wines with tomato leaf and green notes. Many producers blend both for balance.",
+      "highlight": "Wairau tropical; Awatere herbal"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which help create the Marlborough style?",
+      "options": [
+        "High thiol levels",
+        "Cool nights preserving pyrazines",
+        "Protective, unoaked winemaking",
+        "Long ageing in new oak"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The classic style is unoaked."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Thiols give passion fruit; pyrazines give grass",
+        "Machine harvest and cool steel fermentation preserve aromas",
+        "Wairau is tropical; Awatere herbal and saline"
+      ]
+    }
+  ]
+}

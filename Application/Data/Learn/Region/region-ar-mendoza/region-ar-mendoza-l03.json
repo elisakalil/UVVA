@@ -1,0 +1,72 @@
+{
+  "id": "region-ar-mendoza-l03",
+  "moduleId": "region-ar-mendoza",
+  "order": 3,
+  "title": "Luján de Cuyo",
+  "subtitle": "The historic heart",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Luján de Cuyo",
+    "Explain its old vines",
+    "Explain its DOC"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "First zone",
+      "body": "Luján de Cuyo lies just south of Mendoza city, at about 900 to 1,100 m, along the Mendoza river. It's Mendoza's historic quality heartland, sometimes called the first zone, primera zona, with Maipú. Sub-areas like Perdriel, Agrelo, Vistalba and Las Compuertas have deep alluvial soils with stones.",
+      "highlight": "Primera zona, 900 to 1,100 m"
+    },
+    {
+      "type": "concept",
+      "title": "Old vines and DOC",
+      "body": "Luján de Cuyo has some of Argentina's oldest Malbec vines, many planted before 1950, on their own roots, since phylloxera spreads slowly in Mendoza's sandy, irrigated soils. In 1989, it became Argentina's first DOC, Denominación de Origen Controlada, for Malbec. Its wines are ripe, round and generous, with soft tannins.",
+      "highlight": "Argentina's first DOC, 1989"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What was Argentina's first DOC?",
+      "options": [
+        "Luján de Cuyo",
+        "Valle de Uco",
+        "Salta",
+        "Patagonia"
+      ],
+      "answer": 0,
+      "explanation": "Created in 1989 for Malbec."
+    },
+    {
+      "type": "concept",
+      "title": "Producers",
+      "body": "Historic and famous producers include Catena Zapata, whose founder Nicolás Catena pioneered high-altitude, quality Malbec in the 1990s, Achával-Ferrer, Norton and Terrazas de los Andes. Many large wineries are based here, with vineyards both in Luján and in the Valle de Uco.",
+      "highlight": "Catena Zapata and others"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are sub-areas of Luján de Cuyo?",
+      "options": [
+        "Perdriel",
+        "Agrelo",
+        "Vistalba",
+        "Gualtallary"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Gualtallary is in the Valle de Uco."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Luján de Cuyo is Mendoza's historic quality heart",
+        "It has old, own-rooted Malbec vines",
+        "It became Argentina's first DOC in 1989"
+      ]
+    }
+  ]
+}

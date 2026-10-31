@@ -1,0 +1,96 @@
+{
+  "id": "region-es-jerez-l07",
+  "moduleId": "region-es-jerez",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Jerez",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Jerez's land and grapes",
+    "Explain flor and the solera",
+    "Compare Sherry styles"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Albariza",
+          "right": "White chalky soil"
+        },
+        {
+          "left": "Flor",
+          "right": "Protective yeast"
+        },
+        {
+          "left": "Saca",
+          "right": "Wine drawn for bottling"
+        },
+        {
+          "left": "Asoleo",
+          "right": "Sun-drying grapes"
+        }
+      ],
+      "explanation": "Sherry's vocabulary is unique."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Where must Manzanilla be aged?",
+      "options": [
+        "Sanlúcar de Barrameda",
+        "Jerez de la Frontera",
+        "Montilla",
+        "Seville"
+      ],
+      "answer": 0,
+      "explanation": "Manzanilla comes only from Sanlúcar."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Oloroso is naturally sweet.",
+      "answer": false,
+      "explanation": "Not true. It's dry; sweet versions are blended."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Sherry's grapes?",
+      "options": [
+        "Palomino",
+        "Pedro Ximénez",
+        "Moscatel",
+        "Tempranillo"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Tempranillo isn't used."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "By law, no more than ____% of a solera can be drawn per year.",
+      "options": [
+        "40",
+        "10",
+        "80",
+        "100"
+      ],
+      "answer": "40",
+      "explanation": "No more than 40%."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sherry comes from the triangle's albariza soils",
+        "Palomino becomes Fino under flor or Oloroso with oxygen",
+        "The solera blends many ages",
+        "Each style suits a different dish"
+      ]
+    }
+  ]
+}

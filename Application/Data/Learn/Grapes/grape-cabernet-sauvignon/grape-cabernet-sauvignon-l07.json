@@ -1,0 +1,96 @@
+{
+  "id": "grape-cabernet-sauvignon-l07",
+  "moduleId": "grape-cabernet-sauvignon",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Cabernet Sauvignon",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Cabernet Sauvignon",
+    "Compare its main regions",
+    "Explain pyrazines and ripeness"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grapes are Cabernet Sauvignon's parents?",
+      "options": [
+        "Cabernet Franc and Sauvignon Blanc",
+        "Merlot and Malbec",
+        "Syrah and Grenache",
+        "Pinot Noir and Chardonnay"
+      ],
+      "answer": 0,
+      "explanation": "DNA confirmed this in 1996."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each place to its role in Cabernet's story.",
+      "pairs": [
+        {
+          "left": "Pauillac",
+          "right": "Left Bank heartland"
+        },
+        {
+          "left": "Stag's Leap",
+          "right": "Won Paris 1976"
+        },
+        {
+          "left": "Coonawarra",
+          "right": "Terra rossa Cabernet"
+        },
+        {
+          "left": "Bolgheri",
+          "right": "Super Tuscan home"
+        }
+      ],
+      "explanation": "Cabernet is truly international."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sunlight on the bunches helps lower pyrazine levels.",
+      "answer": true,
+      "explanation": "Yes. Pyrazines break down as grapes ripen, especially when exposed to light."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Cabernet Sauvignon?",
+      "options": [
+        "Thick skins",
+        "High tannin",
+        "Early ripening",
+        "Blackcurrant aromas"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Cabernet ripens late, not early."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Left Bank Bordeaux soils are mainly ____.",
+      "options": [
+        "gravel",
+        "chalk",
+        "slate",
+        "volcanic ash"
+      ],
+      "answer": "gravel",
+      "explanation": "Gravel drains and stores heat, helping Cabernet ripen."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Cabernet gives blackcurrant, cedar, firm tannin and acidity",
+        "Bordeaux's Left Bank is its model; Napa its New World star",
+        "Pyrazines give green notes when it's not fully ripe",
+        "It suits red meat and can age for decades"
+      ]
+    }
+  ]
+}

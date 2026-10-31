@@ -1,0 +1,71 @@
+{
+  "id": "path-02-l02",
+  "moduleId": "path-02",
+  "order": 2,
+  "title": "White wine styles",
+  "subtitle": "Crisp, aromatic and rich",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe three broad styles of white wine",
+    "Explain how skins are kept out of white wine",
+    "Link a white style to climate and winemaking"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Three ways a white can taste",
+      "body": "White wines fall into three broad styles. Light and crisp, like Muscadet or Pinot Grigio, with high acidity and little aroma. Aromatic, like Riesling or Gewürztraminer, with intense floral or fruity smells. Full and rich, like oaked Chardonnay, with a weighty, creamy texture.",
+      "highlight": "Crisp, aromatic, rich"
+    },
+    {
+      "type": "concept",
+      "title": "How a white is made",
+      "body": "For white wine the grapes are pressed quickly and the juice is fermented without the skins, so it picks up almost no colour or tannin. Fermentation is usually cool, around 12 to 18 degrees Celsius, which keeps fresh fruit aromas. Fermenting or ageing in oak barrels, as many Chardonnays are, adds body and notes of vanilla and toast.",
+      "highlight": "White: juice fermented without skins"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does a white wine have almost no tannin?",
+      "options": [
+        "White grapes contain no tannin",
+        "The juice ferments without the skins",
+        "Cold fermentation destroys tannin",
+        "Oak removes it"
+      ],
+      "answer": 1,
+      "explanation": "Tannin comes mostly from skins and seeds. White wine juice is separated from them before fermentation, so very little is extracted."
+    },
+    {
+      "type": "concept",
+      "title": "Climate shapes the style",
+      "body": "Cool climates keep acidity high and alcohol moderate, giving crisp whites such as Chablis. Warm climates give riper fruit, more alcohol and a rounder feel, as in many Chardonnays from California or Australia. The same grape can land in different styles depending on where it grows and how it's made.",
+      "highlight": "Cool: crisp. Warm: round."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which of these push a white wine towards a fuller, richer style?",
+      "options": [
+        "A warm climate",
+        "Fermentation in oak barrels",
+        "Picking early",
+        "A very cool climate"
+      ],
+      "answers": [
+        0,
+        1
+      ],
+      "explanation": "Warmth gives riper fruit and more alcohol, and oak adds texture and flavour. Early picking and cool climates both keep a wine lighter and crisper."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "White wines are broadly crisp, aromatic or rich",
+        "The juice ferments without skins, so whites have almost no tannin",
+        "Cool climates give crisp whites; warmth and oak give richer ones"
+      ]
+    }
+  ]
+}

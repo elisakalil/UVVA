@@ -1,0 +1,96 @@
+{
+  "id": "region-it-campania-l04",
+  "moduleId": "region-it-campania",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about Campania",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Campania's geography",
+    "Know its grapes and DOCGs",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Campania.",
+      "pairs": [
+        {
+          "left": "Irpinia",
+          "right": "Inland hills"
+        },
+        {
+          "left": "Vesuvius",
+          "right": "Volcano near Naples"
+        },
+        {
+          "left": "Falernian",
+          "right": "Ancient Roman wine"
+        },
+        {
+          "left": "Tufo",
+          "right": "Greco's village"
+        }
+      ],
+      "explanation": "Campania's map is volcanic and ancient."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape makes Taurasi?",
+      "options": [
+        "Aglianico",
+        "Sangiovese",
+        "Nebbiolo",
+        "Primitivo"
+      ],
+      "answer": 0,
+      "explanation": "At least 85% Aglianico."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Irpinia has a hot, coastal climate.",
+      "answer": false,
+      "explanation": "Not true. Altitude makes it cool, almost continental."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Fiano di Avellino?",
+      "options": [
+        "Nutty",
+        "Textured",
+        "Can age",
+        "Very tannic"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's a white wine with little tannin."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Campania's red DOCG is ____.",
+      "options": [
+        "Taurasi",
+        "Chianti",
+        "Amarone",
+        "Barbaresco"
+      ],
+      "answer": "Taurasi",
+      "explanation": "Taurasi, from Aglianico."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Campania's best wines come from cool, volcanic Irpinia",
+        "Aglianico makes structured Taurasi",
+        "Fiano and Greco make fine, age-worthy whites",
+        "Its wines suit Neapolitan food"
+      ]
+    }
+  ]
+}

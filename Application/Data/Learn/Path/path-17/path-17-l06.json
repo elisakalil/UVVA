@@ -1,0 +1,73 @@
+{
+  "id": "path-17-l06",
+  "moduleId": "path-17",
+  "order": 6,
+  "title": "Oak in detail",
+  "subtitle": "Choosing the barrel",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain the effect of barrel size and age",
+    "Compare French, American and other oaks",
+    "Explain the effect of toast"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Size and age",
+      "body": "Smaller barrels have more wood surface per litre, so they add more flavour and oxygen. A 225-litre barrique gives much more effect than a 500-litre puncheon or a 2,000-litre foudre. New barrels give the most flavour; after three or four fills they are called neutral, giving oxygen but little flavour.",
+      "highlight": "Small and new: strongest effect"
+    },
+    {
+      "type": "concept",
+      "title": "Origin and grain",
+      "body": "French oak, mainly from forests like Tronçais and Allier, has tight grain and gives fine tannins and subtle spice. American oak, Quercus alba, gives more vanilla and coconut, from compounds called lactones. Staves are often seasoned outdoors for two to three years to soften harsh tannins. Eastern European oak offers a cheaper, French-like alternative.",
+      "highlight": "French: subtle. American: coconut and vanilla."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each choice to its result.",
+      "pairs": [
+        {
+          "left": "Small barrique",
+          "right": "More oak effect"
+        },
+        {
+          "left": "Large foudre",
+          "right": "Gentle, little flavour"
+        },
+        {
+          "left": "American oak",
+          "right": "Coconut and vanilla"
+        },
+        {
+          "left": "Heavy toast",
+          "right": "Coffee and smoke"
+        }
+      ],
+      "explanation": "Barrel size, origin and toast each change the result."
+    },
+    {
+      "type": "concept",
+      "title": "Toast",
+      "body": "Barrels are bent over fire, which toasts the inside. Light toast keeps more wood tannin and gives fresh oak notes. Medium toast gives vanilla, caramel and spice. Heavy toast gives coffee, smoke and roasted notes, and less oak tannin. Toast is ordered to suit the wine.",
+      "highlight": "Light, medium, heavy toast"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "A neutral barrel adds no oxygen to the wine.",
+      "answer": false,
+      "explanation": "Not true. A neutral barrel adds little flavour, but still lets small amounts of oxygen in through the wood and joints."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Small, new barrels have the strongest effect",
+        "French oak is subtle; American oak gives coconut and vanilla",
+        "Toast level shapes flavours from fresh wood to smoke"
+      ]
+    }
+  ]
+}

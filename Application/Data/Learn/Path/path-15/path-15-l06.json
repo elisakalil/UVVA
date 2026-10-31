@@ -1,0 +1,83 @@
+{
+  "id": "path-15-l06",
+  "moduleId": "path-15",
+  "order": 6,
+  "title": "Quality and readiness",
+  "subtitle": "Reaching a conclusion",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Judge quality with clear criteria",
+    "Decide whether a wine is ready to drink",
+    "Write a full conclusion"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "BLIC",
+      "body": "Quality can be judged with four criteria, often remembered as BLIC: balance, length, intensity and complexity. A wine with all four is outstanding; with three, very good; two, good; one, acceptable. Faulty wines are poor. This avoids judging by personal taste alone.",
+      "highlight": "Balance, length, intensity, complexity"
+    },
+    {
+      "type": "concept",
+      "title": "Readiness",
+      "body": "Readiness asks whether the wine will improve. A wine with high concentration, firm tannin or acidity and youthful aromas may gain complexity with time. A wine already fully developed, or light and fruity, should be drunk now. Wines past their best are too old. Grape, region and vintage help you decide.",
+      "highlight": "Structure plus concentration means potential"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each BLIC criterion to what it asks.",
+      "pairs": [
+        {
+          "left": "Balance",
+          "right": "Does anything stick out?"
+        },
+        {
+          "left": "Length",
+          "right": "How long does it last?"
+        },
+        {
+          "left": "Intensity",
+          "right": "How strong are the flavours?"
+        },
+        {
+          "left": "Complexity",
+          "right": "How many different flavours?"
+        }
+      ],
+      "explanation": "Together they judge quality without relying on personal taste."
+    },
+    {
+      "type": "concept",
+      "title": "Writing the conclusion",
+      "body": "A full conclusion states quality and readiness, with reasons. For example: Very good. Balanced, with high acidity matched by intense fruit, a long finish, but limited complexity. Can drink now, but has potential for ageing. Reasons make your conclusion useful to others and to your future self.",
+      "highlight": "Verdict plus reasons"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which features suggest a wine has potential for ageing?",
+      "options": [
+        "High concentration of fruit",
+        "Firm, ripe tannin",
+        "Fully developed tertiary aromas",
+        "High acidity"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Fully developed aromas suggest the wine is already at its peak."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Judge quality by balance, length, intensity and complexity",
+        "Concentration plus structure suggests ageing potential",
+        "Give a verdict with reasons"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "grape-palomino-l06",
+  "moduleId": "grape-palomino",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Palomino",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Explain Palomino's role in Sherry",
+    "Describe flor and the solera",
+    "Compare Sherry styles"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Why does Palomino suit Sherry?",
+      "options": [
+        "It's neutral, letting ageing shape the flavour",
+        "It's very aromatic",
+        "It's red",
+        "It's high in acidity"
+      ],
+      "answer": 0,
+      "explanation": "Neutrality lets flor and oxidation speak."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Flor",
+          "right": "Protective yeast layer"
+        },
+        {
+          "left": "Solera",
+          "right": "Tiered ageing system"
+        },
+        {
+          "left": "Albariza",
+          "right": "Chalky white soil"
+        },
+        {
+          "left": "Saca",
+          "right": "Wine drawn for bottling"
+        }
+      ],
+      "explanation": "Jerez's vocabulary describes its unique process."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Oloroso ages under flor.",
+      "answer": false,
+      "explanation": "Not true. It's fortified to 17%, which stops flor, so it ages with oxygen."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are part of the Sherry triangle?",
+      "options": [
+        "Jerez de la Frontera",
+        "Sanlúcar de Barrameda",
+        "El Puerto de Santa María",
+        "Rioja"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Rioja is far to the north."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these Sherries from palest to darkest.",
+      "items": [
+        "Manzanilla",
+        "Amontillado",
+        "Oloroso",
+        "Pedro Ximénez"
+      ],
+      "explanation": "Biological ageing keeps wine pale; oxidation and dried grapes darken it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Palomino is a neutral grape that becomes Sherry",
+        "Flor protects Fino; oxygen shapes Oloroso",
+        "The solera blends many ages",
+        "Sherry is a great food wine"
+      ]
+    }
+  ]
+}

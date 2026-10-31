@@ -1,0 +1,78 @@
+{
+  "id": "grape-pinot-noir-l03",
+  "moduleId": "grape-pinot-noir",
+  "order": 3,
+  "title": "The Côte d'Or",
+  "subtitle": "Burgundy's golden slope",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the Côte d'Or",
+    "Explain Burgundy's hierarchy",
+    "Name key red villages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A thin slope",
+      "body": "The Côte d'Or, the golden slope, is a narrow strip of east and south-east facing vineyards about 50 km long, from Dijon to Santenay. The north, the Côte de Nuits, is mostly Pinot Noir. The south, the Côte de Beaune, makes both reds and Chardonnay. Limestone and marl soils, and mid-slope positions, give the best wines.",
+      "highlight": "Côte de Nuits and Côte de Beaune"
+    },
+    {
+      "type": "concept",
+      "title": "The hierarchy",
+      "body": "Burgundy ranks vineyards: Grand Cru at the top, then Premier Cru, then village wines, then regional Bourgogne. Grand Crus like Romanée-Conti, Chambertin and Musigny name only the vineyard on the label. Of Burgundy's 33 Grand Crus, most of the reds are in the Côte de Nuits. Each climat has its own character.",
+      "highlight": "Grand Cru, Premier Cru, village, regional"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order Burgundy's levels from broadest to most precise.",
+      "items": [
+        "Bourgogne",
+        "Village",
+        "Premier Cru",
+        "Grand Cru"
+      ],
+      "explanation": "Each level narrows the area and raises expectations."
+    },
+    {
+      "type": "concept",
+      "title": "The villages",
+      "body": "Gevrey-Chambertin gives powerful, structured reds; Chambolle-Musigny elegant, perfumed ones; Vosne-Romanée rich, spicy and silky, home to Romanée-Conti. In the Côte de Beaune, Pommard is firm, Volnay delicate. Same grape, different soils and slopes, distinct wines.",
+      "highlight": "Gevrey, Chambolle, Vosne, Pommard, Volnay"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each village to its style.",
+      "pairs": [
+        {
+          "left": "Gevrey-Chambertin",
+          "right": "Powerful and structured"
+        },
+        {
+          "left": "Chambolle-Musigny",
+          "right": "Elegant and perfumed"
+        },
+        {
+          "left": "Vosne-Romanée",
+          "right": "Rich, spicy, silky"
+        },
+        {
+          "left": "Volnay",
+          "right": "Delicate, Côte de Beaune"
+        }
+      ],
+      "explanation": "Each Burgundy village has its own personality."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Côte d'Or runs from Dijon to Santenay",
+        "Burgundy ranks climats from regional to Grand Cru",
+        "Each village, like Gevrey or Chambolle, has its own style"
+      ]
+    }
+  ]
+}

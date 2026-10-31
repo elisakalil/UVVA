@@ -1,0 +1,62 @@
+{
+  "id": "grape-syrah-l06",
+  "moduleId": "grape-syrah",
+  "order": 6,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Syrah",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Syrah with food",
+    "Serve it at the right temperature",
+    "Know how it ages"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Meat and spice",
+      "body": "Syrah's dark fruit and pepper suit grilled and roasted meat: lamb, beef, game and barbecue. Peppery Rhône styles match herbs and black pepper crust. Ripe Barossa Shiraz handles sweet, smoky barbecue sauces. Avoid very delicate dishes, which it overwhelms.",
+      "highlight": "Lamb, game, barbecue"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 16 to 18 degrees. Young, powerful Syrah benefits from decanting. Good Hermitage and Côte-Rôtie age 15 to 30 years, developing leather, game and earthy notes. Top Barossa Shiraz also ages well. Simpler Shiraz is best within a few years.",
+      "highlight": "Hermitage ages decades"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits a peppery northern Rhône Syrah?",
+      "options": [
+        "Lamb with rosemary and black pepper",
+        "Lemon tart",
+        "Raw oysters",
+        "Pad Thai with chilli"
+      ],
+      "answer": 0,
+      "explanation": "Herbs and pepper echo the wine's own aromas; lamb's fat softens its tannins."
+    },
+    {
+      "type": "concept",
+      "title": "Beyond the classic",
+      "body": "Syrah also makes rosé, sparkling red Shiraz, a beloved Australian Christmas wine, and fortified styles in Australia. In blends, it's part of Côtes du Rhône and Châteauneuf-du-Pape. Learning to taste for its pepper is one of the most useful skills in blind tasting.",
+      "highlight": "Rosé, sparkling Shiraz, fortified"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Sparkling red Shiraz is a traditional Australian style.",
+      "answer": true,
+      "explanation": "Yes. It's often served with Christmas lunch in Australia."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Syrah suits lamb, game and barbecue",
+        "Serve at 16 to 18 degrees; the best age for decades",
+        "It also makes rosé and sparkling red Shiraz"
+      ]
+    }
+  ]
+}

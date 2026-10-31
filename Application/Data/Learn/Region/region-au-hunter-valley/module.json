@@ -1,0 +1,24 @@
+{
+  "id": "region-au-hunter-valley",
+  "kind": "region",
+  "order": 45,
+  "country": "Australia",
+  "countryCode": "AU",
+  "title": "Hunter Valley",
+  "grapes": [
+    "Sémillon",
+    "Shiraz"
+  ],
+  "points": "0 0 1 1 = 2",
+  "complexity": "D",
+  "description": "Australia's oldest wine region: humid and hot, yet home to unoaked Sémillon that ages magically.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-au-hunter-valley-l01",
+    "region-au-hunter-valley-l02",
+    "region-au-hunter-valley-l03",
+    "region-au-hunter-valley-l04"
+  ]
+}

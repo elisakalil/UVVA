@@ -1,0 +1,96 @@
+{
+  "id": "region-hu-tokaj-l07",
+  "moduleId": "region-hu-tokaj",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about Tokaj",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Tokaj's land and grapes",
+    "Explain Aszú and its siblings",
+    "Explain its historic classification"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Aszú",
+          "right": "Botrytised berries"
+        },
+        {
+          "left": "Puttony",
+          "right": "25 kg hod"
+        },
+        {
+          "left": "Gönci",
+          "right": "136-litre barrel"
+        },
+        {
+          "left": "Eszencia",
+          "right": "Free-run juice"
+        }
+      ],
+      "explanation": "Tokaj's vocabulary is precise."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which rivers create Tokaj's autumn mists?",
+      "options": [
+        "Bodrog and Tisza",
+        "Danube and Rhine",
+        "Douro and Tagus",
+        "Loire and Seine"
+      ],
+      "answer": 0,
+      "explanation": "They meet at the town of Tokaj."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Eszencia reaches high alcohol, around 15%.",
+      "answer": false,
+      "explanation": "Not true. It usually reaches only 3 to 5%."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Tokaj grapes?",
+      "options": [
+        "Furmint",
+        "Hárslevelű",
+        "Sárgamuskotály",
+        "Sauvignon Blanc"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Sauvignon Blanc isn't permitted."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Tokaj's vineyards were classified from ____.",
+      "options": [
+        "1730",
+        "1855",
+        "1990",
+        "2002"
+      ],
+      "answer": "1730",
+      "explanation": "Among the first classifications in the world."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tokaj's river mists and volcanic soils favour noble rot",
+        "Furmint leads, with Hárslevelű",
+        "Aszú, Szamorodni and Eszencia are its sweet wines",
+        "It was classified from 1730, among the world's first"
+      ]
+    }
+  ]
+}

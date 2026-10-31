@@ -1,0 +1,62 @@
+{
+  "id": "grape-assyrtiko-l04",
+  "moduleId": "grape-assyrtiko",
+  "order": 4,
+  "title": "Vinsanto",
+  "subtitle": "Santorini's sweet wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how Santorini Vinsanto is made",
+    "Explain its ageing",
+    "Compare it with Tuscan Vin Santo"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sun-dried grapes",
+      "body": "Santorini's Vinsanto is a sweet wine made from at least 51% Assyrtiko, with Aidani. Grapes are picked late and dried in the sun for 12 to 14 days, concentrating sugar. The must ferments slowly, and the wine ages for at least two years in oak, often much longer.",
+      "highlight": "Sun-dried Assyrtiko"
+    },
+    {
+      "type": "concept",
+      "title": "Ageing and taste",
+      "body": "Vinsanto can age 10, 20 or even 50 years in barrel, becoming deep amber to dark brown, with raisin, dried apricot, coffee, caramel and spice. Assyrtiko's acidity keeps it fresh despite very high sugar, often over 200 g/l. Its name may come from Santo, for Santorini, wine of Santorini.",
+      "highlight": "Amber, raisin, coffee, fresh acidity"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How are grapes for Santorini Vinsanto concentrated?",
+      "options": [
+        "Dried in the sun for 12 to 14 days",
+        "Frozen on the vine",
+        "By noble rot only",
+        "By adding spirit"
+      ],
+      "answer": 0,
+      "explanation": "Sun-drying concentrates their sugar."
+    },
+    {
+      "type": "concept",
+      "title": "Not Tuscan Vin Santo",
+      "body": "Santorini's Vinsanto and Tuscany's Vin Santo share a name but differ. Tuscan Vin Santo uses Trebbiano and Malvasia dried indoors and ages in sealed caratelli. Santorini's uses Assyrtiko dried in the sun. The name's origin may link to Santorini or to holy wine, vino santo.",
+      "highlight": "Different grapes and methods"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Santorini Vinsanto and Tuscan Vin Santo use the same grapes.",
+      "answer": false,
+      "explanation": "Not true. Santorini uses Assyrtiko and Aidani; Tuscany uses Trebbiano and Malvasia."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Santorini Vinsanto uses sun-dried Assyrtiko",
+        "It ages for years, becoming amber with raisin and coffee",
+        "It differs from Tuscan Vin Santo in grapes and method"
+      ]
+    }
+  ]
+}

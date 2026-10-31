@@ -1,0 +1,68 @@
+{
+  "id": "path-25-l03",
+  "moduleId": "path-25",
+  "order": 3,
+  "title": "Lees ageing and riddling",
+  "subtitle": "Time and clarity",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain autolysis",
+    "Explain riddling methods",
+    "Explain disgorgement timing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Autolysis",
+      "body": "After the second fermentation, the dead yeast cells slowly break down, releasing amino acids, mannoproteins and other compounds into the wine. This is autolysis. It begins after a few months and continues for years, adding bread, brioche, biscuit and nutty flavours, and a creamy texture, while the yeast also absorbs oxygen.",
+      "highlight": "Dead yeast gives brioche and cream"
+    },
+    {
+      "type": "concept",
+      "title": "Riddling",
+      "body": "Riddling moves the sediment into the neck. By hand, on wooden racks called pupitres, a remueur turns and tilts thousands of bottles a day, over several weeks. Gyropalettes, invented in Spain in the 1970s, do the same for 500 bottles at once in about a week. Some yeasts are encapsulated in beads to make it faster still.",
+      "highlight": "Pupitres by hand or gyropalettes"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What do gyropalettes do?",
+      "options": [
+        "Add sugar",
+        "Riddle many bottles at once",
+        "Disgorge the wine",
+        "Press the grapes"
+      ],
+      "answer": 1,
+      "explanation": "Gyropalettes turn and tilt hundreds of bottles at once, replacing manual riddling."
+    },
+    {
+      "type": "concept",
+      "title": "When to disgorge",
+      "body": "Disgorgement ends lees ageing and starts a new phase. Before it, the wine is protected and evolves slowly. After it, oxygen enters, and the wine develops more toasty, nutty notes. Many producers now print the disgorgement date. Recently disgorged, or RD, wines are disgorged after long lees ageing, just before release.",
+      "highlight": "Disgorgement date matters"
+    },
+    {
+      "type": "ordering",
+      "prompt": "Put these steps in order.",
+      "items": [
+        "Second fermentation",
+        "Autolysis on lees",
+        "Riddling",
+        "Disgorgement",
+        "Dosage"
+      ],
+      "explanation": "The lees age the wine, are moved to the neck, removed, and the wine is topped up."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Autolysis releases bready, creamy notes from dead yeast",
+        "Riddling, by hand or gyropalette, moves sediment to the neck",
+        "The disgorgement date changes how the wine develops"
+      ]
+    }
+  ]
+}

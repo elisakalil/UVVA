@@ -1,0 +1,62 @@
+{
+  "id": "region-it-trentino-alto-adige-l01",
+  "moduleId": "region-it-trentino-alto-adige",
+  "order": 1,
+  "title": "The place",
+  "subtitle": "Alpine valleys",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the region's geography",
+    "Explain its climate",
+    "Explain its two cultures"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Two provinces",
+      "body": "Trentino-Alto Adige is Italy's northernmost wine region, in the Alps, along the Adige river valley. It has two provinces: Trentino in the south, Italian-speaking, and Alto Adige, or Südtirol, in the north, mostly German-speaking. Vineyards climb from about 200 to over 1,000 m on steep valley slopes.",
+      "highlight": "Trentino and Alto Adige"
+    },
+    {
+      "type": "concept",
+      "title": "Mountain climate",
+      "body": "The Alps block cold northern winds, so the valleys are surprisingly warm and sunny by day, with over 300 sunny days a year in Bolzano. Nights are cold, thanks to altitude and mountain air. That large day and night range gives aromatic whites with fresh acidity and ripe reds on the warm valley floors.",
+      "highlight": "Warm days, cold mountain nights"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why are Alto Adige's whites so fresh?",
+      "options": [
+        "Cold mountain nights preserve acidity",
+        "They're picked unripe",
+        "They're very low in alcohol",
+        "Acid is added"
+      ],
+      "answer": 0,
+      "explanation": "Altitude and cold air keep acidity high."
+    },
+    {
+      "type": "concept",
+      "title": "Two cultures",
+      "body": "Alto Adige belonged to Austria until 1919, so German is widely spoken and many labels are bilingual, like Südtirol and Alto Adige. Co-operatives, Kellereien, make most of the wine, with high quality; Cantina Terlano is a famous one. Trentino, more Italian in culture, is known for sparkling wine.",
+      "highlight": "Bilingual labels, strong co-operatives"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Alto Adige was part of Austria until 1919.",
+      "answer": true,
+      "explanation": "Yes, which explains its German-speaking culture."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Trentino-Alto Adige is Italy's Alpine north",
+        "Warm days and cold nights give fresh wines",
+        "Alto Adige is German-speaking, with strong co-operatives"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "path-10-l07",
+  "moduleId": "path-10",
+  "order": 7,
+  "title": "Other reds to know",
+  "subtitle": "Five grapes that complete the map",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Zinfandel and Pinotage",
+    "Describe Gamay and Carmenère",
+    "Name a classic region for each"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Zinfandel and Pinotage",
+      "body": "Zinfandel, the same grape as Italy's Primitivo, came from Croatia and became California's heritage red, with ripe bramble fruit and high alcohol, often from old vines in Lodi and Sonoma. Pinotage is South Africa's own cross of Pinot Noir and Cinsault, made in 1925, giving dark, smoky wines with red fruit.",
+      "highlight": "Zinfandel: California. Pinotage: South Africa."
+    },
+    {
+      "type": "concept",
+      "title": "Gamay and Carmenère",
+      "body": "Gamay is the grape of Beaujolais, light and fruity, often with carbonic maceration. Carmenère, once grown in Bordeaux, was nearly lost there after phylloxera. In 1994 it was found in Chile, where it had been mistaken for Merlot. It gives dark fruit and a green, peppery note when not fully ripe.",
+      "highlight": "Carmenère was found in Chile in 1994"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its country of fame.",
+      "pairs": [
+        {
+          "left": "Zinfandel",
+          "right": "United States"
+        },
+        {
+          "left": "Pinotage",
+          "right": "South Africa"
+        },
+        {
+          "left": "Carmenère",
+          "right": "Chile"
+        },
+        {
+          "left": "Gamay",
+          "right": "France"
+        }
+      ],
+      "explanation": "Each grape is closely tied to one country's identity."
+    },
+    {
+      "type": "concept",
+      "title": "Touriga Nacional and Tannat",
+      "body": "Touriga Nacional is Portugal's finest red grape, giving dark, floral wines in the Douro and Dão, and a key grape in Port. Tannat, from south-west France, has very high tannin; Uruguay adopted it as its national grape. Its name is close to the word tannin, and with good reason.",
+      "highlight": "Touriga: Portugal. Tannat: Uruguay."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Carmenère was rediscovered in Chile after being mistaken for Merlot.",
+      "answer": true,
+      "explanation": "Yes. In 1994, DNA analysis and ampelography showed many Chilean Merlot vineyards were actually Carmenère."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Zinfandel is California's heritage red; Pinotage is South Africa's own",
+        "Gamay makes Beaujolais; Carmenère is Chile's rediscovered grape",
+        "Touriga Nacional leads in Portugal; Tannat in Uruguay"
+      ]
+    }
+  ]
+}

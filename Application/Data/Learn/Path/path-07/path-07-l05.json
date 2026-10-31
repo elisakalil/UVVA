@@ -1,0 +1,83 @@
+{
+  "id": "path-07-l05",
+  "moduleId": "path-07",
+  "order": 5,
+  "title": "Soils and slopes",
+  "subtitle": "The ground beneath the vine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain what soil does for the vine",
+    "Describe the effect of drainage and heat retention",
+    "Explain why slopes are prized"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "What soil does",
+      "body": "Soil anchors the vine and supplies water and nutrients. The best vineyard soils are often poor, which limits vigour so the vine puts energy into fruit, not leaves. Drainage matters most: vines hate standing water, which suffocates roots and dilutes berries.",
+      "highlight": "Poor, well-drained soils are prized"
+    },
+    {
+      "type": "concept",
+      "title": "Warm and cool soils",
+      "body": "Stony and gravel soils drain fast and store heat, releasing it at night, which helps ripening in cooler areas like the Médoc. Clay soils hold water and stay cool, which suits early-ripening grapes like Merlot. Dark slate in the Mosel absorbs warmth. Chalk drains well yet stores water deep, ideal for Champagne.",
+      "highlight": "Gravel warms; clay cools"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each soil to its effect.",
+      "pairs": [
+        {
+          "left": "Gravel",
+          "right": "Drains well, stores heat"
+        },
+        {
+          "left": "Clay",
+          "right": "Holds water, stays cool"
+        },
+        {
+          "left": "Chalk",
+          "right": "Drains but holds deep water"
+        },
+        {
+          "left": "Slate",
+          "right": "Absorbs and releases heat"
+        }
+      ],
+      "explanation": "Each soil changes water and heat around the roots, and so the ripening."
+    },
+    {
+      "type": "concept",
+      "title": "Why slopes matter",
+      "body": "Slopes drain well and catch more sunlight when they face the sun: south or south-east in the northern hemisphere, north in the southern. Cold air flows downhill, so slopes avoid the frost that settles in valley floors. That's why Burgundy's best vineyards lie on the middle of the slope, and the Mosel's on steep south-facing banks.",
+      "highlight": "Slopes: drainage, sun and less frost"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Why are slopes often better vineyard sites than valley floors?",
+      "options": [
+        "Better drainage",
+        "More sunlight when well oriented",
+        "Less frost risk",
+        "More fertile soil"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Slopes drain, catch the sun and let cold air flow away. Valley floors usually have deeper, more fertile soils, which can lead to too much vigour."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Poor, well-drained soils focus the vine on its fruit",
+        "Gravel and slate store heat; clay stays cool and wet",
+        "Slopes give drainage, sun and protection from frost"
+      ]
+    }
+  ]
+}

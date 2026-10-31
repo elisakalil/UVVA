@@ -1,0 +1,96 @@
+{
+  "id": "region-fr-northern-rhone-l05",
+  "moduleId": "region-fr-northern-rhone",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about the northern Rhône",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the northern Rhône's landscape and grapes",
+    "Compare its appellations",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each appellation to its wine.",
+      "pairs": [
+        {
+          "left": "Côte-Rôtie",
+          "right": "Elegant, perfumed Syrah"
+        },
+        {
+          "left": "Hermitage",
+          "right": "Powerful Syrah, a single hill"
+        },
+        {
+          "left": "Condrieu",
+          "right": "Viognier"
+        },
+        {
+          "left": "Saint-Péray",
+          "right": "Whites and sparkling"
+        }
+      ],
+      "explanation": "Each appellation has its own style."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How much Viognier may be co-fermented in Côte-Rôtie?",
+      "options": [
+        "Up to 20%",
+        "None",
+        "50%",
+        "100%"
+      ],
+      "answer": 0,
+      "explanation": "Up to 20%, though most use much less."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Grenache is a main grape of the northern Rhône.",
+      "answer": false,
+      "explanation": "Not true. Syrah is the only red grape there."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe the northern Rhône?",
+      "options": [
+        "Steep granite slopes",
+        "Continental climate",
+        "Small production",
+        "Flat, sandy plains"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "The north is steep, not flat."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Côte-Rôtie means the ____ slope.",
+      "options": [
+        "roasted",
+        "golden",
+        "hermit's",
+        "stony"
+      ],
+      "answer": "roasted",
+      "explanation": "For its sun-baked, south-east facing slopes."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The northern Rhône is steep, granite and continental",
+        "Syrah is its only red; Viognier, Marsanne and Roussanne its whites",
+        "Côte-Rôtie and Hermitage are its great wines",
+        "Syrah here suits lamb, game and pepper"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "path-06-l04",
+  "moduleId": "path-06",
+  "order": 4,
+  "title": "Chilli heat",
+  "subtitle": "Spice and wine",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how chilli changes wine",
+    "Choose wines for spicy food",
+    "Explain the role of alcohol and tannin"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Heat and wine",
+      "body": "Chilli heat, from capsaicin, is not a taste but a feeling of burning. In the mouth it makes alcohol feel hotter, and it makes tannin and bitterness more aggressive. A high-alcohol, tannic red with a hot curry can feel like fire. The wine also loses fruit.",
+      "highlight": "Chilli amplifies alcohol, tannin, bitterness"
+    },
+    {
+      "type": "concept",
+      "title": "Why sugar helps",
+      "body": "Sugar and low alcohol calm the burn. Capsaicin dissolves in alcohol and fat, so strong drinks spread it around the mouth. A touch of sweetness and moderate alcohol soothe instead. An off-dry Riesling at 9 or 10% alcohol is a classic match for spicy Thai or Sichuan food.",
+      "highlight": "Off-dry and low alcohol calm the heat"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which wine is the best match for a hot Thai curry?",
+      "options": [
+        "A 15% Zinfandel",
+        "A tannic young Barolo",
+        "An off-dry Riesling at 10%",
+        "A high-alcohol oaked Chardonnay"
+      ],
+      "answer": 2,
+      "explanation": "Lower alcohol and a touch of sugar calm chilli heat. High alcohol and tannin make it burn more."
+    },
+    {
+      "type": "concept",
+      "title": "Other good options",
+      "body": "Fruity, aromatic whites like Gewürztraminer handle spice well. Among reds, choose low-tannin, juicy wines served slightly cool, such as Beaujolais. Fruity rosé also works. Avoid big oak, high alcohol and firm tannin.",
+      "highlight": "Fruity, aromatic, low tannin, moderate alcohol"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which features make a wine harder to pair with chilli?",
+      "options": [
+        "High alcohol",
+        "Firm tannin",
+        "A little residual sugar",
+        "Heavy oak",
+        "Lower alcohol"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "High alcohol, firm tannin and heavy oak all clash with heat. Sugar and lower alcohol help."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Chilli heat makes alcohol, tannin and bitterness feel stronger",
+        "Off-dry, lower-alcohol wines calm the burn",
+        "Choose fruity, aromatic, low-tannin wines with spicy food"
+      ]
+    }
+  ]
+}

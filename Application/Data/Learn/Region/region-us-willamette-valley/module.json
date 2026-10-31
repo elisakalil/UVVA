@@ -1,0 +1,26 @@
+{
+  "id": "region-us-willamette-valley",
+  "kind": "region",
+  "order": 36,
+  "country": "United States",
+  "countryCode": "US",
+  "title": "Willamette Valley",
+  "grapes": [
+    "Pinot Noir",
+    "Pinot Gris",
+    "Chardonnay"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "Oregon's cool valley at Burgundy's latitude, where small family wineries made Pinot Noir world-class.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-us-willamette-valley-l01",
+    "region-us-willamette-valley-l02",
+    "region-us-willamette-valley-l03",
+    "region-us-willamette-valley-l04",
+    "region-us-willamette-valley-l05"
+  ]
+}

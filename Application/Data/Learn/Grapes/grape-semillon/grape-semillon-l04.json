@@ -1,0 +1,60 @@
+{
+  "id": "grape-semillon-l04",
+  "moduleId": "grape-semillon",
+  "order": 4,
+  "title": "Hunter Valley Sémillon",
+  "subtitle": "A dry wine that ages like magic",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Hunter Valley Sémillon",
+    "Explain how it's made",
+    "Explain its remarkable ageing"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Picked early",
+      "body": "The Hunter Valley, north of Sydney, is hot and humid, with rain often at harvest. Growers pick Sémillon early, at around 10 to 11% alcohol, before the rain and rot. The wines are fermented in steel, without oak or malolactic, and bottled early. Young, they're lean, lemony and grassy, with high acidity.",
+      "highlight": "Picked early at 10 to 11%"
+    },
+    {
+      "type": "concept",
+      "title": "The transformation",
+      "body": "With 5 to 10 years in bottle, often under screw cap, Hunter Sémillon transforms: it develops toast, honey, lanolin, lemon curd and nutty notes, as if it had been oaked. It isn't: these flavours come from bottle ageing. The best can age 20 years or more.",
+      "highlight": "Toast and honey without oak"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Hunter Valley Sémillon's toasty notes come from oak ageing.",
+      "answer": false,
+      "explanation": "Not true. It's usually unoaked; toast and honey develop with bottle age."
+    },
+    {
+      "type": "tip",
+      "body": "If you find a 10-year-old Hunter Valley Sémillon, open it next to a young one. The difference shows how far bottle ageing can take a simple, unoaked wine."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why is Hunter Sémillon picked so early?",
+      "options": [
+        "To avoid harvest rain and rot, and keep acidity",
+        "To make it sweet",
+        "To raise alcohol",
+        "Because it's a red grape"
+      ],
+      "answer": 0,
+      "explanation": "Early picking keeps freshness and avoids the region's harvest rains."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Hunter Sémillon is picked early, at 10 to 11%, unoaked",
+        "Young, it's lean and lemony",
+        "With age it gains toast and honey, without oak"
+      ]
+    }
+  ]
+}

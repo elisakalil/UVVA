@@ -1,0 +1,95 @@
+{
+  "id": "grape-malbec-l06",
+  "moduleId": "grape-malbec",
+  "order": 6,
+  "title": "Module review",
+  "subtitle": "Everything about Malbec",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Recognise Malbec",
+    "Compare Cahors and Mendoza",
+    "Explain the effect of altitude"
+  ],
+  "steps": [
+    {
+      "type": "multipleChoice",
+      "prompt": "Which aroma, with plum, is typical of Malbec?",
+      "options": [
+        "Violet",
+        "Petrol",
+        "Gooseberry",
+        "Lychee"
+      ],
+      "answer": 0,
+      "explanation": "Violet and plum are Malbec's signature."
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each fact to Malbec.",
+      "pairs": [
+        {
+          "left": "Côt",
+          "right": "French name"
+        },
+        {
+          "left": "1853",
+          "right": "Arrived in Argentina"
+        },
+        {
+          "left": "Cahors",
+          "right": "French home"
+        },
+        {
+          "left": "April 17",
+          "right": "World Malbec Day"
+        }
+      ],
+      "explanation": "Malbec's history spans two continents."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "High altitude gives Malbec paler colour.",
+      "answer": false,
+      "explanation": "Not true. Stronger UV makes skins thicker and darker."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe Mendoza?",
+      "options": [
+        "High desert",
+        "Irrigated",
+        "Very wet summers",
+        "Malbec country"
+      ],
+      "answers": [
+        0,
+        1,
+        3
+      ],
+      "explanation": "Mendoza is dry, which keeps Malbec healthy."
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order these places from lowest to highest typical vineyard altitude.",
+      "items": [
+        "Cahors",
+        "Luján de Cuyo",
+        "Valle de Uco",
+        "Salta"
+      ],
+      "explanation": "Cahors is low; Salta has some of the world's highest vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Malbec is dark, plush and violet-scented",
+        "Cahors gives firm, savoury wines; Mendoza riper ones",
+        "Altitude brings colour and freshness",
+        "It's a natural partner for grilled beef"
+      ]
+    }
+  ]
+}

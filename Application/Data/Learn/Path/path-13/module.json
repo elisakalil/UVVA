@@ -1,0 +1,19 @@
+{
+  "id": "path-13",
+  "kind": "path",
+  "order": 13,
+  "level": "Intermediate",
+  "complexity": "D",
+  "title": "Sweet Wine",
+  "description": "Four ways to keep sugar in a wine, and why the best sweet wines are never cloying.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "path-13-l01",
+    "path-13-l02",
+    "path-13-l03",
+    "path-13-l04",
+    "path-13-l05"
+  ]
+}

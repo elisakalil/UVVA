@@ -1,0 +1,26 @@
+{
+  "id": "grape-torrontes",
+  "kind": "grape",
+  "order": 39,
+  "color": "white",
+  "title": "Torrontés",
+  "aliases": [
+    "Torrontés Riojano"
+  ],
+  "origin": "Argentina",
+  "countries": [
+    "Argentina"
+  ],
+  "points": "0 0 0 1 = 1",
+  "complexity": "D",
+  "description": "Argentina's own white grape: intensely floral, grown at some of the world's highest vineyards.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "grape-torrontes-l01",
+    "grape-torrontes-l02",
+    "grape-torrontes-l03",
+    "grape-torrontes-l04"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "grape-tannat-l04",
+  "moduleId": "grape-tannat",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Tannat",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Choose foods that suit Tannat",
+    "Serve Tannat well",
+    "Know its ageing potential"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fat and protein",
+      "body": "Tannin binds to fat and protein, so Tannat shines with rich meat. In Uruguay, it's the wine of the asado, beef grilled slowly over wood. In Gascony, it goes with duck confit and cassoulet. The fat softens the tannin; the tannin cleans the palate.",
+      "highlight": "Grilled meat and duck"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve Tannat at 16 to 18 degrees. Young, powerful examples benefit from decanting for an hour or two. Good Madiran can age 10 to 20 years, when the tannins soften and earthy, leather notes emerge. Lighter Uruguayan styles are best within a few years.",
+      "highlight": "Decant young; good Madiran ages 10 to 20 years"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits a young Tannat best?",
+      "options": [
+        "Grilled beef from an asado",
+        "Raw oysters",
+        "Lemon sorbet",
+        "Steamed white fish"
+      ],
+      "answer": 0,
+      "explanation": "Fatty grilled meat softens Tannat's tannin. Delicate fish would taste metallic next to it."
+    },
+    {
+      "type": "tip",
+      "body": "Uruguay's sweet fortified Tannat, sometimes called Tannat licoroso, is a good match for dark chocolate."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tannat is best served very cold, like a white wine.",
+      "answer": false,
+      "explanation": "Not true. Cold makes tannin feel harsher. Serve it at 16 to 18 degrees."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Tannat loves fatty, grilled meat and duck",
+        "Serve at 16 to 18 degrees, and decant when young",
+        "Good Madiran ages for 10 to 20 years"
+      ]
+    }
+  ]
+}

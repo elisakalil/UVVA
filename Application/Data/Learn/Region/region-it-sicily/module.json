@@ -1,0 +1,27 @@
+{
+  "id": "region-it-sicily",
+  "kind": "region",
+  "order": 12,
+  "country": "Italy",
+  "countryCode": "IT",
+  "title": "Sicily",
+  "grapes": [
+    "Nero d'Avola",
+    "Nerello Mascalese",
+    "Grillo",
+    "Carricante"
+  ],
+  "points": "1 0 2 1 = 4",
+  "complexity": "C",
+  "description": "The Mediterranean's largest island: sun-soaked Nero d'Avola, volcanic Etna and historic Marsala.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "region-it-sicily-l01",
+    "region-it-sicily-l02",
+    "region-it-sicily-l03",
+    "region-it-sicily-l04",
+    "region-it-sicily-l05"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "path-08-l03",
+  "moduleId": "path-08",
+  "order": 3,
+  "title": "Making a red",
+  "subtitle": "Colour, tannin and pressing",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe the steps of red winemaking",
+    "Explain the ways to extract colour and tannin",
+    "Explain carbonic maceration"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "The steps",
+      "body": "Black grapes are destemmed and crushed. Juice, skins and seeds ferment together, often at 25 to 30 degrees. The skins float to the top and form a cap. After fermentation the wine may stay on the skins to extract more, then is pressed. The free-run wine and the press wine are kept separate.",
+      "highlight": "Ferment with skins, then press"
+    },
+    {
+      "type": "concept",
+      "title": "Managing the cap",
+      "body": "The cap of skins must be kept in contact with the juice to extract colour and tannin and to stop it drying out and spoiling. Punching down pushes the cap under. Pumping over sprays juice from the bottom over the top. Rack and return drains the tank and pours the juice back. Each gives a different intensity of extraction.",
+      "highlight": "Punch down, pump over, rack and return"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Why must the cap of skins be managed during red fermentation?",
+      "options": [
+        "To cool the wine",
+        "To extract colour and tannin and avoid spoilage",
+        "To remove the yeast",
+        "To add sugar"
+      ],
+      "answer": 1,
+      "explanation": "A floating cap dries out and can spoil. Keeping it wet extracts colour, tannin and flavour."
+    },
+    {
+      "type": "concept",
+      "title": "Carbonic maceration",
+      "body": "In carbonic maceration, whole bunches go into a tank filled with carbon dioxide. Fermentation starts inside each berry, without yeast at first. This gives soft, low-tannin reds with bright aromas of banana, bubblegum and cherry. It is the classic method of Beaujolais, where many wines use a partial version.",
+      "highlight": "Whole berries, CO2, fruity soft reds"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are ways to extract colour and tannin from the cap?",
+      "options": [
+        "Punching down",
+        "Pumping over",
+        "Rack and return",
+        "Cold settling"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Cold settling is used to clear white juice, not to manage a red cap."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Reds ferment with their skins, then are pressed",
+        "Punching down, pumping over and rack and return manage extraction",
+        "Carbonic maceration gives soft, fruity reds like Beaujolais"
+      ]
+    }
+  ]
+}

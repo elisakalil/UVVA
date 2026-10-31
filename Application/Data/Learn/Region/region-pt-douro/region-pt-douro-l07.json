@@ -1,0 +1,96 @@
+{
+  "id": "region-pt-douro-l07",
+  "moduleId": "region-pt-douro",
+  "order": 7,
+  "title": "Module review",
+  "subtitle": "Everything about the Douro",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Douro's land and grapes",
+    "Explain Port's styles",
+    "Read and pair Douro wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "Socalcos",
+          "right": "Stone-walled terraces"
+        },
+        {
+          "left": "Lagares",
+          "right": "Stone treading tanks"
+        },
+        {
+          "left": "Aguardente",
+          "right": "Grape spirit"
+        },
+        {
+          "left": "Quinta",
+          "right": "Estate"
+        }
+      ],
+      "explanation": "The Douro's vocabulary is Portuguese and precise."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which sub-region is hottest and driest?",
+      "options": [
+        "Douro Superior",
+        "Baixo Corgo",
+        "Cima Corgo",
+        "Vinho Verde"
+      ],
+      "answer": 0,
+      "explanation": "It's the furthest east, near Spain."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Tawny Port gets its colour and nutty flavour from cask ageing.",
+      "answer": true,
+      "explanation": "Yes, oxygen through the wood."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are recommended Douro grapes?",
+      "options": [
+        "Touriga Nacional",
+        "Touriga Franca",
+        "Tinto Cão",
+        "Pinot Noir"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Pinot Noir isn't a Douro grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Douro was demarcated in ____.",
+      "options": [
+        "1756",
+        "1855",
+        "1952",
+        "2001"
+      ],
+      "answer": "1756",
+      "explanation": "By the Marquis of Pombal."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Douro is a hot, dry valley of schist terraces",
+        "Touriga Nacional and Touriga Franca lead its grapes",
+        "Port divides into ruby and tawny families",
+        "Dry Douro reds are now just as important"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "region-au-margaret-river",
+  "kind": "region",
+  "order": 44,
+  "country": "Australia",
+  "countryCode": "AU",
+  "title": "Margaret River",
+  "grapes": [
+    "Cabernet Sauvignon",
+    "Chardonnay",
+    "Sémillon",
+    "Sauvignon Blanc"
+  ],
+  "points": "0 0 1 1 = 2",
+  "complexity": "D",
+  "description": "A maritime corner of Western Australia making elegant, Bordeaux-like Cabernet and world-class Chardonnay.",
+  "lessonCount": 4,
+  "xp": 60,
+  "estimatedMinutes": 12,
+  "lessons": [
+    "region-au-margaret-river-l01",
+    "region-au-margaret-river-l02",
+    "region-au-margaret-river-l03",
+    "region-au-margaret-river-l04"
+  ]
+}

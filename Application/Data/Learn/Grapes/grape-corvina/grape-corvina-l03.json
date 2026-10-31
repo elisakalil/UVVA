@@ -1,0 +1,72 @@
+{
+  "id": "grape-corvina-l03",
+  "moduleId": "grape-corvina",
+  "order": 3,
+  "title": "Appassimento",
+  "subtitle": "Drying the grapes",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain how appassimento works",
+    "Explain how drying changes the grape",
+    "Describe modern drying lofts"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Drying for months",
+      "body": "Appassimento is the drying of grapes after harvest. Healthy, loose bunches are picked by hand and laid on bamboo racks or plastic crates in airy lofts, called fruttai. They dry for about 100 to 120 days, losing 30 to 40% of their weight. Sugar, acid and flavour concentrate.",
+      "highlight": "Three to four months in fruttai"
+    },
+    {
+      "type": "concept",
+      "title": "Not just water loss",
+      "body": "Drying is a living process. The berries keep metabolising, changing their chemistry. Some acids decrease, glycerol rises, and new aromas form. Resveratrol and other compounds increase. A little noble rot sometimes develops, adding complexity. The result is dried cherry, raisin and spice flavours.",
+      "highlight": "Grapes keep living as they dry"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "How much weight do grapes typically lose during appassimento?",
+      "options": [
+        "5%",
+        "30 to 40%",
+        "80%",
+        "None"
+      ],
+      "answer": 1,
+      "explanation": "About a third, concentrating sugar, acid and flavour."
+    },
+    {
+      "type": "concept",
+      "title": "Modern fruttai",
+      "body": "Traditionally, grapes dried in attics with open windows, at the mercy of the weather. Today many fruttai have fans and dehumidifiers to control conditions and prevent grey rot. Some producers argue that natural drying gives more complexity; others prefer control. Both are allowed.",
+      "highlight": "Fans and dehumidifiers for control"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What happens during appassimento?",
+      "options": [
+        "Water evaporates",
+        "Sugar concentrates",
+        "New aromas form",
+        "Grapes ferment fully into wine"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Fermentation happens after drying, not during."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Appassimento dries grapes for three to four months",
+        "Berries lose 30 to 40% of their weight and change chemically",
+        "Modern lofts control humidity to prevent rot"
+      ]
+    }
+  ]
+}

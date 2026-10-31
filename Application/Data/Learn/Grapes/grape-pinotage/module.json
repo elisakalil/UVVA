@@ -1,0 +1,25 @@
+{
+  "id": "grape-pinotage",
+  "kind": "grape",
+  "order": 9,
+  "color": "red",
+  "title": "Pinotage",
+  "aliases": [],
+  "origin": "South Africa",
+  "countries": [
+    "South Africa"
+  ],
+  "points": "1 0 0 2 = 3",
+  "complexity": "C",
+  "description": "South Africa's own grape, a 1925 cross of Pinot Noir and Cinsault, in styles from fruity to smoky and serious.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-pinotage-l01",
+    "grape-pinotage-l02",
+    "grape-pinotage-l03",
+    "grape-pinotage-l04",
+    "grape-pinotage-l05"
+  ]
+}

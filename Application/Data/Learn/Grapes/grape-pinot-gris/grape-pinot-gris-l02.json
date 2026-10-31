@@ -1,0 +1,83 @@
+{
+  "id": "grape-pinot-gris-l02",
+  "moduleId": "grape-pinot-gris",
+  "order": 2,
+  "title": "Where it grows",
+  "subtitle": "Italy, Alsace and beyond",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name Pinot Gris' main regions",
+    "Explain how climate and yield shape it",
+    "Name its other names"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "A wide map",
+      "body": "Italy is the largest producer, mostly in the north-east: Veneto, Friuli and Alto Adige. Alsace makes its richest versions. Germany calls it Grauburgunder, for dry styles, or Ruländer, for sweeter ones. Oregon, New Zealand, Australia and Hungary, where it's Szürkebarát, grow it too.",
+      "highlight": "Italy largest; Alsace richest"
+    },
+    {
+      "type": "concept",
+      "title": "Yield and picking",
+      "body": "The style depends heavily on yield and picking time. High yields and early picking give light, neutral, crisp wine. Low yields and later picking give concentrated, rich, spicy wines with more alcohol. The grape itself is the same; the grower's choices make the difference.",
+      "highlight": "Yield and timing decide style"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each name to its country.",
+      "pairs": [
+        {
+          "left": "Pinot Grigio",
+          "right": "Italy"
+        },
+        {
+          "left": "Grauburgunder",
+          "right": "Germany"
+        },
+        {
+          "left": "Szürkebarát",
+          "right": "Hungary"
+        },
+        {
+          "left": "Pinot Gris",
+          "right": "France"
+        }
+      ],
+      "explanation": "One grape, several names."
+    },
+    {
+      "type": "concept",
+      "title": "Delle Venezie",
+      "body": "In Italy, the Delle Venezie DOC, created in 2017, covers Pinot Grigio from Veneto, Friuli and Trentino, the world's largest Pinot Grigio appellation. It aimed to raise quality and control the huge volume produced for export. Alto Adige and Collio make more serious examples.",
+      "highlight": "Delle Venezie DOC, 2017"
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "What gives a richer, spicier Pinot Gris?",
+      "options": [
+        "Low yields",
+        "Later picking",
+        "Warm, dry autumns",
+        "High yields and early picking"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "High yields and early picking give the light, neutral style."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Italy makes the most; Alsace the richest",
+        "Yield and picking time decide the style",
+        "Delle Venezie DOC covers Italy's huge Pinot Grigio output"
+      ]
+    }
+  ]
+}

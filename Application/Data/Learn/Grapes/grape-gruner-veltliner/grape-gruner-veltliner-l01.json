@@ -1,0 +1,62 @@
+{
+  "id": "grape-gruner-veltliner-l01",
+  "moduleId": "grape-gruner-veltliner",
+  "order": 1,
+  "title": "Meet Grüner Veltliner",
+  "subtitle": "Austria's white",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Grüner Veltliner's flavours",
+    "Explain its origins",
+    "Recognise it in the glass"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Fresh and peppery",
+      "body": "Grüner Veltliner, often just Grüner, gives whites with lemon, lime, green apple, pear, green bean, lentil and its signature white pepper. Acidity is medium to high. It ranges from light, crisp everyday wines to powerful, rich ones. It's Austria's most planted grape, about a third of its vineyards.",
+      "highlight": "Citrus, green apple, white pepper"
+    },
+    {
+      "type": "concept",
+      "title": "Origins",
+      "body": "Grüner Veltliner is native to Austria. DNA shows its parents are Traminer and an old grape found in St. Georgen, near Lake Neusiedl, called St. Georgener-Rebe. Despite its name, it isn't related to Roter Veltliner. It's vigorous and productive, so yield control decides quality.",
+      "highlight": "Parents: Traminer and St. Georgener-Rebe"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What is Grüner Veltliner's signature aroma?",
+      "options": [
+        "White pepper",
+        "Lychee",
+        "Blackcurrant",
+        "Petrol"
+      ],
+      "answer": 0,
+      "explanation": "A white pepper note sets it apart."
+    },
+    {
+      "type": "concept",
+      "title": "Spotting it",
+      "body": "Look for pale lemon, sometimes green-tinged colour, citrus and green apple with white pepper and vegetal notes like green bean, and a crisp, fresh palate. Richer versions add stone fruit, spice and a creamy texture. Compared with Sauvignon Blanc, it's less pungent and more peppery.",
+      "highlight": "Peppery and fresh"
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Grüner Veltliner is Austria's most planted grape.",
+      "answer": true,
+      "explanation": "Yes, about a third of its vineyards."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Grüner gives citrus, green apple and white pepper",
+        "It's Austria's native and most planted grape",
+        "Its parents are Traminer and St. Georgener-Rebe"
+      ]
+    }
+  ]
+}

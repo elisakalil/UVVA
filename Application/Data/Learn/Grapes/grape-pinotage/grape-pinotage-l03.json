@@ -1,0 +1,68 @@
+{
+  "id": "grape-pinotage-l03",
+  "moduleId": "grape-pinotage",
+  "order": 3,
+  "title": "A South African cross",
+  "subtitle": "Styles and reputation",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Pinotage's main styles",
+    "Explain its reputation problems",
+    "Explain the Cape blend"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Many styles",
+      "body": "Pinotage is made in several styles. Light and fruity, for early drinking. Coffee Pinotage, a 2000s trend, aged with heavily toasted oak for mocha and chocolate notes. Serious, structured wines from old vines, aged in French oak. And rosé, even sparkling and fortified versions.",
+      "highlight": "Fruity, coffee, serious"
+    },
+    {
+      "type": "concept",
+      "title": "Reputation",
+      "body": "In the 1990s, critics complained of acetone and burnt rubber smells in some Pinotage. Research linked these to isoamyl acetate and to fermentation at high temperatures, stressed yeast and over-extraction. Better vineyard work, cooler fermentations and gentle handling have greatly improved quality.",
+      "highlight": "Better winemaking fixed old faults"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What caused the acetone notes in some 1990s Pinotage?",
+      "options": [
+        "The grape's DNA",
+        "Fermentation and handling issues",
+        "Too little sun",
+        "Old vines"
+      ],
+      "answer": 1,
+      "explanation": "High fermentation temperatures and stressed yeast created volatile compounds; modern winemaking avoids them."
+    },
+    {
+      "type": "concept",
+      "title": "The Cape blend",
+      "body": "A Cape blend is a red blend with a significant share of Pinotage, usually 30 to 70%, with Cabernet Sauvignon, Merlot or Shiraz. It gives South Africa a distinctive blend of its own, combining Pinotage's fruit with Bordeaux grapes' structure. Many Stellenbosch estates make one.",
+      "highlight": "Cape blend: Pinotage plus Bordeaux grapes"
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "A Cape blend is a red blend with a significant share of ____.",
+      "options": [
+        "Pinotage",
+        "Chenin Blanc",
+        "Tannat",
+        "Syrah"
+      ],
+      "answer": "Pinotage",
+      "explanation": "Pinotage gives Cape blends their South African identity."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Pinotage ranges from light and fruity to serious and oaked",
+        "Old faults came from winemaking, now largely fixed",
+        "Cape blends combine Pinotage with Bordeaux grapes"
+      ]
+    }
+  ]
+}

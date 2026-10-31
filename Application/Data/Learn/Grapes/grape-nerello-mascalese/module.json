@@ -1,0 +1,25 @@
+{
+  "id": "grape-nerello-mascalese",
+  "kind": "grape",
+  "order": 27,
+  "color": "red",
+  "title": "Nerello Mascalese",
+  "aliases": [],
+  "origin": "Italy",
+  "countries": [
+    "Italy"
+  ],
+  "points": "1 0 1 1 = 3",
+  "complexity": "C",
+  "description": "Etna's red grape: pale, perfumed and firm, grown high on the slopes of an active volcano.",
+  "lessonCount": 5,
+  "xp": 75,
+  "estimatedMinutes": 15,
+  "lessons": [
+    "grape-nerello-mascalese-l01",
+    "grape-nerello-mascalese-l02",
+    "grape-nerello-mascalese-l03",
+    "grape-nerello-mascalese-l04",
+    "grape-nerello-mascalese-l05"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "region-au-hunter-valley-l04",
+  "moduleId": "region-au-hunter-valley",
+  "order": 4,
+  "title": "Module review",
+  "subtitle": "Everything about the Hunter Valley",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe the Hunter's climate and grapes",
+    "Explain Sémillon's ageing",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        {
+          "left": "James Busby",
+          "right": "Father of Australian wine"
+        },
+        {
+          "left": "Museum release",
+          "right": "Aged Sémillon"
+        },
+        {
+          "left": "Pokolbin",
+          "right": "Main wine area"
+        },
+        {
+          "left": "Sweaty saddle",
+          "right": "Old Hunter Shiraz note"
+        }
+      ],
+      "explanation": "The Hunter's vocabulary is historic."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "At what alcohol is Hunter Sémillon typically picked?",
+      "options": [
+        "About 10 to 11%",
+        "About 15%",
+        "About 5%",
+        "About 20%"
+      ],
+      "answer": 0,
+      "explanation": "Early picking keeps it lean."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Hunter Sémillon's toasty notes come from oak.",
+      "answer": false,
+      "explanation": "Not true. They come from bottle age."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which describe the Hunter's climate?",
+      "options": [
+        "Hot",
+        "Humid",
+        "Rain at harvest",
+        "Very dry and cool"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "It's hot and humid."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "The Hunter Valley lies about 160 km north of ____.",
+      "options": [
+        "Sydney",
+        "Adelaide",
+        "Perth",
+        "Melbourne"
+      ],
+      "answer": "Sydney",
+      "explanation": "North of Sydney, in New South Wales."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "The Hunter is hot, humid and historic",
+        "Sémillon is picked early and transforms with age",
+        "Hunter Shiraz is medium-bodied and earthy",
+        "It's Australia's oldest wine region"
+      ]
+    }
+  ]
+}

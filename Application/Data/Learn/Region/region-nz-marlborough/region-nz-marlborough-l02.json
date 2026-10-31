@@ -1,0 +1,77 @@
+{
+  "id": "region-nz-marlborough-l02",
+  "moduleId": "region-nz-marlborough",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Sauvignon first",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Explain Sauvignon Blanc's dominance",
+    "Describe Marlborough Pinot Noir",
+    "Name its other grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Sauvignon Blanc",
+      "body": "Sauvignon Blanc covers about 80% of Marlborough's vineyards and most of New Zealand's wine exports. Marlborough Sauvignon is pungent and zesty: passion fruit, gooseberry, grapefruit, cut grass, green pepper and sometimes a sweaty, tropical edge, with very high acidity. It's almost always unoaked and bottled young.",
+      "highlight": "About 80% Sauvignon Blanc"
+    },
+    {
+      "type": "concept",
+      "title": "Pinot Noir and others",
+      "body": "Pinot Noir is the second grape, grown on clay-rich, cooler sites in the southern side valleys, like the Southern Valleys sub-region. It gives bright red cherry and spice, lighter than Central Otago's. Chardonnay, Pinot Gris, Riesling and Gewürztraminer also grow, and Marlborough makes traditional method sparkling wine from Chardonnay and Pinot Noir.",
+      "highlight": "Pinot Noir and sparkling"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Sauvignon Blanc",
+          "right": "About 80%, pungent"
+        },
+        {
+          "left": "Pinot Noir",
+          "right": "Second grape, Southern Valleys"
+        },
+        {
+          "left": "Chardonnay",
+          "right": "Still and sparkling"
+        },
+        {
+          "left": "Riesling",
+          "right": "Aromatic minority"
+        }
+      ],
+      "explanation": "Sauvignon leads by a long way."
+    },
+    {
+      "type": "tip",
+      "body": "Marlborough's Southern Valleys, with more clay, are where many of its best Pinot Noirs come from."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "What share of Marlborough's vineyards is Sauvignon Blanc?",
+      "options": [
+        "About 80%",
+        "About 10%",
+        "About 40%",
+        "100%"
+      ],
+      "answer": 0,
+      "explanation": "It dominates the region."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Sauvignon Blanc is about 80%, pungent and zesty",
+        "Pinot Noir is the second grape, from cooler clay sites",
+        "Chardonnay and sparkling wine add variety"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "region-ar-patagonia-l02",
+  "moduleId": "region-ar-patagonia",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Pinot Noir and fresher Malbec",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Describe Patagonian Pinot Noir",
+    "Describe Patagonian Malbec",
+    "Name its other grapes"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Pinot Noir",
+      "body": "Patagonia is Argentina's best region for Pinot Noir. Its cool climate and long, sunny days give red cherry, raspberry and spice, with fresh acidity and fine tannins. Old Pinot Noir vines in Río Negro, like those at Bodega Chacra, planted in 1932 and 1955, make some of South America's most acclaimed Pinots.",
+      "highlight": "Argentina's best Pinot Noir"
+    },
+    {
+      "type": "concept",
+      "title": "Malbec and others",
+      "body": "Patagonian Malbec is fresher and more elegant than Mendoza's, with red fruit, violet and brighter acidity. Merlot, Cabernet Franc and Sauvignon Blanc also do well. Old Sémillon in Río Negro gives textured whites. Chubut, further south, grows Chardonnay and Pinot Noir for sparkling and still wines.",
+      "highlight": "Fresher Malbec, old Sémillon"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its Patagonian style.",
+      "pairs": [
+        {
+          "left": "Pinot Noir",
+          "right": "Red cherry, fresh"
+        },
+        {
+          "left": "Malbec",
+          "right": "Fresher, more elegant"
+        },
+        {
+          "left": "Sémillon",
+          "right": "Old-vine, textured"
+        },
+        {
+          "left": "Chardonnay",
+          "right": "Chubut, sparkling"
+        }
+      ],
+      "explanation": "Patagonia's grapes are fresher than in the north."
+    },
+    {
+      "type": "tip",
+      "body": "Try a Patagonian Malbec next to a Mendoza one. The southern wine is usually lighter, fresher and redder in fruit."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape makes some of South America's most acclaimed wines in Río Negro?",
+      "options": [
+        "Pinot Noir",
+        "Torrontés",
+        "Bonarda",
+        "Tannat"
+      ],
+      "answer": 0,
+      "explanation": "Old-vine Pinot Noir, like Bodega Chacra's."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Patagonia is Argentina's best Pinot Noir region",
+        "Its Malbec is fresher and more elegant",
+        "Old Sémillon and Chubut Chardonnay add variety"
+      ]
+    }
+  ]
+}

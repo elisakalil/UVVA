@@ -1,0 +1,96 @@
+{
+  "id": "region-it-friuli-venezia-giulia-l05",
+  "moduleId": "region-it-friuli-venezia-giulia",
+  "order": 5,
+  "title": "Module review",
+  "subtitle": "Everything about Friuli",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": true,
+  "objectives": [
+    "Describe Friuli's geography and grapes",
+    "Explain orange wine",
+    "Pair its wines"
+  ],
+  "steps": [
+    {
+      "type": "matchPairs",
+      "prompt": "Match each term to Friuli.",
+      "pairs": [
+        {
+          "left": "Collio",
+          "right": "Eastern hill DOC"
+        },
+        {
+          "left": "Ponca",
+          "right": "Marl and sandstone soil"
+        },
+        {
+          "left": "Oslavia",
+          "right": "Orange wine village"
+        },
+        {
+          "left": "Picolit",
+          "right": "Sweet DOCG"
+        }
+      ],
+      "explanation": "Friuli's vocabulary maps its hills."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Who pioneered orange wine in Friuli?",
+      "options": [
+        "Josko Gravner and Stanko Radikon",
+        "Angelo Gaja",
+        "Piero Antinori",
+        "Giulio Ferrari"
+      ],
+      "answer": 0,
+      "explanation": "Both in Oslavia, in the Collio."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Most of Friuli's wine is white.",
+      "answer": true,
+      "explanation": "Yes, about 80%."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are native Friuli grapes?",
+      "options": [
+        "Friulano",
+        "Ribolla Gialla",
+        "Refosco",
+        "Barbera"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Barbera is Piedmont's grape."
+    },
+    {
+      "type": "fillBlank",
+      "prompt": "Tocai Friulano was renamed ____ in 2008.",
+      "options": [
+        "Friulano",
+        "Ribolla",
+        "Picolit",
+        "Verduzzo"
+      ],
+      "answer": "Friulano",
+      "explanation": "To avoid confusion with Hungary's Tokaji."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Friuli is a border region of Alps and Adriatic",
+        "Friulano and Ribolla Gialla are its key whites",
+        "It led the modern orange wine revival",
+        "Its whites suit San Daniele ham and seafood"
+      ]
+    }
+  ]
+}

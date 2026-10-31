@@ -1,0 +1,60 @@
+{
+  "id": "grape-garganega-l04",
+  "moduleId": "grape-garganega",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Garganega",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Soave with food",
+    "Pair Recioto with food",
+    "Serve them well"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Soave",
+      "body": "Soave suits light Italian food: risotto with spring vegetables, seafood, grilled fish, antipasti and fresh cheeses. Its almond notes suit dishes with nuts, and its saline edge suits shellfish. Aged Soave suits richer fish and white meat.",
+      "highlight": "Risotto, seafood, antipasti"
+    },
+    {
+      "type": "concept",
+      "title": "Recioto and service",
+      "body": "Recioto di Soave suits almond biscuits, pandoro, fruit tarts and blue cheese. Serve Soave at 8 to 10 degrees, Recioto at 10 to 12. Simple Soave is best young; Classico from top sites ages 10 years; Recioto can age decades.",
+      "highlight": "Recioto with pandoro and biscuits"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which dish suits Soave?",
+      "options": [
+        "Risotto with spring vegetables",
+        "Steak",
+        "Chocolate cake",
+        "Spicy curry"
+      ],
+      "answer": 0,
+      "explanation": "Light, fresh dishes suit Soave."
+    },
+    {
+      "type": "tip",
+      "body": "Verona's pandoro, a tall star-shaped cake, and a glass of Recioto di Soave is a local Christmas pairing."
+    },
+    {
+      "type": "trueFalse",
+      "prompt": "Recioto di Soave can age for decades.",
+      "answer": true,
+      "explanation": "Yes. Its sugar and acidity preserve it."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Soave suits risotto, seafood and antipasti",
+        "Recioto suits pandoro, biscuits and blue cheese",
+        "Serve Soave at 8 to 10 degrees"
+      ]
+    }
+  ]
+}

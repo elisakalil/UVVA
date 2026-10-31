@@ -1,0 +1,77 @@
+{
+  "id": "region-pt-dao-l02",
+  "moduleId": "region-pt-dao",
+  "order": 2,
+  "title": "The grapes",
+  "subtitle": "Touriga Nacional's home",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Name the Dão's red grapes",
+    "Explain Touriga Nacional's origin here",
+    "Explain field blends"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Reds",
+      "body": "Touriga Nacional probably originated in the Dão and must be at least 20% of the region's red blends. Jaen, the same as Spain's Mencía, gives soft, fruity, floral wines. Alfrocheiro gives colour and red fruit. Tinta Roriz, Tempranillo, adds structure. Dão reds are fresh, floral and structured, with red fruit, pine and spice.",
+      "highlight": "Touriga Nacional, Jaen, Alfrocheiro"
+    },
+    {
+      "type": "concept",
+      "title": "Blends",
+      "body": "Traditionally, Dão wines are blends, often from old field blend vineyards. Touriga Nacional gives aroma and structure; Jaen softness; Alfrocheiro colour; Tinta Roriz body. Single-varietal Touriga Nacional and Jaen are also common now.",
+      "highlight": "Blends and varietals"
+    },
+    {
+      "type": "matchPairs",
+      "prompt": "Match each grape to its role.",
+      "pairs": [
+        {
+          "left": "Touriga Nacional",
+          "right": "Aroma and structure"
+        },
+        {
+          "left": "Jaen",
+          "right": "Softness, same as Mencía"
+        },
+        {
+          "left": "Alfrocheiro",
+          "right": "Colour and red fruit"
+        },
+        {
+          "left": "Encruzado",
+          "right": "Finest white grape"
+        }
+      ],
+      "explanation": "Dão grapes balance one another."
+    },
+    {
+      "type": "tip",
+      "body": "Jaen is the same grape as Mencía, grown across the border in Spain's Bierzo and Ribeira Sacra."
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which grape is Jaen the same as?",
+      "options": [
+        "Mencía",
+        "Tempranillo",
+        "Garnacha",
+        "Merlot"
+      ],
+      "answer": 0,
+      "explanation": "Jaen and Mencía are the same grape."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Touriga Nacional probably originated in the Dão",
+        "Jaen, Alfrocheiro and Tinta Roriz complete the reds",
+        "Dão reds are fresh, floral and structured"
+      ]
+    }
+  ]
+}

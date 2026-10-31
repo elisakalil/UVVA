@@ -1,0 +1,70 @@
+{
+  "id": "grape-glera-l04",
+  "moduleId": "grape-glera",
+  "order": 4,
+  "title": "At the table",
+  "subtitle": "Serving and pairing Prosecco",
+  "xp": 15,
+  "estimatedMinutes": 3,
+  "isReview": false,
+  "objectives": [
+    "Pair Prosecco with food",
+    "Serve it well",
+    "Know how long to keep it"
+  ],
+  "steps": [
+    {
+      "type": "concept",
+      "title": "Aperitivo",
+      "body": "Prosecco is Italy's aperitivo wine: with olives, cured ham, fried snacks, cicchetti, Venetian small bites, and light seafood. It's the base of the Spritz, with Aperol or Campari and soda, and the Bellini, with white peach purée, invented at Harry's Bar in Venice. Extra Dry suits slightly spicy Asian food and fruit desserts.",
+      "highlight": "Aperitivo, Spritz, Bellini"
+    },
+    {
+      "type": "concept",
+      "title": "Service and age",
+      "body": "Serve at 6 to 8 degrees. Prosecco is made to drink young, within 12 to 18 months of the vintage, when its fruit is fresh. Unlike Champagne, it doesn't benefit from long ageing. Use a white wine glass to show its aromas, or a tulip glass.",
+      "highlight": "Cold and young"
+    },
+    {
+      "type": "multipleChoice",
+      "prompt": "Which cocktail is made with Prosecco and white peach purée?",
+      "options": [
+        "Bellini",
+        "Mojito",
+        "Negroni",
+        "Margarita"
+      ],
+      "answer": 0,
+      "explanation": "The Bellini was invented at Harry's Bar in Venice."
+    },
+    {
+      "type": "tip",
+      "body": "When buying Prosecco, check for the vintage, Millesimato. Drink it within a year or two to enjoy its freshness."
+    },
+    {
+      "type": "selectMultiple",
+      "prompt": "Which are Prosecco-based drinks or pairings?",
+      "options": [
+        "Spritz",
+        "Bellini",
+        "Cicchetti",
+        "Beef stew"
+      ],
+      "answers": [
+        0,
+        1,
+        2
+      ],
+      "explanation": "Beef stew needs a red."
+    },
+    {
+      "type": "summary",
+      "title": "What you learned",
+      "points": [
+        "Prosecco is the aperitivo wine, base of the Spritz and Bellini",
+        "Serve at 6 to 8 degrees",
+        "Drink it young, within 12 to 18 months"
+      ]
+    }
+  ]
+}

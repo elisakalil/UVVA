@@ -1,0 +1,20 @@
+{
+  "id": "path-27",
+  "kind": "path",
+  "order": 27,
+  "level": "Expert",
+  "complexity": "C",
+  "title": "Sweet Wines of the World",
+  "description": "The great sweet wines, how each is made and why they last for decades.",
+  "lessonCount": 6,
+  "xp": 90,
+  "estimatedMinutes": 18,
+  "lessons": [
+    "path-27-l01",
+    "path-27-l02",
+    "path-27-l03",
+    "path-27-l04",
+    "path-27-l05",
+    "path-27-l06"
+  ]
+}
