@@ -28,12 +28,14 @@ final class ProfileRepositorySpy: ProfileRepository {
     }
     func save(_ profile: Profile) async throws { profiles.withLock { $0.append(profile) } }
     func markTourSeen(_ tour: String) async throws {}
+    func deleteAccount() async throws {}
 }
 
 struct MapRepositoryStub: PalateMapRepository {
     var map: PalateMap?
     func currentMap() async throws -> PalateMap? { map }
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {}
+    func history() async throws -> [MapChange] { [] }
 }
 
 final class SocialSpy: SocialService {
@@ -56,6 +58,8 @@ final class SocialSpy: SocialService {
         state.withLock { $0.requests.append("\(from)->\(to)") }
     }
     func publish(_ profile: PublicProfile) async throws {}
+    func removeContactKey(phone: String) async throws {}
+    func deleteAccount(userID: String, phone: String?) async throws {}
 }
 
 struct CloudStub: CloudAccountStatus {

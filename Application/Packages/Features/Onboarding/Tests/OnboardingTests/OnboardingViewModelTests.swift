@@ -174,8 +174,51 @@ struct OnboardingViewModelTests {
         let model = viewModel.contactsModel
         #expect(model.onUVVA.map(\.name) == ["Marina Alves"])
         #expect(model.onUVVATitle == "1 of your contacts is on UVVA")
+        #expect(model.title == "Contacts")
         #expect(model.toInvite.map(\.name) == ["Ana Sequeira"])
         #expect(model.onUVVA.first?.note?.hasPrefix("ACIDITY") == true)
+    }
+
+    @Test func ONB_R37_noContactOnUVVA_noTitle() async {
+        let contacts = ContactsStub(contacts: [DeviceContact(id: "1", givenName: "Ana", familyName: "", phones: ["912000003"])])
+        let viewModel = await makeViewModel(contacts: contacts)
+        await viewModel.signIn()
+        viewModel.continueFromName()
+        await viewModel.skipPhone()
+        await viewModel.findFriends()
+        let model = viewModel.contactsModel
+        #expect(model.onUVVA.isEmpty)
+        #expect(model.title == nil)
+        #expect(model.toInvite.map(\.name) == ["Ana"])
+    }
+
+    @Test func ONB_R37_search_narrowsBothLists_ignoringCaseAndAccents() async {
+        let contacts = [
+            DeviceContact(id: "1", givenName: "Marina", familyName: "Alves", phones: ["912 000 001"]),
+            DeviceContact(id: "2", givenName: "José", familyName: "Neves", phones: ["912 000 002"]),
+            DeviceContact(id: "3", givenName: "Ana", familyName: "Sequeira", phones: ["912 000 003"])
+        ]
+        let social = SocialSpy(accounts: [
+            "+351912000001": PublicProfile(id: "m", firstName: "Marina", map: PalateMap([.acidity: 9]), hasMap: true)
+        ])
+        let viewModel = await makeViewModel(social: social, contacts: ContactsStub(contacts: contacts))
+        await viewModel.signIn()
+        viewModel.continueFromName()
+        await viewModel.skipPhone()
+        await viewModel.findFriends()
+
+        viewModel.contactsQuery = "jose"
+        #expect(viewModel.contactsModel.onUVVA.isEmpty)
+        #expect(viewModel.contactsModel.toInvite.map(\.name) == ["José Neves"])
+        #expect(viewModel.contactsModel.title == "Contacts")
+
+        viewModel.contactsQuery = "zz"
+        #expect(viewModel.contactsModel.noResults)
+
+        viewModel.contactsQuery = ""
+        #expect(viewModel.contactsModel.onUVVA.count == 1)
+        #expect(viewModel.contactsModel.toInvite.count == 2)
+        #expect(!viewModel.contactsModel.noResults)
     }
 
     @Test func ONB_R37_add_sendsAFriendRequest_andSaysRequested() async {

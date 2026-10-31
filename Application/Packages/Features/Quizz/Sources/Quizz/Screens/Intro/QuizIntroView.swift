@@ -47,8 +47,6 @@ struct QuizIntroView: View {
                         .opacity(0.8)
                         .frame(maxWidth: .infinity)
                         .padding(.top, 44)
-                    ActionButton(model.button, isEnabled: isReady, action: onStart)
-                        .padding(.top, 24)
                 }
                 .padding(.horizontal, 26)
                 .padding(.top, 20)
@@ -56,6 +54,13 @@ struct QuizIntroView: View {
             }
             .scrollIndicators(.hidden)
             .scrollEdgeFade()
+            // Fixed at the foot of the screen; the text scrolls up clear of it.
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                ActionButton(model.button, isEnabled: isReady, action: onStart)
+                    .shadow(color: Color(hex: 0x12180E).opacity(0.45), radius: 15, y: 10)
+                    .padding(.horizontal, 26)
+                    .padding(.bottom, 12)
+            }
         }
     }
 }

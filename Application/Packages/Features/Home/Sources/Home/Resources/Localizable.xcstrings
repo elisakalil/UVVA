@@ -1,0 +1,177 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "  %lld" : {
+
+    },
+    "/%lld" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lld of %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "%lld%%" : {
+
+    },
+    "+" : {
+
+    },
+    "✷" : {
+
+    },
+    "A pairing drawn for your palate" : {
+
+    },
+    "A quick\nlook around" : {
+
+    },
+    "A short walk through where things live in UVVA." : {
+
+    },
+    "Back" : {
+
+    },
+    "Choose your wine" : {
+
+    },
+    "Continue  →" : {
+
+    },
+    "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
+
+    },
+    "Find my wine" : {
+
+    },
+    "Find the wine" : {
+
+    },
+    "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
+
+    },
+    "Invite friends to discover their palate and find a wine you'll both love" : {
+
+    },
+    "Invite the people you drink with. UVVA reads every map at the table and suggests one bottle for all of you." : {
+
+    },
+    "Learn the wines you love" : {
+
+    },
+    "Malbec at altitude" : {
+
+    },
+    "Map your taste in wine with me on UVVA." : {
+
+    },
+    "match with %@" : {
+
+    },
+    "Next" : {
+
+    },
+    "Notifications" : {
+
+    },
+    "Notifications, unread" : {
+
+    },
+    "Open the table →" : {
+
+    },
+    "Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight." : {
+
+    },
+    "Pick who is coming →" : {
+
+    },
+    "Picked for your palate" : {
+
+    },
+    "Scan a label" : {
+
+    },
+    "See the wine & the dish" : {
+
+    },
+    "Serve the wine at %lld–%lld °C." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Serve the wine at %1$lld–%2$lld °C."
+          }
+        }
+      }
+    },
+    "Set a table" : {
+
+    },
+    "Set a table with your friends" : {
+
+    },
+    "Show less" : {
+
+    },
+    "Show me" : {
+
+    },
+    "Start" : {
+
+    },
+    "Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map." : {
+
+    },
+    "Tell us what you feel like tonight." : {
+
+    },
+    "Tour" : {
+
+    },
+    "Uco Valley" : {
+
+    },
+    "UVVA" : {
+
+    },
+    "UVVA · 0.1 · Made in Portugal" : {
+
+    },
+    "Welcome in, %@" : {
+
+    },
+    "Wines you have tasted and wines you want to try, each one measured against your map." : {
+
+    },
+    "Your cellar" : {
+
+    },
+    "Your last wine %@ your %@ notes." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your last wine %1$@ your %2$@ notes."
+          }
+        }
+      }
+    },
+    "Your map is ready" : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -11,6 +11,12 @@ public actor PalateMapStore: PalateMapRepository {
         return try modelContext.fetch(descriptor).first?.map
     }
 
+    public func history() throws -> [MapChange] {
+        var descriptor = FetchDescriptor<PalateMapEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
+        descriptor.fetchLimit = 1
+        return try modelContext.fetch(descriptor).first?.history ?? []
+    }
+
     /// The new map replaces the old one completely; its history starts again with the Quiz (QUIZ-R18a).
     /// Ratings live in their own table and are not touched.
     public func saveQuizMap(_ map: PalateMap, at date: Date) throws {

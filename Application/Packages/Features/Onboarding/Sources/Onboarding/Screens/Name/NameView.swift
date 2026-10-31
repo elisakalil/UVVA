@@ -5,12 +5,16 @@ import SwiftUI
 struct NameView: View {
     @Bindable var viewModel: OnboardingViewModel
     @FocusState private var focused: Bool
+    @State private var leaving = false
+
+    /// About how long the system keyboard takes to slide away.
+    static let keyboardHide: Duration = .milliseconds(250)
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             SignUpHeader(counter: "01 / 02", onBack: { viewModel.back() })
             SignUpTitle(title: String(localized: "And what should we call you?", bundle: .module),
-                        detail: String(localized: "Your first name is enough. We took it from your account; change it if you like.", bundle: .module),
+                        detail: String(localized: "Your first name is enough.", bundle: .module),
                         detailWidth: 265)
                 .padding(.top, 56)
 
@@ -22,7 +26,7 @@ struct NameView: View {
                 .autocorrectionDisabled()
                 .submitLabel(.continue)
                 .focused($focused)
-                .onSubmit { viewModel.continueFromName() }
+                .onSubmit(next)
                 .padding(.bottom, 13)
                 .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
                 .padding(.top, 44)
@@ -36,12 +40,25 @@ struct NameView: View {
                 .contentTransition(.opacity)
 
             Spacer(minLength: 20)
-            ActionButton(String(localized: "Continue", bundle: .module), isEnabled: viewModel.nameIsValid,
-                         action: viewModel.continueFromName)
+            ActionButton(String(localized: "Continue", bundle: .module), isEnabled: viewModel.nameIsValid && !leaving,
+                         action: next)
         }
         .padding(.horizontal, 30)
         .padding(.top, 16)
         .padding(.bottom, 16)
         .onAppear { focused = true }
+    }
+
+    /// The Phone step has its own keypad, so the system keyboard is put away first; otherwise it lingers
+    /// over that keypad until this field has left the screen.
+    private func next() {
+        guard viewModel.nameIsValid, !leaving else { return }
+        leaving = true
+        focused = false
+        Task {
+            try? await Task.sleep(for: Self.keyboardHide)
+            viewModel.continueFromName()
+            leaving = false
+        }
     }
 }

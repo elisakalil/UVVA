@@ -6,4 +6,6 @@ public protocol PalateMapRepository: Sendable {
     func currentMap() async throws -> PalateMap?
     /// "Keep this map": a new map whose history starts with the Quiz (QUIZ-R18, R18a).
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws
+    /// Every change of the current map, oldest first; the first is the Quiz (YOU-R10).
+    func history() async throws -> [MapChange]
 }

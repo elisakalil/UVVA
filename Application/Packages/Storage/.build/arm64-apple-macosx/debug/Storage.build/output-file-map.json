@@ -212,6 +212,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swift.o",
@@ -233,6 +240,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swift.o",
@@ -253,5 +267,12 @@
     "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore~partial.swiftmodule",
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.dia"
   }
 }

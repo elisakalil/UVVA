@@ -127,7 +127,7 @@
       "dairy"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -3069,7 +3069,7 @@
   {
     "id": "poached-white-peaches-with-elderflower-and-almond-crumble",
     "title": "Poached white peaches with elderflower and almond crumble",
-    "why": "Elderflower and white peach echo a floral, sweet Moscato; its sweetness stays above the fruit's.",
+    "why": "Elderflower and white peach echo a floral, sweet sparkling wine; its sweetness stays above the fruit's.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Italian",
@@ -3202,8 +3202,7 @@
       "nuts"
     ],
     "wineTypes": [
-      "Sparkling",
-      "White"
+      "Sparkling"
     ]
   },
   {
@@ -3454,7 +3453,7 @@
   {
     "id": "crab-salad-with-grapefruit-and-tarragon",
     "title": "Crab salad with grapefruit and tarragon",
-    "why": "Grapefruit and tarragon lift sweet crab toward a floral, high-acid Riesling.",
+    "why": "Grapefruit and tarragon lift sweet crab toward a floral, high-acid white.",
     "course": "main",
     "mainIngredient": "shellfish",
     "cuisine": "French",
@@ -3695,7 +3694,7 @@
   {
     "id": "thai-style-prawn-salad-with-green-mango-and-chilli",
     "title": "Thai-style prawn salad with green mango and chilli",
-    "why": "The chilli heat and sweet-sour dressing call for an off-dry Riesling with bright acidity.",
+    "why": "The chilli heat and sweet-sour dressing call for an off-dry white with bright acidity.",
     "course": "main",
     "mainIngredient": "shellfish",
     "cuisine": "Thai",
@@ -4694,7 +4693,7 @@
   {
     "id": "lobster-with-tarragon-butter-and-new-potatoes",
     "title": "Lobster with tarragon butter and new potatoes",
-    "why": "Rich lobster and butter need a creamy, oaked Chardonnay.",
+    "why": "Rich lobster and butter need a creamy, oaked white.",
     "course": "main",
     "mainIngredient": "shellfish",
     "cuisine": "French",
@@ -6427,7 +6426,7 @@
   {
     "id": "trout-with-almonds-brown-butter-and-horseradish",
     "title": "Trout with almonds, brown butter and horseradish",
-    "why": "Horseradish gives a peppery bite that a spicy Grüner Veltliner loves.",
+    "why": "Horseradish gives a peppery bite that a spicy white loves.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Austrian",
@@ -7051,13 +7050,13 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
     "id": "bouillabaisse-style-fish-stew-with-rouille",
     "title": "Bouillabaisse-style fish stew with rouille",
-    "why": "Saffron, fennel and tomato are the classic match for a Provençal rosé.",
+    "why": "Saffron, fennel and tomato are the classic match for a rosé.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Provençal",
@@ -7203,8 +7202,7 @@
       "shellfish"
     ],
     "wineTypes": [
-      "Rosé",
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -7317,13 +7315,13 @@
       "soy"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
     "id": "squid-a-la-plancha-with-black-olive-and-orange",
     "title": "Squid a la plancha with black olive and orange",
-    "why": "Orange and olive bring the sun-dried fruit side of a southern French rosé.",
+    "why": "Orange and olive bring the sun-dried fruit side of a rosé.",
     "course": "main",
     "mainIngredient": "shellfish",
     "cuisine": "Spanish",
@@ -7431,7 +7429,7 @@
       "shellfish"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -7669,7 +7667,7 @@
   {
     "id": "seared-tuna-with-soy-shiitake-and-sansho-pepper",
     "title": "Seared tuna with soy, shiitake and sansho pepper",
-    "why": "Umami-rich tuna and mushrooms stand up to a light Pinot Noir.",
+    "why": "Umami-rich tuna and mushrooms stand up to a light red.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Japanese",
@@ -7800,7 +7798,7 @@
   {
     "id": "salmon-with-red-wine-butter-and-mushrooms",
     "title": "Salmon with red wine butter and mushrooms",
-    "why": "Red wine sauce and mushrooms make salmon a natural partner for Pinot Noir.",
+    "why": "Red wine sauce and mushrooms make salmon a natural partner for a light red.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "French",
@@ -7916,7 +7914,7 @@
   {
     "id": "cedar-planked-salmon-with-maple-and-mustard",
     "title": "Cedar-planked salmon with maple and mustard",
-    "why": "Smoke from the plank and a sweet glaze suit a Pinot Noir with some oak.",
+    "why": "Smoke from the plank and a sweet glaze suit a red with some oak.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Canadian",
@@ -8018,13 +8016,13 @@
       "mustard"
     ],
     "wineTypes": [
-      "White"
+      "Red"
     ]
   },
   {
     "id": "monkfish-wrapped-in-prosciutto-with-juniper-and-lentils",
     "title": "Monkfish wrapped in prosciutto with juniper and lentils",
-    "why": "Cured ham and earthy lentils give enough savoury depth for an oaked Pinot.",
+    "why": "Cured ham and earthy lentils give enough savoury depth for an oaked red.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Italian",
@@ -8141,7 +8139,6 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White",
       "Red"
     ]
   },
@@ -8286,7 +8283,7 @@
   {
     "id": "lobster-salad-with-mango-and-lime",
     "title": "Lobster salad with mango and lime",
-    "why": "Tropical fruit and sweet lobster want a floral, dry Muscat.",
+    "why": "Tropical fruit and sweet lobster want a floral, dry white.",
     "course": "main",
     "mainIngredient": "shellfish",
     "cuisine": "Fusion",
@@ -8394,14 +8391,13 @@
       "shellfish"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "scallops-with-cauliflower-raisins-and-curry-oil",
     "title": "Scallops with cauliflower, raisins and curry oil",
-    "why": "Mild curry spice and raisins match a fragrant, dry Muscat.",
+    "why": "Mild curry spice and raisins match a fragrant, dry white.",
     "course": "starter",
     "mainIngredient": "shellfish",
     "cuisine": "Modern European",
@@ -8511,14 +8507,13 @@
       "shellfish"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "thai-red-curry-with-prawns-and-pineapple",
     "title": "Thai red curry with prawns and pineapple",
-    "why": "Chilli heat and pineapple need an aromatic, slightly sweet Gewürztraminer.",
+    "why": "Chilli heat and pineapple need an aromatic, slightly sweet white.",
     "course": "main",
     "mainIngredient": "shellfish",
     "cuisine": "Thai",
@@ -8637,13 +8632,13 @@
       "shellfish"
     ],
     "wineTypes": [
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "duck-fat-fried-fish-with-lychee-and-chilli-salsa",
     "title": "Duck-fat fried fish with lychee and chilli salsa",
-    "why": "Lychee's perfume mirrors Gewürztraminer; the chilli wants its sweetness.",
+    "why": "Lychee's perfume mirrors an aromatic white; the chilli wants its sweetness.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Fusion",
@@ -8758,14 +8753,13 @@
       "fish"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "langoustines-with-lemon-verbena-butter",
     "title": "Langoustines with lemon verbena butter",
-    "why": "Sweet langoustines and verbena match the perfume of a Riesling.",
+    "why": "Sweet langoustines and verbena match the perfume of an aromatic white.",
     "course": "starter",
     "mainIngredient": "shellfish",
     "cuisine": "French",
@@ -9461,7 +9455,7 @@
   {
     "id": "scallops-with-jerusalem-artichoke-brown-butter-and-sage",
     "title": "Scallops with Jerusalem artichoke, brown butter and sage",
-    "why": "Brown butter and nutty artichoke match a toasty, oaked Chardonnay.",
+    "why": "Brown butter and nutty artichoke match a toasty, oaked white.",
     "course": "starter",
     "mainIngredient": "shellfish",
     "cuisine": "French",
@@ -10408,7 +10402,7 @@
   {
     "id": "grilled-red-mullet-with-tapenade-and-fennel-seed",
     "title": "Grilled red mullet with tapenade and fennel seed",
-    "why": "Olive and tomato call for a dry Provençal rosé.",
+    "why": "Olive and tomato call for a dry rosé.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Provençal",
@@ -10509,7 +10503,7 @@
       "fish"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -10879,7 +10873,7 @@
   {
     "id": "scallops-with-pork-belly-and-apple-puree",
     "title": "Scallops with pork belly and apple purée",
-    "why": "Sweet apple, rich pork and scallop suit an off-dry Riesling.",
+    "why": "Sweet apple, rich pork and scallop suit an off-dry white.",
     "course": "starter",
     "mainIngredient": "shellfish",
     "cuisine": "British",
@@ -10981,13 +10975,13 @@
       "shellfish"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "prawn-and-pomelo-salad-with-lime-leaf",
     "title": "Prawn and pomelo salad with lime leaf",
-    "why": "Floral lime leaf and juicy pomelo suit an aromatic Muscat.",
+    "why": "Floral lime leaf and juicy pomelo suit an aromatic white.",
     "course": "starter",
     "mainIngredient": "shellfish",
     "cuisine": "Thai",
@@ -11103,14 +11097,13 @@
       "shellfish"
     ],
     "wineTypes": [
-      "White",
-      "Sparkling"
+      "White"
     ]
   },
   {
     "id": "asparagus-and-smoked-trout-with-soft-egg",
     "title": "Asparagus and smoked trout with soft egg",
-    "why": "Asparagus, egg and smoke suit a peppery Grüner Veltliner.",
+    "why": "Asparagus, egg and smoke suit a peppery white.",
     "course": "starter",
     "mainIngredient": "fish",
     "cuisine": "Austrian",
@@ -11574,7 +11567,7 @@
   {
     "id": "warm-goat-s-cheese-with-beetroot-and-caraway",
     "title": "Warm goat's cheese with beetroot and caraway",
-    "why": "Tangy goat's cheese loves a lean, high-acid Sauvignon; caraway adds a savoury lift.",
+    "why": "Tangy goat's cheese loves a lean, high-acid white; caraway adds a savoury lift.",
     "course": "starter",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -11909,7 +11902,7 @@
   {
     "id": "chicken-liver-pate-with-allspice-and-cherries",
     "title": "Chicken liver pâté with allspice and cherries",
-    "why": "Allspice and cherry pull rich liver toward a bright, light Pinot Noir.",
+    "why": "Allspice and cherry pull rich liver toward a bright, light red.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "French",
@@ -12030,7 +12023,7 @@
   {
     "id": "tomato-bruschetta-with-wild-fennel",
     "title": "Tomato bruschetta with wild fennel",
-    "why": "Ripe tomato needs a high-acid Sangiovese; fennel seed adds its herbal edge.",
+    "why": "Ripe tomato needs a high-acid red; fennel seed adds its herbal edge.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Italian",
@@ -12139,7 +12132,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "White"
+      "Red"
     ]
   },
   {
@@ -12262,8 +12255,7 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White",
-      "Red"
+      "Rosé"
     ]
   },
   {
@@ -12609,7 +12601,7 @@
   {
     "id": "melon-and-cucumber-salad-with-rose-water",
     "title": "Melon and cucumber salad with rose water",
-    "why": "Rose water echoes the perfume of a dry Muscat.",
+    "why": "Rose water echoes the perfume of a dry white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Persian",
@@ -12717,14 +12709,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
-      "Sparkling"
+      "White"
     ]
   },
   {
     "id": "carrot-ginger-and-coconut-soup-with-lime-leaf",
     "title": "Carrot, ginger and coconut soup with lime leaf",
-    "why": "Ginger and lime leaf need an aromatic, off-dry Gewürztraminer.",
+    "why": "Ginger and lime leaf need an aromatic, off-dry white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Thai",
@@ -12840,7 +12831,7 @@
   {
     "id": "prawn-summer-rolls-with-peanut-chilli-dip",
     "title": "Prawn summer rolls with peanut-chilli dip",
-    "why": "Herbs, chilli and sweet peanut sauce suit an off-dry Riesling.",
+    "why": "Herbs, chilli and sweet peanut sauce suit an off-dry white.",
     "course": "starter",
     "mainIngredient": "shellfish",
     "cuisine": "Vietnamese",
@@ -12963,8 +12954,7 @@
       "shellfish"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
@@ -13423,7 +13413,7 @@
   {
     "id": "mushroom-pate-with-smoked-garlic",
     "title": "Mushroom pâté with smoked garlic",
-    "why": "Smoked garlic adds the toasty depth an oaked Pinot Noir likes.",
+    "why": "Smoked garlic adds the toasty depth an oaked red likes.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "French",
@@ -13764,14 +13754,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "Red",
-      "White"
+      "Rosé"
     ]
   },
   {
     "id": "chilled-cucumber-soup-with-green-apple-and-elderflower",
     "title": "Chilled cucumber soup with green apple and elderflower",
-    "why": "Elderflower and apple make it fragrant enough for a floral Riesling.",
+    "why": "Elderflower and apple make it fragrant enough for a floral white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Nordic",
@@ -13872,7 +13861,6 @@
       "dairy"
     ],
     "wineTypes": [
-      "Rosé",
       "White"
     ]
   },
@@ -14235,7 +14223,7 @@
   {
     "id": "tuscan-bean-soup-with-cavolo-nero-and-fennel-seed",
     "title": "Tuscan bean soup with cavolo nero and fennel seed",
-    "why": "Beans and bitter greens want a savoury, high-acid Sangiovese.",
+    "why": "Beans and bitter greens want a savoury, high-acid red.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Italian",
@@ -14365,7 +14353,7 @@
   {
     "id": "tuscan-chicken-liver-crostini-with-juniper",
     "title": "Tuscan chicken liver crostini with juniper",
-    "why": "Juniper and rich liver suit a spicy, fresh Sangiovese.",
+    "why": "Juniper and rich liver suit a spicy, fresh red.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "Italian",
@@ -14834,7 +14822,7 @@
   {
     "id": "tomato-tarte-fine-with-anchovies-and-herbes-de-provence",
     "title": "Tomato tarte fine with anchovies and herbes de Provence",
-    "why": "Tomato, olive oil and herbs are the classic for a Provençal rosé.",
+    "why": "Tomato, olive oil and herbs are the classic for a rosé.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Provençal",
@@ -15058,7 +15046,7 @@
   {
     "id": "grilled-peach-mozzarella-and-lavender",
     "title": "Grilled peach, mozzarella and lavender",
-    "why": "Lavender gives the peach a floral note that a dry Muscat echoes.",
+    "why": "Lavender gives the peach a floral note that a dry white echoes.",
     "course": "starter",
     "mainIngredient": "cheese",
     "cuisine": "Italian",
@@ -15302,7 +15290,7 @@
   {
     "id": "duck-spring-rolls-with-five-spice-and-plum-sauce",
     "title": "Duck spring rolls with five spice and plum sauce",
-    "why": "Five spice and sweet plum suit an aromatic, off-dry Gewürztraminer.",
+    "why": "Five spice and sweet plum suit an aromatic, off-dry white.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "Chinese",
@@ -15411,7 +15399,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
@@ -15532,7 +15520,7 @@
   {
     "id": "fresh-goat-s-cheese-with-radishes-and-nigella-seeds",
     "title": "Fresh goat's cheese with radishes and nigella seeds",
-    "why": "Tangy goat's cheese and peppery radish want a lean, crisp Sauvignon.",
+    "why": "Tangy goat's cheese and peppery radish want a lean, crisp white.",
     "course": "starter",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -15640,14 +15628,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "sweetcorn-veloute-with-smoked-butter",
     "title": "Sweetcorn velouté with smoked butter",
-    "why": "Sweet corn and smoky butter mirror a buttery, oaked Chardonnay.",
+    "why": "Sweet corn and smoky butter mirror a buttery, oaked white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "American",
@@ -15755,7 +15742,7 @@
   {
     "id": "mushroom-and-gruyere-tart-with-juniper",
     "title": "Mushroom and Gruyère tart with juniper",
-    "why": "Earthy mushrooms and a hint of juniper suit a light, high-acid Pinot.",
+    "why": "Earthy mushrooms and a hint of juniper suit a light, high-acid red.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "French",
@@ -16100,7 +16087,7 @@
   {
     "id": "white-asparagus-with-ham-and-wild-garlic",
     "title": "White asparagus with ham and wild garlic",
-    "why": "Wild garlic's pungency matches a peppery, fresh Grüner.",
+    "why": "Wild garlic's pungency matches a peppery, fresh white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Austrian",
@@ -16206,7 +16193,7 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
@@ -16336,7 +16323,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "Red"
+      "Rosé"
     ]
   },
   {
@@ -16571,7 +16558,7 @@
   {
     "id": "pappa-al-pomodoro-with-black-pepper-and-pecorino",
     "title": "Pappa al pomodoro with black pepper and pecorino",
-    "why": "Tomato, bread and pepper suit a spicy, high-acid Sangiovese.",
+    "why": "Tomato, bread and pepper suit a spicy, high-acid red.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Italian",
@@ -16687,14 +16674,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "Rosé",
-      "White"
+      "Red"
     ]
   },
   {
     "id": "pear-fennel-and-elderflower-salad-with-pecorino",
     "title": "Pear, fennel and elderflower salad with pecorino",
-    "why": "Elderflower and pear echo the perfume of a dry Muscat or Torrontés.",
+    "why": "Elderflower and pear echo the perfume of a dry, aromatic white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Italian",
@@ -16809,14 +16795,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "peach-and-burrata-with-rose-and-pistachio",
     "title": "Peach and burrata with rose and pistachio",
-    "why": "Rose water and ripe peach mirror a floral, fruit-rich Muscat.",
+    "why": "Rose water and ripe peach mirror a floral, fruit-rich white.",
     "course": "starter",
     "mainIngredient": "cheese",
     "cuisine": "Italian",
@@ -16931,7 +16916,7 @@
   {
     "id": "chicken-and-almond-pastilla-triangles-with-orange-blossom",
     "title": "Chicken and almond pastilla triangles with orange blossom",
-    "why": "Orange blossom, cinnamon and sweet almond suit an aromatic, dry Muscat.",
+    "why": "Orange blossom, cinnamon and sweet almond suit an aromatic, dry white.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "Moroccan",
@@ -17056,14 +17041,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "Red",
       "White"
     ]
   },
   {
     "id": "carrot-and-orange-soup-with-coriander-seed-and-orange-blossom",
     "title": "Carrot and orange soup with coriander seed and orange blossom",
-    "why": "Coriander seed and orange blossom make the soup floral enough for a Muscat.",
+    "why": "Coriander seed and orange blossom make the soup floral enough for a white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Moroccan",
@@ -17186,7 +17170,7 @@
   {
     "id": "prawn-and-lychee-salad-with-jasmine-tea-dressing",
     "title": "Prawn and lychee salad with jasmine tea dressing",
-    "why": "Jasmine and lychee reach the perfume of a floral, dry Muscat.",
+    "why": "Jasmine and lychee reach the perfume of a floral, dry white.",
     "course": "starter",
     "mainIngredient": "shellfish",
     "cuisine": "Chinese",
@@ -17307,7 +17291,7 @@
   {
     "id": "spiced-pumpkin-samosas-with-cardamom-and-mango-chutney",
     "title": "Spiced pumpkin samosas with cardamom and mango chutney",
-    "why": "Cardamom and sweet chutney suit a perfumed, spicy Gewürztraminer.",
+    "why": "Cardamom and sweet chutney suit a perfumed, spicy white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Indian",
@@ -17431,13 +17415,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "roast-carrot-dip-with-rose-harissa",
     "title": "Roast carrot dip with rose harissa",
-    "why": "Rose harissa's floral heat is made for an aromatic Gewürztraminer.",
+    "why": "Rose harissa's floral heat is made for an aromatic white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Tunisian",
@@ -17549,14 +17533,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "onion-and-munster-tart-with-cumin",
     "title": "Onion and Munster tart with cumin",
-    "why": "Pungent Munster and cumin are a classic Alsace match for Gewürztraminer.",
+    "why": "Pungent Munster and cumin are a classic match for an aromatic white.",
     "course": "starter",
     "mainIngredient": "cheese",
     "cuisine": "Alsatian",
@@ -17674,14 +17657,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "Red",
       "White"
     ]
   },
   {
     "id": "duck-and-lychee-salad-with-star-anise",
     "title": "Duck and lychee salad with star anise",
-    "why": "Lychee and star anise bring out the spice and perfume of Gewürztraminer.",
+    "why": "Lychee and star anise bring out the spice and perfume of an aromatic white.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "Chinese",
@@ -17798,13 +17780,13 @@
       "soy"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "green-papaya-salad-with-tamarind-and-chilli",
     "title": "Green papaya salad with tamarind and chilli",
-    "why": "Tamarind's sweet sourness and chilli heat want an off-dry, racy Riesling.",
+    "why": "Tamarind's sweet sourness and chilli heat want an off-dry, racy white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Thai",
@@ -17926,13 +17908,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "Sparkling"
+      "White"
     ]
   },
   {
     "id": "pork-larb-with-lemongrass-and-mint",
     "title": "Pork larb with lemongrass and mint",
-    "why": "Lime, chilli and herbs need an off-dry Riesling with bright acidity.",
+    "why": "Lime, chilli and herbs need an off-dry white with bright acidity.",
     "course": "starter",
     "mainIngredient": "pork",
     "cuisine": "Lao",
@@ -18050,13 +18032,13 @@
       "fish"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "smoked-trout-with-star-anise-pickled-pear",
     "title": "Smoked trout with star anise pickled pear",
-    "why": "Sweet pickled pear and smoky fish suit an off-dry, high-acid Riesling.",
+    "why": "Sweet pickled pear and smoky fish suit an off-dry, high-acid white.",
     "course": "starter",
     "mainIngredient": "fish",
     "cuisine": "German",
@@ -18179,14 +18161,13 @@
       "fish"
     ],
     "wineTypes": [
-      "Red",
       "White"
     ]
   },
   {
     "id": "watermelon-gazpacho-with-chilli-and-lemongrass",
     "title": "Watermelon gazpacho with chilli and lemongrass",
-    "why": "Sweet watermelon and chilli heat call for an off-dry Riesling.",
+    "why": "Sweet watermelon and chilli heat call for an off-dry white.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Spanish",
@@ -18307,14 +18288,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "White",
-      "Sparkling"
+      "White"
     ]
   },
   {
     "id": "smoked-duck-breast-with-blackberries-and-hazelnuts",
     "title": "Smoked duck breast with blackberries and hazelnuts",
-    "why": "Smoky duck and dark berries suit a Pinot Noir with some oak.",
+    "why": "Smoky duck and dark berries suit a red with some oak.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "French",
@@ -18428,7 +18408,7 @@
   {
     "id": "grilled-quail-with-pomegranate-molasses",
     "title": "Grilled quail with pomegranate molasses",
-    "why": "Sweet-sour pomegranate and charred quail suit a juicy, oaked Pinot.",
+    "why": "Sweet-sour pomegranate and charred quail suit a juicy, oaked red.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "Lebanese",
@@ -18535,14 +18515,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "White",
       "Red"
     ]
   },
   {
     "id": "beetroot-tarte-tatin-with-goat-s-cheese-and-smoked-salt",
     "title": "Beetroot tarte tatin with goat's cheese and smoked salt",
-    "why": "Sweet, earthy beetroot and smoke suit an oaked Pinot Noir.",
+    "why": "Sweet, earthy beetroot and smoke suit an oaked red.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "French",
@@ -18660,13 +18639,13 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Red"
     ]
   },
   {
     "id": "fennel-sausage-crostini-with-chilli",
     "title": "Fennel sausage crostini with chilli",
-    "why": "Fennel and chilli pick up the spice of a fresh Sangiovese.",
+    "why": "Fennel and chilli pick up the spice of a fresh red.",
     "course": "starter",
     "mainIngredient": "pork",
     "cuisine": "Italian",
@@ -19125,7 +19104,7 @@
   {
     "id": "beef-tartare-with-violet-mustard",
     "title": "Beef tartare with violet mustard",
-    "why": "Violet mustard gives raw beef a floral note that a Touriga Nacional echoes.",
+    "why": "Violet mustard gives raw beef a floral note that a red echoes.",
     "course": "starter",
     "mainIngredient": "red meat",
     "cuisine": "French",
@@ -19357,7 +19336,7 @@
   {
     "id": "carne-cruda-with-lemon-and-dried-rose",
     "title": "Carne cruda with lemon and dried rose",
-    "why": "Raw beef and a hint of rose meet Nebbiolo's floral perfume and grip.",
+    "why": "Raw beef and a hint of rose meet the floral perfume and grip of a firm red.",
     "course": "starter",
     "mainIngredient": "red meat",
     "cuisine": "Piedmontese",
@@ -19473,7 +19452,7 @@
   {
     "id": "beef-and-porcini-agnolotti-with-sage-butter",
     "title": "Beef and porcini agnolotti with sage butter",
-    "why": "Roast meat, porcini and sage suit the tannin and lift of a Nebbiolo.",
+    "why": "Roast meat, porcini and sage suit the tannin and lift of a firm red.",
     "course": "starter",
     "mainIngredient": "red meat",
     "cuisine": "Piedmontese",
@@ -19588,7 +19567,7 @@
   {
     "id": "beef-empanadas-with-cumin-and-raisins",
     "title": "Beef empanadas with cumin and raisins",
-    "why": "Spiced beef and raisins match the ripe dark fruit of a Malbec.",
+    "why": "Spiced beef and raisins match the ripe dark fruit of a red.",
     "course": "starter",
     "mainIngredient": "red meat",
     "cuisine": "Argentinian",
@@ -19712,7 +19691,7 @@
   {
     "id": "provoleta-with-plum-jam-and-oregano",
     "title": "Provoleta with plum jam and oregano",
-    "why": "Melted cheese and dark fruit suit a ripe, plush Malbec.",
+    "why": "Melted cheese and dark fruit suit a ripe, plush red.",
     "course": "starter",
     "mainIngredient": "cheese",
     "cuisine": "Argentinian",
@@ -20489,7 +20468,7 @@
   {
     "id": "panzanella-with-celery-leaf",
     "title": "Panzanella with celery leaf",
-    "why": "Tomato and vinegar-soaked bread want a high-acid Sangiovese.",
+    "why": "Tomato and vinegar-soaked bread want a high-acid red.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "Italian",
@@ -20607,7 +20586,7 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Red"
     ]
   },
   {
@@ -20960,7 +20939,7 @@
   {
     "id": "beetroot-and-blackberry-salad-with-goat-s-curd",
     "title": "Beetroot and blackberry salad with goat's curd",
-    "why": "Blackberries pull earthy beetroot toward the red fruit of a Pinot Noir.",
+    "why": "Blackberries pull earthy beetroot toward the red fruit of a light red.",
     "course": "starter",
     "mainIngredient": "vegetable",
     "cuisine": "British",
@@ -21072,7 +21051,7 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Red"
     ]
   },
   {
@@ -21437,7 +21416,7 @@
   {
     "id": "salade-nicoise-with-herbes-de-provence",
     "title": "Salade niçoise with herbes de Provence",
-    "why": "Tuna, olives and herbs are the classic for a Provençal rosé.",
+    "why": "Tuna, olives and herbs are the classic for a rosé.",
     "course": "starter",
     "mainIngredient": "fish",
     "cuisine": "Provençal",
@@ -21568,13 +21547,13 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
     "id": "egg-and-chive-salad-with-radish-and-white-pepper",
     "title": "Egg and chive salad with radish and white pepper",
-    "why": "Egg, radish and white pepper suit a peppery, fresh Grüner.",
+    "why": "Egg, radish and white pepper suit a peppery, fresh white.",
     "course": "starter",
     "mainIngredient": "egg",
     "cuisine": "Austrian",
@@ -21689,7 +21668,7 @@
   {
     "id": "chicken-satay-with-galangal-and-peanut",
     "title": "Chicken satay with galangal and peanut",
-    "why": "Galangal and sweet peanut sauce suit a spicy, perfumed Gewürztraminer.",
+    "why": "Galangal and sweet peanut sauce suit a spicy, perfumed white.",
     "course": "starter",
     "mainIngredient": "poultry",
     "cuisine": "Indonesian",
@@ -21807,13 +21786,13 @@
       "soy"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "fig-and-goat-s-cheese-salad-with-lavender-honey",
     "title": "Fig and goat's cheese salad with lavender honey",
-    "why": "Lavender and figs match the floral, fruit-rich side of a Muscat.",
+    "why": "Lavender and figs match the floral, fruit-rich side of a white.",
     "course": "starter",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -21928,7 +21907,7 @@
   {
     "id": "beef-cheeks-braised-in-nebbiolo-with-dried-rose",
     "title": "Beef cheeks braised in Nebbiolo with dried rose",
-    "why": "Wine-braised beef and a whisper of rose meet Nebbiolo's tannin, acidity and perfume.",
+    "why": "Wine-braised beef and a whisper of rose meet the tannin, acidity and perfume of a firm red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Piedmontese",
@@ -22057,7 +22036,7 @@
   {
     "id": "tajarin-with-veal-ragu-and-violet",
     "title": "Tajarin with veal ragù and violet",
-    "why": "A meat ragù with a floral edge suits the perfume and grip of Barolo.",
+    "why": "A meat ragù with a floral edge suits the perfume and grip of a firm red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Piedmontese",
@@ -22188,7 +22167,7 @@
   {
     "id": "roast-leg-of-lamb-with-anchovy-rosemary-and-lemon",
     "title": "Roast leg of lamb with anchovy, rosemary and lemon",
-    "why": "Fatty lamb, lemon and herbs need the acidity and firm tannin of a Nebbiolo.",
+    "why": "Fatty lamb, lemon and herbs need the acidity and firm tannin of a structured red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Italian",
@@ -23149,7 +23128,7 @@
   {
     "id": "grilled-flank-steak-with-chimichurri",
     "title": "Grilled flank steak with chimichurri",
-    "why": "Charred beef and herby chimichurri are the classic for a Malbec.",
+    "why": "Charred beef and herby chimichurri are the classic for a red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Argentinian",
@@ -23270,7 +23249,7 @@
   {
     "id": "asado-style-beef-ribs-with-salsa-criolla",
     "title": "Asado-style beef ribs with salsa criolla",
-    "why": "Fatty grilled ribs need the ripe fruit and soft tannin of a Malbec.",
+    "why": "Fatty grilled ribs need the ripe fruit and soft tannin of a red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Argentinian",
@@ -23972,7 +23951,7 @@
   {
     "id": "venison-with-beetroot-and-violet-mustard",
     "title": "Venison with beetroot and violet mustard",
-    "why": "Violet and earthy beetroot meet the floral side of a Touriga Nacional.",
+    "why": "Violet and earthy beetroot meet the floral side of a red.",
     "course": "main",
     "mainIngredient": "game",
     "cuisine": "Portuguese",
@@ -24082,7 +24061,7 @@
   {
     "id": "portuguese-beef-with-red-wine-bay-and-clove",
     "title": "Portuguese beef with red wine, bay and clove",
-    "why": "Bay, clove and wine-braised beef suit a perfumed Douro red.",
+    "why": "Bay, clove and wine-braised beef suit a perfumed, structured red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Portuguese",
@@ -25995,7 +25974,7 @@
   {
     "id": "entrecote-bordelaise",
     "title": "Entrecôte bordelaise",
-    "why": "A red wine and marrow sauce is the classic for a structured Bordeaux.",
+    "why": "A red wine and marrow sauce is the classic for a structured, oaked red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "French",
@@ -26120,7 +26099,7 @@
   {
     "id": "lamb-with-flageolet-beans-and-rosemary",
     "title": "Lamb with flageolet beans and rosemary",
-    "why": "Lamb and herbs suit a classic, oaked Bordeaux blend.",
+    "why": "Lamb and herbs suit a classic, oaked red blend.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "French",
@@ -27187,7 +27166,7 @@
   {
     "id": "sweet-and-sour-sicilian-beef-with-cocoa",
     "title": "Sweet and sour Sicilian beef with cocoa",
-    "why": "Sweet-sour sauce and ripe fruit match a soft, fruity Nero d'Avola.",
+    "why": "Sweet-sour sauce and ripe fruit match a soft, fruity red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Sicilian",
@@ -27777,7 +27756,7 @@
   {
     "id": "pigeon-with-blackberries-and-cocoa",
     "title": "Pigeon with blackberries and cocoa",
-    "why": "Gamey pigeon and dark fruit suit an oaked, fruit-driven Pinot.",
+    "why": "Gamey pigeon and dark fruit suit an oaked, fruit-driven red.",
     "course": "main",
     "mainIngredient": "game",
     "cuisine": "French",
@@ -28001,7 +27980,7 @@
   {
     "id": "osso-buco-with-gremolata-and-fennel-pollen",
     "title": "Osso buco with gremolata and fennel pollen",
-    "why": "Tomato-braised veal and citrus gremolata suit a high-acid Sangiovese.",
+    "why": "Tomato-braised veal and citrus gremolata suit a high-acid red.",
     "course": "main",
     "mainIngredient": "red meat",
     "cuisine": "Milanese",
@@ -28137,7 +28116,7 @@
   {
     "id": "wild-boar-pappardelle-with-tomato-and-rosemary",
     "title": "Wild boar pappardelle with tomato and rosemary",
-    "why": "Gamey boar and tomato want a high-acid, savoury Chianti.",
+    "why": "Gamey boar and tomato want a high-acid, savoury red.",
     "course": "main",
     "mainIngredient": "game",
     "cuisine": "Tuscan",
@@ -28721,7 +28700,7 @@
   {
     "id": "chicken-with-apricots-cinnamon-and-rose",
     "title": "Chicken with apricots, cinnamon and rose",
-    "why": "Rose and apricot reach the perfume and spice of a Gewürztraminer.",
+    "why": "Rose and apricot reach the perfume and spice of a white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Persian",
@@ -28966,7 +28945,7 @@
   {
     "id": "butter-chicken-with-fenugreek",
     "title": "Butter chicken with fenugreek",
-    "why": "Creamy, gently spiced sauce suits a perfumed Gewürztraminer.",
+    "why": "Creamy, gently spiced sauce suits a perfumed white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Indian",
@@ -29091,13 +29070,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "sticky-chicken-wings-with-tamarind-and-chilli",
     "title": "Sticky chicken wings with tamarind and chilli",
-    "why": "Sweet-sour tamarind and chilli heat want an off-dry Riesling.",
+    "why": "Sweet-sour tamarind and chilli heat want an off-dry white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Thai",
@@ -29214,7 +29193,7 @@
   {
     "id": "teriyaki-chicken-with-pickled-ginger",
     "title": "Teriyaki chicken with pickled ginger",
-    "why": "Sweet soy glaze and sharp ginger suit an off-dry, high-acid Riesling.",
+    "why": "Sweet soy glaze and sharp ginger suit an off-dry, high-acid white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Japanese",
@@ -29331,8 +29310,7 @@
       "soy"
     ],
     "wineTypes": [
-      "White",
-      "Red"
+      "White"
     ]
   },
   {
@@ -29681,13 +29659,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "Red"
+      "Rosé"
     ]
   },
   {
     "id": "provencal-chicken-with-olives-fennel-and-pastis",
     "title": "Provençal chicken with olives, fennel and pastis",
-    "why": "Fennel, olive and pastis are a natural match for a Provençal rosé.",
+    "why": "Fennel, olive and pastis are a natural match for a rosé.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Provençal",
@@ -29799,7 +29777,7 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Red"
+      "Rosé"
     ]
   },
   {
@@ -29919,7 +29897,7 @@
   {
     "id": "coq-au-vin-with-smoked-garlic",
     "title": "Coq au vin with smoked garlic",
-    "why": "Wine-braised chicken and mushrooms are the classic for Pinot Noir.",
+    "why": "Wine-braised chicken and mushrooms are the classic for a light, earthy red.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "French",
@@ -30040,7 +30018,7 @@
   {
     "id": "guinea-fowl-with-prunes-and-armagnac",
     "title": "Guinea fowl with prunes and Armagnac",
-    "why": "Prunes and gamey fowl suit a light, earthy Pinot Noir.",
+    "why": "Prunes and gamey fowl suit a light, earthy red.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "French",
@@ -30150,14 +30128,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "Red",
-      "White"
+      "Red"
     ]
   },
   {
     "id": "duck-breast-with-figs-and-balsamic",
     "title": "Duck breast with figs and balsamic",
-    "why": "Ripe figs and balsamic suit an oaked, fruit-driven Pinot.",
+    "why": "Ripe figs and balsamic suit an oaked, fruit-driven red.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Italian",
@@ -30506,7 +30483,7 @@
   {
     "id": "chicken-cacciatore-with-rosemary-and-olives",
     "title": "Chicken cacciatore with rosemary and olives",
-    "why": "Tomato, rosemary and olives want a high-acid Sangiovese.",
+    "why": "Tomato, rosemary and olives want a high-acid red.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Italian",
@@ -30629,7 +30606,7 @@
   {
     "id": "chicken-diavola-with-chilli-and-fennel",
     "title": "Chicken diavola with chilli and fennel",
-    "why": "Chilli and fennel seed pick up the spice of a fresh Sangiovese.",
+    "why": "Chilli and fennel seed pick up the spice of a fresh red.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Italian",
@@ -30734,7 +30711,6 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "White",
       "Red"
     ]
   },
@@ -30955,7 +30931,7 @@
   {
     "id": "chicken-with-orange-blossom-almonds-and-couscous",
     "title": "Chicken with orange blossom, almonds and couscous",
-    "why": "Orange blossom and almond suit a dry, floral Muscat.",
+    "why": "Orange blossom and almond suit a dry, floral white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Moroccan",
@@ -31072,14 +31048,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "White",
-      "Red"
+      "White"
     ]
   },
   {
     "id": "chicken-with-riesling-tarragon-and-grapes",
     "title": "Chicken with Riesling, tarragon and grapes",
-    "why": "Riesling in the sauce and fresh grapes make an obvious match.",
+    "why": "White wine in the sauce and fresh grapes make an obvious match for an aromatic white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Alsatian",
@@ -31194,7 +31169,7 @@
       "sulphites"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
@@ -31321,7 +31296,7 @@
   {
     "id": "chicken-schnitzel-with-horseradish-potato-salad",
     "title": "Chicken schnitzel with horseradish potato salad",
-    "why": "Crisp schnitzel and horseradish suit a peppery Grüner Veltliner.",
+    "why": "Crisp schnitzel and horseradish suit a peppery white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Austrian",
@@ -31446,7 +31421,6 @@
       "sulphites"
     ],
     "wineTypes": [
-      "Red",
       "White"
     ]
   },
@@ -31813,7 +31787,7 @@
   {
     "id": "kung-pao-chicken-with-sichuan-pepper",
     "title": "Kung pao chicken with Sichuan pepper",
-    "why": "Numbing pepper and sweet-sour sauce want an off-dry Riesling.",
+    "why": "Numbing pepper and sweet-sour sauce want an off-dry white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Sichuan",
@@ -32175,7 +32149,7 @@
   {
     "id": "roast-quail-with-lychee-and-ginger",
     "title": "Roast quail with lychee and ginger",
-    "why": "Lychee and ginger echo the perfume of a dry Muscat.",
+    "why": "Lychee and ginger echo the perfume of a dry white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Chinese",
@@ -32280,7 +32254,7 @@
   {
     "id": "chicken-biryani-with-rose-water-and-saffron",
     "title": "Chicken biryani with rose water and saffron",
-    "why": "Rose, saffron and warm spice suit an aromatic Gewürztraminer.",
+    "why": "Rose, saffron and warm spice suit an aromatic white.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Indian",
@@ -32404,7 +32378,7 @@
   {
     "id": "chicken-paella-with-saffron-and-peppers",
     "title": "Chicken paella with saffron and peppers",
-    "why": "Saffron and sweet peppers are a classic for a Spanish rosé.",
+    "why": "Saffron and sweet peppers are a classic for a rosé.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "Spanish",
@@ -32519,7 +32493,7 @@
       "celery"
     ],
     "wineTypes": [
-      "Red"
+      "Rosé"
     ]
   },
   {
@@ -32962,7 +32936,7 @@
   {
     "id": "duck-breast-with-celeriac-and-coffee-jus",
     "title": "Duck breast with celeriac and coffee jus",
-    "why": "Coffee in the jus echoes the toast of a structured Bordeaux.",
+    "why": "Coffee in the jus echoes the toast of a structured red.",
     "course": "main",
     "mainIngredient": "poultry",
     "cuisine": "French",
@@ -33193,7 +33167,7 @@
   {
     "id": "pork-belly-with-apple-and-star-anise-glaze",
     "title": "Pork belly with apple and star anise glaze",
-    "why": "A sweet-spiced glaze and rich pork want an off-dry Riesling.",
+    "why": "A sweet-spiced glaze and rich pork want an off-dry white.",
     "course": "main",
     "mainIngredient": "pork",
     "cuisine": "Modern European",
@@ -33292,13 +33266,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "char-siu-pork-with-five-spice",
     "title": "Char siu pork with five spice",
-    "why": "Sweet, spiced roast pork suits an off-dry, aromatic Riesling.",
+    "why": "Sweet, spiced roast pork suits an off-dry, aromatic white.",
     "course": "main",
     "mainIngredient": "pork",
     "cuisine": "Cantonese",
@@ -33408,13 +33382,13 @@
       "soy"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "pork-and-lychee-stir-fry-with-ginger",
     "title": "Pork and lychee stir-fry with ginger",
-    "why": "Lychee and ginger suit the perfume of Gewürztraminer.",
+    "why": "Lychee and ginger suit the perfume of an aromatic white.",
     "course": "main",
     "mainIngredient": "pork",
     "cuisine": "Chinese",
@@ -33524,13 +33498,13 @@
       "soy"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "schweinsbraten-with-caraway-and-dark-beer",
     "title": "Schweinsbraten with caraway and dark beer",
-    "why": "Caraway and crisp pork crackling suit a peppery Grüner Veltliner.",
+    "why": "Caraway and crisp pork crackling suit a peppery white.",
     "course": "main",
     "mainIngredient": "pork",
     "cuisine": "Austrian",
@@ -33629,7 +33603,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
@@ -34075,13 +34049,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Red"
+      "Rosé"
     ]
   },
   {
     "id": "porchetta-with-fennel-pollen-and-chilli",
     "title": "Porchetta with fennel pollen and chilli",
-    "why": "Fennel and chilli are the classic for a fresh, spicy Sangiovese.",
+    "why": "Fennel and chilli are the classic for a fresh, spicy red.",
     "course": "main",
     "mainIngredient": "pork",
     "cuisine": "Italian",
@@ -34425,7 +34399,7 @@
   {
     "id": "roast-pork-loin-with-cherries-and-thyme",
     "title": "Roast pork loin with cherries and thyme",
-    "why": "Sour cherries lift pork toward a bright Pinot Noir.",
+    "why": "Sour cherries lift pork toward a bright red.",
     "course": "main",
     "mainIngredient": "pork",
     "cuisine": "French",
@@ -35569,7 +35543,7 @@
   {
     "id": "banh-mi-with-lemongrass-pork",
     "title": "Banh mi with lemongrass pork",
-    "why": "Lemongrass, chilli and pickles suit an off-dry Riesling.",
+    "why": "Lemongrass, chilli and pickles suit an off-dry white.",
     "course": "main",
     "mainIngredient": "pork",
     "cuisine": "Vietnamese",
@@ -35692,8 +35666,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Red"
+      "White"
     ]
   },
   {
@@ -36052,7 +36025,7 @@
   {
     "id": "tomato-and-burrata-pizza-with-wild-fennel",
     "title": "Tomato and burrata pizza with wild fennel",
-    "why": "Tomato and fennel seed suit a bright, savoury Sangiovese.",
+    "why": "Tomato and fennel seed suit a bright, savoury red.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Neapolitan",
@@ -36163,14 +36136,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Red"
     ]
   },
   {
     "id": "polenta-with-porcini-ragu-and-black-pepper",
     "title": "Polenta with porcini ragù and black pepper",
-    "why": "Porcini, tomato and pepper suit a spicy, fresh Sangiovese.",
+    "why": "Porcini, tomato and pepper suit a spicy, fresh red.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Italian",
@@ -36788,7 +36760,7 @@
   {
     "id": "sweet-potato-and-chickpea-curry-with-cardamom",
     "title": "Sweet potato and chickpea curry with cardamom",
-    "why": "Coconut, cardamom and sweet potato suit a perfumed Gewürztraminer.",
+    "why": "Coconut, cardamom and sweet potato suit a perfumed white.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Indian",
@@ -36910,13 +36882,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
     "id": "thai-red-curry-with-tofu-and-lychee",
     "title": "Thai red curry with tofu and lychee",
-    "why": "Lychee and curry spice reach the perfume of Gewürztraminer.",
+    "why": "Lychee and curry spice reach the perfume of an aromatic white.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Thai",
@@ -37036,14 +37008,13 @@
       "soy"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "pad-thai-with-tofu-and-tamarind",
     "title": "Pad thai with tofu and tamarind",
-    "why": "Sweet-sour tamarind sauce wants an off-dry Riesling.",
+    "why": "Sweet-sour tamarind sauce wants an off-dry white.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Thai",
@@ -37184,7 +37155,7 @@
   {
     "id": "sichuan-fish-fragrant-aubergine",
     "title": "Sichuan fish-fragrant aubergine",
-    "why": "Sweet, sour and numbing heat suit an off-dry Riesling.",
+    "why": "Sweet, sour and numbing heat suit an off-dry white.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Sichuan",
@@ -37318,7 +37289,6 @@
       "soy"
     ],
     "wineTypes": [
-      "Rosé",
       "White"
     ]
   },
@@ -37697,7 +37667,7 @@
   {
     "id": "ratatouille-with-herbes-de-provence",
     "title": "Ratatouille with herbes de Provence",
-    "why": "Sun-ripe vegetables and herbs are a natural for Provençal rosé.",
+    "why": "Sun-ripe vegetables and herbs are a natural for a rosé.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Provençal",
@@ -37937,7 +37907,6 @@
       "egg"
     ],
     "wineTypes": [
-      "White",
       "Rosé"
     ]
   },
@@ -38066,7 +38035,7 @@
   {
     "id": "beetroot-risotto-with-goat-s-cheese-and-horseradish",
     "title": "Beetroot risotto with goat's cheese and horseradish",
-    "why": "Earthy beetroot suits a light Pinot; horseradish adds bite.",
+    "why": "Earthy beetroot suits a light red; horseradish adds bite.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Modern European",
@@ -38185,14 +38154,13 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Red"
     ]
   },
   {
     "id": "mushroom-bourguignon-with-cloves",
     "title": "Mushroom bourguignon with cloves",
-    "why": "Wine-braised mushrooms are made for a light Pinot Noir.",
+    "why": "Wine-braised mushrooms are made for a light, earthy red.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "French",
@@ -38322,7 +38290,7 @@
   {
     "id": "wild-mushroom-and-chestnut-pie-with-smoked-salt",
     "title": "Wild mushroom and chestnut pie with smoked salt",
-    "why": "Earthy mushrooms and smoke suit an oaked Pinot Noir.",
+    "why": "Earthy mushrooms and smoke suit an oaked red.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "British",
@@ -39042,7 +39010,7 @@
   {
     "id": "carrot-and-apricot-tagine-with-orange-blossom",
     "title": "Carrot and apricot tagine with orange blossom",
-    "why": "Orange blossom and apricot echo a floral, fruity Muscat.",
+    "why": "Orange blossom and apricot echo a floral, fruity white.",
     "course": "main",
     "mainIngredient": "vegetable",
     "cuisine": "Moroccan",
@@ -40442,7 +40410,7 @@
   {
     "id": "arctic-char-with-lentils-and-pumpkin-seed-oil",
     "title": "Arctic char with lentils and pumpkin seed oil",
-    "why": "Toasty seed oil and earthy lentils suit a peppery Grüner.",
+    "why": "Toasty seed oil and earthy lentils suit a peppery white.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Austrian",
@@ -41013,13 +40981,13 @@
       "fish"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
     "id": "thai-steamed-fish-with-lime-chilli-and-lemongrass",
     "title": "Thai steamed fish with lime, chilli and lemongrass",
-    "why": "Lime, chilli and garlic want an off-dry, high-acid Riesling.",
+    "why": "Lime, chilli and garlic want an off-dry, high-acid white.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Thai",
@@ -41136,14 +41104,13 @@
       "fish"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "fish-curry-with-coconut-and-curry-leaves",
     "title": "Fish curry with coconut and curry leaves",
-    "why": "Curry leaves and coconut suit a perfumed Gewürztraminer.",
+    "why": "Curry leaves and coconut suit a perfumed white.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "Keralan",
@@ -41260,8 +41227,7 @@
       "fish"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
@@ -41373,7 +41339,7 @@
   {
     "id": "tuna-steak-with-lentils-and-juniper",
     "title": "Tuna steak with lentils and juniper",
-    "why": "Meaty tuna and earthy lentils suit a light Pinot Noir.",
+    "why": "Meaty tuna and earthy lentils suit a light red.",
     "course": "main",
     "mainIngredient": "fish",
     "cuisine": "French",
@@ -41482,7 +41448,7 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Red"
     ]
   },
   {
@@ -42298,7 +42264,7 @@
   {
     "id": "pissaladiere-with-anchovy-and-oregano",
     "title": "Pissaladière with anchovy and oregano",
-    "why": "Sweet onion, anchovy and olive are a classic for Provençal rosé.",
+    "why": "Sweet onion, anchovy and olive are a classic for a rosé.",
     "course": "snack",
     "mainIngredient": "vegetable",
     "cuisine": "Provençal",
@@ -42408,13 +42374,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
     "id": "pan-con-tomate-with-jamon-and-smoked-paprika",
     "title": "Pan con tomate with jamón and smoked paprika",
-    "why": "Tomato, ham and smoky paprika suit a dry Spanish rosé.",
+    "why": "Tomato, ham and smoky paprika suit a dry rosé.",
     "course": "snack",
     "mainIngredient": "pork",
     "cuisine": "Spanish",
@@ -42523,7 +42489,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -42630,7 +42596,6 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "White",
       "Rosé"
     ]
   },
@@ -42746,7 +42711,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -43749,7 +43714,7 @@
   {
     "id": "halloumi-fries-with-za-atar-and-rose-honey",
     "title": "Halloumi fries with za'atar and rose honey",
-    "why": "Rose-scented honey and salty cheese suit a floral Muscat.",
+    "why": "Rose-scented honey and salty cheese suit a floral white.",
     "course": "snack",
     "mainIngredient": "cheese",
     "cuisine": "Lebanese",
@@ -43860,14 +43825,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "onion-bhajis-with-nigella-and-mango-chutney",
     "title": "Onion bhajis with nigella and mango chutney",
-    "why": "Spiced fritters and sweet chutney suit an aromatic Gewürztraminer.",
+    "why": "Spiced fritters and sweet chutney suit an aromatic white.",
     "course": "snack",
     "mainIngredient": "vegetable",
     "cuisine": "Indian",
@@ -43978,14 +43942,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Rosé",
       "White"
     ]
   },
   {
     "id": "vegetable-pakoras-with-tamarind-chutney",
     "title": "Vegetable pakoras with tamarind chutney",
-    "why": "Spiced batter and sweet-sour chutney suit a perfumed Gewürztraminer.",
+    "why": "Spiced batter and sweet-sour chutney suit a perfumed white.",
     "course": "snack",
     "mainIngredient": "vegetable",
     "cuisine": "Indian",
@@ -44109,7 +44072,7 @@
   {
     "id": "thai-fish-cakes-with-lime-leaf-and-cucumber-relish",
     "title": "Thai fish cakes with lime leaf and cucumber relish",
-    "why": "Lime leaf and sweet-sour relish suit an off-dry Riesling.",
+    "why": "Lime leaf and sweet-sour relish suit an off-dry white.",
     "course": "snack",
     "mainIngredient": "fish",
     "cuisine": "Thai",
@@ -44234,14 +44197,13 @@
       "fish"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "pork-gyoza-with-yuzu-dipping-sauce",
     "title": "Pork gyoza with yuzu dipping sauce",
-    "why": "Juicy dumplings and citrus suit an off-dry, high-acid Riesling.",
+    "why": "Juicy dumplings and citrus suit an off-dry, high-acid white.",
     "course": "snack",
     "mainIngredient": "pork",
     "cuisine": "Japanese",
@@ -44358,7 +44320,7 @@
       "soy"
     ],
     "wineTypes": [
-      "Red"
+      "White"
     ]
   },
   {
@@ -44482,7 +44444,7 @@
   {
     "id": "mushroom-arancini-with-smoked-scamorza",
     "title": "Mushroom arancini with smoked scamorza",
-    "why": "Earthy mushroom and smoky cheese suit a light, earthy Pinot.",
+    "why": "Earthy mushroom and smoky cheese suit a light, earthy red.",
     "course": "snack",
     "mainIngredient": "vegetable",
     "cuisine": "Italian",
@@ -44598,7 +44560,7 @@
   {
     "id": "saffron-arancini-with-ragu",
     "title": "Saffron arancini with ragù",
-    "why": "Meaty filling and tomato suit a savoury Sangiovese.",
+    "why": "Meaty filling and tomato suit a savoury red.",
     "course": "snack",
     "mainIngredient": "red meat",
     "cuisine": "Sicilian",
@@ -44840,7 +44802,7 @@
   {
     "id": "finocchiona-with-grissini",
     "title": "Finocchiona with grissini",
-    "why": "Fennel salami suits a spicy, fresh Sangiovese.",
+    "why": "Fennel salami suits a spicy, fresh red.",
     "course": "snack",
     "mainIngredient": "pork",
     "cuisine": "Tuscan",
@@ -44927,8 +44889,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "Red",
-      "Rosé"
+      "Red"
     ]
   },
   {
@@ -45044,7 +45005,7 @@
   {
     "id": "choripan-with-smoked-paprika-chimichurri",
     "title": "Choripán with smoked paprika chimichurri",
-    "why": "Grilled sausage and herbs are a natural for Malbec.",
+    "why": "Grilled sausage and herbs are a natural for a red.",
     "course": "snack",
     "mainIngredient": "pork",
     "cuisine": "Argentinian",
@@ -45894,7 +45855,7 @@
   {
     "id": "venison-sausage-rolls-with-cranberry",
     "title": "Venison sausage rolls with cranberry",
-    "why": "Gamey sausage and tart cranberry suit an oaked Pinot.",
+    "why": "Gamey sausage and tart cranberry suit an oaked red.",
     "course": "snack",
     "mainIngredient": "game",
     "cuisine": "British",
@@ -46001,7 +45962,7 @@
   {
     "id": "crottin-de-chavignol-with-celery-and-celery-salt",
     "title": "Crottin de Chavignol with celery and celery salt",
-    "why": "Tangy goat's cheese is the classic for a lean Sauvignon Blanc.",
+    "why": "Tangy goat's cheese is the classic for a lean white.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -46711,7 +46672,7 @@
   {
     "id": "munster-with-cumin-and-warm-potatoes",
     "title": "Munster with cumin and warm potatoes",
-    "why": "Pungent Munster and cumin are the classic for Gewürztraminer.",
+    "why": "Pungent Munster and cumin are the classic for an aromatic white.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "Alsatian",
@@ -46804,7 +46765,7 @@
   {
     "id": "epoisses-with-gingerbread",
     "title": "Époisses with gingerbread",
-    "why": "Rich washed-rind cheese and spiced gingerbread suit an aromatic Gewürztraminer.",
+    "why": "Rich washed-rind cheese and spiced gingerbread suit an aromatic white.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -46884,14 +46845,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "taleggio-with-crystallised-ginger-and-walnuts",
     "title": "Taleggio with crystallised ginger and walnuts",
-    "why": "Ginger and creamy washed-rind cheese suit a perfumed Gewürztraminer.",
+    "why": "Ginger and creamy washed-rind cheese suit a perfumed white.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "Italian",
@@ -46987,7 +46947,7 @@
   {
     "id": "baked-camembert-with-apricot-and-rosemary",
     "title": "Baked Camembert with apricot and rosemary",
-    "why": "Creamy cheese and sweet apricot suit an off-dry Riesling.",
+    "why": "Creamy cheese and sweet apricot suit an off-dry white.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -47090,7 +47050,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "Rosé"
+      "White"
     ]
   },
   {
@@ -47392,7 +47352,7 @@
   {
     "id": "aged-mimolette-with-walnuts-and-coffee",
     "title": "Aged Mimolette with walnuts and coffee",
-    "why": "Nutty aged cheese and coffee echo the toast of a Bordeaux.",
+    "why": "Nutty aged cheese and coffee echo the toast of a red.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -47593,7 +47553,7 @@
   {
     "id": "aged-provolone-with-black-cherry-jam",
     "title": "Aged provolone with black cherry jam",
-    "why": "Sharp provolone and dark cherry match a ripe, plush Malbec.",
+    "why": "Sharp provolone and dark cherry match a ripe, plush red.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "Italian",
@@ -47790,7 +47750,7 @@
   {
     "id": "pecorino-toscano-with-chestnut-honey-and-walnuts",
     "title": "Pecorino Toscano with chestnut honey and walnuts",
-    "why": "Bitter-sweet chestnut honey and pecorino suit a savoury Sangiovese.",
+    "why": "Bitter-sweet chestnut honey and pecorino suit a savoury red.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "Tuscan",
@@ -48089,7 +48049,7 @@
   {
     "id": "castelmagno-with-honey-and-dried-rose",
     "title": "Castelmagno with honey and dried rose",
-    "why": "Crumbly aged cheese and rose meet Nebbiolo's grip and perfume.",
+    "why": "Crumbly aged cheese and rose meet the grip and perfume of a firm red.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "Piedmontese",
@@ -48292,7 +48252,7 @@
       "dairy"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -48395,7 +48355,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "White"
+      "Rosé"
     ]
   },
   {
@@ -48503,7 +48463,7 @@
   {
     "id": "roquefort-with-honeycomb-and-walnuts",
     "title": "Roquefort with honeycomb and walnuts",
-    "why": "Salty blue cheese and honey are the classic for Sauternes.",
+    "why": "Salty blue cheese and honey are the classic for a sweet white.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -48600,14 +48560,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "stilton-with-crystallised-ginger",
     "title": "Stilton with crystallised ginger",
-    "why": "Stilton and ginger suit a rich, sweet Port.",
+    "why": "Stilton and ginger suit a rich, sweet fortified wine.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "British",
@@ -48693,14 +48652,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Fortified"
     ]
   },
   {
     "id": "stilton-with-walnuts-and-port-soaked-figs",
     "title": "Stilton with walnuts and port-soaked figs",
-    "why": "Port-soaked figs build a bridge to a sweet, fortified red.",
+    "why": "Figs soaked in fortified wine build a bridge to a sweet, fortified red.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "British",
@@ -48796,7 +48754,7 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Fortified"
     ]
   },
   {
@@ -48906,7 +48864,7 @@
   {
     "id": "valdeon-with-dates-and-orange-zest",
     "title": "Valdeón with dates and orange zest",
-    "why": "Strong blue cheese and dates match a dense, sweet sherry.",
+    "why": "Strong blue cheese and dates match a dense, sweet fortified wine.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "Spanish",
@@ -48992,14 +48950,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Fortified"
     ]
   },
   {
     "id": "fourme-d-ambert-with-peaches-and-lavender",
     "title": "Fourme d'Ambert with peaches and lavender",
-    "why": "Mild blue and lavender-scented peach suit a sweet, floral Moscato.",
+    "why": "Mild blue and lavender-scented peach suit a sweet, floral sparkling wine.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -49093,14 +49050,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
       "Sparkling"
     ]
   },
   {
     "id": "cambozola-with-grapes-and-celery",
     "title": "Cambozola with grapes and celery",
-    "why": "Mild, creamy blue and grapes suit an off-dry Riesling.",
+    "why": "Mild, creamy blue and grapes suit an off-dry white.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "German",
@@ -49190,14 +49146,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "brie-with-cranberries-and-thyme",
     "title": "Brie with cranberries and thyme",
-    "why": "Soft brie and tart cranberry suit a light Pinot Noir.",
+    "why": "Soft brie and tart cranberry suit a light red.",
     "course": "cheese",
     "mainIngredient": "cheese",
     "cuisine": "French",
@@ -49298,7 +49253,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "White"
+      "Red"
     ]
   },
   {
@@ -49848,7 +49803,7 @@
   {
     "id": "chocolate-fondant-with-cherries-and-star-anise",
     "title": "Chocolate fondant with cherries and star anise",
-    "why": "Molten chocolate needs a sweet, rich Port; star anise follows its spice.",
+    "why": "Molten chocolate needs a sweet, rich fortified wine; star anise follows its spice.",
     "course": "dessert",
     "mainIngredient": "chocolate",
     "cuisine": "French",
@@ -49966,7 +49921,6 @@
       "gluten"
     ],
     "wineTypes": [
-      "Red",
       "Fortified"
     ]
   },
@@ -50093,7 +50047,7 @@
   {
     "id": "black-forest-trifle-with-cardamom-cream",
     "title": "Black Forest trifle with cardamom cream",
-    "why": "Cherry and chocolate suit a ruby Port; cardamom lifts the cream.",
+    "why": "Cherry and chocolate suit a ruby fortified wine; cardamom lifts the cream.",
     "course": "dessert",
     "mainIngredient": "chocolate",
     "cuisine": "German",
@@ -50206,13 +50160,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White"
+      "Fortified"
     ]
   },
   {
     "id": "plum-crumble-with-ground-ginger",
     "title": "Plum crumble with ground ginger",
-    "why": "Baked plums and warm ginger suit a sweet, fruity Port.",
+    "why": "Baked plums and warm ginger suit a sweet, fruity fortified wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "British",
@@ -50321,14 +50275,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Fortified"
     ]
   },
   {
     "id": "chocolate-and-chestnut-torte-with-clove",
     "title": "Chocolate and chestnut torte with clove",
-    "why": "Earthy chestnut and chocolate suit a rich Madeira or Port.",
+    "why": "Earthy chestnut and chocolate suit a rich, sweet fortified wine.",
     "course": "dessert",
     "mainIngredient": "chocolate",
     "cuisine": "Italian",
@@ -50446,14 +50399,13 @@
       "egg"
     ],
     "wineTypes": [
-      "Fortified",
-      "Red"
+      "Fortified"
     ]
   },
   {
     "id": "fig-and-walnut-tart-with-port-glaze",
     "title": "Fig and walnut tart with port glaze",
-    "why": "Port in the glaze echoes the wine itself.",
+    "why": "The fortified wine in the glaze echoes the one in the glass.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Portuguese",
@@ -50572,13 +50524,13 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Fortified"
     ]
   },
   {
     "id": "mince-pies-with-allspice",
     "title": "Mince pies with allspice",
-    "why": "Dried fruit and warm spice are the classic for a tawny Port.",
+    "why": "Dried fruit and warm spice are the classic for a tawny fortified wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "British",
@@ -50680,14 +50632,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Fortified"
     ]
   },
   {
     "id": "chocolate-mousse-with-smoked-salt",
     "title": "Chocolate mousse with smoked salt",
-    "why": "Smoky salt and dark chocolate suit a sweet, powerful Port.",
+    "why": "Smoky salt and dark chocolate suit a sweet, powerful fortified wine.",
     "course": "dessert",
     "mainIngredient": "chocolate",
     "cuisine": "French",
@@ -50793,14 +50744,13 @@
       "egg"
     ],
     "wineTypes": [
-      "Red",
       "Fortified"
     ]
   },
   {
     "id": "cherry-frangipane-tart-with-tonka-bean",
     "title": "Cherry frangipane tart with tonka bean",
-    "why": "Tonka's vanilla-almond warmth and cherry suit a sweet Port.",
+    "why": "Tonka's vanilla-almond warmth and cherry suit a sweet fortified wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -50918,13 +50868,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "White"
+      "Fortified"
     ]
   },
   {
     "id": "red-wine-poached-pears-with-cinnamon-and-chocolate",
     "title": "Red wine poached pears with cinnamon and chocolate",
-    "why": "Wine-poached pears and chocolate suit a ruby Port.",
+    "why": "Wine-poached pears and chocolate suit a ruby fortified wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -51028,14 +50978,13 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Fortified"
     ]
   },
   {
     "id": "cherry-brownies-with-cocoa-nibs",
     "title": "Cherry brownies with cocoa nibs",
-    "why": "Fudgy chocolate and cherry suit a rich, sweet Port.",
+    "why": "Fudgy chocolate and cherry suit a rich, sweet fortified wine.",
     "course": "dessert",
     "mainIngredient": "chocolate",
     "cuisine": "American",
@@ -51155,8 +51104,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "Fortified",
-      "Red"
+      "Fortified"
     ]
   },
   {
@@ -52602,7 +52550,7 @@
   {
     "id": "creme-brulee-with-cardamom",
     "title": "Crème brûlée with cardamom",
-    "why": "Rich custard and caramel are the classic for Sauternes; cardamom adds lift.",
+    "why": "Rich custard and caramel are the classic for a sweet white; cardamom adds lift.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -52701,14 +52649,13 @@
       "egg"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "pear-tarte-tatin-with-ginger",
     "title": "Pear tarte tatin with ginger",
-    "why": "Caramelised pear and ginger suit a sweet, golden Sauternes.",
+    "why": "Caramelised pear and ginger suit a sweet, golden white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -52810,14 +52757,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "roast-apricots-with-honey-and-vanilla",
     "title": "Roast apricots with honey and vanilla",
-    "why": "Honeyed apricots echo the flavours of Sauternes.",
+    "why": "Honeyed apricots echo the flavours of a sweet white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -52918,8 +52864,7 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
@@ -53754,7 +53699,7 @@
   {
     "id": "honey-and-almond-cake-with-orange-blossom",
     "title": "Honey and almond cake with orange blossom",
-    "why": "Honeyed almond cake suits a sweet, golden Sauternes.",
+    "why": "Honeyed almond cake suits a sweet, golden white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Greek",
@@ -53975,7 +53920,7 @@
   {
     "id": "peach-melba-with-rose",
     "title": "Peach melba with rose",
-    "why": "Peach and rose echo the floral sweetness of Moscato.",
+    "why": "Peach and rose echo the floral sweetness of sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -54078,14 +54023,13 @@
       "egg"
     ],
     "wineTypes": [
-      "White",
       "Sparkling"
     ]
   },
   {
     "id": "strawberries-with-lavender-sabayon",
     "title": "Strawberries with lavender sabayon",
-    "why": "Lavender and strawberry suit a floral, sweet Moscato.",
+    "why": "Lavender and strawberry suit a floral, sweet sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Italian",
@@ -54187,14 +54131,13 @@
       "sulphites"
     ],
     "wineTypes": [
-      "Sparkling",
-      "White"
+      "Sparkling"
     ]
   },
   {
     "id": "apricot-and-orange-blossom-galette",
     "title": "Apricot and orange blossom galette",
-    "why": "Apricot and orange blossom echo the perfume of a sweet Muscat.",
+    "why": "Apricot and orange blossom echo the perfume of a sweet white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -54297,14 +54240,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "lychee-and-rose-panna-cotta",
     "title": "Lychee and rose panna cotta",
-    "why": "Lychee and rose reach the floral perfume of Moscato.",
+    "why": "Lychee and rose reach the floral perfume of sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Italian",
@@ -54412,14 +54354,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
       "Sparkling"
     ]
   },
   {
     "id": "jasmine-tea-panna-cotta-with-peaches",
     "title": "Jasmine tea panna cotta with peaches",
-    "why": "Jasmine and peach suit a floral, sweet Moscato.",
+    "why": "Jasmine and peach suit a floral, sweet sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Chinese",
@@ -54520,15 +54461,13 @@
       "dairy"
     ],
     "wineTypes": [
-      "Sparkling",
-      "White",
-      "Rosé"
+      "Sparkling"
     ]
   },
   {
     "id": "white-peach-and-lemon-verbena-granita",
     "title": "White peach and lemon verbena granita",
-    "why": "Peach and verbena suit a light, floral Moscato.",
+    "why": "Peach and verbena suit a light, floral sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Italian",
@@ -54628,14 +54567,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Sparkling",
-      "White"
+      "Sparkling"
     ]
   },
   {
     "id": "melon-with-honey-and-lemon-balm",
     "title": "Melon with honey and lemon balm",
-    "why": "Sweet melon and lemon balm suit a floral Moscato.",
+    "why": "Sweet melon and lemon balm suit a floral sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Italian",
@@ -54727,14 +54665,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Sparkling",
-      "Rosé"
+      "Sparkling"
     ]
   },
   {
     "id": "pear-and-chamomile-tart",
     "title": "Pear and chamomile tart",
-    "why": "Chamomile and pear suit a floral, sweet Moscato.",
+    "why": "Chamomile and pear suit a floral, sweet sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -54844,14 +54781,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Sparkling"
     ]
   },
   {
     "id": "orange-blossom-madeleines",
     "title": "Orange blossom madeleines",
-    "why": "Light, floral madeleines suit a sweet, sparkling Moscato.",
+    "why": "Light, floral madeleines suit a sweet sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -54963,14 +54899,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "Sparkling"
     ]
   },
   {
     "id": "raspberry-and-rose-eton-mess",
     "title": "Raspberry and rose Eton mess",
-    "why": "Rose and raspberry suit a floral, sweet Moscato.",
+    "why": "Rose and raspberry suit a floral, sweet sparkling wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "British",
@@ -55074,13 +55009,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "White"
+      "Sparkling"
     ]
   },
   {
     "id": "vanilla-ice-cream-with-px-soaked-raisins-and-cinnamon",
     "title": "Vanilla ice cream with PX-soaked raisins and cinnamon",
-    "why": "A classic Andalusian dessert built around Pedro Ximénez.",
+    "why": "A classic Andalusian dessert, built for a dense, sweet fortified wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Spanish",
@@ -55179,7 +55114,7 @@
       "sulphites"
     ],
     "wineTypes": [
-      "White"
+      "Fortified"
     ]
   },
   {
@@ -55301,7 +55236,7 @@
   {
     "id": "coffee-and-walnut-cake",
     "title": "Coffee and walnut cake",
-    "why": "Coffee and walnut suit a dense, sweet sherry.",
+    "why": "Coffee and walnut suit a dense, sweet fortified wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "British",
@@ -55422,13 +55357,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "White"
+      "Fortified"
     ]
   },
   {
     "id": "chocolate-and-hazelnut-tart-with-tonka-bean",
     "title": "Chocolate and hazelnut tart with tonka bean",
-    "why": "Rich chocolate and toasted nuts suit a dense, sweet sherry.",
+    "why": "Rich chocolate and toasted nuts suit a dense, sweet fortified wine.",
     "course": "dessert",
     "mainIngredient": "chocolate",
     "cuisine": "Italian",
@@ -55542,8 +55477,7 @@
       "nuts"
     ],
     "wineTypes": [
-      "Fortified",
-      "Red"
+      "Fortified"
     ]
   },
   {
@@ -55671,7 +55605,7 @@
   {
     "id": "turron-semifreddo-with-cinnamon",
     "title": "Turrón semifreddo with cinnamon",
-    "why": "Honeyed nougat and cinnamon suit a sweet, dense sherry.",
+    "why": "Honeyed nougat and cinnamon suit a sweet, dense fortified wine.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Spanish",
@@ -55774,7 +55708,7 @@
       "nuts"
     ],
     "wineTypes": [
-      "White"
+      "Fortified"
     ]
   },
   {
@@ -56033,7 +55967,7 @@
   {
     "id": "apple-strudel-with-raisins-and-cinnamon",
     "title": "Apple strudel with raisins and cinnamon",
-    "why": "Apple and cinnamon suit an off-dry Riesling with bright acidity.",
+    "why": "Apple and cinnamon suit an off-dry white with bright acidity.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Austrian",
@@ -56156,7 +56090,7 @@
   {
     "id": "green-apple-and-lime-sorbet",
     "title": "Green apple and lime sorbet",
-    "why": "Crisp apple and lime mirror an off-dry Riesling.",
+    "why": "Crisp apple and lime mirror an off-dry white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "German",
@@ -56249,15 +56183,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Sparkling",
-      "Rosé",
       "White"
     ]
   },
   {
     "id": "plum-kuchen-with-cardamom",
     "title": "Plum Kuchen with cardamom",
-    "why": "Tart plums and cardamom suit an off-dry, fruity Riesling.",
+    "why": "Tart plums and cardamom suit an off-dry, fruity white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "German",
@@ -56367,14 +56299,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "rhubarb-and-ginger-crumble",
     "title": "Rhubarb and ginger crumble",
-    "why": "Tart rhubarb and ginger suit an off-dry Riesling.",
+    "why": "Tart rhubarb and ginger suit an off-dry white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "British",
@@ -56483,14 +56414,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "pear-and-elderflower-jelly",
     "title": "Pear and elderflower jelly",
-    "why": "Pear and elderflower echo a floral, off-dry Riesling.",
+    "why": "Pear and elderflower echo a floral, off-dry white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "British",
@@ -56581,15 +56511,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "Sparkling",
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "apricot-dumplings-with-buttered-crumbs-and-vanilla",
     "title": "Apricot dumplings with buttered crumbs and vanilla",
-    "why": "Apricot and vanilla suit an off-dry Austrian Riesling.",
+    "why": "Apricot and vanilla suit an off-dry white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Austrian",
@@ -56713,14 +56641,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "lemon-drizzle-cake-with-lemongrass",
     "title": "Lemon drizzle cake with lemongrass",
-    "why": "Zesty lemon and lemongrass suit an off-dry, racy Riesling.",
+    "why": "Zesty lemon and lemongrass suit an off-dry, racy white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "British",
@@ -56833,14 +56760,13 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
     "id": "peach-and-passion-fruit-pavlova-with-lime-leaf",
     "title": "Peach and passion fruit pavlova with lime leaf",
-    "why": "Juicy peach and tart passion fruit suit an off-dry Riesling.",
+    "why": "Juicy peach and tart passion fruit suit an off-dry white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Australian",
@@ -57604,7 +57530,7 @@
   {
     "id": "apple-tarte-fine-with-lemon-thyme",
     "title": "Apple tarte fine with lemon thyme",
-    "why": "A thin apple tart suits a sweet, racy Riesling.",
+    "why": "A thin apple tart suits a sweet, racy white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "French",
@@ -57705,8 +57631,7 @@
       "gluten"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {
@@ -57821,7 +57746,7 @@
   {
     "id": "lychee-and-crystallised-ginger-sorbet",
     "title": "Lychee and crystallised ginger sorbet",
-    "why": "Lychee and ginger echo the perfume and spice of Gewürztraminer.",
+    "why": "Lychee and ginger echo the perfume and spice of an aromatic white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Chinese",
@@ -57914,15 +57839,13 @@
     ],
     "allergens": [],
     "wineTypes": [
-      "White",
-      "Rosé",
-      "Sparkling"
+      "White"
     ]
   },
   {
     "id": "rose-and-pistachio-baklava",
     "title": "Rose and pistachio baklava",
-    "why": "Rose syrup and pistachio suit an aromatic, sweet Gewürztraminer.",
+    "why": "Rose syrup and pistachio suit an aromatic, sweet white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Turkish",
@@ -58035,15 +57958,13 @@
       "nuts"
     ],
     "wineTypes": [
-      "White",
-      "Rosé",
-      "Sparkling"
+      "White"
     ]
   },
   {
     "id": "mango-panna-cotta-with-cardamom",
     "title": "Mango panna cotta with cardamom",
-    "why": "Mango and cardamom suit a perfumed, sweet Gewürztraminer.",
+    "why": "Mango and cardamom suit a perfumed, sweet white.",
     "course": "dessert",
     "mainIngredient": "fruit",
     "cuisine": "Indian",
@@ -58143,8 +58064,7 @@
       "dairy"
     ],
     "wineTypes": [
-      "White",
-      "Rosé"
+      "White"
     ]
   },
   {

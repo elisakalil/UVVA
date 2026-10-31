@@ -9,6 +9,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/BundledContentTests.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/BundledContentTests.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContactKeyTests.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.swift.o",

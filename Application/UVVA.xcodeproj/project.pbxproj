@@ -13,6 +13,7 @@
 		B10000000000000000000004 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000014 /* Storage */; };
 		B10000000000000000000005 /* Quizz in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000015 /* Quizz */; };
 		B10000000000000000000006 /* Onboarding in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000016 /* Onboarding */; };
+		B10000000000000000000007 /* You in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000017 /* You */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 				B10000000000000000000004 /* Storage in Frameworks */,
 				B10000000000000000000005 /* Quizz in Frameworks */,
 				B10000000000000000000006 /* Onboarding in Frameworks */,
+				B10000000000000000000007 /* You in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +101,7 @@
 				B10000000000000000000014 /* Storage */,
 				B10000000000000000000015 /* Quizz */,
 				B10000000000000000000016 /* Onboarding */,
+				B10000000000000000000017 /* You */,
 			);
 			productName = UVVA;
 			productReference = A10000000000000000000004 /* UVVA.app */;
@@ -137,6 +140,7 @@
 				B10000000000000000000025 /* XCLocalSwiftPackageReference "Packages/Storage" */,
 				B10000000000000000000026 /* XCLocalSwiftPackageReference "Packages/Features/Quizz" */,
 				B10000000000000000000027 /* XCLocalSwiftPackageReference "Packages/Features/Onboarding" */,
+				B10000000000000000000028 /* XCLocalSwiftPackageReference "Packages/Features/You" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A10000000000000000000003 /* Products */;
@@ -334,6 +338,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Features/Onboarding;
 		};
+		B10000000000000000000028 /* XCLocalSwiftPackageReference "Packages/Features/You" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Features/You;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -360,6 +368,10 @@
 		B10000000000000000000016 /* Onboarding */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Onboarding;
+		};
+		B10000000000000000000017 /* You */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = You;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

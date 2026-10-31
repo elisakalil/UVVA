@@ -1,5 +1,5 @@
 {
-  "version": "890fa5c07b35b4cc",
+  "version": "e95e6fb78254605e",
   "counts": {
     "wines": 10000,
     "recipes": 500,
@@ -10,7 +10,7 @@
   },
   "files": {
     "wines.json": "b0b2bd360058403dea3dd2a096a18f0fa549936ad83eaa85451ef02fb05f05b6",
-    "recipes.json": "6bd4bd7d81004f100092cd60fb5c287b0f7a7a61ec7c51d75c37a5ba159e3193",
+    "recipes.json": "f3d2d5617ea3c4506237c755b1d6099864753b6b0488a2d26dce72430a5f465d",
     "learn.json": "3e611d06809475e16abf1147a15b996d44f45ccf8c9b7a59cbec681dd8732d9b",
     "glossary.json": "025aa9711817f08ab33e5ca5f5e69d3df4bb522171810e85bbf15d5cd7b545cc",
     "quiz.json": "fa3ed586d01513f703adba25efc37c9fba7f287c6ce6399506cf2b670ad87b6e"

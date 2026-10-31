@@ -1,10 +1,14 @@
 import Core
+import DesignSystem
+import Foundation
+import Home
 import Observation
 import Onboarding
 import OSLog
 import Quizz
 import Storage
 import SwiftData
+import You
 
 /// Decides which top-level screen shows and builds the features with their services.
 /// Features never open each other: they report back here (APP-R06).
@@ -14,11 +18,20 @@ final class AppCoordinator {
     /// The feature on screen, made once when its route opens.
     private(set) var onboarding: OnboardingViewModel?
     private(set) var quiz: QuizViewModel?
+    private(set) var home: HomeViewModel?
+    /// The Home tour, while it runs (HOME-R29).
+    private(set) var tour: GuidedTourViewModel?
+    private(set) var you: YouViewModel?
+    /// The tab on screen; features move it through the coordinator (APP-R06).
+    var selectedTab: AppTab = .home
     private(set) var profile: Profile?
 
     private let maps: PalateMapStore
     private let questions: QuizQuestionStore
     private let profiles: ProfileStore
+    private let catalog: CatalogStore
+    private let reminders: ReminderStore
+    private let scheduler = LocalReminderScheduler()
     private let auth: any Authenticating
     private let cloud: any CloudAccountStatus
     private let social: any SocialService
@@ -26,11 +39,15 @@ final class AppCoordinator {
 
     /// The Splash shows at least one full turn of its seven bunches (ONB-R01).
     static let minimumSplash = Duration.milliseconds(1260)
+    /// Set by "Sign out" (YOU-R26): the data stays, but the app opens on the Welcome until the next sign-in.
+    static let signedOutKey = "session.signedOut"
 
     init(container: ModelContainer) {
         maps = PalateMapStore(modelContainer: container)
         questions = QuizQuestionStore(modelContainer: container)
         profiles = ProfileStore(modelContainer: container)
+        catalog = CatalogStore(modelContainer: container)
+        reminders = ReminderStore(modelContainer: container)
         #if DEBUG
         if DemoMode.isOn {
             auth = DemoAuth()
@@ -44,19 +61,24 @@ final class AppCoordinator {
         social = CloudKitSocialService()
     }
 
-    /// After the Splash (ONB-R02). A revoked Apple credential ends the session.
+    /// After the Splash (ONB-R02). A revoked Apple credential, or "Sign out", ends the session.
     func start() async {
         guard route == .launching else { return }
         async let splash: Void = (try? await Task.sleep(for: Self.minimumSplash)) ?? ()
         var profile = try? await profiles.currentProfile()
         if let current = profile, !(await auth.isStillAuthorized(current.authUserID)) { profile = nil }
+        if UserDefaults.standard.bool(forKey: Self.signedOutKey) { profile = nil }
         let hasMap = ((try? await maps.currentMap()) ?? nil) != nil
         await splash
         self.profile = profile
         switch LaunchRoute.resolve(profile: profile, hasMap: hasMap) {
         case .welcome: openOnboarding()
         case .quiz: openQuiz(.firstMap)
-        case .home: route = .tabs(showTour: false)
+        case .home:
+            // A tour left before "Start" shows again on the next launch: it only counts as seen at the end
+            // (HOME-R33, decided 2026-10-31).
+            let tourPending = !(profile?.seenTours.contains(GuidedTour.tourID) ?? true)
+            openTabs(after: tourPending ? .homeWithTour : nil)
         }
     }
 
@@ -71,13 +93,15 @@ final class AppCoordinator {
     /// ONB-R21, R27
     private func finishOnboarding(_ result: OnboardingResult) {
         onboarding = nil
+        UserDefaults.standard.removeObject(forKey: Self.signedOutKey)
         switch result {
         case let .newAccount(profile):
             self.profile = profile
             openQuiz(.firstMap)
         case let .existingAccount(profile, hasMap):
             self.profile = profile
-            if hasMap { route = .tabs(showTour: false) } else { openQuiz(.firstMap) }
+            restoreReminder()
+            if hasMap { openTabs(after: nil) } else { openQuiz(.firstMap) }
         }
     }
 
@@ -92,9 +116,77 @@ final class AppCoordinator {
     private func finishQuiz(_ exit: QuizExit) {
         quiz = nil
         publishPublicProfile()
-        switch exit {
-        case .homeWithTour: route = .tabs(showTour: !(profile?.seenTours.contains("home") ?? false))
-        case .youMap: route = .tabs(showTour: false)
+        openTabs(after: exit)
+    }
+
+    /// The tabs. The tour shows after the first map, once per account (HOME-R29); a redone map opens You › Map.
+    private func openTabs(after quizExit: QuizExit?) {
+        home = home ?? HomeViewModel(profiles: profiles, maps: maps, catalog: catalog)
+        you = you ?? makeYou()
+        if quizExit == .youMap {
+            selectedTab = .you
+            you?.tab = .map
+        }
+        let showTour = GuidedTour.shouldShow(quizExit: quizExit, seenTours: profile?.seenTours ?? [])
+        tour = showTour ? GuidedTourViewModel(firstName: profile?.firstName ?? "") { [weak self] in self?.finishTour() } : nil
+        route = .tabs(showTour: showTour)
+        Task {
+            await home?.load()
+            await you?.load()
+        }
+    }
+
+    private func makeYou() -> YouViewModel {
+        YouViewModel(profiles: profiles, maps: maps, catalog: catalog, social: social, reminders: reminders,
+                     scheduler: scheduler,
+                     onRedoMap: { [weak self] in self?.openQuiz(.redo) },
+                     onOpenLearn: { [weak self] in self?.selectedTab = .learn },
+                     onSignOut: { [weak self] in self?.signOut() },
+                     onAccountDeleted: { [weak self] in self?.accountDeleted() })
+    }
+
+    /// YOU-R26: back to the Welcome; signing in again finds everything (ONB-R27).
+    private func signOut() {
+        UserDefaults.standard.set(true, forKey: Self.signedOutKey)
+        resetTabs()
+        openOnboarding()
+    }
+
+    /// YOU-R27: the data is gone; the same Apple account starts as a new one.
+    private func accountDeleted() {
+        UserDefaults.standard.removeObject(forKey: Self.signedOutKey)
+        resetTabs()
+        openOnboarding()
+    }
+
+    private func resetTabs() {
+        profile = nil
+        home = nil
+        you = nil
+        tour = nil
+        selectedTab = .home
+    }
+
+    /// An account found again brings its reminder back to this device.
+    private func restoreReminder() {
+        let reminders = reminders
+        let scheduler = scheduler
+        Task { await scheduler.schedule(try? await reminders.reminder()) }
+    }
+
+    /// HOME-R33: the tour closes and is marked seen on the account.
+    private func finishTour() {
+        tour = nil
+        profile?.seenTours.insert(GuidedTour.tourID)
+        let profiles = profiles
+        Task { try? await profiles.markTourSeen(GuidedTour.tourID) }
+    }
+
+    /// The import ended: the Home and You can show the catalog now.
+    func contentDidLoad() {
+        Task {
+            await home?.load()
+            await you?.load()
         }
     }
 

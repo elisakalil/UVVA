@@ -10,9 +10,12 @@ public struct PalateMapChart: View {
     var strong: Set<Int>
     var labelSize: CGFloat
     var labelOpacity: Double
+    /// An earlier map, drawn faintly under this one (YOU-R10).
+    var comparison: [Double]?
 
     public init(values: [Double], labels: [String], strong: Set<Int> = [], labelSize: CGFloat = 8,
-                labelOpacity: Double = 0.7) {
+                labelOpacity: Double = 0.7, comparison: [Double]? = nil) {
+        self.comparison = comparison
         self.values = values
         self.labels = labels
         self.strong = strong
@@ -61,6 +64,13 @@ public struct PalateMapChart: View {
             spoke.move(to: CGPoint(x: c - Self.outerRadius * sin(t), y: c + Self.outerRadius * cos(t)))
             spoke.addLine(to: CGPoint(x: c + Self.outerRadius * sin(t), y: c - Self.outerRadius * cos(t)))
             context.stroke(spoke, with: .color(ink.opacity(0.13)), lineWidth: 1)
+        }
+        if let comparison {
+            var earlier = Path()
+            earlier.addLines(comparison.indices.map { Self.point(comparison[$0], angle: Self.angle($0, of: comparison.count)) })
+            earlier.closeSubpath()
+            context.fill(earlier, with: .color(ink.opacity(0.05)))
+            context.stroke(earlier, with: .color(ink.opacity(0.35)), style: StrokeStyle(lineWidth: 0.8))
         }
         let points = values.indices.map { Self.point(values[$0], angle: Self.angle($0, of: values.count)) }
         var shape = Path()

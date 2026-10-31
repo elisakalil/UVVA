@@ -4,12 +4,15 @@ import SwiftUI
 public struct FrostedCard<Content: View>: View {
     var radius: CGFloat
     var padding: CGFloat
+    /// See `FrostedGlass.pinsPhoto`.
+    var pinsPhoto: Bool
     var content: Content
 
-    public init(radius: CGFloat = UVVARadius.card, padding: CGFloat = UVVASpace.card,
+    public init(radius: CGFloat = UVVARadius.card, padding: CGFloat = UVVASpace.card, pinsPhoto: Bool = false,
                 @ViewBuilder content: () -> Content) {
         self.radius = radius
         self.padding = padding
+        self.pinsPhoto = pinsPhoto
         self.content = content()
     }
 
@@ -17,6 +20,6 @@ public struct FrostedCard<Content: View>: View {
         content
             .padding(padding)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background { FrostedGlass(radius: radius) }
+            .background { FrostedGlass(radius: radius, pinsPhoto: pinsPhoto) }
     }
 }

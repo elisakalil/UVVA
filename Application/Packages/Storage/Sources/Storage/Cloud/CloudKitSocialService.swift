@@ -69,6 +69,24 @@ public final class CloudKitSocialService: SocialService {
         _ = try await database.modifyRecords(saving: [record], deleting: [], savePolicy: .allKeys)
     }
 
+    public func removeContactKey(phone: String) async throws {
+        try await delete([CKRecord.ID(recordName: ContactKey.make(phone: phone))])
+    }
+
+    /// Records that are already gone count as deleted.
+    public func deleteAccount(userID: String, phone: String?) async throws {
+        var ids = [CKRecord.ID(recordName: userID)]
+        if let phone { ids.append(CKRecord.ID(recordName: ContactKey.make(phone: phone))) }
+        try await delete(ids)
+    }
+
+    private func delete(_ ids: [CKRecord.ID]) async throws {
+        let (_, results) = try await database.modifyRecords(saving: [], deleting: ids)
+        for result in results.values {
+            if case let .failure(error) = result, (error as? CKError)?.code != .unknownItem { throw error }
+        }
+    }
+
     private func record(_ id: CKRecord.ID) async throws -> CKRecord? {
         do {
             return try await database.record(for: id)

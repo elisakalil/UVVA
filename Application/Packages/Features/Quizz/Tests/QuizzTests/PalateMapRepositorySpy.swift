@@ -12,6 +12,7 @@ final class PalateMapRepositorySpy: PalateMapRepository {
     var savedMaps: [PalateMap] { saved.withLock { $0 } }
 
     func currentMap() async throws -> PalateMap? { savedMaps.last }
+    func history() async throws -> [MapChange] { [] }
 
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {
         if fails { throw CocoaError(.fileWriteUnknown) }

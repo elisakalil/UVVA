@@ -8,10 +8,14 @@ public struct FrostedGlass: View {
     var radius: CGFloat
     /// Denser glass for chrome that floats over other cards (the tab bar).
     var dense: Bool
+    /// The photo belongs to the glass and scrolls with it, instead of staying fixed to the screen behind it.
+    /// The You tab's panels carry bg1 this way over the hills of bg2.
+    var pinsPhoto: Bool
 
-    public init(radius: CGFloat = UVVARadius.card, dense: Bool = false) {
+    public init(radius: CGFloat = UVVARadius.card, dense: Bool = false, pinsPhoto: Bool = false) {
         self.radius = radius
         self.dense = dense
+        self.pinsPhoto = pinsPhoto
     }
 
     /// Width of the denser band along the edge; inside it the glass is a touch clearer.
@@ -38,26 +42,30 @@ public struct FrostedGlass: View {
             diffusedPhoto
             // Cards are a touch clearer in the centre: less blur and less haze than along the edge.
             // The tab bar is too thin for that and stays even.
-            if dense {
-                Color.white.opacity(Self.outerHaze)
-                UVVAColor.night.opacity(0.18)
-            } else {
-                clearerCenter
-                haze
+            if !dense { clearerCenter }
+            // Everything above the photo stays still on the glass, so it is flattened once into a single
+            // bitmap instead of having its masks and blurs redone on every frame of a scroll.
+            ZStack {
+                if dense {
+                    Color.white.opacity(Self.outerHaze)
+                    UVVAColor.night.opacity(0.18)
+                } else {
+                    haze
+                }
+                // The grain stays the same over the whole pane.
+                if let grain = GlassTextures.grain {
+                    Image(decorative: grain, scale: displayScale)
+                        .resizable(resizingMode: .tile)
+                        .interpolation(.none)
+                        .opacity(Self.grainOpacity)
+                }
+                // Light gathers at the edges of thick frosted glass.
+                shape
+                    .stroke(.white.opacity(0.05), lineWidth: 12)
+                    .blur(radius: 7)
             }
-            // The grain stays the same over the whole pane.
-            if let grain = GlassTextures.grain {
-                Image(decorative: grain, scale: displayScale)
-                    .resizable(resizingMode: .tile)
-                    .interpolation(.none)
-                    .opacity(Self.grainOpacity)
-            }
-            // Light gathers at the edges of thick frosted glass.
-            shape
-                .stroke(.white.opacity(0.05), lineWidth: 12)
-                .blur(radius: 7)
+            .drawingGroup()
         }
-        .compositingGroup()
         .clipShape(shape)
         .overlay(
             shape.strokeBorder(
@@ -72,15 +80,28 @@ public struct FrostedGlass: View {
         )
         .overlay { liquidShine(shape) }
         // Kept faint: a darker shadow spreads into the gaps between cards and dulls the photo there.
-        .shadow(color: Color(hex: 0x0A0E08).opacity(0.05), radius: 20, y: 10)
+        // Cast by a plain shape behind the glass rather than by the glass itself, whose content moves
+        // as it scrolls and would have its shadow recomputed on every frame.
+        .background {
+            if isOpaque {
+                shape.fill(UVVAColor.moss).shadow(color: Color(hex: 0x0A0E08).opacity(0.05), radius: 20, y: 10)
+            }
+        }
         // Decoration only: the full-screen photo copy and the Liquid Glass layer must never take a touch,
         // or they swallow the scroll.
         .allowsHitTesting(false)
     }
 
+    /// The photo fills the glass edge to edge, so a shape behind it can cast the shadow without showing through.
+    private var isOpaque: Bool {
+        GlassTextures.blurredPhoto != nil && (pinsPhoto || backdropFrame != nil)
+    }
+
     /// The blurred photo, cut to the part that sits behind this glass.
     @ViewBuilder private var diffusedPhoto: some View {
-        if let backdropFrame, let photo = GlassTextures.blurredPhoto {
+        if pinsPhoto, let photo = GlassTextures.blurredPhoto {
+            photoPinned(photo)
+        } else if let backdropFrame, let photo = GlassTextures.blurredPhoto {
             photoBehind(photo, in: backdropFrame)
         } else {
             Rectangle().fill(.ultraThinMaterial).environment(\.colorScheme, .light).opacity(0.7)
@@ -89,9 +110,12 @@ public struct FrostedGlass: View {
 
     /// The lightly blurred photo, cut to the part behind this glass and faded out towards the denser edge.
     @ViewBuilder private var clearerCenter: some View {
-        if let backdropFrame, let photo = GlassTextures.lightlyBlurredPhoto {
+        if pinsPhoto, let photo = GlassTextures.lightlyBlurredPhoto {
+            photoPinned(photo)
+                .mask { inset(by: Self.frostedEdge, fade: Self.edgeFade).drawingGroup() }
+        } else if let backdropFrame, let photo = GlassTextures.lightlyBlurredPhoto {
             photoBehind(photo, in: backdropFrame)
-                .mask { inset(by: Self.frostedEdge, fade: Self.edgeFade) }
+                .mask { inset(by: Self.frostedEdge, fade: Self.edgeFade).drawingGroup() }
         }
     }
 
@@ -125,15 +149,30 @@ public struct FrostedGlass: View {
 
     /// The page photo laid out exactly as the background lays it out, shifted so this glass shows the part behind it.
     private func photoBehind(_ photo: UIImage, in backdropFrame: CGRect) -> some View {
-        GeometryReader { proxy in
-            let frame = proxy.frame(in: .global)
+        Color.clear.overlay(alignment: .topLeading) {
             ZStack {
                 UVVAColor.moss
                 Image(uiImage: photo).resizable().scaledToFill()
             }
             .frame(width: backdropFrame.width, height: backdropFrame.height)
             .clipped()
-            .offset(x: backdropFrame.minX - frame.minX, y: backdropFrame.minY - frame.minY)
+            // Shifted at render time: a scroll moves the photo without laying the glass out again.
+            .visualEffect { content, proxy in
+                let frame = proxy.frame(in: .global)
+                return content.offset(x: backdropFrame.minX - frame.minX, y: backdropFrame.minY - frame.minY)
+            }
+        }
+    }
+
+    /// The photo filling the glass from its top edge, so it moves with the glass.
+    private func photoPinned(_ photo: UIImage) -> some View {
+        GeometryReader { proxy in
+            ZStack {
+                UVVAColor.moss
+                Image(uiImage: photo).resizable().scaledToFill()
+            }
+            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .top)
+            .clipped()
         }
     }
 

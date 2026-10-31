@@ -1,3 +1,4 @@
+import Core
 import Foundation
 import SwiftData
 import Testing
@@ -39,5 +40,14 @@ struct BundledContentTests {
         print("Imported again over a full store in \(String(format: "%.2f", Date().timeIntervalSince(start2))) s")
         #expect(again == manifest.version)
         #expect(try context.fetchCount(FetchDescriptor<WineEntity>()) == manifest.counts["wines"])
+
+        let catalog = CatalogStore(modelContainer: container)
+        let map = PalateMap([.acidity: 7, .fruit: 6, .body: 4, .tannin: 3])
+        let start3 = Date()
+        let closest = try await catalog.winesClosest(to: map, limit: 33)
+        print("Ranked 10 000 wines in \(String(format: "%.2f", Date().timeIntervalSince(start3))) s")
+        #expect(closest.count == 33)
+        #expect(try await catalog.recipes().count == manifest.counts["recipes"])
+        #expect(try await catalog.glossary().count == manifest.counts["glossary"])
     }
 }

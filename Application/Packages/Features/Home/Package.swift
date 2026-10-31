@@ -12,7 +12,7 @@ let package = Package(
         .package(path: "../../DesignSystem")
     ],
     targets: [
-        .target(name: "Home", dependencies: ["Core", "Match", "DesignSystem"]),
+        .target(name: "Home", dependencies: ["Core", "Match", "DesignSystem"], resources: [.process("Resources")]),
         .testTarget(name: "HomeTests", dependencies: ["Home", "Core", "Match"])
     ]
 )

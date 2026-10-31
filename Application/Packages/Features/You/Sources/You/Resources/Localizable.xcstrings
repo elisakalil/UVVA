@@ -1,0 +1,118 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "": {},
+    "%@  +%@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@  +%2$@"
+          }
+        }
+      }
+    },
+    "%lld lessons · %lld min": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$lld lessons · %2$lld min"
+          }
+        }
+      }
+    },
+    "%lld wines rated": {},
+    "Add": {},
+    "Another time": {},
+    "Anyone with your link can see your palate map.": {},
+    "Around lunch": {},
+    "At %@ on %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "At %1$@ on %2$@."
+          }
+        }
+      }
+    },
+    "At least two letters": {},
+    "Before dinner": {},
+    "Bottles": {},
+    "Cancel": {},
+    "Certificates": {},
+    "Certificates for the lessons you complete live here. Finish one to see it, then come back whenever you like.": {},
+    "Daily reminder": {},
+    "Days": {},
+    "Delete account": {},
+    "Delete my account": {},
+    "Delete your account?": {},
+    "First": {},
+    "First map · 0 wines rated": {},
+    "Friends": {},
+    "Grapes": {},
+    "Keep my account": {},
+    "Late, with a glass": {},
+    "Lessons": {},
+    "Make chart public": {},
+    "Map": {},
+    "My Map": {},
+    "Name": {},
+    "New": {},
+    "Nice to meet you": {},
+    "No certificates yet": {},
+    "No reminders. You open the app whenever you feel like it.": {},
+    "Nothing to map yet. Finish your first course and this space starts filling in: the grapes you know, the regions you can place, and where you are strongest.": {},
+    "Only friends you share a table with can see your map.": {},
+    "Over time": {},
+    "Palate": {},
+    "Phone number": {},
+    "Pick a moment and at least one day.": {},
+    "Pick the moment of the day and the days of the week. Change it whenever you like.": {},
+    "Profile photo": {},
+    "Progress": {},
+    "Public": {},
+    "Read %@": {},
+    "Redo the map": {},
+    "Regions": {},
+    "Save": {},
+    "See how your map has changed over the last few months.": {},
+    "Set a time": {},
+    "Settings": {},
+    "Share my map": {},
+    "Shared with friends": {},
+    "Sign out": {},
+    "Sign out of UVVA?": {},
+    "Signed in with": {},
+    "So friends who have you in their contacts can find you here. Leave it empty to remove it.": {},
+    "Specialist in": {},
+    "Start here · Course": {},
+    "Start learning": {},
+    "Start the course": {},
+    "Tables": {},
+    "The map": {},
+    "The reminder could not be saved. Try again.": {},
+    "This is my wine palate": {},
+    "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together. %@": {},
+    "This permanently removes your palate map, cellar, tables and certificates. It cannot be undone.": {},
+    "Today": {},
+    "Today · %lld wines rated": {},
+    "Turn reminders off": {},
+    "What you have built in UVVA, ready to share.": {},
+    "Where the map points": {},
+    "With my coffee": {},
+    "XP": {},
+    "You open the app whenever you feel like it.": {},
+    "Your account could not be deleted. Check your connection and try again.": {},
+    "Your changes could not be saved. Try again.": {},
+    "Your first name": {},
+    "Your last wine lowered your %@.": {},
+    "Your last wine raised your %@.": {},
+    "Your palate map, cellar and certificates stay saved to your account.": {},
+    "Your phone number": {},
+    "Your progress": {},
+    "Your readings": {}
+  },
+  "version": "1.0"
+}

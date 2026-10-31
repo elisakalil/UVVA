@@ -23,6 +23,9 @@
       location = "group:Packages/Features/Quizz">
    </FileRef>
    <FileRef
+      location = "group:Packages/Features/You">
+   </FileRef>
+   <FileRef
       location = "group:Packages/Features/Home">
    </FileRef>
 </Workspace>

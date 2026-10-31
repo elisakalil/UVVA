@@ -9,7 +9,7 @@ import SwiftData
 /// content imports again.
 @MainActor @Observable
 final class ContentLoader {
-    static let versionKey = "content.version"
+    nonisolated static let versionKey = "content.version"
 
     let container: ModelContainer
     /// The stage running now; nil before the first and after the last.
@@ -18,8 +18,14 @@ final class ContentLoader {
 
     private let logger = Logger(subsystem: "app.uvva", category: "content")
 
-    init() {
-        container = Self.makeContainer()
+    init(container: ModelContainer) {
+        self.container = container
+    }
+
+    /// Opens the stores off the main thread. The Personal store sets up its iCloud sync as it opens, which on a
+    /// fresh install takes seconds; done on the main thread, it held the system's plain launch screen until it finished.
+    static func openStores() async -> ModelContainer {
+        await Task.detached(priority: .userInitiated) { makeContainer() }.value
     }
 
     func load() async {
@@ -52,10 +58,10 @@ final class ContentLoader {
 
     /// The Content and the Personal stores. The Content store is rebuilt from the bundle, so one that cannot open
     /// (a changed schema during development) is deleted and created again; the Personal store is never deleted.
-    private static func makeContainer() -> ModelContainer {
+    private nonisolated static func makeContainer() -> ModelContainer {
         if let container = try? AppStore.makeContainer() { return container }
         try? FileManager.default.removeItem(at: ContentStore.defaultURL.deletingLastPathComponent())
-        UserDefaults.standard.removeObject(forKey: versionKey)
+        UserDefaults.standard.removeObject(forKey: Self.versionKey)
         do {
             return try AppStore.makeContainer()
         } catch {

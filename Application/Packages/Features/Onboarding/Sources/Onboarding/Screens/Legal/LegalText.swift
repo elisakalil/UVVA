@@ -7,10 +7,11 @@ enum LegalText {
         switch tab {
         case .terms:
             [
+                // TODO: say what is free and what is not once the app has limits.
                 LegalSection(title: String(localized: "The service", bundle: .module),
-                             body: String(localized: "UVVA gives you wine lessons, a map of your palate and a place to keep tasting notes. Everything in the app is free.", bundle: .module)),
+                             body: String(localized: "UVVA gives you wine lessons, a map of your palate and a place to keep tasting notes.", bundle: .module)),
                 LegalSection(title: String(localized: "Your account", bundle: .module),
-                             body: String(localized: "One account per person, signed in with Apple and kept in your iCloud. Anything done from your account is your responsibility.", bundle: .module)),
+                             body: String(localized: "One account per person, signed in with Apple or Google. Anything done from your account is your responsibility.", bundle: .module)),
                 LegalSection(title: String(localized: "Content", bundle: .module),
                              body: String(localized: "Lessons, illustrations and texts belong to UVVA. Your tasting notes belong to you. Do not redistribute the lessons.", bundle: .module)),
                 LegalSection(title: String(localized: "Changes", bundle: .module),
@@ -20,8 +21,9 @@ enum LegalText {
             [
                 LegalSection(title: String(localized: "What we collect", bundle: .module),
                              body: String(localized: "Your first name, your phone number if you add it, your palate map, the lessons you open and the tasting notes you write. Nothing else.", bundle: .module)),
+                // TODO: say where the data lives once storage for Google accounts is decided (and recheck "no servers of our own").
                 LegalSection(title: String(localized: "Where it lives", bundle: .module),
-                             body: String(localized: "In your own iCloud. Your name and, if you choose, your map are public to the people you add as friends.", bundle: .module)),
+                             body: String(localized: "Stored with your account. Your name and, if you choose, your map are public to the people you add as friends.", bundle: .module)),
                 LegalSection(title: String(localized: "Your phone", bundle: .module),
                              body: String(localized: "If you add your number, we publish a code made from it, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA.", bundle: .module)),
                 LegalSection(title: String(localized: "Sharing", bundle: .module),

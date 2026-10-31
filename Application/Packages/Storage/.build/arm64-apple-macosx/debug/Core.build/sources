@@ -7,7 +7,9 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/PublicProfile.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseSummary.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift
@@ -25,8 +27,13 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/Reminder.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderMoment.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderRepository.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift

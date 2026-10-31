@@ -13,6 +13,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "Quizz", dependencies: ["Core", "Match", "DesignSystem"], resources: [.process("Resources")]),
-        .testTarget(name: "QuizzTests", dependencies: ["Quizz", "Core"])
+        .testTarget(name: "QuizzTests", dependencies: ["Quizz", "Core", "Match"])
     ]
 )

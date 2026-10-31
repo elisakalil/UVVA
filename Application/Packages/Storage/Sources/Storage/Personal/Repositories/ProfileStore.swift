@@ -41,4 +41,12 @@ public actor ProfileStore: ProfileRepository {
         entity.seenTours.append(tour)
         try modelContext.save()
     }
+
+    /// Deleting the records here also deletes them from the private iCloud database, through SwiftData's sync.
+    public func deleteAccount() throws {
+        for profile in try modelContext.fetch(FetchDescriptor<ProfileEntity>()) { modelContext.delete(profile) }
+        for map in try modelContext.fetch(FetchDescriptor<PalateMapEntity>()) { modelContext.delete(map) }
+        for reminder in try modelContext.fetch(FetchDescriptor<ReminderEntity>()) { modelContext.delete(reminder) }
+        try modelContext.save()
+    }
 }

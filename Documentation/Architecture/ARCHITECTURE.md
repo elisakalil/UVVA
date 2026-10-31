@@ -25,14 +25,14 @@ As duas lojas ficam no mesmo `ModelContainer` (`AppStore.makeContainer`, package
 
 | Tabela | Campos |
 | --- | --- |
-| `Profile` | id, authProvider, authUserID, firstName, phone?, mapIsPublic, seenTours, language |
+| `Profile` | id, authProvider, authUserID, firstName, phone?, photo?, mapIsPublic, seenTours, language |
 | `PalateMap` | values, createdAt, history |
 | `Rating` | wineKey, verdict, date |
 | `CellarEntry` | wineKey, dados do vinho, status, verdict, note, photoFront, photoBack, createdAt, updatedAt |
 | `LessonProgress` | lessonId, currentStep, answers, completedAt, lastOpenedAt |
 | `Certificate` | courseId, date |
 | `Friend` | friendID, addedAt |
-| `Reminder` | slot, days |
+| `Reminder` | hour, minute, moment?, weekdays |
 
 **`Profile`**
 - `id`: um UUID criado no cadastro (decidido em 2026-10-31). Sincroniza pela base privada, por isso é igual em todos os aparelhos com o mesmo iCloud, e nunca é mostrado. Não depende da Apple nem do CloudKit, para poder ser levado para outro backend (Android). É ele que identifica o usuário na base pública, nos links de convite (`uvva.app/invite/<id>`) e nos pedidos de amizade. Não há handle.
@@ -145,6 +145,13 @@ O SwiftData sincroniza a Loja Pessoal com a base privada sozinho: grava no apare
 - **Quick add:** a app calcula a chave de cada telefone da agenda e pede esses `ContactKey` ao CloudKit de uma vez. Os que existem são contatos na UVVA.
 - **Pedido de amizade:** "Add" cria um `FriendRequest`. Quem recebe aceita, e os dois gravam um `Friend` com o `id` do outro na Loja Pessoal.
 - **Ver o paladar de um amigo:** a app lê o `PublicProfile` dele.
+- **Mapa privado (YOU-R22):** com "Make chart public" desligado, o `PublicProfile` continua a existir (nome e `hasMap`), mas sem o mapa.
+
+### 4.5 Sair e apagar a conta
+
+- **Sign out:** os dados ficam no iCloud. Uma flag local (`session.signedOut`) leva a app à Welcome até o próximo login.
+- **Apagar a conta (YOU-R27):** primeiro a base pública (`PublicProfile` e `ContactKey`), depois a Loja Pessoal (Profile, mapas, lembrete) e as notificações locais. Se a base pública falhar, nada é apagado e o usuário tenta de novo.
+- **Falta antes do TestFlight:** revogar o token do Sign in with Apple (a App Store exige; precisa de um servidor com a chave privada, previsto num Cloudflare Worker). Com o Friends, apagar também os `FriendRequest` enviados e recebidos.
 
 ## 5. Notificações
 

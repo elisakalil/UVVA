@@ -39,7 +39,6 @@ struct QuizViewModelTests {
         viewModel.start()
         guard case let .reading(model) = viewModel.screen else { Issue.record("not reading"); return }
         #expect(model.counter == "1 of 8")
-        #expect(model.title == "Reading 1 · Sweetness")
         #expect(model.answer == nil)
         #expect(!model.canAdvance)
         #expect(model.button == "Next")

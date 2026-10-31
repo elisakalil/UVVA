@@ -1,0 +1,55 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "‹" : {
+
+    },
+    "%lld of %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "Back" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Clear search" : {
+
+    },
+    "Map yours ·" : {
+
+    },
+    "Not now" : {
+
+    },
+    "Save image" : {
+
+    },
+    "Send on WhatsApp" : {
+
+    },
+    "Share to Instagram" : {
+
+    },
+    "Story" : {
+
+    },
+    "UVVA" : {
+
+    },
+    "WhatsApp" : {
+
+    }
+  },
+  "version" : "1.0"
+}

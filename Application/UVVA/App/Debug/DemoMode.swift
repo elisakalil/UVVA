@@ -36,5 +36,7 @@ struct DemoSocial: SocialService {
 
     func sendFriendRequest(from: String, to: String) async throws {}
     func publish(_ profile: PublicProfile) async throws {}
+    func removeContactKey(phone: String) async throws {}
+    func deleteAccount(userID: String, phone: String?) async throws {}
 }
 #endif

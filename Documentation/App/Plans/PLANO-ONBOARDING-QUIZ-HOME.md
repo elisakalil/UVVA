@@ -144,8 +144,9 @@ Regras do SwiftData + CloudKit: sem `#Unique`, todos os campos opcionais ou com 
 
 | `@Model` | Campos |
 | --- | --- |
-| `Profile` | id, authProvider, authUserID, firstName, phone?, phoneCountry?, mapIsPublic, seenTours, language, createdAt |
+| `Profile` | id, authProvider, authUserID, firstName, phone?, phoneCountry?, photo? (external storage), mapIsPublic, seenTours, language, createdAt |
 | `PalateMapRecord` | values (`[String: Double]`), createdAt, history (`[MapChange]`) |
+| `ReminderEntity` | hour, minute, moment?, weekdays (vazio = desligado). As notificações locais são do aparelho: ao entrar numa conta já existente, a app volta a agendá-las |
 
 `Rating`, `CellarEntry`, `LessonProgress` e o resto entram com as suas features. A Home já lê "sem avaliações, sem amigos, sem lições" corretamente com listas vazias.
 
@@ -157,7 +158,11 @@ O `AppCoordinator` (target da app) decide para onde vai depois do Splash (ONB-R0
 sem Profile                → Welcome
 Profile e sem mapa         → Quiz, entrada .firstMap
 Profile e com mapa         → Tabs (Home)
+"Sign out" ativo            → Welcome
 ```
+
+- **Sign out (YOU-R26).** Os dados ficam; uma flag `session.signedOut` (UserDefaults) manda a app para a Welcome até o próximo login, que encontra a conta (ONB-R27).
+- **Apagar a conta (YOU-R27).** Primeiro a base pública (PublicProfile e ContactKey); só depois o iCloud (Profile, mapas, lembrete) e as notificações. Se a base pública falhar, nada local é apagado e aparece um aviso. Falta revogar o token da Apple (Cloudflare Worker, antes do TestFlight) e apagar os FriendRequests (com o Friends).
 
 - **Antes do Telefone** (ONB-R02a) nada vai para o SwiftData: nome e identidade ficam num `OnboardingDraft` em memória.
 - **Nome da Apple só chega uma vez.** A Apple devolve o nome só na primeira autorização. Se a app fechar entre o login e o Telefone, o cadastro recomeça e o nome perdia-se. Guardo o nome devolvido no Keychain, pela `authUserID`, até o `Profile` ser criado.
@@ -218,10 +223,16 @@ Profile e com mapa         → Tabs (Home)
 
 **Não carregar 10 000 vinhos na Home.** As regras que precisam de "os mais semelhantes" (HOME-R06, R22) usam o package `Match` sobre uma pré-seleção feita no SwiftData (por exemplo, eixos dominantes do usuário dentro de ±2), e só depois ordenam por similaridade. O teste garante o mesmo resultado que ordenar o catálogo inteiro.
 
-**Sugestão do dia** (HOME-R06, R07, MATCH.md): proposta até o `MATCH.md` definir o cálculo exato:
+**Sugestão do dia** (HOME-R06, R07, MATCH.md), implementada assim até o `MATCH.md` definir o cálculo exato:
 1. Os 30 vinhos com maior similaridade.
 2. Um deles, sorteado com semente = dia local (fixo durante o dia, SHARED-R03).
-3. Mapa do cruzamento = média do mapa do usuário e do vinho; a receita é a de menor distância a esse mapa, filtrada por `wineTypes` compatível com o tipo do vinho.
+3. Mapa do cruzamento = média do mapa do usuário e do vinho; a receita é a de menor distância a esse mapa, filtrada por `wineTypes` compatível com o tipo do vinho, com entradas e pratos principais antes de sobremesas, petiscos e queijos.
+
+**Dados das receitas, corrigidos em 2026-10-31.** 203 receitas citavam um vinho, uma casta ou uma região no `why`, e algumas contradiziam o `wineTypes`. O `why` passou a descrever o estilo e o `wineTypes` passou a ser esse tipo. Lista completa, para revisão: [`RECEITAS-WHY-REESCRITAS.md`](RECEITAS-WHY-REESCRITAS.md).
+
+**"Find the wine"** (cartão do dia) abre, dentro da app, uma pesquisa na internet com produtor, nome e ano (quando existe).
+
+**Ainda não ligado na Home:** "Find my wine" (HOME-R26 a R28), avaliar um vinho da lista (HOME-R24), os atalhos do Learn com módulos reais (HOME-R18), o sino e as notificações. Dependem de Cellar, Learn e notificações.
 
 **Tour guiado** (HOME-R29 a R33):
 - `GuidedTour` (estado puro: intro, passos 1…6, `next`, `back`, `pick`) e `shouldShowTour(quizExit:seenTours:)`, com testes de todos os critérios.
@@ -233,10 +244,10 @@ Profile e com mapa         → Tabs (Home)
 
 | Dúvida | Padrão |
 | --- | --- |
-| Tour interrompido | Aparece de novo; só conta como visto em "Start" (é o que a HOME-R33 diz) |
+| Tour interrompido | Aparece de novo na abertura seguinte; só conta como visto em "Start" (implementado) |
 | Pular o tour | Sem "Skip" |
 | Passo 1 sem sugestão do dia | Destaca o card de amigos |
-| Palavra do dia | Fixa durante o dia (semente = dia) |
+| Palavra do dia | Fixa durante o dia (semente = dia) (implementado) |
 | Saudação depois do tour | "Welcome back" sempre |
 
 ## 8. Textos e idiomas
@@ -270,7 +281,8 @@ Cada etapa termina com testes a passar e a app a abrir no simulador. Não faço 
 | M1 | Conteúdo | **Feito em 2026-10-31.** Package `Storage` (modelos `WineEntity`, `RecipeEntity`, `ModuleEntity`, `LessonEntity`, `GlossaryTermEntity`, `QuizQuestionEntity`), `Scripts/pack_content.py`, glossário e perguntas em `Data/Glossary` e `Data/Quiz`, `ContentImporter` e `ContentLoader` no arranque. 10 testes, um deles importa o conteúdo real. Import completo: ~3,3 s no simulador |
 | M2 | Quiz | **Feito em 2026-10-31.** Package `Quizz` (Intro, Leitura, Resultado, Partilha), `MapUpdate` no `Match` (QUIZ-R22, R23), loja Pessoal com `PalateMapEntity`, `AppCoordinator` (sem mapa → Quiz, com mapa → abas). 29 testes no Quizz; 82 no total |
 | M3 | Onboarding | **Feito em 2026-10-31.** Package `Onboarding` (Splash, Welcome, Legal, Nome, Telefone com seletor de país, Find friends, Contacts), Sign in with Apple com o nome guardado no Keychain, `ProfileEntity` com id UUID, `CloudKitSocialService` (chave de contato, perfil público, pedidos de amizade), rotas da ONB-R02. 126 testes no total |
-| M4 | Home | Dados reais, `HomeViewModel` + `HomeUIModel` (a Home ainda não segue o padrão UIModel), String Catalog da Home, sugestão do dia, tour guiado |
+| M4 | Home | **Feito em 2026-10-31.** `HomeViewModel` com dados reais (`CatalogStore`: os 33 vinhos mais próximos entre 10 000, receitas, glossário), sugestão do dia com a receita (`Pairing` no `Match`), convite com o link, tour guiado com recorte de luz (`SpotlightAnchors` no DesignSystem). 147 testes no total |
+| M4b | You | **Feito em 2026-10-31.** Package `Features/You`: Progress (números a 0 até existirem Learn e Cellar; primeiro curso do path), Map (leitura, "Over time" com `MapEvolution` no `Match`, partilha, refazer → volta a You › Map), Settings (nome, telefone, foto, lembrete com 4 momentos + qualquer hora, mapa público, Sign out, Delete). `ReminderStore` e `LocalReminderScheduler`. Linha Language escondida até haver pt-BR. 21 testes no You; 181 no total. Testado no simulador em modo demo |
 | M5 | Ligação | `AppCoordinator` com as rotas da ONB-R02, build no TestFlight |
 
 ## 11. O que fazer na Apple

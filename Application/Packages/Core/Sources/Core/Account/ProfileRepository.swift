@@ -9,4 +9,6 @@ public protocol ProfileRepository: Sendable {
     func save(_ profile: Profile) async throws
     /// HOME-R33
     func markTourSeen(_ tour: String) async throws
+    /// YOU-R27: removes the account and everything kept with it (profile, map, reminder).
+    func deleteAccount() async throws
 }

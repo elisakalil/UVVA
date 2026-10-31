@@ -16,6 +16,7 @@ public final class ProfileEntity {
     public var seenTours: [String] = []
     public var language = "en"
     public var createdAt = Date.distantPast
+    @Attribute(.externalStorage) public var photo: Data?
 
     init(_ profile: Profile, createdAt: Date) {
         self.createdAt = createdAt
@@ -30,10 +31,11 @@ public final class ProfileEntity {
         phone = profile.phone
         mapIsPublic = profile.mapIsPublic
         seenTours = profile.seenTours.sorted()
+        photo = profile.photo
     }
 
     public var profile: Profile {
         Profile(id: id, authProvider: AuthProvider(rawValue: authProvider) ?? .apple, authUserID: authUserID,
-                firstName: firstName, phone: phone, mapIsPublic: mapIsPublic, seenTours: Set(seenTours))
+                firstName: firstName, phone: phone, mapIsPublic: mapIsPublic, seenTours: Set(seenTours), photo: photo)
     }
 }

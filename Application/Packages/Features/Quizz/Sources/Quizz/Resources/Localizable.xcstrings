@@ -1,17 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@ drinks for %@, %@ and %@, in that order." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ drinks for %2$@, %3$@ and %4$@, in that order."
-          }
-        }
-      }
+    "" : {
+
     },
     "%@ taste in wine is" : {
+
+    },
+    "%lld" : {
 
     },
     "%lld of %lld" : {
@@ -24,34 +20,10 @@
         }
       }
     },
-    "A little" : {
-
-    },
-    "a little residual sugar reads as generosity to you, not as a flaw" : {
-
-    },
-    "A lot" : {
-
-    },
-    "A trace" : {
-
-    },
-    "acidity is the first thing you notice, and it is what keeps a wine awake for you" : {
-
-    },
-    "Almost none" : {
-
-    },
     "Answer eight questions about the food you love. We turn your answers into a taste map and use it to find wines you'll enjoy." : {
 
     },
     "Answer for the food, not the bottle." : {
-
-    },
-    "APP" : {
-
-    },
-    "As much as possible" : {
 
     },
     "Change question" : {
@@ -63,16 +35,6 @@
     "Draw the map" : {
 
     },
-    "Drinks for %@, %@ and %@, in that order." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Drinks for %1$@, %2$@ and %3$@, in that order."
-          }
-        }
-      }
-    },
     "Eight readings · two minutes" : {
 
     },
@@ -82,16 +44,10 @@
     "Every wine" : {
 
     },
-    "floral aromatics read as soap to you" : {
-
-    },
     "Keep this map" : {
 
     },
     "Loves" : {
-
-    },
-    "Map yours ·" : {
 
     },
     "My taste in wine is %@. Map yours on uvva.app" : {
@@ -103,31 +59,10 @@
     "Next" : {
 
     },
-    "None" : {
-
-    },
-    "Not now" : {
-
-    },
-    "Noticeably" : {
-
-    },
     "Palate map" : {
 
     },
-    "pepper and clove are what you go looking for" : {
-
-    },
-    "perfume pulls you in before structure ever does" : {
-
-    },
-    "Position %lld" : {
-
-    },
-    "Pour something built on %@ and the glass comes back. Politely." : {
-
-    },
-    "Quite a lot" : {
+    "Position" : {
 
     },
     "Read it again" : {
@@ -135,16 +70,6 @@
     },
     "Read my palate" : {
 
-    },
-    "Reading %lld · %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Reading %1$lld · %2$@"
-          }
-        }
-      }
     },
     "Reading %lld of %lld" : {
       "localizations" : {
@@ -156,47 +81,7 @@
         }
       }
     },
-    "ripe fruit is the point for you, not a beginner's phase to grow out of" : {
-
-    },
-    "Save image" : {
-
-    },
-    "Send on WhatsApp" : {
-
-    },
-    "Share to Instagram" : {
-
-    },
     "Share your map" : {
-
-    },
-    "sharpness tires you out; you want a rounder line through the middle" : {
-
-    },
-    "Some" : {
-
-    },
-    "spice distracts you from the fruit" : {
-
-    },
-    "Story" : {
-
-    },
-    "Strongest on %@, quietest on %@. The shape of what you reach for in a glass." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Strongest on %1$@, quietest on %2$@. The shape of what you reach for in a glass."
-          }
-        }
-      }
-    },
-    "sugar reads as a flaw to you, and dry means dry" : {
-
-    },
-    "tannin gets in the way for you; you want fruit without the scaffolding" : {
 
     },
     "The map could not be saved. Try again." : {
@@ -206,15 +91,6 @@
 
     },
     "This map keeps moving" : {
-
-    },
-    "UVVA" : {
-
-    },
-    "vanilla, smoke and toast are part of the pleasure, not a cover-up" : {
-
-    },
-    "Very much" : {
 
     },
     "We compare the two maps to find the wines closest to your taste, and the recipes that go with them." : {
@@ -229,25 +105,7 @@
     "Welcome, %@" : {
 
     },
-    "WhatsApp" : {
-
-    },
     "Where the map points" : {
-
-    },
-    "you look past fruit for earth, salt and stone" : {
-
-    },
-    "you want a wine that stays light and gets out of the way" : {
-
-    },
-    "you want grip, the drying pull that holds a red upright" : {
-
-    },
-    "you want the grape, not the barrel" : {
-
-    },
-    "you want weight in the glass, something that coats and stays" : {
 
     },
     "Your answers give each of the eight axes an intensity, from sweetness to spice. That shape is your taste map." : {

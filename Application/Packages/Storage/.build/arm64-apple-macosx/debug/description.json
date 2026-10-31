@@ -7,7 +7,34 @@
     }
   ],
   "copyCommands" : {
-
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match_Match.bundle/Info.plist" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/Info.plist"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match_Match.bundle/Info.plist"
+        }
+      ]
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match_Match.bundle/Localizable.xcstrings" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Resources/Localizable.xcstrings"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match_Match.bundle/Localizable.xcstrings"
+        }
+      ]
+    }
   },
   "explicitTargetDependencyImportCheckingMode" : {
     "none" : {
@@ -64,7 +91,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseSummary.swift"
         },
         {
           "kind" : "file",
@@ -136,6 +171,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift"
         },
         {
@@ -145,6 +184,22 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/Reminder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderMoment.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift"
         },
         {
           "kind" : "file",
@@ -176,7 +231,9 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/PublicProfile.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseSummary.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Dish.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Friend.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/GlossaryTerm.swift.o",
@@ -194,9 +251,14 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/QuizQuestion.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/QuizQuestionRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Rating.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Recipe.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/RecipeIngredient.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Reminder.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderMoment.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderRepository.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderScheduling.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Verdict.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o"
       ],
@@ -289,7 +351,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseSummary.swift.o"
         },
         {
           "kind" : "file",
@@ -361,6 +431,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Recipe.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o"
         },
         {
@@ -370,6 +444,22 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Reminder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderMoment.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderScheduling.swift.o"
         },
         {
           "kind" : "file",
@@ -395,7 +485,9 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/PublicProfile.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseSummary.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift",
@@ -413,13 +505,207 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/Reminder.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderMoment.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderRepository.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.Match-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/sources",
+      "importPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<Match-arm64-apple-macosx-debug.module-resources>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Match",
+      "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules/Match.swiftmodule",
+      "objects" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/Pairing.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx15.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+        "-module-cache-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/include/Match-Swift.h",
+        "-swift-version",
+        "6",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "match"
+      ],
+      "outputFileMapPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/Pairing.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules/Match.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift"
+      ],
+      "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build",
       "wholeModuleOptimization" : false
     },
     "C.Storage-arm64-apple-macosx-debug.module" : {
@@ -549,6 +835,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift"
         },
         {
@@ -558,6 +848,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ProfileEntity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift"
         },
         {
           "kind" : "file",
@@ -573,11 +867,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
         },
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules/Match.swiftmodule"
         },
         {
           "kind" : "file",
@@ -618,12 +920,15 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedServingTemperature.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWine.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.swift.o",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swift.o"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -798,6 +1103,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swift.o"
         },
         {
@@ -810,6 +1119,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swift.o"
         },
         {
@@ -819,6 +1132,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.swift.o"
         },
         {
           "kind" : "file",
@@ -857,12 +1174,15 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedServingTemperature.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWine.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWinesFile.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ProfileEntity.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/PalateMapStore.swift",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build",
       "wholeModuleOptimization" : false
@@ -973,6 +1293,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContactKeyTests.swift"
         },
         {
@@ -1021,6 +1345,7 @@
       "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules/StorageTests.swiftmodule",
       "objects" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/BundledContentTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContentFixture.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContentImporterTests.swift.o",
@@ -1085,6 +1410,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.swift.o"
         },
         {
@@ -1119,6 +1448,7 @@
       "prepareForIndexing" : false,
       "sources" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/BundledContentTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContactKeyTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentFixture.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentImporterTests.swift",
@@ -1151,7 +1481,9 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/PublicProfile.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseSummary.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift",
@@ -1169,9 +1501,14 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/Reminder.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderMoment.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderRepository.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
       "-I",
@@ -1226,6 +1563,75 @@
       "-driver-use-frontend-path",
       "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
     ],
+    "Match" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Match",
+      "-package-name",
+      "match",
+      "-c",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift",
+      "-I",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx15.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+      "-module-cache-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/include/Match-Swift.h",
+      "-swift-version",
+      "6",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "match",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
     "Storage" : [
       "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
       "-module-name",
@@ -1263,12 +1669,15 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedServingTemperature.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWine.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWinesFile.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ProfileEntity.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/PalateMapStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -1389,6 +1798,7 @@
       "storage",
       "-c",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/BundledContentTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContactKeyTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentFixture.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentImporterTests.swift",
@@ -1452,16 +1862,22 @@
     "Core" : [
 
     ],
+    "Match" : [
+      "Core"
+    ],
     "Storage" : [
+      "Match",
       "Core"
     ],
     "StoragePackageTests" : [
       "StorageTests",
       "Storage",
+      "Match",
       "Core"
     ],
     "StorageTests" : [
       "Storage",
+      "Match",
       "Core"
     ]
   },
@@ -1532,7 +1948,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseSummary.swift"
         },
         {
           "kind" : "file",
@@ -1604,6 +2028,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift"
         },
         {
@@ -1616,6 +2044,22 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/Reminder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderMoment.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift"
         },
         {
@@ -1624,6 +2068,56 @@
         }
       ],
       "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/sources"
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/sources"
     },
     "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/sources" : {
       "alwaysOutOfDate" : false,
@@ -1754,6 +2248,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift"
         },
         {
@@ -1766,6 +2264,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift"
         },
         {
@@ -1775,6 +2277,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift"
         }
       ],
       "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/sources"
@@ -1818,11 +2324,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CloudAccountStatus.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseSummary.swift.o"
         },
         {
           "kind" : "file",
@@ -1906,6 +2420,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Recipe.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o"
         },
         {
@@ -1915,6 +2433,22 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Reminder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderMoment.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/ReminderScheduling.swift.o"
         },
         {
           "kind" : "file",
@@ -1930,11 +2464,55 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/Pairing.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/AppStore.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.swift.o"
         },
         {
           "kind" : "file",
@@ -2070,6 +2648,14 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/WineEntity.swift.o"
         },
         {
@@ -2079,6 +2665,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/BundledContentTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.swift.o"
         },
         {
           "kind" : "file",
@@ -2121,6 +2711,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/BundledContentTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift"
         },
         {
           "kind" : "file",

@@ -8,6 +8,8 @@
 
 A aba You é o perfil do usuário. Ela mostra o que ele já aprendeu (Progress), o seu mapa do paladar e como ele mudou (Map), e a conta (Settings): dados pessoais, lembrete diário, partilha, certificados, sair e apagar a conta.
 
+**Fundo.** A tela usa a bg2 (só as colinas), fixa, com um véu escuro leve por cima: um gradiente de `rgba(24,30,18,.35)` no topo a `.55` em baixo. Os cards de vidro fosco quadrados têm a bg1 (o fundo da Home), desfocada, como fundo próprio: ela começa no topo de cada card e rola junto com o conteúdo, sem ficar presa ao ecrã.
+
 Pela SHARED-R01, não há planos: "Premium lifetime" no header, "Manage subscription" e o paywall estão fora de escopo.
 
 ## 2. Header
@@ -22,6 +24,8 @@ Pela SHARED-R01, não há planos: "Premium lifetime" no header, "Manage subscrip
 - Dado o usuário "Elisa" com top 3 Acidity, Fruit e Body, então o header mostra "Elisa" e "ACIDITY · FRUIT · BODY", sem nenhum "@".
 
 ## 3. Progress
+
+> **Estado da implementação (2026-10-31).** Os números mostram 0 até existirem o Learn e o Cellar; "Specialist in" mostra o texto de vazio e sugere o primeiro curso do path. O nível (YOU-R08) fica escondido até decidir D5. O streak (D11) não entra.
 
 **YOU-R04 · Números.** Seis números em "Your progress":
 
@@ -56,7 +60,7 @@ A secção pode ser recolhida (−) e aberta (+).
 
 **YOU-R09 · O mapa.** "The map", com a data da última mudança do mapa ("Read [data]"), o radar, a legenda e "Your readings" (como na QUIZ-R15 e QUIZ-R16).
 
-**YOU-R10 · Over time.** "See how your map has changed over the last few months." Uma foto do mapa por mês, com a data e o número de vinhos avaliados até então:
+**YOU-R10 · Over time.** A secção só aparece quando o mapa mudou depois do Quiz por uma avaliação de vinho (Yes / No). Só com o Quiz, ou com um Quiz refeito sem avaliações, ela fica escondida. "See how your map has changed over the last few months." Uma foto do mapa por mês, com a data e o número de vinhos avaliados até então:
 
 | Foto | Exemplo |
 | --- | --- |
@@ -105,7 +109,7 @@ Escolher uma foto mostra o mapa desse momento sobre o atual e a variação de ca
 | Before dinner | 19:00 |
 | Late, with a glass | 22:00 |
 
-E os dias, de Mon a Sun. Ver D8.
+E "Another time", com qualquer hora escolhida num seletor (D8, decidido em 2026-10-31). E os dias, de Mon a Sun.
 
 **YOU-R18 · Guardar.** "Save" só fica ativo com um momento e pelo menos um dia escolhidos.
 
@@ -130,7 +134,7 @@ E os dias, de Mon a Sun. Ver D8.
 - **Ligado:** "Anyone with your link can see your palate map."
 - **Desligado:** "Only friends you share a table with can see your map."
 
-O valor inicial é [ver D9].
+O valor inicial é **ligado** (Public, D9, decidido em 2026-10-31).
 
 ### 5.4 Certificados
 
@@ -151,6 +155,8 @@ O valor inicial é [ver D9].
 
 **YOU-R27 · Apagar a conta.** "Delete my account" pede confirmação: "Delete your account?", "This permanently removes your palate map, cellar, tables and certificates. It cannot be undone." Os botões são "Delete my account" e "Keep my account". Apagar remove todos os dados da conta (no iCloud e na base pública: perfil, chave de contato e pedidos de amizade), encerra a sessão e abre a Welcome. A mesma conta Apple ou Google pode criar uma conta nova depois.
 
+> **Estado da implementação (2026-10-31).** Apagar remove o perfil, os mapas e o lembrete do iCloud, o PublicProfile e a ContactKey da base pública, e cancela as notificações. Ainda falta: (1) revogar o token da Apple (exige um servidor; previsto num Cloudflare Worker antes do TestFlight, exigência da App Store para contas com Sign in with Apple); (2) apagar os FriendRequests enviados e recebidos, quando o Friends existir.
+
 **Critérios**
 - Quando o usuário toca em Sign out e depois em Cancel, então a sessão continua.
 - Quando o usuário confirma Sign out, então não há sessão e abre a Welcome.
@@ -164,16 +170,17 @@ O valor inicial é [ver D9].
 
 ## 7. Dúvidas em aberto
 
-- [ ] **D1 · Tab inicial.** A aba You abre sempre em Progress, ou na última tab vista?
+- [x] **D1 · Tab inicial.** Abre em Progress. Depois de refazer o mapa, abre em Map (QUIZ-R25). Cada tab abre no topo.
 - [ ] **D2 · Bottles.** Conta todas as entradas do Cellar, ou só as provadas (sem as Not yet)?
 - [ ] **D3 · Specialist in.** Como se gera o texto? Ex.: "You know Burgundy best: both of its grapes and the region course are done." É um texto escrito à mão para cada combinação, ou gerado por regras (a região com mais cursos concluídos, a próxima sugerida…)?
 - [ ] **D4 · Sugestão de lição.** Com que regra se escolhe a lição sugerida? O protótipo justifica pelo Cellar e pelo mapa ("You keep coming back to Pinot Noir, and your map leans toward light, fresh reds").
 - [ ] **D5 · Níveis.** Quais são os níveis (o protótipo tem "Harvest · Level 3 of 3") e como se sobe de nível: por XP, por lições do curriculum?
 - [x] **D6 · Partilha do mapa.** Story, WhatsApp e Save image, como toda partilha (SHARED-R20).
-- [ ] **D7 · Editar dados.** Mudar o número de telefone não pede código (não há SMS). Mudar o nome não muda os links já partilhados, porque eles usam o id.
-- [ ] **D8 · Hora do lembrete.** O protótipo mostra "20:00", que não é nenhum dos quatro momentos. O usuário só escolhe entre os quatro, ou pode escolher qualquer hora?
-- [ ] **D9 · Mapa público por padrão.** O mapa começa Public ou Friends? E o que vê quem abre o link de um mapa que não é público?
-- [ ] **D10 · Certificados ainda não obtidos.** Eles aparecem na lista (apagados), ou só os obtidos? Qual é o total? Com 30 módulos, 30 castas e 10 países, seriam 70 se cada país for um curso.
-- [ ] **D11 · Streak.** O artboard You tem regras de streak (dias seguidos com pelo menos uma lição, que voltam a zero quando um dia passa sem lição). O streak entra nesta versão? E onde aparece?
+- [x] **D7 · Editar dados.** Mudar o número de telefone não pede código (não há SMS). Mudar o nome não muda os links já partilhados, porque eles usam o id.
+- [x] **D8 · Hora do lembrete.** Os quatro momentos e "Another time", com qualquer hora (começa em 20:00, como no protótipo).
+- [x] **D9 · Mapa público por padrão.** Começa Public. Desligado, o PublicProfile continua a existir (o nome aparece aos amigos), mas sem o mapa. O que vê quem abre o link fica para o Friends.
+- [ ] **D10 · Certificados ainda não obtidos.** *(Por agora só existe o estado vazio, YOU-R24; decidir com o Learn.)* Eles aparecem na lista (apagados), ou só os obtidos? Qual é o total? Com 30 módulos, 30 castas e 10 países, seriam 70 se cada país for um curso.
+- [ ] **D11 · Streak.** *(Não implementado; a decidir com o Learn.)* O artboard You tem regras de streak (dias seguidos com pelo menos uma lição, que voltam a zero quando um dia passa sem lição). O streak entra nesta versão? E onde aparece?
+- [ ] **D12a · Linha Language.** Escondida nos Settings até existirem as traduções pt-BR (decidido em 2026-10-31).
 - [x] **D12 · Idioma.** Inglês e português do Brasil nesta versão; 6 idiomas no futuro (SHARED-R19a, YOU-R15a).
 - [ ] **D13 · Idioma inicial.** A app abre no idioma do aparelho (pt-BR se o aparelho estiver em português, senão inglês)? E um aparelho em português de Portugal?

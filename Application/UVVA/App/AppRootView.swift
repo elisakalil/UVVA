@@ -17,7 +17,7 @@ struct AppRootView: View {
             case .quiz:
                 if let quiz = coordinator.quiz { QuizView(viewModel: quiz) }
             case .tabs:
-                RootTabView()
+                RootTabView(coordinator: coordinator)
             }
         }
         .animation(.smooth, value: coordinator.route)

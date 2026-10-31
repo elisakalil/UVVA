@@ -32,6 +32,7 @@ public struct UVVATabBar: View {
                 }
                 .buttonStyle(.plain)
                 .accessibilityAddTraits(isActive ? .isSelected : [])
+                .spotlightAnchor(tab.spotlightID)
             }
         }
         .padding(.vertical, 2)

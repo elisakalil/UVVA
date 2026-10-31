@@ -1,0 +1,37 @@
+import DesignSystem
+import SwiftUI
+
+/// Change the name (YOU-R14, R15).
+struct EditNameView: View {
+    @State var name: String
+    var onSave: (String) async -> Bool
+    @Environment(\.dismiss) private var dismiss
+    @FocusState private var focused: Bool
+
+    private var isValid: Bool { name.trimmingCharacters(in: .whitespacesAndNewlines).count >= 2 }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Your first name", bundle: .module).font(UVVAFont.sans(26, .ultraLight)).padding(.top, 30)
+            TextField("", text: $name)
+                .font(UVVAFont.sans(26))
+                .textContentType(.givenName)
+                .focused($focused)
+                .padding(.bottom, 13)
+                .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
+                .padding(.top, 30)
+            Text((isValid ? String(localized: "Nice to meet you", bundle: .module)
+                          : String(localized: "At least two letters", bundle: .module)).uppercased())
+                .font(UVVAFont.sans(9)).tracking(2.3).opacity(0.35).padding(.top, 16)
+            Spacer()
+            ActionButton(String(localized: "Save", bundle: .module), isEnabled: isValid) {
+                Task { if await onSave(name) { dismiss() } }
+            }
+        }
+        .padding(30)
+        .foregroundStyle(UVVAColor.creamFill)
+        .presentationBackground(UVVAColor.mossDeep)
+        .presentationDetents([.medium])
+        .onAppear { focused = true }
+    }
+}

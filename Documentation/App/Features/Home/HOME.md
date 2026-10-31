@@ -91,6 +91,8 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **HOME-R09 · Receita.** "See the wine & the dish" expande o card: o prato, por que combina, ingredientes, passos e como servir. "Show less" recolhe.
 
+**HOME-R09a · Find the wine.** Abre, dentro da app (Safari em folha), uma pesquisa na internet com o produtor, o nome e o ano do vinho; sem ano, só produtor e nome. O produtor não se repete quando já está no nome (2026-10-31).
+
 **HOME-R10 · Ausência.** O card não aparece se o catálogo não tiver nenhum vinho com prato associado.
 
 **Critérios**

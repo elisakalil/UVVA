@@ -49,6 +49,9 @@
     "Continue with Apple" : {
 
     },
+    "Continue with Google" : {
+
+    },
     "Could not reach Apple. Check your connection and try again." : {
 
     },
@@ -65,9 +68,6 @@
 
     },
     "If you add your number, we publish a code made from it, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA." : {
-
-    },
-    "In your own iCloud. Your name and, if you choose, your map are public to the people you add as friends." : {
 
     },
     "Invite" : {
@@ -97,10 +97,10 @@
     "Nice to meet you" : {
 
     },
-    "None of your contacts are on UVVA yet" : {
+    "No contacts match “%@”" : {
 
     },
-    "One account per person, signed in with Apple and kept in your iCloud. Anything done from your account is your responsibility." : {
+    "One account per person, signed in with Apple or Google. Anything done from your account is your responsibility." : {
 
     },
     "Optional. You can still add friends with your invite link." : {
@@ -115,6 +115,9 @@
     "Requested" : {
 
     },
+    "Search contacts" : {
+
+    },
     "Sharing" : {
 
     },
@@ -122,6 +125,9 @@
 
     },
     "So friends who have you in their contacts can find you here. We never send you a code or a message." : {
+
+    },
+    "Stored with your account. Your name and, if you choose, your map are public to the people you add as friends." : {
 
     },
     "Terms" : {
@@ -133,16 +139,16 @@
     "The service" : {
 
     },
+    "To continue with Apple, sign in to iCloud in Settings, then come back." : {
+
+    },
     "UVVA" : {
 
     },
-    "UVVA gives you wine lessons, a map of your palate and a place to keep tasting notes. Everything in the app is free." : {
+    "UVVA gives you wine lessons, a map of your palate and a place to keep tasting notes." : {
 
     },
     "UVVA is better with friends. Add them now and, once they accept, you will see where your palates meet and what to open together." : {
-
-    },
-    "UVVA keeps your account in iCloud. Sign in to iCloud in Settings, then come back." : {
 
     },
     "We do not sell your data and we have no servers of our own." : {
@@ -172,7 +178,7 @@
     "Your account could not be saved. Try again." : {
 
     },
-    "Your first name is enough. We took it from your account; change it if you like." : {
+    "Your first name is enough." : {
 
     },
     "Your first name, your phone number if you add it, your palate map, the lessons you open and the tasting notes you write. Nothing else." : {

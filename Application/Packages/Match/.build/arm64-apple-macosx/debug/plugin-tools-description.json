@@ -7,7 +7,34 @@
     }
   ],
   "copyCommands" : {
-
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match_Match.bundle/Info.plist" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Info.plist"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match_Match.bundle/Info.plist"
+        }
+      ]
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match_Match.bundle/Localizable.xcstrings" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Resources/Localizable.xcstrings"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match_Match.bundle/Localizable.xcstrings"
+        }
+      ]
+    }
   },
   "explicitTargetDependencyImportCheckingMode" : {
     "none" : {
@@ -28,7 +55,43 @@
       "inputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthIdentity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Authenticating.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/CloudAccountStatus.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Profile.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/ProfileRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/PublicProfile.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift"
         },
         {
           "kind" : "file",
@@ -72,6 +135,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountries.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneNumber.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift"
         },
         {
@@ -89,6 +164,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift"
         },
         {
           "kind" : "file",
@@ -123,7 +202,16 @@
       "moduleName" : "Core",
       "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule",
       "objects" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AuthIdentity.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AuthProvider.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Authenticating.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CloudAccountStatus.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Profile.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/ProfileRepository.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PublicProfile.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Dish.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Friend.swift.o",
@@ -134,11 +222,15 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMap.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PalateMapRepository.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneCountries.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneCountry.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneNumber.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizEntry.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizExit.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestion.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizQuestionRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Rating.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Recipe.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeIngredient.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o",
@@ -198,7 +290,43 @@
       "outputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AuthIdentity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AuthProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Authenticating.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CloudAccountStatus.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Profile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/ProfileRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PublicProfile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o"
         },
         {
           "kind" : "file",
@@ -242,6 +370,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneCountries.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneCountry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneNumber.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizEntry.swift.o"
         },
         {
@@ -259,6 +399,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Rating.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Recipe.swift.o"
         },
         {
           "kind" : "file",
@@ -287,7 +431,16 @@
       ],
       "prepareForIndexing" : false,
       "sources" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthIdentity.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthProvider.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Authenticating.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/CloudAccountStatus.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Profile.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/ProfileRepository.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/PublicProfile.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
@@ -298,11 +451,15 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountries.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountry.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneNumber.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizExit.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift",
@@ -327,7 +484,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift"
         },
         {
           "kind" : "file",
@@ -335,7 +512,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<Match-arm64-apple-macosx-debug.module-resources>"
         },
         {
           "kind" : "file",
@@ -352,8 +537,14 @@
       "objects" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Pairing.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -368,7 +559,7 @@
         "-j10",
         "-DSWIFT_PACKAGE",
         "-DDEBUG",
-        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
         "-module-cache-path",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
         "-parseable-output",
@@ -416,11 +607,35 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Pairing.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o"
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
         },
         {
           "kind" : "file",
@@ -431,8 +646,14 @@
       "sources" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build",
       "wholeModuleOptimization" : false
@@ -539,7 +760,19 @@
       "inputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapEvolutionTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapReadingTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/PairingTests.swift"
         },
         {
           "kind" : "file",
@@ -566,7 +799,10 @@
       "moduleName" : "MatchTests",
       "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules/MatchTests.swiftmodule",
       "objects" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapEvolutionTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapReadingTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/PairingTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o"
       ],
       "otherArguments" : [
@@ -621,7 +857,19 @@
       "outputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapEvolutionTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapReadingTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/PairingTests.swift.o"
         },
         {
           "kind" : "file",
@@ -634,7 +882,10 @@
       ],
       "prepareForIndexing" : false,
       "sources" : [
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapEvolutionTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapReadingTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/PairingTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/SimilarityTests.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build",
@@ -652,7 +903,16 @@
       "-package-name",
       "core",
       "-c",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthIdentity.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthProvider.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Authenticating.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/CloudAccountStatus.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Profile.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/ProfileRepository.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/PublicProfile.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
@@ -663,11 +923,15 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountries.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountry.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneNumber.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizExit.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestion.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizQuestionRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeFlavor.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeIngredient.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/RecipeTwist.swift",
@@ -734,8 +998,14 @@
       "-c",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/AxisChange.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/MapUpdate.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -750,7 +1020,7 @@
       "-j10",
       "-DSWIFT_PACKAGE",
       "-DDEBUG",
-      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
       "-module-cache-path",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/ModuleCache",
       "-parseable-output",
@@ -855,7 +1125,10 @@
       "-package-name",
       "match",
       "-c",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapEvolutionTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapReadingTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/PairingTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/SimilarityTests.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Modules",
@@ -957,7 +1230,43 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthIdentity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/AuthProvider.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Authenticating.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/CloudAccountStatus.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/Profile.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/ProfileRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/PublicProfile.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift"
         },
         {
           "kind" : "file",
@@ -1001,6 +1310,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountries.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneNumber.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/QuizEntry.swift"
         },
         {
@@ -1018,6 +1339,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Rating.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Recipe.swift"
         },
         {
           "kind" : "file",
@@ -1059,11 +1384,35 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Pairing.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/RatingWeights.swift"
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/AxisLore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapEvolution.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapReading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Reading/MapSnapshot.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Sources/Match/Similarity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift"
         }
       ],
       "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/sources"
@@ -1092,6 +1441,26 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AuthIdentity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/AuthProvider.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Authenticating.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/CloudAccountStatus.swift.o"
         },
         {
           "kind" : "file",
@@ -1135,6 +1504,30 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneCountries.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneCountry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PhoneNumber.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Profile.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/ProfileRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/PublicProfile.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/QuizEntry.swift.o"
         },
         {
@@ -1155,6 +1548,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/Recipe.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeFlavor.swift.o"
         },
         {
@@ -1164,6 +1561,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/RecipeTwist.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o"
         },
         {
           "kind" : "file",
@@ -1179,7 +1580,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/Pairing.swift.o"
         },
         {
           "kind" : "file",
@@ -1191,11 +1612,27 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchPackageTests.build/runner.swift.o"
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapEvolutionTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapReadingTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/.build/arm64-apple-macosx/debug/MatchTests.build/PairingTests.swift.o"
         },
         {
           "kind" : "file",
@@ -1213,7 +1650,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapEvolutionTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapReadingTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/MapUpdateTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match/Tests/MatchTests/PairingTests.swift"
         },
         {
           "kind" : "file",

@@ -22,3 +22,9 @@ Quando o usuário pede um vinho que o surpreenda, a app procura um vinho com o m
 ## Segmento
 
 Cada vinho do catálogo tem um `segment`, um número que agrupa vinhos com mapas parecidos. O sync do catálogo pede ao CloudKit só os vinhos dos segmentos próximos do mapa do usuário (ARCHITECTURE §4.1). O cálculo ainda não está definido e tem de existir antes do sync do catálogo.
+
+## Implementação atual (2026-10-31)
+
+- **Usuário × vinho:** `Similarity.between` (package `Match`), distância euclidiana nos 8 eixos (QUIZ-R21).
+- **Usuário × vinho × receita:** `Pairing.recipe` — o mapa cruzado é a média dos dois mapas; a receita é a mais próxima dele, só entre as feitas para o tipo do vinho (`wineTypes`), com entradas e pratos principais antes de sobremesas, petiscos e queijos.
+- **Sugestão do dia:** um dos 30 vinhos mais próximos do usuário, escolhido pelo dia do calendário (o mesmo durante o dia, HOME-R07).
