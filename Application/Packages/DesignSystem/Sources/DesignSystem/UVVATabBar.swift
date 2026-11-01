@@ -13,12 +13,12 @@ public struct UVVATabBar: View {
                 let isActive = tab == active
                 Button { active = tab } label: {
                     Text(tab.rawValue)
-                        .font(UVVAFont.sans(11, isActive ? .regular : .light))
+                        .font(UVVAFont.sans(11.5, isActive ? .regular : .light))
                         .tracking(0.66)
                         .lineLimit(1)
                         .foregroundStyle(isActive ? UVVAColor.cream : UVVAColor.cream.opacity(0.72))
                         .padding(.horizontal, 4)
-                        .frame(minWidth: 58, minHeight: 28)
+                        .frame(minWidth: 61, minHeight: 30)
                         .background {
                             if isActive {
                                 Capsule()
@@ -35,9 +35,9 @@ public struct UVVATabBar: View {
                 .spotlightAnchor(tab.spotlightID)
             }
         }
-        .padding(.vertical, 2)
-        .padding(.horizontal, 4)
-        .background { FrostedGlass(radius: 20, dense: true) }
+        .padding(.vertical, 3)
+        .padding(.horizontal, 5)
+        .background { FrostedGlass(radius: 21, dense: true) }
     }
 }
 

@@ -6,6 +6,9 @@ struct HomeHeader: View {
     var hasUnread: Bool
     var scroll: HeaderScroll
 
+    /// The logo's size at full scale, measured once.
+    @State private var logoSize = CGSize.zero
+
     static let topPadding: CGFloat = 4
     static let logoMax: CGFloat = 76
     static let logoMin: CGFloat = 30
@@ -16,16 +19,23 @@ struct HomeHeader: View {
     static let collapseDistance: CGFloat = 150
 
     private var logoProgress: CGFloat { min(1, scroll.offset / Self.collapseDistance) }
+    private var logoScale: CGFloat { 1 - (1 - Self.logoMin / Self.logoMax) * logoProgress }
     private var greetingProgress: CGFloat { min(1, scroll.offset / 110) }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .top, spacing: 16) {
+                // Set once at full size and scaled down: a new font size on every frame of the scroll made the
+                // text lay out and render again each time.
                 Text("UVVA")
-                    .font(UVVAFont.whiteGrape(Self.logoMax - (Self.logoMax - Self.logoMin) * logoProgress))
+                    .font(UVVAFont.whiteGrape(Self.logoMax))
                     .tracking(0.02 * Self.logoMax)
                     .foregroundStyle(UVVAColor.logoInk)
                     .lineLimit(1)
+                    .fixedSize()
+                    .onGeometryChange(for: CGSize.self) { $0.size } action: { logoSize = $0 }
+                    .scaleEffect(logoScale, anchor: .topLeading)
+                    .frame(width: logoSize.width * logoScale, height: logoSize.height * logoScale, alignment: .topLeading)
                 Spacer(minLength: 0)
                 HStack(alignment: .top, spacing: 6) {
                     Button {} label: {

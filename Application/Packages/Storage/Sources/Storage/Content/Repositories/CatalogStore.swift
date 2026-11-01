@@ -42,7 +42,8 @@ public actor CatalogStore: CatalogRepository {
 
     static func wine(_ entity: WineEntity) -> Wine {
         Wine(id: entity.wineKey, name: entity.name, producer: entity.producer, vintage: entity.vintage,
-             type: entity.type, origin: entity.origin, profile: entity.palateMap, note: entity.note,
+             type: entity.type, origin: entity.origin, grapes: entity.grapes, alcohol: entity.alcohol,
+             classification: entity.classification, profile: entity.palateMap, note: entity.note,
              serving: entity.servingMin <= entity.servingMax ? entity.servingMin...entity.servingMax : nil)
     }
 }

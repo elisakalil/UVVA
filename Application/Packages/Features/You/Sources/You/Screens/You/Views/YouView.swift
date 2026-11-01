@@ -32,7 +32,7 @@ public struct YouView: View {
                     .padding(.bottom, 24)
                 }
                 .scrollIndicators(.hidden)
-                .scrollEdgeFade(12)
+                .scrollEdgeFade(12, throughBottomInset: true)
                 // Each tab opens at its top, not at the offset the last one was left at.
                 .id(viewModel.tab)
             }

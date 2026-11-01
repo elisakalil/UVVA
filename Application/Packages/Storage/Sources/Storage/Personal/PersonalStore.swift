@@ -6,7 +6,8 @@ import SwiftData
 public enum PersonalStore {
     public static let cloudKitContainer = "iCloud.app.uvva"
 
-    public static let models: [any PersistentModel.Type] = [ProfileEntity.self, PalateMapEntity.self, ReminderEntity.self]
+    public static let models: [any PersistentModel.Type] = [ProfileEntity.self, PalateMapEntity.self, ReminderEntity.self,
+                                                              CellarEntryEntity.self]
 
     /// `Application Support/Personal/Personal.store`.
     public static var defaultURL: URL {

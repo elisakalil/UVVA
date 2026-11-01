@@ -40,8 +40,10 @@ final class ContentLoader {
         do {
             // Created off the main actor, so the import runs on a background context.
             let version = try await Task.detached(priority: .utility) {
-                try await ContentImporter(modelContainer: container)
-                    .importIfNeeded(from: source, currentVersion: current) { stage in
+                // A wine in the Cellar is never removed, even when it leaves the bundle.
+                let cellarKeys = (try? await CellarStore(modelContainer: container).wineKeys()) ?? []
+                return try await ContentImporter(modelContainer: container)
+                    .importIfNeeded(from: source, currentVersion: current, protectedWineKeys: cellarKeys) { stage in
                         Task { @MainActor [weak self] in self?.stage = stage }
                     }
             }.value
@@ -49,6 +51,7 @@ final class ContentLoader {
                 defaults.set(version, forKey: Self.versionKey)
                 logger.info("Imported content \(version) in \(Date().timeIntervalSince(start), format: .fixed(precision: 2)) s")
             }
+            timingLog.info("TIMING import done")
             stage = nil
             isReady = true
         } catch {

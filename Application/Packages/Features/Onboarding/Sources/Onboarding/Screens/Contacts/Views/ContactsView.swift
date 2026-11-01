@@ -10,6 +10,13 @@ struct ContactsView: View {
 
     /// How far the list scrolls before the search bar comes down.
     static let searchReveal: CGFloat = 40
+    /// Room between the top of the screen and the search bar.
+    static let searchTop: CGFloat = 32
+    /// The list is hidden down to the foot of the bar, then fades back in below it.
+    static let searchClear: CGFloat = searchTop + 44
+    static let searchFade: CGFloat = 40
+    /// The list also fades out at its foot, just above "Next".
+    static let footFade: CGFloat = 48
 
     /// The search bar shows once the list is scrolled, and stays while it is in use.
     private var showsSearch: Bool { scrolled || searching || !viewModel.contactsQuery.isEmpty }
@@ -52,11 +59,23 @@ struct ContactsView: View {
                             }
                         }
                     }
-                    .padding(.bottom, 24)
+                    // Room for the last row to clear the fade at the foot.
+                    .padding(.bottom, Self.footFade)
                 }
                 .scrollIndicators(.hidden)
                 .scrollDismissesKeyboard(.immediately)
-                .scrollEdgeFade()
+                // The list fades out into the photo itself: at the top, under the search bar once it is down,
+                // and at the foot, above "Next".
+                .mask {
+                    VStack(spacing: 0) {
+                        Color.clear.frame(height: showsSearch && !model.isLoading ? Self.searchClear : 0)
+                        LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+                            .frame(height: showsSearch && !model.isLoading ? Self.searchFade : 24)
+                        Color.black
+                        LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                            .frame(height: Self.footFade)
+                    }
+                }
                 .onScrollGeometryChange(for: Bool.self) { geometry in
                     geometry.contentOffset.y + geometry.contentInsets.top > Self.searchReveal
                 } action: { _, isScrolled in
@@ -68,15 +87,7 @@ struct ContactsView: View {
                                     prompt: String(localized: "Search contacts", bundle: .module),
                                     isFocused: $searching, onCancel: {})
                             .padding(.horizontal, 24)
-                            .padding(.top, 4)
-                            .padding(.bottom, 18)
-                            .background {
-                                // The list fades out under the bar instead of running into it.
-                                LinearGradient(colors: [UVVAColor.moss.opacity(0.92), UVVAColor.moss.opacity(0)],
-                                               startPoint: .top, endPoint: .bottom)
-                                    .ignoresSafeArea(edges: .top)
-                                    .allowsHitTesting(false)
-                            }
+                            .padding(.top, Self.searchTop)
                             .transition(.move(edge: .top).combined(with: .opacity))
                     }
                 }
@@ -119,10 +130,9 @@ struct ContactsView: View {
                             .id(row.state == .invite || row.state == .invited ? firstOfLetter(row, in: rows) : row.id)
                     }
                 }
-                .overlay(alignment: .top) { Rectangle().opacity(0.18).frame(height: 0.5) }
                 .padding(.leading, 20)
                 .padding(.trailing, 34)
-                .padding(.top, 26)
+                .padding(.top, 14)
             }
         }
     }

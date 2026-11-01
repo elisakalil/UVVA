@@ -53,18 +53,21 @@ struct ProfileStoreTests {
 }
 
 struct AccountDeletionTests {
-    @Test func YOU_R27_deleteAccount_removesProfileMapAndReminder() async throws {
+    @Test func YOU_R27_deleteAccount_removesProfileMapReminderAndCellar() async throws {
         let container = try AppStore.makeInMemoryContainer()
         let profiles = ProfileStore(modelContainer: container)
         try await profiles.save(Profile(id: "u1", authProvider: .apple, authUserID: "a1", firstName: "Elisa", phone: nil))
         try await PalateMapStore(modelContainer: container).saveQuizMap(PalateMap([.acidity: 6]), at: .now)
         try await ReminderStore(modelContainer: container).save(Reminder(hour: 19, weekdays: [2]))
+        try await CellarStore(modelContainer: container)
+            .addWantToTry(Wine(id: "w1", name: "W", origin: "", profile: PalateMap([:])))
 
         try await profiles.deleteAccount()
 
         #expect(try await profiles.currentProfile() == nil)
         #expect(try await PalateMapStore(modelContainer: container).currentMap() == nil)
         #expect(try await ReminderStore(modelContainer: container).reminder() == nil)
+        #expect(try await CellarStore(modelContainer: container).wineKeys().isEmpty)
     }
 
     @Test func YOU_R27_sameAppleAccountAfterDeletion_isANewAccount() async throws {

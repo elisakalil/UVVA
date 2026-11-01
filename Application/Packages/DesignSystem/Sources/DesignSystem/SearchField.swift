@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// A search bar on the glass: a faint capsule with a magnifier, a clear button once there is text,
+/// A search bar on the glass: a frosted capsule, the same glass as the Home cards, with a magnifier, a clear button once there is text,
 /// and "Cancel" beside it while the search is in use. Lists show it once they are scrolled (CELLAR-R11).
 public struct SearchField: View {
     @Binding var text: String
@@ -44,12 +44,7 @@ public struct SearchField: View {
             .padding(.leading, 14)
             .padding(.trailing, 8)
             .frame(height: 40)
-            .background {
-                Capsule()
-                    .fill(UVVAColor.creamFill.opacity(0.06))
-                    .background(.ultraThinMaterial.opacity(0.5), in: Capsule())
-                    .overlay(Capsule().strokeBorder(UVVAColor.creamFill.opacity(0.14), lineWidth: 0.5))
-            }
+            .background { FrostedGlass(radius: 20) }
             .contentShape(Capsule())
             .onTapGesture { isFocused.wrappedValue = true }
 

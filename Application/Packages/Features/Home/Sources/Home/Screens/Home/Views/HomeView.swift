@@ -20,8 +20,8 @@ public struct HomeView: View {
                 HomeContent(
                     model: model,
                     tourTarget: tour?.current?.target,
-                    onInvite: { invite = viewModel.inviteLink
-                    })
+                    cellarWineKeys: viewModel.cellarWineKeys,
+                    onInvite: { invite = viewModel.inviteLink })
             } else {
                 ZStack {
                     PageBackground()

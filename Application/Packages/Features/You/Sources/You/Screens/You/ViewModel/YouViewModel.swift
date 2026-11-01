@@ -80,7 +80,7 @@ public final class YouViewModel {
         return ProgressUIModel(
             stats: stats,
             specialist: String(localized: "Nothing to map yet. Finish your first course and this space starts filling in: the grapes you know, the regions you can place, and where you are strongest.", bundle: .module),
-            suggestionEyebrow: String(localized: "Start here · Course", bundle: .module),
+            suggestionEyebrow: String(localized: "A course for you", bundle: .module),
             suggestionTitle: module?.title ?? "",
             suggestionNote: module.map { String(localized: "\($0.lessonCount) lessons · \($0.minutes) min", bundle: .module) } ?? "",
             cta: String(localized: "Start the course", bundle: .module)

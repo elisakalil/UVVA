@@ -7,6 +7,7 @@ struct HomeContent: View {
     var model: HomeUIModel
     /// The area the tour points at, if any: the scroll follows it.
     var tourTarget: String?
+    var cellarWineKeys: Set<String> = []
     var onInvite: () -> Void
 
     @State private var scroll = HeaderScroll()
@@ -37,11 +38,11 @@ struct HomeContent: View {
                         ForEach(rows, id: \.[0].kind) { row in
                             if row.count == 2 {
                                 HStack(spacing: 14) {
-                                    ForEach(row, id: \.kind) { card($0) }
+                                    ForEach(row, id: \.kind) { card($0, proxy: proxy) }
                                 }
                                 .fixedSize(horizontal: false, vertical: true)
                             } else {
-                                card(row[0])
+                                card(row[0], proxy: proxy)
                             }
                         }
                         Text("UVVA · 0.1 · Made in Portugal")
@@ -53,7 +54,10 @@ struct HomeContent: View {
                     }
                     .padding(.horizontal, UVVASpace.gutter)
                     .padding(.bottom, 40)
+                    .glassPanes()
                 }
+                // One still copy of the glass photo for every card; only the cards' outline follows the scroll.
+                .glassBackdrop()
                 .scrollIndicators(.hidden)
                 .scrollDisabled(tourTarget != nil)
                 // Clamped to the header's range: once it has collapsed, scrolling further reports nothing.
@@ -81,8 +85,9 @@ struct HomeContent: View {
         .foregroundStyle(UVVAColor.cream)
     }
 
-    @ViewBuilder private func card(_ card: HomeCardModel) -> some View {
-        HomeCardView(card: card, palateMap: model.palateMap, onInvite: onInvite)
+    @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
+        HomeCardView(card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite,
+                     onShowLess: { withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } })
             .id(card.kind)
             .modifier(SpotlightModifier(id: card.spotlightID))
     }

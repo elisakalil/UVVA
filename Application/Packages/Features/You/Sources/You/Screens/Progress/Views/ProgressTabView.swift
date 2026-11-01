@@ -31,7 +31,8 @@ struct ProgressTabView: View {
                     .padding(.top, 16)
 
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(model.suggestionEyebrow.uppercased()).font(UVVAFont.sans(9)).tracking(2.2).opacity(0.82)
+                    Text(model.suggestionEyebrow.uppercased())
+                        .font(UVVAFont.redGrapes(16)).tracking(0.64)
                     Text(model.suggestionTitle).font(UVVAFont.sans(14))
                     Text(model.suggestionNote).font(UVVAFont.sans(12.5)).opacity(0.84)
                 }

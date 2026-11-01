@@ -9,18 +9,22 @@ import Observation
 public final class HomeViewModel {
     private(set) var model: HomeUIModel?
     private(set) var inviteLink: URL?
+    /// The wines already in the Cellar, so the day's suggestion shows it is saved.
+    private(set) var cellarWineKeys: Set<String> = []
 
     private let profiles: any ProfileRepository
     private let maps: any PalateMapRepository
     private let catalog: any CatalogRepository
+    private let cellar: any CellarRepository
     private let now: () -> Date
     private let calendar: Calendar
 
     public init(profiles: any ProfileRepository, maps: any PalateMapRepository, catalog: any CatalogRepository,
-                now: @escaping () -> Date = Date.init, calendar: Calendar = .current) {
+                cellar: any CellarRepository, now: @escaping () -> Date = Date.init, calendar: Calendar = .current) {
         self.profiles = profiles
         self.maps = maps
         self.catalog = catalog
+        self.cellar = cellar
         self.now = now
         self.calendar = calendar
     }
@@ -30,6 +34,7 @@ public final class HomeViewModel {
         guard let map = try? await maps.currentMap() else { return }
         let profile = try? await profiles.currentProfile()
         inviteLink = profile?.inviteLink
+        cellarWineKeys = (try? await cellar.wineKeys()) ?? []
         let pool = HomeCardsBuilder.dailySuggestionPool
         let wines = (try? await catalog.winesClosest(to: map, limit: pool + HomeCardsBuilder.winesForPalateCount)) ?? []
         let recipes = (try? await catalog.recipes()) ?? []
@@ -48,6 +53,14 @@ public final class HomeViewModel {
         // The word of the day stays the same all day (HOME-R19, decided 2026-10-31).
         let builder = HomeCardsBuilder(calendar: calendar, pickWordIndex: { count in day % count })
         model = HomeUIModel(cards: builder.build(from: state, now: now()), palateMap: map)
+    }
+
+    /// "Add to cellar" on the day's suggestion: the wine goes in as Want to try (CELLAR-R01).
+    func addToCellar(_ wine: Wine) async {
+        guard !cellarWineKeys.contains(wine.id) else { return }
+        // Marked saved only once the store has it, so a failed save leaves the button to try again.
+        guard (try? await cellar.addWantToTry(wine)) != nil else { return }
+        cellarWineKeys.insert(wine.id)
     }
 
     var inviteMessage: String {

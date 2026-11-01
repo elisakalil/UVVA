@@ -74,7 +74,7 @@ struct GuidedTourTests {
     @Test func HOME_R31_stepTwo_pointsAtChooseYourWine_andTheTabsComeLast() {
         let viewModel = GuidedTourViewModel(firstName: "Elisa") {}
         viewModel.pick(2)
-        #expect(viewModel.current?.target == HomeSpotlight.chooseYourWine)
+        #expect(viewModel.current?.target == HomeSpotlightModel.chooseYourWine)
         viewModel.pick(6)
         #expect(viewModel.current?.target == "tab.friends")
     }

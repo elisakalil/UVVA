@@ -7,7 +7,7 @@ public struct SplashView: View {
 
     public var body: some View {
         ZStack {
-            PageBackground(photoOpacity: 0.5)
+            PageBackground(photoOpacity: OnboardingView.photoOpacity)
             GrapeLoop().frame(width: 140, height: 196)
         }
     }

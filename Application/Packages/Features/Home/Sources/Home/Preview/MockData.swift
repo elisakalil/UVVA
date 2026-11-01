@@ -13,10 +13,19 @@ enum MockData {
     }
 
     static let catalog: [Wine] = [
-        Wine(id: "alvarinho", name: "Alvarinho, Monção e Melgaço", origin: "Monção e Melgaço, Portugal",
+        Wine(id: "alvarinho", name: "Alvarinho, Monção e Melgaço", vintage: 2023, type: "White",
+             origin: "Monção e Melgaço, Portugal", grapes: ["Alvarinho"], alcohol: 12.5,
+             classification: "Vinho Verde DOC · 12.5% abv",
              profile: profile(1, 8, 0, 4, 7, 5, 1, 2),
-             dish: Dish(title: "Roasted peppers with fennel and dill oil", why: "The acidity cuts the oil and the herbs pick up its saline snap."),
-             note: "Bright white with lemon and white peach, a saline finish."),
+             dish: Dish(title: "Roasted peppers with fennel and dill oil",
+                        why: "The acidity cuts the oil and the herbs pick up its saline snap.",
+                        ingredients: ["3 red peppers", "1 fennel bulb", "A bunch of dill", "Olive oil", "Lemon", "Flaked sea salt"],
+                        steps: ["Roast the whole peppers at 220 °C for 30 minutes, then peel and tear into wide strips.",
+                                "Blitz the dill with olive oil and a pinch of salt.",
+                                "Shave the fennel thin and dress it in lemon juice alone.",
+                                "Lay the peppers down, the fennel over them, the dill oil around the edge."],
+                        serves: "Serves 2 · 45 min"),
+             note: "Bright white with lemon and white peach, a saline finish.", serving: 8...10),
         Wine(id: "baga", name: "Baga, Bairrada", origin: "Bairrada, Portugal",
              profile: profile(0, 7, 7, 5, 6, 3, 3, 5),
              dish: Dish(title: "Charred mushrooms with bay and sour cherry butter", why: "Firm tannin meets the char; the cherry follows its red fruit."),

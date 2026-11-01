@@ -33,15 +33,21 @@ private struct CatalogStub: CatalogRepository {
     func firstPathModule() async throws -> CourseSummary? { nil }
 }
 
+private actor CellarStub: CellarRepository {
+    private(set) var added: [String] = []
+    func wineKeys() async throws -> Set<String> { Set(added) }
+    func addWantToTry(_ wine: Wine) async throws { added.append(wine.id) }
+}
+
 @MainActor
 struct HomeViewModelTests {
     let day = Date(timeIntervalSince1970: 1_793_000_000)
 
-    private func load(at date: Date) async -> HomeViewModel {
+    private func load(at date: Date, cellar: CellarStub = CellarStub()) async -> HomeViewModel {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(identifier: "Europe/Lisbon")!
         let viewModel = HomeViewModel(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
-                                      now: { date }, calendar: calendar)
+                                      cellar: cellar, now: { date }, calendar: calendar)
         await viewModel.load()
         return viewModel
     }
@@ -70,5 +76,19 @@ struct HomeViewModelTests {
         let morning = await load(at: day).model?.cards.first { $0.kind == "wordOfTheDay" }
         let evening = await load(at: day.addingTimeInterval(3 * 3600)).model?.cards.first { $0.kind == "wordOfTheDay" }
         #expect(morning == evening)
+    }
+
+    // MARK: CELLAR-R01 · Add to cellar from the day's suggestion
+
+    @Test func addToCellar_savesTheWineOnce_andMarksItSaved() async throws {
+        let cellar = CellarStub()
+        let viewModel = await load(at: day, cellar: cellar)
+        let wine = try #require(HomeState.full.catalog.first)
+
+        await viewModel.addToCellar(wine)
+        await viewModel.addToCellar(wine)
+
+        #expect(viewModel.cellarWineKeys.contains(wine.id))
+        #expect(await cellar.added == [wine.id])
     }
 }

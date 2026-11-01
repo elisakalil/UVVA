@@ -95,6 +95,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift"
         },
         {
@@ -232,6 +236,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseSummary.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Dish.swift.o",
@@ -352,6 +357,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o"
         },
         {
           "kind" : "file",
@@ -486,6 +495,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseSummary.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
@@ -843,6 +853,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/CellarEntryEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift"
         },
         {
@@ -856,6 +870,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/CellarStore.swift"
         },
         {
           "kind" : "file",
@@ -922,10 +940,12 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PackedWinesFile.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.swift.o"
@@ -1111,6 +1131,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o"
         },
         {
@@ -1124,6 +1148,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.swift.o"
         },
         {
           "kind" : "file",
@@ -1176,10 +1204,12 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWinesFile.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/CellarEntryEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ProfileEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/CellarStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/PalateMapStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift"
@@ -1297,6 +1327,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CellarStoreTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContactKeyTests.swift"
         },
         {
@@ -1346,6 +1380,7 @@
       "objects" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/BundledContentTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CellarStoreTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContentFixture.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContentImporterTests.swift.o",
@@ -1414,6 +1449,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CellarStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.swift.o"
         },
         {
@@ -1449,6 +1488,7 @@
       "sources" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/BundledContentTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CellarStoreTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContactKeyTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentFixture.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentImporterTests.swift",
@@ -1482,6 +1522,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseProgress.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CourseSummary.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
@@ -1671,10 +1712,12 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWinesFile.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/CellarEntryEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ProfileEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/CellarStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/PalateMapStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift",
@@ -1799,6 +1842,7 @@
       "-c",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/BundledContentTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CellarStoreTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContactKeyTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentFixture.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/ContentImporterTests.swift",
@@ -1949,6 +1993,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift"
         },
         {
           "kind" : "file",
@@ -2256,6 +2304,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/CellarEntryEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift"
         },
         {
@@ -2269,6 +2321,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/CellarStore.swift"
         },
         {
           "kind" : "file",
@@ -2325,6 +2381,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o"
         },
         {
           "kind" : "file",
@@ -2516,6 +2576,14 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService.swift.o"
         },
         {
@@ -2672,6 +2740,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CellarStoreTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.swift.o"
         },
         {
@@ -2715,6 +2787,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CatalogStoreTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Tests/StorageTests/CellarStoreTests.swift"
         },
         {
           "kind" : "file",

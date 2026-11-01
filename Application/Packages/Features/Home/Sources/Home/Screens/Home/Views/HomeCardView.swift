@@ -5,12 +5,16 @@ import SwiftUI
 struct HomeCardView: View {
     var card: HomeCardModel
     var palateMap: PalateMap
+    var cellarWineKeys: Set<String> = []
     var onInvite: () -> Void = {}
+    var onShowLess: () -> Void = {}
 
     var body: some View {
         switch card {
         case .header: EmptyView() // drawn by HomeHeader, pinned above the scroll
-        case let .dailySuggestion(wine): DailySuggestionCard(wine: wine, palateMap: palateMap)
+        case let .dailySuggestion(wine):
+            DailySuggestionCard(wine: wine, palateMap: palateMap, isInCellar: cellarWineKeys.contains(wine.id),
+                                onShowLess: onShowLess)
         case let .friends(variant):
             // HOME-R11: with no friends yet, the card opens the invite.
             FriendsCard(variant: variant)

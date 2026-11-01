@@ -5,6 +5,9 @@ import SwiftUI
 struct DailySuggestionCard: View {
     var wine: Wine
     var palateMap: PalateMap
+    var isInCellar = false
+    /// "Show less": the Home goes back to the top as the card closes.
+    var onShowLess: () -> Void = {}
     @State private var open = false
     @State private var search: URL?
 
@@ -39,6 +42,7 @@ struct DailySuggestionCard: View {
                 Text([reason, wine.note].compactMap { $0 }.joined(separator: " "))
                     .font(UVVAFont.sans(12, .regular))
                     .lineSpacing(6)
+                    .lineLimit(open ? nil : 3)
                     .foregroundStyle(UVVAColor.cream84)
                     .padding(.top, 30)
 
@@ -56,32 +60,81 @@ struct DailySuggestionCard: View {
                 }
                 .padding(.top, 26)
 
-                if let dish = wine.dish, open {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Rectangle().fill(UVVAColor.cream14).frame(height: 0.5).padding(.bottom, 10)
-                        Caption(text: "The perfect table")
-                        Text(dish.title).font(UVVAFont.sans(16))
-                        Text(dish.why).font(UVVAFont.sans(12, .regular)).lineSpacing(5).foregroundStyle(UVVAColor.cream84)
-                        RecipeDetails(dish: dish, serving: wine.serving)
+                // Built with the card and only folded away while closed, so opening it builds nothing (the pager
+                // and the charts were made on the tap) and the card simply grows, its content staying in place.
+                VStack(alignment: .leading, spacing: 0) {
+                    divider
+                    WineFacts(wine: wine).padding(.top, 20)
+                    PalateMatch(wine: wine.profile, palate: palateMap).padding(.top, 30)
+                    WineMapPager(wine: wine.profile, palate: palateMap).padding(.top, 30)
+                    if let dish = wine.dish {
+                        divider.padding(.top, 22)
+                        PerfectTable(dish: dish, serving: wine.serving).padding(.top, 19)
                     }
-                    .padding(.top, 26)
-                    .transition(.opacity.combined(with: .move(edge: .top)))
                 }
+                .padding(.top, 26)
+                .frame(height: open ? nil : 0, alignment: .top)
+                .clipped()
+                .opacity(open ? 1 : 0)
+                .allowsHitTesting(open)
+                .accessibilityHidden(!open)
 
-                VStack(spacing: 6) {
+                VStack(spacing: 10) {
                     PillButton(style: .outline, action: { search = WineSearch.url(for: wine) }) { Text("Find the wine") }
-                    PillButton(action: { withAnimation(.smooth) { open.toggle() } }) {
-                        HStack(spacing: 10) {
-                            Text(open ? "Show less" : "See the wine & the dish")
-                            Image(systemName: "chevron.down")
-                                .font(.system(size: 11, weight: .regular))
-                                .rotationEffect(.degrees(open ? 180 : 0))
-                        }
+                    if open {
+                        cellarButton.transition(.opacity)
                     }
+                    toggleButton
                 }
                 .padding(.top, 26)
             }
         }
         .sheet(item: $search) { url in SafariSheet(url: url).ignoresSafeArea() }
+    }
+
+    /// Saving to the Cellar is not wired yet: the button shows but does nothing. A wine already saved says so.
+    @ViewBuilder private var cellarButton: some View {
+        if isInCellar {
+            PillButton(style: .outline, action: {}) {
+                HStack(spacing: 8) {
+                    Image(systemName: "checkmark").font(.system(size: 11, weight: .regular))
+                    Text("In your cellar")
+                }
+            }
+            .disabled(true)
+        } else {
+            PillButton(action: {}) { Text("Add to cellar") }
+        }
+    }
+
+    /// One button open or closed, so it slides down with the card as it opens instead of a new one replacing it
+    /// while the old one fades out over the new content. Open, it steps back to a plain line so the recipe ends the card.
+    private var toggleButton: some View {
+        Button {
+            withAnimation(.smooth) { open.toggle() }
+            if !open { onShowLess() }
+        } label: {
+            toggleLabel
+                .font(UVVAFont.sans(14, .regular))
+                .foregroundStyle(open ? UVVAColor.cream : UVVAColor.ink)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .background { Capsule().fill(UVVAColor.creamFill).opacity(open ? 0 : 1) }
+                .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var divider: some View {
+        Rectangle().fill(UVVAColor.cream.opacity(0.22)).frame(height: 0.5)
+    }
+
+    private var toggleLabel: some View {
+        HStack(spacing: 10) {
+            Text(open ? "Show less" : "See the wine & the dish")
+                .font(UVVAFont.sans(14, .regular))
+            Image(systemName: "chevron.down")
+                .font(.system(size: 11, weight: .regular))
+                .rotationEffect(.degrees(open ? 180 : 0))
+        }
     }
 }

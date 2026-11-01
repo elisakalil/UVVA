@@ -3,7 +3,7 @@ import SwiftUI
 
 /// The softened vineyard behind the Quiz screens.
 struct QuizBackground: View {
-    /// Readings show the photo whole under a green shade; the Intro and the share sheet fade it to half.
+    /// Readings show the photo whole under a green shade; the share sheet fades it to half.
     var photoOpacity: Double = 0.5
     var shade: [Double] = [0.16, 0.16]
 

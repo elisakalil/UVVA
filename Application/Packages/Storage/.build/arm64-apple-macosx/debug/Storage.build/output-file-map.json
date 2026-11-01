@@ -226,6 +226,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/CellarEntryEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o",
@@ -253,6 +260,13 @@
     "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore~partial.swiftmodule",
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/CellarStore.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.dia"
   },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/PalateMapStore.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.d",

@@ -10,6 +10,9 @@ struct WelcomeView: View {
 
     /// How far the logo and the greeting sit below the top of the safe area.
     static let headerTop: CGFloat = 130
+    /// Where the fade-in starts. Never fully hidden: it runs while the Splash fades out, and from 0 the page
+    /// read as empty between the two.
+    static let hiddenOpacity = 0.3
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -19,7 +22,7 @@ struct WelcomeView: View {
                 .foregroundStyle(Color(hex: 0xF7F0E2))
                 .frame(height: 33)
                 .offset(y: appeared ? 0 : 10)
-                .opacity(appeared ? 1 : 0)
+                .opacity(appeared ? 1 : Self.hiddenOpacity)
             Text("Welcome. Let's find the wines you'll love.", bundle: .module)
                 .font(UVVAFont.sans(36, .ultraLight))
                 .tracking(-0.4)
@@ -27,7 +30,7 @@ struct WelcomeView: View {
                 .frame(maxWidth: 340, alignment: .leading)
                 .padding(.top, 32)
                 .offset(x: appeared ? 0 : -30)
-                .opacity(appeared ? 1 : 0)
+                .opacity(appeared ? 1 : Self.hiddenOpacity)
 
             Spacer(minLength: 20)
 
@@ -50,11 +53,11 @@ struct WelcomeView: View {
             }
             .frame(maxWidth: .infinity)
             .offset(y: appeared ? 0 : 14)
-            .opacity(appeared ? 1 : 0)
+            .opacity(appeared ? 1 : Self.hiddenOpacity)
         }
         .padding(.horizontal, 30)
         .padding(.top, Self.headerTop)
         .padding(.bottom, 24)
-        .onAppear { withAnimation(.easeOut(duration: 0.8).delay(0.1)) { appeared = true } }
+        .onAppear { withAnimation(.smooth) { appeared = true } }
     }
 }

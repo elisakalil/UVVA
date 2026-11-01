@@ -31,6 +31,7 @@ final class AppCoordinator {
     private let profiles: ProfileStore
     private let catalog: CatalogStore
     private let reminders: ReminderStore
+    private let cellar: CellarStore
     private let scheduler = LocalReminderScheduler()
     private let auth: any Authenticating
     private let cloud: any CloudAccountStatus
@@ -42,12 +43,13 @@ final class AppCoordinator {
     /// Set by "Sign out" (YOU-R26): the data stays, but the app opens on the Welcome until the next sign-in.
     static let signedOutKey = "session.signedOut"
 
-    init(container: ModelContainer) {
-        maps = PalateMapStore(modelContainer: container)
-        questions = QuizQuestionStore(modelContainer: container)
-        profiles = ProfileStore(modelContainer: container)
-        catalog = CatalogStore(modelContainer: container)
-        reminders = ReminderStore(modelContainer: container)
+    init(stores: AppStores) {
+        maps = stores.maps
+        questions = stores.questions
+        profiles = stores.profiles
+        catalog = stores.catalog
+        reminders = stores.reminders
+        cellar = stores.cellar
         #if DEBUG
         if DemoMode.isOn {
             auth = DemoAuth()
@@ -64,12 +66,16 @@ final class AppCoordinator {
     /// After the Splash (ONB-R02). A revoked Apple credential, or "Sign out", ends the session.
     func start() async {
         guard route == .launching else { return }
+        timingLog.info("TIMING start() begin")
         async let splash: Void = (try? await Task.sleep(for: Self.minimumSplash)) ?? ()
         var profile = try? await profiles.currentProfile()
+        timingLog.info("TIMING profile fetched")
         if let current = profile, !(await auth.isStillAuthorized(current.authUserID)) { profile = nil }
         if UserDefaults.standard.bool(forKey: Self.signedOutKey) { profile = nil }
         let hasMap = ((try? await maps.currentMap()) ?? nil) != nil
+        timingLog.info("TIMING map fetched")
         await splash
+        timingLog.info("TIMING splash min done")
         self.profile = profile
         switch LaunchRoute.resolve(profile: profile, hasMap: hasMap) {
         case .welcome: openOnboarding()
@@ -88,6 +94,7 @@ final class AppCoordinator {
             self?.finishOnboarding(result)
         }
         route = .onboarding
+        timingLog.info("TIMING route onboarding")
     }
 
     /// ONB-R21, R27
@@ -121,7 +128,7 @@ final class AppCoordinator {
 
     /// The tabs. The tour shows after the first map, once per account (HOME-R29); a redone map opens You › Map.
     private func openTabs(after quizExit: QuizExit?) {
-        home = home ?? HomeViewModel(profiles: profiles, maps: maps, catalog: catalog)
+        home = home ?? HomeViewModel(profiles: profiles, maps: maps, catalog: catalog, cellar: cellar)
         you = you ?? makeYou()
         if quizExit == .youMap {
             selectedTab = .you

@@ -3,6 +3,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/AuthProvider.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/Authenticating.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CloudAccountStatus.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseProgress.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Core.build/CourseSummary.swift.o
@@ -50,6 +51,8 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/AppStore.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CatalogStore.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContactKey.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/Storage.build/ContentImportStage.swift.o
@@ -89,6 +92,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StoragePackageTests.build/runner.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/BundledContentTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CatalogStoreTests.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/CellarStoreTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContactKeyTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContentFixture.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/.build/arm64-apple-macosx/debug/StorageTests.build/ContentImporterTests.swift.o

@@ -21,7 +21,6 @@ struct ContactRow: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             ContactButton(state: row.state, action: action)
         }
-        .padding(.vertical, 14)
-        .overlay(alignment: .bottom) { Rectangle().opacity(0.14).frame(height: 0.5) }
+        .padding(.vertical, 20)
     }
 }

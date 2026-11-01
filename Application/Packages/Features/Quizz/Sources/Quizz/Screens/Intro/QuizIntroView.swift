@@ -10,7 +10,8 @@ struct QuizIntroView: View {
 
     var body: some View {
         ZStack {
-            QuizBackground()
+            // The photo almost whole, as in the Onboarding, under a lighter shade than the Quiz result's.
+            QuizBackground(photoOpacity: 0.95, shade: [0.2, 0.5])
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     if model.canLeave {

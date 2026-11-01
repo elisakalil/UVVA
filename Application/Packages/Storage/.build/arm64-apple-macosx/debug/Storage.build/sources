@@ -30,10 +30,12 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Packed/PackedWinesFile.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/CatalogStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Content/Repositories/QuizQuestionStore.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/CellarEntryEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/PalateMapEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ProfileEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Models/ReminderEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/PersonalStore.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/CellarStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/PalateMapStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ProfileStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Storage/Sources/Storage/Personal/Repositories/ReminderStore.swift
