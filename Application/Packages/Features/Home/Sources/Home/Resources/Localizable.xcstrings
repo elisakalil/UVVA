@@ -47,10 +47,19 @@
     "Back" : {
 
     },
+    "Bolder than your map, which has no high axis." : {
+
+    },
     "Choose your wine" : {
 
     },
+    "Close to your map on every axis." : {
+
+    },
     "Continue  →" : {
+
+    },
+    "Different from the strongest axes on your map." : {
 
     },
     "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
@@ -65,6 +74,19 @@
     "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
 
     },
+    "High in %@ and %@, like your map." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "High in %1$@ and %2$@, like your map."
+          }
+        }
+      }
+    },
+    "High in %@, like your map." : {
+
+    },
     "In your cellar" : {
 
     },
@@ -75,6 +97,9 @@
 
     },
     "Learn the wines you love" : {
+
+    },
+    "Less %@ than you usually drink." : {
 
     },
     "Malbec at altitude" : {
@@ -89,7 +114,16 @@
     "match with your map" : {
 
     },
+    "More %@ than you usually drink." : {
+
+    },
     "Next" : {
+
+    },
+    "Not high in %@, the strongest axis on your map." : {
+
+    },
+    "Nothing runs high on your map, and nothing runs high on this wine." : {
 
     },
     "Notifications" : {
@@ -110,21 +144,14 @@
     "Picked for your palate" : {
 
     },
+    "Quiet on every axis, like your map." : {
+
+    },
     "Scan a label" : {
 
     },
     "See the wine & the dish" : {
 
-    },
-    "Serve the wine at %lld–%lld °C." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Serve the wine at %1$lld–%2$lld °C."
-          }
-        }
-      }
     },
     "Set a table" : {
 
@@ -165,6 +192,9 @@
     "Wines you have tasted and wines you want to try, each one measured against your map." : {
 
     },
+    "With your palate" : {
+
+    },
     "Your cellar" : {
 
     },
@@ -179,6 +209,19 @@
       }
     },
     "Your map is ready" : {
+
+    },
+    "Your map likes %@ and %@, and this wine is high on both." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your map likes %1$@ and %2$@, and this wine is high on both."
+          }
+        }
+      }
+    },
+    "Your map likes %@, and this wine is high on it." : {
 
     }
   },

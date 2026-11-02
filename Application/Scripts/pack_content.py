@@ -35,6 +35,9 @@ STEP_FIELDS = {
     "ordering": {"prompt", "items", "explanation"},
 }
 
+# A note is aromas and flavours only: body, acidity, tannin and sweetness are the map's.
+STRUCTURE = re.compile(r"\b(body|acidity|tannin|dry|sweet|fruit-led)\b", re.IGNORECASE)
+
 errors = []
 
 
@@ -87,6 +90,8 @@ def pack_wines():
             fail(f"{owner}: type {wine['type']}")
         packed = dict(wine)
         packed["map"] = axis_map(wine["map"], owner)
+        if wine.get("note") and STRUCTURE.search(wine["note"]):
+            fail(f"{owner}: note has structure, not only aromas: {wine['note']}")
         wines.append(packed)
     unique(wines, "id", "wines")
     return wines

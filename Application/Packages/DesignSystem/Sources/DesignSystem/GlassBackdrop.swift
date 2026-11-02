@@ -1,3 +1,5 @@
+import CoreImage
+import CoreImage.CIFilterBuiltins
 import SwiftUI
 import UIKit
 
@@ -129,6 +131,7 @@ private struct GlassBackdropLayer: View {
                     .resizable(resizingMode: .tile)
                     .interpolation(.none)
                     .opacity(FrostedGlass.grainOpacity)
+                    .blendMode(.softLight)
             }
         }
         .frame(width: backdropFrame.width, height: backdropFrame.height)
@@ -230,19 +233,60 @@ private enum PanePiece: Hashable {
         var scale: CGFloat
     }
 
-    /// The piece stretched over whatever frame it is given.
-    @MainActor func view(scale: CGFloat) -> some View {
-        Image(uiImage: image(scale: scale) ?? UIImage()).resizable(capInsets: insets)
+    /// The piece stretched over whatever frame it is given. Should the image fail, the piece is drawn live at the
+    /// pane's size instead: slower in a scroll, but the pane never loses its photo.
+    @MainActor @ViewBuilder func view(scale: CGFloat) -> some View {
+        if let image = image(scale: scale) {
+            Image(uiImage: image).resizable(capInsets: insets)
+        } else {
+            drawing
+        }
     }
 
+    /// The outline the piece is drawn from, in its image.
+    private func outline(in size: CGSize) -> (rect: CGRect, radius: CGFloat, color: UIColor, blur: CGFloat) {
+        let bounds = CGRect(origin: .zero, size: size)
+        switch self {
+        case let .shape(radius):
+            return (bounds, radius, .black, 0)
+        case let .center(radius):
+            let inset = FrostedGlass.frostedEdge
+            return (bounds.insetBy(dx: inset, dy: inset), max(0, radius - inset), .black, FrostedGlass.edgeFade)
+        case let .shadow(radius):
+            return (bounds.insetBy(dx: margin, dy: margin), radius,
+                    UIColor(red: 0x0A / 255, green: 0x0E / 255, blue: 0x08 / 255, alpha: 0.05), Self.shadowBlur)
+        }
+    }
+
+    /// Drawn with Core Graphics rather than `ImageRenderer`, which is not dependable while SwiftUI is updating the
+    /// view that asks for it.
     @MainActor private func image(scale: CGFloat) -> UIImage? {
         let key = Key(piece: self, scale: scale)
         if let image = Self.images[key] { return image }
         let size = CGSize(width: insets.leading + insets.trailing + 1, height: insets.top + insets.bottom + 1)
-        let renderer = ImageRenderer(content: drawing.frame(width: size.width, height: size.height))
-        renderer.scale = scale
-        renderer.isOpaque = false
-        let image = renderer.uiImage
+        let outline = outline(in: size)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = scale
+        format.opaque = false
+        let sharp = UIGraphicsImageRenderer(size: size, format: format).image { context in
+            let path = RoundedRectangle(cornerRadius: outline.radius, style: .continuous).path(in: outline.rect)
+            context.cgContext.addPath(path.cgPath)
+            context.cgContext.setFillColor(outline.color.cgColor)
+            context.cgContext.fillPath()
+        }
+        var image: UIImage? = sharp
+        if outline.blur > 0 {
+            image = nil
+            if let input = CIImage(image: sharp) {
+                let blur = CIFilter.gaussianBlur()
+                blur.inputImage = input
+                blur.radius = Float(outline.blur * scale)
+                if let output = blur.outputImage?.cropped(to: input.extent),
+                   let cg = GlassTextures.context.createCGImage(output, from: input.extent) {
+                    image = UIImage(cgImage: cg, scale: scale, orientation: .up)
+                }
+            }
+        }
         Self.images[key] = image
         return image
     }

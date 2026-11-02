@@ -2,6 +2,13 @@
   "": {
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/primary.swiftdeps"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/CourseRulesTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/CourseRulesTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/CourseRulesTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/CourseRulesTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/CourseRulesTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/CourseRulesTests.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/MapChangeTests.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests.swift.o",

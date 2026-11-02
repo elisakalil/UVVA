@@ -1,0 +1,219 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ above all" : {
+
+    },
+    "%@ and %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ and %2$@"
+          }
+        }
+      }
+    },
+    "%@ drinks for %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ drinks for %2$@."
+          }
+        }
+      }
+    },
+    "%@, even on the other seven." : {
+
+    },
+    "%@, in that order" : {
+
+    },
+    "%@, quietest on %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, quietest on %2$@."
+          }
+        }
+      }
+    },
+    "A little" : {
+
+    },
+    "a little residual sugar reads as generosity to you, not as a flaw" : {
+
+    },
+    "A lot" : {
+
+    },
+    "A trace" : {
+
+    },
+    "acidity is the first thing you notice, and it is what keeps a wine awake for you" : {
+
+    },
+    "Almost none" : {
+
+    },
+    "As much as possible" : {
+
+    },
+    "balance, every axis in the middle" : {
+
+    },
+    "balance, most axes in the middle" : {
+
+    },
+    "Drinks for %@." : {
+
+    },
+    "Even on seven axes, quietest on %@." : {
+
+    },
+    "every axis runs high on your map: you want a wine that does a lot at once, with nothing held back" : {
+
+    },
+    "every axis sits in the middle: you want balance, a wine where nothing is too much or too little" : {
+
+    },
+    "every axis sits low on your map: you want a quiet wine, one that whispers instead of making a point" : {
+
+    },
+    "everything at once, every axis turned up" : {
+
+    },
+    "everything but %@" : {
+
+    },
+    "Everything but %@" : {
+
+    },
+    "floral aromatics read as soap to you" : {
+
+    },
+    "High on all eight axes." : {
+
+    },
+    "High on every axis" : {
+
+    },
+    "In the middle on all eight axes." : {
+
+    },
+    "In the middle on every axis" : {
+
+    },
+    "In the middle on most axes" : {
+
+    },
+    "Leaning most toward %@" : {
+
+    },
+    "many things at once" : {
+
+    },
+    "most of the map runs high: you want a wine that does a lot at once, with no single axis in charge" : {
+
+    },
+    "most of the map stays quiet: you want restraint more than power" : {
+
+    },
+    "None" : {
+
+    },
+    "nothing on the map climbs high, so no single part of a wine has to lead" : {
+
+    },
+    "nothing on the map is truly low: you leave room for every part of a wine" : {
+
+    },
+    "Noticeably" : {
+
+    },
+    "pepper and clove are what you go looking for" : {
+
+    },
+    "perfume pulls you in before structure ever does" : {
+
+    },
+    "Pour almost anything: nothing on this map sends a glass back." : {
+
+    },
+    "Pour something built on %@ and the glass comes back. Politely." : {
+
+    },
+    "Pour something loud and the glass comes back. Politely." : {
+
+    },
+    "Quiet on all eight axes." : {
+
+    },
+    "Quiet on every axis" : {
+
+    },
+    "Quiet on most axes" : {
+
+    },
+    "Quite a lot" : {
+
+    },
+    "restraint, every axis kept low" : {
+
+    },
+    "restraint, most axes kept low" : {
+
+    },
+    "ripe fruit is the point for you, not a beginner's phase to grow out of" : {
+
+    },
+    "several axes at once" : {
+
+    },
+    "sharpness tires you out; you want a rounder line through the middle" : {
+
+    },
+    "Some" : {
+
+    },
+    "spice distracts you from the fruit" : {
+
+    },
+    "Strongest on %@" : {
+
+    },
+    "sugar reads as a flaw to you, and dry means dry" : {
+
+    },
+    "tannin gets in the way for you; you want fruit without the scaffolding" : {
+
+    },
+    "The shape of what you reach for in a glass." : {
+
+    },
+    "vanilla, smoke and toast are part of the pleasure, not a cover-up" : {
+
+    },
+    "Very much" : {
+
+    },
+    "you look past fruit for earth, salt and stone" : {
+
+    },
+    "you want a wine that stays light and gets out of the way" : {
+
+    },
+    "you want grip, the drying pull that holds a red upright" : {
+
+    },
+    "you want the grape, not the barrel" : {
+
+    },
+    "you want weight in the glass, something that coats and stays" : {
+
+    }
+  },
+  "version" : "1.0"
+}

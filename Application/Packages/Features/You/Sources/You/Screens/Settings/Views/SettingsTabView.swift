@@ -91,7 +91,10 @@ struct SettingsTabView: View {
             ReminderView(reminder: viewModel.reminder) { reminder in await viewModel.saveReminder(reminder) }
         }
         .fullScreenCover(isPresented: $showingCertificates) {
-            CertificatesView(onStartLearning: {
+            CertificatesView(rows: viewModel.certificateRows, onOpen: { courseID in
+                showingCertificates = false
+                viewModel.openCertificate(courseID)
+            }, onStartLearning: {
                 showingCertificates = false
                 viewModel.openLearn()
             })

@@ -14,14 +14,14 @@ Pela SHARED-R01, não há planos: "Premium lifetime" no header, "Manage subscrip
 
 ## 2. Header
 
-**YOU-R01 · Header.** O nome do usuário, a foto e a assinatura do paladar (os 3 eixos do topo, QUIZ-R14, em caixa alta, separados por " · "). Não há handle: o usuário é identificado por um id interno, nunca mostrado.
+**YOU-R01 · Header.** O nome do usuário, a foto e a assinatura do paladar (a frase dominante, QUIZ-R15, em caixa alta: por exemplo "ACIDITY · FRUIT · BODY", ou "HIGH ON EVERY AXIS" num mapa plano). Não há handle: o usuário é identificado por um id interno, nunca mostrado.
 
 **YOU-R02 · Tabs.** Três tabs: Progress, Map e Settings. A aba abre em Progress (ver D1).
 
 **YOU-R03 · Entrada pela Home.** O card "O eixo que mudou" da Home (HOME-R17) abre a tab Map, já em "Over time".
 
 **Critérios**
-- Dado o usuário "Elisa" com top 3 Acidity, Fruit e Body, então o header mostra "Elisa" e "ACIDITY · FRUIT · BODY", sem nenhum "@".
+- Dado o usuário "Elisa" com Acidity, Fruit e Body como líderes (QUIZ-R14a), então o header mostra "Elisa" e "ACIDITY · FRUIT · BODY", sem nenhum "@".
 
 ## 3. Progress
 
@@ -72,7 +72,7 @@ Escolher uma foto mostra o mapa desse momento sobre o atual e a variação de ca
 
 **YOU-R11 · Para onde o mapa aponta.** "Where the map points": a narrativa do mapa (QUIZ-R15).
 
-**YOU-R12 · Partilhar o mapa.** "Share my map" abre a folha "This is my wine palate", com o nome, o radar, a assinatura, "Map yours · uvva.app" e a mensagem "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." O link é `uvva.app/invite/[id do usuário]`. Os formatos são os de toda partilha da app (SHARED-R20): Story ("Share to Instagram"), WhatsApp ("Send on WhatsApp") e "Save image".
+**YOU-R12 · Partilhar o mapa.** "Share my map" abre a folha "This is my wine palate", com o nome, o radar (destaques da QUIZ-R16), a assinatura (frase dominante, QUIZ-R15), "Map yours · uvva.app" e a mensagem "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." O link é `uvva.app/invite/[id do usuário]`. Os formatos são os de toda partilha da app (SHARED-R20): Story ("Share to Instagram"), WhatsApp ("Send on WhatsApp") e "Save image".
 
 **YOU-R13 · Refazer o mapa.** "Redo the map" abre o Quiz desde a Intro (QUIZ-R18a). O mapa novo só substitui o atual se o usuário tocar em "Keep this map".
 

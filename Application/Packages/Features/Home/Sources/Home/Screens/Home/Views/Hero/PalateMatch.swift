@@ -8,36 +8,43 @@ struct PalateMatch: View {
     var wine: PalateMap
     var palate: PalateMap
 
-    /// From this value up an axis counts as high, on wine and map alike.
-    private static let high = 5.0
-    /// Under this difference the wine counts as close to the map on an axis.
-    private static let close = 1.8
+    private var fit: WineFit { WineFit(wine: wine, map: palate) }
 
     private var percent: Int { Int((Similarity.between(wine, palate) * 100).rounded()) }
 
-    /// "High in acidity and fruit, like your map."
+    /// "High in acidity and fruit, like your map." (HOME-R10b)
     private var shared: String {
-        let both = PalateAxis.allCases
-            .filter { wine[$0] >= Self.high && palate[$0] >= Self.high }
-            .sorted { wine[$0] > wine[$1] }
-            .prefix(2)
-            .map { $0.label.lowercased() }
-        return both.isEmpty
-            ? "Different from the strongest axes on your map."
-            : "High in \(both.joined(separator: " and ")), like your map."
+        let fit = fit
+        let both = fit.shared.map { $0.label.lowercased() }
+        switch both.count {
+        case 2: return String(localized: "High in \(both[0]) and \(both[1]), like your map.", bundle: .module)
+        case 1: return String(localized: "High in \(both[0]), like your map.", bundle: .module)
+        default: break
+        }
+        switch fit.mapHighs.count {
+        case 0:
+            return fit.wineHasHigh
+                ? String(localized: "Bolder than your map, which has no high axis.", bundle: .module)
+                : String(localized: "Quiet on every axis, like your map.", bundle: .module)
+        case 1:
+            return String(localized: "Not high in \(fit.mapHighs[0].label.lowercased()), the strongest axis on your map.", bundle: .module)
+        default:
+            return String(localized: "Different from the strongest axes on your map.", bundle: .module)
+        }
     }
 
-    /// "More oak than you usually drink."
+    /// "More oak than you usually drink." (HOME-R10b)
     private var apart: String {
-        guard let far = PalateAxis.allCases.max(by: { abs(wine[$0] - palate[$0]) < abs(wine[$1] - palate[$1]) }),
-              abs(wine[far] - palate[far]) >= Self.close
-        else { return "Close to your map on every axis." }
-        return "\(wine[far] > palate[far] ? "More" : "Less") \(far.label.lowercased()) than you usually drink."
+        guard let far = fit.apart else { return String(localized: "Close to your map on every axis.", bundle: .module) }
+        let axis = far.label.lowercased()
+        return wine[far] > palate[far]
+            ? String(localized: "More \(axis) than you usually drink.", bundle: .module)
+            : String(localized: "Less \(axis) than you usually drink.", bundle: .module)
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("With your palate".uppercased())
+            Text(String(localized: "With your palate", bundle: .module).uppercased())
                 .font(UVVAFont.sans(8.5, .medium))
                 .tracking(2.2)
                 .foregroundStyle(UVVAColor.cream)
@@ -45,7 +52,7 @@ struct PalateMatch: View {
                 Text("\(percent)%")
                     .font(UVVAFont.sans(40, .ultraLight))
                     .tracking(-1.2)
-                Text("match with your map")
+                Text(String(localized: "match with your map", bundle: .module))
                     .font(UVVAFont.sans(12.5, .regular))
                     .foregroundStyle(UVVAColor.cream84)
             }

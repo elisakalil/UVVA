@@ -1,0 +1,55 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "core",
+          "kind" : "fileSystem",
+          "location" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core",
+          "name" : "Core"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core"
+        },
+        "subpath" : "core"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "designsystem",
+          "kind" : "fileSystem",
+          "location" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem",
+          "name" : "DesignSystem"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem"
+        },
+        "subpath" : "designsystem"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "match",
+          "kind" : "fileSystem",
+          "location" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match",
+          "name" : "Match"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Match"
+        },
+        "subpath" : "match"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

@@ -26,13 +26,13 @@ public struct FrostedGlass: View {
     static let edgeFade: CGFloat = 5
     /// The white haze steps down in three zones: the outer 10 pt, the band from 10 to 15 pt, and the centre.
     static let outerHazeWidth: CGFloat = 10
-    static let outerHaze = 0.06
-    static let bandHaze = 0.055
-    static let centerHaze = 0.05
+    static let outerHaze = 0.07
+    static let bandHaze = 0.065
+    static let centerHaze = 0.06
     /// How softly each haze zone meets the next.
     static let hazeFade: CGFloat = 3
-    /// Strength of the grain layer.
-    static let grainOpacity = 0.65
+    /// Strength of the grain layer; the grain itself is already faint (see `GlassTextures.grain`).
+    static let grainOpacity = 1.0
 
     @Environment(\.backdropFrame) private var backdropFrame
     @Environment(\.sharesGlassBackdrop) private var sharesBackdrop
@@ -89,6 +89,8 @@ public struct FrostedGlass: View {
                 .resizable(resizingMode: .tile)
                 .interpolation(.none)
                 .opacity(Self.grainOpacity)
+                // Lightens the photo in its own tones, like light scattered by the frosting, instead of painting over it.
+                .blendMode(.softLight)
         }
     }
 

@@ -21,7 +21,9 @@ public struct HomeView: View {
                     model: model,
                     tourTarget: tour?.current?.target,
                     cellarWineKeys: viewModel.cellarWineKeys,
-                    onInvite: { invite = viewModel.inviteLink })
+                    onInvite: { invite = viewModel.inviteLink },
+                    onOpenCourse: viewModel.openCourse,
+                    onOpenLearn: viewModel.openLearn)
             } else {
                 ZStack {
                     PageBackground()

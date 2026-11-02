@@ -32,7 +32,7 @@ public struct GuidedTourView: View {
             let spot = spot(in: size)
             ZStack(alignment: .topLeading) {
                 ZStack {
-                    Color(hex: 0x0E130A).opacity(viewModel.tour.step == 0 ? 0.82 : 0.74)
+                    Color(hex: 0x0E130A).opacity(viewModel.tour.step == 0 ? 0.90 : 0.74)
                     if let spot {
                         RoundedRectangle(cornerRadius: spot.radius, style: .continuous)
                             .frame(width: spot.rect.width, height: spot.rect.height)

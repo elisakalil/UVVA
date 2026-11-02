@@ -33,6 +33,28 @@ private struct CatalogStub: CatalogRepository {
     func firstPathModule() async throws -> CourseSummary? { nil }
 }
 
+private struct CoursesStub: CourseCatalog {
+    static let tannat = Course(id: "grape-tannat", kind: .grape, order: 1, title: "Tannat", about: "",
+                               lessons: (1...3).map {
+                                   LessonSummary(id: "grape-tannat-l0\($0)", courseID: "grape-tannat", order: $0,
+                                                 title: "Lesson \($0)", subtitle: "", xp: 15, minutes: 3, isReview: $0 == 3,
+                                                 objectives: [])
+                               })
+    func courses(_ kind: CourseKind) async throws -> [Course] { kind == .grape ? [Self.tannat] : [] }
+    func course(id: String) async throws -> Course? { id == Self.tannat.id ? Self.tannat : nil }
+    func lesson(id: String) async throws -> Lesson? { nil }
+}
+
+private struct LearningStub: LearningRepository {
+    var saved: [LessonProgress] = []
+    func progress() async throws -> [String: LessonProgress] {
+        Dictionary(uniqueKeysWithValues: saved.map { ($0.lessonID, $0) })
+    }
+    func save(_ progress: LessonProgress) async throws {}
+    func certificates() async throws -> [Certificate] { [] }
+    func addCertificate(_ certificate: Certificate) async throws {}
+}
+
 private actor CellarStub: CellarRepository {
     private(set) var added: [String] = []
     func wineKeys() async throws -> Set<String> { Set(added) }
@@ -43,11 +65,11 @@ private actor CellarStub: CellarRepository {
 struct HomeViewModelTests {
     let day = Date(timeIntervalSince1970: 1_793_000_000)
 
-    private func load(at date: Date, cellar: CellarStub = CellarStub()) async -> HomeViewModel {
+    private func load(at date: Date, cellar: CellarStub = CellarStub(), learning: LearningStub = LearningStub()) async -> HomeViewModel {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(identifier: "Europe/Lisbon")!
         let viewModel = HomeViewModel(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
-                                      cellar: cellar, now: { date }, calendar: calendar)
+                                      cellar: cellar, courses: CoursesStub(), learning: learning, now: { date }, calendar: calendar)
         await viewModel.load()
         return viewModel
     }
@@ -64,6 +86,21 @@ struct HomeViewModelTests {
         }
         #expect(wine.dish?.title == "Lamb stew")
         #expect(wine.dish?.ingredients == ["800 g lamb"])
+    }
+
+    @Test func HOME_R12_aLessonOpened_showsContinueAtItsLesson() async throws {
+        let learning = LearningStub(saved: [
+            LessonProgress(lessonID: "grape-tannat-l01", courseID: "grape-tannat", currentStep: 5, completedAt: day,
+                           lastOpenedAt: day, xp: 15),
+            LessonProgress(lessonID: "grape-tannat-l02", courseID: "grape-tannat", currentStep: 2, lastOpenedAt: day)
+        ])
+        let cards = try #require(await load(at: day, learning: learning).model?.cards)
+        guard case let .continueLesson(course) = cards.first(where: { $0.kind == "continueLesson" }) else {
+            Issue.record("no Continue card"); return
+        }
+        #expect(course.title == "Tannat")
+        #expect(course.completedLessons == 1)
+        #expect(course.current == LessonRef(number: 2, title: "Lesson 2", step: 3))
     }
 
     @Test func HOME_R11_noFriendsYet_showsTheInvite() async {

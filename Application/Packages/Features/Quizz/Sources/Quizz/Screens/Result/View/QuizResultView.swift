@@ -35,7 +35,7 @@ struct QuizResultView: View {
                     .padding(.horizontal, 4)
                     .padding(.top, 44)
 
-                    PalateMapChart(map: model.map, strong: Array(model.top3.prefix(2)))
+                    PalateMapChart(map: model.map, strong: model.highlighted)
                         .frame(maxWidth: .infinity)
                         .padding(.top, 30)
                     Text(model.caption)

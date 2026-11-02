@@ -95,9 +95,30 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **HOME-R10 · Ausência.** O card não aparece se o catálogo não tiver nenhum vinho com prato associado.
 
+**HOME-R10a · Por que foi escolhido (2026-11-01).** O card lê o vinho contra o mapa com a mesma leitura para todos os textos (`WineFit`), para que eles nunca se contradigam. "Alto" é nível acima de 5, no mapa e no vinho; 5 é neutro (QUIZ-R14a).
+- **Eixos mostrados:** os 3 eixos mais fortes do mapa. Entre eixos empatados no mapa, vão os que o vinho tem mais altos (nunca a ordem canônica).
+- **Eixos em comum:** até 2 eixos altos no mapa e no vinho, na mesma ordem.
+- **Frase:**
+  - 2 em comum: "Your map likes [a] and [b], and this wine is high on both.";
+  - 1 em comum: "Your map likes [a], and this wine is high on it.";
+  - nenhum, sem eixo alto no mapa nem no vinho: "Nothing runs high on your map, and nothing runs high on this wine.";
+  - nenhum nos outros casos: sem frase.
+
+**HOME-R10b · With your palate (2026-11-01).** O match em % (QUIZ-R21) e duas linhas:
+- **Em comum:**
+  - "High in [a] and [b], like your map." / "High in [a], like your map.";
+  - sem eixo alto no mapa: "Bolder than your map, which has no high axis." se o vinho tem algum eixo alto, ou então "Quiet on every axis, like your map.";
+  - mapa com um eixo alto só, que o vinho não tem: "Not high in [eixo], the strongest axis on your map.";
+  - mapa com vários eixos altos, nenhum no vinho: "Different from the strongest axes on your map."
+- **Diferença:** o eixo de maior distância entre vinho e mapa, se for de pelo menos 1.8: "More [eixo] than you usually drink." ou "Less [eixo] than you usually drink."; senão, "Close to your map on every axis."
+- Todos os textos estão no catálogo de strings da Home.
+
 **Critérios**
 - Dado o dia 27/10, quando a Home é montada duas vezes nesse dia, então a sugestão é a mesma nas duas.
 - Dados os dias 27/10 e 28/10, quando a Home é montada em cada um, então a sugestão é calculada de novo no dia 28 (pode coincidir só se a regra de escolha permitir).
+- Dado um mapa todo em 3 e um vinho alto em Fruit (8) e Acidity (7), então os eixos mostrados são Fruit e Acidity primeiro, a frase do card não aparece e a linha em comum é "Bolder than your map, which has no high axis."
+- Dado um mapa com sete eixos em 2 e Acidity em 7, e um vinho alto em Floral, então o card nunca diz que o mapa gosta de Floral, e a linha em comum é "Not high in acidity, the strongest axis on your map."
+- Dado um mapa com sete eixos em 7 e Oak em 2, e um vinho com Fruit 8 e Acidity 7, então a frase é "Your map likes fruit and acidity, and this wine is high on both."
 - Dado que o vinho sugerido já está no Cellar, então ele continua elegível.
 
 ### 4.3 Amigos

@@ -45,7 +45,7 @@
                BlueprintIdentifier = "MatchTests"
                BuildableName = "MatchTests"
                BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -73,7 +73,7 @@
                BlueprintIdentifier = "StorageTests"
                BuildableName = "StorageTests"
                BlueprintName = "StorageTests"
-               ReferencedContainer = "container:Packages/Storage">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -101,7 +101,7 @@
                BlueprintIdentifier = "MatchTests"
                BuildableName = "MatchTests"
                BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -157,7 +157,7 @@
                BlueprintIdentifier = "MatchTests"
                BuildableName = "MatchTests"
                BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -185,7 +185,7 @@
                BlueprintIdentifier = "StorageTests"
                BuildableName = "StorageTests"
                BlueprintName = "StorageTests"
-               ReferencedContainer = "container:Packages/Storage">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -213,7 +213,7 @@
                BlueprintIdentifier = "MatchTests"
                BuildableName = "MatchTests"
                BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -269,7 +269,7 @@
                BlueprintIdentifier = "MatchTests"
                BuildableName = "MatchTests"
                BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -297,7 +297,7 @@
                BlueprintIdentifier = "StorageTests"
                BuildableName = "StorageTests"
                BlueprintName = "StorageTests"
-               ReferencedContainer = "container:Packages/Storage">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -325,7 +325,7 @@
                BlueprintIdentifier = "MatchTests"
                BuildableName = "MatchTests"
                BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -354,6 +354,20 @@
                BuildableName = "YouTests"
                BlueprintName = "YouTests"
                ReferencedContainer = "container:Packages/Features/You">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "LearnTests"
+               BuildableName = "LearnTests"
+               BlueprintName = "LearnTests"
+               ReferencedContainer = "container:Packages/Features/Learn">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -381,17 +395,7 @@
                BlueprintIdentifier = "MatchTests"
                BuildableName = "MatchTests"
                BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "HomeTests"
-               BuildableName = "HomeTests"
-               BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Core">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -401,107 +405,7 @@
                BlueprintIdentifier = "StorageTests"
                BuildableName = "StorageTests"
                BlueprintName = "StorageTests"
-               ReferencedContainer = "container:Packages/Storage">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CoreTests"
-               BuildableName = "CoreTests"
-               BlueprintName = "CoreTests"
                ReferencedContainer = "container:Packages/Core">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MatchTests"
-               BuildableName = "MatchTests"
-               BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "HomeTests"
-               BuildableName = "HomeTests"
-               BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "QuizzTests"
-               BuildableName = "QuizzTests"
-               BlueprintName = "QuizzTests"
-               ReferencedContainer = "container:Packages/Features/Quizz">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CoreTests"
-               BuildableName = "CoreTests"
-               BlueprintName = "CoreTests"
-               ReferencedContainer = "container:Packages/Core">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MatchTests"
-               BuildableName = "MatchTests"
-               BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "HomeTests"
-               BuildableName = "HomeTests"
-               BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "StorageTests"
-               BuildableName = "StorageTests"
-               BlueprintName = "StorageTests"
-               ReferencedContainer = "container:Packages/Storage">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CoreTests"
-               BuildableName = "CoreTests"
-               BlueprintName = "CoreTests"
-               ReferencedContainer = "container:Packages/Core">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MatchTests"
-               BuildableName = "MatchTests"
-               BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -528,70 +432,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CoreTests"
-               BuildableName = "CoreTests"
-               BlueprintName = "CoreTests"
-               ReferencedContainer = "container:Packages/Core">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MatchTests"
-               BuildableName = "MatchTests"
-               BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "HomeTests"
-               BuildableName = "HomeTests"
-               BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "StorageTests"
-               BuildableName = "StorageTests"
-               BlueprintName = "StorageTests"
-               ReferencedContainer = "container:Packages/Storage">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CoreTests"
-               BuildableName = "CoreTests"
-               BlueprintName = "CoreTests"
-               ReferencedContainer = "container:Packages/Core">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "MatchTests"
-               BuildableName = "MatchTests"
-               BlueprintName = "MatchTests"
-               ReferencedContainer = "container:Packages/Match">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "HomeTests"
-               BuildableName = "HomeTests"
-               BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               BlueprintIdentifier = "QuizzTests"
+               BuildableName = "QuizzTests"
+               BlueprintName = "QuizzTests"
+               ReferencedContainer = "container:Packages/Features/Quizz">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -602,6 +446,16 @@
                BuildableName = "YouTests"
                BlueprintName = "YouTests"
                ReferencedContainer = "container:Packages/Features/You">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "LearnTests"
+               BuildableName = "LearnTests"
+               BlueprintName = "LearnTests"
+               ReferencedContainer = "container:Packages/Features/Learn">
             </BuildableReference>
          </TestableReference>
       </Testables>

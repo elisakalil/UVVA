@@ -5,7 +5,8 @@ import Foundation
 struct QuizResultUIModel: Equatable {
     var dominantPhrase: String
     var map: PalateMap
-    var top3: [PalateAxis]
+    /// The axes drawn strong on the chart (QUIZ-R16).
+    var highlighted: [PalateAxis]
     var caption: String
     var readings: [QuizReadingRowUIModel]
     var narrative: String

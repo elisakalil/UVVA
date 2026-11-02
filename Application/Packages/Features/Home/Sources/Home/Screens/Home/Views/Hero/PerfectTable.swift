@@ -2,11 +2,10 @@ import Core
 import DesignSystem
 import SwiftUI
 
-/// The dish under the day's wine, beside its engraved plate: why it works, what you need, how to make it
-/// and how to serve (HOME-R09).
+/// The dish under the day's wine, beside its engraved plate: why it works, what you need and how to make it
+/// (HOME-R09). The serving temperature is left to the wine's facts above.
 struct PerfectTable: View {
     var dish: Dish
-    var serving: ClosedRange<Int>?
 
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
@@ -20,13 +19,16 @@ struct PerfectTable: View {
 
             VStack(alignment: .leading, spacing: 0) {
                 label("The perfect table", tracking: 1.6)
+                // Title and why wrap like the steps, onto as many lines as they need instead of ending in "…".
                 Text(dish.title)
                     .font(UVVAFont.sans(14, .medium))
                     .lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding(.top, 9)
                 Text(dish.why)
                     .font(UVVAFont.sans(12.5, .regular))
                     .lineSpacing(5)
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding(.top, 8)
                 if let serves = dish.serves {
                     Text(serves)
@@ -58,20 +60,16 @@ struct PerfectTable: View {
                                     .font(UVVAFont.sans(11, .light))
                                     .foregroundStyle(UVVAColor.cream.opacity(0.75))
                                     .frame(width: 15, alignment: .leading)
+                                // Wraps onto as many lines as the step needs instead of ending in "…".
                                 Text(step)
                                     .font(UVVAFont.sans(12, .light))
                                     .lineSpacing(5)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                             }
                         }
                     }
                     .padding(.top, 12)
-                }
-
-                if let serving {
-                    Text("Serve the wine at \(serving.lowerBound)–\(serving.upperBound) °C.")
-                        .font(UVVAFont.sans(12, .light))
-                        .lineSpacing(5)
-                        .padding(.top, 16)
                 }
             }
             .foregroundStyle(UVVAColor.cream)

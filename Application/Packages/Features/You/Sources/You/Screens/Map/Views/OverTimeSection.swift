@@ -9,7 +9,7 @@ struct OverTimeSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            PanelTitle(text: String(localized: "Over time", bundle: .module))
+            SectionTitle(text: String(localized: "Over time", bundle: .module))
             Text("See how your map has changed over the last few months.", bundle: .module)
                 .font(UVVAFont.sans(13)).lineSpacing(5).opacity(0.84)
                 .padding(.top, 12)
@@ -66,14 +66,13 @@ struct OverTimeSection: View {
                     .padding(.top, 12)
 
                 VStack(spacing: 0) {
-                    ForEach(Array(model.deltas.enumerated()), id: \.element.id) { index, row in
+                    ForEach(model.deltas) { row in
                         HStack {
                             Text(row.name.uppercased()).font(UVVAFont.sans(9.5, .regular)).tracking(1.5)
                             Spacer()
                             Text(row.delta).font(UVVAFont.sans(12, .regular))
                         }
                         .padding(.vertical, 10)
-                        .overlay(alignment: .top) { if index > 0 { Rectangle().opacity(0.09).frame(height: 1) } }
                     }
                 }
                 .padding(.top, 16)

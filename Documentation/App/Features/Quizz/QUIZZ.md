@@ -134,16 +134,38 @@ func exit(for entry: QuizEntry) -> QuizExit
 
 ### 3.3 Resultado (o mapa)
 
-**QUIZ-R14 · Ranking.** Os eixos são ordenados por valor decrescente, com desempate pela ordem canônica (QUIZ-R02).
-- **Top 3:** os três primeiros.
-- **Mais fraco:** o último.
+**QUIZ-R14 · Ranking.** Os eixos são ordenados por valor decrescente, com desempate pela ordem canônica (QUIZ-R02). A ordem canônica só serve para ordenar: nenhum texto escolhe um eixo empatado em vez de outro por ela (QUIZ-R14a).
+
+**QUIZ-R14a · Empates e tom (2026-11-01).**
+- **Patamares:** os eixos com o mesmo nível exibido (QUIZ-R05) formam um patamar e contam como empatados. Usar o nível, e não o valor, evita que 7.2 contra 6.8 eleja um "mais forte" que os pips não mostram.
+- **Tom:** um eixo é *baixo* com nível abaixo de 5, *neutro* com nível 5 e *alto* com nível acima de 5. Vale para o mapa e para os vinhos (HOME-R10a).
+- **Líderes:** os eixos do topo, em patamares inteiros, até um limite. Um patamar que não cabe inteiro fica de fora. Um mapa plano não tem líderes.
+- **Formato:**
+  - *plano* (baixo, neutro ou alto): os 8 eixos no mesmo nível;
+  - *sete e um abaixo*: sete eixos num nível e o oitavo abaixo deles;
+  - *sete e um acima*: sete eixos num nível e o oitavo acima deles;
+  - *com forma*: qualquer outro.
 
 **QUIZ-R15 · Textos gerados.**
-- Frase dominante: os três eixos do top 3 separados por " · " (ex.: "Acidity · Fruit · Tannin").
-- Legenda: "Strongest on [top1], quietest on [mais fraco]. The shape of what you reach for in a glass."
-- Narrativa: três frases, na ordem: o texto "alto" do top1, o texto "alto" do top2 e o texto "baixo" do mais fraco (tabela no Anexo A).
+- **Frase dominante:**
+  - plano: "Quiet on every axis" (baixo), "In the middle on every axis" (neutro) ou "High on every axis" (alto);
+  - sete e um abaixo, com o topo alto: "Everything but [eixo]";
+  - os outros: os líderes até 3, separados por " · " (ex.: "Acidity · Fruit · Body");
+  - 4 a 7 eixos empatados num topo que não é alto: "Quiet on most axes" (baixo) ou "In the middle on most axes" (neutro);
+  - 4 a 6 eixos empatados num topo alto: "Everything but [os restantes]" quando sobram 1 ou 2; senão, os eixos empatados separados por " · ".
+- **Legenda** (sempre seguida de "The shape of what you reach for in a glass."):
+  - plano: "Quiet on all eight axes." / "In the middle on all eight axes." / "High on all eight axes.";
+  - sete e um abaixo: "Even on seven axes, quietest on [eixo].";
+  - sete e um acima: "[abertura], even on the other seven.";
+  - com forma: "[abertura], quietest on [patamar de baixo]." Um patamar de baixo com mais de 3 eixos vira "several axes at once".
+  - A abertura depende do tom do topo (2026-11-01): "Strongest on [patamar do topo]" só para um topo alto (com mais de 3 eixos, "Strongest on several axes at once"). Um topo baixo ou neutro com até 3 eixos fica "Leaning most toward [patamar do topo]"; com mais de 3, fica "Quiet on most axes" ou "In the middle on most axes".
+- **Narrativa:** o que diz o topo e depois o que diz a base (tabelas no Anexo A).
+  - Plano: só o texto do mapa plano do seu tom.
+  - Topo: se o topo não é alto, "nada alto". Se 3 ou mais eixos empatam no topo, "a maior parte alta". Senão, o texto "alto" de cada líder (até 2) que seja alto.
+  - Base: se a base não é baixa, "nada baixo". Se 3 ou mais eixos empatam na base, "a maior parte baixa". Senão, o texto "baixo" de cada eixo da base (1 ou 2).
+  - Um texto "alto" nunca sai para um eixo que não é alto, nem um "baixo" para um eixo que não é baixo.
 
-**QUIZ-R16 · Leituras.** Lista os 8 eixos na ordem do gráfico, cada um com a palavra do nível (QUIZ-R05) e 10 pips. Os eixos do top 3 aparecem em destaque.
+**QUIZ-R16 · Leituras.** Lista os 8 eixos na ordem do gráfico, cada um com a palavra do nível (QUIZ-R05) e 10 pips. Os líderes até 3 (QUIZ-R14a) aparecem em destaque; no gráfico, os líderes até 2. Mapa plano: nenhum destaque.
 
 **QUIZ-R17 · O mapa se move.** O resultado mostra "This map keeps moving": o mapa é recalculado a cada avaliação de vinho (QUIZ-R22).
 
@@ -156,10 +178,21 @@ func exit(for entry: QuizEntry) -> QuizExit
 **Critérios**
 - Dado o mapa { Sweetness 1, Acidity 4, Tannin 3, Body 3, Fruit 4, Floral 2, Oak 2, Spice 3 }, então:
   - o ranking é Acidity 4, Fruit 4, Body 3, Tannin 3, Spice 3, Floral 2, Oak 2, Sweetness 1 (os empates seguem a ordem canônica);
-  - o top 3 é Acidity, Fruit, Body;
-  - o mais fraco é Sweetness;
-  - a frase dominante é "Acidity · Fruit · Body".
-- Dados todos os eixos com o mesmo valor, então o top 3 é Floral, Body, Tannin e o mais fraco é Fruit.
+  - os líderes até 3 são Acidity e Fruit (Body, Tannin e Spice empatam e não cabem);
+  - a frase dominante é "Acidity · Fruit";
+  - a legenda começa por "Leaning most toward acidity and fruit, quietest on sweetness." (o topo, 4, é baixo);
+  - a narrativa não tem texto "alto", porque o topo (4) é baixo.
+- Dado o mapa { Acidity 8, Fruit 7, Body 6, Tannin 5, Spice 4, Floral 3, Oak 2, Sweetness 1 }, então a frase dominante é "Acidity · Fruit · Body" e a narrativa é o texto "alto" de Acidity, o de Fruit e o texto "baixo" de Sweetness.
+- Dados todos os eixos em 3, então a frase é "Quiet on every axis", a legenda começa por "Quiet on all eight axes." e nada aparece em destaque.
+- Dados todos os eixos em 5, então o mapa é plano neutro: "In the middle on every axis".
+- Dados todos os eixos em 7, então a frase é "High on every axis" e a narrativa não tem texto "baixo".
+- Dados sete eixos em 7 e Oak em 2, então a frase é "Everything but oak", a legenda começa por "Even on seven axes, quietest on oak." e a narrativa é "a maior parte alta" e o texto "baixo" de Oak.
+- Dados sete eixos em 2 e Acidity em 7, então a frase é "Acidity", a legenda começa por "Strongest on acidity, even on the other seven.", a narrativa é o texto "alto" de Acidity e "a maior parte baixa", e só Acidity aparece em destaque.
+- Dados seis eixos em 3, Spice em 2 e Fruit em 0, então a frase é "Quiet on most axes" e a legenda começa por "Quiet on most axes, quietest on fruit.", nunca "Strongest on".
+- Dados seis eixos em 8, Spice em 2 e Fruit em 0, então a frase é "Everything but spice and fruit" e a legenda começa por "Strongest on several axes at once, quietest on fruit."
+- Dados sete eixos em 3 e Oak em 1, então a frase é "Quiet on most axes", não "Everything but oak".
+- Dados sete eixos em 2 e Acidity em 4, então a legenda começa por "Leaning most toward acidity, even on the other seven."
+- Dados Acidity 7.2, Fruit 6.8 e o resto em 3, então Acidity e Fruit estão empatados (nível 7) e a frase é "Acidity · Fruit".
 - Quando o usuário toca em "Read it again", então nenhum mapa é guardado e a Leitura 1 abre vazia.
 - Quando o usuário toca em "Keep this map", então o mapa é guardado e `hasMap` passa a ser verdadeiro.
 - Dado um mapa atual com Acidity 6.4 (depois de várias avaliações), quando o usuário refaz o Quiz, escolhe a posição 3 em Acidity e toca em "Keep this map", então Acidity vale 3.
@@ -170,8 +203,15 @@ func exit(for entry: QuizEntry) -> QuizExit
 A folha abre sempre depois de "Keep this map" (QUIZ-R18). Partilhar é opcional: qualquer ação, incluindo "Not now", leva à saída do Quiz (QUIZ-R25).
 
 **QUIZ-R19 · Conteúdo.** Um cartão com "[primeiro nome] taste in wine is", a frase dominante, o radar e duas linhas:
-- **Loves:** "[nome] drinks for [top1], [top2] and [top3], in that order."
-- **Never:** "Pour something built on [mais fraco] and the glass comes back. Politely."
+- **Loves:** "[nome] drinks for […]." ("Drinks for […]." sem nome), em que […] é:
+  - com líderes: "[líder1], [líder2] and [líder3], in that order", com os líderes até 3; "in that order" só quando os líderes têm níveis diferentes. Um líder só: "[eixo] above all";
+  - plano: "restraint, every axis kept low" / "balance, every axis in the middle" / "everything at once, every axis turned up";
+  - sete e um abaixo, com o topo alto: "everything but [eixo]";
+  - 4 a 7 empatados no topo: "many things at once" (topo alto), "restraint, most axes kept low" (baixo) ou "balance, most axes in the middle" (neutro).
+- **Never:**
+  - base baixa com 1 ou 2 eixos: "Pour something built on [base] and the glass comes back. Politely.";
+  - plano baixo, ou 3 ou mais eixos empatados numa base baixa: "Pour something loud and the glass comes back. Politely.";
+  - base que não é baixa: "Pour almost anything: nothing on this map sends a glass back."
 
 **QUIZ-R20 · Formatos.** Como em toda partilha da app (SHARED-R20): Story ("Share to Instagram"), WhatsApp ("Send on WhatsApp") e "Save image", que guarda nas fotos. "Not now" fecha. Não existe formato Link.
 
@@ -191,12 +231,16 @@ O canvas ainda mostra o formato Link e a linha Never antiga ("Pour her something
 
 ```
 distância    = √ Σ (mapa[eixo] − vinho[eixo])²
-similaridade = 1 − distância / distânciaMáxima       // distânciaMáxima = 9 × √8
+similaridade = max(0, 1 − distância / 12)
 ```
+
+12 é a distância de um vinho "nada parecido": cerca de 4 pontos de diferença em cada eixo. A versão anterior dividia pelo máximo teórico (9 × √8 ≈ 25,5), que nenhum vinho real atinge, e todos os matches ficavam entre 70% e 90%. Com 12, um vinho a 1 ponto em todos os eixos dá 76%, a 2 pontos dá 53% e a 3 pontos dá 29% (2026-11-01).
 
 **Critérios**
 - Dado um vinho com perfil igual ao mapa, então a similaridade é 1.
 - Dado um mapa todo 0 e um vinho todo 9, então a similaridade é 0.
+- Dado um mapa todo 3 e um vinho todo 6, então o match é 29%.
+- Dado um vinho a mais de 12 do mapa, então a similaridade é 0, nunca negativa.
 - Dados dois vinhos, o mais próximo do mapa tem a maior similaridade.
 - Dados dois vinhos que diferem do mapa pela mesma quantidade, um só em Acidity e outro só em Oak, então os dois têm a mesma similaridade.
 
@@ -248,6 +292,8 @@ Os pesos são constantes num único lugar (`RatingWeights`), para que possam ser
 | D6 | Texto do Never | Neutro: "Pour something built on […] and the glass comes back. Politely." | QUIZ-R19, R20a |
 | D7 | Sair no meio | Recomeça do início | QUIZ-R13a |
 | D8 | Vinho e prato por eixo | Calculados na primeira abertura do dia, na Home | Fora de escopo, HOME-R07 |
+| D9 | Empates e mapas planos | Eixos com o mesmo nível exibido empatam; nenhum texto desempata pela ordem canônica; 5 é neutro (2026-11-01) | QUIZ-R14a, R15 |
+| D10 | Escala do match | Distância de referência 12 em vez de 9 × √8, com mínimo de 0% (2026-11-01) | QUIZ-R21 |
 
 ## 7. Dúvidas em aberto
 
@@ -270,6 +316,18 @@ Os pesos são constantes num único lugar (`RatingWeights`), para que possam ser
 | Floral | perfume pulls you in before structure ever does | floral aromatics read as soap to you |
 | Oak | vanilla, smoke and toast are part of the pleasure, not a cover-up | you want the grape, not the barrel |
 | Spice | pepper and clove are what you go looking for | spice distracts you from the fruit |
+
+Textos de mapa sem um topo ou uma base únicos (QUIZ-R14a, R15):
+
+| Caso | Texto |
+| --- | --- |
+| Plano baixo | every axis sits low on your map: you want a quiet wine, one that whispers instead of making a point |
+| Plano neutro | every axis sits in the middle: you want balance, a wine where nothing is too much or too little |
+| Plano alto | every axis runs high on your map: you want a wine that does a lot at once, with nothing held back |
+| A maior parte alta | most of the map runs high: you want a wine that does a lot at once, with no single axis in charge |
+| A maior parte baixa | most of the map stays quiet: you want restraint more than power |
+| Nada alto | nothing on the map climbs high, so no single part of a wine has to lead |
+| Nada baixo | nothing on the map is truly low: you leave room for every part of a wine |
 
 ## Anexo B · Perguntas
 

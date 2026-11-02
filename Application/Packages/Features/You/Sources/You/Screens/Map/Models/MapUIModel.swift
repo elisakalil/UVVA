@@ -6,8 +6,10 @@ import Match
 struct MapUIModel: Equatable {
     var readOn: String
     var map: PalateMap
-    var top3: [PalateAxis]
-    var caption: String
+    /// The axes drawn strong on the chart (QUIZ-R16).
+    var highlighted: [PalateAxis]
+    /// "Acidity · Fruit · Body", on the shared card (YOU-R12).
+    var dominantPhrase: String
     var readings: [MapReadingRow]
     /// "Over time" shows only once a rated wine has moved the map after the Quiz (YOU-R10).
     var showsOverTime: Bool

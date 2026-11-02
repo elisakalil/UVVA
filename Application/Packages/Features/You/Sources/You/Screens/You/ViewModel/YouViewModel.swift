@@ -3,8 +3,8 @@ import Foundation
 import Match
 import Observation
 
-/// The You tab (YOU.md): the profile, its map over time and the account.
-/// Lessons, the Cellar, tables and certificates come with their features; until then they count zero.
+/// The You tab (YOU.md): the profile, what it has learned, its map over time and the account.
+/// The Cellar and tables come with their features; until then they count zero.
 @MainActor @Observable
 public final class YouViewModel {
     public var tab: YouTab = .progress
@@ -13,6 +13,10 @@ public final class YouViewModel {
     private(set) var history: [MapChange] = []
     private(set) var reminder: Reminder?
     private(set) var firstModule: CourseSummary?
+    private(set) var lessons: [String: LessonProgress] = [:]
+    private(set) var certificates: [Certificate] = []
+    /// The course of each certificate, for its title.
+    private(set) var certificateCourses: [String: Course] = [:]
     var selectedSnapshot: Int?
     private(set) var notice: String?
     private(set) var isWorking = false
@@ -20,6 +24,8 @@ public final class YouViewModel {
     private let profiles: any ProfileRepository
     private let maps: any PalateMapRepository
     private let catalog: any CatalogRepository
+    private let courses: any CourseCatalog
+    private let learning: any LearningRepository
     private let social: any SocialService
     private let reminders: any ReminderRepository
     private let scheduler: any ReminderScheduling
@@ -27,17 +33,24 @@ public final class YouViewModel {
     private let calendar: Calendar
     private let onRedoMap: () -> Void
     private let onOpenLearn: () -> Void
+    private let onOpenCourse: (String) -> Void
+    private let onOpenCertificate: (String) -> Void
     private let onSignOut: () -> Void
     private let onAccountDeleted: () -> Void
 
+    /// A course and a certificate open in Learn, through the app (APP-R06).
     public init(profiles: any ProfileRepository, maps: any PalateMapRepository, catalog: any CatalogRepository,
+                courses: any CourseCatalog, learning: any LearningRepository,
                 social: any SocialService, reminders: any ReminderRepository, scheduler: any ReminderScheduling,
                 now: @escaping () -> Date = Date.init, calendar: Calendar = .current,
                 onRedoMap: @escaping () -> Void, onOpenLearn: @escaping () -> Void,
+                onOpenCourse: @escaping (String) -> Void = { _ in }, onOpenCertificate: @escaping (String) -> Void = { _ in },
                 onSignOut: @escaping () -> Void, onAccountDeleted: @escaping () -> Void) {
         self.profiles = profiles
         self.maps = maps
         self.catalog = catalog
+        self.courses = courses
+        self.learning = learning
         self.social = social
         self.reminders = reminders
         self.scheduler = scheduler
@@ -45,6 +58,8 @@ public final class YouViewModel {
         self.calendar = calendar
         self.onRedoMap = onRedoMap
         self.onOpenLearn = onOpenLearn
+        self.onOpenCourse = onOpenCourse
+        self.onOpenCertificate = onOpenCertificate
         self.onSignOut = onSignOut
         self.onAccountDeleted = onAccountDeleted
     }
@@ -55,26 +70,33 @@ public final class YouViewModel {
         history = (try? await maps.history()) ?? []
         reminder = (try? await reminders.reminder()) ?? nil
         firstModule = (try? await catalog.firstPathModule()) ?? nil
+        lessons = (try? await learning.progress()) ?? lessons
+        certificates = (try? await learning.certificates()) ?? certificates
+        for certificate in certificates where certificateCourses[certificate.courseID] == nil {
+            certificateCourses[certificate.courseID] = (try? await courses.course(id: certificate.courseID)) ?? nil
+        }
         selectedSnapshot = nil
     }
 
     // MARK: Header (YOU-R01)
 
     var header: YouHeaderUIModel {
-        YouHeaderUIModel(name: profile?.firstName ?? "", signature: map?.signature ?? "", photo: profile?.photo)
+        YouHeaderUIModel(name: profile?.firstName ?? "", signature: map.map { MapReading(map: $0).signature } ?? "", photo: profile?.photo)
     }
 
     // MARK: Progress (YOU-R04 to R07)
 
+    /// YOU-R04: a finished course has its certificate, so the certificates count the grapes and regions done.
+    /// A lesson reviewed counts once (LEARN-R19a).
     var progress: ProgressUIModel {
-        let zero = "0"
+        let completed = lessons.values.filter(\.isCompleted)
         let stats = [
-            ProgressStat(value: zero, label: String(localized: "Grapes", bundle: .module)),
-            ProgressStat(value: zero, label: String(localized: "Regions", bundle: .module)),
-            ProgressStat(value: zero, label: String(localized: "Lessons", bundle: .module)),
-            ProgressStat(value: zero, label: String(localized: "XP", bundle: .module)),
-            ProgressStat(value: zero, label: String(localized: "Bottles", bundle: .module)),
-            ProgressStat(value: zero, label: String(localized: "Certificates", bundle: .module))
+            ProgressStat(value: "\(certificates.filter { $0.kind == .grape }.count)", label: String(localized: "Grapes", bundle: .module)),
+            ProgressStat(value: "\(certificates.filter { $0.kind == .region }.count)", label: String(localized: "Regions", bundle: .module)),
+            ProgressStat(value: "\(completed.count)", label: String(localized: "Lessons", bundle: .module)),
+            ProgressStat(value: "\(completed.reduce(0) { $0 + $1.xp })", label: String(localized: "XP", bundle: .module)),
+            ProgressStat(value: "0", label: String(localized: "Bottles", bundle: .module)),
+            ProgressStat(value: "\(certificates.count)", label: String(localized: "Certificates", bundle: .module))
         ]
         let module = firstModule
         return ProgressUIModel(
@@ -87,7 +109,28 @@ public final class YouViewModel {
         )
     }
 
-    func startCourse() { onOpenLearn() }
+    /// YOU-R07: "Start the course" opens the module itself.
+    func startCourse() {
+        if let firstModule { onOpenCourse(firstModule.id) } else { onOpenLearn() }
+    }
+
+    // MARK: Certificates (YOU-R23 to R25)
+
+    var certificateRows: [CertificateRowUIModel] {
+        certificates.map { certificate in
+            let kind = switch certificate.kind {
+            case .grape: String(localized: "Grape", bundle: .module)
+            case .region: String(localized: "Region", bundle: .module)
+            case .path, nil: String(localized: "Module", bundle: .module)
+            }
+            return CertificateRowUIModel(id: certificate.courseID,
+                                         title: certificateCourses[certificate.courseID]?.title ?? certificate.courseID,
+                                         detail: "\(kind) · \(certificate.date.formatted(.dateTime.day().month(.abbreviated).year()))")
+        }
+    }
+
+    /// YOU-R25: the share opens in Learn, where the certificate is drawn.
+    func openCertificate(_ courseID: String) { onOpenCertificate(courseID) }
 
     // MARK: Map (YOU-R09 to R13)
 
@@ -104,12 +147,12 @@ public final class YouViewModel {
         return MapUIModel(
             readOn: history.last.map { String(localized: "Read \(Self.day($0.date))", bundle: .module) } ?? "",
             map: map,
-            top3: reading.top3,
-            caption: reading.caption,
+            highlighted: reading.highlighted,
+            dominantPhrase: reading.dominantPhrase,
             readings: PalateAxis.allCases.map { axis in
                 let level = MapReading.level(map[axis])
                 return MapReadingRow(name: axis.label, level: level, word: MapReading.levelWord(level),
-                                     isStrong: reading.top3.contains(axis))
+                                     isStrong: reading.leaders(3).contains(axis))
             },
             showsOverTime: history.contains { if case .rating = $0.cause { true } else { false } },
             snapshots: snapshots.enumerated().map { index, snapshot in
@@ -187,7 +230,7 @@ public final class YouViewModel {
             reminder: reminder?.time ?? String(localized: "Set a time", bundle: .module),
             mapVisibility: isPublic ? String(localized: "Public", bundle: .module) : String(localized: "Friends", bundle: .module),
             tables: "0",
-            certificates: "0",
+            certificates: "\(certificates.count)",
             mapIsPublic: isPublic,
             mapPublicNote: isPublic
                 ? String(localized: "Anyone with your link can see your palate map.", bundle: .module)

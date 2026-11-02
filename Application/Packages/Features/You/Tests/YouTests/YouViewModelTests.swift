@@ -14,10 +14,14 @@ struct YouViewModelTests {
     }
 
     private func make(profiles: ProfilesSpy? = nil, social: SocialSpy = SocialSpy(), reminders: RemindersSpy = RemindersSpy(),
-                      history: [MapChange]? = nil, actions: Actions = Actions()) async -> YouViewModel {
+                      history: [MapChange]? = nil, learning: LearningStub = LearningStub(),
+                      actions: Actions = Actions()) async -> YouViewModel {
         let viewModel = YouViewModel(profiles: profiles ?? ProfilesSpy(elisa), maps: MapsStub(history: history ?? [quiz]),
-                                     catalog: CatalogStub(), social: social, reminders: reminders, scheduler: reminders,
+                                     catalog: CatalogStub(), courses: CoursesStub(), learning: learning, social: social,
+                                     reminders: reminders, scheduler: reminders,
                                      onRedoMap: { actions.log.append("redo") }, onOpenLearn: { actions.log.append("learn") },
+                                     onOpenCourse: { actions.log.append("course \($0)") },
+                                     onOpenCertificate: { actions.log.append("certificate \($0)") },
                                      onSignOut: { actions.log.append("signOut") },
                                      onAccountDeleted: { actions.log.append("deleted") })
         await viewModel.load()
@@ -37,6 +41,32 @@ struct YouViewModelTests {
 
     @Test func YOU_R02_opensOnProgress() async {
         #expect(await make().tab == .progress)
+    }
+
+    @Test func YOU_R04_twoGrapesOneRegion_andLessonsCountedOnce() async {
+        let day = Date(timeIntervalSince1970: 1_800_000_000)
+        let learning = LearningStub(
+            lessons: (1...3).map { LessonProgress(lessonID: "grape-tannat-l0\($0)", courseID: "grape-tannat", currentStep: 5,
+                                                  completedAt: day, lastOpenedAt: day, xp: 15) }
+                + [LessonProgress(lessonID: "path-01-l01", courseID: "path-01", currentStep: 2, lastOpenedAt: day)],
+            earned: [Certificate(courseID: "grape-tannat", date: day), Certificate(courseID: "grape-malbec", date: day),
+                     Certificate(courseID: "region-pt-douro", date: day)])
+        let viewModel = await make(learning: learning)
+        #expect(viewModel.progress.stats.map(\.value) == ["2", "1", "3", "45", "0", "3"])
+        #expect(viewModel.settings.certificates == "3")
+        #expect(viewModel.certificateRows.map(\.title) == ["Tannat", "Tannat", "Tannat"])
+    }
+
+    @Test func YOU_R07_startTheCourse_opensThePathsFirstModule() async {
+        let actions = Actions()
+        await make(actions: actions).startCourse()
+        #expect(actions.log == ["course path-01"])
+    }
+
+    @Test func YOU_R25_aCertificate_opensItsShare() async {
+        let actions = Actions()
+        await make(actions: actions).openCertificate("grape-tannat")
+        #expect(actions.log == ["certificate grape-tannat"])
     }
 
     @Test func YOU_R04_R07_newUser_zeros_andThePathsFirstModule() async {

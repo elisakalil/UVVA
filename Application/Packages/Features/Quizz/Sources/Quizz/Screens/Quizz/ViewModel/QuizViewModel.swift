@@ -134,12 +134,12 @@ public final class QuizViewModel {
         return QuizResultUIModel(
             dominantPhrase: reading.dominantPhrase,
             map: map,
-            top3: reading.top3,
+            highlighted: reading.highlighted,
             caption: reading.caption,
             readings: PalateAxis.allCases.map { axis in
                 let level = MapReading.level(map[axis])
                 return QuizReadingRowUIModel(name: axis.label, level: level, word: MapReading.levelWord(level),
-                                             isStrong: reading.top3.contains(axis))
+                                             isStrong: reading.leaders(3).contains(axis))
             },
             narrative: reading.narrative,
             isSaving: isSaving,
@@ -155,7 +155,7 @@ public final class QuizViewModel {
                 ?? String(localized: "Your taste in wine is", bundle: .module),
             dominantPhrase: reading.dominantPhrase,
             map: map,
-            top3: reading.top3,
+            highlighted: reading.highlighted,
             loves: firstName.map(reading.loves) ?? reading.lovesWithoutName,
             never: reading.never,
             message: String(localized: "My taste in wine is \(reading.dominantPhrase). Map yours on uvva.app", bundle: .module)

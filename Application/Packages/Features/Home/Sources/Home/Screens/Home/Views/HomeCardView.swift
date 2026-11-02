@@ -7,7 +7,9 @@ struct HomeCardView: View {
     var palateMap: PalateMap
     var cellarWineKeys: Set<String> = []
     var onInvite: () -> Void = {}
-    var onShowLess: () -> Void = {}
+    var onOpenCourse: (String) -> Void = { _ in }
+    var onOpenLearn: (CourseKind) -> Void = { _ in }
+    var onShowLess: (_ then: @escaping () -> Void) -> Void = { $0() }
 
     var body: some View {
         switch card {
@@ -20,9 +22,12 @@ struct HomeCardView: View {
             FriendsCard(variant: variant)
                 .contentShape(Rectangle())
                 .onTapGesture { if variant == .invite { onInvite() } }
-        case let .continueLesson(course): ContinueLessonCard(course: course)
+        case let .continueLesson(course):
+            ContinueLessonCard(course: course)
+                .contentShape(Rectangle())
+                .onTapGesture { onOpenCourse(course.id) }
         case let .changedMapCard(axis, delta): ChangedMapCard(axis: axis, delta: delta, palateMap: palateMap)
-        case .learnShortcuts: LearnShortcutsCard()
+        case .learnShortcuts: LearnShortcutsCard(onOpen: onOpenLearn)
         case let .wordOfTheDay(term): WordOfTheDayCard(term: term)
         case let .winesForPalate(wines): WinesForPalateCard(wines: wines)
         case .chooseYourWine: ChooseYourWineCard()

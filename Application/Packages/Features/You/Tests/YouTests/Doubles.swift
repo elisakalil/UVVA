@@ -55,3 +55,22 @@ final class RemindersSpy: ReminderRepository, ReminderScheduling {
     func requestPermission() async -> Bool { state.withLock { $0.asked += 1 }; return true }
     func schedule(_ reminder: Reminder?) async { state.withLock { $0.scheduled.append(reminder) } }
 }
+
+struct CoursesStub: CourseCatalog {
+    func courses(_ kind: CourseKind) async throws -> [Course] { [] }
+    func course(id: String) async throws -> Course? {
+        Course(id: id, kind: CourseKind(courseID: id) ?? .path, order: 1, title: "Tannat", about: "", lessons: [])
+    }
+    func lesson(id: String) async throws -> Lesson? { nil }
+}
+
+struct LearningStub: LearningRepository {
+    var lessons: [LessonProgress] = []
+    var earned: [Certificate] = []
+    func progress() async throws -> [String: LessonProgress] {
+        Dictionary(uniqueKeysWithValues: lessons.map { ($0.lessonID, $0) })
+    }
+    func save(_ progress: LessonProgress) async throws {}
+    func certificates() async throws -> [Certificate] { earned }
+    func addCertificate(_ certificate: Certificate) async throws {}
+}

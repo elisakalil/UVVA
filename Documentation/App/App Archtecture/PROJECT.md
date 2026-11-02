@@ -59,15 +59,18 @@ struct WineCard: View { var model: WineCardUIModel }
 
 ## 4. Módulos (SPM)
 
-**APP-R05 · Packages locais.** A app é dividida em packages locais do Swift Package Manager. O target da app só monta os packages e a navegação entre eles.
+**APP-R05 · Packages locais.** A app é dividida em três packages locais do Swift Package Manager: `Core`, `DesignSystem` e `Features`. O target da app só monta os packages e a navegação entre eles.
 
-| Package | O que tem | Depende de |
-| --- | --- | --- |
-| `Features/Home`, `Features/Onboarding`, `Features/Quizz`, `Features/You`, `Features/Friends`, `Features/Cellar`, `Features/Learn` | Um package por feature, com as suas telas | `Core`, `DesignSystem`, `Match` |
-| `Match` | O algoritmo de match: usuário × vinho, vinho × receita, usuário × usuário (`Shared/MATCH.md`) | `Core` |
-| `DesignSystem` | Tokens, fontes, a foto de fundo e os componentes reutilizados (APP-R02) | — |
-| `Core` | As entidades partilhadas (`PalateAxis`, `PalateMap`, `Verdict`, `Wine`…) e os protocolos dos serviços. Só Foundation | — |
-| `Storage` | Os modelos SwiftData das duas lojas, o import do conteúdo do bundle e o acesso ao CloudKit (`ARCHITECTURE.md`) | `Core` |
+| Package | Módulo | O que tem | Depende de |
+| --- | --- | --- | --- |
+| `Core` | `Core` | As entidades partilhadas (`PalateAxis`, `PalateMap`, `Verdict`, `Wine`…) e os protocolos dos serviços. Só Foundation | — |
+| `Core` | `Match` | O algoritmo de match: usuário × vinho, vinho × receita, usuário × usuário (`Shared/MATCH.md`) | `Core` |
+| `Core` | `Storage` | Os modelos SwiftData das duas lojas, o import do conteúdo do bundle e o acesso ao CloudKit (`ARCHITECTURE.md`) | `Core`, `Match` |
+| `DesignSystem` | `DesignSystem` | Tokens, fontes, a foto de fundo e os componentes reutilizados (APP-R02) | — |
+| `Features` | `Features` | Só reúne as features: `import Features` dá acesso a todas (`@_exported import`). É o único módulo de feature que o target da app importa | as features |
+| `Features/Home`, `Features/Onboarding`, `Features/Quizz`, `Features/You`, `Features/Friends`, `Features/Cellar`, `Features/Learn` | um por feature | Cada feature tem a sua pasta e o seu próprio `Package.swift`, com as suas telas | `Core` (módulos `Core` e `Match`), `DesignSystem` |
+
+Uma feature nova entra em `Packages/Features/Package.swift` (dependência e target `Features`) e em `Features.swift`; o projeto do Xcode não muda (ver secção 6 para os testes).
 
 `DesignSystem` e `Core` não são features, mas precisam ser packages: um package de feature não consegue importar código que está no target da app.
 
@@ -91,18 +94,20 @@ Application/
 │   └── Assets.xcassets     Ícone da app e cor de destaque
 ├── Data/                   Fonte editável do conteúdo (vinhos, receitas, lições)
 └── Packages/
-    ├── Features/
-    │   ├── Home/
-    │   ├── Onboarding/
-    │   ├── Quizz/
-    │   ├── You/
-    │   ├── Friends/
-    │   ├── Cellar/
-    │   └── Learn/
-    ├── Match/
+    ├── Core/               Package com os módulos Core, Match e Storage
+    │   ├── Sources/{Core,Match,Storage}/
+    │   └── Tests/{CoreTests,MatchTests,StorageTests}/
     ├── DesignSystem/       Inclui as fontes e a foto de fundo (Resources/)
-    ├── Storage/
-    └── Core/
+    └── Features/
+        ├── Package.swift   Reúne as features num só módulo
+        ├── Sources/Features/Features.swift
+        ├── Home/           Cada feature com o seu Package.swift
+        ├── Onboarding/
+        ├── Quizz/
+        ├── You/
+        ├── Friends/
+        ├── Cellar/
+        └── Learn/
 ```
 
 Exemplo de um package de feature:
@@ -132,10 +137,10 @@ Features/You/
 ## 6. Abrir, correr e testar
 
 - Abrir **`Application/UVVA.xcworkspace`**, e não o `.xcodeproj`. O workspace junta o projeto e os packages, e é ele que deixa o scheme **UVVA** correr os testes de todos os packages com ⌘U.
-- Um package novo entra em três sítios: no workspace (`contents.xcworkspacedata`), nas *Package Dependencies* do projeto (se o target da app o importa) e nos *Testables* do scheme UVVA.
+- O projeto só conhece os três packages (`Core`, `DesignSystem`, `Features`). Uma feature nova entra em `Features/Package.swift` e `Features.swift`. Para o ⌘U do scheme UVVA correr os testes dela, entra também no workspace (`contents.xcworkspacedata`, como `Packages/Features/<Nome>`) e nos *Testables* do scheme: o Xcode só encontra os test targets de packages que estão na raiz do workspace.
 - Depois de mudar algo em `Application/Data`, correr `python3 Application/Scripts/pack_content.py` para gerar de novo o conteúdo do bundle. Os arquivos gerados em `UVVA/Resources/Content/` nunca se editam à mão.
 - Pelo terminal:
-  - `swift test` dentro de `Packages/Core`, `Packages/Match` ou `Packages/Storage` (sem simulador, APP-R07).
+  - `swift test` dentro de `Packages/Core` corre os testes de `Core`, `Match` e `Storage` (sem simulador, APP-R07).
 - **Modo de demonstração (só Debug).** Com o argumento `-UVVADemoAccount` (Xcode › Edit Scheme › Run › Arguments), a app usa uma conta Apple falsa ("Elisa"), assume o iCloud ligado e mostra dois contatos como estando na UVVA. Serve para percorrer o Onboarding no simulador sem Apple ID. Nunca entra num build de Release.
 - **O que é da plataforma fica no target da app:** Sign in with Apple (`App/Account`), o modo de demonstração (`App/Debug`) e o coordenador. Os packages recebem protocolos de `Core` (`Authenticating`, `ProfileRepository`, `SocialService`, `CloudAccountStatus`).
   - `xcodebuild -workspace UVVA.xcworkspace -scheme UVVA -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test` para tudo.

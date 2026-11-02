@@ -9,6 +9,8 @@ struct HomeContent: View {
     var tourTarget: String?
     var cellarWineKeys: Set<String> = []
     var onInvite: () -> Void
+    var onOpenCourse: (String) -> Void = { _ in }
+    var onOpenLearn: (CourseKind) -> Void = { _ in }
 
     @State private var scroll = HeaderScroll()
     static let topID = "home.top"
@@ -87,7 +89,10 @@ struct HomeContent: View {
 
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
         HomeCardView(card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite,
-                     onShowLess: { withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } })
+                     onOpenCourse: onOpenCourse, onOpenLearn: onOpenLearn,
+                     onShowLess: { then in
+                         withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }
+                     })
             .id(card.kind)
             .modifier(SpotlightModifier(id: card.spotlightID))
     }

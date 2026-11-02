@@ -1,6 +1,5 @@
 import DesignSystem
-import Onboarding
-import Quizz
+import Features
 import SwiftUI
 
 /// Shows the screen the coordinator chose.

@@ -8,13 +8,16 @@
       location = "group:Packages/Core">
    </FileRef>
    <FileRef
-      location = "group:Packages/Match">
-   </FileRef>
-   <FileRef
       location = "group:Packages/DesignSystem">
    </FileRef>
    <FileRef
-      location = "group:Packages/Storage">
+      location = "group:Packages/Features">
+   </FileRef>
+   <FileRef
+      location = "group:Packages/Features/Home">
+   </FileRef>
+   <FileRef
+      location = "group:Packages/Features/Learn">
    </FileRef>
    <FileRef
       location = "group:Packages/Features/Onboarding">
@@ -24,8 +27,5 @@
    </FileRef>
    <FileRef
       location = "group:Packages/Features/You">
-   </FileRef>
-   <FileRef
-      location = "group:Packages/Features/Home">
    </FileRef>
 </Workspace>

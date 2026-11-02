@@ -2,7 +2,8 @@ import Core
 import DesignSystem
 import SwiftUI
 
-/// The facts of the day's wine, two to a row: origin, vintage, grapes, serving, then the notes across.
+/// The facts of the day's wine: origin, appellation (when it is notable), grapes, notes and serving down the left, each with its one-line
+/// insight when the content has one, and the vintage alone on the right, under the card's third axis.
 struct WineFacts: View {
     var wine: Wine
     var now = Date()
@@ -10,24 +11,27 @@ struct WineFacts: View {
     private struct Fact: Identifiable {
         var label: String
         var value: String
-        var wide = false
+        var insight: String?
         var id: String { label }
     }
 
     private var facts: [Fact] {
         var facts: [Fact] = []
-        if !wine.origin.isEmpty { facts.append(Fact(label: "Origin", value: wine.origin)) }
-        if let vintage = wine.vintage { facts.append(Fact(label: "Vintage", value: vintageLine(vintage))) }
+        if !wine.originLine.isEmpty {
+            // A wine known only by its country shows the country alone: a line on a whole country says little.
+            let hasRegion = !(wine.region ?? "").isEmpty
+            facts.append(Fact(label: "Origin", value: wine.originLine, insight: hasRegion ? wine.originInsight : nil))
+        }
+        // A plain origin label (a regional DOC, an IGT) says nothing the origin does not; only a notable one shows.
+        if wine.hasNotableAppellation, !wine.classification.isEmpty {
+            facts.append(Fact(label: "Appellation", value: wine.classification, insight: wine.appellationInsight))
+        }
         if !wine.grapes.isEmpty { facts.append(Fact(label: "Grapes", value: wine.grapes.joined(separator: ", "))) }
+        if let note = wine.note, !note.isEmpty { facts.append(Fact(label: "Notes", value: note)) }
         if let serving = wine.serving {
-            facts.append(Fact(label: "Serve at", value: "\(serving.lowerBound)–\(serving.upperBound) °C"))
+            facts.append(Fact(label: "Serve at", value: "\(serving.lowerBound)–\(serving.upperBound) °C",
+                              insight: wine.howToServe))
         }
-        if !wine.classification.isEmpty {
-            facts.append(Fact(label: "Appellation", value: wine.classification, wide: true))
-        } else if let alcohol = wine.alcohol {
-            facts.append(Fact(label: "Strength", value: "\(alcohol.formatted(.number.precision(.fractionLength(0...1))))% abv", wide: true))
-        }
-        if let note = wine.note, !note.isEmpty { facts.append(Fact(label: "Notes", value: note, wide: true)) }
         return facts
     }
 
@@ -42,33 +46,20 @@ struct WineFacts: View {
     }
 
     var body: some View {
-        Grid(alignment: .topLeading, horizontalSpacing: 24, verticalSpacing: 22) {
-            ForEach(rows.indices, id: \.self) { index in
-                let row = rows[index]
-                if row.count == 1, row[0].wide {
-                    GridRow { cell(row[0]).gridCellColumns(2) }
-                } else {
-                    GridRow {
-                        ForEach(row) { cell($0) }
-                        if row.count == 1 { Color.clear.gridCellUnsizedAxes([.horizontal, .vertical]) }
-                    }
+        let column = VStack(alignment: .leading, spacing: 22) {
+            ForEach(facts) { cell($0) }
+        }
+        Group {
+            if let vintage = wine.vintage {
+                ThirdColumnLayout {
+                    column
+                    cell(Fact(label: "Vintage", value: vintageLine(vintage)))
                 }
+            } else {
+                column
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-
-    /// Short facts paired two by two; a wide one takes a row of its own.
-    private var rows: [[Fact]] {
-        var rows: [[Fact]] = []
-        for fact in facts {
-            if !fact.wide, let last = rows.last, last.count == 1, !last[0].wide {
-                rows[rows.count - 1].append(fact)
-            } else {
-                rows.append([fact])
-            }
-        }
-        return rows
     }
 
     private func cell(_ fact: Fact) -> some View {
@@ -82,7 +73,39 @@ struct WineFacts: View {
                 .lineSpacing(2)
                 .foregroundStyle(UVVAColor.cream)
                 .fixedSize(horizontal: false, vertical: true)
+            if let insight = fact.insight {
+                Text(insight)
+                    .font(UVVAFont.sans(11.5, .regular))
+                    .lineSpacing(3)
+                    .foregroundStyle(UVVAColor.cream84)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.top, 2)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+/// The first view across the first two thirds, the second in the last third: the card's axes sit in three equal
+/// columns, so the vintage lines up under the third one.
+private struct ThirdColumnLayout: Layout {
+    var gutter: CGFloat = 16
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let width = proposal.width ?? 320
+        let height = zip(subviews, frames(width: width)).map { $0.sizeThatFits(ProposedViewSize(width: $1.width, height: nil)).height }.max()
+        return CGSize(width: width, height: height ?? 0)
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        for (subview, frame) in zip(subviews, frames(width: bounds.width)) {
+            subview.place(at: CGPoint(x: bounds.minX + frame.minX, y: bounds.minY),
+                          proposal: ProposedViewSize(width: frame.width, height: nil))
+        }
+    }
+
+    private func frames(width: CGFloat) -> [(minX: CGFloat, width: CGFloat)] {
+        let third = width / 3
+        return [(0, 2 * third - gutter), (2 * third, third)]
     }
 }

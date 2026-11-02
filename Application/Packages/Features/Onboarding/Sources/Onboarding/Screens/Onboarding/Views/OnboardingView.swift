@@ -7,6 +7,8 @@ public struct OnboardingView: View {
 
     /// How much of the vineyard photo shows over the moss, on every Onboarding screen and the Splash.
     static let photoOpacity = 0.95
+    /// The black shade over the photo on Name and Phone. Black, not moss: moss turns the faded photo yellowish.
+    static let dimOpacity = 0.45
 
     public init(viewModel: OnboardingViewModel) {
         _viewModel = State(initialValue: viewModel)
@@ -21,6 +23,11 @@ public struct OnboardingView: View {
             if isContacts {
                 LinearGradient(colors: [Color(hex: 0x181E12).opacity(0.2), Color(hex: 0x181E12).opacity(0.5)],
                                startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
+                    .transition(.opacity)
+            }
+            if viewModel.step == .name || viewModel.step == .phone {
+                Color.black.opacity(Self.dimOpacity)
                     .ignoresSafeArea()
                     .transition(.opacity)
             }

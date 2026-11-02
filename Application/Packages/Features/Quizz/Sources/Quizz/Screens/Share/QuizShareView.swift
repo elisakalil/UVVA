@@ -11,7 +11,7 @@ struct QuizShareView: View {
         ShareScreen(title: String(localized: "Share your map", bundle: .module), message: model.message) { format in
             PalateShareCard(heading: model.heading, phrase: model.dominantPhrase,
                             chartValues: model.map.chartValues, chartLabels: PalateAxis.allCases.map(\.label),
-                            strong: Set(model.top3.prefix(2).compactMap { PalateAxis.allCases.firstIndex(of: $0) }),
+                            strong: Set(model.highlighted.compactMap { PalateAxis.allCases.firstIndex(of: $0) }),
                             lines: [ShareCardLine(tag: String(localized: "Loves", bundle: .module), text: model.loves),
                                     ShareCardLine(tag: String(localized: "Never", bundle: .module), text: model.never)],
                             format: format)

@@ -194,7 +194,7 @@ Profile e com mapa         → Tabs (Home)
 | `QuizFlow` | Máquina de estados: intro, leitura 1…8, resultado; respostas e versão por eixo | QUIZ-R07 a R13a, R18 |
 | `QuizExit` | `exit(for: QuizEntry)` | QUIZ-R24, R25 |
 | `PalateMapBuilder` | Respostas → `PalateMap` | QUIZ-R04 |
-| `MapReading` | Ranking, top 3, mais fraco, frases, níveis | QUIZ-R05, R14 a R16, Anexo A |
+| `MapReading` | Ranking, patamares, líderes, formato do mapa, frases, níveis | QUIZ-R05, R14 a R16, Anexo A |
 | `ShareCardRenderer` | `ImageRenderer` em 9:16 e 4:5 | QUIZ-R19, R20, SHARED-R20 |
 
 **Telas**: `Intro` (radar animado), `Reading` (barra de 10 posições, Change question), `Result`, `ShareSheet`.

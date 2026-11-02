@@ -1,5 +1,6 @@
 import Core
 import Foundation
+import Match
 import Observation
 
 /// Runs the Onboarding: sign-in, name, phone, friends (ONBOARDING.md). The app decides what comes after.
@@ -255,7 +256,7 @@ public final class OnboardingViewModel {
     var contactsModel: ContactsUIModel {
         let onUVVA = contactsOnUVVA.filter { matchesQuery($0.contact) }.map { row in
             ContactRowUIModel(id: row.contact.id, name: row.contact.displayName, initials: row.contact.initials,
-                              note: row.account.map?.signature, letter: row.contact.indexLetter,
+                              note: row.account.map.map { MapReading(map: $0).signature }, letter: row.contact.indexLetter,
                               state: requested.contains(row.contact.id) ? .requested : .add)
         }
         let toInvite = contactsToInvite.filter(matchesQuery).map { contact in

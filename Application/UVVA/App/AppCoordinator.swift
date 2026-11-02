@@ -1,14 +1,11 @@
 import Core
 import DesignSystem
+import Features
 import Foundation
-import Home
 import Observation
-import Onboarding
 import OSLog
-import Quizz
 import Storage
 import SwiftData
-import You
 
 /// Decides which top-level screen shows and builds the features with their services.
 /// Features never open each other: they report back here (APP-R06).
@@ -22,6 +19,7 @@ final class AppCoordinator {
     /// The Home tour, while it runs (HOME-R29).
     private(set) var tour: GuidedTourViewModel?
     private(set) var you: YouViewModel?
+    private(set) var learn: LearnViewModel?
     /// The tab on screen; features move it through the coordinator (APP-R06).
     var selectedTab: AppTab = .home
     private(set) var profile: Profile?
@@ -32,6 +30,7 @@ final class AppCoordinator {
     private let catalog: CatalogStore
     private let reminders: ReminderStore
     private let cellar: CellarStore
+    private let learning: LearningStore
     private let scheduler = LocalReminderScheduler()
     private let auth: any Authenticating
     private let cloud: any CloudAccountStatus
@@ -50,6 +49,7 @@ final class AppCoordinator {
         catalog = stores.catalog
         reminders = stores.reminders
         cellar = stores.cellar
+        learning = stores.learning
         #if DEBUG
         if DemoMode.isOn {
             auth = DemoAuth()
@@ -68,6 +68,8 @@ final class AppCoordinator {
         guard route == .launching else { return }
         timingLog.info("TIMING start() begin")
         async let splash: Void = (try? await Task.sleep(for: Self.minimumSplash)) ?? ()
+        // Ready before the first screen with glass, so building it does not freeze the Splash.
+        async let glass: Void = GlassTextures.prepare()
         var profile = try? await profiles.currentProfile()
         timingLog.info("TIMING profile fetched")
         if let current = profile, !(await auth.isStillAuthorized(current.authUserID)) { profile = nil }
@@ -76,6 +78,8 @@ final class AppCoordinator {
         timingLog.info("TIMING map fetched")
         await splash
         timingLog.info("TIMING splash min done")
+        await glass
+        timingLog.info("TIMING glass ready")
         self.profile = profile
         switch LaunchRoute.resolve(profile: profile, hasMap: hasMap) {
         case .welcome: openOnboarding()
@@ -128,8 +132,13 @@ final class AppCoordinator {
 
     /// The tabs. The tour shows after the first map, once per account (HOME-R29); a redone map opens You › Map.
     private func openTabs(after quizExit: QuizExit?) {
-        home = home ?? HomeViewModel(profiles: profiles, maps: maps, catalog: catalog, cellar: cellar)
+        home = home ?? HomeViewModel(profiles: profiles, maps: maps, catalog: catalog, cellar: cellar, courses: catalog,
+                                     learning: learning,
+                                     onOpenCourse: { [weak self] id in self?.openCourse(id) },
+                                     onOpenLearn: { [weak self] kind in self?.openLearn(kind) })
         you = you ?? makeYou()
+        learn = learn ?? LearnViewModel(catalog: catalog, learning: learning, profiles: profiles,
+                                        onProgressChange: { [weak self] in self?.learningChanged() })
         if quizExit == .youMap {
             selectedTab = .you
             you?.tab = .map
@@ -144,10 +153,15 @@ final class AppCoordinator {
     }
 
     private func makeYou() -> YouViewModel {
-        YouViewModel(profiles: profiles, maps: maps, catalog: catalog, social: social, reminders: reminders,
-                     scheduler: scheduler,
+        YouViewModel(profiles: profiles, maps: maps, catalog: catalog, courses: catalog, learning: learning, social: social,
+                     reminders: reminders, scheduler: scheduler,
                      onRedoMap: { [weak self] in self?.openQuiz(.redo) },
                      onOpenLearn: { [weak self] in self?.selectedTab = .learn },
+                     onOpenCourse: { [weak self] id in self?.openCourse(id) },
+                     onOpenCertificate: { [weak self] id in
+                         guard let learn = self?.learn else { return }
+                         Task { await learn.showCertificate(courseID: id) }
+                     },
                      onSignOut: { [weak self] in self?.signOut() },
                      onAccountDeleted: { [weak self] in self?.accountDeleted() })
     }
@@ -166,10 +180,31 @@ final class AppCoordinator {
         openOnboarding()
     }
 
+    /// Home and You open Learn (APP-R06): a tab (LEARN-R04), or a course with its lesson (LEARN-R11).
+    private func openLearn(_ kind: CourseKind) {
+        learn?.show(kind)
+        selectedTab = .learn
+    }
+
+    private func openCourse(_ id: String) {
+        selectedTab = .learn
+        guard let learn else { return }
+        Task { await learn.openCourse(id: id) }
+    }
+
+    /// A lesson saved or a course finished: the Home's "Continue" and You's numbers follow.
+    private func learningChanged() {
+        Task {
+            await home?.load()
+            await you?.load()
+        }
+    }
+
     private func resetTabs() {
         profile = nil
         home = nil
         you = nil
+        learn = nil
         tour = nil
         selectedTab = .home
     }
@@ -189,10 +224,11 @@ final class AppCoordinator {
         Task { try? await profiles.markTourSeen(GuidedTour.tourID) }
     }
 
-    /// The import ended: the Home and You can show the catalog now.
+    /// The import ended: the Home, Learn and You can show the catalog now.
     func contentDidLoad() {
         Task {
             await home?.load()
+            await learn?.load()
             await you?.load()
         }
     }

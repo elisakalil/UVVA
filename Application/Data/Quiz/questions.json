@@ -156,6 +156,23 @@
     {
       "axis": "body",
       "version": 1,
+      "prompt": "Skimmed milk or double cream, a broth or a slow stew. How much weight do you like on your tongue?",
+      "answers": [
+        "Like water",
+        "Very light",
+        "Light",
+        "Light-medium",
+        "Medium",
+        "Medium-full",
+        "Full",
+        "Rich",
+        "Very rich",
+        "Thick as velvet"
+      ]
+    },
+    {
+      "axis": "body",
+      "version": 2,
       "prompt": "How much cream do you like in your coffee?",
       "answers": [
         "Black",
@@ -172,7 +189,7 @@
     },
     {
       "axis": "body",
-      "version": 2,
+      "version": 3,
       "prompt": "How much butter is the right amount of butter?",
       "answers": [
         "No butter",
@@ -185,23 +202,6 @@
         "Teeth marks",
         "A slab",
         "Bread is optional"
-      ]
-    },
-    {
-      "axis": "body",
-      "version": 3,
-      "prompt": "Skimmed milk or double cream, a broth or a slow stew. How much weight do you like on your tongue?",
-      "answers": [
-        "Like water",
-        "Very light",
-        "Light",
-        "Light-medium",
-        "Medium",
-        "Medium-full",
-        "Full",
-        "Rich",
-        "Very rich",
-        "Thick as velvet"
       ]
     },
     {

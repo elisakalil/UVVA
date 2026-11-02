@@ -10,7 +10,14 @@ import SwiftUI
 struct WineMapPager: View {
     var wine: PalateMap
     var palate: PalateMap
+    /// Whether the pager can be seen at all: folded away in a closed card it is still laid out where it would be.
+    var active = true
     @State private var shown: Int? = 0
+    /// Once the maps come into view, the pager slides on to the second map by itself, so the user sees there is one.
+    /// Done once each time the card opens; leaving before it plays cancels it.
+    @State private var hinted = false
+    @State private var hint: Task<Void, Never>?
+    @State private var visible = false
 
     private var page: Int { shown ?? 0 }
 
@@ -39,9 +46,17 @@ struct WineMapPager: View {
             .scrollTargetBehavior(.paging)
             .scrollIndicators(.hidden)
             .scrollPosition(id: $shown)
-            .frame(height: 262)
+            .frame(height: 274)
             .contentShape(Rectangle())
             .onTapGesture { withAnimation(.smooth) { shown = page == 0 ? 1 : 0 } }
+            .onScrollVisibilityChange(threshold: 0.9) { visible = $0; playHint() }
+            .onChange(of: active) { _, active in
+                if !active {
+                    hinted = false
+                    shown = 0
+                }
+                playHint()
+            }
 
             HStack(spacing: 6) {
                 ForEach(0..<2, id: \.self) { index in
@@ -52,6 +67,17 @@ struct WineMapPager: View {
             }
             .animation(.smooth(duration: 0.25), value: page)
             .accessibilityHidden(true)
+        }
+    }
+
+    private func playHint() {
+        hint?.cancel()
+        guard visible, active, !hinted, page == 0 else { return }
+        hint = Task {
+            try? await Task.sleep(for: .milliseconds(600))
+            guard !Task.isCancelled, page == 0 else { return }
+            hinted = true
+            withAnimation(.smooth(duration: 0.7)) { shown = 1 }
         }
     }
 
@@ -68,6 +94,7 @@ struct WineMapPager: View {
             chart()
                 .frame(maxWidth: .infinity)
                 .frame(height: 206)
+                .padding(.top, 12)
             legend()
             Spacer(minLength: 0)
         }

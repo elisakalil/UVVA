@@ -8,11 +8,10 @@ let package = Package(
     products: [.library(name: "Quizz", targets: ["Quizz"])],
     dependencies: [
         .package(path: "../../Core"),
-        .package(path: "../../Match"),
         .package(path: "../../DesignSystem")
     ],
     targets: [
-        .target(name: "Quizz", dependencies: ["Core", "Match", "DesignSystem"], resources: [.process("Resources")]),
-        .testTarget(name: "QuizzTests", dependencies: ["Quizz", "Core", "Match"])
+        .target(name: "Quizz", dependencies: ["Core", .product(name: "Match", package: "Core"), "DesignSystem"], resources: [.process("Resources")]),
+        .testTarget(name: "QuizzTests", dependencies: ["Quizz", "Core", .product(name: "Match", package: "Core")])
     ]
 )

@@ -19,7 +19,6 @@ struct PalateMapTests {
     @Test func QUIZ_R14_ranking_tiesFollowCanonicalOrder() {
         let map = PalateMap([.sweetness: 1, .acidity: 4, .tannin: 3, .body: 3, .fruit: 4, .floral: 2, .oak: 2, .spice: 3])
         #expect(map.ranked == [.acidity, .fruit, .body, .tannin, .spice, .floral, .oak, .sweetness])
-        #expect(map.signature == "ACIDITY · FRUIT · BODY")
     }
 
     @Test func QUIZ_R14_allEqual_topThreeIsFloralBodyTannin_weakestIsFruit() {

@@ -26,10 +26,5 @@ public struct PalateMap: Equatable, Sendable {
             .map(\.element)
     }
 
-    /// The top three axes, upper-cased and joined by " · " (FRI-R04, YOU-R01).
-    public var signature: String {
-        ranked.prefix(3).map { $0.label.uppercased() }.joined(separator: " · ")
-    }
-    
     public var chartValues: [Double] { PalateAxis.allCases.map { self[$0] / PalateMap.range.upperBound } }
 }

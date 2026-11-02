@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B10000000000000000000001 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000011 /* Home */; };
+		B10000000000000000000001 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000011 /* Features */; };
 		B10000000000000000000002 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000012 /* DesignSystem */; };
 		B10000000000000000000003 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000013 /* Core */; };
 		B10000000000000000000004 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000014 /* Storage */; };
-		B10000000000000000000005 /* Quizz in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000015 /* Quizz */; };
-		B10000000000000000000006 /* Onboarding in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000016 /* Onboarding */; };
-		B10000000000000000000007 /* You in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000017 /* You */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,13 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B10000000000000000000001 /* Home in Frameworks */,
+				B10000000000000000000001 /* Features in Frameworks */,
 				B10000000000000000000002 /* DesignSystem in Frameworks */,
 				B10000000000000000000003 /* Core in Frameworks */,
 				B10000000000000000000004 /* Storage in Frameworks */,
-				B10000000000000000000005 /* Quizz in Frameworks */,
-				B10000000000000000000006 /* Onboarding in Frameworks */,
-				B10000000000000000000007 /* You in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,13 +89,10 @@
 			);
 			name = UVVA;
 			packageProductDependencies = (
-				B10000000000000000000011 /* Home */,
+				B10000000000000000000011 /* Features */,
 				B10000000000000000000012 /* DesignSystem */,
 				B10000000000000000000013 /* Core */,
 				B10000000000000000000014 /* Storage */,
-				B10000000000000000000015 /* Quizz */,
-				B10000000000000000000016 /* Onboarding */,
-				B10000000000000000000017 /* You */,
 			);
 			productName = UVVA;
 			productReference = A10000000000000000000004 /* UVVA.app */;
@@ -134,13 +125,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				B10000000000000000000021 /* XCLocalSwiftPackageReference "Packages/Core" */,
-				B10000000000000000000022 /* XCLocalSwiftPackageReference "Packages/Match" */,
 				B10000000000000000000023 /* XCLocalSwiftPackageReference "Packages/DesignSystem" */,
-				B10000000000000000000024 /* XCLocalSwiftPackageReference "Packages/Features/Home" */,
-				B10000000000000000000025 /* XCLocalSwiftPackageReference "Packages/Storage" */,
-				B10000000000000000000026 /* XCLocalSwiftPackageReference "Packages/Features/Quizz" */,
-				B10000000000000000000027 /* XCLocalSwiftPackageReference "Packages/Features/Onboarding" */,
-				B10000000000000000000028 /* XCLocalSwiftPackageReference "Packages/Features/You" */,
+				B10000000000000000000024 /* XCLocalSwiftPackageReference "Packages/Features" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A10000000000000000000003 /* Products */;
@@ -314,40 +300,20 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Core;
 		};
-		B10000000000000000000022 /* XCLocalSwiftPackageReference "Packages/Match" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Match;
-		};
 		B10000000000000000000023 /* XCLocalSwiftPackageReference "Packages/DesignSystem" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/DesignSystem;
 		};
-		B10000000000000000000024 /* XCLocalSwiftPackageReference "Packages/Features/Home" */ = {
+		B10000000000000000000024 /* XCLocalSwiftPackageReference "Packages/Features" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Features/Home;
-		};
-		B10000000000000000000025 /* XCLocalSwiftPackageReference "Packages/Storage" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Storage;
-		};
-		B10000000000000000000026 /* XCLocalSwiftPackageReference "Packages/Features/Quizz" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Features/Quizz;
-		};
-		B10000000000000000000027 /* XCLocalSwiftPackageReference "Packages/Features/Onboarding" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Features/Onboarding;
-		};
-		B10000000000000000000028 /* XCLocalSwiftPackageReference "Packages/Features/You" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/Features/You;
+			relativePath = Packages/Features;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B10000000000000000000011 /* Home */ = {
+		B10000000000000000000011 /* Features */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Home;
+			productName = Features;
 		};
 		B10000000000000000000012 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -360,18 +326,6 @@
 		B10000000000000000000014 /* Storage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Storage;
-		};
-		B10000000000000000000015 /* Quizz */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Quizz;
-		};
-		B10000000000000000000016 /* Onboarding */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Onboarding;
-		};
-		B10000000000000000000017 /* You */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = You;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

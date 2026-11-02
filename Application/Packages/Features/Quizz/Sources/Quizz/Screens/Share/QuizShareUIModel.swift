@@ -6,7 +6,8 @@ struct QuizShareUIModel: Equatable {
     var heading: String
     var dominantPhrase: String
     var map: PalateMap
-    var top3: [PalateAxis]
+    /// The axes drawn strong on the chart (QUIZ-R16).
+    var highlighted: [PalateAxis]
     var loves: String
     var never: String
     /// The text sent with the image on WhatsApp.

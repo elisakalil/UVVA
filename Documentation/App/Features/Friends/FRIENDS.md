@@ -40,13 +40,13 @@ Os testes do Friends usam versões falsas destas funções, com valores fixos. O
 
 ## 4. Lista de amigos
 
-**FRI-R04 · Lista.** Os amigos aparecem por ordem alfabética. Cada um mostra o nome, o avatar, a assinatura do paladar (os 3 eixos do topo, QUIZ-R14, em caixa alta, separados por " · ") e a compatibilidade em %. O topo mostra "[n] friends".
+**FRI-R04 · Lista.** Os amigos aparecem por ordem alfabética. Cada um mostra o nome, o avatar, a assinatura do paladar (a frase dominante da QUIZ-R15 em caixa alta, por exemplo "ACIDITY · FRUIT · BODY") e a compatibilidade em %. O topo mostra "[n] friends".
 
 **FRI-R06 · Vazio.** Sem amigos, a lista mostra [ver D2].
 
 **Critérios**
 - Dados Marina, Bia e Rui, então a ordem é Bia, Marina, Rui.
-- Dado um amigo com top 3 Acidity, Fruit e Body e `compatibility` = 82, então a linha mostra "ACIDITY · FRUIT · BODY" e "82%".
+- Dado um amigo com Acidity, Fruit e Body como líderes (QUIZ-R14a) e `compatibility` = 82, então a linha mostra "ACIDITY · FRUIT · BODY" e "82%".
 
 ### 4.1 Quick add
 

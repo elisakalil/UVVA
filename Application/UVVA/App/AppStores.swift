@@ -11,6 +11,7 @@ struct AppStores: Sendable {
     let catalog: CatalogStore
     let reminders: ReminderStore
     let cellar: CellarStore
+    let learning: LearningStore
 
     static func make(container: ModelContainer) async -> AppStores {
         await Task.detached(priority: .userInitiated) {
@@ -19,7 +20,8 @@ struct AppStores: Sendable {
                       profiles: ProfileStore(modelContainer: container),
                       catalog: CatalogStore(modelContainer: container),
                       reminders: ReminderStore(modelContainer: container),
-                      cellar: CellarStore(modelContainer: container))
+                      cellar: CellarStore(modelContainer: container),
+                      learning: LearningStore(modelContainer: container))
         }.value
     }
 }

@@ -8,10 +8,10 @@ let package = Package(
     products: [.library(name: "Onboarding", targets: ["Onboarding"])],
     dependencies: [
         .package(path: "../../Core"),
-        .package(path: "../../DesignSystem")
+        .package(path: "../../DesignSystem"),
     ],
     targets: [
-        .target(name: "Onboarding", dependencies: ["Core", "DesignSystem"], resources: [.process("Resources")]),
+        .target(name: "Onboarding", dependencies: ["Core", .product(name: "Match", package: "Core"), "DesignSystem"], resources: [.process("Resources")]),
         .testTarget(name: "OnboardingTests", dependencies: ["Onboarding", "Core"])
     ]
 )
