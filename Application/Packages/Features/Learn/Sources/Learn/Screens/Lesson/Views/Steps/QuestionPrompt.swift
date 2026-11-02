@@ -1,15 +1,13 @@
 import DesignSystem
 import SwiftUI
 
-/// The eyebrow and the question, at the top of every question step.
+/// The question, at the top of every question step.
 struct QuestionPrompt: View {
-    var eyebrow: String
     var prompt: String
     var hint: String?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            LessonEyebrow(text: eyebrow)
             Text(prompt)
                 .font(UVVAFont.sans(26, .ultraLight))
                 .tracking(-0.6)

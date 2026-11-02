@@ -80,16 +80,10 @@
     "cheers" : {
 
     },
-    "Choose one" : {
+    "Close" : {
 
     },
     "Closes the course" : {
-
-    },
-    "Complete the sentence" : {
-
-    },
-    "Concept" : {
 
     },
     "Continue" : {
@@ -152,9 +146,6 @@
     "Japanese" : {
 
     },
-    "Key idea" : {
-
-    },
     "Learn" : {
 
     },
@@ -171,9 +162,6 @@
 
     },
     "Map of %@" : {
-
-    },
-    "Match pairs" : {
 
     },
     "means “%@” in %@" : {
@@ -216,16 +204,13 @@
     "Opens the course" : {
 
     },
-    "Pick a word" : {
-
-    },
     "Polish" : {
 
     },
     "Portuguese" : {
 
     },
-    "Put in order" : {
+    "Previous screen" : {
 
     },
     "Red" : {
@@ -250,9 +235,6 @@
 
     },
     "Search modules" : {
-
-    },
-    "Select all that apply" : {
 
     },
     "Share what you learned" : {
@@ -296,12 +278,6 @@
 
     },
     "True" : {
-
-    },
-    "True or false" : {
-
-    },
-    "Uvva tip" : {
 
     },
     "View certificate" : {

@@ -8,22 +8,16 @@ struct FillBlankStepView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            VStack(alignment: .leading, spacing: 16) {
-                LessonEyebrow(text: String(localized: "Complete the sentence", bundle: .module))
-                sentence
-                    .font(UVVAFont.sans(26, .ultraLight))
-                    .tracking(-0.6)
-                    .lineSpacing(8)
-            }
-            .padding(.horizontal, 24)
+            sentence
+                .font(UVVAFont.sans(26, .ultraLight))
+                .tracking(-0.6)
+                .lineSpacing(8)
+                .padding(.horizontal, 24)
             .padding(.top, 6)
             .padding(.bottom, 28)
 
-            VStack(alignment: .leading, spacing: 14) {
-                LessonEyebrow(text: String(localized: "Pick a word", bundle: .module))
-                FlowLayout(spacing: 8) {
-                    ForEach(model.options) { option in word(option) }
-                }
+            FlowLayout(spacing: 8) {
+                ForEach(model.options) { option in word(option) }
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 22)

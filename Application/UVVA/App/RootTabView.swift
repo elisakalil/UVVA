@@ -43,7 +43,7 @@ struct RootTabView: View {
                 .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { backdropFrame = $0 }
                 .ignoresSafeArea()
         }
-        .environment(\.backdropFrame, [.home, .you].contains(coordinator.selectedTab) ? backdropFrame : nil)
+        .environment(\.backdropFrame, [.home, .learn, .you].contains(coordinator.selectedTab) ? backdropFrame : nil)
         .overlayPreferenceValue(SpotlightAnchors.self) { anchors in
             if let tour = coordinator.tour {
                 GeometryReader { proxy in

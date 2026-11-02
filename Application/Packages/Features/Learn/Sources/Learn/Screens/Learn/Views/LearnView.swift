@@ -14,6 +14,8 @@ public struct LearnView: View {
     @State private var position = ScrollPosition()
     /// Where the region list starts in the visible part of the scroll view.
     @State private var regionListTop: CGFloat = 0
+    /// Where the open module starts in the visible part of the scroll view.
+    @State private var openRowTop: CGFloat = 0
     /// The height of the scroll view, between the status bar and the tab bar.
     @State private var visibleHeight: CGFloat = 0
 
@@ -26,7 +28,7 @@ public struct LearnView: View {
 
     public var body: some View {
         ZStack(alignment: .top) {
-            PageBackground(veiled: true)
+            PageBackground(blur: 2, veiled: true)
             content
             searchBar
                 .offset(y: max(0, titleHeight - scrolled))
@@ -88,12 +90,21 @@ public struct LearnView: View {
         }
     }
 
+    /// A grape or a module found by the search: the page scrolls so it starts just below the search bar.
+    private func scrollToOpenRow() {
+        withAnimation(.easeInOut(duration: 0.45)) {
+            position.scrollTo(y: max(0, scrolled + openRowTop - Self.searchSlot))
+        }
+    }
+
     private var searchBar: some View {
         SearchField(text: Binding(get: { viewModel.query }, set: { viewModel.query = $0 }),
                     prompt: String(localized: "Search modules", bundle: .module),
                     isFocused: $isSearchFocused,
                     glassOpacity: 0.45,
                     onCancel: {})
+            // The search bar keeps its light material; only the tab bar takes the photo behind it.
+            .environment(\.backdropFrame, nil)
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
     }
@@ -104,11 +115,11 @@ public struct LearnView: View {
                 isSearchFocused = false
                 Task {
                     await viewModel.openResult(result)
-                    // A region found by the search scrolls to the list, as one tapped on the map does,
-                    // once the list has taken the results' place.
-                    guard case .course = result.target, viewModel.tab == .region else { return }
+                    // A region found by the search scrolls to the list, as one tapped on the map does;
+                    // a grape or a module, to its row. Once the list has taken the results' place.
+                    guard case .course = result.target else { return }
                     try? await Task.sleep(for: .milliseconds(300))
-                    scrollToRegionList()
+                    if viewModel.tab == .region { scrollToRegionList() } else { scrollToOpenRow() }
                 }
             }
             .transition(.opacity)
@@ -186,9 +197,12 @@ public struct LearnView: View {
                 }
                 ForEach(group.rows) { row in
                     CourseRow(model: row,
-                              onToggle: { viewModel.toggle(row.id) },
+                              onToggle: { withAnimation(.easeOut(duration: 0.28)) { viewModel.toggle(row.id) } },
                               onStart: { Task { await viewModel.startCourse(id: row.id) } },
                               onCertificate: { Task { await viewModel.showCertificate(courseID: row.id) } })
+                    .onGeometryChange(for: CGFloat?.self) { row.isOpen ? $0.frame(in: .scrollView(axis: .vertical)).minY : nil } action: {
+                        if let top = $0 { openRowTop = top }
+                    }
                 }
             }
         }

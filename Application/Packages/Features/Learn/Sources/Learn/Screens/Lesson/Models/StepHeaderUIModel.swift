@@ -8,4 +8,6 @@ struct StepHeaderUIModel: Equatable {
     var current: Int?
     var total: Int
     var counter: String
+    /// On the first screen of the first lesson the back chevron leaves; elsewhere it goes to the screen before.
+    var backLeaves: Bool
 }

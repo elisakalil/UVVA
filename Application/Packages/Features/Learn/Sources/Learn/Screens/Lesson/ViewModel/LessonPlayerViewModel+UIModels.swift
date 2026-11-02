@@ -29,7 +29,8 @@ extension LessonPlayerViewModel {
             title: lesson.summary.title,
             current: current,
             total: total,
-            counter: current.map { "\(Self.two($0 + 1)) / \(Self.two(total))" } ?? ""
+            counter: current.map { "\(Self.two($0 + 1)) / \(Self.two(total))" } ?? "",
+            backLeaves: phase == entry && isFirst
         )
     }
 
@@ -42,16 +43,13 @@ extension LessonPlayerViewModel {
         case let .tip(body):
             return .tip(body: body)
         case let .multipleChoice(prompt, options, answer, _):
-            return .choice(ChoiceUIModel(kind: .single, eyebrow: String(localized: "Choose one", bundle: .module),
-                                         prompt: prompt,
+            return .choice(ChoiceUIModel(kind: .single, prompt: prompt,
                                          options: choices(options, right: [answer], draft: draft, numbered: true)))
         case let .selectMultiple(prompt, options, answers, _):
-            return .choice(ChoiceUIModel(kind: .multiple, eyebrow: String(localized: "Select all that apply", bundle: .module),
-                                         prompt: prompt, options: choices(options, right: answers, draft: draft, numbered: false)))
+            return .choice(ChoiceUIModel(kind: .multiple, prompt: prompt, options: choices(options, right: answers, draft: draft, numbered: false)))
         case let .trueFalse(prompt, answer, _):
             let labels = [String(localized: "True", bundle: .module), String(localized: "False", bundle: .module)]
-            return .choice(ChoiceUIModel(kind: .trueFalse, eyebrow: String(localized: "True or false", bundle: .module),
-                                         prompt: prompt, options: choices(labels, right: [answer ? 0 : 1], draft: draft, numbered: false)))
+            return .choice(ChoiceUIModel(kind: .trueFalse, prompt: prompt, options: choices(labels, right: [answer ? 0 : 1], draft: draft, numbered: false)))
         case let .fillBlank(prompt, options, answer, _):
             let parts = prompt.components(separatedBy: "____")
             let wordState: OptionState = draft.isChecked ? (draft.word == answer ? .correct : .wrong)

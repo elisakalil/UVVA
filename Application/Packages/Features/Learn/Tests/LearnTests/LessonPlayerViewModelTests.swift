@@ -8,11 +8,12 @@ struct LessonPlayerViewModelTests {
     let course = Fixture.course("grape-tannat", lessons: 2)
     let learning = LearningSpy()
 
-    func player(_ lessonIndex: Int = 0, progress: LessonProgress? = nil, startStep: Int? = nil,
+    func player(_ lessonIndex: Int = 0, progress: LessonProgress? = nil, startStep: Int? = nil, isFirst: Bool = true,
                 onExit: @escaping (LessonPlayerViewModel.Exit) -> Void = { _ in }) -> LessonPlayerViewModel {
         let summary = course.lessons[lessonIndex]
         return LessonPlayerViewModel(course: course, lesson: Lesson(summary: summary, steps: Fixture.steps(review: summary.isReview)),
-                                     progress: progress, startStep: startStep, learning: learning, now: { Fixture.day },
+                                     progress: progress, startStep: startStep, isFirst: isFirst, learning: learning,
+                                     now: { Fixture.day },
                                      pickToast: { _ in 0 }, onCompleted: { nil }, onExit: onExit)
     }
 
@@ -58,6 +59,70 @@ struct LessonPlayerViewModelTests {
         #expect(saved?.currentStep == 4)
         #expect(saved?.answers == [2: .options([2])])
         #expect(saved?.isCompleted == false)
+    }
+
+    @Test func LEARN_R14_back_goesToThePreviousScreen_andLeavesOnlyFromTheCover() {
+        var exits: [LessonPlayerViewModel.Exit] = []
+        let player = player { exits.append($0) }
+        player.begin()
+        player.primary()
+        player.back()
+        #expect(player.stepIndex == 0)
+        #expect(player.header.backLeaves == false)
+        player.back()
+        #expect(player.phase == .cover)
+        #expect(player.header.backLeaves)
+        #expect(exits.isEmpty)
+        player.back()
+        #expect(exits == [.close])
+    }
+
+    @Test func LEARN_R14_back_fromTheFirstScreenOfAResumedLesson_leaves() {
+        var exits: [LessonPlayerViewModel.Exit] = []
+        let player = player(startStep: 3) { exits.append($0) }
+        player.primary()
+        player.back()
+        #expect(player.stepIndex == 3)
+        #expect(player.header.backLeaves)
+        player.back()
+        #expect(exits == [.close])
+    }
+
+    @Test func LEARN_R14_back_fromTheFirstScreenOfALessonOpenedFromAnother_returnsToIt() {
+        var exits: [LessonPlayerViewModel.Exit] = []
+        let player = player(1, isFirst: false) { exits.append($0) }
+        #expect(player.header.backLeaves == false)
+        player.back()
+        #expect(exits == [.back])
+    }
+
+    @Test func LEARN_R14_twoBacksInARow_showClose_untilTheLearnerMovesOn() {
+        var exits: [LessonPlayerViewModel.Exit] = []
+        let player = player { exits.append($0) }
+        player.begin()
+        player.primary()
+        player.primary()
+        player.back()
+        #expect(!player.showsClose)
+        player.back()
+        #expect(player.showsClose)
+        player.primary()
+        #expect(!player.showsClose)
+        player.back()
+        player.back()
+        player.close()
+        #expect(exits == [.close])
+    }
+
+    @Test func LEARN_R14_back_keepsTheFarthestStepSaved() async {
+        let player = player()
+        player.begin()
+        player.primary()
+        player.primary()
+        player.back()
+        await player.flush()
+        #expect(player.stepIndex == 1)
+        #expect(learning.saved["grape-tannat-l01"]?.currentStep == 2)
     }
 
     @Test func LEARN_R14_reopened_startsAtTheSavedStepWithItsAnswers() {

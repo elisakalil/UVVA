@@ -9,7 +9,7 @@ struct MatchPairsStepView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            QuestionPrompt(eyebrow: String(localized: "Match pairs", bundle: .module), prompt: model.prompt,
+            QuestionPrompt(prompt: model.prompt,
                            hint: String(localized: "Tap a term, then its match. Tap a matched term to undo.", bundle: .module))
             HStack(alignment: .top, spacing: 8) {
                 VStack(spacing: 8) { ForEach(model.left) { cell($0, action: onTapLeft) } }

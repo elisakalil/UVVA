@@ -20,8 +20,11 @@ public final class LearnViewModel {
     private(set) var country: String?
     /// The region last tapped on the map: it leads the list below the map.
     private(set) var pickedRegion: String?
+    /// The lessons opened one from another, the one on screen last. Back from the first screen a lesson showed
+    /// returns to the one before; from the first lesson's, it leaves.
+    private(set) var players: [LessonPlayerViewModel] = []
     /// The lesson on screen, over the whole app.
-    private(set) var player: LessonPlayerViewModel?
+    var player: LessonPlayerViewModel? { players.last }
     /// A certificate opened from its course ("View certificate").
     private(set) var sharedCertificate: CertificateUIModel?
     /// "Search modules"; while it has words, the results take the place of the tabs.
@@ -73,6 +76,9 @@ public final class LearnViewModel {
         tab = course.kind
         openCourses[course.kind] = course.id
         if course.kind == .region, let name = course.countries.first { country = name }
+        // A filter that would hide the course gives way, so its row is there to scroll to.
+        if course.kind == .grape, Self.grapes([course], filter: grapeFilter).isEmpty { grapeFilter = .all }
+        if course.kind == .path, let level = pathLevel, course.level != level { pathLevel = nil }
     }
 
     func course(id: String) -> Course? {
@@ -129,14 +135,17 @@ public final class LearnViewModel {
     }
 
     /// A completed lesson always opens on its cover, to be reviewed (LEARN-R19a).
-    private func open(_ course: Course, lessonID: String, step: Int?) async {
+    /// `stacking` opens it over the lesson on screen, so back returns there.
+    private func open(_ course: Course, lessonID: String, step: Int?, stacking: Bool = false) async {
         guard let lesson = try? await catalog.lesson(id: lessonID) else { return }
         let saved = progress[lessonID]
-        player = LessonPlayerViewModel(
+        let isFirst = !stacking || players.isEmpty
+        let opened = LessonPlayerViewModel(
             course: course, lesson: lesson, progress: saved, startStep: saved?.isCompleted == true ? nil : step,
-            learning: learning, now: now, pickToast: pickToast,
+            isFirst: isFirst, learning: learning, now: now, pickToast: pickToast,
             onCompleted: { [weak self] in await self?.lessonCompleted(in: course) },
             onExit: { [weak self] exit in self?.leave(course, exit) })
+        players = isFirst ? [opened] : players + [opened]
     }
 
     private func leave(_ course: Course, _ exit: LessonPlayerViewModel.Exit) {
@@ -147,9 +156,14 @@ public final class LearnViewModel {
             onProgressChange()
             switch exit {
             case .close:
-                player = nil
+                players = []
+            case .back:
+                guard let leaving, players.last === leaving else { return }
+                players.removeLast()
+                // Backs in a row carry over, so "Close" shows on the lesson before too.
+                player?.backsInARow = leaving.backsInARow
             case let .open(lesson):
-                await open(course, lessonID: lesson.id, step: progress[lesson.id]?.currentStep)
+                await open(course, lessonID: lesson.id, step: progress[lesson.id]?.currentStep, stacking: true)
             }
         }
     }

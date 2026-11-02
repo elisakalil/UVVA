@@ -1,7 +1,7 @@
 import DesignSystem
 import SwiftUI
 
-/// The small caps line above a title in the player ("Concept", "Choose one", "By the end you can").
+/// The small caps line above a title on the lesson cover (the course, "By the end you can").
 struct LessonEyebrow: View {
     var text: String
     var color: Color = LessonPalette.dim

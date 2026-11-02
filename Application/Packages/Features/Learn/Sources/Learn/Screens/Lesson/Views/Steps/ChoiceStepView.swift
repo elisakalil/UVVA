@@ -9,7 +9,7 @@ struct ChoiceStepView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            QuestionPrompt(eyebrow: model.eyebrow, prompt: model.prompt)
+            QuestionPrompt(prompt: model.prompt)
             if model.kind == .trueFalse {
                 HStack(spacing: 0) {
                     ForEach(model.options) { option in trueFalse(option) }

@@ -14,6 +14,8 @@ final class LessonPlayerViewModel: Identifiable {
 
     enum Exit: Equatable {
         case close
+        /// Back from the first screen this lesson showed: to the lesson it was opened from.
+        case back
         case open(LessonSummary)
     }
 
@@ -21,6 +23,12 @@ final class LessonPlayerViewModel: Identifiable {
     let course: Course
     let lesson: Lesson
     private(set) var phase: Phase
+    /// The first screen this lesson showed: back stops here.
+    let entry: Phase
+    /// Opened from the list, not from another lesson: back from its first screen leaves the lessons.
+    let isFirst: Bool
+    /// Back taps since the learner last moved on; from two, "Close" shows above the button.
+    var backsInARow = 0
     private(set) var drafts: [Int: StepDraft] = [:]
     /// The certificate on screen, over the Summary (LEARN-R22).
     private(set) var certificate: CertificateUIModel?
@@ -39,23 +47,27 @@ final class LessonPlayerViewModel: Identifiable {
     private let onExit: (Exit) -> Void
 
     /// `startStep` resumes at a saved step; nil opens the cover. `pickToast` picks an index in 0..<count.
-    init(course: Course, lesson: Lesson, progress: LessonProgress?, startStep: Int?, learning: any LearningRepository,
+    init(course: Course, lesson: Lesson, progress: LessonProgress?, startStep: Int?, isFirst: Bool = true,
+         learning: any LearningRepository,
          now: @escaping () -> Date = Date.init, pickToast: (Int) -> Int = { Int.random(in: 0..<$0) },
          onCompleted: @escaping () async -> CertificateUIModel?, onExit: @escaping (Exit) -> Void) {
         self.course = course
         self.lesson = lesson
         self.progress = progress
         self.isReview = progress?.isCompleted ?? false
+        self.isFirst = isFirst
         self.learning = learning
         self.now = now
         self.toast = Toast.all[pickToast(Toast.all.count)]
         self.onCompleted = onCompleted
         self.onExit = onExit
-        if let startStep, !lesson.steps.isEmpty {
-            phase = .step(min(max(startStep, 0), lesson.steps.count - 1))
+        let first: Phase = if let startStep, !lesson.steps.isEmpty {
+            .step(min(max(startStep, 0), lesson.steps.count - 1))
         } else {
-            phase = .cover
+            .cover
         }
+        phase = first
+        entry = first
         if !isReview, let answers = progress?.answers { restore(answers) }
         // A lesson left on its Summary before it was saved as completed completes now.
         if case let .step(index) = phase, case .summary = lesson.steps[index] { complete() }
@@ -75,6 +87,7 @@ final class LessonPlayerViewModel: Identifiable {
 
     func begin() {
         guard !lesson.steps.isEmpty else { return }
+        backsInARow = 0
         phase = .step(0)
         save()
     }
@@ -85,7 +98,26 @@ final class LessonPlayerViewModel: Identifiable {
         onExit(.open(previous))
     }
 
-    /// The back chevron: the step and the answers are already saved (LEARN-R14).
+    /// The back chevron: always the screen before. From the first screen this lesson showed it returns to the lesson
+    /// it was opened from, or leaves when there is none. The farthest step stays saved, so the lesson still resumes
+    /// there (LEARN-R14).
+    func back() {
+        backsInARow += 1
+        guard phase != entry else {
+            if isFirst { close() } else { onExit(.back) }
+            return
+        }
+        switch phase {
+        case .cover: close()
+        case .step(0): phase = .cover
+        case let .step(index): phase = .step(index - 1)
+        }
+    }
+
+    /// After two backs in a row, above the button.
+    var showsClose: Bool { backsInARow >= 2 }
+
+    /// Leaves the lessons, from the back chevron or "Close": the step and the answers are already saved (LEARN-R14).
     func close() { onExit(.close) }
 
     // MARK: Answering (LEARN-R17, R18)
@@ -169,6 +201,7 @@ final class LessonPlayerViewModel: Identifiable {
     /// The button at the foot of the step.
     func primary() {
         guard let index = stepIndex, let step else { return }
+        backsInARow = 0
         let draft = draft(index)
         switch step {
         case .summary:

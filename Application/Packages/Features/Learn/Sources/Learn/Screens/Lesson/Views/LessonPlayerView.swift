@@ -14,7 +14,7 @@ struct LessonPlayerView: View {
                 LessonBackground()
             }
             VStack(spacing: 0) {
-                LessonTopBar(model: viewModel.header, ink: ink, onBack: viewModel.close)
+                LessonTopBar(model: viewModel.header, ink: ink, onBack: viewModel.back)
                     .padding(.horizontal, 22)
                     .padding(.top, 6)
                 ScrollView {
@@ -38,6 +38,7 @@ struct LessonPlayerView: View {
             }
         }
         .animation(.easeOut(duration: 0.25), value: viewModel.stepIndex)
+        .animation(.easeOut(duration: 0.25), value: viewModel.showsClose)
         .animation(.easeOut(duration: 0.3), value: viewModel.certificate != nil)
         .preferredColorScheme(.dark)
     }
@@ -63,12 +64,22 @@ struct LessonPlayerView: View {
         }
     }
 
+    /// "Close", after two backs in a row.
+    private var closeAction: (() -> Void)? {
+        guard viewModel.showsClose else { return nil }
+        return viewModel.close
+    }
+
     @ViewBuilder private var footer: some View {
         switch viewModel.footer {
         case let .feedback(model):
-            FeedbackPanel(model: model, onContinue: viewModel.primary)
+            FeedbackPanel(model: model, onClose: closeAction, onContinue: viewModel.primary)
         case let .button(title, isEnabled):
             VStack(spacing: 10) {
+                if viewModel.showsClose {
+                    LessonButton(title: String(localized: "Close", bundle: .module), style: viewModel.isTip ? .clearOnTip : .clear,
+                                 showsArrow: false, action: viewModel.close)
+                }
                 if viewModel.phase == .cover, viewModel.cover.showsReviewPrevious {
                     LessonButton(title: String(localized: "Review previous lesson", bundle: .module), style: .outline,
                                  showsArrow: false, action: viewModel.reviewPrevious)

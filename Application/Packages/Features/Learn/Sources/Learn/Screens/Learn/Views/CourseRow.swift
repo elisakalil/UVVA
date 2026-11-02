@@ -62,10 +62,12 @@ struct CourseRow: View {
                 .padding(.leading, 19)
                 .padding(.trailing, 6)
                 .padding(.bottom, 26)
-                .transition(.opacity.combined(with: .move(edge: .top)))
+                // It stays where it is and the row grows over it, so it unfolds downwards from under the title
+                // instead of sliding over it.
+                .transition(.opacity)
             }
         }
-        .animation(.easeOut(duration: 0.28), value: model.isOpen)
+        .clipped()
     }
 
     private func link(_ title: String, action: @escaping () -> Void) -> some View {

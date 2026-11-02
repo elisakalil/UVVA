@@ -226,4 +226,26 @@ struct LearnViewModelTests {
         #expect(model.player?.isReview == true)
         #expect(learning.issued.count == 1)
     }
+
+    // MARK: LEARN-R14 · Voltar entre lições
+
+    @Test func LEARN_R14_aLessonOpenedFromAnother_backReturnsToIt_thenLeaves() async {
+        let course = Fixture.course("grape-tannat", lessons: 2)
+        let learning = LearningSpy([LessonProgress(lessonID: "grape-tannat-l01", courseID: course.id, currentStep: 5,
+                                                   completedAt: Fixture.day, lastOpenedAt: Fixture.day, xp: 15)])
+        let model = viewModel([course], learning: learning)
+        await model.load()
+        await model.openCourse(id: "grape-tannat")
+        let second = try! #require(model.player)
+        #expect(second.lesson.id == "grape-tannat-l02")
+        second.reviewPrevious()
+        await eventually { model.players.count == 2 }
+        #expect(model.player?.lesson.id == "grape-tannat-l01")
+        model.player?.back()
+        await eventually { model.players.count == 1 }
+        #expect(model.player === second)
+        #expect(second.backsInARow == 1)
+        second.back()
+        await eventually { model.player == nil }
+    }
 }

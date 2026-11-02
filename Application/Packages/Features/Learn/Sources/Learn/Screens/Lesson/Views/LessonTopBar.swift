@@ -17,7 +17,8 @@ struct LessonTopBar: View {
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel(Text("Leave the lesson", bundle: .module))
+                .accessibilityLabel(model.backLeaves ? Text("Leave the lesson", bundle: .module)
+                                                     : Text("Previous screen", bundle: .module))
                 Text(model.brand)
                     .font(model.current == nil ? UVVAFont.whiteGrape(15) : UVVAFont.redGrapes(15))
                     .tracking(model.current == nil ? 2 : 0.6)

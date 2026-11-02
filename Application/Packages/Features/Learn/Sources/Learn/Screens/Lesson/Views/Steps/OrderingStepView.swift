@@ -8,7 +8,7 @@ struct OrderingStepView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            QuestionPrompt(eyebrow: String(localized: "Put in order", bundle: .module), prompt: model.prompt, hint: model.hint)
+            QuestionPrompt(prompt: model.prompt, hint: model.hint)
             VStack(spacing: 8) {
                 ForEach(model.rows) { row in item(row) }
             }
