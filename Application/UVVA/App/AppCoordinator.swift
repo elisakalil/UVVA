@@ -1,19 +1,14 @@
 import Core
 import DesignSystem
 import SwiftUI
-//import Foundation
 import Home
 import Learn
-//import Observation
 import Onboarding
 import OSLog
 import Quizz
 import Storage
-//import SwiftData
 import You
 
-/// Decides which top-level screen shows and builds the features with their services.
-/// Features never open each other: they report back here (APP-R06).
 @MainActor @Observable
 final class AppCoordinator {
     private(set) var route: AppRoute = .launching
@@ -24,7 +19,9 @@ final class AppCoordinator {
     private(set) var you: YouViewModel?
     private(set) var learn: LearnViewModel?
     private(set) var profile: Profile?
-
+    private var navigationTask: Task<Void, Never>?
+    
+    var launchError: String?
     var selectedTab: AppTab = .home
 
     private let maps: PalateMapStore
@@ -39,13 +36,14 @@ final class AppCoordinator {
     private let cloud: any CloudAccountStatus
     private let social: any SocialService
     private let logger = Logger(subsystem: "app.uvva", category: "app")
+    private let content: ContentLoader
 
-    /// The Splash shows at least one full turn of its seven bunches (ONB-R01).
     static let minimumSplash = Duration.milliseconds(1260)
-    /// Set by "Sign out" (YOU-R26): the data stays, but the app opens on the Welcome until the next sign-in.
     static let signedOutKey = "session.signedOut"
 
-    init(stores: AppStores) {
+    init(stores: AppStores, content: ContentLoader) {
+        self.content = content
+
         maps = stores.maps
         questions = stores.questions
         profiles = stores.profiles
@@ -53,32 +51,48 @@ final class AppCoordinator {
         reminders = stores.reminders
         cellar = stores.cellar
         learning = stores.learning
+
         auth = AppleAuthProvider()
         cloud = ICloudAccountStatus()
         social = CloudKitSocialService()
     }
-
-    /// After the Splash (ONB-R02). A revoked Apple credential, or "Sign out", ends the session.
-    func start() async {
-        print("START")
+    
+    func start() async throws {
         guard route == .launching else { return }
-        async let splash: Void = (try? await Task.sleep(for: Self.minimumSplash)) ?? ()
-        async let glass: Void = GlassTextures.prepare()
-        var profile = try? await profiles.currentProfile()
-        if let current = profile, !(await auth.isStillAuthorized(current.authUserID)) { profile = nil }
-        if UserDefaults.standard.bool(forKey: Self.signedOutKey) { profile = nil }
-        let hasMap = ((try? await maps.currentMap()) ?? nil) != nil
-        await splash
-        await glass
-        self.profile = profile
-        switch LaunchRoute.resolve(profile: profile, hasMap: hasMap) {
-        case .welcome: openOnboarding()
-        case .quiz: openQuiz(.firstMap)
+
+        var current = try await profiles.currentProfile()
+
+        if UserDefaults.standard.bool(forKey: Self.signedOutKey) {
+            current = nil
+        } else if let saved = current,
+                  !(await auth.isStillAuthorized(saved.authUserID)) {
+            current = nil
+        }
+
+        let hasMap: Bool
+        if current == nil {
+            hasMap = false
+        } else {
+            hasMap = try await maps.currentMap() != nil
+        }
+
+        try Task.checkCancellation()
+        profile = current
+
+        switch LaunchRoute.resolve(profile: current, hasMap: hasMap) {
+        case .welcome:
+            openOnboarding()
+
+        case .quiz:
+            try await prepareQuiz(.firstMap)
+
         case .home:
-            // A tour left before "Start" shows again on the next launch: it only counts as seen at the end
-            // (HOME-R33, decided 2026-10-31).
-            let tourPending = !(profile?.seenTours.contains(GuidedTour.tourID) ?? true)
-            openTabs(after: tourPending ? .homeWithTour : nil)
+            let tourPending = !(
+                current?.seenTours.contains(GuidedTour.tourID) ?? true
+            )
+            try await prepareTabs(
+                after: tourPending ? .homeWithTour : nil
+            )
         }
     }
 
@@ -90,9 +104,7 @@ final class AppCoordinator {
         route = .onboarding
     }
 
-    /// ONB-R21, R27
     private func finishOnboarding(_ result: OnboardingResult) {
-        onboarding = nil
         UserDefaults.standard.removeObject(forKey: Self.signedOutKey)
         switch result {
         case let .newAccount(profile):
@@ -106,39 +118,97 @@ final class AppCoordinator {
     }
 
     func openQuiz(_ entry: QuizEntry) {
-        quiz = QuizViewModel(entry: entry, firstName: profile?.firstName, questions: questions, maps: maps) { [weak self] exit in
+        navigate {
+            try await self.prepareQuiz(entry)
+        }
+    }
+
+    private func prepareQuiz(_ entry: QuizEntry) async throws {
+        try await content.waitForQuestions()
+
+        let model = QuizViewModel(
+            entry: entry,
+            firstName: profile?.firstName,
+            questions: questions,
+            maps: maps
+        ) { [weak self] exit in
             self?.finishQuiz(exit)
         }
+
+        try await model.prepare()
+        try Task.checkCancellation()
+
+        quiz = model
+        onboarding = nil
         route = .quiz(entry)
     }
 
-    /// QUIZ-R25. The tour shows once per account (HOME-R29).
     private func finishQuiz(_ exit: QuizExit) {
-        quiz = nil
         publishPublicProfile()
         openTabs(after: exit)
     }
 
-    /// The tabs. The tour shows after the first map, once per account (HOME-R29); a redone map opens You › Map.
     private func openTabs(after quizExit: QuizExit?) {
-        home = home ?? HomeViewModel(profiles: profiles, maps: maps, catalog: catalog, cellar: cellar, courses: catalog,
-                                     learning: learning,
-                                     onOpenCourse: { [weak self] id in self?.openCourse(id) },
-                                     onOpenLearn: { [weak self] kind in self?.openLearn(kind) })
+        navigate {
+            try await self.prepareTabs(after: quizExit)
+        }
+    }
+
+    private func prepareTabs(after quizExit: QuizExit?) async throws {
+        try await content.waitUntilReady()
+
+        home = home ?? HomeViewModel(
+            profiles: profiles,
+            maps: maps,
+            catalog: catalog,
+            cellar: cellar,
+            courses: catalog,
+            learning: learning,
+            onOpenCourse: { [weak self] id in
+                self?.openCourse(id)
+            },
+            onOpenLearn: { [weak self] kind in
+                self?.openLearn(kind)
+            }
+        )
+
         you = you ?? makeYou()
-        learn = learn ?? LearnViewModel(catalog: catalog, learning: learning, profiles: profiles,
-                                        onProgressChange: { [weak self] in self?.learningChanged() })
+
+        learn = learn ?? LearnViewModel(
+            catalog: catalog,
+            learning: learning,
+            profiles: profiles,
+            onProgressChange: { [weak self] in
+                self?.learningChanged()
+            }
+        )
+
+        try await home?.prepare()
+        try Task.checkCancellation()
+
         if quizExit == .youMap {
             selectedTab = .you
             you?.tab = .map
+        } else {
+            selectedTab = .home
         }
-        let showTour = GuidedTour.shouldShow(quizExit: quizExit, seenTours: profile?.seenTours ?? [])
-        tour = showTour ? GuidedTourViewModel(firstName: profile?.firstName ?? "") { [weak self] in self?.finishTour() } : nil
+
+        let showTour = GuidedTour.shouldShow(
+            quizExit: quizExit,
+            seenTours: profile?.seenTours ?? []
+        )
+
+        tour = showTour
+            ? GuidedTourViewModel(
+                firstName: profile?.firstName ?? ""
+            ) { [weak self] in
+                self?.finishTour()
+            }
+            : nil
+
+        onboarding = nil
+        quiz = nil
         route = .tabs(showTour: showTour)
-        Task {
-            await home?.load()
-            await you?.load()
-        }
     }
 
     private func makeYou() -> YouViewModel {
@@ -155,21 +225,18 @@ final class AppCoordinator {
                      onAccountDeleted: { [weak self] in self?.accountDeleted() })
     }
 
-    /// YOU-R26: back to the Welcome; signing in again finds everything (ONB-R27).
     private func signOut() {
         UserDefaults.standard.set(true, forKey: Self.signedOutKey)
         resetTabs()
         openOnboarding()
     }
 
-    /// YOU-R27: the data is gone; the same Apple account starts as a new one.
     private func accountDeleted() {
         UserDefaults.standard.removeObject(forKey: Self.signedOutKey)
         resetTabs()
         openOnboarding()
     }
 
-    /// Home and You open Learn (APP-R06): a tab (LEARN-R04), or a course with its lesson (LEARN-R11).
     private func openLearn(_ kind: CourseKind) {
         learn?.show(kind)
         selectedTab = .learn
@@ -181,12 +248,8 @@ final class AppCoordinator {
         Task { await learn.openCourse(id: id) }
     }
 
-    /// A lesson saved or a course finished: the Home's "Continue" and You's numbers follow.
     private func learningChanged() {
-        Task {
-            await home?.load()
-            await you?.load()
-        }
+        //TODO: REMOVER O METODO?
     }
 
     private func resetTabs() {
@@ -198,14 +261,12 @@ final class AppCoordinator {
         selectedTab = .home
     }
 
-    /// An account found again brings its reminder back to this device.
     private func restoreReminder() {
         let reminders = reminders
         let scheduler = scheduler
         Task { await scheduler.schedule(try? await reminders.reminder()) }
     }
 
-    /// HOME-R33: the tour closes and is marked seen on the account.
     private func finishTour() {
         tour = nil
         profile?.seenTours.insert(GuidedTour.tourID)
@@ -213,16 +274,6 @@ final class AppCoordinator {
         Task { try? await profiles.markTourSeen(GuidedTour.tourID) }
     }
 
-    /// The import ended: the Home, Learn and You can show the catalog now.
-    func contentDidLoad() {
-        Task {
-            await home?.load()
-            await learn?.load()
-            await you?.load()
-        }
-    }
-
-    /// The map changed: friends see the new one (ARCHITECTURE §4.4). Best effort; the next change tries again.
     private func publishPublicProfile() {
         guard let profile else { return }
         let maps = maps
@@ -237,5 +288,33 @@ final class AppCoordinator {
                 logger.info("Public profile not published: \(error.localizedDescription)")
             }
         }
+    }
+    
+    private func navigate(
+        _ operation: @escaping @MainActor () async throws -> Void
+    ) {
+        guard navigationTask == nil else { return }
+
+        launchError = nil
+        route = .launching
+
+        navigationTask = Task {
+            defer { navigationTask = nil }
+
+            do {
+                try await operation()
+            } catch is CancellationError {
+                return
+            } catch {
+                launchError = error.localizedDescription
+            }
+        }
+    }
+
+    func stop() async {
+        navigationTask?.cancel()
+        await content.stop()
+        await navigationTask?.value
+        navigationTask = nil
     }
 }

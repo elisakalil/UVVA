@@ -30,16 +30,30 @@ public final class QuizViewModel {
     }
 
     func load() async {
-        while bank == nil {
-            if let list = try? await questions.questions() {
-                let loaded = QuizQuestionBank(list)
-                if loaded.isComplete { bank = loaded; return }
-            }
-            try? await Task.sleep(for: .milliseconds(300))
-            if Task.isCancelled { return }
+        try? await prepare()
+    }
+    
+    public func prepare() async throws {
+        guard bank == nil else { return }
+
+        let loaded = QuizQuestionBank(try await questions.questions())
+
+        guard loaded.isComplete else {
+            throw PreparationError.incompleteQuestions
         }
+
+        try Task.checkCancellation()
+        bank = loaded
     }
 
+    private enum PreparationError: LocalizedError {
+        case incompleteQuestions
+
+        var errorDescription: String? {
+            "The quiz questions could not be loaded."
+        }
+    }
+    
     func start() { flow.start() }
     func select(_ position: Int) { flow.select(position) }
     func changeQuestion() { flow.changeQuestion() }

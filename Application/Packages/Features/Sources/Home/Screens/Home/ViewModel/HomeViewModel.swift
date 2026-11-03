@@ -11,6 +11,8 @@ public final class HomeViewModel {
     private(set) var inviteLink: URL?
     /// The wines already in the Cellar, so the day's suggestion shows it is saved.
     private(set) var cellarWineKeys: Set<String> = []
+    
+    private var loadTask: Task<Void, Error>?
 
     private let profiles: any ProfileRepository
     private let maps: any PalateMapRepository
@@ -39,34 +41,103 @@ public final class HomeViewModel {
         self.onOpenCourse = onOpenCourse
         self.onOpenLearn = onOpenLearn
     }
-
-    /// Loads again whenever something it shows may have changed (a new map, the content import ending).
-    public func load() async {
-        guard let map = try? await maps.currentMap() else { return }
-        let profile = try? await profiles.currentProfile()
-        inviteLink = profile?.inviteLink
-        cellarWineKeys = (try? await cellar.wineKeys()) ?? []
-        let pool = HomeCardsBuilder.dailySuggestionPool
-        let wines = (try? await catalog.winesClosest(to: map, limit: pool + HomeCardsBuilder.winesForPalateCount)) ?? []
-        let recipes = (try? await catalog.recipes()) ?? []
-        let glossary = (try? await catalog.glossary()) ?? []
-
-        // HOME-R06: the wines the day's suggestion is drawn from carry the dish that pairs with them.
-        let paired = wines.enumerated().map { index, wine in
-            guard index < pool, let recipe = Pairing.recipe(for: wine, user: map, among: recipes) else { return wine }
-            var withDish = wine
-            withDish.dish = Pairing.dish(from: recipe)
-            return withDish
-        }
-        let state = HomeState(firstName: profile?.firstName ?? "", palateMap: map, friends: [], courses: await startedCourses(),
-                              lastRating: nil, ratedWineIDs: [], catalog: paired, glossary: glossary, notifications: [])
-        let day = calendar.ordinality(of: .day, in: .era, for: now()) ?? 0
-        // The word of the day stays the same all day (HOME-R19, decided 2026-10-31).
-        let builder = HomeCardsBuilder(calendar: calendar, pickWordIndex: { count in day % count })
-        model = HomeUIModel(cards: builder.build(from: state, now: now()), palateMap: map)
+    
+    public func loadIfNeeded() async {
+        guard model == nil else { return }
+        await load()
     }
 
-    /// Every course with a lesson opened, for "Continue" (HOME-R12, R13).
+    public func load() async {
+        try? await prepare()
+    }
+
+    public func prepare() async throws {
+        if let loadTask {
+            try await loadTask.value
+            try Task.checkCancellation()
+            return
+        }
+
+        let task = Task { try await self.readHome() }
+        loadTask = task
+        defer { loadTask = nil }
+
+        try await task.value
+        try Task.checkCancellation()
+    }
+
+    private func readHome() async throws {
+        guard let map = try await maps.currentMap() else {
+            throw PreparationError.missingMap
+        }
+
+        let profile = try await profiles.currentProfile()
+        let savedKeys = try await cellar.wineKeys()
+
+        let pool = HomeCardsBuilder.dailySuggestionPool
+        let wines = try await catalog.winesClosest(
+            to: map,
+            limit: pool + HomeCardsBuilder.winesForPalateCount
+        )
+
+        let recipes = try await catalog.recipes()
+        let glossary = try await catalog.glossary()
+        let courses = await startedCourses()
+
+        // Captura apenas valores Sendable, sem capturar o view model.
+        let paired = await Task.detached(priority: .userInitiated) {
+            wines.enumerated().map { index, wine in
+                guard index < pool,
+                      let recipe = Pairing.recipe(
+                        for: wine,
+                        user: map,
+                        among: recipes
+                      )
+                else { return wine }
+
+                var result = wine
+                result.dish = Pairing.dish(from: recipe)
+                return result
+            }
+        }.value
+
+        try Task.checkCancellation()
+
+        let date = now()
+        let state = HomeState(
+            firstName: profile?.firstName ?? "",
+            palateMap: map,
+            friends: [],
+            courses: courses,
+            lastRating: nil,
+            ratedWineIDs: [],
+            catalog: paired,
+            glossary: glossary,
+            notifications: []
+        )
+
+        let day = calendar.ordinality(of: .day, in: .era, for: date) ?? 0
+        let builder = HomeCardsBuilder(
+            calendar: calendar,
+            pickWordIndex: { count in day % count }
+        )
+
+        inviteLink = profile?.inviteLink
+        cellarWineKeys = savedKeys
+        model = HomeUIModel(
+            cards: builder.build(from: state, now: date),
+            palateMap: map
+        )
+    }
+
+    private enum PreparationError: LocalizedError {
+        case missingMap
+
+        var errorDescription: String? {
+            "Your palate map could not be loaded."
+        }
+    }
+
     private func startedCourses() async -> [CourseProgress] {
         let progress = (try? await learning.progress()) ?? [:]
         let started = Set(progress.values.map(\.courseID))
@@ -83,10 +154,8 @@ public final class HomeViewModel {
 
     func openLearn(_ kind: CourseKind) { onOpenLearn(kind) }
 
-    /// "Add to cellar" on the day's suggestion: the wine goes in as Want to try (CELLAR-R01).
     func addToCellar(_ wine: Wine) async {
         guard !cellarWineKeys.contains(wine.id) else { return }
-        // Marked saved only once the store has it, so a failed save leaves the button to try again.
         guard (try? await cellar.addWantToTry(wine)) != nil else { return }
         cellarWineKeys.insert(wine.id)
     }

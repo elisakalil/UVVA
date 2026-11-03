@@ -1,19 +1,10 @@
 import Foundation
 import SwiftData
 
-/// Copies the packed content from the bundle into the Content store (ARCHITECTURE §2.2), off the main thread.
-///
-/// Recipes, lessons, the glossary and the Quiz questions are replaced. Wines are matched by wineKey: bundle wines
-/// are updated or added, a bundle wine that left the bundle is removed unless it is protected, and wines from the
-/// public catalog are never touched.
 @ModelActor
 public actor ContentImporter {
-    /// Wines saved per batch, so the 10 000 never sit unsaved in memory together.
     static let batchSize = 500
-
-    /// Imports `source` when its version differs from `currentVersion`, and returns the version it imported.
-    /// Returns nil when there was nothing to do. The caller saves the returned version only after this returns,
-    /// so an import cut short runs again on the next launch.
+    
     public func importIfNeeded(
         from source: ContentSource,
         currentVersion: String?,
@@ -24,14 +15,69 @@ public actor ContentImporter {
         guard manifest.version != currentVersion else { return nil }
 
         onStage(.quizAndGlossary)
-        try replaceQuiz(try decode(PackedQuizFile.self, at: source.quiz).questions)
-        try replaceGlossary(try decode(PackedGlossaryFile.self, at: source.glossary).terms)
+        try importQuestionsIfNeeded(
+            from: source,
+            currentVersion: currentVersion
+        )
+
+        return try importCatalogIfNeeded(
+            from: source,
+            currentVersion: currentVersion,
+            protectedWineKeys: protectedWineKeys,
+            onStage: onStage
+        )
+    }
+
+    public func importQuestionsIfNeeded(
+        from source: ContentSource,
+        currentVersion: String?
+    ) throws {
+        try Task.checkCancellation()
+
+        let manifest = try decode(ContentManifest.self, at: source.manifest)
+        guard manifest.version != currentVersion else { return }
+
+        try replaceQuiz(
+            try decode(PackedQuizFile.self, at: source.quiz).questions
+        )
+
+        try Task.checkCancellation()
+
+        try replaceGlossary(
+            try decode(PackedGlossaryFile.self, at: source.glossary).terms
+        )
+    }
+
+    public func importCatalogIfNeeded(
+        from source: ContentSource,
+        currentVersion: String?,
+        protectedWineKeys: Set<String> = [],
+        onStage: @Sendable (ContentImportStage) -> Void = { _ in }
+    ) throws -> String? {
+        try Task.checkCancellation()
+
+        let manifest = try decode(ContentManifest.self, at: source.manifest)
+        guard manifest.version != currentVersion else { return nil }
+
         onStage(.recipes)
-        try replaceRecipes(try decode(PackedRecipesFile.self, at: source.recipes).recipes)
+        try replaceRecipes(
+            try decode(PackedRecipesFile.self, at: source.recipes).recipes
+        )
+        try Task.checkCancellation()
+
         onStage(.learn)
-        try replaceLearn(try decode(PackedLearnFile.self, at: source.learn).modules)
+        try replaceLearn(
+            try decode(PackedLearnFile.self, at: source.learn).modules
+        )
+        try Task.checkCancellation()
+
         onStage(.wines)
-        try upsertWines(try decode(PackedWinesFile.self, at: source.wines).wines, protecting: protectedWineKeys)
+        try upsertWines(
+            try decode(PackedWinesFile.self, at: source.wines).wines,
+            protecting: protectedWineKeys
+        )
+        try Task.checkCancellation()
+
         return manifest.version
     }
 
@@ -160,9 +206,10 @@ public actor ContentImporter {
         }
 
         for (index, packed) in wines.enumerated() {
+            try Task.checkCancellation()
+            
             let entity: WineEntity
             if let found = existing[packed.id] {
-                // A wine that also came from the public catalog keeps the catalog as its source.
                 entity = found
             } else {
                 entity = WineEntity(wineKey: packed.id, source: bundleSource)

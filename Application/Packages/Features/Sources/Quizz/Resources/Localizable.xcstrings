@@ -96,7 +96,7 @@
     "We compare the two maps to find the wines closest to your taste, and the recipes that go with them." : {
 
     },
-    "We map each wine on the same eight axes, using its grape, how it was made, time in oak, residual sugar and region." : {
+    "We map each wine on the same eight axes, using its grape, how it was made, time in oak, residual sugar and more." : {
 
     },
     "Welcome" : {
@@ -108,7 +108,7 @@
     "Where the map points" : {
 
     },
-    "Your answers give each of the eight axes an intensity, from sweetness to spice. That shape is your taste map." : {
+    "Your answers give each of the eight axes an intensity. That shape is your taste map." : {
 
     },
     "Your palate" : {

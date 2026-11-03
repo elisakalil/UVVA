@@ -2,7 +2,6 @@ import Core
 import DesignSystem
 import SwiftUI
 
-/// The Home tab (HOME.md). With a tour running, it scrolls to whatever the tour points at.
 public struct HomeView: View {
     var viewModel: HomeViewModel
     var tour: GuidedTourViewModel?
@@ -31,7 +30,7 @@ public struct HomeView: View {
                 }
             }
         }
-        .task { await viewModel.load() }
+        .task { await viewModel.loadIfNeeded() }
         .sheet(item: $invite) { link in
             ActivityShareSheet(message: viewModel.inviteMessage, link: link) { invite = nil }
                 .presentationDetents([.medium, .large])

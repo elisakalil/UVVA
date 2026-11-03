@@ -1,7 +1,6 @@
 import DesignSystem
 import SwiftUI
 
-/// The Quiz, from the Intro to the share sheet. The app decides where to go on `onExit`.
 public struct QuizView: View {
     @State private var viewModel: QuizViewModel
 
@@ -38,6 +37,5 @@ public struct QuizView: View {
             }
         }
         .foregroundStyle(UVVAColor.creamFill)
-        .task { await viewModel.load() }
     }
 }
