@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B10000000000000000000001 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000011 /* Features */; };
+		B10000000000000000000005 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000015 /* Home */; };
+		B10000000000000000000006 /* Learn in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000016 /* Learn */; };
+		B10000000000000000000007 /* Onboarding in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000017 /* Onboarding */; };
+		B10000000000000000000008 /* Quizz in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000018 /* Quizz */; };
+		B10000000000000000000009 /* You in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000019 /* You */; };
 		B10000000000000000000002 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000012 /* DesignSystem */; };
 		B10000000000000000000003 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000013 /* Core */; };
 		B10000000000000000000004 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000014 /* Storage */; };
@@ -43,7 +47,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B10000000000000000000001 /* Features in Frameworks */,
+				B10000000000000000000005 /* Home in Frameworks */,
+				B10000000000000000000006 /* Learn in Frameworks */,
+				B10000000000000000000007 /* Onboarding in Frameworks */,
+				B10000000000000000000008 /* Quizz in Frameworks */,
+				B10000000000000000000009 /* You in Frameworks */,
 				B10000000000000000000002 /* DesignSystem in Frameworks */,
 				B10000000000000000000003 /* Core in Frameworks */,
 				B10000000000000000000004 /* Storage in Frameworks */,
@@ -89,7 +97,11 @@
 			);
 			name = UVVA;
 			packageProductDependencies = (
-				B10000000000000000000011 /* Features */,
+				B10000000000000000000015 /* Home */,
+				B10000000000000000000016 /* Learn */,
+				B10000000000000000000017 /* Onboarding */,
+				B10000000000000000000018 /* Quizz */,
+				B10000000000000000000019 /* You */,
 				B10000000000000000000012 /* DesignSystem */,
 				B10000000000000000000013 /* Core */,
 				B10000000000000000000014 /* Storage */,
@@ -311,9 +323,25 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B10000000000000000000011 /* Features */ = {
+		B10000000000000000000015 /* Home */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Features;
+			productName = Home;
+		};
+		B10000000000000000000016 /* Learn */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Learn;
+		};
+		B10000000000000000000017 /* Onboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Onboarding;
+		};
+		B10000000000000000000018 /* Quizz */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Quizz;
+		};
+		B10000000000000000000019 /* You */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = You;
 		};
 		B10000000000000000000012 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;

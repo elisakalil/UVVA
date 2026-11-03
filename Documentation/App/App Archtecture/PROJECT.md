@@ -67,10 +67,9 @@ struct WineCard: View { var model: WineCardUIModel }
 | `Core` | `Match` | O algoritmo de match: usuário × vinho, vinho × receita, usuário × usuário (`Shared/MATCH.md`) | `Core` |
 | `Core` | `Storage` | Os modelos SwiftData das duas lojas, o import do conteúdo do bundle e o acesso ao CloudKit (`ARCHITECTURE.md`) | `Core`, `Match` |
 | `DesignSystem` | `DesignSystem` | Tokens, fontes, a foto de fundo e os componentes reutilizados (APP-R02) | — |
-| `Features` | `Features` | Só reúne as features: `import Features` dá acesso a todas (`@_exported import`). É o único módulo de feature que o target da app importa | as features |
-| `Features/Home`, `Features/Onboarding`, `Features/Quizz`, `Features/You`, `Features/Friends`, `Features/Cellar`, `Features/Learn` | um por feature | Cada feature tem a sua pasta e o seu próprio `Package.swift`, com as suas telas | `Core` (módulos `Core` e `Match`), `DesignSystem` |
+| `Features` | um por feature: `Home`, `Onboarding`, `Quizz`, `You`, `Friends`, `Cellar`, `Learn` | Um só `Package.swift` com um target (e um produto) por feature, cada um com as suas telas em `Sources/<Nome>/` e os seus testes em `Tests/<Nome>Tests/`. O target da app importa cada feature que usa (`import Home`, `import Learn`…) | `Core` (módulos `Core` e `Match`), `DesignSystem` |
 
-Uma feature nova entra em `Packages/Features/Package.swift` (dependência e target `Features`) e em `Features.swift`; o projeto do Xcode não muda (ver secção 6 para os testes).
+Uma feature nova entra em `Packages/Features/Package.swift` (produto, target e test target) e no projeto do Xcode, como produto do package `Features` ligado ao target da app (ver secção 6 para os testes).
 
 `DesignSystem` e `Core` não são features, mas precisam ser packages: um package de feature não consegue importar código que está no target da app.
 
@@ -78,7 +77,7 @@ Uma feature nova entra em `Packages/Features/Package.swift` (dependência e targ
 
 **APP-R09 · `PalateAxis`.** O eixo do mapa chama-se `PalateAxis`, e não `Axis`, porque o SwiftUI já tem um tipo `Axis`.
 
-**APP-R06 · Features não se importam.** Um package de feature nunca importa outro. Quando uma feature abre outra (por exemplo, a Home abre You › Map), ela pede a rota ao target da app, que faz a navegação.
+**APP-R06 · Features não se importam.** Um módulo de feature nunca importa outro. Quando uma feature abre outra (por exemplo, a Home abre You › Map), ela pede a rota ao target da app, que faz a navegação.
 
 **APP-R07 · Testes por package.** Cada package tem os seus testes. O `Match` e o `Core` não dependem de UI, por isso os testes deles correm com `swift test`, sem simulador.
 
@@ -98,24 +97,17 @@ Application/
     │   ├── Sources/{Core,Match,Storage}/
     │   └── Tests/{CoreTests,MatchTests,StorageTests}/
     ├── DesignSystem/       Inclui as fontes e a foto de fundo (Resources/)
-    └── Features/
-        ├── Package.swift   Reúne as features num só módulo
-        ├── Sources/Features/Features.swift
-        ├── Home/           Cada feature com o seu Package.swift
-        ├── Onboarding/
-        ├── Quizz/
-        ├── You/
-        ├── Friends/
-        ├── Cellar/
-        └── Learn/
+    └── Features/           Um só package, um target por feature
+        ├── Package.swift
+        ├── Sources/{Home,Onboarding,Quizz,You,Friends,Cellar,Learn}/
+        └── Tests/{HomeTests,OnboardingTests,QuizzTests,YouTests,…}/
 ```
 
-Exemplo de um package de feature:
+Exemplo de uma feature dentro do package `Features`:
 
 ```
-Features/You/
-├── Package.swift
-├── Tests/
+Features/
+├── Tests/YouTests/
 └── Sources/You/
     ├── YouViewModel.swift      partilhado pelas telas de You
     ├── YouTab.swift
@@ -137,7 +129,8 @@ Features/You/
 ## 6. Abrir, correr e testar
 
 - Abrir **`Application/UVVA.xcworkspace`**, e não o `.xcodeproj`. O workspace junta o projeto e os packages, e é ele que deixa o scheme **UVVA** correr os testes de todos os packages com ⌘U.
-- O projeto só conhece os três packages (`Core`, `DesignSystem`, `Features`). Uma feature nova entra em `Features/Package.swift` e `Features.swift`. Para o ⌘U do scheme UVVA correr os testes dela, entra também no workspace (`contents.xcworkspacedata`, como `Packages/Features/<Nome>`) e nos *Testables* do scheme: o Xcode só encontra os test targets de packages que estão na raiz do workspace.
+- O projeto só conhece os três packages (`Core`, `DesignSystem`, `Features`). Uma feature nova entra em `Features/Package.swift` e é ligada ao target da app como produto do package `Features`. Para o ⌘U do scheme UVVA correr os testes dela, o test target entra nos *Testables* do scheme (`container:Packages/Features`); o workspace não muda.
+  - `swift build` dentro de `Packages/Features` não serve: as features usam SwiftUI de iOS. Os testes delas correm pelo `xcodebuild` abaixo.
 - Depois de mudar algo em `Application/Data`, correr `python3 Application/Scripts/pack_content.py` para gerar de novo o conteúdo do bundle. Os arquivos gerados em `UVVA/Resources/Content/` nunca se editam à mão.
 - Pelo terminal:
   - `swift test` dentro de `Packages/Core` corre os testes de `Core`, `Match` e `Storage` (sem simulador, APP-R07).

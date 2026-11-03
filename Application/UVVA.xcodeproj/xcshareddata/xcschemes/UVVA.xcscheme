@@ -59,7 +59,7 @@
                BlueprintIdentifier = "HomeTests"
                BuildableName = "HomeTests"
                BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -115,7 +115,7 @@
                BlueprintIdentifier = "HomeTests"
                BuildableName = "HomeTests"
                BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -129,7 +129,7 @@
                BlueprintIdentifier = "QuizzTests"
                BuildableName = "QuizzTests"
                BlueprintName = "QuizzTests"
-               ReferencedContainer = "container:Packages/Features/Quizz">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -171,7 +171,7 @@
                BlueprintIdentifier = "HomeTests"
                BuildableName = "HomeTests"
                BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -227,7 +227,7 @@
                BlueprintIdentifier = "HomeTests"
                BuildableName = "HomeTests"
                BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -241,7 +241,7 @@
                BlueprintIdentifier = "OnboardingTests"
                BuildableName = "OnboardingTests"
                BlueprintName = "OnboardingTests"
-               ReferencedContainer = "container:Packages/Features/Onboarding">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -283,7 +283,7 @@
                BlueprintIdentifier = "HomeTests"
                BuildableName = "HomeTests"
                BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -339,7 +339,7 @@
                BlueprintIdentifier = "HomeTests"
                BuildableName = "HomeTests"
                BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -353,7 +353,7 @@
                BlueprintIdentifier = "YouTests"
                BuildableName = "YouTests"
                BlueprintName = "YouTests"
-               ReferencedContainer = "container:Packages/Features/You">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -367,7 +367,7 @@
                BlueprintIdentifier = "LearnTests"
                BuildableName = "LearnTests"
                BlueprintName = "LearnTests"
-               ReferencedContainer = "container:Packages/Features/Learn">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -415,7 +415,7 @@
                BlueprintIdentifier = "HomeTests"
                BuildableName = "HomeTests"
                BlueprintName = "HomeTests"
-               ReferencedContainer = "container:Packages/Features/Home">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -425,7 +425,7 @@
                BlueprintIdentifier = "OnboardingTests"
                BuildableName = "OnboardingTests"
                BlueprintName = "OnboardingTests"
-               ReferencedContainer = "container:Packages/Features/Onboarding">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -435,7 +435,7 @@
                BlueprintIdentifier = "QuizzTests"
                BuildableName = "QuizzTests"
                BlueprintName = "QuizzTests"
-               ReferencedContainer = "container:Packages/Features/Quizz">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -445,7 +445,7 @@
                BlueprintIdentifier = "YouTests"
                BuildableName = "YouTests"
                BlueprintName = "YouTests"
-               ReferencedContainer = "container:Packages/Features/You">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -455,7 +455,7 @@
                BlueprintIdentifier = "LearnTests"
                BuildableName = "LearnTests"
                BlueprintName = "LearnTests"
-               ReferencedContainer = "container:Packages/Features/Learn">
+               ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </TestableReference>
       </Testables>

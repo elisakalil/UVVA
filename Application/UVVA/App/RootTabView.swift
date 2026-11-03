@@ -1,6 +1,8 @@
 import DesignSystem
-import Features
+import Home
+import Learn
 import SwiftUI
+import You
 
 /// The five tabs with the design system's floating tab bar, about 40 pt from the bottom of the screen,
 /// and the Home tour over all of it. Home, Learn and You exist for now.
@@ -36,8 +38,7 @@ struct RootTabView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
             isKeyboardUp = false
         }
-        // The page photo fills the window; the glass reads this to line its blurred copy up with it.
-        // Measured before ignoresSafeArea, so the frame is the whole window and not just the safe area.
+        
         .background {
             Color.clear
                 .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { backdropFrame = $0 }

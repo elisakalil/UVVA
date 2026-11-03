@@ -19,15 +19,4 @@ public enum LessonStep: Equatable, Sendable {
         default: true
         }
     }
-
-    /// The question as the Summary lists it when it was missed.
-    public var prompt: String? {
-        switch self {
-        case let .multipleChoice(prompt, _, _, _), let .selectMultiple(prompt, _, _, _), let .trueFalse(prompt, _, _),
-             let .fillBlank(prompt, _, _, _), let .ordering(prompt, _, _), let .matchPairs(prompt, _, _):
-            prompt
-        case .concept, .tip, .summary:
-            nil
-        }
-    }
 }

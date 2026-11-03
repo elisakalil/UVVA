@@ -149,10 +149,8 @@ struct LessonProgress { lessonId; currentStep; completedAt?; lastOpenedAt; answe
 ### 4.4 Resumo (fim da lição)
 
 **LEARN-R19 · Resumo.** O último passo de toda lição é o Summary:
-- **Brinde:** uma palavra entre 10 línguas, com o significado. As línguas são Santé (francês), Salud (espanhol), Cin cin (italiano), Saúde (português), Prost (alemão), Proost (neerlandês), Sláinte (irlandês), Yamas (grego), Kanpai (japonês) e Na zdrowie (polaco). A escolha é aleatória (o gerador é injetado nos testes).
-- "Lesson complete" e "+[XP] XP".
-- **Acertos:** "[certas]/[perguntas]".
-- **Erros:** a lista das perguntas erradas, se houver.
+- **Brinde:** uma palavra entre 10 línguas, com "Means “cheers” in [língua]" na mesma cor (sem a tradução literal). As línguas são Santé (francês), Salud (espanhol), Cin cin (italiano), Saúde (português), Prost (alemão), Proost (neerlandês), Sláinte (irlandês), Yamas (grego), Kanpai (japonês) e Na zdrowie (polaco). A escolha é aleatória (o gerador é injetado nos testes).
+- **Aviso:** ao abrir o Summary, um aviso "Lesson complete +[XP] XP" aparece no topo por alguns segundos. Numa revisão, só "Lesson complete".
 - "What you've learned", com os pontos do resumo.
 - **Botão:** "Next lesson", que mostra o título da seguinte. Na última lição do curso, o botão é "Finish module".
 
@@ -161,7 +159,8 @@ Chegar ao Summary marca a lição como concluída (SHARED-R15).
 **LEARN-R19a · Revisão.** Uma lição já concluída pode ser feita de novo a qualquer momento. A revisão não dá XP outra vez e não muda a data de conclusão (ver D3).
 
 **Critérios**
-- Dada uma lição com 6 perguntas e 4 certas, então o resumo mostra "4/6" e lista as 2 erradas.
+- Dado o brinde "Santé", então o resumo diz "Means “cheers” in French".
+- Dada uma lição de 15 XP, então o aviso diz "Lesson complete +15 XP".
 - Dada a lição 6 de 6, então o botão diz "Finish module".
 - Dada uma lição concluída e revista, então o XP total do usuário não muda.
 
@@ -209,7 +208,6 @@ Não existe formato Link (as telas "Certificate · Link" do canvas estão fora d
 - [ ] **D3 · Revisão e XP.** Rever uma lição não dá XP outra vez. Confirma? E a revisão substitui as respostas guardadas da primeira vez?
 - [x] **D4 · Conteúdo dos cursos.** Definido em `Documentation/Lesson/`. Em By region, o curso é por região dentro do país.
 - [ ] **D5 · Mais de um curso em andamento.** Se houver vários, a Home mostra o último aberto (HOME-R13). Na aba Learn, algum deles aparece em destaque?
-- [ ] **D6 · Erros no resumo.** A lista de perguntas erradas permite refazer só essas perguntas, ou é só informativa?
 - [x] **D8 · Países e regiões.** Definidos em [`../Lesson/REGION.MD`](../Lesson/REGION.MD).
 - [ ] **D9 · Mensagem do WhatsApp.** A mensagem do certificado no WhatsApp leva algum link (por exemplo, para baixar a app), ou só o texto e a imagem?
 - [ ] **D7 · Marcas ✓ e ✕.** O player do protótipo usa ✓ e ✕ nas opções, mas o design system diz que o estado não usa ícones de certo/errado, só cor com uma palavra. Qual vale?

@@ -1,28 +1,31 @@
 import Core
 import DesignSystem
-import Features
-import Foundation
-import Observation
+import SwiftUI
+//import Foundation
+import Home
+import Learn
+//import Observation
+import Onboarding
 import OSLog
+import Quizz
 import Storage
-import SwiftData
+//import SwiftData
+import You
 
 /// Decides which top-level screen shows and builds the features with their services.
 /// Features never open each other: they report back here (APP-R06).
 @MainActor @Observable
 final class AppCoordinator {
     private(set) var route: AppRoute = .launching
-    /// The feature on screen, made once when its route opens.
     private(set) var onboarding: OnboardingViewModel?
     private(set) var quiz: QuizViewModel?
     private(set) var home: HomeViewModel?
-    /// The Home tour, while it runs (HOME-R29).
     private(set) var tour: GuidedTourViewModel?
     private(set) var you: YouViewModel?
     private(set) var learn: LearnViewModel?
-    /// The tab on screen; features move it through the coordinator (APP-R06).
-    var selectedTab: AppTab = .home
     private(set) var profile: Profile?
+
+    var selectedTab: AppTab = .home
 
     private let maps: PalateMapStore
     private let questions: QuizQuestionStore
@@ -50,14 +53,6 @@ final class AppCoordinator {
         reminders = stores.reminders
         cellar = stores.cellar
         learning = stores.learning
-        #if DEBUG
-        if DemoMode.isOn {
-            auth = DemoAuth()
-            cloud = DemoCloud()
-            social = DemoSocial()
-            return
-        }
-        #endif
         auth = AppleAuthProvider()
         cloud = ICloudAccountStatus()
         social = CloudKitSocialService()
@@ -65,21 +60,16 @@ final class AppCoordinator {
 
     /// After the Splash (ONB-R02). A revoked Apple credential, or "Sign out", ends the session.
     func start() async {
+        print("START")
         guard route == .launching else { return }
-        timingLog.info("TIMING start() begin")
         async let splash: Void = (try? await Task.sleep(for: Self.minimumSplash)) ?? ()
-        // Ready before the first screen with glass, so building it does not freeze the Splash.
         async let glass: Void = GlassTextures.prepare()
         var profile = try? await profiles.currentProfile()
-        timingLog.info("TIMING profile fetched")
         if let current = profile, !(await auth.isStillAuthorized(current.authUserID)) { profile = nil }
         if UserDefaults.standard.bool(forKey: Self.signedOutKey) { profile = nil }
         let hasMap = ((try? await maps.currentMap()) ?? nil) != nil
-        timingLog.info("TIMING map fetched")
         await splash
-        timingLog.info("TIMING splash min done")
         await glass
-        timingLog.info("TIMING glass ready")
         self.profile = profile
         switch LaunchRoute.resolve(profile: profile, hasMap: hasMap) {
         case .welcome: openOnboarding()
@@ -98,7 +88,6 @@ final class AppCoordinator {
             self?.finishOnboarding(result)
         }
         route = .onboarding
-        timingLog.info("TIMING route onboarding")
     }
 
     /// ONB-R21, R27

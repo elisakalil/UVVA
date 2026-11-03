@@ -22,8 +22,6 @@ final class ContentLoader {
         self.container = container
     }
 
-    /// Opens the stores off the main thread. The Personal store sets up its iCloud sync as it opens, which on a
-    /// fresh install takes seconds; done on the main thread, it held the system's plain launch screen until it finished.
     static func openStores() async -> ModelContainer {
         await Task.detached(priority: .userInitiated) { makeContainer() }.value
     }
@@ -38,7 +36,6 @@ final class ContentLoader {
         let current = defaults.string(forKey: Self.versionKey)
         let start = Date()
         do {
-            // Created off the main actor, so the import runs on a background context.
             let version = try await Task.detached(priority: .utility) {
                 // A wine in the Cellar is never removed, even when it leaves the bundle.
                 let cellarKeys = (try? await CellarStore(modelContainer: container).wineKeys()) ?? []
@@ -51,7 +48,6 @@ final class ContentLoader {
                 defaults.set(version, forKey: Self.versionKey)
                 logger.info("Imported content \(version) in \(Date().timeIntervalSince(start), format: .fixed(precision: 2)) s")
             }
-            timingLog.info("TIMING import done")
             stage = nil
             isReady = true
         } catch {

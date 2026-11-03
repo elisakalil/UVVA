@@ -1,8 +1,8 @@
 import DesignSystem
-import Features
+import Onboarding
+import Quizz
 import SwiftUI
 
-/// Shows the screen the coordinator chose.
 struct AppRootView: View {
     var coordinator: AppCoordinator
 

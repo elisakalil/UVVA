@@ -13,19 +13,4 @@
    <FileRef
       location = "group:Packages/Features">
    </FileRef>
-   <FileRef
-      location = "group:Packages/Features/Home">
-   </FileRef>
-   <FileRef
-      location = "group:Packages/Features/Learn">
-   </FileRef>
-   <FileRef
-      location = "group:Packages/Features/Onboarding">
-   </FileRef>
-   <FileRef
-      location = "group:Packages/Features/Quizz">
-   </FileRef>
-   <FileRef
-      location = "group:Packages/Features/You">
-   </FileRef>
 </Workspace>

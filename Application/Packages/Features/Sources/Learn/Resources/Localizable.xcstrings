@@ -1,0 +1,272 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "means “cheers” in %@" : {
+
+    },
+    "        " : {
+
+    },
+    " %@ " : {
+
+    },
+    "%@ now knows" : {
+
+    },
+    "%@%@%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@%3$@"
+          }
+        }
+      }
+    },
+    "%lld lessons · %lld min · %lld XP" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld lessons · %2$lld min · %3$lld XP"
+          }
+        }
+      }
+    },
+    "%lld of %lld matched" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld matched"
+          }
+        }
+      }
+    },
+    "All" : {
+
+    },
+    "All %lld pairs matched on the first try." : {
+
+    },
+    "All %lld pairs matched, with %lld wrong tries." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "All %1$lld pairs matched, with %2$lld wrong tries."
+          }
+        }
+      }
+    },
+    "All %lld pairs matched, with 1 wrong try." : {
+
+    },
+    "Begin lesson" : {
+
+    },
+    "By grape" : {
+
+    },
+    "By region" : {
+
+    },
+    "By the end you can" : {
+
+    },
+    "Check" : {
+
+    },
+    "Closes the course" : {
+
+    },
+    "Continue" : {
+
+    },
+    "Continue where you left off" : {
+
+    },
+    "Correct" : {
+
+    },
+    "Correct order: %@" : {
+
+    },
+    "Dutch" : {
+
+    },
+    "False" : {
+
+    },
+    "Finish module" : {
+
+    },
+    "French" : {
+
+    },
+    "German" : {
+
+    },
+    "Go to the module" : {
+
+    },
+    "Got it" : {
+
+    },
+    "Grape" : {
+
+    },
+    "Grapes" : {
+
+    },
+    "Greek" : {
+
+    },
+    "I just finished %@ on UVVA." : {
+
+    },
+    "Irish" : {
+
+    },
+    "Italian" : {
+
+    },
+    "Japanese" : {
+
+    },
+    "Learn" : {
+
+    },
+    "Leave the lesson" : {
+
+    },
+    "Lesson %lld" : {
+
+    },
+    "Lesson complete" : {
+
+    },
+    "Lesson complete +%lld XP" : {
+
+    },
+    "Lessons" : {
+
+    },
+    "Map of %@" : {
+
+    },
+    "Minutes" : {
+
+    },
+    "Module" : {
+
+    },
+    "Module complete" : {
+
+    },
+    "Next lesson" : {
+
+    },
+    "Not a pair. Try again." : {
+
+    },
+    "Not quite" : {
+
+    },
+    "Nothing matches “%@”. Try a region, a grape or a country." : {
+
+    },
+    "Now I know" : {
+
+    },
+    "Now tap where it should go." : {
+
+    },
+    "Opens the course" : {
+
+    },
+    "Polish" : {
+
+    },
+    "Portuguese" : {
+
+    },
+    "Previous screen" : {
+
+    },
+    "Red" : {
+
+    },
+    "Reds" : {
+
+    },
+    "Region" : {
+
+    },
+    "Regions" : {
+
+    },
+    "Review previous lesson" : {
+
+    },
+    "Review the module" : {
+
+    },
+    "Search modules" : {
+
+    },
+    "Share what you learned" : {
+
+    },
+    "Spanish" : {
+
+    },
+    "Step %lld of %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Step %1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "Steps" : {
+
+    },
+    "Study wine by region, by grape or through a sommelier’s complete curriculum." : {
+
+    },
+    "Tap a term, then its match. Tap a matched term to undo." : {
+
+    },
+    "Tap two items to swap them." : {
+
+    },
+    "The path" : {
+
+    },
+    "True" : {
+
+    },
+    "View certificate" : {
+
+    },
+    "What you've learned" : {
+
+    },
+    "White" : {
+
+    },
+    "Whites" : {
+
+    },
+    "XP" : {
+
+    },
+    "Your pick" : {
+
+    }
+  },
+  "version" : "1.0"
+}
