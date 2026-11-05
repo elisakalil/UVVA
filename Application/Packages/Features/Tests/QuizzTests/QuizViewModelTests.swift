@@ -8,8 +8,8 @@ struct QuizViewModelTests {
 
     private func makeViewModel(entry: QuizEntry = .firstMap, maps: PalateMapRepositorySpy? = nil,
                                onExit: @escaping (QuizExit) -> Void = { _ in }) async -> QuizViewModel {
-        let viewModel = QuizViewModel(entry: entry, firstName: "Elisa", questions: QuestionRepositoryStub(),
-                                      maps: maps ?? self.maps, onExit: onExit)
+        let viewModel = QuizFactory(questions: QuestionRepositoryStub(), maps: maps ?? self.maps)
+            .makeViewModel(entry: entry, firstName: "Elisa", coordinator: QuizCoordinator(entry: entry, onExit: onExit))
         await viewModel.load()
         return viewModel
     }

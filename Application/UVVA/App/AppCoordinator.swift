@@ -126,14 +126,12 @@ final class AppCoordinator {
     private func prepareQuiz(_ entry: QuizEntry) async throws {
         try await content.waitForQuestions()
 
-        let model = QuizViewModel(
-            entry: entry,
-            firstName: profile?.firstName,
-            questions: questions,
-            maps: maps
-        ) { [weak self] exit in
-            self?.finishQuiz(exit)
-        }
+        let model = QuizFactory(questions: questions, maps: maps).makeViewModel(
+            entry: entry, firstName: profile?.firstName,
+            coordinator: QuizCoordinator(entry: entry) { [weak self] exit in
+                self?.finishQuiz(exit)
+            }
+        )
 
         try await model.prepare()
         try Task.checkCancellation()
