@@ -5,17 +5,18 @@ import SwiftUI
 /// Learn section: a tall region card with its map on the left, a grape and a lesson stacked on the right.
 /// Each opens its Learn tab: By region, By grape and The path (HOME-R18, LEARN-R04).
 struct LearnShortcutsCard: View {
+    var resources = HomeResourcesUIModel()
     var onOpen: (CourseKind) -> Void = { _ in }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            SectionLabel(text: "Learn")
+            SectionLabel(text: resources.learnShortcutsCardSectionTitle)
             HStack(alignment: .top, spacing: 14) {
                 FrostedCard(padding: 18) {
                     VStack(alignment: .leading, spacing: 0) {
-                        Eyebrow(text: "A region")
-                        Text("Uco Valley").font(UVVAFont.whiteGrape(23)).padding(.top, 10)
-                        Text("Malbec at altitude").font(UVVAFont.sans(12, .regular)).foregroundStyle(UVVAColor.cream84)
+                        Eyebrow(text: resources.learnShortcutsCardRegionEyebrow)
+                        Text(resources.learnShortcutsCardRegionTitle).font(UVVAFont.whiteGrape(23)).padding(.top, 10)
+                        Text(resources.learnShortcutsCardRegionSubtitle).font(UVVAFont.sans(12, .regular)).foregroundStyle(UVVAColor.cream84)
                             .padding(.top, 6)
                         ArgentinaOutline()
                             .stroke(UVVAColor.cream.opacity(0.55), style: StrokeStyle(lineWidth: 0.8, lineJoin: .round))
@@ -29,7 +30,7 @@ struct LearnShortcutsCard: View {
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 24)
                         Spacer(minLength: 0)
-                        Eyebrow(text: "6 lessons")
+                        Eyebrow(text: resources.learnShortcutsCardLessonCount)
                     }
                     .frame(maxHeight: .infinity, alignment: .topLeading)
                 }
@@ -37,11 +38,11 @@ struct LearnShortcutsCard: View {
                 .onTapGesture { onOpen(.region) }
 
                 VStack(spacing: 14) {
-                    ShortcutCard(eyebrow: "A grape", title: "Tempranillo", subtitle: "Spain's great red", action: "6 lessons")
+                    ShortcutCard(eyebrow: resources.learnShortcutsCardGrapeEyebrow, title: resources.learnShortcutsCardGrapeTitle, subtitle: resources.learnShortcutsCardGrapeSubtitle, action: resources.learnShortcutsCardLessonCount)
                         .contentShape(Rectangle())
                         .onTapGesture { onOpen(.grape) }
-                    ShortcutCard(eyebrow: "A lesson", title: "Organic, biodynamic and natural",
-                                 subtitle: "What the labels really mean", action: "Start")
+                    ShortcutCard(eyebrow: resources.learnShortcutsCardLessonEyebrow, title: resources.learnShortcutsCardLessonTitle,
+                                 subtitle: resources.learnShortcutsCardLessonSubtitle, action: resources.learnShortcutsCardStartTitle)
                         .contentShape(Rectangle())
                         .onTapGesture { onOpen(.path) }
                 }

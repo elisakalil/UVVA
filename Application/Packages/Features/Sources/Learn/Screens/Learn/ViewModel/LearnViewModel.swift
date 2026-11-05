@@ -1,30 +1,32 @@
 import Core
 import DesignSystem
 import Foundation
-import Observation
+import Combine
 
 /// The Learn tab (LEARN.md): course lists, filters and search. Lesson flow belongs to the Coordinator.
 /// Home and You open it through the app (APP-R06) with `show(_:)` and `openCourse(id:)`.
-@MainActor @Observable
-public final class LearnViewModel {
+@MainActor
+public final class LearnViewModel: LearnViewModelProtocol {
+    @Published public private(set) var uiModel = LearnUIModel()
+    private var subscriptions: Set<AnyCancellable> = []
     /// LEARN-R03: Learn opens on By region.
-    public var tab: CourseKind = .region
+    public var tab: CourseKind = .region { didSet { refresh() } }
     var courses: [CourseKind: [Course]] { state.content.courses }
     var progress: [String: LessonProgress] { state.content.progress }
     var certificates: [Certificate] { state.content.certificates }
     /// The one course open in each tab (LEARN-R06, R09).
-    private(set) var openCourses: [CourseKind: String] = [:]
-    private(set) var grapeFilter: GrapeFilter = .all
+    private(set) var openCourses: [CourseKind: String] = [:] { didSet { refresh() } }
+    private(set) var grapeFilter: GrapeFilter = .all { didSet { refresh() } }
     /// Nil shows every level (LEARN-R10).
-    private(set) var pathLevel: String?
-    private(set) var country: String?
+    private(set) var pathLevel: String? { didSet { refresh() } }
+    private(set) var country: String? { didSet { refresh() } }
     /// The region last tapped on the map: it leads the list below the map.
-    private(set) var pickedRegion: String?
+    private(set) var pickedRegion: String? { didSet { refresh() } }
     var players: [LessonPlayerViewModel] { coordinator.players }
-    var player: LessonPlayerViewModel? { players.last }
+    public var player: LessonPlayerViewModel? { players.last }
     var sharedCertificate: CertificateUIModel? { coordinator.sharedCertificate }
     /// "Search modules"; while it has words, the results take the place of the tabs.
-    var query = ""
+    var query = "" { didSet { refresh() } }
 
     private let state: LearnState
     private let loadLearn: any LoadLearnUseCaseProtocol
@@ -34,6 +36,13 @@ public final class LearnViewModel {
         self.state = state
         self.loadLearn = loadLearn
         self.coordinator = coordinator
+        state.$content.sink { [weak self] content in self?.refresh(content) }.store(in: &subscriptions)
+        coordinator.playersPublisher.sink { [weak self] players in
+            self?.uiModel.isPresentingPlayer = !players.isEmpty
+        }.store(in: &subscriptions)
+        coordinator.certificatePublisher.sink { [weak self] certificate in
+            self?.uiModel.sharedCertificate = certificate
+        }.store(in: &subscriptions)
     }
 
     public func load() async {
@@ -69,23 +78,23 @@ public final class LearnViewModel {
     // MARK: Lists
 
     /// Only one course open at a time; tapping the open one closes it.
-    func toggle(_ courseID: String) {
+    public func toggle(_ courseID: String) {
         openCourses[tab] = openCourses[tab] == courseID ? nil : courseID
     }
 
     func selectGrapeFilter(_ filter: GrapeFilter) { grapeFilter = filter }
 
-    func selectPathLevel(_ level: String?) { pathLevel = level }
+    public func selectPathLevel(_ level: String?) { pathLevel = level }
 
     /// LEARN-R06: a country opens its first region.
-    func selectCountry(_ name: String) {
+    public func selectCountry(_ name: String) {
         country = name
         pickedRegion = nil
         openCourses[.region] = (courses[.region] ?? []).first { $0.countries.first == name }?.id
     }
 
     /// LEARN-R06: a region tapped on the map opens and moves to the top of the list; it stays open when tapped again.
-    func selectRegion(_ courseID: String) {
+    public func selectRegion(_ courseID: String) {
         openCourses[.region] = courseID
         pickedRegion = courseID
     }
@@ -105,7 +114,7 @@ public final class LearnViewModel {
         await coordinator.open(course, lessonID: lessonID, step: progress[lessonID]?.currentStep, stacking: false)
     }
 
-    func startCourse(id: String) async {
+    public func startCourse(id: String) async {
         guard let course = course(id: id) else { return }
         await start(course)
     }
@@ -120,6 +129,28 @@ public final class LearnViewModel {
         await coordinator.showCertificate(course, certificate: certificate)
     }
 
-    func closeCertificate() { coordinator.closeCertificate() }
+    public func closeCertificate() { coordinator.closeCertificate() }
 
+    public func updateQuery(_ query: String) { self.query = query }
+
+    private func refresh(_ content: LearnContent? = nil) {
+        let content = content ?? state.content
+        let lists = LearnListPresentationBuilder(courses: content.courses, progress: content.progress,
+                                                 certificates: content.certificates, openCourses: openCourses,
+                                                 grapeFilter: grapeFilter, pathLevel: pathLevel,
+                                                 country: country, pickedRegion: pickedRegion)
+        var model = uiModel
+        model.tab = tab
+        model.query = query
+        model.isSearching = isSearching
+        model.pathFilters = lists.pathFilters
+        model.pathGroups = lists.pathGroups
+        model.grapeFilters = lists.grapeFilters
+        model.grapeGroups = lists.grapeGroups
+        model.countryFilters = lists.countryFilters
+        model.regionGroups = lists.regionGroups
+        model.regionMap = lists.regionMap
+        model.searchResults = LearnSearchPresentationBuilder(courses: content.courses, query: query).searchResults
+        uiModel = model
+    }
 }

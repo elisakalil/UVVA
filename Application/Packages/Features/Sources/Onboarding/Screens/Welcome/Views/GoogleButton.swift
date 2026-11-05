@@ -3,14 +3,15 @@ import SwiftUI
 
 /// "Continue with Google": the outline pill under the Apple one. Not wired yet.
 struct GoogleButton: View {
+    var uiModel = GoogleButtonUIModel()
     var isEnabled: Bool
     var action: () -> Void
 
     var body: some View {
         Button(action: action) {
             HStack(spacing: 12) {
-                Text(verbatim: "G").font(.system(size: 16, weight: .medium))
-                Text(String(localized: "Continue with Google", bundle: .module).uppercased())
+                Text(verbatim: uiModel.brandSymbol).font(.system(size: 16, weight: .medium))
+                Text(uiModel.continueWithGoogleText.uppercased())
                     .font(UVVAFont.sans(9.5, .semibold))
                     .tracking(2.85)
             }

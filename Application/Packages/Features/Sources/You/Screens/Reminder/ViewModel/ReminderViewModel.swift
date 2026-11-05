@@ -1,13 +1,10 @@
 import Core
 import Foundation
-import Observation
+import Combine
 
-@MainActor @Observable
-final class ReminderViewModel {
-    var draft = ReminderDraft(nil)
-    var customTime = Date.now
-    private(set) var isSaving = false
-    private(set) var notice: String?
+@MainActor
+public final class ReminderViewModel: ReminderViewModelProtocol {
+    @Published public private(set) var uiModel = ReminderUIModel()
     private let state: YouState
     private let saveReminderUseCase: any SaveReminderUseCaseProtocol
 
@@ -16,25 +13,34 @@ final class ReminderViewModel {
         self.saveReminderUseCase = saveReminderUseCase
     }
 
-    func prepare() {
-        let reminder = state.content.reminder
-        draft = ReminderDraft(reminder)
-        customTime = Calendar.current.date(from: DateComponents(hour: reminder?.hour ?? 20,
-                                                                minute: reminder?.minute ?? 0)) ?? .now
-        notice = nil
+    public func pick(_ moment: ReminderMoment) { uiModel.draft.pick(moment) }
+    public func toggle(_ weekday: Int) { uiModel.draft.toggle(weekday) }
+    public func turnOff() { uiModel.draft.turnOff() }
+    public func updateTime(_ date: Date) {
+        uiModel.customTime = date
+        let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
+        uiModel.draft.pickTime(hour: parts.hour ?? 20, minute: parts.minute ?? 0)
     }
 
-    func saveReminder(_ reminder: Reminder?) async -> Bool {
-        guard !isSaving else { return false }
-        isSaving = true
-        notice = nil
-        defer { isSaving = false }
+    public func prepare() {
+        let reminder = state.content.reminder
+        uiModel.draft = ReminderDraft(reminder)
+        uiModel.customTime = Calendar.current.date(from: DateComponents(hour: reminder?.hour ?? 20,
+                                                                minute: reminder?.minute ?? 0)) ?? .now
+        uiModel.notice = nil
+    }
+
+    public func saveReminder(_ reminder: Reminder?) async -> Bool {
+        guard !uiModel.isSaving else { return false }
+        uiModel.isSaving = true
+        uiModel.notice = nil
+        defer { uiModel.isSaving = false }
         do {
             try await saveReminderUseCase.execute(reminder, previous: state.content.reminder)
             state.content.reminder = reminder
             return true
         } catch {
-            notice = String(localized: "The reminder could not be saved. Try again.", bundle: .module)
+            uiModel.notice = uiModel.theReminderCouldNotBeText
             return false
         }
     }

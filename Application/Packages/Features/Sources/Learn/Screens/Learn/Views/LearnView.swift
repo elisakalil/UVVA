@@ -4,8 +4,9 @@ import SwiftUI
 
 /// The Learn tab (LEARN.md §3): By region, By grape and The path. The lesson player opens over everything;
 /// a certificate opens through `certificateCover(_:)`, set on the app's root.
-public struct LearnView: View {
-    var viewModel: LearnViewModel
+public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
+    private var resources: LearnResourcesUIModel { viewModel.uiModel.resources }
+    @ObservedObject var viewModel: ViewModel
     @FocusState private var isSearchFocused: Bool
     /// How far the page has scrolled, and the height of the title above the search bar.
     @State private var scrolled: CGFloat = 0
@@ -20,9 +21,9 @@ public struct LearnView: View {
     @State private var visibleHeight: CGFloat = 0
 
     /// The search bar with its padding: the room the list keeps for it.
-    private static let searchSlot: CGFloat = 56
+    private static var searchSlot: CGFloat { 56 }
 
-    public init(viewModel: LearnViewModel) {
+    public init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
 
@@ -35,7 +36,7 @@ public struct LearnView: View {
         }
         .foregroundStyle(UVVAColor.creamFill)
         .task { await viewModel.load() }
-        .fullScreenCover(isPresented: Binding(get: { viewModel.player != nil }, set: { _ in })) {
+        .fullScreenCover(isPresented: Binding(get: { viewModel.uiModel.isPresentingPlayer }, set: { _ in })) {
             if let player = viewModel.player {
                 LessonPlayerView(viewModel: player).id(player.id)
                     // The tab shows behind while the lesson is dragged down to close.
@@ -51,7 +52,7 @@ public struct LearnView: View {
     private var content: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Learn", bundle: .module)
+                Text(resources.learnText)
                     .font(UVVAFont.sans(31, .ultraLight))
                     .tracking(-0.47)
                     .accessibilityAddTraits(.isHeader)
@@ -63,7 +64,7 @@ public struct LearnView: View {
                 sections
             }
             .padding(.bottom, 24)
-            .animation(.easeOut(duration: 0.2), value: viewModel.isSearching)
+            .animation(.easeOut(duration: 0.2), value: viewModel.uiModel.isSearching)
         }
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, offset in
             scrolled = offset
@@ -100,8 +101,8 @@ public struct LearnView: View {
     }
 
     private var searchBar: some View {
-        SearchField(text: Binding(get: { viewModel.query }, set: { viewModel.query = $0 }),
-                    prompt: String(localized: "Search modules", bundle: .module),
+        SearchField(text: Binding(get: { viewModel.uiModel.query }, set: { viewModel.updateQuery($0) }),
+                    prompt: resources.searchModulesText,
                     isFocused: $isSearchFocused,
                     glassOpacity: 0.45,
                     onCancel: {})
@@ -112,8 +113,8 @@ public struct LearnView: View {
     }
 
     @ViewBuilder private var sections: some View {
-        if viewModel.isSearching {
-            SearchResultsView(groups: viewModel.searchResults, query: viewModel.query) { result in
+        if viewModel.uiModel.isSearching {
+            SearchResultsView(resources: resources, groups: viewModel.uiModel.searchResults, query: viewModel.uiModel.query) { result in
                 isSearchFocused = false
                 Task {
                     await viewModel.openResult(result)
@@ -121,37 +122,37 @@ public struct LearnView: View {
                     // a grape or a module, to its row. Once the list has taken the results' place.
                     guard case .course = result.target else { return }
                     try? await Task.sleep(for: .milliseconds(300))
-                    if viewModel.tab == .region { scrollToRegionList() } else { scrollToOpenRow() }
+                    if viewModel.uiModel.tab == .region { scrollToRegionList() } else { scrollToOpenRow() }
                 }
             }
             .transition(.opacity)
         } else {
-            Text("Study wine by region, by grape or through a sommelier’s complete curriculum.", bundle: .module)
+            Text(resources.studyWineByRegionByText)
                 .font(UVVAFont.sans(13))
                 .lineSpacing(5)
                 .opacity(0.82)
                 .frame(maxWidth: 300, alignment: .leading)
                 .padding(.horizontal, 30)
                 .padding(.top, 24)
-            LearnTabBar(selected: viewModel.tab) { kind in withAnimation(.easeOut(duration: 0.3)) { viewModel.show(kind) } }
+            LearnTabBar(resources: resources, selected: viewModel.uiModel.tab) { kind in withAnimation(.easeOut(duration: 0.3)) { viewModel.show(kind) } }
                 .padding(.horizontal, 24)
                 .padding(.top, 32)
             tabContent
-                .id(viewModel.tab)
+                .id(viewModel.uiModel.tab)
                 .transition(.opacity)
         }
     }
 
     @ViewBuilder private var tabContent: some View {
-        switch viewModel.tab {
+        switch viewModel.uiModel.tab {
         case .region:
             VStack(alignment: .leading, spacing: 0) {
-                FilterRow(filters: viewModel.countryFilters) { name in
+                FilterRow(filters: viewModel.uiModel.countryFilters) { name in
                     withAnimation(.easeOut(duration: 0.28)) { viewModel.selectCountry(name) }
                 }
                 .padding(.top, 30)
-                if let map = viewModel.regionMap {
-                    RegionMapView(model: map) { id in
+                if let map = viewModel.uiModel.regionMap {
+                    RegionMapView(resources: resources, model: map) { id in
                         withAnimation(.easeOut(duration: 0.28)) { viewModel.selectRegion(id) }
                         scrollToRegionList()
                     }
@@ -160,7 +161,7 @@ public struct LearnView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 24)
                 }
-                list(viewModel.regionGroups)
+                list(viewModel.uiModel.regionGroups)
                     // A short list (Portugal's five regions) still reaches up to the search bar.
                     .frame(minHeight: max(0, visibleHeight - Self.searchSlot), alignment: .top)
                     .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView(axis: .vertical)).minY } action: {
@@ -169,19 +170,19 @@ public struct LearnView: View {
             }
         case .grape:
             VStack(alignment: .leading, spacing: 0) {
-                FilterRow(filters: viewModel.grapeFilters) { id in
+                FilterRow(filters: viewModel.uiModel.grapeFilters) { id in
                     withAnimation(.easeOut(duration: 0.28)) { viewModel.selectGrapeFilter(id: id) }
                 }
                 .padding(.top, 24)
-                list(viewModel.grapeGroups)
+                list(viewModel.uiModel.grapeGroups)
             }
         case .path:
             VStack(alignment: .leading, spacing: 0) {
-                FilterRow(filters: viewModel.pathFilters) { id in
+                FilterRow(filters: viewModel.uiModel.pathFilters) { id in
                     withAnimation(.easeOut(duration: 0.28)) { viewModel.selectPathLevel(id == "all" ? nil : id) }
                 }
                 .padding(.top, 24)
-                list(viewModel.pathGroups)
+                list(viewModel.uiModel.pathGroups)
             }
         }
     }
@@ -198,7 +199,7 @@ public struct LearnView: View {
                         .padding(.bottom, 4)
                 }
                 ForEach(group.rows) { row in
-                    CourseRow(model: row,
+                    CourseRow(resources: resources, model: row,
                               onToggle: { withAnimation(.easeOut(duration: 0.28)) { viewModel.toggle(row.id) } },
                               onStart: { Task { await viewModel.startCourse(id: row.id) } },
                               onCertificate: { Task { await viewModel.showCertificate(courseID: row.id) } })
@@ -211,4 +212,8 @@ public struct LearnView: View {
         .padding(.horizontal, 24)
         .padding(.top, 12)
     }
+}
+
+#Preview {
+    LearnView(viewModel: MockLearnViewModel())
 }

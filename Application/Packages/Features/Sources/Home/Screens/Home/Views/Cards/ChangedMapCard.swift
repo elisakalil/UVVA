@@ -4,6 +4,7 @@ import SwiftUI
 
 /// Half-width card: the palate map with the axis that moved, and one line on what changed.
 struct ChangedMapCard: View {
+    var resources = HomeResourcesUIModel()
     var axis: PalateAxis
     var delta: Double
     var palateMap: PalateMap
@@ -16,7 +17,7 @@ struct ChangedMapCard: View {
                     .padding(.top, 14)
                     .frame(maxWidth: .infinity)
                 Spacer(minLength: 16)
-                Text("Your last wine \(delta >= 0 ? "raised" : "lowered") your \(axis.rawValue) notes.")
+                Text(resources.mapChange(axis: axis, delta: delta))
                     .font(UVVAFont.sans(12, .regular))
                     .lineSpacing(3)
                     .fixedSize(horizontal: false, vertical: true)

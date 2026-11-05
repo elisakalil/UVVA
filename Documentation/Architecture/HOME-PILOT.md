@@ -33,3 +33,19 @@ Mantêm-se a seleção diária, a harmonização em background, os cursos inicia
 A raiz de `Screens/Home` contém apenas pastas. Estes auxiliares permanecem locais ao ecrã enquanto não existir necessidade de partilha.
 
 O GuidedTour está organizado em `Rules/GuidedTour`, `Models/TourStep`, `Models/HomeSpotlightModel`, `Views` e `ViewModel`, uniformizando os nomes das pastas.
+
+## UIModel e protocolo de apresentação
+
+A Home usa agora `HomeViewModelProtocol: ObservableObject`, `@Published public private(set) var uiModel` e `HomeView<ViewModel: HomeViewModelProtocol>` com `@ObservedObject`. O protocolo expõe apenas a apresentação de leitura e as ações consumidas pela View. `prepare()` continua disponível no ViewModel concreto para a preparação pela aplicação.
+
+`HomeUIModel` reúne conteúdo opcional, loading, link e mensagem de convite, chaves dos vinhos guardados e recursos visuais. O antigo agregado de cartões/mapa chama-se `HomeContentUIModel`. `HomeResourcesUIModel` centraliza textos localizados, opções e identificadores de ícones, sendo passado explicitamente aos componentes. `DailySuggestionUIModel`, `PalateMatchUIModel` e `WineFactsUIModel` encapsulam apresentação derivada dos dados dos componentes.
+
+As Views mantêm layout, animação, foco, expansão e posição do scroll. Componentes puramente visuais continuam a receber valores, sem ganhar ViewModels artificiais. A gravação no Cellar continua com o mesmo comportamento: esta refatoração não liga o botão visual que já era um placeholder.
+
+O preview da Home usa um mock do protocolo sem dependências de dados. Os testes verificam também a emissão de alterações do UIModel para loading, conteúdo e vinhos guardados. O GuidedTour também usa um UIModel publicado, conforme descrito abaixo.
+
+## GuidedTour observável
+
+O tour foi migrado para `GuidedTourViewModelProtocol: ObservableObject`, com `GuidedTourUIModel` publicado e Views genéricas com `@ObservedObject`. O UIModel reúne etapa, alvo/fallback, contador, títulos, introdução, acessibilidade e ícone de voltar. `GuidedTour` continua a definir as transições e `TourStep` os conteúdos das etapas.
+
+A Home usa um observador explícito do UIModel do tour para encaminhar mudanças do alvo ao conteúdo e manter o scroll sincronizado. A overlay observa o mesmo ViewModel diretamente. O preview usa um mock do protocolo e o teste adicional verifica alvos, retrocesso e publicação da conclusão.

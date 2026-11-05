@@ -1,15 +1,20 @@
 import Core
 import Foundation
 import Match
-import Observation
+import Combine
 
 /// Owns the You tab shell; screen state and operations belong to their respective ViewModels.
-@MainActor @Observable
-public final class YouViewModel {
-    public var tab: YouTab = .progress
-    let progress: ProgressViewModel
-    let map: MapViewModel
-    let settings: SettingsViewModel
+@MainActor
+public final class YouViewModel: YouViewModelProtocol {
+    @Published public private(set) var uiModel = YouUIModel()
+    public var tab: YouTab {
+        get { uiModel.tab }
+        set { selectTab(newValue) }
+    }
+    private var subscription: AnyCancellable?
+    public let progress: ProgressViewModel
+    public let map: MapViewModel
+    public let settings: SettingsViewModel
     private let state: YouState
     private let loadYouUseCase: any LoadYouUseCaseProtocol
 
@@ -20,6 +25,11 @@ public final class YouViewModel {
         self.progress = progress
         self.map = map
         self.settings = settings
+        subscription = state.$content.sink { [weak self] content in
+            self?.uiModel.header = YouHeaderUIModel(name: content.profile?.firstName ?? "",
+                                                    signature: content.map.map { MapReading(map: $0).signature } ?? "",
+                                                    photo: content.profile?.photo)
+        }
     }
 
     public func load() async {
@@ -27,10 +37,5 @@ public final class YouViewModel {
         map.selectedSnapshot = nil
     }
 
-    var header: YouHeaderUIModel {
-        let profile = state.content.profile
-        return YouHeaderUIModel(name: profile?.firstName ?? "",
-                                signature: state.content.map.map { MapReading(map: $0).signature } ?? "",
-                                photo: profile?.photo)
-    }
+    public func selectTab(_ tab: YouTab) { uiModel.tab = tab }
 }

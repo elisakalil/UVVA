@@ -3,12 +3,13 @@ import SwiftUI
 
 /// Terms / Privacy switch, on a glass pill.
 struct LegalTabs: View {
+    var uiModel = LegalTabsUIModel()
     @Binding var tab: LegalTab
 
     var body: some View {
         HStack(spacing: 4) {
-            item(String(localized: "Terms", bundle: .module), .terms)
-            item(String(localized: "Privacy", bundle: .module), .privacy)
+            item(uiModel.termsText, .terms)
+            item(uiModel.privacyText, .privacy)
         }
         .padding(4)
         .background(GlassPill())

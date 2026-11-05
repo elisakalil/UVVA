@@ -9,8 +9,8 @@ struct OverTimeSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            SectionTitle(text: String(localized: "Over time", bundle: .module))
-            Text("See how your map has changed over the last few months.", bundle: .module)
+            SectionTitle(text: model.historyTitle)
+            Text(model.historyDescription)
                 .font(UVVAFont.sans(13)).lineSpacing(5).opacity(0.84)
                 .padding(.top, 12)
 
@@ -38,7 +38,7 @@ struct OverTimeSection: View {
                         ForEach(model.snapshots) { snapshot in
                             Button { onSelect(snapshot.id) } label: {
                                 VStack(spacing: 10) {
-                                    Text(snapshot.isNew ? String(localized: "New", bundle: .module).uppercased() : " ")
+                                    Text(snapshot.isNew ? model.newSnapshotTitle.uppercased() : " ")
                                         .font(UVVAFont.sans(7, .semibold)).tracking(1.4)
                                     Circle()
                                         .fill(UVVAColor.creamFill.opacity(snapshot.id == model.selected ? 1 : 0.4))

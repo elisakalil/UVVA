@@ -4,6 +4,10 @@ import Match
 
 /// Map (YOU-R09 to R13).
 struct MapUIModel: Equatable {
+    var historyTitle = String(localized: "Over time", bundle: .module)
+    var historyDescription = String(localized: "See how your map has changed over the last few months.", bundle: .module)
+    var newSnapshotTitle = String(localized: "New", bundle: .module)
+
     var readOn: String
     var map: PalateMap
     /// The axes drawn strong on the chart (QUIZ-R16).

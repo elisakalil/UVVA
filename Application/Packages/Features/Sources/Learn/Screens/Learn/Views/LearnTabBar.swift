@@ -4,6 +4,7 @@ import SwiftUI
 
 /// By region, By grape and The path, over a hairline; the chosen one underlined (LEARN-R03).
 struct LearnTabBar: View {
+    var resources = LearnResourcesUIModel()
     var selected: CourseKind
     var onSelect: (CourseKind) -> Void
 
@@ -14,7 +15,7 @@ struct LearnTabBar: View {
             ForEach(Self.order, id: \.self) { kind in
                 let isOn = kind == selected
                 Button { onSelect(kind) } label: {
-                    Text(Self.label(kind).uppercased())
+                    Text(label(kind).uppercased())
                         .font(UVVAFont.sans(11))
                         .tracking(1.1)
                         .lineLimit(1)
@@ -32,11 +33,11 @@ struct LearnTabBar: View {
         .overlay(alignment: .bottom) { Rectangle().fill(Color(hex: 0xE2D5BA).opacity(0.7)).frame(height: 1).offset(y: 0.5) }
     }
 
-    static func label(_ kind: CourseKind) -> String {
+    func label(_ kind: CourseKind) -> String {
         switch kind {
-        case .region: String(localized: "By region", bundle: .module)
-        case .grape: String(localized: "By grape", bundle: .module)
-        case .path: String(localized: "The path", bundle: .module)
+        case .region: resources.byRegionText
+        case .grape: resources.byGrapeText
+        case .path: resources.thePathText
         }
     }
 }

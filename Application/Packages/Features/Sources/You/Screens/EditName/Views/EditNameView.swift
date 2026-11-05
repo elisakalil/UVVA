@@ -2,31 +2,30 @@ import DesignSystem
 import SwiftUI
 
 /// Change the name (YOU-R14, R15).
-struct EditNameView: View {
-    @Bindable var viewModel: EditNameViewModel
+struct EditNameView<ViewModel: EditNameViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focused: Bool
 
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Your first name", bundle: .module).font(UVVAFont.sans(26, .ultraLight)).padding(.top, 30)
-            TextField("", text: $viewModel.name)
+            Text(viewModel.uiModel.yourFirstNameText).font(UVVAFont.sans(26, .ultraLight)).padding(.top, 30)
+            TextField("", text: Binding(get: { viewModel.uiModel.name }, set: { viewModel.updateName($0) }))
                 .font(UVVAFont.sans(26))
                 .textContentType(.givenName)
                 .focused($focused)
                 .padding(.bottom, 13)
                 .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
                 .padding(.top, 30)
-            Text((viewModel.isValid ? String(localized: "Nice to meet you", bundle: .module)
-                          : String(localized: "At least two letters", bundle: .module)).uppercased())
+            Text(viewModel.uiModel.validationMessage.uppercased())
                 .font(UVVAFont.sans(9)).tracking(2.3).opacity(0.35).padding(.top, 16)
-            if let notice = viewModel.notice {
+            if let notice = viewModel.uiModel.notice {
                 Text(notice).font(UVVAFont.sans(12)).padding(.top, 12)
             }
             Spacer()
-            ActionButton(String(localized: "Save", bundle: .module), isEnabled: viewModel.isValid && !viewModel.isSaving) {
-                Task { if await viewModel.saveName(viewModel.name) { dismiss() } }
+            ActionButton(viewModel.uiModel.saveText, isEnabled: viewModel.uiModel.isValid && !viewModel.uiModel.isSaving) {
+                Task { if await viewModel.saveName(viewModel.uiModel.name) { dismiss() } }
             }
         }
         .padding(30)
@@ -35,4 +34,16 @@ struct EditNameView: View {
         .presentationDetents([.medium])
         .onAppear { viewModel.prepare(); focused = true }
     }
+}
+
+#Preview {
+    EditNameView(viewModel: EditNamePreviewViewModel())
+}
+
+@MainActor
+private final class EditNamePreviewViewModel: EditNameViewModelProtocol {
+    @Published var uiModel = EditNameUIModel(name: "Elisa")
+    func prepare() {}
+    func updateName(_ name: String) { uiModel.name = name }
+    func saveName(_ name: String) async -> Bool { true }
 }

@@ -1,3 +1,4 @@
+import Combine
 import Core
 import Foundation
 import Testing
@@ -32,7 +33,7 @@ struct YouViewModelTests {
     // MARK: YOU-R01 · Header
 
     @Test func YOU_R01_header_showsNameAndSignature_withoutHandle() async {
-        let header = await make().header
+        let header = await make().uiModel.header
         #expect(header.name == "Elisa")
         #expect(header.signature == "ACIDITY · FRUIT · BODY")
         #expect(!header.name.contains("@") && !header.signature.contains("@"))
@@ -53,9 +54,9 @@ struct YouViewModelTests {
             earned: [Certificate(courseID: "grape-tannat", date: day), Certificate(courseID: "grape-malbec", date: day),
                      Certificate(courseID: "region-pt-douro", date: day)])
         let viewModel = await make(learning: learning)
-        #expect(viewModel.progress.model.stats.map(\.value) == ["2", "1", "3", "45", "0", "3"])
-        #expect(viewModel.settings.model.certificates == "3")
-        #expect(viewModel.settings.certificates.rows.map(\.title) == ["Tannat", "Tannat", "Tannat"])
+        #expect(viewModel.progress.uiModel.stats.map(\.value) == ["2", "1", "3", "45", "0", "3"])
+        #expect(viewModel.settings.uiModel.certificates == "3")
+        #expect(viewModel.settings.certificates.uiModel.rows.map(\.title) == ["Tannat", "Tannat", "Tannat"])
     }
 
     @Test func YOU_R07_startTheCourse_opensThePathsFirstModule() async {
@@ -71,7 +72,7 @@ struct YouViewModelTests {
     }
 
     @Test func YOU_R04_R07_newUser_zeros_andThePathsFirstModule() async {
-        let progress = await make().progress.model
+        let progress = await make().progress.uiModel
         #expect(progress.stats.map(\.value) == Array(repeating: "0", count: 6))
         #expect(progress.stats.map(\.label) == ["Grapes", "Regions", "Lessons", "XP", "Bottles", "Certificates"])
         #expect(progress.suggestionTitle == "What Wine Is")
@@ -82,7 +83,7 @@ struct YouViewModelTests {
     // MARK: YOU-R09, R10, R13 · Map
 
     @Test func YOU_R10_onlyTheQuiz_hasOneSnapshotAndNoComparison() async throws {
-        let map = try #require(await make().map.model)
+        let map = try #require(await make().map.uiModel.content)
         #expect(map.snapshots.count == 1)
         #expect(map.snapshots.first?.detail == "First map · 0 wines rated")
         #expect(map.comparison == nil)
@@ -93,7 +94,7 @@ struct YouViewModelTests {
         let rated = MapChange(date: .now, cause: .rating(wineKey: "w", verdict: .yes), values: [.acidity: 7, .fruit: 7, .body: 5, .sweetness: 1])
         let viewModel = await make(history: [quiz, rated])
         viewModel.map.selectSnapshot(0)
-        let map = try #require(viewModel.map.model)
+        let map = try #require(viewModel.map.uiModel.content)
         #expect(map.snapshots.map(\.detail) == ["First map · 0 wines rated", "Today · 1 wines rated"])
         #expect(map.deltas.first { $0.name == "Fruit" }?.delta == "+1.0")
         #expect(map.deltas.first { $0.name == "Oak" }?.delta == "—")
@@ -103,7 +104,7 @@ struct YouViewModelTests {
 
     @Test func YOU_R10_aRedoneQuizWithoutRatings_hidesOverTime() async throws {
         let redo = MapChange(date: .now, cause: .quiz, values: [.acidity: 3, .fruit: 8])
-        let map = try #require(await make(history: [quiz, redo]).map.model)
+        let map = try #require(await make(history: [quiz, redo]).map.uiModel.content)
         #expect(!map.showsOverTime)
     }
 
@@ -115,14 +116,14 @@ struct YouViewModelTests {
     }
 
     @Test func YOU_R12_shareLink_usesTheIDNotTheName() async {
-        let message = await make().map.shareMessage
+        let message = await make().map.uiModel.shareMessage
         #expect(message.contains("uvva.app/invite/u1"))
     }
 
     // MARK: YOU-R14, R15 · Conta
 
     @Test func YOU_R14_settings_rows() async {
-        let settings = await make().settings.model
+        let settings = await make().settings.uiModel
         #expect(settings.name == "Elisa")
         #expect(settings.signedInWith == "Apple")
         #expect(settings.phone == "+351 912 345 678")
@@ -166,10 +167,10 @@ struct YouViewModelTests {
         _ = await viewModel.settings.reminder.saveReminder(Reminder(hour: 19, weekdays: [2, 4, 6]))
         #expect(reminders.permissionRequests == 1)
         #expect(reminders.scheduled == [Reminder(hour: 19, weekdays: [2, 4, 6])])
-        #expect(viewModel.settings.model.reminder == "19:00")
+        #expect(viewModel.settings.uiModel.reminder == "19:00")
         _ = await viewModel.settings.reminder.saveReminder(nil)
         #expect(reminders.scheduled.last == .some(nil))
-        #expect(viewModel.settings.model.reminder == "Set a time")
+        #expect(viewModel.settings.uiModel.reminder == "Set a time")
     }
 
     // MARK: YOU-R22 · Mapa público
@@ -177,10 +178,10 @@ struct YouViewModelTests {
     @Test func YOU_R22_mapPublic_isTheDefault_andTurningItOffHidesTheMap() async throws {
         let social = SocialSpy()
         let viewModel = await make(social: social)
-        #expect(viewModel.settings.model.mapVisibility == "Public")
+        #expect(viewModel.settings.uiModel.mapVisibility == "Public")
         await viewModel.settings.setMapPublic(false)
         try await Task.sleep(for: .milliseconds(50))
-        #expect(viewModel.settings.model.mapVisibility == "Friends")
+        #expect(viewModel.settings.uiModel.mapVisibility == "Friends")
         #expect(social.calls.last == "publish map:false")
     }
 
@@ -213,25 +214,25 @@ struct YouViewModelTests {
         await viewModel.settings.deleteAccount()
         #expect(!profiles.deleted)
         #expect(actions.log.isEmpty)
-        #expect(viewModel.settings.notice != nil)
+        #expect(viewModel.settings.uiModel.notice != nil)
     }
 
     @Test func savingName_updatesHeaderMapAndSettingsTogether() async {
         let viewModel = await make()
         #expect(await viewModel.settings.editName.saveName(" Lisa "))
-        #expect(viewModel.header.name == "Lisa")
-        #expect(viewModel.map.name == "Lisa")
-        #expect(viewModel.settings.model.name == "Lisa")
+        #expect(viewModel.uiModel.header.name == "Lisa")
+        #expect(viewModel.map.uiModel.name == "Lisa")
+        #expect(viewModel.settings.uiModel.name == "Lisa")
     }
 
     @Test func failedNameSave_keepsSharedProfileAndShowsEditorError() async {
         let profiles = ProfilesSpy(elisa, failsSaving: true)
         let viewModel = await make(profiles: profiles)
         #expect(await viewModel.settings.editName.saveName("Lisa") == false)
-        #expect(viewModel.header.name == "Elisa")
-        #expect(viewModel.settings.model.name == "Elisa")
-        #expect(viewModel.settings.editName.notice != nil)
-        #expect(!viewModel.settings.editName.isSaving)
+        #expect(viewModel.uiModel.header.name == "Elisa")
+        #expect(viewModel.settings.uiModel.name == "Elisa")
+        #expect(viewModel.settings.editName.uiModel.notice != nil)
+        #expect(!viewModel.settings.editName.uiModel.isSaving)
     }
 
     @Test func failedPhoneSave_doesNotChangeThePublicContactKey() async {
@@ -240,8 +241,8 @@ struct YouViewModelTests {
         #expect(await viewModel.settings.editPhone.savePhone(national: "912000000",
                                                             country: PhoneCountries.country(region: "PT")!) == false)
         #expect(social.calls.isEmpty)
-        #expect(viewModel.settings.model.phone == "+351 912 345 678")
-        #expect(viewModel.settings.editPhone.notice != nil)
+        #expect(viewModel.settings.uiModel.phone == "+351 912 345 678")
+        #expect(viewModel.settings.editPhone.uiModel.notice != nil)
     }
 
     @Test func failedReminderSave_doesNotScheduleOrChangeSettings() async {
@@ -249,9 +250,9 @@ struct YouViewModelTests {
         let viewModel = await make(reminders: reminders)
         #expect(await viewModel.settings.reminder.saveReminder(Reminder(hour: 19, weekdays: [2])) == false)
         #expect(reminders.scheduled.isEmpty)
-        #expect(viewModel.settings.model.reminder == "Set a time")
-        #expect(viewModel.settings.reminder.notice != nil)
-        #expect(!viewModel.settings.reminder.isSaving)
+        #expect(viewModel.settings.uiModel.reminder == "Set a time")
+        #expect(viewModel.settings.reminder.uiModel.notice != nil)
+        #expect(!viewModel.settings.reminder.uiModel.isSaving)
     }
 
     @Test func failedPublicDeletion_keepsNotificationsAndSession() async {
@@ -264,19 +265,48 @@ struct YouViewModelTests {
         #expect(!profiles.deleted)
         #expect(reminders.scheduled.isEmpty)
         #expect(actions.log.isEmpty)
-        #expect(!viewModel.settings.isWorking)
+        #expect(!viewModel.settings.uiModel.isWorking)
     }
 
     @Test func reopeningEditors_discardsUnsavedDrafts() async {
         let viewModel = await make()
         viewModel.settings.editName.prepare()
-        viewModel.settings.editName.name = "Unsaved"
+        viewModel.settings.editName.updateName("Unsaved")
         viewModel.settings.editName.prepare()
-        #expect(viewModel.settings.editName.name == "Elisa")
+        #expect(viewModel.settings.editName.uiModel.name == "Elisa")
         viewModel.settings.editPhone.prepare()
-        viewModel.settings.editPhone.national = "123"
+        viewModel.settings.editPhone.updateNational("123")
         viewModel.settings.editPhone.prepare()
-        #expect(viewModel.settings.editPhone.national == "912345678")
+        #expect(viewModel.settings.editPhone.uiModel.national == "912345678")
+    }
+
+
+    @Test func profileEdit_publishesHeaderMapAndSettings() async {
+        let model = await make()
+        var headerNames: [String] = []
+        var mapNames: [String] = []
+        var settingsNames: [String] = []
+        let header = model.$uiModel.sink { headerNames.append($0.header.name) }
+        let map = model.map.$uiModel.sink { mapNames.append($0.name) }
+        let settings = model.settings.$uiModel.sink { settingsNames.append($0.name) }
+        defer { header.cancel(); map.cancel(); settings.cancel() }
+        #expect(await model.settings.editName.saveName("Lisa"))
+        #expect(headerNames.last == "Lisa")
+        #expect(mapNames.last == "Lisa")
+        #expect(settingsNames.last == "Lisa")
+    }
+
+    @Test func reminderActions_publishTheEditableDraft() async {
+        let model = await make()
+        let reminder = model.settings.reminder
+        reminder.prepare()
+        reminder.pick(.dinner)
+        reminder.toggle(2)
+        #expect(reminder.uiModel.draft.canSave)
+        #expect(reminder.uiModel.draft.reminder == Reminder(hour: 19, weekdays: [2]))
+        reminder.turnOff()
+        #expect(reminder.uiModel.draft.reminder == nil)
+        #expect(reminder.uiModel.draft.canSave)
     }
 
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 /// Eight hairlines: the readings done, the one on screen, the ones to come (QUIZ-R07).
 struct ReadingProgress: View {
+    var resources = QuizResourcesUIModel()
     var count: Int
     var current: Int
 
@@ -14,6 +15,6 @@ struct ReadingProgress: View {
             }
         }
         .accessibilityElement()
-        .accessibilityLabel(Text("Reading \(current + 1) of \(count)", bundle: .module))
+        .accessibilityLabel(Text(resources.readingAccessibility(current: current, count: count)))
     }
 }

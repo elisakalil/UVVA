@@ -5,55 +5,21 @@ import SwiftUI
 /// The facts of the day's wine: origin, appellation (when it is notable), grapes, notes and serving down the left, each with its one-line
 /// insight when the content has one, and the vintage alone on the right, under the card's third axis.
 struct WineFacts: View {
+    var resources = HomeResourcesUIModel()
     var wine: Wine
     var now = Date()
 
-    private struct Fact: Identifiable {
-        var label: String
-        var value: String
-        var insight: String?
-        var id: String { label }
-    }
-
-    private var facts: [Fact] {
-        var facts: [Fact] = []
-        if !wine.originLine.isEmpty {
-            // A wine known only by its country shows the country alone: a line on a whole country says little.
-            let hasRegion = !(wine.region ?? "").isEmpty
-            facts.append(Fact(label: "Origin", value: wine.originLine, insight: hasRegion ? wine.originInsight : nil))
-        }
-        // A plain origin label (a regional DOC, an IGT) says nothing the origin does not; only a notable one shows.
-        if wine.hasNotableAppellation, !wine.classification.isEmpty {
-            facts.append(Fact(label: "Appellation", value: wine.classification, insight: wine.appellationInsight))
-        }
-        if !wine.grapes.isEmpty { facts.append(Fact(label: "Grapes", value: wine.grapes.joined(separator: ", "))) }
-        if let note = wine.note, !note.isEmpty { facts.append(Fact(label: "Notes", value: note)) }
-        if let serving = wine.serving {
-            facts.append(Fact(label: "Serve at", value: "\(serving.lowerBound)–\(serving.upperBound) °C",
-                              insight: wine.howToServe))
-        }
-        return facts
-    }
-
-    /// "2023 · 3 years"
-    private func vintageLine(_ vintage: Int) -> String {
-        let age = Calendar.current.component(.year, from: now) - vintage
-        switch age {
-        case ..<1: return "\(vintage)"
-        case 1: return "\(vintage) · 1 year"
-        default: return "\(vintage) · \(age) years"
-        }
-    }
+    private var uiModel: WineFactsUIModel { WineFactsUIModel(wine: wine, now: now, resources: resources) }
 
     var body: some View {
         let column = VStack(alignment: .leading, spacing: 22) {
-            ForEach(facts) { cell($0) }
+            ForEach(uiModel.facts) { cell($0) }
         }
         Group {
             if let vintage = wine.vintage {
                 ThirdColumnLayout {
                     column
-                    cell(Fact(label: "Vintage", value: vintageLine(vintage)))
+                    cell(WineFactsUIModel.Fact(label: resources.wineFactsVintageTitle, value: uiModel.vintageLine(vintage)))
                 }
             } else {
                 column
@@ -62,7 +28,7 @@ struct WineFacts: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private func cell(_ fact: Fact) -> some View {
+    private func cell(_ fact: WineFactsUIModel.Fact) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(fact.label.uppercased())
                 .font(UVVAFont.sans(8, .medium))

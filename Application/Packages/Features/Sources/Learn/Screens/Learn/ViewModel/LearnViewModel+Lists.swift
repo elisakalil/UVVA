@@ -15,7 +15,7 @@ extension LearnViewModel {
     var regionGroups: [CourseGroupUIModel] { listBuilder.regionGroups }
     var regionMap: RegionMapUIModel? { listBuilder.regionMap }
 
-    func selectGrapeFilter(id: String) {
+    public func selectGrapeFilter(id: String) {
         switch id {
         case "all": selectGrapeFilter(.all)
         case "red": selectGrapeFilter(.red)

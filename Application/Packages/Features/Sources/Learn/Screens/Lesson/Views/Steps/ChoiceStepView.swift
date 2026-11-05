@@ -4,6 +4,7 @@ import SwiftUI
 /// multipleChoice, selectMultiple and trueFalse. After "Check" the right option reads "Correct" and a wrong pick
 /// "Your pick", in colour, without ticks or crosses (D7).
 struct ChoiceStepView: View {
+    var resources = LearnResourcesUIModel()
     var model: ChoiceUIModel
     var onTap: (Int) -> Void
 
@@ -40,8 +41,8 @@ struct ChoiceStepView: View {
                     .font(UVVAFont.sans(16, isMarked ? .medium : .regular))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 if isMarked, model.kind == .single {
-                    Text(option.state == .correct ? String(localized: "Correct", bundle: .module).uppercased()
-                                                  : String(localized: "Your pick", bundle: .module).uppercased())
+                    Text(option.state == .correct ? resources.correctText.uppercased()
+                                                  : resources.yourPickText.uppercased())
                         .font(UVVAFont.sans(10))
                         .tracking(1.6)
                 }

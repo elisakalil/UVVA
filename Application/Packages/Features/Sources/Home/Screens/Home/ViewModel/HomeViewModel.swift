@@ -1,13 +1,11 @@
 import Core
 import Foundation
-import Observation
+import Combine
 
-@MainActor @Observable
-public final class HomeViewModel {
-    private(set) var model: HomeUIModel?
-    private(set) var inviteLink: URL?
-    private(set) var cellarWineKeys: Set<String> = []
-    
+@MainActor
+public final class HomeViewModel: HomeViewModelProtocol {
+    @Published public private(set) var uiModel = HomeUIModel()
+
     private var loadTask: Task<Void, Error>?
 
     private let loadHomeUseCase: any LoadHomeUseCaseProtocol
@@ -31,7 +29,7 @@ public final class HomeViewModel {
     }
 
     public func loadIfNeeded() async {
-        guard model == nil else { return }
+        guard uiModel.content == nil else { return }
         await load()
     }
 
@@ -46,9 +44,10 @@ public final class HomeViewModel {
             return
         }
 
+        uiModel.isLoading = true
         let task = Task { try await self.readHome() }
         loadTask = task
-        defer { loadTask = nil }
+        defer { loadTask = nil; uiModel.isLoading = false }
 
         try await task.value
         try Task.checkCancellation()
@@ -65,25 +64,21 @@ public final class HomeViewModel {
         let day = calendar.ordinality(of: .day, in: .era, for: date) ?? 0
         let builder = HomeCardsBuilder(calendar: calendar, pickWordIndex: { day % $0 })
 
-        inviteLink = content.inviteLink
-        cellarWineKeys = content.cellarWineKeys
-        model = HomeUIModel(
-            cards: builder.build(from: content.state, now: date),
-            palateMap: content.state.palateMap
+        uiModel = HomeUIModel(
+            content: HomeContentUIModel(cards: builder.build(from: content.state, now: date),
+                                         palateMap: content.state.palateMap),
+            inviteLink: content.inviteLink, cellarWineKeys: content.cellarWineKeys, isLoading: false
         )
     }
 
-    func openCourse(_ id: String) { coordinator.openCourse(id) }
+    public func openCourse(_ id: String) { coordinator.openCourse(id) }
 
-    func openLearn(_ kind: CourseKind) { coordinator.openLearn(kind) }
+    public func openLearn(_ kind: CourseKind) { coordinator.openLearn(kind) }
 
     func addToCellar(_ wine: Wine) async {
-        guard !cellarWineKeys.contains(wine.id) else { return }
+        guard !uiModel.cellarWineKeys.contains(wine.id) else { return }
         guard (try? await addWineToCellarUseCase.execute(wine)) != nil else { return }
-        cellarWineKeys.insert(wine.id)
+        uiModel.cellarWineKeys.insert(wine.id)
     }
 
-    var inviteMessage: String {
-        String(localized: "Map your taste in wine with me on UVVA.", bundle: .module)
-    }
 }

@@ -25,3 +25,15 @@ A raiz contém `Coordinator`, `DependencyInjection`, `State`, `Screens` e `Resou
 ## Validação
 
 Os testes existentes continuam a cobrir pesquisa, filtros, retoma, gravação de respostas, revisão sem XP extra, atribuição de certificados e regresso à lição anterior. Foram acrescentados cenários de falha de recarregamento, falha ao atribuir certificado e tentativa de abrir uma lição inexistente.
+
+## UIModels e protocolos observáveis
+
+Learn e o player usam agora `ObservableObject`, `@Published private(set) uiModel` e protocolos próprios. As Views são genéricas e usam `@ObservedObject`; o protocolo de Learn expõe o player através de um associated type, sem fixar a implementação concreta na View.
+
+`LearnUIModel` agrupa listas, filtros, região, pesquisa, estado de apresentação do player, certificado e recursos. `LessonPlayerUIModel` agrupa capa, cabeçalho, passo, footer, certificado e estados visuais. O ViewModel do player preserva a lógica e a fila de gravações, publicando uma apresentação atualizada quando mudam fase, respostas ou certificado. Os modelos específicos de cada passo continuam a ser valores.
+
+`LearnResourcesUIModel` centraliza os textos e identificadores visuais dos componentes. As Views mantêm layout, scroll, gestos e animações. Os bindings de pesquisa passam por `updateQuery`.
+
+`LearnState` publica dados e o Coordinator expõe publishers de players e certificados. As subscrições fracas no ViewModel publicam a apresentação correspondente. A reconstrução de listas usa o valor emitido, evitando reler o valor anterior de `@Published`; os campos das listas são publicados em conjunto. O modifier de certificados observa explicitamente o ViewModel, para continuar a funcionar quando invocado a partir de You.
+
+O preview de Learn usa mocks dos protocolos sem repositórios. Os testes adicionais verificam publicação de pesquisa/filtros/navegação e de seleção/feedback do player. Foram validados 54 testes de Learn e a regressão de Home, Onboarding e You.

@@ -1,12 +1,14 @@
 import Core
 import DesignSystem
-import Observation
+import Combine
 
 /// Owns the lesson stack and certificate destinations. List selection stays in the screen ViewModel.
-@MainActor @Observable
+@MainActor
 final class LearnCoordinator: LearnCoordinatorProtocol {
-    private(set) var players: [LessonPlayerViewModel] = []
-    private(set) var sharedCertificate: CertificateUIModel?
+    @Published private(set) var players: [LessonPlayerViewModel] = []
+    @Published private(set) var sharedCertificate: CertificateUIModel?
+    var playersPublisher: AnyPublisher<[LessonPlayerViewModel], Never> { $players.eraseToAnyPublisher() }
+    var certificatePublisher: AnyPublisher<CertificateUIModel?, Never> { $sharedCertificate.eraseToAnyPublisher() }
     private let state: LearnState
     private let playerFactory: any LessonPlayerFactoryProtocol
     private let loadLesson: any LoadLessonUseCaseProtocol

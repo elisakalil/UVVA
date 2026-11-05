@@ -1,3 +1,4 @@
+import Combine
 import Core
 import Foundation
 import Testing
@@ -30,35 +31,35 @@ struct OnboardingModuleTests {
         let module = await makeModule()
         await module.welcome.signIn()
         #expect(module.coordinator.step == .name)
-        #expect(module.name.name == "Elisa")
-        #expect(module.name.nameIsValid)
+        #expect(module.name.uiModel.name == "Elisa")
+        #expect(module.name.uiModel.isValid)
     }
 
     @Test func ONB_R14a_providerWithoutName_opensTheNameEmpty() async {
         let module = await makeModule(auth: AuthStub(identity: AuthIdentity(provider: .apple, userID: "x", givenName: nil)))
         await module.welcome.signIn()
-        #expect(module.name.name.isEmpty)
-        #expect(!module.name.nameIsValid)
+        #expect(module.name.uiModel.name.isEmpty)
+        #expect(!module.name.uiModel.isValid)
     }
 
     @Test func ONB_R38_cancelledSheet_staysOnTheWelcomeWithoutMessage() async {
         let module = await makeModule(auth: AuthStub(identity: nil))
         await module.welcome.signIn()
         #expect(module.coordinator.step == .welcome)
-        #expect(module.welcome.notice == nil)
+        #expect(module.welcome.uiModel.notice == nil)
     }
 
     @Test func ONB_R38_networkFailure_showsANotice() async {
         let module = await makeModule(auth: AuthStub(identity: nil, fails: true))
         await module.welcome.signIn()
         #expect(module.coordinator.step == .welcome)
-        #expect(module.welcome.notice != nil)
+        #expect(module.welcome.uiModel.notice != nil)
     }
 
     @Test func iCloudRequired_withoutICloud_signInDoesNothing() async {
         let module = await makeModule(cloud: CloudStub(available: false))
         await module.welcome.signIn()
-        #expect(module.welcome.iCloudAvailable == false)
+        #expect(module.welcome.uiModel.iCloudAvailable == false)
         #expect(module.coordinator.step == .welcome)
     }
 
@@ -88,9 +89,9 @@ struct OnboardingModuleTests {
     @Test func ONB_R16_continue_trimsTheName() async {
         let module = await makeModule()
         await module.welcome.signIn()
-        module.name.name = "  Elisa "
+        module.name.updateName("  Elisa ")
         module.name.continueFromName()
-        #expect(module.name.name == "Elisa")
+        #expect(module.name.uiModel.name == "Elisa")
         #expect(module.coordinator.step == .phone)
     }
 
@@ -98,17 +99,17 @@ struct OnboardingModuleTests {
 
     @Test func ONB_R35_emptyPhone_showsSkip_andTypingShowsContinue() async {
         let module = await makeModule()
-        #expect(module.phone.phoneModel.isEmpty)
+        #expect(module.phone.uiModel.isEmpty)
         type("9", into: module)
-        #expect(!module.phone.phoneModel.isEmpty)
-        #expect(!module.phone.phoneModel.canContinue)
+        #expect(!module.phone.uiModel.isEmpty)
+        #expect(!module.phone.uiModel.canContinue)
     }
 
     @Test func ONB_R04_phone_stopsAtTheLongestNumber() async {
         let module = await makeModule()
         type("9123456789", into: module)
-        #expect(module.phone.phoneModel.number == "912 345 678")
-        #expect(module.phone.phoneModel.canContinue)
+        #expect(module.phone.uiModel.number == "912 345 678")
+        #expect(module.phone.uiModel.canContinue)
     }
 
     // MARK: ONB-R07, R02a · A sessão começa no Telefone
@@ -173,7 +174,7 @@ struct OnboardingModuleTests {
         await module.phone.skipPhone()
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
-        let model = module.contacts.contactsModel
+        let model = module.contacts.uiModel
         #expect(model.onUVVA.map(\.name) == ["Marina Alves"])
         #expect(model.onUVVATitle == "1 of your contacts is on UVVA")
         #expect(model.title == "Contacts")
@@ -189,7 +190,7 @@ struct OnboardingModuleTests {
         await module.phone.skipPhone()
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
-        let model = module.contacts.contactsModel
+        let model = module.contacts.uiModel
         #expect(model.onUVVA.isEmpty)
         #expect(model.title == nil)
         #expect(model.toInvite.map(\.name) == ["Ana"])
@@ -211,18 +212,18 @@ struct OnboardingModuleTests {
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
 
-        module.contacts.contactsQuery = "jose"
-        #expect(module.contacts.contactsModel.onUVVA.isEmpty)
-        #expect(module.contacts.contactsModel.toInvite.map(\.name) == ["José Neves"])
-        #expect(module.contacts.contactsModel.title == "Contacts")
+        module.contacts.updateQuery("jose")
+        #expect(module.contacts.uiModel.onUVVA.isEmpty)
+        #expect(module.contacts.uiModel.toInvite.map(\.name) == ["José Neves"])
+        #expect(module.contacts.uiModel.title == "Contacts")
 
-        module.contacts.contactsQuery = "zz"
-        #expect(module.contacts.contactsModel.noResults)
+        module.contacts.updateQuery("zz")
+        #expect(module.contacts.uiModel.noResults)
 
-        module.contacts.contactsQuery = ""
-        #expect(module.contacts.contactsModel.onUVVA.count == 1)
-        #expect(module.contacts.contactsModel.toInvite.count == 2)
-        #expect(!module.contacts.contactsModel.noResults)
+        module.contacts.updateQuery("")
+        #expect(module.contacts.uiModel.onUVVA.count == 1)
+        #expect(module.contacts.uiModel.toInvite.count == 2)
+        #expect(!module.contacts.uiModel.noResults)
     }
 
     @Test func ONB_R37_add_sendsAFriendRequest_andSaysRequested() async {
@@ -237,7 +238,7 @@ struct OnboardingModuleTests {
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         await module.contacts.add("1")
-        #expect(module.contacts.contactsModel.onUVVA.first?.state == .requested)
+        #expect(module.contacts.uiModel.onUVVA.first?.state == .requested)
         #expect(social.requests.count == 1)
         #expect(social.requests.first?.hasSuffix("->m") == true)
     }
@@ -251,8 +252,8 @@ struct OnboardingModuleTests {
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         module.contacts.markInvited("3")
-        #expect(module.contacts.contactsModel.toInvite.first?.state == .invited)
-        #expect(module.contacts.inviteLink?.absoluteString.hasPrefix("https://uvva.app/invite/") == true)
+        #expect(module.contacts.uiModel.toInvite.first?.state == .invited)
+        #expect(module.contacts.uiModel.inviteLink?.absoluteString.hasPrefix("https://uvva.app/invite/") == true)
     }
 
     @Test func accountSaveFailure_keepsPhoneAndDraftWithoutPublishing() async {
@@ -264,8 +265,8 @@ struct OnboardingModuleTests {
         await module.phone.skipPhone()
 
         #expect(module.coordinator.step == .phone)
-        #expect(module.phone.notice != nil)
-        #expect(!module.phone.isSaving)
+        #expect(module.phone.uiModel.notice != nil)
+        #expect(!module.phone.uiModel.isSaving)
         #expect(module.draft.profile == nil)
         #expect(module.draft.name == "Elisa")
         #expect(profiles.saved.isEmpty)
@@ -279,7 +280,7 @@ struct OnboardingModuleTests {
         type("912345678", into: module)
         module.phone.back()
         #expect(module.coordinator.step == .name)
-        #expect(module.name.name == "Elisa")
+        #expect(module.name.uiModel.name == "Elisa")
         module.name.continueFromName()
         #expect(module.phone.phoneE164 == "+351912345678")
     }
@@ -295,6 +296,22 @@ struct OnboardingModuleTests {
         module.contacts.finishContacts()
         #expect(module.coordinator.step == .done)
         #expect(results.count == 1)
+    }
+
+
+    @Test func nameUIModel_publishesProviderNameAndUserEdits() async {
+        let module = await makeModule()
+        var names: [String] = []
+        let subscription = module.name.$uiModel.sink { names.append($0.name) }
+        defer { subscription.cancel() }
+        await module.welcome.signIn()
+        #expect(names.last == "Elisa")
+        module.name.updateName(" Lisa ")
+        #expect(module.draft.name == " Lisa ")
+        #expect(names.last == " Lisa ")
+        module.name.continueFromName()
+        #expect(names.last == "Lisa")
+        #expect(module.draft.name == "Lisa")
     }
 
 }

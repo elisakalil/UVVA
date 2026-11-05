@@ -42,3 +42,13 @@ O AppCoordinator solicita um módulo à Factory e recebe `OnboardingResult`. A V
 O rascunho continua sem persistência antes de Phone. Voltar de Name elimina a identidade autenticada; voltar de Phone preserva nome e número. A publicação pública continua a ser best effort e não impede a criação local da conta. Uma falha de gravação permanece em Phone e agora apresenta a mensagem nesse ecrã (antes era guardada num estado que apenas a Welcome mostrava). Pedidos de amizade falhados revertem o estado Requested.
 
 Os testes de comportamento existentes foram migrados para o módulo composto. Foram acrescentados cenários de falha de gravação, preservação do rascunho e entrega única do resultado final.
+
+## UIModels e contratos de apresentação
+
+Welcome, Name, Phone, FindFriends e Contacts usam agora protocolos específicos que herdam de `ObservableObject`. Cada implementação publica um `uiModel` com `@Published private(set)` e cada View é genérica e usa `@ObservedObject`. Os contratos expõem o UIModel apenas para leitura; a edição do nome e da pesquisa é encaminhada por `updateName` e `updateQuery` através de bindings com closures explícitas.
+
+Os UIModels reúnem textos localizados, imagens/ícones e estado de apresentação, incluindo loading, erros, validação, telefone formatado e dados dos contactos. Os componentes visuais de login, links legais, teclado, botões de contacto e conteúdo legal recebem UIModels de valores, sem necessidade de ViewModels artificiais.
+
+`OnboardingDraft` publica alterações de nome e perfil através de Combine. Name subscreve o nome, pelo que o resultado do login e as edições usam a mesma fonte de dados. Contacts subscreve o perfil para atualizar o link de convite após a criação da conta. As subscrições capturam os ViewModels fracamente. O Coordinator mantém o controlo das transições existente.
+
+O preview de Name usa um mock do protocolo. O teste adicional verifica que o nome do provider, a edição e a normalização são publicados, mantendo o rascunho sincronizado. A validação inclui os 35 testes de Onboarding e os 44 de Home.

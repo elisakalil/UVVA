@@ -4,6 +4,7 @@ import SwiftUI
 /// LEARN-R19: the toast, what was learned, and the lesson that comes next. "Lesson complete" shows over it
 /// as a note (`LessonCompleteNote`).
 struct SummaryStepView: View {
+    var resources = LearnResourcesUIModel()
     var model: LessonSummaryUIModel
 
     var body: some View {
@@ -15,7 +16,7 @@ struct SummaryStepView: View {
             }
 
             VStack(alignment: .leading, spacing: 22) {
-                caps(String(localized: "What you've learned", bundle: .module))
+                caps(resources.whatYouVeLearnedText)
                 ForEach(Array(model.points.enumerated()), id: \.offset) { index, point in
                     HStack(alignment: .firstTextBaseline, spacing: 14) {
                         Text(String(format: "%02d", index + 1))

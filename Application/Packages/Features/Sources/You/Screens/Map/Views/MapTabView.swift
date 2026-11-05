@@ -3,12 +3,12 @@ import DesignSystem
 import SwiftUI
 
 /// Map (YOU-R09 to R13).
-struct MapTabView: View {
-    var viewModel: MapViewModel
+struct MapTabView<ViewModel: MapViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @State private var sharing = false
 
     var body: some View {
-        if let model = viewModel.model {
+        if let model = viewModel.uiModel.content {
             YouPanel {
                 VStack(alignment: .leading, spacing: 0) {
                     PanelTitle(text: model.readOn)
@@ -20,7 +20,7 @@ struct MapTabView: View {
                         .frame(maxWidth: .infinity)
                         .padding(.top, 6)
 
-                    SectionTitle(text: String(localized: "Your readings", bundle: .module)).padding(.top, 48)
+                    SectionTitle(text: viewModel.uiModel.yourReadingsText).padding(.top, 48)
                     VStack(spacing: 0) {
                         ForEach(model.readings) { row in
                             ReadingLine(row: row)
@@ -33,23 +33,23 @@ struct MapTabView: View {
                             .padding(.top, 60)
                     }
 
-                    SectionTitle(text: String(localized: "Where the map points", bundle: .module)).padding(.top, 60)
+                    SectionTitle(text: viewModel.uiModel.whereTheMapPointsText).padding(.top, 60)
                     Text(model.narrative).font(UVVAFont.sans(14)).lineSpacing(9).opacity(0.86)
                         .padding(.top, 14)
 
-                    ActionButton(String(localized: "Share my map", bundle: .module)) { sharing = true }
+                    ActionButton(viewModel.uiModel.shareMyMapText) { sharing = true }
                         .padding(.top, 40)
-                    ActionButton(String(localized: "Redo the map", bundle: .module), style: .outline, action: viewModel.redoMap)
+                    ActionButton(viewModel.uiModel.redoTheMapText, style: .outline, action: viewModel.redoMap)
                         .padding(.top, 10)
                 }
             }
             .fullScreenCover(isPresented: $sharing) {
-                ShareScreen(title: String(localized: "Share my map", bundle: .module), message: viewModel.shareMessage) { format in
-                    PalateShareCard(heading: String(localized: "This is my wine palate", bundle: .module),
-                                    phrase: viewModel.name,
+                ShareScreen(title: viewModel.uiModel.shareMyMapText, message: viewModel.uiModel.shareMessage) { format in
+                    PalateShareCard(heading: viewModel.uiModel.thisIsMyWinePalateText,
+                                    phrase: viewModel.uiModel.name,
                                     chartValues: model.map.chartValues, chartLabels: PalateAxis.allCases.map(\.label),
                                     strong: Set(model.highlighted.compactMap { PalateAxis.allCases.firstIndex(of: $0) }),
-                                    lines: [ShareCardLine(tag: String(localized: "Palate", bundle: .module),
+                                    lines: [ShareCardLine(tag: viewModel.uiModel.palateText,
                                                           text: model.dominantPhrase)],
                                     format: format)
                 } onFinish: {

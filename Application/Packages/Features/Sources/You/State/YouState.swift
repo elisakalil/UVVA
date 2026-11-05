@@ -1,6 +1,6 @@
-import Observation
+import Combine
 
-@MainActor @Observable
-final class YouState {
-    var content = YouContent()
+@MainActor
+final class YouState: ObservableObject {
+    @Published var content = YouContent()
 }

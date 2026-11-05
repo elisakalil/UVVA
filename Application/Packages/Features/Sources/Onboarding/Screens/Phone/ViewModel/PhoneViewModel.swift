@@ -1,13 +1,11 @@
 import Core
 import Foundation
-import Observation
+import Combine
 
-@MainActor @Observable
-final class PhoneViewModel {
-    private(set) var country: PhoneCountry
-    private(set) var phoneDigits = ""
-    private(set) var isSaving = false
-    private(set) var notice: String?
+@MainActor
+final class PhoneViewModel: PhoneViewModelProtocol {
+    @Published private(set) var uiModel: PhoneUIModel
+    private var phoneDigits = ""
 
     private let draft: OnboardingDraft
     private let createAccountUseCase: any CreateAccountUseCaseProtocol
@@ -17,7 +15,9 @@ final class PhoneViewModel {
          createAccountUseCase: any CreateAccountUseCaseProtocol,
          coordinator: any OnboardingCoordinatorProtocol) {
         self.draft = draft
-        self.country = country
+        self.uiModel = PhoneUIModel(country: country, dialCode: "+" + country.callingCode,
+                                    number: Self.example(for: country), isEmpty: true,
+                                    canContinue: false, isSaving: false)
         self.createAccountUseCase = createAccountUseCase
         self.coordinator = coordinator
     }
@@ -25,23 +25,26 @@ final class PhoneViewModel {
     func back() { coordinator?.back() }
 
     /// Room for a trunk prefix on top of the longest national number.
-    private var maxDigits: Int { country.nationalLength.upperBound + (country.trunkPrefix?.count ?? 0) }
+    private var maxDigits: Int { uiModel.country.nationalLength.upperBound + (uiModel.country.trunkPrefix?.count ?? 0) }
 
-    var phoneE164: String? { PhoneNumber.e164(national: phoneDigits, country: country) }
+    var phoneE164: String? { PhoneNumber.e164(national: phoneDigits, country: uiModel.country) }
 
     func press(_ digit: Character) {
         guard digit.isNumber, phoneDigits.count < maxDigits else { return }
         phoneDigits.append(digit)
+        refresh()
     }
 
     func deleteDigit() {
         guard !phoneDigits.isEmpty else { return }
         phoneDigits.removeLast()
+        refresh()
     }
 
     func select(_ country: PhoneCountry) {
-        self.country = country
+        uiModel.country = country
         if phoneDigits.count > maxDigits { phoneDigits = String(phoneDigits.prefix(maxDigits)) }
+        refresh()
     }
 
     /// "Continue" (ONB-R07).
@@ -56,22 +59,23 @@ final class PhoneViewModel {
     }
 
     private func startSession(phone: String?) async {
-        guard let identity = draft.identity, !isSaving else { return }
-        isSaving = true
-        notice = nil
-        defer { isSaving = false }
+        guard let identity = draft.identity, !uiModel.isSaving else { return }
+        uiModel.isSaving = true
+        uiModel.notice = nil
+        defer { uiModel.isSaving = false }
         do {
             let profile = try await createAccountUseCase.execute(identity: identity, name: draft.name, phone: phone)
             coordinator?.accountCreated(profile)
         } catch {
-            notice = String(localized: "Your account could not be saved. Try again.", bundle: .module)
+            uiModel.notice = uiModel.saveError
         }
     }
 
-    var phoneModel: PhoneUIModel {
-        PhoneUIModel(country: country, dialCode: "+" + country.callingCode,
-                     number: phoneDigits.isEmpty ? Self.example(for: country) : PhoneNumber.grouped(phoneDigits),
-                     isEmpty: phoneDigits.isEmpty, canContinue: phoneE164 != nil, isSaving: isSaving)
+    private func refresh() {
+        uiModel.dialCode = "+" + uiModel.country.callingCode
+        uiModel.number = phoneDigits.isEmpty ? Self.example(for: uiModel.country) : PhoneNumber.grouped(phoneDigits)
+        uiModel.isEmpty = phoneDigits.isEmpty
+        uiModel.canContinue = phoneE164 != nil
     }
 
     /// ONB-R03: "912 345 678" for Portugal; zeros of the right length elsewhere.

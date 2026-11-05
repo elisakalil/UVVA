@@ -1,15 +1,16 @@
 import Core
 import Foundation
 import Match
-import Observation
+import Combine
 
-@MainActor @Observable
-public final class QuizViewModel {
-    private(set) var flow = QuizFlow()
-    private(set) var bank: QuizQuestionBank?
-    private(set) var isSharing = false
-    private(set) var isSaving = false
-    private(set) var failedToSave = false
+@MainActor
+public final class QuizViewModel: QuizViewModelProtocol {
+    @Published public private(set) var uiModel = QuizUIModel()
+    private(set) var flow = QuizFlow() { didSet { refresh() } }
+    private(set) var bank: QuizQuestionBank? { didSet { refresh() } }
+    private(set) var isSharing = false { didSet { refresh() } }
+    private(set) var isSaving = false { didSet { refresh() } }
+    private(set) var failedToSave = false { didSet { refresh() } }
 
     private let entry: QuizEntry
     private let firstName: String?
@@ -24,6 +25,7 @@ public final class QuizViewModel {
         self.loadQuestionsUseCase = loadQuestionsUseCase
         self.saveMapUseCase = saveMapUseCase
         self.coordinator = coordinator
+        refresh()
     }
 
     func load() async {
@@ -38,14 +40,14 @@ public final class QuizViewModel {
         bank = loaded
     }
 
-    func start() { flow.start() }
-    func select(_ position: Int) { flow.select(position) }
-    func changeQuestion() { flow.changeQuestion() }
-    func next() { flow.next() }
-    func back() { flow.back() }
-    func readAgain() { flow.readAgain() }
+    public func start() { flow.start() }
+    public func select(_ position: Int) { flow.select(position) }
+    public func changeQuestion() { flow.changeQuestion() }
+    public func next() { flow.next() }
+    public func back() { flow.back() }
+    public func readAgain() { flow.readAgain() }
 
-    func keep() async {
+    public func keep() async {
         guard let map = flow.map, !isSaving else { return }
         isSaving = true
         failedToSave = false
@@ -58,8 +60,8 @@ public final class QuizViewModel {
         isSaving = false
     }
 
-    func finish() { coordinator.finish() }
-    func leave() { coordinator.leave() }
+    public func finish() { coordinator.finish() }
+    public func leave() { coordinator.leave() }
 
     var screen: QuizScreen {
         let builder = QuizPresentationBuilder(entry: entry, firstName: firstName, flow: flow,
@@ -76,4 +78,8 @@ public final class QuizViewModel {
         }
     }
 
+    private func refresh() {
+        uiModel = QuizUIModel(screen: screen, isReady: bank != nil, isSaving: isSaving,
+                              failedToSave: failedToSave, isSharing: isSharing)
+    }
 }

@@ -1,27 +1,25 @@
-import Observation
+import Combine
 
-@MainActor @Observable
-final class NameViewModel {
+@MainActor
+final class NameViewModel: NameViewModelProtocol {
+    @Published private(set) var uiModel = NameUIModel()
+    private var nameSubscription: AnyCancellable?
     private let draft: OnboardingDraft
     private weak var coordinator: (any OnboardingCoordinatorProtocol)?
 
     init(draft: OnboardingDraft, coordinator: any OnboardingCoordinatorProtocol) {
         self.draft = draft
         self.coordinator = coordinator
+        nameSubscription = draft.$name.sink { [weak self] name in self?.uiModel.name = name }
     }
 
-    var name: String {
-        get { draft.name }
-        set { draft.name = newValue }
-    }
-
-    var nameIsValid: Bool { NameValidator.isValid(name) }
+    func updateName(_ name: String) { draft.name = name }
 
     func back() { coordinator?.back() }
 
     func continueFromName() {
-        guard nameIsValid else { return }
-        name = NameValidator.normalized(name)
+        guard uiModel.isValid else { return }
+        draft.name = NameValidator.normalized(uiModel.name)
         coordinator?.continueFromName()
     }
 }

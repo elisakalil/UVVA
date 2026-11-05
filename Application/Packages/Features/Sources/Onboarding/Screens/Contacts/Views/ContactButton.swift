@@ -6,30 +6,21 @@ struct ContactButton: View {
     var state: ContactRowState
     var action: () -> Void
 
-    private var title: String {
-        switch state {
-        case .add: String(localized: "Add", bundle: .module)
-        case .requested: String(localized: "Requested", bundle: .module)
-        case .invite: String(localized: "Invite", bundle: .module)
-        case .invited: String(localized: "Invited", bundle: .module)
-        }
-    }
-
-    private var isDone: Bool { state == .requested || state == .invited }
+    private var uiModel: ContactButtonUIModel { ContactButtonUIModel(state: state) }
 
     var body: some View {
         Button(action: action) {
-            Text(title.uppercased())
+            Text(uiModel.title.uppercased())
                 .font(UVVAFont.sans(9, .semibold))
                 .tracking(2.2)
-                .foregroundStyle(isDone ? UVVAColor.mossDeep : UVVAColor.creamFill)
+                .foregroundStyle(uiModel.isDone ? UVVAColor.mossDeep : UVVAColor.creamFill)
                 .padding(.horizontal, 12)
                 .frame(minWidth: 70, minHeight: 44)
                 .background {
                     RoundedRectangle(cornerRadius: 6)
-                        .fill(UVVAColor.creamFill.opacity(isDone ? 1 : 0))
+                        .fill(UVVAColor.creamFill.opacity(uiModel.isDone ? 1 : 0))
                         .overlay(RoundedRectangle(cornerRadius: 6)
-                            .strokeBorder(UVVAColor.creamFill.opacity(isDone ? 0 : 0.45), lineWidth: 0.5))
+                            .strokeBorder(UVVAColor.creamFill.opacity(uiModel.isDone ? 0 : 0.45), lineWidth: 0.5))
                 }
                 .contentShape(Rectangle())
         }

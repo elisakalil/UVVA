@@ -4,6 +4,7 @@ import SwiftUI
 /// By region: the chosen country drawn from real geometry, the land around it fading out, and its regions pinned at
 /// their true places. The open region's dot is larger, with a ring; tapping a dot or a name opens it (LEARN-R06).
 struct RegionMapView: View {
+    var resources = LearnResourcesUIModel()
     var model: RegionMapUIModel
     var onPick: (String) -> Void
 
@@ -18,7 +19,7 @@ struct RegionMapView: View {
                 }
             }
             .accessibilityElement(children: .contain)
-            .accessibilityLabel(Text("Map of \(model.country.name)", bundle: .module))
+            .accessibilityLabel(Text(resources.mapAccessibility(model.country.name)))
     }
 
     private func map(in size: CGSize) -> some View {

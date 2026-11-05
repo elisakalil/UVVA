@@ -8,6 +8,7 @@ import SwiftUI
 /// and inside the Home's scroll those pages were laid out again on every frame, so the scroll dragged
 /// whenever the open card was on screen.
 struct WineMapPager: View {
+    var resources = HomeResourcesUIModel()
     var wine: PalateMap
     var palate: PalateMap
     /// Whether the pager can be seen at all: folded away in a closed card it is still laid out where it would be.
@@ -25,17 +26,17 @@ struct WineMapPager: View {
         VStack(spacing: 14) {
             ScrollView(.horizontal) {
                 HStack(spacing: 0) {
-                    slide(title: "The map of this wine") {
+                    slide(title: resources.wineMapPagerWineMapTitle) {
                         WineMapChart(wine: wine, palate: nil)
                     }
                     .containerRelativeFrame(.horizontal)
                     .id(0)
-                    slide(title: "This wine and you") {
+                    slide(title: resources.wineMapPagerComparisonTitle) {
                         WineMapChart(wine: wine, palate: palate)
                     } legend: {
                         HStack(spacing: 18) {
-                            legendItem("This wine", dashed: false)
-                            legendItem("Your map", dashed: true)
+                            legendItem(resources.wineMapPagerWineLegend, dashed: false)
+                            legendItem(resources.wineMapPagerPalateLegend, dashed: true)
                         }
                     }
                     .containerRelativeFrame(.horizontal)

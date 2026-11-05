@@ -4,6 +4,7 @@ import SwiftUI
 /// The bar of ten positions, 0...9 (QUIZ-R03, R10). The chosen bar stands tall and bright,
 /// its neighbours rise a little; with nothing chosen every bar is low.
 struct ReadingBar: View {
+    var resources = QuizResourcesUIModel()
     var selection: Int?
     var onSelect: (Int) -> Void
 
@@ -45,7 +46,7 @@ struct ReadingBar: View {
             new.map { .impact(flexibility: .soft, intensity: 0.45 + 0.055 * Double($0)) }
         }
         .accessibilityElement()
-        .accessibilityLabel(Text("Position", bundle: .module))
+        .accessibilityLabel(Text(resources.positionText))
         .accessibilityValue(selection.map { "\($0)" } ?? "")
         .accessibilityAdjustableAction { direction in
             switch direction {

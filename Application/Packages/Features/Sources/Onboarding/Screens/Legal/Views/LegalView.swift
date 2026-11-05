@@ -3,6 +3,7 @@ import SwiftUI
 
 /// Terms and Privacy (ONB-R08). The text is a mock until the real one is written (ONB-R08a).
 struct LegalView: View {
+    var uiModel = LegalViewUIModel()
     @State var tab: LegalTab
     var onBack: () -> Void
 
@@ -11,17 +12,17 @@ struct LegalView: View {
             HStack {
                 BackChevron(action: onBack)
                 Spacer()
-                Text(String(localized: "Legal", bundle: .module).uppercased())
+                Text(uiModel.legalText.uppercased())
                     .font(UVVAFont.sans(9)).tracking(2.7).opacity(0.45)
             }
             .padding(.horizontal, 30)
 
             VStack(alignment: .leading, spacing: 0) {
-                Text(tab == .terms ? String(localized: "Terms of Use", bundle: .module)
-                                   : String(localized: "Privacy Policy", bundle: .module))
+                Text(tab == .terms ? uiModel.termsOfUseText
+                                   : uiModel.privacyPolicyText)
                     .font(UVVAFont.sans(30, .ultraLight))
                     .tracking(-0.4)
-                Text("Last updated 12 August 2026", bundle: .module)
+                Text(uiModel.lastUpdated12August2026Text)
                     .font(UVVAFont.sans(11)).tracking(0.7).opacity(0.4)
                     .padding(.top, 10)
                 LegalTabs(tab: $tab).padding(.top, 22)
@@ -44,7 +45,7 @@ struct LegalView: View {
             .scrollIndicators(.hidden)
             .scrollEdgeFade(18)
 
-            ActionButton(String(localized: "I understand", bundle: .module), action: onBack)
+            ActionButton(uiModel.iUnderstandText, action: onBack)
                 .padding(.horizontal, 30)
                 .padding(.top, 14)
                 .padding(.bottom, 12)

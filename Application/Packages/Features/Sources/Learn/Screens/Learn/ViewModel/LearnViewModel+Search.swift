@@ -7,7 +7,7 @@ extension LearnViewModel {
     }
 
     /// A course opens in its tab, open; a lesson opens where it was left (LEARN-R11).
-    func openResult(_ result: SearchResultUIModel) async {
+    public func openResult(_ result: SearchResultUIModel) async {
         query = ""
         switch result.target {
         case let .course(id):

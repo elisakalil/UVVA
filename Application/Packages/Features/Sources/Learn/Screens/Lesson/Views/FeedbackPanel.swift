@@ -3,6 +3,7 @@ import SwiftUI
 
 /// After "Check": "Correct" or "Not quite", the explanation, and "Continue" (LEARN-R17).
 struct FeedbackPanel: View {
+    var resources = LearnResourcesUIModel()
     var model: FeedbackUIModel
     var onContinue: () -> Void
 
@@ -17,7 +18,7 @@ struct FeedbackPanel: View {
                 .lineSpacing(5)
                 .foregroundStyle(LessonPalette.ink)
                 .fixedSize(horizontal: false, vertical: true)
-            LessonButton(title: String(localized: "Continue", bundle: .module), action: onContinue)
+            LessonButton(title: resources.continueText, action: onContinue)
                 .padding(.top, 10)
         }
         .padding(.horizontal, 24)

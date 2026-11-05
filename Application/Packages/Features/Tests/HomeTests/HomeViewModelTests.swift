@@ -1,3 +1,4 @@
+import Combine
 import Core
 import Foundation
 import Testing
@@ -76,12 +77,12 @@ struct HomeViewModelTests {
     }
 
     @Test func HOME_R02_greetsByFirstName() async {
-        let cards = await load(at: day).model?.cards
+        let cards = await load(at: day).uiModel.content?.cards
         #expect(cards?.first == .header(greeting: "Welcome back, Elisa", hasUnread: false))
     }
 
     @Test func HOME_R06_R09_daySuggestion_comesWithTheRecipe() async throws {
-        let cards = try #require(await load(at: day).model?.cards)
+        let cards = try #require(await load(at: day).uiModel.content?.cards)
         guard case let .dailySuggestion(wine) = cards.first(where: { $0.kind == "dailySuggestion" }) else {
             Issue.record("no suggestion"); return
         }
@@ -95,7 +96,7 @@ struct HomeViewModelTests {
                            lastOpenedAt: day, xp: 15),
             LessonProgress(lessonID: "grape-tannat-l02", courseID: "grape-tannat", currentStep: 2, lastOpenedAt: day)
         ])
-        let cards = try #require(await load(at: day, learning: learning).model?.cards)
+        let cards = try #require(await load(at: day, learning: learning).uiModel.content?.cards)
         guard case let .continueLesson(course) = cards.first(where: { $0.kind == "continueLesson" }) else {
             Issue.record("no Continue card"); return
         }
@@ -106,13 +107,13 @@ struct HomeViewModelTests {
 
     @Test func HOME_R11_noFriendsYet_showsTheInvite() async {
         let viewModel = await load(at: day)
-        #expect(viewModel.model?.cards.contains(.friends(.invite)) == true)
-        #expect(viewModel.inviteLink?.absoluteString == "https://uvva.app/invite/u1")
+        #expect(viewModel.uiModel.content?.cards.contains(.friends(.invite)) == true)
+        #expect(viewModel.uiModel.inviteLink?.absoluteString == "https://uvva.app/invite/u1")
     }
 
     @Test func HOME_R19_wordOfTheDay_staysAllDay() async {
-        let morning = await load(at: day).model?.cards.first { $0.kind == "wordOfTheDay" }
-        let evening = await load(at: day.addingTimeInterval(3 * 3600)).model?.cards.first { $0.kind == "wordOfTheDay" }
+        let morning = await load(at: day).uiModel.content?.cards.first { $0.kind == "wordOfTheDay" }
+        let evening = await load(at: day.addingTimeInterval(3 * 3600)).uiModel.content?.cards.first { $0.kind == "wordOfTheDay" }
         #expect(morning == evening)
     }
 
@@ -126,9 +127,29 @@ struct HomeViewModelTests {
         await viewModel.addToCellar(wine)
         await viewModel.addToCellar(wine)
 
-        #expect(viewModel.cellarWineKeys.contains(wine.id))
+        #expect(viewModel.uiModel.cellarWineKeys.contains(wine.id))
         #expect(await cellar.added == [wine.id])
     }
+
+    @Test func uiModel_publishesLoadingContentAndSavedWine() async throws {
+        let model = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
+                                 cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub())
+            .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
+        var presentations: [HomeUIModel] = []
+        let subscription = model.$uiModel.sink { presentations.append($0) }
+        defer { subscription.cancel() }
+
+        try await model.prepare()
+        let wine = try #require(HomeState.full.catalog.first)
+        await model.addToCellar(wine)
+
+        #expect(presentations.first?.isLoading == true)
+        #expect(presentations.first?.content == nil)
+        #expect(presentations.contains { !$0.isLoading && $0.content != nil })
+        #expect(presentations.last?.cellarWineKeys.contains(wine.id) == true)
+        #expect(presentations.last?.inviteLink?.absoluteString == "https://uvva.app/invite/u1")
+    }
+
 }
 
 @MainActor
@@ -157,9 +178,9 @@ struct HomePresentationTests {
         } catch {
             #expect(error is FailingHomeLoader.Failure)
         }
-        #expect(model.model == nil)
-        #expect(model.inviteLink == nil)
-        #expect(model.cellarWineKeys.isEmpty)
+        #expect(model.uiModel.content == nil)
+        #expect(model.uiModel.inviteLink == nil)
+        #expect(model.uiModel.cellarWineKeys.isEmpty)
     }
 
     @Test func navigationIsForwardedWithoutLoadingData() {
@@ -178,6 +199,6 @@ struct HomePresentationTests {
         model.openLearn(.grape)
         #expect(openedCourse == "grape-tannat")
         #expect(openedKind == .grape)
-        #expect(model.model == nil)
+        #expect(model.uiModel.content == nil)
     }
 }

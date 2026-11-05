@@ -3,6 +3,7 @@ import DesignSystem
 import SwiftUI
 
 struct WineRow: View {
+    var resources = HomeResourcesUIModel()
     var wine: Wine
 
     var body: some View {
@@ -19,7 +20,7 @@ struct WineRow: View {
                 }
                 if let axis = wine.profile.ranked.first {
                     HStack(spacing: 8) {
-                        Text("✷").font(UVVAFont.sans(9))
+                        Text(resources.wineRowAxisSymbol).font(UVVAFont.sans(9))
                         Caption(text: axis.label)
                     }
                     .foregroundStyle(UVVAColor.cream60)
@@ -27,7 +28,7 @@ struct WineRow: View {
                 }
             }
             Spacer(minLength: 0)
-            Image(systemName: "chevron.right")
+            Image(systemName: resources.wineRowChevronIcon)
                 .font(.system(size: 12, weight: .light))
                 .foregroundStyle(UVVAColor.cream60)
         }

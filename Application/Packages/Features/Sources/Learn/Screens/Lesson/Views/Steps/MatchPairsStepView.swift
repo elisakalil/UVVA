@@ -3,6 +3,7 @@ import SwiftUI
 
 /// matchPairs (LEARN-R18): a term on the left, then its match on the right.
 struct MatchPairsStepView: View {
+    var resources = LearnResourcesUIModel()
     var model: MatchPairsUIModel
     var onTapLeft: (Int) -> Void
     var onTapRight: (Int) -> Void
@@ -10,7 +11,7 @@ struct MatchPairsStepView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             QuestionPrompt(prompt: model.prompt,
-                           hint: String(localized: "Tap a term, then its match. Tap a matched term to undo.", bundle: .module))
+                           hint: resources.tapATermThenItsText)
             HStack(alignment: .top, spacing: 8) {
                 VStack(spacing: 8) { ForEach(model.left) { cell($0, action: onTapLeft) } }
                 VStack(spacing: 8) { ForEach(model.right) { cell($0, action: onTapRight) } }

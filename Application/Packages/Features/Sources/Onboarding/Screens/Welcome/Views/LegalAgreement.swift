@@ -3,11 +3,11 @@ import SwiftUI
 
 /// "By continuing you agree to the Terms and the Privacy Policy." Both links open the Legal screen (ONB-R28, R31).
 struct LegalAgreement: View {
+    var uiModel = LegalAgreementUIModel()
     var onOpen: (LegalTab) -> Void
 
     private var text: AttributedString {
-        var text = AttributedString(localized: "By continuing you agree to the [Terms](uvva-legal://terms) and the [Privacy Policy](uvva-legal://privacy).",
-                                    bundle: .module)
+        var text = uiModel.text
         for run in text.runs where run.link != nil {
             text[run.range].foregroundColor = UVVAColor.creamFill
         }

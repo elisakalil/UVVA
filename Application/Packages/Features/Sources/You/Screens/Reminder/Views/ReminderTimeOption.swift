@@ -4,12 +4,13 @@ import SwiftUI
 /// "Another time": any hour and minute (D8, decided 2026-10-31).
 struct ReminderTimeOption: View {
     @Binding var time: Date
+    var title: String
     var isSelected: Bool
     var onPick: (Date) -> Void
 
     var body: some View {
         HStack {
-            Text("Another time", bundle: .module).font(UVVAFont.sans(14.5))
+            Text(title).font(UVVAFont.sans(14.5))
             Spacer()
             DatePicker("", selection: $time, displayedComponents: .hourAndMinute)
                 .labelsHidden()

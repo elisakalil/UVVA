@@ -1,3 +1,4 @@
+import Combine
 import Core
 import Foundation
 import Testing
@@ -53,5 +54,46 @@ struct LearnUseCaseTests {
         await model.openLesson(course, lessonID: "missing")
         #expect(model.players.count == 1)
         #expect(model.player === current)
+    }
+}
+
+@MainActor
+struct LearnPublicationTests {
+    @Test func listUIModel_publishesQueryFiltersAndNavigation() async {
+        let course = Fixture.course("grape-tannat")
+        let model = LearnFactory(catalog: CatalogStub(all: [course], lessons: Fixture.lessons(of: course)),
+                                  learning: LearningSpy(), profiles: ProfilesStub()).makeViewModel()
+        var presentations: [LearnUIModel] = []
+        let subscription = model.$uiModel.sink { presentations.append($0) }
+        defer { subscription.cancel() }
+        await model.load()
+        model.updateQuery("tannat")
+        #expect(presentations.last?.isSearching == true)
+        #expect(presentations.last?.searchResults.first?.results.first?.title == course.title)
+        await model.openCourse(id: course.id)
+        #expect(presentations.last?.tab == .grape)
+        #expect(presentations.last?.isPresentingPlayer == true)
+    }
+
+    @Test func playerUIModel_publishesStepSelectionAndFeedback() async throws {
+        let course = Fixture.course("grape-tannat")
+        let model = LearnFactory(catalog: CatalogStub(all: [course], lessons: Fixture.lessons(of: course)),
+                                  learning: LearningSpy(), profiles: ProfilesStub()).makeViewModel()
+        await model.openCourse(id: course.id)
+        let player = try #require(model.player)
+        var presentations: [LessonPlayerUIModel] = []
+        let subscription = player.$uiModel.sink { presentations.append($0) }
+        defer { subscription.cancel() }
+        #expect(presentations.last?.isCover == true)
+        player.begin()
+        player.primary()
+        player.primary()
+        player.tapOption(2)
+        player.primary()
+        #expect(presentations.last?.stepIndex == 2)
+        guard case let .feedback(feedback) = presentations.last?.footer else {
+            Issue.record("Expected published feedback"); return
+        }
+        #expect(feedback.isCorrect)
     }
 }

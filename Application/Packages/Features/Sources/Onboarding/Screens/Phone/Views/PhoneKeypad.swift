@@ -3,6 +3,7 @@ import SwiftUI
 
 /// The phone keypad of the canvas: 1–9 with their letters, a "+*#" key that does nothing, 0 and ⌫ (ONB-R04).
 struct PhoneKeypad: View {
+    var uiModel = PhoneKeypadUIModel()
     var onDigit: (Character) -> Void
     var onDelete: () -> Void
     @State private var presses = 0
@@ -29,7 +30,7 @@ struct PhoneKeypad: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(key == "+*#")
-                .accessibilityLabel(key == "⌫" ? Text("Delete", bundle: .module) : Text(verbatim: key))
+                .accessibilityLabel(key == "⌫" ? Text(uiModel.deleteText) : Text(verbatim: key))
             }
         }
         .padding(.horizontal, 6)

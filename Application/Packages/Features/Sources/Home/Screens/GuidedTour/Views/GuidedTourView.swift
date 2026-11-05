@@ -3,19 +3,19 @@ import SwiftUI
 
 /// The dark layer over the Home with a window of light on the area of each step, and the cream card that
 /// explains it (HOME-R30 to R33). It takes every touch, so the Home underneath does not respond.
-public struct GuidedTourView: View {
-    var viewModel: GuidedTourViewModel
+public struct GuidedTourView<ViewModel: GuidedTourViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     /// The frames published with `spotlightAnchor`, in this view's space.
     var frames: [String: CGRect]
 
-    public init(viewModel: GuidedTourViewModel, frames: [String: CGRect]) {
+    public init(viewModel: ViewModel, frames: [String: CGRect]) {
         self.viewModel = viewModel
         self.frames = frames
     }
 
     /// The lit area, kept 12 pt inside the screen when the target is taller than it.
     private func spot(in size: CGSize) -> (rect: CGRect, radius: CGFloat)? {
-        guard let step = viewModel.current else { return nil }
+        guard let step = viewModel.uiModel.current else { return nil }
         guard let frame = frames[step.target] ?? step.fallback.flatMap({ frames[$0] }) else { return nil }
         let padded = frame.insetBy(dx: -step.padding, dy: -step.padding)
         // Clamped by hand: while the Home scrolls to the target it can still be off screen, and an empty
@@ -32,7 +32,7 @@ public struct GuidedTourView: View {
             let spot = spot(in: size)
             ZStack(alignment: .topLeading) {
                 ZStack {
-                    Color(hex: 0x0E130A).opacity(viewModel.tour.step == 0 ? 0.90 : 0.74)
+                    Color(hex: 0x0E130A).opacity(viewModel.uiModel.step == 0 ? 0.90 : 0.74)
                     if let spot {
                         RoundedRectangle(cornerRadius: spot.radius, style: .continuous)
                             .frame(width: spot.rect.width, height: spot.rect.height)
@@ -56,8 +56,8 @@ public struct GuidedTourView: View {
                         .allowsHitTesting(false)
                 }
 
-                if viewModel.tour.step == 0 {
-                    TourIntro(firstName: viewModel.firstName)
+                if viewModel.uiModel.step == 0 {
+                    TourIntro(uiModel: viewModel.uiModel)
                         .padding(.horizontal, 30)
                         .offset(y: size.height * 0.34)
                         .transition(.opacity)
@@ -67,11 +67,11 @@ public struct GuidedTourView: View {
                     .padding(.horizontal, 20)
                     .frame(width: size.width)
                     .position(x: size.width / 2, y: cardCenterY(spot: spot?.rect, in: size))
-                    .id(viewModel.tour.step)
+                    .id(viewModel.uiModel.step)
                     .transition(.opacity.combined(with: .offset(y: 8)))
             }
             .animation(.spring(response: 0.5, dampingFraction: 0.85), value: spot?.rect)
-            .animation(.easeOut(duration: 0.3), value: viewModel.tour.step)
+            .animation(.easeOut(duration: 0.3), value: viewModel.uiModel.step)
         }
         .ignoresSafeArea()
         .foregroundStyle(UVVAColor.mossDeep)
@@ -80,7 +80,7 @@ public struct GuidedTourView: View {
     /// The card sits below an area in the top half and above an area in the bottom half;
     /// the intro card sits at the bottom.
     private func cardCenterY(spot: CGRect?, in size: CGSize) -> CGFloat {
-        let half = TourCard.estimatedHeight / 2
+        let half = TourCard<ViewModel>.estimatedHeight / 2
         guard let spot else { return size.height - 44 - half - 20 }
         // An area taller than half the screen ("Choose your wine") leaves the card at the top, over the header.
         if spot.height > size.height / 2 { return 60 + half }
@@ -89,4 +89,8 @@ public struct GuidedTourView: View {
         }
         return max(spot.minY - 20 - half, 60 + half)
     }
+}
+
+#Preview {
+    GuidedTourView(viewModel: MockGuidedTourViewModel(), frames: [:])
 }

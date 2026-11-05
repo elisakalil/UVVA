@@ -3,6 +3,7 @@ import SwiftUI
 
 /// A course in a list. Tapped, it opens on its description, its lessons and its button (LEARN-R07, R09, R11).
 struct CourseRow: View {
+    var resources = LearnResourcesUIModel()
     var model: CourseRowUIModel
     var onToggle: () -> Void
     var onStart: () -> Void
@@ -54,7 +55,7 @@ struct CourseRow: View {
                     HStack(spacing: 22) {
                         link("\(model.cta)  ›", action: onStart)
                         if model.hasCertificate {
-                            link(String(localized: "View certificate", bundle: .module), action: onCertificate)
+                            link(resources.viewCertificateText, action: onCertificate)
                         }
                     }
                     .padding(.top, 22)

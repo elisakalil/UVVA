@@ -3,11 +3,12 @@ import DesignSystem
 import SwiftUI
 
 struct WordOfTheDayCard: View {
+    var resources = HomeResourcesUIModel()
     var term: GlossaryTerm
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            SectionLabel(text: "Word of the day")
+            SectionLabel(text: resources.wordOfTheDayCardSectionTitle)
             FrostedCard(padding: 24) {
                 VStack(alignment: .leading, spacing: 0) {
                     Text(term.term).font(UVVAFont.whiteGrape(24))

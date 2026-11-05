@@ -4,38 +4,22 @@ import Match
 import SwiftUI
 
 struct DailySuggestionCard: View {
+    var resources = HomeResourcesUIModel()
     var wine: Wine
     var palateMap: PalateMap
     var isInCellar = false
-    /// "Show less": the Home goes back to the top, then calls back for the card to close. Both at once, the
+    /// resources.dailySuggestionCardCollapseTitle: the Home goes back to the top, then calls back for the card to close. Both at once, the
     /// content got shorter under a moving scroll, which jumped and then slid the cards back down.
     var onShowLess: (_ then: @escaping () -> Void) -> Void = { $0() }
     @State private var open = false
     @State private var search: URL?
 
-    private var fit: WineFit { WineFit(wine: wine.profile, map: palateMap) }
-
-    /// The user's three strongest axes, read on this wine (HOME-R10a).
-    private var axes: [PalateAxis] { fit.shown }
-
-    /// Why it was picked: the user's high axes on which this wine is also high (HOME-R10a).
-    private var reason: String? {
-        let fit = fit
-        let shared = fit.shared.map { $0.label.lowercased() }
-        switch shared.count {
-        case 2: return String(localized: "Your map likes \(shared[0]) and \(shared[1]), and this wine is high on both.", bundle: .module)
-        case 1: return String(localized: "Your map likes \(shared[0]), and this wine is high on it.", bundle: .module)
-        default:
-            return fit.mapHighs.isEmpty && !fit.wineHasHigh
-                ? String(localized: "Nothing runs high on your map, and nothing runs high on this wine.", bundle: .module)
-                : nil
-        }
-    }
+    private var uiModel: DailySuggestionUIModel { DailySuggestionUIModel(wine: wine, palateMap: palateMap) }
 
     var body: some View {
         FrostedCard(radius: UVVARadius.hero, padding: 26) {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Picked for your palate")
+                Text(resources.dailySuggestionCardPickedTitle)
                     .font(UVVAFont.sans(13, .regular))
                     .foregroundStyle(UVVAColor.cream84)
 
@@ -48,7 +32,7 @@ struct DailySuggestionCard: View {
                         .padding(.top, 14)
                 }
 
-                if let reason {
+                if let reason = uiModel.reason {
                     Text(reason)
                         .font(UVVAFont.sans(12, .regular))
                         .lineSpacing(6)
@@ -58,7 +42,7 @@ struct DailySuggestionCard: View {
                 }
 
                 HStack(alignment: .top, spacing: 0) {
-                    ForEach(axes, id: \.self) { axis in
+                    ForEach(uiModel.axes, id: \.self) { axis in
                         VStack(alignment: .leading, spacing: 9) {
                             Text(axis.label.uppercased())
                                 .font(UVVAFont.sans(8, .medium))
@@ -74,11 +58,11 @@ struct DailySuggestionCard: View {
                 // Built with the card and only folded away while closed, so opening it builds nothing (the pager
                 // and the charts were made on the tap) and the card simply grows, its content staying in place.
                 VStack(alignment: .leading, spacing: 0) {
-                    WineFacts(wine: wine)
-                    PalateMatch(wine: wine.profile, palate: palateMap).padding(.top, 44)
-                    WineMapPager(wine: wine.profile, palate: palateMap, active: open).padding(.top, 44)
+                    WineFacts(resources: resources, wine: wine)
+                    PalateMatch(resources: resources, wine: wine.profile, palate: palateMap).padding(.top, 44)
+                    WineMapPager(resources: resources, wine: wine.profile, palate: palateMap, active: open).padding(.top, 44)
                     if let dish = wine.dish {
-                        PerfectTable(dish: dish).padding(.top, 44)
+                        PerfectTable(resources: resources, dish: dish).padding(.top, 44)
                     }
                 }
                 .padding(.top, 44)
@@ -89,7 +73,7 @@ struct DailySuggestionCard: View {
                 .accessibilityHidden(!open)
 
                 VStack(spacing: 0) {
-                    PillButton(style: .outline, action: { search = WineSearch.url(for: wine) }) { Text("Find the wine") }
+                    PillButton(style: .outline, action: { search = WineSearch.url(for: wine) }) { Text(resources.dailySuggestionCardFindWineTitle) }
                     // Folded away with the rest of the open card rather than added and removed, so it never fades
                     // out on its own where it stood while the card closes around it.
                     cellarButton
@@ -112,13 +96,13 @@ struct DailySuggestionCard: View {
         if isInCellar {
             PillButton(style: .outline, action: {}) {
                 HStack(spacing: 8) {
-                    Image(systemName: "checkmark").font(.system(size: 11, weight: .regular))
-                    Text("In your cellar")
+                    Image(systemName: resources.dailySuggestionCardSavedIcon).font(.system(size: 11, weight: .regular))
+                    Text(resources.dailySuggestionCardSavedTitle)
                 }
             }
             .disabled(true)
         } else {
-            PillButton(action: {}) { Text("Add to cellar") }
+            PillButton(action: {}) { Text(resources.dailySuggestionCardAddTitle) }
         }
     }
 
@@ -135,10 +119,10 @@ struct DailySuggestionCard: View {
             // Both labels are always there and only trade places in opacity: a single label whose text changed was
             // swapped on its own, apart from the button, and slid in from where the button had been.
             ZStack {
-                toggleLabel("See the wine & the dish", chevron: "chevron.down")
+                toggleLabel(resources.dailySuggestionCardExpandTitle, chevron: resources.dailySuggestionCardExpandIcon)
                     .foregroundStyle(UVVAColor.ink)
                     .opacity(open ? 0 : 1)
-                toggleLabel("Show less", chevron: "chevron.up")
+                toggleLabel(resources.dailySuggestionCardCollapseTitle, chevron: resources.dailySuggestionCardCollapseIcon)
                     .foregroundStyle(UVVAColor.cream)
                     .opacity(open ? 1 : 0)
             }
@@ -149,7 +133,7 @@ struct DailySuggestionCard: View {
         .buttonStyle(.plain)
     }
 
-    private func toggleLabel(_ title: LocalizedStringKey, chevron: String) -> some View {
+    private func toggleLabel(_ title: String, chevron: String) -> some View {
         HStack(spacing: 10) {
             Text(title)
                 .font(UVVAFont.sans(14, .regular))

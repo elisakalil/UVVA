@@ -3,6 +3,7 @@ import DesignSystem
 import SwiftUI
 
 struct FriendsCard: View {
+    var resources = HomeResourcesUIModel()
     var variant: HomeCardModel.FriendsVariant
 
     var body: some View {
@@ -10,26 +11,26 @@ struct FriendsCard: View {
             VStack(alignment: .leading, spacing: 14) {
                 switch variant {
                 case .invite:
-                    Text("Invite friends to discover their palate and find a wine you'll both love")
+                    Text(resources.friendsCardInviteTitle)
                         .font(UVVAFont.redGrapes(17))
                         .textCase(.uppercase)
                         .lineSpacing(2)
                         .foregroundStyle(UVVAColor.cream.opacity(0.92))
                 case let .match(friend):
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        Text("\(friend.compatibility)%")
+                        Text(resources.compatibility(friend.compatibility))
                             .font(UVVAFont.sans(46, .ultraLight))
-                        Text("match with \(friend.name)")
+                        Text(resources.friendMatch(friend.name))
                             .font(UVVAFont.sans(12.5))
                             .foregroundStyle(UVVAColor.cream84)
                     }
-                    Text("Open the table →").font(UVVAFont.sans(12)).foregroundStyle(UVVAColor.cream84)
+                    Text(resources.friendsCardOpenTableTitle).font(UVVAFont.sans(12)).foregroundStyle(UVVAColor.cream84)
                 case .setTable:
-                    Text("Set a table with your friends")
+                    Text(resources.friendsCardTableTitle)
                         .font(UVVAFont.redGrapes(21))
                         .textCase(.uppercase)
                         .foregroundStyle(UVVAColor.cream.opacity(0.92))
-                    Text("Pick who is coming →").font(UVVAFont.sans(12)).foregroundStyle(UVVAColor.cream84)
+                    Text(resources.friendsCardPickFriendsTitle).font(UVVAFont.sans(12)).foregroundStyle(UVVAColor.cream84)
                 }
             }
         }

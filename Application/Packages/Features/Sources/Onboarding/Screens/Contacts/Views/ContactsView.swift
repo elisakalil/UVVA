@@ -2,27 +2,27 @@ import DesignSystem
 import SwiftUI
 
 /// Contacts (ONB-R37): who is on UVVA, who to invite, an A–Z bar, a search bar once scrolled and "Next".
-struct ContactsView: View {
-    @Bindable var viewModel: ContactsViewModel
+struct ContactsView<ViewModel: ContactsViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @State private var inviting: ContactRowUIModel?
     @State private var scrolled = false
     @FocusState private var searching: Bool
 
     /// How far the list scrolls before the search bar comes down.
-    static let searchReveal: CGFloat = 40
+    static var searchReveal: CGFloat { 40 }
     /// Room between the top of the screen and the search bar.
-    static let searchTop: CGFloat = 32
+    static var searchTop: CGFloat { 32 }
     /// The list is hidden down to the foot of the bar, then fades back in below it.
-    static let searchClear: CGFloat = searchTop + 44
-    static let searchFade: CGFloat = 40
+    static var searchClear: CGFloat { searchTop + 44 }
+    static var searchFade: CGFloat { 40 }
     /// The list also fades out at its foot, just above "Next".
-    static let footFade: CGFloat = 48
+    static var footFade: CGFloat { 48 }
 
     /// The search bar shows once the list is scrolled, and stays while it is in use.
-    private var showsSearch: Bool { scrolled || searching || !viewModel.contactsQuery.isEmpty }
+    private var showsSearch: Bool { scrolled || searching || !viewModel.uiModel.query.isEmpty }
 
     var body: some View {
-        let model = viewModel.contactsModel
+        let model = viewModel.uiModel
         ZStack(alignment: .bottom) {
             if model.isLoading {
                 GrapeLoop().frame(width: 60, height: 84)
@@ -41,7 +41,7 @@ struct ContactsView: View {
                         .padding(.horizontal, 24)
 
                         if model.noResults {
-                            Text("No contacts match “\(viewModel.contactsQuery)”", bundle: .module)
+                            Text(viewModel.uiModel.noResultsMessage)
                                 .font(UVVAFont.sans(13))
                                 .opacity(0.6)
                                 .multilineTextAlignment(.center)
@@ -49,11 +49,11 @@ struct ContactsView: View {
                                 .padding(.top, 80)
                         } else if !model.isLoading {
                             if !model.onUVVA.isEmpty {
-                                section(grape: 3, title: model.onUVVATitle, rows: model.onUVVA)
+                                section(image: model.accountsIllustration, title: model.onUVVATitle, rows: model.onUVVA)
                                     .padding(.top, 30)
                             }
                             if !model.toInvite.isEmpty {
-                                section(grape: 5, title: String(localized: "Invite contacts who aren't on UVVA", bundle: .module),
+                                section(image: model.inviteIllustration, title: viewModel.uiModel.inviteContactsWhoArenTOnText,
                                         rows: model.toInvite)
                                     .padding(.top, model.onUVVA.isEmpty ? 30 : 48)
                             }
@@ -83,8 +83,8 @@ struct ContactsView: View {
                 }
                 .overlay(alignment: .top) {
                     if showsSearch && !model.isLoading {
-                        SearchField(text: $viewModel.contactsQuery,
-                                    prompt: String(localized: "Search contacts", bundle: .module),
+                        SearchField(text: Binding(get: { viewModel.uiModel.query }, set: { viewModel.updateQuery($0) }),
+                                    prompt: viewModel.uiModel.searchContactsText,
                                     isFocused: $searching, onCancel: {})
                             .padding(.horizontal, 24)
                             .padding(.top, Self.searchTop)
@@ -99,7 +99,7 @@ struct ContactsView: View {
                 }
                 // Fixed at the foot of the screen; the list ends just above it.
                 .safeAreaInset(edge: .bottom, spacing: 0) {
-                    ActionButton(String(localized: "Next", bundle: .module), action: viewModel.finishContacts)
+                    ActionButton(viewModel.uiModel.nextText, action: viewModel.finishContacts)
                         .shadow(color: Color(hex: 0x12180E).opacity(0.45), radius: 15, y: 10)
                         .padding(.horizontal, 30)
                         .padding(.bottom, 12)
@@ -108,16 +108,16 @@ struct ContactsView: View {
         }
         .task { await viewModel.loadContacts() }
         .sheet(item: $inviting) { row in
-            if let link = viewModel.inviteLink {
-                ActivityShareSheet(message: viewModel.inviteMessage, link: link) { inviting = nil }
+            if let link = viewModel.uiModel.inviteLink {
+                ActivityShareSheet(message: viewModel.uiModel.inviteMessage, link: link) { inviting = nil }
                     .presentationDetents([.medium, .large])
             }
         }
     }
 
-    private func section(grape: Int, title: String, rows: [ContactRowUIModel]) -> some View {
+    private func section(image: Image, title: String, rows: [ContactRowUIModel]) -> some View {
         VStack(spacing: 0) {
-            UVVAIllustration.grape(grape).resizable().scaledToFit().frame(width: 60, height: 84)
+            image.resizable().scaledToFit().frame(width: 60, height: 84)
             Text(title)
                 .font(UVVAFont.sans(18, .ultraLight))
                 .tracking(-0.2)

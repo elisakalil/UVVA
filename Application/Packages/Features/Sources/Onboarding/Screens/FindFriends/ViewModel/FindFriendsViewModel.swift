@@ -1,8 +1,8 @@
-import Observation
+import Combine
 
-@MainActor @Observable
-final class FindFriendsViewModel {
-    private(set) var isAsking = false
+@MainActor
+final class FindFriendsViewModel: FindFriendsViewModelProtocol {
+    @Published private(set) var uiModel = FindFriendsUIModel()
     private let requestAccessUseCase: any RequestContactsAccessUseCaseProtocol
     private weak var coordinator: (any OnboardingCoordinatorProtocol)?
 
@@ -13,9 +13,9 @@ final class FindFriendsViewModel {
     }
 
     func findFriends() async {
-        guard !isAsking else { return }
-        isAsking = true
-        defer { isAsking = false }
+        guard !uiModel.isAsking else { return }
+        uiModel.isAsking = true
+        defer { uiModel.isAsking = false }
         let granted = await requestAccessUseCase.execute()
         coordinator?.contactsAnswered(granted: granted)
     }

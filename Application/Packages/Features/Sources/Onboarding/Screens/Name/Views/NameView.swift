@@ -2,23 +2,23 @@ import DesignSystem
 import SwiftUI
 
 /// 01 / 02 · Name (ONB-R14 to R16).
-struct NameView: View {
-    @Bindable var viewModel: NameViewModel
+struct NameView<ViewModel: NameViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @FocusState private var focused: Bool
     @State private var leaving = false
 
     /// About how long the system keyboard takes to slide away.
-    static let keyboardHide: Duration = .milliseconds(250)
+    static var keyboardHide: Duration { .milliseconds(250) }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            SignUpHeader(counter: "01 / 02", onBack: { viewModel.back() })
-            SignUpTitle(title: String(localized: "And what should we call you?", bundle: .module),
-                        detail: String(localized: "Your first name is enough.", bundle: .module),
+            SignUpHeader(counter: viewModel.uiModel.counter, onBack: { viewModel.back() })
+            SignUpTitle(title: viewModel.uiModel.andWhatShouldWeCallYouText,
+                        detail: viewModel.uiModel.yourFirstNameIsEnoughText,
                         detailWidth: 265)
                 .padding(.top, 56)
 
-            TextField("", text: $viewModel.name, prompt: Text(verbatim: "Elisa").foregroundStyle(UVVAColor.creamFill.opacity(0.28)))
+            TextField("", text: Binding(get: { viewModel.uiModel.name }, set: { viewModel.updateName($0) }), prompt: Text(verbatim: viewModel.uiModel.placeholder).foregroundStyle(UVVAColor.creamFill.opacity(0.28)))
                 .font(UVVAFont.sans(26))
                 .tracking(-0.26)
                 .textContentType(.givenName)
@@ -31,8 +31,7 @@ struct NameView: View {
                 .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
                 .padding(.top, 44)
 
-            Text((viewModel.nameIsValid ? String(localized: "Nice to meet you", bundle: .module)
-                                        : String(localized: "At least two letters", bundle: .module)).uppercased())
+            Text(viewModel.uiModel.validationMessage.uppercased())
                 .font(UVVAFont.sans(9))
                 .tracking(2.3)
                 .opacity(0.35)
@@ -40,7 +39,7 @@ struct NameView: View {
                 .contentTransition(.opacity)
 
             Spacer(minLength: 20)
-            ActionButton(String(localized: "Continue", bundle: .module), isEnabled: viewModel.nameIsValid && !leaving,
+            ActionButton(viewModel.uiModel.continueText, isEnabled: viewModel.uiModel.isValid && !leaving,
                          action: next)
         }
         .padding(.horizontal, 30)
@@ -52,7 +51,7 @@ struct NameView: View {
     /// The Phone step has its own keypad, so the system keyboard is put away first; otherwise it lingers
     /// over that keypad until this field has left the screen.
     private func next() {
-        guard viewModel.nameIsValid, !leaving else { return }
+        guard viewModel.uiModel.isValid, !leaving else { return }
         leaving = true
         focused = false
         Task {
@@ -61,4 +60,16 @@ struct NameView: View {
             leaving = false
         }
     }
+}
+
+#Preview {
+    NameView(viewModel: NamePreviewViewModel())
+}
+
+@MainActor
+private final class NamePreviewViewModel: NameViewModelProtocol {
+    @Published var uiModel = NameUIModel(name: "Elisa")
+    func updateName(_ name: String) { uiModel.name = name }
+    func back() {}
+    func continueFromName() {}
 }

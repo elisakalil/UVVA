@@ -2,6 +2,7 @@ import DesignSystem
 import SwiftUI
 
 struct HomeHeader: View {
+    var resources = HomeResourcesUIModel()
     var greeting: String
     var hasUnread: Bool
     var scroll: HeaderScroll
@@ -30,7 +31,7 @@ struct HomeHeader: View {
             HStack(alignment: .top, spacing: 16) {
                 // Set once at full size and scaled down: a new font size on every frame of the scroll made the
                 // text lay out and render again each time.
-                Text("UVVA")
+                Text(resources.homeHeaderBrand)
                     .font(UVVAFont.whiteGrape(Self.logoMax))
                     .tracking(0.02 * Self.logoMax)
                     .foregroundStyle(UVVAColor.logoInk)
@@ -42,11 +43,11 @@ struct HomeHeader: View {
                 Spacer(minLength: 0)
                 HStack(alignment: .top, spacing: 6) {
                     Button {} label: {
-                        Text("+")
+                        Text(resources.homeHeaderScanSymbol)
                             .font(UVVAFont.sans(29, .ultraLight))
                             .frame(width: Self.buttonSize, height: Self.buttonSize)
                     }
-                    .accessibilityLabel("Scan a label")
+                    .accessibilityLabel(resources.homeHeaderScanLabel)
                     .spotlightAnchor(HomeSpotlightModel.scan)
                     Button {} label: {
                         BellIcon()
@@ -60,7 +61,7 @@ struct HomeHeader: View {
                                 }
                             }
                     }
-                    .accessibilityLabel(hasUnread ? "Notifications, unread" : "Notifications")
+                    .accessibilityLabel(hasUnread ? resources.homeHeaderUnreadLabel : resources.homeHeaderNotificationsLabel)
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(UVVAColor.cream)

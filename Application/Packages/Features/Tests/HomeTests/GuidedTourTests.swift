@@ -1,3 +1,4 @@
+import Combine
 import Core
 import Testing
 @testable import Home
@@ -60,12 +61,12 @@ struct GuidedTourTests {
     @Test func HOME_R32_R33_labelsAndFinish() {
         var finished = false
         let viewModel = GuidedTourViewModel(firstName: "Elisa") { finished = true }
-        #expect(viewModel.counter == "Tour")
+        #expect(viewModel.uiModel.counter == "Tour")
         viewModel.next()
-        #expect(viewModel.counter == "1 of 6")
-        #expect(viewModel.nextTitle == "Next")
+        #expect(viewModel.uiModel.counter == "1 of 6")
+        #expect(viewModel.uiModel.nextTitle == "Next")
         viewModel.pick(6)
-        #expect(viewModel.nextTitle == "Start")
+        #expect(viewModel.uiModel.nextTitle == "Start")
         viewModel.next()
         #expect(finished)
     }
@@ -74,8 +75,28 @@ struct GuidedTourTests {
     @Test func HOME_R31_stepTwo_pointsAtChooseYourWine_andTheTabsComeLast() {
         let viewModel = GuidedTourViewModel(firstName: "Elisa") {}
         viewModel.pick(2)
-        #expect(viewModel.current?.target == HomeSpotlightModel.chooseYourWine)
+        #expect(viewModel.uiModel.current?.target == HomeSpotlightModel.chooseYourWine)
         viewModel.pick(6)
-        #expect(viewModel.current?.target == "tab.friends")
+        #expect(viewModel.uiModel.current?.target == "tab.friends")
     }
+
+    @MainActor
+    @Test func uiModel_publishesSpotlightChangesAndCompletion() {
+        var finished = false
+        let model = GuidedTourViewModel(firstName: "Elisa") { finished = true }
+        var presentations: [GuidedTourUIModel] = []
+        let subscription = model.$uiModel.sink { presentations.append($0) }
+        defer { subscription.cancel() }
+        model.next()
+        model.pick(2)
+        #expect(presentations.last?.current?.target == HomeSpotlightModel.chooseYourWine)
+        model.back()
+        #expect(presentations.last?.step == 1)
+        model.pick(6)
+        model.next()
+        #expect(presentations.first?.counter == "Tour")
+        #expect(presentations.last?.isFinished == true)
+        #expect(finished)
+    }
+
 }

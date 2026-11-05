@@ -1,3 +1,4 @@
+import Combine
 import Core
 import Testing
 @testable import Quizz
@@ -26,7 +27,7 @@ struct QuizViewModelTests {
 
     @Test func QUIZ_R06_intro_greetsByFirstName() async {
         let viewModel = await makeViewModel()
-        guard case let .intro(model) = viewModel.screen else { Issue.record("not intro"); return }
+        guard case let .intro(model) = viewModel.uiModel.screen else { Issue.record("not intro"); return }
         #expect(model.greeting == "Welcome, Elisa")
         #expect(model.button == "Read my palate")
         #expect(!model.canLeave)
@@ -37,7 +38,7 @@ struct QuizViewModelTests {
     @Test func QUIZ_R07_firstReading_showsCounterAndAxis() async {
         let viewModel = await makeViewModel()
         viewModel.start()
-        guard case let .reading(model) = viewModel.screen else { Issue.record("not reading"); return }
+        guard case let .reading(model) = viewModel.uiModel.screen else { Issue.record("not reading"); return }
         #expect(model.counter == "1 of 8")
         #expect(model.answer == nil)
         #expect(!model.canAdvance)
@@ -49,7 +50,7 @@ struct QuizViewModelTests {
         viewModel.start()
         viewModel.select(6)
         viewModel.changeQuestion()
-        guard case let .reading(model) = viewModel.screen else { Issue.record("not reading"); return }
+        guard case let .reading(model) = viewModel.uiModel.screen else { Issue.record("not reading"); return }
         #expect(model.prompt == "sweetness v2?")
         #expect(model.answer == "sweetness v2 #6")
     }
@@ -61,7 +62,7 @@ struct QuizViewModelTests {
             viewModel.select(2)
             viewModel.next()
         }
-        guard case let .reading(model) = viewModel.screen else { Issue.record("not reading"); return }
+        guard case let .reading(model) = viewModel.uiModel.screen else { Issue.record("not reading"); return }
         #expect(model.button == "Draw the map")
     }
 
@@ -72,7 +73,7 @@ struct QuizViewModelTests {
         answerAll(viewModel)
         viewModel.readAgain()
         #expect(maps.savedMaps.isEmpty)
-        guard case let .reading(model) = viewModel.screen else { Issue.record("not reading"); return }
+        guard case let .reading(model) = viewModel.uiModel.screen else { Issue.record("not reading"); return }
         #expect(model.index == 0)
         #expect(model.selection == nil)
     }
@@ -83,7 +84,7 @@ struct QuizViewModelTests {
         await viewModel.keep()
         #expect(maps.savedMaps.count == 1)
         #expect(maps.savedMaps.first?[.oak] == 5)
-        guard case let .share(model) = viewModel.screen else { Issue.record("not share"); return }
+        guard case let .share(model) = viewModel.uiModel.screen else { Issue.record("not share"); return }
         #expect(model.loves.hasPrefix("Elisa drinks for"))
     }
 
@@ -92,7 +93,7 @@ struct QuizViewModelTests {
         let viewModel = await makeViewModel(maps: failing)
         answerAll(viewModel)
         await viewModel.keep()
-        guard case let .result(model) = viewModel.screen else { Issue.record("not result"); return }
+        guard case let .result(model) = viewModel.uiModel.screen else { Issue.record("not result"); return }
         #expect(model.failedToSave)
     }
 
@@ -130,4 +131,24 @@ struct QuizViewModelTests {
         #expect(exit == .youMap)
         #expect(maps.savedMaps.isEmpty)
     }
+
+    @Test func uiModel_publishesReadingSelectionAndAdvance() async {
+        let model = await makeViewModel()
+        var screens: [QuizScreen] = []
+        let subscription = model.$uiModel.sink { screens.append($0.screen) }
+        defer { subscription.cancel() }
+        model.start()
+        model.select(4)
+        model.next()
+        #expect(screens.contains { screen in
+            guard case let .reading(reading) = screen else { return false }
+            return reading.index == 0 && reading.selection == 4 && reading.canAdvance
+        })
+        guard case let .reading(reading) = screens.last else {
+            Issue.record("Expected reading"); return
+        }
+        #expect(reading.index == 1)
+        #expect(reading.selection == nil)
+    }
+
 }

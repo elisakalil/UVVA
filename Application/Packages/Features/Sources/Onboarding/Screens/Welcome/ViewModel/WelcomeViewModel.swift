@@ -1,12 +1,10 @@
 import Core
 import Foundation
-import Observation
+import Combine
 
-@MainActor @Observable
-final class WelcomeViewModel {
-    private(set) var iCloudAvailable: Bool?
-    private(set) var isSigningIn = false
-    private(set) var notice: String?
+@MainActor
+final class WelcomeViewModel: WelcomeViewModelProtocol {
+    @Published private(set) var uiModel = WelcomeUIModel()
 
     private let cloud: any CloudAccountStatus
     private let signInUseCase: any SignInUseCaseProtocol
@@ -22,22 +20,22 @@ final class WelcomeViewModel {
         self.coordinator = coordinator
     }
 
-    func checkICloud() async { iCloudAvailable = await cloud.isAvailable() }
+    func checkICloud() async { uiModel.iCloudAvailable = await cloud.isAvailable() }
 
     func openLegal(_ tab: LegalTab) { coordinator?.openLegal(tab) }
 
     func signIn() async {
-        guard iCloudAvailable == true, !isSigningIn else { return }
-        isSigningIn = true
-        notice = nil
-        defer { isSigningIn = false }
+        guard uiModel.iCloudAvailable == true, !uiModel.isSigningIn else { return }
+        uiModel.isSigningIn = true
+        uiModel.notice = nil
+        defer { uiModel.isSigningIn = false }
         do {
             guard let identity = try await signInUseCase.execute() else { return }
             coordinator?.signedIn(identity)
             let account = await findAccountUseCase.execute(userID: identity.userID)
             coordinator?.accountLookedUp(account)
         } catch {
-            notice = String(localized: "Could not reach Apple. Check your connection and try again.", bundle: .module)
+            uiModel.notice = uiModel.signInError
         }
     }
 }

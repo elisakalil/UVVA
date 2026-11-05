@@ -3,6 +3,7 @@ import SwiftUI
 
 /// One reading: the question, the answer word and the bar of ten positions (QUIZ-R07 to R13).
 struct QuizReadingView: View {
+    var resources = QuizResourcesUIModel()
     var model: QuizReadingUIModel
     var onSelect: (Int) -> Void
     var onChangeQuestion: () -> Void
@@ -14,7 +15,7 @@ struct QuizReadingView: View {
             QuizBackground(photoOpacity: 1, shade: [0.35, 0.55])
             VStack(alignment: .leading, spacing: 0) {
                 FlowTopBar(caption: model.counter, onBack: onBack)
-                ReadingProgress(count: model.count, current: model.index)
+                ReadingProgress(resources: resources, count: model.count, current: model.index)
                     .padding(.top, 22)
 
                 Text(model.prompt)
@@ -43,12 +44,12 @@ struct QuizReadingView: View {
                 }
                 .frame(height: 112, alignment: .bottom)
 
-                ReadingBar(selection: model.selection, onSelect: onSelect)
+                ReadingBar(resources: resources, selection: model.selection, onSelect: onSelect)
                     .padding(.top, 26)
 
                 Spacer(minLength: 24)
 
-                ActionButton(String(localized: "Change question", bundle: .module), style: .outline,
+                ActionButton(resources.changeQuestionText, style: .outline,
                              action: onChangeQuestion)
                 ActionButton(model.button, isEnabled: model.canAdvance, action: onNext)
                     .padding(.top, 10)

@@ -2,28 +2,28 @@ import DesignSystem
 import SwiftUI
 
 /// Welcome (ONB-R28 to R31, R38). Apple signs in; the Google button is there but not wired yet.
-struct WelcomeView: View {
-    var viewModel: WelcomeViewModel
+struct WelcomeView<ViewModel: WelcomeViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @State private var appeared = false
 
-    private var canSignIn: Bool { viewModel.iCloudAvailable == true && !viewModel.isSigningIn }
+    private var canSignIn: Bool { viewModel.uiModel.canSignIn }
 
     /// How far the logo and the greeting sit below the top of the safe area.
-    static let headerTop: CGFloat = 130
+    static var headerTop: CGFloat { 130 }
     /// Where the fade-in starts. Never fully hidden: it runs while the Splash fades out, and from 0 the page
     /// read as empty between the two.
-    static let hiddenOpacity = 0.3
+    static var hiddenOpacity: Double { 0.3 }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("UVVA")
+            Text(viewModel.uiModel.uvvaText)
                 .font(UVVAFont.whiteGrape(28))
                 .tracking(2.25)
                 .foregroundStyle(Color(hex: 0xF7F0E2))
                 .frame(height: 33)
                 .offset(y: appeared ? 0 : 10)
                 .opacity(appeared ? 1 : Self.hiddenOpacity)
-            Text("Welcome. Let's find the wines you'll love.", bundle: .module)
+            Text(viewModel.uiModel.welcomeLetSFindTheWinesText)
                 .font(UVVAFont.sans(36, .ultraLight))
                 .tracking(-0.4)
                 .lineSpacing(3)
@@ -35,20 +35,20 @@ struct WelcomeView: View {
             Spacer(minLength: 20)
 
             VStack(spacing: 18) {
-                if viewModel.iCloudAvailable == false {
-                    Text("To continue with Apple, sign in to iCloud in Settings, then come back.", bundle: .module)
+                if viewModel.uiModel.iCloudAvailable == false {
+                    Text(viewModel.uiModel.toContinueWithAppleSignInText)
                         .font(UVVAFont.sans(12))
                         .lineSpacing(4)
                         .multilineTextAlignment(.center)
                         .opacity(0.8)
                 }
-                if let notice = viewModel.notice {
+                if let notice = viewModel.uiModel.notice {
                     Text(notice).font(UVVAFont.sans(12)).multilineTextAlignment(.center).opacity(0.8)
                 }
-                LegalAgreement(onOpen: { tab in withAnimation(.smooth) { viewModel.openLegal(tab) } })
+                LegalAgreement(uiModel: viewModel.uiModel.agreement, onOpen: { tab in withAnimation(.smooth) { viewModel.openLegal(tab) } })
                 VStack(spacing: 10) {
-                    AppleButton(isEnabled: canSignIn) { Task { await viewModel.signIn() } }
-                    GoogleButton(isEnabled: !viewModel.isSigningIn) {}
+                    AppleButton(uiModel: viewModel.uiModel.appleButton, isEnabled: canSignIn) { Task { await viewModel.signIn() } }
+                    GoogleButton(uiModel: viewModel.uiModel.googleButton, isEnabled: !viewModel.uiModel.isSigningIn) {}
                 }
             }
             .frame(maxWidth: .infinity)

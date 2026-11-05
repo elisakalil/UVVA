@@ -5,7 +5,6 @@ extension HomeState {
     static let full = HomeState(
         firstName: "Elisa",
         palateMap: MockData.elisaMap,
-        // No friends yet, so Home shows the invite card (HOME-R11).
         friends: [],
         courses: [MockData.foundations],
         lastRating: MockData.lastRating,

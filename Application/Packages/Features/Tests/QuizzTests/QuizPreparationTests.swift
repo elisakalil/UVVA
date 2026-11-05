@@ -40,13 +40,13 @@ struct QuizPreparationTests {
         model.start()
         for _ in 0..<8 { model.select(4); model.next() }
         await model.keep()
-        #expect(model.failedToSave)
-        #expect(!model.isSaving)
-        #expect(!model.isSharing)
+        #expect(model.uiModel.failedToSave)
+        #expect(!model.uiModel.isSaving)
+        #expect(!model.uiModel.isSharing)
         await model.keep()
-        #expect(!model.failedToSave)
-        #expect(!model.isSaving)
-        #expect(model.isSharing)
+        #expect(!model.uiModel.failedToSave)
+        #expect(!model.uiModel.isSaving)
+        #expect(model.uiModel.isSharing)
         #expect(save.attempts == 2)
     }
 }

@@ -2,11 +2,11 @@ import DesignSystem
 import SwiftUI
 
 /// Progress (YOU-R04 to R07). The level (D5) waits for its rules.
-struct ProgressTabView: View {
-    var viewModel: ProgressViewModel
+struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
-        let model = viewModel.model
+        let model = viewModel.uiModel
         YouPanel {
             VStack(alignment: .leading, spacing: 0) {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16, alignment: .leading), count: 3),
@@ -21,7 +21,7 @@ struct ProgressTabView: View {
                 }
                 .padding(.top, 6)
 
-                SectionTitle(text: String(localized: "Specialist in", bundle: .module))
+                SectionTitle(text: viewModel.uiModel.specialistInText)
                     .padding(.top, 76)
                 Text(model.specialist)
                     .font(UVVAFont.sans(15)).lineSpacing(7)

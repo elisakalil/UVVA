@@ -5,11 +5,12 @@ import SwiftUI
 /// The dish under the day's wine, beside its engraved plate: why it works, what you need and how to make it
 /// (HOME-R09). The serving temperature is left to the wine's facts above.
 struct PerfectTable: View {
+    var resources = HomeResourcesUIModel()
     var dish: Dish
 
     var body: some View {
         HStack(alignment: .top, spacing: 15) {
-            UVVAIllustration.plate
+            resources.plateImage
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 24)
@@ -18,7 +19,7 @@ struct PerfectTable: View {
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 0) {
-                label("The perfect table", tracking: 1.6)
+                label(resources.perfectTableTitle, tracking: 1.6)
                 // Title and why wrap like the steps, onto as many lines as they need instead of ending in "…".
                 Text(dish.title)
                     .font(UVVAFont.sans(14, .medium))
@@ -38,7 +39,7 @@ struct PerfectTable: View {
                 }
 
                 if !dish.ingredients.isEmpty {
-                    label("What you need", tracking: 2).padding(.top, 18)
+                    label(resources.perfectTableIngredientsTitle, tracking: 2).padding(.top, 18)
                     FlowLayout(spacing: 7, lineSpacing: 7) {
                         ForEach(dish.ingredients, id: \.self) { item in
                             Text(item)
@@ -52,11 +53,11 @@ struct PerfectTable: View {
                 }
 
                 if !dish.steps.isEmpty {
-                    label("How to make it", tracking: 2).padding(.top, 18)
+                    label(resources.perfectTableStepsTitle, tracking: 2).padding(.top, 18)
                     VStack(alignment: .leading, spacing: 11) {
                         ForEach(Array(dish.steps.enumerated()), id: \.offset) { index, step in
                             HStack(alignment: .firstTextBaseline, spacing: 11) {
-                                Text("\(index + 1)")
+                                Text(String(index + 1))
                                     .font(UVVAFont.sans(11, .light))
                                     .foregroundStyle(UVVAColor.cream.opacity(0.75))
                                     .frame(width: 15, alignment: .leading)

@@ -1,14 +1,15 @@
 import Core
 import Foundation
-import Observation
+import Combine
 
-@MainActor @Observable
-final class ContactsViewModel {
-    private(set) var isLoadingContacts = false
-    private(set) var discovered = DiscoveredContacts()
-    private(set) var requested: Set<String> = []
-    private(set) var invited: Set<String> = []
-    var contactsQuery = ""
+@MainActor
+final class ContactsViewModel: ContactsViewModelProtocol {
+    @Published private(set) var uiModel = ContactsUIModel(isLoading: false, title: nil, onUVVATitle: "",
+                                                         onUVVA: [], toInvite: [], letters: [], noResults: false)
+    private var discovered = DiscoveredContacts() { didSet { refresh() } }
+    private var requested: Set<String> = [] { didSet { refresh() } }
+    private var invited: Set<String> = [] { didSet { refresh() } }
+    private var profileSubscription: AnyCancellable?
 
     private let draft: OnboardingDraft
     private let findContactsUseCase: any FindContactsOnUVVAUseCaseProtocol
@@ -22,14 +23,20 @@ final class ContactsViewModel {
         self.findContactsUseCase = findContactsUseCase
         self.sendRequestUseCase = sendRequestUseCase
         self.coordinator = coordinator
+        profileSubscription = draft.$profile.sink { [weak self] profile in
+            self?.uiModel.inviteLink = profile?.inviteLink
+        }
     }
 
     func back() { coordinator?.back() }
 
     func loadContacts() async {
-        guard !isLoadingContacts else { return }
-        isLoadingContacts = true
-        defer { isLoadingContacts = false }
+        guard !uiModel.isLoading else { return }
+        uiModel.isLoading = true
+        defer {
+            uiModel.isLoading = false
+            refresh()
+        }
         discovered = await findContactsUseCase.execute(excluding: draft.profile?.id)
     }
 
@@ -47,17 +54,19 @@ final class ContactsViewModel {
 
     func markInvited(_ contactID: String) { invited.insert(contactID) }
 
-    var inviteMessage: String {
-        String(localized: "Map your taste in wine with me on UVVA.", bundle: .module)
-    }
-
-    var inviteLink: URL? { draft.profile?.inviteLink }
-
     func finishContacts() { coordinator?.finishContacts() }
 
-    var contactsModel: ContactsUIModel {
-        ContactsPresentationBuilder().build(from: discovered, query: contactsQuery,
-                                             requested: requested, invited: invited,
-                                             isLoadingContacts: isLoadingContacts)
+    func updateQuery(_ query: String) {
+        uiModel.query = query
+        refresh()
+    }
+
+    private func refresh() {
+        var model = ContactsPresentationBuilder().build(from: discovered, query: uiModel.query,
+                                                        requested: requested, invited: invited,
+                                                        isLoadingContacts: uiModel.isLoading)
+        model.query = uiModel.query
+        model.inviteLink = uiModel.inviteLink
+        uiModel = model
     }
 }

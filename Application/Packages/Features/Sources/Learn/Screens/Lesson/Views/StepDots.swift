@@ -2,6 +2,7 @@ import SwiftUI
 
 /// One dot per step, joined by a hairline: the steps passed filled, the current one glowing (LEARN-R13).
 struct StepDots: View {
+    var resources = LearnResourcesUIModel()
     var current: Int
     var total: Int
     var ink: Color
@@ -20,7 +21,7 @@ struct StepDots: View {
         }
         .frame(height: 14)
         .accessibilityElement()
-        .accessibilityLabel(Text("Step \(current + 1) of \(total)", bundle: .module))
+        .accessibilityLabel(Text(resources.stepAccessibility(current: current, total: total)))
     }
 
     @ViewBuilder private func dot(_ index: Int) -> some View {

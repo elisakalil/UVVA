@@ -1,11 +1,9 @@
 import Foundation
-import Observation
+import Combine
 
-@MainActor @Observable
-final class EditNameViewModel {
-    var name = ""
-    private(set) var isSaving = false
-    private(set) var notice: String?
+@MainActor
+public final class EditNameViewModel: EditNameViewModelProtocol {
+    @Published public private(set) var uiModel = EditNameUIModel()
     private let state: YouState
     private let saveNameUseCase: any SaveNameUseCaseProtocol
 
@@ -14,21 +12,22 @@ final class EditNameViewModel {
         self.saveNameUseCase = saveNameUseCase
     }
 
-    var isValid: Bool { name.trimmingCharacters(in: .whitespacesAndNewlines).count >= 2 }
-    func prepare() { name = state.content.profile?.firstName ?? ""; notice = nil }
+    public func prepare() { uiModel.name = state.content.profile?.firstName ?? ""; uiModel.notice = nil }
 
-    func saveName(_ name: String) async -> Bool {
-        guard let profile = state.content.profile, !isSaving else { return false }
-        isSaving = true
-        notice = nil
-        defer { isSaving = false }
+    public func updateName(_ name: String) { uiModel.name = name }
+
+    public func saveName(_ name: String) async -> Bool {
+        guard let profile = state.content.profile, !uiModel.isSaving else { return false }
+        uiModel.isSaving = true
+        uiModel.notice = nil
+        defer { uiModel.isSaving = false }
         do {
             state.content.profile = try await saveNameUseCase.execute(name, profile: profile, map: state.content.map)
             return true
         } catch is ProfileEditError {
             return false
         } catch {
-            notice = String(localized: "Your changes could not be saved. Try again.", bundle: .module)
+            uiModel.notice = uiModel.yourChangesCouldNotBeText
             return false
         }
     }

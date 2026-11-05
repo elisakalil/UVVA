@@ -3,6 +3,7 @@ import SwiftUI
 
 /// The cover (LEARN-R12): the lesson number and title, minutes, XP and steps, and "By the end you can".
 struct LessonCoverView: View {
+    var resources = LearnResourcesUIModel()
     var model: LessonCoverUIModel
 
     var body: some View {
@@ -26,9 +27,9 @@ struct LessonCoverView: View {
             .padding(.bottom, 28)
 
             HStack(spacing: 0) {
-                stat(model.minutes, String(localized: "Minutes", bundle: .module), leading: false)
-                stat(model.xp, String(localized: "XP", bundle: .module), leading: true)
-                stat(model.steps, String(localized: "Steps", bundle: .module), leading: true)
+                stat(model.minutes, resources.minutesText, leading: false)
+                stat(model.xp, resources.xpText, leading: true)
+                stat(model.steps, resources.stepsText, leading: true)
             }
             .padding(.horizontal, 24)
             .padding(.vertical, 18)
@@ -37,7 +38,7 @@ struct LessonCoverView: View {
 
             if !model.objectives.isEmpty {
                 VStack(alignment: .leading, spacing: 14) {
-                    LessonEyebrow(text: String(localized: "By the end you can", bundle: .module))
+                    LessonEyebrow(text: resources.byTheEndYouCanText)
                     ForEach(Array(model.objectives.enumerated()), id: \.offset) { index, objective in
                         HStack(alignment: .firstTextBaseline, spacing: 14) {
                             Text(String(format: "%02d", index + 1))

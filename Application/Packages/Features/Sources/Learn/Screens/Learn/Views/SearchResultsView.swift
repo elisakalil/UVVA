@@ -3,6 +3,7 @@ import SwiftUI
 
 /// What "Search modules" found, in bands: Regions, Grapes, The path, Lessons.
 struct SearchResultsView: View {
+    var resources = LearnResourcesUIModel()
     var groups: [SearchGroupUIModel]
     var query: String
     var onOpen: (SearchResultUIModel) -> Void
@@ -10,8 +11,7 @@ struct SearchResultsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             if groups.isEmpty {
-                Text("Nothing matches “\(query.trimmingCharacters(in: .whitespaces))”. Try a region, a grape or a country.",
-                     bundle: .module)
+                Text(resources.noResults(query))
                     .font(UVVAFont.sans(13.5))
                     .lineSpacing(5)
                     .opacity(0.72)

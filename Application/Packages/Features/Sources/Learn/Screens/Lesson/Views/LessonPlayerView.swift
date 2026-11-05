@@ -2,8 +2,9 @@ import DesignSystem
 import SwiftUI
 
 /// The lesson player, over the whole app: the cover, then one step at a time (LEARN.md §4).
-struct LessonPlayerView: View {
-    var viewModel: LessonPlayerViewModel
+struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
+    private var resources: LearnResourcesUIModel { viewModel.uiModel.resources }
+    @ObservedObject var viewModel: ViewModel
     /// "Lesson complete", over the Summary for a moment after it opens.
     @State private var showsCompleteNote = false
 
@@ -12,26 +13,26 @@ struct LessonPlayerView: View {
     @State private var isAtTop = true
 
     /// How long "Lesson complete" stays.
-    private static let completeNoteTime: Duration = .seconds(2.5)
+    private static var completeNoteTime: Duration { .seconds(2.5) }
     /// A drag down past this, or flung past twice this, leaves the lessons.
-    private static let closeDistance: CGFloat = 140
+    private static var closeDistance: CGFloat { 140 }
 
     var body: some View {
-        let ink = viewModel.isTip ? LessonPalette.wine : LessonPalette.ink
+        let ink = viewModel.uiModel.isTip ? LessonPalette.wine : LessonPalette.ink
         ZStack {
-            if viewModel.isTip {
+            if viewModel.uiModel.isTip {
                 LessonPalette.ink.ignoresSafeArea()
             } else {
                 LessonBackground()
             }
             VStack(spacing: 0) {
-                LessonTopBar(model: viewModel.header, ink: ink, onBack: viewModel.back)
+                LessonTopBar(resources: resources, model: viewModel.uiModel.header, ink: ink, onBack: viewModel.back)
                     .padding(.horizontal, 22)
                     .padding(.top, 6)
                 ScrollView {
                     content
                         // More room under the step dots than under the bare top bar of the cover and the Summary.
-                        .padding(.top, viewModel.header.current == nil ? 24 : 44)
+                        .padding(.top, viewModel.uiModel.header.current == nil ? 24 : 44)
                         .padding(.bottom, 24)
                 }
                 .scrollIndicators(.hidden)
@@ -42,17 +43,17 @@ struct LessonPlayerView: View {
                     isAtTop = top
                 }
                 // Each step opens at its top.
-                .id(viewModel.stepIndex ?? -1)
+                .id(viewModel.uiModel.stepIndex ?? -1)
                 footer
             }
-            if showsCompleteNote, case let .summary(model)? = viewModel.stepModel {
+            if showsCompleteNote, case let .summary(model)? = viewModel.uiModel.stepModel {
                 LessonCompleteNote(text: model.completion)
                     .padding(.top, 64)
                     .frame(maxHeight: .infinity, alignment: .top)
                     .transition(.move(edge: .top).combined(with: .opacity))
             }
-            if let certificate = viewModel.certificate {
-                ShareScreen(title: String(localized: "Share what you learned", bundle: .module), message: certificate.message) { format in
+            if let certificate = viewModel.uiModel.certificate {
+                ShareScreen(title: resources.shareWhatYouLearnedText, message: certificate.message) { format in
                     CertificateCard(model: certificate, format: format)
                 } onFinish: {
                     viewModel.closeCertificate()
@@ -60,17 +61,17 @@ struct LessonPlayerView: View {
                 .transition(.opacity)
             }
         }
-        .animation(.easeOut(duration: 0.25), value: viewModel.stepIndex)
+        .animation(.easeOut(duration: 0.25), value: viewModel.uiModel.stepIndex)
         .animation(.easeOut(duration: 0.3), value: showsCompleteNote)
-        .task(id: viewModel.isSummary) {
-            guard viewModel.isSummary else { showsCompleteNote = false; return }
+        .task(id: viewModel.uiModel.isSummary) {
+            guard viewModel.uiModel.isSummary else { showsCompleteNote = false; return }
             showsCompleteNote = true
             try? await Task.sleep(for: Self.completeNoteTime)
             showsCompleteNote = false
         }
-        .animation(.easeOut(duration: 0.3), value: viewModel.certificate != nil)
+        .animation(.easeOut(duration: 0.3), value: viewModel.uiModel.certificate != nil)
         .offset(y: dragDown)
-        .simultaneousGesture(dragToClose, isEnabled: viewModel.certificate == nil)
+        .simultaneousGesture(dragToClose, isEnabled: viewModel.uiModel.certificate == nil)
         .accessibilityAction(.escape, viewModel.close)
         .preferredColorScheme(.dark)
     }
@@ -95,38 +96,38 @@ struct LessonPlayerView: View {
     }
 
     @ViewBuilder private var content: some View {
-        switch viewModel.stepModel {
+        switch viewModel.uiModel.stepModel {
         case nil:
-            LessonCoverView(model: viewModel.cover)
+            LessonCoverView(resources: resources, model: viewModel.uiModel.cover)
         case let .concept(title, body, highlight)?:
             ConceptStepView(title: title, bodyText: body, highlight: highlight)
         case let .tip(body)?:
             TipStepView(bodyText: body)
         case let .choice(model)?:
-            ChoiceStepView(model: model, onTap: viewModel.tapOption)
+            ChoiceStepView(resources: resources, model: model, onTap: viewModel.tapOption)
         case let .fillBlank(model)?:
             FillBlankStepView(model: model, onTap: viewModel.tapWord)
         case let .ordering(model)?:
             OrderingStepView(model: model, onTap: viewModel.tapRow)
         case let .matchPairs(model)?:
-            MatchPairsStepView(model: model, onTapLeft: viewModel.tapLeft, onTapRight: viewModel.tapRight)
+            MatchPairsStepView(resources: resources, model: model, onTapLeft: viewModel.tapLeft, onTapRight: viewModel.tapRight)
         case let .summary(model)?:
-            SummaryStepView(model: model)
+            SummaryStepView(resources: resources, model: model)
         }
     }
 
     @ViewBuilder private var footer: some View {
-        switch viewModel.footer {
+        switch viewModel.uiModel.footer {
         case let .feedback(model):
-            FeedbackPanel(model: model, onContinue: viewModel.primary)
+            FeedbackPanel(resources: resources, model: model, onContinue: viewModel.primary)
         case let .button(title, isEnabled):
             VStack(spacing: 10) {
-                if viewModel.phase == .cover, viewModel.cover.showsReviewPrevious {
-                    LessonButton(title: String(localized: "Review previous lesson", bundle: .module), style: .outline,
+                if viewModel.uiModel.isCover, viewModel.uiModel.cover.showsReviewPrevious {
+                    LessonButton(title: resources.reviewPreviousLessonText, style: .outline,
                                  showsArrow: false, action: viewModel.reviewPrevious)
                 }
-                LessonButton(title: title, style: viewModel.isTip ? .onTip : .filled, isEnabled: isEnabled) {
-                    if viewModel.phase == .cover { viewModel.begin() } else { viewModel.primary() }
+                LessonButton(title: title, style: viewModel.uiModel.isTip ? .onTip : .filled, isEnabled: isEnabled) {
+                    if viewModel.uiModel.isCover { viewModel.begin() } else { viewModel.primary() }
                 }
             }
             .padding(.horizontal, 24)

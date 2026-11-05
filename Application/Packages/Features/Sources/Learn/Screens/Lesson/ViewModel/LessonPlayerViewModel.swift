@@ -1,12 +1,14 @@
 import Core
 import DesignSystem
 import Foundation
-import Observation
+import Combine
 
 /// The lesson player (LEARN.md §4): the cover, the steps, Check and feedback, the Summary and the certificate the
 /// lesson may earn. Progress is saved as the learner goes, so leaving at any point resumes there (LEARN-R14).
-@MainActor @Observable
-final class LessonPlayerViewModel: Identifiable {
+@MainActor
+public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
+    @Published public private(set) var uiModel = LessonPlayerUIModel()
+    private var presentationReady = false
     enum Phase: Equatable {
         case cover
         case step(Int)
@@ -19,17 +21,17 @@ final class LessonPlayerViewModel: Identifiable {
         case open(LessonSummary)
     }
 
-    let id = UUID()
+    public let id = UUID()
     let course: Course
     let lesson: Lesson
-    private(set) var phase: Phase
+    private(set) var phase: Phase { didSet { refresh() } }
     /// The first screen this lesson showed: back stops here.
     let entry: Phase
     /// Opened from the list, not from another lesson: back from its first screen leaves the lessons.
     let isFirst: Bool
-    private(set) var drafts: [Int: StepDraft] = [:]
+    private(set) var drafts: [Int: StepDraft] = [:] { didSet { refresh() } }
     /// The certificate on screen, over the Summary (LEARN-R22).
-    private(set) var certificate: CertificateUIModel?
+    private(set) var certificate: CertificateUIModel? { didSet { refresh() } }
     /// The lesson was completed before it opened: it plays again, without XP and without saving (LEARN-R19a).
     let isReview: Bool
 
@@ -67,6 +69,8 @@ final class LessonPlayerViewModel: Identifiable {
         phase = first
         entry = first
         if !isReview, let answers = progress?.answers { restore(answers) }
+        presentationReady = true
+        refresh()
         // A lesson left on its Summary before it was saved as completed completes now.
         if case let .step(index) = phase, case .summary = lesson.steps[index] { complete() }
     }
@@ -87,14 +91,14 @@ final class LessonPlayerViewModel: Identifiable {
 
     // MARK: Cover (LEARN-R12)
 
-    func begin() {
+    public func begin() {
         guard !lesson.steps.isEmpty else { return }
         phase = .step(0)
         save()
     }
 
     /// "Review previous lesson".
-    func reviewPrevious() {
+    public func reviewPrevious() {
         guard let previous = course.lesson(before: lesson.summary) else { return }
         onExit(.open(previous))
     }
@@ -102,7 +106,7 @@ final class LessonPlayerViewModel: Identifiable {
     /// The back chevron: always the screen before. From the first screen this lesson showed it returns to the lesson
     /// it was opened from, or leaves when there is none. The farthest step stays saved, so the lesson still resumes
     /// there (LEARN-R14).
-    func back() {
+    public func back() {
         guard phase != entry else {
             if isFirst { close() } else { onExit(.back) }
             return
@@ -115,7 +119,7 @@ final class LessonPlayerViewModel: Identifiable {
     }
 
     /// Leaves the lessons, from the back chevron or a drag down: the step and the answers are already saved (LEARN-R14).
-    func close() { onExit(.close) }
+    public func close() { onExit(.close) }
 
     // MARK: Answering (LEARN-R17, R18)
 
@@ -136,7 +140,7 @@ final class LessonPlayerViewModel: Identifiable {
         drafts[index] = draft
     }
 
-    func tapOption(_ option: Int) {
+    public func tapOption(_ option: Int) {
         let isMultiple = if case .selectMultiple = step { true } else { false }
         edit { draft in
             if isMultiple {
@@ -147,12 +151,12 @@ final class LessonPlayerViewModel: Identifiable {
         }
     }
 
-    func tapWord(_ word: String) {
+    public func tapWord(_ word: String) {
         edit { $0.word = word }
     }
 
     /// ordering: tap one row, then the row to swap it with; tapping the same row again lets it go.
-    func tapRow(_ position: Int) {
+    public func tapRow(_ position: Int) {
         edit { draft in
             guard let picked = draft.pickedRow else {
                 draft.pickedRow = position
@@ -164,7 +168,7 @@ final class LessonPlayerViewModel: Identifiable {
     }
 
     /// matchPairs: a linked term comes undone; another picks it, or lets it go.
-    func tapLeft(_ pair: Int) {
+    public func tapLeft(_ pair: Int) {
         edit { draft in
             draft.miss = nil
             if draft.links.contains(pair) {
@@ -177,7 +181,7 @@ final class LessonPlayerViewModel: Identifiable {
         if let index = stepIndex, drafts[index]?.isChecked == true { save() }
     }
 
-    func tapRight(_ pair: Int) {
+    public func tapRight(_ pair: Int) {
         guard case let .matchPairs(_, pairs, _) = step else { return }
         edit { draft in
             guard let left = draft.pickedLeft, !draft.links.contains(pair) else { return }
@@ -196,7 +200,7 @@ final class LessonPlayerViewModel: Identifiable {
     }
 
     /// The button at the foot of the step.
-    func primary() {
+    public func primary() {
         guard let index = stepIndex, let step else { return }
         let draft = draft(index)
         switch step {
@@ -254,7 +258,7 @@ final class LessonPlayerViewModel: Identifiable {
     }
 
     /// The certificate closed ("Share", "Save image" or "Not now").
-    func closeCertificate() {
+    public func closeCertificate() {
         certificate = nil
         proceed()
     }
@@ -308,5 +312,11 @@ final class LessonPlayerViewModel: Identifiable {
             draft.isChecked = true
             drafts[index] = draft
         }
+    }
+    private func refresh() {
+        guard presentationReady else { return }
+        uiModel = LessonPlayerUIModel(cover: cover, header: header, stepModel: stepModel, footer: footer,
+                                      certificate: certificate, stepIndex: stepIndex, isTip: isTip,
+                                      isSummary: isSummary, isCover: phase == .cover)
     }
 }

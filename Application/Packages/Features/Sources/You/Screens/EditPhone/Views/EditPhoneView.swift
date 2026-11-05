@@ -3,27 +3,27 @@ import DesignSystem
 import SwiftUI
 
 /// Change or remove the phone (YOU-R15). An empty field removes the number and its contact key.
-struct EditPhoneView: View {
-    @Bindable var viewModel: EditPhoneViewModel
+struct EditPhoneView<ViewModel: EditPhoneViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focused: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Your phone number", bundle: .module).font(UVVAFont.sans(26, .ultraLight)).padding(.top, 30)
-            Text("So friends who have you in their contacts can find you here. Leave it empty to remove it.", bundle: .module)
+            Text(viewModel.uiModel.yourPhoneNumberText).font(UVVAFont.sans(26, .ultraLight)).padding(.top, 30)
+            Text(viewModel.uiModel.soFriendsWhoHaveYouText)
                 .font(UVVAFont.sans(13)).lineSpacing(5).opacity(0.55).padding(.top, 14)
             HStack(alignment: .firstTextBaseline, spacing: 14) {
                 Menu {
                     ForEach(PhoneCountries.all.sorted { $0.name().localizedStandardCompare($1.name()) == .orderedAscending }) { item in
-                        Button("\(item.name())  +\(item.callingCode)") { viewModel.country = item }
+                        Button("\(item.name())  +\(item.callingCode)") { viewModel.selectCountry(item) }
                     }
                 } label: {
-                    Text("+" + viewModel.country.callingCode).font(UVVAFont.sans(22)).tracking(0.9)
+                    Text("+" + viewModel.uiModel.country.callingCode).font(UVVAFont.sans(22)).tracking(0.9)
                         .padding(.horizontal, 13).padding(.vertical, 9)
                         .overlay(Capsule().strokeBorder(UVVAColor.creamFill.opacity(0.2), lineWidth: 0.5))
                 }
-                TextField("", text: $viewModel.national)
+                TextField("", text: Binding(get: { viewModel.uiModel.national }, set: { viewModel.updateNational($0) }))
                     .keyboardType(.numberPad)
                     .textContentType(.telephoneNumber)
                     .font(UVVAFont.sans(22))
@@ -32,12 +32,12 @@ struct EditPhoneView: View {
             .padding(.bottom, 13)
             .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
             .padding(.top, 30)
-            if let notice = viewModel.notice {
+            if let notice = viewModel.uiModel.notice {
                 Text(notice).font(UVVAFont.sans(12)).padding(.top, 12)
             }
             Spacer()
-            ActionButton(String(localized: "Save", bundle: .module), isEnabled: viewModel.isValid && !viewModel.isSaving) {
-                Task { if await viewModel.savePhone(national: viewModel.digits, country: viewModel.country) { dismiss() } }
+            ActionButton(viewModel.uiModel.saveText, isEnabled: viewModel.uiModel.isValid && !viewModel.uiModel.isSaving) {
+                Task { if await viewModel.savePhone(national: viewModel.uiModel.digits, country: viewModel.uiModel.country) { dismiss() } }
             }
         }
         .padding(30)

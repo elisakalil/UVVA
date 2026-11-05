@@ -4,7 +4,8 @@ import SwiftUI
 
 /// The cards under the floating header.
 struct HomeContent: View {
-    var model: HomeUIModel
+    var model: HomeContentUIModel
+    var resources = HomeResourcesUIModel()
     /// The area the tour points at, if any: the scroll follows it.
     var tourTarget: String?
     var cellarWineKeys: Set<String> = []
@@ -47,7 +48,7 @@ struct HomeContent: View {
                                 card(row[0], proxy: proxy)
                             }
                         }
-                        Text("UVVA · 0.1 · Made in Portugal")
+                        Text(resources.homeContentFooter)
                             .font(UVVAFont.sans(8))
                             .tracking(1.8)
                             .foregroundStyle(UVVAColor.cream60)
@@ -81,14 +82,14 @@ struct HomeContent: View {
             }
 
             if case let .header(greeting, hasUnread) = model.cards.first {
-                HomeHeader(greeting: greeting, hasUnread: hasUnread, scroll: scroll)
+                HomeHeader(resources: resources, greeting: greeting, hasUnread: hasUnread, scroll: scroll)
             }
         }
         .foregroundStyle(UVVAColor.cream)
     }
 
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
-        HomeCardView(card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite,
+        HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite,
                      onOpenCourse: onOpenCourse, onOpenLearn: onOpenLearn,
                      onShowLess: { then in
                          withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }
@@ -99,6 +100,6 @@ struct HomeContent: View {
 }
 
 #Preview {
-    HomeContent(model: HomeUIModel(cards: HomeCardsBuilder().build(from: .full, now: .now), palateMap: HomeState.full.palateMap),
+    HomeContent(model: HomeContentUIModel(cards: HomeCardsBuilder().build(from: .full, now: .now), palateMap: HomeState.full.palateMap),
                 onInvite: {})
 }

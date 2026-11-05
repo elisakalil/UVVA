@@ -3,6 +3,7 @@ import SwiftUI
 
 /// The map (QUIZ-R14 to R18).
 struct QuizResultView: View {
+    var resources = QuizResourcesUIModel()
     var model: QuizResultUIModel
     var onKeep: () -> Void
     var onReadAgain: () -> Void
@@ -19,10 +20,10 @@ struct QuizResultView: View {
             QuizBackground(photoOpacity: 0.7, shade: [0.38, 0.85])
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    FlowTopBar(caption: String(localized: "Palate map", bundle: .module), onBack: onBack)
+                    FlowTopBar(caption: resources.palateMapText, onBack: onBack)
 
                     Group {
-                        Text(String(localized: "Your taste is", bundle: .module).uppercased())
+                        Text(resources.yourTasteIsText.uppercased())
                             .font(UVVAFont.sans(9))
                             .tracking(2.7)
                             .opacity(0.5)
@@ -44,7 +45,7 @@ struct QuizResultView: View {
                         .opacity(0.8)
                         .padding(.top, 24)
 
-                    SectionTitle(String(localized: "Your readings", bundle: .module))
+                    SectionTitle(resources.yourReadingsText)
                         .padding(.top, 64)
                     VStack(spacing: 0) {
                         ForEach(Array(model.readings.enumerated()), id: \.element.id) { index, row in
@@ -54,7 +55,7 @@ struct QuizResultView: View {
                     }
                     .padding(.top, 18)
 
-                    SectionTitle(String(localized: "Where the map points", bundle: .module))
+                    SectionTitle(resources.whereTheMapPointsText)
                         .padding(.top, 40)
                     Text(model.narrative)
                         .font(UVVAFont.sans(14.5))
@@ -62,7 +63,7 @@ struct QuizResultView: View {
                         .opacity(0.78)
                         .padding(.top, 16)
 
-                    MapKeepsMovingCard()
+                    MapKeepsMovingCard(resources: resources, )
                         .padding(.top, 64)
                 }
                 .padding(.horizontal, 26)
@@ -75,13 +76,13 @@ struct QuizResultView: View {
 
             VStack(spacing: 10) {
                 if model.failedToSave {
-                    Text("The map could not be saved. Try again.", bundle: .module)
+                    Text(resources.theMapCouldNotBeText)
                         .font(UVVAFont.sans(11))
                         .opacity(0.8)
                 }
-                ActionButton(String(localized: "Keep this map", bundle: .module), isEnabled: !model.isSaving,
+                ActionButton(resources.keepThisMapText, isEnabled: !model.isSaving,
                              action: onKeep)
-                TextAction(String(localized: "Read it again", bundle: .module), opacity: 0.4, action: onReadAgain)
+                TextAction(resources.readItAgainText, opacity: 0.4, action: onReadAgain)
             }
             .padding(.horizontal, 26)
             .padding(.top, Self.footerFade)

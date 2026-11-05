@@ -3,6 +3,7 @@ import SwiftUI
 
 /// "‹  Lesson 3 | TITLE", and under it the step dots and "03 / 06".
 struct LessonTopBar: View {
+    var resources = LearnResourcesUIModel()
     var model: StepHeaderUIModel
     var ink: Color
     var onBack: () -> Void
@@ -11,14 +12,14 @@ struct LessonTopBar: View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(spacing: 10) {
                 Button(action: onBack) {
-                    Image(systemName: "chevron.left")
+                    Image(systemName: resources.backIcon)
                         .font(.system(size: 15, weight: .light))
                         .frame(width: 32, height: 40, alignment: .leading)
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel(model.backLeaves ? Text("Leave the lesson", bundle: .module)
-                                                     : Text("Previous screen", bundle: .module))
+                .accessibilityLabel(model.backLeaves ? Text(resources.leaveTheLessonText)
+                                                     : Text(resources.previousScreenText))
                 Text(model.brand)
                     .font(model.current == nil ? UVVAFont.whiteGrape(15) : UVVAFont.redGrapes(15))
                     .tracking(model.current == nil ? 2 : 0.6)
@@ -32,7 +33,7 @@ struct LessonTopBar: View {
             }
             if let current = model.current {
                 HStack(spacing: 14) {
-                    StepDots(current: current, total: model.total, ink: ink)
+                    StepDots(resources: resources, current: current, total: model.total, ink: ink)
                     Text(model.counter)
                         .font(UVVAFont.sans(9).monospacedDigit())
                         .tracking(2.7)
