@@ -157,20 +157,21 @@ final class AppCoordinator {
     private func prepareTabs(after quizExit: QuizExit?) async throws {
         try await content.waitUntilReady()
 
-        home = home ?? HomeViewModel(
+        home = home ?? HomeFactory(
             profiles: profiles,
             maps: maps,
             catalog: catalog,
             cellar: cellar,
             courses: catalog,
-            learning: learning,
+            learning: learning
+        ).makeViewModel(coordinator: HomeCoordinator(
             onOpenCourse: { [weak self] id in
                 self?.openCourse(id)
             },
             onOpenLearn: { [weak self] kind in
                 self?.openLearn(kind)
             }
-        )
+        ))
 
         you = you ?? makeYou()
 

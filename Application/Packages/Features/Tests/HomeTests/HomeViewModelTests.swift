@@ -68,8 +68,9 @@ struct HomeViewModelTests {
     private func load(at date: Date, cellar: CellarStub = CellarStub(), learning: LearningStub = LearningStub()) async -> HomeViewModel {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(identifier: "Europe/Lisbon")!
-        let viewModel = HomeViewModel(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
+        let viewModel = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
                                       cellar: cellar, courses: CoursesStub(), learning: learning, now: { date }, calendar: calendar)
+            .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
         await viewModel.load()
         return viewModel
     }
@@ -127,5 +128,56 @@ struct HomeViewModelTests {
 
         #expect(viewModel.cellarWineKeys.contains(wine.id))
         #expect(await cellar.added == [wine.id])
+    }
+}
+
+@MainActor
+private struct FailingHomeLoader: LoadHomeUseCaseProtocol {
+    struct Failure: Error {}
+    func execute() async throws -> LoadedHomeContent { throw Failure() }
+}
+
+@MainActor
+private struct UnusedCellarAction: AddWineToCellarUseCaseProtocol {
+    func execute(_ wine: Wine) async throws {}
+}
+
+@MainActor
+struct HomePresentationTests {
+    @Test func preparationFailureDoesNotPublishPartialState() async {
+        let model = HomeViewModel(
+            loadHomeUseCase: FailingHomeLoader(),
+            addWineToCellarUseCase: UnusedCellarAction(),
+            coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
+            now: Date.init, calendar: .current
+        )
+        do {
+            try await model.prepare()
+            Issue.record("Expected preparation to fail")
+        } catch {
+            #expect(error is FailingHomeLoader.Failure)
+        }
+        #expect(model.model == nil)
+        #expect(model.inviteLink == nil)
+        #expect(model.cellarWineKeys.isEmpty)
+    }
+
+    @Test func navigationIsForwardedWithoutLoadingData() {
+        var openedCourse: String?
+        var openedKind: CourseKind?
+        let model = HomeViewModel(
+            loadHomeUseCase: FailingHomeLoader(),
+            addWineToCellarUseCase: UnusedCellarAction(),
+            coordinator: HomeCoordinator(
+                onOpenCourse: { openedCourse = $0 },
+                onOpenLearn: { openedKind = $0 }
+            ),
+            now: Date.init, calendar: .current
+        )
+        model.openCourse("grape-tannat")
+        model.openLearn(.grape)
+        #expect(openedCourse == "grape-tannat")
+        #expect(openedKind == .grape)
+        #expect(model.model == nil)
     }
 }

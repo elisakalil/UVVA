@@ -1,7 +1,6 @@
 import Core
 import Foundation
 
-/// Everything the Home reads (home.md, section 2).
 struct HomeState: Sendable {
     var firstName: String
     var palateMap: PalateMap

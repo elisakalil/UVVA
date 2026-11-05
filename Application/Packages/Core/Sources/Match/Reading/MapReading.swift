@@ -46,10 +46,8 @@ public struct MapReading: Sendable {
         return axes
     }
 
-    /// QUIZ-R16: the axes drawn strong on the chart.
     public var highlighted: [PalateAxis] { leaders(2) }
 
-    /// QUIZ-R15: "Acidity · Fruit · Body".
     public var dominantPhrase: String {
         switch shape {
         case .flat(.low): return String(localized: "Quiet on every axis", bundle: .module)

@@ -19,7 +19,6 @@ enum HomeCardModel: Equatable, Sendable {
         case setTable(count: Int)
     }
 
-    /// Stable identity for SwiftUI lists.
     var kind: String {
         switch self {
         case .header: "header"
@@ -41,7 +40,6 @@ enum HomeCardModel: Equatable, Sendable {
         }
     }
 
-    /// The cards the tour points at (HOME-R31).
     var spotlightID: String? {
         switch self {
         case .dailySuggestion: HomeSpotlightModel.today

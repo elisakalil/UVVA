@@ -30,7 +30,7 @@ struct QuizResultView: View {
                             .font(UVVAFont.sans(30, .ultraLight))
                             .tracking(-0.6)
                             .frame(maxWidth: 300, alignment: .leading)
-                            .padding(.top, 14)
+                            .padding(.top, 7)
                     }
                     .padding(.horizontal, 4)
                     .padding(.top, 44)
