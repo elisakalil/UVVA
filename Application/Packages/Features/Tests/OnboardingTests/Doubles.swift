@@ -17,8 +17,12 @@ struct AuthStub: Authenticating {
 
 final class ProfileRepositorySpy: ProfileRepository {
     private let profiles = Mutex<[Profile]>([])
+    let failsToSave: Bool
 
-    init(existing: [Profile] = []) { profiles.withLock { $0 = existing } }
+    init(existing: [Profile] = [], failsToSave: Bool = false) {
+        self.failsToSave = failsToSave
+        profiles.withLock { $0 = existing }
+    }
 
     var saved: [Profile] { profiles.withLock { $0 } }
 
@@ -26,7 +30,10 @@ final class ProfileRepositorySpy: ProfileRepository {
     func profile(authUserID: String, waitingUpTo timeout: Duration) async throws -> Profile? {
         saved.first { $0.authUserID == authUserID }
     }
-    func save(_ profile: Profile) async throws { profiles.withLock { $0.append(profile) } }
+    func save(_ profile: Profile) async throws {
+        if failsToSave { throw URLError(.cannotWriteToFile) }
+        profiles.withLock { $0.append(profile) }
+    }
     func markTourSeen(_ tour: String) async throws {}
     func deleteAccount() async throws {}
 }

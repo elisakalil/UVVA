@@ -4,12 +4,19 @@ import Synchronization
 
 final class ProfilesSpy: ProfileRepository {
     private let state: Mutex<(profile: Profile?, deleted: Bool)>
-    init(_ profile: Profile?) { state = Mutex((profile, false)) }
+    let failsSaving: Bool
+    init(_ profile: Profile?, failsSaving: Bool = false) {
+        state = Mutex((profile, false))
+        self.failsSaving = failsSaving
+    }
     var profile: Profile? { state.withLock { $0.profile } }
     var deleted: Bool { state.withLock { $0.deleted } }
     func currentProfile() async throws -> Profile? { profile }
     func profile(authUserID: String, waitingUpTo timeout: Duration) async throws -> Profile? { profile }
-    func save(_ profile: Profile) async throws { state.withLock { $0.profile = profile } }
+    func save(_ profile: Profile) async throws {
+        if failsSaving { throw URLError(.cannotWriteToFile) }
+        state.withLock { $0.profile = profile }
+    }
     func markTourSeen(_ tour: String) async throws {}
     func deleteAccount() async throws { state.withLock { $0 = (nil, true) } }
 }
@@ -48,10 +55,15 @@ final class SocialSpy: SocialService {
 
 final class RemindersSpy: ReminderRepository, ReminderScheduling {
     private let state = Mutex<(saved: Reminder?, scheduled: [Reminder?], asked: Int)>((nil, [], 0))
+    let failsSaving: Bool
+    init(failsSaving: Bool = false) { self.failsSaving = failsSaving }
     var scheduled: [Reminder?] { state.withLock { $0.scheduled } }
     var permissionRequests: Int { state.withLock { $0.asked } }
     func reminder() async throws -> Reminder? { state.withLock { $0.saved } }
-    func save(_ reminder: Reminder?) async throws { state.withLock { $0.saved = reminder } }
+    func save(_ reminder: Reminder?) async throws {
+        if failsSaving { throw URLError(.cannotWriteToFile) }
+        state.withLock { $0.saved = reminder }
+    }
     func requestPermission() async -> Bool { state.withLock { $0.asked += 1 }; return true }
     func schedule(_ reminder: Reminder?) async { state.withLock { $0.scheduled.append(reminder) } }
 }

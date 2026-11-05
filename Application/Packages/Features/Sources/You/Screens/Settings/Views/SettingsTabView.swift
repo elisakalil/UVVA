@@ -4,7 +4,7 @@ import SwiftUI
 
 /// Settings (YOU-R14 to R27). Language (YOU-R15a) waits for the pt-BR texts.
 struct SettingsTabView: View {
-    var viewModel: YouViewModel
+    var viewModel: SettingsViewModel
 
     @State private var editingName = false
     @State private var editingPhone = false
@@ -14,7 +14,7 @@ struct SettingsTabView: View {
     @State private var photoItem: PhotosPickerItem?
 
     var body: some View {
-        let model = viewModel.settings
+        let model = viewModel.model
         VStack(spacing: 14) {
             YouPanel {
                 VStack(spacing: 0) {
@@ -80,23 +80,21 @@ struct SettingsTabView: View {
             }
         }
         .sheet(isPresented: $editingName) {
-            EditNameView(name: model.name) { name in await viewModel.saveName(name) }
+            EditNameView(viewModel: viewModel.editName)
         }
         .sheet(isPresented: $editingPhone) {
-            EditPhoneView(country: viewModel.phoneParts.country, national: viewModel.phoneParts.national) { national, country in
-                await viewModel.savePhone(national: national, country: country)
-            }
+            EditPhoneView(viewModel: viewModel.editPhone)
         }
         .fullScreenCover(isPresented: $editingReminder) {
-            ReminderView(reminder: viewModel.reminder) { reminder in await viewModel.saveReminder(reminder) }
+            ReminderView(viewModel: viewModel.reminder)
         }
         .fullScreenCover(isPresented: $showingCertificates) {
-            CertificatesView(rows: viewModel.certificateRows, onOpen: { courseID in
+            CertificatesView(rows: viewModel.certificates.rows, onOpen: { courseID in
                 showingCertificates = false
-                viewModel.openCertificate(courseID)
+                viewModel.certificates.open(courseID)
             }, onStartLearning: {
                 showingCertificates = false
-                viewModel.openLearn()
+                viewModel.certificates.startLearning()
             })
         }
         .sheet(item: $confirming) { kind in

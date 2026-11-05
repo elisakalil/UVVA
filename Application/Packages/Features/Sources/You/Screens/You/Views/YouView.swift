@@ -21,9 +21,9 @@ public struct YouView: View {
                 ScrollView {
                     Group {
                         switch viewModel.tab {
-                        case .progress: ProgressTabView(viewModel: viewModel)
-                        case .map: MapTabView(viewModel: viewModel)
-                        case .settings: SettingsTabView(viewModel: viewModel)
+                        case .progress: ProgressTabView(viewModel: viewModel.progress)
+                        case .map: MapTabView(viewModel: viewModel.map)
+                        case .settings: SettingsTabView(viewModel: viewModel.settings)
                         }
                     }
                     .padding(.horizontal, 26)

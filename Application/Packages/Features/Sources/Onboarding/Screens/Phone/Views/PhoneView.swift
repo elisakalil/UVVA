@@ -4,7 +4,7 @@ import SwiftUI
 
 /// 02 / 02 · Phone (ONB-R03 to R07, R35), with its own keypad and the country picker (D8).
 struct PhoneView: View {
-    var viewModel: OnboardingViewModel
+    var viewModel: PhoneViewModel
     @State private var choosingCountry = false
 
     var body: some View {
@@ -39,6 +39,11 @@ struct PhoneView: View {
                 .padding(.bottom, 13)
                 .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
                 .padding(.top, 40)
+
+                if let notice = viewModel.notice {
+                    Text(notice).font(UVVAFont.sans(12)).multilineTextAlignment(.center)
+                        .padding(.top, 12)
+                }
 
                 Spacer(minLength: 12)
 

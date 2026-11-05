@@ -39,14 +39,14 @@ final class LessonPlayerViewModel: Identifiable {
     /// Completing the lesson: its save, then the certificate it may earn.
     private var completing: Task<Void, Never>?
     let toast: Toast
-    private let learning: any LearningRepository
+    private let saveProgressUseCase: any SaveLessonProgressUseCaseProtocol
     private let now: () -> Date
     private let onCompleted: () async -> CertificateUIModel?
     private let onExit: (Exit) -> Void
 
     /// `startStep` resumes at a saved step; nil opens the cover. `pickToast` picks an index in 0..<count.
     init(course: Course, lesson: Lesson, progress: LessonProgress?, startStep: Int?, isFirst: Bool = true,
-         learning: any LearningRepository,
+         saveProgressUseCase: any SaveLessonProgressUseCaseProtocol,
          now: @escaping () -> Date = Date.init, pickToast: (Int) -> Int = { Int.random(in: 0..<$0) },
          onCompleted: @escaping () async -> CertificateUIModel?, onExit: @escaping (Exit) -> Void) {
         self.course = course
@@ -54,7 +54,7 @@ final class LessonPlayerViewModel: Identifiable {
         self.progress = progress
         self.isReview = progress?.isCompleted ?? false
         self.isFirst = isFirst
-        self.learning = learning
+        self.saveProgressUseCase = saveProgressUseCase
         self.now = now
         self.toast = Toast.all[pickToast(Toast.all.count)]
         self.onCompleted = onCompleted
@@ -279,11 +279,11 @@ final class LessonPlayerViewModel: Identifiable {
             record.xp = lesson.summary.xp
         }
         progress = record
-        let learning = learning
+        let saveProgressUseCase = saveProgressUseCase
         let previous = saving
         saving = Task {
             await previous?.value
-            try? await learning.save(record)
+            try? await saveProgressUseCase.execute(record)
         }
     }
 

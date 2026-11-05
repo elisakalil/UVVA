@@ -7,8 +7,8 @@ import Testing
 struct LearnViewModelTests {
     func viewModel(_ courses: [Course], learning: LearningSpy = LearningSpy()) -> LearnViewModel {
         let lessons = courses.reduce(into: [String: Lesson]()) { $0.merge(Fixture.lessons(of: $1)) { a, _ in a } }
-        return LearnViewModel(catalog: CatalogStub(all: courses, lessons: lessons), learning: learning,
-                              profiles: ProfilesStub(), now: { Fixture.day }, pickToast: { _ in 0 })
+        return LearnFactory(catalog: CatalogStub(all: courses, lessons: lessons), learning: learning,
+                              profiles: ProfilesStub(), now: { Fixture.day }, pickToast: { _ in 0 }).makeViewModel()
     }
 
     func eventually(_ condition: () -> Bool) async {
@@ -140,7 +140,7 @@ struct LearnViewModelTests {
 
     @Test func LEARN_R10a_line_showsLessonsMinutesAndXP() {
         let module = Fixture.course("path-03", kind: .path, lessons: 6, minutes: [5, 5, 5, 5, 5, 6])
-        #expect(LearnViewModel.meta(module) == "6 lessons · 31 min · 90 XP")
+        #expect(LearnListPresentationBuilder.meta(module) == "6 lessons · 31 min · 90 XP")
     }
 
     @Test func LEARN_R10b_module20_opensWithModule1NotStarted() async {
@@ -161,9 +161,9 @@ struct LearnViewModelTests {
     // MARK: LEARN-R11 · Rótulo e destino
 
     @Test func LEARN_R11_labels() {
-        #expect(LearnViewModel.cta(.notStarted) == "Go to the module")
-        #expect(LearnViewModel.cta(.inProgress) == "Continue where you left off")
-        #expect(LearnViewModel.cta(.done) == "Review the module")
+        #expect(LearnListPresentationBuilder.cta(.notStarted) == "Go to the module")
+        #expect(LearnListPresentationBuilder.cta(.inProgress) == "Continue where you left off")
+        #expect(LearnListPresentationBuilder.cta(.done) == "Review the module")
     }
 
     @Test func LEARN_R11_inProgress_opensTheSavedStep() async {

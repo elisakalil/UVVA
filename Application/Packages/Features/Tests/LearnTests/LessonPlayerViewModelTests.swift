@@ -12,7 +12,7 @@ struct LessonPlayerViewModelTests {
                 onExit: @escaping (LessonPlayerViewModel.Exit) -> Void = { _ in }) -> LessonPlayerViewModel {
         let summary = course.lessons[lessonIndex]
         return LessonPlayerViewModel(course: course, lesson: Lesson(summary: summary, steps: Fixture.steps(review: summary.isReview)),
-                                     progress: progress, startStep: startStep, isFirst: isFirst, learning: learning,
+                                     progress: progress, startStep: startStep, isFirst: isFirst, saveProgressUseCase: SaveLessonProgressUseCase(learning: learning),
                                      now: { Fixture.day },
                                      pickToast: { _ in 0 }, onCompleted: { nil }, onExit: onExit)
     }
@@ -221,7 +221,7 @@ struct LessonPlayerViewModelTests {
         let player = LessonPlayerViewModel(
             course: course, lesson: Lesson(summary: summary, steps: [.matchPairs(prompt: "Match", pairs: pairs, explanation: nil),
                                                                     .summary(title: "", points: [])]),
-            progress: nil, startStep: 0, learning: learning, onCompleted: { nil }, onExit: { _ in })
+            progress: nil, startStep: 0, saveProgressUseCase: SaveLessonProgressUseCase(learning: learning), onCompleted: { nil }, onExit: { _ in })
         player.tapLeft(0)
         player.tapRight(1)
         guard case let .matchPairs(model) = player.stepModel else { Issue.record("Not matchPairs"); return }

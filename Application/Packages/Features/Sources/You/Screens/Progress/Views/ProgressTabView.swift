@@ -3,10 +3,10 @@ import SwiftUI
 
 /// Progress (YOU-R04 to R07). The level (D5) waits for its rules.
 struct ProgressTabView: View {
-    var viewModel: YouViewModel
+    var viewModel: ProgressViewModel
 
     var body: some View {
-        let model = viewModel.progress
+        let model = viewModel.model
         YouPanel {
             VStack(alignment: .leading, spacing: 0) {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16, alignment: .leading), count: 3),

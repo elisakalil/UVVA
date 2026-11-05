@@ -18,8 +18,8 @@ struct SearchTests {
         tasting.title = "How to taste"
         let courses = [douro, dao, touriga, tasting]
         let lessons = courses.reduce(into: [String: Lesson]()) { $0.merge(Fixture.lessons(of: $1)) { a, _ in a } }
-        let model = LearnViewModel(catalog: CatalogStub(all: courses, lessons: lessons), learning: LearningSpy(),
-                                   profiles: ProfilesStub(), now: { Fixture.day }, pickToast: { _ in 0 })
+        let model = LearnFactory(catalog: CatalogStub(all: courses, lessons: lessons), learning: LearningSpy(),
+                                   profiles: ProfilesStub(), now: { Fixture.day }, pickToast: { _ in 0 }).makeViewModel()
         await model.load()
         return model
     }

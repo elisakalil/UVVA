@@ -12,7 +12,7 @@ import You
 @MainActor @Observable
 final class AppCoordinator {
     private(set) var route: AppRoute = .launching
-    private(set) var onboarding: OnboardingViewModel?
+    private(set) var onboarding: OnboardingModule?
     private(set) var quiz: QuizViewModel?
     private(set) var home: HomeViewModel?
     private(set) var tour: GuidedTourViewModel?
@@ -97,8 +97,8 @@ final class AppCoordinator {
     }
 
     private func openOnboarding() {
-        onboarding = OnboardingViewModel(auth: auth, profiles: profiles, maps: maps, social: social, cloud: cloud,
-                                         contacts: DeviceContacts()) { [weak self] result in
+        onboarding = OnboardingFactory(auth: auth, profiles: profiles, maps: maps, social: social, cloud: cloud,
+                                         contacts: DeviceContacts()).makeModule { [weak self] result in
             self?.finishOnboarding(result)
         }
         route = .onboarding
@@ -175,11 +175,11 @@ final class AppCoordinator {
 
         you = you ?? makeYou()
 
-        learn = learn ?? LearnViewModel(
+        learn = learn ?? LearnFactory(
             catalog: catalog,
             learning: learning,
-            profiles: profiles,
-            onProgressChange: { [weak self] in
+            profiles: profiles
+        ).makeViewModel(onProgressChange: { [weak self] in
                 self?.learningChanged()
             }
         )
@@ -213,8 +213,9 @@ final class AppCoordinator {
     }
 
     private func makeYou() -> YouViewModel {
-        YouViewModel(profiles: profiles, maps: maps, catalog: catalog, courses: catalog, learning: learning, social: social,
-                     reminders: reminders, scheduler: scheduler,
+        YouFactory(profiles: profiles, maps: maps, catalog: catalog, courses: catalog, learning: learning, social: social,
+                     reminders: reminders, scheduler: scheduler)
+            .makeViewModel(coordinator: YouCoordinator(
                      onRedoMap: { [weak self] in self?.openQuiz(.redo) },
                      onOpenLearn: { [weak self] in self?.selectedTab = .learn },
                      onOpenCourse: { [weak self] id in self?.openCourse(id) },
@@ -223,7 +224,7 @@ final class AppCoordinator {
                          Task { await learn.showCertificate(courseID: id) }
                      },
                      onSignOut: { [weak self] in self?.signOut() },
-                     onAccountDeleted: { [weak self] in self?.accountDeleted() })
+                     onAccountDeleted: { [weak self] in self?.accountDeleted() }))
     }
 
     private func signOut() {

@@ -31,3 +31,5 @@ Mantêm-se a seleção diária, a harmonização em background, os cursos inicia
 - `Views/Modifiers/SpotlightModifier`: comportamento visual de destaque para o tour.
 
 A raiz de `Screens/Home` contém apenas pastas. Estes auxiliares permanecem locais ao ecrã enquanto não existir necessidade de partilha.
+
+O GuidedTour está organizado em `Rules/GuidedTour`, `Models/TourStep`, `Models/HomeSpotlightModel`, `Views` e `ViewModel`, uniformizando os nomes das pastas.

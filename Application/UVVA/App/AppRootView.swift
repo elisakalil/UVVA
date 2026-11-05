@@ -45,7 +45,7 @@ struct AppRootView: View {
 
                 case .onboarding:
                     if let model = coordinator?.onboarding {
-                        OnboardingView(viewModel: model)
+                        OnboardingView(module: model)
                     }
 
                 case .quiz:

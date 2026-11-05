@@ -3,22 +3,22 @@ import SwiftUI
 
 /// The Onboarding, from the Welcome to Contacts.
 public struct OnboardingView: View {
-    @State private var viewModel: OnboardingViewModel
+    private let module: OnboardingModule
 
     /// How much of the vineyard photo shows over the moss, on every Onboarding screen and the Splash.
     static let photoOpacity = 0.95
     /// The black shade over the photo on Name and Phone. Black, not moss: moss turns the faded photo yellowish.
     static let dimOpacity = 0.45
 
-    public init(viewModel: OnboardingViewModel) {
-        _viewModel = State(initialValue: viewModel)
+    public init(module: OnboardingModule) {
+        self.module = module
     }
 
     public var body: some View {
         ZStack {
             // The photo almost whole, so the moss under it doesn't tint the page.
             // Contacts softens it like the Quiz result ("Your taste is"), under a lighter shade.
-            let isContacts = viewModel.step == .contacts
+            let isContacts = module.coordinator.step == .contacts
             PageBackground(photoOpacity: Self.photoOpacity, blur: isContacts ? 7 : 0)
             if isContacts {
                 LinearGradient(colors: [Color(hex: 0x181E12).opacity(0.2), Color(hex: 0x181E12).opacity(0.5)],
@@ -26,30 +26,30 @@ public struct OnboardingView: View {
                     .ignoresSafeArea()
                     .transition(.opacity)
             }
-            if viewModel.step == .name || viewModel.step == .phone {
+            if module.coordinator.step == .name || module.coordinator.step == .phone {
                 Color.black.opacity(Self.dimOpacity)
                     .ignoresSafeArea()
                     .transition(.opacity)
             }
-            switch viewModel.step {
+            switch module.coordinator.step {
             case .welcome:
-                WelcomeView(viewModel: viewModel)
+                WelcomeView(viewModel: module.welcome)
             case let .legal(tab):
-                LegalView(tab: tab, onBack: { withAnimation(.smooth) { viewModel.back() } })
+                LegalView(tab: tab, onBack: { withAnimation(.smooth) { module.coordinator.back() } })
             case .lookingUpAccount, .done:
                 GrapeLoop().frame(width: 100, height: 140)
             case .name:
-                NameView(viewModel: viewModel)
+                NameView(viewModel: module.name)
             case .phone:
-                PhoneView(viewModel: viewModel)
+                PhoneView(viewModel: module.phone)
             case .findFriends:
-                FindFriendsView(viewModel: viewModel)
+                FindFriendsView(viewModel: module.findFriends)
             case .contacts:
-                ContactsView(viewModel: viewModel)
+                ContactsView(viewModel: module.contacts)
             }
         }
         .foregroundStyle(UVVAColor.creamFill)
-        .animation(.smooth, value: viewModel.step)
-        .task { await viewModel.checkICloud() }
+        .animation(.smooth, value: module.coordinator.step)
+        .task { await module.welcome.checkICloud() }
     }
 }

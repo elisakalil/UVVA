@@ -4,11 +4,11 @@ import SwiftUI
 
 /// Map (YOU-R09 to R13).
 struct MapTabView: View {
-    var viewModel: YouViewModel
+    var viewModel: MapViewModel
     @State private var sharing = false
 
     var body: some View {
-        if let model = viewModel.mapModel {
+        if let model = viewModel.model {
             YouPanel {
                 VStack(alignment: .leading, spacing: 0) {
                     PanelTitle(text: model.readOn)
@@ -46,7 +46,7 @@ struct MapTabView: View {
             .fullScreenCover(isPresented: $sharing) {
                 ShareScreen(title: String(localized: "Share my map", bundle: .module), message: viewModel.shareMessage) { format in
                     PalateShareCard(heading: String(localized: "This is my wine palate", bundle: .module),
-                                    phrase: viewModel.header.name,
+                                    phrase: viewModel.name,
                                     chartValues: model.map.chartValues, chartLabels: PalateAxis.allCases.map(\.label),
                                     strong: Set(model.highlighted.compactMap { PalateAxis.allCases.firstIndex(of: $0) }),
                                     lines: [ShareCardLine(tag: String(localized: "Palate", bundle: .module),

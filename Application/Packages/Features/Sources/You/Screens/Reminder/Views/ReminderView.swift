@@ -4,18 +4,8 @@ import SwiftUI
 
 /// Daily reminder (YOU-R16 to R20): a moment or any time, the days, or reminders off.
 struct ReminderView: View {
-    @State private var draft: ReminderDraft
-    @State private var customTime: Date
-    var onSave: (Reminder?) async -> Void
+    @Bindable var viewModel: ReminderViewModel
     @Environment(\.dismiss) private var dismiss
-
-    init(reminder: Reminder?, onSave: @escaping (Reminder?) async -> Void) {
-        _draft = State(initialValue: ReminderDraft(reminder))
-        let hour = reminder?.hour ?? 20
-        let minute = reminder?.minute ?? 0
-        _customTime = State(initialValue: Calendar.current.date(from: DateComponents(hour: hour, minute: minute)) ?? .now)
-        self.onSave = onSave
-    }
 
     private static let moments: [(ReminderMoment, String)] = [
         (.coffee, String(localized: "With my coffee", bundle: .module)),
@@ -29,8 +19,8 @@ struct ReminderView: View {
     }
 
     private var summary: String {
-        if draft.isOff { return String(localized: "No reminders. You open the app whenever you feel like it.", bundle: .module) }
-        guard let reminder = draft.reminder else {
+        if viewModel.draft.isOff { return String(localized: "No reminders. You open the app whenever you feel like it.", bundle: .module) }
+        guard let reminder = viewModel.draft.reminder else {
             return String(localized: "Pick a moment and at least one day.", bundle: .module)
         }
         let days = ReminderDraft.week.filter(reminder.weekdays.contains).map(Self.dayLabel).joined(separator: ", ")
@@ -54,26 +44,26 @@ struct ReminderView: View {
                     VStack(spacing: 10) {
                         ForEach(Self.moments, id: \.0) { moment, title in
                             ReminderOption(title: title, detail: String(format: "%02d:00", moment.hour),
-                                           isSelected: !draft.isOff && draft.moment == moment) { draft.pick(moment) }
+                                           isSelected: !viewModel.draft.isOff && viewModel.draft.moment == moment) { viewModel.draft.pick(moment) }
                         }
-                        ReminderTimeOption(time: $customTime,
-                                           isSelected: !draft.isOff && draft.hour != nil && draft.moment == nil) { date in
+                        ReminderTimeOption(time: $viewModel.customTime,
+                                           isSelected: !viewModel.draft.isOff && viewModel.draft.hour != nil && viewModel.draft.moment == nil) { date in
                             let parts = Calendar.current.dateComponents([.hour, .minute], from: date)
-                            draft.pickTime(hour: parts.hour ?? 20, minute: parts.minute ?? 0)
+                            viewModel.draft.pickTime(hour: parts.hour ?? 20, minute: parts.minute ?? 0)
                         }
                         ReminderOption(title: String(localized: "Turn reminders off", bundle: .module),
                                        subtitle: String(localized: "You open the app whenever you feel like it.", bundle: .module),
-                                       isSelected: draft.isOff) { draft.turnOff() }
+                                       isSelected: viewModel.draft.isOff) { viewModel.draft.turnOff() }
                     }
                     .padding(.top, 30)
 
                     Text(String(localized: "Days", bundle: .module).uppercased())
-                        .font(UVVAFont.sans(9, .semibold)).tracking(3.2).opacity(draft.isOff ? 0.35 : 0.82)
+                        .font(UVVAFont.sans(9, .semibold)).tracking(3.2).opacity(viewModel.draft.isOff ? 0.35 : 0.82)
                         .padding(.top, 30)
                     HStack(spacing: 7) {
                         ForEach(ReminderDraft.week, id: \.self) { weekday in
-                            let isOn = draft.weekdays.contains(weekday)
-                            Button { draft.toggle(weekday) } label: {
+                            let isOn = viewModel.draft.weekdays.contains(weekday)
+                            Button { viewModel.draft.toggle(weekday) } label: {
                                 Text(Self.dayLabel(weekday))
                                     .font(UVVAFont.sans(11))
                                     .foregroundStyle(isOn ? UVVAColor.mossDeep : UVVAColor.creamFill)
@@ -87,12 +77,14 @@ struct ReminderView: View {
                     }
                     .padding(.top, 14)
 
+                    if let notice = viewModel.notice {
+                        Text(notice).font(UVVAFont.sans(12)).padding(.top, 12)
+                    }
                     Text(summary).font(UVVAFont.sans(11.5)).opacity(0.86).multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity).padding(.top, 34)
-                    ActionButton(String(localized: "Save", bundle: .module), isEnabled: draft.canSave) {
+                    ActionButton(String(localized: "Save", bundle: .module), isEnabled: viewModel.draft.canSave && !viewModel.isSaving) {
                         Task {
-                            await onSave(draft.reminder)
-                            dismiss()
+                            if await viewModel.saveReminder(viewModel.draft.reminder) { dismiss() }
                         }
                     }
                     .padding(.top, 14)
@@ -104,5 +96,6 @@ struct ReminderView: View {
             .scrollIndicators(.hidden)
         }
         .foregroundStyle(UVVAColor.creamFill)
+        .onAppear { viewModel.prepare() }
     }
 }

@@ -3,7 +3,7 @@ import SwiftUI
 
 /// Contacts (ONB-R37): who is on UVVA, who to invite, an A–Z bar, a search bar once scrolled and "Next".
 struct ContactsView: View {
-    @Bindable var viewModel: OnboardingViewModel
+    @Bindable var viewModel: ContactsViewModel
     @State private var inviting: ContactRowUIModel?
     @State private var scrolled = false
     @FocusState private var searching: Bool
@@ -106,6 +106,7 @@ struct ContactsView: View {
                 }
             }
         }
+        .task { await viewModel.loadContacts() }
         .sheet(item: $inviting) { row in
             if let link = viewModel.inviteLink {
                 ActivityShareSheet(message: viewModel.inviteMessage, link: link) { inviting = nil }
