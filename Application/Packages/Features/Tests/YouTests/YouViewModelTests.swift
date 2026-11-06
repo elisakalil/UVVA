@@ -61,7 +61,9 @@ struct YouViewModelTests {
 
     @Test func YOU_R07_startTheCourse_opensThePathsFirstModule() async {
         let actions = Actions()
-        await make(actions: actions).progress.startCourse()
+        let viewModel = await make(actions: actions)
+        // Child callbacks read the parent's model; keep its owner alive as the app does.
+        withExtendedLifetime(viewModel) { viewModel.progress.startCourse() }
         #expect(actions.log == ["course path-01"])
     }
 
@@ -307,6 +309,27 @@ struct YouViewModelTests {
         reminder.turnOff()
         #expect(reminder.uiModel.draft.reminder == nil)
         #expect(reminder.uiModel.draft.canSave)
+    }
+
+
+    @Test func parentOwnsSavedChanges_withoutResettingAnOpenEditorDraft() async {
+        let model = await make()
+        model.settings.editName.prepare()
+        model.settings.editName.updateName("Unsaved draft")
+        let photo = Data([1, 2, 3])
+        await model.settings.savePhoto(photo)
+        #expect(model.contentModel.profile?.photo == photo)
+        #expect(model.uiModel.header.photo == photo)
+        #expect(model.settings.editName.uiModel.name == "Unsaved draft")
+    }
+
+    @Test func screenCallbacks_doNotRetainTheParent() async {
+        var parent: YouViewModel? = await make()
+        weak var released = parent
+        let editor = parent?.settings.editName
+        parent = nil
+        #expect(released == nil)
+        #expect(await editor?.saveName("Lisa") == false)
     }
 
 }

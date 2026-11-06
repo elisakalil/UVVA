@@ -3,6 +3,7 @@ import DesignSystem
 
 public struct LearnUIModel {
     var tab: CourseKind = .region
+    var focusedCourseID: String?
     var query = ""
     var isSearching = false
     var pathFilters: [FilterUIModel] = []
@@ -14,6 +15,8 @@ public struct LearnUIModel {
     var regionMap: RegionMapUIModel?
     var searchResults: [SearchGroupUIModel] = []
     var isPresentingPlayer = false
+    var isLoadingLesson = false
+    var lessonError: String?
     var sharedCertificate: CertificateUIModel?
     var resources = LearnResourcesUIModel()
 }

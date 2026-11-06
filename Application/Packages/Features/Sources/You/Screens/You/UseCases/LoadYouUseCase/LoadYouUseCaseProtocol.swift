@@ -3,5 +3,5 @@ import Foundation
 
 @MainActor
 protocol LoadYouUseCaseProtocol {
-    func execute(previous: YouContent) async -> YouContent
+    func execute(previous: YouContentModel) async -> YouContentModel
 }

@@ -7,15 +7,17 @@ public struct SearchField: View {
     var prompt: String
     var isFocused: FocusState<Bool>.Binding
     var onCancel: () -> Void
+    var showsCancelButton: Bool
     /// Below 1 the glass lets more of the page through, where it would read too white.
     var glassOpacity: Double
 
-    public init(text: Binding<String>, prompt: String, isFocused: FocusState<Bool>.Binding, glassOpacity: Double = 1,
+    public init(text: Binding<String>, prompt: String, isFocused: FocusState<Bool>.Binding, glassOpacity: Double = 1, showsCancelButton: Bool = true,
                 onCancel: @escaping () -> Void) {
         _text = text
         self.prompt = prompt
         self.isFocused = isFocused
         self.glassOpacity = glassOpacity
+        self.showsCancelButton = showsCancelButton
         self.onCancel = onCancel
     }
 
@@ -52,7 +54,7 @@ public struct SearchField: View {
             .contentShape(Capsule())
             .onTapGesture { isFocused.wrappedValue = true }
 
-            if isActive {
+            if isActive && showsCancelButton {
                 Button {
                     text = ""
                     isFocused.wrappedValue = false

@@ -19,6 +19,7 @@ final class AppCoordinator {
     private(set) var you: YouViewModel?
     private(set) var learn: LearnViewModel?
     private(set) var profile: Profile?
+    private var isOpeningCourse = false
     private var navigationTask: Task<Void, Never>?
     
     var launchError: String?
@@ -54,7 +55,7 @@ final class AppCoordinator {
 
         auth = AppleAuthProvider()
         cloud = ICloudAccountStatus()
-        social = CloudKitSocialService()
+        social = stores.social
     }
     
     func start() async throws {
@@ -168,6 +169,9 @@ final class AppCoordinator {
             },
             onOpenLearn: { [weak self] kind in
                 self?.openLearn(kind)
+            },
+            onOpenLesson: { [weak self] suggestion in
+                self?.openCourse(suggestion.courseID, lessonID: suggestion.lessonID)
             }
         ))
 
@@ -242,17 +246,27 @@ final class AppCoordinator {
         selectedTab = .learn
     }
 
-    private func openCourse(_ id: String) {
+    private func openCourse(_ id: String, lessonID: String? = nil) {
+        guard let learn, !isOpeningCourse else { return }
+        isOpeningCourse = true
+        Task {
+            await learn.openCourse(id: id, lessonID: lessonID)
+            if learn.player == nil { isOpeningCourse = false }
+        }
+    }
+
+    func lessonDidPresent() {
+        guard isOpeningCourse else { return }
+        isOpeningCourse = false
         selectedTab = .learn
-        guard let learn else { return }
-        Task { await learn.openCourse(id: id) }
     }
 
     private func learningChanged() {
-        //TODO: REMOVER O METODO?
+        Task { await home?.load() }
     }
 
     private func resetTabs() {
+        isOpeningCourse = false
         profile = nil
         home = nil
         you = nil

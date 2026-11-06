@@ -5,25 +5,26 @@ import Combine
 @MainActor
 public final class SettingsViewModel: SettingsViewModelProtocol {
     @Published public private(set) var uiModel: SettingsUIModel
-    private var subscription: AnyCancellable?
     public let editName: EditNameViewModel
     public let editPhone: EditPhoneViewModel
     public let reminder: ReminderViewModel
     public let certificates: CertificatesViewModel
 
-    private let state: YouState
+    private let onProfileSaved: (Profile) -> Void
+    private let readModel: () -> YouContentModel
     private let coordinator: any YouCoordinatorProtocol
     private let savePhotoUseCase: any SavePhotoUseCaseProtocol
     private let setMapPublicUseCase: any SetMapPublicUseCaseProtocol
     private let signOutUseCase: any SignOutUseCaseProtocol
     private let deleteAccountUseCase: any DeleteAccountUseCaseProtocol
 
-    init(state: YouState, coordinator: any YouCoordinatorProtocol,
+    init(readModel: @escaping () -> YouContentModel, onProfileSaved: @escaping (Profile) -> Void, coordinator: any YouCoordinatorProtocol,
          savePhotoUseCase: any SavePhotoUseCaseProtocol, setMapPublicUseCase: any SetMapPublicUseCaseProtocol,
          signOutUseCase: any SignOutUseCaseProtocol, deleteAccountUseCase: any DeleteAccountUseCaseProtocol,
          editName: EditNameViewModel, editPhone: EditPhoneViewModel, reminder: ReminderViewModel,
          certificates: CertificatesViewModel) {
-        self.state = state
+        self.readModel = readModel
+        self.onProfileSaved = onProfileSaved
         self.coordinator = coordinator
         self.savePhotoUseCase = savePhotoUseCase
         self.setMapPublicUseCase = setMapPublicUseCase
@@ -33,30 +34,32 @@ public final class SettingsViewModel: SettingsViewModelProtocol {
         self.editPhone = editPhone
         self.reminder = reminder
         self.certificates = certificates
-        uiModel = SettingsPresentationBuilder().build(from: state.content)
-        subscription = state.$content.sink { [weak self] content in
-            guard let self else { return }
-            var model = SettingsPresentationBuilder().build(from: content)
-            model.notice = uiModel.notice
-            model.isWorking = uiModel.isWorking
-            uiModel = model
-        }
+        uiModel = SettingsPresentationBuilder().build(from: readModel())
+
     }
 
 
+    func present(_ model: YouContentModel) {
+        var presentation = SettingsPresentationBuilder().build(from: model)
+        presentation.notice = uiModel.notice
+        presentation.isWorking = uiModel.isWorking
+        uiModel = presentation
+        certificates.present(model)
+    }
+
     public func savePhoto(_ jpeg: Data) async {
-        guard let profile = state.content.profile else { return }
+        guard let profile = readModel().profile else { return }
         do {
-            state.content.profile = try await savePhotoUseCase.execute(jpeg, profile: profile)
+            onProfileSaved(try await savePhotoUseCase.execute(jpeg, profile: profile))
         } catch {
             uiModel.notice = uiModel.yourChangesCouldNotBeText
         }
     }
 
     public func setMapPublic(_ isPublic: Bool) async {
-        guard let profile = state.content.profile else { return }
+        guard let profile = readModel().profile else { return }
         do {
-            state.content.profile = try await setMapPublicUseCase.execute(isPublic, profile: profile, map: state.content.map)
+            onProfileSaved(try await setMapPublicUseCase.execute(isPublic, profile: profile, map: readModel().map))
         } catch {
             uiModel.notice = uiModel.yourChangesCouldNotBeText
         }
@@ -71,7 +74,7 @@ public final class SettingsViewModel: SettingsViewModelProtocol {
     }
 
     public func deleteAccount() async {
-        guard let profile = state.content.profile, !uiModel.isWorking else { return }
+        guard let profile = readModel().profile, !uiModel.isWorking else { return }
         uiModel.isWorking = true
         uiModel.notice = nil
         defer { uiModel.isWorking = false }

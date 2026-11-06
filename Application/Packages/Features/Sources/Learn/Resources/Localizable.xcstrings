@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "means “cheers” in %@" : {
-
-    },
     "        " : {
 
     },
@@ -33,16 +30,6 @@
         }
       }
     },
-    "%lld of %lld matched" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld of %2$lld matched"
-          }
-        }
-      }
-    },
     "All" : {
 
     },
@@ -60,6 +47,9 @@
       }
     },
     "All %lld pairs matched, with 1 wrong try." : {
+
+    },
+    "Back" : {
 
     },
     "Begin lesson" : {
@@ -83,13 +73,16 @@
     "Continue" : {
 
     },
-    "Continue where you left off" : {
-
-    },
     "Correct" : {
 
     },
     "Correct order: %@" : {
+
+    },
+    "Couldn't load the lesson. Please try again." : {
+
+    },
+    "Couldn't save your lesson. Please try again before leaving." : {
 
     },
     "Dutch" : {
@@ -105,9 +98,6 @@
 
     },
     "German" : {
-
-    },
-    "Go to the module" : {
 
     },
     "Got it" : {
@@ -153,6 +143,9 @@
 
     },
     "Map of %@" : {
+
+    },
+    "means “cheers” in %@" : {
 
     },
     "Minutes" : {
@@ -206,10 +199,13 @@
     "Regions" : {
 
     },
+    "Review" : {
+
+    },
     "Review previous lesson" : {
 
     },
-    "Review the module" : {
+    "saving your progress" : {
 
     },
     "Search modules" : {
@@ -219,6 +215,9 @@
 
     },
     "Spanish" : {
+
+    },
+    "Start" : {
 
     },
     "Step %lld of %lld" : {
@@ -247,6 +246,9 @@
 
     },
     "True" : {
+
+    },
+    "Try again" : {
 
     },
     "View certificate" : {

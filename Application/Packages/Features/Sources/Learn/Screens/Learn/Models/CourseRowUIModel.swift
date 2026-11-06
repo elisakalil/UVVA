@@ -12,7 +12,7 @@ struct CourseRowUIModel: Identifiable, Equatable {
     var about: String
     /// Region only: the grapes it grows.
     var grapes: [String]
-    /// "Go to the module", "Continue where you left off" or "Review the module".
+    /// "Start", "Continue" or "Review".
     var cta: String
     var hasCertificate: Bool
 }

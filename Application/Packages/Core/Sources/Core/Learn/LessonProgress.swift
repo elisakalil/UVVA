@@ -1,11 +1,13 @@
 import Foundation
 
 /// Where the learner is in one lesson (SHARED-R15, R17; ARCHITECTURE §2.1 `LessonProgress`).
-/// A lesson has progress once its first step opened (SHARED-R16).
+/// Persisted on departure, including a departure from the cover.
 public struct LessonProgress: Equatable, Sendable {
     public var lessonID: String
     public var courseID: String
-    /// The step on screen, from 0.
+    /// Monotonic within a lesson session; rejects delayed writes from earlier snapshots.
+    public var revision: Int
+    /// The saved screen: -1 is the cover; steps start at 0.
     public var currentStep: Int
     /// The checked answers, by step index.
     public var answers: [Int: LessonAnswer]
@@ -16,7 +18,8 @@ public struct LessonProgress: Equatable, Sendable {
     public var xp: Int
 
     public init(lessonID: String, courseID: String, currentStep: Int = 0, answers: [Int: LessonAnswer] = [:],
-                completedAt: Date? = nil, lastOpenedAt: Date, xp: Int = 0) {
+                completedAt: Date? = nil, lastOpenedAt: Date, xp: Int = 0, revision: Int = 0) {
+        self.revision = revision
         self.lessonID = lessonID
         self.courseID = courseID
         self.currentStep = currentStep

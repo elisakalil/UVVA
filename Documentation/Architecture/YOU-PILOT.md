@@ -11,7 +11,7 @@
 - `CertificatesViewModel`: lista de certificados e destinos para Learn.
 - `EditNameViewModel`, `EditPhoneViewModel`, `ReminderViewModel`: rascunhos e estado de gravação de cada editor.
 - Builders: conversão pura de dados em modelos de apresentação.
-- `YouState`/`YouContent`: valores partilhados entre os ecrãs, sem operações ou navegação.
+- `YouContentModel`: agregado de dados possuído pelo `YouViewModel`; não é observável e não implementa operações.
 
 ## Casos de uso
 
@@ -31,6 +31,6 @@ Os oito ViewModels de apresentação usam `ObservableObject` e `@Published publi
 
 `YouUIModel` contém o separador e o cabeçalho; `MapScreenUIModel` agrupa o mapa, nome e mensagem de partilha; Settings e Progress mantêm os modelos de apresentação existentes enriquecidos com textos e estado. Os editores possuem UIModels próprios com rascunhos, validação, loading e erros. Certificados são observados diretamente pelo seu ecrã. Os textos e recursos visuais foram retirados das Views; layout, estilos, foco e apresentações locais continuam nas Views.
 
-O estado partilhado `YouState` publica `YouContent`. Os ViewModels subscrevem os valores emitidos para construir a apresentação, sem reler o valor antigo durante o `willSet` de `@Published`. As subscrições capturam os ViewModels fracamente. Settings preserva o erro e o estado de operação durante a reconstrução, e You atualiza o cabeçalho sem repor o separador selecionado.
+O `YouViewModel` possui o `YouContentModel`. Os filhos recebem uma função de leitura e devolvem os resultados persistidos por callbacks fracos. O proprietário atualiza o modelo e apresenta os novos valores aos filhos; não existe uma caixa observável intermédia. Settings preserva o erro e o estado de operação durante a reconstrução; You atualiza o cabeçalho sem repor o separador e não reinicializa rascunhos dos editores.
 
 Os bindings dos formulários passam por ações explícitas (`updateName`, `updateNational`, `selectCountry`, `pick`, `toggle`, `turnOff`, `updateTime`); as Views não podem alterar livremente o UIModel. O preview de EditName usa um mock do protocolo. Os testes incluem publicação simultânea de nome nos três ecrãs e manipulação do rascunho do lembrete através das ações.

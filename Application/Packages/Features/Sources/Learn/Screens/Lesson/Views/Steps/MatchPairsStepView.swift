@@ -17,11 +17,13 @@ struct MatchPairsStepView: View {
                 VStack(spacing: 8) { ForEach(model.right) { cell($0, action: onTapRight) } }
             }
             .padding(.horizontal, 16)
-            Text(model.status)
-                .font(UVVAFont.sans(14))
-                .foregroundStyle(model.isMiss ? LessonPalette.wrong : LessonPalette.ink.opacity(0.72))
-                .padding(.horizontal, 24)
-                .padding(.top, 16)
+            if !model.status.isEmpty {
+                Text(model.status)
+                    .font(UVVAFont.sans(14))
+                    .foregroundStyle(LessonPalette.wrong)
+                    .padding(.horizontal, 24)
+                    .padding(.top, 16)
+            }
         }
     }
 

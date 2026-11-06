@@ -16,12 +16,19 @@ public final class GuidedTourViewModel: GuidedTourViewModelProtocol {
     }
 
     public func next() {
+        guard !tour.isFinished else { return }
         tour.next()
         if tour.isFinished { onFinish() }
     }
 
-    public func back() { tour.back() }
-    public func pick(_ step: Int) { tour.pick(step) }
+    public func back() {
+        guard !tour.isFinished else { return }
+        tour.back()
+    }
+    public func pick(_ step: Int) {
+        guard !tour.isFinished else { return }
+        tour.pick(step)
+    }
     private func refresh() {
         uiModel = GuidedTourUIModel(step: tour.step, isFinished: tour.isFinished, firstName: firstName)
     }

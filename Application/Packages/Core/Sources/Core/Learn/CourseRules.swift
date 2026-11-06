@@ -1,35 +1,31 @@
 import Foundation
 
-/// The rules every feature shares about a course and the progress of its lessons (LEARN-R02, R11; SHARED-R15 to R17).
-/// `progress` is keyed by lesson id.
+/// Presentation of persisted module state. Never reconstructs a cursor from lesson records.
 public enum CourseRules {
-    public static func state(of course: Course, progress: [String: LessonProgress]) -> CourseState {
-        let opened = course.lessons.compactMap { progress[$0.id] }
-        if !course.lessons.isEmpty, opened.count == course.lessons.count, opened.allSatisfy(\.isCompleted) { return .done }
-        return opened.isEmpty ? .notStarted : .inProgress
+    public static func state(of course: Course, module: ModuleProgress?) -> CourseState {
+        guard let module else { return .notStarted }
+        if !course.lessons.isEmpty, module.state >= course.lessons.count { return .done }
+        return module.state > 0 || module.lastOpenedAt != nil ? .inProgress : .notStarted
     }
 
-    /// LEARN-R11: lesson 1 when not started or done; otherwise the first lesson not completed, at its saved step.
-    public static func entry(for course: Course, progress: [String: LessonProgress]) -> CourseEntry? {
-        guard let first = course.lessons.first else { return nil }
-        guard state(of: course, progress: progress) == .inProgress,
-              let next = course.lessons.first(where: { !(progress[$0.id]?.isCompleted ?? false) }) else {
-            return CourseEntry(lessonID: first.id, step: nil)
-        }
-        return CourseEntry(lessonID: next.id, step: progress[next.id]?.currentStep)
+    public static func entry(for course: Course, module: ModuleProgress?, progress: [String: LessonProgress]) -> CourseEntry? {
+        let state = module?.state ?? 0
+        guard state >= 0, course.lessons.indices.contains(state) else { return nil }
+        let lesson = course.lessons[state] // state 0 -> lesson 1; state 1 -> lesson 2.
+        let step = progress[lesson.id].flatMap { $0.currentStep >= 0 ? $0.currentStep : nil }
+        return CourseEntry(lessonID: lesson.id, step: step)
     }
 
-    /// The course as Home and You show it (HOME-R12, R13).
-    public static func summary(of course: Course, progress: [String: LessonProgress]) -> CourseProgress {
-        let opened = course.lessons.compactMap { progress[$0.id] }
-        let entry = state(of: course, progress: progress) == .inProgress ? entry(for: course, progress: progress) : nil
+    public static func summary(of course: Course, module: ModuleProgress?, progress: [String: LessonProgress]) -> CourseProgress {
+        let completed = min(max(module?.state ?? 0, 0), course.lessons.count)
+        let entry = entry(for: course, module: module, progress: progress)
         let current = entry.flatMap { entry in
             course.lessons.first { $0.id == entry.lessonID }.map {
                 LessonRef(number: $0.order, title: $0.title, step: (entry.step ?? 0) + 1)
             }
         }
         return CourseProgress(id: course.id, title: course.title, totalLessons: course.lessons.count,
-                              completedLessons: opened.filter(\.isCompleted).count, hasStarted: !opened.isEmpty,
-                              lastOpenedAt: opened.map(\.lastOpenedAt).max(), current: current)
+            completedLessons: completed, hasStarted: module?.lastOpenedAt != nil || completed > 0,
+            lastOpenedAt: module?.lastOpenedAt, current: current)
     }
 }

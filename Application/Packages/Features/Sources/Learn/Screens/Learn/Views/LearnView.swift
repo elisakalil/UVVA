@@ -3,7 +3,7 @@ import DesignSystem
 import SwiftUI
 
 /// The Learn tab (LEARN.md §3): By region, By grape and The path. The lesson player opens over everything;
-/// a certificate opens through `certificateCover(_:)`, set on the app's root.
+/// lessons and certificates are presented by modifiers on the app root.
 public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
     private var resources: LearnResourcesUIModel { viewModel.uiModel.resources }
     @ObservedObject var viewModel: ViewModel
@@ -36,13 +36,7 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
         }
         .foregroundStyle(UVVAColor.creamFill)
         .task { await viewModel.load() }
-        .fullScreenCover(isPresented: Binding(get: { viewModel.uiModel.isPresentingPlayer }, set: { _ in })) {
-            if let player = viewModel.player {
-                LessonPlayerView(viewModel: player).id(player.id)
-                    // The tab shows behind while the lesson is dragged down to close.
-                    .presentationBackground(.clear)
-            }
-        }
+
     }
 
     /// The title has scrolled away and the search bar holds the top.
@@ -50,6 +44,7 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
 
     /// The title scrolls away; the search bar rides with it, then stays at the top while the lists fade out under it.
     private var content: some View {
+        ScrollViewReader { proxy in
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 Text(resources.learnText)
@@ -84,6 +79,15 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
         .scrollIndicators(.hidden)
         .scrollEdgeFade(12, throughBottomInset: true)
         .scrollPosition($position)
+        .onChange(of: viewModel.uiModel.focusedCourseID, initial: true) { _, id in
+            guard let id else { return }
+            proxy.scrollTo(id, anchor: .top)
+        }
+        .onChange(of: viewModel.uiModel.isPresentingPlayer) { _, presenting in
+            guard !presenting, let id = viewModel.uiModel.focusedCourseID else { return }
+            proxy.scrollTo(id, anchor: .top)
+        }
+        }
     }
 
     private func scrollToRegionList() {
@@ -201,8 +205,8 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
                 ForEach(group.rows) { row in
                     CourseRow(resources: resources, model: row,
                               onToggle: { withAnimation(.easeOut(duration: 0.28)) { viewModel.toggle(row.id) } },
-                              onStart: { Task { await viewModel.startCourse(id: row.id) } },
-                              onCertificate: { Task { await viewModel.showCertificate(courseID: row.id) } })
+                              onStart: { Task { await viewModel.startCourse(id: row.id) } })
+                    .id(row.id)
                     .onGeometryChange(for: CGFloat?.self) { row.isOpen ? $0.frame(in: .scrollView(axis: .vertical)).minY : nil } action: {
                         if let top = $0 { openRowTop = top }
                     }

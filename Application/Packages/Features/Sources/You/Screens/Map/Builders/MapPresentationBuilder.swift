@@ -3,7 +3,7 @@ import Foundation
 import Match
 
 struct MapPresentationBuilder {
-    func build(from content: YouContent, selectedSnapshot: Int?, now: Date, calendar: Calendar) -> MapUIModel? {
+    func build(from content: YouContentModel, selectedSnapshot: Int?, now: Date, calendar: Calendar) -> MapUIModel? {
         let map = content.map
         let history = content.history
         guard let map else { return nil }

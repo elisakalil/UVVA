@@ -8,6 +8,9 @@ final class ContentLoader {
 
     private nonisolated let questionsTask: Task<Void, Error>
     private nonisolated let catalogTask: Task<Void, Error>
+    /// Lets the catalog import go. It waits for this, so it doesn't compete with opening the stores, the glass
+    /// textures and the first reads while the Splash is on screen (ONB-R01).
+    private nonisolated let catalogGate: AsyncStream<Void>.Continuation
 
     init(container: ModelContainer) throws {
         guard let source = ContentSource(bundle: .main) else {
@@ -26,8 +29,13 @@ final class ContentLoader {
 
         questionsTask = questions
 
+        let (gate, opening) = AsyncStream<Void>.makeStream()
+        catalogGate = opening
+
         catalogTask = Task.detached(priority: .utility) {
             try await questions.value
+            // Ends without a value when the task is cancelled; the check below then throws.
+            for await _ in gate { break }
             try Task.checkCancellation()
 
             let protected = try await CellarStore(
@@ -58,7 +66,14 @@ final class ContentLoader {
         try Task.checkCancellation()
     }
 
+    /// Starts the catalog import, once the first screen after the Splash is up. Calling it again does nothing.
+    nonisolated func startCatalogImport() {
+        catalogGate.yield()
+        catalogGate.finish()
+    }
+
     func waitUntilReady() async throws {
+        startCatalogImport()
         try await catalogTask.value
         try Task.checkCancellation()
     }
@@ -66,6 +81,7 @@ final class ContentLoader {
     nonisolated func cancel() {
         questionsTask.cancel()
         catalogTask.cancel()
+        catalogGate.finish()
     }
 
     func stop() async {

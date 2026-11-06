@@ -7,6 +7,7 @@ import SwiftData
 public final class LessonProgressEntity {
     public var lessonId = ""
     public var courseId = ""
+    public var revision = 0
     public var currentStep = 0
     /// `[step index: LessonAnswer]` as JSON.
     public var answersData = Data()

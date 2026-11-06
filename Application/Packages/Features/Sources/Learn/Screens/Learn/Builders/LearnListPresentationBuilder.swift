@@ -4,6 +4,7 @@ import Foundation
 struct LearnListPresentationBuilder {
     let courses: [CourseKind: [Course]]
     let progress: [String: LessonProgress]
+    var modules: [String: ModuleProgress] = [:]
     let certificates: [Certificate]
     let openCourses: [CourseKind: String]
     let grapeFilter: GrapeFilter
@@ -93,7 +94,7 @@ struct LearnListPresentationBuilder {
     // MARK: Rows
 
     func row(_ course: Course) -> CourseRowUIModel {
-        let state = CourseRules.state(of: course, progress: progress)
+        let state = CourseRules.state(of: course, module: modules[course.id])
         return CourseRowUIModel(
             id: course.id,
             title: course.title,
@@ -115,9 +116,9 @@ struct LearnListPresentationBuilder {
     /// LEARN-R11
     static func cta(_ state: CourseState) -> String {
         switch state {
-        case .notStarted: String(localized: "Go to the module", bundle: .module)
-        case .inProgress: String(localized: "Continue where you left off", bundle: .module)
-        case .done: String(localized: "Review the module", bundle: .module)
+        case .notStarted: String(localized: "Start", bundle: .module)
+        case .inProgress: String(localized: "Continue", bundle: .module)
+        case .done: String(localized: "Review", bundle: .module)
         }
     }
 }

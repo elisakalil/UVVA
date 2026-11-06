@@ -16,9 +16,11 @@ public struct CertificateUIModel: Equatable, Sendable {
     public var xp: String
     /// Sent with the picture on WhatsApp.
     public var message: String
+    public var country: String?
+    public var courseID: String?
 
     public init(date: String, kind: String, lead: String, title: String, about: String, skills: [String], xp: String,
-                message: String) {
+                message: String, country: String? = nil, courseID: String? = nil) {
         self.date = date
         self.kind = kind
         self.lead = lead
@@ -27,5 +29,7 @@ public struct CertificateUIModel: Equatable, Sendable {
         self.skills = skills
         self.xp = xp
         self.message = message
+        self.country = country
+        self.courseID = courseID
     }
 }

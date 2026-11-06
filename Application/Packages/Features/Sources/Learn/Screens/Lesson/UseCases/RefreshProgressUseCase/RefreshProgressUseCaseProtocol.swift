@@ -3,5 +3,5 @@ import Foundation
 
 @MainActor
 protocol RefreshProgressUseCaseProtocol {
-    func execute(previous: [String: LessonProgress]) async -> [String: LessonProgress]
+    func execute(_ courses: [Course]) async throws -> LearningSnapshot
 }

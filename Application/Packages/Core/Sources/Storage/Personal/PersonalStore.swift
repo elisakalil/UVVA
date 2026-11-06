@@ -7,7 +7,7 @@ public enum PersonalStore {
     public static let cloudKitContainer = "iCloud.app.uvva"
 
     public static let models: [any PersistentModel.Type] = [ProfileEntity.self, PalateMapEntity.self, ReminderEntity.self,
-                                                              CellarEntryEntity.self, LessonProgressEntity.self,
+                                                              CellarEntryEntity.self, LessonProgressEntity.self, ModuleProgressEntity.self,
                                                               CertificateEntity.self]
 
     /// `Application Support/Personal/Personal.store`.

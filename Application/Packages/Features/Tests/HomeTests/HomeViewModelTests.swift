@@ -3,6 +3,8 @@ import Core
 import Foundation
 import Testing
 @testable import Home
+@testable import Learn
+import Storage
 
 private struct ProfilesStub: ProfileRepository {
     func currentProfile() async throws -> Profile? {
@@ -15,14 +17,14 @@ private struct ProfilesStub: ProfileRepository {
 }
 
 private struct MapStub: PalateMapRepository {
-    func currentMap() async throws -> PalateMap? { HomeState.full.palateMap }
+    func currentMap() async throws -> PalateMap? { HomeContentModel.full.palateMap }
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {}
     func history() async throws -> [MapChange] { [] }
 }
 
 private struct CatalogStub: CatalogRepository {
     func winesClosest(to map: PalateMap, limit: Int) async throws -> [Wine] {
-        Array(HomeState.full.catalog.map { var wine = $0; wine.dish = nil; return wine }.prefix(limit))
+        Array(HomeContentModel.full.catalog.map { var wine = $0; wine.dish = nil; return wine }.prefix(limit))
     }
     func recipes() async throws -> [Recipe] {
         [Recipe(id: "stew", title: "Lamb stew", why: "Weight for weight.", course: "main", wineTypes: ["Red"],
@@ -30,7 +32,7 @@ private struct CatalogStub: CatalogRepository {
                 ingredients: [RecipeIngredient(name: "lamb", quantity: 800, unit: "g", note: nil, role: "base")],
                 steps: ["Brown the lamb."])]
     }
-    func glossary() async throws -> [GlossaryTerm] { HomeState.full.glossary }
+    func glossary() async throws -> [GlossaryTerm] { HomeContentModel.full.glossary }
     func firstPathModule() async throws -> CourseSummary? { nil }
 }
 
@@ -47,6 +49,9 @@ private struct CoursesStub: CourseCatalog {
 }
 
 private struct LearningStub: LearningRepository {
+    func snapshot(for courses: [Course]) async throws -> LearningSnapshot { testSnapshot(courses, lessons: try await progress()) }
+    func save(_ progress: LessonProgress, in course: Course) async throws { try await save(progress) }
+
     var saved: [LessonProgress] = []
     func progress() async throws -> [String: LessonProgress] {
         Dictionary(uniqueKeysWithValues: saved.map { ($0.lessonID, $0) })
@@ -107,7 +112,7 @@ struct HomeViewModelTests {
 
     @Test func HOME_R11_noFriendsYet_showsTheInvite() async {
         let viewModel = await load(at: day)
-        #expect(viewModel.uiModel.content?.cards.contains(.friends(.invite)) == true)
+        #expect(viewModel.uiModel.content?.cards.contains(.friends(.noFriends)) == true)
         #expect(viewModel.uiModel.inviteLink?.absoluteString == "https://uvva.app/invite/u1")
     }
 
@@ -122,7 +127,7 @@ struct HomeViewModelTests {
     @Test func addToCellar_savesTheWineOnce_andMarksItSaved() async throws {
         let cellar = CellarStub()
         let viewModel = await load(at: day, cellar: cellar)
-        let wine = try #require(HomeState.full.catalog.first)
+        let wine = try #require(HomeContentModel.full.catalog.first)
 
         await viewModel.addToCellar(wine)
         await viewModel.addToCellar(wine)
@@ -140,7 +145,7 @@ struct HomeViewModelTests {
         defer { subscription.cancel() }
 
         try await model.prepare()
-        let wine = try #require(HomeState.full.catalog.first)
+        let wine = try #require(HomeContentModel.full.catalog.first)
         await model.addToCellar(wine)
 
         #expect(presentations.first?.isLoading == true)
@@ -155,7 +160,7 @@ struct HomeViewModelTests {
 @MainActor
 private struct FailingHomeLoader: LoadHomeUseCaseProtocol {
     struct Failure: Error {}
-    func execute() async throws -> LoadedHomeContent { throw Failure() }
+    func execute() async throws -> HomeLoadResultModel { throw Failure() }
 }
 
 @MainActor
@@ -201,4 +206,153 @@ struct HomePresentationTests {
         #expect(openedKind == .grape)
         #expect(model.uiModel.content == nil)
     }
+}
+
+private struct RegionFlowCatalog: CourseCatalog {
+    let region = Course(id: "region-test", kind: .region, order: 1, title: "Test Region", about: "",
+        countries: ["Portugal"], lessons: (1...6).map {
+            LessonSummary(id: "region-test-l0\($0)", courseID: "region-test", order: $0,
+                title: "Lesson \($0)", subtitle: "", xp: 15, minutes: 3, isReview: false, objectives: [])
+        })
+    func courses(_ kind: CourseKind) async throws -> [Course] { kind == .region ? [region] : [] }
+    func course(id: String) async throws -> Course? { id == region.id ? region : nil }
+    func lesson(id: String) async throws -> Lesson? {
+        region.lessons.first { $0.id == id }.map {
+            Lesson(summary: $0, steps: [.concept(title: "One", body: "Body", highlight: nil),
+                .concept(title: "Two", body: "Body", highlight: nil), .summary(title: "Done", points: [])])
+        }
+    }
+}
+
+@MainActor
+private final class HomeProgressRefresh {
+    weak var home: HomeViewModel?
+    func reload() { Task { await home?.load() } }
+}
+
+@MainActor
+private final class SuspendedHomeSnapshot: LoadHomeUseCaseProtocol {
+    let old: HomeLoadResultModel
+    let latest: HomeLoadResultModel
+    var pending: CheckedContinuation<HomeLoadResultModel, Never>?
+    var calls = 0
+    init(old: HomeLoadResultModel, latest: HomeLoadResultModel) { self.old = old; self.latest = latest }
+    func execute() async throws -> HomeLoadResultModel {
+        calls += 1
+        if calls == 1 { return await withCheckedContinuation { pending = $0 } }
+        return latest
+    }
+    func resume() { pending?.resume(returning: old); pending = nil }
+}
+
+@MainActor
+struct ModuleStateFlowTests {
+    private func waitUntil(_ condition: () -> Bool) async throws {
+        let deadline = ContinuousClock.now.advanced(by: .seconds(5))
+        while !condition(), ContinuousClock.now < deadline { try await Task.sleep(for: .milliseconds(5)) }
+        try #require(condition())
+    }
+
+    @Test func regionCard_completeTwoLessons_leaveThird_homeAndEveryEntryResumeStatePlusOne() async throws {
+        let container = try AppStore.makeInMemoryContainer()
+        let store = LearningStore(modelContainer: container)
+        let catalog = RegionFlowCatalog()
+        let course = catalog.region
+        let refresh = HomeProgressRefresh()
+        let learn = LearnFactory(catalog: catalog, learning: store, profiles: ProfilesStub())
+            .makeViewModel(onProgressChange: { refresh.reload() })
+        let home = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
+            cellar: CellarStub(), courses: catalog, learning: store)
+            .makeViewModel(coordinator: HomeCoordinator(
+                onOpenCourse: { id in Task { await learn.openCourse(id: id) } }, onOpenLearn: { _ in },
+                onOpenLesson: { suggestion in Task { await learn.openCourse(id: suggestion.courseID, lessonID: suggestion.lessonID) } }))
+        refresh.home = home
+        await home.load()
+        guard case let .learnShortcuts(initial)? = home.uiModel.content?.cards.first(where: { $0.kind == "learnShortcuts" }) else {
+            Issue.record("Missing A REGION"); return
+        }
+        let suggested = try #require(initial.first { $0.course.kind == .region })
+        #expect(suggested.lesson.order == 1)
+        home.openLesson(suggested)
+        try await waitUntil { learn.player != nil && !learn.uiModel.isLoadingLesson }
+        for number in 1...2 {
+            let player = try #require(learn.player)
+            #expect(player.lesson.summary.order == number)
+            player.begin()
+            player.primary()
+            player.primary() // Summary persists completion immediately, without leaving.
+            try await waitUntil { !learn.uiModel.isLoadingLesson }
+            let snapshot = try await store.snapshot(for: [course])
+            #expect(snapshot.modules[course.id]?.state == number)
+            #expect(snapshot.lessons[player.lesson.id]?.isCompleted == true)
+            player.primary()
+            try await waitUntil { learn.player?.lesson.summary.order == number + 1 && !learn.uiModel.isLoadingLesson }
+        }
+        let third = try #require(learn.player)
+        third.begin()
+        third.primary()
+        #expect(third.stepIndex == 1)
+        third.close()
+        try await waitUntil { learn.player == nil }
+        try await waitUntil {
+            home.uiModel.content?.cards.contains {
+                if case let .continueLesson(card) = $0 { return card.current?.number == 3 && card.completedLessons == 2 }
+                return false
+            } == true
+        }
+        guard case let .continueLesson(card)? = home.uiModel.content?.cards.first(where: { $0.kind == "continueLesson" }) else {
+            Issue.record("Missing Continue Lesson"); return
+        }
+        #expect(card.current?.number == 3)
+        #expect(card.completedLessons == 2)
+        #expect(card.totalLessons == 6)
+        guard case let .learnShortcuts(updated)? = home.uiModel.content?.cards.first(where: { $0.kind == "learnShortcuts" }) else {
+            Issue.record("Missing A REGION after progress"); return
+        }
+        let sameRegion = try #require(updated.first { $0.course.kind == .region })
+        #expect(sameRegion.lesson.order == 3)
+        home.openLesson(sameRegion)
+        try await waitUntil { learn.player != nil && !learn.uiModel.isLoadingLesson }
+        #expect(learn.player?.lesson.summary.order == 3)
+        #expect(learn.player?.stepIndex == 1)
+        learn.player?.close()
+        try await waitUntil { learn.player == nil }
+        home.openCourse(course.id)
+        try await waitUntil { learn.player != nil && !learn.uiModel.isLoadingLesson }
+        #expect(learn.player?.lesson.summary.order == 3)
+        #expect(learn.player?.stepIndex == 1)
+        let relaunched = LearnFactory(catalog: catalog, learning: LearningStore(modelContainer: container),
+            profiles: ProfilesStub()).makeViewModel()
+        await relaunched.openCourse(id: course.id)
+        #expect(relaunched.player?.lesson.summary.order == 3)
+        #expect(relaunched.player?.stepIndex == 1)
+    }
+    @Test func progressRefresh_duringAnOlderHomeLoad_doesNotReuseItsStaleState() async throws {
+        let course = RegionFlowCatalog().region
+        func content(_ state: Int) -> HomeLoadResultModel {
+            var model = HomeContentModel.full
+            model.courses = [CourseRules.summary(of: course,
+                module: ModuleProgress(courseID: course.id, state: state, lastOpenedAt: Date()), progress: [:])]
+            return HomeLoadResultModel(model: model, inviteLink: nil, cellarWineKeys: [])
+        }
+        let source = SuspendedHomeSnapshot(old: content(1), latest: content(2))
+        let home = HomeViewModel(loadHomeUseCase: source,
+            addWineToCellarUseCase: AddWineToCellarUseCase(cellar: CellarStub()),
+            coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
+            now: Date.init, calendar: .current)
+        let oldLoad = Task { await home.load() }
+        try await waitUntil { source.pending != nil }
+        let refresh = Task { await home.load() }
+        await Task.yield()
+        source.resume()
+        await oldLoad.value
+        await refresh.value
+        #expect(source.calls == 2)
+        guard case let .continueLesson(card)? = home.uiModel.content?.cards.first(where: { $0.kind == "continueLesson" }) else {
+            Issue.record("Missing refreshed state"); return
+        }
+        #expect(card.completedLessons == 2)
+        #expect(card.current?.number == 3)
+    }
+
 }

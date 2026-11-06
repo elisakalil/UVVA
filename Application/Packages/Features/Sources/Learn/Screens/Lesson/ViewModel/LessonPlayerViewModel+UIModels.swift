@@ -3,6 +3,17 @@ import Foundation
 
 /// What the player draws, built from the lesson and the drafts.
 extension LessonPlayerViewModel {
+    private static let lessonWordFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.numberStyle = .spellOut
+        return formatter
+    }()
+
+    private static func word(_ number: Int) -> String {
+        (lessonWordFormatter.string(from: NSNumber(value: number)) ?? String(number)).uppercased()
+    }
+
     static func two(_ number: Int) -> String { String(format: "%02d", number) }
 
     var cover: LessonCoverUIModel {
@@ -16,7 +27,8 @@ extension LessonPlayerViewModel {
             xp: "\(summary.xp)",
             steps: "\(lesson.steps.count)",
             objectives: summary.objectives,
-            showsReviewPrevious: course.lesson(before: summary) != nil
+            showsReviewPrevious: course.lesson(before: summary) != nil,
+            position: "LESSON\n\(Self.word(summary.order))\nOF \(Self.word(course.lessons.count))"
         )
     }
 
@@ -30,7 +42,7 @@ extension LessonPlayerViewModel {
             current: current,
             total: total,
             counter: current.map { "\(Self.two($0 + 1)) / \(Self.two(total))" } ?? "",
-            backLeaves: phase == entry && isFirst
+            backLeaves: playerState == entry && isFirst
         )
     }
 
@@ -89,7 +101,7 @@ extension LessonPlayerViewModel {
                 right: shuffled.map { OptionUIModel(id: $0, number: "", label: pairs[$0].right, state: state($0, isLeft: false)) },
                 status: draft.miss != nil
                     ? String(localized: "Not a pair. Try again.", bundle: .module)
-                    : String(localized: "\(draft.links.count) of \(pairs.count) matched", bundle: .module),
+                    : "",
                 isMiss: draft.miss != nil))
         case let .summary(_, points):
             return .summary(summary(points: points))
@@ -133,8 +145,9 @@ extension LessonPlayerViewModel {
             return .button(title: course.lesson(after: lesson.summary) == nil
                            ? String(localized: "Finish module", bundle: .module)
                            : String(localized: "Next lesson", bundle: .module), isEnabled: true)
-        case let .matchPairs(_, pairs, _) where !draft.isChecked:
-            return .button(title: "\(draft.links.count) / \(pairs.count)", isEnabled: false)
+        case let .matchPairs(_, pairs, _):
+            return .button(title: String(localized: "Continue", bundle: .module),
+                           isEnabled: draft.isChecked && draft.links.count == pairs.count)
         default:
             guard draft.isChecked, let answer = LessonGrader.answer(step, draft) else {
                 return .button(title: String(localized: "Check", bundle: .module), isEnabled: LessonGrader.canCheck(step, draft))

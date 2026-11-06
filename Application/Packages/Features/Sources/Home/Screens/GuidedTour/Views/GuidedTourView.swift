@@ -1,11 +1,8 @@
 import DesignSystem
 import SwiftUI
 
-/// The dark layer over the Home with a window of light on the area of each step, and the cream card that
-/// explains it (HOME-R30 to R33). It takes every touch, so the Home underneath does not respond.
 public struct GuidedTourView<ViewModel: GuidedTourViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
-    /// The frames published with `spotlightAnchor`, in this view's space.
     var frames: [String: CGRect]
 
     public init(viewModel: ViewModel, frames: [String: CGRect]) {
@@ -13,13 +10,10 @@ public struct GuidedTourView<ViewModel: GuidedTourViewModelProtocol>: View {
         self.frames = frames
     }
 
-    /// The lit area, kept 12 pt inside the screen when the target is taller than it.
     private func spot(in size: CGSize) -> (rect: CGRect, radius: CGFloat)? {
         guard let step = viewModel.uiModel.current else { return nil }
         guard let frame = frames[step.target] ?? step.fallback.flatMap({ frames[$0] }) else { return nil }
         let padded = frame.insetBy(dx: -step.padding, dy: -step.padding)
-        // Clamped by hand: while the Home scrolls to the target it can still be off screen, and an empty
-        // intersection (CGRect.null) would reach the layer as an infinite frame.
         let top = max(padded.minY, 12)
         let bottom = min(padded.maxY, size.height - 12)
         guard bottom > top, padded.width.isFinite, padded.width > 0 else { return nil }
@@ -77,12 +71,9 @@ public struct GuidedTourView<ViewModel: GuidedTourViewModelProtocol>: View {
         .foregroundStyle(UVVAColor.mossDeep)
     }
 
-    /// The card sits below an area in the top half and above an area in the bottom half;
-    /// the intro card sits at the bottom.
     private func cardCenterY(spot: CGRect?, in size: CGSize) -> CGFloat {
         let half = TourCard<ViewModel>.estimatedHeight / 2
         guard let spot else { return size.height - 44 - half - 20 }
-        // An area taller than half the screen ("Choose your wine") leaves the card at the top, over the header.
         if spot.height > size.height / 2 { return 60 + half }
         if spot.midY < size.height / 2 {
             return min(spot.maxY + 20 + half, size.height - 40 - half)

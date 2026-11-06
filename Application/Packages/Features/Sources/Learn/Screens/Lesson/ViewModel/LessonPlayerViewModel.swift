@@ -4,18 +4,20 @@ import Foundation
 import Combine
 
 /// The lesson player (LEARN.md §4): the cover, the steps, Check and feedback, the Summary and the certificate the
-/// lesson may earn. Progress is saved as the learner goes, so leaving at any point resumes there (LEARN-R14).
+/// lesson may earn. Progress stays in memory during play and is persisted at the exit barrier.
 @MainActor
 public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     @Published public private(set) var uiModel = LessonPlayerUIModel()
     private var presentationReady = false
-    enum Phase: Equatable {
+    enum LessonPlayerState: Equatable {
         case cover
         case step(Int)
     }
 
     enum Exit: Equatable {
         case close
+        case finish
+        case checkpoint
         /// Back from the first screen this lesson showed: to the lesson it was opened from.
         case back
         case open(LessonSummary)
@@ -24,30 +26,33 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     public let id = UUID()
     let course: Course
     let lesson: Lesson
-    private(set) var phase: Phase { didSet { refresh() } }
+    private(set) var playerState: LessonPlayerState { didSet { refresh() } }
     /// The first screen this lesson showed: back stops here.
-    let entry: Phase
+    let entry: LessonPlayerState
     /// Opened from the list, not from another lesson: back from its first screen leaves the lessons.
     let isFirst: Bool
     private(set) var drafts: [Int: StepDraft] = [:] { didSet { refresh() } }
     /// The certificate on screen, over the Summary (LEARN-R22).
     private(set) var certificate: CertificateUIModel? { didSet { refresh() } }
-    /// The lesson was completed before it opened: it plays again, without XP and without saving (LEARN-R19a).
+    /// A completed lesson keeps its cursor, without awarding XP or a certificate again.
     let isReview: Bool
 
+    var progressSnapshot: LessonProgress? { progress }
+    /// The Summary already has a durable completion; leaving it requires no second save.
+    var hasSavedSummary: Bool { isSummary && saving == nil && (isReview || completionHandled) }
     private var progress: LessonProgress?
     private var earnedCertificate: CertificateUIModel?
-    private var saving: Task<Void, Never>?
+    private var saving: Task<Void, Error>?
     /// Completing the lesson: its save, then the certificate it may earn.
-    private var completing: Task<Void, Never>?
+    private var completionHandled = false
     let toast: Toast
     private let saveProgressUseCase: any SaveLessonProgressUseCaseProtocol
     private let now: () -> Date
     private let onCompleted: () async -> CertificateUIModel?
     private let onExit: (Exit) -> Void
 
-    /// `startStep` resumes at a saved step; nil opens the cover. `pickToast` picks an index in 0..<count.
-    init(course: Course, lesson: Lesson, progress: LessonProgress?, startStep: Int?, isFirst: Bool = true,
+    /// The persisted progress alone chooses the initial screen. `pickToast` picks an index in 0..<count.
+    init(course: Course, lesson: Lesson, progress: LessonProgress?, isFirst: Bool = true,
          saveProgressUseCase: any SaveLessonProgressUseCaseProtocol,
          now: @escaping () -> Date = Date.init, pickToast: (Int) -> Int = { Int.random(in: 0..<$0) },
          onCompleted: @escaping () async -> CertificateUIModel?, onExit: @escaping (Exit) -> Void) {
@@ -61,22 +66,22 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         self.toast = Toast.all[pickToast(Toast.all.count)]
         self.onCompleted = onCompleted
         self.onExit = onExit
-        let first: Phase = if let startStep, !lesson.steps.isEmpty {
+        let first: LessonPlayerState = if let startStep = progress?.currentStep, startStep >= 0, !lesson.steps.isEmpty {
             .step(min(max(startStep, 0), lesson.steps.count - 1))
         } else {
             .cover
         }
-        phase = first
+        playerState = first
         entry = first
-        if !isReview, let answers = progress?.answers { restore(answers) }
+        if let answers = progress?.answers { restore(answers) }
         presentationReady = true
         refresh()
         // A lesson left on its Summary before it was saved as completed completes now.
-        if case let .step(index) = phase, case .summary = lesson.steps[index] { complete() }
+        if case let .step(index) = playerState, case .summary = lesson.steps[index], !isReview { updateProgress(markingCompleted: true) }
     }
 
     var stepIndex: Int? {
-        if case let .step(index) = phase { index } else { nil }
+        if case let .step(index) = playerState { index } else { nil }
     }
 
     var step: LessonStep? { stepIndex.map { lesson.steps[$0] } }
@@ -93,8 +98,8 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
 
     public func begin() {
         guard !lesson.steps.isEmpty else { return }
-        phase = .step(0)
-        save()
+        playerState = .step(0)
+        updateProgress()
     }
 
     /// "Review previous lesson".
@@ -104,21 +109,21 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     }
 
     /// The back chevron: always the screen before. From the first screen this lesson showed it returns to the lesson
-    /// it was opened from, or leaves when there is none. The farthest step stays saved, so the lesson still resumes
-    /// there (LEARN-R14).
+    /// it was opened from, or leaves when there is none. Departure saves the displayed screen (LEARN-R14).
     public func back() {
-        guard phase != entry else {
+        guard playerState != entry else {
             if isFirst { close() } else { onExit(.back) }
             return
         }
-        switch phase {
+        switch playerState {
         case .cover: close()
-        case .step(0): phase = .cover
-        case let .step(index): phase = .step(index - 1)
+        case .step(0): playerState = .cover
+        case let .step(index): playerState = .step(index - 1)
         }
+        updateProgress()
     }
 
-    /// Leaves the lessons, from the back chevron or a drag down: the step and the answers are already saved (LEARN-R14).
+    /// Requests departure. The coordinator persists the step and answers before dismissing.
     public func close() { onExit(.close) }
 
     // MARK: Answering (LEARN-R17, R18)
@@ -178,7 +183,7 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
                 draft.pickedLeft = draft.pickedLeft == pair ? nil : pair
             }
         }
-        if let index = stepIndex, drafts[index]?.isChecked == true { save() }
+        if let index = stepIndex, drafts[index]?.isChecked == true { updateProgress() }
     }
 
     public func tapRight(_ pair: Int) {
@@ -196,7 +201,7 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
                 draft.misses += 1
             }
         }
-        if let index = stepIndex, drafts[index]?.isChecked == true { save() }
+        if let index = stepIndex, drafts[index]?.isChecked == true { updateProgress() }
     }
 
     /// The button at the foot of the step.
@@ -212,7 +217,7 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
             checked.isChecked = true
             checked.pickedRow = nil
             drafts[index] = checked
-            save()
+            updateProgress()
         default:
             // Concept, tip, or a question already checked: wrong answers move on too (LEARN-R17).
             advance(from: index)
@@ -221,8 +226,8 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
 
     private func advance(from index: Int) {
         guard index + 1 < lesson.steps.count else { return }
-        phase = .step(index + 1)
-        save()
+        playerState = .step(index + 1)
+        updateProgress()
         if case .summary = lesson.steps[index + 1] { complete() }
     }
 
@@ -231,30 +236,28 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     /// Reaching the Summary completes the lesson, once (SHARED-R15, LEARN-R21).
     private func complete() {
         guard !isReview, progress?.completedAt == nil else { return }
-        save(markingCompleted: true)
-        let pending = saving
-        completing = Task {
-            await pending?.value
-            earnedCertificate = await onCompleted()
-        }
+        updateProgress(markingCompleted: true)
+        onExit(.checkpoint)
+    }
+
+    /// Called after installation in the coordinator, never from init.
+    func savePendingCompletion() {
+        if !isReview, progress?.isCompleted == true, !completionHandled { onExit(.checkpoint) }
     }
 
     /// Waits for the certificate, so a quick tap on the Summary button never skips it.
     private func finish() {
-        let completing = completing
-        Task {
-            await completing?.value
-            showCertificateOrProceed()
-        }
+        // The coordinator owns every departure, including Summary -> certificate/next lesson.
+        onExit(.finish)
     }
 
-    private func showCertificateOrProceed() {
+    func finishAfterSaving() -> Exit? {
         if let earned = earnedCertificate {
             earnedCertificate = nil
             certificate = earned
-            return
+            return nil
         }
-        proceed()
+        return nextExit
     }
 
     /// The certificate closed ("Share", "Save image" or "Not now").
@@ -263,16 +266,17 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         proceed()
     }
 
-    private func proceed() {
-        if let next = course.lesson(after: lesson.summary) { onExit(.open(next)) } else { onExit(.close) }
+    private var nextExit: Exit {
+        if let next = course.lesson(after: lesson.summary) { .open(next) } else { .close }
     }
+
+    private func proceed() { onExit(nextExit) }
 
     // MARK: Saving (LEARN-R14)
 
-    private func save(markingCompleted: Bool = false) {
-        guard !isReview else { return }
+    private func updateProgress(markingCompleted: Bool = false) {
         var record = progress ?? LessonProgress(lessonID: lesson.id, courseID: course.id, lastOpenedAt: now())
-        record.currentStep = stepIndex ?? 0
+        record.currentStep = stepIndex ?? -1
         record.answers = drafts.reduce(into: [:]) { answers, entry in
             guard entry.value.isChecked, let answer = LessonGrader.answer(lesson.steps[entry.key], entry.value) else { return }
             answers[entry.key] = answer
@@ -283,18 +287,27 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
             record.xp = lesson.summary.xp
         }
         progress = record
-        let saveProgressUseCase = saveProgressUseCase
-        let previous = saving
-        saving = Task {
-            await previous?.value
-            try? await saveProgressUseCase.execute(record)
-        }
     }
 
-    /// Waits for the saves in flight, so what opens next reads them.
-    func flush() async {
-        await saving?.value
-        await completing?.value
+    /// The only persistence entry point. Called by the coordinator when leaving a lesson.
+    /// A failed save keeps the player alive; the same snapshot can be retried.
+    func saveOnExit() async throws {
+        if let saving { try await saving.value; return }
+        updateProgress()
+        guard var snapshot = progress else { return }
+        snapshot.revision += 1
+        let useCase = saveProgressUseCase
+        let record = snapshot
+        let course = course
+        let task = Task.detached(priority: .utility) { try await useCase.execute(record, in: course) }
+        saving = task
+        defer { saving = nil }
+        try await task.value
+        progress = snapshot
+        if snapshot.isCompleted, !isReview, !completionHandled {
+            completionHandled = true
+            earnedCertificate = await onCompleted()
+        }
     }
 
     private func restore(_ answers: [Int: LessonAnswer]) {
@@ -317,6 +330,6 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         guard presentationReady else { return }
         uiModel = LessonPlayerUIModel(cover: cover, header: header, stepModel: stepModel, footer: footer,
                                       certificate: certificate, stepIndex: stepIndex, isTip: isTip,
-                                      isSummary: isSummary, isCover: phase == .cover)
+                                      isSummary: isSummary, isCover: playerState == .cover)
     }
 }

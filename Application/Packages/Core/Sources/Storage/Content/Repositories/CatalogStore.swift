@@ -27,7 +27,7 @@ public actor CatalogStore: CatalogRepository {
 
     public func glossary() throws -> [GlossaryTerm] {
         try modelContext.fetch(FetchDescriptor<GlossaryTermEntity>(sortBy: [SortDescriptor(\.term)])).map {
-            GlossaryTerm(term: $0.term, pronunciation: $0.pronunciation ?? "", definition: $0.definition)
+            GlossaryTerm(term: $0.term, pronunciation: $0.pronunciation ?? "", definition: $0.definition, aka: $0.aka, lesson: $0.lesson)
         }
     }
 

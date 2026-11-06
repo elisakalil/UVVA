@@ -49,6 +49,7 @@ public actor ProfileStore: ProfileRepository {
         for reminder in try modelContext.fetch(FetchDescriptor<ReminderEntity>()) { modelContext.delete(reminder) }
         for entry in try modelContext.fetch(FetchDescriptor<CellarEntryEntity>()) { modelContext.delete(entry) }
         for lesson in try modelContext.fetch(FetchDescriptor<LessonProgressEntity>()) { modelContext.delete(lesson) }
+        for module in try modelContext.fetch(FetchDescriptor<ModuleProgressEntity>()) { modelContext.delete(module) }
         for certificate in try modelContext.fetch(FetchDescriptor<CertificateEntity>()) { modelContext.delete(certificate) }
         try modelContext.save()
     }

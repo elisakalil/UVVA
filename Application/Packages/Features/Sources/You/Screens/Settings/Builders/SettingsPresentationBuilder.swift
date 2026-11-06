@@ -2,7 +2,7 @@ import Core
 import Foundation
 
 struct SettingsPresentationBuilder {
-    func build(from content: YouContent) -> SettingsUIModel {
+    func build(from content: YouContentModel) -> SettingsUIModel {
         let profile = content.profile
         let reminder = content.reminder
         let certificates = content.certificates

@@ -113,6 +113,7 @@ struct AppRootView: View {
             try Task.checkCancellation()
 
             coordinator = candidate
+            loader.startCatalogImport()
         } catch is CancellationError {
             await content?.stop()
         } catch {

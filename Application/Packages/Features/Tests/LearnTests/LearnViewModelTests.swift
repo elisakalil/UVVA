@@ -12,7 +12,58 @@ struct LearnViewModelTests {
     }
 
     func eventually(_ condition: () -> Bool) async {
-        for _ in 0..<200 where !condition() { await Task.yield() }
+        let deadline = ContinuousClock.now.advanced(by: .seconds(5))
+        while !condition(), ContinuousClock.now < deadline { try? await Task.sleep(for: .milliseconds(5)) }
+    }
+
+    @Test func homeSuggestion_keepsRegionSelectedAfterClosingLesson() async throws {
+        let first = Fixture.course("region-fr-bordeaux", kind: .region, order: 1, countries: ["France"])
+        let selected = Fixture.course("region-fr-burgundy", kind: .region, order: 2, countries: ["France"])
+        let model = viewModel([first, selected])
+        await model.load()
+        model.updateQuery("unrelated search")
+        let lesson = try #require(selected.lessons.last)
+        await model.openCourse(id: selected.id, lessonID: lesson.id)
+        #expect(model.uiModel.query.isEmpty)
+        #expect(model.uiModel.focusedCourseID == selected.id)
+        #expect(model.uiModel.regionGroups.first?.rows.first?.id == selected.id)
+        #expect(model.uiModel.regionMap?.pins.first(where: { $0.id == selected.id })?.isSelected == true)
+        let player = try #require(model.player)
+        player.close()
+        await eventually { model.player == nil }
+        #expect(model.uiModel.regionGroups.first?.rows.first?.isOpen == true)
+        #expect(model.uiModel.focusedCourseID == selected.id)
+    }
+
+    @Test func immediateReopenFromSuggestionAndSearch_resumesSavedStep() async throws {
+        let course = Fixture.course("grape-tannat")
+        let model = viewModel([course])
+        let lessonID = course.lessons[0].id
+        await model.openCourse(id: course.id, lessonID: lessonID)
+        let original = try #require(model.player)
+        original.begin()
+        original.primary()
+        original.primary()
+        original.close()
+        await model.openCourse(id: course.id, lessonID: lessonID)
+        let resumed = try #require(model.player)
+        #expect(resumed.stepIndex == 2)
+        resumed.close()
+        await model.openLesson(course, lessonID: lessonID)
+        #expect(model.player?.stepIndex == 2)
+    }
+
+    @Test func staleLearnCache_doesNotOverrideRepositoryProgress() async throws {
+        let course = Fixture.course("grape-tannat")
+        let learning = LearningSpy()
+        let model = viewModel([course], learning: learning)
+        await model.load()
+        let lessonID = course.lessons[0].id
+        try await learning.save(LessonProgress(lessonID: lessonID, courseID: course.id, currentStep: 4,
+                                               answers: [2: .options([2])], lastOpenedAt: Fixture.day))
+        await model.openCourse(id: course.id, lessonID: lessonID)
+        #expect(model.player?.stepIndex == 4)
+        #expect(model.player?.draft(2).isChecked == true)
     }
 
     // MARK: LEARN-R03 · Percursos
@@ -23,7 +74,7 @@ struct LearnViewModelTests {
 
     // MARK: LEARN-R05, R06 · Países e regiões
 
-    @Test func LEARN_R06_aCountry_opensItsFirstRegion_oneAtATime() async {
+    @Test func LEARN_R06_aCountry_opensItsFirstRegion_oneAtATime() async throws {
         let regions = [Fixture.course("region-fr-bordeaux", kind: .region, order: 1, countries: ["France"]),
                        Fixture.course("region-fr-burgundy", kind: .region, order: 2, countries: ["France"]),
                        Fixture.course("region-pt-douro", kind: .region, order: 3, countries: ["Portugal"])]
@@ -39,7 +90,7 @@ struct LearnViewModelTests {
         #expect(model.regionGroups[0].rows.filter(\.isOpen).map(\.id) == ["region-fr-burgundy"])
     }
 
-    @Test func LEARN_R06_theMap_pinsTheCountrysRegions_theOpenOneSelected() async {
+    @Test func LEARN_R06_theMap_pinsTheCountrysRegions_theOpenOneSelected() async throws {
         let regions = [Fixture.course("region-fr-bordeaux", kind: .region, order: 1, countries: ["France"]),
                        Fixture.course("region-fr-burgundy", kind: .region, order: 2, countries: ["France"]),
                        Fixture.course("region-pt-madeira", kind: .region, order: 3, countries: ["Portugal"])]
@@ -56,7 +107,7 @@ struct LearnViewModelTests {
         #expect(model.regionMap?.pins.first?.isInset == true)
     }
 
-    @Test func LEARN_R06_aRegionTappedOnTheMap_leadsTheList() async {
+    @Test func LEARN_R06_aRegionTappedOnTheMap_leadsTheList() async throws {
         let regions = [Fixture.course("region-fr-bordeaux", kind: .region, order: 1, countries: ["France"]),
                        Fixture.course("region-fr-burgundy", kind: .region, order: 2, countries: ["France"]),
                        Fixture.course("region-fr-alsace", kind: .region, order: 3, countries: ["France"])]
@@ -122,7 +173,7 @@ struct LearnViewModelTests {
 
     // MARK: LEARN-R08 · Filtros
 
-    @Test func LEARN_R08_redFilter_onlyReds_inTheirOrder() async {
+    @Test func LEARN_R08_redFilter_onlyReds_inTheirOrder() async throws {
         let grapes = [Fixture.course("grape-riesling", order: 45, color: "white", countries: ["Germany"]),
                       Fixture.course("grape-pinot-noir", order: 28, color: "red", countries: ["France"]),
                       Fixture.course("grape-tannat", order: 1, color: "red", countries: ["Uruguay", "France"])]
@@ -143,14 +194,14 @@ struct LearnViewModelTests {
         #expect(LearnListPresentationBuilder.meta(module) == "6 lessons · 31 min · 90 XP")
     }
 
-    @Test func LEARN_R10b_module20_opensWithModule1NotStarted() async {
+    @Test func LEARN_R10b_module20_opensWithModule1NotStarted() async throws {
         let model = viewModel([Fixture.course("path-01", kind: .path, order: 1), Fixture.course("path-20", kind: .path, order: 20)])
         await model.load()
         await model.startCourse(id: "path-20")
         #expect(model.player?.course.id == "path-20")
     }
 
-    @Test func LEARN_R10_levelFilter() async {
+    @Test func LEARN_R10_levelFilter() async throws {
         let model = viewModel([Fixture.course("path-01", kind: .path, level: "Essentials"),
                                Fixture.course("path-25", kind: .path, order: 25, level: "Expert")])
         await model.load()
@@ -161,12 +212,12 @@ struct LearnViewModelTests {
     // MARK: LEARN-R11 · Rótulo e destino
 
     @Test func LEARN_R11_labels() {
-        #expect(LearnListPresentationBuilder.cta(.notStarted) == "Go to the module")
-        #expect(LearnListPresentationBuilder.cta(.inProgress) == "Continue where you left off")
-        #expect(LearnListPresentationBuilder.cta(.done) == "Review the module")
+        #expect(LearnListPresentationBuilder.cta(.notStarted) == "Start")
+        #expect(LearnListPresentationBuilder.cta(.inProgress) == "Continue")
+        #expect(LearnListPresentationBuilder.cta(.done) == "Review")
     }
 
-    @Test func LEARN_R11_inProgress_opensTheSavedStep() async {
+    @Test func LEARN_R11_inProgress_opensTheSavedStep() async throws {
         let course = Fixture.course("grape-tannat", lessons: 3)
         let learning = LearningSpy([
             LessonProgress(lessonID: "grape-tannat-l01", courseID: course.id, currentStep: 5, completedAt: Fixture.day,
@@ -175,7 +226,7 @@ struct LearnViewModelTests {
         ])
         let model = viewModel([course], learning: learning)
         await model.load()
-        #expect(model.grapeGroups[0].rows[0].cta == "Continue where you left off")
+        #expect(model.grapeGroups[0].rows[0].cta == "Continue")
         await model.openCourse(id: "grape-tannat")
         #expect(model.tab == .grape)
         #expect(model.player?.lesson.id == "grape-tannat-l02")
@@ -184,7 +235,7 @@ struct LearnViewModelTests {
 
     // MARK: LEARN-R22 · Certificado
 
-    @Test func LEARN_R22_finishingTheLastLesson_issuesOneCertificate_andShowsIt() async {
+    @Test func LEARN_R22_finishingTheLastLesson_issuesOneCertificate_andShowsIt() async throws {
         let course = Fixture.course("grape-tannat", lessons: 2)
         let learning = LearningSpy([LessonProgress(lessonID: "grape-tannat-l01", courseID: course.id, currentStep: 5,
                                                    completedAt: Fixture.day, lastOpenedAt: Fixture.day, xp: 15)])
@@ -200,7 +251,7 @@ struct LearnViewModelTests {
             }
             player.primary()
         }
-        await player.flush()
+        try await player.saveOnExit()
         #expect(learning.issued == [Certificate(courseID: "grape-tannat", date: Fixture.day)])
         player.primary() // "Finish module"
         await eventually { player.certificate != nil }
@@ -210,7 +261,7 @@ struct LearnViewModelTests {
         #expect(model.grapeGroups[0].rows[0].hasCertificate)
     }
 
-    @Test func LEARN_R22_reviewedAndFinishedAgain_noNewCertificate() async {
+    @Test func LEARN_R22_reviewedAndFinishedAgain_noNewCertificate() async throws {
         let course = Fixture.course("grape-tannat", lessons: 2)
         let done = course.lessons.map {
             LessonProgress(lessonID: $0.id, courseID: course.id, currentStep: 5, completedAt: Fixture.day, lastOpenedAt: Fixture.day, xp: 15)
@@ -219,17 +270,17 @@ struct LearnViewModelTests {
         try? await learning.addCertificate(Certificate(courseID: course.id, date: Fixture.day))
         let model = viewModel([course], learning: learning)
         await model.load()
-        #expect(model.grapeGroups[0].rows[0].cta == "Review the module")
+        #expect(model.grapeGroups[0].rows[0].cta == "Review")
         await model.openCourse(id: "grape-tannat")
         #expect(model.player?.lesson.id == "grape-tannat-l01")
-        #expect(model.player?.phase == .cover)
+        #expect(model.player?.stepIndex == 5)
         #expect(model.player?.isReview == true)
         #expect(learning.issued.count == 1)
     }
 
     // MARK: LEARN-R14 · Voltar entre lições
 
-    @Test func LEARN_R14_aLessonOpenedFromAnother_backReturnsToIt_thenLeaves() async {
+    @Test func LEARN_R14_aLessonOpenedFromAnother_backReturnsToIt_thenLeaves() async throws {
         let course = Fixture.course("grape-tannat", lessons: 2)
         let learning = LearningSpy([LessonProgress(lessonID: "grape-tannat-l01", courseID: course.id, currentStep: 5,
                                                    completedAt: Fixture.day, lastOpenedAt: Fixture.day, xp: 15)])
@@ -243,8 +294,10 @@ struct LearnViewModelTests {
         #expect(model.player?.lesson.id == "grape-tannat-l01")
         model.player?.back()
         await eventually { model.players.count == 1 }
-        #expect(model.player === second)
-        second.back()
+        await eventually { model.player?.lesson.id == second.lesson.id && !model.uiModel.isLoadingLesson }
+        #expect(model.player?.lesson.id == second.lesson.id)
+        #expect(model.player?.playerState == .cover)
+        model.player?.back()
         await eventually { model.player == nil }
     }
 }

@@ -3,5 +3,5 @@ import Foundation
 
 @MainActor
 protocol LoadLearnUseCaseProtocol {
-    func execute(previous: LearnContent) async -> LearnContent
+    func execute(previous: LearnContentModel) async -> LearnContentModel
 }

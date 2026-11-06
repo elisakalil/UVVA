@@ -1,0 +1,23 @@
+{
+  "images": [
+    {
+      "filename": "LaunchPreparationText.png",
+      "idiom": "universal",
+      "scale": "1x"
+    },
+    {
+      "filename": "LaunchPreparationText@2x.png",
+      "idiom": "universal",
+      "scale": "2x"
+    },
+    {
+      "filename": "LaunchPreparationText@3x.png",
+      "idiom": "universal",
+      "scale": "3x"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

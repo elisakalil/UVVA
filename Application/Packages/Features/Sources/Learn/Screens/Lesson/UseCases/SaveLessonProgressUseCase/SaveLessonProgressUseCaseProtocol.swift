@@ -1,7 +1,6 @@
 import Core
 import Foundation
 
-@MainActor
-protocol SaveLessonProgressUseCaseProtocol {
-    func execute(_ progress: LessonProgress) async throws
+protocol SaveLessonProgressUseCaseProtocol: Sendable {
+    func execute(_ progress: LessonProgress, in course: Course) async throws
 }

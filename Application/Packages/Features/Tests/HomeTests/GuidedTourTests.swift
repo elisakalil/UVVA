@@ -75,7 +75,7 @@ struct GuidedTourTests {
     @Test func HOME_R31_stepTwo_pointsAtChooseYourWine_andTheTabsComeLast() {
         let viewModel = GuidedTourViewModel(firstName: "Elisa") {}
         viewModel.pick(2)
-        #expect(viewModel.uiModel.current?.target == HomeSpotlightModel.chooseYourWine)
+        #expect(viewModel.uiModel.current?.target == HomeSpotlightID.chooseYourWine)
         viewModel.pick(6)
         #expect(viewModel.uiModel.current?.target == "tab.friends")
     }
@@ -89,7 +89,7 @@ struct GuidedTourTests {
         defer { subscription.cancel() }
         model.next()
         model.pick(2)
-        #expect(presentations.last?.current?.target == HomeSpotlightModel.chooseYourWine)
+        #expect(presentations.last?.current?.target == HomeSpotlightID.chooseYourWine)
         model.back()
         #expect(presentations.last?.step == 1)
         model.pick(6)
@@ -97,6 +97,21 @@ struct GuidedTourTests {
         #expect(presentations.first?.counter == "Tour")
         #expect(presentations.last?.isFinished == true)
         #expect(finished)
+    }
+
+    @MainActor
+    @Test func completedTour_ignoresFurtherActionsAndFinishesOnce() {
+        var completions = 0
+        let model = GuidedTourViewModel(firstName: "Elisa") { completions += 1 }
+        model.pick(6)
+        model.next()
+        model.next()
+        model.back()
+        model.pick(2)
+        model.next()
+        #expect(completions == 1)
+        #expect(model.uiModel.isFinished)
+        #expect(model.uiModel.step == 6)
     }
 
 }

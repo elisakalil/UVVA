@@ -5,6 +5,9 @@ import Testing
 @testable import Learn
 
 private struct OfflineLearning: LearningRepository {
+    func snapshot(for courses: [Course]) async throws -> LearningSnapshot { throw URLError(.notConnectedToInternet) }
+    func save(_ progress: LessonProgress, in course: Course) async throws { try await save(progress) }
+
     func progress() async throws -> [String: LessonProgress] { throw URLError(.notConnectedToInternet) }
     func save(_ progress: LessonProgress) async throws { throw URLError(.notConnectedToInternet) }
     func certificates() async throws -> [Certificate] { throw URLError(.notConnectedToInternet) }
@@ -24,7 +27,7 @@ struct LearnUseCaseTests {
         let certificate = Certificate(courseID: course.id, date: Fixture.day)
         let record = LessonProgress(lessonID: course.lessons[0].id, courseID: course.id,
                                     currentStep: 3, lastOpenedAt: Fixture.day)
-        let previous = LearnContent(courses: [.grape: [course]], progress: [record.lessonID: record],
+        let previous = LearnContentModel(courses: [.grape: [course]], progress: [record.lessonID: record],
                                     certificates: [certificate], firstName: "Elisa")
         let result = await LoadLearnUseCase(catalog: OfflineCourses(), learning: OfflineLearning(),
                                             profiles: ProfilesStub()).execute(previous: previous)
@@ -39,7 +42,7 @@ struct LearnUseCaseTests {
         let record = LessonProgress(lessonID: course.lessons[0].id, courseID: course.id,
                                     currentStep: 5, completedAt: Fixture.day, lastOpenedAt: Fixture.day, xp: 15)
         let result = await CompleteCourseUseCase(learning: OfflineLearning(), now: { Fixture.day })
-            .execute(course, previous: LearnContent(progress: [record.lessonID: record]))
+            .execute(course, previous: LearnContentModel(progress: [record.lessonID: record]))
         #expect(result.earned == nil)
         #expect(result.certificates.isEmpty)
         #expect(result.progress[record.lessonID]?.isCompleted == true)

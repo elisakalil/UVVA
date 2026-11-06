@@ -2,7 +2,7 @@ import Core
 
 extension LearnViewModel {
     var listBuilder: LearnListPresentationBuilder {
-        LearnListPresentationBuilder(courses: courses, progress: progress, certificates: certificates,
+        LearnListPresentationBuilder(courses: courses, progress: progress, modules: contentModel.modules, certificates: certificates,
                                      openCourses: openCourses, grapeFilter: grapeFilter, pathLevel: pathLevel,
                                      country: country, pickedRegion: pickedRegion)
     }

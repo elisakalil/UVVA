@@ -1,5 +1,5 @@
 public struct QuizUIModel {
-    var screen: QuizScreen = .loading
+    var screen: QuizViewState = .loading
     var isReady = false
     var isSaving = false
     var failedToSave = false

@@ -63,7 +63,7 @@ public final class QuizViewModel: QuizViewModelProtocol {
     public func finish() { coordinator.finish() }
     public func leave() { coordinator.leave() }
 
-    var screen: QuizScreen {
+    var screen: QuizViewState {
         let builder = QuizPresentationBuilder(entry: entry, firstName: firstName, flow: flow,
                                                isSaving: isSaving, failedToSave: failedToSave)
         if isSharing, let map = flow.map { return .share(builder.shareModel(map)) }

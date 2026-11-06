@@ -5,12 +5,14 @@ import SwiftUI
 public struct CertificateCard: View {
     var model: CertificateUIModel
     var format: ShareFormat
+    var cornerRadius: CGFloat
 
     static let ground = Color(hex: 0x3A1F2C)
 
-    public init(model: CertificateUIModel, format: ShareFormat) {
+    public init(model: CertificateUIModel, format: ShareFormat, cornerRadius: CGFloat = 14) {
         self.model = model
         self.format = format
+        self.cornerRadius = cornerRadius
     }
 
     private var isStory: Bool { format == .story }
@@ -21,7 +23,7 @@ public struct CertificateCard: View {
             HStack(alignment: .firstTextBaseline) {
                 Text("UVVA").font(UVVAFont.whiteGrape(14)).tracking(2)
                 Spacer()
-                Text("\(model.kind) · \(model.date)".uppercased())
+                Text(model.date.uppercased())
                     .font(UVVAFont.sans(7))
                     .tracking(1.8)
                     .opacity(0.7)
@@ -34,6 +36,7 @@ public struct CertificateCard: View {
                     .opacity(0.8)
                 Text(model.title)
                     .font(UVVAFont.redGrapes(isStory ? 32 : 28))
+                    .textCase(.uppercase)
                     .lineLimit(2)
                     .minimumScaleFactor(0.6)
                 Text(model.about)
@@ -43,6 +46,13 @@ public struct CertificateCard: View {
                     .lineLimit(isStory ? 4 : 2)
             }
             .padding(.top, isStory ? 56 : 24)
+
+            if let country = model.country, let courseID = model.courseID {
+                RegionMapPreview(country: country, courseID: courseID)
+                    .frame(width: 82, height: isStory ? 94 : 56)
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 12)
+            }
 
             Spacer(minLength: 12)
 
@@ -89,7 +99,7 @@ public struct CertificateCard: View {
         .padding(.bottom, 20)
         .frame(width: size.width, height: size.height, alignment: .topLeading)
         .foregroundStyle(UVVAColor.creamFill)
-        .background(LinearGradient(colors: [Self.ground, UVVAColor.burgundy], startPoint: .top, endPoint: .bottom))
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(CertificateBackground())
+        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
     }
 }

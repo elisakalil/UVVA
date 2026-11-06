@@ -11,9 +11,9 @@ public final class LearnViewModel: LearnViewModelProtocol {
     private var subscriptions: Set<AnyCancellable> = []
     /// LEARN-R03: Learn opens on By region.
     public var tab: CourseKind = .region { didSet { refresh() } }
-    var courses: [CourseKind: [Course]] { state.content.courses }
-    var progress: [String: LessonProgress] { state.content.progress }
-    var certificates: [Certificate] { state.content.certificates }
+    var courses: [CourseKind: [Course]] { contentModel.courses }
+    var progress: [String: LessonProgress] { contentModel.progress }
+    var certificates: [Certificate] { contentModel.certificates }
     /// The one course open in each tab (LEARN-R06, R09).
     private(set) var openCourses: [CourseKind: String] = [:] { didSet { refresh() } }
     private(set) var grapeFilter: GrapeFilter = .all { didSet { refresh() } }
@@ -24,21 +24,35 @@ public final class LearnViewModel: LearnViewModelProtocol {
     private(set) var pickedRegion: String? { didSet { refresh() } }
     var players: [LessonPlayerViewModel] { coordinator.players }
     public var player: LessonPlayerViewModel? { players.last }
+    public var lessonLoadingPublisher: AnyPublisher<Bool, Never> {
+        $uiModel.map(\.isLoadingLesson).removeDuplicates().eraseToAnyPublisher()
+    }
     var sharedCertificate: CertificateUIModel? { coordinator.sharedCertificate }
     /// "Search modules"; while it has words, the results take the place of the tabs.
     var query = "" { didSet { refresh() } }
 
-    private let state: LearnState
+    private(set) var contentModel = LearnContentModel() { didSet { refresh() } }
     private let loadLearn: any LoadLearnUseCaseProtocol
-    private let coordinator: any LearnCoordinatorProtocol
+    private let makeCoordinator: (LearnViewModel) -> any LearnCoordinatorProtocol
+    private lazy var coordinator = makeCoordinator(self)
 
-    init(state: LearnState, loadLearn: any LoadLearnUseCaseProtocol, coordinator: any LearnCoordinatorProtocol) {
-        self.state = state
+    init(loadLearn: any LoadLearnUseCaseProtocol,
+         makeCoordinator: @escaping (LearnViewModel) -> any LearnCoordinatorProtocol) {
         self.loadLearn = loadLearn
-        self.coordinator = coordinator
-        state.$content.sink { [weak self] content in self?.refresh(content) }.store(in: &subscriptions)
+        self.makeCoordinator = makeCoordinator
         coordinator.playersPublisher.sink { [weak self] players in
-            self?.uiModel.isPresentingPlayer = !players.isEmpty
+            guard let self else { return }
+            self.uiModel.isPresentingPlayer = !players.isEmpty || self.uiModel.isLoadingLesson || self.uiModel.lessonError != nil
+        }.store(in: &subscriptions)
+        coordinator.loadingPublisher.sink { [weak self] loading in
+            guard let self else { return }
+            self.uiModel.isLoadingLesson = loading
+            self.uiModel.isPresentingPlayer = loading || self.uiModel.lessonError != nil || self.player != nil
+        }.store(in: &subscriptions)
+        coordinator.errorPublisher.sink { [weak self] error in
+            guard let self else { return }
+            self.uiModel.lessonError = error
+            self.uiModel.isPresentingPlayer = error != nil || self.uiModel.isLoadingLesson || self.player != nil
         }.store(in: &subscriptions)
         coordinator.certificatePublisher.sink { [weak self] certificate in
             self?.uiModel.sharedCertificate = certificate
@@ -46,7 +60,7 @@ public final class LearnViewModel: LearnViewModelProtocol {
     }
 
     public func load() async {
-        state.content = await loadLearn.execute(previous: state.content)
+        contentModel = await loadLearn.execute(previous: contentModel)
         if country == nil, let first = countries.first { selectCountry(first) }
     }
 
@@ -54,11 +68,22 @@ public final class LearnViewModel: LearnViewModelProtocol {
     public func show(_ kind: CourseKind) { tab = kind }
 
     /// From the Home or You: the tab of the course, the course open, and its lesson on screen (LEARN-R11).
-    public func openCourse(id: String) async {
+    public func openCourse(id: String, lessonID: String? = nil) async {
+        coordinator.beginLoading()
         if courses.values.allSatisfy(\.isEmpty) { await load() }
-        guard let course = course(id: id) else { return }
+        let catalog = courses
+        let selection = await Task.detached(priority: .userInitiated) {
+            catalog.values.lazy.flatMap({ $0 }).first(where: { $0.id == id })
+        }.value
+        guard let course = selection else { coordinator.cancelLoading(); return }
+        // Publish the prepared selection on MainActor; no observable state crosses the detached task.
+        query = ""
+        grapeFilter = .all
+        pathLevel = nil
         reveal(course)
-        await start(course)
+        if course.kind == .region { pickedRegion = course.id }
+        uiModel.focusedCourseID = course.id
+        await coordinator.open(course, lessonID: lessonID, stacking: false)
     }
 
     /// The course's tab, with the course open (and its country, in By region).
@@ -105,13 +130,12 @@ public final class LearnViewModel: LearnViewModelProtocol {
 
     /// The course button: lesson 1, the lesson to continue at its step, or lesson 1 to review.
     func start(_ course: Course) async {
-        guard let entry = CourseRules.entry(for: course, progress: progress) else { return }
-        await coordinator.open(course, lessonID: entry.lessonID, step: entry.step, stacking: false)
+        await coordinator.open(course, lessonID: nil, stacking: false)
     }
 
     /// One lesson, from the search: where it was left, or its cover.
     func openLesson(_ course: Course, lessonID: String) async {
-        await coordinator.open(course, lessonID: lessonID, step: progress[lessonID]?.currentStep, stacking: false)
+        await coordinator.open(course, lessonID: lessonID, stacking: false)
     }
 
     public func startCourse(id: String) async {
@@ -129,13 +153,32 @@ public final class LearnViewModel: LearnViewModelProtocol {
         await coordinator.showCertificate(course, certificate: certificate)
     }
 
+    public func saveLessonOnBackground() async { await coordinator.saveOnBackground() }
+    public func retryLesson() async { await coordinator.retry() }
+    public func cancelLessonLoading() { coordinator.cancelLoading() }
+
     public func closeCertificate() { coordinator.closeCertificate() }
+
+    func progressUpdated(_ snapshot: LearningSnapshot) {
+        var model = contentModel
+        model.progress = snapshot.lessons
+        model.modules.merge(snapshot.modules) { _, updated in updated }
+        contentModel = model
+    }
+
+    func courseCompleted(_ result: CourseCompletionResultModel) {
+        var model = contentModel
+        model.progress = result.progress
+        model.certificates = result.certificates
+        model.modules.merge(result.modules) { _, updated in updated }
+        contentModel = model
+    }
 
     public func updateQuery(_ query: String) { self.query = query }
 
-    private func refresh(_ content: LearnContent? = nil) {
-        let content = content ?? state.content
-        let lists = LearnListPresentationBuilder(courses: content.courses, progress: content.progress,
+    private func refresh(_ content: LearnContentModel? = nil) {
+        let content = content ?? contentModel
+        let lists = LearnListPresentationBuilder(courses: content.courses, progress: content.progress, modules: content.modules,
                                                  certificates: content.certificates, openCourses: openCourses,
                                                  grapeFilter: grapeFilter, pathLevel: pathLevel,
                                                  country: country, pickedRegion: pickedRegion)

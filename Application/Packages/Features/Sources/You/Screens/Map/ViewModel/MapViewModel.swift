@@ -4,25 +4,24 @@ import Combine
 @MainActor
 public final class MapViewModel: MapViewModelProtocol {
     @Published public private(set) var uiModel = MapScreenUIModel()
-    private var subscription: AnyCancellable?
-    var selectedSnapshot: Int? { didSet { present(state.content) } }
-    private let state: YouState
+    var selectedSnapshot: Int? { didSet { present(readModel()) } }
+    private let readModel: () -> YouContentModel
     private let coordinator: any YouCoordinatorProtocol
     private let now: () -> Date
     private let calendar: Calendar
 
-    init(state: YouState, coordinator: any YouCoordinatorProtocol, now: @escaping () -> Date, calendar: Calendar) {
-        self.state = state
+    init(readModel: @escaping () -> YouContentModel, coordinator: any YouCoordinatorProtocol, now: @escaping () -> Date, calendar: Calendar) {
+        self.readModel = readModel
         self.coordinator = coordinator
         self.now = now
         self.calendar = calendar
-        subscription = state.$content.sink { [weak self] content in self?.present(content) }
+        present(readModel())
     }
 
     public func selectSnapshot(_ index: Int) { selectedSnapshot = index }
     public func redoMap() { coordinator.redoMap() }
 
-    private func present(_ content: YouContent) {
+    func present(_ content: YouContentModel) {
         let link = content.profile?.inviteLink.absoluteString ?? "uvva.app"
         uiModel = MapScreenUIModel(
             content: MapPresentationBuilder().build(from: content, selectedSnapshot: selectedSnapshot,

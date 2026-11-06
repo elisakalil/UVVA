@@ -2,7 +2,7 @@ import Core
 import Foundation
 
 struct ProgressPresentationBuilder {
-    func build(from content: YouContent) -> ProgressUIModel {
+    func build(from content: YouContentModel) -> ProgressUIModel {
         let lessons = content.lessons
         let certificates = content.certificates
         let firstModule = content.firstModule

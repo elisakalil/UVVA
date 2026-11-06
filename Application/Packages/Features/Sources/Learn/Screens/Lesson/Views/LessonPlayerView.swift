@@ -10,6 +10,8 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
 
     /// How far the player follows a drag down, and whether the step is scrolled to its top, where that drag can start.
     @State private var dragDown: CGFloat = 0
+    @State private var viewportHeight: CGFloat = 0
+    @State private var isClosing = false
     @State private var isAtTop = true
 
     /// How long "Lesson complete" stays.
@@ -26,13 +28,15 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
                 LessonBackground()
             }
             VStack(spacing: 0) {
-                LessonTopBar(resources: resources, model: viewModel.uiModel.header, ink: ink, onBack: viewModel.back)
-                    .padding(.horizontal, 22)
-                    .padding(.top, 6)
+                if !viewModel.uiModel.isCover {
+                    LessonTopBar(resources: resources, model: viewModel.uiModel.header, ink: ink, onBack: viewModel.back)
+                        .padding(.horizontal, 22)
+                        .padding(.top, 6)
+                }
                 ScrollView {
                     content
-                        // More room under the step dots than under the bare top bar of the cover and the Summary.
-                        .padding(.top, viewModel.uiModel.header.current == nil ? 24 : 44)
+                        // The intro starts lower; step and Summary spacing stays independent.
+                        .padding(.top, viewModel.uiModel.isCover ? 56 : (viewModel.uiModel.header.current == nil ? 24 : 44))
                         .padding(.bottom, 24)
                 }
                 .scrollIndicators(.hidden)
@@ -70,6 +74,8 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
             showsCompleteNote = false
         }
         .animation(.easeOut(duration: 0.3), value: viewModel.uiModel.certificate != nil)
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { viewportHeight = $0 }
+        .allowsHitTesting(!isClosing)
         .offset(y: dragDown)
         .simultaneousGesture(dragToClose, isEnabled: viewModel.uiModel.certificate == nil)
         .accessibilityAction(.escape, viewModel.close)
@@ -81,14 +87,23 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
     private var dragToClose: some Gesture {
         DragGesture(minimumDistance: 20, coordinateSpace: .global)
             .onChanged { drag in
+                guard !isClosing else { return }
                 let down = drag.translation.height
                 guard isAtTop || dragDown > 0, down > 0, down > abs(drag.translation.width) else { return }
                 dragDown = down
             }
             .onEnded { drag in
-                guard dragDown > 0 else { return }
+                guard !isClosing, dragDown > 0 else { return }
                 if dragDown > Self.closeDistance || drag.predictedEndTranslation.height > 2 * Self.closeDistance {
-                    viewModel.close()
+                    isClosing = true
+                    withAnimation(.easeOut(duration: 0.22)) {
+                        dragDown = max(viewportHeight, dragDown) + 100
+                    } completion: {
+                        // The custom drag has already moved the lesson offscreen.
+                        var transaction = Transaction(animation: nil)
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) { viewModel.close() }
+                    }
                 } else {
                     withAnimation(.spring(duration: 0.3)) { dragDown = 0 }
                 }

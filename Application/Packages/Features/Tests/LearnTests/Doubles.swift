@@ -12,6 +12,9 @@ struct CatalogStub: CourseCatalog {
 }
 
 final class LearningSpy: LearningRepository {
+    func snapshot(for courses: [Course]) async throws -> LearningSnapshot { testSnapshot(courses, lessons: saved) }
+    func save(_ progress: LessonProgress, in course: Course) async throws { try await save(progress) }
+
     private let state = Mutex<(progress: [String: LessonProgress], certificates: [Certificate])>(([:], []))
     init(_ progress: [LessonProgress] = []) {
         state.withLock { $0.progress = Dictionary(uniqueKeysWithValues: progress.map { ($0.lessonID, $0) }) }

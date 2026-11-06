@@ -20,18 +20,21 @@ public struct LearnFactory: LearnFactoryProtocol {
     }
 
     public func makeViewModel(onProgressChange: @escaping () -> Void = {}) -> LearnViewModel {
-        let state = LearnState()
-        let coordinator = LearnCoordinator(
-            state: state,
-            playerFactory: LessonPlayerFactory(saveProgress: SaveLessonProgressUseCase(learning: learning),
-                                                now: now, pickToast: pickToast),
-            loadLesson: LoadLessonUseCase(catalog: catalog),
-            refreshProgress: RefreshProgressUseCase(learning: learning),
-            completeCourse: CompleteCourseUseCase(learning: learning, now: now),
-            loadSkills: LoadCertificateSkillsUseCase(catalog: catalog), onProgressChange: onProgressChange
+        LearnViewModel(
+            loadLearn: LoadLearnUseCase(catalog: catalog, learning: learning, profiles: profiles),
+            makeCoordinator: { owner in
+                LearnCoordinator(
+                    readModel: { [weak owner] in owner?.contentModel ?? LearnContentModel() },
+                    onProgressUpdated: { [weak owner] in owner?.progressUpdated($0) },
+                    onCourseCompleted: { [weak owner] in owner?.courseCompleted($0) },
+                    playerFactory: LessonPlayerFactory(saveProgress: SaveLessonProgressUseCase(learning: learning),
+                                                        now: now, pickToast: pickToast),
+                    loadLesson: LoadLessonUseCase(catalog: catalog),
+                    refreshProgress: RefreshProgressUseCase(learning: learning),
+                    completeCourse: CompleteCourseUseCase(learning: learning, now: now),
+                    loadSkills: LoadCertificateSkillsUseCase(catalog: catalog), onProgressChange: onProgressChange
+                )
+            }
         )
-        return LearnViewModel(state: state,
-                              loadLearn: LoadLearnUseCase(catalog: catalog, learning: learning, profiles: profiles),
-                              coordinator: coordinator)
     }
 }

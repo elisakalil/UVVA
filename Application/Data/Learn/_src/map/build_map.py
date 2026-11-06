@@ -6,7 +6,7 @@ UVVA Telas canvas (regions-map.js). For each country of the region courses this 
 the land around it clipped to a frame, and the frame the map is fitted to. Each region course gets
 its true coordinates; a region far off the mainland (Madeira) is drawn in an inset.
 
-Output: Packages/Features/Learn/Sources/Learn/Resources/RegionMaps.json
+Output: Packages/DesignSystem/Sources/DesignSystem/Resources/RegionMaps.json
   {"countries": [{"name", "box": [minLon, minLat, maxLon, maxLat],
                   "land": [[lon, lat, lon, lat, ...]], "near": [[...]]}],
    "regions": {"<courseId>": [lon, lat]}, "insets": ["<courseId>"]}
@@ -15,7 +15,7 @@ import json, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ATLAS = os.path.join(HERE, "countries-110m.json")
-OUT = os.path.join(HERE, "../../../../Packages/Features/Learn/Sources/Learn/Resources/RegionMaps.json")
+OUT = os.path.join(HERE, "../../../../Packages/DesignSystem/Sources/DesignSystem/Resources/RegionMaps.json")
 
 # The frame each map is fitted to: the whole country, or the part its regions sit in.
 COUNTRIES = {
@@ -136,7 +136,16 @@ def main():
         frame = [box[0] - w * 0.8, box[1] - h * 0.8, box[2] + w * 0.8, box[3] + h * 0.8]
         land = [flat(clip(ring, frame)) for ring in shapes[feature]]
         near = [flat(clip(ring, frame)) for other, rings in shapes.items() if other != feature for ring in rings]
-        countries.append({"name": name, "box": box,
+        # Home shows the complete mainland silhouette and nearby islands, not the wine-region crop.
+        rings = shapes[feature]
+        def area(ring):
+            return abs(sum(a[0] * b[1] - b[0] * a[1] for a, b in zip(ring, ring[1:] + ring[:1])))
+        mainland = max(rings, key=area)
+        xs, ys = zip(*mainland)
+        bounds = [min(xs) - 5, min(ys) - 5, max(xs) + 5, max(ys) + 5]
+        thumbnail = [flat(ring) for ring in rings
+                     if any(bounds[0] <= x <= bounds[2] and bounds[1] <= y <= bounds[3] for x, y in ring)]
+        countries.append({"name": name, "box": box, "thumbnailLand": thumbnail,
                           "land": [r for r in land if len(r) >= 6], "near": [r for r in near if len(r) >= 6]})
     with open(OUT, "w") as f:
         json.dump({"countries": countries, "regions": REGIONS, "insets": INSETS}, f,

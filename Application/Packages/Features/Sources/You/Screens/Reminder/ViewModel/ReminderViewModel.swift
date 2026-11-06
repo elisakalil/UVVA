@@ -5,11 +5,13 @@ import Combine
 @MainActor
 public final class ReminderViewModel: ReminderViewModelProtocol {
     @Published public private(set) var uiModel = ReminderUIModel()
-    private let state: YouState
+    private let onReminderSaved: (Reminder?) -> Void
+    private let readModel: () -> YouContentModel
     private let saveReminderUseCase: any SaveReminderUseCaseProtocol
 
-    init(state: YouState, saveReminderUseCase: any SaveReminderUseCaseProtocol) {
-        self.state = state
+    init(readModel: @escaping () -> YouContentModel, onReminderSaved: @escaping (Reminder?) -> Void, saveReminderUseCase: any SaveReminderUseCaseProtocol) {
+        self.readModel = readModel
+        self.onReminderSaved = onReminderSaved
         self.saveReminderUseCase = saveReminderUseCase
     }
 
@@ -23,7 +25,7 @@ public final class ReminderViewModel: ReminderViewModelProtocol {
     }
 
     public func prepare() {
-        let reminder = state.content.reminder
+        let reminder = readModel().reminder
         uiModel.draft = ReminderDraft(reminder)
         uiModel.customTime = Calendar.current.date(from: DateComponents(hour: reminder?.hour ?? 20,
                                                                 minute: reminder?.minute ?? 0)) ?? .now
@@ -36,8 +38,8 @@ public final class ReminderViewModel: ReminderViewModelProtocol {
         uiModel.notice = nil
         defer { uiModel.isSaving = false }
         do {
-            try await saveReminderUseCase.execute(reminder, previous: state.content.reminder)
-            state.content.reminder = reminder
+            try await saveReminderUseCase.execute(reminder, previous: readModel().reminder)
+            onReminderSaved(reminder)
             return true
         } catch {
             uiModel.notice = uiModel.theReminderCouldNotBeText

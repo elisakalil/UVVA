@@ -8,45 +8,60 @@ struct CertificatesView<ViewModel: CertificatesViewModelProtocol>: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        ZStack {
-            PageBackground(photoOpacity: 0.5)
-            VStack(spacing: 0) {
-                FlowTopBar(caption: viewModel.uiModel.certificatesText) { dismiss() }
-                    .padding(.horizontal, 26)
-                if viewModel.uiModel.rows.isEmpty { empty } else { list }
+        ZStack(alignment: .topLeading) {
+            CertificateBackground().ignoresSafeArea()
+            if viewModel.uiModel.rows.isEmpty { empty } else { gallery }
+            HStack(spacing: 8) {
+                Button(action: { dismiss() }) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 16, weight: .light))
+                        .frame(width: 40, height: 40)
+                        .background(.ultraThinMaterial, in: Circle())
+                }
+                .accessibilityLabel(Text("Close", bundle: .module))
+                Text(viewModel.uiModel.certificatesText)
+                    .font(UVVAFont.sans(12))
+                    .padding(.horizontal, 18)
+                    .frame(height: 40)
+                    .background(.ultraThinMaterial, in: Capsule())
             }
-            .padding(.top, 8)
+            .padding(.leading, 14)
+            .padding(.top, 12)
         }
         .foregroundStyle(UVVAColor.creamFill)
     }
 
-    private var list: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                Text(String(format: "%02d", viewModel.uiModel.rows.count))
-                    .font(UVVAFont.sans(38, .ultraLight))
-                    .padding(.top, 28)
-                    .padding(.bottom, 12)
-                ForEach(viewModel.uiModel.rows) { row in
-                    Button { onClose(); viewModel.open(row.id) } label: {
-                        HStack(spacing: 16) {
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(row.title).font(UVVAFont.redGrapes(20))
-                                Text(row.detail.uppercased()).font(UVVAFont.sans(9.5)).tracking(1.6).opacity(0.6)
+    private var gallery: some View {
+        GeometryReader { geometry in
+            let width = geometry.size.width / 3
+            ScrollView {
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(width), spacing: 0), count: 3), spacing: 0) {
+                    ForEach(viewModel.uiModel.rows) { row in
+                        Button { onClose(); viewModel.open(row.id) } label: {
+                            Group {
+                                if let certificate = row.certificate {
+                                    CertificateCard(model: certificate, format: .story, cornerRadius: 0)
+                                        .scaleEffect(width / ShareFormat.story.cardSize.width, anchor: .topLeading)
+                                        .frame(width: width, height: width * 16 / 9, alignment: .topLeading)
+                                } else {
+                                    Text(row.title)
+                                        .font(UVVAFont.redGrapes(16))
+                                        .padding(12)
+                                        .frame(width: width, height: width * 16 / 9)
+                                        .background(CertificateBackground())
+                                }
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            Text(verbatim: "›").font(UVVAFont.sans(20, .ultraLight)).opacity(0.6)
+                            .clipped()
+                            .overlay(Rectangle().strokeBorder(UVVAColor.creamFill.opacity(0.65), lineWidth: 0.5))
+                            .contentShape(Rectangle())
                         }
-                        .padding(.vertical, 18)
-                        .overlay(alignment: .top) { Rectangle().fill(UVVAColor.creamFill.opacity(0.18)).frame(height: 0.5) }
-                        .contentShape(Rectangle())
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("\(row.title), \(row.detail)")
                     }
-                    .buttonStyle(.plain)
                 }
             }
-            .padding(.horizontal, 26)
+            .scrollIndicators(.hidden)
         }
-        .scrollIndicators(.hidden)
     }
 
     private var empty: some View {

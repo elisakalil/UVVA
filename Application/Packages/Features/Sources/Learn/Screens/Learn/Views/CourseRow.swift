@@ -7,7 +7,6 @@ struct CourseRow: View {
     var model: CourseRowUIModel
     var onToggle: () -> Void
     var onStart: () -> Void
-    var onCertificate: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -52,13 +51,8 @@ struct CourseRow: View {
                         }
                         .padding(.top, 14)
                     }
-                    HStack(spacing: 22) {
-                        link("\(model.cta)  ›", action: onStart)
-                        if model.hasCertificate {
-                            link(resources.viewCertificateText, action: onCertificate)
-                        }
-                    }
-                    .padding(.top, 22)
+                    link("\(model.cta)  ›", action: onStart)
+                        .padding(.top, 22)
                 }
                 .padding(.leading, 19)
                 .padding(.trailing, 6)
@@ -77,7 +71,6 @@ struct CourseRow: View {
                 .font(UVVAFont.sans(9.5, .regular))
                 .tracking(2.6)
                 .padding(.bottom, 9)
-                .overlay(alignment: .bottom) { Rectangle().fill(UVVAColor.creamFill.opacity(0.5)).frame(height: 0.5) }
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

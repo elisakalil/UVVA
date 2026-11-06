@@ -8,7 +8,13 @@ protocol LearnCoordinatorProtocol: AnyObject {
     var sharedCertificate: CertificateUIModel? { get }
     var playersPublisher: AnyPublisher<[LessonPlayerViewModel], Never> { get }
     var certificatePublisher: AnyPublisher<CertificateUIModel?, Never> { get }
-    func open(_ course: Course, lessonID: String, step: Int?, stacking: Bool) async
+    var loadingPublisher: AnyPublisher<Bool, Never> { get }
+    var errorPublisher: AnyPublisher<String?, Never> { get }
+    func beginLoading()
+    func saveOnBackground() async
+    func retry() async
+    func cancelLoading()
+    func open(_ course: Course, lessonID: String?, stacking: Bool) async
     func showCertificate(_ course: Course, certificate: Certificate) async
     func closeCertificate()
 }

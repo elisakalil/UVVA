@@ -11,7 +11,7 @@ final class MockHomeViewModel: HomeViewModelProtocol {
     init() {
         uiModel = HomeUIModel(
             content: HomeContentUIModel(cards: HomeCardsBuilder().build(from: .full, now: .now),
-                                         palateMap: HomeState.full.palateMap),
+                                         glossary: MockData.glossary, palateMap: HomeContentModel.full.palateMap),
             isLoading: false
         )
     }

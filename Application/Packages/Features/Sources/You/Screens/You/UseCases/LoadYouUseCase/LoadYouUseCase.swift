@@ -10,8 +10,8 @@ struct LoadYouUseCase: LoadYouUseCaseProtocol {
     let learning: any LearningRepository
     let reminders: any ReminderRepository
 
-    func execute(previous: YouContent) async -> YouContent {
-        var content = YouContent()
+    func execute(previous: YouContentModel) async -> YouContentModel {
+        var content = YouContentModel()
         content.profile = try? await profiles.currentProfile()
         content.map = (try? await maps.currentMap()) ?? nil
         content.history = (try? await maps.history()) ?? []

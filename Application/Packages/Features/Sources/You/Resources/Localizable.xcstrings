@@ -14,6 +14,19 @@
         }
       }
     },
+    "%@ now knows" : {
+
+    },
+    "%@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        }
+      }
+    },
     "%lld lessons · %lld min" : {
       "localizations" : {
         "en" : {
@@ -70,6 +83,9 @@
     "Certificates for the lessons you complete live here. Finish one to see it, then come back whenever you like." : {
 
     },
+    "Close" : {
+
+    },
     "Daily reminder" : {
 
     },
@@ -98,6 +114,9 @@
 
     },
     "Grapes" : {
+
+    },
+    "I just finished %@ on UVVA." : {
 
     },
     "Keep my account" : {
@@ -137,6 +156,9 @@
 
     },
     "Nothing to map yet. Finish your first course and this space starts filling in: the grapes you know, the regions you can place, and where you are strongest." : {
+
+    },
+    "Now I know" : {
 
     },
     "Only friends you share a table with can see your map." : {

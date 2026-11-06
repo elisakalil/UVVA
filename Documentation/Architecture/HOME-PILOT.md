@@ -1,9 +1,9 @@
 # Home: piloto de arquitetura de Features
 
-A Home mantém SwiftUI e Observation, com responsabilidades separadas:
+A Home mantém SwiftUI, com apresentação observável por Combine e responsabilidades separadas:
 
 - `HomeFactory`: compõe os casos de uso e o ViewModel a partir dos contratos dos repositórios.
-- `LoadHomeUseCase`: lê os dados e prepara vinhos com harmonização e progresso dos cursos. Retorna `LoadedHomeContent`, sem modificar estado visual.
+- `LoadHomeUseCase`: lê os dados e prepara vinhos com harmonização e progresso dos cursos. Retorna `HomeLoadResultModel`, sem modificar estado visual.
 - `AddWineToCellarUseCase`: grava um vinho no Cellar.
 - `HomeViewModel`: gere carregamento, publica apresentação e encaminha ações.
 - `HomeCardsBuilder`: constrói os cartões de apresentação de forma pura.
@@ -27,8 +27,8 @@ Mantêm-se a seleção diária, a harmonização em background, os cursos inicia
 - `Builders/HomeCardsBuilder`: composição dos cartões de apresentação.
 - `Helpers/WineSearch`: construção da pesquisa e URL do vinho, sem executar navegação ou pedidos de rede.
 - `Extensions/PalateRadar+PalateMap`: adaptação do modelo de domínio para o radar.
-- `Views/Shapes/ArgentinaOutline`: forma gráfica usada na interface.
-- `Views/Modifiers/SpotlightModifier`: comportamento visual de destaque para o tour.
+- `View/Shapes/ArgentinaOutline`: forma gráfica usada na interface.
+- `View/Modifiers/SpotlightModifier`: comportamento visual de destaque para o tour.
 
 A raiz de `Screens/Home` contém apenas pastas. Estes auxiliares permanecem locais ao ecrã enquanto não existir necessidade de partilha.
 
@@ -49,3 +49,9 @@ O preview da Home usa um mock do protocolo sem dependências de dados. Os testes
 O tour foi migrado para `GuidedTourViewModelProtocol: ObservableObject`, com `GuidedTourUIModel` publicado e Views genéricas com `@ObservedObject`. O UIModel reúne etapa, alvo/fallback, contador, títulos, introdução, acessibilidade e ícone de voltar. `GuidedTour` continua a definir as transições e `TourStep` os conteúdos das etapas.
 
 A Home usa um observador explícito do UIModel do tour para encaminhar mudanças do alvo ao conteúdo e manter o scroll sincronizado. A overlay observa o mesmo ViewModel diretamente. O preview usa um mock do protocolo e o teste adicional verifica alvos, retrocesso e publicação da conclusão.
+
+## Glossário
+
+O card Word of the day abre o glossário em tela cheia. A Home mantém a instância de `GlossaryViewModel` durante a apresentação, com os termos já carregados e a palavra do dia selecionada. `GlossaryView<ViewModel: GlossaryViewModelProtocol>` observa o `GlossaryUIModel` publicado; o ViewModel controla pesquisa, prioridade dos resultados, seleção e pedidos de saída. O toque fora limpa primeiro a pesquisa e a seleção; sem seleção ou foco ativo, solicita o fechamento pela callback da Home.
+
+`GlossaryResourcesUIModel` reúne os textos localizados no bundle de Home, inclusive acessibilidade, além dos identificadores dos ícones e da textura. A View mantém somente apresentação, animações, scroll e foco do teclado. O painel de definição cobre o rodapé e acompanha a altura do conteúdo. Os testes de `GlossaryViewModelTests` cobrem pesquisa por termo e sinônimo, normalização, ordenação, seleção e fechamento.

@@ -11,8 +11,11 @@ struct LessonPlayerViewModelTests {
     func player(_ lessonIndex: Int = 0, progress: LessonProgress? = nil, startStep: Int? = nil, isFirst: Bool = true,
                 onExit: @escaping (LessonPlayerViewModel.Exit) -> Void = { _ in }) -> LessonPlayerViewModel {
         let summary = course.lessons[lessonIndex]
+        let saved = progress ?? startStep.map {
+            LessonProgress(lessonID: summary.id, courseID: course.id, currentStep: $0, lastOpenedAt: Fixture.day)
+        }
         return LessonPlayerViewModel(course: course, lesson: Lesson(summary: summary, steps: Fixture.steps(review: summary.isReview)),
-                                     progress: progress, startStep: startStep, isFirst: isFirst, saveProgressUseCase: SaveLessonProgressUseCase(learning: learning),
+                                     progress: saved, isFirst: isFirst, saveProgressUseCase: SaveLessonProgressUseCase(learning: learning),
                                      now: { Fixture.day },
                                      pickToast: { _ in 0 }, onCompleted: { nil }, onExit: onExit)
     }
@@ -44,7 +47,7 @@ struct LessonPlayerViewModelTests {
 
     // MARK: LEARN-R14 · Sair e retomar
 
-    @Test func LEARN_R14_leavingAtStepFive_savesTheStepAndAnswers() async {
+    @Test func LEARN_R14_leavingAtStepFive_savesTheStepAndAnswers() async throws {
         let player = player()
         player.begin()
         player.primary()
@@ -54,7 +57,7 @@ struct LessonPlayerViewModelTests {
         player.primary()
         player.primary()
         player.close()
-        await player.flush()
+        try await player.saveOnExit()
         let saved = learning.saved["grape-tannat-l01"]
         #expect(saved?.currentStep == 4)
         #expect(saved?.answers == [2: .options([2])])
@@ -70,7 +73,7 @@ struct LessonPlayerViewModelTests {
         #expect(player.stepIndex == 0)
         #expect(player.header.backLeaves == false)
         player.back()
-        #expect(player.phase == .cover)
+        #expect(player.playerState == .cover)
         #expect(player.header.backLeaves)
         #expect(exits.isEmpty)
         player.back()
@@ -96,15 +99,15 @@ struct LessonPlayerViewModelTests {
         #expect(exits == [.back])
     }
 
-    @Test func LEARN_R14_back_keepsTheFarthestStepSaved() async {
+    @Test func LEARN_R14_back_savesTheDisplayedStepOnExit() async throws {
         let player = player()
         player.begin()
         player.primary()
         player.primary()
         player.back()
-        await player.flush()
+        try await player.saveOnExit()
         #expect(player.stepIndex == 1)
-        #expect(learning.saved["grape-tannat-l01"]?.currentStep == 2)
+        #expect(learning.saved["grape-tannat-l01"]?.currentStep == 1)
     }
 
     @Test func LEARN_R14_reopened_startsAtTheSavedStepWithItsAnswers() {
@@ -184,10 +187,11 @@ struct LessonPlayerViewModelTests {
 
     // MARK: LEARN-R21, SHARED-R15 · XP e conclusão
 
-    @Test func LEARN_R21_reachingTheSummaryWithNoRightAnswers_earns15XP() async {
+    @Test func LEARN_R21_reachingTheSummaryWithNoRightAnswers_earns15XP() async throws {
         let player = player()
         playToSummary(player, right: false)
-        await player.flush()
+        #expect(learning.saved.isEmpty)
+        try await player.saveOnExit()
         let saved = learning.saved["grape-tannat-l01"]
         #expect(saved?.completedAt == Fixture.day)
         #expect(saved?.xp == 15)
@@ -195,14 +199,15 @@ struct LessonPlayerViewModelTests {
 
     // MARK: LEARN-R19a · Revisão
 
-    @Test func LEARN_R19a_reviewingACompletedLesson_savesNothingAndGivesNoXP() async {
+    @Test func LEARN_R19a_reviewingACompletedLesson_preservesCompletionAndXP() async throws {
         let done = LessonProgress(lessonID: "grape-tannat-l01", courseID: course.id, currentStep: 5,
                                   completedAt: Fixture.day.addingTimeInterval(-86_400), lastOpenedAt: Fixture.day, xp: 15)
         let player = player(progress: done)
         #expect(player.isReview)
         playToSummary(player, right: true)
-        await player.flush()
-        #expect(learning.saved.isEmpty)
+        try await player.saveOnExit()
+        #expect(learning.saved[done.lessonID]?.completedAt == done.completedAt)
+        #expect(learning.saved[done.lessonID]?.xp == done.xp)
         guard case let .summary(summary) = player.stepModel else { Issue.record("Not on the Summary"); return }
         #expect(summary.completion == "Lesson complete")
     }
@@ -221,17 +226,22 @@ struct LessonPlayerViewModelTests {
         let player = LessonPlayerViewModel(
             course: course, lesson: Lesson(summary: summary, steps: [.matchPairs(prompt: "Match", pairs: pairs, explanation: nil),
                                                                     .summary(title: "", points: [])]),
-            progress: nil, startStep: 0, saveProgressUseCase: SaveLessonProgressUseCase(learning: learning), onCompleted: { nil }, onExit: { _ in })
+            progress: LessonProgress(lessonID: summary.id, courseID: course.id, currentStep: 0, lastOpenedAt: Fixture.day), saveProgressUseCase: SaveLessonProgressUseCase(learning: learning), onCompleted: { nil }, onExit: { _ in })
         player.tapLeft(0)
         player.tapRight(1)
         guard case let .matchPairs(model) = player.stepModel else { Issue.record("Not matchPairs"); return }
         #expect(model.status == "Not a pair. Try again.")
         player.tapLeft(0)
         player.tapRight(0)
+        #expect(player.footer == .button(title: "Continue", isEnabled: false))
+        player.primary()
+        #expect(player.stepIndex == 0)
         player.tapLeft(1)
         player.tapRight(1)
-        guard case let .feedback(feedback) = player.footer else { Issue.record("No feedback"); return }
-        #expect(feedback.text == "All 2 pairs matched, with 1 wrong try.")
-        #expect(!feedback.isCorrect)
+        #expect(player.footer == .button(title: "Continue", isEnabled: true))
+        guard case let .matchPairs(completed) = player.stepModel else { Issue.record("No match pairs"); return }
+        #expect(completed.status.isEmpty)
+        player.primary()
+        #expect(player.stepIndex == 1)
     }
 }

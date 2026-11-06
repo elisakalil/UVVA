@@ -134,7 +134,7 @@ struct QuizViewModelTests {
 
     @Test func uiModel_publishesReadingSelectionAndAdvance() async {
         let model = await makeViewModel()
-        var screens: [QuizScreen] = []
+        var screens: [QuizViewState] = []
         let subscription = model.$uiModel.sink { screens.append($0.screen) }
         defer { subscription.cancel() }
         model.start()

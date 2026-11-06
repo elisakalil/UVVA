@@ -2,20 +2,28 @@ import SwiftUI
 import UIKit
 
 /// The share sheet of the app (SHARED-R20): the card in Story or WhatsApp shape, "Share to Instagram" or
-/// "Send on WhatsApp" through the system sheet, "Save image" to Photos, and "Not now". Every action ends with
-/// `onFinish`.
+/// Stories open in Instagram when configured; WhatsApp uses the system sheet.
+/// Also offers "Save image" to Photos and "Not now".
+/// Invite previews stay open after sharing or saving when `dismissAfterAction` is false.
 public struct ShareScreen<Card: View>: View {
     var title: String
     /// Sent with the picture on WhatsApp.
     var message: String
     var card: (ShareFormat) -> Card
+    var dismissAfterAction: Bool
+    var showsMessage: Bool
+    var isCertificate: Bool
     var onFinish: () -> Void
 
     @State private var format: ShareFormat = .story
     @State private var sharedImage: SharedImage?
+    @State private var isSharing = false
 
-    public init(title: String, message: String, @ViewBuilder card: @escaping (ShareFormat) -> Card,
+    public init(title: String, message: String, showsMessage: Bool = false, isCertificate: Bool = false, dismissAfterAction: Bool = true, @ViewBuilder card: @escaping (ShareFormat) -> Card,
                 onFinish: @escaping () -> Void) {
+        self.isCertificate = isCertificate
+        self.dismissAfterAction = dismissAfterAction
+        self.showsMessage = showsMessage
         self.title = title
         self.message = message
         self.card = card
@@ -28,8 +36,22 @@ public struct ShareScreen<Card: View>: View {
             LinearGradient(colors: [Color(hex: 0x181E12).opacity(0.55), Color(hex: 0x181E12).opacity(0.82)],
                            startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
+            if isCertificate { CertificateBackground(dimmed: true).ignoresSafeArea() }
             VStack(spacing: 0) {
                 Text(title.uppercased())
+                    .overlay(alignment: .leading) {
+                        if isCertificate {
+                            Button(action: onFinish) {
+                                Image(systemName: "chevron.left")
+                                    .font(.system(size: 13, weight: .light))
+                                    .frame(width: 32, height: 30)
+                                    .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel(Text("Back", bundle: .module))
+                            .offset(x: -48)
+                        }
+                    }
                     .font(UVVAFont.sans(9))
                     .tracking(2.7)
                     .opacity(0.6)
@@ -37,10 +59,26 @@ public struct ShareScreen<Card: View>: View {
 
                 Spacer(minLength: 12)
                 card(format)
+                    .scaleEffect(showsMessage ? 0.82 : 1)
+                    .frame(width: format.cardSize.width * (showsMessage ? 0.82 : 1),
+                           height: format.cardSize.height * (showsMessage ? 0.82 : 1))
                     .shadow(color: .black.opacity(0.55), radius: 30, y: 26)
                     .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .strokeBorder(UVVAColor.creamFill.opacity(0.28), lineWidth: 0.5))
                     .animation(.smooth, value: format)
+                if showsMessage {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(String(localized: "Message", bundle: .module).uppercased())
+                            .font(UVVAFont.sans(8)).tracking(2).opacity(0.6)
+                        Text(message)
+                            .font(UVVAFont.sans(12)).lineSpacing(4)
+                            .padding(14)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .overlay(RoundedRectangle(cornerRadius: 14)
+                                .strokeBorder(UVVAColor.creamFill.opacity(0.25), lineWidth: 0.5))
+                    }
+                    .padding(.top, 18)
+                }
                 Spacer(minLength: 12)
 
                 HStack(spacing: 8) {
@@ -49,7 +87,8 @@ public struct ShareScreen<Card: View>: View {
                     }
                 }
                 .padding(.bottom, 22)
-                ActionButton(format.action) { share() }
+                ActionButton(format.action) { Task { await share() } }
+                    .disabled(isSharing)
                 HStack(spacing: 26) {
                     TextAction(String(localized: "Save image", bundle: .module), opacity: 0.45) { save() }
                     TextAction(String(localized: "Not now", bundle: .module), opacity: 0.72, action: onFinish)
@@ -64,7 +103,7 @@ public struct ShareScreen<Card: View>: View {
         .sheet(item: $sharedImage) { shared in
             ActivityShareSheet(image: shared.image, message: format == .whatsApp ? message : nil) {
                 sharedImage = nil
-                onFinish()
+                if dismissAfterAction { onFinish() }
             }
             .presentationDetents([.medium, .large])
         }
@@ -76,9 +115,14 @@ public struct ShareScreen<Card: View>: View {
         return renderer.uiImage
     }
 
-    /// Story and WhatsApp go through the system share sheet, where Instagram and WhatsApp appear.
-    private func share() {
-        guard let image = render(format) else { return }
+    private func share() async {
+        guard !isSharing, let image = render(format) else { return }
+        isSharing = true
+        defer { isSharing = false }
+        if format == .story, await InstagramStorySharing.open(image) {
+            return
+        }
+        // WhatsApp, or fallback when Instagram is unavailable or lacks a Meta App ID.
         sharedImage = SharedImage(image: image)
     }
 
@@ -86,6 +130,6 @@ public struct ShareScreen<Card: View>: View {
         if let image = render(.story) {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
-        onFinish()
+        if dismissAfterAction { onFinish() }
     }
 }

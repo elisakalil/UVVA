@@ -31,31 +31,38 @@ public struct YouFactory: YouFactoryProtocol {
     }
 
     public func makeViewModel(coordinator: any YouCoordinatorProtocol) -> YouViewModel {
-        let state = YouState()
-        return YouViewModel(
-            state: state,
+        YouViewModel(
             loadYouUseCase: LoadYouUseCase(profiles: profiles, maps: maps, catalog: catalog, courses: courses,
                                           learning: learning, reminders: reminders),
-            progress: ProgressViewModel(state: state, coordinator: coordinator),
-            map: MapViewModel(state: state, coordinator: coordinator, now: now, calendar: calendar),
-            settings: makeSettings(state: state, coordinator: coordinator)
+            makeScreens: { owner in
+                let readModel = { [weak owner] in owner?.contentModel ?? YouContentModel() }
+                return (
+                    ProgressViewModel(readModel: readModel, coordinator: coordinator),
+                    MapViewModel(readModel: readModel, coordinator: coordinator, now: now, calendar: calendar),
+                    makeSettings(owner: owner, coordinator: coordinator)
+                )
+            }
         )
     }
 
-    private func makeSettings(state: YouState, coordinator: any YouCoordinatorProtocol) -> SettingsViewModel {
+    private func makeSettings(owner: YouViewModel, coordinator: any YouCoordinatorProtocol) -> SettingsViewModel {
         let saveProfile = SaveProfileUseCase(profiles: profiles, social: social)
+        let readModel = { [weak owner] in owner?.contentModel ?? YouContentModel() }
+        let onProfileSaved: (Profile) -> Void = { [weak owner] in owner?.profileSaved($0) }
         return SettingsViewModel(
-            state: state, coordinator: coordinator,
+            readModel: readModel, onProfileSaved: onProfileSaved, coordinator: coordinator,
             savePhotoUseCase: SavePhotoUseCase(saveProfile: saveProfile),
             setMapPublicUseCase: SetMapPublicUseCase(saveProfile: saveProfile),
             signOutUseCase: SignOutUseCase(scheduler: scheduler),
             deleteAccountUseCase: DeleteAccountUseCase(social: social, profiles: profiles, scheduler: scheduler),
-            editName: EditNameViewModel(state: state, saveNameUseCase: SaveNameUseCase(saveProfile: saveProfile)),
-            editPhone: EditPhoneViewModel(state: state,
-                                         savePhoneUseCase: SavePhoneUseCase(saveProfile: saveProfile, social: social)),
-            reminder: ReminderViewModel(state: state,
-                                        saveReminderUseCase: SaveReminderUseCase(reminders: reminders, scheduler: scheduler)),
-            certificates: CertificatesViewModel(state: state, coordinator: coordinator)
+            editName: EditNameViewModel(readModel: readModel, onProfileSaved: onProfileSaved,
+                                         saveNameUseCase: SaveNameUseCase(saveProfile: saveProfile)),
+            editPhone: EditPhoneViewModel(readModel: readModel, onProfileSaved: onProfileSaved,
+                                           savePhoneUseCase: SavePhoneUseCase(saveProfile: saveProfile, social: social)),
+            reminder: ReminderViewModel(readModel: readModel,
+                                          onReminderSaved: { [weak owner] in owner?.reminderSaved($0) },
+                                          saveReminderUseCase: SaveReminderUseCase(reminders: reminders, scheduler: scheduler)),
+            certificates: CertificatesViewModel(readModel: readModel, coordinator: coordinator)
         )
     }
 }

@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10000000000000000000002 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000012 /* DesignSystem */; };
+		B10000000000000000000003 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000013 /* Core */; };
+		B10000000000000000000004 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000014 /* Storage */; };
 		B10000000000000000000005 /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000015 /* Home */; };
 		B10000000000000000000006 /* Learn in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000016 /* Learn */; };
 		B10000000000000000000007 /* Onboarding in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000017 /* Onboarding */; };
 		B10000000000000000000008 /* Quizz in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000018 /* Quizz */; };
 		B10000000000000000000009 /* You in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000019 /* You */; };
-		B10000000000000000000002 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000012 /* DesignSystem */; };
-		B10000000000000000000003 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000013 /* Core */; };
-		B10000000000000000000004 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000014 /* Storage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -249,6 +249,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				UVVA_META_APP_ID = "";
 			};
 			name = Debug;
 		};
@@ -281,6 +282,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				UVVA_META_APP_ID = "";
 			};
 			name = Release;
 		};
@@ -323,6 +325,18 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B10000000000000000000012 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		B10000000000000000000013 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		B10000000000000000000014 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Storage;
+		};
 		B10000000000000000000015 /* Home */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Home;
@@ -342,18 +356,6 @@
 		B10000000000000000000019 /* You */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = You;
-		};
-		B10000000000000000000012 /* DesignSystem */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DesignSystem;
-		};
-		B10000000000000000000013 /* Core */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Core;
-		};
-		B10000000000000000000014 /* Storage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Storage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

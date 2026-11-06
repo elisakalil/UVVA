@@ -38,7 +38,7 @@ let package = Package(
                 resources: [.process("Resources")]),
 
         .testTarget(name: "HomeTests",
-                    dependencies: ["Home"] + Dependencies.tests + [Dependencies.match]),
+                    dependencies: ["Home", "Learn", .product(name: "Storage", package: "Core")] + Dependencies.tests + [Dependencies.match]),
 
         .testTarget(name: "LearnTests",
                     dependencies: ["Learn"] + Dependencies.tests),

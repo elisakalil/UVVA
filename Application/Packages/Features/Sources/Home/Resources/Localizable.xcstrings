@@ -10,7 +10,17 @@
     "/%lld" : {
 
     },
-    "%lld" : {
+    "%lld · %lld years" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld · %2$lld years"
+          }
+        }
+      }
+    },
+    "%lld · 1 year" : {
 
     },
     "%lld of %lld" : {
@@ -32,10 +42,22 @@
     "✷" : {
 
     },
+    "6 lessons" : {
+
+    },
+    "A grape" : {
+
+    },
+    "A lesson" : {
+
+    },
     "A pairing drawn for your palate" : {
 
     },
     "A quick\nlook around" : {
+
+    },
+    "A region" : {
 
     },
     "A short walk through where things live in UVVA." : {
@@ -44,13 +66,46 @@
     "Add to cellar" : {
 
     },
+    "Anywhere" : {
+
+    },
+    "Appellation" : {
+
+    },
+    "Argentina" : {
+
+    },
+    "Australia" : {
+
+    },
+    "Austria" : {
+
+    },
     "Back" : {
+
+    },
+    "Back to Home" : {
 
     },
     "Bolder than your map, which has no high axis." : {
 
     },
+    "Chile" : {
+
+    },
     "Choose your wine" : {
+
+    },
+    "Citrus" : {
+
+    },
+    "Clear search" : {
+
+    },
+    "Clear selection" : {
+
+    },
+    "Close definition" : {
 
     },
     "Close to your map on every axis." : {
@@ -59,7 +114,13 @@
     "Continue  →" : {
 
     },
+    "Dark fruit" : {
+
+    },
     "Different from the strongest axes on your map." : {
+
+    },
+    "Earthy" : {
 
     },
     "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
@@ -71,7 +132,25 @@
     "Find the wine" : {
 
     },
+    "Floral" : {
+
+    },
+    "Fortified" : {
+
+    },
+    "France" : {
+
+    },
+    "Germany" : {
+
+    },
     "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
+
+    },
+    "Grapes" : {
+
+    },
+    "Herbal" : {
 
     },
     "High in %@ and %@, like your map." : {
@@ -87,6 +166,9 @@
     "High in %@, like your map." : {
 
     },
+    "How to make it" : {
+
+    },
     "In your cellar" : {
 
     },
@@ -94,6 +176,12 @@
 
     },
     "Invite the people you drink with. UVVA reads every map at the table and suggests one bottle for all of you." : {
+
+    },
+    "Italy" : {
+
+    },
+    "Learn" : {
 
     },
     "Learn the wines you love" : {
@@ -108,19 +196,31 @@
     "Map your taste in wine with me on UVVA." : {
 
     },
+    "Map yours · uvva.app" : {
+
+    },
     "match with %@" : {
 
     },
     "match with your map" : {
 
     },
+    "Mineral" : {
+
+    },
     "More %@ than you usually drink." : {
+
+    },
+    "New Zealand" : {
 
     },
     "Next" : {
 
     },
     "Not high in %@, the strongest axis on your map." : {
+
+    },
+    "Notes" : {
 
     },
     "Nothing runs high on your map, and nothing runs high on this wine." : {
@@ -132,10 +232,25 @@
     "Notifications, unread" : {
 
     },
+    "Open glossary" : {
+
+    },
     "Open the table →" : {
 
     },
+    "Orchard fruit" : {
+
+    },
+    "Organic, biodynamic and natural" : {
+
+    },
+    "Origin" : {
+
+    },
     "Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight." : {
+
+    },
+    "Pick up to three" : {
 
     },
     "Pick who is coming →" : {
@@ -144,13 +259,34 @@
     "Picked for your palate" : {
 
     },
+    "Portugal" : {
+
+    },
     "Quiet on every axis, like your map." : {
+
+    },
+    "Red" : {
+
+    },
+    "Red fruit" : {
+
+    },
+    "Region" : {
+
+    },
+    "Rosé" : {
 
     },
     "Scan a label" : {
 
     },
+    "Search a term" : {
+
+    },
     "See the wine & the dish" : {
+
+    },
+    "Serve at" : {
 
     },
     "Set a table" : {
@@ -159,25 +295,82 @@
     "Set a table with your friends" : {
 
     },
+    "Share your palate" : {
+
+    },
     "Show less" : {
 
     },
     "Show me" : {
 
     },
+    "South Africa" : {
+
+    },
+    "Spain" : {
+
+    },
+    "Spain's great red" : {
+
+    },
+    "Sparkling" : {
+
+    },
+    "Spiced" : {
+
+    },
     "Start" : {
+
+    },
+    "Sweet" : {
 
     },
     "Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map." : {
 
     },
+    "TAP ANYWHERE TO LEAVE" : {
+
+    },
     "Tell us what you feel like tonight." : {
+
+    },
+    "Tempranillo" : {
+
+    },
+    "The map of this wine" : {
+
+    },
+    "The perfect table" : {
+
+    },
+    "This is my wine palate" : {
+
+    },
+    "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." : {
+
+    },
+    "This wine" : {
+
+    },
+    "This wine and you" : {
+
+    },
+    "Toasty" : {
 
     },
     "Tour" : {
 
     },
+    "Tropical" : {
+
+    },
+    "Type" : {
+
+    },
     "Uco Valley" : {
+
+    },
+    "United States" : {
 
     },
     "UVVA" : {
@@ -186,7 +379,22 @@
     "UVVA · 0.1 · Made in Portugal" : {
 
     },
+    "Vintage" : {
+
+    },
     "Welcome in, %@" : {
+
+    },
+    "What the labels really mean" : {
+
+    },
+    "What you need" : {
+
+    },
+    "White" : {
+
+    },
+    "Wines for your palate" : {
 
     },
     "Wines you have tasted and wines you want to try, each one measured against your map." : {
@@ -195,18 +403,20 @@
     "With your palate" : {
 
     },
+    "Word of the day" : {
+
+    },
     "Your cellar" : {
 
     },
-    "Your last wine %@ your %@ notes." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Your last wine %1$@ your %2$@ notes."
-          }
-        }
-      }
+    "Your last wine lowered your %@ notes." : {
+
+    },
+    "Your last wine raised your %@ notes." : {
+
+    },
+    "Your map" : {
+
     },
     "Your map is ready" : {
 

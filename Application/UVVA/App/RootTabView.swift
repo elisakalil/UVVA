@@ -4,8 +4,6 @@ import Learn
 import SwiftUI
 import You
 
-/// The five tabs with the design system's floating tab bar, about 40 pt from the bottom of the screen,
-/// and the Home tour over all of it. Home, Learn and You exist for now.
 struct RootTabView: View {
     @Bindable var coordinator: AppCoordinator
     @State private var backdropFrame: CGRect?
@@ -54,6 +52,7 @@ struct RootTabView: View {
                 .transition(.opacity)
             }
         }
+        .lessonCover(coordinator.learn, onPresented: coordinator.lessonDidPresent)
         .certificateCover(coordinator.learn)
         .animation(.easeOut(duration: 0.35), value: coordinator.tour == nil)
     }

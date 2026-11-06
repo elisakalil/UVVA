@@ -5,18 +5,18 @@ import Foundation
 enum HomeCardModel: Equatable, Sendable {
     case header(greeting: String, hasUnread: Bool)
     case dailySuggestion(Wine)
-    case friends(FriendsVariant)
+    case friends(FriendsCardState)
     case continueLesson(CourseProgress)
     case changedMapCard(axis: PalateAxis, delta: Double)
-    case learnShortcuts
+    case learnShortcuts([HomeLessonSuggestion])
     case wordOfTheDay(GlossaryTerm)
     case winesForPalate([Wine])
     case chooseYourWine
 
-    enum FriendsVariant: Equatable, Sendable {
-        case invite
-        case match(Friend)
-        case setTable(count: Int)
+    enum FriendsCardState: Equatable, Sendable {
+        case noFriends
+        case hasMatch(Friend)
+        case hasFriends(count: Int)
     }
 
     var kind: String {
@@ -42,9 +42,9 @@ enum HomeCardModel: Equatable, Sendable {
 
     var spotlightID: String? {
         switch self {
-        case .dailySuggestion: HomeSpotlightModel.today
-        case .friends: HomeSpotlightModel.friends
-        case .chooseYourWine: HomeSpotlightModel.chooseYourWine
+        case .dailySuggestion: HomeSpotlightID.today
+        case .friends: HomeSpotlightID.friends
+        case .chooseYourWine: HomeSpotlightID.chooseYourWine
         default: nil
         }
     }

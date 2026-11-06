@@ -1,70 +1,79 @@
 import DesignSystem
 import SwiftUI
 
-/// The cover (LEARN-R12): the lesson number and title, minutes, XP and steps, and "By the end you can".
+/// Lesson introduction: title, handwritten position, three metrics and numbered objectives.
 struct LessonCoverView: View {
     var resources = LearnResourcesUIModel()
     var model: LessonCoverUIModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            VStack(alignment: .leading, spacing: 18) {
-                HStack(alignment: .top) {
-                    LessonEyebrow(text: model.eyebrow)
-                    Spacer()
-                    Text(model.number)
-                        .font(UVVAFont.redGrapes(60))
-                        .foregroundStyle(LessonPalette.accent)
-                }
-                Text(model.title)
-                    .font(UVVAFont.sans(44, .ultraLight))
-                    .tracking(-1.5)
-                Text(model.subtitle)
-                    .font(UVVAFont.sans(15))
-                    .foregroundStyle(LessonPalette.dim)
-            }
-            .padding(.horizontal, 24)
-            .padding(.bottom, 28)
+            Text(model.title)
+                .font(UVVAFont.sans(38, .ultraLight))
+                .tracking(-1.6)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Text(model.position)
+                .font(UVVAFont.redGrapes(15))
+                .tracking(2)
+                .lineSpacing(3)
+                .foregroundStyle(LessonPalette.accent)
+                .padding(.top, 22)
+                .accessibilityLabel(model.position.replacingOccurrences(of: "\n", with: " "))
 
             HStack(spacing: 0) {
-                stat(model.minutes, resources.minutesText, leading: false)
-                stat(model.xp, resources.xpText, leading: true)
-                stat(model.steps, resources.stepsText, leading: true)
+                stat(model.minutes, resources.minutesText, separated: false)
+                stat(model.xp, resources.xpText, separated: true)
+                stat(model.steps, resources.stepsText, separated: true)
             }
-            .padding(.horizontal, 24)
-            .padding(.vertical, 18)
-            .overlay(alignment: .top) { Rectangle().fill(LessonPalette.line).frame(height: 1) }
-            .overlay(alignment: .bottom) { Rectangle().fill(LessonPalette.line).frame(height: 1) }
+            .padding(.top, 34)
 
             if !model.objectives.isEmpty {
                 VStack(alignment: .leading, spacing: 14) {
                     LessonEyebrow(text: resources.byTheEndYouCanText)
-                    ForEach(Array(model.objectives.enumerated()), id: \.offset) { index, objective in
-                        HStack(alignment: .firstTextBaseline, spacing: 14) {
-                            Text(String(format: "%02d", index + 1))
-                                .font(UVVAFont.sans(12))
-                                .foregroundStyle(LessonPalette.dim)
-                                .frame(width: 22, alignment: .leading)
-                            Text(objective).font(UVVAFont.sans(15)).lineSpacing(4)
+                        .padding(.bottom, 2)
+                    VStack(spacing: 0) {
+                        ForEach(Array(model.objectives.enumerated()), id: \.offset) { index, objective in
+                            HStack(alignment: .firstTextBaseline, spacing: 12) {
+                                Text(String(format: "%02d", index + 1))
+                                    .font(UVVAFont.sans(10))
+                                    .foregroundStyle(LessonPalette.dim)
+                                    .frame(width: 22, alignment: .leading)
+                                Text(objective)
+                                    .font(UVVAFont.sans(14))
+                                    .tracking(-0.4)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            .frame(maxWidth: .infinity, minHeight: 49, alignment: .leading)
+                            .padding(.vertical, 1)
+                            .overlay(alignment: .bottom) {
+                                if index < model.objectives.count - 1 {
+                                    Rectangle().fill(LessonPalette.line).frame(height: 0.5)
+                                }
+                            }
                         }
                     }
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 22)
+                .padding(.top, 72)
             }
         }
+        .padding(.horizontal, 30)
         .foregroundStyle(LessonPalette.ink)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private func stat(_ value: String, _ label: String, leading: Bool) -> some View {
+    private func stat(_ value: String, _ label: String, separated: Bool) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(value).font(UVVAFont.sans(30, .ultraLight))
-            Text(label.uppercased()).font(UVVAFont.sans(11)).tracking(1.8).foregroundStyle(LessonPalette.dim)
+            Text(value).font(UVVAFont.sans(38, .ultraLight))
+            Text(label.uppercased())
+                .font(UVVAFont.sans(10))
+                .tracking(1.8)
+                .foregroundStyle(LessonPalette.dim)
         }
-        .padding(.leading, leading ? 14 : 0)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.leading, separated ? 16 : 0)
+        .frame(maxWidth: .infinity, minHeight: 88, alignment: .leading)
         .overlay(alignment: .leading) {
-            if leading { Rectangle().fill(LessonPalette.line).frame(width: 1) }
+            if separated { Rectangle().fill(LessonPalette.line).frame(width: 0.5) }
         }
     }
 }

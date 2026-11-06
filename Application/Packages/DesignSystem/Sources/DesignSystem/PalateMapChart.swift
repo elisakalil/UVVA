@@ -12,9 +12,11 @@ public struct PalateMapChart: View {
     var labelOpacity: Double
     /// An earlier map, drawn faintly under this one (YOU-R10).
     var comparison: [Double]?
+    var ink: Color
 
     public init(values: [Double], labels: [String], strong: Set<Int> = [], labelSize: CGFloat = 8,
-                labelOpacity: Double = 0.7, comparison: [Double]? = nil) {
+                labelOpacity: Double = 0.7, comparison: [Double]? = nil, ink: Color = UVVAColor.creamFill) {
+        self.ink = ink
         self.comparison = comparison
         self.values = values
         self.labels = labels
@@ -52,7 +54,6 @@ public struct PalateMapChart: View {
     }
 
     private func draw(in context: inout GraphicsContext) {
-        let ink = UVVAColor.creamFill
         let c = Self.box / 2
         for r in [24.0, 48, 72, 96] {
             context.stroke(Path(ellipseIn: CGRect(x: c - r, y: c - r, width: 2 * r, height: 2 * r)),
@@ -106,6 +107,7 @@ public struct PalateMapChart: View {
             .lineLimit(1)
             .fixedSize()
             .frame(width: width, alignment: alignment)
+            .foregroundStyle(ink)
             .opacity(labelOpacity)
             .position(x: centerX, y: y)
     }

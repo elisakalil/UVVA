@@ -13,7 +13,9 @@ struct CertificatePresentationBuilder {
             about: course.about,
             skills: Array(skills.prefix(3)),
             xp: "+\(course.xp) XP",
-            message: String(localized: "I just finished \(course.title) on UVVA.", bundle: .module)
+            message: String(localized: "I just finished \(course.title) on UVVA.", bundle: .module),
+            country: course.kind == .region ? course.countries.first : nil,
+            courseID: course.id
         )
     }
 

@@ -5,5 +5,5 @@ import Foundation
 struct LoadLessonUseCase: LoadLessonUseCaseProtocol {
     let catalog: any CourseCatalog
 
-    func execute(id: String) async -> Lesson? { try? await catalog.lesson(id: id) }
+    func execute(id: String) async -> Lesson? { await Task.detached(priority: .userInitiated) { try? await catalog.lesson(id: id) }.value }
 }

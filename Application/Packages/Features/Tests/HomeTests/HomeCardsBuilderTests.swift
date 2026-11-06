@@ -16,33 +16,33 @@ struct HomeCardsBuilderTests {
 
     // MARK: HOME-R01 · Ordem fixa
 
-    @Test func HOME_R01_fullState_showsNineCardsInOrder() {
+    @Test func HOME_R01_withoutLessonCatalog_omitsSuggestions() {
         let kinds = builder.build(from: .full, now: now).map(\.kind)
         #expect(kinds == ["header", "dailySuggestion", "friends", "continueLesson", "changedMapCard",
-                          "learnShortcuts", "wordOfTheDay", "winesForPalate", "chooseYourWine"])
+                          "wordOfTheDay", "winesForPalate", "chooseYourWine"])
     }
 
     @Test func HOME_R01_noLessonNoRating_hidesThoseCardsAndKeepsOrder() {
-        var state = HomeState.full
-        state.courses = []
-        state.lastRating = nil
-        let kinds = builder.build(from: state, now: now).map(\.kind)
-        #expect(kinds == ["header", "dailySuggestion", "friends", "learnShortcuts",
+        var model = HomeContentModel.full
+        model.courses = []
+        model.lastRating = nil
+        let kinds = builder.build(from: model, now: now).map(\.kind)
+        #expect(kinds == ["header", "dailySuggestion", "friends",
                           "wordOfTheDay", "winesForPalate", "chooseYourWine"])
     }
 
     // MARK: HOME-R04 · Sino
 
     @Test func HOME_R04_unreadNotification_showsDot() {
-        var state = HomeState.full
-        state.notifications = [.init(id: "1", text: "a", isRead: true), .init(id: "2", text: "b", isRead: false)]
-        #expect(builder.header(state) == .header(greeting: "Welcome back, Elisa", hasUnread: true))
+        var model = HomeContentModel.full
+        model.notifications = [.init(id: "1", text: "a", isRead: true), .init(id: "2", text: "b", isRead: false)]
+        #expect(builder.header(model) == .header(greeting: "Welcome back, Elisa", hasUnread: true))
     }
 
     @Test func HOME_R04_allRead_hidesDot() {
-        var state = HomeState.full
-        state.notifications = [.init(id: "1", text: "a", isRead: true)]
-        #expect(builder.header(state) == .header(greeting: "Welcome back, Elisa", hasUnread: false))
+        var model = HomeContentModel.full
+        model.notifications = [.init(id: "1", text: "a", isRead: true)]
+        #expect(builder.header(model) == .header(greeting: "Welcome back, Elisa", hasUnread: false))
     }
 
     // MARK: HOME-R07 · Troca diária
@@ -60,25 +60,25 @@ struct HomeCardsBuilderTests {
     }
 
     @Test func HOME_R10_noWineWithDish_hidesSuggestion() {
-        var state = HomeState.full
-        state.catalog = state.catalog.map { var w = $0; w.dish = nil; return w }
-        #expect(builder.dailySuggestion(state, now: now) == nil)
+        var model = HomeContentModel.full
+        model.catalog = model.catalog.map { var w = $0; w.dish = nil; return w }
+        #expect(builder.dailySuggestion(model, now: now) == nil)
     }
 
     // MARK: HOME-R11 · Amigos
 
     @Test func HOME_R11_noFriends_showsInvite() {
-        #expect(builder.friendsVariant([]) == .invite)
+        #expect(builder.friendsCardState([]) == .noFriends)
     }
 
     @Test func HOME_R11_oneFriend_showsMatch() {
         let marina = Friend(id: "m", name: "Marina", compatibility: 82)
-        #expect(builder.friendsVariant([marina]) == .match(marina))
+        #expect(builder.friendsCardState([marina]) == .hasMatch(marina))
     }
 
     @Test func HOME_R11_twoFriends_showsSetTable() {
         let friends = [Friend(id: "a", name: "A", compatibility: 50), Friend(id: "b", name: "B", compatibility: 60)]
-        #expect(builder.friendsVariant(friends) == .setTable(count: 2))
+        #expect(builder.friendsCardState(friends) == .hasFriends(count: 2))
     }
 
     // MARK: HOME-R12, R13 · Continuar lição
@@ -126,9 +126,9 @@ struct HomeCardsBuilderTests {
     // MARK: HOME-R19, R21 · Palavra do dia
 
     @Test func HOME_R21_emptyGlossary_hidesCard() {
-        var state = HomeState.full
-        state.glossary = []
-        #expect(!builder.build(from: state, now: now).map(\.kind).contains("wordOfTheDay"))
+        var model = HomeContentModel.full
+        model.glossary = []
+        #expect(!builder.build(from: model, now: now).map(\.kind).contains("wordOfTheDay"))
     }
 
     // MARK: HOME-R22, R23, R25 · Vinhos para o seu paladar
@@ -136,23 +136,23 @@ struct HomeCardsBuilderTests {
     @Test func HOME_R22_showsThreeMostSimilar_descending() {
         let wines = builder.winesForPalate(.full)
         #expect(wines.count == 3)
-        let scores = wines.map { Similarity.between($0.profile, HomeState.full.palateMap) }
+        let scores = wines.map { Similarity.between($0.profile, HomeContentModel.full.palateMap) }
         #expect(scores == scores.sorted(by: >))
     }
 
     @Test func HOME_R23_ratedWine_leavesAndNextEnters() {
-        var state = HomeState.full
-        let before = builder.winesForPalate(state)
-        state.ratedWineIDs.insert(before[0].id)
-        let after = builder.winesForPalate(state)
+        var model = HomeContentModel.full
+        let before = builder.winesForPalate(model)
+        model.ratedWineIDs.insert(before[0].id)
+        let after = builder.winesForPalate(model)
         #expect(!after.contains(before[0]))
         #expect(Array(after.prefix(2)) == Array(before.dropFirst()))
     }
 
     @Test func HOME_R25_noUnratedWines_hidesCard() {
-        var state = HomeState.full
-        state.ratedWineIDs = Set(state.catalog.map(\.id))
-        #expect(!builder.build(from: state, now: now).map(\.kind).contains("winesForPalate"))
+        var model = HomeContentModel.full
+        model.ratedWineIDs = Set(model.catalog.map(\.id))
+        #expect(!builder.build(from: model, now: now).map(\.kind).contains("winesForPalate"))
     }
 }
 

@@ -71,8 +71,9 @@ public struct MapReading: Sendable {
     /// YOU-R01, FRI-R04: "ACIDITY · FRUIT · BODY".
     public var signature: String { dominantPhrase.uppercased() }
 
-    public var caption: String {
-        let head = switch shape {
+    /// A concise description for the share invitation.
+    public var shortCaption: String {
+        switch shape {
         case .flat(.low): String(localized: "Quiet on all eight axes.", bundle: .module)
         case .flat(.neutral): String(localized: "In the middle on all eight axes.", bundle: .module)
         case .flat(.high): String(localized: "High on all eight axes.", bundle: .module)
@@ -83,7 +84,10 @@ public struct MapReading: Sendable {
         case .shaped:
             String(localized: "\(topPhrase), quietest on \(Self.group(tiers[tiers.count - 1])).", bundle: .module)
         }
-        return head + " " + String(localized: "The shape of what you reach for in a glass.", bundle: .module)
+    }
+
+    public var caption: String {
+        shortCaption + " " + String(localized: "The shape of what you reach for in a glass.", bundle: .module)
     }
 
     /// The top's tone (QUIZ-R14a).

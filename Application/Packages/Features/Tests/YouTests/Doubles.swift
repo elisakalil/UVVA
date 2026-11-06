@@ -77,6 +77,9 @@ struct CoursesStub: CourseCatalog {
 }
 
 struct LearningStub: LearningRepository {
+    func snapshot(for courses: [Course]) async throws -> LearningSnapshot { testSnapshot(courses, lessons: try await progress()) }
+    func save(_ progress: LessonProgress, in course: Course) async throws { try await save(progress) }
+
     var lessons: [LessonProgress] = []
     var earned: [Certificate] = []
     func progress() async throws -> [String: LessonProgress] {

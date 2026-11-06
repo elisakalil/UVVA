@@ -13,7 +13,7 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
     let suggestionPool: Int
     let wineLimit: Int
 
-    func execute() async throws -> LoadedHomeContent {
+    func execute() async throws -> HomeLoadResultModel {
         guard let map = try await maps.currentMap() else {
             throw PreparationError.missingMap
         }
@@ -23,15 +23,24 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
 
         let wines = try await pairedWines(for: map)
         let glossary = try await catalog.glossary()
-        let courses = await startedCourses()
+        var lessonCatalog: [Course] = []
+        for kind in [CourseKind.region, .grape, .path] {
+            lessonCatalog += try await courses.courses(kind)
+        }
+        let snapshot = try await learning.snapshot(for: lessonCatalog)
+        let progress = snapshot.lessons
+        let startedCourses = lessonCatalog.filter { course in
+            let module = snapshot.modules[course.id]
+            return module?.lastOpenedAt != nil || (module?.state ?? 0) > 0
+        }.map { CourseRules.summary(of: $0, module: snapshot.modules[$0.id], progress: progress) }
 
         try Task.checkCancellation()
 
-        return LoadedHomeContent(
-            state: HomeState(
+        return HomeLoadResultModel(
+            model: HomeContentModel(
                 firstName: profile?.firstName ?? "", palateMap: map, friends: [],
-                courses: courses, lastRating: nil, ratedWineIDs: [], catalog: wines,
-                glossary: glossary, notifications: []
+                courses: startedCourses, lastRating: nil, ratedWineIDs: [], catalog: wines,
+                glossary: glossary, notifications: [], lessonCatalog: lessonCatalog, modules: snapshot.modules, lessonProgress: progress
             ),
             inviteLink: profile?.inviteLink,
             cellarWineKeys: savedKeys
@@ -63,18 +72,6 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
         var errorDescription: String? {
             "Your palate map could not be loaded."
         }
-    }
-
-    private func startedCourses() async -> [CourseProgress] {
-        let progress = (try? await learning.progress()) ?? [:]
-        let started = Set(progress.values.map(\.courseID))
-        var result: [CourseProgress] = []
-        for kind in Set(started.compactMap(CourseKind.init(courseID:))) {
-            for course in (try? await courses.courses(kind)) ?? [] where started.contains(course.id) {
-                result.append(CourseRules.summary(of: course, progress: progress))
-            }
-        }
-        return result
     }
 
 }

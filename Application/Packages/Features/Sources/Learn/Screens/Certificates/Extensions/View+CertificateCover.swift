@@ -18,7 +18,7 @@ private struct LearnCertificateCover<ViewModel: LearnViewModelProtocol>: ViewMod
             set: { if !$0 { viewModel.closeCertificate() } }
         )) {
             if let certificate = viewModel.uiModel.sharedCertificate {
-                ShareScreen(title: viewModel.uiModel.resources.shareWhatYouLearnedText, message: certificate.message) { format in
+                ShareScreen(title: viewModel.uiModel.resources.shareWhatYouLearnedText, message: certificate.message, isCertificate: true) { format in
                     CertificateCard(model: certificate, format: format)
                 } onFinish: { viewModel.closeCertificate() }
             }

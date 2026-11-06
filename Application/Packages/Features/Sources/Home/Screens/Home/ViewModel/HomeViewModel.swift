@@ -6,6 +6,7 @@ import Combine
 public final class HomeViewModel: HomeViewModelProtocol {
     @Published public private(set) var uiModel = HomeUIModel()
 
+    private var presentedDay: Date?
     private var loadTask: Task<Void, Error>?
 
     private let loadHomeUseCase: any LoadHomeUseCaseProtocol
@@ -29,11 +30,13 @@ public final class HomeViewModel: HomeViewModelProtocol {
     }
 
     public func loadIfNeeded() async {
-        guard uiModel.content == nil else { return }
+        guard uiModel.content == nil || presentedDay.map({ !calendar.isDate($0, inSameDayAs: now()) }) == true else { return }
         await load()
     }
 
     public func load() async {
+        // A progress change requires a fresh read, even if an older Home snapshot is in flight.
+        if let pending = loadTask { try? await pending.value }
         try? await prepare()
     }
 
@@ -45,9 +48,11 @@ public final class HomeViewModel: HomeViewModelProtocol {
         }
 
         uiModel.isLoading = true
-        let task = Task { try await self.readHome() }
+        let task = Task {
+            defer { self.loadTask = nil; self.uiModel.isLoading = false }
+            try await self.readHome()
+        }
         loadTask = task
-        defer { loadTask = nil; uiModel.isLoading = false }
 
         try await task.value
         try Task.checkCancellation()
@@ -59,19 +64,22 @@ public final class HomeViewModel: HomeViewModelProtocol {
         present(content)
     }
 
-    private func present(_ content: LoadedHomeContent) {
+    private func present(_ content: HomeLoadResultModel) {
         let date = now()
+        presentedDay = date
         let day = calendar.ordinality(of: .day, in: .era, for: date) ?? 0
         let builder = HomeCardsBuilder(calendar: calendar, pickWordIndex: { day % $0 })
 
         uiModel = HomeUIModel(
-            content: HomeContentUIModel(cards: builder.build(from: content.state, now: date),
-                                         palateMap: content.state.palateMap),
+            content: HomeContentUIModel(cards: builder.build(from: content.model, now: date),
+                                         glossary: content.model.glossary, firstName: content.model.firstName, palateMap: content.model.palateMap),
             inviteLink: content.inviteLink, cellarWineKeys: content.cellarWineKeys, isLoading: false
         )
     }
 
     public func openCourse(_ id: String) { coordinator.openCourse(id) }
+
+    public func openLesson(_ suggestion: HomeLessonSuggestion) { coordinator.openLesson(suggestion) }
 
     public func openLearn(_ kind: CourseKind) { coordinator.openLearn(kind) }
 
