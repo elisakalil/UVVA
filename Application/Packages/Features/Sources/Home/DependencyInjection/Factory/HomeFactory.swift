@@ -31,8 +31,7 @@ public struct HomeFactory: HomeFactoryProtocol {
         HomeViewModel(
             loadHomeUseCase: LoadHomeUseCase(profiles: profiles, maps: maps, catalog: catalog,
                                             cellar: cellar, courses: courses, learning: learning,
-                                            suggestionPool: HomeCardsBuilder.dailySuggestionPool,
-                                            wineLimit: HomeCardsBuilder.dailySuggestionPool + HomeCardsBuilder.winesForPalateCount),
+                                            suggestionPool: HomeCardsBuilder.dailySuggestionPool),
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: cellar),
             coordinator: coordinator, now: now, calendar: calendar
         )

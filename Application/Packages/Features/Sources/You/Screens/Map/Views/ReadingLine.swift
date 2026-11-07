@@ -1,7 +1,7 @@
 import DesignSystem
 import SwiftUI
 
-/// An axis with ten pips and its word (QUIZ-R05, R16).
+/// An axis with ten pips, lit up to its position on the Quiz bar, and its word (QUIZ-R05, R16).
 struct ReadingLine: View {
     var row: MapReadingRow
 
@@ -14,7 +14,7 @@ struct ReadingLine: View {
                 .frame(width: 92, alignment: .leading)
             HStack(spacing: 5) {
                 ForEach(0..<10, id: \.self) { index in
-                    if index < row.level {
+                    if index <= row.level {
                         Circle().opacity(row.isStrong ? 0.92 : 0.7).frame(width: 4, height: 4)
                     } else {
                         Circle().strokeBorder(lineWidth: 0.5).opacity(0.3).frame(width: 4, height: 4)

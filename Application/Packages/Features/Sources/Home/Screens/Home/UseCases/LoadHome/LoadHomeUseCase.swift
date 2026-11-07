@@ -11,7 +11,6 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
     let courses: any CourseCatalog
     let learning: any LearningRepository
     let suggestionPool: Int
-    let wineLimit: Int
 
     func execute() async throws -> HomeLoadResultModel {
         guard let map = try await maps.currentMap() else {
@@ -48,7 +47,8 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
     }
 
     private func pairedWines(for map: PalateMap) async throws -> [Wine] {
-        let wines = try await catalog.winesClosest(to: map, limit: wineLimit)
+        // An axis match can sit anywhere in the overall similarity ranking.
+        let wines = try await catalog.winesClosest(to: map, limit: .max)
         let recipes = try await catalog.recipes()
         let pool = suggestionPool
 

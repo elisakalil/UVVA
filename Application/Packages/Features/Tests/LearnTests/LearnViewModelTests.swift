@@ -283,20 +283,21 @@ struct LearnViewModelTests {
     @Test func LEARN_R14_aLessonOpenedFromAnother_backReturnsToIt_thenLeaves() async throws {
         let course = Fixture.course("grape-tannat", lessons: 2)
         let learning = LearningSpy([LessonProgress(lessonID: "grape-tannat-l01", courseID: course.id, currentStep: 5,
-                                                   completedAt: Fixture.day, lastOpenedAt: Fixture.day, xp: 15)])
+                                                   lastOpenedAt: Fixture.day)])
         let model = viewModel([course], learning: learning)
         await model.load()
         await model.openCourse(id: "grape-tannat")
-        let second = try! #require(model.player)
-        #expect(second.lesson.id == "grape-tannat-l02")
-        second.reviewPrevious()
+        let first = try #require(model.player)
+        #expect(first.lesson.id == "grape-tannat-l01")
+        await eventually { first.hasSavedSummary && !model.uiModel.isLoadingLesson }
+        first.primary()
         await eventually { model.players.count == 2 }
-        #expect(model.player?.lesson.id == "grape-tannat-l01")
+        #expect(model.player?.lesson.id == "grape-tannat-l02")
         model.player?.back()
         await eventually { model.players.count == 1 }
-        await eventually { model.player?.lesson.id == second.lesson.id && !model.uiModel.isLoadingLesson }
-        #expect(model.player?.lesson.id == second.lesson.id)
-        #expect(model.player?.playerState == .cover)
+        await eventually { model.player?.lesson.id == first.lesson.id && !model.uiModel.isLoadingLesson }
+        #expect(model.player?.lesson.id == first.lesson.id)
+        #expect(model.player?.playerState == .step(5))
         model.player?.back()
         await eventually { model.player == nil }
     }

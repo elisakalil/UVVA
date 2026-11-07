@@ -10,8 +10,8 @@ enum HomeCardModel: Equatable, Sendable {
     case changedMapCard(axis: PalateAxis, delta: Double)
     case learnShortcuts([HomeLessonSuggestion])
     case wordOfTheDay(GlossaryTerm)
-    case winesForPalate([Wine])
-    case chooseYourWine
+    case winesForPalate([PalateWineSuggestion])
+    case chooseYourWine([Wine])
 
     enum FriendsCardState: Equatable, Sendable {
         case noFriends
@@ -46,6 +46,34 @@ enum HomeCardModel: Equatable, Sendable {
         case .friends: HomeSpotlightID.friends
         case .chooseYourWine: HomeSpotlightID.chooseYourWine
         default: nil
+        }
+    }
+}
+
+struct PalateWineSuggestion: Equatable, Sendable {
+    let wine: Wine
+    let axis: PalateAxis
+    let level: Level
+
+    enum Level: Equatable, Sendable {
+        case low, high
+
+        private static let lowThreshold = 4.0
+        private static let highThreshold = 7.0
+
+        init?(_ score: Double) {
+            if score <= Self.lowThreshold { self = .low }
+            else if score >= Self.highThreshold { self = .high }
+            else { return nil }
+        }
+
+        func matches(_ score: Double, target: Double) -> Bool {
+            switch self {
+            case .low:
+                target < Self.lowThreshold ? score < Self.lowThreshold : score <= Self.lowThreshold
+            case .high:
+                score >= Self.highThreshold
+            }
         }
     }
 }

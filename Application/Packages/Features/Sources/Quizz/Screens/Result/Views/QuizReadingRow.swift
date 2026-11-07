@@ -1,7 +1,8 @@
 import DesignSystem
 import SwiftUI
 
-/// An axis with its level as ten pips and its word (QUIZ-R05, R16). The top three are brighter.
+/// An axis with its level as ten pips, lit up to its position on the Quiz bar, and its word (QUIZ-R05, R16).
+/// The top three are brighter.
 struct QuizReadingRow: View {
     var row: QuizReadingRowUIModel
 
@@ -14,7 +15,7 @@ struct QuizReadingRow: View {
                 .frame(width: 96, alignment: .leading)
             HStack(spacing: 4) {
                 ForEach(0..<10, id: \.self) { index in
-                    if index < row.level {
+                    if index <= row.level {
                         Circle().opacity(row.isStrong ? 0.92 : 0.7).frame(width: 4, height: 4)
                     } else {
                         Circle().strokeBorder(lineWidth: 0.5).opacity(0.3).frame(width: 4, height: 4)

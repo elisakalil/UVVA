@@ -16,12 +16,14 @@ public struct Course: Identifiable, Equatable, Sendable {
     public var countries: [String]
     /// Region only.
     public var countryCode: String?
+    /// Grape only: other names for the same variety.
+    public var aliases: [String]
     /// Region only: the grapes it grows.
     public var grapes: [String]
     public var lessons: [LessonSummary]
 
     public init(id: String, kind: CourseKind, order: Int, title: String, about: String, level: String? = nil,
-                color: String? = nil, countries: [String] = [], countryCode: String? = nil, grapes: [String] = [],
+                color: String? = nil, countries: [String] = [], countryCode: String? = nil, grapes: [String] = [], aliases: [String] = [],
                 lessons: [LessonSummary]) {
         self.id = id
         self.kind = kind
@@ -33,6 +35,7 @@ public struct Course: Identifiable, Equatable, Sendable {
         self.countries = countries
         self.countryCode = countryCode
         self.grapes = grapes
+        self.aliases = aliases
         self.lessons = lessons
     }
 
@@ -42,9 +45,5 @@ public struct Course: Identifiable, Equatable, Sendable {
 
     public func lesson(after lesson: LessonSummary) -> LessonSummary? {
         lessons.first { $0.order > lesson.order }
-    }
-
-    public func lesson(before lesson: LessonSummary) -> LessonSummary? {
-        lessons.last { $0.order < lesson.order }
     }
 }

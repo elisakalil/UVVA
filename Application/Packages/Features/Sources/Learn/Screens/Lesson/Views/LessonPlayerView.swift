@@ -136,14 +136,8 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
         case let .feedback(model):
             FeedbackPanel(resources: resources, model: model, onContinue: viewModel.primary)
         case let .button(title, isEnabled):
-            VStack(spacing: 10) {
-                if viewModel.uiModel.isCover, viewModel.uiModel.cover.showsReviewPrevious {
-                    LessonButton(title: resources.reviewPreviousLessonText, style: .outline,
-                                 showsArrow: false, action: viewModel.reviewPrevious)
-                }
-                LessonButton(title: title, style: viewModel.uiModel.isTip ? .onTip : .filled, isEnabled: isEnabled) {
-                    if viewModel.uiModel.isCover { viewModel.begin() } else { viewModel.primary() }
-                }
+            LessonButton(title: title, style: viewModel.uiModel.isTip ? .onTip : .filled, isEnabled: isEnabled) {
+                if viewModel.uiModel.isCover { viewModel.begin() } else { viewModel.primary() }
             }
             .padding(.horizontal, 24)
             .padding(.top, 10)

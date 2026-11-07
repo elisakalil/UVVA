@@ -99,7 +99,7 @@ struct LessonProgress { lessonId; currentStep; completedAt?; lastOpenedAt; answe
 
 ### 4.1 Abertura da lição
 
-**LEARN-R12 · Capa.** Mostra o número e o título da lição, os minutos, o XP, o número de passos e "By the end you can", com os objetivos. Da lição 2 em diante, tem também "Review previous lesson", que abre a lição anterior.
+**LEARN-R12 · Capa.** Mostra o número e o título da lição, os minutos, o XP, o número de passos e "By the end you can", com os objetivos.
 
 **LEARN-R13 · Progresso.** O topo mostra um segmento por passo; os passos até o atual ficam preenchidos.
 

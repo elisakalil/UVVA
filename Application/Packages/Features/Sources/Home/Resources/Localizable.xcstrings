@@ -1,10 +1,959 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Any type" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qualquer tipo"
+          }
+        }
+      }
+    },
+    "Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo"
+          }
+        }
+      }
+    },
+    "Dessert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobremesa"
+          }
+        }
+      }
+    },
+    "Fish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peixe"
+          }
+        }
+      }
+    },
+    "Food pairing" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harmonização"
+          }
+        }
+      }
+    },
+    "Pasta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Massa"
+          }
+        }
+      }
+    },
+    "Poultry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aves"
+          }
+        }
+      }
+    },
+    "Red meat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne vermelha"
+          }
+        }
+      }
+    },
+    "Seafood" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutos do mar"
+          }
+        }
+      }
+    },
+    "Vegetables" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetais"
+          }
+        }
+      }
+    },
+    "Another one" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outro vinho"
+          }
+        }
+      }
+    },
+    "For my palate" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para o meu paladar"
+          }
+        }
+      }
+    },
+    "No wines match these choices. Try changing a filter." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum vinho combina com essas escolhas. Tente mudar um filtro."
+          }
+        }
+      }
+    },
+    "Surprise me" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Me surpreenda"
+          }
+        }
+      }
+    },
+    "Expect a bright, tangy sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espera um gole vivo, com aquele azedinho."
+          }
+        }
+      }
+    },
+    "Expect a firm, drying feel on the finish." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No final do gole, dá pra sentir a boca secar."
+          }
+        }
+      }
+    },
+    "Expect a strong oak character in this glass." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessa taça, o carvalho marca presença."
+          }
+        }
+      }
+    },
+    "Expect less of that mouth-drying feeling." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquela sensação de boca seca aparece bem menos."
+          }
+        }
+      }
+    },
+    "Fruit is front and center in this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesse vinho, a fruta fica em primeiro plano."
+          }
+        }
+      }
+    },
+    "Go for this if you want something light-bodied." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vai nesse se quiser um vinho de corpo leve."
+          }
+        }
+      }
+    },
+    "Go for this one if you want less perfume." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vai nesse se você quiser algo menos perfumado."
+          }
+        }
+      }
+    },
+    "If a sweet sip sounds good, pour this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se bateu vontade de um gole doce, vai nesse."
+          }
+        }
+      }
+    },
+    "If you enjoy a noticeable oak note, try this." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você gosta de sentir o carvalho, prova esse."
+          }
+        }
+      }
+    },
+    "If you want less tang, try this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você quer menos azedinho, prova esse."
+          }
+        }
+      }
+    },
+    "If you're after a floral wine, try this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você quer um vinho bem floral, vai nesse."
+          }
+        }
+      }
+    },
+    "In the mood for a lighter wine? Here's one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tá a fim de um vinho mais leve? Prova esse."
+          }
+        }
+      }
+    },
+    "In the mood for something fruity? Go for this." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tá a fim de um vinho frutado? Vai nesse."
+          }
+        }
+      }
+    },
+    "It feels full and substantial on the palate." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ele tem bastante presença na boca."
+          }
+        }
+      }
+    },
+    "It feels light from the first sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já no primeiro gole dá pra sentir a leveza."
+          }
+        }
+      }
+    },
+    "Just a light touch of spice here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui é só um toque de especiarias."
+          }
+        }
+      }
+    },
+    "Just a little fruit peeks through." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A fruta só dá uma aparecidinha."
+          }
+        }
+      }
+    },
+    "Like a wine that makes your mouth pucker a bit? Try this." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gosta quando o vinho dá aquela amarradinha na boca? Prova esse."
+          }
+        }
+      }
+    },
+    "Lots of floral character in this glass." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem bastante floral nessa taça."
+          }
+        }
+      }
+    },
+    "Oak stays in the background as you sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No gole, o carvalho fica em segundo plano."
+          }
+        }
+      }
+    },
+    "Spice is one of the first things you'll notice." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As especiarias estão entre as primeiras coisas que você vai notar."
+          }
+        }
+      }
+    },
+    "Take a sniff. The floral aromas stand out." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sente o aroma. O floral se destaca."
+          }
+        }
+      }
+    },
+    "The acidity gives this wine a real zip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A acidez dá aquele pique ao vinho."
+          }
+        }
+      }
+    },
+    "The acidity is easygoing here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui a acidez é bem tranquila."
+          }
+        }
+      }
+    },
+    "The floral aromas are barely there." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os aromas florais mal aparecem."
+          }
+        }
+      }
+    },
+    "The floral notes come through loud and clear." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As notas florais aparecem bem de cara."
+          }
+        }
+      }
+    },
+    "The floral side of this wine is pretty subtle." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O lado floral desse vinho é bem sutil."
+          }
+        }
+      }
+    },
+    "The fruit comes through clearly as you sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A fruta aparece bem clara no gole."
+          }
+        }
+      }
+    },
+    "The fruit plays a small part in this glass." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A fruta tem um papel discreto nessa taça."
+          }
+        }
+      }
+    },
+    "The oak stands out as you sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O carvalho aparece bem no gole."
+          }
+        }
+      }
+    },
+    "The spice is there in small doses." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As especiarias aparecem em pequenas doses."
+          }
+        }
+      }
+    },
+    "The spice notes are easy to miss." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As notas de especiarias quase passam despercebidas."
+          }
+        }
+      }
+    },
+    "The spice notes are easy to pick out." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dá pra perceber bem as notas de especiarias."
+          }
+        }
+      }
+    },
+    "The sweetness is easy to notice here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A doçura aparece bem nesse vinho."
+          }
+        }
+      }
+    },
+    "The sweetness stays low here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesse vinho, a doçura fica bem contida."
+          }
+        }
+      }
+    },
+    "The tannins are light on the palate." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O tanino pesa pouco na boca."
+          }
+        }
+      }
+    },
+    "The tannins give this wine a real grip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os taninos dão uma boa pegada nesse vinho."
+          }
+        }
+      }
+    },
+    "There's a faint fruit note in the background." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem uma notinha de fruta lá no fundo."
+          }
+        }
+      }
+    },
+    "There's a good bit of sweetness in the glass." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem uma boa dose de doçura nessa taça."
+          }
+        }
+      }
+    },
+    "There's a good dose of oak here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui tem uma boa dose de carvalho."
+          }
+        }
+      }
+    },
+    "There's a little floral character in the background." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem um toque floral lá no fundo."
+          }
+        }
+      }
+    },
+    "There's a real kick of spice in this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse tem uma boa dose de especiarias."
+          }
+        }
+      }
+    },
+    "There's just a little lift from the acidity." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A acidez dá só um leve frescor."
+          }
+        }
+      }
+    },
+    "There's little sweetness in this sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem pouca doçura nesse gole."
+          }
+        }
+      }
+    },
+    "There's only a touch of oak here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui o carvalho dá só um toque."
+          }
+        }
+      }
+    },
+    "There's very little tannic grip here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui o tanino quase não aperta a boca."
+          }
+        }
+      }
+    },
+    "This has a softer feel thanks to its low acidity." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A acidez baixa deixa o gole mais macio."
+          }
+        }
+      }
+    },
+    "This has that weighty feel you like in a wine." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem aquele peso na boca que você gosta."
+          }
+        }
+      }
+    },
+    "This leans toward the dry side." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse puxa mais pro seco."
+          }
+        }
+      }
+    },
+    "This one has plenty of freshness from its acidity." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A acidez dá bastante frescor a esse vinho."
+          }
+        }
+      }
+    },
+    "This one's a good pick if you want less tannin." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse é uma boa se você quer pouco tanino."
+          }
+        }
+      }
+    },
+    "This one's got a lighter feel." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse vinho tem uma textura mais leve."
+          }
+        }
+      }
+    },
+    "This one's got a sweeter feel from the first sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse já dá pra sentir mais doce no primeiro gole."
+          }
+        }
+      }
+    },
+    "This one's on the fuller side." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse é dos mais encorpados."
+          }
+        }
+      }
+    },
+    "Try this for something less spiced." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se quiser algo com menos especiarias, prova esse."
+          }
+        }
+      }
+    },
+    "Try this if you prefer a less fruity wine." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prova esse se você prefere um vinho menos frutado."
+          }
+        }
+      }
+    },
+    "Try this if you prefer a lighter oak note." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prova esse se você prefere o carvalho mais leve."
+          }
+        }
+      }
+    },
+    "Try this if you want a wine with a lively edge." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prova esse se quiser um vinho com acidez bem viva."
+          }
+        }
+      }
+    },
+    "Try this if you want the spice to stand out." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prova esse se quiser sentir bem as especiarias."
+          }
+        }
+      }
+    },
+    "Want a wine with less sweetness? Go for this." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quer um vinho menos doce? Vai nesse."
+          }
+        }
+      }
+    },
+    "Want something with a bit of heft? Try this." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quer algo com mais corpo? Experimenta esse."
+          }
+        }
+      }
+    },
+    "You might just catch a hint of oak." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talvez você perceba só um fundinho de carvalho."
+          }
+        }
+      }
+    },
+    "You'll feel the tannins with the first sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dá pra sentir os taninos logo no primeiro gole."
+          }
+        }
+      }
+    },
+    "You'll get lots of fruit in the glass." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dá pra sentir bastante fruta nessa taça."
+          }
+        }
+      }
+    },
+    "Gentle acidity, with less of that sharp bite." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A acidez é suave, sem aquela mordida."
+          }
+        }
+      }
+    },
+    "If you like your wine on the drier side, try this." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você prefere um vinho mais seco, prova esse."
+          }
+        }
+      }
+    },
+    "If you're in the mood for spice, try this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se bater vontade de especiarias, vai nesse."
+          }
+        }
+      }
+    },
+    "Just a hint of flowers here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui o floral aparece só de leve."
+          }
+        }
+      }
+    },
+    "Light on the palate, the way you like it." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leve na boca, do jeito que você gosta."
+          }
+        }
+      }
+    },
+    "Love floral notes? This one's full of them." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gosta de notas florais? Esse vinho é cheio delas."
+          }
+        }
+      }
+    },
+    "Soft tannins, so it won't dry out your mouth as much." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pouco tanino, pra deixar a boca menos seca."
+          }
+        }
+      }
+    },
+    "That mouthwatering acidity you like? It's here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sabe aquela acidez que dá água na boca? Tem aqui."
+          }
+        }
+      }
+    },
+    "The fruit notes are pretty quiet here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As notas de fruta ficam bem discretas aqui."
+          }
+        }
+      }
+    },
+    "The oak is subtle in this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O carvalho é bem discreto nesse vinho."
+          }
+        }
+      }
+    },
+    "The spice stays in the background." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As especiarias ficam lá no fundo."
+          }
+        }
+      }
+    },
+    "There's plenty of that tannic grip you like." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem bastante daquela pegada de tanino que você gosta."
+          }
+        }
+      }
+    },
+    "This one's all about the fruit." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui a fruta rouba a cena."
+          }
+        }
+      }
+    },
+    "This one's got the weight you enjoy." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse vinho tem o corpo que você gosta."
+          }
+        }
+      }
+    },
+    "Want something sweeter? Give this a try." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quer algo mais doce? Experimenta esse."
+          }
+        }
+      }
+    },
+    "You'll pick up plenty of oak here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dá pra sentir bem o carvalho nesse vinho."
+          }
+        }
+      }
+    },
     "" : {
 
     },
-    "  %lld" : {
+    " %lld" : {
 
     },
     "/%lld" : {
@@ -39,9 +988,6 @@
     "+" : {
 
     },
-    "✷" : {
-
-    },
     "6 lessons" : {
 
     },
@@ -67,18 +1013,22 @@
 
     },
     "Anywhere" : {
+      "extractionState" : "manual"
 
     },
     "Appellation" : {
 
     },
     "Argentina" : {
+      "extractionState" : "manual"
 
     },
     "Australia" : {
+      "extractionState" : "manual"
 
     },
     "Austria" : {
+      "extractionState" : "manual"
 
     },
     "Back" : {
@@ -91,12 +1041,14 @@
 
     },
     "Chile" : {
+      "extractionState" : "manual"
 
     },
     "Choose your wine" : {
 
     },
     "Citrus" : {
+      "extractionState" : "manual"
 
     },
     "Clear search" : {
@@ -115,12 +1067,14 @@
 
     },
     "Dark fruit" : {
+      "extractionState" : "manual"
 
     },
     "Different from the strongest axes on your map." : {
 
     },
     "Earthy" : {
+      "extractionState" : "manual"
 
     },
     "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
@@ -133,15 +1087,29 @@
 
     },
     "Floral" : {
+      "extractionState" : "manual"
 
     },
     "Fortified" : {
+      "extractionState" : "manual"
 
     },
     "France" : {
+      "extractionState" : "manual"
 
     },
+    "Full body" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo alto"
+          }
+        }
+      }
+    },
     "Germany" : {
+      "extractionState" : "manual"
 
     },
     "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
@@ -151,7 +1119,38 @@
 
     },
     "Herbal" : {
+      "extractionState" : "manual"
 
+    },
+    "High acidity" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acidez alta"
+          }
+        }
+      }
+    },
+    "High floral" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral alto"
+          }
+        }
+      }
+    },
+    "High fruit" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta alta"
+          }
+        }
+      }
     },
     "High in %@ and %@, like your map." : {
       "localizations" : {
@@ -166,6 +1165,46 @@
     "High in %@, like your map." : {
 
     },
+    "High oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho alto"
+          }
+        }
+      }
+    },
+    "High spice" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias altas"
+          }
+        }
+      }
+    },
+    "High sweetness" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doçura alta"
+          }
+        }
+      }
+    },
+    "High tannin" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanino alto"
+          }
+        }
+      }
+    },
     "How to make it" : {
 
     },
@@ -179,6 +1218,7 @@
 
     },
     "Italy" : {
+      "extractionState" : "manual"
 
     },
     "Learn" : {
@@ -189,6 +1229,86 @@
     },
     "Less %@ than you usually drink." : {
 
+    },
+    "Light body" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo baixo"
+          }
+        }
+      }
+    },
+    "Low acidity" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acidez baixa"
+          }
+        }
+      }
+    },
+    "Low floral" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral baixo"
+          }
+        }
+      }
+    },
+    "Low fruit" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta baixa"
+          }
+        }
+      }
+    },
+    "Low oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho baixo"
+          }
+        }
+      }
+    },
+    "Low spice" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias baixas"
+          }
+        }
+      }
+    },
+    "Low sweetness" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doçura baixa"
+          }
+        }
+      }
+    },
+    "Low tannin" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanino baixo"
+          }
+        }
+      }
     },
     "Malbec at altitude" : {
 
@@ -206,12 +1326,14 @@
 
     },
     "Mineral" : {
+      "extractionState" : "manual"
 
     },
     "More %@ than you usually drink." : {
 
     },
     "New Zealand" : {
+      "extractionState" : "manual"
 
     },
     "Next" : {
@@ -239,6 +1361,7 @@
 
     },
     "Orchard fruit" : {
+      "extractionState" : "manual"
 
     },
     "Organic, biodynamic and natural" : {
@@ -260,21 +1383,25 @@
 
     },
     "Portugal" : {
+      "extractionState" : "manual"
 
     },
     "Quiet on every axis, like your map." : {
 
     },
     "Red" : {
+      "extractionState" : "manual"
 
     },
     "Red fruit" : {
+      "extractionState" : "manual"
 
     },
     "Region" : {
 
     },
     "Rosé" : {
+      "extractionState" : "manual"
 
     },
     "Scan a label" : {
@@ -305,33 +1432,35 @@
 
     },
     "South Africa" : {
+      "extractionState" : "manual"
 
     },
     "Spain" : {
+      "extractionState" : "manual"
 
     },
     "Spain's great red" : {
 
     },
     "Sparkling" : {
+      "extractionState" : "manual"
 
     },
     "Spiced" : {
+      "extractionState" : "manual"
 
     },
     "Start" : {
 
     },
     "Sweet" : {
+      "extractionState" : "manual"
 
     },
     "Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map." : {
 
     },
     "TAP ANYWHERE TO LEAVE" : {
-
-    },
-    "Tell us what you feel like tonight." : {
 
     },
     "Tempranillo" : {
@@ -356,12 +1485,14 @@
 
     },
     "Toasty" : {
+      "extractionState" : "manual"
 
     },
     "Tour" : {
 
     },
     "Tropical" : {
+      "extractionState" : "manual"
 
     },
     "Type" : {
@@ -371,12 +1502,13 @@
 
     },
     "United States" : {
+      "extractionState" : "manual"
 
     },
     "UVVA" : {
 
     },
-    "UVVA · 0.1 · Made in Portugal" : {
+    "Made in Portugal" : {
 
     },
     "Vintage" : {
@@ -392,6 +1524,7 @@
 
     },
     "White" : {
+      "extractionState" : "manual"
 
     },
     "Wines for your palate" : {

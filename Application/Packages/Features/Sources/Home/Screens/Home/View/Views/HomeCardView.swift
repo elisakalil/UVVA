@@ -39,8 +39,8 @@ struct HomeCardView: View {
             }
             .buttonStyle(.plain)
             .accessibilityHint("Open glossary")
-        case let .winesForPalate(wines): WinesForPalateCard(resources: resources, wines: wines)
-        case .chooseYourWine: ChooseYourWineCard(resources: resources)
+        case let .winesForPalate(suggestions): WinesForPalateCard(resources: resources, suggestions: suggestions)
+        case let .chooseYourWine(catalog): ChooseYourWineCard(resources: resources, palateMap: palateMap, catalog: catalog)
         }
     }
 }

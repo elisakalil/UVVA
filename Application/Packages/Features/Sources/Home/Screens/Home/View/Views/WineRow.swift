@@ -4,28 +4,31 @@ import SwiftUI
 
 struct WineRow: View {
     var resources = HomeResourcesUIModel()
-    var wine: Wine
+    var suggestion: PalateWineSuggestion
 
     var body: some View {
+        let wine = suggestion.wine
+        let axis = suggestion.axis
+        let label = resources.wineRowAxisLabel(axis, level: suggestion.level)
+
         HStack(spacing: 14) {
             VStack(alignment: .leading, spacing: 0) {
                 (Text(wine.displayName).font(UVVAFont.sans(14.5, .medium))
-                    + Text(wine.vintage.map { "  \($0)" } ?? "").font(UVVAFont.whiteGrape(13)).foregroundColor(UVVAColor.cream.opacity(0.78)))
-                if let note = wine.note {
-                    Text(note)
-                        .font(UVVAFont.sans(12, .regular))
-                        .lineSpacing(4)
-                        .foregroundStyle(UVVAColor.cream84)
-                        .padding(.top, 6)
+                    + Text(wine.vintage.map { " \($0)" } ?? "").font(UVVAFont.whiteGrape(13)).foregroundColor(UVVAColor.cream.opacity(0.78)))
+                Text(resources.wineRowReason(suggestion))
+                    .font(UVVAFont.sans(12, .regular))
+                    .lineSpacing(4)
+                    .foregroundStyle(UVVAColor.cream84)
+                    .padding(.top, 6)
+                HStack(spacing: 8) {
+                    Image(decorative: "palate-\(axis.rawValue)", bundle: .module)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 14, height: 14)
+                    Caption(text: label)
                 }
-                if let axis = wine.profile.ranked.first {
-                    HStack(spacing: 8) {
-                        Text(resources.wineRowAxisSymbol).font(UVVAFont.sans(9))
-                        Caption(text: axis.label)
-                    }
-                    .foregroundStyle(UVVAColor.cream60)
-                    .padding(.top, 10)
-                }
+                .foregroundStyle(UVVAColor.cream60)
+                .padding(.top, 10)
             }
             Spacer(minLength: 0)
             Image(systemName: resources.wineRowChevronIcon)

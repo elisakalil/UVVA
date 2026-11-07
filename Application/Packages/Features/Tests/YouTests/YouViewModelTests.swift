@@ -16,9 +16,9 @@ struct YouViewModelTests {
 
     private func make(profiles: ProfilesSpy? = nil, social: SocialSpy = SocialSpy(), reminders: RemindersSpy = RemindersSpy(),
                       history: [MapChange]? = nil, learning: LearningStub = LearningStub(),
-                      actions: Actions = Actions()) async -> YouViewModel {
+                      actions: Actions = Actions(), courses: CoursesStub = CoursesStub()) async -> YouViewModel {
         let viewModel = YouFactory(profiles: profiles ?? ProfilesSpy(elisa), maps: MapsStub(history: history ?? [quiz]),
-                                     catalog: CatalogStub(), courses: CoursesStub(), learning: learning, social: social,
+                                     catalog: CatalogStub(), courses: courses, learning: learning, social: social,
                                      reminders: reminders, scheduler: reminders)
             .makeViewModel(coordinator: YouCoordinator(
                                      onRedoMap: { actions.log.append("redo") }, onOpenLearn: { actions.log.append("learn") },
@@ -67,6 +67,17 @@ struct YouViewModelTests {
         #expect(actions.log == ["course path-01"])
     }
 
+    @Test func courseSuggestionOpensTheCourseShownAfterTheIntroduction() async {
+        let next = Course(id: "path-02", kind: .path, order: 2, title: "Types and Styles", about: "", lessons: [])
+        let actions = Actions()
+        let model = await make(learning: LearningStub(earned: [Certificate(courseID: "path-01", date: .now)]),
+                               actions: actions, courses: CoursesStub(catalog: [next]))
+        #expect(model.progress.uiModel.suggestionTitle == next.title)
+        #expect(model.progress.uiModel.suggestionReason?.contains("The Path") == true)
+        model.progress.startCourse()
+        #expect(actions.log == ["course path-02"])
+    }
+
     @Test func YOU_R25_aCertificate_opensItsShare() async {
         let actions = Actions()
         await make(actions: actions).settings.certificates.open("grape-tannat")
@@ -76,10 +87,48 @@ struct YouViewModelTests {
     @Test func YOU_R04_R07_newUser_zeros_andThePathsFirstModule() async {
         let progress = await make().progress.uiModel
         #expect(progress.stats.map(\.value) == Array(repeating: "0", count: 6))
-        #expect(progress.stats.map(\.label) == ["Grapes", "Regions", "Lessons", "XP", "Bottles", "Certificates"])
+        #expect(progress.stats.map(\.label) == ["Grapes", "Regions", "Modules", "XP", "Bottles", "Certificates"])
         #expect(progress.suggestionTitle == "What Wine Is")
         #expect(progress.suggestionNote == "5 lessons · 15 min")
         #expect(progress.cta == "Start the course")
+    }
+
+    @Test func progress_groupsCompletedCourses_andPersonalizesFromTheirMetadata() {
+        let path = Course(id: "path-01", kind: .path, order: 1, title: "What Wine Is", about: "An introduction to wine.", level: "Essentials", lessons: [])
+        let grape = Course(id: "grape-tannat", kind: .grape, order: 1, title: "Tannat", about: "", countries: ["Uruguay"], lessons: [])
+        let region = Course(id: "region-uy-canelones", kind: .region, order: 1, title: "Canelones", about: "Vineyards near Montevideo.", countries: ["Uruguay"], grapes: ["Tannat"], lessons: [])
+        var content = YouContentModel()
+        content.certificates = [path, grape, region, grape].map { Certificate(courseID: $0.id, date: .now) }
+        content.certificateCourses = [path.id: path, grape.id: grape, region.id: region]
+        let model = ProgressPresentationBuilder().build(from: content)
+        #expect(model.stats.prefix(3).map(\.value) == ["1", "1", "3"])
+        #expect(model.stats[0].items.first?.title == "Tannat")
+        #expect(model.stats[1].items.first?.detail == "Vineyards near Montevideo.")
+        #expect(Set(model.stats[2].items.map(\.id)) == Set([path.id, grape.id, region.id]))
+        #expect(model.stats[2].items.first { $0.id == path.id }?.detail == "An introduction to wine.")
+        #expect(model.specialist.contains("beginner"))
+        #expect(model.specialist.contains("Tannat"))
+        #expect(model.specialist.contains("Canelones"))
+    }
+
+    @Test func specialist_connectsStudiedRegionsThroughGrapeAliases() {
+        let grape = Course(id: "grape-tempranillo", kind: .grape, order: 1, title: "Tempranillo", about: "", aliases: ["Tinta Roriz"], lessons: [])
+        let rioja = Course(id: "region-es-rioja", kind: .region, order: 1, title: "Rioja", about: "", countries: ["Spain"], grapes: ["Tempranillo"], lessons: [])
+        let douro = Course(id: "region-pt-douro", kind: .region, order: 1, title: "Douro", about: "", countries: ["Portugal"], grapes: ["Tinta Roriz"], lessons: [])
+        let reading = SpecialistReading()
+        let story = reading.text(completed: [grape, rioja, douro], regionCatalog: [])
+        #expect(story.contains("Tempranillo across borders"))
+        #expect(story.contains("Rioja") && story.contains("Douro"))
+        #expect(story == reading.text(completed: [douro, grape, rioja], regionCatalog: []))
+    }
+
+    @Test func specialist_infersARegionFromMultipleGrapes() {
+        let varieties = ["Touriga Nacional", "Tinta Barroca"]
+        let grapes = varieties.map { Course(id: $0, kind: .grape, order: 1, title: $0, about: "", lessons: []) }
+        let douro = Course(id: "region-pt-douro", kind: .region, order: 1, title: "Douro", about: "", grapes: varieties, lessons: [])
+        let story = SpecialistReading().text(completed: grapes, regionCatalog: [douro])
+        #expect(story.contains("Douro"))
+        #expect(varieties.allSatisfy { story.contains($0) })
     }
 
     // MARK: YOU-R09, R10, R13 · Map

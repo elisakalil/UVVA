@@ -4,18 +4,18 @@ import SwiftUI
 
 struct WinesForPalateCard: View {
     var resources = HomeResourcesUIModel()
-    var wines: [Wine]
+    var suggestions: [PalateWineSuggestion]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             SectionLabel(text: resources.winesForPalateCardSectionTitle)
             FrostedCard(radius: UVVARadius.hero, padding: 0) {
                 VStack(alignment: .leading, spacing: 0) {
-                    ForEach(Array(wines.enumerated()), id: \.element.id) { index, wine in
+                    ForEach(Array(suggestions.enumerated()), id: \.element.axis) { index, suggestion in
                         if index > 0 {
                             Rectangle().fill(UVVAColor.cream14).frame(height: 0.5).padding(.horizontal, 26)
                         }
-                        WineRow(resources: resources, wine: wine)
+                        WineRow(resources: resources, suggestion: suggestion)
                     }
                 }
                 .padding(.vertical, 8)

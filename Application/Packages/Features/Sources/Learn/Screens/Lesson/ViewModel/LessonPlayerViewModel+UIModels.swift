@@ -27,7 +27,6 @@ extension LessonPlayerViewModel {
             xp: "\(summary.xp)",
             steps: "\(lesson.steps.count)",
             objectives: summary.objectives,
-            showsReviewPrevious: course.lesson(before: summary) != nil,
             position: "LESSON\n\(Self.word(summary.order))\nOF \(Self.word(course.lessons.count))"
         )
     }
@@ -56,9 +55,10 @@ extension LessonPlayerViewModel {
             return .tip(body: body)
         case let .multipleChoice(prompt, options, answer, _):
             return .choice(ChoiceUIModel(kind: .single, prompt: prompt,
-                                         options: choices(options, right: [answer], draft: draft, numbered: true)))
+                                         options: choices(options, right: [answer], draft: draft, numbered: true, order: choiceOrders[index])))
         case let .selectMultiple(prompt, options, answers, _):
-            return .choice(ChoiceUIModel(kind: .multiple, prompt: prompt, options: choices(options, right: answers, draft: draft, numbered: false)))
+            return .choice(ChoiceUIModel(kind: .multiple, prompt: prompt,
+                                         options: choices(options, right: answers, draft: draft, numbered: false, order: choiceOrders[index])))
         case let .trueFalse(prompt, answer, _):
             let labels = [String(localized: "True", bundle: .module), String(localized: "False", bundle: .module)]
             return .choice(ChoiceUIModel(kind: .trueFalse, prompt: prompt, options: choices(labels, right: [answer ? 0 : 1], draft: draft, numbered: false)))
@@ -108,12 +108,13 @@ extension LessonPlayerViewModel {
         }
     }
 
-    private func choices(_ labels: [String], right: Set<Int>, draft: StepDraft, numbered: Bool) -> [OptionUIModel] {
-        labels.enumerated().map { index, label in
+    private func choices(_ labels: [String], right: Set<Int>, draft: StepDraft, numbered: Bool,
+                         order: [Int]? = nil) -> [OptionUIModel] {
+        (order ?? Array(labels.indices)).enumerated().map { position, index in
             let state: OptionState = draft.isChecked
                 ? (right.contains(index) ? .correct : draft.selection.contains(index) ? .wrong : .idle)
                 : (draft.selection.contains(index) ? .selected : .idle)
-            return OptionUIModel(id: index, number: numbered ? Self.two(index + 1) : "", label: label, state: state)
+            return OptionUIModel(id: index, number: numbered ? Self.two(position + 1) : "", label: labels[index], state: state)
         }
     }
 

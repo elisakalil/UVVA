@@ -2,7 +2,7 @@ import DesignSystem
 
 public struct LessonPlayerUIModel {
     var cover = LessonCoverUIModel(eyebrow: "", number: "", title: "", subtitle: "", minutes: "", xp: "", steps: "",
-                                    objectives: [], showsReviewPrevious: false)
+                                    objectives: [])
     var header = StepHeaderUIModel(brand: "", title: "", current: nil, total: 0, counter: "", backLeaves: true)
     var stepModel: StepUIModel?
     var footer: PlayerFooterUIModel = .button(title: "", isEnabled: false)

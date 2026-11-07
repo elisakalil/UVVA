@@ -44,9 +44,7 @@ A secção pode ser recolhida (−) e aberta (+).
 
 **YOU-R06 · Specialist in.** Um texto que resume em que o usuário é mais forte, a partir dos cursos de casta e de região concluídos (ver D3). Sem nenhum curso concluído: "Nothing to map yet. Finish your first course and this space starts filling in: the grapes you know, the regions you can place, and where you are strongest."
 
-**YOU-R07 · Sugestão.** Uma sugestão de lição ou curso, com o porquê:
-- **Sem cursos concluídos:** "Start here · Course", com o primeiro módulo do The path (o nome, o número de lições e os minutos vêm do próprio módulo, LEARN-R10a), e o botão "Start the course", que abre esse módulo. O conteúdo dos módulos ainda não está definido (LEARN-R10).
-- **Com cursos concluídos:** "Suggested lesson", com título, nota, XP e o porquê, e o botão "Start the lesson". Ver D4.
+**YOU-R07 · A Course for You.** Mostra **What Wine Is** até à sua conclusão. Depois, sugere apenas cursos ainda não iniciados: primeiro um curso ligado à casta ou região estudada mais recentemente, depois o próximo módulo novo de The Path e, por fim, outro curso novo do catálogo. A recomendação mostra o motivo, o número de lições e a duração. “Start the course” abre o curso mostrado. Se não houver candidatos, o cartão indica que não há novas sugestões.
 
 **YOU-R08 · Nível.** Um nível ("Harvest · Level 3 of 3"), uma barra de progresso e uma frase ("4 curriculum lessons left to finish the curriculum."). Ver D5.
 
@@ -173,7 +171,7 @@ O valor inicial é **ligado** (Public, D9, decidido em 2026-10-31).
 - [x] **D1 · Tab inicial.** Abre em Progress. Depois de refazer o mapa, abre em Map (QUIZ-R25). Cada tab abre no topo.
 - [ ] **D2 · Bottles.** Conta todas as entradas do Cellar, ou só as provadas (sem as Not yet)?
 - [ ] **D3 · Specialist in.** Como se gera o texto? Ex.: "You know Burgundy best: both of its grapes and the region course are done." É um texto escrito à mão para cada combinação, ou gerado por regras (a região com mais cursos concluídos, a próxima sugerida…)?
-- [ ] **D4 · Sugestão de lição.** Com que regra se escolhe a lição sugerida? O protótipo justifica pelo Cellar e pelo mapa ("You keep coming back to Pinot Noir, and your map leans toward light, fresh reds").
+- [x] **D4 · Sugestão de curso.** Baseada em cursos concluídos e nas ligações do catálogo, conforme YOU-R07.
 - [ ] **D5 · Níveis.** Quais são os níveis (o protótipo tem "Harvest · Level 3 of 3") e como se sobe de nível: por XP, por lições do curriculum?
 - [x] **D6 · Partilha do mapa.** Story, WhatsApp e Save image, como toda partilha (SHARED-R20).
 - [x] **D7 · Editar dados.** Mudar o número de telefone não pede código (não há SMS). Mudar o nome não muda os links já partilhados, porque eles usam o id.

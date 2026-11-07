@@ -7,6 +7,8 @@ public struct ProgressUIModel: Equatable {
     var suggestionEyebrow: String
     var suggestionTitle: String
     var suggestionNote: String
-    var cta: String
+    var suggestionReason: String?
+    var suggestedCourseID: String?
+    var cta: String?
     var specialistInText = String(localized: "Specialist in", bundle: .module)
 }

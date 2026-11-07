@@ -9,7 +9,6 @@ struct LearnResourcesUIModel {
     var learnText = String(localized: "Learn", bundle: .module)
     var studyWineByRegionByText = String(localized: "Study wine by region, by grape or through a sommelier’s complete curriculum.", bundle: .module)
     var shareWhatYouLearnedText = String(localized: "Share what you learned", bundle: .module)
-    var reviewPreviousLessonText = String(localized: "Review previous lesson", bundle: .module)
     var minutesText = String(localized: "Minutes", bundle: .module)
     var xpText = String(localized: "XP", bundle: .module)
     var stepsText = String(localized: "Steps", bundle: .module)

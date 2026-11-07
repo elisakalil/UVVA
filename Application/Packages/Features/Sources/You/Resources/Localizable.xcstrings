@@ -68,10 +68,22 @@
     "At least two letters" : {
 
     },
+    "At the advanced stage of The Path, connections like these are becoming part of how you read a wine." : {
+
+    },
+    "At the expert stage of The Path, the details of place and grape are becoming part of your own reading of wine." : {
+
+    },
+    "At the intermediate stage of The Path, these studies are giving you more ways to connect what you learn to what’s in the glass." : {
+
+    },
     "Before dinner" : {
 
     },
     "Bottles" : {
+
+    },
+    "Build on what you’ve learned with the next new module in The Path." : {
 
     },
     "Cancel" : {
@@ -101,13 +113,31 @@
     "Delete your account?" : {
 
     },
+    "Every wine story begins somewhere. Finish your first course and see where yours takes you." : {
+
+    },
+    "Explore Learn" : {
+
+    },
+    "Find a new corner of the wine world to explore." : {
+
+    },
     "First" : {
 
     },
     "First map · 0 wines rated" : {
 
     },
+    "Follow %@ from the grape to the place that shapes it." : {
+
+    },
     "Friends" : {
+
+    },
+    "From %@, you’re getting to know wine through the places that make it. Your map already crosses borders." : {
+
+    },
+    "From %@, you’re learning to hear the different voices a grape can bring to wine. Variety is the thread running through your studies." : {
 
     },
     "Grape" : {
@@ -125,9 +155,6 @@
     "Late, with a glass" : {
 
     },
-    "Lessons" : {
-
-    },
     "Make chart public" : {
 
     },
@@ -135,6 +162,9 @@
 
     },
     "Module" : {
+
+    },
+    "Modules" : {
 
     },
     "My Map" : {
@@ -155,10 +185,10 @@
     "No reminders. You open the app whenever you feel like it." : {
 
     },
-    "Nothing to map yet. Finish your first course and this space starts filling in: the grapes you know, the regions you can place, and where you are strongest." : {
+    "Now I know" : {
 
     },
-    "Now I know" : {
+    "On the beginner stretch of The Path, these discoveries are giving the basics a place to take root." : {
 
     },
     "Only friends you share a table with can see your map." : {
@@ -242,7 +272,20 @@
     "Tables" : {
 
     },
+    "The grapes you’ve studied lead to %@. With %@ as your guide, that corner of the wine map is coming into focus." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The grapes you’ve studied lead to %1$@. With %2$@ as your guide, that corner of the wine map is coming into focus."
+          }
+        }
+      }
+    },
     "The reminder could not be saved. Try again." : {
+
+    },
+    "There are no new course suggestions right now." : {
 
     },
     "This is my wine palate" : {
@@ -275,7 +318,91 @@
     "XP" : {
 
     },
+    "You know %@ from its vineyards down to the grape. With %@ as your guide, you can follow a thread from the landscape into the glass." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You know %1$@ from its vineyards down to the grape. With %2$@ as your guide, you can follow a thread from the landscape into the glass."
+          }
+        }
+      }
+    },
+    "You know %@ from the ground up. Follow %@ and the landscape begins to make sense in the glass." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You know %1$@ from the ground up. Follow %2$@ and the landscape begins to make sense in the glass."
+          }
+        }
+      }
+    },
+    "You know %@ well enough to follow %@ across borders. The same grape gives you a way to read each place." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You know %1$@ well enough to follow %2$@ across borders. The same grape gives you a way to read each place."
+          }
+        }
+      }
+    },
+    "You know %@, different corners of the same wine country. Your studies give you a way to read the differences from one vineyard to the next." : {
+
+    },
     "You open the app whenever you feel like it." : {
+
+    },
+    "You’re at the advanced stage of The Path. A glass is becoming a set of clues you can trace back through the cellar and the vineyard." : {
+
+    },
+    "You’re at the expert stage of The Path. The smallest details in the glass can open up the longest stories." : {
+
+    },
+    "You’re at the intermediate stage of The Path. The pieces are starting to fit together, from what happens in the vineyard to what finally shows up in the glass." : {
+
+    },
+    "You’re getting to know %@ by following its grapes. %@ give you different ways into the same wine country." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You’re getting to know %1$@ by following its grapes. %2$@ give you different ways into the same wine country."
+          }
+        }
+      }
+    },
+    "You’re getting to know %@ through its grapes. %@ are voices in a blend you’re learning to hear." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You’re getting to know %1$@ through its grapes. %2$@ are voices in a blend you’re learning to hear."
+          }
+        }
+      }
+    },
+    "You’re getting to know %@ through its vineyards. Your studies also follow %@, another thread to pull as your map grows." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You’re getting to know %1$@ through its vineyards. Your studies also follow %2$@, another thread to pull as your map grows."
+          }
+        }
+      }
+    },
+    "You’re getting to know %@, where the story in the glass begins in the vineyard." : {
+
+    },
+    "You’re on the beginner stretch of The Path. The next glass already has a little more to tell you." : {
+
+    },
+    "You’ve explored %@. Now get to know one of the grapes that grows there." : {
+
+    },
+    "You’ve found a first thread in %@. Follow it and a whole corner of the wine world begins to open up." : {
 
     },
     "Your account could not be deleted. Check your connection and try again." : {
@@ -284,7 +411,13 @@
     "Your changes could not be saved. Try again." : {
 
     },
+    "Your course suggestion is temporarily unavailable." : {
+
+    },
     "Your first name" : {
+
+    },
+    "Your journey through wine has a first landmark in %@." : {
 
     },
     "Your last wine lowered your %@." : {
@@ -300,6 +433,9 @@
 
     },
     "Your readings" : {
+
+    },
+    "Your studies follow %@ through the wine world. Each grape gives you a different way to read the glass." : {
 
     }
   },

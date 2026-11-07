@@ -41,8 +41,6 @@ struct LessonPlayerViewModelTests {
         #expect(cover.number == "02")
         #expect(cover.xp == "15")
         #expect(cover.steps == "6")
-        #expect(cover.showsReviewPrevious)
-        #expect(!player(0).cover.showsReviewPrevious)
     }
 
     // MARK: LEARN-R14 · Sair e retomar
@@ -210,12 +208,6 @@ struct LessonPlayerViewModelTests {
         #expect(learning.saved[done.lessonID]?.xp == done.xp)
         guard case let .summary(summary) = player.stepModel else { Issue.record("Not on the Summary"); return }
         #expect(summary.completion == "Lesson complete")
-    }
-
-    @Test func reviewPrevious_opensTheLessonBefore() {
-        var exits: [LessonPlayerViewModel.Exit] = []
-        player(1) { exits.append($0) }.reviewPrevious()
-        #expect(exits == [.open(course.lessons[0])])
     }
 
     // MARK: LEARN-R18 · matchPairs

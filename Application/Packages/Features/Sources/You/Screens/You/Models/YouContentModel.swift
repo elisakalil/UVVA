@@ -6,8 +6,12 @@ struct YouContentModel {
     var map: PalateMap?
     var history: [MapChange] = []
     var reminder: Reminder?
-    var firstModule: CourseSummary?
+    var recommendation: CourseRecommendation?
+    var recommendationStatus: RecommendationStatus = .loading
+
+    enum RecommendationStatus { case loading, ready, unavailable }
     var lessons: [String: LessonProgress] = [:]
     var certificates: [Certificate] = []
+    var regionCatalog: [Course] = []
     var certificateCourses: [String: Course] = [:]
 }

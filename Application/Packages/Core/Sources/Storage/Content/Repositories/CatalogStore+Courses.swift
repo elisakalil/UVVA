@@ -29,7 +29,7 @@ extension CatalogStore: CourseCatalog {
         return Course(id: entity.id, kind: kind, order: entity.order, title: entity.title, about: entity.about,
                       level: entity.level, color: entity.color,
                       countries: kind == .region ? [entity.country].compactMap(\.self) : entity.countries,
-                      countryCode: entity.countryCode, grapes: entity.grapes,
+                      countryCode: entity.countryCode, grapes: entity.grapes, aliases: entity.aliases,
                       lessons: entity.lessons.sorted { $0.order < $1.order }.map(summary))
     }
 

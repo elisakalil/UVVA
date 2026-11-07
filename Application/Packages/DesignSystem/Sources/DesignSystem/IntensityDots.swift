@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// Intensity of one axis as ten dots: filled up to the value, small rings after it.
+/// Intensity of one axis as ten dots, one per position of the Quiz bar: filled up to the value's position
+/// (0 lights the first dot, the top of the scale lights all ten), small rings after it.
 public struct IntensityDots: View {
     var value: Double
     var maxValue: Double
@@ -12,7 +13,10 @@ public struct IntensityDots: View {
         self.maxValue = maxValue
     }
 
-    private var filled: Int { max(0, min(Self.count, Int((value / maxValue * Double(Self.count)).rounded()))) }
+    private var filled: Int {
+        let position = Int((value / maxValue * Double(Self.count - 1)).rounded())
+        return max(0, min(Self.count - 1, position)) + 1
+    }
 
     public var body: some View {
         HStack(spacing: 2) {

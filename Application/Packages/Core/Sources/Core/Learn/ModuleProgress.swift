@@ -26,3 +26,19 @@ public struct LearningSnapshot: Sendable {
         self.modules = modules
     }
 }
+
+/// Read-only account progress for surfaces that do not open a course.
+public struct LearningActivity: Sendable {
+    public var lessons: [String: LessonProgress]
+    public var certificates: [Certificate]
+    public var startedModuleIDs: Set<String>
+    public var completedModuleDates: [String: Date]
+
+    public init(lessons: [String: LessonProgress], certificates: [Certificate],
+                startedModuleIDs: Set<String> = [], completedModuleDates: [String: Date] = [:]) {
+        self.lessons = lessons
+        self.certificates = certificates
+        self.startedModuleIDs = startedModuleIDs
+        self.completedModuleDates = completedModuleDates
+    }
+}

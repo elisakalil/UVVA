@@ -263,6 +263,10 @@ final class AppCoordinator {
 
     private func learningChanged() {
         Task { await home?.load() }
+        // You reloads on entry. Refresh immediately if it is already visible.
+        if selectedTab == .you, let you {
+            Task { await you.load() }
+        }
     }
 
     private func resetTabs() {

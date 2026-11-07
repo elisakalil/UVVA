@@ -8,7 +8,6 @@ public protocol LessonPlayerViewModelProtocol: ObservableObject, Identifiable {
     func close()
     func begin()
     func primary()
-    func reviewPrevious()
     func closeCertificate()
     func tapOption(_ option: Int)
     func tapWord(_ word: String)

@@ -17,6 +17,7 @@ public struct Wine: Identifiable, Equatable, Sendable {
     /// The appellation and strength, "Vinho Verde DOC · 12.5% abv".
     public var classification: String
     public var profile: PalateMap
+    public var pairings: [String]
     /// The dish UVVA pairs with it, when there is one (HOME-R06).
     public var dish: Dish?
     /// The aromas and flavours, "Violet, rose, iris." Nil when the wine has none on record.
@@ -40,7 +41,7 @@ public struct Wine: Identifiable, Equatable, Sendable {
                 alcohol: Double? = nil, classification: String = "",
                 profile: PalateMap, dish: Dish? = nil, note: String? = nil, serving: ClosedRange<Int>? = nil,
                 originInsight: String? = nil, appellationInsight: String? = nil, hasNotableAppellation: Bool = false,
-                howToServe: String? = nil) {
+                howToServe: String? = nil, pairings: [String] = []) {
         self.id = id
         self.name = name
         self.producer = producer
@@ -53,6 +54,7 @@ public struct Wine: Identifiable, Equatable, Sendable {
         self.alcohol = alcohol
         self.classification = classification
         self.profile = profile
+        self.pairings = pairings
         self.dish = dish
         self.note = note
         self.serving = serving

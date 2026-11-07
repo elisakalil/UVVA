@@ -12,7 +12,5 @@ struct LessonCoverUIModel: Equatable {
     var xp: String
     var steps: String
     var objectives: [String]
-    /// From lesson 2 on.
-    var showsReviewPrevious: Bool
     var position: String = ""
 }

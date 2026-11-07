@@ -48,6 +48,6 @@ public actor CatalogStore: CatalogRepository {
              note: entity.note.isEmpty ? nil : entity.note,
              serving: entity.servingMin <= entity.servingMax ? entity.servingMin...entity.servingMax : nil,
              originInsight: entity.originInsight, appellationInsight: entity.appellationInsight,
-             hasNotableAppellation: entity.hasNotableAppellation, howToServe: entity.howToServe)
+             hasNotableAppellation: entity.hasNotableAppellation, howToServe: entity.howToServe, pairings: entity.pairings)
     }
 }

@@ -6,10 +6,20 @@ public protocol LearningRepository: Sendable {
     func snapshot(for courses: [Course]) async throws -> LearningSnapshot
     /// Saves the lesson and module state in one transaction. Completion increments only state + 1.
     func save(_ progress: LessonProgress, in course: Course) async throws
+    func activity() async throws -> LearningActivity
     func progress() async throws -> [String: LessonProgress]
     /// Adds the lesson's progress or replaces it.
     func save(_ progress: LessonProgress) async throws
     func certificates() async throws -> [Certificate]
     /// One per course (LEARN-R22): a course that already has one keeps it.
     func addCertificate(_ certificate: Certificate) async throws
+}
+
+
+public extension LearningRepository {
+    func activity() async throws -> LearningActivity {
+        let lessons = try await progress()
+        let certificates = try await certificates()
+        return LearningActivity(lessons: lessons, certificates: certificates)
+    }
 }

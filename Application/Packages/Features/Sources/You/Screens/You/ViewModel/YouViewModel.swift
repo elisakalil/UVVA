@@ -9,6 +9,7 @@ public final class YouViewModel: YouViewModelProtocol {
     typealias Screens = (progress: ProgressViewModel, map: MapViewModel, settings: SettingsViewModel)
     @Published public private(set) var uiModel = YouUIModel()
     private(set) var contentModel = YouContentModel() { didSet { present() } }
+    private var loadVersion = 0
     private let loadYouUseCase: any LoadYouUseCaseProtocol
     private let makeScreens: (YouViewModel) -> Screens
     private lazy var screens = makeScreens(self)
@@ -27,8 +28,14 @@ public final class YouViewModel: YouViewModelProtocol {
     }
 
     public func load() async {
-        contentModel = await loadYouUseCase.execute(previous: contentModel)
-        map.selectedSnapshot = nil
+        loadVersion += 1
+        let version = loadVersion
+        let previous = contentModel
+        var updated = await loadYouUseCase.execute(previous: previous)
+        guard !Task.isCancelled, version == loadVersion else { return }
+        if contentModel.profile != previous.profile { updated.profile = contentModel.profile }
+        if contentModel.reminder != previous.reminder { updated.reminder = contentModel.reminder }
+        contentModel = updated
     }
 
     func profileSaved(_ profile: Profile) { contentModel.profile = profile }

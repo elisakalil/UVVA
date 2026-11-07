@@ -90,6 +90,22 @@ public final class LearningStore: LearningRepository, @unchecked Sendable {
         return entity
     }
 
+    public func activity() async throws -> LearningActivity {
+        try await perform {
+            let modules = try self.modelContext.fetch(FetchDescriptor<ModuleProgressEntity>())
+            var activity = LearningActivity(lessons: try self.readProgress(), certificates: try self.readCertificates())
+            for module in modules {
+                if module.state > 0 || module.lastOpenedAt != nil || module.completedAt != nil {
+                    activity.startedModuleIDs.insert(module.courseId)
+                }
+                if let date = module.completedAt {
+                    activity.completedModuleDates[module.courseId] = max(activity.completedModuleDates[module.courseId] ?? date, date)
+                }
+            }
+            return activity
+        }
+    }
+
     public func progress() async throws -> [String: LessonProgress] {
         try await perform { try self.readProgress() }
     }

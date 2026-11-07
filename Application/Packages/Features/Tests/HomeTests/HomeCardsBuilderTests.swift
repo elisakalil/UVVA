@@ -65,6 +65,24 @@ struct HomeCardsBuilderTests {
         #expect(builder.dailySuggestion(model, now: now) == nil)
     }
 
+    @Test func HOME_R10_onlyWinesMatchingTheMapByAtLeast70Percent() {
+        var model = HomeContentModel.full
+        model.catalog = model.catalog.filter { $0.dish != nil }
+        let close = model.catalog.filter { Similarity.percent($0.profile, model.palateMap) >= 70 }
+        #expect(!close.isEmpty)
+        for hours in stride(from: 0, to: 24 * 30, by: 24) {
+            let wine = builder.dailySuggestion(model, now: now.addingTimeInterval(Double(hours) * 60 * 60))
+            #expect(wine.map { Similarity.percent($0.profile, model.palateMap) >= 70 } == true)
+        }
+    }
+
+    @Test func HOME_R10_noWineAbove70Percent_hidesSuggestion() {
+        var model = HomeContentModel.full
+        model.palateMap = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, 0.0) }))
+        model.catalog = model.catalog.map { var w = $0; w.profile = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, 9.0) })); return w }
+        #expect(builder.dailySuggestion(model, now: now) == nil)
+    }
+
     // MARK: HOME-R11 · Amigos
 
     @Test func HOME_R11_noFriends_showsInvite() {
@@ -133,20 +151,35 @@ struct HomeCardsBuilderTests {
 
     // MARK: HOME-R22, R23, R25 · Vinhos para o seu paladar
 
-    @Test func HOME_R22_showsThreeMostSimilar_descending() {
-        let wines = builder.winesForPalate(.full)
-        #expect(wines.count == 3)
-        let scores = wines.map { Similarity.between($0.profile, HomeContentModel.full.palateMap) }
-        #expect(scores == scores.sorted(by: >))
+    @Test func HOME_R22_matchesEachExtremeAxis_includingBoundaryScores() {
+        var model = HomeContentModel.full
+        let scores = Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, 5.0) })
+        model.palateMap = PalateMap(scores.merging([.floral: 7, .tannin: 4, .oak: 3]) { _, score in score })
+        model.catalog = [
+            Wine(id: "boundary", name: "Boundary", origin: "", profile: PalateMap([.floral: 7, .tannin: 4, .oak: 4])),
+            Wine(id: "near", name: "Near", origin: "", profile: PalateMap([.floral: 8, .tannin: 3, .oak: 5])),
+            Wine(id: "neutral", name: "Neutral", origin: "", profile: PalateMap([.floral: 6.9, .tannin: 4.1, .oak: 4.1]))
+        ]
+
+        let suggestions = builder.winesForPalate(model)
+        #expect(suggestions.map(\.axis) == [.floral, .tannin])
+        #expect(suggestions.map(\.level) == [.high, .low])
+        #expect(suggestions.map(\.wine.id) == ["boundary", "boundary"])
     }
 
-    @Test func HOME_R23_ratedWine_leavesAndNextEnters() {
+    @Test func HOME_R23_ratedWine_leavesAndNextEnters() throws {
         var model = HomeContentModel.full
-        let before = builder.winesForPalate(model)
-        model.ratedWineIDs.insert(before[0].id)
+        let before = try #require(builder.winesForPalate(model).first { $0.axis == .acidity })
+        model.ratedWineIDs.insert(before.wine.id)
         let after = builder.winesForPalate(model)
-        #expect(!after.contains(before[0]))
-        #expect(Array(after.prefix(2)) == Array(before.dropFirst()))
+        #expect(after.allSatisfy { $0.wine.id != before.wine.id })
+        #expect(after.contains { $0.axis == .acidity })
+    }
+
+    @Test func HOME_R25_noExtremeAxes_hidesCard() {
+        var model = HomeContentModel.full
+        model.palateMap = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, 5) }))
+        #expect(!builder.build(from: model, now: now).map(\.kind).contains("winesForPalate"))
     }
 
     @Test func HOME_R25_noUnratedWines_hidesCard() {

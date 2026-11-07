@@ -8,9 +8,10 @@ struct HomeCardsBuilder {
     /// Picks an index in 0..<count for the word of the day; injected so tests can fix it (HOME-R19).
     var pickWordIndex: (Int) -> Int = { Int.random(in: 0..<$0) }
 
-    static let winesForPalateCount = 3
     /// The day's wine is drawn from the closest wines with a dish (HOME-R06, R07).
     static let dailySuggestionPool = 30
+    /// Only wines at least this close to the map, as the percentage the card shows, are suggested.
+    static let dailySuggestionMinimumMatch = 70
 
     func build(from model: HomeContentModel, now: Date) -> [HomeCardModel] {
         var cards: [HomeCardModel] = [header(model)]
@@ -23,7 +24,7 @@ struct HomeCardsBuilder {
         if !model.glossary.isEmpty { cards.append(.wordOfTheDay(model.glossary[pickWordIndex(model.glossary.count)])) }
         let wines = winesForPalate(model)
         if !wines.isEmpty { cards.append(.winesForPalate(wines)) }
-        cards.append(.chooseYourWine)
+        cards.append(.chooseYourWine(model.catalog))
         return cards
     }
 
@@ -33,10 +34,11 @@ struct HomeCardsBuilder {
                 hasUnread: model.notifications.contains { !$0.isRead })
     }
 
-    // HOME-R06, R07, R08, R10: same wine all day, a new pick each day.
+    // HOME-R06, R07, R08, R10: same wine all day, a new pick each day; with no wine matching the map
+    // by at least `dailySuggestionMinimumMatch`, there is no suggestion.
     func dailySuggestion(_ model: HomeContentModel, now: Date) -> Wine? {
         let pool = model.catalog
-            .filter { $0.dish != nil }
+            .filter { $0.dish != nil && Similarity.percent($0.profile, model.palateMap) >= Self.dailySuggestionMinimumMatch }
             .sorted { Similarity.between($0.profile, model.palateMap) > Similarity.between($1.profile, model.palateMap) }
             .prefix(Self.dailySuggestionPool)
         guard !pool.isEmpty else { return nil }
@@ -95,12 +97,21 @@ struct HomeCardsBuilder {
     }
 
     // HOME-R22, R23, R25
-    func winesForPalate(_ model: HomeContentModel) -> [Wine] {
-        Array(
-            model.catalog
-                .filter { !model.ratedWineIDs.contains($0.id) }
-                .sorted { Similarity.between($0.profile, model.palateMap) > Similarity.between($1.profile, model.palateMap) }
-                .prefix(Self.winesForPalateCount)
-        )
+    func winesForPalate(_ model: HomeContentModel) -> [PalateWineSuggestion] {
+        let candidates = model.catalog.filter { !model.ratedWineIDs.contains($0.id) }
+        return PalateAxis.allCases.compactMap { axis in
+            let target = model.palateMap[axis]
+            guard let level = PalateWineSuggestion.Level(target) else { return nil }
+            let matches = candidates.lazy.filter { level.matches($0.profile[axis], target: target) }
+            let wine = matches.min { lhs, rhs in
+                let left = abs(lhs.profile[axis] - target)
+                let right = abs(rhs.profile[axis] - target)
+                if left != right { return left < right }
+                let leftSimilarity = Similarity.between(lhs.profile, model.palateMap)
+                let rightSimilarity = Similarity.between(rhs.profile, model.palateMap)
+                return leftSimilarity == rightSimilarity ? lhs.id < rhs.id : leftSimilarity > rightSimilarity
+            }
+            return wine.map { PalateWineSuggestion(wine: $0, axis: axis, level: level) }
+        }
     }
 }

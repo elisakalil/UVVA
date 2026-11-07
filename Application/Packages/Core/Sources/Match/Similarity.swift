@@ -12,4 +12,9 @@ public enum Similarity {
         let distance = squares.reduce(0, +).squareRoot()
         return max(0, 1 - distance / farDistance)
     }
+
+    /// The match as shown on screen, 0...100.
+    public static func percent(_ a: PalateMap, _ b: PalateMap) -> Int {
+        Int((between(a, b) * 100).rounded())
+    }
 }

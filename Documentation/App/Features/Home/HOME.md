@@ -187,24 +187,26 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 ### 4.8 Vinhos para o seu paladar
 
-**HOME-R22 · Lista.** Mostra 3 vinhos: os 3 do catálogo com maior similaridade com o mapa do paladar (SHARED-R07), por ordem decrescente.
+**HOME-R22 · Lista.** Mostra uma sugestão para cada eixo do mapa com valor alto (≥ 7) ou baixo (≤ 4) que tenha um vinho elegível no catálogo. O vinho precisa estar na mesma faixa naquele eixo. Quando o mapa está abaixo de 4, o vinho também precisa estar abaixo de 4. A menor distância no eixo tem prioridade, seguida pela similaridade geral (SHARED-R07). As linhas seguem a ordem canônica dos eixos e um vinho pode aparecer em mais de um eixo. Cada linha mostra nome, produtor e safra, uma frase curta sobre o encaixe e o ícone com o nível do eixo.
 
-**HOME-R23 · Exclusão.** Vinhos já avaliados (SHARED-R11) não entram na lista. Quando um vinho é avaliado, ele sai e o próximo mais semelhante entra no lugar.
+**HOME-R23 · Exclusão.** Vinhos já avaliados (SHARED-R11) ficam fora da seleção. Quando um vinho é avaliado, os eixos que ele representava passam a usar os próximos vinhos elegíveis, quando houver.
 
 **HOME-R24 · Avaliar.** Tocar num vinho pergunta "Would you drink it again?" com Yes, Maybe ou No (SHARED-R08). A resposta recalcula o mapa (SHARED-R09), guarda o vinho no Cellar como Tasted com esse veredito (CELLAR-R13c) e mostra um aviso com os eixos que subiram ou desceram, por exemplo "Map updated · Acidity ↑ · Fruit ↑", durante 3 segundos.
 
-**HOME-R25 · Menos de 3 elegíveis.** Se houver menos de 3 vinhos não avaliados, mostra os que houver. Com 0, o card não aparece.
+**HOME-R25 · Ausência.** O card aparece quando pelo menos um eixo encontra uma sugestão elegível.
 
 **Critérios**
-- Dados 10 vinhos com similaridades conhecidas e nenhum avaliado, então a lista tem os 3 maiores, em ordem decrescente.
-- Dado que o vinho #1 da lista é avaliado com No, então a lista passa a ser #2, #3 e #4.
+- Dado um mapa com floral 7 e tanino 4, então as sugestões de floral alto e tanino baixo têm, respectivamente, floral ≥ 7 e tanino ≤ 4.
+- Dado um eixo alto sem vinhos elegíveis naquela faixa, então a lista omite esse eixo.
 - Dado que o vinho #1 já tinha sido avaliado no Cellar, então ele não aparece na Home.
 - Dada uma avaliação Yes que sobe a acidez e a fruta, então o aviso mostra "Acidity ↑ · Fruit ↑" e some depois de 3 s.
 - Dado que o mapa mudou com a avaliação, então a lista é recalculada com o mapa novo.
 
 ### 4.9 Escolha o seu vinho
 
-**HOME-R26 · Sempre visível.** Um formulário no fim da Home: direção, tipo, região e até 3 notas.
+**HOME-R26 · Sempre visível.** Um formulário no fim da Home com direção, tipo, região, harmonização opcional e até 3 notas. A harmonização usa as categorias de pratos registradas no catálogo. Tocar novamente no prato selecionado limpa esse filtro.
+
+A direção é a primeira escolha do formulário. **Para o meu paladar** vem selecionada e prioriza os mapas mais parecidos. **Me surpreenda** prioriza perfis diferentes que ainda tenham pelo menos metade dos eixos próximos do mapa da pessoa. Ambas as direções respeitam os filtros do formulário.
 
 **HOME-R27 · Limite de notas.** É possível escolher no máximo 3 notas; com 3 escolhidas, as outras ficam inativas até uma ser desmarcada.
 
@@ -212,7 +214,7 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **Critérios**
 - Dadas 3 notas escolhidas, quando o usuário tenta escolher a quarta, então ela não é selecionada.
-- Dados filtros sem nenhum vinho correspondente, então [a definir].
+- Dados filtros sem nenhum vinho correspondente, a folha informa que nenhum vinho combina e orienta a mudar um filtro.
 
 ---
 

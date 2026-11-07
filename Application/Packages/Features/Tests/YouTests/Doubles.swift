@@ -69,7 +69,8 @@ final class RemindersSpy: ReminderRepository, ReminderScheduling {
 }
 
 struct CoursesStub: CourseCatalog {
-    func courses(_ kind: CourseKind) async throws -> [Course] { [] }
+    var catalog: [Course] = []
+    func courses(_ kind: CourseKind) async throws -> [Course] { catalog.filter { $0.kind == kind } }
     func course(id: String) async throws -> Course? {
         Course(id: id, kind: CourseKind(courseID: id) ?? .path, order: 1, title: "Tannat", about: "", lessons: [])
     }

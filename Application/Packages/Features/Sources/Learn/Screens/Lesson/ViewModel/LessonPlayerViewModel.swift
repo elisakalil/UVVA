@@ -26,6 +26,8 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     public let id = UUID()
     let course: Course
     let lesson: Lesson
+    /// Drawn once per opening so selections and feedback stay in place while navigating.
+    let choiceOrders: [[Int]?]
     private(set) var playerState: LessonPlayerState { didSet { refresh() } }
     /// The first screen this lesson showed: back stops here.
     let entry: LessonPlayerState
@@ -58,6 +60,14 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
          onCompleted: @escaping () async -> CertificateUIModel?, onExit: @escaping (Exit) -> Void) {
         self.course = course
         self.lesson = lesson
+        self.choiceOrders = lesson.steps.map { step in
+            switch step {
+            case let .multipleChoice(_, options, _, _), let .selectMultiple(_, options, _, _):
+                return options.indices.shuffled()
+            default:
+                return nil
+            }
+        }
         self.progress = progress
         self.isReview = progress?.isCompleted ?? false
         self.isFirst = isFirst
@@ -100,12 +110,6 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         guard !lesson.steps.isEmpty else { return }
         playerState = .step(0)
         updateProgress()
-    }
-
-    /// "Review previous lesson".
-    public func reviewPrevious() {
-        guard let previous = course.lesson(before: lesson.summary) else { return }
-        onExit(.open(previous))
     }
 
     /// The back chevron: always the screen before. From the first screen this lesson showed it returns to the lesson

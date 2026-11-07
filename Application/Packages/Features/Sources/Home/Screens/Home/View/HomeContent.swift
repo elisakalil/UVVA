@@ -55,12 +55,7 @@ struct HomeContent: View {
                                 card(row[0], proxy: proxy)
                             }
                         }
-                        Text(resources.homeContentFooter)
-                            .font(UVVAFont.sans(8))
-                            .tracking(1.8)
-                            .foregroundStyle(UVVAColor.cream60)
-                            .frame(maxWidth: .infinity)
-                            .padding(.top, 12)
+                        footer
                     }
                     .padding(.horizontal, UVVASpace.gutter)
                     .padding(.bottom, 40)
@@ -80,7 +75,7 @@ struct HomeContent: View {
                 .onChange(of: tourTarget) { _, target in
                     withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
                         if target == HomeSpotlightID.chooseYourWine {
-                            proxy.scrollTo(HomeCardModel.chooseYourWine.kind, anchor: .bottom)
+                            proxy.scrollTo(HomeSpotlightID.chooseYourWine, anchor: .bottom)
                         } else {
                             proxy.scrollTo(Self.topID, anchor: .top)
                         }
@@ -95,13 +90,36 @@ struct HomeContent: View {
         .foregroundStyle(UVVAColor.cream)
     }
 
+    private var footer: some View {
+        VStack(spacing: 6) {
+            HStack(alignment: .firstTextBaseline, spacing: 6) {
+                Text(resources.homeHeaderBrand)
+                    .font(UVVAFont.whiteGrape(20))
+                    .tracking(0.4)
+                    .foregroundStyle(UVVAColor.logoInk)
+                if let version = resources.homeFooterVersion {
+                    Text(version)
+                        .font(UVVAFont.sans(8))
+                        .tracking(1)
+                }
+            }
+            Text(resources.homeFooterOrigin)
+                .font(UVVAFont.sans(8))
+                .tracking(1.8)
+        }
+        .foregroundStyle(UVVAColor.cream60)
+        .accessibilityElement(children: .combine)
+        .frame(maxWidth: .infinity)
+        .padding(.top, 12)
+    }
+
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
         HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite,
                      onOpenLesson: onOpenLesson, onOpenCourse: onOpenCourse, onOpenGlossary: onOpenGlossary, onOpenLearn: onOpenLearn,
                      onShowLess: { then in
                          withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }
                      })
-            .id(card.kind)
+            .id(card.spotlightID ?? card.kind)
             .modifier(SpotlightModifier(id: card.spotlightID))
     }
 }
