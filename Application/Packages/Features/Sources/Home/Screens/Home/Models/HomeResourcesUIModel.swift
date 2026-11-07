@@ -66,6 +66,21 @@ struct HomeResourcesUIModel {
     var wineFactsServingTitle = String(localized: "Serve at", bundle: .module)
     var wineFactsVintageTitle = String(localized: "Vintage", bundle: .module)
 
+    var wineMapPagerOverlapLegend = String(localized: "In common", bundle: .module)
+    var wineDetailPickTitle = String(localized: "Your pick", bundle: .module)
+    var wineDetailShowAnother = String(localized: "Show another ›", bundle: .module)
+    var wineDetailAwayCaption = String(localized: "away from your map", bundle: .module)
+    var wineDetailStyleTitle = String(localized: "Style", bundle: .module)
+    var wineDetailGrapeNotesTitle = String(localized: "Grape & notes", bundle: .module)
+    var wineDetailPairingsTitle = String(localized: "Pairings", bundle: .module)
+    var wineDetailNonVintage = String(localized: "Non-vintage", bundle: .module)
+    var wineDetailServeTitle = String(localized: "How to serve", bundle: .module)
+    var wineDetailTastedQuestion = String(localized: "Have you had this wine?", bundle: .module)
+    var wineDetailNotYetTitle = String(localized: "Not yet", bundle: .module)
+    var wineDetailVerdictQuestion = String(localized: "Would you drink it again?", bundle: .module)
+    var wineDetailKeepQuestion = String(localized: "Add it to your cellar?", bundle: .module)
+    var wineDetailNotNowTitle = String(localized: "Not now", bundle: .module)
+
     var palateMatchTitle = String(localized: "With your palate", bundle: .module)
     var palateMatchCaption = String(localized: "match with your map", bundle: .module)
     var plateImage: Image { UVVAIllustration.plate }
@@ -242,6 +257,47 @@ struct HomeResourcesUIModel {
                 String(localized: "There's a faint fruit note in the background.", bundle: .module)
             ]
         }
+    }
+
+    /// The light line after "Add it to your cellar?", by the verdict (none for a wine not tasted yet) and the answer.
+    func wineSheetFeedback(verdict: Verdict?, kept: Bool) -> String {
+        switch (verdict, kept) {
+        case (.yes, true): String(localized: "Glad you loved it! It's in your cellar now.", bundle: .module)
+        case (.yes, false): String(localized: "Glad you loved it! Your map just learned something.", bundle: .module)
+        case (.maybe, true): String(localized: "Fair enough. It's in your cellar, ready for a second chance.", bundle: .module)
+        case (.maybe, false): String(localized: "Fair enough. Your map took note.", bundle: .module)
+        case (.no, true): String(localized: "Not your glass, then. It's in your cellar, so you won't buy it twice.", bundle: .module)
+        case (.no, false): String(localized: "Not your glass, then. Your map took note.", bundle: .module)
+        case (nil, true): String(localized: "Saved for later. It's waiting in your cellar.", bundle: .module)
+        case (nil, false): String(localized: "No rush. It'll be here when you're ready.", bundle: .module)
+        }
+    }
+
+    func verdictLabel(_ verdict: Verdict) -> String {
+        switch verdict {
+        case .yes: String(localized: "Yes", bundle: .module)
+        case .maybe: String(localized: "Maybe", bundle: .module)
+        case .no: String(localized: "No", bundle: .module)
+        }
+    }
+
+    /// "Saved to Cellar · Pontoforte" (HOME-R28).
+    func savedToCellarNotice(_ wine: Wine) -> String {
+        String(localized: "Saved to Cellar · \(wine.name)", bundle: .module)
+    }
+
+    /// "Map updated · Acidity ↑ · Fruit ↑": the axes that moved, in the canonical order (HOME-R24, QUIZ-R23);
+    /// "Saved to Cellar · Map updated · …" when the wine went to the Cellar too.
+    func mapUpdatedNotice(_ moves: [(axis: PalateAxis, up: Bool)], savedToCellar: Bool = false) -> String {
+        var parts: [String] = []
+        if savedToCellar { parts.append(String(localized: "Saved to Cellar", bundle: .module)) }
+        parts.append(String(localized: "Map updated", bundle: .module))
+        if moves.isEmpty {
+            parts.append(String(localized: "barely moved", bundle: .module))
+        } else {
+            parts += moves.map { "\($0.axis.label) \($0.up ? "↑" : "↓")" }
+        }
+        return parts.joined(separator: " · ")
     }
 
     func compatibility(_ value: Int) -> String { "\(value)%" }

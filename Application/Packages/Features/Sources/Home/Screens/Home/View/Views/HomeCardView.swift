@@ -13,13 +13,15 @@ struct HomeCardView: View {
     var onOpenGlossary: (GlossaryTerm) -> Void = { _ in }
     var onOpenLearn: (CourseKind) -> Void = { _ in }
     var onShowLess: (_ then: @escaping () -> Void) -> Void = { $0() }
+    var onOpenWine: (WineSheetModel) -> Void = { _ in }
+    var onSaveToCellar: (Wine) -> Void = { _ in }
 
     var body: some View {
         switch card {
         case .header: EmptyView() // drawn by HomeHeader, pinned above the scroll
         case let .dailySuggestion(wine):
             HeroCard(resources: resources, wine: wine, palateMap: palateMap, isInCellar: cellarWineKeys.contains(wine.id),
-                                onShowLess: onShowLess)
+                    onShowLess: onShowLess, onSaveToCellar: { onSaveToCellar(wine) })
         case let .friends(state):
             // HOME-R11: with no friends yet, the card opens the invite.
             FriendsCard(resources: resources, state: state)
@@ -39,8 +41,12 @@ struct HomeCardView: View {
             }
             .buttonStyle(.plain)
             .accessibilityHint("Open glossary")
-        case let .winesForPalate(suggestions): WinesForPalateCard(resources: resources, suggestions: suggestions)
-        case let .chooseYourWine(catalog): ChooseYourWineCard(resources: resources, palateMap: palateMap, catalog: catalog)
+        case let .winesForPalate(suggestions):
+            WinesForPalateCard(resources: resources, suggestions: suggestions) { onOpenWine(.palate($0)) }
+        case let .chooseYourWine(catalog):
+            ChooseYourWineCard(resources: resources, palateMap: palateMap, catalog: catalog) { suggestions, direction in
+                onOpenWine(.discovery(suggestions: suggestions, direction: direction))
+            }
         }
     }
 }

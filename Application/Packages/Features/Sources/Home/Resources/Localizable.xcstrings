@@ -959,17 +959,17 @@
     "/%lld" : {
 
     },
-    "%lld · %lld years" : {
+    "%@ · %lld years" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$lld · %2$lld years"
+            "value" : "%1$@ · %2$lld years"
           }
         }
       }
     },
-    "%lld · 1 year" : {
+    "%@ · 1 year" : {
 
     },
     "%lld of %lld" : {
@@ -1565,6 +1565,99 @@
       }
     },
     "Your map likes %@, and this wine is high on it." : {
+
+    },
+    "Map updated" : {
+
+    },
+    "Maybe" : {
+
+    },
+    "No" : {
+
+    },
+    "Saved to Cellar · %@" : {
+
+    },
+    "Yes" : {
+
+    },
+    "In common" : {
+
+    },
+    "Your pick" : {
+
+    },
+    "Show another ›" : {
+
+    },
+    "away from your map" : {
+
+    },
+    "Style" : {
+
+    },
+    "Grape & notes" : {
+
+    },
+    "Pairings" : {
+
+    },
+    "Non-vintage" : {
+
+    },
+    "How to serve" : {
+
+    },
+    "Have you had this wine?" : {
+
+    },
+    "Not yet" : {
+
+    },
+    "Would you drink it again?" : {
+
+    },
+    "Add it to your cellar?" : {
+
+    },
+    "Not now" : {
+
+    },
+    "Saved to Cellar" : {
+
+    },
+    "barely moved" : {
+
+    },
+    "The only %@ for your choices" : {
+
+    },
+    "%lld of %lld %@ wines for your choices" : {
+
+    },
+    "Glad you loved it! It's in your cellar now." : {
+
+    },
+    "Glad you loved it! Your map just learned something." : {
+
+    },
+    "Fair enough. It's in your cellar, ready for a second chance." : {
+
+    },
+    "Fair enough. Your map took note." : {
+
+    },
+    "Not your glass, then. It's in your cellar, so you won't buy it twice." : {
+
+    },
+    "Not your glass, then. Your map took note." : {
+
+    },
+    "Saved for later. It's waiting in your cellar." : {
+
+    },
+    "No rush. It'll be here when you're ready." : {
 
     }
   },

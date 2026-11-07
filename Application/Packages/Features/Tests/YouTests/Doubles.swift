@@ -26,6 +26,7 @@ struct MapsStub: PalateMapRepository {
     func currentMap() async throws -> PalateMap? { history.last.map { PalateMap($0.values) } }
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {}
     func history() async throws -> [MapChange] { history }
+    func saveRatedMap(_ map: PalateMap, wineKey: String, verdict: Verdict, at date: Date) async throws {}
 }
 
 struct CatalogStub: CatalogRepository {

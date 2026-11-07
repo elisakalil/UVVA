@@ -6,15 +6,14 @@ struct ChooseYourWineCard: View {
     var resources = HomeResourcesUIModel()
     var palateMap: PalateMap
     var catalog: [Wine]
+    /// "Find my wine": the matching wines, best first, for the Home to show in its sheet (HOME-R28).
+    var onFind: (_ suggestions: [Wine], _ direction: WineDiscovery.Direction) -> Void = { _, _ in }
 
     @State private var direction: WineDiscovery.Direction = .familiar
     @State private var type = "Red"
     @State private var country = "Anywhere"
     @State private var pairing: WineDiscovery.Pairing?
     @State private var notes: [WineDiscovery.Note] = []
-    @State private var suggestions: [Wine] = []
-    @State private var resultIndex = 0
-    @State private var showingResult = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -51,10 +50,6 @@ struct ChooseYourWineCard: View {
                 }
             }
         }
-        .sheet(isPresented: $showingResult) {
-            result
-                .presentationDragIndicator(.visible)
-        }
     }
 
     private var directionPicker: some View {
@@ -68,44 +63,10 @@ struct ChooseYourWineCard: View {
         }
     }
 
-    private var result: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                SectionLabel(text: direction == .familiar ? resources.chooseYourWineFamiliarTitle : resources.chooseYourWineSurpriseTitle)
-                if suggestions.indices.contains(resultIndex) {
-                    let wine = suggestions[resultIndex]
-                    Text(wine.displayName)
-                        .font(UVVAFont.sans(28))
-                        .accessibilityAddTraits(.isHeader)
-                    if let vintage = wine.vintage {
-                        Caption(text: String(vintage))
-                    }
-                    if let note = wine.note {
-                        Text(note)
-                            .font(UVVAFont.sans(14))
-                    }
-                    WineMapPager(resources: resources, wine: wine.profile, palate: palateMap)
-                        .id(wine.id)
-                    if resultIndex + 1 < suggestions.count {
-                        PillButton(action: { resultIndex += 1 }) { Text(resources.chooseYourWineAnotherTitle) }
-                    }
-                } else {
-                    Text(resources.chooseYourWineNoMatch)
-                        .font(UVVAFont.sans(17))
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(26)
-        }
-        .foregroundStyle(UVVAColor.cream)
-        .background(UVVAColor.moss.ignoresSafeArea())
-    }
-
     private func findWine() {
-        suggestions = WineDiscovery.suggestions(in: catalog, for: palateMap, direction: direction,
-                                                 type: type, country: country, notes: notes, pairing: pairing)
-        resultIndex = 0
-        showingResult = true
+        let suggestions = WineDiscovery.suggestions(in: catalog, for: palateMap, direction: direction,
+                                                    type: type, country: country, notes: notes, pairing: pairing)
+        onFind(suggestions, direction)
     }
 
     private func toggle(_ note: WineDiscovery.Note) {

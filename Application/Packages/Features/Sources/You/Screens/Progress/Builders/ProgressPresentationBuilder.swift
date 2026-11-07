@@ -57,8 +57,32 @@ struct ProgressPresentationBuilder {
     private func stat(label: String, certificates: [Certificate], content: YouContentModel) -> ProgressStat {
         let items: [ProgressStatItem] = certificates.map { certificate -> ProgressStatItem in
             let course = content.certificateCourses[certificate.courseID]
+            let countries = course?.countries ?? []
+            let group: String
+            var chips: [String]
+            switch certificate.kind {
+            case .grape:
+                switch course?.color {
+                case "red": group = String(localized: "Red grapes", bundle: .module)
+                case "white": group = String(localized: "White grapes", bundle: .module)
+                default: group = String(localized: "Grapes", bundle: .module)
+                }
+                chips = countries
+            case .region:
+                group = countries.first ?? String(localized: "Regions", bundle: .module)
+                chips = course?.grapes ?? []
+            case .path:
+                group = String(localized: "The Path", bundle: .module)
+                chips = [course?.level].compactMap { $0 }
+            case nil:
+                group = String(localized: "Other modules", bundle: .module)
+                chips = []
+            }
+            if let course, !course.lessons.isEmpty {
+                chips.append(String(localized: "\(course.lessons.count) lessons · \(course.minutes) min", bundle: .module))
+            }
             return ProgressStatItem(id: certificate.courseID, title: course?.title ?? certificate.courseID,
-                                    detail: course?.about ?? "")
+                                    detail: course?.about ?? "", group: group, chips: chips)
         }.sorted { $0.title.localizedStandardCompare($1.title) == .orderedAscending }
         return ProgressStat(value: "\(items.count)", label: label, items: items)
     }

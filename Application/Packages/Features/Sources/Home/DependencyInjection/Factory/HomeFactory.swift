@@ -33,6 +33,7 @@ public struct HomeFactory: HomeFactoryProtocol {
                                             cellar: cellar, courses: courses, learning: learning,
                                             suggestionPool: HomeCardsBuilder.dailySuggestionPool),
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: cellar),
+            rateWineUseCase: RateWineUseCase(maps: maps, cellar: cellar, now: now),
             coordinator: coordinator, now: now, calendar: calendar
         )
     }

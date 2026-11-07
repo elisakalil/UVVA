@@ -19,6 +19,10 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
 
         let profile = try await profiles.currentProfile()
         let savedKeys = try await cellar.wineKeys()
+        // HOME-R23 and the changed-map card (HOME-R15): the wines rated so far and the last rating's moves.
+        let history = try await maps.history()
+        let ratedKeys = try await cellar.tastedWineKeys().union(Rating.wineKeys(in: history))
+        let lastRating = Rating.last(in: history)
 
         let wines = try await pairedWines(for: map)
         let glossary = try await catalog.glossary()
@@ -38,7 +42,7 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
         return HomeLoadResultModel(
             model: HomeContentModel(
                 firstName: profile?.firstName ?? "", palateMap: map, friends: [],
-                courses: startedCourses, lastRating: nil, ratedWineIDs: [], catalog: wines,
+                courses: startedCourses, lastRating: lastRating, ratedWineIDs: ratedKeys, catalog: wines,
                 glossary: glossary, notifications: [], lessonCatalog: lessonCatalog, modules: snapshot.modules, lessonProgress: progress
             ),
             inviteLink: profile?.inviteLink,

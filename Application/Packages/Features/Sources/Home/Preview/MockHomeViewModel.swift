@@ -19,5 +19,13 @@ final class MockHomeViewModel: HomeViewModelProtocol {
     func loadIfNeeded() async {}
     func openCourse(_ id: String) {}
     func openLearn(_ kind: CourseKind) {}
+    func addToCellar(_ wine: Wine) async {
+        uiModel.cellarWineKeys.insert(wine.id)
+        uiModel.notice = uiModel.resources.savedToCellarNotice(wine)
+    }
+    func rate(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async {
+        if addToCellar { uiModel.cellarWineKeys.insert(wine.id) }
+        uiModel.notice = uiModel.resources.mapUpdatedNotice([(.acidity, true), (.fruit, true)], savedToCellar: addToCellar)
+    }
 }
 #endif

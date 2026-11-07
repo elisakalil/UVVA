@@ -11,6 +11,8 @@ public enum UVVAColor {
     public static let logoInk = cream
     /// The warmer cream behind filled buttons and selected chips.
     public static let creamFill = Color(hex: 0xF3ECDE)
+    /// The paper of the wine sheet, under ink text (`mossDeep`).
+    public static let parchment = Color(hex: 0xEBE0C9)
     public static let ink = Color(hex: 0x22271C)
     public static let grape = Color(hex: 0x9D8FF0)
     public static let burgundy = Color(hex: 0x4B1D2D)

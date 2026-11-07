@@ -232,7 +232,7 @@ Profile e com mapa         → Tabs (Home)
 
 **"Find the wine"** (cartão do dia) abre, dentro da app, uma pesquisa na internet com produtor, nome e ano (quando existe).
 
-**Ainda não ligado na Home:** "Find my wine" (HOME-R26 a R28), avaliar um vinho da lista (HOME-R24), os atalhos do Learn com módulos reais (HOME-R18), o sino e as notificações. Dependem de Cellar, Learn e notificações.
+**Ainda não ligado na Home:** "Find my wine" (HOME-R26 a R28), os atalhos do Learn com módulos reais (HOME-R18), o sino e as notificações. Dependem de Cellar, Learn e notificações.
 
 **Tour guiado** (HOME-R29 a R33):
 - `GuidedTour` (estado puro: intro, passos 1…6, `next`, `back`, `pick`) e `shouldShowTour(quizExit:seenTours:)`, com testes de todos os critérios.

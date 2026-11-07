@@ -1,6 +1,7 @@
 import Combine
 import Core
 import Foundation
+import Match
 import Testing
 @testable import Home
 @testable import Learn
@@ -20,6 +21,7 @@ private struct MapStub: PalateMapRepository {
     func currentMap() async throws -> PalateMap? { HomeContentModel.full.palateMap }
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {}
     func history() async throws -> [MapChange] { [] }
+    func saveRatedMap(_ map: PalateMap, wineKey: String, verdict: Verdict, at date: Date) async throws {}
 }
 
 private struct CatalogStub: CatalogRepository {
@@ -65,6 +67,8 @@ private actor CellarStub: CellarRepository {
     private(set) var added: [String] = []
     func wineKeys() async throws -> Set<String> { Set(added) }
     func addWantToTry(_ wine: Wine) async throws { added.append(wine.id) }
+    func tastedWineKeys() async throws -> Set<String> { [] }
+    func addTasted(_ wine: Wine, verdict: Verdict) async throws {}
 }
 
 @MainActor
@@ -169,11 +173,17 @@ private struct UnusedCellarAction: AddWineToCellarUseCaseProtocol {
 }
 
 @MainActor
+private struct UnusedRatingAction: RateWineUseCaseProtocol {
+    func execute(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async throws -> [AxisChange] { [] }
+}
+
+@MainActor
 struct HomePresentationTests {
     @Test func preparationFailureDoesNotPublishPartialState() async {
         let model = HomeViewModel(
             loadHomeUseCase: FailingHomeLoader(),
             addWineToCellarUseCase: UnusedCellarAction(),
+            rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
             now: Date.init, calendar: .current
         )
@@ -194,6 +204,7 @@ struct HomePresentationTests {
         let model = HomeViewModel(
             loadHomeUseCase: FailingHomeLoader(),
             addWineToCellarUseCase: UnusedCellarAction(),
+            rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(
                 onOpenCourse: { openedCourse = $0 },
                 onOpenLearn: { openedKind = $0 }
@@ -338,6 +349,7 @@ struct ModuleStateFlowTests {
         let source = SuspendedHomeSnapshot(old: content(1), latest: content(2))
         let home = HomeViewModel(loadHomeUseCase: source,
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: CellarStub()),
+            rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
             now: Date.init, calendar: .current)
         let oldLoad = Task { await home.load() }

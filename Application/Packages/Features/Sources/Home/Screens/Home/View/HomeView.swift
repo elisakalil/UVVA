@@ -9,6 +9,7 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
 
     @State private var glossaryViewModel: GlossaryViewModel?
     @State private var inviting = false
+    @State private var wineSheet: WineSheetModel?
 
     public init(viewModel: ViewModel, tour: GuidedTourViewModel? = nil) {
         self.viewModel = viewModel
@@ -49,6 +50,18 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     .presentationDragIndicator(.visible)
             }
         }
+        .sheet(item: $wineSheet) { sheet in
+            if let model = viewModel.uiModel.content {
+                WineSheet(resources: viewModel.uiModel.resources, sheet: sheet, palateMap: model.palateMap,
+                          cellarWineKeys: viewModel.uiModel.cellarWineKeys,
+                          // HOME-R24: the sheet stays open and answers in its own words.
+                          onRate: { wine, verdict, keep in
+                              Task { await viewModel.rate(wine, verdict: verdict, addToCellar: keep) }
+                          },
+                          onSaveToCellar: { wine in Task { await viewModel.addToCellar(wine) } })
+            }
+        }
+        .overlay(alignment: .top) { HomeNoticeView(text: wineSheet == nil ? viewModel.uiModel.notice : nil) }
     }
     private func content(_ model: HomeContentUIModel, target: String?) -> some View {
         HomeContent(
@@ -64,7 +77,9 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     glossaryViewModel = nil
                 }
             },
-            onOpenLearn: viewModel.openLearn)
+            onOpenLearn: viewModel.openLearn,
+            onOpenWine: { wineSheet = $0 },
+            onSaveToCellar: { wine in Task { await viewModel.addToCellar(wine) } })
     }
 
 }

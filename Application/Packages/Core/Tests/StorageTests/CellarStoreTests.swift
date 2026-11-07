@@ -47,4 +47,25 @@ struct CellarStoreTests {
         #expect(entries.count == 1)
         #expect(entries.first?.status == CellarEntryEntity.Status.tasted.rawValue)
     }
+
+    // MARK: CELLAR-R13c · Rated on the Home
+
+    @Test func CELLAR_R13c_rating_savesTheWineAsTasted_withItsVerdict() async throws {
+        try await store.addTasted(wine, verdict: .maybe)
+        #expect(try await store.tastedWineKeys() == [wine.id])
+        let entry = try #require(try ModelContext(container).fetch(FetchDescriptor<CellarEntryEntity>()).first)
+        #expect(entry.status == CellarEntryEntity.Status.tasted.rawValue)
+        #expect(entry.verdict == "maybe")
+        #expect(entry.grapes == ["Tempranillo"])
+    }
+
+    @Test func CELLAR_R13c_rating_aWantToTryWine_turnsItTasted() async throws {
+        try await store.addWantToTry(wine)
+        #expect(try await store.tastedWineKeys().isEmpty)
+        try await store.addTasted(wine, verdict: .yes)
+        let entries = try ModelContext(container).fetch(FetchDescriptor<CellarEntryEntity>())
+        #expect(entries.count == 1)
+        #expect(entries.first?.status == CellarEntryEntity.Status.tasted.rawValue)
+        #expect(entries.first?.verdict == "yes")
+    }
 }

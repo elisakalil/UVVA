@@ -191,7 +191,15 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **HOME-R23 · Exclusão.** Vinhos já avaliados (SHARED-R11) ficam fora da seleção. Quando um vinho é avaliado, os eixos que ele representava passam a usar os próximos vinhos elegíveis, quando houver.
 
-**HOME-R24 · Avaliar.** Tocar num vinho pergunta "Would you drink it again?" com Yes, Maybe ou No (SHARED-R08). A resposta recalcula o mapa (SHARED-R09), guarda o vinho no Cellar como Tasted com esse veredito (CELLAR-R13c) e mostra um aviso com os eixos que subiram ou desceram, por exemplo "Map updated · Acidity ↑ · Fruit ↑", durante 3 segundos.
+**HOME-R24 · Detalhes e avaliação (2026-11-07).** Tocar num vinho abre a folha do vinho (HOME-R28a). No rodapé, fixo, uma pergunta de cada vez:
+- "Have you had this wine?" com Yes e Not yet;
+- Yes → "Would you drink it again?" com Yes, Maybe ou No (SHARED-R08);
+- depois do veredito → "Add it to your cellar?" com Add to cellar ou Not now. As duas recalculam o mapa (SHARED-R09); Add to cellar também guarda o vinho no Cellar como Tasted com o veredito (CELLAR-R13c). O aviso no topo da Home, durante 3 segundos (visto se a folha for fechada nesse tempo), diz os eixos que subiram ou desceram: "Map updated · Acidity ↑ · Fruit ↑", com "Saved to Cellar · " à frente quando o vinho foi guardado, e "Map updated · barely moved" quando nenhum eixo mexeu;
+- Not yet → o mesmo "Add it to your cellar?", sem veredito: Add to cellar guarda o vinho como Not yet; Not now não faz nada;
+- respondida esta pergunta, a folha fica aberta: no lugar da pergunta aparece uma frase descontraída conforme a resposta (por exemplo "Glad you loved it! It's in your cellar now." ou "No rush. It'll be here when you're ready."), e uns 4 segundos depois o rodapé some num fade, deixando só o vinho. "Show another ›" volta a mostrar a pergunta para o vinho seguinte;
+- não há volta atrás: para recomeçar, fecha-se e abre-se a folha de novo.
+
+Um vinho avaliado conta como avaliado para a HOME-R23 mesmo que não vá para o Cellar.
 
 **HOME-R25 · Ausência.** O card aparece quando pelo menos um eixo encontra uma sugestão elegível.
 
@@ -210,7 +218,18 @@ A direção é a primeira escolha do formulário. **Para o meu paladar** vem sel
 
 **HOME-R27 · Limite de notas.** É possível escolher no máximo 3 notas; com 3 escolhidas, as outras ficam inativas até uma ser desmarcada.
 
-**HOME-R28 · Resultado.** "Find my wine" abre uma folha com o vinho que melhor corresponde aos filtros e ao paladar. "Another one" mostra o seguinte do mesmo tipo. "Save to Cellar" guarda o vinho no Cellar como Not yet (CELLAR-R13c) e mostra "Saved to Cellar · [vinho]".
+**HOME-R28 · Resultado.** "Find my wine" abre a folha do vinho (HOME-R28a) com o vinho que melhor corresponde aos filtros e ao paladar. "Show another ›" mostra o seguinte do mesmo tipo. O vinho pode ser avaliado ou guardado no Cellar pela pergunta do rodapé (HOME-R24).
+
+**HOME-R28a · Folha do vinho (2026-11-07).** A mesma folha serve a "Vinhos para o seu paladar" e a "Escolha o seu vinho" (tela "Beberia outra vez?" no design). Papel creme, tinta escura, cantos de 28. Abre quase até ao topo, com a Home escurecida atrás. Mostra, de cima para baixo:
+- o nome do vinho em maiúsculas desenhadas, menor quanto mais longo;
+- por baixo, o produtor; num resultado do formulário, "Your pick · [produtor]";
+- num resultado, "2 of 5 red wines for your choices" e "Show another ›", que mostra o seguinte e volta ao primeiro no fim;
+- o match (HOME-R10b), sem título; em "Surprise me", a distância ("away from your map");
+- os factos, sem título, em duas colunas onde há par: Origin | Vintage ("2023 · 3 years", ou "Non-vintage"); Serve at; Style | Grape & notes; Pairings. Os que o vinho não tem ficam fora;
+- "Find the wine" (HOME-R09a), logo a seguir aos factos;
+- How to serve, quando há;
+- os dois mapas, com a legenda This wine, Your map e In common;
+- a pergunta da HOME-R24, fixa no rodapé.
 
 **Critérios**
 - Dadas 3 notas escolhidas, quando o usuário tenta escolher a quarta, então ela não é selecionada.

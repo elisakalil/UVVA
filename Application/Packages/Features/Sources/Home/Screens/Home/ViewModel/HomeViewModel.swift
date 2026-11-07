@@ -1,6 +1,7 @@
 import Core
 import Foundation
 import Combine
+import Match
 
 @MainActor
 public final class HomeViewModel: HomeViewModelProtocol {
@@ -8,25 +9,33 @@ public final class HomeViewModel: HomeViewModelProtocol {
 
     private var presentedDay: Date?
     private var loadTask: Task<Void, Error>?
+    private var noticeTask: Task<Void, Never>?
 
     private let loadHomeUseCase: any LoadHomeUseCaseProtocol
     private let addWineToCellarUseCase: any AddWineToCellarUseCaseProtocol
+    private let rateWineUseCase: any RateWineUseCaseProtocol
     private let coordinator: any HomeCoordinatorProtocol
     private let now: () -> Date
     private let calendar: Calendar
+    /// How long a notice stays (HOME-R24); injected so tests need not wait for it.
+    private let noticeDuration: Duration
 
     init(
         loadHomeUseCase: any LoadHomeUseCaseProtocol,
         addWineToCellarUseCase: any AddWineToCellarUseCaseProtocol,
+        rateWineUseCase: any RateWineUseCaseProtocol,
         coordinator: any HomeCoordinatorProtocol,
         now: @escaping () -> Date,
-        calendar: Calendar
+        calendar: Calendar,
+        noticeDuration: Duration = .seconds(3)
     ) {
         self.loadHomeUseCase = loadHomeUseCase
         self.addWineToCellarUseCase = addWineToCellarUseCase
+        self.rateWineUseCase = rateWineUseCase
         self.coordinator = coordinator
         self.now = now
         self.calendar = calendar
+        self.noticeDuration = noticeDuration
     }
 
     public func loadIfNeeded() async {
@@ -70,10 +79,11 @@ public final class HomeViewModel: HomeViewModelProtocol {
         let day = calendar.ordinality(of: .day, in: .era, for: date) ?? 0
         let builder = HomeCardsBuilder(calendar: calendar, pickWordIndex: { day % $0 })
 
+        let notice = uiModel.notice
         uiModel = HomeUIModel(
             content: HomeContentUIModel(cards: builder.build(from: content.model, now: date),
                                          glossary: content.model.glossary, firstName: content.model.firstName, palateMap: content.model.palateMap),
-            inviteLink: content.inviteLink, cellarWineKeys: content.cellarWineKeys, isLoading: false
+            inviteLink: content.inviteLink, cellarWineKeys: content.cellarWineKeys, isLoading: false, notice: notice
         )
     }
 
@@ -83,10 +93,30 @@ public final class HomeViewModel: HomeViewModelProtocol {
 
     public func openLearn(_ kind: CourseKind) { coordinator.openLearn(kind) }
 
-    func addToCellar(_ wine: Wine) async {
+    public func addToCellar(_ wine: Wine) async {
         guard !uiModel.cellarWineKeys.contains(wine.id) else { return }
         guard (try? await addWineToCellarUseCase.execute(wine)) != nil else { return }
         uiModel.cellarWineKeys.insert(wine.id)
+        show(uiModel.resources.savedToCellarNotice(wine))
+    }
+
+    /// HOME-R24: the map moves and the Home is built again on it, so the rated wine leaves the list (HOME-R23)
+    /// and the others follow the new map; then the notice tells which axes moved.
+    public func rate(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async {
+        guard let changes = try? await rateWineUseCase.execute(wine, verdict: verdict, addToCellar: addToCellar) else { return }
+        await load()
+        show(uiModel.resources.mapUpdatedNotice(changes.map { ($0.axis, $0.wentUp) }, savedToCellar: addToCellar))
+    }
+
+    private func show(_ notice: String) {
+        noticeTask?.cancel()
+        uiModel.notice = notice
+        let duration = noticeDuration
+        noticeTask = Task { [weak self] in
+            try? await Task.sleep(for: duration)
+            guard !Task.isCancelled else { return }
+            self?.uiModel.notice = nil
+        }
     }
 
 }

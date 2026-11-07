@@ -23,6 +23,12 @@ public final class PalateMapEntity {
         PalateMap((try? JSONDecoder().decode([PalateAxis: Double].self, from: valuesData)) ?? [:])
     }
 
+    /// The map after a change, with the change added to the end of the history.
+    func apply(_ map: PalateMap, change: MapChange) {
+        valuesData = (try? JSONEncoder().encode(map.values)) ?? Data()
+        historyData = (try? JSONEncoder().encode(history + [change])) ?? Data()
+    }
+
     public var history: [MapChange] {
         (try? JSONDecoder().decode([MapChange].self, from: historyData)) ?? []
     }

@@ -43,6 +43,7 @@ struct MapRepositoryStub: PalateMapRepository {
     func currentMap() async throws -> PalateMap? { map }
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {}
     func history() async throws -> [MapChange] { [] }
+    func saveRatedMap(_ map: PalateMap, wineKey: String, verdict: Verdict, at date: Date) async throws {}
 }
 
 final class SocialSpy: SocialService {

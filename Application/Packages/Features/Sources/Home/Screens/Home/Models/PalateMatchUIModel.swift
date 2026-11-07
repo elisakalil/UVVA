@@ -9,7 +9,7 @@ struct PalateMatchUIModel {
 
     var percentage: String { "\(percent)%" }
 
-    private var percent: Int { Similarity.percent(wine, palate) }
+    var percent: Int { Similarity.percent(wine, palate) }
 
     /// "High in acidity and fruit, like your map." (HOME-R10b)
     var shared: String {

@@ -13,6 +13,7 @@ final class PalateMapRepositorySpy: PalateMapRepository {
 
     func currentMap() async throws -> PalateMap? { savedMaps.last }
     func history() async throws -> [MapChange] { [] }
+    func saveRatedMap(_ map: PalateMap, wineKey: String, verdict: Verdict, at date: Date) async throws {}
 
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {
         if fails { throw CocoaError(.fileWriteUnknown) }

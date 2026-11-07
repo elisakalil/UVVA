@@ -14,6 +14,8 @@ struct HomeContent: View {
     var onOpenCourse: (String) -> Void = { _ in }
     var onOpenGlossary: (GlossaryTerm) -> Void = { _ in }
     var onOpenLearn: (CourseKind) -> Void = { _ in }
+    var onOpenWine: (WineSheetModel) -> Void = { _ in }
+    var onSaveToCellar: (Wine) -> Void = { _ in }
 
     @State private var scroll = HeaderScrollModel()
     static let topID = "home.top"
@@ -118,7 +120,8 @@ struct HomeContent: View {
                      onOpenLesson: onOpenLesson, onOpenCourse: onOpenCourse, onOpenGlossary: onOpenGlossary, onOpenLearn: onOpenLearn,
                      onShowLess: { then in
                          withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }
-                     })
+                     },
+                     onOpenWine: onOpenWine, onSaveToCellar: onSaveToCellar)
             .id(card.spotlightID ?? card.kind)
             .modifier(SpotlightModifier(id: card.spotlightID))
     }

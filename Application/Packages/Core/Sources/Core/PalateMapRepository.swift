@@ -8,4 +8,6 @@ public protocol PalateMapRepository: Sendable {
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws
     /// Every change of the current map, oldest first; the first is the Quiz (YOU-R10).
     func history() async throws -> [MapChange]
+    /// A rating moved the map (QUIZ-R22): the current map becomes `map`, and the change joins its history.
+    func saveRatedMap(_ map: PalateMap, wineKey: String, verdict: Verdict, at date: Date) async throws
 }

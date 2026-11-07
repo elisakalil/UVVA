@@ -51,34 +51,7 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
             }
         }
         .sheet(item: $selectedProgressStat) { stat in
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 24) {
-                    ForEach(Array(stat.items.enumerated()), id: \.element.id) { index, item in
-                        HStack(alignment: .top, spacing: 10) {
-                            UVVAIllustration.grape(index % UVVAIllustration.grapeCount + 1)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 24, height: 24)
-                                .accessibilityHidden(true)
-
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(item.title)
-                                    .font(UVVAFont.sans(17))
-                                if !item.detail.isEmpty {
-                                    Text(item.detail)
-                                        .font(UVVAFont.sans(12))
-                                        .opacity(0.84)
-                                }
-                            }
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 26)
-                .padding(.vertical, 28)
-            }
-            .foregroundStyle(UVVAColor.creamFill)
+            ProgressDetailSheet(stat: stat)
             .presentationBackground {
                 PageBackground(photo: viewModel.uiModel.backgroundPhoto, veiled: true)
             }

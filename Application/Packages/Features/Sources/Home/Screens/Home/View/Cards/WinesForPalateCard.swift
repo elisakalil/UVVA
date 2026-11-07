@@ -5,6 +5,7 @@ import SwiftUI
 struct WinesForPalateCard: View {
     var resources = HomeResourcesUIModel()
     var suggestions: [PalateWineSuggestion]
+    var onOpen: (PalateWineSuggestion) -> Void = { _ in }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -15,7 +16,10 @@ struct WinesForPalateCard: View {
                         if index > 0 {
                             Rectangle().fill(UVVAColor.cream14).frame(height: 0.5).padding(.horizontal, 26)
                         }
-                        WineRow(resources: resources, suggestion: suggestion)
+                        Button { onOpen(suggestion) } label: {
+                            WineRow(resources: resources, suggestion: suggestion)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
                 .padding(.vertical, 8)

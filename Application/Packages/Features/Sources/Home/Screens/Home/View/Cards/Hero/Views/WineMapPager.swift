@@ -13,6 +13,10 @@ struct WineMapPager: View {
     var palate: PalateMap
     /// Whether the pager can be seen at all: folded away in a closed card it is still laid out where it would be.
     var active = true
+    /// The colour of the charts and their text: cream over the glass, ink on the wine sheet.
+    var tint: Color = UVVAColor.cream
+    /// The comparison names the filled overlap too, as the wine sheet does.
+    var showsOverlapLegend = false
     @State private var shown: Int? = 0
     /// Once the maps come into view, the pager slides on to the second map by itself, so the user sees there is one.
     /// Done once each time the card opens; leaving before it plays cancels it.
@@ -27,16 +31,24 @@ struct WineMapPager: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 0) {
                     slide(title: resources.wineMapPagerWineMapTitle) {
-                        WineMapChart(wine: wine, palate: nil)
+                        WineMapChart(wine: wine, palate: nil, tint: tint)
                     }
                     .containerRelativeFrame(.horizontal)
                     .id(0)
                     slide(title: resources.wineMapPagerComparisonTitle) {
-                        WineMapChart(wine: wine, palate: palate)
+                        WineMapChart(wine: wine, palate: palate, tint: tint)
                     } legend: {
                         HStack(spacing: 18) {
                             legendItem(resources.wineMapPagerWineLegend, dashed: false)
                             legendItem(resources.wineMapPagerPalateLegend, dashed: true)
+                            if showsOverlapLegend {
+                                HStack(spacing: 7) {
+                                    RoundedRectangle(cornerRadius: 2).fill(tint.opacity(0.3)).frame(width: 9, height: 9)
+                                    Text(resources.wineMapPagerOverlapLegend.uppercased())
+                                        .font(UVVAFont.sans(9, .regular))
+                                        .tracking(1.8)
+                                }
+                            }
                         }
                     }
                     .containerRelativeFrame(.horizontal)
@@ -62,7 +74,7 @@ struct WineMapPager: View {
             HStack(spacing: 6) {
                 ForEach(0..<2, id: \.self) { index in
                     Capsule()
-                        .fill(index == page ? UVVAColor.cream : UVVAColor.cream.opacity(0.35))
+                        .fill(index == page ? tint : tint.opacity(0.35))
                         .frame(width: index == page ? 18 : 4, height: 4)
                 }
             }
@@ -99,13 +111,13 @@ struct WineMapPager: View {
             legend()
             Spacer(minLength: 0)
         }
-        .foregroundStyle(UVVAColor.cream)
+        .foregroundStyle(tint)
     }
 
     private func legendItem(_ label: String, dashed: Bool) -> some View {
         HStack(spacing: 8) {
             Path { $0.move(to: .zero); $0.addLine(to: CGPoint(x: 16, y: 0)) }
-                .stroke(UVVAColor.cream, style: StrokeStyle(lineWidth: 1.2, dash: dashed ? [3, 2] : []))
+                .stroke(tint, style: StrokeStyle(lineWidth: 1.2, dash: dashed ? [3, 2] : []))
                 .frame(width: 16, height: 1)
             Text(label.uppercased())
                 .font(UVVAFont.sans(9, .regular))
@@ -119,6 +131,7 @@ struct WineMapPager: View {
 private struct WineMapChart: View {
     var wine: PalateMap
     var palate: PalateMap?
+    var tint: Color = UVVAColor.cream
 
     private static let axes = PalateAxis.allCases
     /// Room left around the rings for the axis names.
@@ -147,7 +160,7 @@ private struct WineMapChart: View {
             let wineValues = wine.chartValues
             ZStack {
                 Canvas { context, _ in
-                    let line = GraphicsContext.Shading.color(UVVAColor.cream.opacity(0.28))
+                    let line = GraphicsContext.Shading.color(tint.opacity(0.28))
                     for ring in [1.0 / 3, 2.0 / 3, 1] {
                         let r = radius * ring
                         context.stroke(Path(ellipseIn: CGRect(x: center.x - r, y: center.y - r, width: 2 * r, height: 2 * r)),
@@ -157,19 +170,19 @@ private struct WineMapChart: View {
                         var spoke = Path()
                         spoke.move(to: center)
                         spoke.addLine(to: point(index, 1, center: center, radius: radius))
-                        context.stroke(spoke, with: .color(UVVAColor.cream.opacity(0.22)), lineWidth: 0.6)
+                        context.stroke(spoke, with: .color(tint.opacity(0.22)), lineWidth: 0.6)
                     }
                     let wineShape = shape(wineValues, center: center, radius: radius)
                     if let palate {
                         let palateValues = palate.chartValues
                         let overlap = zip(wineValues, palateValues).map { min($0, $1) }
-                        context.fill(shape(overlap, center: center, radius: radius), with: .color(UVVAColor.cream.opacity(0.22)))
-                        context.stroke(shape(palateValues, center: center, radius: radius), with: .color(UVVAColor.cream),
+                        context.fill(shape(overlap, center: center, radius: radius), with: .color(tint.opacity(0.22)))
+                        context.stroke(shape(palateValues, center: center, radius: radius), with: .color(tint),
                                        style: StrokeStyle(lineWidth: 1.2, lineJoin: .round, dash: [3, 2]))
                     } else {
-                        context.fill(wineShape, with: .color(UVVAColor.cream.opacity(0.18)))
+                        context.fill(wineShape, with: .color(tint.opacity(0.18)))
                     }
-                    context.stroke(wineShape, with: .color(UVVAColor.cream.opacity(0.9)),
+                    context.stroke(wineShape, with: .color(tint.opacity(0.9)),
                                    style: StrokeStyle(lineWidth: 1.2, lineJoin: .round))
                 }
                 ForEach(Array(Self.axes.enumerated()), id: \.offset) { index, axis in

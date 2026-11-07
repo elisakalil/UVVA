@@ -35,10 +35,12 @@ struct WineFactsUIModel {
     /// "2023 · 3 years"
     func vintageLine(_ vintage: Int) -> String {
         let age = Calendar.current.component(.year, from: now) - vintage
+        // The year as text: as a number it would be grouped by the locale, "2 023".
+        let year = String(vintage)
         switch age {
-        case ..<1: return String(vintage)
-        case 1: return String(localized: "\(vintage) · 1 year", bundle: .module)
-        default: return String(localized: "\(vintage) · \(age) years", bundle: .module)
+        case ..<1: return year
+        case 1: return String(localized: "\(year) · 1 year", bundle: .module)
+        default: return String(localized: "\(year) · \(age) years", bundle: .module)
         }
     }
 
