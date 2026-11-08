@@ -72,6 +72,20 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntry.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntryStatus.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o",
@@ -219,6 +233,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MatchPair.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MatchPair.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChange.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o",
@@ -239,6 +260,13 @@
     "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis~partial.swiftmodule",
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.dia"
   },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateMap.d",
@@ -379,5 +407,12 @@
     "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine~partial.swiftmodule",
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.dia"
   }
 }

@@ -261,6 +261,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LessonProgressEntity.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LessonProgressEntity.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/PalateMapEntity.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o",

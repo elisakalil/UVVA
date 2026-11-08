@@ -5,7 +5,14 @@ import SwiftData
 
 /// `CatalogRepository` on the Content store.
 @ModelActor
-public actor CatalogStore: CatalogRepository {
+public actor CatalogStore: CatalogRepository, WineLookup {
+    public func wines(keys: Set<String>) throws -> [String: Wine] {
+        guard !keys.isEmpty else { return [:] }
+        let wanted = Array(keys)
+        let descriptor = FetchDescriptor<WineEntity>(predicate: #Predicate { wanted.contains($0.wineKey) })
+        return Dictionary(try modelContext.fetch(descriptor).map { ($0.wineKey, Self.wine($0)) }) { first, _ in first }
+    }
+
     /// Reads the eight axes of every wine, ranks them by similarity and builds full wines only for the best.
     public func winesClosest(to map: PalateMap, limit: Int) throws -> [Wine] {
         var descriptor = FetchDescriptor<WineEntity>()

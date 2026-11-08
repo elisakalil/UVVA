@@ -8,6 +8,8 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntry.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntryStatus.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift
@@ -29,9 +31,11 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/LessonStep.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/LessonSummary.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/MatchPair.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountries.swift
@@ -52,3 +56,4 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift

@@ -23,6 +23,9 @@ private actor MapSpy: PalateMapRepository {
 
 private actor CellarSpy: CellarRepository {
     private(set) var tasted: [String: Verdict] = [:]
+    func entries() async throws -> [CellarEntry] { [] }
+    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {}
+    func delete(_ wineKey: String) async throws {}
     func wineKeys() async throws -> Set<String> { Set(tasted.keys) }
     func addWantToTry(_ wine: Wine) async throws {}
     func tastedWineKeys() async throws -> Set<String> { Set(tasted.keys) }

@@ -4,7 +4,15 @@ import SwiftData
 
 /// `PalateMapRepository` on the Personal store.
 @ModelActor
-public actor PalateMapStore: PalateMapRepository {
+public actor PalateMapStore: PalateMapRepository, PalateHistoryRewriting {
+    public func rewriteHistory(_ history: [MapChange]) throws {
+        var descriptor = FetchDescriptor<PalateMapEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
+        descriptor.fetchLimit = 1
+        guard let entity = try modelContext.fetch(descriptor).first else { throw PalateMapStoreError.noMap }
+        entity.replace(history: history)
+        try modelContext.save()
+    }
+
     public func currentMap() throws -> PalateMap? {
         var descriptor = FetchDescriptor<PalateMapEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
         descriptor.fetchLimit = 1

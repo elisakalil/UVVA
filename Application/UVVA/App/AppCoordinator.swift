@@ -1,3 +1,4 @@
+import Cellar
 import Core
 import DesignSystem
 import SwiftUI
@@ -18,6 +19,7 @@ final class AppCoordinator {
     private(set) var tour: GuidedTourViewModel?
     private(set) var you: YouViewModel?
     private(set) var learn: LearnViewModel?
+    private(set) var cellarTab: CellarViewModel?
     private(set) var profile: Profile?
     private var isOpeningCourse = false
     private var navigationTask: Task<Void, Never>?
@@ -177,6 +179,8 @@ final class AppCoordinator {
 
         you = you ?? makeYou()
 
+        cellarTab = cellarTab ?? CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog).makeViewModel()
+
         learn = learn ?? LearnFactory(
             catalog: catalog,
             learning: learning,
@@ -275,6 +279,7 @@ final class AppCoordinator {
         home = nil
         you = nil
         learn = nil
+        cellarTab = nil
         tour = nil
         selectedTab = .home
     }

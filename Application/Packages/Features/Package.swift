@@ -6,6 +6,7 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v18)],
     products: [
+        .singleTargetLibrary("Cellar"),
         .singleTargetLibrary("Home"),
         .singleTargetLibrary("Learn"),
         .singleTargetLibrary("Onboarding"),
@@ -17,6 +18,10 @@ let package = Package(
         .package(path: "../DesignSystem")
     ],
     targets: [
+        .target(name: "Cellar",
+                dependencies: Dependencies.common + [Dependencies.match],
+                resources: [.process("Resources")]),
+
         .target(name: "Home",
                 dependencies: Dependencies.common + [Dependencies.match],
                 resources: [.process("Resources")]),
@@ -36,6 +41,9 @@ let package = Package(
         .target(name: "You",
                 dependencies: Dependencies.common + [Dependencies.match],
                 resources: [.process("Resources")]),
+
+        .testTarget(name: "CellarTests",
+                    dependencies: ["Cellar"] + Dependencies.tests + [Dependencies.match]),
 
         .testTarget(name: "HomeTests",
                     dependencies: ["Home", "Learn", .product(name: "Storage", package: "Core")] + Dependencies.tests + [Dependencies.match]),

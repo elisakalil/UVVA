@@ -3,6 +3,8 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/AuthProvider.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Authenticating.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Certificate.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CloudAccountStatus.swift.o
@@ -27,7 +29,9 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChangeCause.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MatchPair.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateMap.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateMapRepository.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PhoneCountries.swift.o
@@ -52,6 +56,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Verdict.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CorePackageTests.build/runner.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/CourseRulesTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/MapChangeTests.swift.o
@@ -62,6 +67,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapShape.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o
@@ -72,6 +78,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapEvolutionTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapReadingTests.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapRebuildTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/PairingTests.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o
@@ -97,6 +104,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LessonEntity.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LessonProgressEntity.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleEntity.swift.o
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PackedAxes.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryFile.swift.o
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PackedGlossaryTerm.swift.o

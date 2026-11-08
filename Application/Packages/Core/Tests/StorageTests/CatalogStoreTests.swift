@@ -22,6 +22,20 @@ struct CatalogStoreTests {
     }
 }
 
+struct CatalogStoreLookupTests {
+    @Test func wines_byKey_leaveOutTheUnknown() async throws {
+        let container = try AppStore.makeInMemoryContainer()
+        var fixture = ContentFixture()
+        fixture.wines = [ContentFixture.wine("a", name: "A", vintage: nil, acidity: 3),
+                         ContentFixture.wine("b", name: "B", vintage: nil, acidity: 7)]
+        _ = try await ContentImporter(modelContainer: container)
+            .importIfNeeded(from: ContentSource(directory: try fixture.write()), currentVersion: nil)
+        let wines = try await CatalogStore(modelContainer: container).wines(keys: ["b", "scanned"])
+        #expect(Array(wines.keys) == ["b"])
+        #expect(wines["b"]?.profile[.acidity] == 7)
+    }
+}
+
 struct CatalogStoreCoursesTests {
     let store: CatalogStore
 

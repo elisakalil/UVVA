@@ -15,6 +15,7 @@
 		B10000000000000000000007 /* Onboarding in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000017 /* Onboarding */; };
 		B10000000000000000000008 /* Quizz in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000018 /* Quizz */; };
 		B10000000000000000000009 /* You in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000019 /* You */; };
+		B1000000000000000000000A /* Cellar in Frameworks */ = {isa = PBXBuildFile; productRef = B1000000000000000000001A /* Cellar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 				B10000000000000000000007 /* Onboarding in Frameworks */,
 				B10000000000000000000008 /* Quizz in Frameworks */,
 				B10000000000000000000009 /* You in Frameworks */,
+				B1000000000000000000000A /* Cellar in Frameworks */,
 				B10000000000000000000002 /* DesignSystem in Frameworks */,
 				B10000000000000000000003 /* Core in Frameworks */,
 				B10000000000000000000004 /* Storage in Frameworks */,
@@ -102,6 +104,7 @@
 				B10000000000000000000017 /* Onboarding */,
 				B10000000000000000000018 /* Quizz */,
 				B10000000000000000000019 /* You */,
+				B1000000000000000000001A /* Cellar */,
 				B10000000000000000000012 /* DesignSystem */,
 				B10000000000000000000013 /* Core */,
 				B10000000000000000000014 /* Storage */,
@@ -356,6 +359,10 @@
 		B10000000000000000000019 /* You */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = You;
+		};
+		B1000000000000000000001A /* Cellar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Cellar;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

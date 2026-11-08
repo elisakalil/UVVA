@@ -59,4 +59,15 @@ struct PalateMapStoreTests {
             try await store.saveRatedMap(map(6), wineKey: "w", verdict: .yes, at: .now)
         }
     }
+
+    // MARK: CELLAR-R29 · Recalcular o mapa
+
+    @Test func CELLAR_R29_rewrite_replacesTheHistory_andTheMap() async throws {
+        try await store.saveQuizMap(map(4), at: Date(timeIntervalSince1970: 0))
+        try await store.saveRatedMap(map(6), wineKey: "a", verdict: .yes, at: Date(timeIntervalSince1970: 1))
+        let quizOnly = Array(try await store.history().prefix(1))
+        try await store.rewriteHistory(quizOnly)
+        #expect(try await store.history() == quizOnly)
+        #expect(try await store.currentMap() == map(4))
+    }
 }

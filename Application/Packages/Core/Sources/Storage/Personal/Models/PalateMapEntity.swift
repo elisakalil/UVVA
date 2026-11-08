@@ -29,6 +29,13 @@ public final class PalateMapEntity {
         historyData = (try? JSONEncoder().encode(history + [change])) ?? Data()
     }
 
+    /// The history replaced as a whole, and the map set to its last entry (CELLAR-R29).
+    func replace(history: [MapChange]) {
+        guard let last = history.last else { return }
+        valuesData = (try? JSONEncoder().encode(last.values)) ?? Data()
+        historyData = (try? JSONEncoder().encode(history)) ?? Data()
+    }
+
     public var history: [MapChange] {
         (try? JSONDecoder().decode([MapChange].self, from: historyData)) ?? []
     }

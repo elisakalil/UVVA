@@ -9,6 +9,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisChange.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapRebuild.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapUpdate.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o",

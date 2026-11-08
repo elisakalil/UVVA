@@ -65,6 +65,9 @@ private struct LearningStub: LearningRepository {
 
 private actor CellarStub: CellarRepository {
     private(set) var added: [String] = []
+    func entries() async throws -> [CellarEntry] { [] }
+    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {}
+    func delete(_ wineKey: String) async throws {}
     func wineKeys() async throws -> Set<String> { Set(added) }
     func addWantToTry(_ wine: Wine) async throws { added.append(wine.id) }
     func tastedWineKeys() async throws -> Set<String> { [] }

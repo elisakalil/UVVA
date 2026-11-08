@@ -1,3 +1,4 @@
+import Cellar
 import DesignSystem
 import Home
 import Learn
@@ -17,6 +18,8 @@ struct RootTabView: View {
                 if let home = coordinator.home { HomeView(viewModel: home, tour: coordinator.tour) }
             case .learn:
                 if let learn = coordinator.learn { LearnView(viewModel: learn) }
+            case .cellar:
+                if let cellar = coordinator.cellarTab { CellarView(viewModel: cellar) }
             case .you:
                 if let you = coordinator.you { YouView(viewModel: you) }
             default:
@@ -42,7 +45,7 @@ struct RootTabView: View {
                 .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { backdropFrame = $0 }
                 .ignoresSafeArea()
         }
-        .environment(\.backdropFrame, [.home, .learn, .you].contains(coordinator.selectedTab) ? backdropFrame : nil)
+        .environment(\.backdropFrame, [.home, .learn, .cellar, .you].contains(coordinator.selectedTab) ? backdropFrame : nil)
         .overlayPreferenceValue(SpotlightAnchors.self) { anchors in
             if let tour = coordinator.tour {
                 GeometryReader { proxy in

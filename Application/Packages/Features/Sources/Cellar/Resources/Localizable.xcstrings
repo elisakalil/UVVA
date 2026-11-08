@@ -1,0 +1,208 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "%lld notes" : {
+
+    },
+    "1 note" : {
+
+    },
+    "Acidity" : {
+
+    },
+    "Again" : {
+
+    },
+    "Alcohol" : {
+
+    },
+    "Any grape" : {
+
+    },
+    "Any producer" : {
+
+    },
+    "Any region" : {
+
+    },
+    "Any tag" : {
+
+    },
+    "Any type" : {
+
+    },
+    "Back" : {
+
+    },
+    "Body" : {
+
+    },
+    "Bottles marked Not yet wait in your cellar until you taste them." : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Clear" : {
+
+    },
+    "Clear filters" : {
+
+    },
+    "Close" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete this note?" : {
+
+    },
+    "Dry" : {
+
+    },
+    "Edit" : {
+
+    },
+    "Edit note" : {
+
+    },
+    "Every wine you rate moves your map" : {
+
+    },
+    "Full" : {
+
+    },
+    "Grape" : {
+
+    },
+    "Grid view" : {
+
+    },
+    "High" : {
+
+    },
+    "It leaves your cellar and stops counting towards your palate map. This can’t be undone." : {
+
+    },
+    "Kept for you only" : {
+
+    },
+    "Light" : {
+
+    },
+    "List view" : {
+
+    },
+    "Low" : {
+
+    },
+    "Maybe" : {
+
+    },
+    "Medium" : {
+
+    },
+    "No" : {
+
+    },
+    "No bottles in your cellar match these filters." : {
+
+    },
+    "No notes for “%@”" : {
+
+    },
+    "Not yet" : {
+
+    },
+    "Off-dry" : {
+
+    },
+    "Producer" : {
+
+    },
+    "Region" : {
+
+    },
+    "Save changes" : {
+
+    },
+    "Scan a label" : {
+
+    },
+    "Search by wine, grape, region or producer." : {
+
+    },
+    "Search your cellar" : {
+
+    },
+    "Show %lld bottles" : {
+
+    },
+    "Show 1 bottle" : {
+
+    },
+    "Sweet" : {
+
+    },
+    "Sweetness" : {
+
+    },
+    "Tag" : {
+
+    },
+    "Tannin" : {
+
+    },
+    "Tap + to photograph your first bottle and add it to your cellar." : {
+
+    },
+    "Tasting note" : {
+
+    },
+    "The note wasn’t deleted. Try again." : {
+
+    },
+    "Type" : {
+
+    },
+    "UVVA’s reading" : {
+
+    },
+    "Vintage" : {
+
+    },
+    "Would you drink it again?" : {
+
+    },
+    "Yes" : {
+
+    },
+    "Your Cellar" : {
+
+    },
+    "Your cellar is empty" : {
+
+    },
+    "Your changes weren’t saved. Try again." : {
+
+    },
+    "Your note" : {
+
+    }
+  },
+  "version" : "1.0"
+}

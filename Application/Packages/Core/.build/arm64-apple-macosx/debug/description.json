@@ -95,6 +95,14 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntryStatus.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift"
         },
         {
@@ -179,6 +187,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift"
         },
         {
@@ -188,6 +200,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift"
         },
         {
           "kind" : "file",
@@ -271,6 +287,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
         },
         {
@@ -292,6 +312,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/AppNotification.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Dish.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Friend.swift.o",
@@ -313,9 +335,11 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/LessonStep.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/LessonSummary.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MatchPair.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChangeCause.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateMap.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateMapRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PhoneCountries.swift.o",
@@ -335,7 +359,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ReminderRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ReminderScheduling.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Verdict.swift.o",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -430,6 +455,14 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o"
         },
         {
@@ -514,6 +547,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o"
         },
         {
@@ -523,6 +560,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.swift.o"
         },
         {
           "kind" : "file",
@@ -606,6 +647,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules/Core.swiftmodule"
         }
       ],
@@ -621,6 +666,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntry.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntryStatus.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
@@ -642,9 +689,11 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/LessonStep.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/LessonSummary.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/MatchPair.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountries.swift",
@@ -664,7 +713,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build",
       "wholeModuleOptimization" : false
@@ -917,6 +967,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapRebuild.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapUpdate.swift"
         },
         {
@@ -981,6 +1035,7 @@
       "moduleOutputPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules/Match.swiftmodule",
       "objects" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/Pairing.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
@@ -1050,6 +1105,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapUpdate.swift.o"
         },
         {
@@ -1100,6 +1159,7 @@
       "prepareForIndexing" : false,
       "sources" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/AxisChange.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapRebuild.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapUpdate.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Pairing.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift",
@@ -1127,6 +1187,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapReadingTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapRebuildTests.swift"
         },
         {
           "kind" : "file",
@@ -1167,6 +1231,7 @@
       "objects" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapEvolutionTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapReadingTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapRebuildTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/PairingTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o",
@@ -1232,6 +1297,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapRebuildTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o"
         },
         {
@@ -1255,6 +1324,7 @@
       "sources" : [
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapEvolutionTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapReadingTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapRebuildTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapUpdateTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/PairingTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/SimilarityTests.swift",
@@ -1418,6 +1488,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/PalateMapEntity.swift"
         },
         {
@@ -1510,6 +1584,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CellarEntryEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CertificateEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LessonProgressEntity.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o",
@@ -1721,6 +1796,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o"
         },
         {
@@ -1799,6 +1878,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CellarEntryEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CertificateEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LessonProgressEntity.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/PalateMapEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ProfileEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReminderEntity.swift",
@@ -2032,6 +2112,8 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Account/SocialService.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/AppNotification.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/CatalogRepository.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntry.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntryStatus.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Dish.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friend.swift",
@@ -2053,9 +2135,11 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/LessonStep.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/LessonSummary.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/MatchPair.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMapRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Phone/PhoneCountries.swift",
@@ -2076,6 +2160,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Reminder/ReminderScheduling.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -2259,6 +2344,7 @@
       "core",
       "-c",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/AxisChange.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapRebuild.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapUpdate.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Pairing.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift",
@@ -2331,6 +2417,7 @@
       "-c",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapEvolutionTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapReadingTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapRebuildTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapUpdateTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/PairingTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/SimilarityTests.swift",
@@ -2430,6 +2517,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CellarEntryEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CertificateEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LessonProgressEntity.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/PalateMapEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ProfileEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReminderEntity.swift",
@@ -2664,6 +2752,14 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarEntryStatus.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift"
         },
         {
@@ -2748,6 +2844,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift"
         },
         {
@@ -2757,6 +2857,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift"
         },
         {
           "kind" : "file",
@@ -2837,6 +2941,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift"
         }
       ],
       "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/sources"
@@ -2881,6 +2989,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CatalogRepository.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarEntryStatus.swift.o"
         },
         {
           "kind" : "file",
@@ -2980,7 +3096,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.swift.o"
         },
         {
           "kind" : "file",
@@ -3080,6 +3204,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CorePackageTests.build/runner.swift.o"
         },
         {
@@ -3120,6 +3248,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapRebuild.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapShape.swift.o"
         },
         {
@@ -3157,6 +3289,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapReadingTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapRebuildTests.swift.o"
         },
         {
           "kind" : "file",
@@ -3257,6 +3393,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleEntity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swift.o"
         },
         {
           "kind" : "file",
@@ -3448,6 +3588,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapRebuild.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/MapUpdate.swift"
         },
         {
@@ -3507,6 +3651,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapReadingTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapRebuildTests.swift"
         },
         {
           "kind" : "file",
@@ -3681,6 +3829,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LessonProgressEntity.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift"
         },
         {
           "kind" : "file",

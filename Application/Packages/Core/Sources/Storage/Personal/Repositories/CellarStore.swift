@@ -5,6 +5,11 @@ import SwiftData
 /// `CellarRepository` on the Personal store.
 @ModelActor
 public actor CellarStore: CellarRepository {
+    public func entries() throws -> [CellarEntry] {
+        let descriptor = FetchDescriptor<CellarEntryEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
+        return try modelContext.fetch(descriptor).map(\.entry)
+    }
+
     public func wineKeys() throws -> Set<String> {
         Set(try modelContext.fetch(FetchDescriptor<CellarEntryEntity>()).map(\.wineKey))
     }
@@ -46,6 +51,28 @@ public actor CellarStore: CellarRepository {
         try modelContext.save()
     }
 
+    public func update(_ wineKey: String, verdict: Verdict?, note: String?) throws {
+        try update(wineKey, verdict: verdict, note: note, at: Date())
+    }
+
+    func update(_ wineKey: String, verdict: Verdict?, note: String?, at date: Date) throws {
+        guard let entry = try entry(for: wineKey) else { return }
+        if let verdict {
+            entry.status = CellarEntryEntity.Status.tasted.rawValue
+            entry.verdict = verdict.rawValue
+        }
+        let trimmed = note?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        entry.note = trimmed.isEmpty ? nil : trimmed
+        entry.updatedAt = date
+        try modelContext.save()
+    }
+
+    public func delete(_ wineKey: String) throws {
+        let descriptor = FetchDescriptor<CellarEntryEntity>(predicate: #Predicate { $0.wineKey == wineKey })
+        for entry in try modelContext.fetch(descriptor) { modelContext.delete(entry) }
+        try modelContext.save()
+    }
+
     private func entry(for key: String) throws -> CellarEntryEntity? {
         var descriptor = FetchDescriptor<CellarEntryEntity>(predicate: #Predicate { $0.wineKey == key })
         descriptor.fetchLimit = 1
@@ -61,8 +88,25 @@ private extension CellarEntryEntity {
         vintage = wine.vintage
         type = wine.type
         origin = wine.origin
+        region = wine.region
+        country = wine.country
         grapes = wine.grapes
         alcohol = wine.alcohol
         classification = wine.classification
+    }
+}
+
+private extension CellarEntryEntity {
+    var entry: CellarEntry {
+        // An entry saved before region and country were kept falls back on its origin, "Douro, Portugal".
+        let parts = origin.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+        return CellarEntry(id: wineKey, name: name, producer: producer, vintage: vintage, type: type,
+                           region: region ?? parts.first.flatMap { $0.isEmpty ? nil : $0 },
+                           country: country ?? (parts.count > 1 ? parts.last : nil),
+                           origin: origin, grapes: grapes,
+                           status: CellarEntryStatus(rawValue: status) ?? .wantToTry,
+                           verdict: verdict.flatMap(Verdict.init(rawValue:)),
+                           note: note, alcohol: alcohol, classification: classification,
+                           photoFront: photoFront, photoBack: photoBack, createdAt: createdAt, updatedAt: updatedAt)
     }
 }

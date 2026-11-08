@@ -370,6 +370,20 @@
                ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CellarTests"
+               BuildableName = "CellarTests"
+               BlueprintName = "CellarTests"
+               ReferencedContainer = "container:Packages/Features">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -455,6 +469,16 @@
                BlueprintIdentifier = "LearnTests"
                BuildableName = "LearnTests"
                BlueprintName = "LearnTests"
+               ReferencedContainer = "container:Packages/Features">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CellarTests"
+               BuildableName = "CellarTests"
+               BlueprintName = "CellarTests"
                ReferencedContainer = "container:Packages/Features">
             </BuildableReference>
          </TestableReference>

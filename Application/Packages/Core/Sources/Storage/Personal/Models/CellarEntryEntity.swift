@@ -12,6 +12,9 @@ public final class CellarEntryEntity {
     public var vintage: Int?
     public var type = ""
     public var origin = ""
+    /// The region and country of the wine, for the Cellar's filters and numbers (CELLAR-R04, R10).
+    public var region: String?
+    public var country: String?
     public var grapes: [String] = []
     public var alcohol: Double?
     public var classification = ""

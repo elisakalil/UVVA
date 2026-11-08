@@ -2,6 +2,8 @@ import Foundation
 
 /// Keeps the Cellar in the Personal store (CELLAR.md).
 public protocol CellarRepository: Sendable {
+    /// Every entry, newest first by `createdAt` (CELLAR-R02).
+    func entries() async throws -> [CellarEntry]
     /// The wineKeys of every entry, tasted or not.
     func wineKeys() async throws -> Set<String>
     /// Adds the wine as Want to try (CELLAR-R01). A wine already in the Cellar stays as it is, so a tasted
@@ -12,4 +14,8 @@ public protocol CellarRepository: Sendable {
     /// Keeps the wine as Tasted with its verdict (CELLAR-R13c). A wine already in the Cellar, Not yet or
     /// Tasted, is updated in place.
     func addTasted(_ wine: Wine, verdict: Verdict) async throws
+    /// "Save changes" on a note (CELLAR-R27): a verdict makes the entry Tasted; an empty note is cleared.
+    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws
+    /// "Delete" on a note (CELLAR-R28).
+    func delete(_ wineKey: String) async throws
 }

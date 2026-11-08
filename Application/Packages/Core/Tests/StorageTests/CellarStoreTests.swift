@@ -68,4 +68,67 @@ struct CellarStoreTests {
         #expect(entries.first?.status == CellarEntryEntity.Status.tasted.rawValue)
         #expect(entries.first?.verdict == "yes")
     }
+
+    // MARK: CELLAR-R02 · Ordem
+
+    @Test func CELLAR_R02_entries_newestFirst() async throws {
+        let older = Wine(id: "older", name: "Older", origin: "Dão, Portugal", profile: PalateMap([:]))
+        try await store.addWantToTry(older, at: Date(timeIntervalSince1970: 1_000))
+        try await store.addTasted(wine, verdict: .yes, at: Date(timeIntervalSince1970: 2_000))
+        #expect(try await store.entries().map(\.id) == [wine.id, "older"])
+    }
+
+    @Test func entries_carryTheWineFacts_andTheVerdict() async throws {
+        let douro = Wine(id: "vale-meao-2019", name: "Quinta do Vale Meão", producer: "F. Olazabal", vintage: 2019,
+                         type: "Red", origin: "Douro, Portugal", region: "Douro", country: "Portugal",
+                         grapes: ["Touriga Nacional"], profile: PalateMap([:]))
+        try await store.addTasted(douro, verdict: .maybe)
+        let entry = try #require(try await store.entries().first)
+        #expect(entry.status == .tasted)
+        #expect(entry.verdict == .maybe)
+        #expect(entry.region == "Douro")
+        #expect(entry.country == "Portugal")
+        #expect(entry.vintage == 2019)
+        #expect(entry.grapes == ["Touriga Nacional"])
+    }
+
+    @Test func entries_withoutRegion_fallBackOnTheOrigin() async throws {
+        try await store.addWantToTry(wine)
+        let entry = try #require(try await store.entries().first)
+        #expect(entry.status == .wantToTry)
+        #expect(entry.verdict == nil)
+        #expect(entry.region == "Rioja")
+        #expect(entry.country == "Spain")
+    }
+
+    // MARK: CELLAR-R27 · Editar
+
+    @Test func CELLAR_R27_update_changesTheVerdictAndTheNote() async throws {
+        try await store.addTasted(wine, verdict: .yes)
+        try await store.update(wine.id, verdict: .no, note: "  Better with lamb.  ")
+        let entry = try #require(try await store.entries().first)
+        #expect(entry.verdict == .no)
+        #expect(entry.note == "Better with lamb.")
+    }
+
+    @Test func update_aWantToTry_withAVerdict_turnsItTasted() async throws {
+        try await store.addWantToTry(wine)
+        try await store.update(wine.id, verdict: .maybe, note: nil)
+        #expect(try await store.entries().first?.status == .tasted)
+    }
+
+    @Test func update_withAnEmptyNote_clearsIt() async throws {
+        try await store.addTasted(wine, verdict: .yes)
+        try await store.update(wine.id, verdict: .yes, note: "Dry.")
+        try await store.update(wine.id, verdict: .yes, note: "   ")
+        #expect(try await store.entries().first?.note == nil)
+    }
+
+    // MARK: CELLAR-R28 · Apagar
+
+    @Test func CELLAR_R28_delete_removesTheEntry() async throws {
+        try await store.addTasted(wine, verdict: .yes)
+        try await store.delete(wine.id)
+        #expect(try await store.entries().isEmpty)
+    }
 }
