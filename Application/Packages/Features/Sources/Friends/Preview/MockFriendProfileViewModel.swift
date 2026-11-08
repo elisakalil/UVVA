@@ -38,6 +38,8 @@ final class MockFriendProfileViewModel: FriendProfileViewModelProtocol {
     func askToRemove() {}
     func cancelRemoval() {}
     func confirmRemoval() async {}
+    func openShare() {}
+    func closeShare() {}
     func close() {}
 }
 #endif

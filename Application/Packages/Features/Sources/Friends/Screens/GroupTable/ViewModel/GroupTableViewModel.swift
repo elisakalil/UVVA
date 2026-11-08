@@ -12,6 +12,7 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
 
     private var bottles: [TableBottle]? { didSet { refresh() } }
     private var isReadingsExpanded = false { didSet { refresh() } }
+    private var isSharing = false { didSet { refresh() } }
 
     private let friends: [Friend]
     private let user: FriendsUser
@@ -44,13 +45,19 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
 
     public func toggleReadings() { isReadingsExpanded.toggle() }
 
+    public func openShare() { isSharing = true }
+
+    public func closeShare() { isSharing = false }
+
     public func close() { onClose() }
 
     private func refresh() {
         var model = uiModel
-        GroupTablePresentationBuilder(userMap: user.map, friends: friends, bottles: bottles, resources: model.resources)
+        GroupTablePresentationBuilder(userMap: user.map, userName: user.firstName, friends: friends, bottles: bottles,
+                                      resources: model.resources)
             .build(into: &model)
         model.isReadingsExpanded = isReadingsExpanded
+        model.isSharing = isSharing && model.share != nil
         uiModel = model
     }
 }

@@ -5,6 +5,7 @@ import Match
 /// The group table from every map at it, the user's first. Pure (FRI §3: the numbers come from `TableMatch`).
 struct GroupTablePresentationBuilder {
     var userMap: PalateMap
+    var userName = ""
     var friends: [Friend]
     var bottles: [TableBottle]?
     var resources: GroupTableResourcesUIModel
@@ -22,6 +23,8 @@ struct GroupTablePresentationBuilder {
         model.readings = readings
         model.dinnerTitle = resources.dinnerTitle(count)
         model.footerText = resources.footer(count)
+        model.share = bottles.flatMap { $0.isEmpty ? nil : TableShareBuilder(friendNames: friends.map(\.name), userName: userName,
+                                                                              bottles: $0, resources: resources.table).build() }
         model.bottles = bottles.map { TableBottlesBuilder(resources: resources.table).rows($0, shared: shared) }
     }
 

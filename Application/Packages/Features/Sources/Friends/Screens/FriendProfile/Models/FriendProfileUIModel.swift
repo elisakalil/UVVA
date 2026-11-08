@@ -22,6 +22,9 @@ public struct FriendProfileUIModel {
     var dinnerTitle = ""
     /// Nil while the bottles are worked out.
     var bottles: [TableBottleUIModel]?
+    /// Nil until the bottles are there (FRI-R21).
+    var share: TableShareUIModel?
+    var isSharing = false
 
     var isConfirmingRemoval = false
     var removeTitle = ""

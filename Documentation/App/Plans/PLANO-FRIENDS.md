@@ -1,6 +1,6 @@
 # Plano · Friends
 
-> Status: partes A a D feitas · 2026-11-08
+> Status: partes A a E feitas · 2026-11-08
 > Spec: [`FRIENDS.md`](../Features/Friends/FRIENDS.md) v0.3 (FRI-R01 a R22). Backend: [`ARCHITECTURE.md`](../../Architecture/ARCHITECTURE.md) §3.2, §4.4, §5. Cálculos: [`MATCH.md`](../Features/Shared/MATCH.md). Design: canvas UVVA App, artboard Friends (telas 01 a 12).
 > A aba é feita em 5 partes (A a E). Push, link/QR de convite e foto do amigo ficam para depois (§9).
 
@@ -145,7 +145,10 @@ Feito como descrito: modo de escolha na lista (máximo 5 amigos, D6), `Screens/G
 2. Resultado (FRI-R19): compatibilidade da mesa, frase, "Where the table lands" (média + "The boldest reading" a tracejado — o `PalateRadar` precisa de uma segunda série tracejada, no DesignSystem), "Reading by reading" recolhida, garrafas e menu.
 3. "Set a table with your friends" da Home abre esta escolha (FRI-R20).
 
-### E · Partilhar uma mesa
+### E · Partilhar uma mesa · feita (2026-11-08)
+
+"Share" no fim da tab Table e da mesa de grupo (inativo até as garrafas chegarem) abre o `ShareScreen` com o `TableShareCard`: Story "Tonight's table" com o menu, WhatsApp "You're invited to dinner" com o menu compacto e a mensagem completa (nomes, menu, "Dinner at mine?…", link), e Save image com o guia de compras ("What to buy": curso, "Ask for: produtor nome ano", prato). O `ShareScreen` ganhou `savedCard` (opcional) para o Save image guardar uma imagem diferente da Story. Link `https://uvva.app/t/<amigos>-<usuário>` sem acentos (D9: sem página ainda). A descrição de Fotos (`NSPhotoLibraryAddUsageDescription`) passou a falar também do menu.
+
 1. Três formatos com o `ShareScreen` (FRI-R21): convite WhatsApp, Story "Tonight's table", guia de compras em Save image.
 2. Texto do grupo (FRI-R22). Link `uvva.app/t/[mesa]` só como texto até a D9.
 

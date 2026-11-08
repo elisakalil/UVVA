@@ -55,6 +55,8 @@ struct GroupTableView<ViewModel: GroupTableViewModelProtocol>: View {
                     Text(model.footerText.uppercased()).font(UVVAFont.sans(8.5)).tracking(1.8).opacity(0.55)
                         .frame(maxWidth: .infinity)
                         .padding(.top, 20)
+                    ActionButton(resources.table.shareText, isEnabled: model.share != nil, action: viewModel.openShare)
+                        .padding(.top, 28)
                 }
                 .padding(.horizontal, 30)
                 .padding(.bottom, 40)
@@ -63,6 +65,9 @@ struct GroupTableView<ViewModel: GroupTableViewModelProtocol>: View {
         }
         .foregroundStyle(UVVAColor.creamFill)
         .task { await viewModel.load() }
+        .fullScreenCover(isPresented: Binding(get: { model.isSharing }, set: { if !$0 { viewModel.closeShare() } })) {
+            if let share = model.share { TableShareView(model: share, onFinish: viewModel.closeShare) }
+        }
     }
 
     /// The table in a dashed shape with dots; the boldest reading in a fine dotted line.

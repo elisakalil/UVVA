@@ -27,6 +27,8 @@ final class MockGroupTableViewModel: GroupTableViewModelProtocol {
 
     func load() async {}
     func toggleReadings() {}
+    func openShare() {}
+    func closeShare() {}
     func close() {}
 }
 #endif

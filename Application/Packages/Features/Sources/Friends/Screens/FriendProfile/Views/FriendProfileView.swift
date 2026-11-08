@@ -25,6 +25,9 @@ struct FriendProfileView<ViewModel: FriendProfileViewModelProtocol>: View {
         }
         .foregroundStyle(UVVAColor.creamFill)
         .task { await viewModel.load() }
+        .fullScreenCover(isPresented: Binding(get: { model.isSharing }, set: { if !$0 { viewModel.closeShare() } })) {
+            if let share = model.share { TableShareView(model: share, onFinish: viewModel.closeShare) }
+        }
         .confirmationDialog(model.removeTitle,
                             isPresented: Binding(get: { model.isConfirmingRemoval }, set: { if !$0 { viewModel.cancelRemoval() } }),
                             titleVisibility: .visible) {
@@ -125,6 +128,8 @@ struct FriendProfileView<ViewModel: FriendProfileViewModelProtocol>: View {
             Text(resources.menuFooterText.uppercased()).font(UVVAFont.sans(8.5)).tracking(1.8).opacity(0.55)
                 .frame(maxWidth: .infinity)
                 .padding(.top, 20)
+            ActionButton(resources.table.shareText, isEnabled: model.share != nil, action: viewModel.openShare)
+                .padding(.top, 28)
         }
     }
 }

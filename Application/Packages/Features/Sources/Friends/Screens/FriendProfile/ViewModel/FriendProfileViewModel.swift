@@ -12,6 +12,7 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
     private var tab: FriendProfileTab { didSet { refresh() } }
     private var bottles: [TableBottle]? { didSet { refresh() } }
     private var isConfirmingRemoval = false { didSet { refresh() } }
+    private var isSharing = false { didSet { refresh() } }
 
     private let friend: Friend
     private let user: FriendsUser
@@ -70,14 +71,22 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
         }
     }
 
+    // MARK: FRI-R21 · Partilhar
+
+    public func openShare() { isSharing = true }
+
+    public func closeShare() { isSharing = false }
+
     public func close() { onClose() }
 
     private func refresh() {
         var model = uiModel
-        FriendProfilePresentationBuilder(friend: friend, userMap: user.map, bottles: bottles, resources: model.resources)
+        FriendProfilePresentationBuilder(friend: friend, userMap: user.map, userName: user.firstName, bottles: bottles,
+                                         resources: model.resources)
             .build(into: &model)
         model.tab = tab
         model.isConfirmingRemoval = isConfirmingRemoval
+        model.isSharing = isSharing && model.share != nil
         uiModel = model
     }
 }

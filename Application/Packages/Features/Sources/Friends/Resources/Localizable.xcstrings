@@ -61,6 +61,9 @@
     "Allow contacts" : {
 
     },
+    "Ask for: %@" : {
+
+    },
     "Cancel" : {
 
     },
@@ -83,6 +86,12 @@
 
     },
     "Dessert" : {
+
+    },
+    "Dinner at mine? I built the menu from all our palate maps. Three courses, three bottles." : {
+
+    },
+    "Dinner at mine? I built the menu from both our palate maps. Three courses, three bottles." : {
 
     },
     "Everyone reads it the same way." : {
@@ -122,6 +131,9 @@
 
     },
     "Open Settings" : {
+
+    },
+    "Open the menu on UVVA · uvva.app" : {
 
     },
     "Open this together" : {
@@ -172,6 +184,12 @@
     "Select" : {
 
     },
+    "Share" : {
+
+    },
+    "Share this table" : {
+
+    },
     "Share your palate" : {
 
     },
@@ -214,7 +232,13 @@
     "This is where the table splits." : {
 
     },
+    "Tonight's table" : {
+
+    },
     "UVVA can't see your contacts. Allow it in Settings to find friends who are already here." : {
+
+    },
+    "What to buy" : {
 
     },
     "Where the table lands" : {
@@ -239,6 +263,9 @@
 
     },
     "You both want %@ in a glass." : {
+
+    },
+    "You're invited to dinner" : {
 
     },
     "Your table is empty" : {

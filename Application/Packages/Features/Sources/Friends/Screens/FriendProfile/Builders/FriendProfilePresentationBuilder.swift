@@ -6,6 +6,7 @@ import Match
 struct FriendProfilePresentationBuilder {
     var friend: Friend
     var userMap: PalateMap
+    var userName = ""
     var bottles: [TableBottle]?
     var resources: FriendProfileResourcesUIModel
 
@@ -27,6 +28,8 @@ struct FriendProfilePresentationBuilder {
         model.overlapPhrase = overlapPhrase
         model.dinnerTitle = resources.dinnerTitle(friend.name)
         model.bottles = bottles.map { TableBottlesBuilder(resources: resources.table).rows($0, shared: shared) }
+        model.share = bottles.flatMap { $0.isEmpty ? nil : TableShareBuilder(friendNames: [friend.name], userName: userName,
+                                                                              bottles: $0, resources: resources.table).build() }
         model.removeTitle = resources.removeTitle(friend.name)
         model.removeBody = resources.removeBody(friend.name)
     }

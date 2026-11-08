@@ -6,5 +6,7 @@ public protocol GroupTableViewModelProtocol: ObservableObject, Identifiable {
     func load() async
     /// "Expand" / "Collapse" of "Reading by reading".
     func toggleReadings()
+    func openShare()
+    func closeShare()
     func close()
 }

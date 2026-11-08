@@ -13,5 +13,8 @@ public struct GroupTableUIModel {
     var footerText = ""
     /// Nil while the bottles are worked out.
     var bottles: [TableBottleUIModel]?
+    /// Nil until the bottles are there (FRI-R21, R22).
+    var share: TableShareUIModel?
+    var isSharing = false
     var resources = GroupTableResourcesUIModel()
 }

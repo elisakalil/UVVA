@@ -8,5 +8,7 @@ public protocol FriendProfileViewModelProtocol: ObservableObject, Identifiable {
     func askToRemove()
     func cancelRemoval()
     func confirmRemoval() async
+    func openShare()
+    func closeShare()
     func close()
 }
