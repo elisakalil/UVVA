@@ -93,6 +93,10 @@ public final class HomeViewModel: HomeViewModelProtocol {
 
     public func openLearn(_ kind: CourseKind) { coordinator.openLearn(kind) }
 
+    public func scan() { coordinator.scan() }
+    public func openFriends() { coordinator.openFriends() }
+    public func openLastTable() { coordinator.openLastTable() }
+
     public func addToCellar(_ wine: Wine) async {
         guard !uiModel.cellarWineKeys.contains(wine.id) else { return }
         guard (try? await addWineToCellarUseCase.execute(wine)) != nil else { return }

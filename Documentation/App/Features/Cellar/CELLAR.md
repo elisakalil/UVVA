@@ -152,7 +152,12 @@ struct CellarEntry {
 - Segundo passo: "Now the back label", "Grape, alcohol and producer are usually here."
 - O topo mostra os dois passos ("01 Front", "02 Back label"), com o passo concluído marcado.
 
-**CELLAR-R17 · Leitura.** Depois das duas fotos, "Reading your label" ("This takes a few seconds"). A leitura precisa de internet. O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaReading).
+**CELLAR-R17 · Leitura.** Depois das duas fotos, "Reading your label" ("This takes a few seconds"). A leitura é feita no aparelho, sem internet e sem serviço na nuvem:
+1. O texto do rótulo é lido nas duas fotos.
+2. A UVVA procura o vinho no catálogo. Se o encontrar, os dados e a leitura vêm do catálogo.
+3. Se não o encontrar, os dados vêm do texto lido, e o mapa do vinho é a média dos vinhos do catálogo mais parecidos (mesma casta e tipo; depois região e tipo; depois só tipo). Quando há dúvida sobre o que foi lido, abre o preenchimento à mão já preenchido, para o usuário confirmar.
+
+O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaReading).
 
 **CELLAR-R18 · Já provou?** "Have you had this wine?"
 - "Yes · would you drink it again" leva a "Would you drink it again?", com Yes, Maybe ou No (SHARED-R08). Depois vêm a nota livre ("Your note") e "Save note".
@@ -172,7 +177,7 @@ struct CellarEntry {
 
 **CELLAR-R21 · Rótulo não lido.** Se a leitura falhar, mostra "We couldn't read your label", "Check these two things and try again." e duas dicas:
 1. **Light:** "Move somewhere brighter and keep the label out of shadow."
-2. **Connection:** "UVVA needs internet to read the label. Check your Wi-Fi or mobile data."
+2. **Whole label:** "Fit the whole label inside the frame, flat and in focus."
 
 "Try again" volta à foto da frente. "Fill in by hand" abre o preenchimento à mão.
 
@@ -218,7 +223,7 @@ struct CellarEntry {
 ## 6. Fora de escopo
 
 - O limite de notas e o paywall (SHARED-R01).
-- Como a leitura do rótulo funciona (serviço externo); aqui só entram o sucesso, a falha e os dados devolvidos.
+- Os detalhes técnicos da leitura do rótulo (ver `Plans/PLANO-CELLAR-NOVA-NOTA.md`); aqui só entram o sucesso, a falha e os dados devolvidos.
 
 ## 7. Decisões
 

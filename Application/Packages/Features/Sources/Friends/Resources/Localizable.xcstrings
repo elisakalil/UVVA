@@ -1,0 +1,249 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ and %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ and %2$@"
+          }
+        }
+      }
+    },
+    "%@ is now your friend." : {
+
+    },
+    "%@ won't be told. You can add each other again later." : {
+
+    },
+    "%@'s palate" : {
+
+    },
+    "%lld friends" : {
+
+    },
+    "%lld%% match across all %lld palate maps at the table" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld%% match across all %2$lld palate maps at the table"
+          }
+        }
+      }
+    },
+    "%lld%% of your palate map matches %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld%% of your palate map matches %2$@"
+          }
+        }
+      }
+    },
+    "1 friend" : {
+
+    },
+    "A table seats you and %lld friends" : {
+
+    },
+    "Accept" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add the people you drink with. Once they accept, you will see where your palates meet and what to open together." : {
+
+    },
+    "Allow contacts" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Close" : {
+
+    },
+    "Close enough to share a bottle." : {
+
+    },
+    "Closest" : {
+
+    },
+    "Collapse" : {
+
+    },
+    "Compatibility" : {
+
+    },
+    "Decline" : {
+
+    },
+    "Dessert" : {
+
+    },
+    "Everyone reads it the same way." : {
+
+    },
+    "Expand" : {
+
+    },
+    "Find a bottle for these %lld" : {
+
+    },
+    "Friends" : {
+
+    },
+    "Hosting tonight?" : {
+
+    },
+    "Invite friends" : {
+
+    },
+    "Leans on %@, the strongest reading at the table." : {
+
+    },
+    "Main" : {
+
+    },
+    "No bottle on your phone fits this table yet." : {
+
+    },
+    "None of your contacts are on UVVA yet. Invite them with your palate." : {
+
+    },
+    "Not now" : {
+
+    },
+    "Nothing lines up across all %lld — the menu is built on compromise." : {
+
+    },
+    "Open Settings" : {
+
+    },
+    "Open this together" : {
+
+    },
+    "Palate" : {
+
+    },
+    "Pick at least two friends" : {
+
+    },
+    "Quick add" : {
+
+    },
+    "Read from all %lld palate maps · UVVA" : {
+
+    },
+    "Read from both palate maps · UVVA" : {
+
+    },
+    "Reading by reading" : {
+
+    },
+    "Reading the maps at the table…" : {
+
+    },
+    "Readings" : {
+
+    },
+    "Remove %@?" : {
+
+    },
+    "Remove friend" : {
+
+    },
+    "Requested" : {
+
+    },
+    "Requests" : {
+
+    },
+    "Same" : {
+
+    },
+    "See which of your contacts are already on UVVA. Their numbers never leave your phone." : {
+
+    },
+    "Select" : {
+
+    },
+    "Share your palate" : {
+
+    },
+    "Some give" : {
+
+    },
+    "Someone gives a little here." : {
+
+    },
+    "Starter" : {
+
+    },
+    "Table" : {
+
+    },
+    "Takes the request back" : {
+
+    },
+    "The boldest reading" : {
+
+    },
+    "The perfect dinner for The %lld of you" : {
+
+    },
+    "The perfect dinner for You & %@" : {
+
+    },
+    "The perfect table" : {
+
+    },
+    "The table" : {
+
+    },
+    "This is my wine palate" : {
+
+    },
+    "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together. %@" : {
+
+    },
+    "This is where the table splits." : {
+
+    },
+    "UVVA can't see your contacts. Allow it in Settings to find friends who are already here." : {
+
+    },
+    "Where the table lands" : {
+
+    },
+    "Where your maps meet: %@." : {
+
+    },
+    "Widest" : {
+
+    },
+    "You" : {
+
+    },
+    "You all want %@ in a glass." : {
+
+    },
+    "You and %@" : {
+
+    },
+    "You barely overlap — you like different things." : {
+
+    },
+    "You both want %@ in a glass." : {
+
+    },
+    "Your table is empty" : {
+
+    }
+  },
+  "version" : "1.0"
+}

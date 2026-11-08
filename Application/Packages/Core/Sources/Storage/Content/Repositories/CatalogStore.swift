@@ -5,7 +5,43 @@ import SwiftData
 
 /// `CatalogRepository` on the Content store.
 @ModelActor
-public actor CatalogStore: CatalogRepository, WineLookup {
+public actor CatalogStore: CatalogRepository, WineLookup, LabelCatalogRepository {
+    /// Where a wine scanned from a label, and not found in the catalog, came from (`WineEntity.source`).
+    static let scannedSource = "scanned"
+
+    public func allWines() throws -> [Wine] {
+        try modelContext.fetch(FetchDescriptor<WineEntity>()).map(Self.wine)
+    }
+
+    public func addScanned(_ wine: Wine) throws {
+        guard try wines(keys: [wine.id]).isEmpty else { return }
+        let entity = WineEntity(wineKey: wine.id, source: Self.scannedSource)
+        entity.name = wine.name
+        entity.producer = wine.producer
+        entity.vintage = wine.vintage
+        entity.origin = wine.origin
+        entity.region = wine.region
+        entity.country = wine.country
+        entity.grapes = wine.grapes
+        entity.type = wine.type
+        entity.alcohol = wine.alcohol
+        entity.classification = wine.classification
+        entity.note = wine.note ?? ""
+        // An unknown serving temperature stays min > max, which reads back as none.
+        entity.servingMin = wine.serving?.lowerBound ?? 1
+        entity.servingMax = wine.serving?.upperBound ?? 0
+        entity.floral = wine.profile[.floral]
+        entity.body = wine.profile[.body]
+        entity.tannin = wine.profile[.tannin]
+        entity.spice = wine.profile[.spice]
+        entity.oak = wine.profile[.oak]
+        entity.sweetness = wine.profile[.sweetness]
+        entity.acidity = wine.profile[.acidity]
+        entity.fruit = wine.profile[.fruit]
+        modelContext.insert(entity)
+        try modelContext.save()
+    }
+
     public func wines(keys: Set<String>) throws -> [String: Wine] {
         guard !keys.isEmpty else { return [:] }
         let wanted = Array(keys)

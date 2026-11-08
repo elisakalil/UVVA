@@ -67,6 +67,10 @@ final class SocialSpy: SocialService {
     }
     func publish(_ profile: PublicProfile) async throws {}
     func removeContactKey(phone: String) async throws {}
+    func friendRequests(to userID: String) async throws -> [FriendRequestRecord] { [] }
+    func friendRequests(from userID: String) async throws -> [FriendRequestRecord] { [] }
+    func deleteFriendRequest(from: String, to: String) async throws {}
+    func profiles(ids: [String]) async throws -> [String: PublicProfile] { [:] }
     func deleteAccount(userID: String, phone: String?) async throws {}
 }
 
@@ -78,6 +82,7 @@ struct CloudStub: CloudAccountStatus {
 struct ContactsStub: ContactsProviding {
     var granted = true
     var contacts: [DeviceContact] = []
+    func access() -> ContactsAccess { granted ? .granted : .denied }
     func requestAccess() async -> Bool { granted }
     func fetch() async throws -> [DeviceContact] { contacts }
 }

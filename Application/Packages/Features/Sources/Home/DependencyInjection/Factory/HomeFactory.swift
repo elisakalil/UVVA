@@ -10,12 +10,13 @@ public struct HomeFactory: HomeFactoryProtocol {
     private let cellar: any CellarRepository
     private let courses: any CourseCatalog
     private let learning: any LearningRepository
+    private let friends: any FriendsRepository
     private let now: () -> Date
     private let calendar: Calendar
 
     public init(profiles: any ProfileRepository, maps: any PalateMapRepository,
                 catalog: any CatalogRepository, cellar: any CellarRepository,
-                courses: any CourseCatalog, learning: any LearningRepository,
+                courses: any CourseCatalog, learning: any LearningRepository, friends: any FriendsRepository,
                 now: @escaping () -> Date = Date.init, calendar: Calendar = .current) {
         self.profiles = profiles
         self.maps = maps
@@ -23,6 +24,7 @@ public struct HomeFactory: HomeFactoryProtocol {
         self.cellar = cellar
         self.courses = courses
         self.learning = learning
+        self.friends = friends
         self.now = now
         self.calendar = calendar
     }
@@ -31,7 +33,7 @@ public struct HomeFactory: HomeFactoryProtocol {
         HomeViewModel(
             loadHomeUseCase: LoadHomeUseCase(profiles: profiles, maps: maps, catalog: catalog,
                                             cellar: cellar, courses: courses, learning: learning,
-                                            suggestionPool: HomeCardsBuilder.dailySuggestionPool),
+                                            friends: friends, suggestionPool: HomeCardsBuilder.dailySuggestionPool),
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: cellar),
             rateWineUseCase: RateWineUseCase(maps: maps, cellar: cellar, now: now),
             coordinator: coordinator, now: now, calendar: calendar

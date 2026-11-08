@@ -1,9 +1,12 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/BundledContentTests.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CatalogStoreScannedTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CatalogStoreTests.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CellarStoreSaveTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CellarStoreTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/ContactKeyTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/ContentFixture.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/ContentImporterTests.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/FriendsStoreTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/LearningStoreTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/PalateMapStoreTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/ProfileStoreTests.swift

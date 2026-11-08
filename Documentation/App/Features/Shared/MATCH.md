@@ -27,4 +27,11 @@ Cada vinho do catálogo tem um `segment`, um número que agrupa vinhos com mapas
 
 - **Usuário × vinho:** `Similarity.between` (package `Match`), distância euclidiana nos 8 eixos (QUIZ-R21).
 - **Usuário × vinho × receita:** `Pairing.recipe` — o mapa cruzado é a média dos dois mapas; a receita é a mais próxima dele, só entre as feitas para o tipo do vinho (`wineTypes`), com entradas e pratos principais antes de sobremesas, petiscos e queijos.
+- **Usuário × usuário:** `TableMatch` (package `Match`), proposta do [`PLANO-FRIENDS.md`](../../Plans/PLANO-FRIENDS.md) §4, a confirmar (N4):
+  - `compatibility(a, b)` = `Similarity.percent`, a mesma distância do vinho.
+  - `tableCompatibility(mapas)` = média de `Similarity.between` de cada par, em %. Uma mesa de dois é a compatibilidade do par.
+  - `sharedAxes(mapas)`: eixos em que todos estão em ≥ 5,5 e a diferença entre o maior e o menor valor é ≤ 1,5, pela média, no máximo 3.
+  - `axisSpread(mapas, eixo)` pela diferença máx − mín: Same ≤ 0,5 · Closest ≤ 1,5 · Some give ≤ 3 · Widest > 3.
+  - `crossed(mapas)` é a média de cada eixo ("Where the table lands"); `boldest(mapas)` o valor mais alto de cada eixo.
+  - `tableBottles(mapas, vinhos, receitas)`: para cada curso (Starter, Main, Dessert), a receita do curso mais próxima do mapa cruzado e o vinho, de um tipo dessa receita, mais próximo da média entre o mapa cruzado e a receita. Um vinho só entra uma vez; um curso sem receita ou sem vinho fica de fora. O eixo da garrafa é o eixo em comum em que o vinho é mais alto (sem eixos em comum, os 3 eixos mais altos do mapa cruzado).
 - **Sugestão do dia:** um dos 30 vinhos mais próximos do usuário, escolhido pelo dia do calendário (o mesmo durante o dia, HOME-R07).

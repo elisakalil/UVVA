@@ -34,6 +34,10 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Repositories/QuizQuestionStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CellarEntryEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CertificateEntity.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/DeclinedRequestEntity.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/DismissedSuggestionEntity.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/FriendEntity.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LastTableEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LessonProgressEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/PalateMapEntity.swift
@@ -41,6 +45,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReminderEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/PersonalStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/CellarStore.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/FriendsStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/LearningStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/PalateMapStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/ProfileStore.swift

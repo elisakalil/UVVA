@@ -11,13 +11,10 @@ public struct YouFactory: YouFactoryProtocol {
     private let social: any SocialService
     private let reminders: any ReminderRepository
     private let scheduler: any ReminderScheduling
-    private let now: () -> Date
-    private let calendar: Calendar
 
     public init(profiles: any ProfileRepository, maps: any PalateMapRepository, catalog: any CatalogRepository,
                 courses: any CourseCatalog, learning: any LearningRepository, social: any SocialService,
-                reminders: any ReminderRepository, scheduler: any ReminderScheduling,
-                now: @escaping () -> Date = Date.init, calendar: Calendar = .current) {
+                reminders: any ReminderRepository, scheduler: any ReminderScheduling) {
         self.profiles = profiles
         self.maps = maps
         self.catalog = catalog
@@ -26,8 +23,6 @@ public struct YouFactory: YouFactoryProtocol {
         self.social = social
         self.reminders = reminders
         self.scheduler = scheduler
-        self.now = now
-        self.calendar = calendar
     }
 
     public func makeViewModel(coordinator: any YouCoordinatorProtocol) -> YouViewModel {
@@ -38,7 +33,7 @@ public struct YouFactory: YouFactoryProtocol {
                 let readModel = { [weak owner] in owner?.contentModel ?? YouContentModel() }
                 return (
                     ProgressViewModel(readModel: readModel, coordinator: coordinator),
-                    MapViewModel(readModel: readModel, coordinator: coordinator, now: now, calendar: calendar),
+                    MapViewModel(content: readModel(), coordinator: coordinator),
                     makeSettings(owner: owner, coordinator: coordinator)
                 )
             }

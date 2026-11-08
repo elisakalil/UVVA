@@ -30,6 +30,9 @@
         }
       }
     },
+    "About Learn" : {
+
+    },
     "All" : {
 
     },
@@ -88,13 +91,22 @@
     "Dutch" : {
 
     },
+    "Explore wine by country and region. Each course introduces the local grapes and what makes the region’s wines distinctive." : {
+
+    },
     "False" : {
 
     },
     "Finish module" : {
 
     },
+    "Follow a sommelier’s curriculum from Essentials to Expert. You can take the modules in any order." : {
+
+    },
     "French" : {
+
+    },
+    "Get to know red and white grape varieties, where they grow and the styles of wine they produce." : {
 
     },
     "German" : {
@@ -125,6 +137,9 @@
 
     },
     "Learn" : {
+
+    },
+    "Learning tracks" : {
 
     },
     "Leave the lesson" : {
@@ -228,9 +243,6 @@
       }
     },
     "Steps" : {
-
-    },
-    "Study wine by region, by grape or through a sommelier’s complete curriculum." : {
 
     },
     "Tap a term, then its match. Tap a matched term to undo." : {

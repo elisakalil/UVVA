@@ -37,13 +37,15 @@ struct GlassPaneFrames: PreferenceKey {
 extension EnvironmentValues {
     /// Set by `glassPanes()`: the panes inside leave the photo to `glassBackdrop()` instead of drawing their own copy.
     @Entry var sharesGlassBackdrop = false
+    @Entry var glassRimOpacity = 1.0
 }
 
 extension View {
     /// On the content of a scroll view full of glass: its `FrostedGlass` panes stop drawing the photo themselves and
     /// report where they are, for `glassBackdrop()` on the scroll view to draw it.
-    public func glassPanes() -> some View {
+    public func glassPanes(rimOpacity: Double = 1) -> some View {
         environment(\.sharesGlassBackdrop, true)
+            .environment(\.glassRimOpacity, rimOpacity)
             .backgroundPreferenceValue(GlassPanes.self) { panes in
                 GeometryReader { proxy in
                     Color.clear.preference(key: GlassPaneFrames.self, value: panes.map {
@@ -175,7 +177,7 @@ private struct GlassBackdropLayer: View {
 }
 
 /// One of the pieces the backdrop draws for a pane, as a small image whose middle point stretches over the pane.
-private enum PanePiece: Hashable {
+enum PanePiece: Hashable {
     /// The pane's outline, filled.
     case shape(radius: CGFloat)
     /// The pane's outline shrunk to inside the denser edge band, its edge softened.

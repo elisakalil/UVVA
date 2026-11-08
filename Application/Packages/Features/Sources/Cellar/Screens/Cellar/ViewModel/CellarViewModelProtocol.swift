@@ -8,6 +8,8 @@ public protocol CellarViewModelProtocol: ObservableObject {
     var note: NoteModel? { get }
     func openNote(_ wineKey: String)
     func closeNote()
+    /// The `+` (CELLAR-R14).
+    func add()
     func load() async
     func selectViewMode(_ mode: CellarViewMode)
     func openFilter(_ facet: CellarFacet)

@@ -11,7 +11,6 @@ struct MapTabView<ViewModel: MapViewModelProtocol>: View {
         if let model = viewModel.uiModel.content {
             YouPanel {
                 VStack(alignment: .leading, spacing: 0) {
-                    PanelTitle(text: model.readOn)
                     PalateMapChart(values: model.map.chartValues, labels: PalateAxis.allCases.map(\.label),
                                    strong: Set(model.highlighted.compactMap { PalateAxis.allCases.firstIndex(of: $0) }))
                         .scaleEffect(0.84)
@@ -28,8 +27,8 @@ struct MapTabView<ViewModel: MapViewModelProtocol>: View {
                     }
                     .padding(.top, 10)
 
-                    if model.showsOverTime {
-                        OverTimeSection(model: model, onSelect: viewModel.selectSnapshot)
+                    if !model.snapshots.isEmpty {
+                        OverTimeSection(model: model)
                             .padding(.top, 60)
                     }
 

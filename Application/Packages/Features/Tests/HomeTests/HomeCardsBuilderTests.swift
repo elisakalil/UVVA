@@ -86,17 +86,19 @@ struct HomeCardsBuilderTests {
     // MARK: HOME-R11 · Amigos
 
     @Test func HOME_R11_noFriends_showsInvite() {
-        #expect(builder.friendsCardState([]) == .noFriends)
+        #expect(builder.friendsCardState([], map: PalateMap([:])) == .noFriends)
     }
 
     @Test func HOME_R11_oneFriend_showsMatch() {
-        let marina = Friend(id: "m", name: "Marina", compatibility: 82)
-        #expect(builder.friendsCardState([marina]) == .hasMatch(marina))
+        let map = PalateMap([.acidity: 7, .fruit: 6])
+        let marina = Friend(id: "m", name: "Marina", map: map, addedAt: .now)
+        #expect(builder.friendsCardState([marina], map: map) == .hasMatch(name: "Marina", compatibility: 100))
     }
 
     @Test func HOME_R11_twoFriends_showsSetTable() {
-        let friends = [Friend(id: "a", name: "A", compatibility: 50), Friend(id: "b", name: "B", compatibility: 60)]
-        #expect(builder.friendsCardState(friends) == .hasFriends(count: 2))
+        let friends = [Friend(id: "a", name: "A", map: PalateMap([:]), addedAt: .now),
+                       Friend(id: "b", name: "B", map: PalateMap([:]), addedAt: .now)]
+        #expect(builder.friendsCardState(friends, map: PalateMap([:])) == .hasFriends(count: 2))
     }
 
     // MARK: HOME-R12, R13 · Continuar lição

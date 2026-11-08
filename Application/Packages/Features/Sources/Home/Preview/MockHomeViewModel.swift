@@ -19,6 +19,9 @@ final class MockHomeViewModel: HomeViewModelProtocol {
     func loadIfNeeded() async {}
     func openCourse(_ id: String) {}
     func openLearn(_ kind: CourseKind) {}
+    func scan() {}
+    func openFriends() {}
+    func openLastTable() {}
     func addToCellar(_ wine: Wine) async {
         uiModel.cellarWineKeys.insert(wine.id)
         uiModel.notice = uiModel.resources.savedToCellarNotice(wine)

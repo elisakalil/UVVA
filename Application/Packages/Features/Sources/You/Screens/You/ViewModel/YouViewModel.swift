@@ -36,6 +36,13 @@ public final class YouViewModel: YouViewModelProtocol {
         if contentModel.profile != previous.profile { updated.profile = contentModel.profile }
         if contentModel.reminder != previous.reminder { updated.reminder = contentModel.reminder }
         contentModel = updated
+        if !uiModel.isLoaded { uiModel.isLoaded = true }
+    }
+
+    /// Reads ahead of the first visit, when the tabs open, so You shows at once.
+    public func prefetch() async {
+        guard !uiModel.isLoaded else { return }
+        await load()
     }
 
     func profileSaved(_ profile: Profile) { contentModel.profile = profile }

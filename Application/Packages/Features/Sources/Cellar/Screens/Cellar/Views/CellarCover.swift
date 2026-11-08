@@ -13,7 +13,7 @@ struct CellarCover: View {
                     .opacity(model.isNotYet ? 0.45 : 1)
                     .saturation(model.isNotYet ? 0.4 : 1)
             }
-            .overlay { CellarPalette.veil }
+            .overlay { CellarPalette.coverVeil }
             .overlay {
                 Text(model.tag.uppercased())
                     .font(UVVAFont.redGrapes(model.cover.size))

@@ -16,7 +16,7 @@ struct HomeCardsBuilder {
     func build(from model: HomeContentModel, now: Date) -> [HomeCardModel] {
         var cards: [HomeCardModel] = [header(model)]
         if let wine = dailySuggestion(model, now: now) { cards.append(.dailySuggestion(wine)) }
-        cards.append(.friends(friendsCardState(model.friends)))
+        cards.append(.friends(friendsCardState(model.friends, map: model.palateMap)))
         if let course = continueLesson(model.courses) { cards.append(.continueLesson(course)) }
         if let changed = axisChanged(model.lastRating) { cards.append(.changedMapCard(axis: changed.axis, delta: changed.delta)) }
         let lessons = dailyLessons(model, now: now)
@@ -70,10 +70,10 @@ struct HomeCardsBuilder {
     }
 
     // HOME-R11
-    func friendsCardState(_ friends: [Friend]) -> HomeCardModel.FriendsCardState {
+    func friendsCardState(_ friends: [Friend], map: PalateMap) -> HomeCardModel.FriendsCardState {
         switch friends.count {
         case 0: .noFriends
-        case 1: .hasMatch(friends[0])
+        case 1: .hasMatch(name: friends[0].name, compatibility: TableMatch.compatibility(map, friends[0].map))
         default: .hasFriends(count: friends.count)
         }
     }

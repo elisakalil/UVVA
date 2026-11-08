@@ -14,6 +14,11 @@ public protocol CellarRepository: Sendable {
     /// Keeps the wine as Tasted with its verdict (CELLAR-R13c). A wine already in the Cellar, Not yet or
     /// Tasted, is updated in place.
     func addTasted(_ wine: Wine, verdict: Verdict) async throws
+    /// "Save note" or "Add to cellar" on a new note (CELLAR-R19, R13b). A wine already in the Cellar is updated in
+    /// place: the facts, and the photos and note when the draft has them; a verdict replaces the old one, and a
+    /// Tasted entry never goes back to Want to try. Returns the entry as it was before, nil when it is new.
+    @discardableResult
+    func save(_ draft: NewNoteDraft) async throws -> CellarEntry?
     /// "Save changes" on a note (CELLAR-R27): a verdict makes the entry Tasted; an empty note is cleared.
     func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws
     /// "Delete" on a note (CELLAR-R28).

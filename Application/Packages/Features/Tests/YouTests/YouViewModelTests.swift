@@ -73,7 +73,7 @@ struct YouViewModelTests {
         let model = await make(learning: LearningStub(earned: [Certificate(courseID: "path-01", date: .now)]),
                                actions: actions, courses: CoursesStub(catalog: [next]))
         #expect(model.progress.uiModel.suggestionTitle == next.title)
-        #expect(model.progress.uiModel.suggestionReason?.contains("The Path") == true)
+        #expect(model.progress.uiModel.suggestionStatusMessage == nil)
         model.progress.startCourse()
         #expect(actions.log == ["course path-02"])
     }
@@ -133,30 +133,104 @@ struct YouViewModelTests {
 
     // MARK: YOU-R09, R10, R13 · Map
 
-    @Test func YOU_R10_onlyTheQuiz_hasOneSnapshotAndNoComparison() async throws {
+    @Test func YOU_R10_onlyTheQuiz_hidesOverTime() async throws {
         let map = try #require(await make().map.uiModel.content)
-        #expect(map.snapshots.count == 1)
-        #expect(map.snapshots.first?.detail == "First map · 0 wines rated")
-        #expect(map.comparison == nil)
-        #expect(!map.showsOverTime)
+        #expect(map.snapshots.isEmpty)
     }
 
-    @Test func YOU_R10_afterARating_comparesTheFirstMapWithToday() async throws {
-        let rated = MapChange(date: .now, cause: .rating(wineKey: "w", verdict: .yes), values: [.acidity: 7, .fruit: 7, .body: 5, .sweetness: 1])
-        let viewModel = await make(history: [quiz, rated])
-        viewModel.map.selectSnapshot(0)
-        let map = try #require(viewModel.map.uiModel.content)
-        #expect(map.snapshots.map(\.detail) == ["First map · 0 wines rated", "Today · 1 wines rated"])
-        #expect(map.deltas.first { $0.name == "Fruit" }?.delta == "+1.0")
-        #expect(map.deltas.first { $0.name == "Oak" }?.delta == "—")
+    @Test func YOU_R10_afterARating_showsTheNewMapAndOnlyChangedAxes() async throws {
+        let rated = MapChange(date: .now, cause: .rating(wineKey: "w", verdict: .yes),
+                              values: [.acidity: 7, .fruit: 7, .body: 5, .sweetness: 0.5])
+        let map = try #require(await make(history: [quiz, rated]).map.uiModel.content)
+        #expect(map.snapshots.count == 1)
+        let selected = try #require(map.snapshots.last)
+        #expect(selected.map[.fruit] == 7)
+        #expect(selected.deltas.first { $0.axis == .fruit }?.value == 1)
+        #expect(selected.deltas.first { $0.axis == .sweetness }?.value == -0.5)
+        #expect(selected.deltas.count == 2)
         #expect(map.lastChange == "Your last wine raised your fruit.")
-        #expect(map.showsOverTime)
+    }
+
+    @Test func YOU_R10_keepsSixDistinctMeasurementsFromTheSameDay() async throws {
+        let ratings = (1...8).map { index in
+            MapChange(date: quiz.date.addingTimeInterval(Double(index)), cause: .rating(wineKey: "w", verdict: .yes),
+                      values: [.acidity: 7, .fruit: index == 8 ? 8 : (index.isMultiple(of: 2) ? 6 : 8),
+                               .body: 5, .sweetness: 1])
+        }
+        let viewModel = await make(history: [quiz] + ratings)
+        let latest = try #require(viewModel.map.uiModel.content)
+        #expect(latest.snapshots.map(\.date) == ratings[1..<7].map(\.date))
+        #expect(latest.lastChange == "Your last wine raised your fruit.")
+
+        #expect(latest.snapshots.map { $0.map[.fruit] } == [6, 8, 6, 8, 6, 8])
+        let oldest = try #require(latest.snapshots.first)
+        #expect(oldest.map[.fruit] == 6)
+        #expect(oldest.deltas == [MapDeltaRow(axis: .fruit, value: -2)])
+    }
+
+    @Test func YOU_R10_animatesCoordinatesAndFinishesAtTheSelectedMeasurement() {
+        let start = Date(timeIntervalSince1970: 1_000)
+        let from = [0.4, 0.6]
+        let target = [0.405, 0.58]
+        let transition = HistoryMapTransition(from: from, to: target, startedAt: start)
+        let halfway = transition.values(at: start.addingTimeInterval(HistoryMapTransition.duration / 2))
+        #expect(transition.values(at: start) == from)
+        #expect(halfway[0] > from[0] && halfway[0] < target[0])
+        #expect(halfway[1] < from[1] && halfway[1] > target[1])
+        #expect(transition.values(at: start.addingTimeInterval(1)) == target)
+    }
+
+    @Test func YOU_R10_keepsSmallChangesAtTheirExactSavedValues() async throws {
+        let rated = MapChange(date: quiz.date, cause: .rating(wineKey: "w", verdict: .yes),
+                              values: [.acidity: 7, .fruit: 6.01, .body: 5, .sweetness: 1])
+        let map = try #require(await make(history: [quiz, rated]).map.uiModel.content)
+        #expect(map.snapshots.count == 1)
+        #expect(map.snapshots.first?.map[.fruit] == 6.01)
+    }
+
+    @Test func YOU_R10_magnifiesSmallMovementsOnlyInTheHistoryChart() async throws {
+        let ratings = [6.0, 6.27].enumerated().map { index, fruit in
+            MapChange(date: quiz.date.addingTimeInterval(Double(index)), cause: .rating(wineKey: "w", verdict: .yes),
+                      values: [.acidity: 7, .fruit: fruit, .body: 5, .sweetness: 1.2])
+        }
+        let model = try #require(await make(history: [quiz] + ratings).map.uiModel.content)
+        let fruit = try #require(PalateAxis.allCases.firstIndex(of: .fruit))
+        let coordinates = model.historyChartValues
+        #expect(abs(coordinates[1][fruit] - coordinates[0][fruit] - 0.3) < 0.000001)
+        #expect(model.snapshots.map { $0.map[.fruit] } == [6, 6.27])
+    }
+
+    @Test func YOU_R10_fitsLargeMovementsWithoutCollapsingDistinctCoordinates() async throws {
+        let ratings = [4.0, 7.0, 9.0].map { fruit in
+            MapChange(date: quiz.date, cause: .rating(wineKey: "w", verdict: .yes),
+                      values: [.fruit: fruit])
+        }
+        let model = try #require(await make(history: [quiz] + ratings).map.uiModel.content)
+        let fruit = try #require(PalateAxis.allCases.firstIndex(of: .fruit))
+        let coordinates = model.historyChartValues.map { $0[fruit] }
+        #expect(coordinates[0] >= -0.000001 && coordinates[2] <= 1.000001)
+        #expect(coordinates[0] < coordinates[1] && coordinates[1] < coordinates[2])
+    }
+
+    @Test func YOU_R10_sumsSignedChangesFromOnlyTheSixVisibleMeasurements() async throws {
+        let ratings = (1...7).map { index in
+            MapChange(date: quiz.date.addingTimeInterval(Double(index)), cause: .rating(wineKey: "w", verdict: .yes),
+                      values: [.acidity: index.isMultiple(of: 2) ? 8 : 7,
+                               .fruit: index == 1 ? 8 : 7 + Double(index) * 0.04,
+                               .body: 5, .sweetness: 1])
+        }
+        let model = try #require(await make(history: [quiz] + ratings).map.uiModel.content)
+        let fruit = try #require(model.historyDeltas.first { $0.axis == .fruit })
+        #expect(abs(fruit.value - (-0.72)) < 0.000001)
+        #expect(model.historyDeltas.map(\.axis) == [.fruit])
     }
 
     @Test func YOU_R10_aRedoneQuizWithoutRatings_hidesOverTime() async throws {
-        let redo = MapChange(date: .now, cause: .quiz, values: [.acidity: 3, .fruit: 8])
-        let map = try #require(await make(history: [quiz, redo]).map.uiModel.content)
-        #expect(!map.showsOverTime)
+        let rated = MapChange(date: quiz.date.addingTimeInterval(1), cause: .rating(wineKey: "w", verdict: .yes),
+                              values: [.acidity: 7, .fruit: 7])
+        let redo = MapChange(date: quiz.date.addingTimeInterval(2), cause: .quiz, values: [.acidity: 3, .fruit: 8])
+        let map = try #require(await make(history: [quiz, rated, redo]).map.uiModel.content)
+        #expect(map.snapshots.isEmpty)
     }
 
     @Test func YOU_R13_redo_opensTheQuiz() async {

@@ -51,6 +51,33 @@ public actor CellarStore: CellarRepository {
         try modelContext.save()
     }
 
+    @discardableResult
+    public func save(_ draft: NewNoteDraft) throws -> CellarEntry? {
+        try save(draft, at: Date())
+    }
+
+    @discardableResult
+    func save(_ draft: NewNoteDraft, at date: Date) throws -> CellarEntry? {
+        let existing = try entry(for: draft.wine.id)
+        let before = existing?.entry
+        // A new entry starts as Want to try; only a verdict makes it Tasted (CELLAR-R01).
+        let entry = existing ?? CellarEntryEntity(wineKey: draft.wine.id, status: .wantToTry, date: date)
+        if existing == nil { modelContext.insert(entry) }
+        entry.copyFacts(of: draft.wine)
+        // CELLAR-R13b: what the new note has replaces the old; what it lacks leaves the old in place.
+        if draft.status == .tasted, let verdict = draft.verdict {
+            entry.status = CellarEntryEntity.Status.tasted.rawValue
+            entry.verdict = verdict.rawValue
+        }
+        if let photo = draft.photoFront { entry.photoFront = photo }
+        if let photo = draft.photoBack { entry.photoBack = photo }
+        let note = draft.note?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if !note.isEmpty { entry.note = note }
+        entry.updatedAt = date
+        try modelContext.save()
+        return before
+    }
+
     public func update(_ wineKey: String, verdict: Verdict?, note: String?) throws {
         try update(wineKey, verdict: verdict, note: note, at: Date())
     }

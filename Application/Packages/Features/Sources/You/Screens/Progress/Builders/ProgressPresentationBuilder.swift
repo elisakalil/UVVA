@@ -25,25 +25,11 @@ struct ProgressPresentationBuilder {
             suggestionEyebrow: String(localized: "A course for you", bundle: .module),
             suggestionTitle: module?.title ?? "",
             suggestionNote: module.map { String(localized: "\($0.lessonCount) lessons · \($0.minutes) min", bundle: .module) } ?? "",
-            suggestionReason: recommendation == nil ? emptySuggestion(content.recommendationStatus) : recommendation.flatMap { reasonText($0.reason) },
+            suggestionStatusMessage: recommendation == nil ? emptySuggestion(content.recommendationStatus) : nil,
             suggestedCourseID: module?.id,
             cta: module != nil ? String(localized: "Start the course", bundle: .module)
                 : (content.recommendationStatus == .unavailable ? String(localized: "Explore Learn", bundle: .module) : nil)
         )
-    }
-
-    private func reasonText(_ reason: CourseRecommendation.Reason) -> String? {
-        switch reason {
-        case .introduction: nil
-        case .linkedRegion(let grape):
-            String(localized: "Follow \(grape) from the grape to the place that shapes it.", bundle: .module)
-        case .linkedGrape(let region):
-            String(localized: "You’ve explored \(region). Now get to know one of the grapes that grows there.", bundle: .module)
-        case .nextPathModule:
-            String(localized: "Build on what you’ve learned with the next new module in The Path.", bundle: .module)
-        case .explore:
-            String(localized: "Find a new corner of the wine world to explore.", bundle: .module)
-        }
     }
 
     private func emptySuggestion(_ status: YouContentModel.RecommendationStatus) -> String? {

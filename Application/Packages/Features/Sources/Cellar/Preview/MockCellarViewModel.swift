@@ -30,6 +30,7 @@ final class MockCellarViewModel: CellarViewModelProtocol {
     func load() async {}
     func openNote(_ wineKey: String) { note = MockNoteViewModel() }
     func closeNote() { note = nil }
+    func add() {}
     func selectViewMode(_ mode: CellarViewMode) { uiModel.viewMode = mode }
     func openFilter(_ facet: CellarFacet) {}
     func closeFilter() {}

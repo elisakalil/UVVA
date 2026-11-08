@@ -18,6 +18,7 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                 YouHeader(model: viewModel.uiModel.header)
                     .padding(.horizontal, 30)
                     .padding(.top, 36)
+                    .opacity(viewModel.uiModel.isLoaded ? 1 : 0)
                 YouTabBar(selected: Binding(get: { viewModel.uiModel.tab }, set: { viewModel.selectTab($0) }))
                     .padding(.top, 30)
                 ScrollView {
@@ -36,11 +37,13 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                 }
                 .scrollIndicators(.hidden)
                 .scrollEdgeFade(12, throughBottomInset: true)
+                .opacity(viewModel.uiModel.isLoaded ? 1 : 0)
                 // Each tab opens at its top, not at the offset the last one was left at.
                 .id(viewModel.uiModel.tab)
             }
         }
         .foregroundStyle(UVVAColor.creamFill)
+        .animation(.easeOut(duration: 0.25), value: viewModel.uiModel.isLoaded)
         .overlay {
             if selectedProgressStat != nil {
                 Rectangle()

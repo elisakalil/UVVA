@@ -35,30 +35,34 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
                     .font(UVVAFont.sans(15)).lineSpacing(7)
                     .padding(.top, 16)
 
-                VStack(alignment: .leading, spacing: 20) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        SectionTitle(text: model.suggestionEyebrow)
-                        if !model.suggestionTitle.isEmpty {
-                            Text(model.suggestionTitle).font(UVVAFont.sans(14))
-                            Text(model.suggestionNote).font(UVVAFont.sans(12.5)).opacity(0.84)
-                        }
-                        if let reason = model.suggestionReason {
-                            Text(reason).font(UVVAFont.sans(12.5)).opacity(0.84)
-                        }
-                    }
+                SectionTitle(text: model.suggestionEyebrow)
+                    .padding(.top, 56)
 
-                    if let cta = model.cta {
-                        ActionButton(cta, style: .outline, action: viewModel.startCourse)
+                if let cta = model.cta {
+                    Button(action: viewModel.startCourse) {
+                        HStack(spacing: 16) {
+                            VStack(alignment: .leading, spacing: 5) {
+                                Text(model.suggestionTitle.isEmpty ? cta : model.suggestionTitle)
+                                    .font(UVVAFont.sans(14))
+                                Text(model.suggestionStatusMessage ?? model.suggestionNote)
+                                    .font(UVVAFont.sans(12.5)).opacity(0.84)
+                            }
+                            Spacer(minLength: 0)
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 11, weight: .medium))
+                                .accessibilityHidden(true)
+                        }
+                        .padding(.vertical, 6)
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                     }
+                    .buttonStyle(.plain)
+                    .padding(.top, 10)
+                } else if let message = model.suggestionStatusMessage {
+                    Text(message)
+                        .font(UVVAFont.sans(12.5)).opacity(0.84)
+                        .padding(.top, 16)
                 }
-                .padding(16)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10)
-                        .strokeBorder(UVVAColor.creamFill, lineWidth: 0.35)
-                        .allowsHitTesting(false)
-                }
-                .padding(.top, 56)
             }
         }
     }

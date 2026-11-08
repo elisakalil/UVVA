@@ -16,11 +16,11 @@ struct FriendsCard: View {
                         .textCase(.uppercase)
                         .lineSpacing(2)
                         .foregroundStyle(UVVAColor.cream.opacity(0.92))
-                case let .hasMatch(friend):
+                case let .hasMatch(name, compatibility):
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        Text(resources.compatibility(friend.compatibility))
+                        Text(resources.compatibility(compatibility))
                             .font(UVVAFont.sans(46, .ultraLight))
-                        Text(resources.friendMatch(friend.name))
+                        Text(resources.friendMatch(name))
                             .font(UVVAFont.sans(12.5))
                             .foregroundStyle(UVVAColor.cream84)
                     }

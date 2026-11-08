@@ -1,11 +1,9 @@
+import Core
 import Foundation
 
-/// One dot of the Over time line.
-struct SnapshotUIModel: Equatable, Identifiable {
-    var id: Int
-    /// "First map", "Aug", "Today"
-    var label: String
-    /// "First map · 0 wines rated", "8 wines rated", "Today · 27 wines rated"
-    var detail: String
-    var isNew: Bool
+/// The map and its axis changes after one wine rating.
+struct SnapshotUIModel: Equatable {
+    var date: Date
+    var map: PalateMap
+    var deltas: [MapDeltaRow]
 }

@@ -3,13 +3,15 @@ import UIKit
 
 /// The share sheet of the app (SHARED-R20): the card in Story or WhatsApp shape, "Share to Instagram" or
 /// Stories open in Instagram when configured; WhatsApp uses the system sheet.
-/// Also offers "Save image" to Photos and "Not now".
+/// Also offers "Save image" to Photos (the Story picture, or `savedCard`) and "Not now".
 /// Invite previews stay open after sharing or saving when `dismissAfterAction` is false.
 public struct ShareScreen<Card: View>: View {
     var title: String
     /// Sent with the picture on WhatsApp.
     var message: String
     var card: (ShareFormat) -> Card
+    /// What "Save image" keeps, when it is not the Story picture (the shopping guide of a table, FRI-R21).
+    var savedCard: (() -> AnyView)?
     var dismissAfterAction: Bool
     var showsMessage: Bool
     var isCertificate: Bool
@@ -19,8 +21,10 @@ public struct ShareScreen<Card: View>: View {
     @State private var sharedImage: SharedImage?
     @State private var isSharing = false
 
-    public init(title: String, message: String, showsMessage: Bool = false, isCertificate: Bool = false, dismissAfterAction: Bool = true, @ViewBuilder card: @escaping (ShareFormat) -> Card,
+    public init(title: String, message: String, showsMessage: Bool = false, isCertificate: Bool = false, dismissAfterAction: Bool = true,
+                savedCard: (() -> AnyView)? = nil, @ViewBuilder card: @escaping (ShareFormat) -> Card,
                 onFinish: @escaping () -> Void) {
+        self.savedCard = savedCard
         self.isCertificate = isCertificate
         self.dismissAfterAction = dismissAfterAction
         self.showsMessage = showsMessage
@@ -127,7 +131,11 @@ public struct ShareScreen<Card: View>: View {
     }
 
     private func save() {
-        if let image = render(.story) {
+        if let savedCard {
+            let renderer = ImageRenderer(content: savedCard().environment(\.colorScheme, .dark))
+            renderer.scale = ShareFormat.renderScale
+            if let image = renderer.uiImage { UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil) }
+        } else if let image = render(.story) {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
         if dismissAfterAction { onFinish() }

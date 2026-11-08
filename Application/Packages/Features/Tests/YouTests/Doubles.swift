@@ -46,6 +46,10 @@ final class SocialSpy: SocialService {
     func publishContactKey(phone: String, userID: String) async throws -> Bool { log.withLock { $0.append("key+\(phone)") }; return true }
     func accounts(forPhones phones: [String]) async throws -> [String: PublicProfile] { [:] }
     func sendFriendRequest(from: String, to: String) async throws {}
+    func friendRequests(to userID: String) async throws -> [FriendRequestRecord] { [] }
+    func friendRequests(from userID: String) async throws -> [FriendRequestRecord] { [] }
+    func deleteFriendRequest(from: String, to: String) async throws {}
+    func profiles(ids: [String]) async throws -> [String: PublicProfile] { [:] }
     func publish(_ profile: PublicProfile) async throws { log.withLock { $0.append("publish map:\(profile.map != nil)") } }
     func removeContactKey(phone: String) async throws { log.withLock { $0.append("key-\(phone)") } }
     func deleteAccount(userID: String, phone: String?) async throws {

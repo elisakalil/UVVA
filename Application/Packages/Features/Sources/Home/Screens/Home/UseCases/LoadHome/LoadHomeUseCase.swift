@@ -10,6 +10,8 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
     let cellar: any CellarRepository
     let courses: any CourseCatalog
     let learning: any LearningRepository
+    /// The friends kept on the device by the Friends tab (HOME-R11).
+    let friends: any FriendsRepository
     let suggestionPool: Int
 
     func execute() async throws -> HomeLoadResultModel {
@@ -26,6 +28,7 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
 
         let wines = try await pairedWines(for: map)
         let glossary = try await catalog.glossary()
+        let friendList = (try? await friends.friends()) ?? []
         var lessonCatalog: [Course] = []
         for kind in [CourseKind.region, .grape, .path] {
             lessonCatalog += try await courses.courses(kind)
@@ -41,7 +44,7 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
 
         return HomeLoadResultModel(
             model: HomeContentModel(
-                firstName: profile?.firstName ?? "", palateMap: map, friends: [],
+                firstName: profile?.firstName ?? "", palateMap: map, friends: friendList,
                 courses: startedCourses, lastRating: lastRating, ratedWineIDs: ratedKeys, catalog: wines,
                 glossary: glossary, notifications: [], lessonCatalog: lessonCatalog, modules: snapshot.modules, lessonProgress: progress
             ),

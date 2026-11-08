@@ -16,7 +16,17 @@ struct AppStores: Sendable {
     let reminders: ReminderStore
     let cellar: CellarStore
     let learning: LearningStore
+    let friends: FriendsStore
     let social: any SocialService
+
+    /// `-UVVADemoAccount` (Debug only): friends and requests in memory, so the Friends tab can be walked through in
+    /// the simulator without a second iCloud account.
+    private static func makeSocial() -> any SocialService {
+        #if DEBUG
+        if DemoMode.isOn { return DemoSocial() }
+        #endif
+        return CloudKitSocialService()
+    }
 
     static func make(container: ModelContainer) async -> AppStores {
         await Task.detached(priority: .userInitiated) {
@@ -27,7 +37,8 @@ struct AppStores: Sendable {
                       reminders: ReminderStore(modelContainer: container),
                       cellar: CellarStore(modelContainer: container),
                       learning: LearningStore(modelContainer: container),
-                      social: CloudKitSocialService())
+                      friends: FriendsStore(modelContainer: container),
+                      social: makeSocial())
         }.value
     }
 }

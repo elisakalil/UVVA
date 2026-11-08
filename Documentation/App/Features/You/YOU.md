@@ -44,7 +44,7 @@ A secção pode ser recolhida (−) e aberta (+).
 
 **YOU-R06 · Specialist in.** Um texto que resume em que o usuário é mais forte, a partir dos cursos de casta e de região concluídos (ver D3). Sem nenhum curso concluído: "Nothing to map yet. Finish your first course and this space starts filling in: the grapes you know, the regions you can place, and where you are strongest."
 
-**YOU-R07 · A Course for You.** Mostra **What Wine Is** até à sua conclusão. Depois, sugere apenas cursos ainda não iniciados: primeiro um curso ligado à casta ou região estudada mais recentemente, depois o próximo módulo novo de The Path e, por fim, outro curso novo do catálogo. A recomendação mostra o motivo, o número de lições e a duração. “Start the course” abre o curso mostrado. Se não houver candidatos, o cartão indica que não há novas sugestões.
+**YOU-R07 · A Course for You.** Mostra **What Wine Is** até à sua conclusão. Depois, sugere apenas cursos ainda não iniciados: primeiro um curso ligado à casta ou região estudada mais recentemente, depois o próximo módulo novo de The Path e, por fim, outro curso novo do catálogo. Abaixo do título, uma linha com chevron mostra o nome do curso, o número de lições e a duração. Tocar na linha abre o curso. Se não houver candidatos, a secção indica que não há novas sugestões.
 
 **YOU-R08 · Nível.** Um nível ("Harvest · Level 3 of 3"), uma barra de progresso e uma frase ("4 curriculum lessons left to finish the curriculum."). Ver D5.
 
@@ -56,17 +56,11 @@ A secção pode ser recolhida (−) e aberta (+).
 
 ## 4. Map
 
-**YOU-R09 · O mapa.** "The map", com a data da última mudança do mapa ("Read [data]"), o radar, a legenda e "Your readings" (como na QUIZ-R15 e QUIZ-R16).
+**YOU-R09 · O mapa.** "The map", com o radar, a legenda e "Your readings" (como na QUIZ-R15 e QUIZ-R16).
 
-**YOU-R10 · Over time.** A secção só aparece quando o mapa mudou depois do Quiz por uma avaliação de vinho (Yes / No). Só com o Quiz, ou com um Quiz refeito sem avaliações, ela fica escondida. "See how your map has changed over the last few months." Uma foto do mapa por mês, com a data e o número de vinhos avaliados até então:
+**YOU-R10 · Over time.** A secção aparece quando uma avaliação de vinho (Yes / No) altera o mapa depois do Quiz. A descrição indica o eixo que mais mudou na última alteração, por exemplo "Your last wine raised your tannin." (HOME-R16).
 
-| Foto | Exemplo |
-| --- | --- |
-| A primeira | "First map · 0 wines rated" (o mapa do Quiz) |
-| Uma por mês | "8 wines rated" (no fim de cada mês) |
-| A atual | "Today · 27 wines rated" |
-
-Escolher uma foto mostra o mapa desse momento sobre o atual e a variação de cada eixo. Os eixos que mudaram com a avaliação mais recente aparecem marcados como "New", e o topo mostra o aviso da última avaliação ("Your last wine raised your tannin."), como o card da Home (HOME-R16).
+A linha do tempo mostra até seis alterações, em ordem cronológica, com a mais recente selecionada por defeito. Cada ponto corresponde a uma avaliação e mostra a sua data, com hora quando há mais de uma no mesmo dia. As avaliações do mesmo dia ocupam pontos separados. Ao escolher um ponto, as coordenadas do radar passam suavemente para a medição selecionada, com transição imediata quando a opção de reduzir movimento está ativa. O radar do histórico amplia a distância visual entre medições em até 10× por eixo, mantendo os valores guardados. A lista mostra a variação líquida por eixo, somando as subidas e descidas das alterações mostradas na linha do tempo.
 
 **YOU-R11 · Para onde o mapa aponta.** "Where the map points": a narrativa do mapa (QUIZ-R15).
 
@@ -75,8 +69,8 @@ Escolher uma foto mostra o mapa desse momento sobre o atual e a variação de ca
 **YOU-R13 · Refazer o mapa.** "Redo the map" abre o Quiz desde a Intro (QUIZ-R18a). O mapa novo só substitui o atual se o usuário tocar em "Keep this map".
 
 **Critérios**
-- Dado um Quiz feito em 30/07 e 8 avaliações em agosto, então existem as fotos "First map · 0 wines rated" e, em 31/08, "8 wines rated".
-- Dada uma foto de agosto com Fruit 5 e o mapa atual com Fruit 6, então a variação de Fruit é +1.
+- Dadas oito avaliações que alteraram o mapa depois do Quiz, a linha do tempo mostra as seis mais recentes.
+- Se as alterações mostradas fizeram Fruit subir 1,0 e depois descer 0,3, a lista mostra Fruit com ↑ 0,7 mesmo ao selecionar outro ponto da linha do tempo.
 - Quando o usuário toca em "Redo the map" e depois sai do Quiz sem "Keep this map", então o mapa não muda.
 - Dado o usuário "Elisa", então o link de partilha é `uvva.app/invite/` seguido do id dela, e não do nome.
 

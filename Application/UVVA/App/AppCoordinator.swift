@@ -1,6 +1,7 @@
 import Cellar
 import Core
 import DesignSystem
+import Friends
 import SwiftUI
 import Home
 import Learn
@@ -20,9 +21,13 @@ final class AppCoordinator {
     private(set) var you: YouViewModel?
     private(set) var learn: LearnViewModel?
     private(set) var cellarTab: CellarViewModel?
+    private(set) var friends: FriendsViewModel?
+    /// The new note over the tabs, from the `+` of the Home or the Cellar (CELLAR-R14).
+    private(set) var newNote: NewNoteViewModel?
     private(set) var profile: Profile?
     private var isOpeningCourse = false
     private var navigationTask: Task<Void, Never>?
+    private var prefetchTask: Task<Void, Never>?
     
     var launchError: String?
     var selectedTab: AppTab = .home
@@ -34,6 +39,7 @@ final class AppCoordinator {
     private let reminders: ReminderStore
     private let cellar: CellarStore
     private let learning: LearningStore
+    private let friendsStore: FriendsStore
     private let scheduler = LocalReminderScheduler()
     private let auth: any Authenticating
     private let cloud: any CloudAccountStatus
@@ -54,6 +60,7 @@ final class AppCoordinator {
         reminders = stores.reminders
         cellar = stores.cellar
         learning = stores.learning
+        friendsStore = stores.friends
 
         auth = AppleAuthProvider()
         cloud = ICloudAccountStatus()
@@ -164,7 +171,8 @@ final class AppCoordinator {
             catalog: catalog,
             cellar: cellar,
             courses: catalog,
-            learning: learning
+            learning: learning,
+            friends: friendsStore
         ).makeViewModel(coordinator: HomeCoordinator(
             onOpenCourse: { [weak self] id in
                 self?.openCourse(id)
@@ -174,12 +182,22 @@ final class AppCoordinator {
             },
             onOpenLesson: { [weak self] suggestion in
                 self?.openCourse(suggestion.courseID, lessonID: suggestion.lessonID)
-            }
+            },
+            onScan: { [weak self] in self?.openNewNote() },
+            onOpenFriends: { [weak self] in self?.openFriendsSelection() },
+            onOpenLastTable: { [weak self] in self?.openLastTable() }
         ))
 
         you = you ?? makeYou()
 
-        cellarTab = cellarTab ?? CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog).makeViewModel()
+        cellarTab = cellarTab ?? cellarFactory.makeViewModel(onAdd: { [weak self] in self?.openNewNote() })
+
+        friends = friends ?? FriendsFactory(profiles: profiles, maps: maps, friends: friendsStore, catalog: catalog,
+                                            social: social, contacts: DeviceContacts())
+            .makeViewModel(onFriendsChange: { [weak self] in
+                guard let home = self?.home else { return }
+                Task { await home.load() }
+            })
 
         learn = learn ?? LearnFactory(
             catalog: catalog,
@@ -216,6 +234,57 @@ final class AppCoordinator {
         onboarding = nil
         quiz = nil
         route = .tabs(showTour: showTour)
+        prefetchTabs()
+    }
+
+    /// The Cellar, You and Friends read their data while the Home shows, so each opens complete on the first visit
+    /// instead of flashing an empty state. The reads suspend without holding the main thread.
+    private func prefetchTabs() {
+        prefetchTask?.cancel()
+        let (cellar, you, friends) = (cellarTab, you, friends)
+        prefetchTask = Task(priority: .utility) {
+            async let readCellar: Void = cellar?.prefetch() ?? ()
+            async let readYou: Void = you?.prefetch() ?? ()
+            async let readFriends: Void = friends?.prefetch() ?? ()
+            _ = await (readCellar, readYou, readFriends)
+        }
+    }
+
+    private var cellarFactory: CellarFactory {
+        CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog, labelCatalog: catalog,
+                      reader: VisionLabelReader(), structurer: DeviceLabelStructurer(), camera: DeviceCamera())
+    }
+
+    /// CELLAR-R14: the same new note from the Home and the Cellar.
+    func openNewNote() {
+        guard newNote == nil else { return }
+        newNote = cellarFactory.makeNewNote(
+            onSaved: { [weak self] in self?.newNoteSaved() },
+            onClose: { [weak self] in self?.closeNewNote() })
+    }
+
+    func closeNewNote() { newNote = nil }
+
+    /// CELLAR-R19: the note is on top of the Cellar, which says "Note saved"; the Home sees the new rating.
+    private func newNoteSaved() {
+        newNote = nil
+        selectedTab = .cellar
+        cellarTab?.newNoteSaved()
+        Task { await home?.load() }
+        publishPublicProfile()
+    }
+
+    /// FRI-R20: "Set a table with your friends" opens the choice of who comes.
+    private func openFriendsSelection() {
+        selectedTab = .friends
+        friends?.startSelecting()
+    }
+
+    /// HOME-R11: the match card opens the last table, in the Friends tab (FRI-R17).
+    private func openLastTable() {
+        selectedTab = .friends
+        guard let friends else { return }
+        Task { await friends.openLastTable() }
     }
 
     private func makeYou() -> YouViewModel {
@@ -274,12 +343,16 @@ final class AppCoordinator {
     }
 
     private func resetTabs() {
+        prefetchTask?.cancel()
+        prefetchTask = nil
         isOpeningCourse = false
         profile = nil
         home = nil
         you = nil
         learn = nil
         cellarTab = nil
+        friends = nil
+        newNote = nil
         tour = nil
         selectedTab = .home
     }

@@ -211,6 +211,8 @@ public actor ContentImporter {
             let entity: WineEntity
             if let found = existing[packed.id] {
                 entity = found
+                // A wine once scanned and now in the bundle is the bundle's from here on.
+                if found.source == CatalogStore.scannedSource { found.source = bundleSource }
             } else {
                 entity = WineEntity(wineKey: packed.id, source: bundleSource)
                 modelContext.insert(entity)

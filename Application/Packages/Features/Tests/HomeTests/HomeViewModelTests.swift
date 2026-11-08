@@ -68,6 +68,7 @@ private actor CellarStub: CellarRepository {
     func entries() async throws -> [CellarEntry] { [] }
     func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {}
     func delete(_ wineKey: String) async throws {}
+    func save(_ draft: NewNoteDraft) async throws -> CellarEntry? { nil }
     func wineKeys() async throws -> Set<String> { Set(added) }
     func addWantToTry(_ wine: Wine) async throws { added.append(wine.id) }
     func tastedWineKeys() async throws -> Set<String> { [] }
@@ -82,7 +83,8 @@ struct HomeViewModelTests {
         var calendar = Calendar(identifier: .gregorian)
         calendar.timeZone = TimeZone(identifier: "Europe/Lisbon")!
         let viewModel = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
-                                      cellar: cellar, courses: CoursesStub(), learning: learning, now: { date }, calendar: calendar)
+                                      cellar: cellar, courses: CoursesStub(), learning: learning, friends: FriendsRepositoryStub(),
+                                      now: { date }, calendar: calendar)
             .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
         await viewModel.load()
         return viewModel
@@ -143,9 +145,31 @@ struct HomeViewModelTests {
         #expect(await cellar.added == [wine.id])
     }
 
+    @Test func HOME_R11_friendsKeptOnTheDevice_fillTheCard() async throws {
+        let marina = Friend(id: "m", name: "Marina", map: HomeContentModel.full.palateMap, addedAt: .now)
+        let model = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
+                                cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
+                                friends: FriendsRepositoryStub(list: [marina]))
+            .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
+        try await model.prepare()
+        #expect(model.uiModel.content?.cards.contains(.friends(.hasMatch(name: "Marina", compatibility: 100))) == true)
+    }
+
+    @Test func HOME_R11_cardWithFriends_opensTheFriendsTab() {
+        var opened = false
+        let model = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
+                                cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
+                                friends: FriendsRepositoryStub())
+            .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in },
+                                                        onOpenFriends: { opened = true }))
+        model.openFriends()
+        #expect(opened)
+    }
+
     @Test func uiModel_publishesLoadingContentAndSavedWine() async throws {
         let model = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
-                                 cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub())
+                                 cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
+                                 friends: FriendsRepositoryStub())
             .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
         var presentations: [HomeUIModel] = []
         let subscription = model.$uiModel.sink { presentations.append($0) }
@@ -276,7 +300,7 @@ struct ModuleStateFlowTests {
         let learn = LearnFactory(catalog: catalog, learning: store, profiles: ProfilesStub())
             .makeViewModel(onProgressChange: { refresh.reload() })
         let home = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
-            cellar: CellarStub(), courses: catalog, learning: store)
+            cellar: CellarStub(), courses: catalog, learning: store, friends: FriendsRepositoryStub())
             .makeViewModel(coordinator: HomeCoordinator(
                 onOpenCourse: { id in Task { await learn.openCourse(id: id) } }, onOpenLearn: { _ in },
                 onOpenLesson: { suggestion in Task { await learn.openCourse(id: suggestion.courseID, lessonID: suggestion.lessonID) } }))

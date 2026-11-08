@@ -51,11 +51,34 @@ public final class CloudKitSocialService: SocialService {
     }
 
     public func sendFriendRequest(from: String, to: String) async throws {
-        let record = CKRecord(recordType: RecordType.friendRequest, recordID: CKRecord.ID(recordName: "\(from)-\(to)"))
+        let record = CKRecord(recordType: RecordType.friendRequest, recordID: Self.requestID(from: from, to: to))
         record["from"] = from
         record["to"] = to
         record["status"] = "pending"
         _ = try await database.modifyRecords(saving: [record], deleting: [], savePolicy: .allKeys)
+    }
+
+    public func friendRequests(to userID: String) async throws -> [FriendRequestRecord] {
+        try await requests(matching: NSPredicate(format: "to == %@", userID))
+    }
+
+    public func friendRequests(from userID: String) async throws -> [FriendRequestRecord] {
+        try await requests(matching: NSPredicate(format: "from == %@", userID))
+    }
+
+    public func deleteFriendRequest(from: String, to: String) async throws {
+        try await delete([Self.requestID(from: from, to: to)])
+    }
+
+    public func profiles(ids: [String]) async throws -> [String: PublicProfile] {
+        var profiles: [String: PublicProfile] = [:]
+        for batch in Array(Set(ids)).chunked(into: 200) {
+            let results = try await database.records(for: batch.map { CKRecord.ID(recordName: $0) })
+            for (id, result) in results {
+                if case let .success(record) = result { profiles[id.recordName] = Self.profile(from: record) }
+            }
+        }
+        return profiles
     }
 
     public func publish(_ profile: PublicProfile) async throws {
@@ -77,14 +100,43 @@ public final class CloudKitSocialService: SocialService {
     public func deleteAccount(userID: String, phone: String?) async throws {
         var ids = [CKRecord.ID(recordName: userID)]
         if let phone { ids.append(CKRecord.ID(recordName: ContactKey.make(phone: phone))) }
+        // Requests made to this account belong to their senders and cannot be deleted here; without the
+        // public profile they are left out of every list.
+        ids += try await friendRequests(from: userID).map { Self.requestID(from: $0.from, to: $0.to) }
         try await delete(ids)
     }
 
     private func delete(_ ids: [CKRecord.ID]) async throws {
-        let (_, results) = try await database.modifyRecords(saving: [], deleting: ids)
-        for result in results.values {
-            if case let .failure(error) = result, (error as? CKError)?.code != .unknownItem { throw error }
+        for batch in ids.chunked(into: 200) {
+            let (_, results) = try await database.modifyRecords(saving: [], deleting: batch)
+            for result in results.values {
+                if case let .failure(error) = result, (error as? CKError)?.code != .unknownItem { throw error }
+            }
         }
+    }
+
+    /// Every page of a `FriendRequest` query. Needs `from` and `to` queryable in the Dashboard.
+    private func requests(matching predicate: NSPredicate) async throws -> [FriendRequestRecord] {
+        var records: [FriendRequestRecord] = []
+        var page = try await database.records(matching: CKQuery(recordType: RecordType.friendRequest, predicate: predicate),
+                                              desiredKeys: ["from", "to"])
+        while true {
+            for (_, result) in page.matchResults {
+                if case let .success(record) = result, let request = Self.request(from: record) { records.append(request) }
+            }
+            guard let cursor = page.queryCursor else { break }
+            page = try await database.records(continuingMatchFrom: cursor, desiredKeys: ["from", "to"])
+        }
+        return records
+    }
+
+    static func requestID(from: String, to: String) -> CKRecord.ID {
+        CKRecord.ID(recordName: "\(from)-\(to)")
+    }
+
+    static func request(from record: CKRecord) -> FriendRequestRecord? {
+        guard let from = record["from"] as? String, let to = record["to"] as? String else { return nil }
+        return FriendRequestRecord(from: from, to: to, createdAt: record.creationDate ?? .distantPast)
     }
 
     private func record(_ id: CKRecord.ID) async throws -> CKRecord? {

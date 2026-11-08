@@ -8,6 +8,8 @@ struct HomeCardView: View {
     var palateMap: PalateMap
     var cellarWineKeys: Set<String> = []
     var onInvite: () -> Void = {}
+    var onOpenFriends: () -> Void = {}
+    var onOpenLastTable: () -> Void = {}
     var onOpenLesson: (HomeLessonSuggestion) -> Void = { _ in }
     var onOpenCourse: (String) -> Void = { _ in }
     var onOpenGlossary: (GlossaryTerm) -> Void = { _ in }
@@ -23,10 +25,16 @@ struct HomeCardView: View {
             HeroCard(resources: resources, wine: wine, palateMap: palateMap, isInCellar: cellarWineKeys.contains(wine.id),
                     onShowLess: onShowLess, onSaveToCellar: { onSaveToCellar(wine) })
         case let .friends(state):
-            // HOME-R11: with no friends yet, the card opens the invite.
+            // HOME-R11: no friend, the invite; one, the last table (FRI-R17); more, the Friends tab.
             FriendsCard(resources: resources, state: state)
                 .contentShape(Rectangle())
-                .onTapGesture { if state == .noFriends { onInvite() } }
+                .onTapGesture {
+                    switch state {
+                    case .noFriends: onInvite()
+                    case .hasMatch: onOpenLastTable()
+                    case .hasFriends: onOpenFriends()
+                    }
+                }
         case let .continueLesson(course):
             ContinueLessonCard(resources: resources, course: course)
                 .contentShape(Rectangle())

@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The vineyard photo (bg1) behind full pages, with moss while it loads.
+/// The vineyard photo (bg1) behind full pages.
 /// The Quiz and the Onboarding show it softer: faded and blurred. The You tab shows only the hills (bg2).
 public struct PageBackground: View {
     var photo: Image
@@ -20,7 +20,7 @@ public struct PageBackground: View {
     }
 
     public var body: some View {
-        UVVAColor.moss
+        (photoOpacity < 1 ? UVVAColor.moss : Color.clear)
             .overlay {
                 photo
                     .resizable()

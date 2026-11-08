@@ -12,6 +12,7 @@ struct CellarResourcesUIModel {
     var emptyTitleText = String(localized: "Your cellar is empty", bundle: .module)
     var emptyBodyText = String(localized: "Tap + to photograph your first bottle and add it to your cellar.", bundle: .module)
     var noMatchesText = String(localized: "No bottles in your cellar match these filters.", bundle: .module)
+    var noteSavedText = String(localized: "Note saved", bundle: .module)
     var bannerTitleText = String(localized: "Every wine you rate moves your map", bundle: .module)
     var bannerBodyText = String(localized: "Bottles marked Not yet wait in your cellar until you taste them.", bundle: .module)
     var searchHintText = String(localized: "Search by wine, grape, region or producer.", bundle: .module)

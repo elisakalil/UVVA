@@ -79,7 +79,10 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             },
             onOpenLearn: viewModel.openLearn,
             onOpenWine: { wineSheet = $0 },
-            onSaveToCellar: { wine in Task { await viewModel.addToCellar(wine) } })
+            onSaveToCellar: { wine in Task { await viewModel.addToCellar(wine) } },
+            onScan: viewModel.scan,
+            onOpenFriends: viewModel.openFriends,
+            onOpenLastTable: viewModel.openLastTable)
     }
 
 }

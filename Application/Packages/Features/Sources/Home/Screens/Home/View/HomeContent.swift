@@ -16,11 +16,13 @@ struct HomeContent: View {
     var onOpenLearn: (CourseKind) -> Void = { _ in }
     var onOpenWine: (WineSheetModel) -> Void = { _ in }
     var onSaveToCellar: (Wine) -> Void = { _ in }
+    var onScan: () -> Void = {}
+    var onOpenFriends: () -> Void = {}
+    var onOpenLastTable: () -> Void = {}
 
     @State private var scroll = HeaderScrollModel()
     static let topID = "home.top"
 
-    /// Pair adjacent small cards. A lesson keeps its half-width slot even when alone.
     private var rows: [[HomeCardModel]] {
         var rows: [[HomeCardModel]] = []
         for card in model.cards {
@@ -40,19 +42,18 @@ struct HomeContent: View {
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(alignment: .leading, spacing: UVVASpace.card) {
-                        // Room for the header at full size; it floats above the cards.
                         Color.clear.frame(height: HomeHeader.fullHeight + HomeHeader.cardsGap).id(Self.topID)
                         ForEach(rows, id: \.[0].kind) { row in
-                            if row.count == 2 {
+                            if row[0].isHalfWidth {
                                 HStack(spacing: 14) {
-                                    ForEach(row, id: \.kind) { card($0, proxy: proxy) }
+                                    ForEach(row, id: \.kind) {
+                                        card($0, proxy: proxy)
+                                            .containerRelativeFrame(.horizontal) { width, _ in
+                                                (width - 2 * UVVASpace.gutter - 14) / 2
+                                            }
+                                    }
                                 }
                                 .fixedSize(horizontal: false, vertical: true)
-                            } else if case .continueLesson = row[0] {
-                                card(row[0], proxy: proxy)
-                                    .containerRelativeFrame(.horizontal) { width, _ in
-                                        (width - 2 * UVVASpace.gutter - 14) / 2
-                                    }
                             } else {
                                 card(row[0], proxy: proxy)
                             }
@@ -61,19 +62,16 @@ struct HomeContent: View {
                     }
                     .padding(.horizontal, UVVASpace.gutter)
                     .padding(.bottom, 40)
-                    .glassPanes()
+                    .glassPanes(rimOpacity: 0.5)
                 }
-                // One still copy of the glass photo for every card; only the cards' outline follows the scroll.
                 .glassBackdrop()
                 .scrollIndicators(.hidden)
                 .scrollDisabled(tourTarget != nil)
-                // Clamped to the header's range: once it has collapsed, scrolling further reports nothing.
                 .onScrollGeometryChange(for: CGFloat.self) { geometry in
                     min(HomeHeader.collapseDistance, max(0, geometry.contentOffset.y + geometry.contentInsets.top))
                 } action: { _, offset in
                     scroll.offset = offset
                 }
-                // HOME-R31: on step 2 the Home scrolls down to "Choose your wine"; otherwise it stays at the top.
                 .onChange(of: tourTarget) { _, target in
                     withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
                         if target == HomeSpotlightID.chooseYourWine {
@@ -86,7 +84,8 @@ struct HomeContent: View {
             }
 
             if case let .header(greeting, hasUnread) = model.cards.first {
-                HomeHeader(resources: resources, greeting: greeting, hasUnread: hasUnread, scroll: scroll)
+                HomeHeader(resources: resources, greeting: greeting, hasUnread: hasUnread, scroll: scroll,
+                           onScan: onScan)
             }
         }
         .foregroundStyle(UVVAColor.cream)
@@ -116,7 +115,8 @@ struct HomeContent: View {
     }
 
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
-        HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite,
+        HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite, onOpenFriends: onOpenFriends,
+                     onOpenLastTable: onOpenLastTable,
                      onOpenLesson: onOpenLesson, onOpenCourse: onOpenCourse, onOpenGlossary: onOpenGlossary, onOpenLearn: onOpenLearn,
                      onShowLess: { then in
                          withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }

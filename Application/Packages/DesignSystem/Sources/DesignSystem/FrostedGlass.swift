@@ -36,11 +36,13 @@ public struct FrostedGlass: View {
 
     @Environment(\.backdropFrame) private var backdropFrame
     @Environment(\.sharesGlassBackdrop) private var sharesBackdrop
+    @Environment(\.glassRimOpacity) private var rimOpacity
     /// The grain is drawn at the screen's own scale, so one speck is one device pixel.
     @Environment(\.displayScale) private var displayScale
 
     public var body: some View {
         let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
+        let borderOpacity = pinsPhoto ? 0.5 : rimOpacity
         ZStack {
             diffusedPhoto
             // Cards are a touch clearer in the centre: less blur and less haze than along the edge.
@@ -57,10 +59,10 @@ public struct FrostedGlass: View {
         .overlay(
             shape.strokeBorder(
                 LinearGradient(stops: [
-                    .init(color: .white.opacity(0.4), location: 0),
-                    .init(color: .white.opacity(0.09), location: 0.35),
-                    .init(color: .white.opacity(0.04), location: 0.65),
-                    .init(color: .white.opacity(0.2), location: 1)
+                    .init(color: .white.opacity(0.4 * borderOpacity), location: 0),
+                    .init(color: .white.opacity(0.09 * borderOpacity), location: 0.35),
+                    .init(color: .white.opacity(0.04 * borderOpacity), location: 0.65),
+                    .init(color: .white.opacity(0.2 * borderOpacity), location: 1)
                 ], startPoint: .topLeading, endPoint: .bottomTrailing),
                 lineWidth: 1.2
             )
@@ -107,12 +109,12 @@ public struct FrostedGlass: View {
         GeometryReader { proxy in
             let cap = radius + Self.edgeReach
             if min(proxy.size.width, proxy.size.height) > 2 * cap,
-               let image = EdgeLight.image(radius: radius, dense: dense, scale: displayScale) {
+               let image = EdgeLight.image(radius: radius, dense: dense, innerGlow: pinsPhoto, scale: displayScale) {
                 Image(uiImage: image)
                     .resizable(capInsets: EdgeInsets(top: cap, leading: cap, bottom: cap, trailing: cap))
             } else {
                 // Too small to stretch: small enough to keep whole as one bitmap.
-                EdgeLight(radius: radius, dense: dense).drawingGroup()
+                EdgeLight(radius: radius, dense: dense, innerGlow: pinsPhoto).drawingGroup()
             }
         }
     }
@@ -147,7 +149,7 @@ public struct FrostedGlass: View {
             EmptyView()
         } else if pinsPhoto, let photo = GlassTextures.lightlyBlurredPhoto {
             photoPinned(photo)
-                .mask { inset(by: Self.frostedEdge, fade: Self.edgeFade).drawingGroup() }
+                .mask { PanePiece.center(radius: radius).view(scale: displayScale) }
         } else if let backdropFrame, let photo = GlassTextures.lightlyBlurredPhoto {
             FixedPhoto(photo: photo, backdropFrame: backdropFrame)
                 .mask { inset(by: Self.frostedEdge, fade: Self.edgeFade).drawingGroup() }
@@ -173,10 +175,9 @@ public struct FrostedGlass: View {
         }
     }
 
-    /// Left out on panes over a shared backdrop: each Liquid Glass layer samples what lies behind it, so in a scroll
-    /// view every card was rendered again on every frame and the scroll stuttered.
+    /// Shared and photo-pinned panes use the cached edge light while scrolling.
     @ViewBuilder private func liquidShine(_ shape: RoundedRectangle) -> some View {
-        if #available(iOS 26.0, *), !usesSharedBackdrop {
+        if #available(iOS 26.0, *), !usesSharedBackdrop, !pinsPhoto {
             Color.clear
                 .glassEffect(.clear, in: shape)
                 // Any stronger and its lensing draws a thin dark line just inside the rim.
@@ -192,6 +193,7 @@ struct EdgeLight: View {
     var radius: CGFloat
     /// Even haze across the thin chrome (the tab bar).
     var dense: Bool
+    var innerGlow: Bool
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
@@ -204,7 +206,7 @@ struct EdgeLight: View {
             }
             // Light gathers at the edges of thick frosted glass.
             shape
-                .stroke(.white.opacity(0.05), lineWidth: 12)
+                .stroke(.white.opacity(innerGlow ? 0.12 : 0.05), lineWidth: 12)
                 .blur(radius: 7)
         }
         .clipShape(shape)
@@ -237,6 +239,7 @@ struct EdgeLight: View {
     private struct Key: Hashable {
         var radius: CGFloat
         var dense: Bool
+        var innerGlow: Bool
         var scale: CGFloat
     }
 
@@ -244,11 +247,13 @@ struct EdgeLight: View {
 
     /// The edge light of a pane just big enough to hold its corners and the even middle: one point wider and
     /// taller than the two corners, so that middle point is what stretches over a bigger pane.
-    @MainActor static func image(radius: CGFloat, dense: Bool, scale: CGFloat) -> UIImage? {
-        let key = Key(radius: radius, dense: dense, scale: scale)
+    @MainActor static func image(radius: CGFloat, dense: Bool, innerGlow: Bool, scale: CGFloat) -> UIImage? {
+        let key = Key(radius: radius, dense: dense, innerGlow: innerGlow, scale: scale)
         if let image = images[key] { return image }
         let side = 2 * (radius + FrostedGlass.edgeReach) + 1
-        let renderer = ImageRenderer(content: EdgeLight(radius: radius, dense: dense).frame(width: side, height: side))
+        let renderer = ImageRenderer(
+            content: EdgeLight(radius: radius, dense: dense, innerGlow: innerGlow).frame(width: side, height: side)
+        )
         renderer.scale = scale
         renderer.isOpaque = false
         let image = renderer.uiImage

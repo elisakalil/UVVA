@@ -31,7 +31,10 @@ As duas lojas ficam no mesmo `ModelContainer` (`AppStore.makeContainer`, package
 | `CellarEntry` | wineKey, dados do vinho, status, verdict, note, photoFront, photoBack, createdAt, updatedAt |
 | `LessonProgress` | lessonId, currentStep, answers, completedAt, lastOpenedAt |
 | `Certificate` | courseId, date |
-| `Friend` | friendID, addedAt |
+| `Friend` | friendID, name, values, addedAt (cache do `PublicProfile`) |
+| `DeclinedRequest` | userID, declinedAt |
+| `DismissedSuggestion` | userID, dismissedAt |
+| `LastTable` | friendIDs, openedAt |
 | `Reminder` | hour, minute, moment?, weekdays |
 
 **`Profile`**
@@ -64,6 +67,8 @@ O "antes" de uma mudança é a entrada anterior; a variação de cada eixo é a 
 
 **`Friend`**
 - `friendID`: o `id` do amigo. Com ele, a app lê o `PublicProfile` do amigo (nome, foto e mapa).
+- `name` e `values` são uma cópia do `PublicProfile`, atualizada a cada refresh, para a aba abrir sem rede. A amizade em si está na base pública (4.4).
+- `DeclinedRequest`: pedidos recusados, só nesta conta, para quem enviou não ser avisado (FRI-R08a). `DismissedSuggestion`: sugestões tiradas do Quick add com `×` (FRI-R09). `LastTable`: quem estava na última mesa (FRI-R17); a mesa é recalculada ao abrir.
 - Limites do SwiftData com CloudKit: sem `@Attribute(.unique)` (a app evita duplicados), todos os campos opcionais ou com valor padrão, fotos em `.externalStorage`.
 - O `UserDefaults` guarda só o que é do aparelho: data do último sync, versão do conteúdo, vista do Cellar.
 
@@ -102,12 +107,13 @@ As tabelas da Loja Pessoal (2.1), criadas e sincronizadas pelo SwiftData. Ficam 
 | `CatalogWine` | wineKey | dados do vinho, 8 eixos, `segment`, status (`approved`, `pending`, `rejected`) | Equipa (Dashboard) e usuários (vinhos escaneados, como `pending`) |
 | `PublicProfile` | id do usuário | firstName, avatar, values (vazio se o mapa não é público) | O dono |
 | `ContactKey` | SHA-256(telefone E.164 + sal) | userID | O dono |
-| `FriendRequest` | `<id de>-<id para>` | from, to, status (`pending`, `accepted`, `declined`) | Quem envia e quem recebe |
+| `FriendRequest` | `<id de>-<id para>` | from, to, status (`pending`, só informativo) | Quem envia (só o criador altera ou apaga) |
 | `Announcement` | id | title, body, date | Equipa (Dashboard) |
 
 - `recordName` igual à chave impede duplicados sem servidor: criar um registo que já existe falha.
 - `segment` é um número que agrupa vinhos parecidos no paladar. Serve para pedir ao CloudKit só os vinhos certos (4.1). Como é calculado fica no [`MATCH.md`](../App/Features/Shared/MATCH.md).
-- Índices no Dashboard: *queryable* em `CatalogWine.segment`, `CatalogWine.status`, `CatalogWine.modificationDate` e `FriendRequest.to`.
+- Índices no Dashboard: *queryable* em `CatalogWine.segment`, `CatalogWine.status`, `CatalogWine.modificationDate`, `FriendRequest.from`, `FriendRequest.to` e `recordName`.
+- Na base pública só o criador de um registo o pode alterar. Por isso ninguém muda o `FriendRequest` do outro: a amizade são dois pedidos, um em cada sentido (4.4).
 
 ## 4. Sincronização
 
@@ -143,7 +149,11 @@ O SwiftData sincroniza a Loja Pessoal com a base privada sozinho: grava no apare
 
 - **Mapa público:** a cada mudança do `PalateMap`, a app atualiza o seu `PublicProfile`.
 - **Quick add:** a app calcula a chave de cada telefone da agenda e pede esses `ContactKey` ao CloudKit de uma vez. Os que existem são contatos na UVVA.
-- **Pedido de amizade:** "Add" cria um `FriendRequest`. Quem recebe aceita, e os dois gravam um `Friend` com o `id` do outro na Loja Pessoal.
+- **Pedido de amizade:** "Add" cria o `FriendRequest` `A-B`. Dois usuários são amigos quando existem `A-B` e `B-A` (`Friendship`, Core):
+  - **Aceitar** é criar o pedido de volta, `B-A`. Se os dois pediram, já são amigos (FRI-R08b).
+  - **Recusar** grava um `DeclinedRequest` só na conta de quem recusa; `A-B` fica, e A continua a ver "Requested".
+  - **Cancelar** (D11) ou **remover um amigo** (D4) é apagar o próprio pedido. Quem foi removido vê, no refresh seguinte, um pedido seu sem par a um amigo da cache, e apaga-o também.
+  - A cada refresh, a app lê os pedidos com `to` = eu e `from` = eu, aplica o `Friendship`, lê os `PublicProfile` dos amigos e grava a cache `Friend`.
 - **Ver o paladar de um amigo:** a app lê o `PublicProfile` dele.
 - **Mapa privado (YOU-R22):** com "Make chart public" desligado, o `PublicProfile` continua a existir (nome e `hasMap`), mas sem o mapa.
 
@@ -151,7 +161,8 @@ O SwiftData sincroniza a Loja Pessoal com a base privada sozinho: grava no apare
 
 - **Sign out:** os dados ficam no iCloud. Uma flag local (`session.signedOut`) leva a app à Welcome até o próximo login.
 - **Apagar a conta (YOU-R27):** primeiro a base pública (`PublicProfile` e `ContactKey`), depois a Loja Pessoal (Profile, mapas, lembrete) e as notificações locais. Se a base pública falhar, nada é apagado e o usuário tenta de novo.
-- **Falta antes do TestFlight:** revogar o token do Sign in with Apple (a App Store exige; precisa de um servidor com a chave privada, previsto num Cloudflare Worker). Com o Friends, apagar também os `FriendRequest` enviados e recebidos.
+- **Apagar a conta** apaga também os `FriendRequest` enviados. Os recebidos são de quem os enviou e não podem ser apagados; sem `PublicProfile`, ficam fora de todas as listas.
+- **Falta antes do TestFlight:** revogar o token do Sign in with Apple (a App Store exige; precisa de um servidor com a chave privada, previsto num Cloudflare Worker).
 
 ## 5. Notificações
 

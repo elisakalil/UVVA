@@ -37,9 +37,6 @@
         }
       }
     },
-    "%lld wines rated" : {
-
-    },
     "A course for you" : {
 
     },
@@ -83,9 +80,6 @@
     "Bottles" : {
 
     },
-    "Build on what you’ve learned with the next new module in The Path." : {
-
-    },
     "Cancel" : {
 
     },
@@ -117,18 +111,6 @@
 
     },
     "Explore Learn" : {
-
-    },
-    "Find a new corner of the wine world to explore." : {
-
-    },
-    "First" : {
-
-    },
-    "First map · 0 wines rated" : {
-
-    },
-    "Follow %@ from the grape to the place that shapes it." : {
 
     },
     "Friends" : {
@@ -171,9 +153,6 @@
 
     },
     "Name" : {
-
-    },
-    "New" : {
 
     },
     "Nice to meet you" : {
@@ -221,9 +200,6 @@
     "Public" : {
 
     },
-    "Read %@" : {
-
-    },
     "Red grapes" : {
 
     },
@@ -237,9 +213,6 @@
 
     },
     "Save" : {
-
-    },
-    "See how your map has changed over the last few months." : {
 
     },
     "Set a time" : {
@@ -304,12 +277,6 @@
 
     },
     "This permanently removes your palate map, cellar, tables and certificates. It cannot be undone." : {
-
-    },
-    "Today" : {
-
-    },
-    "Today · %lld wines rated" : {
 
     },
     "Turn reminders off" : {
@@ -409,9 +376,6 @@
 
     },
     "You’re on the beginner stretch of The Path. The next glass already has a little more to tell you." : {
-
-    },
-    "You’ve explored %@. Now get to know one of the grapes that grows there." : {
 
     },
     "You’ve found a first thread in %@. Follow it and a whole corner of the wine world begins to open up." : {

@@ -6,13 +6,17 @@ import Testing
 @MainActor
 struct CellarViewModelTests {
     private func make(_ entries: [CellarEntry], preferences: PreferencesStub = PreferencesStub()) async -> CellarViewModel {
-        let model = CellarViewModel(loadCellar: CellarLoaderStub(entries: entries), preferences: preferences,
-                                    bannerDuration: .milliseconds(10)) { entry, owner in
+        let model = makeUnloaded(entries, preferences: preferences)
+        await model.load()
+        return model
+    }
+
+    private func makeUnloaded(_ entries: [CellarEntry], preferences: PreferencesStub = PreferencesStub()) -> CellarViewModel {
+        CellarViewModel(loadCellar: CellarLoaderStub(entries: entries), preferences: preferences,
+                        bannerDuration: .milliseconds(10)) { entry, owner in
             NoteViewModel(entry: entry, loadNote: NoteLoaderStub(), saveNote: SaveNoteSpy(), deleteNote: DeleteNoteSpy(),
                           onChange: { _ in }, onClose: { [weak owner] in owner?.closeNote() })
         }
-        await model.load()
-        return model
     }
 
     private let douro = [Entries.entry("vale-meao", type: "Red", region: "Douro", verdict: .yes),
@@ -26,6 +30,27 @@ struct CellarViewModelTests {
         #expect(!model.uiModel.areFiltersEnabled)
         model.openFilter(.type)
         #expect(model.uiModel.filterSheet == nil)
+    }
+
+    // MARK: Pré-carregamento
+
+    @Test func beforeTheFirstRead_showsNeitherTheEmptyStateNorWines() {
+        #expect(makeUnloaded(douro).uiModel.state == .idle)
+    }
+
+    @Test func prefetch_readsTheWines_withoutUsingABannerVisit() async {
+        let preferences = PreferencesStub()
+        let model = makeUnloaded(douro, preferences: preferences)
+        await model.prefetch()
+        #expect(model.uiModel.state == .items)
+        #expect(!model.uiModel.isBannerVisible)
+        #expect(preferences.bannerViews == 0)
+    }
+
+    @Test func prefetch_ofAnEmptyCellar_showsTheEmptyState() async {
+        let model = makeUnloaded([])
+        await model.prefetch()
+        #expect(model.uiModel.state == .empty)
     }
 
     // MARK: CELLAR-R07 · Vista guardada
@@ -109,7 +134,8 @@ struct CellarViewModelTests {
         for _ in 0..<2 {
             let model = await make(douro, preferences: preferences)
             #expect(model.uiModel.isBannerVisible)
-            try await Task.sleep(for: .milliseconds(50))
+            // The banner hides after its (shortened) duration; a busy test run may take a little longer.
+            for _ in 0..<100 where model.uiModel.isBannerVisible { try await Task.sleep(for: .milliseconds(20)) }
             #expect(!model.uiModel.isBannerVisible)
         }
         #expect(!(await make(douro, preferences: preferences)).uiModel.isBannerVisible)

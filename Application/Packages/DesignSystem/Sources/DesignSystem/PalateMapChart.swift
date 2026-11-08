@@ -12,11 +12,15 @@ public struct PalateMapChart: View {
     var labelOpacity: Double
     /// An earlier map, drawn faintly under this one (YOU-R10).
     var comparison: [Double]?
+    /// A second shape in a fine dotted line, with no fill or dots: the boldest reading of a table (FRI-R19).
+    var outline: [Double]?
     var ink: Color
 
     public init(values: [Double], labels: [String], strong: Set<Int> = [], labelSize: CGFloat = 8,
-                labelOpacity: Double = 0.7, comparison: [Double]? = nil, ink: Color = UVVAColor.creamFill) {
+                labelOpacity: Double = 0.7, comparison: [Double]? = nil, outline: [Double]? = nil,
+                ink: Color = UVVAColor.creamFill) {
         self.ink = ink
+        self.outline = outline
         self.comparison = comparison
         self.values = values
         self.labels = labels
@@ -72,6 +76,12 @@ public struct PalateMapChart: View {
             earlier.closeSubpath()
             context.fill(earlier, with: .color(ink.opacity(0.05)))
             context.stroke(earlier, with: .color(ink.opacity(0.35)), style: StrokeStyle(lineWidth: 0.8))
+        }
+        if let outline {
+            var boldest = Path()
+            boldest.addLines(outline.indices.map { Self.point(outline[$0], angle: Self.angle($0, of: outline.count)) })
+            boldest.closeSubpath()
+            context.stroke(boldest, with: .color(ink.opacity(0.7)), style: StrokeStyle(lineWidth: 0.8, dash: [1, 3]))
         }
         let points = values.indices.map { Self.point(values[$0], angle: Self.angle($0, of: values.count)) }
         var shape = Path()

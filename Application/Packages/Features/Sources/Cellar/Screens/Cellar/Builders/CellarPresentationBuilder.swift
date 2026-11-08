@@ -7,6 +7,8 @@ struct CellarPresentationBuilder {
     var filters: [CellarFacet: String]
     var openFacet: CellarFacet?
     var query: String
+    /// False until the entries are read for the first time.
+    var isLoaded = true
     var resources = CellarResourcesUIModel()
     var dateStyle = Date.FormatStyle().day().month(.abbreviated)
 
@@ -14,6 +16,7 @@ struct CellarPresentationBuilder {
     var filtered: [CellarEntry] { entries.filter { matches($0) } }
 
     var state: CellarListState {
+        if !isLoaded { return .idle }
         if entries.isEmpty { return .empty }
         return filtered.isEmpty ? .noMatches : .items
     }

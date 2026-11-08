@@ -6,6 +6,8 @@ struct HomeHeader: View {
     var greeting: String
     var hasUnread: Bool
     var scroll: HeaderScrollModel
+    /// The `+` (HOME-R03): the new note, the same as the Cellar's (CELLAR-R14).
+    var onScan: () -> Void = {}
 
     /// The logo's size at full scale, measured once.
     @State private var logoSize = CGSize.zero
@@ -42,7 +44,7 @@ struct HomeHeader: View {
                     .frame(width: logoSize.width * logoScale, height: logoSize.height * logoScale, alignment: .topLeading)
                 Spacer(minLength: 0)
                 HStack(alignment: .top, spacing: 6) {
-                    Button {} label: {
+                    Button(action: onScan) {
                         Text(resources.homeHeaderScanSymbol)
                             .font(UVVAFont.sans(29, .ultraLight))
                             .frame(width: Self.buttonSize, height: Self.buttonSize)

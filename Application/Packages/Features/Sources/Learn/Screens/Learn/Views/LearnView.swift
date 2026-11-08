@@ -8,9 +8,9 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
     private var resources: LearnResourcesUIModel { viewModel.uiModel.resources }
     @ObservedObject var viewModel: ViewModel
     @FocusState private var isSearchFocused: Bool
-    /// How far the page has scrolled, and the height of the title above the search bar.
     @State private var scrolled: CGFloat = 0
-    @State private var titleHeight: CGFloat = 0
+    @State private var headerHeight: CGFloat = 0
+    @State private var isInfoPresented = false
     /// A region tapped on the map scrolls the page so the list starts just below the search bar.
     @State private var position = ScrollPosition()
     /// Where the region list starts in the visible part of the scroll view.
@@ -32,61 +32,90 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
             PageBackground(blur: 2, veiled: true)
             content
             searchBar
-                .offset(y: max(0, titleHeight - scrolled))
+                .opacity(searchOpacity)
+                .allowsHitTesting(searchOpacity > 0.5)
+                .accessibilityHidden(searchOpacity <= 0.5)
         }
         .foregroundStyle(UVVAColor.creamFill)
         .task { await viewModel.load() }
-
+        .overlay {
+            if isInfoPresented {
+                Rectangle()
+                    .fill(.black.opacity(0.25))
+                    .ignoresSafeArea()
+                    .accessibilityHidden(true)
+                    .onTapGesture { isInfoPresented = false }
+            }
+        }
+        .sheet(isPresented: $isInfoPresented) {
+            LearnTracksSheet(resources: resources)
+                .presentationBackground {
+                    PageBackground(photo: UVVAPhoto.hills, veiled: true)
+                }
+                .presentationDetents([.medium, .large])
+                .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+                .presentationDragIndicator(.visible)
+        }
     }
 
-    /// The title has scrolled away and the search bar holds the top.
-    private var isSearchPinned: Bool { titleHeight > 0 && scrolled > titleHeight }
+    /// The title and info button scroll out of view with the tabs.
+    private var header: some View {
+        HStack(alignment: .top, spacing: 16) {
+            Text(resources.learnText)
+                .font(UVVAFont.sans(31, .ultraLight))
+                .tracking(-0.47)
+                .accessibilityAddTraits(.isHeader)
+            Spacer()
+            Button { isInfoPresented = true } label: {
+                Image(systemName: "info.circle")
+                    .font(.system(size: 17, weight: .light))
+                    .foregroundStyle(UVVAColor.creamFill)
+                    .frame(width: 52, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(Text("About Learn", bundle: .module))
+            .padding(.top, -8)
+            .padding(.trailing, -8)
+        }
+        .padding(.horizontal, 30)
+        .padding(.top, 36)
+        .padding(.bottom, 14)
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { headerHeight = $0 }
+    }
 
-    /// The title scrolls away; the search bar rides with it, then stays at the top while the lists fade out under it.
+    /// Search fades in after the header scrolls out of view and stays visible while in use.
+    private var searchOpacity: Double {
+        if isSearchFocused || viewModel.uiModel.isSearching { return 1 }
+        return min(1, max(0, (scrolled - headerHeight) / 44))
+    }
+
     private var content: some View {
         ScrollViewReader { proxy in
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                Text(resources.learnText)
-                    .font(UVVAFont.sans(31, .ultraLight))
-                    .tracking(-0.47)
-                    .accessibilityAddTraits(.isHeader)
-                    .padding(.horizontal, 30)
-                    .padding(.top, 36)
-                    .padding(.bottom, 6)
-                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { titleHeight = $0 }
-                Color.clear.frame(height: Self.searchSlot)
+            ScrollView {
                 sections
+                    .padding(.bottom, 24)
+                    .animation(.easeOut(duration: 0.2), value: viewModel.uiModel.isSearching)
             }
-            .padding(.bottom, 24)
-            .animation(.easeOut(duration: 0.2), value: viewModel.uiModel.isSearching)
-        }
-        .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, offset in
-            scrolled = offset
-        }
-        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { visibleHeight = $0 }
-        .mask {
-            VStack(spacing: 0) {
-                Color.black.opacity(isSearchPinned ? 0 : 1).frame(height: Self.searchSlot - 6)
-                LinearGradient(colors: [.black.opacity(isSearchPinned ? 0 : 1), .black], startPoint: .top, endPoint: .bottom)
-                    .frame(height: 22)
-                Color.black
-                    // Past the bottom inset too, so the lists still show through the tab bar's glass.
-                    .padding(.bottom, -200)
+            .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, offset in
+                scrolled = offset
             }
-        }
-        .scrollDismissesKeyboard(.immediately)
-        .scrollIndicators(.hidden)
-        .scrollEdgeFade(12, throughBottomInset: true)
-        .scrollPosition($position)
-        .onChange(of: viewModel.uiModel.focusedCourseID, initial: true) { _, id in
-            guard let id else { return }
-            proxy.scrollTo(id, anchor: .top)
-        }
-        .onChange(of: viewModel.uiModel.isPresentingPlayer) { _, presenting in
-            guard !presenting, let id = viewModel.uiModel.focusedCourseID else { return }
-            proxy.scrollTo(id, anchor: .top)
-        }
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { visibleHeight = $0 }
+            .scrollDismissesKeyboard(.immediately)
+            .scrollIndicators(.hidden)
+            .scrollEdgeFade(12, throughBottomInset: true)
+            .scrollPosition($position)
+            .onChange(of: viewModel.uiModel.isSearching) { _, isSearching in
+                if isSearching { position.scrollTo(edge: .top) }
+            }
+            .onChange(of: viewModel.uiModel.focusedCourseID, initial: true) { _, id in
+                guard let id else { return }
+                proxy.scrollTo(id, anchor: .top)
+            }
+            .onChange(of: viewModel.uiModel.isPresentingPlayer) { _, presenting in
+                guard !presenting, let id = viewModel.uiModel.focusedCourseID else { return }
+                proxy.scrollTo(id, anchor: .top)
+            }
         }
     }
 
@@ -108,11 +137,9 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
         SearchField(text: Binding(get: { viewModel.uiModel.query }, set: { viewModel.updateQuery($0) }),
                     prompt: resources.searchModulesText,
                     isFocused: $isSearchFocused,
-                    glassOpacity: 0.45,
                     onCancel: {})
-            // The search bar keeps its light material; only the tab bar takes the photo behind it.
-            .environment(\.backdropFrame, nil)
-            .padding(.horizontal, 20)
+            // The same frosted photo glass as the tab bar: the content scrolls behind it, softly diffused.
+            .padding(.horizontal, 24)
             .padding(.vertical, 8)
     }
 
@@ -129,21 +156,21 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
                     if viewModel.uiModel.tab == .region { scrollToRegionList() } else { scrollToOpenRow() }
                 }
             }
+            .padding(.top, Self.searchSlot)
             .transition(.opacity)
         } else {
-            Text(resources.studyWineByRegionByText)
-                .font(UVVAFont.sans(13))
-                .lineSpacing(5)
-                .opacity(0.82)
-                .frame(maxWidth: 300, alignment: .leading)
-                .padding(.horizontal, 30)
-                .padding(.top, 24)
-            LearnTabBar(resources: resources, selected: viewModel.uiModel.tab) { kind in withAnimation(.easeOut(duration: 0.3)) { viewModel.show(kind) } }
+            VStack(alignment: .leading, spacing: 0) {
+                header
+                LearnTabBar(resources: resources, selected: viewModel.uiModel.tab) { kind in
+                    withAnimation(.easeOut(duration: 0.3)) { viewModel.show(kind) }
+                }
                 .padding(.horizontal, 24)
-                .padding(.top, 32)
-            tabContent
-                .id(viewModel.uiModel.tab)
-                .transition(.opacity)
+                // The 40-point tabs end at Cellar's rule, below its filters.
+                .padding(.top, 35)
+                tabContent
+                    .id(viewModel.uiModel.tab)
+                    .transition(.opacity)
+            }
         }
     }
 

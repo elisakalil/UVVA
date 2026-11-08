@@ -54,6 +54,10 @@ final class RecalculateSpy: RecalculateMapUseCaseProtocol {
 actor CellarSpy: CellarRepository {
     private(set) var updates: [(String, Verdict?, String?)] = []
     private(set) var deletes: [String] = []
+    private(set) var saved: [NewNoteDraft] = []
+    /// What `save` reports as the entry before it, keyed by wineKey.
+    var existing: [String: CellarEntry] = [:]
+    func setExisting(_ entry: CellarEntry) { existing[entry.id] = entry }
     func entries() async throws -> [CellarEntry] { [] }
     func wineKeys() async throws -> Set<String> { [] }
     func addWantToTry(_ wine: Wine) async throws {}
@@ -61,6 +65,10 @@ actor CellarSpy: CellarRepository {
     func addTasted(_ wine: Wine, verdict: Verdict) async throws {}
     func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws { updates.append((wineKey, verdict, note)) }
     func delete(_ wineKey: String) async throws { deletes.append(wineKey) }
+    func save(_ draft: NewNoteDraft) async throws -> CellarEntry? {
+        saved.append(draft)
+        return existing[draft.wine.id]
+    }
 }
 
 actor MapsSpy: PalateMapRepository, PalateHistoryRewriting {

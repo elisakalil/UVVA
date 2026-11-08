@@ -7,6 +7,7 @@ let package = Package(
     platforms: [.iOS(.v18)],
     products: [
         .singleTargetLibrary("Cellar"),
+        .singleTargetLibrary("Friends"),
         .singleTargetLibrary("Home"),
         .singleTargetLibrary("Learn"),
         .singleTargetLibrary("Onboarding"),
@@ -19,6 +20,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "Cellar",
+                dependencies: Dependencies.common + [Dependencies.match],
+                resources: [.process("Resources")]),
+
+        .target(name: "Friends",
                 dependencies: Dependencies.common + [Dependencies.match],
                 resources: [.process("Resources")]),
 
@@ -44,6 +49,9 @@ let package = Package(
 
         .testTarget(name: "CellarTests",
                     dependencies: ["Cellar"] + Dependencies.tests + [Dependencies.match]),
+
+        .testTarget(name: "FriendsTests",
+                    dependencies: ["Friends"] + Dependencies.tests + [Dependencies.match]),
 
         .testTarget(name: "HomeTests",
                     dependencies: ["Home", "Learn", .product(name: "Storage", package: "Core")] + Dependencies.tests + [Dependencies.match]),

@@ -2,7 +2,7 @@ import Foundation
 
 public struct CellarUIModel {
     var viewMode: CellarViewMode = .grid
-    var state: CellarListState = .empty
+    var state: CellarListState = .idle
     var items: [CellarItemUIModel] = []
     var chips: [CellarChipUIModel] = []
     /// The filters are faded and do nothing while the Cellar is empty (CELLAR-R05).
@@ -10,6 +10,8 @@ public struct CellarUIModel {
     var isFiltered = false
     var filterSheet: CellarFilterSheetUIModel?
     var isBannerVisible = false
+    /// "Note saved", after a new note (CELLAR-R19).
+    var isNoteSavedVisible = false
     var query = ""
     /// The search has words: its results take the place of the Cellar.
     var isSearching = false

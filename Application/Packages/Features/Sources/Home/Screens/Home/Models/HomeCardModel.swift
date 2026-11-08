@@ -15,7 +15,7 @@ enum HomeCardModel: Equatable, Sendable {
 
     enum FriendsCardState: Equatable, Sendable {
         case noFriends
-        case hasMatch(Friend)
+        case hasMatch(name: String, compatibility: Int)
         case hasFriends(count: Int)
     }
 

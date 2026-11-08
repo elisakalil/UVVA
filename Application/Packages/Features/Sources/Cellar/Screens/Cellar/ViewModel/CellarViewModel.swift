@@ -13,26 +13,39 @@ public final class CellarViewModel: CellarViewModelProtocol {
     static let bannerVisits = 2
 
     private var entries: [CellarEntry] = [] { didSet { refresh() } }
+    private var isLoaded = false { didSet { refresh() } }
     private var filters: [CellarFacet: String] = [:] { didSet { refresh() } }
     private var openFacet: CellarFacet? { didSet { refresh() } }
     private var query = "" { didSet { refresh() } }
     private var isBannerVisible = false { didSet { refresh() } }
     private var bannerTask: Task<Void, Never>?
+    private var isNoteSavedVisible = false { didSet { refresh() } }
+    private var noteSavedTask: Task<Void, Never>?
 
     private let loadCellar: any LoadCellarUseCaseProtocol
     private let preferences: any CellarPreferencesProtocol
     private let makeNote: (CellarEntry, _ owner: CellarViewModel) -> NoteViewModel
     private let bannerDuration: Duration
+    /// The `+` (CELLAR-R14): the app opens the new note, the same as from the Home.
+    private let onAdd: () -> Void
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
     init(loadCellar: any LoadCellarUseCaseProtocol, preferences: any CellarPreferencesProtocol,
-         bannerDuration: Duration = .seconds(5),
+         bannerDuration: Duration = .seconds(5), onAdd: @escaping () -> Void = {},
          makeNote: @escaping (CellarEntry, CellarViewModel) -> NoteViewModel) {
+        self.onAdd = onAdd
         self.loadCellar = loadCellar
         self.preferences = preferences
         self.makeNote = makeNote
         self.bannerDuration = bannerDuration
         refresh()
+    }
+
+    /// Reads the entries ahead of the first visit, when the tabs open, so the Cellar shows them at once.
+    /// No banner: that is for when the user is looking.
+    public func prefetch() async {
+        guard !isLoaded else { return }
+        await reload()
     }
 
     /// Every time the tab opens, so wines saved from the Home are there.
@@ -50,6 +63,21 @@ public final class CellarViewModel: CellarViewModelProtocol {
     /// Back to the Cellar, where it was.
     public func closeNote() { note = nil }
 
+    public func add() { onAdd() }
+
+    /// A new note was saved (CELLAR-R19): the Cellar reads its entries again, with the new one on top, and says
+    /// "Note saved" for a few seconds.
+    public func newNoteSaved() {
+        Task { await reload() }
+        isNoteSavedVisible = true
+        noteSavedTask?.cancel()
+        noteSavedTask = Task { [weak self, bannerDuration] in
+            try? await Task.sleep(for: min(bannerDuration, .seconds(3)))
+            guard !Task.isCancelled else { return }
+            self?.isNoteSavedVisible = false
+        }
+    }
+
     /// The note was saved or deleted: the Cellar reads its entries again.
     func noteChanged() {
         Task { await reload() }
@@ -61,6 +89,7 @@ public final class CellarViewModel: CellarViewModelProtocol {
         } catch {
             logger.error("Cellar did not load: \(error.localizedDescription, privacy: .public)")
         }
+        isLoaded = true
     }
 
     /// CELLAR-R07: the choice is kept for the next time the Cellar opens.
@@ -105,7 +134,7 @@ public final class CellarViewModel: CellarViewModelProtocol {
 
     private func refresh() {
         let builder = CellarPresentationBuilder(entries: entries, filters: filters, openFacet: openFacet,
-                                                query: query, resources: uiModel.resources)
+                                                query: query, isLoaded: isLoaded, resources: uiModel.resources)
         var model = uiModel
         model.viewMode = preferences.viewMode
         model.state = builder.state
@@ -115,6 +144,7 @@ public final class CellarViewModel: CellarViewModelProtocol {
         model.isFiltered = !filters.isEmpty
         model.filterSheet = builder.filterSheet
         model.isBannerVisible = isBannerVisible
+        model.isNoteSavedVisible = isNoteSavedVisible
         model.query = query
         model.isSearching = builder.isSearching
         let results = builder.searchResults

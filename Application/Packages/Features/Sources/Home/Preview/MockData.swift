@@ -79,10 +79,11 @@ enum MockData {
     static let lastRating = Rating(wineKey: "pontoforte", verdict: .yes, date: Date().addingTimeInterval(-86_400),
                                    deltas: [.tannin: 0.3, .body: 0.2, .acidity: -0.1])
 
-    static let marina = Friend(id: "marina", name: "Marina Alves", compatibility: 82)
+    static let marina = Friend(id: "marina", name: "Marina Alves",
+                               map: PalateMap([.acidity: 7, .fruit: 6.5, .body: 5, .floral: 4]), addedAt: .now)
     static let friends: [Friend] = [
         marina,
-        Friend(id: "bia", name: "Bia Damas", compatibility: 74),
-        Friend(id: "rui", name: "Rui das Neves", compatibility: 61)
+        Friend(id: "bia", name: "Bia Damas", map: PalateMap([.tannin: 7, .oak: 6, .body: 6]), addedAt: .now),
+        Friend(id: "rui", name: "Rui das Neves", map: PalateMap([.spice: 7, .fruit: 6, .sweetness: 3]), addedAt: .now)
     ]
 }

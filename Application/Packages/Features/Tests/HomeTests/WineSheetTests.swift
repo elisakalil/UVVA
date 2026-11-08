@@ -26,6 +26,7 @@ private actor CellarSpy: CellarRepository {
     func entries() async throws -> [CellarEntry] { [] }
     func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {}
     func delete(_ wineKey: String) async throws {}
+    func save(_ draft: NewNoteDraft) async throws -> CellarEntry? { nil }
     func wineKeys() async throws -> Set<String> { Set(tasted.keys) }
     func addWantToTry(_ wine: Wine) async throws {}
     func tastedWineKeys() async throws -> Set<String> { Set(tasted.keys) }
