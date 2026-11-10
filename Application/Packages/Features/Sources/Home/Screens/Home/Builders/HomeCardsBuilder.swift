@@ -2,20 +2,16 @@ import Core
 import Foundation
 import Match
 
-/// Builds the Home cards from the model. Pure: no UI, no clock or randomness of its own (SHARED-R04).
-struct HomeCardsBuilder {
+/// Builds the Home cards from the model. Pure: no UI, no clock or randomness of its own (SHARED-R04). Sendable, as
+/// it reads the whole catalog and is run off the main actor.
+struct HomeCardsBuilder: Sendable {
     var calendar: Calendar = .current
     /// Picks an index in 0..<count for the word of the day; injected so tests can fix it (HOME-R19).
-    var pickWordIndex: (Int) -> Int = { Int.random(in: 0..<$0) }
-
-    /// The day's wine is drawn from the closest wines with a dish (HOME-R06, R07).
-    static let dailySuggestionPool = 30
-    /// Only wines at least this close to the map, as the percentage the card shows, are suggested.
-    static let dailySuggestionMinimumMatch = 70
+    var pickWordIndex: @Sendable (Int) -> Int = { Int.random(in: 0..<$0) }
 
     func build(from model: HomeContentModel, now: Date) -> [HomeCardModel] {
         var cards: [HomeCardModel] = [header(model)]
-        if let wine = dailySuggestion(model, now: now) { cards.append(.dailySuggestion(wine)) }
+        if let wine = topMatch(model) { cards.append(.topMatch(wine)) }
         cards.append(.friends(friendsCardState(model.friends, map: model.palateMap)))
         if let course = continueLesson(model.courses) { cards.append(.continueLesson(course)) }
         if let changed = axisChanged(model.lastRating) { cards.append(.changedMapCard(axis: changed.axis, delta: changed.delta)) }
@@ -34,16 +30,15 @@ struct HomeCardsBuilder {
                 hasUnread: model.notifications.contains { !$0.isRead })
     }
 
-    // HOME-R06, R07, R08, R10: same wine all day, a new pick each day; with no wine matching the map
-    // by at least `dailySuggestionMinimumMatch`, there is no suggestion.
-    func dailySuggestion(_ model: HomeContentModel, now: Date) -> Wine? {
-        let pool = model.catalog
-            .filter { $0.dish != nil && Similarity.percent($0.profile, model.palateMap) >= Self.dailySuggestionMinimumMatch }
-            .sorted { Similarity.between($0.profile, model.palateMap) > Similarity.between($1.profile, model.palateMap) }
-            .prefix(Self.dailySuggestionPool)
-        guard !pool.isEmpty else { return nil }
-        let day = calendar.ordinality(of: .day, in: .era, for: now) ?? 0
-        return Array(pool)[day % pool.count]
+    // HOME-R06, R07, R08, R10: the top of the match list, the wine with a dish closest to the map. It follows the
+    // map and not the day, so it only changes when the map does; wines equally close keep the catalog's order.
+    func topMatch(_ model: HomeContentModel) -> Wine? {
+        var best: (wine: Wine, similarity: Double)?
+        for wine in model.catalog where wine.dish != nil {
+            let similarity = Similarity.between(wine.profile, model.palateMap)
+            if similarity > (best?.similarity ?? -.infinity) { best = (wine, similarity) }
+        }
+        return best?.wine
     }
 
     /// Daily deterministic shuffle of unfinished lessons, one per Learn category.

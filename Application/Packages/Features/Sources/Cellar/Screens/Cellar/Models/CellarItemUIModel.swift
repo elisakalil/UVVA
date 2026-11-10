@@ -4,6 +4,8 @@ import Foundation
 struct CellarItemUIModel: Identifiable, Equatable {
     var id: String
     var name: String
+    /// The producer, or empty when unknown. The grid writes it on covers without a photo.
+    var producer: String
     /// "2019", or empty for a wine without a vintage.
     var vintage: String
     /// "Douro · Portugal · Touriga Nacional".

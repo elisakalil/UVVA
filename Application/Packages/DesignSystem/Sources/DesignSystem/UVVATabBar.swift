@@ -37,7 +37,11 @@ public struct UVVATabBar: View {
         }
         .padding(.vertical, 3)
         .padding(.horizontal, 5)
-        .background { FrostedGlass(radius: 21, dense: true) }
+        .background {
+            // A touch brighter than the cards: a faint white veil over the same glass.
+            FrostedGlass(radius: 21, dense: true)
+                .overlay(RoundedRectangle(cornerRadius: 21, style: .continuous).fill(.white.opacity(0.07)))
+        }
     }
 }
 

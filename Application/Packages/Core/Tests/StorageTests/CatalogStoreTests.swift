@@ -20,6 +20,21 @@ struct CatalogStoreTests {
         #expect(wines.first?.serving == 14...16)
         #expect(wines.first?.producer == "Producer")
     }
+
+    /// HOME-R07: the Hero is the top of this list, so wines equally close must come in the same order on every read.
+    @Test func winesClosest_equallyClose_goByTheirKey() async throws {
+        let container = try AppStore.makeInMemoryContainer()
+        var fixture = ContentFixture()
+        fixture.wines = ["twin-c", "twin-a", "twin-b"].map { ContentFixture.wine($0, name: $0, vintage: nil, acidity: 7) }
+            + [ContentFixture.wine("far", name: "Far", vintage: nil, acidity: 0)]
+        _ = try await ContentImporter(modelContainer: container)
+            .importIfNeeded(from: ContentSource(directory: try fixture.write()), currentVersion: nil)
+        let user = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, $0 == .acidity ? 9 : 5) }))
+        let store = CatalogStore(modelContainer: container)
+        for _ in 0..<3 {
+            #expect(try await store.winesClosest(to: user, limit: .max).map(\.id) == ["twin-a", "twin-b", "twin-c", "far"])
+        }
+    }
 }
 
 struct CatalogStoreLookupTests {

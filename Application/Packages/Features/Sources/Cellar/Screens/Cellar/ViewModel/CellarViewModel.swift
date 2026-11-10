@@ -28,12 +28,16 @@ public final class CellarViewModel: CellarViewModelProtocol {
     private let bannerDuration: Duration
     /// The `+` (CELLAR-R14): the app opens the new note, the same as from the Home.
     private let onAdd: () -> Void
+    /// A note was saved or deleted: its verdict may have moved the map (CELLAR-R29), which the Home follows.
+    private let onNoteChange: () -> Void
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
     init(loadCellar: any LoadCellarUseCaseProtocol, preferences: any CellarPreferencesProtocol,
          bannerDuration: Duration = .seconds(5), onAdd: @escaping () -> Void = {},
+         onNoteChange: @escaping () -> Void = {},
          makeNote: @escaping (CellarEntry, CellarViewModel) -> NoteViewModel) {
         self.onAdd = onAdd
+        self.onNoteChange = onNoteChange
         self.loadCellar = loadCellar
         self.preferences = preferences
         self.makeNote = makeNote
@@ -78,9 +82,10 @@ public final class CellarViewModel: CellarViewModelProtocol {
         }
     }
 
-    /// The note was saved or deleted: the Cellar reads its entries again.
+    /// The note was saved or deleted: the Cellar reads its entries again, and the app is told.
     func noteChanged() {
         Task { await reload() }
+        onNoteChange()
     }
 
     private func reload() async {

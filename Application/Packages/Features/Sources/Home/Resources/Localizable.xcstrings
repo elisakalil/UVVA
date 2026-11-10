@@ -1,6 +1,84 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    " %lld" : {
+
+    },
+    "/%lld" : {
+
+    },
+    "%@ · %lld years" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$lld years"
+          }
+        }
+      }
+    },
+    "%@ · 1 year" : {
+
+    },
+    "%lld of %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "%lld of %lld %@ wines for your choices" : {
+
+    },
+    "%lld%%" : {
+
+    },
+    "+" : {
+
+    },
+    "6 lessons" : {
+
+    },
+    "A grape" : {
+
+    },
+    "A lesson" : {
+
+    },
+    "A pairing drawn for your palate" : {
+
+    },
+    "A quick\nlook around" : {
+
+    },
+    "A region" : {
+
+    },
+    "A short walk through where things live in UVVA." : {
+
+    },
+    "Add it to your cellar?" : {
+
+    },
+    "Add to cellar" : {
+
+    },
+    "Another one" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outro vinho"
+          }
+        }
+      }
+    },
     "Any type" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11,6 +89,36 @@
           }
         }
       }
+    },
+    "Anywhere" : {
+      "extractionState" : "manual"
+    },
+    "Appellation" : {
+
+    },
+    "Argentina" : {
+      "extractionState" : "manual"
+    },
+    "Australia" : {
+      "extractionState" : "manual"
+    },
+    "Austria" : {
+      "extractionState" : "manual"
+    },
+    "away from your map" : {
+
+    },
+    "Back" : {
+
+    },
+    "Back to Home" : {
+
+    },
+    "barely moved" : {
+
+    },
+    "Bolder than your map, which has no high axis." : {
+
     },
     "Cheese" : {
       "extractionState" : "manual",
@@ -23,6 +131,36 @@
         }
       }
     },
+    "Chile" : {
+      "extractionState" : "manual"
+    },
+    "Choose your wine" : {
+
+    },
+    "Choose yourself" : {
+
+    },
+    "Citrus" : {
+      "extractionState" : "manual"
+    },
+    "Clear search" : {
+
+    },
+    "Clear selection" : {
+
+    },
+    "Close definition" : {
+
+    },
+    "Close to your map on every axis." : {
+
+    },
+    "Continue  →" : {
+
+    },
+    "Dark fruit" : {
+      "extractionState" : "manual"
+    },
     "Dessert" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -34,121 +172,14 @@
         }
       }
     },
-    "Fish" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Peixe"
-          }
-        }
-      }
+    "Different from the strongest axes on your map." : {
+
     },
-    "Food pairing" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Harmonização"
-          }
-        }
-      }
+    "Earthy" : {
+      "extractionState" : "manual"
     },
-    "Pasta" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Massa"
-          }
-        }
-      }
-    },
-    "Poultry" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aves"
-          }
-        }
-      }
-    },
-    "Red meat" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carne vermelha"
-          }
-        }
-      }
-    },
-    "Seafood" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Frutos do mar"
-          }
-        }
-      }
-    },
-    "Vegetables" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vegetais"
-          }
-        }
-      }
-    },
-    "Another one" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Outro vinho"
-          }
-        }
-      }
-    },
-    "For my palate" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Para o meu paladar"
-          }
-        }
-      }
-    },
-    "No wines match these choices. Try changing a filter." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nenhum vinho combina com essas escolhas. Tente mudar um filtro."
-          }
-        }
-      }
-    },
-    "Surprise me" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Me surpreenda"
-          }
-        }
-      }
+    "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
+
     },
     "Expect a bright, tangy sip." : {
       "localizations" : {
@@ -190,6 +221,58 @@
         }
       }
     },
+    "Fair enough. It's in your cellar, ready for a second chance." : {
+
+    },
+    "Fair enough. Your map took note." : {
+
+    },
+    "Find my wine" : {
+
+    },
+    "Find the wine" : {
+
+    },
+    "Fish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peixe"
+          }
+        }
+      }
+    },
+    "Floral" : {
+      "extractionState" : "manual"
+    },
+    "Food pairing" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harmonização"
+          }
+        }
+      }
+    },
+    "For my palate" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para o meu paladar"
+          }
+        }
+      }
+    },
+    "Fortified" : {
+      "extractionState" : "manual"
+    },
+    "France" : {
+      "extractionState" : "manual"
+    },
     "Fruit is front and center in this one." : {
       "localizations" : {
         "pt-BR" : {
@@ -199,6 +282,38 @@
           }
         }
       }
+    },
+    "Full body" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo alto"
+          }
+        }
+      }
+    },
+    "Gentle acidity, with less of that sharp bite." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A acidez é suave, sem aquela mordida."
+          }
+        }
+      }
+    },
+    "Germany" : {
+      "extractionState" : "manual"
+    },
+    "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
+
+    },
+    "Glad you loved it! It's in your cellar now." : {
+
+    },
+    "Glad you loved it! Your map just learned something." : {
+
     },
     "Go for this if you want something light-bodied." : {
       "localizations" : {
@@ -220,6 +335,107 @@
         }
       }
     },
+    "Grape & notes" : {
+
+    },
+    "Grapes" : {
+
+    },
+    "Have you had this wine?" : {
+
+    },
+    "Herbal" : {
+      "extractionState" : "manual"
+    },
+    "High acidity" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acidez alta"
+          }
+        }
+      }
+    },
+    "High floral" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral alto"
+          }
+        }
+      }
+    },
+    "High fruit" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta alta"
+          }
+        }
+      }
+    },
+    "High in %@ and %@, like your map." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "High in %1$@ and %2$@, like your map."
+          }
+        }
+      }
+    },
+    "High in %@, like your map." : {
+
+    },
+    "High oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho alto"
+          }
+        }
+      }
+    },
+    "High spice" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias altas"
+          }
+        }
+      }
+    },
+    "High sweetness" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doçura alta"
+          }
+        }
+      }
+    },
+    "High tannin" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanino alto"
+          }
+        }
+      }
+    },
+    "How to make it" : {
+
+    },
+    "How to serve" : {
+
+    },
     "If a sweet sip sounds good, pour this one." : {
       "localizations" : {
         "pt-BR" : {
@@ -236,6 +452,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se você gosta de sentir o carvalho, prova esse."
+          }
+        }
+      }
+    },
+    "If you like your wine on the drier side, try this." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você prefere um vinho mais seco, prova esse."
           }
         }
       }
@@ -260,6 +486,19 @@
         }
       }
     },
+    "If you're in the mood for spice, try this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se bater vontade de especiarias, vai nesse."
+          }
+        }
+      }
+    },
+    "In common" : {
+
+    },
     "In the mood for a lighter wine? Here's one." : {
       "localizations" : {
         "pt-BR" : {
@@ -280,6 +519,15 @@
         }
       }
     },
+    "In your cellar" : {
+
+    },
+    "Invite friends to discover their palate and find a wine you'll both love" : {
+
+    },
+    "Invite the people you drink with. UVVA reads every map at the table and suggests one bottle for all of you." : {
+
+    },
     "It feels full and substantial on the palate." : {
       "localizations" : {
         "pt-BR" : {
@@ -296,6 +544,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Já no primeiro gole dá pra sentir a leveza."
+          }
+        }
+      }
+    },
+    "Italy" : {
+      "extractionState" : "manual"
+    },
+    "Just a hint of flowers here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui o floral aparece só de leve."
           }
         }
       }
@@ -320,6 +581,35 @@
         }
       }
     },
+    "Learn" : {
+
+    },
+    "Learn the wines you love" : {
+
+    },
+    "Less %@ than you usually drink." : {
+
+    },
+    "Light body" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo baixo"
+          }
+        }
+      }
+    },
+    "Light on the palate, the way you like it." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leve na boca, do jeito que você gosta."
+          }
+        }
+      }
+    },
     "Like a wine that makes your mouth pucker a bit? Try this." : {
       "localizations" : {
         "pt-BR" : {
@@ -340,6 +630,168 @@
         }
       }
     },
+    "Love floral notes? This one's full of them." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gosta de notas florais? Esse vinho é cheio delas."
+          }
+        }
+      }
+    },
+    "Low acidity" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acidez baixa"
+          }
+        }
+      }
+    },
+    "Low floral" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral baixo"
+          }
+        }
+      }
+    },
+    "Low fruit" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta baixa"
+          }
+        }
+      }
+    },
+    "Low oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho baixo"
+          }
+        }
+      }
+    },
+    "Low spice" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias baixas"
+          }
+        }
+      }
+    },
+    "Low sweetness" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doçura baixa"
+          }
+        }
+      }
+    },
+    "Low tannin" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanino baixo"
+          }
+        }
+      }
+    },
+    "Made in Portugal" : {
+
+    },
+    "Malbec at altitude" : {
+
+    },
+    "Map updated" : {
+
+    },
+    "Map your taste in wine with me on UVVA." : {
+
+    },
+    "Map yours · uvva.app" : {
+
+    },
+    "match with %@" : {
+
+    },
+    "match with your map" : {
+
+    },
+    "Maybe" : {
+
+    },
+    "Mineral" : {
+      "extractionState" : "manual"
+    },
+    "More %@ than you usually drink." : {
+
+    },
+    "New Zealand" : {
+      "extractionState" : "manual"
+    },
+    "Next" : {
+
+    },
+    "No" : {
+
+    },
+    "No rush. It'll be here when you're ready." : {
+
+    },
+    "No wines match these choices. Try changing a filter." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum vinho combina com essas escolhas. Tente mudar um filtro."
+          }
+        }
+      }
+    },
+    "Non-vintage" : {
+
+    },
+    "Not high in %@, the strongest axis on your map." : {
+
+    },
+    "Not now" : {
+
+    },
+    "Not yet" : {
+
+    },
+    "Not your glass, then. It's in your cellar, so you won't buy it twice." : {
+
+    },
+    "Not your glass, then. Your map took note." : {
+
+    },
+    "Notes" : {
+
+    },
+    "Nothing runs high on your map, and nothing runs high on this wine." : {
+
+    },
+    "Notifications" : {
+
+    },
+    "Notifications, unread" : {
+
+    },
     "Oak stays in the background as you sip." : {
       "localizations" : {
         "pt-BR" : {
@@ -349,6 +801,156 @@
           }
         }
       }
+    },
+    "Open glossary" : {
+
+    },
+    "Open the table →" : {
+
+    },
+    "Orchard fruit" : {
+      "extractionState" : "manual"
+    },
+    "Organic, biodynamic and natural" : {
+
+    },
+    "Origin" : {
+
+    },
+    "Pairings" : {
+
+    },
+    "Pasta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Massa"
+          }
+        }
+      }
+    },
+    "Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight." : {
+
+    },
+    "Pick up to three" : {
+
+    },
+    "Pick who is coming →" : {
+
+    },
+    "Portugal" : {
+      "extractionState" : "manual"
+    },
+    "Poultry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aves"
+          }
+        }
+      }
+    },
+    "Quiet on every axis, like your map." : {
+
+    },
+    "Red" : {
+      "extractionState" : "manual"
+    },
+    "Red fruit" : {
+      "extractionState" : "manual"
+    },
+    "Red meat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne vermelha"
+          }
+        }
+      }
+    },
+    "Region" : {
+
+    },
+    "Rosé" : {
+      "extractionState" : "manual"
+    },
+    "Saved for later. It's waiting in your cellar." : {
+
+    },
+    "Saved to Cellar" : {
+
+    },
+    "Saved to Cellar · %@" : {
+
+    },
+    "Scan a label" : {
+
+    },
+    "Seafood" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutos do mar"
+          }
+        }
+      }
+    },
+    "Search a term" : {
+
+    },
+    "See the wine & the dish" : {
+
+    },
+    "Serve at" : {
+
+    },
+    "Set a table" : {
+
+    },
+    "Set a table with your friends" : {
+
+    },
+    "Share your palate" : {
+
+    },
+    "Show another ›" : {
+
+    },
+    "Show less" : {
+
+    },
+    "Show me" : {
+
+    },
+    "Soft tannins, so it won't dry out your mouth as much." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pouco tanino, pra deixar a boca menos seca."
+          }
+        }
+      }
+    },
+    "South Africa" : {
+      "extractionState" : "manual"
+    },
+    "Spain" : {
+      "extractionState" : "manual"
+    },
+    "Spain's great red" : {
+
+    },
+    "Sparkling" : {
+      "extractionState" : "manual"
     },
     "Spice is one of the first things you'll notice." : {
       "localizations" : {
@@ -360,12 +962,53 @@
         }
       }
     },
+    "Spiced" : {
+      "extractionState" : "manual"
+    },
+    "Start" : {
+
+    },
+    "Style" : {
+
+    },
+    "Surprise me" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Me surpreenda"
+          }
+        }
+      }
+    },
+    "Sweet" : {
+      "extractionState" : "manual"
+    },
     "Take a sniff. The floral aromas stand out." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sente o aroma. O floral se destaca."
+          }
+        }
+      }
+    },
+    "Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map." : {
+
+    },
+    "TAP ANYWHERE TO LEAVE" : {
+
+    },
+    "Tempranillo" : {
+
+    },
+    "That mouthwatering acidity you like? It's here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sabe aquela acidez que dá água na boca? Tem aqui."
           }
         }
       }
@@ -430,12 +1073,35 @@
         }
       }
     },
+    "The fruit notes are pretty quiet here." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As notas de fruta ficam bem discretas aqui."
+          }
+        }
+      }
+    },
     "The fruit plays a small part in this glass." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "A fruta tem um papel discreto nessa taça."
+          }
+        }
+      }
+    },
+    "The map of this wine" : {
+
+    },
+    "The oak is subtle in this one." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O carvalho é bem discreto nesse vinho."
           }
         }
       }
@@ -449,6 +1115,12 @@
           }
         }
       }
+    },
+    "The only %@ for your choices" : {
+
+    },
+    "The perfect table" : {
+
     },
     "The spice is there in small doses." : {
       "localizations" : {
@@ -476,6 +1148,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dá pra perceber bem as notas de especiarias."
+          }
+        }
+      }
+    },
+    "The spice stays in the background." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As especiarias ficam lá no fundo."
           }
         }
       }
@@ -600,6 +1282,16 @@
         }
       }
     },
+    "There's plenty of that tannic grip you like." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem bastante daquela pegada de tanino que você gosta."
+          }
+        }
+      }
+    },
     "There's very little tannic grip here." : {
       "localizations" : {
         "pt-BR" : {
@@ -629,6 +1321,12 @@
           }
         }
       }
+    },
+    "This is my wine palate" : {
+
+    },
+    "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." : {
+
     },
     "This leans toward the dry side." : {
       "localizations" : {
@@ -660,6 +1358,16 @@
         }
       }
     },
+    "This one's all about the fruit." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui a fruta rouba a cena."
+          }
+        }
+      }
+    },
     "This one's got a lighter feel." : {
       "localizations" : {
         "pt-BR" : {
@@ -680,6 +1388,16 @@
         }
       }
     },
+    "This one's got the weight you enjoy." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse vinho tem o corpo que você gosta."
+          }
+        }
+      }
+    },
     "This one's on the fuller side." : {
       "localizations" : {
         "pt-BR" : {
@@ -689,6 +1407,21 @@
           }
         }
       }
+    },
+    "This wine" : {
+
+    },
+    "This wine and you" : {
+
+    },
+    "Toasty" : {
+      "extractionState" : "manual"
+    },
+    "Tour" : {
+
+    },
+    "Tropical" : {
+      "extractionState" : "manual"
     },
     "Try this for something less spiced." : {
       "localizations" : {
@@ -740,12 +1473,48 @@
         }
       }
     },
+    "Type" : {
+
+    },
+    "Uco Valley" : {
+
+    },
+    "United States" : {
+      "extractionState" : "manual"
+    },
+    "UVVA" : {
+
+    },
+    "Vegetables" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetais"
+          }
+        }
+      }
+    },
+    "Vintage" : {
+
+    },
     "Want a wine with less sweetness? Go for this." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quer um vinho menos doce? Vai nesse."
+          }
+        }
+      }
+    },
+    "Want something sweeter? Give this a try." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quer algo mais doce? Experimenta esse."
           }
         }
       }
@@ -759,6 +1528,36 @@
           }
         }
       }
+    },
+    "Welcome in, %@" : {
+
+    },
+    "What the labels really mean" : {
+
+    },
+    "What you need" : {
+
+    },
+    "White" : {
+      "extractionState" : "manual"
+    },
+    "Wines for your palate" : {
+
+    },
+    "Wines you have tasted and wines you want to try, each one measured against your map." : {
+
+    },
+    "With your palate" : {
+
+    },
+    "Word of the day" : {
+
+    },
+    "Would you drink it again?" : {
+
+    },
+    "Yes" : {
+
     },
     "You might just catch a hint of oak." : {
       "localizations" : {
@@ -790,156 +1589,6 @@
         }
       }
     },
-    "Gentle acidity, with less of that sharp bite." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A acidez é suave, sem aquela mordida."
-          }
-        }
-      }
-    },
-    "If you like your wine on the drier side, try this." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se você prefere um vinho mais seco, prova esse."
-          }
-        }
-      }
-    },
-    "If you're in the mood for spice, try this one." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se bater vontade de especiarias, vai nesse."
-          }
-        }
-      }
-    },
-    "Just a hint of flowers here." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aqui o floral aparece só de leve."
-          }
-        }
-      }
-    },
-    "Light on the palate, the way you like it." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leve na boca, do jeito que você gosta."
-          }
-        }
-      }
-    },
-    "Love floral notes? This one's full of them." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gosta de notas florais? Esse vinho é cheio delas."
-          }
-        }
-      }
-    },
-    "Soft tannins, so it won't dry out your mouth as much." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pouco tanino, pra deixar a boca menos seca."
-          }
-        }
-      }
-    },
-    "That mouthwatering acidity you like? It's here." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sabe aquela acidez que dá água na boca? Tem aqui."
-          }
-        }
-      }
-    },
-    "The fruit notes are pretty quiet here." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "As notas de fruta ficam bem discretas aqui."
-          }
-        }
-      }
-    },
-    "The oak is subtle in this one." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O carvalho é bem discreto nesse vinho."
-          }
-        }
-      }
-    },
-    "The spice stays in the background." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "As especiarias ficam lá no fundo."
-          }
-        }
-      }
-    },
-    "There's plenty of that tannic grip you like." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tem bastante daquela pegada de tanino que você gosta."
-          }
-        }
-      }
-    },
-    "This one's all about the fruit." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aqui a fruta rouba a cena."
-          }
-        }
-      }
-    },
-    "This one's got the weight you enjoy." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esse vinho tem o corpo que você gosta."
-          }
-        }
-      }
-    },
-    "Want something sweeter? Give this a try." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quer algo mais doce? Experimenta esse."
-          }
-        }
-      }
-    },
     "You'll pick up plenty of oak here." : {
       "localizations" : {
         "pt-BR" : {
@@ -949,595 +1598,6 @@
           }
         }
       }
-    },
-    "" : {
-
-    },
-    " %lld" : {
-
-    },
-    "/%lld" : {
-
-    },
-    "%@ · %lld years" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ · %2$lld years"
-          }
-        }
-      }
-    },
-    "%@ · 1 year" : {
-
-    },
-    "%lld of %lld" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld of %2$lld"
-          }
-        }
-      }
-    },
-    "%lld%%" : {
-
-    },
-    "+" : {
-
-    },
-    "6 lessons" : {
-
-    },
-    "A grape" : {
-
-    },
-    "A lesson" : {
-
-    },
-    "A pairing drawn for your palate" : {
-
-    },
-    "A quick\nlook around" : {
-
-    },
-    "A region" : {
-
-    },
-    "A short walk through where things live in UVVA." : {
-
-    },
-    "Add to cellar" : {
-
-    },
-    "Anywhere" : {
-      "extractionState" : "manual"
-
-    },
-    "Appellation" : {
-
-    },
-    "Argentina" : {
-      "extractionState" : "manual"
-
-    },
-    "Australia" : {
-      "extractionState" : "manual"
-
-    },
-    "Austria" : {
-      "extractionState" : "manual"
-
-    },
-    "Back" : {
-
-    },
-    "Back to Home" : {
-
-    },
-    "Bolder than your map, which has no high axis." : {
-
-    },
-    "Chile" : {
-      "extractionState" : "manual"
-
-    },
-    "Choose your wine" : {
-
-    },
-    "Citrus" : {
-      "extractionState" : "manual"
-
-    },
-    "Clear search" : {
-
-    },
-    "Clear selection" : {
-
-    },
-    "Close definition" : {
-
-    },
-    "Close to your map on every axis." : {
-
-    },
-    "Continue  →" : {
-
-    },
-    "Dark fruit" : {
-      "extractionState" : "manual"
-
-    },
-    "Different from the strongest axes on your map." : {
-
-    },
-    "Earthy" : {
-      "extractionState" : "manual"
-
-    },
-    "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
-
-    },
-    "Find my wine" : {
-
-    },
-    "Find the wine" : {
-
-    },
-    "Floral" : {
-      "extractionState" : "manual"
-
-    },
-    "Fortified" : {
-      "extractionState" : "manual"
-
-    },
-    "France" : {
-      "extractionState" : "manual"
-
-    },
-    "Full body" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Corpo alto"
-          }
-        }
-      }
-    },
-    "Germany" : {
-      "extractionState" : "manual"
-
-    },
-    "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
-
-    },
-    "Grapes" : {
-
-    },
-    "Herbal" : {
-      "extractionState" : "manual"
-
-    },
-    "High acidity" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Acidez alta"
-          }
-        }
-      }
-    },
-    "High floral" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Floral alto"
-          }
-        }
-      }
-    },
-    "High fruit" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fruta alta"
-          }
-        }
-      }
-    },
-    "High in %@ and %@, like your map." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "High in %1$@ and %2$@, like your map."
-          }
-        }
-      }
-    },
-    "High in %@, like your map." : {
-
-    },
-    "High oak" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carvalho alto"
-          }
-        }
-      }
-    },
-    "High spice" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Especiarias altas"
-          }
-        }
-      }
-    },
-    "High sweetness" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Doçura alta"
-          }
-        }
-      }
-    },
-    "High tannin" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tanino alto"
-          }
-        }
-      }
-    },
-    "How to make it" : {
-
-    },
-    "In your cellar" : {
-
-    },
-    "Invite friends to discover their palate and find a wine you'll both love" : {
-
-    },
-    "Invite the people you drink with. UVVA reads every map at the table and suggests one bottle for all of you." : {
-
-    },
-    "Italy" : {
-      "extractionState" : "manual"
-
-    },
-    "Learn" : {
-
-    },
-    "Learn the wines you love" : {
-
-    },
-    "Less %@ than you usually drink." : {
-
-    },
-    "Light body" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Corpo baixo"
-          }
-        }
-      }
-    },
-    "Low acidity" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Acidez baixa"
-          }
-        }
-      }
-    },
-    "Low floral" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Floral baixo"
-          }
-        }
-      }
-    },
-    "Low fruit" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fruta baixa"
-          }
-        }
-      }
-    },
-    "Low oak" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Carvalho baixo"
-          }
-        }
-      }
-    },
-    "Low spice" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Especiarias baixas"
-          }
-        }
-      }
-    },
-    "Low sweetness" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Doçura baixa"
-          }
-        }
-      }
-    },
-    "Low tannin" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tanino baixo"
-          }
-        }
-      }
-    },
-    "Malbec at altitude" : {
-
-    },
-    "Map your taste in wine with me on UVVA." : {
-
-    },
-    "Map yours · uvva.app" : {
-
-    },
-    "match with %@" : {
-
-    },
-    "match with your map" : {
-
-    },
-    "Mineral" : {
-      "extractionState" : "manual"
-
-    },
-    "More %@ than you usually drink." : {
-
-    },
-    "New Zealand" : {
-      "extractionState" : "manual"
-
-    },
-    "Next" : {
-
-    },
-    "Not high in %@, the strongest axis on your map." : {
-
-    },
-    "Notes" : {
-
-    },
-    "Nothing runs high on your map, and nothing runs high on this wine." : {
-
-    },
-    "Notifications" : {
-
-    },
-    "Notifications, unread" : {
-
-    },
-    "Open glossary" : {
-
-    },
-    "Open the table →" : {
-
-    },
-    "Orchard fruit" : {
-      "extractionState" : "manual"
-
-    },
-    "Organic, biodynamic and natural" : {
-
-    },
-    "Origin" : {
-
-    },
-    "Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight." : {
-
-    },
-    "Pick up to three" : {
-
-    },
-    "Pick who is coming →" : {
-
-    },
-    "Picked for your palate" : {
-
-    },
-    "Portugal" : {
-      "extractionState" : "manual"
-
-    },
-    "Quiet on every axis, like your map." : {
-
-    },
-    "Red" : {
-      "extractionState" : "manual"
-
-    },
-    "Red fruit" : {
-      "extractionState" : "manual"
-
-    },
-    "Region" : {
-
-    },
-    "Rosé" : {
-      "extractionState" : "manual"
-
-    },
-    "Scan a label" : {
-
-    },
-    "Search a term" : {
-
-    },
-    "See the wine & the dish" : {
-
-    },
-    "Serve at" : {
-
-    },
-    "Set a table" : {
-
-    },
-    "Set a table with your friends" : {
-
-    },
-    "Share your palate" : {
-
-    },
-    "Show less" : {
-
-    },
-    "Show me" : {
-
-    },
-    "South Africa" : {
-      "extractionState" : "manual"
-
-    },
-    "Spain" : {
-      "extractionState" : "manual"
-
-    },
-    "Spain's great red" : {
-
-    },
-    "Sparkling" : {
-      "extractionState" : "manual"
-
-    },
-    "Spiced" : {
-      "extractionState" : "manual"
-
-    },
-    "Start" : {
-
-    },
-    "Sweet" : {
-      "extractionState" : "manual"
-
-    },
-    "Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map." : {
-
-    },
-    "TAP ANYWHERE TO LEAVE" : {
-
-    },
-    "Tempranillo" : {
-
-    },
-    "The map of this wine" : {
-
-    },
-    "The perfect table" : {
-
-    },
-    "This is my wine palate" : {
-
-    },
-    "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." : {
-
-    },
-    "This wine" : {
-
-    },
-    "This wine and you" : {
-
-    },
-    "Toasty" : {
-      "extractionState" : "manual"
-
-    },
-    "Tour" : {
-
-    },
-    "Tropical" : {
-      "extractionState" : "manual"
-
-    },
-    "Type" : {
-
-    },
-    "Uco Valley" : {
-
-    },
-    "United States" : {
-      "extractionState" : "manual"
-
-    },
-    "UVVA" : {
-
-    },
-    "Made in Portugal" : {
-
-    },
-    "Vintage" : {
-
-    },
-    "Welcome in, %@" : {
-
-    },
-    "What the labels really mean" : {
-
-    },
-    "What you need" : {
-
-    },
-    "White" : {
-      "extractionState" : "manual"
-
-    },
-    "Wines for your palate" : {
-
-    },
-    "Wines you have tasted and wines you want to try, each one measured against your map." : {
-
-    },
-    "With your palate" : {
-
-    },
-    "Word of the day" : {
-
     },
     "Your cellar" : {
 
@@ -1567,97 +1627,7 @@
     "Your map likes %@, and this wine is high on it." : {
 
     },
-    "Map updated" : {
-
-    },
-    "Maybe" : {
-
-    },
-    "No" : {
-
-    },
-    "Saved to Cellar · %@" : {
-
-    },
-    "Yes" : {
-
-    },
-    "In common" : {
-
-    },
     "Your pick" : {
-
-    },
-    "Show another ›" : {
-
-    },
-    "away from your map" : {
-
-    },
-    "Style" : {
-
-    },
-    "Grape & notes" : {
-
-    },
-    "Pairings" : {
-
-    },
-    "Non-vintage" : {
-
-    },
-    "How to serve" : {
-
-    },
-    "Have you had this wine?" : {
-
-    },
-    "Not yet" : {
-
-    },
-    "Would you drink it again?" : {
-
-    },
-    "Add it to your cellar?" : {
-
-    },
-    "Not now" : {
-
-    },
-    "Saved to Cellar" : {
-
-    },
-    "barely moved" : {
-
-    },
-    "The only %@ for your choices" : {
-
-    },
-    "%lld of %lld %@ wines for your choices" : {
-
-    },
-    "Glad you loved it! It's in your cellar now." : {
-
-    },
-    "Glad you loved it! Your map just learned something." : {
-
-    },
-    "Fair enough. It's in your cellar, ready for a second chance." : {
-
-    },
-    "Fair enough. Your map took note." : {
-
-    },
-    "Not your glass, then. It's in your cellar, so you won't buy it twice." : {
-
-    },
-    "Not your glass, then. Your map took note." : {
-
-    },
-    "Saved for later. It's waiting in your cellar." : {
-
-    },
-    "No rush. It'll be here when you're ready." : {
 
     }
   },

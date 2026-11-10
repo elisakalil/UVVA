@@ -34,4 +34,4 @@ Cada vinho do catálogo tem um `segment`, um número que agrupa vinhos com mapas
   - `axisSpread(mapas, eixo)` pela diferença máx − mín: Same ≤ 0,5 · Closest ≤ 1,5 · Some give ≤ 3 · Widest > 3.
   - `crossed(mapas)` é a média de cada eixo ("Where the table lands"); `boldest(mapas)` o valor mais alto de cada eixo.
   - `tableBottles(mapas, vinhos, receitas)`: para cada curso (Starter, Main, Dessert), a receita do curso mais próxima do mapa cruzado e o vinho, de um tipo dessa receita, mais próximo da média entre o mapa cruzado e a receita. Um vinho só entra uma vez; um curso sem receita ou sem vinho fica de fora. O eixo da garrafa é o eixo em comum em que o vinho é mais alto (sem eixos em comum, os 3 eixos mais altos do mapa cruzado).
-- **Sugestão do dia:** um dos 30 vinhos mais próximos do usuário, escolhido pelo dia do calendário (o mesmo durante o dia, HOME-R07).
+- **Melhor match (Hero da Home):** o vinho mais próximo do usuário, o topo da lista; muda quando o mapa muda, não com o dia (HOME-R07).

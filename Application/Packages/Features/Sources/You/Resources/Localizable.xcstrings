@@ -164,6 +164,9 @@
     "No reminders. You open the app whenever you feel like it." : {
 
     },
+    "Nothing was removed. Check your connection and try again." : {
+
+    },
     "Now I know" : {
 
     },
@@ -381,7 +384,7 @@
     "You’ve found a first thread in %@. Follow it and a whole corner of the wine world begins to open up." : {
 
     },
-    "Your account could not be deleted. Check your connection and try again." : {
+    "Your account could not be deleted" : {
 
     },
     "Your changes could not be saved. Try again." : {

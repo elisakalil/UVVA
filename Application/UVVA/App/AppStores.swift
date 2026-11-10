@@ -13,6 +13,11 @@ struct AppStores: Sendable {
     let questions: QuizQuestionStore
     let profiles: ProfileStore
     let catalog: CatalogStore
+    /// Courses and lessons, on a Content store actor of their own. An actor runs one read at a time, and the Home
+    /// ranks all 10,000 wines on `catalog` (`winesClosest`, over a second on a fast device) every time it reloads,
+    /// which it does right after the tabs first open. A lesson opened then waited behind that ranking; on its own
+    /// actor it reads alongside it.
+    let courses: CatalogStore
     let reminders: ReminderStore
     let cellar: CellarStore
     let learning: LearningStore
@@ -34,6 +39,7 @@ struct AppStores: Sendable {
                       questions: QuizQuestionStore(modelContainer: container),
                       profiles: ProfileStore(modelContainer: container),
                       catalog: CatalogStore(modelContainer: container),
+                      courses: CatalogStore(modelContainer: container),
                       reminders: ReminderStore(modelContainer: container),
                       cellar: CellarStore(modelContainer: container),
                       learning: LearningStore(modelContainer: container),

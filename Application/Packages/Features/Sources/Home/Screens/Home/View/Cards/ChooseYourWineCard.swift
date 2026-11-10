@@ -17,9 +17,14 @@ struct ChooseYourWineCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            SectionLabel(text: resources.chooseYourWineCardSectionTitle)
             FrostedCard(radius: UVVARadius.hero, padding: 26) {
                 VStack(alignment: .leading, spacing: 0) {
+                    Text(resources.chooseYourWineCardTitle)
+                        .font(UVVAFont.redGrapes(21))
+                        .textCase(.uppercase)
+                        .foregroundStyle(UVVAColor.cream.opacity(0.92))
+                        .accessibilityAddTraits(.isHeader)
+                        .padding(.bottom, 20)
                     directionPicker
                     group(resources.chooseYourWineCardTypeTitle) {
                         ForEach(WineDiscovery.types, id: \.self) { item in

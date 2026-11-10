@@ -57,6 +57,8 @@ private struct LessonModalContent<ViewModel: LearnViewModelProtocol>: View {
     @Binding var holdsPresentation: Bool
     @State private var showsLoading = true
     @State private var completedCycle: Int?
+    /// A lesson was on screen when this loading began, so it is being saved; opening one from the lists says nothing.
+    @State private var isSaving = false
 
     var body: some View {
         ZStack {
@@ -67,10 +69,12 @@ private struct LessonModalContent<ViewModel: LearnViewModelProtocol>: View {
                     .frame(width: 60, height: 84)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .overlay(alignment: .bottom) {
-                        Text(String(localized: "saving your progress", bundle: .module))
-                            .font(UVVAFont.sans(12))
-                            .foregroundStyle(UVVAColor.cream84)
-                            .padding(.bottom, 32)
+                        if isSaving {
+                            Text(String(localized: "saving your progress", bundle: .module))
+                                .font(UVVAFont.sans(12))
+                                .foregroundStyle(UVVAColor.cream84)
+                                .padding(.bottom, 32)
+                        }
                     }
             } else if let error = viewModel.uiModel.lessonError {
                 VStack(spacing: 20) {
@@ -85,6 +89,8 @@ private struct LessonModalContent<ViewModel: LearnViewModelProtocol>: View {
             }
         }
         .task(id: loadingCycle) {
+            // Read once, at the start: the lesson that opens at the end must not bring the words in.
+            isSaving = viewModel.player != nil
             showsLoading = true
             completedCycle = nil
             holdsPresentation = true

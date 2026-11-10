@@ -9,6 +9,7 @@ struct HomeContent: View {
     /// The area the tour points at, if any: the scroll follows it.
     var tourTarget: String?
     var cellarWineKeys: Set<String> = []
+    var isRefreshingMatches = false
     var onInvite: () -> Void
     var onOpenLesson: (HomeLessonSuggestion) -> Void = { _ in }
     var onOpenCourse: (String) -> Void = { _ in }
@@ -19,6 +20,7 @@ struct HomeContent: View {
     var onScan: () -> Void = {}
     var onOpenFriends: () -> Void = {}
     var onOpenLastTable: () -> Void = {}
+    var onOpenMapHistory: () -> Void = {}
 
     @State private var scroll = HeaderScrollModel()
     static let topID = "home.top"
@@ -115,8 +117,8 @@ struct HomeContent: View {
     }
 
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
-        HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, onInvite: onInvite, onOpenFriends: onOpenFriends,
-                     onOpenLastTable: onOpenLastTable,
+        HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, isRefreshingMatches: isRefreshingMatches, onInvite: onInvite, onOpenFriends: onOpenFriends,
+                     onOpenLastTable: onOpenLastTable, onOpenMapHistory: onOpenMapHistory,
                      onOpenLesson: onOpenLesson, onOpenCourse: onOpenCourse, onOpenGlossary: onOpenGlossary, onOpenLearn: onOpenLearn,
                      onShowLess: { then in
                          withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }

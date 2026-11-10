@@ -67,8 +67,11 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
                 .accessibilityAddTraits(.isHeader)
             Spacer()
             Button { isInfoPresented = true } label: {
-                Image(systemName: "info.circle")
-                    .font(.system(size: 17, weight: .light))
+                // A hairline ring and a light "i" in the app's own type, like the title beside it.
+                Text(verbatim: "i")
+                    .font(UVVAFont.sans(17, .thin))
+                    .frame(width: 28, height: 28)
+                    .overlay(Circle().strokeBorder(lineWidth: 0.75))
                     .foregroundStyle(UVVAColor.creamFill)
                     .frame(width: 52, height: 44)
                     .contentShape(Rectangle())

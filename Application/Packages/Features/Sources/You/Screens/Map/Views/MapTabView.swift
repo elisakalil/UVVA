@@ -5,7 +5,12 @@ import SwiftUI
 /// Map (YOU-R09 to R13).
 struct MapTabView<ViewModel: MapViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
+    /// YOU-R03: the page is to open at "Over time"; `onHistoryShown` runs once the section is on the page.
+    var focusesHistory = false
+    var onHistoryShown: () -> Void = {}
     @State private var sharing = false
+
+    static var historyID: String { "you.map.history" }
 
     var body: some View {
         if let model = viewModel.uiModel.content {
@@ -28,8 +33,14 @@ struct MapTabView<ViewModel: MapViewModelProtocol>: View {
                     .padding(.top, 10)
 
                     if !model.snapshots.isEmpty {
+                        // The id takes part of the gap above, so the title lands clear of the scroll's top fade.
                         OverTimeSection(model: model)
-                            .padding(.top, 60)
+                            .padding(.top, 24)
+                            .id(Self.historyID)
+                            .padding(.top, 36)
+                            .onChange(of: focusesHistory, initial: true) {
+                                if focusesHistory { onHistoryShown() }
+                            }
                     }
 
                     SectionTitle(text: viewModel.uiModel.whereTheMapPointsText).padding(.top, 60)

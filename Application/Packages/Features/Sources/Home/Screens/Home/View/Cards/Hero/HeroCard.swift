@@ -8,6 +8,8 @@ struct HeroCard: View {
     var wine: Wine
     var palateMap: PalateMap
     var isInCellar = false
+    /// HOME-R10c: the top of the match is being read again; the card folds to its closed size under the curtain.
+    var isLoading = false
     /// resources.dailySuggestionCardCollapseTitle: the Home goes back to the top, then calls back for the card to close. Both at once, the
     /// content got shorter under a moving scroll, which jumped and then slid the cards back down.
     var onShowLess: (_ then: @escaping () -> Void) -> Void = { $0() }
@@ -18,14 +20,9 @@ struct HeroCard: View {
     var body: some View {
         FrostedCard(radius: UVVARadius.hero, padding: 26) {
             VStack(alignment: .leading, spacing: 0) {
-                Text(resources.dailySuggestionCardPickedTitle)
-                    .font(UVVAFont.sans(13, .regular))
-                    .foregroundStyle(UVVAColor.cream84)
-
                 Text(wine.name)
                     .font(UVVAFont.sans(32))
                     .lineSpacing(-2)
-                    .padding(.top, 22)
                 if !wine.producer.isEmpty {
                     Caption(text: wine.producer)
                         .padding(.top, 14)
@@ -67,6 +64,12 @@ struct HeroCard: View {
                 }
                 .padding(.top, 36)
             }
+            .opacity(MatchCurtain.contentOpacity(isLoading))
+            .accessibilityHidden(isLoading)
+        }
+        .matchCurtain(isLoading)
+        .onChange(of: isLoading) { _, loading in
+            if loading { withAnimation(.smooth) { open = false } }
         }
         .sheet(item: $search) { url in SafariSheet(url: url).ignoresSafeArea() }
     }

@@ -30,10 +30,14 @@ public struct HomeFactory: HomeFactoryProtocol {
     }
 
     public func makeViewModel(coordinator: any HomeCoordinatorProtocol) -> HomeViewModel {
-        HomeViewModel(
-            loadHomeUseCase: LoadHomeUseCase(profiles: profiles, maps: maps, catalog: catalog,
-                                            cellar: cellar, courses: courses, learning: learning,
-                                            friends: friends, suggestionPool: HomeCardsBuilder.dailySuggestionPool),
+        let loadPalateState = LoadPalateStateUseCase(maps: maps, cellar: cellar)
+        let rankWines = RankWinesUseCase(catalog: catalog)
+        return HomeViewModel(
+            loadHomeUseCase: LoadHomeUseCase(profiles: profiles, catalog: catalog, loadPalateState: loadPalateState,
+                                            rankWines: rankWines, courses: courses, learning: learning,
+                                            friends: friends),
+            loadPalateStateUseCase: loadPalateState,
+            rankWinesUseCase: rankWines,
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: cellar),
             rateWineUseCase: RateWineUseCase(maps: maps, cellar: cellar, now: now),
             coordinator: coordinator, now: now, calendar: calendar

@@ -48,6 +48,8 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     /// Completing the lesson: its save, then the certificate it may earn.
     private var completionHandled = false
     let toast: Toast
+    /// The last moment to feel; the view turns it into haptics.
+    private(set) var sensory: SensoryEvent?
     private let saveProgressUseCase: any SaveLessonProgressUseCaseProtocol
     private let now: () -> Date
     private let onCompleted: () async -> CertificateUIModel?
@@ -141,32 +143,43 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         return draft
     }
 
-    private func edit(_ change: (inout StepDraft) -> Void) {
-        guard let index = stepIndex else { return }
-        var draft = draft(index)
-        guard !draft.isChecked else { return }
+    /// Changes the draft on screen; false when it is checked or nothing changed.
+    @discardableResult private func edit(_ change: (inout StepDraft) -> Void) -> Bool {
+        guard let index = stepIndex else { return false }
+        let before = draft(index)
+        var draft = before
+        guard !draft.isChecked else { return false }
         change(&draft)
+        guard draft != before else { return false }
         drafts[index] = draft
+        return true
+    }
+
+    private func emit(_ cue: SensoryCue) {
+        sensory = SensoryEvent(cue: cue, id: (sensory?.id ?? 0) + 1)
+        refresh()
     }
 
     public func tapOption(_ option: Int) {
         let isMultiple = if case .selectMultiple = step { true } else { false }
-        edit { draft in
+        let changed = edit { draft in
             if isMultiple {
                 if draft.selection.contains(option) { draft.selection.remove(option) } else { draft.selection.insert(option) }
             } else {
                 draft.selection = [option]
             }
         }
+        if changed { emit(.select) }
     }
 
     public func tapWord(_ word: String) {
-        edit { $0.word = word }
+        if edit({ $0.word = word }) { emit(.select) }
     }
 
     /// ordering: tap one row, then the row to swap it with; tapping the same row again lets it go.
     public func tapRow(_ position: Int) {
-        edit { draft in
+        let swaps = stepIndex.flatMap { drafts[$0]?.pickedRow }.map { $0 != position } ?? false
+        let changed = edit { draft in
             guard let picked = draft.pickedRow else {
                 draft.pickedRow = position
                 return
@@ -174,11 +187,12 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
             if picked != position { draft.order.swapAt(picked, position) }
             draft.pickedRow = nil
         }
+        if changed { emit(swaps ? .swap : .select) }
     }
 
     /// matchPairs: a linked term comes undone; another picks it, or lets it go.
     public func tapLeft(_ pair: Int) {
-        edit { draft in
+        let changed = edit { draft in
             draft.miss = nil
             if draft.links.contains(pair) {
                 draft.links.remove(pair)
@@ -187,12 +201,14 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
                 draft.pickedLeft = draft.pickedLeft == pair ? nil : pair
             }
         }
+        if changed { emit(.select) }
         if let index = stepIndex, drafts[index]?.isChecked == true { updateProgress() }
     }
 
     public func tapRight(_ pair: Int) {
-        guard case let .matchPairs(_, pairs, _) = step else { return }
-        edit { draft in
+        guard case let .matchPairs(_, pairs, _) = step, let index = stepIndex else { return }
+        let misses = draft(index).misses
+        let changed = edit { draft in
             guard let left = draft.pickedLeft, !draft.links.contains(pair) else { return }
             draft.pickedLeft = nil
             if left == pair {
@@ -205,7 +221,10 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
                 draft.misses += 1
             }
         }
-        if let index = stepIndex, drafts[index]?.isChecked == true { updateProgress() }
+        if changed, let after = drafts[index] {
+            emit(after.isChecked ? .correct : after.misses > misses ? .miss : .pair)
+        }
+        if drafts[index]?.isChecked == true { updateProgress() }
     }
 
     /// The button at the foot of the step.
@@ -222,6 +241,8 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
             checked.pickedRow = nil
             drafts[index] = checked
             updateProgress()
+            let isRight = LessonGrader.answer(step, checked).map { LessonGrader.isCorrect(step, $0) } ?? false
+            emit(isRight ? .correct : .wrong)
         default:
             // Concept, tip, or a question already checked: wrong answers move on too (LEARN-R17).
             advance(from: index)
@@ -232,7 +253,10 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         guard index + 1 < lesson.steps.count else { return }
         playerState = .step(index + 1)
         updateProgress()
-        if case .summary = lesson.steps[index + 1] { complete() }
+        if case .summary = lesson.steps[index + 1] {
+            emit(.toast)
+            complete()
+        }
     }
 
     // MARK: Summary, XP and certificate (LEARN-R19 to R22)
@@ -297,6 +321,9 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     /// A failed save keeps the player alive; the same snapshot can be retried.
     func saveOnExit() async throws {
         if let saving { try await saving.value; return }
+        // A lesson is recorded only once "Begin lesson" is tapped: opening its cover and leaving keeps no trace.
+        // `progress` is nil until then, unless the lesson was already begun before.
+        guard progress != nil else { return }
         updateProgress()
         guard var snapshot = progress else { return }
         snapshot.revision += 1
@@ -334,6 +361,6 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         guard presentationReady else { return }
         uiModel = LessonPlayerUIModel(cover: cover, header: header, stepModel: stepModel, footer: footer,
                                       certificate: certificate, stepIndex: stepIndex, isTip: isTip,
-                                      isSummary: isSummary, isCover: playerState == .cover)
+                                      isSummary: isSummary, isCover: playerState == .cover, sensory: sensory)
     }
 }

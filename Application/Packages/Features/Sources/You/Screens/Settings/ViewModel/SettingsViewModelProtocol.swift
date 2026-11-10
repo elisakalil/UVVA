@@ -17,4 +17,5 @@ public protocol SettingsViewModelProtocol: ObservableObject {
     func setMapPublic(_ isPublic: Bool) async
     func signOut() async
     func deleteAccount() async
+    func dismissDeleteFailure()
 }

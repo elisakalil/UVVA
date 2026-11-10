@@ -5,13 +5,15 @@ import SwiftUI
 struct OrderingStepView: View {
     var model: OrderingUIModel
     var onTap: (Int) -> Void
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             QuestionPrompt(prompt: model.prompt, hint: model.hint)
             VStack(spacing: 8) {
-                ForEach(model.rows) { row in item(row) }
+                ForEach(model.rows, id: \.key) { row in item(row) }
             }
+            .animation(reduceMotion ? .easeOut(duration: 0.2) : .spring(duration: 0.42, bounce: 0.12), value: model.rows.map(\.key))
             .padding(.horizontal, 16)
         }
     }
@@ -36,6 +38,7 @@ struct OrderingStepView: View {
             .background(PairCell.background(row.state, pickedFill: LessonPalette.ink))
             .offset(x: isPicked ? 6 : 0)
             .animation(.easeOut(duration: 0.18), value: row.state)
+            .lessonBreath(row.state == .correct)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

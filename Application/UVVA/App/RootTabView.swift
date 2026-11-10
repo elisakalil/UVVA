@@ -27,6 +27,8 @@ struct RootTabView: View {
                 if let you = coordinator.you { YouView(viewModel: you) }
             }
         }
+        // A cross-fade when a tab is opened from code (the Home's map card, HOME-R17); taps on the bar stay instant.
+        .transition(.opacity)
         .safeAreaInset(edge: .bottom, spacing: 0) {
             if !isKeyboardUp {
                 UVVATabBar(active: $coordinator.selectedTab)

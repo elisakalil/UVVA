@@ -47,7 +47,18 @@ public final class YouViewModel: YouViewModelProtocol {
 
     func profileSaved(_ profile: Profile) { contentModel.profile = profile }
     func reminderSaved(_ reminder: Reminder?) { contentModel.reminder = reminder }
-    public func selectTab(_ tab: YouTab) { uiModel.tab = tab }
+    public func selectTab(_ tab: YouTab) {
+        uiModel.tab = tab
+        uiModel.focusesMapHistory = false
+    }
+
+    /// YOU-R03: the Home card (HOME-R17) opens the Map tab, already at "Over time".
+    public func showMapHistory() {
+        uiModel.tab = .map
+        uiModel.focusesMapHistory = true
+    }
+
+    public func mapHistoryShown() { uiModel.focusesMapHistory = false }
 
     private func present() {
         let model = contentModel

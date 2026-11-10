@@ -14,6 +14,8 @@ public protocol HomeViewModelProtocol: ObservableObject {
     func openFriends()
     /// The match card (HOME-R11).
     func openLastTable()
+    /// The "axis that changed" card (HOME-R17).
+    func openMapHistory()
     /// Saves the wine to the Cellar as Not yet (CELLAR-R13c, HOME-R28).
     func addToCellar(_ wine: Wine) async
     /// "Would you drink it again?" (HOME-R24): moves the map and tells which axes moved; with `addToCellar`, the wine

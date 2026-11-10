@@ -9,14 +9,17 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
     private let onScan: () -> Void
     private let onOpenFriends: () -> Void
     private let onOpenLastTable: () -> Void
+    private let onOpenMapHistory: () -> Void
 
     public init(onOpenCourse: @escaping (String) -> Void,
                 onOpenLearn: @escaping (CourseKind) -> Void,
                 onOpenLesson: ((HomeLessonSuggestion) -> Void)? = nil,
                 onScan: @escaping () -> Void = {},
                 onOpenFriends: @escaping () -> Void = {},
-                onOpenLastTable: @escaping () -> Void = {}) {
+                onOpenLastTable: @escaping () -> Void = {},
+                onOpenMapHistory: @escaping () -> Void = {}) {
         self.onOpenLastTable = onOpenLastTable
+        self.onOpenMapHistory = onOpenMapHistory
         self.onScan = onScan
         self.onOpenFriends = onOpenFriends
         self.onOpenLesson = onOpenLesson
@@ -33,4 +36,5 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
     public func scan() { onScan() }
     public func openFriends() { onOpenFriends() }
     public func openLastTable() { onOpenLastTable() }
+    public func openMapHistory() { onOpenMapHistory() }
 }

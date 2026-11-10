@@ -49,13 +49,18 @@ public actor CatalogStore: CatalogRepository, WineLookup, LabelCatalogRepository
         return Dictionary(try modelContext.fetch(descriptor).map { ($0.wineKey, Self.wine($0)) }) { first, _ in first }
     }
 
-    /// Reads the eight axes of every wine, ranks them by similarity and builds full wines only for the best.
+    /// Reads the eight axes of every wine, ranks them by similarity and builds full wines only for the best. Wines
+    /// equally close go by their key, so the top of the list is the same wine on every read (HOME-R07).
     public func winesClosest(to map: PalateMap, limit: Int) throws -> [Wine] {
         var descriptor = FetchDescriptor<WineEntity>()
         descriptor.propertiesToFetch = [\.wineKey, \.floral, \.body, \.tannin, \.spice, \.oak, \.sweetness, \.acidity, \.fruit]
-        let ranked = try modelContext.fetch(descriptor)
+        let scored: [(entity: WineEntity, score: Double)] = try modelContext.fetch(descriptor)
             .map { (entity: $0, score: Similarity.between($0.palateMap, map)) }
-            .sorted { $0.score > $1.score }
+        let ranked = scored
+            .sorted { lhs, rhs in
+                if lhs.score != rhs.score { return lhs.score > rhs.score }
+                return lhs.entity.wineKey < rhs.entity.wineKey
+            }
             .prefix(limit)
         return ranked.map { Self.wine($0.entity) }
     }

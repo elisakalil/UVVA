@@ -21,6 +21,12 @@ struct ChoiceStepView: View {
         }
     }
 
+    /// After a wrong pick the right answer comes a beat later, so the eye goes from the pick to the answer.
+    private func reveal(_ option: OptionUIModel) -> Animation {
+        let isLate = option.state == .correct && model.options.contains { $0.state == .wrong }
+        return .easeOut(duration: 0.3).delay(isLate ? 0.15 : 0)
+    }
+
     private func row(_ option: OptionUIModel) -> some View {
         let tone = LessonPalette.tone(option.state)
         let isMarked = option.state == .correct || option.state == .wrong
@@ -51,6 +57,8 @@ struct ChoiceStepView: View {
             .padding(.horizontal, 24)
             .padding(.vertical, 14)
             .frame(minHeight: 62)
+            .animation(reveal(option), value: option.state)
+            .lessonBreath(option.state == .correct)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -72,6 +80,8 @@ struct ChoiceStepView: View {
             .padding(.vertical, 20)
             .frame(maxWidth: .infinity, minHeight: 156, alignment: .topLeading)
             .background(option.state == .correct || option.state == .wrong ? LessonPalette.ink.opacity(0.045) : .clear)
+            .animation(reveal(option), value: option.state)
+            .lessonBreath(option.state == .correct)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

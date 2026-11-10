@@ -7,9 +7,12 @@ struct HomeCardView: View {
     var card: HomeCardModel
     var palateMap: PalateMap
     var cellarWineKeys: Set<String> = []
+    /// HOME-R10c: the cards that follow the map are being read again.
+    var isRefreshingMatches = false
     var onInvite: () -> Void = {}
     var onOpenFriends: () -> Void = {}
     var onOpenLastTable: () -> Void = {}
+    var onOpenMapHistory: () -> Void = {}
     var onOpenLesson: (HomeLessonSuggestion) -> Void = { _ in }
     var onOpenCourse: (String) -> Void = { _ in }
     var onOpenGlossary: (GlossaryTerm) -> Void = { _ in }
@@ -21,8 +24,8 @@ struct HomeCardView: View {
     var body: some View {
         switch card {
         case .header: EmptyView() // drawn by HomeHeader, pinned above the scroll
-        case let .dailySuggestion(wine):
-            HeroCard(resources: resources, wine: wine, palateMap: palateMap, isInCellar: cellarWineKeys.contains(wine.id),
+        case let .topMatch(wine):
+            HeroCard(resources: resources, wine: wine, palateMap: palateMap, isInCellar: cellarWineKeys.contains(wine.id), isLoading: isRefreshingMatches,
                     onShowLess: onShowLess, onSaveToCellar: { onSaveToCellar(wine) })
         case let .friends(state):
             // HOME-R11: no friend, the invite; one, the last table (FRI-R17); more, the Friends tab.
@@ -39,7 +42,12 @@ struct HomeCardView: View {
             ContinueLessonCard(resources: resources, course: course)
                 .contentShape(Rectangle())
                 .onTapGesture { onOpenCourse(course.id) }
-        case let .changedMapCard(axis, delta): ChangedMapCard(resources: resources, axis: axis, delta: delta, palateMap: palateMap)
+        case let .changedMapCard(axis, delta):
+            // HOME-R17: You › Map, at "Over time".
+            ChangedMapCard(resources: resources, axis: axis, delta: delta, palateMap: palateMap)
+                .contentShape(Rectangle())
+                .onTapGesture(perform: onOpenMapHistory)
+                .accessibilityAddTraits(.isButton)
         case let .learnShortcuts(suggestions): LearnShortcutsCard(resources: resources, suggestions: suggestions, onOpen: onOpenLesson)
         case let .wordOfTheDay(term):
             Button { onOpenGlossary(term) } label: {
@@ -50,7 +58,7 @@ struct HomeCardView: View {
             .buttonStyle(.plain)
             .accessibilityHint("Open glossary")
         case let .winesForPalate(suggestions):
-            WinesForPalateCard(resources: resources, suggestions: suggestions) { onOpenWine(.palate($0)) }
+            WinesForPalateCard(resources: resources, suggestions: suggestions, isLoading: isRefreshingMatches) { onOpenWine(.palate($0)) }
         case let .chooseYourWine(catalog):
             ChooseYourWineCard(resources: resources, palateMap: palateMap, catalog: catalog) { suggestions, direction in
                 onOpenWine(.discovery(suggestions: suggestions, direction: direction))

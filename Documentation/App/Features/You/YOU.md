@@ -145,7 +145,7 @@ O valor inicial é **ligado** (Public, D9, decidido em 2026-10-31).
 
 **YOU-R26 · Sign out.** Pede confirmação: "Sign out of UVVA?", "Your palate map, cellar and certificates stay saved to your account." Os botões são "Sign out" e "Cancel". "Sign out" encerra a sessão e abre a Welcome (ONB-R02). Entrar de novo com a mesma conta Apple ou Google, no mesmo iCloud, recupera tudo (ONB-R27, R27a).
 
-**YOU-R27 · Apagar a conta.** "Delete my account" pede confirmação: "Delete your account?", "This permanently removes your palate map, cellar, tables and certificates. It cannot be undone." Os botões são "Delete my account" e "Keep my account". Apagar remove todos os dados da conta (no iCloud e na base pública: perfil, chave de contato e pedidos de amizade), encerra a sessão e abre a Welcome. A mesma conta Apple ou Google pode criar uma conta nova depois.
+**YOU-R27 · Apagar a conta.** "Delete my account" pede confirmação: "Delete your account?", "This permanently removes your palate map, cellar, tables and certificates. It cannot be undone." Os botões são "Delete my account" e "Keep my account". Apagar remove todos os dados da conta (no iCloud e na base pública: perfil, chave de contato e pedidos de amizade), encerra a sessão e abre a Welcome. A mesma conta Apple ou Google pode criar uma conta nova depois. Se a base pública não responde, nada é apagado: a confirmação fecha e um card creme claro, com texto escuro, sobe no final da tela, acima da tab bar: "Your account could not be deleted", "Nothing was removed. Check your connection and try again." O card sai sozinho depois de alguns segundos ou com um toque, e "Delete my account" continua nas Settings para tentar de novo. Uma conta sem pedidos de amizade é apagada normalmente.
 
 > **Estado da implementação (2026-10-31).** Apagar remove o perfil, os mapas e o lembrete do iCloud, o PublicProfile e a ContactKey da base pública, e cancela as notificações. Ainda falta: (1) revogar o token da Apple (exige um servidor; previsto num Cloudflare Worker antes do TestFlight, exigência da App Store para contas com Sign in with Apple); (2) apagar os FriendRequests enviados e recebidos, quando o Friends existir.
 
@@ -154,6 +154,8 @@ O valor inicial é **ligado** (Public, D9, decidido em 2026-10-31).
 - Quando o usuário confirma Sign out, então não há sessão e abre a Welcome.
 - Dada uma conta apagada, quando a mesma conta Apple entra de novo, então ela segue o cadastro como um usuário novo.
 - Quando o usuário toca em "Keep my account", então nada é apagado.
+- Dado que apagar falha, então nada é apagado, a sessão continua, a confirmação fecha e o card de erro aparece no final da tela.
+- Dada uma conta que nunca enviou nem recebeu pedidos de amizade, quando o usuário confirma apagar, então a conta é apagada.
 
 ## 6. Fora de escopo
 

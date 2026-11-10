@@ -107,6 +107,7 @@ struct LessonProgress { lessonId; currentStep; completedAt?; lastOpenedAt; answe
 
 **Critérios**
 - Dada a lição 3 parada no passo 5, quando o usuário a abre de novo, então ela começa no passo 5.
+- Dada uma lição nunca começada, quando o usuário abre a capa e sai sem tocar em "Begin lesson", então nada é gravado: a lição não conta como aberta.
 
 ### 4.2 Passos de conteúdo
 

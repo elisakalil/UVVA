@@ -38,6 +38,34 @@ private struct CatalogStub: CatalogRepository {
     func firstPathModule() async throws -> CourseSummary? { nil }
 }
 
+/// The catalog as the store gives it: ranked on the map it is asked for, equally close wines by their key.
+private struct RankedCatalogStub: CatalogRepository {
+    func winesClosest(to map: PalateMap, limit: Int) async throws -> [Wine] {
+        let ranked = HomeContentModel.full.catalog
+            .map { wine -> Wine in var wine = wine; wine.dish = nil; return wine }
+            .sorted {
+                let (l, r) = (Similarity.between($0.profile, map), Similarity.between($1.profile, map))
+                return l == r ? $0.id < $1.id : l > r
+            }
+        return Array(ranked.prefix(limit))
+    }
+    func recipes() async throws -> [Recipe] { try await CatalogStub().recipes() }
+    func glossary() async throws -> [GlossaryTerm] { HomeContentModel.full.glossary }
+    func firstPathModule() async throws -> CourseSummary? { nil }
+}
+
+/// A map that a rating moves onto the rated wine, so the test can tell where the top of the list must go.
+private actor MovingMapStub: PalateMapRepository {
+    private var map: PalateMap
+    init(map: PalateMap) { self.map = map }
+    func currentMap() async throws -> PalateMap? { map }
+    func saveQuizMap(_ map: PalateMap, at date: Date) async throws {}
+    func history() async throws -> [MapChange] { [] }
+    func saveRatedMap(_ map: PalateMap, wineKey: String, verdict: Verdict, at date: Date) async throws {
+        self.map = HomeContentModel.full.catalog.first { $0.id == wineKey }?.profile ?? map
+    }
+}
+
 private struct CoursesStub: CourseCatalog {
     static let tannat = Course(id: "grape-tannat", kind: .grape, order: 1, title: "Tannat", about: "",
                                lessons: (1...3).map {
@@ -97,11 +125,35 @@ struct HomeViewModelTests {
 
     @Test func HOME_R06_R09_daySuggestion_comesWithTheRecipe() async throws {
         let cards = try #require(await load(at: day).uiModel.content?.cards)
-        guard case let .dailySuggestion(wine) = cards.first(where: { $0.kind == "dailySuggestion" }) else {
+        guard case let .topMatch(wine) = cards.first(where: { $0.kind == "topMatch" }) else {
             Issue.record("no suggestion"); return
         }
         #expect(wine.dish?.title == "Lamb stew")
         #expect(wine.dish?.ingredients == ["800 g lamb"])
+    }
+
+    @Test func HOME_R07_aRating_movesTheMap_andTheHeroFollows() async throws {
+        let maps = MovingMapStub(map: HomeContentModel.full.palateMap)
+        let viewModel = HomeFactory(profiles: ProfilesStub(), maps: maps, catalog: RankedCatalogStub(),
+                                    cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
+                                    friends: FriendsRepositoryStub())
+            .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
+        func hero() -> Wine? {
+            guard case let .topMatch(wine) = viewModel.uiModel.content?.cards.first(where: { $0.kind == "topMatch" }) else { return nil }
+            return wine
+        }
+        await viewModel.load()
+        let before = try #require(hero())
+        #expect(before.dish?.title == "Lamb stew")
+
+        // A wine the user loved pulls the map all the way to it (the stub saves the wine's own map).
+        let loved = try #require(HomeContentModel.full.catalog.first { $0.type == "Red" && $0.id != before.id })
+        await viewModel.rate(loved, verdict: .yes, addToCellar: false)
+
+        let after = try #require(hero())
+        #expect(after.id == loved.id)
+        #expect(after.dish?.title == "Lamb stew")
+        #expect(viewModel.uiModel.content?.palateMap == loved.profile)
     }
 
     @Test func HOME_R12_aLessonOpened_showsContinueAtItsLesson() async throws {
@@ -166,6 +218,17 @@ struct HomeViewModelTests {
         #expect(opened)
     }
 
+    @Test func HOME_R17_changedMapCard_opensTheMapHistory() {
+        var opened = false
+        let model = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
+                                cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
+                                friends: FriendsRepositoryStub())
+            .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in },
+                                                        onOpenMapHistory: { opened = true }))
+        model.openMapHistory()
+        #expect(opened)
+    }
+
     @Test func uiModel_publishesLoadingContentAndSavedWine() async throws {
         let model = HomeFactory(profiles: ProfilesStub(), maps: MapStub(), catalog: CatalogStub(),
                                  cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
@@ -208,7 +271,7 @@ private struct UnusedRatingAction: RateWineUseCaseProtocol {
 struct HomePresentationTests {
     @Test func preparationFailureDoesNotPublishPartialState() async {
         let model = HomeViewModel(
-            loadHomeUseCase: FailingHomeLoader(),
+            loadHomeUseCase: FailingHomeLoader(), loadPalateStateUseCase: PalateStateStub(), rankWinesUseCase: WineRankingSpy(),
             addWineToCellarUseCase: UnusedCellarAction(),
             rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
@@ -229,7 +292,7 @@ struct HomePresentationTests {
         var openedCourse: String?
         var openedKind: CourseKind?
         let model = HomeViewModel(
-            loadHomeUseCase: FailingHomeLoader(),
+            loadHomeUseCase: FailingHomeLoader(), loadPalateStateUseCase: PalateStateStub(), rankWinesUseCase: WineRankingSpy(),
             addWineToCellarUseCase: UnusedCellarAction(),
             rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(
@@ -374,7 +437,7 @@ struct ModuleStateFlowTests {
             return HomeLoadResultModel(model: model, inviteLink: nil, cellarWineKeys: [])
         }
         let source = SuspendedHomeSnapshot(old: content(1), latest: content(2))
-        let home = HomeViewModel(loadHomeUseCase: source,
+        let home = HomeViewModel(loadHomeUseCase: source, loadPalateStateUseCase: PalateStateStub(), rankWinesUseCase: WineRankingSpy(),
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: CellarStub()),
             rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),

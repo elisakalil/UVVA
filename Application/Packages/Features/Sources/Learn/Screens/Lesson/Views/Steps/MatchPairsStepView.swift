@@ -17,12 +17,14 @@ struct MatchPairsStepView: View {
                 VStack(spacing: 8) { ForEach(model.right) { cell($0, action: onTapRight) } }
             }
             .padding(.horizontal, 16)
+            .animation(.easeOut(duration: 0.2), value: model.isMiss)
             if !model.status.isEmpty {
                 Text(model.status)
                     .font(UVVAFont.sans(14))
                     .foregroundStyle(LessonPalette.wrong)
                     .padding(.horizontal, 24)
                     .padding(.top, 16)
+                    .transition(.opacity)
             }
         }
     }
@@ -37,6 +39,9 @@ struct MatchPairsStepView: View {
                 .padding(.horizontal, 14)
                 .padding(.vertical, 12)
                 .background(PairCell.background(term.state, pickedFill: LessonPalette.ink))
+                .animation(.easeOut(duration: 0.2), value: term.state)
+                .lessonBreath(term.state == .correct)
+                .lessonNudge(term.state == .wrong)
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

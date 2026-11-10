@@ -110,24 +110,31 @@ struct RateWineUseCaseTests {
 @MainActor
 struct HomeRatingViewModelTests {
     private func viewModel(rating: any RateWineUseCaseProtocol, loader: HomeLoaderSpy,
+                           palate: PalateStateStub = PalateStateStub(), ranking: WineRankingSpy = WineRankingSpy(),
                            noticeDuration: Duration = .seconds(60)) -> HomeViewModel {
-        HomeViewModel(loadHomeUseCase: loader, addWineToCellarUseCase: SavingCellar(), rateWineUseCase: rating,
+        HomeViewModel(loadHomeUseCase: loader, loadPalateStateUseCase: palate, rankWinesUseCase: ranking, addWineToCellarUseCase: SavingCellar(), rateWineUseCase: rating,
                       coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
-                      now: Date.init, calendar: .current, noticeDuration: noticeDuration)
+                      now: Date.init, calendar: .current, noticeDuration: noticeDuration, curtainDuration: .zero)
     }
 
-    @Test func HOME_R24_rating_rebuildsTheHome_andTellsWhichAxesMoved() async throws {
+    @Test func HOME_R24_rating_readsAgainWhatFollowsTheMap_andTellsWhichAxesMoved() async throws {
         let loader = HomeLoaderSpy()
+        let palate = PalateStateStub()
+        let ranking = WineRankingSpy()
         let model = viewModel(rating: FixedRating(changes: [
             AxisChange(axis: .acidity, before: 5, after: 6),
             AxisChange(axis: .oak, before: 5, after: 4.5)
-        ]), loader: loader)
+        ]), loader: loader, palate: palate, ranking: ranking)
         await model.load()
         let wine = try #require(HomeContentModel.full.catalog.first)
+        palate.state.palateMap = wine.profile
 
         await model.rate(wine, verdict: .yes, addToCellar: false)
 
-        #expect(loader.calls == 2)
+        // HOME-R10c: the Home is not read again, only the map and the ranking on it.
+        #expect(loader.calls == 1)
+        #expect(ranking.calls == 1)
+        #expect(model.uiModel.content?.palateMap == wine.profile)
         #expect(model.uiModel.notice == "Map updated · Acidity ↑ · Oak ↓")
     }
 

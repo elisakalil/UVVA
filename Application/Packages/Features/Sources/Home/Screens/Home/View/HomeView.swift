@@ -69,6 +69,7 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             resources: viewModel.uiModel.resources,
             tourTarget: target,
             cellarWineKeys: viewModel.uiModel.cellarWineKeys,
+            isRefreshingMatches: viewModel.uiModel.isRefreshingMatches,
             onInvite: { inviting = true },
             onOpenLesson: viewModel.openLesson,
             onOpenCourse: viewModel.openCourse,
@@ -82,7 +83,8 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             onSaveToCellar: { wine in Task { await viewModel.addToCellar(wine) } },
             onScan: viewModel.scan,
             onOpenFriends: viewModel.openFriends,
-            onOpenLastTable: viewModel.openLastTable)
+            onOpenLastTable: viewModel.openLastTable,
+            onOpenMapHistory: viewModel.openMapHistory)
     }
 
 }

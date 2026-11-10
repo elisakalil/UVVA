@@ -116,10 +116,17 @@ public final class CloudKitSocialService: SocialService {
     }
 
     /// Every page of a `FriendRequest` query. Needs `from` and `to` queryable in the Dashboard.
+    /// CloudKit creates a record type when its first record is saved. Until someone sends a request the type is not
+    /// there and the query fails with `unknownItem`, which means there are no requests.
     private func requests(matching predicate: NSPredicate) async throws -> [FriendRequestRecord] {
         var records: [FriendRequestRecord] = []
-        var page = try await database.records(matching: CKQuery(recordType: RecordType.friendRequest, predicate: predicate),
+        var page: (matchResults: [(CKRecord.ID, Result<CKRecord, any Error>)], queryCursor: CKQueryOperation.Cursor?)
+        do {
+            page = try await database.records(matching: CKQuery(recordType: RecordType.friendRequest, predicate: predicate),
                                               desiredKeys: ["from", "to"])
+        } catch let error as CKError where error.code == .unknownItem {
+            return []
+        }
         while true {
             for (_, result) in page.matchResults {
                 if case let .success(record) = result, let request = Self.request(from: record) { records.append(request) }

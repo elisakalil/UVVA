@@ -36,6 +36,7 @@ final class AppCoordinator {
     private let questions: QuizQuestionStore
     private let profiles: ProfileStore
     private let catalog: CatalogStore
+    private let courses: CatalogStore
     private let reminders: ReminderStore
     private let cellar: CellarStore
     private let learning: LearningStore
@@ -57,6 +58,7 @@ final class AppCoordinator {
         questions = stores.questions
         profiles = stores.profiles
         catalog = stores.catalog
+        courses = stores.courses
         reminders = stores.reminders
         cellar = stores.cellar
         learning = stores.learning
@@ -170,7 +172,7 @@ final class AppCoordinator {
             maps: maps,
             catalog: catalog,
             cellar: cellar,
-            courses: catalog,
+            courses: courses,
             learning: learning,
             friends: friendsStore
         ).makeViewModel(coordinator: HomeCoordinator(
@@ -185,12 +187,15 @@ final class AppCoordinator {
             },
             onScan: { [weak self] in self?.openNewNote() },
             onOpenFriends: { [weak self] in self?.openFriendsSelection() },
-            onOpenLastTable: { [weak self] in self?.openLastTable() }
+            onOpenLastTable: { [weak self] in self?.openLastTable() },
+            onOpenMapHistory: { [weak self] in self?.openMapHistory() }
         ))
 
         you = you ?? makeYou()
 
-        cellarTab = cellarTab ?? cellarFactory.makeViewModel(onAdd: { [weak self] in self?.openNewNote() })
+        cellarTab = cellarTab ?? cellarFactory.makeViewModel(
+            onAdd: { [weak self] in self?.openNewNote() },
+            onNoteChange: { [weak self] in self?.noteChanged() })
 
         friends = friends ?? FriendsFactory(profiles: profiles, maps: maps, friends: friendsStore, catalog: catalog,
                                             social: social, contacts: DeviceContacts())
@@ -200,7 +205,7 @@ final class AppCoordinator {
             })
 
         learn = learn ?? LearnFactory(
-            catalog: catalog,
+            catalog: courses,
             learning: learning,
             profiles: profiles
         ).makeViewModel(onProgressChange: { [weak self] in
@@ -287,8 +292,14 @@ final class AppCoordinator {
         Task { await friends.openLastTable() }
     }
 
+    /// HOME-R17: the "axis that changed" card opens You › Map, at "Over time" (YOU-R03).
+    private func openMapHistory() {
+        you?.showMapHistory()
+        withAnimation(.easeInOut(duration: 0.35)) { selectedTab = .you }
+    }
+
     private func makeYou() -> YouViewModel {
-        YouFactory(profiles: profiles, maps: maps, catalog: catalog, courses: catalog, learning: learning, social: social,
+        YouFactory(profiles: profiles, maps: maps, catalog: catalog, courses: courses, learning: learning, social: social,
                      reminders: reminders, scheduler: scheduler)
             .makeViewModel(coordinator: YouCoordinator(
                      onRedoMap: { [weak self] in self?.openQuiz(.redo) },
@@ -332,6 +343,14 @@ final class AppCoordinator {
         guard isOpeningCourse else { return }
         isOpeningCourse = false
         selectedTab = .learn
+    }
+
+    /// HOME-R10c: a note edited or deleted in the Cellar may have moved the map. The Home is not read now: it reads
+    /// its Hero and "Wines for your palate" again, under their curtain, the next time it is shown.
+    private func noteChanged() {
+        guard let home else { return }
+        home.palateChanged()
+        if selectedTab == .home { Task { await home.loadIfNeeded() } }
     }
 
     private func learningChanged() {

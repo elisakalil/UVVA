@@ -18,7 +18,7 @@ struct HomeCardsBuilderTests {
 
     @Test func HOME_R01_withoutLessonCatalog_omitsSuggestions() {
         let kinds = builder.build(from: .full, now: now).map(\.kind)
-        #expect(kinds == ["header", "dailySuggestion", "friends", "continueLesson", "changedMapCard",
+        #expect(kinds == ["header", "topMatch", "friends", "continueLesson", "changedMapCard",
                           "wordOfTheDay", "winesForPalate", "chooseYourWine"])
     }
 
@@ -27,7 +27,7 @@ struct HomeCardsBuilderTests {
         model.courses = []
         model.lastRating = nil
         let kinds = builder.build(from: model, now: now).map(\.kind)
-        #expect(kinds == ["header", "dailySuggestion", "friends",
+        #expect(kinds == ["header", "topMatch", "friends",
                           "wordOfTheDay", "winesForPalate", "chooseYourWine"])
     }
 
@@ -45,42 +45,54 @@ struct HomeCardsBuilderTests {
         #expect(builder.header(model) == .header(greeting: "Welcome back, Elisa", hasUnread: false))
     }
 
-    // MARK: HOME-R07 · Troca diária
+    // MARK: HOME-R07 · Topo do match
 
-    @Test func HOME_R07_sameDay_sameSuggestion() {
-        let morning = builder.dailySuggestion(.full, now: now)
-        let evening = builder.dailySuggestion(.full, now: now.addingTimeInterval(60 * 60 * 6))
-        #expect(morning == evening)
+    @Test func HOME_R07_showsTheWineWithADishClosestToTheMap() throws {
+        let model = HomeContentModel.full
+        let paired = model.catalog.filter { $0.dish != nil }
+        let closest = try #require(paired.max { Similarity.between($0.profile, model.palateMap) < Similarity.between($1.profile, model.palateMap) })
+        #expect(builder.topMatch(model) == closest)
     }
 
-    @Test func HOME_R07_nextDay_newSuggestion() {
-        let today = builder.dailySuggestion(.full, now: now)
-        let tomorrow = builder.dailySuggestion(.full, now: now.addingTimeInterval(60 * 60 * 24))
-        #expect(today != tomorrow)
+    @Test func HOME_R07_anotherDay_sameWine() {
+        func top(at date: Date) -> HomeCardModel? { builder.build(from: .full, now: date).first { $0.kind == "topMatch" } }
+        #expect(top(at: now) != nil)
+        for days in 1...30 {
+            #expect(top(at: now.addingTimeInterval(Double(days) * 60 * 60 * 24)) == top(at: now))
+        }
+    }
+
+    @Test func HOME_R07_theMapMoves_theTopFollows() throws {
+        var model = HomeContentModel.full
+        let before = try #require(builder.topMatch(model))
+        let other = try #require(model.catalog.first { $0.dish != nil && $0.id != before.id })
+        model.palateMap = other.profile
+        #expect(builder.topMatch(model) == other)
+    }
+
+    @Test func HOME_R07_equallyClose_keepsTheCatalogOrder() throws {
+        var model = HomeContentModel.full
+        let first = try #require(model.catalog.first { $0.dish != nil })
+        var twin = first
+        twin.id = "twin"
+        model.palateMap = first.profile
+        model.catalog = [first, twin]
+        #expect(builder.topMatch(model) == first)
+        model.catalog = [twin, first]
+        #expect(builder.topMatch(model) == twin)
     }
 
     @Test func HOME_R10_noWineWithDish_hidesSuggestion() {
         var model = HomeContentModel.full
         model.catalog = model.catalog.map { var w = $0; w.dish = nil; return w }
-        #expect(builder.dailySuggestion(model, now: now) == nil)
+        #expect(builder.topMatch(model) == nil)
     }
 
-    @Test func HOME_R10_onlyWinesMatchingTheMapByAtLeast70Percent() {
-        var model = HomeContentModel.full
-        model.catalog = model.catalog.filter { $0.dish != nil }
-        let close = model.catalog.filter { Similarity.percent($0.profile, model.palateMap) >= 70 }
-        #expect(!close.isEmpty)
-        for hours in stride(from: 0, to: 24 * 30, by: 24) {
-            let wine = builder.dailySuggestion(model, now: now.addingTimeInterval(Double(hours) * 60 * 60))
-            #expect(wine.map { Similarity.percent($0.profile, model.palateMap) >= 70 } == true)
-        }
-    }
-
-    @Test func HOME_R10_noWineAbove70Percent_hidesSuggestion() {
+    @Test func HOME_R10_farFromTheMap_stillShowsTheTop() {
         var model = HomeContentModel.full
         model.palateMap = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, 0.0) }))
         model.catalog = model.catalog.map { var w = $0; w.profile = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, 9.0) })); return w }
-        #expect(builder.dailySuggestion(model, now: now) == nil)
+        #expect(builder.topMatch(model) != nil)
     }
 
     // MARK: HOME-R11 · Amigos

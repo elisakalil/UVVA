@@ -67,9 +67,9 @@ struct SettingsTabView<ViewModel: SettingsViewModelProtocol>: View {
                 Text(notice).font(UVVAFont.sans(12)).opacity(0.8).multilineTextAlignment(.center)
             }
 
-            ActionButton(viewModel.uiModel.signOutText, style: .outline) { confirming = .signOut }
+            ActionButton(viewModel.uiModel.signOutText, style: .outline) { open(.signOut) }
                 .padding(.top, 10)
-            TextAction(viewModel.uiModel.deleteMyAccountText, opacity: 0.55) { confirming = .delete }
+            TextAction(viewModel.uiModel.deleteMyAccountText, opacity: 0.55) { open(.delete) }
         }
         .onChange(of: photoItem) { _, item in
             guard let item else { return }
@@ -96,6 +96,7 @@ struct SettingsTabView<ViewModel: SettingsViewModelProtocol>: View {
             ConfirmSheet(kind: kind, isWorking: viewModel.uiModel.isWorking) {
                 switch kind {
                 case .signOut: await viewModel.signOut()
+                // A failed delete closes the sheet too: the card at the foot of the screen says so (YOU-R27).
                 case .delete: await viewModel.deleteAccount()
                 }
                 confirming = nil
@@ -105,5 +106,11 @@ struct SettingsTabView<ViewModel: SettingsViewModelProtocol>: View {
             .presentationDetents([.height(360)])
             .presentationBackground(.clear)
         }
+    }
+
+    /// A failure card from the last try leaves as the next confirmation opens.
+    private func open(_ kind: ConfirmKind) {
+        viewModel.dismissDeleteFailure()
+        confirming = kind
     }
 }

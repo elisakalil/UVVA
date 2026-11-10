@@ -14,11 +14,18 @@ public struct CellarFactory: CellarFactoryProtocol {
     private let preferences: any CellarPreferencesProtocol
     private let now: () -> Date
 
-    public init(cellar: any CellarRepository, maps: any PalateMapRepository, rewriter: any PalateHistoryRewriting,
-                wines: any WineLookup, labelCatalog: any LabelCatalogRepository, reader: any LabelReading,
-                structurer: any LabelStructuring, camera: any CameraAuthorizing,
-                preferences: any CellarPreferencesProtocol = CellarPreferences(),
-                now: @escaping () -> Date = Date.init) {
+    public init(
+        cellar: any CellarRepository,
+        maps: any PalateMapRepository,
+        rewriter: any PalateHistoryRewriting,
+        wines: any WineLookup,
+        labelCatalog: any LabelCatalogRepository,
+        reader: any LabelReading,
+        structurer: any LabelStructuring,
+        camera: any CameraAuthorizing,
+        preferences: any CellarPreferencesProtocol = CellarPreferences(),
+        now: @escaping () -> Date = Date.init
+    ) {
         self.cellar = cellar
         self.maps = maps
         self.rewriter = rewriter
@@ -36,13 +43,18 @@ public struct CellarFactory: CellarFactoryProtocol {
     }
 
     /// The tab. `onAdd` is the `+`: the app opens `makeNewNote`, as it does from the Home (CELLAR-R14).
-    public func makeViewModel(onAdd: @escaping () -> Void = {}) -> CellarViewModel {
+    /// `onNoteChange` tells the app a note was saved or deleted, which may have moved the map (CELLAR-R29).
+    public func makeViewModel(onAdd: @escaping () -> Void = {}, onNoteChange: @escaping () -> Void = {}) -> CellarViewModel {
         let recalculate = recalculate
         let load = LoadNoteUseCase(wines: wines)
         let save = SaveNoteUseCase(cellar: cellar, maps: maps, wines: wines, recalculate: recalculate, now: now)
         let delete = DeleteNoteUseCase(cellar: cellar, recalculate: recalculate)
-        return CellarViewModel(loadCellar: LoadCellarUseCase(cellar: cellar), preferences: preferences,
-                               onAdd: onAdd) { entry, owner in
+        return CellarViewModel(
+            loadCellar: LoadCellarUseCase(cellar: cellar),
+            preferences: preferences,
+            onAdd: onAdd,
+            onNoteChange: onNoteChange
+        ) { entry, owner in
             NoteViewModel(entry: entry, loadNote: load, saveNote: save, deleteNote: delete,
                           onChange: { [weak owner] _ in owner?.noteChanged() },
                           onClose: { [weak owner] in owner?.closeNote() })

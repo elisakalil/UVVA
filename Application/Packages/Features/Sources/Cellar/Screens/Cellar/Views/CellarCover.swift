@@ -25,6 +25,14 @@ struct CellarCover: View {
                     .padding(12)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
             }
+            .overlay {
+                // Without a label to look at, the cover names the wine, on the side the tag leaves free.
+                if model.photo == nil {
+                    caption
+                        .padding(12)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: captionAlignment)
+                }
+            }
             .frame(height: 200)
             .clipped()
             // `clipped()` cuts what shows, not what is tappable: the cover takes taps only within its own frame.
@@ -33,6 +41,31 @@ struct CellarCover: View {
             .overlay(alignment: .bottom) { CellarPalette.rule.frame(height: 1) }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(model.accessibilityLabel)
+    }
+
+    private var caption: some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text(model.name)
+                .font(UVVAFont.sans(13))
+                .lineLimit(2)
+            if !model.producer.isEmpty {
+                Text(model.producer)
+                    .font(UVVAFont.sans(11))
+                    .opacity(0.8)
+                    .lineLimit(1)
+            }
+        }
+        .multilineTextAlignment(.leading)
+        .foregroundStyle(.white)
+        .shadow(color: .black.opacity(0.45), radius: 3, y: 1)
+    }
+
+    /// The caption takes the edge the tag does not: the top when the tag is at the bottom, the bottom otherwise.
+    private var captionAlignment: Alignment {
+        switch model.cover.corner {
+        case .bottomLeading, .bottomTrailing: .topLeading
+        case .topLeading, .topTrailing, .trailing: .bottomLeading
+        }
     }
 
     private var alignment: Alignment {

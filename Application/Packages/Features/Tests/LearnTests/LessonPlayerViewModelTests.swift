@@ -62,6 +62,22 @@ struct LessonPlayerViewModelTests {
         #expect(saved?.isCompleted == false)
     }
 
+    @Test func LEARN_R14_leavingTheCoverWithoutBeginning_savesNothing() async throws {
+        let player = player()
+        player.close()
+        try await player.saveOnExit()
+        #expect(learning.saved["grape-tannat-l01"] == nil)
+        #expect(player.progressSnapshot == nil)
+    }
+
+    @Test func LEARN_R14_beginningThenLeavingFromTheCover_savesTheLesson() async throws {
+        let player = player()
+        player.begin()
+        player.back()
+        try await player.saveOnExit()
+        #expect(learning.saved["grape-tannat-l01"]?.currentStep == -1)
+    }
+
     @Test func LEARN_R14_back_goesToThePreviousScreen_andLeavesOnlyFromTheCover() {
         var exits: [LessonPlayerViewModel.Exit] = []
         let player = player { exits.append($0) }
@@ -235,5 +251,65 @@ struct LessonPlayerViewModelTests {
         #expect(completed.status.isEmpty)
         player.primary()
         #expect(player.stepIndex == 1)
+    }
+
+    // MARK: Sensory feedback
+
+    @Test func sensory_pickingAnOption_isASelection_andTheSamePickAgainIsSilent() {
+        let player = player(startStep: 2)
+        player.tapOption(0)
+        #expect(player.sensory?.cue == .select)
+        let id = player.sensory?.id
+        player.tapOption(0)
+        #expect(player.sensory?.id == id)
+    }
+
+    @Test func sensory_check_feelsRightOrWrong() {
+        let right = player(startStep: 2)
+        right.tapOption(2)
+        right.primary()
+        #expect(right.sensory?.cue == .correct)
+        let wrong = player(startStep: 2)
+        wrong.tapOption(0)
+        wrong.primary()
+        #expect(wrong.sensory?.cue == .wrong)
+        // Taps after Check change nothing, so nothing is felt.
+        let id = wrong.sensory?.id
+        wrong.tapOption(1)
+        #expect(wrong.sensory?.id == id)
+    }
+
+    @Test func sensory_reachingTheSummary_isTheToast() {
+        let player = player()
+        playToSummary(player, right: true)
+        #expect(player.isSummary)
+        #expect(player.uiModel.sensory?.cue == .toast)
+    }
+
+    @Test func sensory_ordering_picksThenSwaps() {
+        let player = player(1, startStep: 4)
+        player.tapRow(0)
+        #expect(player.sensory?.cue == .select)
+        player.tapRow(1)
+        #expect(player.sensory?.cue == .swap)
+    }
+
+    @Test func sensory_matchPairs_missPairAndLastPair() {
+        let pairs = [MatchPair(left: "A", right: "1"), MatchPair(left: "B", right: "2")]
+        let summary = course.lessons[0]
+        let player = LessonPlayerViewModel(
+            course: course, lesson: Lesson(summary: summary, steps: [.matchPairs(prompt: "Match", pairs: pairs, explanation: nil),
+                                                                    .summary(title: "", points: [])]),
+            progress: LessonProgress(lessonID: summary.id, courseID: course.id, currentStep: 0, lastOpenedAt: Fixture.day),
+            saveProgressUseCase: SaveLessonProgressUseCase(learning: learning), onCompleted: { nil }, onExit: { _ in })
+        player.tapLeft(0)
+        player.tapRight(1)
+        #expect(player.sensory?.cue == .miss)
+        player.tapLeft(0)
+        player.tapRight(0)
+        #expect(player.sensory?.cue == .pair)
+        player.tapLeft(1)
+        player.tapRight(1)
+        #expect(player.sensory?.cue == .correct)
     }
 }

@@ -4,7 +4,8 @@ import Foundation
 /// One card per case, in the fixed order of HOME-R01.
 enum HomeCardModel: Equatable, Sendable {
     case header(greeting: String, hasUnread: Bool)
-    case dailySuggestion(Wine)
+    /// The Hero: the wine at the top of the match list (HOME-R07).
+    case topMatch(Wine)
     case friends(FriendsCardState)
     case continueLesson(CourseProgress)
     case changedMapCard(axis: PalateAxis, delta: Double)
@@ -22,7 +23,7 @@ enum HomeCardModel: Equatable, Sendable {
     var kind: String {
         switch self {
         case .header: "header"
-        case .dailySuggestion: "dailySuggestion"
+        case .topMatch: "topMatch"
         case .friends: "friends"
         case .continueLesson: "continueLesson"
         case .changedMapCard: "changedMapCard"
@@ -42,7 +43,7 @@ enum HomeCardModel: Equatable, Sendable {
 
     var spotlightID: String? {
         switch self {
-        case .dailySuggestion: HomeSpotlightID.today
+        case .topMatch: HomeSpotlightID.today
         case .friends: HomeSpotlightID.friends
         case .chooseYourWine: HomeSpotlightID.chooseYourWine
         default: nil

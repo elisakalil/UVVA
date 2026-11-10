@@ -86,7 +86,7 @@ extension LessonPlayerViewModel {
                 rows: draft.order.enumerated().map { position, item in
                     let state: OptionState = draft.isChecked ? (item == position ? .correct : .wrong)
                         : draft.pickedRow == position ? .selected : .idle
-                    return OptionUIModel(id: position, number: Self.two(position + 1), label: items[item], state: state)
+                    return OptionUIModel(id: position, number: Self.two(position + 1), label: items[item], state: state, key: item)
                 }))
         case let .matchPairs(prompt, pairs, _):
             let shuffled = SeededShuffle.order(count: pairs.count, seed: SeededShuffle.seed(lessonID: lesson.id, step: index))

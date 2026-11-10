@@ -20,6 +20,7 @@ struct StepDots: View {
             }
         }
         .frame(height: 14)
+        .animation(.spring(duration: 0.45, bounce: 0.2), value: current)
         .accessibilityElement()
         .accessibilityLabel(Text(resources.stepAccessibility(current: current, total: total)))
     }

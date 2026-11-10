@@ -1,7 +1,7 @@
 import Foundation
 
 struct HomeLoadResultModel: Sendable {
-    let model: HomeContentModel
+    var model: HomeContentModel
     let inviteLink: URL?
-    let cellarWineKeys: Set<String>
+    var cellarWineKeys: Set<String>
 }

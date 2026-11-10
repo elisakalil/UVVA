@@ -13,6 +13,8 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
     @State private var viewportHeight: CGFloat = 0
     @State private var isClosing = false
     @State private var isAtTop = true
+    @State private var clink = ToastClink()
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// How long "Lesson complete" stays.
     private static var completeNoteTime: Duration { .seconds(2.5) }
@@ -54,7 +56,9 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
                 LessonCompleteNote(text: model.completion)
                     .padding(.top, 64)
                     .frame(maxHeight: .infinity, alignment: .top)
-                    .transition(.move(edge: .top).combined(with: .opacity))
+                    .transition(reduceMotion ? .opacity : .asymmetric(
+                        insertion: .offset(y: -28).combined(with: .opacity),
+                        removal: .offset(y: -16).combined(with: .opacity)))
             }
             if let certificate = viewModel.uiModel.certificate {
                 ShareScreen(title: resources.shareWhatYouLearnedText, message: certificate.message) { format in
@@ -66,14 +70,21 @@ struct LessonPlayerView<ViewModel: LessonPlayerViewModelProtocol>: View {
             }
         }
         .animation(.easeOut(duration: 0.25), value: viewModel.uiModel.stepIndex)
-        .animation(.easeOut(duration: 0.3), value: showsCompleteNote)
         .task(id: viewModel.uiModel.isSummary) {
             guard viewModel.uiModel.isSummary else { showsCompleteNote = false; return }
-            showsCompleteNote = true
-            try? await Task.sleep(for: Self.completeNoteTime)
-            showsCompleteNote = false
+            // The Summary is saved first, behind the grapes; this runs once it is really on screen. It settles, the
+            // note comes down slowly, and the glasses touch as it lands.
+            do {
+                try await Task.sleep(for: .milliseconds(200))
+                withAnimation(reduceMotion ? .easeOut(duration: 0.3) : .smooth(duration: 0.7)) { showsCompleteNote = true }
+                try await Task.sleep(for: .milliseconds(260))
+                clink.play()
+                try await Task.sleep(for: Self.completeNoteTime)
+            } catch { return }
+            withAnimation(.easeIn(duration: 0.45)) { showsCompleteNote = false }
         }
         .animation(.easeOut(duration: 0.3), value: viewModel.uiModel.certificate != nil)
+        .lessonSensory(viewModel.uiModel.sensory)
         .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { viewportHeight = $0 }
         .allowsHitTesting(!isClosing)
         .offset(y: dragDown)

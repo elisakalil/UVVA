@@ -45,6 +45,23 @@ struct YouViewModelTests {
         #expect(await make().tab == .progress)
     }
 
+    @Test func YOU_R03_homeCard_opensMapAtOverTime_once() async {
+        let viewModel = await make()
+        viewModel.showMapHistory()
+        #expect(viewModel.tab == .map)
+        #expect(viewModel.uiModel.focusesMapHistory)
+        viewModel.mapHistoryShown()
+        #expect(viewModel.tab == .map)
+        #expect(!viewModel.uiModel.focusesMapHistory)
+    }
+
+    @Test func YOU_R03_choosingATab_dropsTheRequest() async {
+        let viewModel = await make()
+        viewModel.showMapHistory()
+        viewModel.selectTab(.map)
+        #expect(!viewModel.uiModel.focusesMapHistory)
+    }
+
     @Test func YOU_R04_twoGrapesOneRegion_andLessonsCountedOnce() async {
         let day = Date(timeIntervalSince1970: 1_800_000_000)
         let learning = LearningStub(
@@ -330,16 +347,27 @@ struct YouViewModelTests {
         #expect(social.calls == ["delete u1"])
         #expect(profiles.deleted)
         #expect(actions.log == ["deleted"])
+        #expect(!viewModel.settings.uiModel.deleteFailed)
     }
 
-    @Test func YOU_R27_offline_keepsEverything_andSaysSo() async {
+    @Test func YOU_R27_offline_keepsEverything_andShowsTheFailureCard() async {
         let profiles = ProfilesSpy(elisa)
         let actions = Actions()
         let viewModel = await make(profiles: profiles, social: SocialSpy(failsDeleting: true), actions: actions)
         await viewModel.settings.deleteAccount()
         #expect(!profiles.deleted)
         #expect(actions.log.isEmpty)
-        #expect(viewModel.settings.uiModel.notice != nil)
+        #expect(viewModel.settings.uiModel.deleteFailed)
+        #expect(!viewModel.settings.uiModel.isWorking)
+    }
+
+    @Test func YOU_R27_theFailureCard_leavesOnDismiss_andStaysThroughAReload() async {
+        let viewModel = await make(social: SocialSpy(failsDeleting: true))
+        await viewModel.settings.deleteAccount()
+        await viewModel.load()
+        #expect(viewModel.settings.uiModel.deleteFailed)
+        viewModel.settings.dismissDeleteFailure()
+        #expect(!viewModel.settings.uiModel.deleteFailed)
     }
 
     @Test func savingName_updatesHeaderMapAndSettingsTogether() async {

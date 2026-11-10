@@ -4,6 +4,8 @@ import Foundation
 public struct SettingsUIModel: Equatable {
     var notice: String?
     var isWorking = false
+    /// The account could not be deleted: the card at the foot of the screen says so (YOU-R27).
+    var deleteFailed = false
     var name: String
     var signedInWith: String
     var phone: String
@@ -28,5 +30,6 @@ public struct SettingsUIModel: Equatable {
     var whatYouHaveBuiltInText = String(localized: "What you have built in UVVA, ready to share.", bundle: .module)
     var makeChartPublicText = String(localized: "Make chart public", bundle: .module)
     var yourChangesCouldNotBeText = String(localized: "Your changes could not be saved. Try again.", bundle: .module)
-    var yourAccountCouldNotBeText = String(localized: "Your account could not be deleted. Check your connection and try again.", bundle: .module)
+    var yourAccountCouldNotBeText = String(localized: "Your account could not be deleted", bundle: .module)
+    var nothingWasRemovedText = String(localized: "Nothing was removed. Check your connection and try again.", bundle: .module)
 }

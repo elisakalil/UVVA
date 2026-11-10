@@ -13,4 +13,6 @@ public protocol YouViewModelProtocol: ObservableObject {
     var settings: SettingsModel { get }
     func load() async
     func selectTab(_ tab: YouTab)
+    /// The page reached "Over time", or left before it could (YOU-R03).
+    func mapHistoryShown()
 }

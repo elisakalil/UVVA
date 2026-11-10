@@ -17,17 +17,17 @@ A Home também é dona do **tour guiado** (seção 5): uma camada por cima da Ho
 | Dado | De onde vem | Usado por |
 | --- | --- | --- |
 | `user.firstName` | Onboarding | Header, Tour guiado |
-| `palateMap` | Quiz | Sugestão do dia, Vinhos para o paladar |
+| `palateMap` | Quiz | Melhor match, Vinhos para o paladar |
 | `seenTours` (por conta; o tour da Home é `"home"`) | Home | Tour guiado |
 | `quizExit` (`.homeWithTour`) | Quiz (QUIZ-R25) | Tour guiado |
 | `friends: [Friend]` (com `hasMap`, `compatibility`) | Friends | Card de amigos |
 | `moduleProgress: [ModuleProgress]` (com `lastOpenedAt`, lição e passo atuais) | Learn | Continuar lição |
 | `lastRating: Rating?` (com variação por eixo) | Cellar / Home | Eixo que mudou |
 | `ratedWineIDs: Set<WineID>` | Cellar / Home | Vinhos para o paladar |
-| `wineCatalog: [Wine]` | Catálogo | Sugestão do dia, Vinhos para o paladar, Escolha o seu vinho |
+| `wineCatalog: [Wine]` | Catálogo | Melhor match, Vinhos para o paladar, Escolha o seu vinho |
 | `glossary: [GlossaryTerm]` | Glossário | Palavra do dia |
 | `notifications: [Notification]` (com `isRead`) | Notificações | Header |
-| `clock` | Aparelho | Sugestão do dia, Palavra do dia |
+| `clock` | Aparelho | Palavra do dia |
 
 **Para TDD:** a montagem dos cards é uma função pura, sem UI:
 
@@ -44,7 +44,7 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 | # | Card | Pode não aparecer? |
 | --- | --- | --- |
 | 1 | Header (saudação, `+`, sino) | Não |
-| 2 | Sugestão do dia (vinho e prato) | Sim |
+| 2 | Melhor match (vinho e prato) | Sim |
 | 3 | Amigos | Não (muda de variante) |
 | 4 | Continuar lição | Sim |
 | 5 | O eixo que mudou | Sim |
@@ -81,11 +81,11 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 - Dadas 2 não lidas, quando o usuário abre uma delas, então resta 1 não lida e o ponto continua.
 - Dada 1 não lida, quando o usuário a abre, então o ponto some.
 
-### 4.2 Sugestão do dia (vinho e prato)
+### 4.2 Melhor match (vinho e prato)
 
-**HOME-R06 · Escolha.** Um vinho do catálogo escolhido a partir do mapa do paladar ("Picked for your palate"), com o prato que o acompanha.
+**HOME-R06 · Escolha.** Um vinho do catálogo escolhido a partir do mapa do paladar, com o prato que o acompanha. O card abre direto no nome do vinho, sem título por cima (2026-11-10).
 
-**HOME-R07 · Troca diária.** A sugestão muda todo dia (SHARED-R03) e fica a mesma durante o dia, por mais vezes que a Home seja aberta.
+**HOME-R07 · Topo do match (2026-11-09).** O card mostra o vinho no topo da lista de match: o vinho com prato mais próximo do mapa (SHARED-R07). Não segue o dia: fica o mesmo enquanto o mapa for o mesmo e muda quando o mapa muda, numa avaliação (HOME-R24, QUIZ-R22) ou num Quiz refeito (QUIZ-R18a). Só o vinho do topo recebe o prato; se nenhuma receita servir ao tipo dele, o lugar passa ao seguinte. Vinhos igualmente próximos seguem a ordem da chave do vinho, para o topo ser o mesmo em todas as leituras. Substitui a troca diária.
 
 **HOME-R08 · Pode repetir o Cellar.** O vinho sugerido pode ser um vinho que já está no Cellar do usuário ou que ele já avaliou.
 
@@ -93,7 +93,14 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **HOME-R09a · Find the wine.** Abre, dentro da app (Safari em folha), uma pesquisa na internet com o produtor, o nome e o ano do vinho; sem ano, só produtor e nome. O produtor não se repete quando já está no nome (2026-10-31).
 
-**HOME-R10 · Ausência.** O card não aparece se o catálogo não tiver nenhum vinho com prato associado.
+**HOME-R10 · Ausência.** O card não aparece se o catálogo não tiver nenhum vinho com prato associado. Não há match mínimo: com o mapa longe de todos os vinhos, o topo aparece na mesma, com a sua % (2026-11-09).
+
+**HOME-R10c · Só o que segue o mapa (2026-11-10).** Quando o mapa muda, a Home não é lida toda de novo: lê só o que segue o mapa (o mapa, as avaliações, as chaves do Cellar e o ranking do catálogo) e refaz os cards sobre isso.
+- **Quando:** numa avaliação feita na Home (HOME-R24), na hora; numa nota editada ou apagada no Cellar (CELLAR-R29), na próxima vez que a Home aparece, uma vez só, por mais notas que tenham mudado.
+- **Antes de ler o catálogo:** a Home compara o mapa, os vinhos avaliados e a última avaliação com os que tem. Se nada mudou (uma nota que só mudou o texto), não há loading nem ranking; só as chaves do Cellar são atualizadas.
+- **Loading:** o card do melhor match e "Wines for your palate" mostram uma cortina de uvinhas, em vários tamanhos e opacidades, que escorre devagar de cima para baixo. O card mantém o tamanho (o do melhor match recolhe, se estava aberto), o conteúdo some por baixo da cortina e não responde a toques. Com Reduce Motion, as uvas ficam paradas.
+- **Fim:** os cards novos e o fim do loading chegam juntos; a cortina sai num fade lento (1,4 s) enquanto o conteúdo novo aparece. A cortina fica pelo menos 1,8 s, para ser vista a correr e não como um piscar.
+- Os outros cards não mostram loading; os que usam o mapa (amigos, o eixo que mudou, "Choose your wine") são refeitos em silêncio.
 
 **HOME-R10a · Por que foi escolhido (2026-11-01).** O card lê o vinho contra o mapa com a mesma leitura para todos os textos (`WineFit`), para que eles nunca se contradigam. "Alto" é nível acima de 5, no mapa e no vinho; 5 é neutro (QUIZ-R14a).
 - **Eixos mostrados:** os 3 eixos mais fortes do mapa. Entre eixos empatados no mapa, vão os que o vinho tem mais altos (nunca a ordem canônica).
@@ -114,8 +121,13 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 - Todos os textos estão no catálogo de strings da Home.
 
 **Critérios**
-- Dado o dia 27/10, quando a Home é montada duas vezes nesse dia, então a sugestão é a mesma nas duas.
-- Dados os dias 27/10 e 28/10, quando a Home é montada em cada um, então a sugestão é calculada de novo no dia 28 (pode coincidir só se a regra de escolha permitir).
+- Dado o mesmo mapa, quando a Home é montada nos dias 27/10 e 28/10, então o vinho do card é o mesmo nos dois.
+- Dado o vinho A no topo, quando o usuário avalia um vinho e o mapa passa a estar mais perto do vinho B, então o card mostra B sem a Home ser reaberta.
+- Dados dois vinhos igualmente próximos do mapa, então o card mostra sempre o mesmo dos dois.
+- Dado um mapa a 40% do vinho mais próximo, então o card aparece com esse vinho.
+- Dada uma nota cujo veredito mudou no Cellar, quando a Home volta a aparecer, então só o melhor match e "Wines for your palate" mostram a cortina, e o resto da Home não é lido.
+- Dadas três notas editadas no Cellar, quando a Home volta a aparecer, então o que segue o mapa é lido uma vez.
+- Dada uma nota que só mudou o texto, quando a Home volta a aparecer, então não há cortina e o catálogo não é ordenado de novo.
 - Dado um mapa todo em 3 e um vinho alto em Fruit (8) e Acidity (7), então os eixos mostrados são Fruit e Acidity primeiro, a frase do card não aparece e a linha em comum é "Bolder than your map, which has no high axis."
 - Dado um mapa com sete eixos em 2 e Acidity em 7, e um vinho alto em Floral, então o card nunca diz que o mapa gosta de Floral, e a linha em comum é "Not high in acidity, the strongest axis on your map."
 - Dado um mapa com sete eixos em 7 e Oak em 2, e um vinho com Fruit 8 e Acidity 7, então a frase é "Your map likes fruit and acidity, and this wine is high on both."
@@ -263,7 +275,7 @@ func shouldShowTour(quizExit: QuizExit?, seenTours: Set<String>) -> Bool
 
 | # | Passo | Título | Texto | Área destacada |
 | --- | --- | --- | --- | --- |
-| 1 | Today | A pairing drawn for your palate | Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else. | Sugestão do dia (4.2) |
+| 1 | Today | A pairing drawn for your palate | Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else. | Melhor match (4.2) |
 | 2 | Your wine | Choose your wine | Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight. | Escolha o seu vinho (4.9) |
 | 3 | Scan | Scan a label | Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map. | Botão + (HOME-R03) |
 | 4 | Learn | Learn the wines you love | Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time. | Aba Learn |
@@ -299,11 +311,11 @@ No passo 2, a Home rola até o card "Escolha o seu vinho", que fica no fim da li
 
 - [x] **Amigos pelos contatos.** Contam só os contatos adicionados como amigos pelo Quick add (FRI-R08).
 - [ ] **Palavra do dia.** É sorteada uma vez por dia (fixa durante o dia) ou a cada abertura da Home? Pode repetir a palavra de ontem?
-- [ ] **Sugestão do dia.** Entre os vinhos compatíveis, ela é aleatória ou é o mais semelhante ainda não sugerido? Pode repetir uma sugestão de dias anteriores?
+- [x] **Sugestão do dia.** Deixou de ser diária: é o vinho no topo da lista de match e repete-se enquanto o mapa não mudar (HOME-R07, 2026-11-09).
 - [ ] **Eixo que mudou.** Se uma avaliação não mudar nenhum eixo (por exemplo, Maybe num vinho já muito próximo do mapa), o card mostra o quê?
 - [ ] **Escolha o seu vinho.** O que aparece quando nenhum vinho corresponde aos filtros? E "Another one" quando acabam os vinhos do tipo?
 - [ ] **Saudação.** É sempre "Welcome back", ou "Welcome" na primeira abertura depois do Onboarding (logo depois do tour, que já diz "Welcome in")?
 - [ ] **Pular o tour.** O tour pode ser pulado (por exemplo, um "Skip" na intro)? Pular conta como visto?
 - [ ] **Rever o tour.** O tour pode ser visto de novo depois (por exemplo, em You › Settings)?
 - [ ] **Tour interrompido.** Se a app fechar no meio do tour, ele aparece de novo na próxima abertura, ou só conta como visto ao tocar em "Start"?
-- [ ] **Passo 1 sem sugestão.** Se o card "Sugestão do dia" não aparecer (HOME-R10), o passo 1 é pulado ou destaca outro card?
+- [ ] **Passo 1 sem sugestão.** Se o card "Melhor match" não aparecer (HOME-R10), o passo 1 é pulado ou destaca outro card?

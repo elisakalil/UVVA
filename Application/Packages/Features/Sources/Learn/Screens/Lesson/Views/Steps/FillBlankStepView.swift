@@ -50,6 +50,8 @@ struct FillBlankStepView: View {
                         Capsule().strokeBorder(option.state == .idle ? LessonPalette.ink.opacity(0.3) : tone, lineWidth: 1)
                     }
                 }
+                .animation(.easeOut(duration: 0.25), value: option.state)
+                .lessonBreath(option.state == .correct)
                 .contentShape(Capsule())
         }
         .buttonStyle(.plain)

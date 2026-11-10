@@ -11,6 +11,8 @@ public protocol HomeCoordinatorProtocol {
     func openFriends()
     /// The match card, with one friend (HOME-R11): the last table (FRI-R17).
     func openLastTable()
+    /// The "axis that changed" card (HOME-R17): You › Map, at "Over time" (YOU-R03).
+    func openMapHistory()
 }
 
 extension HomeCoordinatorProtocol {
@@ -18,4 +20,5 @@ extension HomeCoordinatorProtocol {
     public func scan() {}
     public func openFriends() {}
     public func openLastTable() {}
+    public func openMapHistory() {}
 }

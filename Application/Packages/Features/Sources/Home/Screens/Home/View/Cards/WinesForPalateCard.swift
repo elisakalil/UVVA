@@ -5,6 +5,8 @@ import SwiftUI
 struct WinesForPalateCard: View {
     var resources = HomeResourcesUIModel()
     var suggestions: [PalateWineSuggestion]
+    /// HOME-R10c: the list is being read again on a map that moved.
+    var isLoading = false
     var onOpen: (PalateWineSuggestion) -> Void = { _ in }
 
     var body: some View {
@@ -23,7 +25,10 @@ struct WinesForPalateCard: View {
                     }
                 }
                 .padding(.vertical, 8)
+                .opacity(MatchCurtain.contentOpacity(isLoading))
+                .accessibilityHidden(isLoading)
             }
+            .matchCurtain(isLoading)
         }
     }
 }

@@ -11,5 +11,7 @@ public struct LessonPlayerUIModel {
     var isTip = false
     var isSummary = false
     var isCover = true
+    /// The last moment to feel, by haptics (SensoryCue).
+    var sensory: SensoryEvent?
     var resources = LearnResourcesUIModel()
 }

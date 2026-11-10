@@ -27,7 +27,7 @@ struct CellarPresentationBuilder {
             let tag = resources.tag(CellarTag(entry))
             let vintage = entry.vintage.map(String.init) ?? ""
             return CellarItemUIModel(
-                id: entry.id, name: entry.name, vintage: vintage,
+                id: entry.id, name: entry.name, producer: entry.producer, vintage: vintage,
                 meta: [entry.region, entry.country, grapes(entry)].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · "),
                 tag: tag, isNotYet: CellarTag(entry) == .notYet, photo: entry.photoFront,
                 cover: .at(index),
