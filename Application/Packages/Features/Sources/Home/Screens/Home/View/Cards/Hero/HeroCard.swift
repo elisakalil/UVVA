@@ -18,7 +18,7 @@ struct HeroCard: View {
     @State private var search: URL?
 
     var body: some View {
-        FrostedCard(radius: UVVARadius.hero, padding: 26) {
+        FrostedCard(radius: UVVARadius.hero, padding: 26, cachesRim: true) {
             VStack(alignment: .leading, spacing: 0) {
                 Text(wine.name)
                     .font(UVVAFont.sans(32))
@@ -34,8 +34,8 @@ struct HeroCard: View {
                 // Built with the card and only folded away while closed, so opening it builds nothing (the pager
                 // and the charts were made on the tap) and the card simply grows, its content staying in place.
                 VStack(alignment: .leading, spacing: 0) {
-                    WineIntensityGrid(profile: wine.profile)
                     WineFacts(resources: resources, wine: wine)
+                    WineIntensityList(profile: wine.profile)
                         .padding(.top, 44)
                     WineMapPager(resources: resources, wine: wine.profile, palate: palateMap, active: open).padding(.top, 44)
                     if let dish = wine.dish {
@@ -53,13 +53,15 @@ struct HeroCard: View {
                     PillButton(style: .outline, action: { search = WineSearch.url(for: wine) }) { Text(resources.dailySuggestionCardFindWineTitle) }
                     // Folded away with the rest of the open card rather than added and removed, so it never fades
                     // out on its own where it stood while the card closes around it.
-                    CellarButton(resources: resources, isInCellar: isInCellar, onSave: onSaveToCellar)
-                        .padding(.top, 10)
-                        .frame(height: open ? nil : 0, alignment: .top)
-                        .clipped()
-                        .opacity(open ? 1 : 0)
-                        .allowsHitTesting(open)
-                        .accessibilityHidden(!open)
+                    if !isInCellar {
+                        PillButton(action: onSaveToCellar) { Text(resources.dailySuggestionCardAddTitle) }
+                            .padding(.top, 10)
+                            .frame(height: open ? nil : 0, alignment: .top)
+                            .clipped()
+                            .opacity(open ? 1 : 0)
+                            .allowsHitTesting(open)
+                            .accessibilityHidden(!open)
+                    }
                     toggleButton.padding(.top, 10)
                 }
                 .padding(.top, 36)

@@ -23,6 +23,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
     private let deleteNote: any DeleteNoteUseCaseProtocol
     /// The Cellar reads its entries again; `true` when the note left it.
     private let onChange: (_ deleted: Bool) -> Void
+    /// The note was deleted: its sheet closes (CELLAR-R28).
     private let onClose: () -> Void
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
@@ -41,9 +42,6 @@ public final class NoteViewModel: NoteViewModelProtocol {
     public func load() async {
         wine = await loadNote.execute(entry.id)
     }
-
-    /// The `‹`: back to the Cellar where it was (CELLAR-R13).
-    public func close() { onClose() }
 
     /// CELLAR-R27: the draft starts from the note as it is.
     public func edit() {
@@ -110,7 +108,6 @@ public final class NoteViewModel: NoteViewModelProtocol {
         let builder = NotePresentationBuilder(entry: entry, wine: wine, resources: uiModel.resources)
         var model = uiModel
         model.isEditing = isEditing
-        model.barLabel = isEditing ? model.resources.editNoteText : model.resources.tastingNoteText
         model.date = builder.date
         model.title = entry.name
         model.subtitle = builder.subtitle
@@ -120,11 +117,13 @@ public final class NoteViewModel: NoteViewModelProtocol {
         model.photoBack = entry.photoBack
         model.note = entry.note
         model.facts = builder.facts
-        model.hasReading = wine != nil
+        model.hasReading = wine != nil || entry.wineProfile != nil
+        model.pairings = entry.pairings ?? wine?.pairings ?? []
+        model.wineProfile = entry.wineProfile
         model.readingText = wine?.originInsight
         model.structure = builder.structure
         model.aromas = builder.aromas
-        model.verdicts = builder.verdicts(selected: draftVerdict)
+        model.verdicts = NotePresentationBuilder.verdicts(selected: draftVerdict, resources: model.resources)
         model.draftNote = draftNote
         model.isWorking = isWorking
         model.isConfirmingDelete = isConfirmingDelete

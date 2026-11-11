@@ -49,10 +49,7 @@ struct HomeContent: View {
                             if row[0].isHalfWidth {
                                 HStack(spacing: 14) {
                                     ForEach(row, id: \.kind) {
-                                        card($0, proxy: proxy)
-                                            .containerRelativeFrame(.horizontal) { width, _ in
-                                                (width - 2 * UVVASpace.gutter - 14) / 2
-                                            }
+                                        squareCard($0, proxy: proxy)
                                     }
                                 }
                                 .fixedSize(horizontal: false, vertical: true)
@@ -93,27 +90,36 @@ struct HomeContent: View {
         .foregroundStyle(UVVAColor.cream)
     }
 
+    private func squareCard(_ model: HomeCardModel, proxy: ScrollViewProxy) -> some View {
+        Color.clear
+            .aspectRatio(1, contentMode: .fit)
+            .overlay { card(model, proxy: proxy) }
+            .containerRelativeFrame(.horizontal) { width, _ in
+                (width - 2 * UVVASpace.gutter - 14) / 2
+            }
+    }
+
     private var footer: some View {
-        VStack(spacing: 6) {
+        let fontSize: CGFloat = 10
+        return VStack(spacing: 8) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text(resources.homeHeaderBrand)
-                    .font(UVVAFont.whiteGrape(20))
+                    .font(UVVAFont.whiteGrape(fontSize))
                     .tracking(0.4)
-                    .foregroundStyle(UVVAColor.logoInk)
                 if let version = resources.homeFooterVersion {
                     Text(version)
-                        .font(UVVAFont.sans(8))
+                        .font(UVVAFont.sans(fontSize))
                         .tracking(1)
                 }
             }
             Text(resources.homeFooterOrigin)
-                .font(UVVAFont.sans(8))
+                .font(UVVAFont.sans(fontSize))
                 .tracking(1.8)
         }
         .foregroundStyle(UVVAColor.cream60)
         .accessibilityElement(children: .combine)
         .frame(maxWidth: .infinity)
-        .padding(.top, 12)
+        .padding(.top, 16)
     }
 
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {

@@ -15,6 +15,9 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
     /// The appellation and country, "Chianti Classico, Italy".
     public var origin: String
     public var grapes: [String]
+    public var wineProfile: PalateMap?
+    public var wineNotes: String?
+    public var pairings: [String]?
     public var status: CellarEntryStatus
     /// Only when tasted.
     public var verdict: Verdict?
@@ -33,7 +36,8 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
                 region: String? = nil, country: String? = nil, origin: String = "", grapes: [String] = [],
                 status: CellarEntryStatus, verdict: Verdict? = nil, note: String? = nil, alcohol: Double? = nil,
                 classification: String = "", photoFront: Data? = nil, photoBack: Data? = nil,
-                createdAt: Date, updatedAt: Date? = nil) {
+                createdAt: Date, updatedAt: Date? = nil, wineProfile: PalateMap? = nil,
+                wineNotes: String? = nil, pairings: [String]? = nil) {
         self.id = id
         self.name = name
         self.producer = producer
@@ -43,6 +47,9 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
         self.country = country
         self.origin = origin
         self.grapes = grapes
+        self.wineProfile = wineProfile
+        self.wineNotes = wineNotes
+        self.pairings = pairings
         self.status = status
         self.verdict = verdict
         self.note = note

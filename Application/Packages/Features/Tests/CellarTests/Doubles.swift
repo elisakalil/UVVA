@@ -14,10 +14,10 @@ final class PreferencesStub: CellarPreferencesProtocol {
 }
 
 enum Entries {
-    static func entry(_ id: String, name: String? = nil, producer: String = "", type: String = "Red",
+    static func entry(_ id: String, name: String? = nil, producer: String = "", vintage: Int? = nil, type: String = "Red",
                       region: String? = nil, country: String? = nil, grapes: [String] = [],
                       verdict: Verdict? = nil, at seconds: TimeInterval = 0) -> CellarEntry {
-        CellarEntry(id: id, name: name ?? id, producer: producer, type: type, region: region, country: country,
+        CellarEntry(id: id, name: name ?? id, producer: producer, vintage: vintage, type: type, region: region, country: country,
                     grapes: grapes, status: verdict == nil ? .wantToTry : .tasted, verdict: verdict,
                     createdAt: Date(timeIntervalSince1970: seconds))
     }
@@ -82,6 +82,7 @@ actor MapsSpy: PalateMapRepository, PalateHistoryRewriting {
         self.changes = history
     }
 
+    func setHistory(_ history: [MapChange]) { changes = history }
     func currentMap() async throws -> PalateMap? { map }
     func saveQuizMap(_ map: PalateMap, at date: Date) async throws {}
     func history() async throws -> [MapChange] { changes }

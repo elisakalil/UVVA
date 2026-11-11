@@ -1,7 +1,7 @@
 import Core
 import Foundation
 import Testing
-@testable import Cellar
+@testable import CoreUI
 
 @MainActor
 final class PrepareCameraStub: PrepareCameraUseCaseProtocol {
@@ -45,20 +45,33 @@ final class SaveNewNoteSpy: SaveNewNoteUseCaseProtocol {
 
 @MainActor
 struct NewNoteViewModelTests {
-    let read = ReadLabelStub(.found(Labels.pontoForte))
+    let read = ReadLabelStub(.read(Labels.pontoForte))
     let manual = ReadManualStub(Labels.pontoForte)
     let save = SaveNewNoteSpy()
     let events = Events()
 
     @MainActor final class Events {
         var saved = 0
-        var closed = 0
     }
 
     private func make(_ access: CameraAccess = .authorized) -> NewNoteViewModel {
         NewNoteViewModel(prepareCamera: PrepareCameraStub(access), readLabel: read, readManual: manual,
-                         saveNewNote: save, onSaved: { [events] in events.saved += 1 },
-                         onClose: { [events] in events.closed += 1 })
+                         saveNewNote: save, onSaved: { [events] in events.saved += 1 })
+    }
+
+    // MARK: CELLAR-R14a
+
+    @Test func CELLAR_R14a_aWineFromTheHome_skipsTheCamera_andSavesWithItsVerdict() async {
+        let viewModel = NewNoteViewModel(wine: Labels.pontoForte, verdict: .yes,
+                                         prepareCamera: PrepareCameraStub(.denied), readLabel: read, readManual: manual,
+                                         saveNewNote: save, onSaved: { [events] in events.saved += 1 })
+        await viewModel.start()
+        #expect(viewModel.uiModel.step == .note)
+        #expect(viewModel.uiModel.title == Labels.pontoForte.name)
+        #expect(viewModel.uiModel.canSave)
+        await viewModel.save()
+        #expect(save.saved.map(\.verdict) == [.yes])
+        #expect(events.saved == 1)
     }
 
     // MARK: CELLAR-R15 / R22
@@ -90,9 +103,10 @@ struct NewNoteViewModelTests {
         #expect(read.reads.map(\.1) == [Data([2])])
         #expect(viewModel.uiModel.step == .note)
         #expect(viewModel.uiModel.title == "Ponto Forte")
-        #expect(viewModel.uiModel.subtitle == "Vinho Regional Alentejano · 2024")
-        #expect(viewModel.uiModel.facts.contains { $0.value == "Syrah" })
-        #expect(viewModel.uiModel.structure.count == 4)
+        #expect(viewModel.uiModel.wine?.producer == "Ravasqueira")
+        #expect(viewModel.uiModel.facts.map(\.label) == ["Style", "Vintage"])
+        #expect(viewModel.uiModel.wine?.grapes.contains("Syrah") == true)
+        #expect(viewModel.uiModel.wine?.profile.values.count == PalateAxis.allCases.count)
         #expect(viewModel.uiModel.findURL != nil)
     }
 
@@ -109,14 +123,16 @@ struct NewNoteViewModelTests {
 
     // MARK: CELLAR-R23 · Preencher à mão
 
-    @Test func CELLAR_R23_unsure_fillsTheForm_continueReadsIt() async {
-        read.result = .unsure(LabelFacts(name: "Ponto Forte", producer: "Ravasqueira"))
+    @Test func CELLAR_R23_noName_fillsTheForm_continueReadsIt() async {
+        read.result = .nameless(LabelFacts(producer: "Ravasqueira"))
         let viewModel = make()
         await viewModel.start()
         await viewModel.capture(Data([1]))
         await viewModel.capture(Data([2]))
         #expect(viewModel.uiModel.step == .manual)
-        #expect(viewModel.uiModel.manualFields.first?.text == "Ponto Forte")
+        #expect(viewModel.uiModel.manualFields.map(\.text).contains("Ravasqueira"))
+        #expect(!viewModel.uiModel.canContinue)
+        viewModel.updateManual(.name, text: "Ponto Forte")
         #expect(viewModel.uiModel.canContinue)
         viewModel.updateManual(.vintage, text: "20x24")
         viewModel.pickType("Red")
@@ -200,33 +216,13 @@ struct NewNoteViewModelTests {
         #expect(viewModel.uiModel.errorText == viewModel.uiModel.resources.saveErrorText)
     }
 
-    // MARK: CELLAR-R24 / R25
+    // MARK: CELLAR-R24
 
     @Test func CELLAR_R24_redo_opensTheFrontAgain() async {
         let viewModel = await atTheNote()
         #expect(viewModel.uiModel.canRedo)
         viewModel.redo()
         #expect(viewModel.uiModel.step == .front)
-        #expect(viewModel.uiModel.photoFront == nil)
-    }
-
-    @Test func CELLAR_R25_close_asks_discardCloses_withoutSaving() async {
-        let viewModel = await atTheNote()
-        viewModel.close()
-        #expect(viewModel.uiModel.isConfirmingDiscard)
-        #expect(events.closed == 0)
-        viewModel.keepEditing()
-        #expect(!viewModel.uiModel.isConfirmingDiscard)
-        viewModel.close()
-        viewModel.discard()
-        #expect(events.closed == 1)
-        #expect(save.saved.isEmpty)
-    }
-
-    @Test func CELLAR_R25_nothingTaken_closesStraightAway() async {
-        let viewModel = make()
-        await viewModel.start()
-        viewModel.close()
-        #expect(events.closed == 1)
+        #expect(viewModel.uiModel.wine == nil)
     }
 }

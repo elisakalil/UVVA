@@ -108,7 +108,7 @@ struct CellarEntry {
 
 ### 3.6 Abrir uma nota
 
-**CELLAR-R13 · Abrir e voltar.** Tocar numa capa ou numa linha abre a nota. O `‹` volta ao Cellar na mesma posição de scroll.
+**CELLAR-R13 · Abrir e voltar.** Tocar numa capa ou numa linha abre a nota numa folha sobre o Cellar, sem barra, logo nem título. Arrastar a folha para baixo fecha-a, e o Cellar fica na mesma posição de scroll.
 
 ## 4. Nova nota
 
@@ -134,16 +134,19 @@ struct CellarEntry {
 - Dado "Ponto Forte 2024" e "Ponto Forte 2023", então são 2 vinhos diferentes.
 - Dada uma entrada Tasted, quando o mesmo vinho é guardado com "Not yet · Add to cellar", então a entrada continua Tasted.
 
-**CELLAR-R13c · Entradas vindas da Home.**
-- "Save to Cellar" em Escolha o seu vinho (HOME-R28) guarda o vinho como Not yet.
-- Avaliar um vinho em Vinhos para o seu paladar (HOME-R24) guarda o vinho como Tasted, com esse veredito.
-- Nos dois casos vale a CELLAR-R13b. A entrada não tem fotos, e os dados e a leitura vêm do catálogo.
+**CELLAR-R13c · Entradas vindas da Home (2026-11-10).**
+- "Add to cellar" no card do melhor match abre a nota nova já no vinho (CELLAR-R14a).
+- "Add to cellar" na folha do vinho (HOME-R24) abre a nota nova (CELLAR-R14a); a entrada é a que essa nota guardar.
+- Avaliar na folha um vinho que já está no Cellar como Not yet passa a entrada a Tasted, com esse veredito.
+- Em todos vale a CELLAR-R13b. A entrada não tem fotos, e os dados e a leitura vêm do catálogo.
 
 **Critérios**
-- Quando o usuário toca em "Save to Cellar" na Home, então aparece no Cellar uma entrada com tag Not yet.
-- Quando o usuário avalia um vinho da Home com Maybe, então aparece no Cellar uma entrada com tag Maybe e o mapa é recalculado uma única vez.
+- Quando o usuário toca em "Add to cellar" no card do melhor match, então a nota abre com esse vinho. A entrada aparece no Cellar ao tocar em "Save note".
+- Quando o usuário avalia um vinho da Home com Maybe, toca em "Add to cellar" e guarda a nota, então aparece no Cellar uma entrada com tag Maybe e o mapa é recalculado uma única vez.
 
-**CELLAR-R14 · O botão +.** O `+` do Cellar e o da Home (HOME-R03) abrem este mesmo fluxo.
+**CELLAR-R14 · O botão +.** O `+` do Cellar e o da Home (HOME-R03) abrem este mesmo fluxo. A nota aparece como uma folha sobre a aba de origem e volta a essa aba ao fechar ou guardar. Nenhum passo tem barra, logo, título nem botão de fechar: a folha fecha-se arrastando para baixo (CELLAR-R25).
+
+**CELLAR-R14a · Vinho vindo da Home (2026-11-10).** "Add to cellar" na folha do vinho da Home (HOME-R24) abre este fluxo já no vinho em papel (CELLAR-R18), sem câmara nem fotos, com o vinho do catálogo. Pelo card do melhor match, a nota abre no mesmo ponto e pergunta se o usuário já provou o vinho quando ainda não há veredito. Pela folha, "Have you had this wine?" vem respondida com o que foi dito na folha: Yes com o veredito, ou Not yet; dá para mudar a resposta. Sem resposta completa na folha, a nota faz a pergunta (2026-11-11). "Redo" não aparece, porque não há fotos. Guardar e fechar seguem a CELLAR-R19, R20 e R25. Um vinho já avaliado na Home não é avaliado outra vez ao guardar: o mesmo veredito deixa o mapa como está, e um veredito diferente substitui a avaliação (CELLAR-R13b).
 
 **CELLAR-R15 · Câmara.** A primeira vez, o iOS pede acesso à câmara com o texto "UVVA photographs the front and back label to read the wine." Com acesso dado, o fluxo segue.
 
@@ -152,10 +155,13 @@ struct CellarEntry {
 - Segundo passo: "Now the back label", "Grape, alcohol and producer are usually here."
 - O topo mostra os dois passos ("01 Front", "02 Back label"), com o passo concluído marcado.
 
+**CELLAR-R16a · Foto da galeria.** Em cada um dos dois passos, ao lado do disparador, um botão abre a galeria do iOS para escolher uma foto já tirada em vez de fotografar na hora. A foto escolhida conta como a desse passo e o fluxo segue igual. O seletor é o do sistema e não pede acesso à galeria.
+
 **CELLAR-R17 · Leitura.** Depois das duas fotos, "Reading your label" ("This takes a few seconds"). A leitura é feita no aparelho, sem internet e sem serviço na nuvem:
 1. O texto do rótulo é lido nas duas fotos.
 2. A UVVA procura o vinho no catálogo. Se o encontrar, os dados e a leitura vêm do catálogo.
-3. Se não o encontrar, os dados vêm do texto lido, e o mapa do vinho é a média dos vinhos do catálogo mais parecidos (mesma casta e tipo; depois região e tipo; depois só tipo). Quando há dúvida sobre o que foi lido, abre o preenchimento à mão já preenchido, para o usuário confirmar.
+3. Se não o encontrar, os dados vêm do texto lido, e o mapa do vinho é a média dos vinhos do catálogo mais parecidos (mesma casta e tipo; depois região e tipo; depois só tipo). Basta ter lido o nome: a nota abre logo, preenchida com o que foi lido, sem passar pelo preenchimento à mão.
+4. O preenchimento à mão (CELLAR-R23) só aparece quando a leitura não dá para uma nota: nenhum nome lido (abre com o que mais tiver sido lido, se houver) ou, pela CELLAR-R21, nada lido.
 
 O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaReading).
 
@@ -165,7 +171,7 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 
 **CELLAR-R19 · Guardar.** "Save note" guarda a entrada Tasted no topo do Cellar e mostra "Note saved". O veredito gera uma avaliação que recalcula o mapa (SHARED-R09, QUIZ-R22).
 
-**CELLAR-R20 · Nota livre opcional.** O veredito é obrigatório ("Required"); "Your note" é opcional ("Kept for you only"). Dá para guardar só com o veredito.
+**CELLAR-R20 · Nota livre opcional.** O veredito é obrigatório ("Required"); "Your note" é opcional ("What stood out in the glass?"). A nota não é só para o usuário: poderá ser mostrada a outras pessoas no futuro, por isso o texto de ajuda não promete privacidade (2026-11-11). Dá para guardar só com o veredito.
 
 **Critérios**
 - Dado um acesso à câmara nunca pedido, quando o usuário toca em +, então aparece o pedido do iOS.
@@ -187,14 +193,17 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 
 **CELLAR-R24 · Refazer as fotos.** Na nova nota, "Redo" apaga as duas fotos e a leitura e volta à foto da frente.
 
-**CELLAR-R25 · Descartar.** Fechar a nova nota (`×`) antes de guardar pede confirmação: "Discard this note?", "Your photos and UVVA's reading won't be saved." "Discard" fecha sem guardar nada; "Keep editing" volta à nota.
+**CELLAR-R25 · Descartar.** Arrastar a folha da nova nota para baixo, em qualquer passo antes de guardar, fecha-a sem guardar nada e sem pedir confirmação. Enquanto a nota está a ser guardada, a folha não se fecha.
 
 **Critérios**
 - Dado um erro de leitura, quando o usuário toca em Try again, então abre a foto da frente.
 - Dada a câmara recusada, quando o usuário toca em +, então abre "The camera is off", e não o pedido do iOS.
 - Dado o preenchimento à mão com o nome vazio, então Continue está inativo; com "Ponto Forte", fica ativo.
 - Dadas as duas fotos tiradas, quando o usuário toca em Redo, então as fotos e a leitura são apagadas e abre a foto da frente.
-- Dada uma nova nota, quando o usuário toca em × e depois em Discard, então o Cellar não muda e nenhuma avaliação é criada.
+- Dada uma nova nota, quando o usuário arrasta a folha para baixo, então o Cellar não muda e nenhuma avaliação é criada.
+- Dado um rótulo fora do catálogo com o nome lido, então abre a nota com esse nome, sem o preenchimento à mão.
+- Dado um rótulo em que só se leu a casta, então abre o preenchimento à mão com a casta preenchida e Continue inativo.
+- Dado o passo da foto da frente, quando o usuário escolhe uma foto da galeria, então abre o passo do contrarrótulo.
 
 ## 5. A nota guardada
 
@@ -207,7 +216,7 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 - "UVVA's reading": um texto, a estrutura (Body, Tannin, Acidity, Sweetness, cada um com uma palavra) e os aromas.
 - Os botões Edit e Delete.
 
-**CELLAR-R27 · Editar.** "Edit" deixa mudar todos os campos, inclusive o veredito. "Save changes" guarda as alterações; "Cancel" descarta-as. Mudar o veredito altera a avaliação desse vinho (ver D8).
+**CELLAR-R27 · Editar.** "Edit" deixa mudar todos os campos, inclusive o veredito. "Save changes" guarda as alterações; "Cancel" descarta-as, tal como fechar a folha a meio da edição. Mudar o veredito altera a avaliação desse vinho (ver D8).
 
 **CELLAR-R28 · Apagar.** "Delete" pede confirmação: "Delete this note?", "It leaves your cellar and stops counting towards your palate map. This can't be undone." "Delete" apaga a entrada e retira a sua avaliação do mapa. "Cancel" fecha a folha e mantém a nota.
 
@@ -232,8 +241,8 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 | D1 | O que é Tag | Yes, Maybe, No e Not yet | CELLAR-R01a |
 | D5 | Not yet passa a provado | Sim, ao responder Yes e dar o veredito | CELLAR-R01b |
 | D9 | O mesmo vinho duas vezes | Atualiza a entrada existente | CELLAR-R13a, R13b |
-| D10 | Save to Cellar da Home | Sim, entra como Not yet | CELLAR-R13c |
-| D11 | Avaliação na Home | Sim, entra como Tasted com o veredito | CELLAR-R13c |
+| D10 | Add to cellar do melhor match | Abre a nota nova no vinho | CELLAR-R13c, R14a |
+| D11 | Add to cellar da folha do vinho (2026-11-10) | Abre a nota nova no vinho; entra o que a nota guardar | CELLAR-R13c, R14a |
 | D7 | Nota livre | Opcional; o veredito é obrigatório | CELLAR-R20 |
 
 ## 8. Dúvidas em aberto

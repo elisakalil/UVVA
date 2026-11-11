@@ -6,13 +6,15 @@ public struct FrostedCard<Content: View>: View {
     var padding: CGFloat
     /// See `FrostedGlass.pinsPhoto`.
     var pinsPhoto: Bool
+    var cachesRim: Bool
     var content: Content
 
     public init(radius: CGFloat = UVVARadius.card, padding: CGFloat = UVVASpace.card, pinsPhoto: Bool = false,
-                @ViewBuilder content: () -> Content) {
+                cachesRim: Bool = false, @ViewBuilder content: () -> Content) {
         self.radius = radius
         self.padding = padding
         self.pinsPhoto = pinsPhoto
+        self.cachesRim = cachesRim
         self.content = content()
     }
 
@@ -20,6 +22,6 @@ public struct FrostedCard<Content: View>: View {
         content
             .padding(padding)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background { FrostedGlass(radius: radius, pinsPhoto: pinsPhoto) }
+            .background { FrostedGlass(radius: radius, pinsPhoto: pinsPhoto, cachesRim: cachesRim) }
     }
 }

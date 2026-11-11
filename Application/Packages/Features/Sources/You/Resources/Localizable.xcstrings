@@ -86,7 +86,10 @@
     "Certificates" : {
 
     },
-    "Certificates for the lessons you complete live here. Finish one to see it, then come back whenever you like." : {
+    "Change photo" : {
+
+    },
+    "Choose a photo" : {
 
     },
     "Close" : {
@@ -158,9 +161,6 @@
     "Nice to meet you" : {
 
     },
-    "No certificates yet" : {
-
-    },
     "No reminders. You open the app whenever you feel like it." : {
 
     },
@@ -215,6 +215,9 @@
     "Regions" : {
 
     },
+    "Remove photo" : {
+
+    },
     "Save" : {
 
     },
@@ -245,13 +248,13 @@
     "Specialist in" : {
 
     },
-    "Start learning" : {
-
-    },
     "Start the course" : {
 
     },
     "Tables" : {
+
+    },
+    "That photo could not be opened. Try another one." : {
 
     },
     "The grapes you’ve studied lead to %@. With %@ as your guide, that corner of the wine map is coming into focus." : {
@@ -265,6 +268,9 @@
       }
     },
     "The Path" : {
+
+    },
+    "The photo next to your name. Change it whenever you like." : {
 
     },
     "The reminder could not be saved. Try again." : {

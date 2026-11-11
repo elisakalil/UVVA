@@ -1,4 +1,5 @@
 import Cellar
+import CoreUI
 import Core
 import DesignSystem
 import Friends
@@ -22,8 +23,8 @@ final class AppCoordinator {
     private(set) var learn: LearnViewModel?
     private(set) var cellarTab: CellarViewModel?
     private(set) var friends: FriendsViewModel?
-    /// The new note over the tabs, from the `+` of the Home or the Cellar (CELLAR-R14).
-    private(set) var newNote: NewNoteViewModel?
+    /// The originating feature presents the note (CELLAR-R14).
+    private(set) var newNote: (origin: AppTab, model: NewNoteViewModel)?
     private(set) var profile: Profile?
     private var isOpeningCourse = false
     private var navigationTask: Task<Void, Never>?
@@ -185,7 +186,10 @@ final class AppCoordinator {
             onOpenLesson: { [weak self] suggestion in
                 self?.openCourse(suggestion.courseID, lessonID: suggestion.lessonID)
             },
-            onScan: { [weak self] in self?.openNewNote() },
+            onScan: { [weak self] in self?.openNewNote(from: .home) },
+            onOpenCellarNote: { [weak self] wine, verdict, asksTasting in
+                self?.openNewNote(from: .home, for: wine, verdict: verdict, asksTasting: asksTasting)
+            },
             onOpenFriends: { [weak self] in self?.openFriendsSelection() },
             onOpenLastTable: { [weak self] in self?.openLastTable() },
             onOpenMapHistory: { [weak self] in self?.openMapHistory() }
@@ -194,7 +198,7 @@ final class AppCoordinator {
         you = you ?? makeYou()
 
         cellarTab = cellarTab ?? cellarFactory.makeViewModel(
-            onAdd: { [weak self] in self?.openNewNote() },
+            onAdd: { [weak self] in self?.openNewNote(from: .cellar) },
             onNoteChange: { [weak self] in self?.noteChanged() })
 
         friends = friends ?? FriendsFactory(profiles: profiles, maps: maps, friends: friendsStore, catalog: catalog,
@@ -256,24 +260,30 @@ final class AppCoordinator {
     }
 
     private var cellarFactory: CellarFactory {
-        CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog, labelCatalog: catalog,
-                      reader: VisionLabelReader(), structurer: DeviceLabelStructurer(), camera: DeviceCamera())
+        CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog)
     }
 
-    /// CELLAR-R14: the same new note from the Home and the Cellar.
-    func openNewNote() {
+    /// CELLAR-R14: the same new note from the Home and the Cellar. With a wine, from the Home's wine sheet, it opens
+    /// on paper with that wine and the verdict given there (CELLAR-R14a).
+    private func openNewNote(from origin: AppTab, for wine: Wine? = nil, verdict: Verdict? = nil,
+                             asksTasting: Bool = false) {
         guard newNote == nil else { return }
-        newNote = cellarFactory.makeNewNote(
-            onSaved: { [weak self] in self?.newNoteSaved() },
-            onClose: { [weak self] in self?.closeNewNote() })
+        let model = NewNoteViewModel(
+            wine: wine, verdict: verdict, asksTasting: asksTasting,
+            cellar: cellar, maps: maps, labelCatalog: catalog, reader: VisionLabelReader(),
+            structurer: DeviceLabelStructurer(), camera: DeviceCamera(), rewriter: maps, wines: catalog,
+            onSaved: { [weak self] in self?.newNoteSaved() })
+        newNote = (origin, model)
     }
 
-    func closeNewNote() { newNote = nil }
+    func closeNewNote(from origin: AppTab) {
+        guard newNote?.origin == origin else { return }
+        newNote = nil
+    }
 
-    /// CELLAR-R19: the note is on top of the Cellar, which says "Note saved"; the Home sees the new rating.
+    /// Both tabs refresh after a save, while the note closes over its originating tab.
     private func newNoteSaved() {
         newNote = nil
-        selectedTab = .cellar
         cellarTab?.newNoteSaved()
         Task { await home?.load() }
         publishPublicProfile()

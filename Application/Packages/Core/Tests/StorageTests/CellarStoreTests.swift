@@ -101,6 +101,24 @@ struct CellarStoreTests {
         #expect(entry.country == "Spain")
     }
 
+    @Test func newNotePersistsPersonalWineDetails() async throws {
+        var personal = wine
+        personal.grapes.append("Graciano")
+        personal.note = "Plum, cedar"
+        personal.pairings = ["Roast lamb"]
+        personal.profile = PalateMap([.oak: 8, .acidity: 4.5])
+        _ = try await store.save(NewNoteDraft(wine: personal, status: .wantToTry,
+                                               note: "Try with dinner", originalWine: wine))
+
+        let reopenedStore = CellarStore(modelContainer: container)
+        let entry = try #require(try await reopenedStore.entries().first)
+        #expect(entry.grapes == personal.grapes)
+        #expect(entry.wineNotes == personal.note)
+        #expect(entry.pairings == personal.pairings)
+        #expect(entry.wineProfile == personal.profile)
+        #expect(entry.note == "Try with dinner")
+    }
+
     // MARK: CELLAR-R27 · Editar
 
     @Test func CELLAR_R27_update_changesTheVerdictAndTheNote() async throws {

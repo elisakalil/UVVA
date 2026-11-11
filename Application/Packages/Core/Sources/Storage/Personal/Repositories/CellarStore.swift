@@ -64,6 +64,9 @@ public actor CellarStore: CellarRepository {
         let entry = existing ?? CellarEntryEntity(wineKey: draft.wine.id, status: .wantToTry, date: date)
         if existing == nil { modelContext.insert(entry) }
         entry.copyFacts(of: draft.wine)
+        entry.wineProfile = PalateAxis.allCases.map { draft.wine.profile[$0] }
+        entry.wineNotes = draft.wine.note ?? ""
+        entry.pairings = draft.wine.pairings
         // CELLAR-R13b: what the new note has replaces the old; what it lacks leaves the old in place.
         if draft.status == .tasted, let verdict = draft.verdict {
             entry.status = CellarEntryEntity.Status.tasted.rawValue
@@ -127,6 +130,9 @@ private extension CellarEntryEntity {
     var entry: CellarEntry {
         // An entry saved before region and country were kept falls back on its origin, "Douro, Portugal".
         let parts = origin.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
+        let profile = wineProfile.map { values in
+            PalateMap(Dictionary(uniqueKeysWithValues: zip(PalateAxis.allCases, values)))
+        }
         return CellarEntry(id: wineKey, name: name, producer: producer, vintage: vintage, type: type,
                            region: region ?? parts.first.flatMap { $0.isEmpty ? nil : $0 },
                            country: country ?? (parts.count > 1 ? parts.last : nil),
@@ -134,6 +140,7 @@ private extension CellarEntryEntity {
                            status: CellarEntryStatus(rawValue: status) ?? .wantToTry,
                            verdict: verdict.flatMap(Verdict.init(rawValue:)),
                            note: note, alcohol: alcohol, classification: classification,
-                           photoFront: photoFront, photoBack: photoBack, createdAt: createdAt, updatedAt: updatedAt)
+                           photoFront: photoFront, photoBack: photoBack, createdAt: createdAt, updatedAt: updatedAt,
+                           wineProfile: profile, wineNotes: wineNotes, pairings: pairings)
     }
 }

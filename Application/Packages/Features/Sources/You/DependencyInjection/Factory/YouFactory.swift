@@ -46,7 +46,6 @@ public struct YouFactory: YouFactoryProtocol {
         let onProfileSaved: (Profile) -> Void = { [weak owner] in owner?.profileSaved($0) }
         return SettingsViewModel(
             readModel: readModel, onProfileSaved: onProfileSaved, coordinator: coordinator,
-            savePhotoUseCase: SavePhotoUseCase(saveProfile: saveProfile),
             setMapPublicUseCase: SetMapPublicUseCase(saveProfile: saveProfile),
             signOutUseCase: SignOutUseCase(scheduler: scheduler),
             deleteAccountUseCase: DeleteAccountUseCase(social: social, profiles: profiles, scheduler: scheduler),
@@ -54,6 +53,8 @@ public struct YouFactory: YouFactoryProtocol {
                                          saveNameUseCase: SaveNameUseCase(saveProfile: saveProfile)),
             editPhone: EditPhoneViewModel(readModel: readModel, onProfileSaved: onProfileSaved,
                                            savePhoneUseCase: SavePhoneUseCase(saveProfile: saveProfile, social: social)),
+            editPhoto: EditPhotoViewModel(readModel: readModel, onProfileSaved: onProfileSaved,
+                                           savePhotoUseCase: SavePhotoUseCase(saveProfile: saveProfile)),
             reminder: ReminderViewModel(readModel: readModel,
                                           onReminderSaved: { [weak owner] in owner?.reminderSaved($0) },
                                           saveReminderUseCase: SaveReminderUseCase(reminders: reminders, scheduler: scheduler)),

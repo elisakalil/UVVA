@@ -1,4 +1,5 @@
 import Core
+import CoreUI
 import DesignSystem
 import SwiftUI
 
@@ -6,14 +7,19 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     @Environment(\.scenePhase) private var scenePhase
     @ObservedObject private var viewModel: ViewModel
     var tour: GuidedTourViewModel?
+    @Binding private var newNote: NewNoteViewModel?
 
     @State private var glossaryViewModel: GlossaryViewModel?
     @State private var inviting = false
     @State private var wineSheet: WineSheetModel?
+    /// "Add to cellar" on the wine sheet: the note opens over the tabs once the sheet is gone (HOME-R24).
+    @State private var cellarNote: (wine: Wine, verdict: Verdict?, asksTasting: Bool)?
 
-    public init(viewModel: ViewModel, tour: GuidedTourViewModel? = nil) {
+    public init(viewModel: ViewModel, tour: GuidedTourViewModel? = nil,
+                newNote: Binding<NewNoteViewModel?> = .constant(nil)) {
         self.viewModel = viewModel
         self.tour = tour
+        self._newNote = newNote
     }
 
     public var body: some View {
@@ -50,19 +56,31 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                     .presentationDragIndicator(.visible)
             }
         }
-        .sheet(item: $wineSheet) { sheet in
+        .sheet(item: $wineSheet, onDismiss: openCellarNote) { sheet in
             if let model = viewModel.uiModel.content {
                 WineSheet(resources: viewModel.uiModel.resources, sheet: sheet, palateMap: model.palateMap,
                           cellarWineKeys: viewModel.uiModel.cellarWineKeys,
-                          // HOME-R24: the sheet stays open and answers in its own words.
-                          onRate: { wine, verdict, keep in
-                              Task { await viewModel.rate(wine, verdict: verdict, addToCellar: keep) }
+                          ratedVerdicts: viewModel.uiModel.ratedVerdicts,
+                          // HOME-R24: the sheet stays open, with the verdict marked.
+                          onRate: { wine, verdict, isInCellar in
+                              Task { await viewModel.rate(wine, verdict: verdict, addToCellar: isInCellar) }
                           },
-                          onSaveToCellar: { wine in Task { await viewModel.addToCellar(wine) } })
+                          onAddToCellar: { wine, verdict, asksTasting in
+                              cellarNote = (wine, verdict, asksTasting)
+                              wineSheet = nil
+                          })
             }
         }
+        .newNoteSheet($newNote)
         .overlay(alignment: .top) { HomeNoticeView(text: wineSheet == nil ? viewModel.uiModel.notice : nil) }
     }
+
+    private func openCellarNote() {
+        guard let note = cellarNote else { return }
+        cellarNote = nil
+        viewModel.openCellarNote(for: note.wine, verdict: note.verdict, asksTasting: note.asksTasting)
+    }
+
     private func content(_ model: HomeContentUIModel, target: String?) -> some View {
         HomeContent(
             model: model,
@@ -80,7 +98,10 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             },
             onOpenLearn: viewModel.openLearn,
             onOpenWine: { wineSheet = $0 },
-            onSaveToCellar: { wine in Task { await viewModel.addToCellar(wine) } },
+            onSaveToCellar: { wine in
+                let verdict = viewModel.uiModel.ratedVerdicts[wine.id]
+                viewModel.openCellarNote(for: wine, verdict: verdict, asksTasting: verdict == nil)
+            },
             onScan: viewModel.scan,
             onOpenFriends: viewModel.openFriends,
             onOpenLastTable: viewModel.openLastTable,

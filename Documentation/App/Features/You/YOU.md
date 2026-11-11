@@ -78,13 +78,20 @@ A linha do tempo mostra até seis alterações, em ordem cronológica, com a mai
 
 ### 5.1 Conta
 
-**YOU-R14 · Dados.** Linhas Name, Phone number, Profile photo e "Signed in with" (Apple ou Google, só leitura), cada uma com o valor atual. Não há linha de e-mail: a conta não tem e-mail (ONBOARDING v0.5). Tocar em Name, Phone number ou Profile photo abre a edição (ver D7).
+**YOU-R14 · Dados.** Linhas Name, Phone number, Profile photo e "Signed in with" (Apple ou Google, só leitura), cada uma com o valor atual. Não há linha de e-mail: a conta não tem e-mail (ONBOARDING v0.5). Tocar em Name, Phone number, Profile photo ou Daily reminder abre a edição numa folha que sobe de baixo, sempre com o mesmo desenho: o fundo da aba You (as colinas com o véu escuro), cantos arredondados, a alça no topo, o título em Red Grapes caixa alta ("Your first name", "Your phone number", "Change photo", "Daily reminder") e, quando há, uma linha de texto por baixo. Não há botão de voltar nem de fechar: a folha fecha ao arrastar para baixo ou ao tocar fora dela, sem guardar. Com o teclado aberto, a folha sobe acima dele (ver D7).
+
+**YOU-R14a · Foto de perfil.** A linha Profile photo mostra a foto atual em miniatura e abre a folha "Change photo" (título em Red Grapes, caixa alta), que sobe de baixo e fecha ao arrastar para baixo, sem botão de voltar nem de fechar: "The photo next to your name. Change it whenever you like.", a foto em grande (sem foto, a figura creme sobre o vinhedo, YOU-R01), "Choose a photo", "Remove photo" (só quando há foto) e "Save". "Choose a photo" e tocar na foto abrem a biblioteca de fotos do iOS; a foto escolhida é cortada num quadrado de 512 px e lavada nos azuis do céu do fundo da app (de `#E4E8E3`/`#4A5F63`, a névoa junto às colinas, a `#93B1B8`/`#1C2C31`, o topo do céu): a foto passa a tons de cinza e as sombras e as luzes tomam os dois azuis. O Vision separa os objetos da frente (pessoas, animais, coisas): o fundo fica no azul mais claro e cada objeto num azul mais fundo, o maior o mais fundo. Sem objetos, ou num aparelho onde o Vision não corre (o simulador), a foto toda fica no azul claro. Enquanto a foto é lida e lavada, a foto atual fica apagada com a GrapeLoop por cima. Depois a foto fica como rascunho. Nada muda até "Save": fechar a folha descarta o rascunho. "Save" só fica ativo quando o rascunho é diferente da foto guardada. Uma foto que não abre: "That photo could not be opened. Try another one." Se guardar falha: "Your changes could not be saved. Try again.", e a folha continua aberta. A foto fica só na conta do usuário (iCloud); não vai para o perfil público. Esta folha não está nos artboards (decidido em 2026-11-10).
 
 **YOU-R15 · Validação.** Name segue a regra do Onboarding (ONB-R15). Phone number segue a ONB-R05 e pode ficar vazio; mudar ou apagar o número troca ou apaga a chave de contato (ONB-R07, ARCHITECTURE §4.4).
 
 **YOU-R15a · Idioma.** Uma linha "Language" com English e Português (Brasil) (SHARED-R19a). A app muda de idioma assim que o usuário escolhe, sem reiniciar.
 
 **Critérios**
+- Dada uma foto vermelha, quando é escolhida, então o rascunho é azul.
+- Dados dois objetos e o fundo, então o objeto maior fica no azul mais fundo e o fundo no mais claro.
+- Dada uma foto escolhida e ainda não guardada, então o header continua com a foto anterior; depois de "Save", o header e a linha Profile photo mostram a nova.
+- Dada uma conta com foto, quando o usuário toca em "Remove photo" e guarda, então o header volta à figura creme.
+- Quando o usuário escolhe uma foto e arrasta a folha para fechar sem guardar, então a foto não muda.
 - Dado o idioma English, quando o usuário escolhe Português (Brasil), então os textos passam a pt-BR sem fechar a app.
 - Dada a lista de idiomas, então ela tem exatamente 2 opções.
 
@@ -92,7 +99,7 @@ A linha do tempo mostra até seis alterações, em ordem cronológica, com a mai
 
 **YOU-R16 · Linha.** "Daily reminder" mostra a hora escolhida, ou "Set a time" quando não há lembrete.
 
-**YOU-R17 · Escolha.** "Pick the moment of the day and the days of the week. Change it whenever you like." Quatro momentos:
+**YOU-R17 · Escolha.** Numa folha (YOU-R14). "Pick the moment of the day and the days of the week. Change it whenever you like." Quatro momentos:
 
 | Momento | Hora |
 | --- | --- |
@@ -132,12 +139,13 @@ O valor inicial é **ligado** (Public, D9, decidido em 2026-10-31).
 
 **YOU-R23 · Lista.** "Certificates" com o contador "[obtidos]/[total]", com dois dígitos ("00/36"). Os certificados obtidos mostram a data; os que ainda não foram obtidos aparecem apagados (ver D10).
 
-**YOU-R24 · Vazio.** Sem certificados: "No certificates yet", "Certificates for the lessons you complete live here. Finish one to see it, then come back whenever you like." e "Start learning", que abre a aba Learn.
+**YOU-R24 · Sem certificados.** A linha Certificates mostra "0" e não abre nada, como My Map e Tables: não há tela de estado vazio. Com pelo menos um certificado, a linha abre a lista (decidido em 2026-11-11).
 
 **YOU-R25 · Partilhar.** Tocar num certificado obtido abre a partilha, com os formatos Story, WhatsApp e Save image (LEARN-R24, SHARED-R20).
 
 **Critérios**
-- Dados 0 certificados, então aparece o estado vazio e "Start learning" abre a aba Learn.
+- Dados 0 certificados, então a linha Certificates mostra "0" e tocar nela não abre nada.
+- Dado 1 certificado, quando o usuário toca na linha, então abre a lista.
 - Dados 14 de 36 obtidos, então o contador mostra "14/36".
 - Dado um certificado não obtido, quando o usuário toca nele, então nada abre.
 
@@ -173,7 +181,7 @@ O valor inicial é **ligado** (Public, D9, decidido em 2026-10-31).
 - [x] **D7 · Editar dados.** Mudar o número de telefone não pede código (não há SMS). Mudar o nome não muda os links já partilhados, porque eles usam o id.
 - [x] **D8 · Hora do lembrete.** Os quatro momentos e "Another time", com qualquer hora (começa em 20:00, como no protótipo).
 - [x] **D9 · Mapa público por padrão.** Começa Public. Desligado, o PublicProfile continua a existir (o nome aparece aos amigos), mas sem o mapa. O que vê quem abre o link fica para o Friends.
-- [ ] **D10 · Certificados ainda não obtidos.** *(Por agora só existe o estado vazio, YOU-R24; decidir com o Learn.)* Eles aparecem na lista (apagados), ou só os obtidos? Qual é o total? Com 30 módulos, 30 castas e 10 países, seriam 70 se cada país for um curso.
+- [ ] **D10 · Certificados ainda não obtidos.** *(Por agora a lista só mostra os obtidos, e sem nenhum a linha não abre, YOU-R24; decidir com o Learn.)* Eles aparecem na lista (apagados), ou só os obtidos? Qual é o total? Com 30 módulos, 30 castas e 10 países, seriam 70 se cada país for um curso.
 - [ ] **D11 · Streak.** *(Não implementado; a decidir com o Learn.)* O artboard You tem regras de streak (dias seguidos com pelo menos uma lição, que voltam a zero quando um dia passa sem lição). O streak entra nesta versão? E onde aparece?
 - [ ] **D12a · Linha Language.** Escondida nos Settings até existirem as traduções pt-BR (decidido em 2026-10-31).
 - [x] **D12 · Idioma.** Inglês e português do Brasil nesta versão; 6 idiomas no futuro (SHARED-R19a, YOU-R15a).

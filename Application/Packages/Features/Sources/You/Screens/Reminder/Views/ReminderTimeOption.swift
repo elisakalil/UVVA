@@ -2,6 +2,8 @@ import DesignSystem
 import SwiftUI
 
 /// "Another time": any hour and minute (D8, decided 2026-10-31).
+/// Only the person picks it: a time they set in the picker comes through the binding, a tap on the row picks the time
+/// shown. The time the editor sets when it opens selects nothing.
 struct ReminderTimeOption: View {
     @Binding var time: Date
     var title: String
@@ -16,7 +18,6 @@ struct ReminderTimeOption: View {
                 .labelsHidden()
                 .colorScheme(.dark)
                 .tint(UVVAColor.creamFill)
-                .onChange(of: time) { _, value in onPick(value) }
         }
         .padding(.horizontal, 18)
         .padding(.vertical, 8)

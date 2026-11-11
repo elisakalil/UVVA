@@ -12,7 +12,7 @@ struct WineFactsUIModel {
         var id: String { label }
     }
 
-    var facts: [Fact] {
+    var originFacts: [Fact] {
         var facts: [Fact] = []
         if !wine.originLine.isEmpty {
             // A wine known only by its country shows the country alone: a line on a whole country says little.
@@ -23,13 +23,23 @@ struct WineFactsUIModel {
         if wine.hasNotableAppellation, !wine.classification.isEmpty {
             facts.append(Fact(label: resources.wineFactsAppellationTitle, value: wine.classification, insight: wine.appellationInsight))
         }
-        if !wine.grapes.isEmpty { facts.append(Fact(label: resources.wineFactsGrapesTitle, value: wine.grapes.joined(separator: ", "))) }
-        if let note = wine.note, !note.isEmpty { facts.append(Fact(label: resources.wineFactsNotesTitle, value: note)) }
-        if let serving = wine.serving {
-            facts.append(Fact(label: resources.wineFactsServingTitle, value: "\(serving.lowerBound)–\(serving.upperBound) °C",
-                              insight: wine.howToServe))
-        }
         return facts
+    }
+
+    var grapes: Fact? {
+        guard !wine.grapes.isEmpty else { return nil }
+        return Fact(label: resources.wineFactsGrapesTitle, value: wine.grapes.joined(separator: ", "))
+    }
+
+    var notes: Fact? {
+        guard let note = wine.note, !note.isEmpty else { return nil }
+        return Fact(label: resources.wineFactsNotesTitle, value: note)
+    }
+
+    var serving: Fact? {
+        guard let serving = wine.serving else { return nil }
+        return Fact(label: resources.wineFactsServingTitle, value: "\(serving.lowerBound)–\(serving.upperBound) °C",
+                    insight: wine.howToServe)
     }
 
     /// "2023 · 3 years"

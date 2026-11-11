@@ -8,13 +8,13 @@ public final class SettingsViewModel: SettingsViewModelProtocol {
     @Published public private(set) var uiModel: SettingsUIModel
     public let editName: EditNameViewModel
     public let editPhone: EditPhoneViewModel
+    public let editPhoto: EditPhotoViewModel
     public let reminder: ReminderViewModel
     public let certificates: CertificatesViewModel
 
     private let onProfileSaved: (Profile) -> Void
     private let readModel: () -> YouContentModel
     private let coordinator: any YouCoordinatorProtocol
-    private let savePhotoUseCase: any SavePhotoUseCaseProtocol
     private let setMapPublicUseCase: any SetMapPublicUseCaseProtocol
     private let signOutUseCase: any SignOutUseCaseProtocol
     private let deleteAccountUseCase: any DeleteAccountUseCaseProtocol
@@ -23,19 +23,19 @@ public final class SettingsViewModel: SettingsViewModelProtocol {
     static let deleteFailureDuration = Duration.seconds(6)
 
     init(readModel: @escaping () -> YouContentModel, onProfileSaved: @escaping (Profile) -> Void, coordinator: any YouCoordinatorProtocol,
-         savePhotoUseCase: any SavePhotoUseCaseProtocol, setMapPublicUseCase: any SetMapPublicUseCaseProtocol,
+         setMapPublicUseCase: any SetMapPublicUseCaseProtocol,
          signOutUseCase: any SignOutUseCaseProtocol, deleteAccountUseCase: any DeleteAccountUseCaseProtocol,
-         editName: EditNameViewModel, editPhone: EditPhoneViewModel, reminder: ReminderViewModel,
-         certificates: CertificatesViewModel) {
+         editName: EditNameViewModel, editPhone: EditPhoneViewModel, editPhoto: EditPhotoViewModel,
+         reminder: ReminderViewModel, certificates: CertificatesViewModel) {
         self.readModel = readModel
         self.onProfileSaved = onProfileSaved
         self.coordinator = coordinator
-        self.savePhotoUseCase = savePhotoUseCase
         self.setMapPublicUseCase = setMapPublicUseCase
         self.signOutUseCase = signOutUseCase
         self.deleteAccountUseCase = deleteAccountUseCase
         self.editName = editName
         self.editPhone = editPhone
+        self.editPhoto = editPhoto
         self.reminder = reminder
         self.certificates = certificates
         uiModel = SettingsPresentationBuilder().build(from: readModel())
@@ -50,15 +50,6 @@ public final class SettingsViewModel: SettingsViewModelProtocol {
         presentation.deleteFailed = uiModel.deleteFailed
         uiModel = presentation
         certificates.present(model)
-    }
-
-    public func savePhoto(_ jpeg: Data) async {
-        guard let profile = readModel().profile else { return }
-        do {
-            onProfileSaved(try await savePhotoUseCase.execute(jpeg, profile: profile))
-        } catch {
-            uiModel.notice = uiModel.yourChangesCouldNotBeText
-        }
     }
 
     public func setMapPublic(_ isPublic: Bool) async {

@@ -1,9 +1,9 @@
+import CoreUI
+import Core
 import Foundation
 
 public struct NoteUIModel {
     var isEditing = false
-    /// "Tasting note", or "Edit note".
-    var barLabel = ""
     /// "29 Aug".
     var date = ""
     var title = ""
@@ -20,6 +20,8 @@ public struct NoteUIModel {
     var hasReading = false
     var readingText: String?
     var structure: [NoteStructureUIModel] = []
+    var pairings: [String] = []
+    var wineProfile: PalateMap?
     var aromas: String?
     var verdicts: [NoteVerdictUIModel] = []
     var draftNote = ""

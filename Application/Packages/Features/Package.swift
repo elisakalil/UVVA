@@ -20,7 +20,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "Cellar",
-                dependencies: Dependencies.common + [Dependencies.match],
+                dependencies: Dependencies.common + [Dependencies.match, Dependencies.coreUI],
                 resources: [.process("Resources")]),
 
         .target(name: "Friends",
@@ -28,7 +28,7 @@ let package = Package(
                 resources: [.process("Resources")]),
 
         .target(name: "Home",
-                dependencies: Dependencies.common + [Dependencies.match],
+                dependencies: Dependencies.common + [Dependencies.match, Dependencies.coreUI],
                 resources: [.process("Resources")]),
 
         .target(name: "Learn",
@@ -48,7 +48,7 @@ let package = Package(
                 resources: [.process("Resources")]),
 
         .testTarget(name: "CellarTests",
-                    dependencies: ["Cellar"] + Dependencies.tests + [Dependencies.match]),
+                    dependencies: ["Cellar"] + Dependencies.tests + [Dependencies.match, Dependencies.coreUI]),
 
         .testTarget(name: "FriendsTests",
                     dependencies: ["Friends"] + Dependencies.tests + [Dependencies.match]),
@@ -90,6 +90,8 @@ enum Dependencies {
     static var tests: [Target.Dependency] {
         [.product(name: "Core", package: "Core")]
     }
+
+    static var coreUI: Target.Dependency { .product(name: "CoreUI", package: "Core") }
 
     static var match: Target.Dependency {
         .product(name: "Match", package: "Core")

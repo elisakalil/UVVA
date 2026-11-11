@@ -1,3 +1,4 @@
+import CoreUI
 import Core
 import Foundation
 
@@ -33,7 +34,7 @@ struct NotePresentationBuilder {
     }
 
     var structure: [NoteStructureUIModel] {
-        guard let profile = wine?.profile else { return [] }
+        guard let profile = entry.wineProfile ?? wine?.profile else { return [] }
         return NoteStructureRow.allCases.map { row in
             let value = profile[row.axis]
             let filled = Int((value / PalateMap.range.upperBound * Double(NoteStructureUIModel.dotCount)).rounded())
@@ -45,7 +46,7 @@ struct NotePresentationBuilder {
 
     /// "Violet, rose, iris." becomes "Violet  ·  Rose  ·  Iris".
     var aromas: String? {
-        guard let note = wine?.note else { return nil }
+        guard let note = entry.wineNotes ?? wine?.note else { return nil }
         let words = note.split(separator: ",")
             .map { $0.trimmingCharacters(in: CharacterSet.whitespaces.union(CharacterSet(charactersIn: "."))) }
             .filter { !$0.isEmpty }
@@ -54,7 +55,7 @@ struct NotePresentationBuilder {
     }
 
     /// The order of the artboard: Yes, No, Maybe.
-    func verdicts(selected: Verdict?) -> [NoteVerdictUIModel] {
+    static func verdicts(selected: Verdict?, resources: NoteResourcesUIModel) -> [NoteVerdictUIModel] {
         [Verdict.yes, .no, .maybe].map { verdict in
             NoteVerdictUIModel(verdict: verdict, label: resources.verdict(CellarTag(verdict)),
                                isSelected: verdict == selected)

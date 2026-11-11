@@ -1,7 +1,8 @@
 import DesignSystem
 import SwiftUI
 
-/// Certificates (YOU-R23 to R25): the ones earned, newest first, each opening its share. Empty until Learn awards one.
+/// Certificates (YOU-R23 to R25): the ones earned, newest first, each opening its share. Settings opens it only when
+/// there is at least one (YOU-R24).
 struct CertificatesView<ViewModel: CertificatesViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     var onClose: () -> Void
@@ -10,7 +11,7 @@ struct CertificatesView<ViewModel: CertificatesViewModelProtocol>: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             CertificateBackground().ignoresSafeArea()
-            if viewModel.uiModel.rows.isEmpty { empty } else { gallery }
+            gallery
             HStack(spacing: 8) {
                 Button(action: { dismiss() }) {
                     Image(systemName: "xmark")
@@ -61,21 +62,6 @@ struct CertificatesView<ViewModel: CertificatesViewModelProtocol>: View {
                 }
             }
             .scrollIndicators(.hidden)
-        }
-    }
-
-    private var empty: some View {
-        VStack(spacing: 0) {
-            Spacer()
-            viewModel.uiModel.emptyIllustration.resizable().scaledToFit().frame(width: 72, height: 100)
-            Text(viewModel.uiModel.noCertificatesYetText.uppercased())
-                .font(UVVAFont.redGrapes(22)).tracking(0.9).padding(.top, 24)
-            Text(viewModel.uiModel.certificatesForTheLessonsYouText)
-                .font(UVVAFont.sans(13)).lineSpacing(5).opacity(0.84)
-                .multilineTextAlignment(.center).frame(maxWidth: 290).padding(.top, 12)
-            ActionButton(viewModel.uiModel.startLearningText, action: { onClose(); viewModel.startLearning() })
-                .frame(width: 220).padding(.top, 30)
-            Spacer()
         }
     }
 }

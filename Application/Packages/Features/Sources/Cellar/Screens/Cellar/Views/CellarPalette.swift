@@ -11,6 +11,4 @@ enum CellarPalette {
     static let coverVeil = Color(hex: 0x0E130A).opacity(0.24)
     /// The veil behind the filter sheet.
     static let veil = Color(hex: 0x0E130A).opacity(0.58)
-    /// Behind the camera and around the label frame (CELLAR-R16).
-    static let cameraGround = Color(hex: 0x0F130C)
 }

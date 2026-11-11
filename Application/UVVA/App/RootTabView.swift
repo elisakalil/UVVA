@@ -1,4 +1,5 @@
 import Cellar
+import CoreUI
 import DesignSystem
 import Friends
 import Home
@@ -16,11 +17,15 @@ struct RootTabView: View {
         Group {
             switch coordinator.selectedTab {
             case .home:
-                if let home = coordinator.home { HomeView(viewModel: home, tour: coordinator.tour) }
+                if let home = coordinator.home {
+                    HomeView(viewModel: home, tour: coordinator.tour, newNote: newNote(from: .home))
+                }
             case .learn:
                 if let learn = coordinator.learn { LearnView(viewModel: learn) }
             case .cellar:
-                if let cellar = coordinator.cellarTab { CellarView(viewModel: cellar) }
+                if let cellar = coordinator.cellarTab {
+                    CellarView(viewModel: cellar, newNote: newNote(from: .cellar))
+                }
             case .friends:
                 if let friends = coordinator.friends { FriendsView(viewModel: friends) }
             case .you:
@@ -58,12 +63,17 @@ struct RootTabView: View {
                 .transition(.opacity)
             }
         }
-        .fullScreenCover(item: Binding(get: { coordinator.newNote },
-                                       set: { if $0 == nil { coordinator.closeNewNote() } })) { note in
-            NewNoteView(viewModel: note)
-        }
         .lessonCover(coordinator.learn, onPresented: coordinator.lessonDidPresent)
         .certificateCover(coordinator.learn)
         .animation(.easeOut(duration: 0.35), value: coordinator.tour == nil)
+    }
+
+    private func newNote(from origin: AppTab) -> Binding<NewNoteViewModel?> {
+        Binding {
+            guard let note = coordinator.newNote, note.origin == origin else { return nil }
+            return note.model
+        } set: { note in
+            if note == nil { coordinator.closeNewNote(from: origin) }
+        }
     }
 }

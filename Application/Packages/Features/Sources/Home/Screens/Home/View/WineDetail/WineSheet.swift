@@ -3,24 +3,27 @@ import DesignSystem
 import SwiftUI
 
 /// The wine sheet over the Home (HOME-R28a), for a wine of "Wines for your palate" or the results of "Choose your
-/// wine". The wine scrolls; the question stays at the foot, one step at a time (HOME-R24):
-/// "Have you had this wine?" → Yes → the verdict → "Add it to your cellar?";
-/// Not yet → straight to "Add it to your cellar?", the one cellar step of the sheet. The answer there is met with a
-/// light line, and then the question fades away, leaving the wine on its own; the sheet stays open.
+/// wine". The wine scrolls; the question stays at the foot, over "Add to cellar", which is always there (HOME-R24):
+/// "Have you had this wine?" → Yes → the verdict, which moves the map at once and stays marked; Not yet → the
+/// question goes. A wine rated before opens with no question. "Add to cellar" leaves the sheet for the Cellar's new
+/// note, with what was answered.
 struct WineSheet: View {
     var resources = HomeResourcesUIModel()
     var sheet: WineSheetModel
     var palateMap: PalateMap
     var cellarWineKeys: Set<String> = []
-    /// The verdict, and whether the wine goes to the Cellar as Tasted with it.
-    var onRate: (Wine, Verdict, _ keep: Bool) -> Void = { _, _, _ in }
-    /// Not tasted yet: saved to the Cellar as Not yet (CELLAR-R13c).
-    var onSaveToCellar: (Wine) -> Void = { _ in }
+    /// The verdict of each wine rated since the Quiz.
+    var ratedVerdicts: [String: Verdict] = [:]
+    /// The verdict, as soon as it is given, and whether the wine is in the Cellar, where its entry takes it.
+    var onRate: (Wine, Verdict, _ isInCellar: Bool) -> Void = { _, _, _ in }
+    /// "Add to cellar": the Cellar's new note, with the verdict given, if any; `asksTasting` when the sheet got no
+    /// full answer, so the note asks "Have you had this wine?" itself.
+    var onAddToCellar: (Wine, Verdict?, _ asksTasting: Bool) -> Void = { _, _, _ in }
 
     @State private var resultIndex = 0
-    @State private var step = WineSheetStep.askTasted
+    /// Nil until an answer is given: the question starts where the wine stands (`WineSheetStep.first`).
+    @State private var answered: WineSheetStep?
     @State private var search: URL?
-    @State private var fadeOut: Task<Void, Never>?
 
     private let ink = UVVAColor.mossDeep
 
@@ -36,9 +39,7 @@ struct WineSheet: View {
                             .padding(.bottom, 44)
                     }
                     .scrollIndicators(.hidden)
-                    if step != .done {
-                        footer(model.wine).transition(.opacity)
-                    }
+                    footer(model.wine, step: currentStep(for: model.wine))
                 }
             } else {
                 noMatch
@@ -65,125 +66,72 @@ struct WineSheet: View {
     }
 
     private func showAnother() {
-        fadeOut?.cancel()
         withAnimation(.smooth) {
             resultIndex += 1
-            step = .askTasted
+            answered = nil
         }
+    }
+
+    private func currentStep(for wine: Wine) -> WineSheetStep {
+        answered ?? .first(rated: ratedVerdicts[wine.id])
     }
 
     // MARK: The question at the foot
 
-    private func footer(_ wine: Wine) -> some View {
-        VStack(alignment: .leading, spacing: 18) {
-            switch step {
-            case .askTasted:
-                question(resources.wineDetailTastedQuestion)
-                HStack(spacing: 10) {
-                    choice(resources.verdictLabel(.yes)) { go(.askVerdict) }
-                    choice(resources.wineDetailNotYetTitle) { go(.askKeep(nil)) }
-                }
-            case .askVerdict:
-                question(resources.wineDetailVerdictQuestion)
-                HStack(spacing: 10) {
-                    ForEach([Verdict.yes, .maybe, .no], id: \.self) { verdict in
-                        choice(resources.verdictLabel(verdict)) { go(.askKeep(verdict)) }
-                    }
-                }
-            case let .askKeep(verdict):
-                question(resources.wineDetailKeepQuestion)
-                HStack(spacing: 10) {
-                    if let verdict {
-                        // Tasted: the verdict moves the map either way; Add to cellar keeps it as Tasted too.
-                        action(resources.dailySuggestionCardAddTitle, filled: true) {
-                            finish(verdict: verdict, kept: true) { onRate(wine, verdict, true) }
-                        }
-                        action(resources.wineDetailNotNowTitle, filled: false) {
-                            finish(verdict: verdict, kept: false) { onRate(wine, verdict, false) }
-                        }
-                    } else {
-                        // Not yet: it goes to the Cellar as Not yet, or nothing happens.
-                        if cellarWineKeys.contains(wine.id) {
-                            action(resources.dailySuggestionCardSavedTitle, filled: true) {}.disabled(true)
-                        } else {
-                            action(resources.dailySuggestionCardAddTitle, filled: true) {
-                                finish(verdict: nil, kept: true) { onSaveToCellar(wine) }
-                            }
-                        }
-                        action(resources.wineDetailNotNowTitle, filled: false) { finish(verdict: nil, kept: false) {} }
-                    }
-                }
-            case let .feedback(text):
-                question(text)
-            case .done:
-                EmptyView()
+    private func footer(_ wine: Wine, step: WineSheetStep) -> some View {
+        let isInCellar = cellarWineKeys.contains(wine.id)
+        return WineTastingActions(
+            question: question(wine, step: step),
+            primaryTitle: isInCellar ? resources.dailySuggestionCardSavedTitle : resources.dailySuggestionCardAddTitle,
+            isPrimaryEnabled: !isInCellar,
+            // The Cellar's new note takes it from here, with what was answered (CELLAR-R14a).
+            onPrimary: { onAddToCellar(wine, verdict(wine, step: step), step.leavesTastingOpen) })
+            .padding(.horizontal, 26)
+            .padding(.top, 20)
+            .padding(.bottom, 14)
+            .background(alignment: .top) {
+                // The wine fades out under the question instead of being cut by it.
+                LinearGradient(colors: [UVVAColor.parchment.opacity(0), UVVAColor.parchment], startPoint: .top, endPoint: .bottom)
+                    .frame(height: 36)
+                    .offset(y: -36)
+                    .allowsHitTesting(false)
             }
+            .background(UVVAColor.parchment)
+            .foregroundStyle(ink)
+    }
+
+    private func question(_ wine: Wine, step: WineSheetStep) -> WineTastingActions.Question? {
+        switch step {
+        case .askTasted:
+            .init(text: resources.wineDetailTastedQuestion, choices: [
+                .init(title: resources.verdictLabel(.yes)) { go(.askVerdict(nil)) },
+                .init(title: resources.wineDetailNotYetTitle) { go(.done) }
+            ])
+        case let .askVerdict(given):
+            .init(text: resources.wineDetailVerdictQuestion,
+                  choices: [Verdict.yes, .maybe, .no].map { verdict in
+                      .init(title: resources.verdictLabel(verdict), isSelected: verdict == given) { rate(wine, verdict) }
+                  },
+                  // Given once: a second verdict would move the map again.
+                  isLocked: given != nil)
+        case .done:
+            nil
         }
-        .padding(.horizontal, 26)
-        .padding(.top, 20)
-        .padding(.bottom, 14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(alignment: .top) {
-            // The wine fades out under the question instead of being cut by it.
-            LinearGradient(colors: [UVVAColor.parchment.opacity(0), UVVAColor.parchment], startPoint: .top, endPoint: .bottom)
-                .frame(height: 36)
-                .offset(y: -36)
-                .allowsHitTesting(false)
-        }
-        .background(UVVAColor.parchment)
-        .foregroundStyle(ink)
+    }
+
+    /// The verdict the new note opens with: the one given here, or the one the wine was rated with before.
+    private func verdict(_ wine: Wine, step: WineSheetStep) -> Verdict? {
+        if case let .askVerdict(given) = step { given } else { ratedVerdicts[wine.id] }
     }
 
     private func go(_ next: WineSheetStep) {
-        withAnimation(.smooth(duration: 0.25)) { step = next }
+        withAnimation(.smooth(duration: 0.25)) { answered = next }
     }
 
-    /// The answer is saved, a light line takes the question's place, and after a moment the section fades away.
-    private func finish(verdict: Verdict?, kept: Bool, save: () -> Void) {
-        save()
-        go(.feedback(resources.wineSheetFeedback(verdict: verdict, kept: kept)))
-        fadeOut?.cancel()
-        fadeOut = Task {
-            try? await Task.sleep(for: .seconds(4))
-            guard !Task.isCancelled else { return }
-            withAnimation(.easeOut(duration: 0.6)) { step = .done }
-        }
-    }
-
-    private func question(_ text: String) -> some View {
-        HStack(spacing: 12) {
-            Text(text)
-                .font(UVVAFont.sans(17))
-                .tracking(-0.17)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-    }
-
-    /// An answer to the question: outlined, in the hand-drawn capitals.
-    private func choice(_ title: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(title.uppercased())
-                .font(UVVAFont.redGrapes(17))
-                .tracking(0.7)
-                .frame(maxWidth: .infinity, minHeight: 47)
-                .overlay(Capsule().strokeBorder(ink.opacity(0.5), lineWidth: 0.5))
-                .contentShape(Capsule())
-        }
-        .buttonStyle(.plain)
-    }
-
-    /// What to do with the wine: the first filled in ink, the other outlined.
-    private func action(_ title: String, filled: Bool, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(title)
-                .font(UVVAFont.sans(12.5, .medium))
-                .foregroundStyle(filled ? UVVAColor.creamFill : ink)
-                .frame(maxWidth: .infinity, minHeight: 45)
-                .background { if filled { Capsule().fill(ink) } }
-                .overlay { if !filled { Capsule().strokeBorder(ink.opacity(0.5), lineWidth: 0.5) } }
-                .contentShape(Capsule())
-        }
-        .buttonStyle(.plain)
+    /// The verdict moves the map now and stays marked. A wine in the Cellar takes it in its entry.
+    private func rate(_ wine: Wine, _ verdict: Verdict) {
+        onRate(wine, verdict, cellarWineKeys.contains(wine.id))
+        go(.askVerdict(verdict))
     }
 
     private var noMatch: some View {

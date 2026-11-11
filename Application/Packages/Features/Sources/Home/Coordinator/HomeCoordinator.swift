@@ -7,6 +7,7 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
     private let onOpenCourse: (String) -> Void
     private let onOpenLearn: (CourseKind) -> Void
     private let onScan: () -> Void
+    private let onOpenCellarNote: (Wine, Verdict?, Bool) -> Void
     private let onOpenFriends: () -> Void
     private let onOpenLastTable: () -> Void
     private let onOpenMapHistory: () -> Void
@@ -15,12 +16,14 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
                 onOpenLearn: @escaping (CourseKind) -> Void,
                 onOpenLesson: ((HomeLessonSuggestion) -> Void)? = nil,
                 onScan: @escaping () -> Void = {},
+                onOpenCellarNote: @escaping (Wine, Verdict?, Bool) -> Void = { _, _, _ in },
                 onOpenFriends: @escaping () -> Void = {},
                 onOpenLastTable: @escaping () -> Void = {},
                 onOpenMapHistory: @escaping () -> Void = {}) {
         self.onOpenLastTable = onOpenLastTable
         self.onOpenMapHistory = onOpenMapHistory
         self.onScan = onScan
+        self.onOpenCellarNote = onOpenCellarNote
         self.onOpenFriends = onOpenFriends
         self.onOpenLesson = onOpenLesson
         self.onOpenCourse = onOpenCourse
@@ -34,6 +37,9 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
     public func openCourse(_ id: String) { onOpenCourse(id) }
     public func openLearn(_ kind: CourseKind) { onOpenLearn(kind) }
     public func scan() { onScan() }
+    public func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool) {
+        onOpenCellarNote(wine, verdict, asksTasting)
+    }
     public func openFriends() { onOpenFriends() }
     public func openLastTable() { onOpenLastTable() }
     public func openMapHistory() { onOpenMapHistory() }

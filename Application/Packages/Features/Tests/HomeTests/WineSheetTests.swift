@@ -38,7 +38,7 @@ private final class HomeLoaderSpy: LoadHomeUseCaseProtocol {
     var calls = 0
     func execute() async throws -> HomeLoadResultModel {
         calls += 1
-        return HomeLoadResultModel(model: .full, inviteLink: nil, cellarWineKeys: [])
+        return HomeLoadResultModel(model: .full, inviteLink: nil)
     }
 }
 
@@ -87,7 +87,7 @@ struct RateWineUseCaseTests {
         #expect(changes.first?.wentUp == true)
     }
 
-    @Test func HOME_R24_notNow_movesTheMap_withoutTheCellar() async throws {
+    @Test func HOME_R24_theVerdict_movesTheMap_withoutTheCellar() async throws {
         let maps = MapSpy(map: flat(5))
         let cellar = CellarSpy()
         let useCase = RateWineUseCase(maps: maps, cellar: cellar, now: Date.init)
@@ -138,7 +138,7 @@ struct HomeRatingViewModelTests {
         #expect(model.uiModel.notice == "Map updated · Acidity ↑ · Oak ↓")
     }
 
-    @Test func HOME_R24_keptInTheCellar_saysSo() async throws {
+    @Test func HOME_R24_aWineInTheCellar_takesTheVerdict_andSaysSo() async throws {
         let model = viewModel(rating: FixedRating(changes: [AxisChange(axis: .fruit, before: 5, after: 6)]), loader: HomeLoaderSpy())
         await model.load()
         await model.rate(try #require(HomeContentModel.full.catalog.first), verdict: .yes, addToCellar: true)
@@ -161,6 +161,38 @@ struct HomeRatingViewModelTests {
         #expect(model.uiModel.notice == "Map updated · barely moved")
         try await Task.sleep(for: .milliseconds(200))
         #expect(model.uiModel.notice == nil)
+    }
+
+    @Test func HOME_R24_addToCellar_opensTheCellarNote_withTheVerdict() async throws {
+        var opened: [(String, Verdict?, Bool)] = []
+        let model = HomeViewModel(loadHomeUseCase: HomeLoaderSpy(), loadPalateStateUseCase: PalateStateStub(),
+                                  rankWinesUseCase: WineRankingSpy(), addWineToCellarUseCase: SavingCellar(),
+                                  rateWineUseCase: FixedRating(changes: []),
+                                  coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in },
+                                                               onOpenCellarNote: { opened.append(($0.id, $1, $2)) }),
+                                  now: Date.init, calendar: .current)
+        let wine = try #require(HomeContentModel.full.catalog.first)
+        model.openCellarNote(for: wine, verdict: .maybe)
+        model.openCellarNote(for: wine, verdict: nil)
+        model.openCellarNote(for: wine, verdict: nil, asksTasting: true)
+        #expect(opened.map(\.0) == [wine.id, wine.id, wine.id])
+        #expect(opened.map(\.1) == [.maybe, nil, nil])
+        #expect(opened.map(\.2) == [false, false, true])
+    }
+
+    @Test func HOME_R24_whereTheQuestionStarts() {
+        // Not rated: "Have you had this wine?".
+        #expect(WineSheetStep.first(rated: nil) == .askTasted)
+        // Rated before: nothing to ask, only "Add to cellar".
+        #expect(WineSheetStep.first(rated: .no) == .done)
+    }
+
+    @Test func HOME_R24_addToCellar_letsTheNoteAsk_whenTheSheetGotNoFullAnswer() {
+        #expect(WineSheetStep.askTasted.leavesTastingOpen)
+        #expect(WineSheetStep.askVerdict(nil).leavesTastingOpen)
+        // A verdict, "Not yet" or a wine rated before: the note opens answered.
+        #expect(!WineSheetStep.askVerdict(.maybe).leavesTastingOpen)
+        #expect(!WineSheetStep.done.leavesTastingOpen)
     }
 
     @Test func HOME_R28_saveToCellar_saysSaved() async throws {
@@ -198,8 +230,8 @@ struct WineDetailUIModelTests {
     @Test func HOME_R28a_theWine_factsInTheDesignOrder() {
         let detail = model(wine(), .discovery(.familiar, index: 0, count: 1))
         let facts = detail.facts
-        #expect(facts.map(\.label) == ["Origin", "Vintage", "Serve at", "Style", "Grape & notes"])
-        #expect(facts.map(\.value) == ["Monção e Melgaço, Portugal", "2023 · 3 years", "8–10°C", "White",
+        #expect(facts.map(\.label) == ["Origin", "Vintage", "Style", "Grape & notes"])
+        #expect(facts.map(\.value) == ["Monção e Melgaço, Portugal", "2023 · 3 years", "White",
                                        "Alvarinho · Lemon, white peach"])
         #expect(detail.pairings == "Shellfish, Grilled fish")
         // Vintage beside Origin, Grape & notes beside Style.
@@ -226,12 +258,16 @@ struct WineDetailUIModelTests {
         #expect(surprise.percentageCaption == "away from your map")
     }
 
-    @Test func HOME_R24_afterTheCellarQuestion_aLightLineForEachAnswer() {
-        let resources = HomeResourcesUIModel()
-        #expect(resources.wineSheetFeedback(verdict: .yes, kept: true) == "Glad you loved it! It's in your cellar now.")
-        #expect(resources.wineSheetFeedback(verdict: nil, kept: false) == "No rush. It'll be here when you're ready.")
-        let lines = [Verdict.yes, .maybe, .no].flatMap { v in [true, false].map { resources.wineSheetFeedback(verdict: v, kept: $0) } }
-            + [true, false].map { resources.wineSheetFeedback(verdict: nil, kept: $0) }
-        #expect(Set(lines).count == 8)
+    @Test func HOME_R28a_howToServe_startsWithTheTemperature() {
+        let detail = model(wine(), .discovery(.familiar, index: 0, count: 1))
+        #expect(detail.servingTemperature == "8–10 °C")
+        #expect(detail.howToServe == "Cold.")
+        #expect(detail.showsServing)
+        // The temperature alone is enough for the section; with neither, it is left out.
+        var bare = wine()
+        bare.howToServe = nil
+        #expect(model(bare, .discovery(.familiar, index: 0, count: 1)).showsServing)
+        bare.serving = nil
+        #expect(!model(bare, .discovery(.familiar, index: 0, count: 1)).showsServing)
     }
 }

@@ -1,9 +1,9 @@
 import Core
 import Foundation
 
-/// The five filters above the Cellar (CELLAR-R10).
+/// The six filters above the Cellar (CELLAR-R10).
 public enum CellarFacet: String, CaseIterable, Identifiable, Sendable {
-    case tag, type, grape, region, producer
+    case tag, type, grape, region, producer, vintage
 
     public var id: String { rawValue }
 
@@ -15,6 +15,7 @@ public enum CellarFacet: String, CaseIterable, Identifiable, Sendable {
         case .grape: entry.grapes
         case .region: entry.region.map { [$0] } ?? []
         case .producer: entry.producer.isEmpty ? [] : [entry.producer]
+        case .vintage: entry.vintage.map { [String($0)] } ?? []
         }
     }
 }

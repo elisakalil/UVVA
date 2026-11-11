@@ -1,7 +1,7 @@
 import DesignSystem
 import SwiftUI
 
-/// The grid and list buttons, then the five filters, which scroll sideways (CELLAR-R06, R10).
+/// The grid and list buttons, then the six filters, which scroll sideways (CELLAR-R06, R10).
 struct CellarFilterBar: View {
     var resources: CellarResourcesUIModel
     var viewMode: CellarViewMode

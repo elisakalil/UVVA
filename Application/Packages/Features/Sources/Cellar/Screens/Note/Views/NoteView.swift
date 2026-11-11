@@ -1,7 +1,9 @@
+import CoreUI
 import DesignSystem
 import SwiftUI
 
-/// A saved note on paper (CELLAR.md §5). Edit turns it into the form of the new note, with the verdict and "Your note".
+/// A saved note on paper (CELLAR.md §5), in a sheet that is dragged down to close (CELLAR-R13). Edit turns it into
+/// the form of the new note, with the verdict and "Your note".
 public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     @FocusState private var isNoteFocused: Bool
@@ -14,73 +16,48 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
     }
 
     public var body: some View {
-        VStack(spacing: 0) {
-            bar
-            ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
-                    if model.isEditing { editTop } else { savedTop }
-                    if !model.facts.isEmpty {
-                        NoteFacts(facts: model.facts).padding(.top, 56)
-                    }
-                    if model.hasReading {
-                        NoteReading(resources: resources, text: model.readingText,
-                                    structure: model.structure, aromas: model.aromas)
-                            .padding(.top, 56)
-                    }
-                    if model.isEditing { editEnd } else { savedEnd }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                if model.isEditing { editTop } else { savedTop }
+                if !model.facts.isEmpty {
+                    NoteFacts(facts: model.facts).padding(.top, 56)
                 }
-                .padding(.horizontal, 28)
-                .padding(.top, 24)
-                .padding(.bottom, 64)
-                .animation(.easeOut(duration: 0.25), value: model.isEditing)
+                if model.hasReading {
+                    NoteReading(resources: resources, text: model.readingText,
+                                structure: model.wineProfile == nil ? model.structure : [], aromas: model.aromas)
+                        .padding(.top, 56)
+                }
+                if let profile = model.wineProfile {
+                    NoteIntensityView(profile: profile, onPick: nil).padding(.top, 24)
+                }
+                if !model.pairings.isEmpty {
+                    VStack(alignment: .leading, spacing: 12) {
+                        NoteEyebrow(text: String(localized: "Pairings", bundle: .module))
+                        Text(model.pairings.joined(separator: " · "))
+                            .font(UVVAFont.sans(12))
+                    }
+                    .padding(.top, 24)
+                }
+                if model.isEditing { editEnd } else { savedEnd }
             }
-            .scrollDismissesKeyboard(.interactively)
-            .scrollIndicators(.hidden)
+            .padding(.horizontal, 28)
+            .padding(.top, 44)
+            .padding(.bottom, 64)
+            .animation(.easeOut(duration: 0.25), value: model.isEditing)
         }
+        .scrollDismissesKeyboard(.interactively)
+        .scrollIndicators(.hidden)
         .foregroundStyle(NotePalette.ink)
         .background(NotePalette.paper.ignoresSafeArea())
         // Dark status bar over the light paper.
         .preferredColorScheme(.light)
         .task { await viewModel.load() }
+        .interactiveDismissDisabled(model.isWorking)
         .sheet(isPresented: Binding(get: { model.isConfirmingDelete }, set: { if !$0 { viewModel.cancelDelete() } })) {
             NoteDeleteSheet(resources: resources, isWorking: model.isWorking,
                             onDelete: { Task { await viewModel.confirmDelete() } },
                             onCancel: viewModel.cancelDelete)
         }
-    }
-
-    /// `‹`, then "UVVA | TASTING NOTE".
-    private var bar: some View {
-        HStack(spacing: 14) {
-            Button {
-                if model.isEditing { viewModel.cancelEdit() } else { viewModel.close() }
-            } label: {
-                Image(systemName: resources.backIcon)
-                    .font(.system(size: 18, weight: .light))
-                    .opacity(0.8)
-                    .frame(width: 44, height: 44)
-                    .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel(resources.backText)
-            .padding(.leading, -12)
-            HStack(spacing: 9) {
-                Text(verbatim: "UVVA")
-                    .font(UVVAFont.whiteGrape(15))
-                    .tracking(1.5)
-                    .opacity(0.7)
-                Rectangle().fill(NotePalette.ink.opacity(0.5)).frame(width: 1, height: 11)
-                Text(model.barLabel.uppercased())
-                    .font(UVVAFont.sans(9))
-                    .tracking(2.7)
-                    .opacity(0.8)
-            }
-            .accessibilityElement(children: .combine)
-            Spacer()
-        }
-        .padding(.horizontal, 26)
-        .padding(.top, 8)
-        .padding(.bottom, 10)
     }
 
     // MARK: Saved (CELLAR-R26)

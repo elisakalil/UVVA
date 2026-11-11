@@ -16,7 +16,7 @@ struct ContinueLessonCard: View {
                     Text(String(format: "%02d", number)).font(UVVAFont.sans(38, .ultraLight))
                     Text(resources.lessonTotal(course.totalLessons)).font(UVVAFont.sans(10)).foregroundStyle(UVVAColor.cream84)
                 }
-                Spacer(minLength: 24)
+                Spacer(minLength: 6)
                 Text(course.title)
                     .font(UVVAFont.sans(15))
                     .lineLimit(2)

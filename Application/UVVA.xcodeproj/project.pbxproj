@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1000000000000000000000C /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = B1000000000000000000001C /* CoreUI */; };
 		B10000000000000000000002 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000012 /* DesignSystem */; };
 		B10000000000000000000003 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000013 /* Core */; };
 		B10000000000000000000004 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000014 /* Storage */; };
@@ -58,6 +59,7 @@
 				B1000000000000000000000B /* Friends in Frameworks */,
 				B10000000000000000000002 /* DesignSystem in Frameworks */,
 				B10000000000000000000003 /* Core in Frameworks */,
+				B1000000000000000000000C /* CoreUI in Frameworks */,
 				B10000000000000000000004 /* Storage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +112,7 @@
 				B1000000000000000000001B /* Friends */,
 				B10000000000000000000012 /* DesignSystem */,
 				B10000000000000000000013 /* Core */,
+				B1000000000000000000001C /* CoreUI */,
 				B10000000000000000000014 /* Storage */,
 			);
 			productName = UVVA;
@@ -372,6 +375,11 @@
 		B1000000000000000000001B /* Friends */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Friends;
+		};
+		B1000000000000000000001C /* CoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B10000000000000000000021 /* XCLocalSwiftPackageReference "Packages/Core" */;
+			productName = CoreUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

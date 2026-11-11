@@ -1,5 +1,6 @@
 import Core
 import Foundation
+import Match
 
 @MainActor
 public struct CellarFactory: CellarFactoryProtocol {
@@ -7,10 +8,6 @@ public struct CellarFactory: CellarFactoryProtocol {
     private let maps: any PalateMapRepository
     private let rewriter: any PalateHistoryRewriting
     private let wines: any WineLookup
-    private let labelCatalog: any LabelCatalogRepository
-    private let reader: any LabelReading
-    private let structurer: any LabelStructuring
-    private let camera: any CameraAuthorizing
     private let preferences: any CellarPreferencesProtocol
     private let now: () -> Date
 
@@ -19,10 +16,6 @@ public struct CellarFactory: CellarFactoryProtocol {
         maps: any PalateMapRepository,
         rewriter: any PalateHistoryRewriting,
         wines: any WineLookup,
-        labelCatalog: any LabelCatalogRepository,
-        reader: any LabelReading,
-        structurer: any LabelStructuring,
-        camera: any CameraAuthorizing,
         preferences: any CellarPreferencesProtocol = CellarPreferences(),
         now: @escaping () -> Date = Date.init
     ) {
@@ -30,10 +23,6 @@ public struct CellarFactory: CellarFactoryProtocol {
         self.maps = maps
         self.rewriter = rewriter
         self.wines = wines
-        self.labelCatalog = labelCatalog
-        self.reader = reader
-        self.structurer = structurer
-        self.camera = camera
         self.preferences = preferences
         self.now = now
     }
@@ -42,7 +31,7 @@ public struct CellarFactory: CellarFactoryProtocol {
         RecalculateMapUseCase(history: maps, rewriter: rewriter, wines: wines)
     }
 
-    /// The tab. `onAdd` is the `+`: the app opens `makeNewNote`, as it does from the Home (CELLAR-R14).
+    /// The tab. `onAdd` is the `+`: the app opens the shared new note (CELLAR-R14).
     /// `onNoteChange` tells the app a note was saved or deleted, which may have moved the map (CELLAR-R29).
     public func makeViewModel(onAdd: @escaping () -> Void = {}, onNoteChange: @escaping () -> Void = {}) -> CellarViewModel {
         let recalculate = recalculate
@@ -59,17 +48,5 @@ public struct CellarFactory: CellarFactoryProtocol {
                           onChange: { [weak owner] _ in owner?.noteChanged() },
                           onClose: { [weak owner] in owner?.closeNote() })
         }
-    }
-
-    /// A new note (CELLAR.md §4), with the catalog read once for it.
-    public func makeNewNote(onSaved: @escaping () -> Void, onClose: @escaping () -> Void) -> NewNoteViewModel {
-        let catalog = LabelCatalogCache(catalog: labelCatalog)
-        return NewNoteViewModel(
-            prepareCamera: PrepareCameraUseCase(camera: camera),
-            readLabel: ReadLabelUseCase(reader: reader, structurer: structurer, catalog: catalog, now: now),
-            readManual: ReadManualUseCase(catalog: catalog),
-            saveNewNote: SaveNewNoteUseCase(cellar: cellar, catalog: labelCatalog, maps: maps,
-                                            recalculate: recalculate, now: now),
-            onSaved: onSaved, onClose: onClose)
     }
 }

@@ -36,7 +36,6 @@ struct CellarPresentationBuilderTests {
     @Test func CELLAR_R09_wantToTry_showsNotYet() {
         let item = builder([Entries.entry("baga")]).items.first
         #expect(item?.tag == "Not yet")
-        #expect(item?.isNotYet == true)
     }
 
     // MARK: CELLAR-R10 · Filtros
@@ -80,6 +79,12 @@ struct CellarPresentationBuilderTests {
     @Test func CELLAR_R10_grape_matchesAnyGrapeOfABlend() {
         let blend = Entries.entry("ponto-forte", grapes: ["Syrah", "Viognier"], verdict: .yes)
         #expect(builder([blend], filters: [.grape: "Viognier"]).items.count == 1)
+    }
+
+    @Test func CELLAR_R10_vintage_filtersAndListsNewestFirst() {
+        let wines = [Entries.entry("a", vintage: 2016), Entries.entry("b", vintage: 2020), Entries.entry("c")]
+        #expect(builder(wines, open: .vintage).filterSheet?.options.map(\.value) == ["2020", "2016"])
+        #expect(builder(wines, filters: [.vintage: "2016"]).items.map(\.id) == ["a"])
     }
 
     @Test func filters_hidingEverything_showNoMatches() {

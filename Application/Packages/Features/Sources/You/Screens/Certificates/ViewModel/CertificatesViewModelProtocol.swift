@@ -6,5 +6,4 @@ import Foundation
 public protocol CertificatesViewModelProtocol: ObservableObject {
     var uiModel: CertificatesUIModel { get }
     func open(_ id: String)
-    func startLearning()
 }

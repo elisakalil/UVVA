@@ -10,7 +10,7 @@ private final class LoaderSpy: LoadHomeUseCaseProtocol {
     private(set) var calls = 0
     func execute() async throws -> HomeLoadResultModel {
         calls += 1
-        return HomeLoadResultModel(model: .full, inviteLink: nil, cellarWineKeys: [])
+        return HomeLoadResultModel(model: .full, inviteLink: nil)
     }
 }
 
@@ -44,6 +44,11 @@ struct HomeMatchRefreshTests {
     private func hero(_ model: HomeViewModel) -> Wine? {
         guard case let .topMatch(wine) = model.uiModel.content?.cards.first(where: { $0.kind == "topMatch" }) else { return nil }
         return wine
+    }
+
+    private func palateWines(_ model: HomeViewModel) -> [Wine] {
+        guard case let .winesForPalate(suggestions) = model.uiModel.content?.cards.first(where: { $0.kind == "winesForPalate" }) else { return [] }
+        return suggestions.map(\.wine)
     }
 
     @Test func HOME_R10c_theMapMoved_onlyTheMatchIsReadAgain_underTheCurtain() async throws {
@@ -90,22 +95,38 @@ struct HomeMatchRefreshTests {
         let subscription = model.$uiModel.sink { if $0.isRefreshingMatches { raised = true } }
         defer { subscription.cancel() }
 
-        // A note that only changed its text, or a Not yet wine that left the Cellar.
-        palate.state.cellarWineKeys = ["alvarinho"]
+        // A note that only changed its text.
         await model.refreshMatches()
 
         #expect(!raised)
         #expect(ranking.calls == 0)
         #expect(loader.calls == 1)
-        #expect(model.uiModel.cellarWineKeys == ["alvarinho"])
+    }
+
+    @Test func HOME_R23_aWineThatWentToTheCellar_leavesTheList_withoutCurtainOrRanking() async throws {
+        let model = await loadedViewModel()
+        let listed = try #require(palateWines(model).first)
+        var raised = false
+        let subscription = model.$uiModel.sink { if $0.isRefreshingMatches { raised = true } }
+        defer { subscription.cancel() }
+
+        palate.state.cellarWineKeys = [listed.id]
+        await model.refreshMatches()
+
+        #expect(!raised)
+        #expect(ranking.calls == 0)
+        #expect(loader.calls == 1)
+        #expect(model.uiModel.cellarWineKeys == [listed.id])
+        #expect(!palateWines(model).contains { $0.id == listed.id })
     }
 
     @Test func HOME_R10c_aRatingThatLeftTheMapWhereItWas_rebuildsTheList_withoutRanking() async throws {
         let model = await loadedViewModel()
-        palate.state.ratedWineIDs = []
+        palate.state.ratedVerdicts = ["alvarinho": .maybe]
         await model.refreshMatches()
         #expect(ranking.calls == 0)
         #expect(loader.calls == 1)
+        #expect(model.uiModel.ratedVerdicts == ["alvarinho": .maybe])
     }
 
     @Test func HOME_R10c_notesChanged_areReadOnce_whenTheHomeIsShownAgain() async throws {

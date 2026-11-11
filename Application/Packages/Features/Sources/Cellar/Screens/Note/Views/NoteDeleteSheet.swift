@@ -1,3 +1,4 @@
+import CoreUI
 import SwiftUI
 
 /// "Delete this note?" on the paper: Delete, or Cancel to keep it (CELLAR-R28).

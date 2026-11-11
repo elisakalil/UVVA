@@ -181,13 +181,20 @@ struct HomeCardsBuilderTests {
         #expect(suggestions.map(\.wine.id) == ["boundary", "boundary"])
     }
 
-    @Test func HOME_R23_ratedWine_leavesAndNextEnters() throws {
+    @Test func HOME_R23_wineInTheCellar_leavesAndNextEnters() throws {
         var model = HomeContentModel.full
         let before = try #require(builder.winesForPalate(model).first { $0.axis == .acidity })
-        model.ratedWineIDs.insert(before.wine.id)
+        model.cellarWineKeys.insert(before.wine.id)
         let after = builder.winesForPalate(model)
         #expect(after.allSatisfy { $0.wine.id != before.wine.id })
         #expect(after.contains { $0.axis == .acidity })
+    }
+
+    @Test func HOME_R23_ratedWine_notInTheCellar_stays() throws {
+        var model = HomeContentModel.full
+        let before = builder.winesForPalate(model)
+        model.ratedVerdicts[try #require(before.first).wine.id] = .no
+        #expect(builder.winesForPalate(model) == before)
     }
 
     @Test func HOME_R25_noExtremeAxes_hidesCard() {
@@ -196,9 +203,9 @@ struct HomeCardsBuilderTests {
         #expect(!builder.build(from: model, now: now).map(\.kind).contains("winesForPalate"))
     }
 
-    @Test func HOME_R25_noUnratedWines_hidesCard() {
+    @Test func HOME_R25_everyWineInTheCellar_hidesCard() {
         var model = HomeContentModel.full
-        model.ratedWineIDs = Set(model.catalog.map(\.id))
+        model.cellarWineKeys = Set(model.catalog.map(\.id))
         #expect(!builder.build(from: model, now: now).map(\.kind).contains("winesForPalate"))
     }
 }

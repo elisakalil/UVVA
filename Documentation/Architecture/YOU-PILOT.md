@@ -7,9 +7,9 @@
 - `YouViewModel`: seleção do separador, carregamento geral e cabeçalho.
 - `ProgressViewModel`: apresentação do progresso e abertura do curso sugerido.
 - `MapViewModel`: apresentação do mapa, seleção do histórico e ações de partilha/refazer.
-- `SettingsViewModel`: fotografia, visibilidade e ações da conta; recebe os editores já compostos.
+- `SettingsViewModel`: visibilidade e ações da conta; recebe os editores já compostos.
 - `CertificatesViewModel`: lista de certificados e destinos para Learn.
-- `EditNameViewModel`, `EditPhoneViewModel`, `ReminderViewModel`: rascunhos e estado de gravação de cada editor.
+- `EditNameViewModel`, `EditPhoneViewModel`, `EditPhotoViewModel`, `ReminderViewModel`: rascunhos e estado de gravação de cada editor. O de fotografia recebe a leitura da biblioteca como closure, corta a imagem (`PhotoResizer`), lava-a em azul fora da main thread (`PhotoWash`: Core Image e `VNGenerateForegroundInstanceMaskRequest`, uma camada por objeto) e só grava em "Save"; `nil` remove a foto.
 - Builders: conversão pura de dados em modelos de apresentação.
 - `YouContentModel`: agregado de dados possuído pelo `YouViewModel`; não é observável e não implementa operações.
 

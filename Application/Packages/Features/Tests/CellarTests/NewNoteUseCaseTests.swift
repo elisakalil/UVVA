@@ -1,7 +1,7 @@
 import Core
 import Foundation
 import Testing
-@testable import Cellar
+@testable import CoreUI
 
 @MainActor
 struct NewNoteUseCaseTests {
@@ -34,18 +34,29 @@ struct NewNoteUseCaseTests {
 
     @Test func CELLAR_R17_catalogWine_isFound() async {
         let result = await readLabel(Labels.pontoForteLabel).execute(front: Data(), back: Data())
-        #expect(result == .found(Labels.pontoForte))
+        #expect(result == .read(Labels.pontoForte))
     }
 
-    @Test func CELLAR_R17_unknownWine_isUnsure_withWhatWasRead() async {
+    @Test func CELLAR_R17_unknownWine_goesToTheNote_withWhatWasRead() async {
         let text = LabelText([LabelLine("Vinha Imaginária", height: 0.1), LabelLine("2022"),
                               LabelLine("Syrah", side: .back)])
         let result = await readLabel(text).execute(front: Data(), back: Data())
-        guard case let .unsure(facts) = result else { Issue.record("\(result)"); return }
-        #expect(facts.name == "Vinha Imaginária")
-        #expect(facts.vintage == 2022)
+        guard case let .read(wine) = result else { Issue.record("\(result)"); return }
+        #expect(wine.id == "vinha-imaginaria-2022")
+        #expect(wine.name == "Vinha Imaginária")
+        #expect(wine.vintage == 2022)
+        #expect(wine.grapes == ["Syrah"])
+        #expect(wine.type == "Red")
+        // The map of the catalog's Syrah reds.
+        #expect(wine.profile == Maps.flat(7))
+    }
+
+    @Test func CELLAR_R17_noNameRead_isNameless_withWhatWasRead() async {
+        let text = LabelText([LabelLine("Syrah", side: .back), LabelLine("2022", side: .back)])
+        let result = await readLabel(text).execute(front: Data(), back: Data())
+        guard case let .nameless(facts) = result else { Issue.record("\(result)"); return }
+        #expect(!facts.hasName)
         #expect(facts.grapes == ["Syrah"])
-        #expect(facts.type == "Red")
     }
 
     @Test func CELLAR_R17_modelReading_comesFirst_parserFillsTheGaps() async {
@@ -54,7 +65,7 @@ struct NewNoteUseCaseTests {
                               LabelLine("2024"), LabelLine("Syrah", side: .back)])
         let structured = LabelFacts(name: "Ponto Forte", producer: "Ravasqueira", vintage: 2024)
         let result = await readLabel(text, structured: structured).execute(front: Data(), back: Data())
-        #expect(result == .found(Labels.pontoForte))
+        #expect(result == .read(Labels.pontoForte))
     }
 
     @Test func CELLAR_R21_nothingRead_orReaderFails_isFailed() async {
@@ -147,6 +158,25 @@ struct NewNoteUseCaseTests {
         #expect(await save.maps.rated.isEmpty)
         #expect(save.recalculate.calls.map(\.0) == [Labels.pontoForte.id])
         #expect(save.recalculate.calls.map(\.1) == [.yes])
+    }
+
+    @Test func CELLAR_R14a_ratedOnTheHome_sameVerdict_isNotRatedAgain() async throws {
+        let save = Save(now: now)
+        await save.maps.setHistory([MapChange(date: now, cause: .quiz, values: [:]),
+                                    MapChange(date: now, cause: .rating(wineKey: Labels.pontoForte.id, verdict: .yes), values: [:])])
+        try await save.useCase.execute(NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .yes))
+        #expect(await save.cellar.saved.count == 1)
+        #expect(await save.maps.rated.isEmpty)
+        #expect(save.recalculate.calls.isEmpty)
+    }
+
+    @Test func CELLAR_R14a_ratedOnTheHome_newVerdict_replacesTheRating() async throws {
+        let save = Save(now: now)
+        await save.maps.setHistory([MapChange(date: now, cause: .quiz, values: [:]),
+                                    MapChange(date: now, cause: .rating(wineKey: Labels.pontoForte.id, verdict: .yes), values: [:])])
+        try await save.useCase.execute(NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .no))
+        #expect(await save.maps.rated.isEmpty)
+        #expect(save.recalculate.calls.map(\.1) == [.no])
     }
 
     @Test func CELLAR_R13b_sameWine_sameVerdict_leavesTheMap() async throws {

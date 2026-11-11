@@ -2,17 +2,16 @@ import Core
 import DesignSystem
 import SwiftUI
 
-/// Change or remove the phone (YOU-R15). An empty field removes the number and its contact key.
+/// Change or remove the phone (YOU-R15), in the sheet of the account rows. An empty field removes the number and its
+/// contact key.
 struct EditPhoneView<ViewModel: EditPhoneViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focused: Bool
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(viewModel.uiModel.yourPhoneNumberText).font(UVVAFont.sans(26, .ultraLight)).padding(.top, 30)
-            Text(viewModel.uiModel.soFriendsWhoHaveYouText)
-                .font(UVVAFont.sans(13)).lineSpacing(5).opacity(0.55).padding(.top, 14)
+        YouSheet(title: viewModel.uiModel.yourPhoneNumberText, message: viewModel.uiModel.soFriendsWhoHaveYouText,
+                 height: 370) {
             HStack(alignment: .firstTextBaseline, spacing: 14) {
                 Menu {
                     ForEach(PhoneCountries.all.sorted { $0.name().localizedStandardCompare($1.name()) == .orderedAscending }) { item in
@@ -31,19 +30,15 @@ struct EditPhoneView<ViewModel: EditPhoneViewModelProtocol>: View {
             }
             .padding(.bottom, 13)
             .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
-            .padding(.top, 30)
+            .padding(.top, 26)
             if let notice = viewModel.uiModel.notice {
                 Text(notice).font(UVVAFont.sans(12)).padding(.top, 12)
             }
-            Spacer()
+            Spacer(minLength: 20)
             ActionButton(viewModel.uiModel.saveText, isEnabled: viewModel.uiModel.isValid && !viewModel.uiModel.isSaving) {
                 Task { if await viewModel.savePhone(national: viewModel.uiModel.digits, country: viewModel.uiModel.country) { dismiss() } }
             }
         }
-        .padding(30)
-        .foregroundStyle(UVVAColor.creamFill)
-        .presentationBackground(UVVAColor.mossDeep)
-        .presentationDetents([.medium, .large])
         .onAppear { viewModel.prepare(); focused = true }
     }
 }

@@ -10,7 +10,7 @@ final class PalateStateStub: LoadPalateStateUseCaseProtocol {
     private(set) var calls = 0
 
     init(_ model: HomeContentModel = .full, cellarWineKeys: Set<String> = []) {
-        state = PalateStateModel(palateMap: model.palateMap, ratedWineIDs: model.ratedWineIDs,
+        state = PalateStateModel(palateMap: model.palateMap, ratedVerdicts: model.ratedVerdicts,
                                  lastRating: model.lastRating, cellarWineKeys: cellarWineKeys)
     }
 

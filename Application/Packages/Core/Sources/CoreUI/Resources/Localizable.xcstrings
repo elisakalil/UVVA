@@ -1,0 +1,237 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%lld%%" : {
+
+    },
+    "About intensity" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add to %@" : {
+
+    },
+    "Add what you can read on the label. Only the name is needed." : {
+
+    },
+    "Back label" : {
+
+    },
+    "Check these two things and try again." : {
+
+    },
+    "Choose from library" : {
+
+    },
+    "Choose from the list" : {
+
+    },
+    "Close" : {
+
+    },
+    "Continue" : {
+
+    },
+    "Fill in by hand" : {
+
+    },
+    "Find the wine" : {
+
+    },
+    "Fit the whole label inside the frame, flat and in focus." : {
+
+    },
+    "Fit the whole label inside the frame." : {
+
+    },
+    "Fortified" : {
+
+    },
+    "Front" : {
+
+    },
+    "Grape" : {
+
+    },
+    "Grape or blend" : {
+
+    },
+    "Grape, alcohol and producer are usually here." : {
+
+    },
+    "Grapes" : {
+
+    },
+    "Have you had this wine?" : {
+
+    },
+    "How to serve" : {
+
+    },
+    "In common" : {
+
+    },
+    "Intensity" : {
+
+    },
+    "Light" : {
+
+    },
+    "match with your map" : {
+
+    },
+    "Maybe" : {
+
+    },
+    "Move somewhere brighter and keep the label out of shadow." : {
+
+    },
+    "No" : {
+
+    },
+    "No camera on this device" : {
+
+    },
+    "No matching suggestions" : {
+
+    },
+    "Non-vintage" : {
+
+    },
+    "Not yet" : {
+
+    },
+    "Now the back label" : {
+
+    },
+    "Open Settings" : {
+
+    },
+    "Origin" : {
+
+    },
+    "Pairings" : {
+
+    },
+    "Photograph the front" : {
+
+    },
+    "Producer" : {
+
+    },
+    "Reading grape, region, vintage" : {
+
+    },
+    "Reading your label" : {
+
+    },
+    "Red" : {
+
+    },
+    "Redo" : {
+
+    },
+    "Region" : {
+
+    },
+    "Region or appellation" : {
+
+    },
+    "Rosé" : {
+
+    },
+    "Save note" : {
+
+    },
+    "Sparkling" : {
+
+    },
+    "Style" : {
+
+    },
+    "Take photo" : {
+
+    },
+    "Tasted it differently? Tap or slide a line to give your own reading. It's kept with your note, and the map of this wine follows it." : {
+
+    },
+    "Tasting notes" : {
+
+    },
+    "The camera is off" : {
+
+    },
+    "The map of this wine" : {
+
+    },
+    "The note wasn’t saved. Try again." : {
+
+    },
+    "This takes a few seconds." : {
+
+    },
+    "This wine" : {
+
+    },
+    "This wine and you" : {
+
+    },
+    "Try again" : {
+
+    },
+    "Type" : {
+
+    },
+    "UVVA couldn’t read this wine. Try again." : {
+
+    },
+    "UVVA needs the camera to read labels. Turn it on in Settings, or add the wine by hand." : {
+
+    },
+    "UVVA read this wine and set how strong it is on each axis of the map, from barely there to as much as it gets." : {
+
+    },
+    "Vintage" : {
+
+    },
+    "We couldn’t read your label" : {
+
+    },
+    "What stood out in the glass?" : {
+
+    },
+    "White" : {
+
+    },
+    "Whole label" : {
+
+    },
+    "Wine" : {
+
+    },
+    "Would you drink it again?" : {
+
+    },
+    "Write your own" : {
+
+    },
+    "Yes" : {
+
+    },
+    "Your map" : {
+
+    },
+    "Your note" : {
+
+    },
+    "Your palate map is unavailable" : {
+
+    }
+  },
+  "version" : "1.0"
+}

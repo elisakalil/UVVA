@@ -25,19 +25,18 @@ struct HomeResourcesUIModel {
     var friendsCardTableTitle = String(localized: "Set a table with your friends", bundle: .module)
     var friendsCardPickFriendsTitle = String(localized: "Pick who is coming →", bundle: .module)
     var continueLessonCardContinueTitle = String(localized: "Continue  →", bundle: .module)
-    var learnShortcutsCardSectionTitle = String(localized: "Learn", bundle: .module)
-    var learnShortcutsCardRegionEyebrow = String(localized: "A region", bundle: .module)
+    var learnShortcutsCardRegionEyebrow = String(localized: "Learn a region", bundle: .module)
     var learnShortcutsCardRegionTitle = String(localized: "Uco Valley", bundle: .module)
     var learnShortcutsCardRegionSubtitle = String(localized: "Malbec at altitude", bundle: .module)
     var learnShortcutsCardLessonCount = String(localized: "6 lessons", bundle: .module)
-    var learnShortcutsCardGrapeEyebrow = String(localized: "A grape", bundle: .module)
+    var learnShortcutsCardGrapeEyebrow = String(localized: "Learn a grape", bundle: .module)
     var learnShortcutsCardGrapeTitle = String(localized: "Tempranillo", bundle: .module)
     var learnShortcutsCardGrapeSubtitle = String(localized: "Spain's great red", bundle: .module)
-    var learnShortcutsCardLessonEyebrow = String(localized: "A lesson", bundle: .module)
+    var learnShortcutsCardLessonEyebrow = String(localized: "Learn a lesson", bundle: .module)
     var learnShortcutsCardLessonTitle = String(localized: "Organic, biodynamic and natural", bundle: .module)
     var learnShortcutsCardLessonSubtitle = String(localized: "What the labels really mean", bundle: .module)
     var learnShortcutsCardStartTitle = String(localized: "Start", bundle: .module)
-    var winesForPalateCardSectionTitle = String(localized: "Wines for your palate", bundle: .module)
+    var winesForPalateCardTitle = String(localized: "A wine for each strong trait of your map", bundle: .module)
     var wordOfTheDayCardSectionTitle = String(localized: "Word of the day", bundle: .module)
     var chooseYourWineCardTitle = String(localized: "Choose yourself", bundle: .module)
     var chooseYourWineFamiliarTitle = String(localized: "For my palate", bundle: .module)
@@ -77,8 +76,6 @@ struct HomeResourcesUIModel {
     var wineDetailTastedQuestion = String(localized: "Have you had this wine?", bundle: .module)
     var wineDetailNotYetTitle = String(localized: "Not yet", bundle: .module)
     var wineDetailVerdictQuestion = String(localized: "Would you drink it again?", bundle: .module)
-    var wineDetailKeepQuestion = String(localized: "Add it to your cellar?", bundle: .module)
-    var wineDetailNotNowTitle = String(localized: "Not now", bundle: .module)
 
     var palateMatchTitle = String(localized: "With your palate", bundle: .module)
     var palateMatchCaption = String(localized: "match with your map", bundle: .module)
@@ -255,20 +252,6 @@ struct HomeResourcesUIModel {
                 String(localized: "The fruit plays a small part in this glass.", bundle: .module),
                 String(localized: "There's a faint fruit note in the background.", bundle: .module)
             ]
-        }
-    }
-
-    /// The light line after "Add it to your cellar?", by the verdict (none for a wine not tasted yet) and the answer.
-    func wineSheetFeedback(verdict: Verdict?, kept: Bool) -> String {
-        switch (verdict, kept) {
-        case (.yes, true): String(localized: "Glad you loved it! It's in your cellar now.", bundle: .module)
-        case (.yes, false): String(localized: "Glad you loved it! Your map just learned something.", bundle: .module)
-        case (.maybe, true): String(localized: "Fair enough. It's in your cellar, ready for a second chance.", bundle: .module)
-        case (.maybe, false): String(localized: "Fair enough. Your map took note.", bundle: .module)
-        case (.no, true): String(localized: "Not your glass, then. It's in your cellar, so you won't buy it twice.", bundle: .module)
-        case (.no, false): String(localized: "Not your glass, then. Your map took note.", bundle: .module)
-        case (nil, true): String(localized: "Saved for later. It's waiting in your cellar.", bundle: .module)
-        case (nil, false): String(localized: "No rush. It'll be here when you're ready.", bundle: .module)
         }
     }
 

@@ -36,7 +36,7 @@ enum HomeCardModel: Equatable, Sendable {
     
     var isHalfWidth: Bool {
         switch self {
-        case .continueLesson, .changedMapCard: true
+        case .friends(.hasMatch), .continueLesson, .changedMapCard: true
         default: false
         }
     }

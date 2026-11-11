@@ -70,7 +70,8 @@ public final class HomeViewModel: HomeViewModelProtocol {
 
     /// HOME-R10c: reads again only what follows the map (the Hero, "Wines for your palate" and the map the other
     /// cards are drawn on), under the curtain. The rest of the Home is not read. If nothing those cards follow has
-    /// changed (a note that only changed its text), there is no curtain and the catalog is not ranked.
+    /// changed (a note that only changed its text), there is no curtain and the catalog is not ranked; if only the
+    /// Cellar's wines changed, the list is built again without the curtain (HOME-R23).
     public func refreshMatches() async {
         // A read in flight may have started before the change: wait for it, then read on the new map.
         if let pending = loadTask { try? await pending.value }
@@ -92,28 +93,27 @@ public final class HomeViewModel: HomeViewModelProtocol {
         let state = try await loadPalateStateUseCase.execute()
         try Task.checkCancellation()
 
-        result.cellarWineKeys = state.cellarWineKeys
         let mapMoved = state.palateMap != result.model.palateMap
-        guard mapMoved || state.ratedWineIDs != result.model.ratedWineIDs || state.lastRating != result.model.lastRating else {
-            loaded = result
-            uiModel.cellarWineKeys = state.cellarWineKeys
-            return
-        }
+        let ratingsChanged = state.ratedVerdicts != result.model.ratedVerdicts || state.lastRating != result.model.lastRating
+        guard mapMoved || ratingsChanged || state.cellarWineKeys != result.model.cellarWineKeys else { return }
 
-        uiModel.isRefreshingMatches = true
+        // A wine that only went to the Cellar or left it changes the list (HOME-R23) and nothing else: no curtain.
+        let showsCurtain = mapMoved || ratingsChanged
+        if showsCurtain { uiModel.isRefreshingMatches = true }
         let clock = ContinuousClock()
         let raised = clock.now
 
         result.model.palateMap = state.palateMap
-        result.model.ratedWineIDs = state.ratedWineIDs
+        result.model.ratedVerdicts = state.ratedVerdicts
         result.model.lastRating = state.lastRating
+        result.model.cellarWineKeys = state.cellarWineKeys
         // The ranking only depends on the map: ratings that left it where it was keep the one already read.
         if mapMoved { result.model.catalog = try await rankWinesUseCase.execute(for: state.palateMap) }
         try Task.checkCancellation()
         let cards = await buildCards(from: result.model, at: presentedDay ?? now())
 
         let rest = curtainDuration - (clock.now - raised)
-        if rest > .zero { try await Task.sleep(for: rest) }
+        if showsCurtain, rest > .zero { try await Task.sleep(for: rest) }
         try Task.checkCancellation()
         present(result, cards: cards, at: presentedDay ?? now())
     }
@@ -172,7 +172,8 @@ public final class HomeViewModel: HomeViewModelProtocol {
         uiModel = HomeUIModel(
             content: HomeContentUIModel(cards: cards,
                                          glossary: content.model.glossary, firstName: content.model.firstName, palateMap: content.model.palateMap),
-            inviteLink: content.inviteLink, cellarWineKeys: content.cellarWineKeys, isLoading: false, notice: notice
+            inviteLink: content.inviteLink, cellarWineKeys: content.model.cellarWineKeys,
+            ratedVerdicts: content.model.ratedVerdicts, isLoading: false, notice: notice
         )
     }
 
@@ -192,10 +193,17 @@ public final class HomeViewModel: HomeViewModelProtocol {
         guard (try? await addWineToCellarUseCase.execute(wine)) != nil else { return }
         uiModel.cellarWineKeys.insert(wine.id)
         show(uiModel.resources.savedToCellarNotice(wine))
+        // HOME-R23: a wine in the Cellar leaves "Wines for your palate".
+        await refreshMatches()
+    }
+
+    /// The Hero and the wine sheet open the Cellar's new note with the wine already read.
+    public func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool = false) {
+        coordinator.openCellarNote(for: wine, verdict: verdict, asksTasting: asksTasting)
     }
 
     /// HOME-R24: the map moves and the notice tells which axes moved; what follows the map is read again on it
-    /// (HOME-R10c), so the rated wine leaves the list (HOME-R23) and the Hero is the new top of the match (HOME-R07).
+    /// (HOME-R10c), so the Hero is the new top of the match (HOME-R07) and the wine's sheet only asks about the Cellar.
     public func rate(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async {
         guard let changes = try? await rateWineUseCase.execute(wine, verdict: verdict, addToCellar: addToCellar) else { return }
         show(uiModel.resources.mapUpdatedNotice(changes.map { ($0.axis, $0.wentUp) }, savedToCellar: addToCellar))

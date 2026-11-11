@@ -12,7 +12,7 @@ struct LoadPalateStateUseCase: LoadPalateStateUseCaseProtocol {
         let history = try await maps.history()
         return PalateStateModel(
             palateMap: map,
-            ratedWineIDs: try await cellar.tastedWineKeys().union(Rating.wineKeys(in: history)),
+            ratedVerdicts: Rating.verdicts(in: history),
             lastRating: Rating.last(in: history),
             cellarWineKeys: try await cellar.wineKeys())
     }

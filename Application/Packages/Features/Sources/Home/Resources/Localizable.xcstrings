@@ -4,9 +4,6 @@
     "" : {
 
     },
-    " %lld" : {
-
-    },
     "/%lld" : {
 
     },
@@ -45,26 +42,24 @@
     "6 lessons" : {
 
     },
-    "A grape" : {
-
-    },
-    "A lesson" : {
-
-    },
     "A pairing drawn for your palate" : {
 
     },
     "A quick\nlook around" : {
 
     },
-    "A region" : {
-
-    },
     "A short walk through where things live in UVVA." : {
 
     },
-    "Add it to your cellar?" : {
-
+    "A wine for each strong trait of your map" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um vinho para cada traço forte do seu mapa"
+          }
+        }
+      }
     },
     "Add to cellar" : {
 
@@ -221,12 +216,6 @@
         }
       }
     },
-    "Fair enough. It's in your cellar, ready for a second chance." : {
-
-    },
-    "Fair enough. Your map took note." : {
-
-    },
     "Find my wine" : {
 
     },
@@ -307,12 +296,6 @@
       "extractionState" : "manual"
     },
     "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
-
-    },
-    "Glad you loved it! It's in your cellar now." : {
-
-    },
-    "Glad you loved it! Your map just learned something." : {
 
     },
     "Go for this if you want something light-bodied." : {
@@ -581,7 +564,13 @@
         }
       }
     },
-    "Learn" : {
+    "Learn a grape" : {
+
+    },
+    "Learn a lesson" : {
+
+    },
+    "Learn a region" : {
 
     },
     "Learn the wines you love" : {
@@ -749,9 +738,6 @@
     "No" : {
 
     },
-    "No rush. It'll be here when you're ready." : {
-
-    },
     "No wines match these choices. Try changing a filter." : {
       "localizations" : {
         "pt-BR" : {
@@ -768,16 +754,7 @@
     "Not high in %@, the strongest axis on your map." : {
 
     },
-    "Not now" : {
-
-    },
     "Not yet" : {
-
-    },
-    "Not your glass, then. It's in your cellar, so you won't buy it twice." : {
-
-    },
-    "Not your glass, then. Your map took note." : {
 
     },
     "Notes" : {
@@ -879,9 +856,6 @@
     },
     "Rosé" : {
       "extractionState" : "manual"
-    },
-    "Saved for later. It's waiting in your cellar." : {
-
     },
     "Saved to Cellar" : {
 
@@ -1540,9 +1514,6 @@
     },
     "White" : {
       "extractionState" : "manual"
-    },
-    "Wines for your palate" : {
-
     },
     "Wines you have tasted and wines you want to try, each one measured against your map." : {
 

@@ -2,6 +2,7 @@ import Combine
 import Core
 import Foundation
 import Testing
+import UIKit
 @testable import You
 
 @MainActor
@@ -93,6 +94,19 @@ struct YouViewModelTests {
         #expect(model.progress.uiModel.suggestionStatusMessage == nil)
         model.progress.startCourse()
         #expect(actions.log == ["course path-02"])
+    }
+
+    @Test func YOU_R24_noCertificates_theRowOpensNothing() async {
+        let settings = await make().settings.uiModel
+        #expect(settings.certificates == "0")
+        #expect(!settings.canOpenCertificates)
+    }
+
+    @Test func YOU_R24_aCertificate_theRowOpensTheList() async {
+        let day = Date(timeIntervalSince1970: 1_800_000_000)
+        let viewModel = await make(learning: LearningStub(earned: [Certificate(courseID: "grape-tannat", date: day)]))
+        #expect(viewModel.settings.uiModel.certificates == "1")
+        #expect(viewModel.settings.uiModel.canOpenCertificates)
     }
 
     @Test func YOU_R25_aCertificate_opensItsShare() async {
@@ -301,6 +315,151 @@ struct YouViewModelTests {
         #expect(social.calls == ["key-+351912345678"])
     }
 
+    // MARK: YOU-R14a · Foto de perfil
+
+    /// A picture as it comes from the library: any size, any format.
+    private func picture(width: CGFloat = 40, height: CGFloat = 20) -> Data {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        return UIGraphicsImageRenderer(size: CGSize(width: width, height: height), format: format).pngData { context in
+            UIColor.red.setFill()
+            context.fill(CGRect(x: 0, y: 0, width: width, height: height))
+        }
+    }
+
+    @Test func YOU_R14a_chosenPhoto_isADraftUntilSave() async throws {
+        let profiles = ProfilesSpy(elisa)
+        let viewModel = await make(profiles: profiles)
+        let editor = viewModel.settings.editPhoto
+        let original = picture()
+        editor.prepare()
+        #expect(!editor.uiModel.hasPhoto && !editor.uiModel.canSave)
+
+        await editor.pickPhoto { original }
+        let draft = try #require(editor.uiModel.photo)
+        #expect(UIImage(data: draft)?.size == CGSize(width: 512, height: 512))
+        #expect(editor.uiModel.canSave)
+        #expect(profiles.profile?.photo == nil)
+        #expect(viewModel.uiModel.header.photo == nil)
+
+        #expect(await editor.savePhoto(draft))
+        #expect(profiles.profile?.photo == draft)
+        #expect(viewModel.uiModel.header.photo == draft)
+        #expect(viewModel.settings.uiModel.photo == draft)
+    }
+
+    /// The average colour of a picture, as 0...1 channels.
+    private func averageColor(_ data: Data) -> (red: Double, green: Double, blue: Double)? {
+        guard let cgImage = UIImage(data: data)?.cgImage else { return nil }
+        var pixel = [UInt8](repeating: 0, count: 4)
+        guard let context = CGContext(data: &pixel, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
+                                      space: CGColorSpaceCreateDeviceRGB(),
+                                      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
+        context.interpolationQuality = .medium
+        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: 1, height: 1))
+        return (Double(pixel[0]) / 255, Double(pixel[1]) / 255, Double(pixel[2]) / 255)
+    }
+
+    @Test func YOU_R14a_chosenPhoto_isWashedInTheBluesOfTheSky() async throws {
+        let editor = await make().settings.editPhoto
+        let original = picture()
+        editor.prepare()
+        await editor.pickPhoto { original }
+        let washed = try #require(editor.uiModel.photo)
+        let color = try #require(averageColor(washed))
+        #expect(color.blue > color.red)
+        #expect(color.green > color.red)
+    }
+
+    @Test func YOU_R14a_deeperLayers_takeADeeperBlue() {
+        let haze = PhotoWash.tone(depth: 0), sky = PhotoWash.tone(depth: 1)
+        #expect(sky.light.blue < haze.light.blue && sky.shadow.blue < haze.shadow.blue)
+        #expect(sky.light.blue > sky.light.red && sky.shadow.blue > sky.shadow.red)
+        #expect(PhotoWash.depths(objects: 0) == [0.15])
+        let layers = PhotoWash.depths(objects: 3)
+        #expect(layers.count == 4)
+        #expect(layers.dropFirst().allSatisfy { $0 > layers[0] })
+        #expect(Array(layers.dropFirst()) == layers.dropFirst().sorted(by: >))
+    }
+
+    @Test func YOU_R14a_eachObject_isWashedDeeperThanTheBackground() throws {
+        let square = CGRect(x: 0, y: 0, width: 100, height: 100)
+        let photo = CIImage(color: CIColor(red: 0.6, green: 0.6, blue: 0.6)).cropped(to: square)
+        // One object on the left half, one on the top right quarter.
+        let large = CIImage(color: .white).cropped(to: CGRect(x: 0, y: 0, width: 50, height: 100))
+            .composited(over: CIImage(color: .black).cropped(to: square))
+        let small = CIImage(color: .white).cropped(to: CGRect(x: 50, y: 50, width: 50, height: 50))
+            .composited(over: CIImage(color: .black).cropped(to: square))
+        let washed = PhotoWash.wash(photo, masks: [large, small])
+        let context = CIContext()
+        func blue(at x: CGFloat, _ y: CGFloat) throws -> Double {
+            var pixel = [UInt8](repeating: 0, count: 4)
+            context.render(washed, toBitmap: &pixel, rowBytes: 4, bounds: CGRect(x: x, y: y, width: 1, height: 1),
+                           format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            #expect(pixel[2] > pixel[0])
+            return Double(pixel[2])
+        }
+        let largeObject = try blue(at: 25, 50), smallObject = try blue(at: 75, 75), background = try blue(at: 75, 25)
+        #expect(largeObject < smallObject)
+        #expect(smallObject < background)
+    }
+
+    @Test func YOU_R14a_removePhoto_goesBackToNoPhoto() async {
+        var withPhoto = elisa
+        withPhoto.photo = picture()
+        let profiles = ProfilesSpy(withPhoto)
+        let viewModel = await make(profiles: profiles)
+        let editor = viewModel.settings.editPhoto
+        editor.prepare()
+        #expect(editor.uiModel.hasPhoto && !editor.uiModel.canSave)
+
+        editor.removePhoto()
+        #expect(!editor.uiModel.hasPhoto && editor.uiModel.canSave)
+        #expect(profiles.profile?.photo != nil)
+
+        #expect(await editor.savePhoto(editor.uiModel.photo))
+        #expect(profiles.profile?.photo == nil)
+        #expect(viewModel.uiModel.header.photo == nil)
+    }
+
+    @Test func YOU_R14a_photoThatCannotBeOpened_keepsTheDraft_andSaysSo() async {
+        let editor = await make().settings.editPhoto
+        editor.prepare()
+        await editor.pickPhoto { Data([1, 2, 3]) }
+        #expect(editor.uiModel.notice == editor.uiModel.thatPhotoCouldNotBeText)
+        #expect(!editor.uiModel.hasPhoto && !editor.uiModel.canSave && !editor.uiModel.isLoading)
+
+        let original = picture()
+        await editor.pickPhoto { original }
+        #expect(editor.uiModel.notice == nil)
+        await editor.pickPhoto { nil }
+        #expect(editor.uiModel.notice == editor.uiModel.thatPhotoCouldNotBeText)
+        #expect(editor.uiModel.hasPhoto)
+    }
+
+    @Test func YOU_R14a_closingWithoutSave_dropsTheDraft() async {
+        let profiles = ProfilesSpy(elisa)
+        let editor = await make(profiles: profiles).settings.editPhoto
+        let original = picture()
+        editor.prepare()
+        await editor.pickPhoto { original }
+        editor.prepare()
+        #expect(!editor.uiModel.hasPhoto && !editor.uiModel.canSave)
+        #expect(profiles.profile?.photo == nil)
+    }
+
+    @Test func YOU_R14a_saveFails_staysOnTheDraft_andSaysSo() async {
+        let viewModel = await make(profiles: ProfilesSpy(elisa, failsSaving: true))
+        let editor = viewModel.settings.editPhoto
+        let original = picture()
+        editor.prepare()
+        await editor.pickPhoto { original }
+        #expect(await editor.savePhoto(editor.uiModel.photo) == false)
+        #expect(editor.uiModel.notice == editor.uiModel.yourChangesCouldNotBeText)
+        #expect(editor.uiModel.hasPhoto && editor.uiModel.canSave)
+        #expect(viewModel.uiModel.header.photo == nil)
+    }
+
     // MARK: YOU-R18 to R20 · Lembrete
 
     @Test func YOU_R20_firstReminder_asksPermission_andSchedules() async {
@@ -449,6 +608,13 @@ struct YouViewModelTests {
         #expect(settingsNames.last == "Lisa")
     }
 
+    @Test func YOU_R16_noReminder_opensWithNothingPicked() async {
+        let reminder = await make().settings.reminder
+        reminder.prepare()
+        #expect(reminder.uiModel.draft.hour == nil && reminder.uiModel.draft.moment == nil)
+        #expect(!reminder.uiModel.draft.isOff && !reminder.uiModel.draft.canSave)
+    }
+
     @Test func reminderActions_publishTheEditableDraft() async {
         let model = await make()
         let reminder = model.settings.reminder
@@ -468,7 +634,7 @@ struct YouViewModelTests {
         model.settings.editName.prepare()
         model.settings.editName.updateName("Unsaved draft")
         let photo = Data([1, 2, 3])
-        await model.settings.savePhoto(photo)
+        #expect(await model.settings.editPhoto.savePhoto(photo))
         #expect(model.contentModel.profile?.photo == photo)
         #expect(model.uiModel.header.photo == photo)
         #expect(model.settings.editName.uiModel.name == "Unsaved draft")

@@ -10,8 +10,6 @@ struct CellarCover: View {
         CellarPalette.coverGround
             .overlay {
                 CellarPhoto(data: model.photo)
-                    .opacity(model.isNotYet ? 0.45 : 1)
-                    .saturation(model.isNotYet ? 0.4 : 1)
             }
             .overlay { CellarPalette.coverVeil }
             .overlay {
@@ -43,19 +41,13 @@ struct CellarCover: View {
             .accessibilityLabel(model.accessibilityLabel)
     }
 
+    /// The name alone, on as many lines as it needs: never cut short with "…".
     private var caption: some View {
-        VStack(alignment: .leading, spacing: 3) {
-            Text(model.name)
-                .font(UVVAFont.sans(13))
-                .lineLimit(2)
-            if !model.producer.isEmpty {
-                Text(model.producer)
-                    .font(UVVAFont.sans(11))
-                    .opacity(0.8)
-                    .lineLimit(1)
-            }
-        }
-        .multilineTextAlignment(.leading)
+        Text(model.name)
+            .font(UVVAFont.sans(13))
+            .lineLimit(nil)
+            .fixedSize(horizontal: false, vertical: true)
+            .multilineTextAlignment(.leading)
         .foregroundStyle(.white)
         .shadow(color: .black.opacity(0.45), radius: 3, y: 1)
     }

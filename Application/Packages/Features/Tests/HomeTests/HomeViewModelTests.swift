@@ -434,7 +434,7 @@ struct ModuleStateFlowTests {
             var model = HomeContentModel.full
             model.courses = [CourseRules.summary(of: course,
                 module: ModuleProgress(courseID: course.id, state: state, lastOpenedAt: Date()), progress: [:])]
-            return HomeLoadResultModel(model: model, inviteLink: nil, cellarWineKeys: [])
+            return HomeLoadResultModel(model: model, inviteLink: nil)
         }
         let source = SuspendedHomeSnapshot(old: content(1), latest: content(2))
         let home = HomeViewModel(loadHomeUseCase: source, loadPalateStateUseCase: PalateStateStub(), rankWinesUseCase: WineRankingSpy(),

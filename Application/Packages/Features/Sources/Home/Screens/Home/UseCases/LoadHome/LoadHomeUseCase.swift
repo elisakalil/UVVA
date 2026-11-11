@@ -36,11 +36,11 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
         return HomeLoadResultModel(
             model: HomeContentModel(
                 firstName: profile?.firstName ?? "", palateMap: palate.palateMap, friends: friendList,
-                courses: startedCourses, lastRating: palate.lastRating, ratedWineIDs: palate.ratedWineIDs, catalog: wines,
+                courses: startedCourses, lastRating: palate.lastRating, ratedVerdicts: palate.ratedVerdicts,
+                cellarWineKeys: palate.cellarWineKeys, catalog: wines,
                 glossary: glossary, notifications: [], lessonCatalog: lessonCatalog, modules: snapshot.modules, lessonProgress: progress
             ),
-            inviteLink: profile?.inviteLink,
-            cellarWineKeys: palate.cellarWineKeys
+            inviteLink: profile?.inviteLink
         )
     }
 }

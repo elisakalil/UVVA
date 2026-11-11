@@ -23,12 +23,6 @@
     "Acidity" : {
 
     },
-    "Add to cellar" : {
-
-    },
-    "Add what you can read on the label. Only the name is needed." : {
-
-    },
     "Again" : {
 
     },
@@ -50,10 +44,7 @@
     "Any type" : {
 
     },
-    "Back" : {
-
-    },
-    "Back label" : {
+    "Any vintage" : {
 
     },
     "Body" : {
@@ -65,9 +56,6 @@
     "Cancel" : {
 
     },
-    "Check these two things and try again." : {
-
-    },
     "Clear" : {
 
     },
@@ -77,19 +65,10 @@
     "Close" : {
 
     },
-    "Continue" : {
-
-    },
     "Delete" : {
 
     },
     "Delete this note?" : {
-
-    },
-    "Discard" : {
-
-    },
-    "Discard this note?" : {
 
     },
     "Dry" : {
@@ -98,28 +77,7 @@
     "Edit" : {
 
     },
-    "Edit note" : {
-
-    },
     "Every wine you rate moves your map" : {
-
-    },
-    "Fill in by hand" : {
-
-    },
-    "Find it" : {
-
-    },
-    "Fit the whole label inside the frame, flat and in focus." : {
-
-    },
-    "Fit the whole label inside the frame." : {
-
-    },
-    "Fortified" : {
-
-    },
-    "Front" : {
 
     },
     "Full" : {
@@ -128,28 +86,13 @@
     "Grape" : {
 
     },
-    "Grape or blend" : {
-
-    },
-    "Grape, alcohol and producer are usually here." : {
-
-    },
     "Grid view" : {
-
-    },
-    "Have you had this wine?" : {
 
     },
     "High" : {
 
     },
     "It leaves your cellar and stops counting towards your palate map. This can’t be undone." : {
-
-    },
-    "Keep editing" : {
-
-    },
-    "Kept for you only" : {
 
     },
     "Light" : {
@@ -167,19 +110,10 @@
     "Medium" : {
 
     },
-    "Move somewhere brighter and keep the label out of shadow." : {
-
-    },
-    "New note" : {
-
-    },
     "No" : {
 
     },
     "No bottles in your cellar match these filters." : {
-
-    },
-    "No camera on this device" : {
 
     },
     "No notes for “%@”" : {
@@ -188,55 +122,22 @@
     "Not yet" : {
 
     },
-    "Not yet · add to cellar or find it" : {
-
-    },
     "Note saved" : {
-
-    },
-    "Now the back label" : {
 
     },
     "Off-dry" : {
 
     },
-    "Open Settings" : {
-
-    },
-    "Photograph the front" : {
+    "Pairings" : {
 
     },
     "Producer" : {
 
     },
-    "Reading grape, region, vintage" : {
-
-    },
-    "Reading your label" : {
-
-    },
-    "Red" : {
-
-    },
-    "Redo" : {
-
-    },
     "Region" : {
 
     },
-    "Region or appellation" : {
-
-    },
-    "Required" : {
-
-    },
-    "Rosé" : {
-
-    },
     "Save changes" : {
-
-    },
-    "Save note" : {
 
     },
     "Scan a label" : {
@@ -254,9 +155,6 @@
     "Show 1 bottle" : {
 
     },
-    "Sparkling" : {
-
-    },
     "Sweet" : {
 
     },
@@ -266,40 +164,16 @@
     "Tag" : {
 
     },
-    "Take photo" : {
-
-    },
     "Tannin" : {
 
     },
     "Tap + to photograph your first bottle and add it to your cellar." : {
 
     },
-    "Tasting note" : {
-
-    },
-    "The camera is off" : {
-
-    },
     "The note wasn’t deleted. Try again." : {
 
     },
-    "The note wasn’t saved. Try again." : {
-
-    },
-    "This takes a few seconds." : {
-
-    },
-    "Try again" : {
-
-    },
     "Type" : {
-
-    },
-    "UVVA couldn’t read this wine. Try again." : {
-
-    },
-    "UVVA needs the camera to read labels. Turn it on in Settings, or add the wine by hand." : {
 
     },
     "UVVA’s reading" : {
@@ -308,25 +182,13 @@
     "Vintage" : {
 
     },
-    "We couldn’t read your label" : {
-
-    },
-    "White" : {
-
-    },
-    "Whole label" : {
-
-    },
-    "Wine" : {
+    "What stood out in the glass?" : {
 
     },
     "Would you drink it again?" : {
 
     },
     "Yes" : {
-
-    },
-    "Yes · would you drink it again" : {
 
     },
     "Your Cellar" : {
@@ -339,9 +201,6 @@
 
     },
     "Your note" : {
-
-    },
-    "Your photos and UVVA’s reading won’t be saved." : {
 
     }
   },

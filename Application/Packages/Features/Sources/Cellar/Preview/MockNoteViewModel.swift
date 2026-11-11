@@ -17,19 +17,17 @@ final class MockNoteViewModel: NoteViewModelProtocol {
                                 alcohol: 13.5, createdAt: .now)
         let builder = NotePresentationBuilder(entry: entry, wine: nil)
         var model = NoteUIModel()
-        model.barLabel = model.resources.tastingNoteText
         model.date = builder.date
         model.title = entry.name
         model.subtitle = builder.subtitle
         model.again = builder.again
         model.note = entry.note
         model.facts = builder.facts
-        model.verdicts = builder.verdicts(selected: .yes)
+        model.verdicts = NotePresentationBuilder.verdicts(selected: .yes, resources: model.resources)
         uiModel = model
     }
 
     func load() async {}
-    func close() {}
     func edit() { uiModel.isEditing = true }
     func cancelEdit() { uiModel.isEditing = false }
     func pick(_ verdict: Verdict) {}

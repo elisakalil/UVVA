@@ -1,5 +1,4 @@
 import DesignSystem
-import PhotosUI
 import SwiftUI
 
 /// Settings (YOU-R14 to R27). Language (YOU-R15a) waits for the pt-BR texts.
@@ -8,28 +7,23 @@ struct SettingsTabView<ViewModel: SettingsViewModelProtocol>: View {
 
     @State private var editingName = false
     @State private var editingPhone = false
+    @State private var editingPhoto = false
     @State private var editingReminder = false
     @State private var showingCertificates = false
     @State private var confirming: ConfirmKind?
-    @State private var photoItem: PhotosPickerItem?
 
     var body: some View {
         let model = viewModel.uiModel
-        let photoLabel = SettingsRow(model.profilePhotoText) {
-            Avatar(photo: model.photo, size: 28)
-                .overlay(Circle().strokeBorder(UVVAColor.creamFill.opacity(0.45), lineWidth: 0.5))
-        }
-        .allowsHitTesting(false)
         VStack(spacing: 14) {
             YouPanel {
                 VStack(spacing: 0) {
                     SettingsRow(viewModel.uiModel.nameText, value: model.name, isFirst: true) { editingName = true }
                     SettingsRow(viewModel.uiModel.signedInWithText, value: model.signedInWith)
                     SettingsRow(viewModel.uiModel.phoneNumberText, value: model.phone) { editingPhone = true }
-                    PhotosPicker(selection: $photoItem, matching: .images) {
-                        photoLabel
+                    SettingsRow(model.profilePhotoText, action: { editingPhoto = true }) {
+                        Avatar(photo: model.photo, size: 28)
+                            .overlay(Circle().strokeBorder(UVVAColor.creamFill.opacity(0.45), lineWidth: 0.5))
                     }
-                    .buttonStyle(.plain)
                     SettingsRow(viewModel.uiModel.dailyReminderText, value: model.reminder) { editingReminder = true }
                 }
             }
@@ -44,9 +38,8 @@ struct SettingsTabView<ViewModel: SettingsViewModelProtocol>: View {
                     VStack(spacing: 0) {
                         SettingsRow(viewModel.uiModel.myMapText, value: model.mapVisibility, isFirst: true)
                         SettingsRow(viewModel.uiModel.tablesText, value: model.tables)
-                        SettingsRow(viewModel.uiModel.certificatesText, value: model.certificates) {
-                            showingCertificates = true
-                        }
+                        SettingsRow(viewModel.uiModel.certificatesText, value: model.certificates,
+                                    action: model.canOpenCertificates ? { showingCertificates = true } : nil)
                     }
                     .padding(.top, 10)
                 }
@@ -71,22 +64,16 @@ struct SettingsTabView<ViewModel: SettingsViewModelProtocol>: View {
                 .padding(.top, 10)
             TextAction(viewModel.uiModel.deleteMyAccountText, opacity: 0.55) { open(.delete) }
         }
-        .onChange(of: photoItem) { _, item in
-            guard let item else { return }
-            Task {
-                if let data = try? await item.loadTransferable(type: Data.self), let jpeg = PhotoResizer.squareJPEG(data) {
-                    await viewModel.savePhoto(jpeg)
-                }
-                photoItem = nil
-            }
-        }
         .sheet(isPresented: $editingName) {
             EditNameView(viewModel: viewModel.editName)
         }
         .sheet(isPresented: $editingPhone) {
             EditPhoneView(viewModel: viewModel.editPhone)
         }
-        .fullScreenCover(isPresented: $editingReminder) {
+        .sheet(isPresented: $editingPhoto) {
+            EditPhotoView(viewModel: viewModel.editPhoto)
+        }
+        .sheet(isPresented: $editingReminder) {
             ReminderView(viewModel: viewModel.reminder)
         }
         .fullScreenCover(isPresented: $showingCertificates) {

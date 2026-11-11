@@ -2,8 +2,7 @@ import Core
 import DesignSystem
 import SwiftUI
 
-/// The facts of the day's wine: origin, appellation (when it is notable), grapes, notes and serving down the left, each with its one-line
-/// insight when the content has one, and the vintage alone on the right, under the card's third axis.
+/// Origin and vintage at the top, then grapes and notes side by side.
 struct WineFacts: View {
     var resources = HomeResourcesUIModel()
     var wine: Wine
@@ -12,18 +11,25 @@ struct WineFacts: View {
     private var uiModel: WineFactsUIModel { WineFactsUIModel(wine: wine, now: now, resources: resources) }
 
     var body: some View {
-        let column = VStack(alignment: .leading, spacing: 22) {
-            ForEach(uiModel.facts) { cell($0) }
+        let origins = VStack(alignment: .leading, spacing: 22) {
+            ForEach(uiModel.originFacts) { cell($0) }
         }
-        Group {
+        VStack(alignment: .leading, spacing: 22) {
             if let vintage = wine.vintage {
                 ThirdColumnLayout {
-                    column
+                    origins
                     cell(WineFactsUIModel.Fact(label: resources.wineFactsVintageTitle, value: uiModel.vintageLine(vintage)))
                 }
-            } else {
-                column
+            } else if !uiModel.originFacts.isEmpty {
+                origins
             }
+            if uiModel.grapes != nil || uiModel.notes != nil {
+                HStack(alignment: .top, spacing: 16) {
+                    if let grapes = uiModel.grapes { cell(grapes) }
+                    if let notes = uiModel.notes { cell(notes) }
+                }
+            }
+            if let serving = uiModel.serving { cell(serving) }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -52,8 +58,7 @@ struct WineFacts: View {
     }
 }
 
-/// The first view across the first two thirds, the second in the last third: the card's axes sit in three equal
-/// columns, so the vintage lines up under the third one.
+/// Gives the origin two thirds of the width and the vintage the last third.
 private struct ThirdColumnLayout: Layout {
     var gutter: CGFloat = 16
 

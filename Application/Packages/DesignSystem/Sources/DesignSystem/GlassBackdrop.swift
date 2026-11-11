@@ -180,6 +180,8 @@ private struct GlassBackdropLayer: View {
 enum PanePiece: Hashable {
     /// The pane's outline, filled.
     case shape(radius: CGFloat)
+    /// An inset stroke used as an alpha mask for the glass rim.
+    case rim(radius: CGFloat, lineWidth: CGFloat)
     /// The pane's outline shrunk to inside the denser edge band, its edge softened.
     case center(radius: CGFloat)
     /// A faint shadow under the pane, the pane's outline blurred; cast downwards by `drop`.
@@ -202,6 +204,10 @@ enum PanePiece: Hashable {
         switch self {
         case let .shape(radius):
             return EdgeInsets(top: radius, leading: radius, bottom: radius, trailing: radius)
+        case let .rim(radius, lineWidth):
+            // The continuous curve extends beyond the nominal radius.
+            let corner = 2 * radius + lineWidth
+            return EdgeInsets(top: corner, leading: corner, bottom: corner, trailing: corner)
         case let .center(radius):
             let corner = max(0, radius - FrostedGlass.frostedEdge) + FrostedGlass.frostedEdge
             return EdgeInsets(top: corner, leading: corner, bottom: corner, trailing: corner)
@@ -215,6 +221,8 @@ enum PanePiece: Hashable {
         switch self {
         case let .shape(radius):
             RoundedRectangle(cornerRadius: radius, style: .continuous).fill(.black)
+        case let .rim(radius, lineWidth):
+            RoundedRectangle(cornerRadius: radius, style: .continuous).strokeBorder(.black, lineWidth: lineWidth)
         case let .center(radius):
             let inset = FrostedGlass.frostedEdge
             RoundedRectangle(cornerRadius: max(0, radius - inset), style: .continuous)
@@ -249,7 +257,7 @@ enum PanePiece: Hashable {
     private func outline(in size: CGSize) -> (rect: CGRect, radius: CGFloat, color: UIColor, blur: CGFloat) {
         let bounds = CGRect(origin: .zero, size: size)
         switch self {
-        case let .shape(radius):
+        case let .shape(radius), let .rim(radius, _):
             return (bounds, radius, .black, 0)
         case let .center(radius):
             let inset = FrostedGlass.frostedEdge
@@ -271,10 +279,18 @@ enum PanePiece: Hashable {
         format.scale = scale
         format.opaque = false
         let sharp = UIGraphicsImageRenderer(size: size, format: format).image { context in
-            let path = RoundedRectangle(cornerRadius: outline.radius, style: .continuous).path(in: outline.rect)
-            context.cgContext.addPath(path.cgPath)
-            context.cgContext.setFillColor(outline.color.cgColor)
-            context.cgContext.fillPath()
+            let shape = RoundedRectangle(cornerRadius: outline.radius, style: .continuous)
+            let graphics = context.cgContext
+            if case let .rim(_, lineWidth) = self {
+                graphics.addPath(shape.inset(by: lineWidth / 2).path(in: outline.rect).cgPath)
+                graphics.setStrokeColor(outline.color.cgColor)
+                graphics.setLineWidth(lineWidth)
+                graphics.strokePath()
+            } else {
+                graphics.addPath(shape.path(in: outline.rect).cgPath)
+                graphics.setFillColor(outline.color.cgColor)
+                graphics.fillPath()
+            }
         }
         var image: UIImage? = sharp
         if outline.blur > 0 {

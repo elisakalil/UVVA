@@ -82,9 +82,6 @@ struct WineDetailUIModel: Equatable {
         var facts: [Fact] = []
         if !wine.originLine.isEmpty { facts.append(Fact(label: resources.wineFactsOriginTitle, value: wine.originLine)) }
         facts.append(Fact(label: resources.wineFactsVintageTitle, value: vintageLine, besidePrevious: true))
-        if let serving = wine.serving {
-            facts.append(Fact(label: resources.wineFactsServingTitle, value: "\(serving.lowerBound)–\(serving.upperBound)°C"))
-        }
         facts.append(Fact(label: resources.wineDetailStyleTitle, value: resources.wineFilterLabel(wine.type)))
         let grapeAndNotes = [wine.grapes.joined(separator: ", "), wine.note ?? ""].filter { !$0.isEmpty }
         if !grapeAndNotes.isEmpty {
@@ -103,10 +100,18 @@ struct WineDetailUIModel: Equatable {
         return WineFactsUIModel(wine: wine, now: now, resources: resources).vintageLine(vintage)
     }
 
+    /// "8–10 °C", the first line of "How to serve".
+    var servingTemperature: String? {
+        wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" }
+    }
+
     var howToServe: String? {
         guard let line = wine.howToServe, !line.isEmpty else { return nil }
         return line
     }
+
+    /// "How to serve" shows with the temperature, the line on serving, or both.
+    var showsServing: Bool { servingTemperature != nil || howToServe != nil }
 }
 
 /// The sheet the Home has open over its cards, if any.
@@ -122,16 +127,25 @@ enum WineSheetModel: Identifiable, Equatable {
     }
 }
 
-/// The question at the foot of the sheet, one step at a time (HOME-R24).
+/// The question at the foot of the sheet, over "Add to cellar", which is always there (HOME-R24).
 enum WineSheetStep: Equatable {
     /// "Have you had this wine?"
     case askTasted
-    /// "Would you drink it again?"
-    case askVerdict
-    /// "Add it to your cellar?": after the verdict, or with no verdict for a wine not tasted yet.
-    case askKeep(Verdict?)
-    /// A light line on the answer, before the section fades away.
-    case feedback(String)
-    /// Answered: the foot is gone and the wine has the sheet to itself.
+    /// "Would you drink it again?", with the verdict once it is given: it stays marked and is not asked again.
+    case askVerdict(Verdict?)
+    /// Nothing to ask: "Not yet", or a wine rated before. Only "Add to cellar" is left.
     case done
+
+    /// Where the question starts for a wine: one rated since the Quiz is not asked again (HOME-R24).
+    static func first(rated verdict: Verdict?) -> WineSheetStep {
+        verdict == nil ? .askTasted : .done
+    }
+
+    /// The Cellar's new note asks "Have you had this wine?" itself when the sheet got no full answer (CELLAR-R14a).
+    var leavesTastingOpen: Bool {
+        switch self {
+        case .askTasted, .askVerdict(nil): true
+        case .askVerdict, .done: false
+        }
+    }
 }

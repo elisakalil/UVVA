@@ -153,7 +153,8 @@ struct CellarViewModelTests {
         let model = await make(douro)
         model.openNote("redoma")
         #expect(model.note?.id == "redoma")
-        model.note?.close()
+        // The sheet, dragged down.
+        model.closeNote()
         #expect(model.note == nil)
     }
 

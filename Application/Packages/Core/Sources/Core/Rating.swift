@@ -19,6 +19,15 @@ public struct Rating: Equatable, Sendable {
         Set(history.compactMap { if case let .rating(wineKey, _) = $0.cause { wineKey } else { nil } })
     }
 
+    /// The verdict of every wine rated since the Quiz; a wine rated twice keeps its last one.
+    public static func verdicts(in history: [MapChange]) -> [String: Verdict] {
+        var verdicts: [String: Verdict] = [:]
+        for change in history {
+            if case let .rating(wineKey, verdict) = change.cause { verdicts[wineKey] = verdict }
+        }
+        return verdicts
+    }
+
     /// The last rating in a map's history, with how far it moved each axis from the entry before it (SHARED-R10).
     /// Nil when nothing after the Quiz is a rating.
     public static func last(in history: [MapChange]) -> Rating? {

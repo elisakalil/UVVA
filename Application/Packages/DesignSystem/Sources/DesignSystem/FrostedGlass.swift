@@ -13,11 +13,14 @@ public struct FrostedGlass: View {
     /// The photo belongs to the glass and scrolls with it, instead of staying fixed to the screen behind it.
     /// The You tab's panels carry bg1 this way over the hills of bg2.
     var pinsPhoto: Bool
+    var cachesRim: Bool
 
-    public init(radius: CGFloat = UVVARadius.card, dense: Bool = false, pinsPhoto: Bool = false) {
+    public init(radius: CGFloat = UVVARadius.card, dense: Bool = false, pinsPhoto: Bool = false,
+                cachesRim: Bool = false) {
         self.radius = radius
         self.dense = dense
         self.pinsPhoto = pinsPhoto
+        self.cachesRim = cachesRim
     }
 
     /// Width of the denser band along the edge; inside it the glass is a touch clearer.
@@ -42,7 +45,6 @@ public struct FrostedGlass: View {
 
     public var body: some View {
         let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
-        let borderOpacity = pinsPhoto ? 0.5 : rimOpacity
         ZStack {
             diffusedPhoto
             // Cards are a touch clearer in the centre: less blur and less haze than along the edge.
@@ -56,17 +58,7 @@ public struct FrostedGlass: View {
         // Over a shared backdrop the bitmap above is all there is, already cut. Otherwise the photo moves with the
         // scroll and needs cutting live; a rounded cut is redone on every frame, over the whole visible pane.
         .clipShape(usesSharedBackdrop ? AnyShape(Rectangle()) : AnyShape(shape))
-        .overlay(
-            shape.strokeBorder(
-                LinearGradient(stops: [
-                    .init(color: .white.opacity(0.4 * borderOpacity), location: 0),
-                    .init(color: .white.opacity(0.09 * borderOpacity), location: 0.35),
-                    .init(color: .white.opacity(0.04 * borderOpacity), location: 0.65),
-                    .init(color: .white.opacity(0.2 * borderOpacity), location: 1)
-                ], startPoint: .topLeading, endPoint: .bottomTrailing),
-                lineWidth: 1.2
-            )
-        )
+        .overlay { rim(shape) }
         .overlay { liquidShine(shape) }
         // Kept faint: a darker shadow spreads into the gaps between cards and dulls the photo there.
         // Cast by a plain shape behind the glass rather than by the glass itself, whose content moves
@@ -82,6 +74,32 @@ public struct FrostedGlass: View {
         // Decoration only: the full-screen photo copy and the Liquid Glass layer must never take a touch,
         // or they swallow the scroll.
         .allowsHitTesting(false)
+    }
+
+    @ViewBuilder private func rim(_ shape: RoundedRectangle) -> some View {
+        let opacity = pinsPhoto ? 0.5 : rimOpacity
+        let gradient = LinearGradient(stops: [
+            .init(color: .white.opacity(0.4 * opacity), location: 0),
+            .init(color: .white.opacity(0.09 * opacity), location: 0.35),
+            .init(color: .white.opacity(0.04 * opacity), location: 0.65),
+            .init(color: .white.opacity(0.2 * opacity), location: 1)
+        ], startPoint: .topLeading, endPoint: .bottomTrailing)
+        let lineWidth: CGFloat = 1.2
+
+        if cachesRim {
+            let mask = PanePiece.rim(radius: radius, lineWidth: lineWidth)
+            GeometryReader { proxy in
+                if proxy.size.width > mask.insets.leading + mask.insets.trailing,
+                   proxy.size.height > mask.insets.top + mask.insets.bottom {
+                    // Keep the gradient in the card's coordinate space as its height changes.
+                    gradient.mask { mask.view(scale: displayScale) }
+                } else {
+                    shape.strokeBorder(gradient, lineWidth: lineWidth)
+                }
+            }
+        } else {
+            shape.strokeBorder(gradient, lineWidth: lineWidth)
+        }
     }
 
     /// The grain stays the same over the whole pane.

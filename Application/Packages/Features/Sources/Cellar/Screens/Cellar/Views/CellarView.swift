@@ -1,3 +1,4 @@
+import CoreUI
 import DesignSystem
 import SwiftUI
 
@@ -5,6 +6,7 @@ import SwiftUI
 /// "Search your cellar" fades in once the page is scrolled (CELLAR-R11).
 public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
+    @Binding private var newNote: NewNoteViewModel?
     @FocusState private var isSearchFocused: Bool
     @State private var scrolled: CGFloat = 0
     @State private var headerHeight: CGFloat = 0
@@ -16,8 +18,9 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
     /// The search bar with its padding: the room it takes over the top of the page.
     private static var searchSlot: CGFloat { 56 }
 
-    public init(viewModel: ViewModel) {
+    public init(viewModel: ViewModel, newNote: Binding<NewNoteViewModel?> = .constant(nil)) {
         self.viewModel = viewModel
+        self._newNote = newNote
     }
 
     public var body: some View {
@@ -37,8 +40,13 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
             if isVisible { AccessibilityNotification.Announcement(resources.noteSavedText).post() }
         }
         .task { await viewModel.load() }
-        .fullScreenCover(item: Binding(get: { viewModel.note }, set: { if $0 == nil { viewModel.closeNote() } })) { note in
+        .newNoteSheet($newNote)
+        // CELLAR-R13: the note in a sheet over the Cellar, dragged down to close.
+        .sheet(item: Binding(get: { viewModel.note }, set: { if $0 == nil { viewModel.closeNote() } })) { note in
             NoteView(viewModel: note)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(28)
         }
         .sheet(item: Binding(get: { model.filterSheet }, set: { if $0 == nil { viewModel.closeFilter() } })) { sheet in
             CellarFilterSheet(resources: resources, model: sheet,

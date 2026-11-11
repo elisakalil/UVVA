@@ -91,9 +91,9 @@ struct HomeCardsBuilder: Sendable {
         return best ?? (PalateAxis.allCases[0], 0)
     }
 
-    // HOME-R22, R23, R25
+    // HOME-R22, R23, R25: a wine in the Cellar leaves the list; a rated one stays until it is kept.
     func winesForPalate(_ model: HomeContentModel) -> [PalateWineSuggestion] {
-        let candidates = model.catalog.filter { !model.ratedWineIDs.contains($0.id) }
+        let candidates = model.catalog.filter { !model.cellarWineKeys.contains($0.id) }
         return PalateAxis.allCases.compactMap { axis in
             let target = model.palateMap[axis]
             guard let level = PalateWineSuggestion.Level(target) else { return nil }

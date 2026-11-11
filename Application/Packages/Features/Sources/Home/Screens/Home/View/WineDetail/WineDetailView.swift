@@ -3,7 +3,7 @@ import DesignSystem
 import SwiftUI
 
 /// The body of the wine sheet (HOME-R28a), ink on parchment: the wine and the axis it stands for, how it sits with
-/// the map, its facts, how to serve it and its two maps. The question at the foot is the sheet's own.
+/// the map, its facts, how to serve it, its axes in dots and its two maps. The question at the foot is the sheet's own.
 struct WineDetailView: View {
     var resources = HomeResourcesUIModel()
     var model: WineDetailUIModel
@@ -19,25 +19,28 @@ struct WineDetailView: View {
             header
             palate.padding(.top, 40)
             facts.padding(.top, 44)
-            Button(action: onFindWine) {
-                Text(resources.dailySuggestionCardFindWineTitle)
-                    .font(UVVAFont.sans(12.5, .medium))
-                    .frame(maxWidth: .infinity, minHeight: 45)
-                    .overlay(Capsule().strokeBorder(ink.opacity(0.5), lineWidth: 0.5))
-                    .contentShape(Capsule())
-            }
-            .buttonStyle(.plain)
-            .padding(.top, 32)
+            WineSheetButton(title: resources.dailySuggestionCardFindWineTitle, style: .outlined, action: onFindWine)
+                .padding(.top, 32)
             if let pairings = model.pairings {
                 section(resources.wineDetailPairingsTitle, top: 32, gap: 14) { paragraph(pairings) }
             }
-            if let howToServe = model.howToServe {
-                section(resources.wineDetailServeTitle, top: 44, gap: 14) { paragraph(howToServe) }
+            if model.showsServing {
+                section(resources.wineDetailServeTitle, top: 44, gap: 14) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        if let temperature = model.servingTemperature {
+                            Text(temperature).font(UVVAFont.sans(12.5, .regular))
+                        }
+                        if let howToServe = model.howToServe { paragraph(howToServe) }
+                    }
+                }
             }
+            // The axes in dots over the maps, as in the Hero.
+            WineIntensityList(profile: model.wine.profile)
+                .padding(.top, 44)
             WineMapPager(resources: resources, wine: model.wine.profile, palate: model.palateMap,
                          tint: ink, showsOverlapLegend: true)
                 .id(model.wine.id)
-                .padding(.top, 48)
+                .padding(.top, 44)
         }
         .foregroundStyle(ink)
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -38,6 +38,7 @@ struct CellarResourcesUIModel {
         case .grape: String(localized: "Grape", bundle: .module)
         case .region: String(localized: "Region", bundle: .module)
         case .producer: String(localized: "Producer", bundle: .module)
+        case .vintage: String(localized: "Vintage", bundle: .module)
         }
     }
 
@@ -49,6 +50,7 @@ struct CellarResourcesUIModel {
         case .grape: String(localized: "Any grape", bundle: .module)
         case .region: String(localized: "Any region", bundle: .module)
         case .producer: String(localized: "Any producer", bundle: .module)
+        case .vintage: String(localized: "Any vintage", bundle: .module)
         }
     }
 

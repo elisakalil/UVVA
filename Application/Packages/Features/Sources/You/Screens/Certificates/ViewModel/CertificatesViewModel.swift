@@ -17,5 +17,4 @@ public final class CertificatesViewModel: CertificatesViewModelProtocol {
     }
 
     public func open(_ id: String) { coordinator.openCertificate(id) }
-    public func startLearning() { coordinator.openLearn() }
 }

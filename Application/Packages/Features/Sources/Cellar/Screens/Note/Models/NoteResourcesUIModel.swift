@@ -1,12 +1,9 @@
 import Foundation
 
 struct NoteResourcesUIModel {
-    var tastingNoteText = String(localized: "Tasting note", bundle: .module)
-    var editNoteText = String(localized: "Edit note", bundle: .module)
-    var backText = String(localized: "Back", bundle: .module)
     var againText = String(localized: "Again", bundle: .module)
     var yourNoteText = String(localized: "Your note", bundle: .module)
-    var notePromptText = String(localized: "Kept for you only", bundle: .module)
+    var notePromptText = String(localized: "What stood out in the glass?", bundle: .module)
     var readingText = String(localized: "UVVA’s reading", bundle: .module)
     var drinkAgainText = String(localized: "Would you drink it again?", bundle: .module)
     var editText = String(localized: "Edit", bundle: .module)
@@ -27,7 +24,6 @@ struct NoteResourcesUIModel {
     var tanninText = String(localized: "Tannin", bundle: .module)
     var acidityText = String(localized: "Acidity", bundle: .module)
     var sweetnessText = String(localized: "Sweetness", bundle: .module)
-    var backIcon = "chevron.left"
 
     func verdict(_ verdict: CellarTag) -> String { CellarResourcesUIModel().tag(verdict) }
 

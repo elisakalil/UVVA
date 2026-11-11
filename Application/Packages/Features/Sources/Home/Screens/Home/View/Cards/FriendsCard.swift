@@ -17,14 +17,19 @@ struct FriendsCard: View {
                         .lineSpacing(2)
                         .foregroundStyle(UVVAColor.cream.opacity(0.92))
                 case let .hasMatch(name, compatibility):
-                    HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        Text(resources.compatibility(compatibility))
-                            .font(UVVAFont.sans(46, .ultraLight))
-                        Text(resources.friendMatch(name))
-                            .font(UVVAFont.sans(12.5))
-                            .foregroundStyle(UVVAColor.cream84)
+                    VStack(alignment: .leading, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(resources.compatibility(compatibility))
+                                .font(UVVAFont.sans(46, .ultraLight))
+                            Text(resources.friendMatch(name))
+                                .font(UVVAFont.sans(12.5))
+                                .foregroundStyle(UVVAColor.cream84)
+                                .lineLimit(2)
+                        }
+                        Spacer(minLength: 0)
+                        Text(resources.friendsCardOpenTableTitle).font(UVVAFont.sans(12)).foregroundStyle(UVVAColor.cream84)
                     }
-                    Text(resources.friendsCardOpenTableTitle).font(UVVAFont.sans(12)).foregroundStyle(UVVAColor.cream84)
+                    .frame(maxHeight: .infinity, alignment: .topLeading)
                 case .hasFriends:
                     Text(resources.friendsCardTableTitle)
                         .font(UVVAFont.redGrapes(21))

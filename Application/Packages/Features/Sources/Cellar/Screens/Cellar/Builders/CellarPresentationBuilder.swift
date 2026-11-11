@@ -27,9 +27,9 @@ struct CellarPresentationBuilder {
             let tag = resources.tag(CellarTag(entry))
             let vintage = entry.vintage.map(String.init) ?? ""
             return CellarItemUIModel(
-                id: entry.id, name: entry.name, producer: entry.producer, vintage: vintage,
+                id: entry.id, name: entry.name, vintage: vintage,
                 meta: [entry.region, entry.country, grapes(entry)].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · "),
-                tag: tag, isNotYet: CellarTag(entry) == .notYet, photo: entry.photoFront,
+                tag: tag, photo: entry.photoFront,
                 cover: .at(index),
                 accessibilityLabel: [entry.name, vintage, tag].filter { !$0.isEmpty }.joined(separator: ", ")
             )
@@ -50,12 +50,15 @@ struct CellarPresentationBuilder {
         for entry in others {
             for value in Set(facet.values(of: entry, resources: resources)) { counts[value, default: 0] += 1 }
         }
-        let values: [String] = facet == .tag
-            // Tag always shows its four values, in their own order.
-            ? CellarTag.allCases.map(resources.tag)
-            // The other filters show only what the user's entries have.
-            : Set(entries.flatMap { facet.values(of: $0, resources: resources) })
-                .sorted { $0.localizedStandardCompare($1) == .orderedAscending }
+        // The other filters show only what the user's entries have.
+        let present = Set(entries.flatMap { facet.values(of: $0, resources: resources) })
+        let values: [String] = switch facet {
+        // Tag always shows its four values, in their own order.
+        case .tag: CellarTag.allCases.map(resources.tag)
+        // Vintages run newest first.
+        case .vintage: present.sorted { $0.localizedStandardCompare($1) == .orderedDescending }
+        default: present.sorted { $0.localizedStandardCompare($1) == .orderedAscending }
+        }
         let options = values.map { value in
             let count = counts[value] ?? 0
             return CellarFilterOptionUIModel(value: value, count: String(count),

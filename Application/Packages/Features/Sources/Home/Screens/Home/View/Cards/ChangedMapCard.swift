@@ -14,13 +14,13 @@ struct ChangedMapCard: View {
             VStack(alignment: .leading, spacing: 0) {
                 PalateRadar(map: palateMap, highlight: axis)
                     .frame(width: 70, height: 70)
-                    .padding(.top, 14)
+                    .padding(.top, 6)
                     .frame(maxWidth: .infinity)
-                Spacer(minLength: 16)
+                Spacer(minLength: 6)
                 Text(resources.mapChange(axis: axis, delta: delta))
                     .font(UVVAFont.sans(12, .regular))
                     .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(3)
             }
             .frame(maxHeight: .infinity, alignment: .topLeading)
         }

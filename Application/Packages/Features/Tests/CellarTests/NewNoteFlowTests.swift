@@ -1,7 +1,7 @@
 import Core
 import Foundation
 import Testing
-@testable import Cellar
+@testable import CoreUI
 
 struct NewNoteFlowTests {
     private let front = Data([1])
@@ -18,8 +18,37 @@ struct NewNoteFlowTests {
 
     private func note() -> NewNoteFlow {
         var flow = reading()
-        flow.labelRead(.found(Labels.pontoForte))
+        flow.labelRead(.read(Labels.pontoForte))
         return flow
+    }
+
+    // MARK: CELLAR-R14a · Vinho vindo da Home
+
+    @Test func CELLAR_R14a_aKnownWine_opensOnPaper_withTheVerdictGiven() {
+        let flow = NewNoteFlow(wine: Labels.pontoForte, verdict: .maybe)
+        #expect(flow.step == .note)
+        #expect(flow.wine == Labels.pontoForte)
+        #expect(flow.tasting == .tasted)
+        #expect(flow.draft == NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .maybe, note: ""))
+        #expect(!flow.canRedo)
+    }
+
+    @Test func CELLAR_R14a_aKnownWine_notTastedYet_isReadyToAdd() {
+        var flow = NewNoteFlow(wine: Labels.pontoForte, verdict: nil)
+        #expect(flow.tasting == .notYet)
+        #expect(flow.draft == NewNoteDraft(wine: Labels.pontoForte, status: .wantToTry))
+        // The answer can still change on paper.
+        flow.answer(hasTasted: true)
+        flow.pick(.yes)
+        #expect(flow.draft?.verdict == .yes)
+    }
+
+    @Test func heroWineWithoutAVerdictAsksIfItWasTasted() {
+        let flow = NewNoteFlow(wine: Labels.pontoForte, verdict: nil, asksTasting: true)
+        #expect(flow.step == .note)
+        #expect(flow.wine == Labels.pontoForte)
+        #expect(flow.tasting == .asking)
+        #expect(!flow.canSave)
     }
 
     // MARK: CELLAR-R15 · Câmara / CELLAR-R22 · Câmara recusada
@@ -57,7 +86,7 @@ struct NewNoteFlowTests {
         #expect(flow.photoBack == back)
     }
 
-    @Test func CELLAR_R17_found_opensTheNote_askingIfTasted() {
+    @Test func CELLAR_R17_read_opensTheNote_askingIfTasted() {
         let flow = note()
         #expect(flow.step == .note)
         #expect(flow.wine == Labels.pontoForte)
@@ -65,11 +94,12 @@ struct NewNoteFlowTests {
         #expect(!flow.canSave)
     }
 
-    @Test func CELLAR_R17_unsure_opensFillByHand_withWhatWasRead() {
+    @Test func CELLAR_R17_noName_opensFillByHand_withWhatWasRead() {
         var flow = reading()
-        flow.labelRead(.unsure(LabelFacts(name: "Ponto Forte", vintage: 2024, grapes: ["Syrah", "Alicante Bouschet"])))
+        flow.labelRead(.nameless(LabelFacts(vintage: 2024, grapes: ["Syrah", "Alicante Bouschet"])))
         #expect(flow.step == .manual)
-        #expect(flow.manual.name == "Ponto Forte")
+        #expect(flow.manual.name.isEmpty)
+        #expect(!flow.canContinueManual)
         #expect(flow.manual.vintage == "2024")
         #expect(flow.manual.grape == "Syrah, Alicante Bouschet")
         #expect(flow.photoFront == front)
@@ -176,29 +206,31 @@ struct NewNoteFlowTests {
         #expect(flow.verdict == nil)
     }
 
-    // MARK: CELLAR-R25 · Descartar
+    @Test func personalDetailsAreIncludedWhenSavingAnUntastedWine() throws {
+        var flow = NewNoteFlow(wine: Labels.pontoForte, verdict: nil)
+        flow.addChip("  Touriga Nacional  ", to: .grapes)
+        flow.addChip("touriga nacional", to: .grapes)
+        flow.addChip("Blackberry", to: .notes)
+        flow.addChip("Roast mushrooms", to: .pairings)
+        flow.setIntensity(9, for: .fruit)
+        flow.note = "Try this with dinner"
 
-    @Test func CELLAR_R25_withPhotos_closeAsksFirst() {
-        var flow = reading()
-        #expect(flow.close() == .confirm)
-        #expect(flow.isConfirmingDiscard)
-        flow.keepEditing()
-        #expect(!flow.isConfirmingDiscard)
-        #expect(flow.step == .reading)
+        let draft = try #require(flow.draft)
+        #expect(draft.status == .wantToTry)
+        #expect(draft.note == "Try this with dinner")
+        #expect(draft.wine.grapes == Labels.pontoForte.grapes + ["Touriga Nacional"])
+        #expect(draft.wine.note?.contains("Blackberry") == true)
+        #expect(draft.wine.pairings.last == "Roast mushrooms")
+        #expect(draft.wine.profile[.fruit] == 9)
+        #expect(draft.originalWine == Labels.pontoForte)
     }
 
-    @Test func CELLAR_R25_nothingYet_closesStraightAway() {
-        var flow = NewNoteFlow()
-        flow.cameraChecked(.authorized)
-        #expect(flow.close() == .close)
-        #expect(!flow.isConfirmingDiscard)
-    }
+    @Test func chipOptionsGroupCaseVariantsAndRankCommonSuggestionsFirst() {
+        var first = Labels.pontoForte
+        first.note = "Cedar, plum."
+        var second = Labels.alentejoSyrah
+        second.note = "cedar, blackberry."
 
-    @Test func CELLAR_R25_typedByHand_closeAsksFirst() {
-        var flow = NewNoteFlow()
-        flow.cameraChecked(.denied)
-        flow.fillInByHand()
-        flow.manual.producer = "Ravasqueira"
-        #expect(flow.close() == .confirm)
+        #expect(NewNoteChipField.notes.options(in: [first, second]) == ["Cedar", "blackberry", "plum"])
     }
 }

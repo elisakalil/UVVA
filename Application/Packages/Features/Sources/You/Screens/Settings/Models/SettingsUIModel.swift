@@ -14,6 +14,8 @@ public struct SettingsUIModel: Equatable {
     var mapVisibility: String
     var tables: String
     var certificates: String
+    /// No certificate yet: the row shows 0 and opens nothing, like My Map and Tables (YOU-R24).
+    var canOpenCertificates: Bool
     var mapIsPublic: Bool
     var mapPublicNote: String
     var nameText = String(localized: "Name", bundle: .module)

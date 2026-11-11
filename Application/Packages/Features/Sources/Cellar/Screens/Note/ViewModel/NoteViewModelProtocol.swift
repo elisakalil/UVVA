@@ -5,7 +5,6 @@ import Core
 public protocol NoteViewModelProtocol: ObservableObject, Identifiable {
     var uiModel: NoteUIModel { get }
     func load() async
-    func close()
     func edit()
     func cancelEdit()
     func pick(_ verdict: Verdict)

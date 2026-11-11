@@ -10,25 +10,32 @@ struct WinesForPalateCard: View {
     var onOpen: (PalateWineSuggestion) -> Void = { _ in }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            SectionLabel(text: resources.winesForPalateCardSectionTitle)
-            FrostedCard(radius: UVVARadius.hero, padding: 0) {
-                VStack(alignment: .leading, spacing: 0) {
-                    ForEach(Array(suggestions.enumerated()), id: \.element.axis) { index, suggestion in
-                        if index > 0 {
-                            Rectangle().fill(UVVAColor.cream14).frame(height: 0.5).padding(.horizontal, 26)
-                        }
-                        Button { onOpen(suggestion) } label: {
-                            WineRow(resources: resources, suggestion: suggestion)
-                        }
-                        .buttonStyle(.plain)
+        FrostedCard(radius: UVVARadius.hero, padding: 0) {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(resources.winesForPalateCardTitle)
+                    .font(UVVAFont.redGrapes(21))
+                    .textCase(.uppercase)
+                    .foregroundStyle(UVVAColor.cream.opacity(0.92))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityAddTraits(.isHeader)
+                    .padding(.leading, 26)
+                    .padding(.trailing, 44)
+                    .padding(.top, 18)
+                    .padding(.bottom, 14)
+                ForEach(Array(suggestions.enumerated()), id: \.element.axis) { index, suggestion in
+                    if index > 0 {
+                        Rectangle().fill(UVVAColor.cream14).frame(height: 0.5).padding(.horizontal, 26)
                     }
+                    Button { onOpen(suggestion) } label: {
+                        WineRow(resources: resources, suggestion: suggestion)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .padding(.vertical, 8)
-                .opacity(MatchCurtain.contentOpacity(isLoading))
-                .accessibilityHidden(isLoading)
             }
-            .matchCurtain(isLoading)
+            .padding(.vertical, 8)
+            .opacity(MatchCurtain.contentOpacity(isLoading))
+            .accessibilityHidden(isLoading)
         }
+        .matchCurtain(isLoading)
     }
 }

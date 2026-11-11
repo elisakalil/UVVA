@@ -16,6 +16,9 @@ public final class CellarEntryEntity {
     public var region: String?
     public var country: String?
     public var grapes: [String] = []
+    public var wineProfile: [Double]?
+    public var wineNotes: String?
+    public var pairings: [String]?
     public var alcohol: Double?
     public var classification = ""
     /// `tasted` or `wantToTry` (CELLAR-R01).

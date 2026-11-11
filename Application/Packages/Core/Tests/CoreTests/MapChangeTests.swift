@@ -35,6 +35,16 @@ struct MapChangeTests {
         #expect(Rating.wineKeys(in: history) == ["a", "b"])
     }
 
+    @Test func ratedVerdicts_keepTheLastOneOfEachWine() {
+        let history = [
+            MapChange(date: .now, cause: .quiz, values: [:]),
+            MapChange(date: .now, cause: .rating(wineKey: "a", verdict: .no), values: [:]),
+            MapChange(date: .now, cause: .rating(wineKey: "b", verdict: .yes), values: [:]),
+            MapChange(date: .now, cause: .rating(wineKey: "a", verdict: .maybe), values: [:])
+        ]
+        #expect(Rating.verdicts(in: history) == ["a": .maybe, "b": .yes])
+    }
+
     @Test func lastRating_isNil_withOnlyTheQuiz() {
         #expect(Rating.last(in: [MapChange(date: .now, cause: .quiz, values: [:])]) == nil)
     }

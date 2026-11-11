@@ -16,13 +16,16 @@ public protocol HomeViewModelProtocol: ObservableObject {
     func openLastTable()
     /// The "axis that changed" card (HOME-R17).
     func openMapHistory()
-    /// Saves the wine to the Cellar as Not yet (CELLAR-R13c, HOME-R28).
+    /// Saves a wine to the Cellar as Not yet.
     func addToCellar(_ wine: Wine) async
-    /// "Would you drink it again?" (HOME-R24): moves the map and tells which axes moved; with `addToCellar`, the wine
-    /// goes to the Cellar as Tasted with the verdict.
+    /// Opens the Cellar's new note from the Hero or wine sheet. The Hero asks about tasting if there is no verdict.
+    func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool)
+    /// "Would you drink it again?" (HOME-R24): moves the map and tells which axes moved; with `addToCellar`, a wine
+    /// already in the Cellar becomes Tasted with the verdict.
     func rate(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async
 }
 
 extension HomeViewModelProtocol {
     public func openLesson(_ suggestion: HomeLessonSuggestion) { openCourse(suggestion.course.id) }
+    public func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool) {}
 }

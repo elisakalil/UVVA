@@ -1,6 +1,6 @@
 import Core
 import Foundation
-@testable import Cellar
+@testable import CoreUI
 
 actor CameraStub: CameraAuthorizing {
     var current: CameraAccess

@@ -16,6 +16,7 @@ struct SettingsPresentationBuilder {
             mapVisibility: isPublic ? String(localized: "Public", bundle: .module) : String(localized: "Friends", bundle: .module),
             tables: "0",
             certificates: "\(certificates.count)",
+            canOpenCertificates: !certificates.isEmpty,
             mapIsPublic: isPublic,
             mapPublicNote: isPublic
                 ? String(localized: "Anyone with your link can see your palate map.", bundle: .module)

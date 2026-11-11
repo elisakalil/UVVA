@@ -7,6 +7,8 @@ public protocol HomeCoordinatorProtocol {
     func openLearn(_ kind: CourseKind)
     /// The `+` (HOME-R03): the Cellar's new note (CELLAR-R14).
     func scan()
+    /// Opens the Cellar's new note with the wine already loaded (CELLAR-R14a).
+    func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool)
     /// The friends card with two or more friends (HOME-R11, FRI-R20): the Friends tab, choosing who comes.
     func openFriends()
     /// The match card, with one friend (HOME-R11): the last table (FRI-R17).
@@ -18,6 +20,7 @@ public protocol HomeCoordinatorProtocol {
 extension HomeCoordinatorProtocol {
     public func openLesson(_ suggestion: HomeLessonSuggestion) { openCourse(suggestion.course.id) }
     public func scan() {}
+    public func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool) {}
     public func openFriends() {}
     public func openLastTable() {}
     public func openMapHistory() {}
