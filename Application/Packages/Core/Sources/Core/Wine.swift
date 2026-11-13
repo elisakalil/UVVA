@@ -34,6 +34,13 @@ public struct Wine: Identifiable, Equatable, Sendable {
     /// One line on what the serving temperature does to this kind of wine.
     public var howToServe: String?
 
+    /// The appellation without the alcohol content appended to the classification.
+    public var appellation: String? {
+        let name = classification.components(separatedBy: " · ").first?
+            .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        return name.isEmpty || name.lowercased().hasSuffix("% abv") ? nil : name
+    }
+
     public var displayName: String { producer.isEmpty ? name : "\(name), \(producer)" }
 
     public init(id: String, name: String, producer: String = "", vintage: Int? = nil, type: String = "Red",

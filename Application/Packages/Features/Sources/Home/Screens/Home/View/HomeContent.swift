@@ -100,7 +100,7 @@ struct HomeContent: View {
                            onScan: onScan)
             }
         }
-        .foregroundStyle(UVVAColor.cream)
+        .foregroundStyle(Color.white)
     }
 
     private func squareCard(_ model: HomeCardModel, proxy: ScrollViewProxy) -> some View {
@@ -129,7 +129,7 @@ struct HomeContent: View {
                 .font(UVVAFont.sans(fontSize))
                 .tracking(1.8)
         }
-        .foregroundStyle(UVVAColor.cream60)
+        .foregroundStyle(Color.white.opacity(0.6))
         .accessibilityElement(children: .combine)
         .frame(maxWidth: .infinity)
         .padding(.top, 16)

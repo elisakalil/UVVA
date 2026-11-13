@@ -30,29 +30,29 @@ struct ChooseYourWineCard: View {
                     directionPicker
                     group(resources.chooseYourWineCardTypeTitle) {
                         ForEach(WineDiscovery.types, id: \.self) { item in
-                            Chip(text: resources.wineFilterLabel(item), isSelected: type == item, cutsOutSelectedLabel: true) { type = item }
+                            Chip(text: resources.wineFilterLabel(item), isSelected: type == item, cutsOutSelectedLabel: true, glassTint: .white) { type = item }
                         }
                     }
                     group(resources.chooseYourWineCardRegionTitle) {
                         ForEach(WineDiscovery.countries, id: \.self) { item in
-                            Chip(text: resources.wineFilterLabel(item), isSelected: country == item, cutsOutSelectedLabel: true) { country = item }
+                            Chip(text: resources.wineFilterLabel(item), isSelected: country == item, cutsOutSelectedLabel: true, glassTint: .white) { country = item }
                         }
                     }
                     group(resources.chooseYourWinePairingTitle) {
                         ForEach(WineDiscovery.Pairing.allCases, id: \.self) { item in
-                            Chip(text: resources.wineFilterLabel(item.rawValue), isSelected: pairing == item, cutsOutSelectedLabel: true) {
+                            Chip(text: resources.wineFilterLabel(item.rawValue), isSelected: pairing == item, cutsOutSelectedLabel: true, glassTint: .white) {
                                 pairing = pairing == item ? nil : item
                             }
                         }
                     }
                     group(resources.chooseYourWineCardNotesTitle, hint: resources.chooseYourWineCardNotesHint) {
                         ForEach(WineDiscovery.Note.allCases, id: \.self) { note in
-                            Chip(text: resources.wineFilterLabel(note.rawValue), isSelected: notes.contains(note), cutsOutSelectedLabel: true) { toggle(note) }
+                            Chip(text: resources.wineFilterLabel(note.rawValue), isSelected: notes.contains(note), cutsOutSelectedLabel: true, glassTint: .white) { toggle(note) }
                                 .disabled(notes.count >= resources.maximumNotes && !notes.contains(note))
                         }
                     }
 
-                    PillButton(action: findWine) { Text(resources.chooseYourWineCardFindTitle) }
+                    PillButton(tint: .white, action: findWine) { Text(resources.chooseYourWineCardFindTitle) }
                         .padding(.top, 30)
                 }
             }
@@ -61,10 +61,10 @@ struct ChooseYourWineCard: View {
 
     private var directionPicker: some View {
         HStack(spacing: 6) {
-            Chip(text: resources.chooseYourWineFamiliarTitle, isSelected: direction == .familiar, fillsWidth: true, cutsOutSelectedLabel: true) {
+            Chip(text: resources.chooseYourWineFamiliarTitle, isSelected: direction == .familiar, fillsWidth: true, cutsOutSelectedLabel: true, glassTint: .white) {
                 direction = .familiar
             }
-            Chip(text: resources.chooseYourWineSurpriseTitle, isSelected: direction == .surprise, fillsWidth: true, cutsOutSelectedLabel: true) {
+            Chip(text: resources.chooseYourWineSurpriseTitle, isSelected: direction == .surprise, fillsWidth: true, cutsOutSelectedLabel: true, glassTint: .white) {
                 direction = .surprise
             }
         }

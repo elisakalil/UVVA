@@ -14,8 +14,6 @@ struct WineDetailUIModel: Equatable {
     struct Fact: Equatable, Identifiable {
         var label: String
         var value: String
-        /// In a second column beside the one before it: Vintage beside Origin, Grape & notes beside Style.
-        var besidePrevious = false
         var id: String { label }
     }
 
@@ -80,15 +78,14 @@ struct WineDetailUIModel: Equatable {
     // MARK: The wine
 
     var facts: [Fact] {
-        var facts: [Fact] = []
-        if !wine.originLine.isEmpty { facts.append(Fact(label: resources.wineFactsOriginTitle, value: wine.originLine)) }
-        facts.append(Fact(label: resources.wineFactsVintageTitle, value: vintageLine, besidePrevious: true))
-        facts.append(Fact(label: resources.wineDetailStyleTitle, value: resources.wineFilterLabel(wine.type)))
-        let grapeAndNotes = [wine.grapes.joined(separator: ", "), wine.note ?? ""].filter { !$0.isEmpty }
-        if !grapeAndNotes.isEmpty {
-            facts.append(Fact(label: resources.wineDetailGrapeNotesTitle, value: grapeAndNotes.joined(separator: " · "), besidePrevious: true))
-        }
-        return facts
+        [
+            Fact(label: resources.wineFactsOriginTitle, value: wine.originLine),
+            Fact(label: resources.wineDetailProducerTitle, value: wine.producer),
+            Fact(label: resources.wineDetailStyleTitle, value: resources.wineFilterLabel(wine.type)),
+            Fact(label: resources.wineFactsVintageTitle, value: vintageLine),
+            Fact(label: resources.wineFactsGrapesTitle, value: wine.grapes.joined(separator: ", ")),
+            Fact(label: resources.wineFactsNotesTitle, value: wine.note ?? "")
+        ]
     }
 
     var pairings: String? {

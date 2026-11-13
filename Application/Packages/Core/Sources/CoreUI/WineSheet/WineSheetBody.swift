@@ -37,12 +37,8 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
                 palate.padding(.top, 40)
             }
             facts.padding(.top, 44)
-            if let onFindWine {
-                WineSheetButton(title: strings.findWine, style: .outlined, action: onFindWine)
-                    .padding(.top, 32)
-            }
             if let pairings = content.pairings {
-                section(strings.pairings, top: onFindWine == nil ? 44 : 32, gap: 14) { paragraph(pairings) }
+                section(strings.pairings, top: 44, gap: 14) { paragraph(pairings) }
             }
             if content.showsServing {
                 section(strings.serve, top: 44, gap: 14) {
@@ -53,6 +49,11 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
                         if let howToServe = content.howToServe { paragraph(howToServe) }
                     }
                 }
+            }
+            WineAppellationCard(appellation: content.appellation).padding(.top, 32)
+            if let onFindWine {
+                WineSheetButton(title: strings.findWine, style: .outlined, action: onFindWine)
+                    .padding(.top, 32)
             }
             // The axes in dots over the maps, as in the Hero.
             VStack(alignment: .leading, spacing: 0) {
@@ -110,32 +111,18 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
     }
 
     private var facts: some View {
-        VStack(alignment: .leading, spacing: 22) {
-            ForEach(rows, id: \.first?.id) { row in
-                HStack(alignment: .top, spacing: 24) {
-                    ForEach(row) { fact in
-                        VStack(alignment: .leading, spacing: 6) {
-                            label(fact.label)
-                            Text(fact.value)
-                                .font(UVVAFont.sans(12.5, .regular))
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .accessibilityElement(children: .combine)
-                    }
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 24, alignment: .topLeading), count: 2),
+                  alignment: .leading, spacing: 22) {
+            ForEach(content.facts) { fact in
+                VStack(alignment: .leading, spacing: 6) {
+                    label(fact.label)
+                    Text(fact.value.isEmpty ? "—" : fact.value)
+                        .font(UVVAFont.sans(12.5, .regular))
+                        .fixedSize(horizontal: false, vertical: true)
                 }
+                .accessibilityElement(children: .combine)
             }
         }
-    }
-
-    /// Two columns where a fact sits beside the one before it (Origin | Vintage, Style | Grape & notes); the rest
-    /// on a line of their own.
-    private var rows: [[WineSheetContent.Fact]] {
-        var rows: [[WineSheetContent.Fact]] = []
-        for fact in content.facts {
-            if fact.besidePrevious, let last = rows.last, last.count == 1 { rows[rows.count - 1].append(fact) } else { rows.append([fact]) }
-        }
-        return rows
     }
 
     private func section<Content: View>(_ title: String, top: CGFloat, gap: CGFloat = 18,
@@ -148,6 +135,7 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
                 .accessibilityAddTraits(.isHeader)
             content()
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, top)
     }
 

@@ -53,11 +53,11 @@ struct HeroCard: View {
                 .accessibilityHidden(!open)
 
                 VStack(spacing: 0) {
-                    PillButton(style: .outline, action: { search = WineSearch.url(for: wine) }) { Text(resources.dailySuggestionCardFindWineTitle) }
+                    PillButton(style: .outline, tint: .white, action: { search = WineSearch.url(for: wine) }) { Text(resources.dailySuggestionCardFindWineTitle) }
                     // Folded away with the rest of the open card rather than added and removed, so it never fades
                     // out on its own where it stood while the card closes around it.
                     if !isInCellar {
-                        PillButton(action: onSaveToCellar) { Text(resources.dailySuggestionCardAddTitle) }
+                        PillButton(tint: .white, action: onSaveToCellar) { Text(resources.dailySuggestionCardAddTitle) }
                             .padding(.top, 10)
                             .frame(height: open ? nil : 0, alignment: .top)
                             .clipped()
@@ -98,7 +98,7 @@ struct HeroCard: View {
                     .opacity(open ? 1 : 0)
             }
             .frame(maxWidth: .infinity, minHeight: 44)
-            .background { Capsule().fill(UVVAColor.creamFill).opacity(open ? 0 : 1) }
+            .background { Capsule().fill(Color.white).opacity(open ? 0 : 1) }
             .contentShape(Capsule())
         }
         .buttonStyle(.plain)

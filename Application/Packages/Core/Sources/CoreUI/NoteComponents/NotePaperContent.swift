@@ -15,7 +15,6 @@ public struct NotePaperResources {
     public var findWineText = String(localized: "Find the wine", bundle: .module)
     public var grapesText = String(localized: "Grapes", bundle: .module)
     public var notesText = String(localized: "Notes", bundle: .module)
-    public var grapeNotesText = String(localized: "Grape & notes", bundle: .module)
     public var pairingsText = String(localized: "Pairings", bundle: .module)
     public var intensityText = String(localized: "Intensity", bundle: .module)
     public var wineMapText = String(localized: "The map of this wine", bundle: .module)
@@ -76,6 +75,7 @@ public struct NotePaperContent: Equatable {
     public var title: String
     public var producer: String
     public var origin: String
+    public var appellation: String?
     /// Style and Vintage, under Origin and Producer.
     public var facts: [NoteFactUIModel]
     /// "14–16 °C", then the line on serving; empty when the wine has neither.
@@ -93,6 +93,7 @@ public struct NotePaperContent: Equatable {
         title = wine.name
         producer = wine.producer
         origin = wine.origin
+        appellation = wine.appellation
         facts = [
             NoteFactUIModel(label: resources.styleText, value: resources.type(wine.type)),
             NoteFactUIModel(label: resources.vintageText, value: wine.vintage.map(String.init) ?? resources.nonVintageText)

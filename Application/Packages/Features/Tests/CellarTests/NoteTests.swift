@@ -27,11 +27,9 @@ struct NoteViewModelTests {
         let content = try #require(model.content)
         #expect(content.title == "Ponto Forte")
         #expect(content.eyebrow == "Ravasqueira")
-        #expect(content.facts.map(\.label) == ["Origin", "Vintage", "Style", "Grape & notes"])
-        #expect(content.facts.map(\.value) == ["Vinho Regional Alentejano, Portugal", "2024 · 2 years", "Red",
-                                                "Syrah, Viognier"])
-        // Vintage beside Origin, Grape & notes beside Style.
-        #expect(content.facts.filter(\.besidePrevious).map(\.label) == ["Vintage", "Grape & notes"])
+        #expect(content.facts.map(\.label) == ["Origin", "Producer", "Style", "Vintage", "Grapes", "Notes"])
+        #expect(content.facts.map(\.value) == ["Vinho Regional Alentejano, Portugal", "Ravasqueira", "Red",
+                                                "2024 · 2 years", "Syrah, Viognier", ""])
         #expect(model.note == "Dry.")
         #expect(model.coverTag == "Yes")
         // No map read yet: no match.
@@ -59,6 +57,7 @@ struct NoteViewModelTests {
     @Test func CELLAR_R26_theEntrysOwnCopy_comesBeforeTheCatalog() async throws {
         var entry = tasted
         entry.wineNotes = "Cherry"
+        entry.classification = "Alentejo DOC · 13.5% abv"
         entry.pairings = ["Cheese"]
         var wine = Maps.wine("ponto-forte", 9)
         wine.note = "plum"
@@ -66,8 +65,10 @@ struct NoteViewModelTests {
         let model = make(entry, wine: wine)
         await model.load()
         let content = try #require(model.uiModel.content)
-        #expect(content.facts.last?.value == "Syrah, Viognier · Cherry")
+        #expect(content.facts.suffix(2).map(\.label) == ["Grapes", "Notes"])
+        #expect(content.facts.suffix(2).map(\.value) == ["Syrah, Viognier", "Cherry"])
         #expect(content.pairings == "Cheese")
+        #expect(content.appellation == "Alentejo DOC")
     }
 
     // MARK: CELLAR-R27 · Editar

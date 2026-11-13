@@ -10,6 +10,10 @@ public enum UVVAIllustration {
         Image("Grape\(min(max(number, 1), grapeCount))", bundle: .module).renderingMode(.template)
     }
 
+    public static var certificateSeal: Image {
+        Image("UVVACertificateSeal", bundle: .module).renderingMode(.original)
+    }
+
     /// The engraved plate beside "The perfect table" on the Home hero.
     public static var plate: Image {
         Image("Plate", bundle: .module).renderingMode(.template)

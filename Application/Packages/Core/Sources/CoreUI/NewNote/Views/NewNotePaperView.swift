@@ -43,7 +43,7 @@ struct NewNotePaperView: View {
                         }
                         NotePaperMatch(match: content.match, resources: resources.paper)
                         NotePaperFacts(content: content, resources: resources.paper)
-                        NotePaperFindWine(title: resources.paper.findWineText, url: content.findURL)
+                        WineAppellationCard(appellation: content.appellation)
                         ForEach([NewNoteChipField.grapes, .notes, .pairings]) { field in
                             NotePaperChips(label: chipTitle(field), chips: content.chips(field),
                                            addLabel: resources.paper.addText(chipTitle(field))) {
@@ -56,7 +56,7 @@ struct NewNotePaperView: View {
                                            onInfo: { isExplainingIntensity = true }, onPick: onIntensity)
                         NotePaperMaps(profile: content.profile, palate: content.palate, resources: resources.paper)
                         noteField
-                        end
+                        end(findURL: content.findURL)
                         #if DEBUG
                         if let text = model.readingDebugText { NewNoteReadingDebugView(text: text) }
                         #endif
@@ -198,11 +198,16 @@ struct NewNotePaperView: View {
     }
 
     /// The same question and button as the foot of the Home's wine sheet.
-    private var end: some View {
+    private func end(findURL: URL?) -> some View {
         VStack(spacing: 12) {
+            if let tastingQuestion {
+                WineTastingActions(question: tastingQuestion, primaryTitle: nil,
+                                   questionOpacity: isQuestionFading ? 0 : 1)
+            }
+            NotePaperFindWine(title: resources.paper.findWineText, url: findURL)
             // Always there: unanswered, the wine goes in as Not yet; a "Yes" with no verdict is asked for it.
-            WineTastingActions(question: tastingQuestion, primaryTitle: resources.saveNoteText,
-                               isPrimaryEnabled: !model.isWorking, questionOpacity: isQuestionFading ? 0 : 1) {
+            WineTastingActions(question: nil, primaryTitle: resources.saveNoteText,
+                               isPrimaryEnabled: !model.isWorking) {
                 isNoteFocused = false
                 onSave()
             }

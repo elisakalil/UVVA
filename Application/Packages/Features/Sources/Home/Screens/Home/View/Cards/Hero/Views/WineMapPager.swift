@@ -7,7 +7,7 @@ struct WineMapPager: View {
     var wine: PalateMap
     var palate: PalateMap
     var active = true
-    var tint: Color = UVVAColor.cream
+    var tint: Color = Color.white
     var showsOverlapLegend = false
 
     var body: some View {

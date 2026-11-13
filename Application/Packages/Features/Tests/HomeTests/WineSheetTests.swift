@@ -98,12 +98,10 @@ struct WineDetailUIModelTests {
     @Test func HOME_R28a_theWine_factsInTheDesignOrder() {
         let detail = model(wine(), .discovery(.familiar, index: 0, count: 1))
         let facts = detail.facts
-        #expect(facts.map(\.label) == ["Origin", "Vintage", "Style", "Grape & notes"])
-        #expect(facts.map(\.value) == ["Monção e Melgaço, Portugal", "2023 · 3 years", "White",
-                                       "Alvarinho · Lemon, white peach"])
+        #expect(facts.map(\.label) == ["Origin", "Producer", "Style", "Vintage", "Grapes", "Notes"])
+        #expect(facts.map(\.value) == ["Monção e Melgaço, Portugal", "Soalheiro", "White", "2023 · 3 years",
+                                       "Alvarinho", "Lemon, white peach"])
         #expect(detail.pairings == "Shellfish, Grilled fish")
-        // Vintage beside Origin, Grape & notes beside Style.
-        #expect(facts.filter(\.besidePrevious).map(\.label) == ["Vintage", "Grape & notes"])
     }
 
     @Test func noVintage_readsNonVintage() {

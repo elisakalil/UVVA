@@ -32,7 +32,9 @@ struct GrapeCurtainFrame: View {
     var sprites: [CGImage]
 
     var body: some View {
-        Canvas { context, size in
+        // Drawn off the main thread: a screen of cards loads at once, each curtain drawn again on every frame, and
+        // drawn on the main thread they took the frames from the animations running meanwhile (the Hero folding).
+        Canvas(rendersAsynchronously: true) { context, size in
             guard !sprites.isEmpty else { return }
             // Template images, drawn in cream like every other bunch of the app.
             let images = sprites.map { sprite -> GraphicsContext.ResolvedImage in

@@ -4,7 +4,7 @@ import DesignSystem
 import SwiftUI
 
 /// A saved note (CELLAR.md §5), in a sheet that is dragged down to close (CELLAR-R13): the wine as the Home's wine
-/// sheet shows it, read only, with the photos and the user's note after the name. Edit opens the new note.
+/// sheet shows it, read only, with the photos after the name and the user's note after the maps. Edit opens the new note.
 public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     @State private var search: URL?
@@ -21,9 +21,13 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
             VStack(spacing: 0) {
                 if let content = model.content {
                     WineSheetBody(content: content, strings: WineSheetStrings(resources: resources.paper),
-                                  onFindWine: { search = content.findURL },
+                                  onFindWine: nil,
                                   headerAccessory: { added },
-                                  afterHeader: { photosAndNote })
+                                  afterHeader: { photos })
+                }
+                if let note = model.note {
+                    NotePaperNote(label: resources.paper.yourNoteText, text: note)
+                        .padding(.top, 64)
                 }
                 end.padding(.top, 56)
             }
@@ -54,19 +58,23 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
             .padding(.top, 8)
     }
 
-    /// The labels, with the verdict on the front, and what the user wrote.
-    @ViewBuilder private var photosAndNote: some View {
-        NoteCover(front: model.photoFront, back: model.photoBack, tag: model.coverTag)
-            .clipShape(RoundedRectangle(cornerRadius: 18))
-            .padding(.top, 28)
-        if let note = model.note {
-            NotePaperNote(label: resources.paper.yourNoteText, text: note)
-                .padding(.top, 40)
+    /// The labels, with the verdict on the front.
+    @ViewBuilder private var photos: some View {
+        if model.photoFront != nil || model.photoBack != nil {
+            NoteCover(front: model.photoFront, back: model.photoBack, tag: model.coverTag)
+                .clipShape(RoundedRectangle(cornerRadius: 18))
+                .padding(.top, 28)
         }
     }
 
     private var end: some View {
         VStack(spacing: 0) {
+            if let content = model.content {
+                WineSheetButton(title: resources.paper.findWineText, style: .outlined) {
+                    search = content.findURL
+                }
+                .padding(.bottom, 12)
+            }
             HStack(spacing: 32) {
                 linkButton(resources.editText) { viewModel.edit() }
                 linkButton(resources.deleteText) { viewModel.askToDelete() }

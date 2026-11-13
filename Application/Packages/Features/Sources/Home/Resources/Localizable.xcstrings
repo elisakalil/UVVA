@@ -306,9 +306,6 @@
         }
       }
     },
-    "Grape & notes" : {
-
-    },
     "Grapes" : {
 
     },
@@ -781,6 +778,9 @@
           }
         }
       }
+    },
+    "Producer" : {
+
     },
     "Red" : {
       "extractionState" : "manual"

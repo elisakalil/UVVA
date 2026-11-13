@@ -24,9 +24,10 @@ struct WineDetailView: View {
         WineSheetContent(title: model.title, eyebrow: model.eyebrow, percentage: model.percentage,
                          percentageCaption: model.percentageCaption, sharedLine: model.sharedLine,
                          apartLine: model.apartLine,
-                         facts: model.facts.map { .init(label: $0.label, value: $0.value, besidePrevious: $0.besidePrevious) },
+                         facts: model.facts.map { .init(label: $0.label, value: $0.value) },
                          pairings: model.pairings, servingTemperature: model.servingTemperature,
-                         howToServe: model.howToServe, profile: model.wine.profile, palate: model.palateMap)
+                         howToServe: model.howToServe, profile: model.wine.profile, palate: model.palateMap,
+                         appellation: model.wine.appellation)
     }
 
     private var strings: WineSheetStrings {

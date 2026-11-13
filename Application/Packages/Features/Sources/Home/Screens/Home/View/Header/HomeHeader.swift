@@ -36,7 +36,7 @@ struct HomeHeader: View {
                 Text(resources.homeHeaderBrand)
                     .font(UVVAFont.whiteGrape(Self.logoMax))
                     .tracking(0.02 * Self.logoMax)
-                    .foregroundStyle(UVVAColor.logoInk)
+                    .foregroundStyle(Color.white)
                     .lineLimit(1)
                     .fixedSize()
                     .onGeometryChange(for: CGSize.self) { $0.size } action: { logoSize = $0 }
@@ -53,12 +53,12 @@ struct HomeHeader: View {
                     .spotlightAnchor(HomeSpotlightID.scan)
                     Button {} label: {
                         BellIcon()
-                            .stroke(UVVAColor.cream, style: StrokeStyle(lineWidth: 1.1, lineCap: .round, lineJoin: .round))
+                            .stroke(Color.white, style: StrokeStyle(lineWidth: 1.1, lineCap: .round, lineJoin: .round))
                             .frame(width: 21, height: 21)
                             .frame(width: Self.buttonSize, height: Self.buttonSize)
                             .overlay(alignment: .topTrailing) {
                                 if hasUnread {
-                                    Circle().fill(UVVAColor.cream).frame(width: 3, height: 3)
+                                    Circle().fill(Color.white).frame(width: 3, height: 3)
                                         .padding(.top, 5).padding(.trailing, 6)
                                 }
                             }
@@ -66,13 +66,13 @@ struct HomeHeader: View {
                     .accessibilityLabel(hasUnread ? resources.homeHeaderUnreadLabel : resources.homeHeaderNotificationsLabel)
                 }
                 .buttonStyle(.plain)
-                .foregroundStyle(UVVAColor.cream)
+                .foregroundStyle(Color.white)
             }
 
             Text(greeting)
                 .font(UVVAFont.sans(12.5, .ultraLight))
                 .tracking(0.28)
-                .foregroundStyle(UVVAColor.cream.opacity(0.9))
+                .foregroundStyle(Color.white.opacity(0.9))
                 .frame(maxWidth: 280, alignment: .leading)
                 .padding(.top, 16)
                 .frame(height: Self.greetingBlock * (1 - greetingProgress), alignment: .top)

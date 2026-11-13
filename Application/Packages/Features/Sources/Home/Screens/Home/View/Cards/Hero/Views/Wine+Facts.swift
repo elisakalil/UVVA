@@ -9,10 +9,4 @@ extension Wine {
         guard let country, !country.isEmpty, country != region else { return region }
         return "\(region), \(country)"
     }
-
-    /// "Chianti Classico DOCG", without the strength the classification carries after it.
-    var appellation: String? {
-        let name = classification.components(separatedBy: " · ").first?.trimmingCharacters(in: .whitespaces) ?? ""
-        return name.isEmpty ? nil : name
-    }
 }

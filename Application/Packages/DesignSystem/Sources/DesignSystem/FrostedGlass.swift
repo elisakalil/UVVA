@@ -127,12 +127,13 @@ public struct FrostedGlass: View {
         GeometryReader { proxy in
             let cap = radius + Self.edgeReach
             if min(proxy.size.width, proxy.size.height) > 2 * cap,
-               let image = EdgeLight.image(radius: radius, dense: dense, innerGlow: pinsPhoto, scale: displayScale) {
+               let image = EdgeLight.image(radius: radius, dense: dense, innerGlow: pinsPhoto,
+                                           strongerHaze: sharesBackdrop, scale: displayScale) {
                 Image(uiImage: image)
                     .resizable(capInsets: EdgeInsets(top: cap, leading: cap, bottom: cap, trailing: cap))
             } else {
                 // Too small to stretch: small enough to keep whole as one bitmap.
-                EdgeLight(radius: radius, dense: dense, innerGlow: pinsPhoto).drawingGroup()
+                EdgeLight(radius: radius, dense: dense, innerGlow: pinsPhoto, strongerHaze: sharesBackdrop).drawingGroup()
             }
         }
     }
@@ -212,6 +213,7 @@ struct EdgeLight: View {
     /// Even haze across the thin chrome (the tab bar).
     var dense: Bool
     var innerGlow: Bool
+    var strongerHaze: Bool
 
     var body: some View {
         let shape = RoundedRectangle(cornerRadius: radius, style: .continuous)
@@ -233,11 +235,15 @@ struct EdgeLight: View {
     /// The centre's haze over the whole pane, then a little more outside 15 pt from the edge and a little more
     /// again outside 10 pt.
     private var haze: some View {
-        ZStack {
-            Color.white.opacity(FrostedGlass.centerHaze)
-            Color.white.opacity(FrostedGlass.bandHaze - FrostedGlass.centerHaze)
+        let center = strongerHaze ? 0.08 : FrostedGlass.centerHaze
+        let band = strongerHaze ? 0.09 : FrostedGlass.bandHaze
+        let outer = strongerHaze ? 0.10 : FrostedGlass.outerHaze
+        // Account for the haze already underneath each band.
+        return ZStack {
+            Color.white.opacity(center)
+            Color.white.opacity((band - center) / (strongerHaze ? 1 - center : 1))
                 .mask { outside(FrostedGlass.frostedEdge) }
-            Color.white.opacity(FrostedGlass.outerHaze - FrostedGlass.bandHaze)
+            Color.white.opacity((outer - band) / (strongerHaze ? 1 - band : 1))
                 .mask { outside(FrostedGlass.outerHazeWidth) }
         }
     }
@@ -258,6 +264,7 @@ struct EdgeLight: View {
         var radius: CGFloat
         var dense: Bool
         var innerGlow: Bool
+        var strongerHaze: Bool
         var scale: CGFloat
     }
 
@@ -265,12 +272,14 @@ struct EdgeLight: View {
 
     /// The edge light of a pane just big enough to hold its corners and the even middle: one point wider and
     /// taller than the two corners, so that middle point is what stretches over a bigger pane.
-    @MainActor static func image(radius: CGFloat, dense: Bool, innerGlow: Bool, scale: CGFloat) -> UIImage? {
-        let key = Key(radius: radius, dense: dense, innerGlow: innerGlow, scale: scale)
+    @MainActor static func image(radius: CGFloat, dense: Bool, innerGlow: Bool, strongerHaze: Bool,
+                                 scale: CGFloat) -> UIImage? {
+        let key = Key(radius: radius, dense: dense, innerGlow: innerGlow, strongerHaze: strongerHaze, scale: scale)
         if let image = images[key] { return image }
         let side = 2 * (radius + FrostedGlass.edgeReach) + 1
         let renderer = ImageRenderer(
-            content: EdgeLight(radius: radius, dense: dense, innerGlow: innerGlow).frame(width: side, height: side)
+            content: EdgeLight(radius: radius, dense: dense, innerGlow: innerGlow, strongerHaze: strongerHaze)
+                .frame(width: side, height: side)
         )
         renderer.scale = scale
         renderer.isOpaque = false

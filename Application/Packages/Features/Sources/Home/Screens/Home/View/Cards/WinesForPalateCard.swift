@@ -24,7 +24,7 @@ struct WinesForPalateCard: View {
                     .padding(.bottom, 14)
                 ForEach(Array(suggestions.enumerated()), id: \.element.axis) { index, suggestion in
                     if index > 0 {
-                        Rectangle().fill(UVVAColor.cream14).frame(height: 0.5).padding(.horizontal, 26)
+                        Rectangle().fill(Color.white.opacity(0.14)).frame(height: 0.5).padding(.horizontal, 26)
                     }
                     Button { onOpen(suggestion) } label: {
                         WineRow(resources: resources, suggestion: suggestion)

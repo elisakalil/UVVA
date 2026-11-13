@@ -8,14 +8,11 @@ public struct WineSheetContent: Equatable {
     public struct Fact: Equatable, Identifiable {
         public var label: String
         public var value: String
-        /// In a second column beside the one before it: Vintage beside Origin, Grape & notes beside Style.
-        public var besidePrevious: Bool
         public var id: String { label }
 
-        public init(label: String, value: String, besidePrevious: Bool = false) {
+        public init(label: String, value: String) {
             self.label = label
             self.value = value
-            self.besidePrevious = besidePrevious
         }
     }
 
@@ -28,6 +25,7 @@ public struct WineSheetContent: Equatable {
     public var sharedLine: String?
     public var apartLine: String?
     public var facts: [Fact]
+    public var appellation: String?
     public var pairings: String?
     /// "14–16 °C", the first line of "How to serve".
     public var servingTemperature: String?
@@ -39,7 +37,7 @@ public struct WineSheetContent: Equatable {
 
     public init(title: String, eyebrow: String, percentage: String?, percentageCaption: String, sharedLine: String?,
                 apartLine: String?, facts: [Fact], pairings: String?, servingTemperature: String?, howToServe: String?,
-                profile: PalateMap, palate: PalateMap?) {
+                profile: PalateMap, palate: PalateMap?, appellation: String? = nil) {
         self.title = title
         self.eyebrow = eyebrow
         self.percentage = percentage
@@ -47,6 +45,7 @@ public struct WineSheetContent: Equatable {
         self.sharedLine = sharedLine
         self.apartLine = apartLine
         self.facts = facts
+        self.appellation = appellation
         self.pairings = pairings
         self.servingTemperature = servingTemperature
         self.howToServe = howToServe
@@ -91,26 +90,24 @@ public struct WineSheetStrings {
 }
 
 public extension WineSheetContent {
-    /// A wine as the wine sheet shows it, in the words of the new note: Origin | Vintage, Style | Grape & notes.
+    /// A wine as the wine sheet shows it, in the words of the new note.
     init(wine: Wine, palate: PalateMap?, now: Date = Date(), resources: NotePaperResources = NotePaperResources()) {
         let match = palate.map { PalateMatchUIModel(wine: wine.profile, palate: $0) }
-        var facts: [Fact] = []
-        if !wine.origin.isEmpty { facts.append(Fact(label: resources.originText, value: wine.origin)) }
-        facts.append(Fact(label: resources.vintageText, value: resources.vintageLine(wine.vintage, now: now),
-                          besidePrevious: true))
-        facts.append(Fact(label: resources.styleText, value: resources.type(wine.type)))
-        let grapeAndNotes = [wine.grapes.joined(separator: ", "), wine.note ?? ""].filter { !$0.isEmpty }
-        if !grapeAndNotes.isEmpty {
-            facts.append(Fact(label: resources.grapeNotesText, value: grapeAndNotes.joined(separator: " · "),
-                              besidePrevious: true))
-        }
+        let facts = [
+            Fact(label: resources.originText, value: wine.origin),
+            Fact(label: resources.producerText, value: wine.producer),
+            Fact(label: resources.styleText, value: resources.type(wine.type)),
+            Fact(label: resources.vintageText, value: resources.vintageLine(wine.vintage, now: now)),
+            Fact(label: resources.grapesText, value: wine.grapes.joined(separator: ", ")),
+            Fact(label: resources.notesText, value: wine.note ?? "")
+        ]
         self.init(title: wine.name, eyebrow: wine.producer, percentage: match?.percentage,
                   percentageCaption: match == nil ? resources.noMapText : resources.matchText,
                   sharedLine: match?.shared, apartLine: match?.apart, facts: facts,
                   pairings: wine.pairings.isEmpty ? nil : wine.pairings.joined(separator: ", "),
                   servingTemperature: wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" },
                   howToServe: (wine.howToServe ?? "").isEmpty ? nil : wine.howToServe,
-                  profile: wine.profile, palate: palate)
+                  profile: wine.profile, palate: palate, appellation: wine.appellation)
         findURL = WineSearch.url(for: wine)
     }
 }

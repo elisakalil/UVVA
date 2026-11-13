@@ -17,7 +17,7 @@ struct HomeNoticeView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 14)
-                    .background(Capsule().fill(UVVAColor.creamFill))
+                    .background(Capsule().fill(Color.white))
                     .shadow(color: Color(red: 12 / 255, green: 16 / 255, blue: 9 / 255).opacity(0.4), radius: 17, y: 14)
                     .padding(.horizontal, 20)
                     .padding(.top, 8)

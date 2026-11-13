@@ -14,7 +14,7 @@ struct PerfectTable: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 24)
-                .foregroundStyle(UVVAColor.creamFill)
+                .foregroundStyle(Color.white)
                 .padding(.top, 3)
                 .accessibilityHidden(true)
 
@@ -46,7 +46,7 @@ struct PerfectTable: View {
                                 .font(UVVAFont.sans(11, .light))
                                 .padding(.horizontal, 11)
                                 .padding(.vertical, 6)
-                                .overlay(Capsule().strokeBorder(UVVAColor.cream.opacity(0.28), lineWidth: 0.5))
+                                .overlay(Capsule().strokeBorder(Color.white.opacity(0.28), lineWidth: 0.5))
                         }
                     }
                     .padding(.top, 10)

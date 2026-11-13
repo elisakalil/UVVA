@@ -63,7 +63,37 @@ public struct NotePaperMatch: View {
     }
 }
 
-/// Origin and Producer side by side, Style, Vintage and How to serve.
+struct WineAppellationCard: View {
+    @Environment(\.displayScale) private var displayScale
+    var appellation: String?
+    private let ink = Color(hex: 0x494038)
+
+    var body: some View {
+        HStack(spacing: 12) {
+            UVVAIllustration.certificateSeal
+                .resizable()
+                .scaledToFit()
+                .frame(width: 44, height: 44)
+                .accessibilityHidden(true)
+            Text(appellation ?? "—")
+                .font(UVVAFont.sans(13))
+                .foregroundStyle(ink)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .overlay {
+            RoundedRectangle(cornerRadius: 22)
+                .strokeBorder(ink, lineWidth: 1 / displayScale)
+                .allowsHitTesting(false)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(String(localized: "Appellation", bundle: .module)))
+        .accessibilityValue(Text(appellation ?? "—"))
+    }
+}
+
+/// Origin, Producer, Style and Vintage in two columns, followed by How to serve.
 public struct NotePaperFacts: View {
     var content: NotePaperContent
     var resources: NotePaperResources
@@ -75,14 +105,13 @@ public struct NotePaperFacts: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 18) {
-            HStack(alignment: .top, spacing: 24) {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 24, alignment: .topLeading), count: 2),
+                      alignment: .leading, spacing: 18) {
                 detail(resources.originText, value: content.origin)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 detail(resources.producerText, value: content.producer)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            ForEach(content.facts) { fact in
-                detail(fact.label, value: fact.value)
+                ForEach(content.facts) { fact in
+                    detail(fact.label, value: fact.value)
+                }
             }
             detail(resources.serveText, value: content.serving)
         }

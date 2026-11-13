@@ -23,7 +23,7 @@ struct ContinueLessonCard: View {
                 HStack(spacing: 3) {
                     ForEach(0..<course.totalLessons, id: \.self) { index in
                         Capsule()
-                            .fill(UVVAColor.cream.opacity(course.completedLessonNumbers.contains(index + 1) ? 0.84
+                            .fill(Color.white.opacity(course.completedLessonNumbers.contains(index + 1) ? 0.84
                                                           : index == number - 1 ? 0.5 : 0.2))
                             .frame(height: 2)
                     }

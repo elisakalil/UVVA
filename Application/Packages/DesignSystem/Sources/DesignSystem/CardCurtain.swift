@@ -13,15 +13,32 @@ struct CardCurtain: ViewModifier {
     static let fadeIn = Animation.easeOut(duration: 0.6)
     static let fadeOut = Animation.easeInOut(duration: 1.4)
 
+    /// The height the curtain keeps while the card folds under it (the Hero, after a note saved from it). The curtain
+    /// is laid out from its height, so following the card it was drawn again at every height the card passed, a new
+    /// surface each frame, and its bunches jumped to new places; held, the folding card only clips it.
+    @State private var heldHeight: CGFloat?
+
     func body(content: Content) -> some View {
         content
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { old, new in
+                guard isLoading else { return }
+                if new < old {
+                    if heldHeight == nil { heldHeight = old }
+                } else if let heldHeight, new > heldHeight {
+                    self.heldHeight = nil
+                }
+            }
             .overlay {
                 // Only there while loading: once it has faded out, nothing is drawn or timed.
                 if isLoading {
-                    GrapeCurtain()
+                    Color.clear
+                        .overlay(alignment: .top) { GrapeCurtain().frame(height: heldHeight) }
                         .clipShape(RoundedRectangle(cornerRadius: radius, style: .continuous))
                         .transition(.opacity)
                 }
+            }
+            .onChange(of: isLoading) { _, loading in
+                if loading { heldHeight = nil }
             }
             .allowsHitTesting(!isLoading)
             .animation(isLoading ? Self.fadeIn : Self.fadeOut, value: isLoading)
