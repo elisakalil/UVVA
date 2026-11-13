@@ -16,18 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFill" image="LaunchPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="launch-photo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="LaunchScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="launch-photo">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're getting everything ready for you. In the meantime, enjoy the view." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="launch-preparation">
-                                <rect key="frame" x="40" y="710" width="313" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="preparation-height"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.95294117647058818" green="0.92549019607843142" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="launch-safe"/>
                         <color key="backgroundColor" name="LaunchBackground"/>
@@ -36,9 +27,6 @@
                             <constraint firstItem="launch-photo" firstAttribute="leading" secondItem="launch-view" secondAttribute="leading" id="photo-leading"/>
                             <constraint firstItem="launch-photo" firstAttribute="top" secondItem="launch-view" secondAttribute="top" id="photo-top"/>
                             <constraint firstItem="launch-photo" firstAttribute="trailing" secondItem="launch-view" secondAttribute="trailing" id="photo-trailing"/>
-                            <constraint firstItem="launch-preparation" firstAttribute="bottom" secondItem="launch-safe" secondAttribute="bottom" constant="-30" id="preparation-bottom"/>
-                            <constraint firstItem="launch-preparation" firstAttribute="leading" secondItem="launch-safe" secondAttribute="leading" constant="40" id="preparation-leading"/>
-                            <constraint firstItem="launch-safe" firstAttribute="trailing" secondItem="launch-preparation" secondAttribute="trailing" constant="40" id="preparation-trailing"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -48,7 +36,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchPhoto" width="786" height="1708"/>
+        <image name="LaunchScreenImage" width="1179" height="2562"/>
         <namedColor name="LaunchBackground">
             <color red="0.20000000000000001" green="0.23921568627450981" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

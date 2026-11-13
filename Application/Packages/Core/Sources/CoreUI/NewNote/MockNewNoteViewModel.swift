@@ -33,13 +33,13 @@ final class MockNewNoteViewModel: NewNoteViewModelProtocol {
     }
 
     func start() async {}
-    func capture(_ photo: Data) async { flow.capture(photo) }
+    func capture(_ photo: Data, reading: Data?) async { flow.capture(photo) }
     func tryAgain() { flow.tryAgain() }
     func fillInByHand() { flow.fillInByHand() }
     func updateManual(_ field: NewNoteField, text: String) { flow.manual[field] = text }
     func pickType(_ type: String) { flow.manual.type = type }
     func continueManual() async { flow.manualRead(Self.wine) }
-    func redo() { flow.redo() }
+    func replacePhoto(_ photo: Data) { flow.replacePhoto(photo) }
     func answer(hasTasted: Bool) { flow.answer(hasTasted: hasTasted) }
     func pick(_ verdict: Verdict) { flow.pick(verdict) }
     func updateNote(_ text: String) { flow.note = text }

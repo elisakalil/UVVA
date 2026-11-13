@@ -3,8 +3,13 @@ import Foundation
 import SwiftData
 
 /// `PalateMapRepository` on the Personal store.
-@ModelActor
-public actor PalateMapStore: PalateMapRepository, PalateHistoryRewriting {
+public actor PalateMapStore: StoreActor, PalateMapRepository, PalateHistoryRewriting {
+    public nonisolated let executor: StoreExecutor
+
+    public init(modelContainer: ModelContainer) {
+        executor = StoreExecutor(modelContainer, label: "app.uvva.store.palate-maps")
+    }
+
     public func rewriteHistory(_ history: [MapChange]) throws {
         var descriptor = FetchDescriptor<PalateMapEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
         descriptor.fetchLimit = 1

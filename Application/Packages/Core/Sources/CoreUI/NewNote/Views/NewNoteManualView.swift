@@ -55,6 +55,10 @@ struct NewNoteManualView: View {
                     if let error = model.errorText {
                         Text(error).font(UVVAFont.sans(12)).opacity(0.74).padding(.top, 20)
                     }
+                    #if DEBUG
+                    // Why the reading gave no name.
+                    if let text = model.readingDebugText { NewNoteReadingDebugView(text: text).padding(.top, 40) }
+                    #endif
                 }
                 .padding(.horizontal, 28)
                 .padding(.top, 44)

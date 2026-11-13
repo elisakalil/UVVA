@@ -4,8 +4,13 @@ import Match
 import SwiftData
 
 /// `CatalogRepository` on the Content store.
-@ModelActor
-public actor CatalogStore: CatalogRepository, WineLookup, LabelCatalogRepository {
+public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatalogRepository {
+    public nonisolated let executor: StoreExecutor
+
+    public init(modelContainer: ModelContainer) {
+        executor = StoreExecutor(modelContainer, label: "app.uvva.store.catalog")
+    }
+
     /// Where a wine scanned from a label, and not found in the catalog, came from (`WineEntity.source`).
     static let scannedSource = "scanned"
 

@@ -1,6 +1,8 @@
 import Foundation
 
 struct NewNoteResourcesUIModel {
+    /// The words of the wine on paper, shared with the saved note.
+    var paper = NotePaperResources()
     var closeText = String(localized: "Close", bundle: .module)
 
     // MARK: Photos (CELLAR-R16, R17)
@@ -44,46 +46,34 @@ struct NewNoteResourcesUIModel {
     var manualErrorText = String(localized: "UVVA couldn’t read this wine. Try again.", bundle: .module)
 
     // MARK: The note (CELLAR-R18 to R20)
-    var matchText = String(localized: "match with your map", bundle: .module)
-    var noMapText = String(localized: "Your palate map is unavailable", bundle: .module)
-    var originText = String(localized: "Origin", bundle: .module)
-    var styleText = String(localized: "Style", bundle: .module)
-    var nonVintageText = String(localized: "Non-vintage", bundle: .module)
-    var serveText = String(localized: "How to serve", bundle: .module)
-    var findWineText = String(localized: "Find the wine", bundle: .module)
-    var grapesText = String(localized: "Grapes", bundle: .module)
-    var notesText = String(localized: "Tasting notes", bundle: .module)
-    var pairingsText = String(localized: "Pairings", bundle: .module)
-    var intensityText = String(localized: "Intensity", bundle: .module)
     var intensityInfoText = String(localized: "About intensity", bundle: .module)
     var intensityInfoParagraphs = [
         String(localized: "UVVA read this wine and set how strong it is on each axis of the map, from barely there to as much as it gets.", bundle: .module),
         String(localized: "Tasted it differently? Tap or slide a line to give your own reading. It's kept with your note, and the map of this wine follows it.", bundle: .module)
     ]
-    var wineMapText = String(localized: "The map of this wine", bundle: .module)
-    var comparisonText = String(localized: "This wine and you", bundle: .module)
-    var wineText = String(localized: "This wine", bundle: .module)
-    var palateText = String(localized: "Your map", bundle: .module)
     var addText = String(localized: "Add", bundle: .module)
-    var overlapText = String(localized: "In common", bundle: .module)
     var writeOptionText = String(localized: "Write your own", bundle: .module)
     var selectOptionText = String(localized: "Choose from the list", bundle: .module)
     var noOptionsText = String(localized: "No matching suggestions", bundle: .module)
     var tastedQuestionText = String(localized: "Have you had this wine?", bundle: .module)
+    var rateAgainQuestionText = String(localized: "Rate it again?", bundle: .module)
     var yesText = String(localized: "Yes", bundle: .module)
     var noText = String(localized: "No", bundle: .module)
     var maybeText = String(localized: "Maybe", bundle: .module)
-    var yourNoteText = String(localized: "Your note", bundle: .module)
     var notePromptText = String(localized: "What stood out in the glass?", bundle: .module)
     var drinkAgainText = String(localized: "Would you drink it again?", bundle: .module)
     var notYetText = String(localized: "Not yet", bundle: .module)
-    var redoText = String(localized: "Redo", bundle: .module)
+    var addPhotoText = String(localized: "Add photo", bundle: .module)
+    var changePhotoText = String(localized: "Change photo", bundle: .module)
+    var photoTitleText = String(localized: "Photograph the wine", bundle: .module)
+    var photoBodyText = String(localized: "The label, or the bottle as you remember it.", bundle: .module)
+    var verdictRequiredText = String(localized: "Choose whether you would drink it again.", bundle: .module)
     var saveNoteText = String(localized: "Save note", bundle: .module)
     var saveErrorText = String(localized: "The note wasn’t saved. Try again.", bundle: .module)
 
     var closeIcon = "xmark"
     var libraryIcon = "photo.on.rectangle"
-    var infoIcon = "info.circle"
+    var addPhotoIcon = "plus"
 
     /// The types of the catalog, in the artboard's order.
     static let types = ["Red", "White", "Rosé", "Sparkling", "Fortified"]

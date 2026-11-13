@@ -1,8 +1,13 @@
 import Foundation
 import SwiftData
 
-@ModelActor
-public actor ContentImporter {
+public actor ContentImporter: StoreActor {
+    public nonisolated let executor: StoreExecutor
+
+    public init(modelContainer: ModelContainer) {
+        executor = StoreExecutor(modelContainer, label: "app.uvva.store.content-import", qos: .utility)
+    }
+
     static let batchSize = 500
     
     public func importIfNeeded(

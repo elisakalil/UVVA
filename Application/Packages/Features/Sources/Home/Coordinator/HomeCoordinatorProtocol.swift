@@ -7,8 +7,10 @@ public protocol HomeCoordinatorProtocol {
     func openLearn(_ kind: CourseKind)
     /// The `+` (HOME-R03): the Cellar's new note (CELLAR-R14).
     func scan()
-    /// Opens the Cellar's new note with the wine already loaded (CELLAR-R14a).
-    func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool)
+    /// Opens the Cellar's new note with the wine already loaded (CELLAR-R14a), and the verdict it was rated with
+    /// before, if any, so the note asks whether to rate it again. `fromHero`: once saved, the Home goes back to its
+    /// top (HOME-R10c).
+    func openCellarNote(for wine: Wine, ratedVerdict: Verdict?, fromHero: Bool)
     /// The friends card with two or more friends (HOME-R11, FRI-R20): the Friends tab, choosing who comes.
     func openFriends()
     /// The match card, with one friend (HOME-R11): the last table (FRI-R17).
@@ -20,7 +22,7 @@ public protocol HomeCoordinatorProtocol {
 extension HomeCoordinatorProtocol {
     public func openLesson(_ suggestion: HomeLessonSuggestion) { openCourse(suggestion.course.id) }
     public func scan() {}
-    public func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool) {}
+    public func openCellarNote(for wine: Wine, ratedVerdict: Verdict?, fromHero: Bool) {}
     public func openFriends() {}
     public func openLastTable() {}
     public func openMapHistory() {}

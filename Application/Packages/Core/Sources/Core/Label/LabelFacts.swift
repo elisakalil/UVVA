@@ -16,10 +16,17 @@ public struct LabelFacts: Equatable, Sendable {
     public var alcohol: Double?
     /// The front lines that could be the name or the producer, biggest type first.
     public var titleLines: [String]
+    /// The aromas and flavours the back label describes: "Plum", "black pepper".
+    public var notes: [String]
+    /// The foods the back label suggests.
+    public var pairings: [String]
+    /// The serving temperature in °C, "Serve at 16–18 °C".
+    public var serving: ClosedRange<Int>?
 
     public init(name: String? = nil, producer: String? = nil, vintage: Int? = nil, type: String? = nil,
                 appellation: String? = nil, region: String? = nil, country: String? = nil, grapes: [String] = [],
-                alcohol: Double? = nil, titleLines: [String] = []) {
+                alcohol: Double? = nil, titleLines: [String] = [], notes: [String] = [], pairings: [String] = [],
+                serving: ClosedRange<Int>? = nil) {
         self.name = name
         self.producer = producer
         self.vintage = vintage
@@ -30,6 +37,9 @@ public struct LabelFacts: Equatable, Sendable {
         self.grapes = grapes
         self.alcohol = alcohol
         self.titleLines = titleLines
+        self.notes = notes
+        self.pairings = pairings
+        self.serving = serving
     }
 
     /// Without a name there is nothing to save (CELLAR-R23).

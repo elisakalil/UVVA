@@ -9,7 +9,7 @@ struct WordOfTheDayCard: View {
     var body: some View {
         FrostedCard(padding: 24) {
             VStack(alignment: .leading, spacing: 10) {
-                Eyebrow(text: resources.wordOfTheDayCardSectionTitle)
+                Eyebrow(text: resources.wordOfTheDayCardSectionTitle, color: .white)
                 Text(term.term).font(UVVAFont.whiteGrape(24))
             }
         }

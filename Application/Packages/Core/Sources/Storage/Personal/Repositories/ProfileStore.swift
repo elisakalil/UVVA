@@ -3,8 +3,13 @@ import Foundation
 import SwiftData
 
 /// `ProfileRepository` on the Personal store.
-@ModelActor
-public actor ProfileStore: ProfileRepository {
+public actor ProfileStore: StoreActor, ProfileRepository {
+    public nonisolated let executor: StoreExecutor
+
+    public init(modelContainer: ModelContainer) {
+        executor = StoreExecutor(modelContainer, label: "app.uvva.store.profiles")
+    }
+
     /// The oldest profile, in case two devices each made one before syncing.
     public func currentProfile() throws -> Profile? {
         var descriptor = FetchDescriptor<ProfileEntity>(sortBy: [SortDescriptor(\.createdAt)])

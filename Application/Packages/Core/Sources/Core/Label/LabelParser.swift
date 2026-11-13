@@ -34,7 +34,7 @@ public enum LabelParser {
 
         return LabelFacts(name: name, producer: producer, vintage: vintage(in: lines, currentYear: currentYear),
                           type: type, appellation: appellation, region: region, country: country, grapes: grapes,
-                          alcohol: alcohol(in: lines), titleLines: titles)
+                          alcohol: alcohol(in: lines), titleLines: titles, serving: serving(in: lines))
     }
 
     // MARK: Names from the catalog
@@ -88,6 +88,23 @@ public enum LabelParser {
                 if before.contains(where: LabelKeywords.foundedWords.contains) { continue }
                 return year
             }
+        }
+        return nil
+    }
+
+    /// "Serve at 16-18°C", "Servir a 16 – 18 ºC", "16°/18°C": two temperatures a wine is served at, with a degree
+    /// sign; a single one, "Serve at 8 °C", makes a range of one degree.
+    static func serving(in lines: [LabelLine]) -> ClosedRange<Int>? {
+        let plausible = 4...22
+        let text = lines.map(\.text).joined(separator: " ")
+        let range = /([0-9]{1,2})\s*[°º]?\s*C?\s*(?:-|–|—|\/|a|to|à|bis|e)\s*([0-9]{1,2})\s*[°º]\s*C?/
+        if let match = text.firstMatch(of: range), let low = Int(match.1), let high = Int(match.2),
+           plausible.contains(low), plausible.contains(high), low <= high {
+            return low...high
+        }
+        let single = /([0-9]{1,2})\s*[°º]\s*C/
+        if let match = text.firstMatch(of: single), let degrees = Int(match.1), plausible.contains(degrees) {
+            return degrees...degrees
         }
         return nil
     }

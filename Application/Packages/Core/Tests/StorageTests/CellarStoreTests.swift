@@ -142,6 +142,19 @@ struct CellarStoreTests {
         #expect(try await store.entries().first?.note == nil)
     }
 
+    @Test func CELLAR_R27_editedInTheNewNote_replacesTheNote_evenEmptied() async throws {
+        _ = try await store.save(NewNoteDraft(wine: wine, status: .tasted, verdict: .yes, note: "Dry."))
+        // A new note on the same wine that says nothing keeps the old note…
+        _ = try await store.save(NewNoteDraft(wine: wine, status: .tasted, verdict: .yes, note: ""))
+        #expect(try await store.entries().first?.note == "Dry.")
+        // …but a saved note edited and emptied loses it.
+        _ = try await store.save(NewNoteDraft(wine: wine, status: .tasted, verdict: .no, note: " ", replacesNote: true))
+        let entry = try #require(try await store.entries().first)
+        #expect(entry.note == nil)
+        #expect(entry.verdict == .no)
+        #expect(try await store.entries().count == 1)
+    }
+
     // MARK: CELLAR-R28 · Apagar
 
     @Test func CELLAR_R28_delete_removesTheEntry() async throws {

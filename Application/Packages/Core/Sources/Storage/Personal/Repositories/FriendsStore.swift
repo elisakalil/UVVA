@@ -4,8 +4,13 @@ import SwiftData
 
 /// `FriendsRepository` on the Personal store. CloudKit allows no unique attributes, so duplicates that arrive by
 /// sync are removed here.
-@ModelActor
-public actor FriendsStore: FriendsRepository {
+public actor FriendsStore: StoreActor, FriendsRepository {
+    public nonisolated let executor: StoreExecutor
+
+    public init(modelContainer: ModelContainer) {
+        executor = StoreExecutor(modelContainer, label: "app.uvva.store.friends")
+    }
+
     public func friends() throws -> [Friend] {
         var seen = Set<String>()
         return try modelContext.fetch(FetchDescriptor<FriendEntity>())

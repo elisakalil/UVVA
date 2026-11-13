@@ -5,7 +5,7 @@ import SwiftUI
 struct ChooseYourWineCard: View {
     var resources = HomeResourcesUIModel()
     var palateMap: PalateMap
-    var catalog: [Wine]
+    var catalog: WineList
     /// "Find my wine": the matching wines, best first, for the Home to show in its sheet (HOME-R28).
     var onFind: (_ suggestions: [Wine], _ direction: WineDiscovery.Direction) -> Void = { _, _ in }
 
@@ -14,6 +14,8 @@ struct ChooseYourWineCard: View {
     @State private var country = "Anywhere"
     @State private var pairing: WineDiscovery.Pairing?
     @State private var notes: [WineDiscovery.Note] = []
+    /// The search for "Find my wine" is running: a second tap waits for it.
+    @State private var isFinding = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -22,7 +24,7 @@ struct ChooseYourWineCard: View {
                     Text(resources.chooseYourWineCardTitle)
                         .font(UVVAFont.redGrapes(21))
                         .textCase(.uppercase)
-                        .foregroundStyle(UVVAColor.cream.opacity(0.92))
+                        .foregroundStyle(.white)
                         .accessibilityAddTraits(.isHeader)
                         .padding(.bottom, 30)
                     directionPicker
@@ -68,10 +70,21 @@ struct ChooseYourWineCard: View {
         }
     }
 
+    /// The new wines of the catalog (HOME-R08a) are searched away from the main actor: thousands of them, scored
+    /// against the map. Only Sendable values cross into the background task.
     private func findWine() {
-        let suggestions = WineDiscovery.suggestions(in: catalog, for: palateMap, direction: direction,
-                                                    type: type, country: country, notes: notes, pairing: pairing)
-        onFind(suggestions, direction)
+        guard !isFinding else { return }
+        isFinding = true
+        let (wines, map, direction, type, country, notes, pairing) = (catalog.wines, palateMap, direction, type,
+                                                                       country, notes, pairing)
+        Task {
+            let suggestions = await Task.detached(priority: .userInitiated) {
+                WineDiscovery.suggestions(in: wines, for: map, direction: direction, type: type, country: country,
+                                          notes: notes, pairing: pairing)
+            }.value
+            isFinding = false
+            onFind(suggestions, direction)
+        }
     }
 
     private func toggle(_ note: WineDiscovery.Note) {
@@ -85,10 +98,10 @@ struct ChooseYourWineCard: View {
     private func group<Chips: View>(_ title: String, hint: String? = nil, @ViewBuilder chips: () -> Chips) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .firstTextBaseline) {
-                Caption(text: title)
+                Caption(text: title, color: .white)
                 Spacer()
                 if let hint {
-                    Text(hint).font(UVVAFont.sans(11.5)).foregroundStyle(UVVAColor.cream84)
+                    Text(hint).font(UVVAFont.sans(11.5)).foregroundStyle(.white)
                 }
             }
             FlowLayout(spacing: 6, lineSpacing: 8) { chips() }

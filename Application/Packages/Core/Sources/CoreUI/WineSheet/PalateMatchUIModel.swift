@@ -2,17 +2,25 @@ import Core
 import Foundation
 import Match
 
-struct PalateMatchUIModel {
-    let wine: PalateMap
-    let palate: PalateMap
+/// How a wine sits with the user's map, in two lines (HOME-R10b): on the Home's cards and sheet, and on a saved
+/// note of the Cellar.
+public struct PalateMatchUIModel {
+    public let wine: PalateMap
+    public let palate: PalateMap
+
+    public init(wine: PalateMap, palate: PalateMap) {
+        self.wine = wine
+        self.palate = palate
+    }
+
     private var fit: WineFit { WineFit(wine: wine, map: palate) }
 
-    var percentage: String { "\(percent)%" }
+    public var percentage: String { "\(percent)%" }
 
-    var percent: Int { Similarity.percent(wine, palate) }
+    public var percent: Int { Similarity.percent(wine, palate) }
 
     /// "High in acidity and fruit, like your map." (HOME-R10b)
-    var shared: String {
+    public var shared: String {
         let fit = fit
         let both = fit.shared.map { $0.label.lowercased() }
         switch both.count {
@@ -33,7 +41,7 @@ struct PalateMatchUIModel {
     }
 
     /// "More oak than you usually drink." (HOME-R10b)
-    var apart: String {
+    public var apart: String {
         guard let far = fit.apart else { return String(localized: "Close to your map on every axis.", bundle: .module) }
         let axis = far.label.lowercased()
         return wine[far] > palate[far]

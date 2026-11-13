@@ -8,7 +8,6 @@ struct CellarResourcesUIModel {
     var listViewText = String(localized: "List view", bundle: .module)
     var clearText = String(localized: "Clear", bundle: .module)
     var clearFiltersText = String(localized: "Clear filters", bundle: .module)
-    var closeText = String(localized: "Close", bundle: .module)
     var emptyTitleText = String(localized: "Your cellar is empty", bundle: .module)
     var emptyBodyText = String(localized: "Tap + to photograph your first bottle and add it to your cellar.", bundle: .module)
     var noMatchesText = String(localized: "No bottles in your cellar match these filters.", bundle: .module)
@@ -20,7 +19,6 @@ struct CellarResourcesUIModel {
     var listIcon = "line.3.horizontal"
     var chipIcon = "chevron.down"
     var checkIcon = "checkmark"
-    var closeIcon = "xmark"
 
     func tag(_ tag: CellarTag) -> String {
         switch tag {

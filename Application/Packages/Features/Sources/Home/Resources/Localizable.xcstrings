@@ -109,12 +109,6 @@
     "Back to Home" : {
 
     },
-    "barely moved" : {
-
-    },
-    "Bolder than your map, which has no high axis." : {
-
-    },
     "Cheese" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -147,9 +141,6 @@
     "Close definition" : {
 
     },
-    "Close to your map on every axis." : {
-
-    },
     "Continue  →" : {
 
     },
@@ -166,9 +157,6 @@
           }
         }
       }
-    },
-    "Different from the strongest axes on your map." : {
-
     },
     "Earthy" : {
       "extractionState" : "manual"
@@ -324,9 +312,6 @@
     "Grapes" : {
 
     },
-    "Have you had this wine?" : {
-
-    },
     "Herbal" : {
       "extractionState" : "manual"
     },
@@ -359,19 +344,6 @@
           }
         }
       }
-    },
-    "High in %@ and %@, like your map." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "High in %1$@ and %2$@, like your map."
-          }
-        }
-      }
-    },
-    "High in %@, like your map." : {
-
     },
     "High oak" : {
       "localizations" : {
@@ -576,9 +548,6 @@
     "Learn the wines you love" : {
 
     },
-    "Less %@ than you usually drink." : {
-
-    },
     "Light body" : {
       "localizations" : {
         "pt-BR" : {
@@ -705,9 +674,6 @@
     "Malbec at altitude" : {
 
     },
-    "Map updated" : {
-
-    },
     "Map your taste in wine with me on UVVA." : {
 
     },
@@ -720,22 +686,13 @@
     "match with your map" : {
 
     },
-    "Maybe" : {
-
-    },
     "Mineral" : {
       "extractionState" : "manual"
-    },
-    "More %@ than you usually drink." : {
-
     },
     "New Zealand" : {
       "extractionState" : "manual"
     },
     "Next" : {
-
-    },
-    "No" : {
 
     },
     "No wines match these choices. Try changing a filter." : {
@@ -749,12 +706,6 @@
       }
     },
     "Non-vintage" : {
-
-    },
-    "Not high in %@, the strongest axis on your map." : {
-
-    },
-    "Not yet" : {
 
     },
     "Notes" : {
@@ -831,9 +782,6 @@
         }
       }
     },
-    "Quiet on every axis, like your map." : {
-
-    },
     "Red" : {
       "extractionState" : "manual"
     },
@@ -856,9 +804,6 @@
     },
     "Rosé" : {
       "extractionState" : "manual"
-    },
-    "Saved to Cellar" : {
-
     },
     "Saved to Cellar · %@" : {
 
@@ -1522,12 +1467,6 @@
 
     },
     "Word of the day" : {
-
-    },
-    "Would you drink it again?" : {
-
-    },
-    "Yes" : {
 
     },
     "You might just catch a hint of oak." : {

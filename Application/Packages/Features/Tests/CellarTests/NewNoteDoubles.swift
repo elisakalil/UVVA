@@ -32,7 +32,10 @@ struct ReaderStub: LabelReading {
 
 struct StructurerStub: LabelStructuring {
     var facts: LabelFacts?
-    func structure(_ text: LabelText) async -> LabelFacts? { facts }
+    var failure: String? = "Apple Intelligence is off in Settings (appleIntelligenceNotEnabled)."
+    func structure(_ text: LabelText) async -> LabelStructuringResult {
+        LabelStructuringResult(facts: facts, failure: facts == nil ? failure : nil, context: "iOS 26.1 · pt-PT · language supported")
+    }
 }
 
 actor LabelCatalogStub: LabelCatalogRepository {

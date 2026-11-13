@@ -55,7 +55,7 @@ struct MapChange: Codable {
 }
 ```
 
-O "antes" de uma mudança é a entrada anterior; a variação de cada eixo é a diferença entre as duas (HOME-R16, HOME-R24).
+O "antes" de uma mudança é a entrada anterior; a variação de cada eixo é a diferença entre as duas (HOME-R16).
 
 - **Refazer o Quiz** cria um `PalateMap` novo: `values` e `createdAt` novos, e `history` recomeça só com o Quiz (QUIZ-R18a).
 - **Avaliar um vinho** muda `values` e acrescenta uma entrada a `history`.

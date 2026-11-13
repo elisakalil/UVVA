@@ -15,3 +15,8 @@ public struct SafariSheet: UIViewControllerRepresentable {
 
     public func updateUIViewController(_ controller: SFSafariViewController, context: Context) {}
 }
+
+/// A page opens in a sheet by its address: `.sheet(item: $url)`.
+extension URL: @retroactive Identifiable {
+    public var id: String { absoluteString }
+}

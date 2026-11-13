@@ -42,7 +42,8 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
         .task { await viewModel.load() }
         .newNoteSheet($newNote)
         // CELLAR-R13: the note in a sheet over the Cellar, dragged down to close.
-        .sheet(item: Binding(get: { viewModel.note }, set: { if $0 == nil { viewModel.closeNote() } })) { note in
+        .sheet(item: Binding(get: { viewModel.note }, set: { if $0 == nil { viewModel.closeNote() } }),
+               onDismiss: viewModel.noteDismissed) { note in
             NoteView(viewModel: note)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)

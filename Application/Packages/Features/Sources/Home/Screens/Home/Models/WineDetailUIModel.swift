@@ -1,4 +1,5 @@
 import Core
+import CoreUI
 import Foundation
 
 /// What the wine sheet shows about one wine, and where it was opened from (HOME-R28a).
@@ -117,35 +118,12 @@ struct WineDetailUIModel: Equatable {
 /// The sheet the Home has open over its cards, if any.
 enum WineSheetModel: Identifiable, Equatable {
     case palate(PalateWineSuggestion)
-    case discovery(suggestions: [Wine], direction: WineDiscovery.Direction)
+    case discovery(suggestions: WineList, direction: WineDiscovery.Direction)
 
     var id: String {
         switch self {
         case let .palate(suggestion): "palate.\(suggestion.axis.rawValue).\(suggestion.wine.id)"
-        case let .discovery(suggestions, direction): "discovery.\(direction).\(suggestions.map(\.id).joined(separator: ","))"
-        }
-    }
-}
-
-/// The question at the foot of the sheet, over "Add to cellar", which is always there (HOME-R24).
-enum WineSheetStep: Equatable {
-    /// "Have you had this wine?"
-    case askTasted
-    /// "Would you drink it again?", with the verdict once it is given: it stays marked and is not asked again.
-    case askVerdict(Verdict?)
-    /// Nothing to ask: "Not yet", or a wine rated before. Only "Add to cellar" is left.
-    case done
-
-    /// Where the question starts for a wine: one rated since the Quiz is not asked again (HOME-R24).
-    static func first(rated verdict: Verdict?) -> WineSheetStep {
-        verdict == nil ? .askTasted : .done
-    }
-
-    /// The Cellar's new note asks "Have you had this wine?" itself when the sheet got no full answer (CELLAR-R14a).
-    var leavesTastingOpen: Bool {
-        switch self {
-        case .askTasted, .askVerdict(nil): true
-        case .askVerdict, .done: false
+        case let .discovery(suggestions, direction): "discovery.\(direction).\(suggestions.id)"
         }
     }
 }

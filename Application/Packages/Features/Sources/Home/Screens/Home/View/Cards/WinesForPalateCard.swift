@@ -15,7 +15,7 @@ struct WinesForPalateCard: View {
                 Text(resources.winesForPalateCardTitle)
                     .font(UVVAFont.redGrapes(21))
                     .textCase(.uppercase)
-                    .foregroundStyle(UVVAColor.cream.opacity(0.92))
+                    .foregroundStyle(.white)
                     .fixedSize(horizontal: false, vertical: true)
                     .accessibilityAddTraits(.isHeader)
                     .padding(.leading, 26)
@@ -33,9 +33,7 @@ struct WinesForPalateCard: View {
                 }
             }
             .padding(.vertical, 8)
-            .opacity(MatchCurtain.contentOpacity(isLoading))
-            .accessibilityHidden(isLoading)
         }
-        .matchCurtain(isLoading)
+        .environment(\.cardIsLoading, isLoading)
     }
 }

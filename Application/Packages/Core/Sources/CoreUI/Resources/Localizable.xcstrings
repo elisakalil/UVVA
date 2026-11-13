@@ -4,6 +4,22 @@
     "" : {
 
     },
+    "—" : {
+
+    },
+    "%@ · %lld years" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$lld years"
+          }
+        }
+      }
+    },
+    "%@ · 1 year" : {
+
+    },
     "%lld%%" : {
 
     },
@@ -11,6 +27,9 @@
 
     },
     "Add" : {
+
+    },
+    "Add photo" : {
 
     },
     "Add to %@" : {
@@ -22,6 +41,12 @@
     "Back label" : {
 
     },
+    "Bolder than your map, which has no high axis." : {
+
+    },
+    "Change photo" : {
+
+    },
     "Check these two things and try again." : {
 
     },
@@ -31,10 +56,19 @@
     "Choose from the list" : {
 
     },
+    "Choose whether you would drink it again." : {
+
+    },
     "Close" : {
 
     },
+    "Close to your map on every axis." : {
+
+    },
     "Continue" : {
+
+    },
+    "Different from the strongest axes on your map." : {
 
     },
     "Fill in by hand" : {
@@ -58,6 +92,9 @@
     "Grape" : {
 
     },
+    "Grape & notes" : {
+
+    },
     "Grape or blend" : {
 
     },
@@ -70,6 +107,19 @@
     "Have you had this wine?" : {
 
     },
+    "High in %@ and %@, like your map." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "High in %1$@ and %2$@, like your map."
+          }
+        }
+      }
+    },
+    "High in %@, like your map." : {
+
+    },
     "How to serve" : {
 
     },
@@ -79,6 +129,9 @@
     "Intensity" : {
 
     },
+    "Less %@ than you usually drink." : {
+
+    },
     "Light" : {
 
     },
@@ -86,6 +139,9 @@
 
     },
     "Maybe" : {
+
+    },
+    "More %@ than you usually drink." : {
 
     },
     "Move somewhere brighter and keep the label out of shadow." : {
@@ -103,7 +159,13 @@
     "Non-vintage" : {
 
     },
+    "Not high in %@, the strongest axis on your map." : {
+
+    },
     "Not yet" : {
+
+    },
+    "Notes" : {
 
     },
     "Now the back label" : {
@@ -121,8 +183,24 @@
     "Photograph the front" : {
 
     },
+    "Photograph the wine" : {
+
+    },
     "Producer" : {
 
+    },
+    "Quiet on every axis, like your map." : {
+
+    },
+    "Rate it again?" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quer avaliar novamente?"
+          }
+        }
+      }
     },
     "Reading grape, region, vintage" : {
 
@@ -131,9 +209,6 @@
 
     },
     "Red" : {
-
-    },
-    "Redo" : {
 
     },
     "Region" : {
@@ -160,10 +235,10 @@
     "Tasted it differently? Tap or slide a line to give your own reading. It's kept with your note, and the map of this wine follows it." : {
 
     },
-    "Tasting notes" : {
+    "The camera is off" : {
 
     },
-    "The camera is off" : {
+    "The label, or the bottle as you remember it." : {
 
     },
     "The map of this wine" : {

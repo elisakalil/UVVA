@@ -11,33 +11,19 @@ struct CellarFilterSheet: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                Text(model.title.uppercased())
-                    .font(UVVAFont.redGrapes(20))
-                    .tracking(0.8)
-                    .accessibilityAddTraits(.isHeader)
-                Spacer()
-                Button(action: onClose) {
-                    Image(systemName: resources.closeIcon)
-                        .font(.system(size: 11, weight: .regular))
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(resources.closeText)
-                .padding(.trailing, -10)
-            }
-            .padding(.horizontal, 26)
-            .padding(.top, 22)
-            .padding(.bottom, 8)
+            Text(model.title.uppercased())
+                .font(UVVAFont.redGrapes(20))
+                .tracking(0.8)
+                .accessibilityAddTraits(.isHeader)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 26)
+                .padding(.top, 32)
+                .padding(.bottom, 24)
 
             ScrollView {
-                LazyVStack(spacing: 0) {
-                    ForEach(Array(model.options.enumerated()), id: \.element.id) { index, option in
+                LazyVStack(spacing: 8) {
+                    ForEach(model.options) { option in
                         optionRow(option)
-                            .overlay(alignment: .top) {
-                                if index > 0 { UVVAColor.creamFill.opacity(0.09).frame(height: 1) }
-                            }
                     }
                 }
                 .padding(.horizontal, 26)

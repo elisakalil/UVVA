@@ -18,14 +18,12 @@ public protocol HomeViewModelProtocol: ObservableObject {
     func openMapHistory()
     /// Saves a wine to the Cellar as Not yet.
     func addToCellar(_ wine: Wine) async
-    /// Opens the Cellar's new note from the Hero or wine sheet. The Hero asks about tasting if there is no verdict.
-    func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool)
-    /// "Would you drink it again?" (HOME-R24): moves the map and tells which axes moved; with `addToCellar`, a wine
-    /// already in the Cellar becomes Tasted with the verdict.
-    func rate(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async
+    /// "Add to cellar" on the Hero or the wine sheet: the Cellar's new note, which asks about the wine (CELLAR-R14a).
+    /// From the Hero, the Home goes back to its top once the note is saved (HOME-R10c).
+    func openCellarNote(for wine: Wine, fromHero: Bool)
 }
 
 extension HomeViewModelProtocol {
     public func openLesson(_ suggestion: HomeLessonSuggestion) { openCourse(suggestion.course.id) }
-    public func openCellarNote(for wine: Wine, verdict: Verdict?, asksTasting: Bool) {}
+    public func openCellarNote(for wine: Wine, fromHero: Bool) {}
 }

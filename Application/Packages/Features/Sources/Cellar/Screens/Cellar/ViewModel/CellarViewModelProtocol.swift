@@ -8,6 +8,8 @@ public protocol CellarViewModelProtocol: ObservableObject {
     var note: NoteModel? { get }
     func openNote(_ wineKey: String)
     func closeNote()
+    /// The note's sheet has gone; Edit opens the new note then (CELLAR-R27).
+    func noteDismissed()
     /// The `+` (CELLAR-R14).
     func add()
     func load() async

@@ -32,7 +32,8 @@ public struct PalateReadingLine: View {
                 .tracking(isCompact ? 1.7 : 1.8)
                 .opacity(isCompact ? 0.84 : isStrong ? 1 : 0.62)
                 .frame(width: isCompact ? 80 : 92, alignment: .leading)
-            if let onPick {
+            // On a note the pips spread along a line, set or only read; elsewhere they sit close together.
+            if isCompact || onPick != nil {
                 EditablePips(level: level, onPick: onPick)
             } else {
                 HStack(spacing: 5) {
@@ -49,7 +50,8 @@ public struct PalateReadingLine: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
-        .padding(.vertical, onPick == nil ? 12 : 0)
+        // A spread line is already 44 tall.
+        .padding(.vertical, isCompact || onPick != nil ? 0 : 12)
         .accessibilityElement(children: onPick == nil ? .combine : .ignore)
         .modifier(AdjustableReading(name: name, level: level, onPick: onPick))
     }
@@ -76,12 +78,13 @@ private struct Pip: View {
 /// The pips of an editable line: spread across its width over a hairline, set where the finger lands or slides.
 private struct EditablePips: View {
     var level: Int
-    var onPick: (Int) -> Void
+    /// Nil on a saved note: the line only reads, and its pip does not glow.
+    var onPick: ((Int) -> Void)?
 
     private func pick(at x: CGFloat, width: CGFloat) {
         let slot = width / CGFloat(PalateReadingLine.count)
         let index = min(max(Int(x / slot), 0), PalateReadingLine.count - 1)
-        if index != level { onPick(index) }
+        if index != level { onPick?(index) }
     }
 
     var body: some View {
@@ -95,8 +98,10 @@ private struct EditablePips: View {
                 HStack(spacing: 0) {
                     ForEach(0..<PalateReadingLine.count, id: \.self) { index in
                         Group {
-                            if index == level {
+                            if index == level && onPick != nil {
                                 GlowingPip()
+                            } else if index == level {
+                                Pip(isLit: true, isStrong: true, size: 6)
                             } else {
                                 Pip(isLit: index < level, isStrong: true, size: 5)
                                     .background { if index > level { Circle().fill(UVVAColor.parchment) } }
@@ -108,9 +113,9 @@ private struct EditablePips: View {
             }
             .frame(width: width, height: proxy.size.height)
             .contentShape(Rectangle())
-            .gesture(SpatialTapGesture().onEnded { pick(at: $0.location.x, width: width) })
+            .gesture(SpatialTapGesture().onEnded { pick(at: $0.location.x, width: width) }, isEnabled: onPick != nil)
             // A slide that starts sideways sets the line; one that starts up or down is left to the page's scroll.
-            .gesture(SidewaysPan { pick(at: $0, width: width) })
+            .gesture(SidewaysPan(isEnabled: onPick != nil) { pick(at: $0, width: width) })
         }
         .frame(height: 44)
         .animation(.snappy(duration: 0.18), value: level)
@@ -144,12 +149,19 @@ private struct GlowingPip: View {
 /// A pan that only begins when the finger first moves sideways, so a line in a scroll view can be slid along without
 /// taking the vertical scroll from the page (a SwiftUI drag there holds every touch that starts on it).
 private struct SidewaysPan: UIGestureRecognizerRepresentable {
+    /// Off on a line that only reads: every touch goes to the page.
+    var isEnabled = true
     var onChange: (CGFloat) -> Void
 
     func makeUIGestureRecognizer(context: Context) -> UIPanGestureRecognizer {
         let pan = UIPanGestureRecognizer()
         pan.delegate = context.coordinator
+        pan.isEnabled = isEnabled
         return pan
+    }
+
+    func updateUIGestureRecognizer(_ recognizer: UIPanGestureRecognizer, context: Context) {
+        recognizer.isEnabled = isEnabled
     }
 
     func handleUIGestureRecognizerAction(_ recognizer: UIPanGestureRecognizer, context: Context) {

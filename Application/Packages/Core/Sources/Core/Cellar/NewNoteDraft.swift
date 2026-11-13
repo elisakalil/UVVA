@@ -12,9 +12,11 @@ public struct NewNoteDraft: Equatable, Sendable {
     public var note: String?
     public var photoFront: Data?
     public var photoBack: Data?
+    /// A saved note edited in the new note (CELLAR-R27): its note is replaced as it is, even emptied.
+    public var replacesNote: Bool
 
     public init(wine: Wine, status: CellarEntryStatus, verdict: Verdict? = nil, note: String? = nil,
-                photoFront: Data? = nil, photoBack: Data? = nil, originalWine: Wine? = nil) {
+                photoFront: Data? = nil, photoBack: Data? = nil, originalWine: Wine? = nil, replacesNote: Bool = false) {
         self.wine = wine
         self.originalWine = originalWine == wine ? nil : originalWine
         self.status = status
@@ -22,5 +24,6 @@ public struct NewNoteDraft: Equatable, Sendable {
         self.note = note
         self.photoFront = photoFront
         self.photoBack = photoBack
+        self.replacesNote = replacesNote
     }
 }

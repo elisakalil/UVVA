@@ -30,14 +30,20 @@ public final class CellarViewModel: CellarViewModelProtocol {
     private let onAdd: () -> Void
     /// A note was saved or deleted: its verdict may have moved the map (CELLAR-R29), which the Home follows.
     private let onNoteChange: () -> Void
+    /// CELLAR-R27: the app opens the new note on a saved one.
+    private let onEditNote: (CellarEntry, Wine) -> Void
+    /// The note asked to be edited: the new note opens once its sheet has gone.
+    private var pendingEdit: (entry: CellarEntry, wine: Wine)?
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
     init(loadCellar: any LoadCellarUseCaseProtocol, preferences: any CellarPreferencesProtocol,
          bannerDuration: Duration = .seconds(5), onAdd: @escaping () -> Void = {},
          onNoteChange: @escaping () -> Void = {},
+         onEditNote: @escaping (CellarEntry, Wine) -> Void = { _, _ in },
          makeNote: @escaping (CellarEntry, CellarViewModel) -> NoteViewModel) {
         self.onAdd = onAdd
         self.onNoteChange = onNoteChange
+        self.onEditNote = onEditNote
         self.loadCellar = loadCellar
         self.preferences = preferences
         self.makeNote = makeNote
@@ -66,6 +72,20 @@ public final class CellarViewModel: CellarViewModelProtocol {
 
     /// Back to the Cellar, where it was.
     public func closeNote() { note = nil }
+
+    /// CELLAR-R27: Edit closes the note; the new note opens on it when the sheet is gone (`noteDismissed`), since
+    /// one sheet cannot open over another that is closing.
+    func editNote(_ entry: CellarEntry, wine: Wine) {
+        pendingEdit = (entry, wine)
+        note = nil
+    }
+
+    /// The note's sheet has gone.
+    public func noteDismissed() {
+        guard let edit = pendingEdit else { return }
+        pendingEdit = nil
+        onEditNote(edit.entry, edit.wine)
+    }
 
     public func add() { onAdd() }
 

@@ -73,9 +73,6 @@ struct HomeResourcesUIModel {
     var wineDetailPairingsTitle = String(localized: "Pairings", bundle: .module)
     var wineDetailNonVintage = String(localized: "Non-vintage", bundle: .module)
     var wineDetailServeTitle = String(localized: "How to serve", bundle: .module)
-    var wineDetailTastedQuestion = String(localized: "Have you had this wine?", bundle: .module)
-    var wineDetailNotYetTitle = String(localized: "Not yet", bundle: .module)
-    var wineDetailVerdictQuestion = String(localized: "Would you drink it again?", bundle: .module)
 
     var palateMatchTitle = String(localized: "With your palate", bundle: .module)
     var palateMatchCaption = String(localized: "match with your map", bundle: .module)
@@ -255,31 +252,9 @@ struct HomeResourcesUIModel {
         }
     }
 
-    func verdictLabel(_ verdict: Verdict) -> String {
-        switch verdict {
-        case .yes: String(localized: "Yes", bundle: .module)
-        case .maybe: String(localized: "Maybe", bundle: .module)
-        case .no: String(localized: "No", bundle: .module)
-        }
-    }
-
     /// "Saved to Cellar · Pontoforte" (HOME-R28).
     func savedToCellarNotice(_ wine: Wine) -> String {
         String(localized: "Saved to Cellar · \(wine.name)", bundle: .module)
-    }
-
-    /// "Map updated · Acidity ↑ · Fruit ↑": the axes that moved, in the canonical order (HOME-R24, QUIZ-R23);
-    /// "Saved to Cellar · Map updated · …" when the wine went to the Cellar too.
-    func mapUpdatedNotice(_ moves: [(axis: PalateAxis, up: Bool)], savedToCellar: Bool = false) -> String {
-        var parts: [String] = []
-        if savedToCellar { parts.append(String(localized: "Saved to Cellar", bundle: .module)) }
-        parts.append(String(localized: "Map updated", bundle: .module))
-        if moves.isEmpty {
-            parts.append(String(localized: "barely moved", bundle: .module))
-        } else {
-            parts += moves.map { "\($0.axis.label) \($0.up ? "↑" : "↓")" }
-        }
-        return parts.joined(separator: " · ")
     }
 
     func compatibility(_ value: Int) -> String { "\(value)%" }

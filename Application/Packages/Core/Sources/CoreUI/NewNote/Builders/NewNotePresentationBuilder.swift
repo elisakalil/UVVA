@@ -65,22 +65,19 @@ struct NewNotePresentationBuilder {
         model.wine = flow.wine
         model.palate = palate
         model.tasting = flow.tasting
+        model.isRatedBefore = flow.ratedVerdict != nil
         model.draftNote = flow.note
         model.canSave = flow.canSave
-        model.canRedo = flow.canRedo
+        model.photo = flow.photoFront
         guard let wine = flow.wine else { return }
-        model.title = wine.name
-        model.facts = [
-            NoteFactUIModel(label: resources.styleText, value: resources.type(wine.type)),
-            NoteFactUIModel(label: resources.vintageFieldText, value: wine.vintage.map(String.init) ?? resources.nonVintageText)
-        ]
-        let temperature = wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" }
-        model.servingText = [temperature, wine.howToServe].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: "\n")
-        model.match = palate.map { Similarity.percent(wine.profile, $0) }
+        let content = NotePaperContent(wine: wine, palate: palate, resources: resources.paper)
+        model.content = content
+        model.title = content.title
+        model.facts = content.facts
+        model.findURL = content.findURL
         model.verdicts = [(Verdict.yes, resources.yesText), (.no, resources.noText), (.maybe, resources.maybeText)]
             .map { verdict, label in
                 NoteVerdictUIModel(verdict: verdict, label: label, isSelected: flow.verdict == verdict)
             }
-        model.findURL = WineSearch.url(for: wine)
     }
 }

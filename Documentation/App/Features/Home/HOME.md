@@ -85,9 +85,21 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **HOME-R06 · Escolha.** Um vinho do catálogo escolhido a partir do mapa do paladar, com o prato que o acompanha. O card abre direto no nome do vinho, sem título por cima (2026-11-10).
 
-**HOME-R07 · Topo do match (2026-11-09).** O card mostra o vinho no topo da lista de match: o vinho com prato mais próximo do mapa (SHARED-R07). Não segue o dia: fica o mesmo enquanto o mapa for o mesmo e muda quando o mapa muda, numa avaliação (HOME-R24, QUIZ-R22) ou num Quiz refeito (QUIZ-R18a). Só o vinho do topo recebe o prato; se nenhuma receita servir ao tipo dele, o lugar passa ao seguinte. Vinhos igualmente próximos seguem a ordem da chave do vinho, para o topo ser o mesmo em todas as leituras. Substitui a troca diária.
+**HOME-R07 · Topo do match (2026-11-09).** O card mostra o vinho no topo da lista de match: o vinho com prato mais próximo do mapa (SHARED-R07). Não segue o dia: fica o mesmo enquanto o mapa for o mesmo e muda quando o mapa muda, numa avaliação (a nota do Cellar, CELLAR-R19, QUIZ-R22) ou num Quiz refeito (QUIZ-R18a). Só o vinho do topo recebe o prato; se nenhuma receita servir ao tipo dele, o lugar passa ao seguinte. Vinhos igualmente próximos seguem a ordem da chave do vinho, para o topo ser o mesmo em todas as leituras. Substitui a troca diária.
 
-**HOME-R08 · Pode repetir o Cellar.** O vinho sugerido pode ser um vinho que já está no Cellar do usuário ou que ele já avaliou.
+**HOME-R08 · Pode repetir o Cellar.** Substituída pela HOME-R08a (2026-11-12): o melhor match já não sugere um vinho que está no Cellar.
+
+**HOME-R08a · Só vinhos novos (2026-11-12).** Os cards que sugerem vinhos (o melhor match, "A wine for each strong trait" e "Choose yourself") só sugerem vinhos novos: vinhos que não estão no Cellar do usuário, provados ou Not yet. Um vinho avaliado que não está no Cellar (avaliado na Home antes da HOME-R24 atual) continua novo.
+- **Uma lista só:** o catálogo é ordenado pelo mapa (SHARED-R07) e os vinhos do Cellar saem dessa lista antes de o prato ser escolhido; os três cards leem a mesma lista. O prato vai para o primeiro vinho novo a que uma receita sirva (HOME-R07).
+- **Um vinho entra no Cellar:** sai dos três cards sem ranking novo e sem cortina, porque o mapa não mexeu (HOME-R23). Se era o melhor match, o vinho novo seguinte com receita passa a ser o melhor match, com o seu prato. Depois de uma nota nova, a Home é lida toda de novo (HOME-R10c).
+- **Um vinho sai do Cellar** (a nota apagada, CELLAR-R29): volta a ser novo, e o catálogo é ordenado de novo para ele voltar ao lugar dele; sem cortina, se o mapa não mexeu.
+- **Sem travar a app:** o ranking dos vinhos do catálogo e as receitas são lidos na fila do catálogo, fora da main thread; tirar os vinhos do Cellar, escolher o prato, montar os cards e a busca de "Find my wine" correm em tarefas em segundo plano. A main thread só publica o resultado, e a Home mostra o que já tinha até lá.
+
+**Critérios**
+- Dado o melhor match A, quando A vai para o Cellar, então o card mostra o vinho novo seguinte com prato, e A não aparece em "Choose yourself".
+- Dado um vinho no Cellar como Not yet, então ele não aparece em nenhum dos três cards.
+- Dado um vinho do Cellar cuja nota é apagada, quando a Home volta a aparecer, então ele pode voltar a ser sugerido.
+- Dada uma Home aberta, quando um vinho entra no Cellar, então o catálogo não é ordenado de novo.
 
 **HOME-R09 · Receita.** "See the wine & the dish" expande o card: o prato, por que combina, ingredientes, passos e como servir. "Show less" recolhe.
 
@@ -96,8 +108,9 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 **HOME-R10 · Ausência.** O card não aparece se o catálogo não tiver nenhum vinho com prato associado. Não há match mínimo: com o mapa longe de todos os vinhos, o topo aparece na mesma, com a sua % (2026-11-09).
 
 **HOME-R10c · Só o que segue o mapa (2026-11-10).** Quando o mapa muda, a Home não é lida toda de novo: lê só o que segue o mapa (o mapa, as avaliações, as chaves do Cellar e o ranking do catálogo) e refaz os cards sobre isso.
-- **Quando:** numa avaliação feita na Home (HOME-R24), na hora; numa nota editada ou apagada no Cellar (CELLAR-R29), na próxima vez que a Home aparece, uma vez só, por mais notas que tenham mudado.
-- **Antes de ler o catálogo:** a Home compara o mapa, os vinhos avaliados e a última avaliação com os que tem. Se nada mudou (uma nota que só mudou o texto), não há loading nem ranking; só as chaves do Cellar são atualizadas.
+- **Quando:** numa nota editada ou apagada no Cellar (CELLAR-R29), na próxima vez que a Home aparece, uma vez só, por mais notas que tenham mudado.
+- **Depois de uma nota nova (2026-11-12):** a Home é lida toda de novo, não só o que segue o mapa, porque o match de cada vinho e "A wine for each strong trait" mudam com a avaliação. Durante a leitura, todos os cards mostram a cortina de uvinhas descrita em **Loading**, cada um com o seu tamanho e cantos, e não respondem a toques; os cards novos chegam com o fim das cortinas. Quando a nota veio do "Add to cellar" do melhor match, a Home também volta ao topo, numa rolagem suave, e o card recolhe quando ela chega lá (as duas coisas ao mesmo tempo faziam os cards saltar), tudo sob a cortina, para o melhor match novo aparecer ali; vinda da folha do vinho ou do Cellar, a Home fica onde estava (2026-11-12).
+- **Antes de ler o catálogo:** a Home compara o mapa, os vinhos avaliados, a última avaliação e as chaves do Cellar com os que tem. Se nada mudou (uma nota que só mudou o texto), não há loading nem ranking. Se só o Cellar mudou, não há loading: um vinho que entrou no Cellar sai das sugestões sem ranking novo, e um que saiu dele obriga a ordenar o catálogo de novo (HOME-R08a).
 - **Loading:** o card do melhor match e "Wines for your palate" mostram uma cortina de uvinhas, em vários tamanhos e opacidades, que escorre devagar de cima para baixo. O card mantém o tamanho (o do melhor match recolhe, se estava aberto), o conteúdo some por baixo da cortina e não responde a toques. Com Reduce Motion, as uvas ficam paradas.
 - **Fim:** os cards novos e o fim do loading chegam juntos; a cortina sai num fade lento (1,4 s) enquanto o conteúdo novo aparece. A cortina fica pelo menos 1,8 s, para ser vista a correr e não como um piscar.
 - Os outros cards não mostram loading; os que usam o mapa (amigos, o eixo que mudou, "Choose your wine") são refeitos em silêncio.
@@ -122,7 +135,7 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **Critérios**
 - Dado o mesmo mapa, quando a Home é montada nos dias 27/10 e 28/10, então o vinho do card é o mesmo nos dois.
-- Dado o vinho A no topo, quando o usuário avalia um vinho e o mapa passa a estar mais perto do vinho B, então o card mostra B sem a Home ser reaberta.
+- Dado o vinho A no topo, quando o usuário guarda uma nota que avalia um vinho e o mapa passa a estar mais perto do vinho B, então o card mostra B sem a Home ser reaberta.
 - Dados dois vinhos igualmente próximos do mapa, então o card mostra sempre o mesmo dos dois.
 - Dado um mapa a 40% do vinho mais próximo, então o card aparece com esse vinho.
 - Dada uma nota cujo veredito mudou no Cellar, quando a Home volta a aparecer, então só o melhor match e "Wines for your palate" mostram a cortina, e o resto da Home não é lido.
@@ -201,21 +214,15 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **HOME-R22 · Lista.** Mostra uma sugestão para cada eixo do mapa com valor alto (≥ 7) ou baixo (≤ 4) que tenha um vinho elegível no catálogo. O vinho precisa estar na mesma faixa naquele eixo. Quando o mapa está abaixo de 4, o vinho também precisa estar abaixo de 4. A menor distância no eixo tem prioridade, seguida pela similaridade geral (SHARED-R07). As linhas seguem a ordem canônica dos eixos e um vinho pode aparecer em mais de um eixo. Cada linha mostra nome e produtor e o ícone com o nível do eixo, sem safra nem frase sobre o encaixe (2026-11-10). O card não tem título de seção: o título fica dentro do card, em Red Grapes, e diz o que a lista é: "A wine for each strong trait of your map" (2026-11-10).
 
-**HOME-R23 · Exclusão (2026-11-10).** Vinhos que estão no Cellar, provados ou não, ficam fora da seleção. Quando um vinho vai para o Cellar, os eixos que ele representava passam a usar os próximos vinhos elegíveis, quando houver; a lista é refeita sem cortina (HOME-R10c), porque o mapa não mexeu. Um vinho avaliado que não foi para o Cellar continua na lista. Substitui a exclusão por avaliação.
+**HOME-R23 · Exclusão (2026-11-10).** Vinhos que estão no Cellar, provados ou não, ficam fora da seleção (HOME-R08a, que vale para os três cards que sugerem vinhos). Quando um vinho vai para o Cellar, os eixos que ele representava passam a usar os próximos vinhos elegíveis, quando houver; a lista é refeita sem cortina (HOME-R10c), porque o mapa não mexeu. Um vinho avaliado que não foi para o Cellar continua na lista. Substitui a exclusão por avaliação.
 
-**HOME-R24 · Detalhes e avaliação (2026-11-11).** Tocar num vinho abre a folha do vinho (HOME-R28a). No rodapé, fixo, uma pergunta de cada vez e, logo abaixo, o botão "Add to cellar", que está sempre lá. A pergunta e o botão são o mesmo componente do fim da nota nova do Cellar (CELLAR-R18):
-- "Have you had this wine?" com Yes e Not yet;
-- Yes → "Would you drink it again?" com Yes, Maybe ou No (SHARED-R08);
-- o veredito recalcula o mapa na hora (SHARED-R09). Fica marcado e não pode ser trocado na folha, porque um segundo veredito mexeria o mapa outra vez. O aviso no topo da Home, durante 3 segundos (visto se a folha for fechada nesse tempo), diz os eixos que subiram ou desceram: "Map updated · Acidity ↑ · Fruit ↑", e "Map updated · barely moved" quando nenhum eixo mexeu;
-- Not yet → a pergunta some e fica só "Add to cellar";
-- **Add to cellar** fecha a folha e abre a nota nova do Cellar já no vinho em papel, a mesma que aparece depois de ler um rótulo (CELLAR-R14a), com o que já foi respondido: o veredito dado, ou "Not yet". Sem resposta completa (nenhuma, ou Yes sem veredito), a nota faz ela a pergunta. O vinho só entra no Cellar quando a nota é guardada; fechar a nota sem guardar não guarda nada;
+**HOME-R24 · Detalhes (2026-11-12).** Tocar num vinho abre a folha do vinho (HOME-R28a). A folha não avalia: no rodapé, fixos, ficam "Find the wine" (HOME-R09a) e, logo abaixo, "Add to cellar".
+- **Add to cellar** fecha a folha e abre a nota nova do Cellar já no vinho em papel, a mesma que aparece depois de ler um rótulo (CELLAR-R14a). É na nota que o usuário diz se já provou o vinho e o avalia; o vinho só entra no Cellar, e o mapa só muda, quando a nota é guardada. Fechar a nota sem guardar não guarda nada;
+- um vinho avaliado antes leva o veredito que tem: a nota pergunta "Rate it again?" em vez de "Have you had this wine?" (CELLAR-R14a);
 - um vinho que já está no Cellar mostra o botão como "In your cellar", inativo;
-- "Show another ›" volta a mostrar a pergunta para o vinho seguinte;
-- não há volta atrás: para recomeçar, fecha-se e abre-se a folha de novo.
+- não há aviso no topo da Home sobre o mapa: depois de guardar a nota, a Home é lida de novo sob a cortina (HOME-R10c).
 
-Substitui a pergunta "Add it to your cellar?" com Add to cellar e Not now, e a frase que aparecia depois dela.
-
-**Vinho já avaliado (2026-11-11).** Um vinho avaliado desde o último Quiz abre a folha sem pergunta, só com o botão: "Add to cellar", que leva o veredito que o vinho tem, ou "In your cellar" se já lá estiver. Um vinho que está no Cellar como Not yet (só na "Escolha o seu vinho", HOME-R28) ainda pode ser avaliado na folha: o veredito passa a entrada a Tasted (CELLAR-R13c) e o aviso começa por "Saved to Cellar · ".
+Substitui a pergunta da folha ("Have you had this wine?" e "Would you drink it again?"), que avaliava o vinho e mexia o mapa na hora, e o aviso "Map updated · Acidity ↑ · Fruit ↑" que ela mostrava (2026-11-12). Avaliar passou a acontecer num lugar só, a nota do Cellar.
 
 **HOME-R25 · Ausência.** O card aparece quando pelo menos um eixo encontra uma sugestão elegível.
 
@@ -223,8 +230,8 @@ Substitui a pergunta "Add it to your cellar?" com Add to cellar e Not now, e a f
 - Dado um mapa com floral 7 e tanino 4, então as sugestões de floral alto e tanino baixo têm, respectivamente, floral ≥ 7 e tanino ≤ 4.
 - Dado um eixo alto sem vinhos elegíveis naquela faixa, então a lista omite esse eixo.
 - Dado que o vinho #1 já tinha sido avaliado no Cellar, então ele não aparece na Home.
-- Dada uma avaliação Yes que sobe a acidez e a fruta, então o aviso mostra "Acidity ↑ · Fruit ↑" e some depois de 3 s.
-- Dado que o mapa mudou com a avaliação, então a lista é recalculada com o mapa novo.
+- Dada uma nota nova guardada com um veredito que muda o mapa, então a lista é recalculada com o mapa novo.
+- Dada a folha de um vinho, então o rodapé mostra "Find the wine" e "Add to cellar", sem pergunta.
 
 ### 4.9 Escolha o seu vinho
 
@@ -234,7 +241,7 @@ A direção é a primeira escolha do formulário. **Para o meu paladar** vem sel
 
 **HOME-R27 · Limite de notas.** É possível escolher no máximo 3 notas; com 3 escolhidas, as outras ficam inativas até uma ser desmarcada.
 
-**HOME-R28 · Resultado.** "Find my wine" abre a folha do vinho (HOME-R28a) com o vinho que melhor corresponde aos filtros e ao paladar. "Show another ›" mostra o seguinte do mesmo tipo. O vinho pode ser avaliado ou guardado no Cellar pela pergunta do rodapé (HOME-R24).
+**HOME-R28 · Resultado.** "Find my wine" abre a folha do vinho (HOME-R28a) com o vinho novo (HOME-R08a) que melhor corresponde aos filtros e ao paladar. A busca corre em segundo plano, e um segundo toque enquanto ela corre não começa outra. "Show another ›" mostra o seguinte do mesmo tipo. O vinho vai para o Cellar, e é avaliado, pela nota que "Add to cellar" abre (HOME-R24).
 
 **HOME-R28a · Folha do vinho (2026-11-07).** A mesma folha serve a "Vinhos para o seu paladar" e a "Escolha o seu vinho" (tela "Beberia outra vez?" no design). Papel creme, tinta escura, cantos de 28. Abre quase até ao topo, com a Home escurecida atrás. Mostra, de cima para baixo:
 - o nome do vinho em maiúsculas desenhadas, menor quanto mais longo;
@@ -242,11 +249,10 @@ A direção é a primeira escolha do formulário. **Para o meu paladar** vem sel
 - num resultado, "2 of 5 red wines for your choices" e "Show another ›", que mostra o seguinte e volta ao primeiro no fim;
 - o match (HOME-R10b), sem título; em "Surprise me", a distância ("away from your map");
 - os factos, sem título, em duas colunas onde há par: Origin | Vintage ("2023 · 3 years", ou "Non-vintage"); Style | Grape & notes; Pairings. Os que o vinho não tem ficam fora;
-- "Find the wine" (HOME-R09a), logo a seguir aos factos;
 - How to serve: a temperatura de servir ("8–10 °C") e, por baixo, a frase sobre como servir; aparece com uma das duas. Não há campo "Serve at" (2026-11-11);
 - a lista dos eixos do vinho em pontos, como no card do melhor match (2026-11-11);
 - os dois mapas, com a legenda This wine, Your map e In common;
-- a pergunta e o botão da HOME-R24, fixos no rodapé.
+- no rodapé, fixos, "Find the wine" (HOME-R09a) e "Add to cellar" (HOME-R24) (2026-11-12).
 
 **Critérios**
 - Dadas 3 notas escolhidas, quando o usuário tenta escolher a quarta, então ela não é selecionada.

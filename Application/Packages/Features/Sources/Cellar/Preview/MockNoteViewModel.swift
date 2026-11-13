@@ -15,24 +15,17 @@ final class MockNoteViewModel: NoteViewModelProtocol {
                                 grapes: ["Syrah", "Viognier"], status: .tasted, verdict: .yes,
                                 note: "Dry, full, soft tannin. Plum and pepper first, then something floral at the end.",
                                 alcohol: 13.5, createdAt: .now)
-        let builder = NotePresentationBuilder(entry: entry, wine: nil)
+        let builder = NotePresentationBuilder(entry: entry, wine: nil, palate: PalateMap([.body: 6, .fruit: 8]))
         var model = NoteUIModel()
-        model.date = builder.date
-        model.title = entry.name
-        model.subtitle = builder.subtitle
-        model.again = builder.again
+        model.addedText = model.resources.added(builder.date)
+        model.coverTag = builder.coverTag
+        model.content = builder.content
         model.note = entry.note
-        model.facts = builder.facts
-        model.verdicts = NotePresentationBuilder.verdicts(selected: .yes, resources: model.resources)
         uiModel = model
     }
 
     func load() async {}
-    func edit() { uiModel.isEditing = true }
-    func cancelEdit() { uiModel.isEditing = false }
-    func pick(_ verdict: Verdict) {}
-    func updateNote(_ text: String) { uiModel.draftNote = text }
-    func save() async { uiModel.isEditing = false }
+    func edit() {}
     func askToDelete() { uiModel.isConfirmingDelete = true }
     func cancelDelete() { uiModel.isConfirmingDelete = false }
     func confirmDelete() async {}

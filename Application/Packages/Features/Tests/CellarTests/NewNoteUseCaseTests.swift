@@ -68,6 +68,40 @@ struct NewNoteUseCaseTests {
         #expect(result == .read(Labels.pontoForte))
     }
 
+    @Test func CELLAR_R17_theLog_keepsEveryStepOfTheReading() async throws {
+        let log = LabelReadingLog()
+        let read = ReadLabelUseCase(reader: ReaderStub(text: Labels.pontoForteLabel),
+                                    structurer: StructurerStub(facts: LabelFacts(name: "Ponto Forte")),
+                                    catalog: LabelCatalogCache(catalog: LabelCatalogStub(Labels.catalog)),
+                                    now: { [now] in now }, log: log)
+        _ = await read.execute(front: Data(), back: Data())
+        let entry = log.last
+        #expect(entry?.front == ["Ponto Forte", "RAVASQUEIRA", "2024"])
+        #expect(entry?.back == ["Syrah", "14% vol"])
+        #expect(entry?.parsed?.vintage == 2024)
+        #expect(entry?.structured?.name == "Ponto Forte")
+        #expect(entry?.match == Labels.pontoForte.displayName)
+        let text = LabelReadingLog.text(try #require(entry))
+        #expect(text.contains("FRONT · 3 lines"))
+        #expect(text.contains("Taken for Ponto Forte, Ravasqueira"))
+    }
+
+    @Test func CELLAR_R17_withoutTheModel_theLogSaysSo() async throws {
+        let log = LabelReadingLog()
+        let read = ReadLabelUseCase(reader: ReaderStub(text: LabelText([LabelLine("Vinha Imaginária", height: 0.1)])),
+                                    structurer: StructurerStub(),
+                                    catalog: LabelCatalogCache(catalog: LabelCatalogStub(Labels.catalog)),
+                                    now: { [now] in now }, log: log)
+        _ = await read.execute(front: Data(), back: Data())
+        let entry = try #require(log.last)
+        #expect(entry.structured == nil)
+        #expect(entry.match == nil)
+        // The reason the model gave nothing, and the phone as it saw it.
+        let text = LabelReadingLog.text(entry)
+        #expect(text.contains("No answer: Apple Intelligence is off in Settings (appleIntelligenceNotEnabled)."))
+        #expect(text.contains("iOS 26.1 · pt-PT · language supported"))
+    }
+
     @Test func CELLAR_R21_nothingRead_orReaderFails_isFailed() async {
         #expect(await readLabel(LabelText([LabelLine("  ")])).execute(front: Data(), back: Data()) == .failed)
         #expect(await readLabel(nil).execute(front: Data(), back: Data()) == .failed)

@@ -15,6 +15,7 @@ public enum ScannedWine {
                     producer: producer, vintage: facts.vintage, type: facts.type ?? "", origin: origin,
                     region: facts.region, country: facts.country, grapes: facts.grapes, alcohol: facts.alcohol,
                     classification: [facts.appellation, strength].compactMap { $0 }.joined(separator: " · "),
-                    profile: profile)
+                    profile: profile, note: facts.notes.isEmpty ? nil : facts.notes.joined(separator: ", "),
+                    serving: facts.serving, pairings: facts.pairings)
     }
 }

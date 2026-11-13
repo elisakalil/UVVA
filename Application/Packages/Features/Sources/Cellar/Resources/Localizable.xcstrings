@@ -20,13 +20,7 @@
     "1 note" : {
 
     },
-    "Acidity" : {
-
-    },
-    "Again" : {
-
-    },
-    "Alcohol" : {
+    "Added %@" : {
 
     },
     "Any grape" : {
@@ -47,9 +41,6 @@
     "Any vintage" : {
 
     },
-    "Body" : {
-
-    },
     "Bottles marked Not yet wait in your cellar until you taste them." : {
 
     },
@@ -62,16 +53,10 @@
     "Clear filters" : {
 
     },
-    "Close" : {
-
-    },
     "Delete" : {
 
     },
     "Delete this note?" : {
-
-    },
-    "Dry" : {
 
     },
     "Edit" : {
@@ -80,34 +65,19 @@
     "Every wine you rate moves your map" : {
 
     },
-    "Full" : {
-
-    },
     "Grape" : {
 
     },
     "Grid view" : {
 
     },
-    "High" : {
-
-    },
     "It leaves your cellar and stops counting towards your palate map. This can’t be undone." : {
-
-    },
-    "Light" : {
 
     },
     "List view" : {
 
     },
-    "Low" : {
-
-    },
     "Maybe" : {
-
-    },
-    "Medium" : {
 
     },
     "No" : {
@@ -125,19 +95,10 @@
     "Note saved" : {
 
     },
-    "Off-dry" : {
-
-    },
-    "Pairings" : {
-
-    },
     "Producer" : {
 
     },
     "Region" : {
-
-    },
-    "Save changes" : {
 
     },
     "Scan a label" : {
@@ -155,16 +116,7 @@
     "Show 1 bottle" : {
 
     },
-    "Sweet" : {
-
-    },
-    "Sweetness" : {
-
-    },
     "Tag" : {
-
-    },
-    "Tannin" : {
 
     },
     "Tap + to photograph your first bottle and add it to your cellar." : {
@@ -176,16 +128,7 @@
     "Type" : {
 
     },
-    "UVVA’s reading" : {
-
-    },
     "Vintage" : {
-
-    },
-    "What stood out in the glass?" : {
-
-    },
-    "Would you drink it again?" : {
 
     },
     "Yes" : {
@@ -195,12 +138,6 @@
 
     },
     "Your cellar is empty" : {
-
-    },
-    "Your changes weren’t saved. Try again." : {
-
-    },
-    "Your note" : {
 
     }
   },

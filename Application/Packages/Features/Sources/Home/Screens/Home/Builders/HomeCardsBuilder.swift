@@ -20,7 +20,8 @@ struct HomeCardsBuilder: Sendable {
         if !model.glossary.isEmpty { cards.append(.wordOfTheDay(model.glossary[pickWordIndex(model.glossary.count)])) }
         let wines = winesForPalate(model)
         if !wines.isEmpty { cards.append(.winesForPalate(wines)) }
-        cards.append(.chooseYourWine(model.catalog))
+        // The catalog holds only new wines already (HOME-R08a): "Choose yourself" takes it as it is.
+        cards.append(.chooseYourWine(WineList(model.catalog)))
         return cards
     }
 
@@ -30,11 +31,12 @@ struct HomeCardsBuilder: Sendable {
                 hasUnread: model.notifications.contains { !$0.isRead })
     }
 
-    // HOME-R06, R07, R08, R10: the top of the match list, the wine with a dish closest to the map. It follows the
-    // map and not the day, so it only changes when the map does; wines equally close keep the catalog's order.
+    // HOME-R06, R07, R08, R08a, R10: the top of the match list, the new wine with a dish closest to the map. It
+    // follows the map and not the day, so it only changes when the map or the Cellar does; wines equally close keep
+    // the catalog's order.
     func topMatch(_ model: HomeContentModel) -> Wine? {
         var best: (wine: Wine, similarity: Double)?
-        for wine in model.catalog where wine.dish != nil {
+        for wine in model.catalog where wine.dish != nil && !model.cellarWineKeys.contains(wine.id) {
             let similarity = Similarity.between(wine.profile, model.palateMap)
             if similarity > (best?.similarity ?? -.infinity) { best = (wine, similarity) }
         }
@@ -91,7 +93,7 @@ struct HomeCardsBuilder: Sendable {
         return best ?? (PalateAxis.allCases[0], 0)
     }
 
-    // HOME-R22, R23, R25: a wine in the Cellar leaves the list; a rated one stays until it is kept.
+    // HOME-R22, R23, R25, R08a: only new wines; a rated one stays until it is kept in the Cellar.
     func winesForPalate(_ model: HomeContentModel) -> [PalateWineSuggestion] {
         let candidates = model.catalog.filter { !model.cellarWineKeys.contains($0.id) }
         return PalateAxis.allCases.compactMap { axis in

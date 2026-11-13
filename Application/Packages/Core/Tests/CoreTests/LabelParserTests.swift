@@ -111,4 +111,25 @@ struct LabelParserTests {
         #expect(LabelText([LabelLine("  "), LabelLine("2019")]).isEmpty)
         #expect(!parse([]).hasName)
     }
+
+    // MARK: CELLAR-R17 · Temperatura de servir
+
+    @Test func CELLAR_R17_servingTemperature_inTheWaysLabelsWriteIt() {
+        #expect(LabelParser.serving(in: [LabelLine("Serve at 16-18°C", side: .back)]) == 16...18)
+        #expect(LabelParser.serving(in: [LabelLine("Servir a 16 – 18 ºC", side: .back)]) == 16...18)
+        #expect(LabelParser.serving(in: [LabelLine("Servire a 14° / 16°C", side: .back)]) == 14...16)
+        #expect(LabelParser.serving(in: [LabelLine("Temperatura de serviço 8 a 10 ºC", side: .back)]) == 8...10)
+        #expect(LabelParser.serving(in: [LabelLine("Serve chilled at 8 °C", side: .back)]) == 8...8)
+    }
+
+    @Test func CELLAR_R17_noServingTemperature_whenThereIsNone() {
+        #expect(LabelParser.serving(in: [LabelLine("13,5% vol   750 ml"), LabelLine("2019")]) == nil)
+        // Too warm to be a serving temperature.
+        #expect(LabelParser.serving(in: [LabelLine("Fermented at 28-30°C")]) == nil)
+    }
+
+    @Test func CELLAR_R17_theParser_readsTheServingTemperature() {
+        let facts = parse([LabelLine("Ponto Forte", height: 0.12), LabelLine("Serve at 16-18°C", side: .back)])
+        #expect(facts.serving == 16...18)
+    }
 }

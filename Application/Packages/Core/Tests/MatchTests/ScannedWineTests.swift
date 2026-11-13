@@ -39,4 +39,22 @@ struct ScannedWineTests {
         #expect(merged.alcohol == 14)
         #expect(merged.titleLines == ["Ponto Forte", "PONTO"])
     }
+
+    @Test func CELLAR_R17_scannedWine_keepsTheNotesPairingsAndServing() {
+        let facts = LabelFacts(name: "Vinha Imaginária", notes: ["Plum", "Black pepper"],
+                               pairings: ["Grilled lamb"], serving: 16...18)
+        let wine = ScannedWine.make(facts, profile: PalateMap([:]))
+        #expect(wine.note == "Plum, Black pepper")
+        #expect(wine.pairings == ["Grilled lamb"])
+        #expect(wine.serving == 16...18)
+    }
+
+    @Test func modelNotes_comeFirst_parserServingFillsTheGap() {
+        let model = LabelFacts(name: "X", notes: ["Plum"], pairings: [])
+        let parser = LabelFacts(name: "X", notes: ["Cherry"], pairings: ["Cheese"], serving: 14...16)
+        let merged = model.filling(from: parser)
+        #expect(merged.notes == ["Plum"])
+        #expect(merged.pairings == ["Cheese"])
+        #expect(merged.serving == 14...16)
+    }
 }

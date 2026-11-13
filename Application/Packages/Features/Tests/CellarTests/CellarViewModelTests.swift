@@ -14,7 +14,7 @@ struct CellarViewModelTests {
     private func makeUnloaded(_ entries: [CellarEntry], preferences: PreferencesStub = PreferencesStub()) -> CellarViewModel {
         CellarViewModel(loadCellar: CellarLoaderStub(entries: entries), preferences: preferences,
                         bannerDuration: .milliseconds(10)) { entry, owner in
-            NoteViewModel(entry: entry, loadNote: NoteLoaderStub(), saveNote: SaveNoteSpy(), deleteNote: DeleteNoteSpy(),
+            NoteViewModel(entry: entry, loadNote: NoteLoaderStub(), deleteNote: DeleteNoteSpy(),
                           onChange: { _ in }, onClose: { [weak owner] in owner?.closeNote() })
         }
     }
@@ -156,6 +156,29 @@ struct CellarViewModelTests {
         // The sheet, dragged down.
         model.closeNote()
         #expect(model.note == nil)
+    }
+
+    @Test func CELLAR_R27_edit_closesTheNote_thenOpensTheNewNote() async {
+        var opened: [(String, String)] = []
+        let model = CellarViewModel(loadCellar: CellarLoaderStub(entries: douro), preferences: PreferencesStub(),
+                                    onEditNote: { opened.append(($0.id, $1.name)) }) { entry, owner in
+            NoteViewModel(entry: entry, loadNote: NoteLoaderStub(), deleteNote: DeleteNoteSpy(),
+                          onChange: { _ in }, onClose: {},
+                          onEdit: { [weak owner] entry, wine in owner?.editNote(entry, wine: wine) })
+        }
+        await model.load()
+        model.openNote("redoma")
+        model.note?.edit()
+        #expect(model.note == nil)
+        // The new note waits for the sheet to be gone.
+        #expect(opened.isEmpty)
+        model.noteDismissed()
+        #expect(opened.map(\.0) == ["redoma"])
+        // Closed without Edit, nothing opens.
+        model.openNote("redoma")
+        model.closeNote()
+        model.noteDismissed()
+        #expect(opened.count == 1)
     }
 
     @Test func open_anUnknownWine_doesNothing() async {

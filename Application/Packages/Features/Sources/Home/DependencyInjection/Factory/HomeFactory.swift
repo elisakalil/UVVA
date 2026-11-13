@@ -39,7 +39,6 @@ public struct HomeFactory: HomeFactoryProtocol {
             loadPalateStateUseCase: loadPalateState,
             rankWinesUseCase: rankWines,
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: cellar),
-            rateWineUseCase: RateWineUseCase(maps: maps, cellar: cellar, now: now),
             coordinator: coordinator, now: now, calendar: calendar
         )
     }

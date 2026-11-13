@@ -11,7 +11,7 @@ struct ShortcutCard: View {
     var body: some View {
         FrostedCard(padding: 18) {
             VStack(alignment: .leading, spacing: 0) {
-                Eyebrow(text: eyebrow)
+                Eyebrow(text: eyebrow, color: .white)
                 Text(title)
                     .font(UVVAFont.sans(17.5))
                     .lineLimit(nil)
@@ -20,7 +20,7 @@ struct ShortcutCard: View {
                     .padding(.top, 12)
                 Text(subtitle)
                     .font(UVVAFont.sans(12, .regular))
-                    .foregroundStyle(UVVAColor.cream84)
+                    .foregroundStyle(.white)
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)

@@ -14,7 +14,7 @@ struct ContinueLessonCard: View {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(alignment: .firstTextBaseline, spacing: 2) {
                     Text(String(format: "%02d", number)).font(UVVAFont.sans(38, .ultraLight))
-                    Text(resources.lessonTotal(course.totalLessons)).font(UVVAFont.sans(10)).foregroundStyle(UVVAColor.cream84)
+                    Text(resources.lessonTotal(course.totalLessons)).font(UVVAFont.sans(10)).foregroundStyle(.white)
                 }
                 Spacer(minLength: 6)
                 Text(course.title)
@@ -31,7 +31,7 @@ struct ContinueLessonCard: View {
                 .padding(.top, 10)
                 Text(resources.continueLessonCardContinueTitle)
                     .font(UVVAFont.sans(12))
-                    .foregroundStyle(UVVAColor.cream84)
+                    .foregroundStyle(.white)
                     .padding(.top, 18)
             }
             .frame(maxHeight: .infinity, alignment: .topLeading)

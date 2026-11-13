@@ -34,7 +34,7 @@ struct PerfectTable: View {
                 if let serves = dish.serves {
                     Text(serves)
                         .font(UVVAFont.sans(11, .regular))
-                        .foregroundStyle(UVVAColor.cream60)
+                        .foregroundStyle(.white)
                         .padding(.top, 10)
                 }
 
@@ -59,7 +59,7 @@ struct PerfectTable: View {
                             HStack(alignment: .firstTextBaseline, spacing: 11) {
                                 Text(String(index + 1))
                                     .font(UVVAFont.sans(11, .light))
-                                    .foregroundStyle(UVVAColor.cream.opacity(0.75))
+                                    .foregroundStyle(.white)
                                     .frame(width: 15, alignment: .leading)
                                 // Wraps onto as many lines as the step needs instead of ending in "…".
                                 Text(step)
@@ -73,7 +73,7 @@ struct PerfectTable: View {
                     .padding(.top, 12)
                 }
             }
-            .foregroundStyle(UVVAColor.cream)
+            .foregroundStyle(.white)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
     }

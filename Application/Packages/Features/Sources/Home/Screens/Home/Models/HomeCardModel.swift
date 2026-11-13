@@ -12,7 +12,7 @@ enum HomeCardModel: Equatable, Sendable {
     case learnShortcuts([HomeLessonSuggestion])
     case wordOfTheDay(GlossaryTerm)
     case winesForPalate([PalateWineSuggestion])
-    case chooseYourWine([Wine])
+    case chooseYourWine(WineList)
 
     enum FriendsCardState: Equatable, Sendable {
         case noFriends

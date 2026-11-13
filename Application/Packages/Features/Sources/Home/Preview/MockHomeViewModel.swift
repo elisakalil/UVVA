@@ -27,9 +27,5 @@ final class MockHomeViewModel: HomeViewModelProtocol {
         uiModel.cellarWineKeys.insert(wine.id)
         uiModel.notice = uiModel.resources.savedToCellarNotice(wine)
     }
-    func rate(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async {
-        uiModel.ratedVerdicts[wine.id] = verdict
-        uiModel.notice = uiModel.resources.mapUpdatedNotice([(.acidity, true), (.fruit, true)], savedToCellar: addToCellar)
-    }
 }
 #endif

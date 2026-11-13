@@ -10,6 +10,9 @@ struct HeroCard: View {
     var isInCellar = false
     /// HOME-R10c: the top of the match is being read again; the card folds to its closed size under the curtain.
     var isLoading = false
+    /// A note was saved from this card and the Home is going back to its top (HOME-R10c): the card stays open under
+    /// the curtain until the Home is there, then folds. Folding while the scroll moved made the cards jump.
+    var holdsOpen = false
     /// resources.dailySuggestionCardCollapseTitle: the Home goes back to the top, then calls back for the card to close. Both at once, the
     /// content got shorter under a moving scroll, which jumped and then slid the cards back down.
     var onShowLess: (_ then: @escaping () -> Void) -> Void = { $0() }
@@ -24,7 +27,7 @@ struct HeroCard: View {
                     .font(UVVAFont.sans(32))
                     .lineSpacing(-2)
                 if !wine.producer.isEmpty {
-                    Caption(text: wine.producer)
+                    Caption(text: wine.producer, color: .white)
                         .padding(.top, 14)
                 }
 
@@ -66,12 +69,10 @@ struct HeroCard: View {
                 }
                 .padding(.top, 36)
             }
-            .opacity(MatchCurtain.contentOpacity(isLoading))
-            .accessibilityHidden(isLoading)
         }
-        .matchCurtain(isLoading)
-        .onChange(of: isLoading) { _, loading in
-            if loading { withAnimation(.smooth) { open = false } }
+        .environment(\.cardIsLoading, isLoading)
+        .onChange(of: isLoading && !holdsOpen) { _, folds in
+            if folds { withAnimation(.smooth) { open = false } }
         }
         .sheet(item: $search) { url in SafariSheet(url: url).ignoresSafeArea() }
     }
@@ -93,7 +94,7 @@ struct HeroCard: View {
                     .foregroundStyle(UVVAColor.ink)
                     .opacity(open ? 0 : 1)
                 toggleLabel(resources.dailySuggestionCardCollapseTitle, chevron: resources.dailySuggestionCardCollapseIcon)
-                    .foregroundStyle(UVVAColor.cream)
+                    .foregroundStyle(.white)
                     .opacity(open ? 1 : 0)
             }
             .frame(maxWidth: .infinity, minHeight: 44)

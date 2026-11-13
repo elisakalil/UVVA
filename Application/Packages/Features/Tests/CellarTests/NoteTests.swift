@@ -10,84 +10,80 @@ struct NoteViewModelTests {
                                      type: "Red", region: "Alentejo", origin: "Vinho Regional Alentejano, Portugal",
                                      grapes: ["Syrah", "Viognier"], status: .tasted, verdict: .yes, note: "Dry.",
                                      createdAt: .now)
+    private let now = Date(timeIntervalSince1970: 1_793_000_000) // 2026
 
-    private func make(_ entry: CellarEntry? = nil, save: SaveNoteSpy = SaveNoteSpy(), delete: DeleteNoteSpy = DeleteNoteSpy(),
-                      onChange: @escaping (Bool) -> Void = { _ in }, onClose: @escaping () -> Void = {}) -> NoteViewModel {
-        NoteViewModel(entry: entry ?? tasted, loadNote: NoteLoaderStub(), saveNote: save, deleteNote: delete,
-                      onChange: onChange, onClose: onClose)
+    private func make(_ entry: CellarEntry? = nil, wine: Wine? = nil, maps: MapsSpy? = nil,
+                      delete: DeleteNoteSpy = DeleteNoteSpy(),
+                      onChange: @escaping (Bool) -> Void = { _ in }, onClose: @escaping () -> Void = {},
+                      onEdit: @escaping (CellarEntry, Wine) -> Void = { _, _ in }) -> NoteViewModel {
+        NoteViewModel(entry: entry ?? tasted, loadNote: NoteLoaderStub(wine: wine), deleteNote: delete, maps: maps,
+                      now: { [now] in now }, onChange: onChange, onClose: onClose, onEdit: onEdit)
     }
 
     // MARK: CELLAR-R26 · Conteúdo
 
-    @Test func CELLAR_R26_showsTheNoteAndTheFacts() {
+    @Test func CELLAR_R26_showsTheWineAsTheHomeSheetDoes() throws {
         let model = make().uiModel
-        #expect(model.title == "Ponto Forte")
-        #expect(model.subtitle == "Vinho Regional Alentejano · 2024")
-        #expect(model.again == "Yes")
+        let content = try #require(model.content)
+        #expect(content.title == "Ponto Forte")
+        #expect(content.eyebrow == "Ravasqueira")
+        #expect(content.facts.map(\.label) == ["Origin", "Vintage", "Style", "Grape & notes"])
+        #expect(content.facts.map(\.value) == ["Vinho Regional Alentejano, Portugal", "2024 · 2 years", "Red",
+                                                "Syrah, Viognier"])
+        // Vintage beside Origin, Grape & notes beside Style.
+        #expect(content.facts.filter(\.besidePrevious).map(\.label) == ["Vintage", "Grape & notes"])
         #expect(model.note == "Dry.")
-        #expect(model.facts.map(\.label) == ["Grape", "Region", "Vintage", "Type", "Producer"])
-        #expect(model.facts.first?.value == "Syrah & Viognier")
+        #expect(model.coverTag == "Yes")
+        // No map read yet: no match.
+        #expect(content.percentage == nil)
     }
 
-    @Test func CELLAR_R26_noAlcohol_noAlcoholLine() {
-        #expect(!make().uiModel.facts.contains { $0.label == "Alcohol" })
-    }
-
-    @Test func reading_comesFromTheCatalogWine() async {
+    @Test func CELLAR_R26_theCatalogAndTheMap_fillTheMatchAndHowToServe() async throws {
         var wine = Maps.wine("ponto-forte", 9)
-        wine.note = "plum, black pepper, violet."
-        wine.originInsight = "A warm Alentejo red."
-        let model = NoteViewModel(entry: tasted, loadNote: NoteLoaderStub(wine: wine), saveNote: SaveNoteSpy(),
-                                  deleteNote: DeleteNoteSpy(), onChange: { _ in }, onClose: {})
-        #expect(!model.uiModel.hasReading)
+        wine.serving = 16...18
+        wine.howToServe = "Just below room temperature."
+        wine.pairings = ["Lamb", "Cheese"]
+        let model = make(wine: wine, maps: MapsSpy(map: Maps.flat(5)))
         await model.load()
-        #expect(model.uiModel.hasReading)
-        #expect(model.uiModel.readingText == "A warm Alentejo red.")
-        #expect(model.uiModel.aromas == "Plum  ·  Black pepper  ·  Violet")
-        #expect(model.uiModel.structure.map(\.label) == ["Body", "Tannin", "Acidity", "Sweetness"])
-        #expect(model.uiModel.structure.first?.filled == 11)
-        #expect(model.uiModel.structure.first?.word == "Full")
+        let content = try #require(model.uiModel.content)
+        #expect(content.servingTemperature == "16–18 °C")
+        #expect(content.howToServe == "Just below room temperature.")
+        #expect(content.pairings == "Lamb, Cheese")
+        #expect(content.profile == wine.profile)
+        #expect(content.percentage != nil)
+        #expect(content.sharedLine != nil)
+        #expect(content.apartLine != nil)
+        #expect(content.palate == Maps.flat(5))
+    }
+
+    @Test func CELLAR_R26_theEntrysOwnCopy_comesBeforeTheCatalog() async throws {
+        var entry = tasted
+        entry.wineNotes = "Cherry"
+        entry.pairings = ["Cheese"]
+        var wine = Maps.wine("ponto-forte", 9)
+        wine.note = "plum"
+        wine.pairings = ["Lamb"]
+        let model = make(entry, wine: wine)
+        await model.load()
+        let content = try #require(model.uiModel.content)
+        #expect(content.facts.last?.value == "Syrah, Viognier · Cherry")
+        #expect(content.pairings == "Cheese")
     }
 
     // MARK: CELLAR-R27 · Editar
 
-    @Test func CELLAR_R27_save_keepsTheNewVerdictAndNote() async {
-        let save = SaveNoteSpy()
-        var changed = false
-        let model = make(save: save, onChange: { _ in changed = true })
+    @Test func CELLAR_R27_edit_opensTheNewNote_withTheEntryAndTheWineAsShown() async throws {
+        var edited: (CellarEntry, Wine)?
+        var wine = Maps.wine("ponto-forte", 9)
+        wine.serving = 16...18
+        let model = make(wine: wine, onEdit: { edited = ($0, $1) })
+        await model.load()
         model.edit()
-        #expect(model.uiModel.verdicts.first { $0.isSelected }?.verdict == .yes)
-        model.pick(.no)
-        model.updateNote("Better with the lamb.")
-        await model.save()
-        #expect(save.saved.first?.1 == .no)
-        #expect(save.saved.first?.2 == "Better with the lamb.")
-        #expect(!model.uiModel.isEditing)
-        #expect(model.uiModel.again == "No")
-        #expect(model.uiModel.note == "Better with the lamb.")
-        #expect(changed)
-    }
-
-    @Test func CELLAR_R27_cancel_changesNothing() async {
-        let save = SaveNoteSpy()
-        let model = make(save: save)
-        model.edit()
-        model.pick(.no)
-        model.cancelEdit()
-        #expect(save.saved.isEmpty)
-        #expect(model.uiModel.again == "Yes")
-        model.edit()
-        #expect(model.uiModel.verdicts.first { $0.isSelected }?.verdict == .yes)
-    }
-
-    @Test func saveFailing_staysInEdit_withTheError() async {
-        let save = SaveNoteSpy()
-        save.error = CancellationError()
-        let model = make(save: save)
-        model.edit()
-        await model.save()
-        #expect(model.uiModel.isEditing)
-        #expect(model.uiModel.errorText != nil)
+        let (entry, shown) = try #require(edited)
+        #expect(entry == tasted)
+        #expect(shown.name == "Ponto Forte")
+        #expect(shown.grapes == ["Syrah", "Viognier"])
+        #expect(shown.serving == 16...18)
     }
 
     // MARK: CELLAR-R28 · Apagar
@@ -117,39 +113,6 @@ struct NoteViewModelTests {
 @MainActor
 struct NoteUseCaseTests {
     private let entry = CellarEntry(id: "a", name: "A", status: .tasted, verdict: .yes, createdAt: .now)
-
-    // MARK: CELLAR-R27 · Mudar o veredito recalcula o mapa
-
-    @Test func CELLAR_R27_newVerdict_recalculatesTheMap() async throws {
-        let cellar = CellarSpy(), recalculate = RecalculateSpy()
-        let save = SaveNoteUseCase(cellar: cellar, maps: MapsSpy(), wines: WinesStub(wines: [:]),
-                                   recalculate: recalculate, now: Date.init)
-        try await save.execute(entry, verdict: .no, note: "")
-        #expect(await cellar.updates.first?.1 == .no)
-        #expect(recalculate.calls.first?.0 == "a")
-        #expect(recalculate.calls.first?.1 == .no)
-    }
-
-    @Test func sameVerdict_onlyTheNote_leavesTheMap() async throws {
-        let recalculate = RecalculateSpy()
-        let save = SaveNoteUseCase(cellar: CellarSpy(), maps: MapsSpy(), wines: WinesStub(wines: [:]),
-                                   recalculate: recalculate, now: Date.init)
-        try await save.execute(entry, verdict: .yes, note: "Dry.")
-        #expect(recalculate.calls.isEmpty)
-    }
-
-    // MARK: CELLAR-R01b · De Not yet a provado
-
-    @Test func CELLAR_R01b_notYet_givenAVerdict_ratesOnce() async throws {
-        let maps = MapsSpy(map: Maps.flat(4)), recalculate = RecalculateSpy()
-        let notYet = CellarEntry(id: "a", name: "A", status: .wantToTry, createdAt: .now)
-        let save = SaveNoteUseCase(cellar: CellarSpy(), maps: maps, wines: WinesStub(wines: ["a": Maps.wine("a", 9)]),
-                                   recalculate: recalculate, now: Date.init)
-        try await save.execute(notYet, verdict: .maybe, note: "")
-        #expect(await maps.rated.map(\.0) == ["a"])
-        #expect(await maps.map != Maps.flat(4))
-        #expect(recalculate.calls.isEmpty)
-    }
 
     // MARK: CELLAR-R28 · Apagar retira a avaliação
 

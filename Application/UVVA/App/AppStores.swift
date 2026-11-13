@@ -2,9 +2,9 @@ import Core
 import Storage
 import SwiftData
 
-/// The repositories of the app. A `@ModelActor` runs on the queue it is created on, so these are made off the
-/// main thread: made on it, every read waited there for the content import holding the store, and the first
-/// screen stayed on the plain launch colour until the import finished.
+/// The repositories of the app. Each store runs on a serial queue of its own (`StoreExecutor`), never on the main
+/// thread; they are still made off it, as the stores' `ModelContext`s are made while the content import may be
+/// holding the store.
 /// The CloudKit social service is made here too: `CKContainer(identifier:)` talks to `cloudd` synchronously, and on
 /// the first launch, while SwiftData sets up the Personal store's iCloud mirroring, that held the main thread and froze
 /// the Splash.

@@ -62,16 +62,33 @@ struct NewNoteViewModelTests {
     // MARK: CELLAR-R14a
 
     @Test func CELLAR_R14a_aWineFromTheHome_skipsTheCamera_andSavesWithItsVerdict() async {
-        let viewModel = NewNoteViewModel(wine: Labels.pontoForte, verdict: .yes,
+        let viewModel = NewNoteViewModel(wine: Labels.pontoForte,
                                          prepareCamera: PrepareCameraStub(.denied), readLabel: read, readManual: manual,
                                          saveNewNote: save, onSaved: { [events] in events.saved += 1 })
         await viewModel.start()
         #expect(viewModel.uiModel.step == .note)
         #expect(viewModel.uiModel.title == Labels.pontoForte.name)
+        #expect(viewModel.uiModel.tasting == .asking)
+        #expect(!viewModel.uiModel.isRatedBefore)
+        viewModel.answer(hasTasted: true)
+        viewModel.pick(.yes)
         #expect(viewModel.uiModel.canSave)
         await viewModel.save()
         #expect(save.saved.map(\.verdict) == [.yes])
         #expect(events.saved == 1)
+    }
+
+    @Test func CELLAR_R14a_aWineRatedBefore_asksToRateItAgain_andNoKeepsItsVerdict() async {
+        let viewModel = NewNoteViewModel(wine: Labels.pontoForte, ratedVerdict: .maybe,
+                                         prepareCamera: PrepareCameraStub(.denied), readLabel: read, readManual: manual,
+                                         saveNewNote: save, onSaved: { [events] in events.saved += 1 })
+        await viewModel.start()
+        #expect(viewModel.uiModel.isRatedBefore)
+        viewModel.answer(hasTasted: false)
+        #expect(viewModel.uiModel.tasting == .keptRating)
+        await viewModel.save()
+        #expect(save.saved.map(\.verdict) == [.maybe])
+        #expect(save.saved.map(\.status) == [.tasted])
     }
 
     // MARK: CELLAR-R15 / R22
@@ -216,13 +233,45 @@ struct NewNoteViewModelTests {
         #expect(viewModel.uiModel.errorText == viewModel.uiModel.resources.saveErrorText)
     }
 
+    @Test func CELLAR_R19_unanswered_savesAsNotYet() async {
+        let viewModel = await atTheNote()
+        await viewModel.save()
+        #expect(save.saved.map(\.status) == [.wantToTry])
+        #expect(events.saved == 1)
+    }
+
+    @Test func CELLAR_R20_yesWithoutAVerdict_asksForIt_andSavesNothing() async {
+        let viewModel = await atTheNote()
+        viewModel.answer(hasTasted: true)
+        await viewModel.save()
+        #expect(save.saved.isEmpty)
+        #expect(viewModel.uiModel.errorText == viewModel.uiModel.resources.verdictRequiredText)
+        viewModel.pick(.yes)
+        #expect(viewModel.uiModel.errorText == nil)
+        await viewModel.save()
+        #expect(save.saved.map(\.verdict) == [.yes])
+    }
+
+    @Test func CELLAR_R17_theLabelIsReadFromTheFullSizeCopies_andTheLightOnesAreKept() async throws {
+        let viewModel = make()
+        await viewModel.start()
+        await viewModel.capture(Data([1]), reading: Data([11]))
+        await viewModel.capture(Data([2]), reading: Data([22]))
+        let reads = read.reads
+        #expect(reads.count == 1)
+        #expect(reads.first?.0 == Data([11]))
+        #expect(reads.first?.1 == Data([22]))
+        // The note keeps the light photo.
+        #expect(viewModel.uiModel.photo == Data([1]))
+    }
+
     // MARK: CELLAR-R24
 
-    @Test func CELLAR_R24_redo_opensTheFrontAgain() async {
+    @Test func CELLAR_R24_theNoteShowsItsPhoto_andTakesANewOne() async {
         let viewModel = await atTheNote()
-        #expect(viewModel.uiModel.canRedo)
-        viewModel.redo()
-        #expect(viewModel.uiModel.step == .front)
-        #expect(viewModel.uiModel.wine == nil)
+        #expect(viewModel.uiModel.photo == Data([1]))
+        viewModel.replacePhoto(Data([5]))
+        #expect(viewModel.uiModel.photo == Data([5]))
+        #expect(viewModel.uiModel.step == .note)
     }
 }

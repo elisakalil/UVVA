@@ -132,7 +132,7 @@ struct HomeViewModelTests {
         #expect(wine.dish?.ingredients == ["800 g lamb"])
     }
 
-    @Test func HOME_R07_aRating_movesTheMap_andTheHeroFollows() async throws {
+    @Test func HOME_R07_aNoteThatMovesTheMap_theHeroFollows() async throws {
         let maps = MovingMapStub(map: HomeContentModel.full.palateMap)
         let viewModel = HomeFactory(profiles: ProfilesStub(), maps: maps, catalog: RankedCatalogStub(),
                                     cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
@@ -146,9 +146,11 @@ struct HomeViewModelTests {
         let before = try #require(hero())
         #expect(before.dish?.title == "Lamb stew")
 
-        // A wine the user loved pulls the map all the way to it (the stub saves the wine's own map).
+        // A note on a wine the user loved pulls the map all the way to it (the stub saves the wine's own map); the
+        // saved note reads the whole Home again.
         let loved = try #require(HomeContentModel.full.catalog.first { $0.type == "Red" && $0.id != before.id })
-        await viewModel.rate(loved, verdict: .yes, addToCellar: false)
+        try await maps.saveRatedMap(loved.profile, wineKey: loved.id, verdict: .yes, at: .now)
+        await viewModel.reload()
 
         let after = try #require(hero())
         #expect(after.id == loved.id)
@@ -263,17 +265,11 @@ private struct UnusedCellarAction: AddWineToCellarUseCaseProtocol {
 }
 
 @MainActor
-private struct UnusedRatingAction: RateWineUseCaseProtocol {
-    func execute(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async throws -> [AxisChange] { [] }
-}
-
-@MainActor
 struct HomePresentationTests {
     @Test func preparationFailureDoesNotPublishPartialState() async {
         let model = HomeViewModel(
             loadHomeUseCase: FailingHomeLoader(), loadPalateStateUseCase: PalateStateStub(), rankWinesUseCase: WineRankingSpy(),
             addWineToCellarUseCase: UnusedCellarAction(),
-            rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
             now: Date.init, calendar: .current
         )
@@ -294,7 +290,6 @@ struct HomePresentationTests {
         let model = HomeViewModel(
             loadHomeUseCase: FailingHomeLoader(), loadPalateStateUseCase: PalateStateStub(), rankWinesUseCase: WineRankingSpy(),
             addWineToCellarUseCase: UnusedCellarAction(),
-            rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(
                 onOpenCourse: { openedCourse = $0 },
                 onOpenLearn: { openedKind = $0 }
@@ -439,7 +434,6 @@ struct ModuleStateFlowTests {
         let source = SuspendedHomeSnapshot(old: content(1), latest: content(2))
         let home = HomeViewModel(loadHomeUseCase: source, loadPalateStateUseCase: PalateStateStub(), rankWinesUseCase: WineRankingSpy(),
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: CellarStub()),
-            rateWineUseCase: UnusedRatingAction(),
             coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
             now: Date.init, calendar: .current)
         let oldLoad = Task { await home.load() }

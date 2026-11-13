@@ -26,7 +26,9 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
         case .checkingCamera:
             NotePalette.cameraGround.ignoresSafeArea()
         case .front, .back, .reading:
-            NewNoteCaptureView(model: model, onCapture: { photo in Task { await viewModel.capture(photo) } })
+            NewNoteCaptureView(model: model, onCapture: { photo in
+                Task { await viewModel.capture(photo.kept, reading: photo.reading) }
+            })
                 .transition(.opacity)
         case .readFailed, .cameraDenied:
             NewNoteMessageView(model: model, onPrimary: viewModel.tryAgain, onFillInByHand: viewModel.fillInByHand)
@@ -39,7 +41,7 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
             NewNotePaperView(model: model, onAnswer: viewModel.answer(hasTasted:), onPick: viewModel.pick,
                              onNote: viewModel.updateNote, onAddChip: viewModel.addChip,
                              loadChipOptions: viewModel.chipOptions, onIntensity: viewModel.setIntensity,
-                             onRedo: viewModel.redo,
+                             onReplacePhoto: viewModel.replacePhoto,
                              onSave: { Task { await viewModel.save() } })
                 .transition(.opacity)
         }

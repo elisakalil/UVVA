@@ -3,7 +3,8 @@ import Core
 import Foundation
 import OSLog
 
-/// A saved note (CELLAR.md §5): what was tasted and UVVA's reading; Edit and Delete.
+/// A saved note (CELLAR.md §5): the wine as the Home's wine sheet shows it, with the photos and the note, read only.
+/// Edit opens it in the new note; Delete takes it out of the Cellar.
 @MainActor
 public final class NoteViewModel: NoteViewModelProtocol {
     @Published public private(set) var uiModel = NoteUIModel()
@@ -11,76 +12,47 @@ public final class NoteViewModel: NoteViewModelProtocol {
 
     private var entry: CellarEntry { didSet { refresh() } }
     private var wine: Wine? { didSet { refresh() } }
-    private var isEditing = false { didSet { refresh() } }
-    private var draftVerdict: Verdict? { didSet { refresh() } }
-    private var draftNote = "" { didSet { refresh() } }
+    /// The user's map, for the match and the second map.
+    private var palate: PalateMap? { didSet { refresh() } }
     private var isWorking = false { didSet { refresh() } }
     private var isConfirmingDelete = false { didSet { refresh() } }
     private var errorText: String? { didSet { refresh() } }
 
     private let loadNote: any LoadNoteUseCaseProtocol
-    private let saveNote: any SaveNoteUseCaseProtocol
     private let deleteNote: any DeleteNoteUseCaseProtocol
+    private let maps: (any PalateMapRepository)?
     /// The Cellar reads its entries again; `true` when the note left it.
     private let onChange: (_ deleted: Bool) -> Void
     /// The note was deleted: its sheet closes (CELLAR-R28).
     private let onClose: () -> Void
+    /// CELLAR-R27: the entry and the wine as shown, for the new note to open with.
+    private let onEdit: (CellarEntry, Wine) -> Void
+    private let now: () -> Date
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
-    init(entry: CellarEntry, loadNote: any LoadNoteUseCaseProtocol, saveNote: any SaveNoteUseCaseProtocol,
-         deleteNote: any DeleteNoteUseCaseProtocol, onChange: @escaping (Bool) -> Void, onClose: @escaping () -> Void) {
+    init(entry: CellarEntry, loadNote: any LoadNoteUseCaseProtocol, deleteNote: any DeleteNoteUseCaseProtocol,
+         maps: (any PalateMapRepository)? = nil, now: @escaping () -> Date = Date.init,
+         onChange: @escaping (Bool) -> Void, onClose: @escaping () -> Void,
+         onEdit: @escaping (CellarEntry, Wine) -> Void = { _, _ in }) {
         id = entry.id
         self.entry = entry
         self.loadNote = loadNote
-        self.saveNote = saveNote
         self.deleteNote = deleteNote
+        self.maps = maps
+        self.now = now
         self.onChange = onChange
         self.onClose = onClose
+        self.onEdit = onEdit
         refresh()
     }
 
     public func load() async {
         wine = await loadNote.execute(entry.id)
+        palate = try? await maps?.currentMap()
     }
 
-    /// CELLAR-R27: the draft starts from the note as it is.
     public func edit() {
-        draftVerdict = entry.verdict
-        draftNote = entry.note ?? ""
-        errorText = nil
-        isEditing = true
-    }
-
-    /// "Cancel" drops the changes.
-    public func cancelEdit() {
-        isEditing = false
-        errorText = nil
-    }
-
-    public func pick(_ verdict: Verdict) { draftVerdict = verdict }
-
-    public func updateNote(_ text: String) { draftNote = text }
-
-    public func save() async {
-        guard isEditing, !isWorking else { return }
-        isWorking = true
-        defer { isWorking = false }
-        do {
-            try await saveNote.execute(entry, verdict: draftVerdict, note: draftNote)
-            let note = draftNote.trimmingCharacters(in: .whitespacesAndNewlines)
-            var saved = entry
-            if let draftVerdict {
-                saved.verdict = draftVerdict
-                saved.status = .tasted
-            }
-            saved.note = note.isEmpty ? nil : note
-            entry = saved
-            isEditing = false
-            onChange(false)
-        } catch {
-            logger.error("Note not saved: \(error.localizedDescription, privacy: .public)")
-            errorText = uiModel.resources.saveErrorText
-        }
+        onEdit(entry, builder.paperWine)
     }
 
     public func askToDelete() { isConfirmingDelete = true }
@@ -104,27 +76,19 @@ public final class NoteViewModel: NoteViewModelProtocol {
         }
     }
 
+    private var builder: NotePresentationBuilder {
+        NotePresentationBuilder(entry: entry, wine: wine, palate: palate, resources: uiModel.resources, now: now())
+    }
+
     private func refresh() {
-        let builder = NotePresentationBuilder(entry: entry, wine: wine, resources: uiModel.resources)
+        let builder = builder
         var model = uiModel
-        model.isEditing = isEditing
-        model.date = builder.date
-        model.title = entry.name
-        model.subtitle = builder.subtitle
-        model.again = builder.again
+        model.addedText = model.resources.added(builder.date)
         model.coverTag = builder.coverTag
         model.photoFront = entry.photoFront
         model.photoBack = entry.photoBack
+        model.content = builder.content
         model.note = entry.note
-        model.facts = builder.facts
-        model.hasReading = wine != nil || entry.wineProfile != nil
-        model.pairings = entry.pairings ?? wine?.pairings ?? []
-        model.wineProfile = entry.wineProfile
-        model.readingText = wine?.originInsight
-        model.structure = builder.structure
-        model.aromas = builder.aromas
-        model.verdicts = NotePresentationBuilder.verdicts(selected: draftVerdict, resources: model.resources)
-        model.draftNote = draftNote
         model.isWorking = isWorking
         model.isConfirmingDelete = isConfirmingDelete
         model.errorText = errorText

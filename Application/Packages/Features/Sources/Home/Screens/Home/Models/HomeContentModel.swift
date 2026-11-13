@@ -11,6 +11,8 @@ struct HomeContentModel: Sendable {
     var ratedVerdicts: [String: Verdict]
     /// HOME-R23: the wines in the Cellar, tasted or not.
     var cellarWineKeys: Set<String> = []
+    /// The new wines of the catalog (none in the Cellar, HOME-R08a), closest to the map first, the Hero's with its
+    /// dish: what the Hero, "A wine for each strong trait" and "Choose yourself" suggest from.
     var catalog: [Wine]
     var glossary: [GlossaryTerm]
     var notifications: [AppNotification]

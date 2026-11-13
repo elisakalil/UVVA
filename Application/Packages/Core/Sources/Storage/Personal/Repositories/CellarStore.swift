@@ -3,8 +3,13 @@ import Foundation
 import SwiftData
 
 /// `CellarRepository` on the Personal store.
-@ModelActor
-public actor CellarStore: CellarRepository {
+public actor CellarStore: StoreActor, CellarRepository {
+    public nonisolated let executor: StoreExecutor
+
+    public init(modelContainer: ModelContainer) {
+        executor = StoreExecutor(modelContainer, label: "app.uvva.store.cellar")
+    }
+
     public func entries() throws -> [CellarEntry] {
         let descriptor = FetchDescriptor<CellarEntryEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
         return try modelContext.fetch(descriptor).map(\.entry)
@@ -75,7 +80,12 @@ public actor CellarStore: CellarRepository {
         if let photo = draft.photoFront { entry.photoFront = photo }
         if let photo = draft.photoBack { entry.photoBack = photo }
         let note = draft.note?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        if !note.isEmpty { entry.note = note }
+        if draft.replacesNote {
+            // CELLAR-R27: an edited note is kept as written, and an emptied one goes.
+            entry.note = note.isEmpty ? nil : note
+        } else if !note.isEmpty {
+            entry.note = note
+        }
         entry.updatedAt = date
         try modelContext.save()
         return before

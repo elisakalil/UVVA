@@ -33,20 +33,25 @@ public struct CellarFactory: CellarFactoryProtocol {
 
     /// The tab. `onAdd` is the `+`: the app opens the shared new note (CELLAR-R14).
     /// `onNoteChange` tells the app a note was saved or deleted, which may have moved the map (CELLAR-R29).
-    public func makeViewModel(onAdd: @escaping () -> Void = {}, onNoteChange: @escaping () -> Void = {}) -> CellarViewModel {
+    /// `onEditNote` opens the shared new note on a saved one, to edit it there (CELLAR-R27).
+    public func makeViewModel(onAdd: @escaping () -> Void = {}, onNoteChange: @escaping () -> Void = {},
+                              onEditNote: @escaping (CellarEntry, Wine) -> Void = { _, _ in }) -> CellarViewModel {
         let recalculate = recalculate
         let load = LoadNoteUseCase(wines: wines)
-        let save = SaveNoteUseCase(cellar: cellar, maps: maps, wines: wines, recalculate: recalculate, now: now)
         let delete = DeleteNoteUseCase(cellar: cellar, recalculate: recalculate)
+        let maps = maps
+        let now = now
         return CellarViewModel(
             loadCellar: LoadCellarUseCase(cellar: cellar),
             preferences: preferences,
             onAdd: onAdd,
-            onNoteChange: onNoteChange
+            onNoteChange: onNoteChange,
+            onEditNote: onEditNote
         ) { entry, owner in
-            NoteViewModel(entry: entry, loadNote: load, saveNote: save, deleteNote: delete,
+            NoteViewModel(entry: entry, loadNote: load, deleteNote: delete, maps: maps, now: now,
                           onChange: { [weak owner] _ in owner?.noteChanged() },
-                          onClose: { [weak owner] in owner?.closeNote() })
+                          onClose: { [weak owner] in owner?.closeNote() },
+                          onEdit: { [weak owner] entry, wine in owner?.editNote(entry, wine: wine) })
         }
     }
 }

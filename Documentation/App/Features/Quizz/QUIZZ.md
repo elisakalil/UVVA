@@ -260,7 +260,7 @@ novo = clamp(atual + peso × (vinho[eixo] − atual), 0, 9)
 
 Os pesos são constantes num único lugar (`RatingWeights`), para que possam ser ajustados sem reescrever os testes de comportamento.
 
-**QUIZ-R23 · Variação.** A atualização devolve, para cada eixo, o valor antes e depois. Um eixo "subiu" ou "desceu" quando a variação absoluta é ≥ 0.05 (o aviso da HOME-R24 e o card da HOME-R16 usam isto).
+**QUIZ-R23 · Variação.** A atualização devolve, para cada eixo, o valor antes e depois. Um eixo "subiu" ou "desceu" quando a variação absoluta é ≥ 0.05 (o card da HOME-R16 usa isto).
 
 **Critérios**
 - Dados Acidity 2 no mapa e 8 no vinho, com Yes, então Acidity passa a 2.6.

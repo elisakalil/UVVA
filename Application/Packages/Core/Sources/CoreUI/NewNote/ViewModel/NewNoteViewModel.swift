@@ -23,15 +23,29 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     private let saveNewNote: any SaveNewNoteUseCaseProtocol
     /// The note was kept: the Cellar reads its entries again and says "Note saved".
     private let onSaved: () -> Void
+    /// The full-size copies of the label photos, held only until they are read.
+    private var readingFront: Data?
+    private var readingBack: Data?
+    /// What the last reading saw, for the debug section of the note (CELLAR-R17).
+    private let readingLog: LabelReadingLog?
+    private var readingDebugText: String? { didSet { refresh() } }
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
-    /// `wine` is one the app already knows, with the verdict given for it, if any: the note opens on paper (CELLAR-R14a).
-    init(wine: Wine? = nil, verdict: Verdict? = nil, asksTasting: Bool = false,
+    /// `wine` is one the app already knows: the note opens on paper, asking "Rate it again?" when it was rated before
+    /// with `ratedVerdict` (CELLAR-R14a).
+    /// With `editing`, a saved note of the Cellar opens to be edited, on `wine` as it shows (CELLAR-R27).
+    init(wine: Wine? = nil, ratedVerdict: Verdict? = nil, editing: CellarEntry? = nil,
          prepareCamera: any PrepareCameraUseCaseProtocol, readLabel: any ReadLabelUseCaseProtocol,
          readManual: any ReadManualUseCaseProtocol, saveNewNote: any SaveNewNoteUseCaseProtocol,
          maps: (any PalateMapRepository)? = nil, catalog: LabelCatalogCache? = nil,
-         onSaved: @escaping () -> Void) {
-        if let wine { flow = NewNoteFlow(wine: wine, verdict: verdict, asksTasting: asksTasting) }
+         readingLog: LabelReadingLog? = nil, onSaved: @escaping () -> Void) {
+        if let wine, let entry = editing {
+            flow = NewNoteFlow(editing: wine, verdict: entry.verdict, note: entry.note,
+                               photoFront: entry.photoFront, photoBack: entry.photoBack)
+        } else if let wine {
+            flow = NewNoteFlow(wine: wine, ratedVerdict: ratedVerdict)
+        }
+        self.readingLog = readingLog
         self.maps = maps
         self.catalog = catalog
         self.prepareCamera = prepareCamera
@@ -42,23 +56,29 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         refresh()
     }
 
-    public convenience init(wine: Wine? = nil, verdict: Verdict? = nil, asksTasting: Bool = false,
-                            cellar: any CellarRepository, maps: any PalateMapRepository,
+    public convenience init(wine: Wine? = nil, ratedVerdict: Verdict? = nil,
+                            editing: CellarEntry? = nil, cellar: any CellarRepository, maps: any PalateMapRepository,
                             labelCatalog: any LabelCatalogRepository, reader: any LabelReading,
                             structurer: any LabelStructuring, camera: any CameraAuthorizing,
                             rewriter: any PalateHistoryRewriting, wines: any WineLookup,
                             now: @escaping () -> Date = Date.init,
                             onSaved: @escaping () -> Void) {
         let catalog = LabelCatalogCache(catalog: labelCatalog)
+        #if DEBUG
+        let readingLog: LabelReadingLog? = LabelReadingLog()
+        #else
+        let readingLog: LabelReadingLog? = nil
+        #endif
         let recalculate = RecalculateMapUseCase(history: maps, rewriter: rewriter, wines: wines)
         self.init(
-            wine: wine, verdict: verdict, asksTasting: asksTasting,
+            wine: wine, ratedVerdict: ratedVerdict, editing: editing,
             prepareCamera: PrepareCameraUseCase(camera: camera),
-            readLabel: ReadLabelUseCase(reader: reader, structurer: structurer, catalog: catalog, now: now),
+            readLabel: ReadLabelUseCase(reader: reader, structurer: structurer, catalog: catalog, now: now,
+                                        log: readingLog),
             readManual: ReadManualUseCase(catalog: catalog),
             saveNewNote: SaveNewNoteUseCase(cellar: cellar, catalog: labelCatalog, maps: maps,
                                             recalculate: recalculate, now: now),
-            maps: maps, catalog: catalog, onSaved: onSaved)
+            maps: maps, catalog: catalog, readingLog: readingLog, onSaved: onSaved)
     }
 
     public func start() async {
@@ -68,10 +88,19 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         palate = try? await maps?.currentMap()
     }
 
-    public func capture(_ photo: Data) async {
+    public func capture(_ photo: Data, reading: Data?) async {
+        switch flow.step {
+        case .front: readingFront = reading
+        case .back: readingBack = reading
+        default: break
+        }
         flow.capture(photo)
         guard flow.step == .reading, let front = flow.photoFront, let back = flow.photoBack else { return }
-        let result = await readLabel.execute(front: front, back: back)
+        // The full-size copies are read when there are; the kept photos otherwise.
+        let result = await readLabel.execute(front: readingFront ?? front, back: readingBack ?? back)
+        readingFront = nil
+        readingBack = nil
+        refreshDiagnostics()
         flow.labelRead(result)
     }
 
@@ -101,17 +130,17 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         }
     }
 
-    public func redo() {
-        errorText = nil
-        flow.redo()
-    }
+    public func replacePhoto(_ photo: Data) { flow.replacePhoto(photo) }
 
     public func answer(hasTasted: Bool) {
         errorText = nil
         flow.answer(hasTasted: hasTasted)
     }
 
-    public func pick(_ verdict: Verdict) { flow.pick(verdict) }
+    public func pick(_ verdict: Verdict) {
+        errorText = nil
+        flow.pick(verdict)
+    }
 
     public func updateNote(_ text: String) { flow.note = text }
 
@@ -126,7 +155,11 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     public func setIntensity(_ value: Double, for axis: PalateAxis) { flow.setIntensity(value, for: axis) }
 
     public func save() async {
-        guard let draft = flow.draft, !isWorking else { return }
+        guard !isWorking else { return }
+        guard let draft = flow.draft else {
+            if flow.needsVerdict { errorText = uiModel.resources.verdictRequiredText }
+            return
+        }
         isWorking = true
         defer { isWorking = false }
         do {
@@ -138,11 +171,17 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         }
     }
 
+    /// The last reading, as text, for the debug section of the note.
+    private func refreshDiagnostics() {
+        readingDebugText = readingLog?.last.map(LabelReadingLog.text)
+    }
+
     private func refresh() {
         var model = uiModel
         NewNotePresentationBuilder(flow: flow, palate: palate, resources: model.resources)
             .build(into: &model)
         model.isWorking = isWorking
+        model.readingDebugText = readingDebugText
         model.errorText = errorText
         uiModel = model
     }

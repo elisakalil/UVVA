@@ -1,4 +1,5 @@
 import Core
+import CoreUI
 import DesignSystem
 import Match
 import SwiftUI
@@ -19,7 +20,7 @@ struct PalateMatch: View {
                     .tracking(-1.2)
                 Text(resources.palateMatchCaption)
                     .font(UVVAFont.sans(12.5, .regular))
-                    .foregroundStyle(UVVAColor.cream84)
+                    .foregroundStyle(.white)
             }
             VStack(alignment: .leading, spacing: 6) {
                 Text(uiModel.shared)
@@ -27,7 +28,7 @@ struct PalateMatch: View {
             }
             .font(UVVAFont.sans(13, .light))
             .lineSpacing(4)
-            .foregroundStyle(UVVAColor.cream.opacity(0.9))
+            .foregroundStyle(.white)
             .padding(.top, 14)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

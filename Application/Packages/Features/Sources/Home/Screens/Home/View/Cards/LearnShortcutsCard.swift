@@ -16,7 +16,7 @@ struct LearnShortcutsCard: View {
                 Button { onOpen(region) } label: {
                     FrostedCard(padding: 18) {
                         VStack(alignment: .leading, spacing: 0) {
-                            Eyebrow(text: resources.learnShortcutsCardRegionEyebrow)
+                            Eyebrow(text: resources.learnShortcutsCardRegionEyebrow, color: .white)
                             Text(region.course.title)
                                 .font(UVVAFont.whiteGrape(23))
                                 .lineLimit(1)

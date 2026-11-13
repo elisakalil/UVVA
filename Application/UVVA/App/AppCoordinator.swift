@@ -25,6 +25,8 @@ final class AppCoordinator {
     private(set) var friends: FriendsViewModel?
     /// The originating feature presents the note (CELLAR-R14).
     private(set) var newNote: (origin: AppTab, model: NewNoteViewModel)?
+    /// The open note came from the Hero's "Add to cellar": once saved, the Home goes back to its top (HOME-R10c).
+    private var newNoteReturnsHomeToTop = false
     private(set) var profile: Profile?
     private var isOpeningCourse = false
     private var navigationTask: Task<Void, Never>?
@@ -187,8 +189,8 @@ final class AppCoordinator {
                 self?.openCourse(suggestion.courseID, lessonID: suggestion.lessonID)
             },
             onScan: { [weak self] in self?.openNewNote(from: .home) },
-            onOpenCellarNote: { [weak self] wine, verdict, asksTasting in
-                self?.openNewNote(from: .home, for: wine, verdict: verdict, asksTasting: asksTasting)
+            onOpenCellarNote: { [weak self] wine, ratedVerdict, fromHero in
+                self?.openNewNote(from: .home, for: wine, ratedVerdict: ratedVerdict, returnsHomeToTop: fromHero)
             },
             onOpenFriends: { [weak self] in self?.openFriendsSelection() },
             onOpenLastTable: { [weak self] in self?.openLastTable() },
@@ -199,7 +201,9 @@ final class AppCoordinator {
 
         cellarTab = cellarTab ?? cellarFactory.makeViewModel(
             onAdd: { [weak self] in self?.openNewNote(from: .cellar) },
-            onNoteChange: { [weak self] in self?.noteChanged() })
+            onNoteChange: { [weak self] in self?.noteChanged() },
+            // CELLAR-R27: Edit on a saved note opens it in the new note.
+            onEditNote: { [weak self] entry, wine in self?.openNewNote(from: .cellar, for: wine, editing: entry) })
 
         friends = friends ?? FriendsFactory(profiles: profiles, maps: maps, friends: friendsStore, catalog: catalog,
                                             social: social, contacts: DeviceContacts())
@@ -263,13 +267,15 @@ final class AppCoordinator {
         CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog)
     }
 
-    /// CELLAR-R14: the same new note from the Home and the Cellar. With a wine, from the Home's wine sheet, it opens
-    /// on paper with that wine and the verdict given there (CELLAR-R14a).
-    private func openNewNote(from origin: AppTab, for wine: Wine? = nil, verdict: Verdict? = nil,
-                             asksTasting: Bool = false) {
+    /// CELLAR-R14: the same new note from the Home and the Cellar. With a wine, from the Home's Hero or wine sheet, it
+    /// opens on paper with that wine, asking about it; "Rate it again?" when it was rated before (CELLAR-R14a).
+    /// `returnsHomeToTop`: the note comes from the Hero, and the Home goes back to its top once it is saved.
+    private func openNewNote(from origin: AppTab, for wine: Wine? = nil, ratedVerdict: Verdict? = nil,
+                             editing: CellarEntry? = nil, returnsHomeToTop: Bool = false) {
         guard newNote == nil else { return }
+        newNoteReturnsHomeToTop = returnsHomeToTop
         let model = NewNoteViewModel(
-            wine: wine, verdict: verdict, asksTasting: asksTasting,
+            wine: wine, ratedVerdict: ratedVerdict, editing: editing,
             cellar: cellar, maps: maps, labelCatalog: catalog, reader: VisionLabelReader(),
             structurer: DeviceLabelStructurer(), camera: DeviceCamera(), rewriter: maps, wines: catalog,
             onSaved: { [weak self] in self?.newNoteSaved() })
@@ -285,7 +291,11 @@ final class AppCoordinator {
     private func newNoteSaved() {
         newNote = nil
         cellarTab?.newNoteSaved()
-        Task { await home?.load() }
+        // The match of every wine and "A wine for each strong trait" follow the new rating: the whole Home is read
+        // again, under the curtain of every card. A note from the Hero also takes the Home back to its top.
+        let returnsToTop = newNoteReturnsHomeToTop
+        newNoteReturnsHomeToTop = false
+        Task { await home?.reload(returningToTop: returnsToTop) }
         publishPublicProfile()
     }
 

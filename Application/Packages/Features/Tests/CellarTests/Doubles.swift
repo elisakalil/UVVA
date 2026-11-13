@@ -30,16 +30,6 @@ struct NoteLoaderStub: LoadNoteUseCaseProtocol {
 }
 
 @MainActor
-final class SaveNoteSpy: SaveNoteUseCaseProtocol {
-    var saved: [(String, Verdict?, String)] = []
-    var error: Error?
-    func execute(_ entry: CellarEntry, verdict: Verdict?, note: String) async throws {
-        if let error { throw error }
-        saved.append((entry.id, verdict, note))
-    }
-}
-
-@MainActor
 final class DeleteNoteSpy: DeleteNoteUseCaseProtocol {
     var deleted: [String] = []
     func execute(_ entry: CellarEntry) async throws { deleted.append(entry.id) }

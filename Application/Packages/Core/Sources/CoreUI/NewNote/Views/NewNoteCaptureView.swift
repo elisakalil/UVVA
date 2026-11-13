@@ -8,7 +8,7 @@ import SwiftUI
 /// a label-shaped frame, the two steps, the shutter and, beside it, a photo from the library instead.
 struct NewNoteCaptureView: View {
     var model: NewNoteUIModel
-    var onCapture: (Data) -> Void
+    var onCapture: (LabelPhoto) -> Void
 
     @State private var camera = LabelCamera()
     @State private var isTaking = false
@@ -185,14 +185,12 @@ struct NewNoteCaptureView: View {
         }
     }
 
-    /// The chosen photo, shrunk like one from the camera, off the main thread.
+    /// The chosen photo, made into its two copies like one from the camera, off the main thread.
     private func choose(_ item: PhotosPickerItem) {
         isTaking = true
         Task {
             let data = try? await item.loadTransferable(type: Data.self)
-            let photo: Data? = if let data { await Task.detached { LabelCamera.shrink(data) }.value } else { nil }
-            isTaking = false
-            if let photo { onCapture(photo) }
+            await finish(data)
         }
     }
 
@@ -200,10 +198,14 @@ struct NewNoteCaptureView: View {
         isTaking = true
         let side: LabelSide = model.step == .back ? .back : .front
         Task {
-            let photo = camera.isAvailable ? await camera.takePhoto() : LabelCameraSample.photo(side)
-            isTaking = false
-            if let photo { onCapture(photo) }
+            await finish(camera.isAvailable ? await camera.takePhoto() : LabelCameraSample.photo(side))
         }
+    }
+
+    private func finish(_ data: Data?) async {
+        let photo: LabelPhoto? = if let data { await Task.detached { LabelCamera.prepare(data) }.value } else { nil }
+        isTaking = false
+        if let photo { onCapture(photo) }
     }
 }
 #endif

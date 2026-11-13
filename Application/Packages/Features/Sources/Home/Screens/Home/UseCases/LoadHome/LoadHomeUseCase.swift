@@ -17,7 +17,8 @@ struct LoadHomeUseCase: LoadHomeUseCaseProtocol {
     func execute() async throws -> HomeLoadResultModel {
         let palate = try await loadPalateState.execute()
         let profile = try await profiles.currentProfile()
-        let wines = try await rankWines.execute(for: palate.palateMap)
+        // Only new wines: those in the Cellar are left out of every card that suggests one (HOME-R08a).
+        let wines = try await rankWines.execute(for: palate.palateMap, excluding: palate.cellarWineKeys)
         let glossary = try await catalog.glossary()
         let friendList = (try? await friends.friends()) ?? []
         var lessonCatalog: [Course] = []

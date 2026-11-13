@@ -12,13 +12,20 @@ struct NewNotePaperView: View {
     var onAddChip: (String, NewNoteChipField) -> Void
     var loadChipOptions: (NewNoteChipField) async -> [String]
     var onIntensity: (Double, PalateAxis) -> Void
-    var onRedo: () -> Void
+    var onReplacePhoto: (Data) -> Void
     var onSave: () -> Void
 
     @FocusState private var isNoteFocused: Bool
-    @State private var isFinding = false
     @State private var chipField: NewNoteChipField?
     @State private var isExplainingIntensity = false
+    @State private var isTakingPhoto = false
+    /// A verdict was just given here: the question has shown it marked and gone.
+    @State private var isVerdictGiven = false
+    /// The question fades where it stands, then its place closes from above.
+    @State private var isQuestionFading = false
+    /// While the place closes, the page holds its bottom, so what is above comes down into it.
+    @State private var holdsBottom = false
+    @State private var verdictFade: Task<Void, Never>?
 
     private let ink = UVVAColor.mossDeep
 
@@ -27,53 +34,39 @@ struct NewNotePaperView: View {
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
-                if let wine = model.wine {
-                    VStack(alignment: .leading, spacing: 32) {
-                        title(producer: wine.producer)
-                        match
-                        VStack(alignment: .leading, spacing: 18) {
-                            HStack(alignment: .top, spacing: 24) {
-                                detail(resources.originText, value: wine.origin)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                detail(resources.producerFieldText, value: wine.producer)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-                            ForEach(model.facts) { fact in
-                                detail(fact.label, value: fact.value)
-                            }
-                            detail(resources.serveText, value: model.servingText)
+                if let content = model.content {
+                    // The same parts, in the same order, as a saved note of the Cellar; here they can be added to.
+                    VStack(alignment: .leading, spacing: NotePaper.sectionSpacing) {
+                        VStack(alignment: .leading, spacing: 28) {
+                            NotePaperTitle(title: content.title, producer: content.producer)
+                            photo
                         }
-                        findWine
-                        chipSection(resources.grapesText, field: .grapes, wine: wine)
-                        chipSection(resources.notesText, field: .notes, wine: wine)
-                        chipSection(resources.pairingsText, field: .pairings, wine: wine)
-                        VStack(alignment: .leading, spacing: 4) {
-                            HStack(spacing: 2) {
-                                NoteEyebrow(text: resources.intensityText)
-                                Button { isExplainingIntensity = true } label: {
-                                    Image(systemName: resources.infoIcon)
-                                        .font(.system(size: 12))
-                                        .foregroundStyle(ink.opacity(0.62))
-                                        .frame(width: 44, height: 44)
-                                        .contentShape(Rectangle())
-                                }
-                                .buttonStyle(.plain)
-                                .accessibilityLabel(resources.intensityInfoText)
+                        NotePaperMatch(match: content.match, resources: resources.paper)
+                        NotePaperFacts(content: content, resources: resources.paper)
+                        NotePaperFindWine(title: resources.paper.findWineText, url: content.findURL)
+                        ForEach([NewNoteChipField.grapes, .notes, .pairings]) { field in
+                            NotePaperChips(label: chipTitle(field), chips: content.chips(field),
+                                           addLabel: resources.paper.addText(chipTitle(field))) {
+                                isNoteFocused = false
+                                chipField = field
                             }
-                            .padding(.vertical, -14)
-                            NoteIntensityView(profile: wine.profile, onPick: onIntensity)
-                                .padding(.top, 8)
                         }
+                        NotePaperIntensity(title: resources.paper.intensityText, profile: content.profile,
+                                           infoLabel: resources.intensityInfoText,
+                                           onInfo: { isExplainingIntensity = true }, onPick: onIntensity)
+                        NotePaperMaps(profile: content.profile, palate: content.palate, resources: resources.paper)
                         noteField
-                        maps(wine.profile)
-                            .padding(.top, 24)
                         end
+                        #if DEBUG
+                        if let text = model.readingDebugText { NewNoteReadingDebugView(text: text) }
+                        #endif
                     }
                     .padding(.horizontal, 26)
                     .padding(.top, 42)
                     .padding(.bottom, 16)
                 }
             }
+            .defaultScrollAnchor(holdsBottom ? .bottom : nil, for: .sizeChanges)
             .scrollDismissesKeyboard(.interactively)
             .scrollIndicators(.hidden)
         }
@@ -81,11 +74,11 @@ struct NewNotePaperView: View {
         .foregroundStyle(ink)
         .background(UVVAColor.parchment.ignoresSafeArea())
         .preferredColorScheme(.light)
-        .sheet(isPresented: $isFinding) {
-            if let url = model.findURL { SafariSheet(url: url).ignoresSafeArea() }
+        .sheet(isPresented: $isTakingPhoto) {
+            NewNotePhotoSheet(resources: resources, onPhoto: onReplacePhoto)
         }
         .sheet(isPresented: $isExplainingIntensity) {
-            NewNoteInfoSheet(title: resources.intensityText, paragraphs: resources.intensityInfoParagraphs,
+            NewNoteInfoSheet(title: resources.paper.intensityText, paragraphs: resources.intensityInfoParagraphs,
                              resources: resources)
         }
         .sheet(item: $chipField) { field in
@@ -97,112 +90,106 @@ struct NewNotePaperView: View {
         }
     }
 
-    private func title(producer: String) -> some View {
-        let size: CGFloat = model.title.count >= 23 ? 24 : model.title.count >= 15 ? 29 : 36
-        return VStack(alignment: .leading, spacing: 12) {
-            Text(model.title.uppercased())
-                .font(UVVAFont.redGrapes(size))
-                .lineSpacing(-size * 0.1)
-                .accessibilityAddTraits(.isHeader)
-            if !producer.isEmpty {
-                Text(producer.uppercased())
-                    .font(UVVAFont.sans(8.5, .medium))
-                    .tracking(2.2)
-                    .foregroundStyle(ink.opacity(0.6))
-            }
+    /// The photo taken, or the vineyard with "Add photo +" when there is none; either way a tap takes another
+    /// (CELLAR-R24).
+    private var photo: some View {
+        Button {
+            isNoteFocused = false
+            isTakingPhoto = true
+        } label: {
+            Color.clear
+                .frame(height: 220)
+                .overlay {
+                    if let data = model.photo, let image = UIImage(data: data) {
+                        Image(uiImage: image).resizable().scaledToFill()
+                    } else {
+                        UVVAPhoto.background.resizable().scaledToFill()
+                            .overlay { NotePalette.veil.opacity(0.5) }
+                            .overlay {
+                                HStack(spacing: 8) {
+                                    Text(resources.addPhotoText.uppercased())
+                                        .font(UVVAFont.sans(10, .medium))
+                                        .tracking(2.6)
+                                    Image(systemName: resources.addPhotoIcon)
+                                        .font(.system(size: 12, weight: .regular))
+                                }
+                                .foregroundStyle(UVVAColor.creamFill)
+                            }
+                    }
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 18))
+                .contentShape(RoundedRectangle(cornerRadius: 18))
         }
-    }
-
-    private var match: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 10) {
-            if let match = model.match {
-                Text("\(match)%")
-                    .font(UVVAFont.sans(44, .ultraLight))
-                    .tracking(-1.3)
-            }
-            Text(model.match == nil ? resources.noMapText : resources.matchText)
-                .font(UVVAFont.sans(12.5))
-                .foregroundStyle(ink.opacity(0.78))
-        }
-        .accessibilityElement(children: .combine)
-    }
-
-    private func detail(_ label: String, value: String) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            NoteEyebrow(text: label)
-            Text(value.isEmpty ? "—" : value)
-                .font(UVVAFont.sans(13))
-        }
-        .accessibilityElement(children: .combine)
-    }
-
-    private var findWine: some View {
-        WineSheetButton(title: resources.findWineText, style: .outlined) { isFinding = true }
-            .disabled(model.findURL == nil)
+        .buttonStyle(.plain)
+        .accessibilityLabel(model.photo == nil ? resources.addPhotoText : resources.changePhotoText)
     }
 
     private func chipTitle(_ field: NewNoteChipField) -> String {
         switch field {
-        case .grapes: resources.grapesText
-        case .notes: resources.notesText
-        case .pairings: resources.pairingsText
-        }
-    }
-
-    private func chipSection(_ label: String, field: NewNoteChipField, wine: Wine) -> some View {
-        let chips = field.values(in: wine)
-        return VStack(alignment: .leading, spacing: 10) {
-            NoteEyebrow(text: label)
-            FlowLayout {
-                ForEach(chips.indices, id: \.self) { index in
-                    Chip(text: chips[index], surface: .paper)
-                }
-                Chip(text: String(localized: "Add to \(label)", bundle: .module), surface: .paper, icon: "plus") {
-                    isNoteFocused = false
-                    chipField = field
-                }
-            }
+        case .grapes: resources.paper.grapesText
+        case .notes: resources.paper.notesText
+        case .pairings: resources.paper.pairingsText
         }
     }
 
     private var noteField: some View {
         VStack(alignment: .leading, spacing: 18) {
-            NoteEyebrow(text: resources.yourNoteText)
+            NoteEyebrow(text: resources.paper.yourNoteText)
             TextField("", text: Binding(get: { model.draftNote }, set: { onNote($0) }),
                       prompt: Text(resources.notePromptText).foregroundStyle(NotePalette.ink.opacity(0.4)),
                       axis: .vertical)
                 .font(UVVAFont.sans(15))
-                .lineSpacing(5)
+                .lineSpacing(NoteRule.lineSpacing)
                 .tint(NotePalette.ink)
                 .focused($isNoteFocused)
-                .padding(.bottom, 12)
-                .overlay(alignment: .bottom) { NotePalette.ink.frame(height: 0.5) }
-                .accessibilityLabel(resources.yourNoteText)
+                .padding(.bottom, NoteRule.belowText)
+                .background(alignment: .top) { NoteRule(color: NotePalette.ink) }
+                .accessibilityLabel(resources.paper.yourNoteText)
         }
     }
 
-    private func maps(_ profile: PalateMap) -> some View {
-        WineMapCarousel(copy: .init(wineTitle: resources.wineMapText, comparisonTitle: resources.comparisonText,
-                                    wineLegend: resources.wineText, palateLegend: resources.palateText,
-                                    overlapLegend: resources.overlapText),
-                        labels: PalateAxis.allCases.map(\.label), wine: profile.chartValues,
-                        palate: model.palate?.chartValues, tint: ink)
-    }
-
-    /// "Have you had this wine?", then the verdict; "Not yet" leaves only the button (CELLAR-R18).
+    /// "Have you had this wine?", then the verdict; "Not yet" leaves only the button (CELLAR-R18). A wine rated
+    /// before is asked "Rate it again?": Yes asks for the verdict, No keeps the one it had (CELLAR-R14a).
     private var tastingQuestion: WineTastingActions.Question? {
         switch model.tasting {
+        case .asking where model.isRatedBefore:
+            .init(text: resources.rateAgainQuestionText, choices: [
+                .init(title: resources.yesText) { answer(true) },
+                .init(title: resources.noText) { answer(false) }
+            ])
         case .asking:
             .init(text: resources.tastedQuestionText, choices: [
                 .init(title: resources.yesText) { answer(true) },
                 .init(title: resources.notYetText) { answer(false) }
             ])
+        // Answered here, the question has nothing left to ask.
+        case .tasted where isVerdictGiven:
+            nil
         case .tasted:
             .init(text: resources.drinkAgainText, choices: model.verdicts.map { option in
-                .init(title: option.label, isSelected: option.isSelected) { onPick(option.verdict) }
+                .init(title: option.label, isSelected: option.isSelected) { give(option.verdict) }
             })
-        case .notYet:
+        case .notYet, .keptRating:
             nil
+        }
+    }
+
+    /// The verdict fills its button, and after a moment the question fades away and the button below rises into
+    /// its place.
+    private func give(_ verdict: Verdict) {
+        onPick(verdict)
+        verdictFade?.cancel()
+        verdictFade = Task {
+            // The verdict shows marked for a moment.
+            try? await Task.sleep(for: .milliseconds(400))
+            guard !Task.isCancelled else { return }
+            withAnimation(.easeOut(duration: 0.35)) { isQuestionFading = true }
+            try? await Task.sleep(for: .milliseconds(380))
+            guard !Task.isCancelled else { return }
+            holdsBottom = true
+            withAnimation(.easeInOut(duration: 0.45)) { isVerdictGiven = true }
+            try? await Task.sleep(for: .milliseconds(500))
+            holdsBottom = false
         }
     }
 
@@ -213,9 +200,9 @@ struct NewNotePaperView: View {
     /// The same question and button as the foot of the Home's wine sheet.
     private var end: some View {
         VStack(spacing: 12) {
+            // Always there: unanswered, the wine goes in as Not yet; a "Yes" with no verdict is asked for it.
             WineTastingActions(question: tastingQuestion, primaryTitle: resources.saveNoteText,
-                               isPrimaryEnabled: model.canSave && !model.isWorking,
-                               secondaryTitle: model.canRedo ? resources.redoText : nil, onSecondary: onRedo) {
+                               isPrimaryEnabled: !model.isWorking, questionOpacity: isQuestionFading ? 0 : 1) {
                 isNoteFocused = false
                 onSave()
             }
@@ -224,6 +211,31 @@ struct NewNotePaperView: View {
             }
         }
         .frame(maxWidth: .infinity)
+    }
+}
+
+/// Ruled paper under the note: one rule beneath each line written, so a new line gets its own rule as it appears.
+private struct NoteRule: View {
+    var color: Color
+
+    static let lineSpacing: CGFloat = 14
+    /// How far a rule sits below its line of text.
+    static let belowText: CGFloat = 9
+    /// The height of one line of `UVVAFont.sans(15)`, drawn one step heavier than its light weight.
+    private static let lineHeight = UIFont.systemFont(ofSize: 15, weight: .regular).lineHeight
+    private static let pitch = lineHeight + lineSpacing
+
+    var body: some View {
+        Canvas { context, size in
+            let textHeight = size.height - Self.belowText
+            let lines = max(1, Int(((textHeight + Self.lineSpacing) / Self.pitch).rounded()))
+            for line in 0..<lines {
+                let y = CGFloat(line) * Self.pitch + Self.lineHeight + Self.belowText
+                context.fill(Path(CGRect(x: 0, y: y - 0.5, width: size.width, height: 0.5)), with: .color(color))
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 }
 #endif

@@ -19,11 +19,6 @@ private struct NoCellar: AddWineToCellarUseCaseProtocol {
     func execute(_ wine: Wine) async throws {}
 }
 
-@MainActor
-private struct NoRating: RateWineUseCaseProtocol {
-    func execute(_ wine: Wine, verdict: Verdict, addToCellar: Bool) async throws -> [AxisChange] { [] }
-}
-
 // MARK: HOME-R10c · Só o que segue o mapa
 
 @MainActor
@@ -34,7 +29,7 @@ struct HomeMatchRefreshTests {
 
     private func loadedViewModel() async -> HomeViewModel {
         let model = HomeViewModel(loadHomeUseCase: loader, loadPalateStateUseCase: palate, rankWinesUseCase: ranking,
-                                  addWineToCellarUseCase: NoCellar(), rateWineUseCase: NoRating(),
+                                  addWineToCellarUseCase: NoCellar(),
                                   coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
                                   now: Date.init, calendar: .current, curtainDuration: .zero)
         await model.load()
@@ -154,9 +149,60 @@ struct HomeMatchRefreshTests {
         #expect(loader.calls == 1)
     }
 
+    @Test func aNewNote_readsTheWholeHomeAgain_underEveryCurtain() async throws {
+        let model = await loadedViewModel()
+        var curtain: [Bool] = []
+        var cardsWhileLoading = 0
+        let subscription = model.$uiModel.sink { ui in
+            if ui.isReloading { cardsWhileLoading = ui.content?.cards.count ?? 0 }
+        }
+        let curtainSubscription = model.$uiModel.map(\.isReloading).removeDuplicates().sink { curtain.append($0) }
+        defer { subscription.cancel(); curtainSubscription.cancel() }
+
+        await model.reload()
+
+        #expect(loader.calls == 2)
+        // Down, up while the Home is read, down again with the new cards.
+        #expect(curtain == [false, true, false])
+        // The cards stay in their place under the curtain.
+        #expect(cardsWhileLoading > 0)
+        #expect(model.uiModel.content != nil)
+    }
+
+    @Test func HOME_R10c_aNoteFromTheHero_takesTheHomeBackToTheTop_andOthersDoNot() async throws {
+        let model = await loadedViewModel()
+        var returning: [Bool] = []
+        let subscription = model.$uiModel.map(\.isReturningToTop).removeDuplicates().sink { returning.append($0) }
+        defer { subscription.cancel() }
+
+        // A note from the wine sheet or the Cellar: the curtains, and the Home stays where it is.
+        await model.reload()
+        #expect(returning == [false])
+
+        // A note from the Hero: back to the top while the curtains run, and the flag goes with them.
+        await model.reload(returningToTop: true)
+        #expect(returning == [false, true, false])
+    }
+
+    @Test func aNewNote_beforeTheFirstLoad_readsTheHomeWithoutCurtain() async {
+        let model = HomeViewModel(loadHomeUseCase: loader, loadPalateStateUseCase: palate, rankWinesUseCase: ranking,
+                                  addWineToCellarUseCase: NoCellar(),
+                                  coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
+                                  now: Date.init, calendar: .current, curtainDuration: .zero)
+        var raised = false
+        let subscription = model.$uiModel.sink { if $0.isReloading { raised = true } }
+        defer { subscription.cancel() }
+
+        await model.reload()
+
+        #expect(!raised)
+        #expect(loader.calls == 1)
+        #expect(model.uiModel.content != nil)
+    }
+
     @Test func HOME_R10c_beforeTheFirstLoad_theWholeHomeIsRead() async {
         let model = HomeViewModel(loadHomeUseCase: loader, loadPalateStateUseCase: palate, rankWinesUseCase: ranking,
-                                  addWineToCellarUseCase: NoCellar(), rateWineUseCase: NoRating(),
+                                  addWineToCellarUseCase: NoCellar(),
                                   coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }),
                                   now: Date.init, calendar: .current, curtainDuration: .zero)
         await model.refreshMatches()

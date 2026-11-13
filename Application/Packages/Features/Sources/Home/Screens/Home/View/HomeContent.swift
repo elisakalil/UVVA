@@ -10,6 +10,9 @@ struct HomeContent: View {
     var tourTarget: String?
     var cellarWineKeys: Set<String> = []
     var isRefreshingMatches = false
+    var isReloading = false
+    /// The reload follows a note from the Hero: the Home goes back to its top.
+    var isReturningToTop = false
     var onInvite: () -> Void
     var onOpenLesson: (HomeLessonSuggestion) -> Void = { _ in }
     var onOpenCourse: (String) -> Void = { _ in }
@@ -23,6 +26,8 @@ struct HomeContent: View {
     var onOpenMapHistory: () -> Void = {}
 
     @State private var scroll = HeaderScrollModel()
+    /// The scroll back to the top, after a note from the Hero, has ended: the Hero may fold.
+    @State private var reachedTop = false
     static let topID = "home.top"
 
     private var rows: [[HomeCardModel]] {
@@ -70,6 +75,14 @@ struct HomeContent: View {
                     min(HomeHeader.collapseDistance, max(0, geometry.contentOffset.y + geometry.contentInsets.top))
                 } action: { _, offset in
                     scroll.offset = offset
+                }
+                // A note saved from the Hero: under the curtains, the Home goes back to its top and the Hero folds
+                // there, where the new Hero comes in (HOME-R10c). Other notes leave the Home where it is.
+                .onChange(of: isReturningToTop) { _, returning in
+                    guard returning else { reachedTop = false; return }
+                    withAnimation(.smooth(duration: 0.6)) { proxy.scrollTo(Self.topID, anchor: .top) } completion: {
+                        reachedTop = true
+                    }
                 }
                 .onChange(of: tourTarget) { _, target in
                     withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
@@ -123,13 +136,15 @@ struct HomeContent: View {
     }
 
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
-        HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, isRefreshingMatches: isRefreshingMatches, onInvite: onInvite, onOpenFriends: onOpenFriends,
+        HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, isRefreshingMatches: isRefreshingMatches, isReloading: isReloading,
+                     heroHoldsOpen: isReturningToTop && !reachedTop, onInvite: onInvite, onOpenFriends: onOpenFriends,
                      onOpenLastTable: onOpenLastTable, onOpenMapHistory: onOpenMapHistory,
                      onOpenLesson: onOpenLesson, onOpenCourse: onOpenCourse, onOpenGlossary: onOpenGlossary, onOpenLearn: onOpenLearn,
                      onShowLess: { then in
                          withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }
                      },
                      onOpenWine: onOpenWine, onSaveToCellar: onSaveToCellar)
+            .foregroundStyle(.white)
             .id(card.spotlightID ?? card.kind)
             .modifier(SpotlightModifier(id: card.spotlightID))
     }

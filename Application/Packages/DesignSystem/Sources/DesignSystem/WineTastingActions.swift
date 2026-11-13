@@ -31,22 +31,20 @@ public struct WineTastingActions: View {
     }
 
     var question: Question?
-    var primaryTitle: String
+    var primaryTitle: String?
     var isPrimaryEnabled: Bool
-    var secondaryTitle: String?
-    var onSecondary: () -> Void
+    /// The question fades out where it stands before it leaves, so nothing moves while it goes.
+    var questionOpacity: Double
     var onPrimary: () -> Void
 
-    /// `question` is nil once there is nothing left to ask. `secondaryTitle` puts an outlined button beside the
-    /// primary one ("Redo" in the new note).
-    public init(question: Question?, primaryTitle: String, isPrimaryEnabled: Bool = true,
-                secondaryTitle: String? = nil, onSecondary: @escaping () -> Void = {},
-                onPrimary: @escaping () -> Void) {
+    /// `question` is nil once there is nothing left to ask. Without `primaryTitle`, only the question shows: a
+    /// saved note, read and not edited.
+    public init(question: Question?, primaryTitle: String?, isPrimaryEnabled: Bool = true,
+                questionOpacity: Double = 1, onPrimary: @escaping () -> Void = {}) {
         self.question = question
         self.primaryTitle = primaryTitle
         self.isPrimaryEnabled = isPrimaryEnabled
-        self.secondaryTitle = secondaryTitle
-        self.onSecondary = onSecondary
+        self.questionOpacity = questionOpacity
         self.onPrimary = onPrimary
     }
 
@@ -64,14 +62,12 @@ public struct WineTastingActions: View {
                     }
                     .allowsHitTesting(!question.isLocked)
                 }
+                .opacity(questionOpacity)
                 // One question gives way to the next instead of its words changing in place.
                 .id(question.text)
                 .transition(.opacity)
             }
-            HStack(spacing: 10) {
-                if let secondaryTitle {
-                    WineSheetButton(title: secondaryTitle, style: .outlined, action: onSecondary)
-                }
+            if let primaryTitle {
                 WineSheetButton(title: primaryTitle, style: .filled, action: onPrimary)
                     .disabled(!isPrimaryEnabled)
                     .opacity(isPrimaryEnabled ? 1 : 0.45)
@@ -92,8 +88,7 @@ public struct WineTastingActions: View {
                                                      .init(title: "No") {}],
                                            isLocked: true),
                            primaryTitle: "Add to cellar") {}
-        WineTastingActions(question: nil, primaryTitle: "Save note", isPrimaryEnabled: false,
-                           secondaryTitle: "Redo") {}
+        WineTastingActions(question: nil, primaryTitle: "Save note") {}
     }
     .padding(26)
     .foregroundStyle(UVVAColor.mossDeep)

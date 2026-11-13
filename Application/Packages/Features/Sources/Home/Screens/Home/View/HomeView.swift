@@ -13,7 +13,7 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     @State private var inviting = false
     @State private var wineSheet: WineSheetModel?
     /// "Add to cellar" on the wine sheet: the note opens over the tabs once the sheet is gone (HOME-R24).
-    @State private var cellarNote: (wine: Wine, verdict: Verdict?, asksTasting: Bool)?
+    @State private var cellarNote: Wine?
 
     public init(viewModel: ViewModel, tour: GuidedTourViewModel? = nil,
                 newNote: Binding<NewNoteViewModel?> = .constant(nil)) {
@@ -60,13 +60,8 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             if let model = viewModel.uiModel.content {
                 WineSheet(resources: viewModel.uiModel.resources, sheet: sheet, palateMap: model.palateMap,
                           cellarWineKeys: viewModel.uiModel.cellarWineKeys,
-                          ratedVerdicts: viewModel.uiModel.ratedVerdicts,
-                          // HOME-R24: the sheet stays open, with the verdict marked.
-                          onRate: { wine, verdict, isInCellar in
-                              Task { await viewModel.rate(wine, verdict: verdict, addToCellar: isInCellar) }
-                          },
-                          onAddToCellar: { wine, verdict, asksTasting in
-                              cellarNote = (wine, verdict, asksTasting)
+                          onAddToCellar: { wine in
+                              cellarNote = wine
                               wineSheet = nil
                           })
             }
@@ -76,9 +71,9 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     }
 
     private func openCellarNote() {
-        guard let note = cellarNote else { return }
+        guard let wine = cellarNote else { return }
         cellarNote = nil
-        viewModel.openCellarNote(for: note.wine, verdict: note.verdict, asksTasting: note.asksTasting)
+        viewModel.openCellarNote(for: wine, fromHero: false)
     }
 
     private func content(_ model: HomeContentUIModel, target: String?) -> some View {
@@ -88,6 +83,8 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             tourTarget: target,
             cellarWineKeys: viewModel.uiModel.cellarWineKeys,
             isRefreshingMatches: viewModel.uiModel.isRefreshingMatches,
+            isReloading: viewModel.uiModel.isReloading,
+            isReturningToTop: viewModel.uiModel.isReturningToTop,
             onInvite: { inviting = true },
             onOpenLesson: viewModel.openLesson,
             onOpenCourse: viewModel.openCourse,
@@ -98,10 +95,7 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             },
             onOpenLearn: viewModel.openLearn,
             onOpenWine: { wineSheet = $0 },
-            onSaveToCellar: { wine in
-                let verdict = viewModel.uiModel.ratedVerdicts[wine.id]
-                viewModel.openCellarNote(for: wine, verdict: verdict, asksTasting: verdict == nil)
-            },
+            onSaveToCellar: { viewModel.openCellarNote(for: $0, fromHero: true) },
             onScan: viewModel.scan,
             onOpenFriends: viewModel.openFriends,
             onOpenLastTable: viewModel.openLastTable,
@@ -114,10 +108,6 @@ private struct HomeTourObserver<Tour: GuidedTourViewModelProtocol, Content: View
     @ObservedObject var tour: Tour
     @ViewBuilder var content: (String?) -> Content
     var body: some View { content(tour.uiModel.current?.target) }
-}
-
-extension URL: @retroactive Identifiable {
-    public var id: String { absoluteString }
 }
 
 #Preview {
