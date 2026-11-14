@@ -192,8 +192,11 @@ Cada corrida:
    `openssl ecparam -name prime256v1 -genkey -noout -out eckey.pem` e `openssl ec -in eckey.pem -pubout`.
    No CloudKit Console › `iCloud.app.uvva` › *Tokens & Keys* › *Server-to-Server Keys*, criar uma chave em **Development** e outra em **Production** com a parte pública. Cada uma dá um *Key ID*.
 2. **Segredos no GitHub** (Settings › Secrets and variables › Actions): `CLOUDKIT_DEVELOPMENT_KEY_ID`, `CLOUDKIT_DEVELOPMENT_PRIVATE_KEY` (o conteúdo de `eckey.pem`) e os dois `CLOUDKIT_PRODUCTION_…`. Um ambiente sem segredos é saltado.
-3. **Primeira corrida em Development** (*Run workflow*): cria as tabelas `CatalogWine` e `CatalogSnapshot` e publica os 10 000 vinhos. A `WineContribution` nasce com a primeira nota guardada num build de Debug.
-4. **Índices** (Schema › Indexes), *queryable*: `recordName` e `modificationDate` em `CatalogWine` e `WineContribution`; `CatalogWine.status`, `CatalogWine.tokens`; `WineContribution.wineKey`, `WineContribution.contributor`.
+3. **Tabelas** (Schema › Record Types, em Development). Uma chave de servidor não cria tabelas, então o robô precisa delas antes da primeira corrida:
+   - `CatalogWine`: `data` (String), `status` (String), `tokens` (String List).
+   - `CatalogSnapshot`: `version` (String), `builtAt` (Date/Time), `wineCount` (Int(64)), `prevalence` (String), `wines` (Asset), `state` (Asset).
+   - A `WineContribution` nasce com a primeira nota guardada num build de Debug com iCloud.
+4. **Índices** (Schema › Indexes), *queryable*: `recordName` e `modificationDate` em `CatalogWine` e `WineContribution`; `CatalogWine.status`, `CatalogWine.tokens`; `WineContribution.wineKey`, `WineContribution.contributor`. Sem o de `modificationDate`, o robô para com «Field '___modTime' is not marked queryable». Depois disso, *Run workflow* publica os 10 000 vinhos em Development.
 5. **Permissões** (Schema › Security Roles): em `CatalogWine` e `CatalogSnapshot`, `_icloud` só lê (sem *create*); um papel `Robot` com *create* e *write* nas duas, dado ao usuário dono da chave. Em `WineContribution`, `_world` sem nada, `_icloud` *create*, `_creator` *read* e *write*, e `Robot` *read*.
 6. **Deploy Schema Changes** para Production, e correr o workflow outra vez para publicar em Production. Só então um build de TestFlight ou da App Store tem catálogo.
 

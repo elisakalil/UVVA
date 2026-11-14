@@ -1,18 +1,24 @@
 import DesignSystem
 import SwiftUI
 
-/// The world under the counts of Progress, drawn like the maps of By region: whole coastlines filled in white, without
-/// the poles, the regions of finished courses as solid dots with a ring, the places of tasted wines as small open
-/// rings. While the Regions or Bottles sheet is open only its pins stay.
+/// The world under the counts of Progress, drawn like the maps of By region: the plain shape of the coasts filled in
+/// white, without the poles, the regions of finished courses as solid dots with a ring, the places of tasted wines as
+/// small open rings. While the Regions or Bottles sheet is open only its pins stay.
 ///
 /// A pinch zooms in where the fingers are and a drag then moves the map; a double tap zooms in, or back out. The pins
 /// keep their size, so the ones crowded together come apart, and close in their names show beside them.
+///
+/// While a finger moves, the coastline already drawn is only scaled and moved, a cheap transform; it is drawn again,
+/// sharp, when the gesture ends, or sooner when the drawing has been stretched too far.
 struct ProgressWorldMap: View {
     var model: ProgressMapUIModel
     /// The kind the open sheet keeps; nil shows both.
     var focus: ProgressMapPin.Kind?
 
+    /// What shows.
     @State private var zoom = MapZoom()
+    /// What the coastline was last drawn at.
+    @State private var drawnZoom = MapZoom()
     /// The zoom a pinch or a drag started from.
     @State private var pinchStart: MapZoom?
     @State private var dragStart: MapZoom?
@@ -41,40 +47,51 @@ struct ProgressWorldMap: View {
                 .padding(.horizontal, 20)
         }
         .animation(.easeInOut(duration: 0.35), value: focus)
-        .animation(.easeInOut(duration: 0.35), value: model)
     }
 
     private func map(in size: CGSize) -> some View {
         let projection = WorldProjection(box: atlas.box, size: size)
-        let zoom = zoom
-        return ZStack {
-            land(projection, zoom: zoom)
-            bottles(projection, zoom: zoom)
-                .opacity(isShown(.bottle) ? 1 : 0)
-            regions(projection, zoom: zoom)
-                .opacity(isShown(.region) ? 1 : 0)
-        }
-        .frame(width: size.width, height: size.height)
-        .contentShape(Rectangle())
-        .simultaneousGesture(pinch(in: size))
-        // Only a zoomed map takes a drag, ahead of the page's scroll: at full size the drag scrolls the page.
-        .highPriorityGesture(drag(in: size), including: zoom.scale > 1 ? .all : .subviews)
-        .onTapGesture(count: 2, coordinateSpace: .local) { location in
-            withAnimation(.smooth(duration: 0.45)) {
-                self.zoom = zoom.scale > 1 ? MapZoom()
-                    : zoom.zoomed(to: Self.doubleTapScale, at: location, in: size)
+        return Color.clear
+            .frame(width: size.width, height: size.height)
+            .background(alignment: .topLeading) { coastline(in: size) }
+            .overlay(alignment: .topLeading) {
+                ZStack(alignment: .topLeading) {
+                    pins(.bottle, projection: projection)
+                    pins(.region, projection: projection)
+                }
+                .frame(width: size.width, height: size.height)
+                .allowsHitTesting(false)
             }
-        }
-        .accessibilityZoomAction { action in
-            let middle = CGPoint(x: size.width / 2, y: size.height / 2)
-            let scale = action.direction == .zoomIn ? zoom.scale * 2 : zoom.scale / 2
-            withAnimation(.smooth(duration: 0.35)) { self.zoom = zoom.zoomed(to: scale, at: middle, in: size) }
-        }
+            // In the empty South Pacific, where it covers no land.
+            .overlay(alignment: .bottomLeading) { wholeWorldButton.padding(.leading, 10).padding(.bottom, 4) }
+            .contentShape(Rectangle())
+            .simultaneousGesture(pinch(in: size))
+            // Only a zoomed map takes a drag, ahead of the page's scroll: at full size the drag scrolls the page.
+            .highPriorityGesture(drag(in: size), including: zoom.scale > 1 ? .all : .subviews)
+            .onTapGesture(count: 2, coordinateSpace: .local) { location in
+                move(to: zoom.scale > 1 ? MapZoom() : zoom.zoomed(to: Self.doubleTapScale, at: location, in: size))
+            }
+            .accessibilityZoomAction { action in
+                let middle = CGPoint(x: size.width / 2, y: size.height / 2)
+                let scale = action.direction == .zoomIn ? zoom.scale * 2 : zoom.scale / 2
+                move(to: zoom.zoomed(to: scale, at: middle, in: size))
+            }
     }
 
     private func isShown(_ kind: ProgressMapPin.Kind) -> Bool { focus == nil || focus == kind }
 
-    // MARK: Gestures
+    // MARK: Zooming
+
+    /// An animated jump (double tap, Whole world), with the coastline drawn sharp where it ends.
+    private func move(to target: MapZoom) {
+        // Zooming out, the coastline is drawn for the end first: scaled up, it still covers the start.
+        if target.scale < zoom.scale { drawnZoom = target }
+        withAnimation(.smooth(duration: 0.45)) {
+            zoom = target
+        } completion: {
+            drawnZoom = zoom
+        }
+    }
 
     private func pinch(in size: CGSize) -> some Gesture {
         MagnifyGesture()
@@ -82,8 +99,12 @@ struct ProgressWorldMap: View {
                 let start = pinchStart ?? zoom
                 if pinchStart == nil { pinchStart = zoom }
                 zoom = start.zoomed(to: start.scale * value.magnification, at: value.startLocation, in: size)
+                redrawIfStretched(in: size)
             }
-            .onEnded { _ in pinchStart = nil }
+            .onEnded { _ in
+                pinchStart = nil
+                drawnZoom = zoom
+            }
     }
 
     private func drag(in size: CGSize) -> some Gesture {
@@ -94,64 +115,89 @@ struct ProgressWorldMap: View {
                 let start = dragStart ?? zoom
                 if dragStart == nil { dragStart = zoom }
                 zoom = start.moved(by: value.translation, in: size)
+                redrawIfStretched(in: size)
             }
-            .onEnded { _ in dragStart = nil }
+            .onEnded { _ in
+                dragStart = nil
+                drawnZoom = zoom
+            }
+    }
+
+    /// The drawing scaled past what still looks sharp, or moved past the land drawn around the frame, is drawn again.
+    private func redrawIfStretched(in size: CGSize) {
+        let ratio = zoom.scale / drawnZoom.scale
+        let shift = coastlineShift(ratio: ratio)
+        let covers = -ratio * size.width + shift.width <= 0 && 2 * ratio * size.width + shift.width >= size.width
+            && -ratio * size.height + shift.height <= 0 && 2 * ratio * size.height + shift.height >= size.height
+        if !covers || ratio < 0.75 || ratio > 1.5 { drawnZoom = zoom }
+    }
+
+    /// Where the coastline drawn at `drawnZoom` moves to show `zoom`, once scaled by `ratio`.
+    private func coastlineShift(ratio: CGFloat) -> CGSize {
+        CGSize(width: zoom.offset.width - ratio * drawnZoom.offset.width,
+               height: zoom.offset.height - ratio * drawnZoom.offset.height)
     }
 
     // MARK: Land
 
-    /// The coastlines and a faint white fill, every shape whole inside the frame.
-    private func land(_ projection: WorldProjection, zoom: MapZoom) -> some View {
-        Canvas { context, _ in
-            let path = Path(projection.path(atlas.land)).applying(zoom.transform)
-            context.fill(path, with: .color(ink.opacity(0.1)), style: FillStyle(eoFill: true))
-            context.stroke(path, with: .color(ink.opacity(0.45)), lineWidth: 0.5)
-        }
-        .accessibilityHidden(true)
+    /// The coastline drawn at `drawnZoom` with a frame of land around it on every side, scaled and moved to `zoom`.
+    private func coastline(in size: CGSize) -> some View {
+        let ratio = zoom.scale / drawnZoom.scale
+        let shift = coastlineShift(ratio: ratio)
+        return WorldCoastline(size: size, zoom: drawnZoom)
+            .equatable()
+            .frame(width: size.width * 3, height: size.height * 3)
+            .scaleEffect(ratio, anchor: UnitPoint(x: 1.0 / 3, y: 1.0 / 3))
+            .offset(x: -size.width + shift.width, y: -size.height + shift.height)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
     }
 
     // MARK: Pins
 
-    /// A finished region: a solid dot inside a thin ring, the dot of the open region in By region.
-    private func regions(_ projection: WorldProjection, zoom: MapZoom) -> some View {
-        Canvas { context, _ in
-            for pin in model.pins(.region) {
-                let p = zoom.apply(projection.point(lon: pin.lon, lat: pin.lat))
-                context.stroke(Path(ellipseIn: CGRect(x: p.x - 6, y: p.y - 6, width: 12, height: 12)),
-                               with: .color(ink.opacity(0.5)), lineWidth: 0.6)
-                context.fill(Path(ellipseIn: CGRect(x: p.x - 2.5, y: p.y - 2.5, width: 5, height: 5)),
-                             with: .color(ink))
-                label(pin.name, at: p, gap: 9, zoom: zoom, in: &context)
+    private func pins(_ kind: ProgressMapPin.Kind, projection: WorldProjection) -> some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(model.pins(kind)) { pin in
+                pinView(pin)
+                    .position(zoom.apply(projection.point(lon: pin.lon, lat: pin.lat)))
             }
         }
+        .opacity(isShown(kind) ? 1 : 0)
         .accessibilityHidden(true)
     }
 
-    /// A place of tasted wines: an open ring, a little wider when several wines come from there.
-    private func bottles(_ projection: WorldProjection, zoom: MapZoom) -> some View {
-        Canvas { context, _ in
-            for pin in model.pins(.bottle) {
-                let p = zoom.apply(projection.point(lon: pin.lon, lat: pin.lat))
-                let radius = Self.bottleRadius(count: pin.count)
-                let ring = Path(ellipseIn: CGRect(x: p.x - radius, y: p.y - radius, width: radius * 2, height: radius * 2))
-                context.fill(ring, with: .color(UVVAColor.night.opacity(0.35)))
-                context.stroke(ring, with: .color(ink.opacity(0.9)), lineWidth: 1)
-                label(pin.count > 1 ? "\(pin.name) · \(pin.count)" : pin.name, at: p, gap: radius + 5, zoom: zoom,
-                      in: &context)
+    @ViewBuilder
+    private func pinView(_ pin: ProgressMapPin) -> some View {
+        switch pin.kind {
+        case .region:
+            // A finished region: a solid dot inside a thin ring, the dot of the open region in By region.
+            ZStack {
+                Circle().stroke(ink.opacity(0.5), lineWidth: 0.6)
+                Circle().fill(ink).frame(width: 5, height: 5)
             }
+            .frame(width: 12, height: 12)
+            .overlay(alignment: .leading) { label(pin.name).offset(x: 15) }
+        case .bottle:
+            // A place of tasted wines: an open ring, a little wider when several wines come from there.
+            let diameter = Self.bottleRadius(count: pin.count) * 2
+            Circle()
+                .fill(UVVAColor.night.opacity(0.35))
+                .overlay(Circle().stroke(ink.opacity(0.9), lineWidth: 1))
+                .frame(width: diameter, height: diameter)
+                .overlay(alignment: .leading) {
+                    label(pin.count > 1 ? "\(pin.name) · \(pin.count)" : pin.name).offset(x: diameter + 5)
+                }
         }
-        .accessibilityHidden(true)
     }
 
     /// The pin's name to its right, fading in as the map closes in.
-    private func label(_ name: String, at point: CGPoint, gap: CGFloat, zoom: MapZoom,
-                       in context: inout GraphicsContext) {
-        let opacity = min(max((zoom.scale - Self.labelScale + 0.5) / 0.5, 0), 1)
-        guard opacity > 0 else { return }
-        var faded = context
-        faded.opacity = opacity
-        faded.draw(Text(name).font(UVVAFont.sans(10)).tracking(0.4).foregroundStyle(ink.opacity(0.9)),
-                   at: CGPoint(x: point.x + gap, y: point.y), anchor: .leading)
+    private func label(_ name: String) -> some View {
+        Text(name)
+            .font(UVVAFont.sans(10)).tracking(0.4)
+            .foregroundStyle(ink.opacity(0.9))
+            .lineLimit(1)
+            .fixedSize()
+            .opacity(min(max((zoom.scale - Self.labelScale + 0.5) / 0.5, 0), 1))
     }
 
     static func bottleRadius(count: Int) -> CGFloat { min(2.5 + CGFloat(count - 1) * 0.5, 4.5) }
@@ -170,35 +216,32 @@ struct ProgressWorldMap: View {
                 Circle().stroke(ink.opacity(0.9), lineWidth: 1).frame(width: 6, height: 6)
                     .frame(width: 12, height: 12)
             }
-            Spacer(minLength: 0)
-            zoomHint
+            Spacer(minLength: 8)
+            Text(String(localized: "Pinch to zoom", bundle: .module).uppercased())
+                .font(UVVAFont.sans(8)).tracking(1.6)
+                .lineLimit(1)
+                .fixedSize()
+                .opacity(zoom.scale > 1 ? 0 : 0.5)
+                .accessibilityHidden(true)
         }
     }
 
-    /// "Pinch to zoom" at full size; zoomed in, a way back to the whole world.
+    /// Zoomed in, a way back to the whole world.
     @ViewBuilder
-    private var zoomHint: some View {
+    private var wholeWorldButton: some View {
         if zoom.scale > 1 {
-            Button {
-                withAnimation(.smooth(duration: 0.45)) { zoom = MapZoom() }
-            } label: {
-                HStack(spacing: 6) {
-                    Image(systemName: "arrow.down.right.and.arrow.up.left").font(.system(size: 9, weight: .medium))
-                    Text(String(localized: "Whole world", bundle: .module).uppercased()).font(UVVAFont.sans(9)).tracking(2.2)
-                }
-                .lineLimit(1)
-                .fixedSize()
-                .frame(minHeight: 44)
-                .contentShape(Rectangle())
+            Button { move(to: MapZoom()) } label: {
+                Image(systemName: "arrow.down.right.and.arrow.up.left")
+                    .font(.system(size: 11, weight: .medium))
+                    .frame(width: 30, height: 30)
+                    .background(UVVAColor.night.opacity(0.35), in: Circle())
+                    .overlay(Circle().strokeBorder(ink.opacity(0.3), lineWidth: 0.6))
+                    .frame(width: 44, height: 44, alignment: .bottomLeading)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .opacity(0.82)
-        } else {
-            Text(String(localized: "Pinch to zoom", bundle: .module).uppercased())
-                .font(UVVAFont.sans(9)).tracking(2.2).opacity(0.5)
-                .lineLimit(1)
-                .fixedSize()
-                .accessibilityHidden(true)
+            .accessibilityLabel(Text("Whole world", bundle: .module))
+            .transition(.opacity)
         }
     }
 
@@ -206,6 +249,8 @@ struct ProgressWorldMap: View {
         HStack(spacing: 8) {
             symbol()
             Text(label.uppercased()).font(UVVAFont.sans(9)).tracking(2.2)
+                .lineLimit(1)
+                .fixedSize()
         }
         .opacity(isShown(kind) ? 0.82 : 0.3)
         .accessibilityHidden(true)
@@ -222,10 +267,36 @@ struct ProgressWorldMap: View {
     }
 }
 
+/// The land at one zoom, with a frame of land drawn around the map on every side, so the drawing still fills the map
+/// when a pinch scales it down a little or a drag moves it. Drawn only when its size or zoom changes.
+private struct WorldCoastline: View, Equatable {
+    var size: CGSize
+    var zoom: MapZoom
+
+    /// The land projected once, onto a map 1 point wide.
+    private static let unitPath: CGPath = {
+        let atlas = WorldAtlas.shared
+        let aspect = WorldProjection.aspectRatio(box: atlas.box)
+        return WorldProjection(box: atlas.box, size: CGSize(width: 1, height: 1 / aspect)).path(atlas.land)
+    }()
+
+    var body: some View {
+        Canvas { context, _ in
+            let place = CGAffineTransform(scaleX: size.width, y: size.width)
+                .concatenating(zoom.transform)
+                .concatenating(CGAffineTransform(translationX: size.width, y: size.height))
+            let path = Path(Self.unitPath).applying(place)
+            let ink = UVVAColor.creamFill
+            context.fill(path, with: .color(ink.opacity(0.1)), style: FillStyle(eoFill: true))
+            context.stroke(path, with: .color(ink.opacity(0.5)), lineWidth: 0.6)
+        }
+    }
+}
+
 /// How far in the world map is and which part of it shows: points of the map at full size are scaled by `scale`, then
 /// moved by `offset`. The map always covers its frame.
 struct MapZoom: Equatable {
-    /// Past this the coastlines (1:110m) grow coarse.
+    /// Past this the plain coastline grows too coarse.
     static let maxScale: CGFloat = 6
 
     var scale: CGFloat = 1

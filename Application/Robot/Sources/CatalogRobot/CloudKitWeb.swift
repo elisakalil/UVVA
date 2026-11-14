@@ -197,12 +197,24 @@ public struct CloudKitWeb: Sendable {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = data
-        let (body, response) = try await session.data(for: request)
-        let status = (response as? HTTPURLResponse)?.statusCode ?? 0
-        guard status == 200, let receipt = try JSONDecoder().decode(JSON.self, from: body)["singleFile"] else {
-            throw CloudKitWebError.server(status: status, path: "asset upload", body: String(decoding: body, as: UTF8.self))
+        // Binary, not the form type URLSession would send; with the date, as some uploads need it.
+        request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+        request.setValue(ISO8601DateFormatter().string(from: Date()), forHTTPHeaderField: "X-Apple-CloudKit-Request-ISO8601Date")
+        var attempt = 1
+        while true {
+            let (body, response) = try await session.data(for: request)
+            let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+            if status == 200, let receipt = (try? JSONDecoder().decode(JSON.self, from: body))?["singleFile"] {
+                return receipt
+            }
+            // CloudKit's 5xx are mostly passing: try again a little later.
+            guard status >= 500, attempt < 4 else {
+                throw CloudKitWebError.server(status: status, path: "asset upload",
+                                              body: String(decoding: body, as: UTF8.self))
+            }
+            try await Task.sleep(for: .seconds(5 * attempt))
+            attempt += 1
         }
-        return receipt
     }
 
     /// The file of an asset field, as a lookup or a query returned it.
@@ -221,15 +233,21 @@ public struct CloudKitWeb: Sendable {
         request.httpMethod = "POST"
         request.httpBody = data
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        for (header, value) in try signature(for: data, path: path, date: Date()) {
-            request.setValue(value, forHTTPHeaderField: header)
+        var attempt = 1
+        while true {
+            // Signed again each time: the signature carries the date.
+            for (header, value) in try signature(for: data, path: path, date: Date()) {
+                request.setValue(value, forHTTPHeaderField: header)
+            }
+            let (body, response) = try await session.data(for: request)
+            let status = (response as? HTTPURLResponse)?.statusCode ?? 0
+            if status == 200 { return try JSONDecoder().decode(JSON.self, from: body) }
+            guard status >= 500, attempt < 4 else {
+                throw CloudKitWebError.server(status: status, path: operation, body: String(decoding: body, as: UTF8.self))
+            }
+            try await Task.sleep(for: .seconds(5 * attempt))
+            attempt += 1
         }
-        let (body, response) = try await session.data(for: request)
-        let status = (response as? HTTPURLResponse)?.statusCode ?? 0
-        guard status == 200 else {
-            throw CloudKitWebError.server(status: status, path: operation, body: String(decoding: body, as: UTF8.self))
-        }
-        return try JSONDecoder().decode(JSON.self, from: body)
     }
 
     /// The three headers of a server-to-server request: the date, and the ECDSA signature of

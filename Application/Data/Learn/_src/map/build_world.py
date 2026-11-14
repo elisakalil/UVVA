@@ -24,6 +24,10 @@ OUT = os.path.join(HERE, "../../../../Packages/DesignSystem/Sources/DesignSystem
 # Land whose middle lies past these latitudes is polar and stays off the map.
 ARCTIC = 66.5
 ANTARCTIC = -60.0
+# A world this small needs only the shape of the coasts, as the maps of By region draw them: bends smaller than
+# this (degrees) are smoothed away, and islands smaller than this (square degrees) are left out.
+SIMPLIFY = 0.25
+SMALLEST_ISLAND = 0.6
 
 # The names the wines use, for the names Natural Earth gives.
 COUNTRY_NAMES = {
@@ -243,6 +247,37 @@ def unwrap(points):
     return out
 
 
+def simplify(ring, tolerance):
+    """Douglas-Peucker on a closed ring, keeping its two farthest points so the ring stays closed."""
+    def distance(p, a, b):
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        if dx == dy == 0:
+            return ((p[0] - a[0]) ** 2 + (p[1] - a[1]) ** 2) ** 0.5
+        t = max(0, min(1, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / (dx * dx + dy * dy)))
+        return ((p[0] - a[0] - t * dx) ** 2 + (p[1] - a[1] - t * dy) ** 2) ** 0.5
+
+    def line(points):
+        keep = [False] * len(points)
+        keep[0] = keep[-1] = True
+        stack = [(0, len(points) - 1)]
+        while stack:
+            start, end = stack.pop()
+            far, index = 0.0, None
+            for i in range(start + 1, end):
+                d = distance(points[i], points[start], points[end])
+                if d > far:
+                    far, index = d, i
+            if index is not None and far > tolerance:
+                keep[index] = True
+                stack += [(start, index), (index, end)]
+        return [p for p, k in zip(points, keep) if k]
+
+    if len(ring) < 4:
+        return ring
+    opposite = max(range(len(ring)), key=lambda i: (ring[i][0] - ring[0][0]) ** 2 + (ring[i][1] - ring[0][1]) ** 2)
+    return line(ring[:opposite + 1])[:-1] + line(ring[opposite:] + ring[:1])[:-1]
+
+
 def flat(points):
     out, last = [], None
     for lon, lat in points:
@@ -259,7 +294,10 @@ def main():
     kept = []
     for r in rings:
         r = unwrap(r)
-        if len(r) < 4 or not ANTARCTIC < centroid(r)[1] < ARCTIC:
+        if len(r) < 4 or not ANTARCTIC < centroid(r)[1] < ARCTIC or area(r) / 2 < SMALLEST_ISLAND:
+            continue
+        r = simplify(r, SIMPLIFY)
+        if len(r) < 4:
             continue
         # A piece of an island cut by the 180° meridian (Fiji) joins the rest of it, east of 180.
         if min(lon for lon, _ in r) < -180:
@@ -285,7 +323,7 @@ def main():
     with open(OUT, "w") as f:
         json.dump({"box": box, "land": land, "countries": countries, "places": places}, f,
                   ensure_ascii=False, separators=(",", ":"))
-    print(f"box {box}, {len(land)} rings, {len(countries)} countries, {len(places)} places, "
+    print(f"box {box}, {len(land)} rings, {sum(len(r) for r in land) // 2} points, {len(countries)} countries, {len(places)} places, "
           f"{os.path.getsize(OUT) // 1024} KB")
 
 

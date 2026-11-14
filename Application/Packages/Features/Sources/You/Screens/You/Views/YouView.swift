@@ -6,6 +6,10 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
 
     @State private var selectedProgressStat: ProgressStat?
+    /// How far a Progress sheet is open: it opens at half of the half screen it used to open at.
+    @State private var progressDetent = Self.progressOpeningDetent
+
+    private static var progressOpeningDetent: PresentationDetent { .fraction(0.25) }
 
     public init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -63,9 +67,9 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                         guard kind != nil else { return }
                         // After the room under the page is laid out: scrolled before it, the page stops short.
                         Task { @MainActor in
-                            try? await Task.sleep(for: .milliseconds(60))
+                            try? await Task.sleep(for: .milliseconds(250))
                             withAnimation(.smooth(duration: 0.6)) {
-                                proxy.scrollTo(ProgressTabView<ViewModel.ProgressModel>.mapID, anchor: .top)
+                                proxy.scrollTo(ProgressTabView<ViewModel.ProgressModel>.mapID, anchor: UnitPoint(x: 0.5, y: -0.1))
                             }
                         }
                     }
@@ -87,12 +91,13 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                     .onTapGesture { selectedProgressStat = nil }
             }
         }
-        .sheet(item: $selectedProgressStat) { stat in
+        // The next sheet opens small again, however far this one was dragged.
+        .sheet(item: $selectedProgressStat, onDismiss: { progressDetent = Self.progressOpeningDetent }) { stat in
             ProgressDetailSheet(stat: stat)
             .presentationBackground {
                 PageBackground(photo: viewModel.uiModel.backgroundPhoto, veiled: true)
             }
-            .presentationDetents([.medium, .large])
+            .presentationDetents([Self.progressOpeningDetent, .medium, .large], selection: $progressDetent)
             .presentationBackgroundInteraction(.enabled(upThrough: .medium))
             .presentationDragIndicator(.visible)
         }
