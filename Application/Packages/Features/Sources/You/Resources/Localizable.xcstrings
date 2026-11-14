@@ -146,6 +146,9 @@
     "Map" : {
 
     },
+    "Maybe again" : {
+
+    },
     "Module" : {
 
     },
@@ -164,6 +167,9 @@
     "No reminders. You open the app whenever you feel like it." : {
 
     },
+    "Not again" : {
+
+    },
     "Nothing was removed. Check your connection and try again." : {
 
     },
@@ -177,6 +183,9 @@
 
     },
     "Other modules" : {
+
+    },
+    "Other wines" : {
 
     },
     "Over time" : {
@@ -301,6 +310,25 @@
 
     },
     "With my coffee" : {
+
+    },
+    "World map: %lld regions" : {
+
+    },
+    "World map: %lld regions and %lld tasted wines" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "World map: %1$lld regions and %2$lld tasted wines"
+          }
+        }
+      }
+    },
+    "World map: %lld tasted wines" : {
+
+    },
+    "Would drink again" : {
 
     },
     "XP" : {

@@ -6,6 +6,9 @@ By region (build_map.py). This keeps the coastlines of the merged land (no borde
 middle of each country's mainland, and the true places of the wine regions the catalog uses, so a tasted
 wine is pinned at its region, or at its country when the region is not listed.
 
+The polar land is left out (Antarctica, Greenland, the Arctic islands) and the frame is fitted to what is left,
+so every coastline is drawn whole and none is cut at the edge of the map.
+
 Output: Packages/DesignSystem/Sources/DesignSystem/Resources/WorldMap.json
   {"box": [minLon, minLat, maxLon, maxLat],
    "land": [[lon, lat, lon, lat, ...]],
@@ -18,8 +21,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ATLAS = os.path.join(HERE, "countries-110m.json")
 OUT = os.path.join(HERE, "../../../../Packages/DesignSystem/Sources/DesignSystem/Resources/WorldMap.json")
 
-# The frame of the world: the inhabited land, without the poles.
-BOX = [-168.0, -56.0, 180.0, 76.0]
+# Land whose middle lies past these latitudes is polar and stays off the map.
+ARCTIC = 66.5
+ANTARCTIC = -60.0
 
 # The names the wines use, for the names Natural Earth gives.
 COUNTRY_NAMES = {
@@ -252,8 +256,19 @@ def flat(points):
 def main():
     topo = json.load(open(ATLAS))
     rings, ring, _ = decode_land(topo)
-    # Antarctica stays off the map: the frame stops at the southern tip of the Americas.
-    land = [flat(unwrap(r)) for r in rings if max(lat for _, lat in r) > BOX[1] and len(r) >= 4]
+    kept = []
+    for r in rings:
+        r = unwrap(r)
+        if len(r) < 4 or not ANTARCTIC < centroid(r)[1] < ARCTIC:
+            continue
+        # A piece of an island cut by the 180° meridian (Fiji) joins the rest of it, east of 180.
+        if min(lon for lon, _ in r) < -180:
+            r = [(lon + 360, lat) for lon, lat in r]
+        kept.append(r)
+    lons = [lon for r in kept for lon, _ in r]
+    lats = [lat for r in kept for _, lat in r]
+    box = [round(min(lons) - 0.5, 2), round(min(lats) - 0.5, 2), round(max(lons) + 0.5, 2), round(max(lats) + 0.5, 2)]
+    land = [flat(r) for r in kept]
 
     countries = {}
     for name, shapes in country_rings(topo, ring).items():
@@ -268,9 +283,9 @@ def main():
               for country, regions in PLACES.items() for region, at in regions.items()]
 
     with open(OUT, "w") as f:
-        json.dump({"box": BOX, "land": land, "countries": countries, "places": places}, f,
+        json.dump({"box": box, "land": land, "countries": countries, "places": places}, f,
                   ensure_ascii=False, separators=(",", ":"))
-    print(f"{len(land)} rings, {len(countries)} countries, {len(places)} places, "
+    print(f"box {box}, {len(land)} rings, {len(countries)} countries, {len(places)} places, "
           f"{os.path.getsize(OUT) // 1024} KB")
 
 

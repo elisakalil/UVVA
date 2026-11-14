@@ -49,7 +49,9 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                         // While Regions or Bottles is open, room under the page lets the map rise to the top, above
                         // the sheet; it goes with the sheet.
                         .padding(.bottom, viewModel.uiModel.tab == .progress && selectedProgressStat?.mapKind != nil ? 420 : 0)
-                        .animation(.smooth(duration: 0.6), value: selectedProgressStat?.mapKind)
+                        // It comes at once, so the scroll to the map has it; it leaves smoothly.
+                        .animation(selectedProgressStat?.mapKind == nil ? .smooth(duration: 0.6) : nil,
+                                   value: selectedProgressStat?.mapKind)
                     }
                     .scrollIndicators(.hidden)
                     .scrollEdgeFade(12, throughBottomInset: true)
@@ -59,8 +61,12 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                     // Regions and Bottles keep only their pins: the page brings the map up, above their sheet.
                     .onChange(of: selectedProgressStat?.mapKind) { _, kind in
                         guard kind != nil else { return }
-                        withAnimation(.smooth(duration: 0.6)) {
-                            proxy.scrollTo(ProgressTabView<ViewModel.ProgressModel>.mapID, anchor: .top)
+                        // After the room under the page is laid out: scrolled before it, the page stops short.
+                        Task { @MainActor in
+                            try? await Task.sleep(for: .milliseconds(60))
+                            withAnimation(.smooth(duration: 0.6)) {
+                                proxy.scrollTo(ProgressTabView<ViewModel.ProgressModel>.mapID, anchor: .top)
+                            }
                         }
                     }
                 }

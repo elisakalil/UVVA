@@ -194,7 +194,43 @@ struct YouViewModelTests {
         #expect(atlas.coordinate(region: nil, country: "United States").map { $0.lon < -90 } == true)
         #expect(atlas.coordinate(region: "Marlborough", country: nil).map { $0.lon } == 173.9)
         #expect(atlas.coordinate(region: nil, country: "Atlantis") == nil)
+        #expect(atlas.coordinate(region: "Douro", country: "Portugal")?.region == "Douro")
+        #expect(atlas.coordinate(region: "Somewhere new", country: "Italy")?.region == nil)
         #expect(!atlas.land.isEmpty)
+    }
+
+    @Test func worldAtlas_leavesThePolesOut_andFramesEveryCoastlineWhole() {
+        let atlas = WorldAtlas.shared
+        let points = atlas.land.flatMap { ring in stride(from: 0, to: ring.count - 1, by: 2).map { (ring[$0], ring[$0 + 1]) } }
+        #expect(points.allSatisfy { $0.0 >= atlas.box[0] && $0.0 <= atlas.box[2] && $0.1 >= atlas.box[1] && $0.1 <= atlas.box[3] })
+        // Greenland and Antarctica are gone; Taymyr, the north of the Eurasian mainland, stays.
+        #expect(atlas.box[3] < 80 && atlas.box[1] > -60)
+    }
+
+    @Test func progress_bottlePinAtTheMiddleOfItsCountry_isNamedByTheCountry() {
+        var content = YouContentModel()
+        content.tasted = [tasted("c", region: "Somewhere new", country: "Italy", verdict: .no)]
+        #expect(ProgressPresentationBuilder().build(from: content).map.pins(.bottle).map(\.name) == ["Italy"])
+    }
+
+    // MARK: Progress · Zooming the world map
+
+    @Test func mapZoom_pinch_keepsThePointUnderTheFingers() {
+        let size = CGSize(width: 350, height: 160)
+        let anchor = CGPoint(x: 200, y: 60)
+        let zoom = MapZoom().zoomed(to: 3, at: anchor, in: size)
+        #expect(zoom.scale == 3)
+        #expect(zoom.apply(anchor) == anchor)
+    }
+
+    @Test func mapZoom_neverShowsPastTheEdges_norZoomsOutPastTheWholeMap() {
+        let size = CGSize(width: 350, height: 160)
+        let zoomed = MapZoom().zoomed(to: 4, at: CGPoint(x: 10, y: 10), in: size)
+        #expect(zoomed.moved(by: CGSize(width: 900, height: 900), in: size).offset == .zero)
+        let farRight = zoomed.moved(by: CGSize(width: -9000, height: -9000), in: size)
+        #expect(farRight.offset == CGSize(width: -350 * 3, height: -160 * 3))
+        #expect(zoomed.zoomed(to: 0.2, at: .zero, in: size) == MapZoom())
+        #expect(MapZoom().zoomed(to: 100, at: .zero, in: size).scale == MapZoom.maxScale)
     }
 
     @Test func specialist_connectsStudiedRegionsThroughGrapeAliases() {

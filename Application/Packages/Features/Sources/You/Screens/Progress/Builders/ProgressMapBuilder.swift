@@ -17,7 +17,7 @@ struct ProgressMapBuilder {
             let course = content.certificateCourses[certificate.courseID]
             let at: (lon: Double, lat: Double)? = {
                 if let known = regionCoordinates[certificate.courseID], known.count == 2 { return (known[0], known[1]) }
-                return atlas.coordinate(region: course?.title, country: course?.countries.first)
+                return atlas.coordinate(region: course?.title, country: course?.countries.first).map { ($0.lon, $0.lat) }
             }()
             guard let at else { return nil }
             return ProgressMapPin(id: certificate.courseID, kind: .region, lon: at.lon, lat: at.lat,
@@ -34,7 +34,8 @@ struct ProgressMapBuilder {
             if pins[id] != nil {
                 pins[id]?.count += 1
             } else {
-                let name = [entry.region, entry.country].compactMap { $0 }.filter { !$0.isEmpty }.first ?? entry.name
+                // A wine pinned at the middle of its country is named by the country, not by a region found nowhere.
+                let name = at.region ?? entry.country.flatMap { $0.isEmpty ? nil : $0 } ?? entry.name
                 pins[id] = ProgressMapPin(id: id, kind: .bottle, lon: at.lon, lat: at.lat, name: name)
             }
         }

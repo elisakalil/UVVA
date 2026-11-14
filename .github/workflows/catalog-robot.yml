@@ -58,11 +58,21 @@ jobs:
         working-directory: Application/Robot
         env:
           CLOUDKIT_ENVIRONMENT: ${{ matrix.environment }}
-          CLOUDKIT_KEY_ID: ${{ matrix.environment == 'production' && secrets.CLOUDKIT_PRODUCTION_KEY_ID || secrets.CLOUDKIT_DEVELOPMENT_KEY_ID }}
-          CLOUDKIT_PRIVATE_KEY: ${{ matrix.environment == 'production' && secrets.CLOUDKIT_PRODUCTION_PRIVATE_KEY || secrets.CLOUDKIT_DEVELOPMENT_PRIVATE_KEY }}
+          # Each environment only its own key: `a && b || c` would fall back to the development key when production
+          # has none.
+          DEVELOPMENT_KEY_ID: ${{ secrets.CLOUDKIT_DEVELOPMENT_KEY_ID }}
+          DEVELOPMENT_PRIVATE_KEY: ${{ secrets.CLOUDKIT_DEVELOPMENT_PRIVATE_KEY }}
+          PRODUCTION_KEY_ID: ${{ secrets.CLOUDKIT_PRODUCTION_KEY_ID }}
+          PRODUCTION_PRIVATE_KEY: ${{ secrets.CLOUDKIT_PRODUCTION_PRIVATE_KEY }}
           CATALOG_SEED: ${{ runner.temp }}/seed.json
           DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
         run: |
+          if [ "$CLOUDKIT_ENVIRONMENT" = production ]; then
+            export CLOUDKIT_KEY_ID="$PRODUCTION_KEY_ID" CLOUDKIT_PRIVATE_KEY="$PRODUCTION_PRIVATE_KEY"
+          else
+            export CLOUDKIT_KEY_ID="$DEVELOPMENT_KEY_ID" CLOUDKIT_PRIVATE_KEY="$DEVELOPMENT_PRIVATE_KEY"
+          fi
+          unset DEVELOPMENT_KEY_ID DEVELOPMENT_PRIVATE_KEY PRODUCTION_KEY_ID PRODUCTION_PRIVATE_KEY
           if [ -z "$CLOUDKIT_KEY_ID" ] || [ -z "$CLOUDKIT_PRIVATE_KEY" ]; then
             echo "No key for $CLOUDKIT_ENVIRONMENT: skipped."
             exit 0

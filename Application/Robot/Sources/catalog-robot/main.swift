@@ -28,6 +28,12 @@ do {
     let robot = CatalogRobot(cloud: cloud, seed: seed, dryRun: CommandLine.arguments.contains("--dry-run"))
     try await robot.run()
 } catch {
-    FileHandle.standardError.write(Data("Robot failed: \(error.localizedDescription)\n".utf8))
+    let message = "Robot failed: \(error.localizedDescription)"
+    FileHandle.standardError.write(Data("\(message)\n".utf8))
+    if environment["GITHUB_ACTIONS"] == "true" {
+        // An annotation: shown on the run's page, and read by the API, without signing in to read the logs.
+        print("::error title=Catalog robot (\(environment["CLOUDKIT_ENVIRONMENT"] ?? "?"))::"
+            + message.replacingOccurrences(of: "%", with: "%25").replacingOccurrences(of: "\n", with: "%0A"))
+    }
     exit(1)
 }

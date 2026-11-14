@@ -64,15 +64,16 @@ public struct WebRecord: Sendable {
 }
 
 public enum CloudKitWebError: LocalizedError {
-    case badKey
+    /// Why, without anything of the key.
+    case badKey(String)
     case server(status: Int, path: String, body: String)
     case records([String])
 
     public var errorDescription: String? {
         switch self {
-        case .badKey:
-            "CLOUDKIT_PRIVATE_KEY is not a P-256 private key in PEM. Make it with "
-                + "`openssl ecparam -name prime256v1 -genkey -noout -out eckey.pem`."
+        case let .badKey(why):
+            "CLOUDKIT_PRIVATE_KEY is not a P-256 private key (\(why)). Paste the whole file "
+                + "`openssl ecparam -name prime256v1 -genkey -noout -out eckey.pem` writes, BEGIN and END lines included."
         case let .server(status, path, body): "CloudKit \(status) on \(path): \(body)"
         case let .records(errors): "CloudKit refused \(errors.count) record(s): \(errors.prefix(5).joined(separator: "; "))"
         }
@@ -94,11 +95,39 @@ public struct CloudKitWeb: Sendable {
         self.container = container
         self.environment = environment
         self.keyID = keyID
-        guard let key = try? P256.Signing.PrivateKey(pemRepresentation: privateKeyPEM) else {
-            throw CloudKitWebError.badKey
+        guard let key = Self.privateKey(privateKeyPEM) else {
+            throw CloudKitWebError.badKey(Self.describe(privateKeyPEM))
         }
         self.key = key
         self.session = session
+    }
+
+    /// The key however it was pasted into the secret: with or without its BEGIN/END lines, indented, or on one line.
+    static func privateKey(_ text: String) -> P256.Signing.PrivateKey? {
+        if let key = try? P256.Signing.PrivateKey(pemRepresentation: text) { return key }
+        var body = text
+        if let begin = body.range(of: "PRIVATE KEY-----") { body = String(body[begin.upperBound...]) }
+        if let end = body.range(of: "-----END") { body = String(body[..<end.lowerBound]) }
+        body.removeAll { $0.isWhitespace }
+        guard let der = Data(base64Encoded: body) else { return nil }
+        if let key = try? P256.Signing.PrivateKey(derRepresentation: der) { return key }
+        // SEC1 (`BEGIN EC PRIVATE KEY`, as `openssl ecparam -genkey` writes it), which `derRepresentation` may not read.
+        let lines = stride(from: 0, to: body.count, by: 64).map { offset -> String in
+            let start = body.index(body.startIndex, offsetBy: offset)
+            return String(body[start..<(body.index(start, offsetBy: 64, limitedBy: body.endIndex) ?? body.endIndex)])
+        }
+        return try? P256.Signing.PrivateKey(
+            pemRepresentation: "-----BEGIN EC PRIVATE KEY-----\n\(lines.joined(separator: "\n"))\n-----END EC PRIVATE KEY-----")
+    }
+
+    /// What was given instead of a private key, without anything of the key itself.
+    static func describe(_ text: String) -> String {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.isEmpty { return "it is empty" }
+        if trimmed.contains("PUBLIC KEY") { return "it is the public key; the secret takes the private one" }
+        let header = trimmed.components(separatedBy: "\n").first { $0.hasPrefix("-----BEGIN") }
+        return "it starts \(header.map { "with \($0)" } ?? "without a BEGIN line"), "
+            + "\(trimmed.components(separatedBy: "\n").count) line(s), \(trimmed.count) characters"
     }
 
     var basePath: String { "/database/1/\(container)/\(environment)/public" }

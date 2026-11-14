@@ -125,6 +125,18 @@ struct CloudKitWebTests {
         #expect(headers["X-Apple-CloudKit-Request-KeyID"] == "key")
     }
 
+    @Test func theKey_isReadHoweverItWasPasted() throws {
+        let key = P256.Signing.PrivateKey()
+        let pem = key.pemRepresentation
+        let lines = pem.components(separatedBy: "\n")
+        let body = lines.filter { !$0.hasPrefix("-----") }.joined(separator: "\n")
+        for pasted in ["  \(pem)\n", pem.replacingOccurrences(of: "\n", with: " "), body,
+                       pem.replacingOccurrences(of: "\n", with: "\r\n")] {
+            #expect(CloudKitWeb.privateKey(pasted)?.publicKey.rawRepresentation == key.publicKey.rawRepresentation)
+        }
+        #expect(CloudKitWeb.describe(key.publicKey.pemRepresentation).contains("public key"))
+    }
+
     @Test func aKeyThatIsNotPEM_isRefusedAtOnce() {
         #expect(throws: CloudKitWebError.self) {
             try CloudKitWeb(container: "c", environment: "development", keyID: "k", privateKeyPEM: "nope")

@@ -1,8 +1,8 @@
 import CoreGraphics
 import Foundation
 
-/// The world map of You › Progress: the coastlines of the land from Natural Earth (world-atlas, public domain), the
-/// middle of each country and the true places of the wine regions. Built by `Data/Learn/_src/map/build_world.py`.
+/// The world map of You › Progress: the coastlines of the land from Natural Earth (world-atlas, public domain), without
+/// the polar land, the middle of each country and the true places of the wine regions. Built by `Data/Learn/_src/map/build_world.py`.
 public struct WorldAtlas: Sendable {
     /// `[minLon, minLat, maxLon, maxLat]`: the frame the map is fitted to.
     public let box: [Double]
@@ -16,7 +16,7 @@ public struct WorldAtlas: Sendable {
         guard let url = Bundle.module.url(forResource: "WorldMap", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let file = try? JSONDecoder().decode(File.self, from: data) else {
-            return WorldAtlas(file: File(box: [-168, -56, 180, 76], land: [], countries: [:], places: []))
+            return WorldAtlas(file: File(box: [-172, -56, 191, 78], land: [], countries: [:], places: []))
         }
         return WorldAtlas(file: file)
     }()
@@ -31,18 +31,26 @@ public struct WorldAtlas: Sendable {
         placesByName = byName.compactMapValues { $0.count == 1 ? $0[0].at : nil }
     }
 
+    /// Where a wine from `region`, `country` sits on the map.
+    public struct Place: Equatable, Sendable {
+        public var lon: Double
+        public var lat: Double
+        /// The region it was found by; nil when it stands at the middle of its country.
+        public var region: String?
+    }
+
     /// Where a wine from `region`, `country` sits: its region when it is listed, else the middle of its country.
-    public func coordinate(region: String?, country: String?) -> (lon: Double, lat: Double)? {
+    public func coordinate(region: String?, country: String?) -> Place? {
         let region = region?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let country = country?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let found: [Double]? = {
-            if !region.isEmpty, !country.isEmpty, let place = places[Self.key(region, country)] { return place }
-            if !region.isEmpty, country.isEmpty, let place = placesByName[Self.key(region)] { return place }
-            if !country.isEmpty, let middle = countries[Self.key(country)] { return middle }
+        let found: (at: [Double], region: String?)? = {
+            if !region.isEmpty, !country.isEmpty, let place = places[Self.key(region, country)] { return (place, region) }
+            if !region.isEmpty, country.isEmpty, let place = placesByName[Self.key(region)] { return (place, region) }
+            if !country.isEmpty, let middle = countries[Self.key(country)] { return (middle, nil) }
             return nil
         }()
-        guard let found, found.count == 2 else { return nil }
-        return (found[0], found[1])
+        guard let found, found.at.count == 2 else { return nil }
+        return Place(lon: found.at[0], lat: found.at[1], region: found.region)
     }
 
     /// Case, accents and punctuation do not count: "Dão" is "dao", "Hawke's Bay" is "hawkesbay".
@@ -57,10 +65,10 @@ public struct WorldAtlas: Sendable {
         var box: [Double]
         var land: [[Double]]
         var countries: [String: [Double]]
-        var places: [Place]
+        var places: [StoredPlace]
     }
 
-    private struct Place: Decodable {
+    private struct StoredPlace: Decodable {
         var name: String
         var country: String
         var at: [Double]
