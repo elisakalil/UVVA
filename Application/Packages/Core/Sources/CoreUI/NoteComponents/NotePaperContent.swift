@@ -75,13 +75,18 @@ public struct NotePaperContent: Equatable {
     public var title: String
     public var producer: String
     public var origin: String
-    public var appellation: String?
+    /// The certificate card (CELLAR-R30); nil hides it.
+    public var certificate: WineCertificateUIModel?
     /// Style and Vintage, under Origin and Producer.
     public var facts: [NoteFactUIModel]
     /// "14–16 °C", then the line on serving; empty when the wine has neither.
     public var serving: String
     /// Nil without a map.
     public var match: Int?
+    /// Under the match, as on the wine sheet (HOME-R10b): "High in body, like your map." Nil without a map.
+    public var matchShared: String?
+    /// "More oak than you usually drink." Nil without a map.
+    public var matchApart: String?
     public var grapes: [String]
     public var notes: [String]
     public var pairings: [String]
@@ -93,14 +98,17 @@ public struct NotePaperContent: Equatable {
         title = wine.name
         producer = wine.producer
         origin = wine.origin
-        appellation = wine.appellation
+        certificate = WineCertificateUIModel(wine: wine)
         facts = [
             NoteFactUIModel(label: resources.styleText, value: resources.type(wine.type)),
             NoteFactUIModel(label: resources.vintageText, value: wine.vintage.map(String.init) ?? resources.nonVintageText)
         ]
         let temperature = wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" }
         serving = [temperature, wine.howToServe].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: "\n")
-        match = palate.map { Similarity.percent(wine.profile, $0) }
+        let fit = palate.map { PalateMatchUIModel(wine: wine.profile, palate: $0) }
+        match = fit?.percent
+        matchShared = fit?.shared
+        matchApart = fit?.apart
         grapes = NewNoteChipField.grapes.values(in: wine)
         notes = NewNoteChipField.notes.values(in: wine)
         pairings = NewNoteChipField.pairings.values(in: wine)

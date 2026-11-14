@@ -1,4 +1,6 @@
+import Core
 import Foundation
+import OSLog
 import Storage
 import SwiftData
 
@@ -7,12 +9,14 @@ final class ContentLoader {
     nonisolated static let versionKey = "content.version"
 
     private nonisolated let questionsTask: Task<Void, Error>
+    /// The recipes and lessons of the bundle, then the wines of the public catalog: the whole snapshot the first time,
+    /// which the tabs wait for; after, the day's changes, which they do not wait for (ARCHITECTURE §4.1).
     private nonisolated let catalogTask: Task<Void, Error>
     /// Lets the catalog import go. It waits for this, so it doesn't compete with opening the stores, the glass
     /// textures and the first reads while the Splash is on screen (ONB-R01).
     private nonisolated let catalogGate: AsyncStream<Void>.Continuation
 
-    init(container: ModelContainer) throws {
+    init(container: ModelContainer, stores: AppStores) throws {
         guard let source = ContentSource(bundle: .main) else {
             throw ContentError.missingManifest
         }
@@ -38,16 +42,11 @@ final class ContentLoader {
             for await _ in gate { break }
             try Task.checkCancellation()
 
-            let protected = try await CellarStore(
-                modelContainer: container
-            ).wineKeys()
-
             let importedVersion = try await ContentImporter(
                 modelContainer: container
             ).importCatalogIfNeeded(
                 from: source,
-                currentVersion: version,
-                protectedWineKeys: protected
+                currentVersion: version
             )
 
             try Task.checkCancellation()
@@ -58,7 +57,31 @@ final class ContentLoader {
                     forKey: Self.versionKey
                 )
             }
+
+            let sync = stores.catalogSync
+            try await sync.restorePrevalence()
+            if try await sync.hasCatalog() {
+                Task.detached(priority: .utility) {
+                    do {
+                        try await Self.syncCatalog(stores)
+                    } catch {
+                        Self.logger.error("Catalog sync failed: \(error.localizedDescription, privacy: .public)")
+                    }
+                }
+            } else {
+                try await Self.syncCatalog(stores)
+            }
         }
+    }
+
+    private nonisolated static let logger = Logger(subsystem: "app.uvva", category: "catalog")
+
+    /// The wines in the Cellar or rated never leave the phone; the palate chooses which wines a full phone keeps.
+    private nonisolated static func syncCatalog(_ stores: AppStores) async throws {
+        let rated = Rating.verdicts(in: try await stores.maps.history()).keys
+        let protected = try await stores.cellar.wineKeys().union(rated)
+        let map = try await stores.maps.currentMap()
+        try await stores.catalogSync.sync(protecting: protected, map: map)
     }
 
     func waitForQuestions() async throws {

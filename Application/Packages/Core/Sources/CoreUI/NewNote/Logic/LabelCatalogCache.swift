@@ -29,4 +29,18 @@ final class LabelCatalogCache {
         prepared = built
         return built
     }
+
+    /// The label's wine in the public catalog, when the phone's copy does not have it (ARCHITECTURE §4.1): asked by
+    /// the words of its name and producer. The wines found stay on the phone; the next note reads them with the rest.
+    /// Nil without a network or a confident match.
+    func publicMatch(for facts: LabelFacts) async -> LabelMatchResult? {
+        var tokens = WineText.significantTokens([facts.name, facts.producer].compactMap { $0 }.joined(separator: " "))
+        if tokens.isEmpty { tokens = WineText.significantTokens(facts.titleLines.joined(separator: " ")) }
+        guard let wines = try? await catalog.publicWines(sharing: tokens), !wines.isEmpty else { return nil }
+        prepared = nil
+        guard let match = LabelMatch.best(for: facts, in: LabelCatalogIndex(wines: wines)), match.isConfident else {
+            return nil
+        }
+        return match
+    }
 }

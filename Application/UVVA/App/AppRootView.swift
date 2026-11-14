@@ -93,7 +93,7 @@ struct AppRootView: View {
 
             try Task.checkCancellation()
 
-            let loader = try ContentLoader(container: container)
+            let loader = try ContentLoader(container: container, stores: stores)
             content = loader
 
             let candidate = AppCoordinator(

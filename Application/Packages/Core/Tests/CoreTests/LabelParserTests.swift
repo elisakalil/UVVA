@@ -132,4 +132,54 @@ struct LabelParserTests {
         let facts = parse([LabelLine("Ponto Forte", height: 0.12), LabelLine("Serve at 16-18°C", side: .back)])
         #expect(facts.serving == 16...18)
     }
+
+    // MARK: CELLAR-R30 · Certificação
+
+    @Test func CELLAR_R30_theColossal_readsItsRegionalWineAndItsGrandeReserva() {
+        let facts = parse([
+            LabelLine("COLOSSAL", height: 0.12),
+            LabelLine("GRANDE RESERVA", height: 0.05),
+            LabelLine("CASA SANTOS LIMA", height: 0.04),
+            LabelLine("VINHO REGIONAL LISBOA", side: .back),
+            LabelLine("2023", side: .back)
+        ])
+        #expect(facts.name == "COLOSSAL")
+        #expect(facts.designation == "Grande Reserva")
+        #expect(facts.appellation == "VINHO REGIONAL LISBOA")
+        #expect(facts.titleLines.contains("GRANDE RESERVA") == false)
+    }
+
+    @Test func CELLAR_R30_appellationKnown_getsTheCategoryWrittenInFull() {
+        let facts = parse([LabelLine("Quinta Nova", height: 0.1),
+                           LabelLine("DOURO", side: .back),
+                           LabelLine("Denominação de Origem Controlada", side: .back)])
+        #expect(facts.appellation == "Douro DOC")
+        #expect(facts.region == "Douro")
+    }
+
+    @Test func CELLAR_R30_appellationThatSaysItsCategory_staysAsItIs() {
+        let facts = parse([LabelLine("Ponto Forte", height: 0.1), LabelLine("Vinho Regional Alentejano")])
+        #expect(facts.appellation == "Vinho Regional Alentejano")
+    }
+
+    @Test func CELLAR_R30_medalsAndScores_withTheirCompetitionNearby() {
+        let facts = parse([
+            LabelLine("Ponto Forte", height: 0.1),
+            LabelLine("MÉDAILLE D'OR", height: 0.01),
+            LabelLine("CONCOURS MONDIAL DE BRUXELLES", height: 0.01),
+            LabelLine("2022", height: 0.01),
+            LabelLine("92 points · James Suckling", side: .back)
+        ])
+        #expect(facts.awards == [
+            WineAward(competition: "Concours Mondial de Bruxelles", medal: .gold, year: 2022),
+            WineAward(competition: "James Suckling", points: 92)
+        ])
+    }
+
+    @Test func CELLAR_R30_aMedalWordAlone_orAReservado_isNothing() {
+        let facts = parse([LabelLine("Casillero", height: 0.1), LabelLine("Reservado", height: 0.05),
+                           LabelLine("A golden colour and gold reflections", side: .back)])
+        #expect(facts.awards.isEmpty)
+        #expect(facts.designation == nil)
+    }
 }

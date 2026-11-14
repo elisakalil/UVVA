@@ -45,10 +45,12 @@ public enum LabelMatch {
         return (total, name, producer, foundName + foundProducer)
     }
 
-    /// The catalog wine as the label shows it: another vintage makes another wine (CELLAR-R13a), with the same
-    /// profile and the label's alcohol.
+    /// The catalog wine as the label shows it: with what this reading adds to it (its grapes, notes and pairings),
+    /// and another vintage makes another wine (CELLAR-R13a), with the same profile and the label's alcohol.
     private static func wine(_ wine: Wine, as facts: LabelFacts, confident: Bool) -> Wine {
-        guard confident, let vintage = facts.vintage, vintage != wine.vintage else { return wine }
+        guard confident else { return wine }
+        let wine = wine.adding(facts)
+        guard let vintage = facts.vintage, vintage != wine.vintage else { return wine }
         var other = wine
         other.vintage = vintage
         other.id = WineKey.make(producer: wine.producer, name: wine.name, vintage: vintage)

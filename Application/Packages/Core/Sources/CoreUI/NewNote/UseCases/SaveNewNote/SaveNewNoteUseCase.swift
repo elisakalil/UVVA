@@ -12,7 +12,7 @@ struct SaveNewNoteUseCase: SaveNewNoteUseCaseProtocol {
 
     func execute(_ draft: NewNoteDraft) async throws {
         // A wine the catalog does not have (scanned, or another vintage) joins it first, so the note and the map
-        // find it; a catalog wine is left as it is.
+        // find it; one scanned before gains what this reading added; a catalog wine is left as it is.
         let catalogWine = draft.originalWine ?? draft.wine
         try await catalog.addScanned(catalogWine)
         let before = try await cellar.save(draft)

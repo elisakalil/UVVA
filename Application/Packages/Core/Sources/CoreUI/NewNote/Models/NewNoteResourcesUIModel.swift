@@ -8,8 +8,18 @@ struct NewNoteResourcesUIModel {
     // MARK: Photos (CELLAR-R16, R17)
     var frontTitleText = String(localized: "Photograph the front", bundle: .module)
     var frontBodyText = String(localized: "Fit the whole label inside the frame.", bundle: .module)
-    var backTitleText = String(localized: "Now the back label", bundle: .module)
-    var backBodyText = String(localized: "Grape, alcohol and producer are usually here.", bundle: .module)
+    var backTitleText = String(localized: "Now scan the back label", bundle: .module)
+    var backBodyText = String(localized: "Tap the button, then turn the bottle slowly.", bundle: .module)
+    /// While the back label is scanned (CELLAR-R16, R17).
+    var scanningBodyText = String(localized: "Turn the bottle slowly until the whole label has passed. Tap again when the count stops growing.", bundle: .module)
+    /// Before the scan is sure of any line.
+    var scanStartText = String(localized: "Hold the label inside the frame", bundle: .module)
+    var scanStartButtonText = String(localized: "Start scanning", bundle: .module)
+    var scanDoneText = String(localized: "Finish scanning", bundle: .module)
+    func scannedLinesText(_ count: Int) -> String {
+        count == 1 ? String(localized: "1 line read", bundle: .module)
+            : String(localized: "\(count) lines read", bundle: .module)
+    }
     var readingTitleText = String(localized: "Reading your label", bundle: .module)
     var readingBodyText = String(localized: "This takes a few seconds.", bundle: .module)
     var readingProgressText = String(localized: "Reading grape, region, vintage", bundle: .module)

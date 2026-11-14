@@ -4,16 +4,24 @@ import DesignSystem
 import PhotosUI
 import SwiftUI
 
-/// "Photograph the front", "Now the back label", then "Reading your label" (CELLAR-R16, R17): the camera behind
-/// a label-shaped frame, the two steps, the shutter and, beside it, a photo from the library instead.
+/// "Photograph the front", "Now scan the back label", then "Reading your label" (CELLAR-R16, R17): the camera behind
+/// a label-shaped frame, the two steps, the shutter and, beside it, a photo from the library instead. On the back
+/// label the shutter starts a scan: the bottle is turned in front of the camera, and a second tap ends it with the
+/// photo that is kept.
 struct NewNoteCaptureView: View {
     var model: NewNoteUIModel
-    var onCapture: (LabelPhoto) -> Void
+    var onCapture: (LabelPhoto, LabelScan?) -> Void
 
     @State private var camera = LabelCamera()
     @State private var isTaking = false
+    /// The back label is being scanned: started by the shutter, ended by it.
+    @State private var isScanning = false
+    /// The back label's lines the scan is sure of so far.
+    @State private var scannedLines = 0
     @State private var picked: PhotosPickerItem?
     @State private var labelFrame: CGRect = .zero
+    /// The camera's preview on screen, to read only what shows inside the label frame.
+    @State private var previewFrame: CGRect = .zero
     @State private var progress = 0.0
 
     private var resources: NewNoteResourcesUIModel { model.resources }
@@ -23,6 +31,7 @@ struct NewNoteCaptureView: View {
         ZStack {
             NotePalette.cameraGround.ignoresSafeArea()
             background.ignoresSafeArea()
+                .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { previewFrame = $0 }
             dim.ignoresSafeArea()
             VStack(alignment: .leading, spacing: 0) {
                 VStack(alignment: .leading, spacing: 8) {
@@ -30,14 +39,18 @@ struct NewNoteCaptureView: View {
                         .font(UVVAFont.sans(26, .ultraLight))
                         .tracking(-0.4)
                         .accessibilityAddTraits(.isHeader)
-                    Text(model.captureBody)
+                    Text(captureBody)
                         .font(UVVAFont.sans(12.5))
                         .opacity(0.8)
                 }
                 .padding(.horizontal, 30)
                 .padding(.top, 44)
                 RoundedRectangle(cornerRadius: 18)
-                    .strokeBorder(UVVAColor.creamFill.opacity(0.9), lineWidth: 1)
+                    .strokeBorder(UVVAColor.creamFill.opacity(isScanning ? 1 : 0.9), lineWidth: isScanning ? 2 : 1)
+                    .phaseAnimator([false, true], trigger: isScanning) { frame, phase in
+                        // While scanning, the frame breathes, so it is plain the camera is reading.
+                        frame.opacity(isScanning && phase ? 0.45 : 1)
+                    } animation: { _ in .easeInOut(duration: 0.9) }
                     .aspectRatio(310.0 / 430.0, contentMode: .fit)
                     .frame(maxWidth: .infinity)
                     .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { labelFrame = $0 }
@@ -47,6 +60,18 @@ struct NewNoteCaptureView: View {
                 steps
                     .padding(.horizontal, 40)
                     .padding(.top, 20)
+                if isScanning {
+                    Text((scannedLines == 0 ? resources.scanStartText : resources.scannedLinesText(scannedLines))
+                        .uppercased())
+                        .font(UVVAFont.sans(9))
+                        .tracking(2.3)
+                        .opacity(0.7)
+                        .contentTransition(.numericText())
+                        .animation(.easeOut(duration: 0.2), value: scannedLines)
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 14)
+                        .accessibilityAddTraits(.updatesFrequently)
+                }
                 Spacer(minLength: 16)
                 foot
                     .frame(maxWidth: .infinity)
@@ -57,7 +82,35 @@ struct NewNoteCaptureView: View {
         .foregroundStyle(UVVAColor.creamFill)
         .preferredColorScheme(.dark)
         .onAppear { camera.start() }
-        .onDisappear { camera.stop() }
+        .onDisappear {
+            _ = camera.scanner.finish()
+            camera.stop()
+        }
+    }
+
+    // MARK: Scan (CELLAR-R17)
+
+    /// The back label is scanned from the camera's video; without a camera, it is read from its photo alone.
+    private var scansBack: Bool { model.step == .back && camera.isAvailable }
+
+    /// Before the scan, how to start it; during it, what to do.
+    private var captureBody: String {
+        guard scansBack else { return model.captureBody }
+        return isScanning ? resources.scanningBodyText : resources.backBodyText
+    }
+
+    private func beginScan() {
+        guard scansBack else { return }
+        scannedLines = 0
+        isScanning = true
+        camera.scanner.begin(label: labelFrame, preview: previewFrame) { count in scannedLines = count }
+    }
+
+    /// The scan so far, ended; nil when none was running.
+    private func endScan() -> LabelScan? {
+        guard isScanning else { return nil }
+        isScanning = false
+        return camera.scanner.finish()
     }
 
     // MARK: Camera
@@ -149,13 +202,19 @@ struct NewNoteCaptureView: View {
                             .strokeBorder(UVVAColor.creamFill, lineWidth: 1.5)
                             .frame(width: 72, height: 72)
                             .overlay {
-                                Circle().fill(UVVAColor.creamFill).frame(width: 58, height: 58).opacity(isTaking ? 0.6 : 1)
+                                // While scanning, a stop square: the next tap ends the scan.
+                                RoundedRectangle(cornerRadius: isScanning ? 6 : 29)
+                                    .fill(UVVAColor.creamFill)
+                                    .frame(width: isScanning ? 28 : 58, height: isScanning ? 28 : 58)
+                                    .opacity(isTaking ? 0.6 : 1)
+                                    .animation(.easeOut(duration: 0.2), value: isScanning)
                             }
                             .contentShape(Circle())
                     }
                     .buttonStyle(.plain)
                     .disabled(isTaking)
-                    .accessibilityLabel(resources.shutterText)
+                    .accessibilityLabel(isScanning ? resources.scanDoneText
+                        : scansBack ? resources.scanStartButtonText : resources.shutterText)
                 } else {
                     Text(resources.cameraUnavailableText).font(UVVAFont.sans(12)).opacity(0.7)
                 }
@@ -185,27 +244,36 @@ struct NewNoteCaptureView: View {
         }
     }
 
-    /// The chosen photo, made into its two copies like one from the camera, off the main thread.
+    /// The chosen photo, made into its two copies like one from the camera, off the main thread. A photo from the
+    /// library is not of what the camera scanned: the scan is set aside.
     private func choose(_ item: PhotosPickerItem) {
         isTaking = true
+        _ = endScan()
         Task {
             let data = try? await item.loadTransferable(type: Data.self)
-            await finish(data)
+            await finish(data, scan: nil)
         }
     }
 
+    /// On the front, the photo. On the back, the first tap starts the scan and the second ends it with the photo.
     private func shoot() {
+        if scansBack, !isScanning {
+            beginScan()
+            return
+        }
         isTaking = true
         let side: LabelSide = model.step == .back ? .back : .front
+        let scan = endScan()
         Task {
-            await finish(camera.isAvailable ? await camera.takePhoto() : LabelCameraSample.photo(side))
+            await finish(camera.isAvailable ? await camera.takePhoto() : LabelCameraSample.photo(side), scan: scan)
         }
     }
 
-    private func finish(_ data: Data?) async {
+    private func finish(_ data: Data?, scan: LabelScan?) async {
         let photo: LabelPhoto? = if let data { await Task.detached { LabelCamera.prepare(data) }.value } else { nil }
         isTaking = false
-        if let photo { onCapture(photo) }
+        // No photo: the shutter waits for another tap, which starts a new scan on the back.
+        if let photo { onCapture(photo, scan) }
     }
 }
 #endif

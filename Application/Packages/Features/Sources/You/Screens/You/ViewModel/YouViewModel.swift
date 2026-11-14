@@ -30,11 +30,18 @@ public final class YouViewModel: YouViewModelProtocol {
     public func load() async {
         loadVersion += 1
         let version = loadVersion
+        // The map first: the rest of You takes longer to read, and a redone Quiz must not leave the old map showing.
+        await reloadMap()
+        guard !Task.isCancelled, version == loadVersion else { return }
         let previous = contentModel
         var updated = await loadYouUseCase.execute(previous: previous)
         guard !Task.isCancelled, version == loadVersion else { return }
         if contentModel.profile != previous.profile { updated.profile = contentModel.profile }
         if contentModel.reminder != previous.reminder { updated.reminder = contentModel.reminder }
+        if contentModel.map != previous.map || contentModel.history != previous.history {
+            updated.map = contentModel.map
+            updated.history = contentModel.history
+        }
         contentModel = updated
         if !uiModel.isLoaded { uiModel.isLoaded = true }
     }
@@ -43,6 +50,16 @@ public final class YouViewModel: YouViewModelProtocol {
     public func prefetch() async {
         guard !uiModel.isLoaded else { return }
         await load()
+    }
+
+    /// Reads the map and its history again, on their own: after a Quiz, before You › Map shows.
+    public func reloadMap() async {
+        guard let read = await loadYouUseCase.loadMap(), !Task.isCancelled else { return }
+        guard read.map != contentModel.map || read.history != contentModel.history else { return }
+        var updated = contentModel
+        updated.map = read.map
+        updated.history = read.history
+        contentModel = updated
     }
 
     func profileSaved(_ profile: Profile) { contentModel.profile = profile }

@@ -12,6 +12,7 @@ public extension LabelFacts {
                    },
                    notes: notes.isEmpty ? other.notes : notes,
                    pairings: pairings.isEmpty ? other.pairings : pairings,
-                   serving: serving ?? other.serving)
+                   serving: serving ?? other.serving, designation: designation ?? other.designation,
+                   awards: awards.adding(other.awards))
     }
 }

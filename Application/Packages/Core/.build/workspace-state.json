@@ -4,7 +4,20 @@
 
     ],
     "dependencies" : [
-
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "designsystem",
+          "kind" : "fileSystem",
+          "location" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem",
+          "name" : "DesignSystem"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem"
+        },
+        "subpath" : "designsystem"
+      }
     ],
     "prebuilts" : [
 

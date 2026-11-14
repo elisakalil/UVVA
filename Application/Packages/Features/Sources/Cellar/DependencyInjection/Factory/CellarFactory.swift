@@ -8,6 +8,8 @@ public struct CellarFactory: CellarFactoryProtocol {
     private let maps: any PalateMapRepository
     private let rewriter: any PalateHistoryRewriting
     private let wines: any WineLookup
+    /// Where scanned wines are kept, so deleting a note takes its scanned wine too (CELLAR-R28).
+    private let labelCatalog: (any LabelCatalogRepository)?
     private let preferences: any CellarPreferencesProtocol
     private let now: () -> Date
 
@@ -16,6 +18,7 @@ public struct CellarFactory: CellarFactoryProtocol {
         maps: any PalateMapRepository,
         rewriter: any PalateHistoryRewriting,
         wines: any WineLookup,
+        labelCatalog: (any LabelCatalogRepository)? = nil,
         preferences: any CellarPreferencesProtocol = CellarPreferences(),
         now: @escaping () -> Date = Date.init
     ) {
@@ -23,6 +26,7 @@ public struct CellarFactory: CellarFactoryProtocol {
         self.maps = maps
         self.rewriter = rewriter
         self.wines = wines
+        self.labelCatalog = labelCatalog
         self.preferences = preferences
         self.now = now
     }
@@ -38,7 +42,7 @@ public struct CellarFactory: CellarFactoryProtocol {
                               onEditNote: @escaping (CellarEntry, Wine) -> Void = { _, _ in }) -> CellarViewModel {
         let recalculate = recalculate
         let load = LoadNoteUseCase(wines: wines)
-        let delete = DeleteNoteUseCase(cellar: cellar, recalculate: recalculate)
+        let delete = DeleteNoteUseCase(cellar: cellar, recalculate: recalculate, catalog: labelCatalog)
         let maps = maps
         let now = now
         return CellarViewModel(
@@ -49,7 +53,7 @@ public struct CellarFactory: CellarFactoryProtocol {
             onEditNote: onEditNote
         ) { entry, owner in
             NoteViewModel(entry: entry, loadNote: load, deleteNote: delete, maps: maps, now: now,
-                          onChange: { [weak owner] _ in owner?.noteChanged() },
+                          onChange: { [weak owner] _ in owner?.noteDeleted(entry.id) },
                           onClose: { [weak owner] in owner?.closeNote() },
                           onEdit: { [weak owner] entry, wine in owner?.editNote(entry, wine: wine) })
         }

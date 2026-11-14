@@ -1,5 +1,6 @@
 import Core
 import Foundation
+import Match
 import SwiftData
 
 /// `CellarRepository` on the Personal store.
@@ -13,6 +14,25 @@ public actor CellarStore: StoreActor, CellarRepository {
     public func entries() throws -> [CellarEntry] {
         let descriptor = FetchDescriptor<CellarEntryEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
         return try modelContext.fetch(descriptor).map(\.entry)
+    }
+
+    public func entrySummaries() throws -> [CellarEntry] {
+        let descriptor = FetchDescriptor<CellarEntryEntity>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
+        return try modelContext.fetch(descriptor).map { $0.makeEntry(includingPhotos: false) }
+    }
+
+    public func entry(_ wineKey: String) throws -> CellarEntry? {
+        try entry(for: wineKey)?.entry
+    }
+
+    public func frontPhotos(for wineKeys: [String]) throws -> [String: Data] {
+        guard !wineKeys.isEmpty else { return [:] }
+        let descriptor = FetchDescriptor<CellarEntryEntity>(predicate: #Predicate { wineKeys.contains($0.wineKey) })
+        var photos: [String: Data] = [:]
+        for entry in try modelContext.fetch(descriptor) {
+            photos[entry.wineKey] = entry.photoFront
+        }
+        return photos
     }
 
     public func wineKeys() throws -> Set<String> {
@@ -133,11 +153,17 @@ private extension CellarEntryEntity {
         grapes = wine.grapes
         alcohol = wine.alcohol
         classification = wine.classification
+        designation = wine.designation
+        awards = wine.awards.map(\.text)
+        // The "Top X%" as the new note showed it, kept as it is (CELLAR-R30).
+        certificateTop = Certification.make(for: wine)?.topPercent ?? 0
     }
 }
 
 private extension CellarEntryEntity {
-    var entry: CellarEntry {
+    var entry: CellarEntry { makeEntry(includingPhotos: true) }
+
+    func makeEntry(includingPhotos: Bool) -> CellarEntry {
         // An entry saved before region and country were kept falls back on its origin, "Douro, Portugal".
         let parts = origin.split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) }
         let profile = wineProfile.map { values in
@@ -150,7 +176,9 @@ private extension CellarEntryEntity {
                            status: CellarEntryStatus(rawValue: status) ?? .wantToTry,
                            verdict: verdict.flatMap(Verdict.init(rawValue:)),
                            note: note, alcohol: alcohol, classification: classification,
-                           photoFront: photoFront, photoBack: photoBack, createdAt: createdAt, updatedAt: updatedAt,
-                           wineProfile: profile, wineNotes: wineNotes, pairings: pairings)
+                           photoFront: includingPhotos ? photoFront : nil, photoBack: includingPhotos ? photoBack : nil,
+                           createdAt: createdAt, updatedAt: updatedAt,
+                           wineProfile: profile, wineNotes: wineNotes, pairings: pairings, designation: designation,
+                           awards: awards?.compactMap(WineAward.init(text:)), certificateTop: certificateTop)
     }
 }

@@ -5,7 +5,7 @@ import Match
 import SwiftUI
 
 /// The wine sheet's body, ink on parchment (HOME-R28a): the name and producer, how the wine sits with the map, its
-/// facts, "Find the wine" (unless the sheet keeps it at its foot), pairings, how to serve it, its axes in dots and its two maps. The Home shows it over its
+/// certificate, its facts, "Find the wine" (unless the sheet keeps it at its foot), pairings, how to serve it, its axes in dots and its two maps. The Home shows it over its
 /// cards; a saved note of the Cellar shows it read only, with its photos and the user's note after the name.
 public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
     var content: WineSheetContent
@@ -36,6 +36,10 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
             if content.percentage != nil {
                 palate.padding(.top, 40)
             }
+            // After the match and before the facts, as in the new note (CELLAR-R30).
+            if let certificate = content.certificate {
+                WineCertificateCard(certificate: certificate).padding(.top, 40)
+            }
             facts.padding(.top, 44)
             if let pairings = content.pairings {
                 section(strings.pairings, top: 44, gap: 14) { paragraph(pairings) }
@@ -50,7 +54,6 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
                     }
                 }
             }
-            WineAppellationCard(appellation: content.appellation).padding(.top, 32)
             if let onFindWine {
                 WineSheetButton(title: strings.findWine, style: .outlined, action: onFindWine)
                     .padding(.top, 32)

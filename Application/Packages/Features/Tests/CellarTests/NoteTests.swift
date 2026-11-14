@@ -68,7 +68,92 @@ struct NoteViewModelTests {
         #expect(content.facts.suffix(2).map(\.label) == ["Grapes", "Notes"])
         #expect(content.facts.suffix(2).map(\.value) == ["Syrah, Viognier", "Cherry"])
         #expect(content.pairings == "Cheese")
-        #expect(content.appellation == "Alentejo DOC")
+        #expect(content.certificate?.headline == "Made by strict local rules")
+        #expect(content.certificate?.subline == "Alentejo DOC")
+    }
+
+    // MARK: CELLAR-R30 · Certificação
+
+    @Test func CELLAR_R30_aWineWithNothingThatCertifiesIt_hasNoCard() async throws {
+        let model = make(tasted, wine: Maps.wine("ponto-forte", 9))
+        await model.load()
+        #expect(try #require(model.uiModel.content).certificate == nil)
+    }
+
+    @Test func CELLAR_R30_aSavedNote_showsTheTopItWasSavedWith_whateverTheCatalogLearntSince() async throws {
+        var entry = tasted
+        entry.classification = "Alentejo DOC"
+        entry.awards = [WineAward(competition: "Feira da Vila", medal: .bronze)]
+        entry.certificateTop = 9
+        var wine = Maps.wine("ponto-forte", 9)
+        wine.awards = [WineAward(competition: "Decanter World Wine Awards", medal: .gold, year: 2023)]
+        let model = make(entry, wine: wine)
+        await model.load()
+        let certificate = try #require(model.uiModel.content?.certificate)
+        #expect(certificate.headline == "Top 9% of the world's wines")
+        #expect(certificate.sections.first { $0.title == "Awards" }?.lines == ["Bronze · Feira da Vila"])
+    }
+
+    @Test func CELLAR_R30_aSavedTop_thatRestedOnCameraNoise_isWorkedOutAgain() async throws {
+        var entry = tasted
+        entry.classification = "Vinho Regional Lisboa"
+        entry.awards = [WineAward(competition: "SENTENA COM.", medal: .trophy)]
+        entry.certificateTop = 1
+        let model = make(entry, wine: Maps.wine("ponto-forte", 9))
+        await model.load()
+        let certificate = try #require(model.uiModel.content?.certificate)
+        // Not the kept 1 %: only the regional label remains, outside the top.
+        #expect(certificate.headline == "Regional, free to experiment")
+        #expect(certificate.sections.first { $0.title == "Awards" } == nil)
+    }
+
+    @Test func CELLAR_R30_anAwardEndingInAFullStop_endsTheSentenceOnce() async throws {
+        var entry = tasted
+        entry.classification = "Alentejo DOC"
+        entry.designation = "Reserva"
+        entry.awards = [WineAward(competition: "Concurso Int. de Vinhos.", medal: .trophy)]
+        entry.certificateTop = 1
+        let model = make(entry, wine: Maps.wine("ponto-forte", 9))
+        await model.load()
+        let certificate = try #require(model.uiModel.content?.certificate)
+        let estimate = try #require(certificate.sections.first { $0.title == "How UVVA estimates it" }?.lines.first)
+        #expect(estimate.contains("Trophy · Concurso Int. de Vinhos. An estimate"))
+        #expect(!estimate.contains(".."))
+    }
+
+    @Test func CELLAR_R30_aSavedNoteWithoutATop_isWorkedOutFromTheNotesOwnSignals() async throws {
+        var entry = tasted
+        entry.classification = "Alentejo DOC"
+        entry.awards = []
+        entry.certificateTop = 0
+        var wine = Maps.wine("ponto-forte", 9)
+        wine.awards = [WineAward(competition: "Decanter World Wine Awards", medal: .gold, year: 2023)]
+        wine.designation = "Reserva"
+        let model = make(entry, wine: wine)
+        await model.load()
+        let certificate = try #require(model.uiModel.content?.certificate)
+        // The note's own DOC, not the catalog's gold and Reserva learnt since: outside the top.
+        #expect(certificate.headline == "Made by strict local rules")
+        #expect(certificate.subline == "Alentejo DOC")
+    }
+
+    @Test func CELLAR_R30_theEntrysAwards_andTheCatalogsLine_reachTheCard() async throws {
+        var entry = tasted
+        entry.classification = "Alentejo DOC"
+        entry.designation = "Reserva"
+        entry.awards = [WineAward(competition: "Mundus Vini", medal: .gold, year: 2022)]
+        var wine = Maps.wine("ponto-forte", 9)
+        wine.appellationInsight = "The Alentejo's own rules."
+        let model = make(entry, wine: wine)
+        await model.load()
+        let certificate = try #require(model.uiModel.content?.certificate)
+        // The card leads with the top, and says what it rests on.
+        #expect(certificate.headline == "Top 1% of the world's wines")
+        #expect(certificate.subline == "Made by strict local rules · Alentejo DOC · Reserva · 1 award")
+        #expect(certificate.sections.map(\.title) == ["Appellation", "Legal term", "Awards", "How UVVA estimates it"])
+        #expect(certificate.sections[0].value == "Alentejo DOC · Made by strict local rules")
+        #expect(certificate.sections[0].lines == ["The Alentejo's own rules."])
+        #expect(certificate.sections[2].lines == ["Gold · Mundus Vini · 2022"])
     }
 
     // MARK: CELLAR-R27 · Editar
@@ -123,6 +208,13 @@ struct NoteUseCaseTests {
         #expect(await cellar.deletes == ["a"])
         #expect(recalculate.calls.first?.0 == "a")
         #expect(recalculate.calls.first?.1 == nil)
+    }
+
+    @Test func CELLAR_R28_delete_takesTheScannedWineToo() async throws {
+        let catalog = LabelCatalogStub([])
+        try await DeleteNoteUseCase(cellar: CellarSpy(), recalculate: RecalculateSpy(), catalog: catalog)
+            .execute(entry)
+        #expect(await catalog.forgotten == ["a"])
     }
 
     @Test func delete_aNotYet_leavesTheMap() async throws {

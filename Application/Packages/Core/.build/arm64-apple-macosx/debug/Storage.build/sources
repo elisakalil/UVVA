@@ -1,5 +1,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/AppStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/Array+Chunked.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CatalogCloudService.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitCatalogService.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitSocialService.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/ContactKey.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/ICloudAccountStatus.swift
@@ -7,9 +9,11 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Import/ContentImportStage.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Import/ContentImporter.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Import/ContentSource.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/CatalogStateEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/GlossaryTermEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/LessonEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/ModuleEntity.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/PendingContributionEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/QuizQuestionEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/RecipeEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Models/WineEntity.swift
@@ -27,11 +31,11 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Packed/PackedRecipesFile.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Packed/PackedServingTemperature.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Packed/PackedStep.swift
-/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Packed/PackedWine.swift
-/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Packed/PackedWinesFile.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Repositories/CatalogStore+Courses.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Repositories/CatalogStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Repositories/QuizQuestionStore.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Sync/CatalogSync.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Content/Sync/CatalogWriter.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CellarEntryEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/CertificateEntity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/DeclinedRequestEntity.swift
@@ -50,3 +54,4 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/PalateMapStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/ProfileStore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/ReminderStore.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/StoreExecutor.swift

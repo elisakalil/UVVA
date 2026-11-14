@@ -9,6 +9,8 @@ public struct NoteUIModel {
     var coverTag: String?
     var photoFront: Data?
     var photoBack: Data?
+    var isReadingPhotos = false
+    var wineKey = ""
     /// The wine as the Home's wine sheet shows it (HOME-R28a).
     var content: WineSheetContent?
     var note: String?

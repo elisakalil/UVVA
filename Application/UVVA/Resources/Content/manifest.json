@@ -1,7 +1,6 @@
 {
-  "version": "c0a3fa9ff8c13bb5",
+  "version": "ec476478e0942ade",
   "counts": {
-    "wines": 10000,
     "recipes": 500,
     "modules": 130,
     "lessons": 749,
@@ -9,7 +8,6 @@
     "quiz": 24
   },
   "files": {
-    "wines.json": "aba1857c7e73e5f7a1c2982ccc3222ab6993672de95d238ec693c1e13298d24c",
     "recipes.json": "f3d2d5617ea3c4506237c755b1d6099864753b6b0488a2d26dce72430a5f465d",
     "learn.json": "3e611d06809475e16abf1147a15b996d44f45ccf8c9b7a59cbec681dd8732d9b",
     "glossary.json": "025aa9711817f08ab33e5ca5f5e69d3df4bb522171810e85bbf15d5cd7b545cc",

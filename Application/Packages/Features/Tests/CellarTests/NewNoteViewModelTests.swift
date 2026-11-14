@@ -14,9 +14,11 @@ final class PrepareCameraStub: PrepareCameraUseCaseProtocol {
 final class ReadLabelStub: ReadLabelUseCaseProtocol {
     var result: LabelReadResult
     private(set) var reads: [(Data, Data)] = []
+    private(set) var scans: [LabelScan?] = []
     init(_ result: LabelReadResult) { self.result = result }
-    func execute(front: Data, back: Data) async -> LabelReadResult {
+    func execute(front: Data, back: Data, backScan: LabelScan?) async -> LabelReadResult {
         reads.append((front, back))
+        scans.append(backScan)
         return result
     }
 }
@@ -56,7 +58,7 @@ struct NewNoteViewModelTests {
 
     private func make(_ access: CameraAccess = .authorized) -> NewNoteViewModel {
         NewNoteViewModel(prepareCamera: PrepareCameraStub(access), readLabel: read, readManual: manual,
-                         saveNewNote: save, onSaved: { [events] in events.saved += 1 })
+                         saveNewNote: save, onSaved: { [events] _ in events.saved += 1 })
     }
 
     // MARK: CELLAR-R14a
@@ -64,7 +66,7 @@ struct NewNoteViewModelTests {
     @Test func CELLAR_R14a_aWineFromTheHome_skipsTheCamera_andSavesWithItsVerdict() async {
         let viewModel = NewNoteViewModel(wine: Labels.pontoForte,
                                          prepareCamera: PrepareCameraStub(.denied), readLabel: read, readManual: manual,
-                                         saveNewNote: save, onSaved: { [events] in events.saved += 1 })
+                                         saveNewNote: save, onSaved: { [events] _ in events.saved += 1 })
         await viewModel.start()
         #expect(viewModel.uiModel.step == .note)
         #expect(viewModel.uiModel.title == Labels.pontoForte.name)
@@ -81,7 +83,7 @@ struct NewNoteViewModelTests {
     @Test func CELLAR_R14a_aWineRatedBefore_asksToRateItAgain_andNoKeepsItsVerdict() async {
         let viewModel = NewNoteViewModel(wine: Labels.pontoForte, ratedVerdict: .maybe,
                                          prepareCamera: PrepareCameraStub(.denied), readLabel: read, readManual: manual,
-                                         saveNewNote: save, onSaved: { [events] in events.saved += 1 })
+                                         saveNewNote: save, onSaved: { [events] _ in events.saved += 1 })
         await viewModel.start()
         #expect(viewModel.uiModel.isRatedBefore)
         viewModel.answer(hasTasted: false)
@@ -265,6 +267,32 @@ struct NewNoteViewModelTests {
         #expect(viewModel.uiModel.photo == Data([1]))
     }
 
+    @Test func CELLAR_R17_theBackLabelsScan_goesWithItsPhotoToTheReading() async throws {
+        let viewModel = make()
+        await viewModel.start()
+        var scan = LabelScan()
+        scan.add([LabelLine("Castas: Touriga Nacional", side: .back)])
+        await viewModel.capture(Data([1]), reading: nil, scan: nil)
+        await viewModel.capture(Data([2]), reading: nil, scan: scan)
+        #expect(read.scans == [scan])
+    }
+
+    @Test func CELLAR_R17_theScan_decidesHowSureEachBackLineIs_andThePhotoIsOneFrameMore() {
+        var scan = LabelScan()
+        scan.add([LabelLine("Castas: Touriga Nacional", side: .back, confidence: 0.4),
+                  LabelLine("Trophy SENTENA COM.", side: .back, confidence: 1)])
+        scan.add([LabelLine("Castas: Touriga Nacional", side: .back, confidence: 0.4)])
+        let photos = LabelText([LabelLine("COLOSSAL", side: .front, confidence: 1),
+                                LabelLine("Castas: Touriga Nacional", side: .back, confidence: 0.5)])
+        let text = ReadLabelUseCase.merging(photos, backScan: scan)
+        #expect(text.front.map(\.text) == ["COLOSSAL"])
+        #expect(text.back.map(\.text) == ["Castas: Touriga Nacional", "Trophy SENTENA COM."])
+        #expect(text.back.map(\.confidence) == [0.8, 0.4])
+        // No scan: the photos as they were read.
+        #expect(ReadLabelUseCase.merging(photos, backScan: nil) == photos)
+        #expect(ReadLabelUseCase.merging(photos, backScan: LabelScan()) == photos)
+    }
+
     // MARK: CELLAR-R24
 
     @Test func CELLAR_R24_theNoteShowsItsPhoto_andTakesANewOne() async {
@@ -273,5 +301,31 @@ struct NewNoteViewModelTests {
         viewModel.replacePhoto(Data([5]))
         #expect(viewModel.uiModel.photo == Data([5]))
         #expect(viewModel.uiModel.step == .note)
+    }
+}
+
+struct NewNoteMatchLinesTests {
+    private func map(_ highs: [PalateAxis: Double]) -> PalateMap {
+        PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, highs[$0] ?? 3) }))
+    }
+
+    @Test func HOME_R10b_theNewNote_saysHowTheWineSitsWithTheMap_asTheWineSheetDoes() throws {
+        var wine = Maps.wine("w", 3)
+        wine.profile = map([.body: 9, .oak: 9])
+        let palate = map([.body: 8, .acidity: 8])
+        let content = NotePaperContent(wine: wine, palate: palate)
+        let sheet = PalateMatchUIModel(wine: wine.profile, palate: palate)
+        #expect(content.match == sheet.percent)
+        #expect(content.matchShared == sheet.shared)
+        #expect(content.matchApart == sheet.apart)
+        #expect(content.matchShared == "High in body, like your map.")
+        #expect(content.matchApart == "More oak than you usually drink.")
+    }
+
+    @Test func HOME_R10b_withoutAMap_theNewNoteHasNoLines() {
+        let content = NotePaperContent(wine: Maps.wine("w", 5), palate: nil)
+        #expect(content.match == nil)
+        #expect(content.matchShared == nil)
+        #expect(content.matchApart == nil)
     }
 }

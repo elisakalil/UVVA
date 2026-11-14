@@ -1,7 +1,7 @@
 import Foundation
 
 /// One line of text read on a label photo.
-public struct LabelLine: Equatable, Sendable {
+public struct LabelLine: Equatable, Codable, Sendable {
     public var text: String
     public var side: LabelSide
     /// The height of the line against the photo, 0...1: the bigger the type, the likelier it is the name or the

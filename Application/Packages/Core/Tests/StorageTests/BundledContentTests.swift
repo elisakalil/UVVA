@@ -4,7 +4,8 @@ import SwiftData
 import Testing
 @testable import Storage
 
-/// Imports the real packed content (UVVA/Resources/Content) and checks it against its manifest.
+/// Imports the real packed content (UVVA/Resources/Content) and checks it against its manifest. The bundle has no
+/// wines: they come from the public catalog.
 struct BundledContentTests {
     static let folder = URL(fileURLWithPath: #filePath)
         .deletingLastPathComponent() // StorageTests
@@ -28,7 +29,8 @@ struct BundledContentTests {
 
         let context = ModelContext(container)
         #expect(version == manifest.version)
-        #expect(try context.fetchCount(FetchDescriptor<WineEntity>()) == manifest.counts["wines"])
+        #expect(manifest.counts["wines"] == nil)
+        #expect(try context.fetchCount(FetchDescriptor<WineEntity>()) == 0)
         #expect(try context.fetchCount(FetchDescriptor<RecipeEntity>()) == manifest.counts["recipes"])
         #expect(try context.fetchCount(FetchDescriptor<ModuleEntity>()) == manifest.counts["modules"])
         #expect(try context.fetchCount(FetchDescriptor<LessonEntity>()) == manifest.counts["lessons"])
@@ -39,14 +41,8 @@ struct BundledContentTests {
         let again = try await importer.importIfNeeded(from: source, currentVersion: "other")
         print("Imported again over a full store in \(String(format: "%.2f", Date().timeIntervalSince(start2))) s")
         #expect(again == manifest.version)
-        #expect(try context.fetchCount(FetchDescriptor<WineEntity>()) == manifest.counts["wines"])
 
         let catalog = CatalogStore(modelContainer: container)
-        let map = PalateMap([.acidity: 7, .fruit: 6, .body: 4, .tannin: 3])
-        let start3 = Date()
-        let closest = try await catalog.winesClosest(to: map, limit: 33)
-        print("Ranked 10 000 wines in \(String(format: "%.2f", Date().timeIntervalSince(start3))) s")
-        #expect(closest.count == 33)
         #expect(try await catalog.recipes().count == manifest.counts["recipes"])
         #expect(try await catalog.glossary().count == manifest.counts["glossary"])
     }

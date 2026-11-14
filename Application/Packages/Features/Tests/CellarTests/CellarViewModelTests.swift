@@ -53,6 +53,27 @@ struct CellarViewModelTests {
         #expect(model.uiModel.state == .empty)
     }
 
+    @Test func firstVisitSharesPrefetchAndSaveReadsOnlyTheChangedEntry() async throws {
+        let loader = CellarLoaderProbe(initial: douro, saved: Entries.entry("new", at: 1))
+        let model = CellarViewModel(loadCellar: loader, preferences: PreferencesStub()) { entry, owner in
+            NoteViewModel(entry: entry, loadNote: NoteLoaderStub(), deleteNote: DeleteNoteSpy(),
+                          onChange: { _ in }, onClose: { [weak owner] in owner?.closeNote() })
+        }
+
+        async let prefetch: Void = model.prefetch()
+        async let visit: Void = model.load()
+        _ = await (prefetch, visit)
+        #expect(await loader.collectionReads == 1)
+
+        model.newNoteSaved("new")
+        for _ in 0..<100 where model.uiModel.items.first?.id != "new" {
+            try await Task.sleep(for: .milliseconds(5))
+        }
+        #expect(model.uiModel.items.map(\.id) == ["new", "vale-meao", "redoma"])
+        #expect(await loader.entryReads == ["new"])
+        #expect(await loader.collectionReads == 1)
+    }
+
     // MARK: CELLAR-R07 · Vista guardada
 
     @Test func CELLAR_R07_firstOpen_isTheGrid() async {
@@ -168,6 +189,9 @@ struct CellarViewModelTests {
         }
         await model.load()
         model.openNote("redoma")
+        for _ in 0..<100 where model.note?.uiModel.isReadingPhotos == true {
+            try? await Task.sleep(for: .milliseconds(5))
+        }
         model.note?.edit()
         #expect(model.note == nil)
         // The new note waits for the sheet to be gone.
@@ -185,5 +209,28 @@ struct CellarViewModelTests {
         let model = await make(douro)
         model.openNote("nope")
         #expect(model.note == nil)
+    }
+}
+
+private actor CellarLoaderProbe: LoadCellarUseCaseProtocol {
+    let initial: [CellarEntry]
+    let saved: CellarEntry
+    private(set) var collectionReads = 0
+    private(set) var entryReads: [String] = []
+
+    init(initial: [CellarEntry], saved: CellarEntry) {
+        self.initial = initial
+        self.saved = saved
+    }
+
+    func execute() async throws -> [CellarEntry] {
+        collectionReads += 1
+        try await Task.sleep(for: .milliseconds(15))
+        return initial
+    }
+
+    func entry(_ wineKey: String) async throws -> CellarEntry? {
+        entryReads.append(wineKey)
+        return saved.id == wineKey ? saved : nil
     }
 }

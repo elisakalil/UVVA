@@ -1,6 +1,10 @@
 import Foundation
+import SwiftData
+@testable import Storage
+import Core
 
-/// A small set of packed content files written to a temporary folder, in the format of pack_content.py.
+/// A small set of packed content files written to a temporary folder, in the format of pack_content.py, and the
+/// wines of a public catalog snapshot.
 struct ContentFixture {
     var version = "v1"
     var wines: [[String: Any]] = [Self.wine("a-wine-2020", name: "A Wine", vintage: 2020),
@@ -10,8 +14,8 @@ struct ContentFixture {
     var terms: [[String: Any]] = [["id": "acidity", "term": "Acidity", "lesson": 6, "definition": "Freshness.",
                                    "pronunciation": NSNull(), "aka": NSNull()]]
     var questions: [[String: Any]] = Self.questions()
-    /// Leaves wines.json out, to break the import half way.
-    var skipWines = false
+    /// Leaves learn.json out, to break the import half way.
+    var skipLearn = false
 
     static let axes = ["floral", "body", "tannin", "spice", "oak", "sweetness", "acidity", "fruit"]
 
@@ -68,11 +72,23 @@ struct ContentFixture {
             try JSONSerialization.data(withJSONObject: object).write(to: folder.appending(path: name))
         }
         try save(["version": version, "counts": [String: Int](), "files": [String: String]()], "manifest.json")
-        if !skipWines { try save(["wines": wines], "wines.json") }
         try save(["recipes": recipes], "recipes.json")
-        try save(["modules": modules], "learn.json")
+        if !skipLearn { try save(["modules": modules], "learn.json") }
         try save(["terms": terms], "glossary.json")
         try save(["questions": questions], "quiz.json")
         return folder
+    }
+
+    /// The wines as the snapshot of the public catalog has them.
+    func catalogWines() throws -> [CatalogWineData] {
+        let data = try JSONSerialization.data(withJSONObject: ["wines": wines])
+        return try JSONDecoder().decode(CatalogWinesFile.self, from: data).wines
+    }
+
+    /// The bundled content, then the wines as the first catalog sync writes them.
+    func load(into container: ModelContainer) async throws {
+        _ = try await ContentImporter(modelContainer: container)
+            .importIfNeeded(from: ContentSource(directory: try write()), currentVersion: nil)
+        try await CatalogWriter(modelContainer: container).replaceAll(with: try catalogWines(), protecting: [])
     }
 }

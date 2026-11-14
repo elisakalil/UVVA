@@ -7,7 +7,8 @@ public enum ScannedWine {
     public static func make(_ facts: LabelFacts, profile: PalateMap) -> Wine {
         let name = (facts.name ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
         let producer = (facts.producer ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-        let place = facts.appellation ?? facts.region
+        // The place without its category: "Vinho Regional Lisboa" is from Lisboa.
+        let place = facts.appellation.flatMap { CertificationKeywords.split($0).name } ?? facts.region
         let origin = [place, facts.country].compactMap { $0 }.joined(separator: ", ")
         // As the catalog writes it, whatever the phone's language: "13.5% abv".
         let strength = facts.alcohol.map { "\($0.formatted(.number.precision(.fractionLength(0...1)).locale(Locale(identifier: "en_US_POSIX"))))% abv" }
@@ -16,6 +17,7 @@ public enum ScannedWine {
                     region: facts.region, country: facts.country, grapes: facts.grapes, alcohol: facts.alcohol,
                     classification: [facts.appellation, strength].compactMap { $0 }.joined(separator: " · "),
                     profile: profile, note: facts.notes.isEmpty ? nil : facts.notes.joined(separator: ", "),
-                    serving: facts.serving, pairings: facts.pairings)
+                    serving: facts.serving, pairings: facts.pairings, designation: facts.designation,
+                    awards: facts.awards)
     }
 }

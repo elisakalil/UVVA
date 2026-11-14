@@ -2,11 +2,11 @@ import Foundation
 import SwiftData
 
 /// The Content store: wines, recipes, lessons, glossary and Quiz questions (ARCHITECTURE §2.2).
-/// It is rebuilt from the bundle and the public database, so it stays out of iCloud and of the device backup.
+/// It is rebuilt from the bundle and the public database (the scans not yet sent are lost with it), so it stays out of iCloud and of the device backup.
 public enum ContentStore {
     public static let models: [any PersistentModel.Type] = [
         WineEntity.self, RecipeEntity.self, ModuleEntity.self, LessonEntity.self,
-        GlossaryTermEntity.self, QuizQuestionEntity.self
+        GlossaryTermEntity.self, QuizQuestionEntity.self, PendingContributionEntity.self, CatalogStateEntity.self
     ]
 
     /// `Application Support/Content/Content.store`.

@@ -6,20 +6,39 @@ import SwiftData
 /// `CatalogRepository` on the Content store.
 public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatalogRepository {
     public nonisolated let executor: StoreExecutor
+    /// The public catalog, asked when a label is not found on the phone. Nil in the tests and the previews.
+    private let cloud: (any CatalogCloudService)?
 
-    public init(modelContainer: ModelContainer) {
+    public init(modelContainer: ModelContainer, cloud: (any CatalogCloudService)? = nil) {
         executor = StoreExecutor(modelContainer, label: "app.uvva.store.catalog")
+        self.cloud = cloud
     }
 
     /// Where a wine scanned from a label, and not found in the catalog, came from (`WineEntity.source`).
-    static let scannedSource = "scanned"
+    static let scannedSource = WineEntity.scannedSource
 
     public func allWines() throws -> [Wine] {
         try modelContext.fetch(FetchDescriptor<WineEntity>()).map(Self.wine)
     }
 
+    /// Also queues what was read as the user's contribution to the public catalog (ARCHITECTURE §4.3): for a
+    /// scanned wine, all its readings here added up; for a catalog wine, the catalog's facts with what the label
+    /// added, which the robot adds to the catalog once other users read the same.
     public func addScanned(_ wine: Wine) throws {
-        guard try wines(keys: [wine.id]).isEmpty else { return }
+        let key = wine.id
+        var descriptor = FetchDescriptor<WineEntity>(predicate: #Predicate { $0.wineKey == key })
+        descriptor.fetchLimit = 1
+        if let found = try modelContext.fetch(descriptor).first {
+            // A wine scanned before gains what this reading added; a catalog wine is left as it is.
+            if found.source == Self.scannedSource {
+                Self.accumulate(wine, into: found)
+                try PendingContributionEntity.enqueue(Self.wine(found), in: modelContext)
+            } else {
+                try PendingContributionEntity.enqueue(wine, in: modelContext)
+            }
+            try modelContext.save()
+            return
+        }
         let entity = WineEntity(wineKey: wine.id, source: Self.scannedSource)
         entity.name = wine.name
         entity.producer = wine.producer
@@ -32,6 +51,11 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
         entity.alcohol = wine.alcohol
         entity.classification = wine.classification
         entity.note = wine.note ?? ""
+        entity.pairings = wine.pairings
+        entity.designation = wine.designation
+        entity.awards = wine.awards.map(\.text)
+        entity.appellationInsight = wine.appellationInsight
+        entity.hasNotableAppellation = wine.hasNotableAppellation
         // An unknown serving temperature stays min > max, which reads back as none.
         entity.servingMin = wine.serving?.lowerBound ?? 1
         entity.servingMax = wine.serving?.upperBound ?? 0
@@ -44,7 +68,59 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
         entity.acidity = wine.profile[.acidity]
         entity.fruit = wine.profile[.fruit]
         modelContext.insert(entity)
+        try PendingContributionEntity.enqueue(wine, in: modelContext)
         try modelContext.save()
+    }
+
+    public func forgetScanned(_ wineKey: String) async throws {
+        let wine = FetchDescriptor<WineEntity>(predicate: #Predicate { $0.wineKey == wineKey })
+        for entity in try modelContext.fetch(wine) where entity.source == Self.scannedSource {
+            modelContext.delete(entity)
+        }
+        let pending = FetchDescriptor<PendingContributionEntity>(predicate: #Predicate { $0.wineKey == wineKey })
+        for entity in try modelContext.fetch(pending) { modelContext.delete(entity) }
+        try modelContext.save()
+    }
+
+    /// The wines of the public catalog that share words with a label, kept on the phone so the note and the map find
+    /// them like any other (ARCHITECTURE §4.1). Empty without a network or a public catalog.
+    public func publicWines(sharing tokens: Set<String>) async throws -> [Wine] {
+        guard let cloud, !tokens.isEmpty else { return [] }
+        let found = try await cloud.wines(sharing: tokens)
+        guard !found.isEmpty else { return [] }
+        let keys = found.map(\.id)
+        let existing = Dictionary(try modelContext.fetch(FetchDescriptor<WineEntity>(
+            predicate: #Predicate { keys.contains($0.wineKey) })).map { ($0.wineKey, $0) }) { first, _ in first }
+        for data in found {
+            WineEntity.upsert(data, existing: existing[data.id], in: modelContext)
+        }
+        try modelContext.save()
+        return found.map(\.wine)
+    }
+
+    /// CELLAR-R17, R30: every reading of a scanned wine leaves it richer. Its grapes, notes, pairings and awards gain
+    /// the new ones; the serving temperature, alcohol and legal term are kept once known, and the appellation gains
+    /// its category when a reading brings it; its name, producer and map stay as first read.
+    private static func accumulate(_ wine: Wine, into entity: WineEntity) {
+        let stored = Self.wine(entity)
+        entity.grapes = stored.grapes.adding(wine.grapes)
+        entity.pairings = stored.pairings.adding(wine.pairings)
+        entity.note = stored.addingNotes(wine.noteItems).note ?? ""
+        if stored.serving == nil, let serving = wine.serving {
+            entity.servingMin = serving.lowerBound
+            entity.servingMax = serving.upperBound
+        }
+        if entity.alcohol == nil { entity.alcohol = wine.alcohol }
+        entity.awards = stored.awards.adding(wine.awards).map(\.text)
+        if entity.designation == nil { entity.designation = wine.designation }
+        if let kept = CertificationKeywords.appellation(stored.appellation, adding: wine.appellation),
+           kept != stored.appellation {
+            entity.classification = stored.settingAppellation(kept).classification
+        }
+        if entity.appellationInsight == nil {
+            entity.appellationInsight = wine.appellationInsight
+            entity.hasNotableAppellation = entity.hasNotableAppellation || wine.hasNotableAppellation
+        }
     }
 
     public func wines(keys: Set<String>) throws -> [String: Wine] {
@@ -101,6 +177,7 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
              note: entity.note.isEmpty ? nil : entity.note,
              serving: entity.servingMin <= entity.servingMax ? entity.servingMin...entity.servingMax : nil,
              originInsight: entity.originInsight, appellationInsight: entity.appellationInsight,
-             hasNotableAppellation: entity.hasNotableAppellation, howToServe: entity.howToServe, pairings: entity.pairings)
+             hasNotableAppellation: entity.hasNotableAppellation, howToServe: entity.howToServe, pairings: entity.pairings,
+             designation: entity.designation, awards: entity.awards.compactMap(WineAward.init(text:)))
     }
 }

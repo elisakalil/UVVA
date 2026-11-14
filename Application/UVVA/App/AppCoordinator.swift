@@ -48,6 +48,7 @@ final class AppCoordinator {
     private let auth: any Authenticating
     private let cloud: any CloudAccountStatus
     private let social: any SocialService
+    private let catalogSync: CatalogSync
     private let logger = Logger(subsystem: "app.uvva", category: "app")
     private let content: ContentLoader
 
@@ -70,6 +71,7 @@ final class AppCoordinator {
         auth = AppleAuthProvider()
         cloud = ICloudAccountStatus()
         social = stores.social
+        catalogSync = stores.catalogSync
     }
     
     func start() async throws {
@@ -194,7 +196,8 @@ final class AppCoordinator {
             },
             onOpenFriends: { [weak self] in self?.openFriendsSelection() },
             onOpenLastTable: { [weak self] in self?.openLastTable() },
-            onOpenMapHistory: { [weak self] in self?.openMapHistory() }
+            onOpenMapHistory: { [weak self] in self?.openMapHistory() },
+            onWineAddedToCellar: { [weak self] wineKey in self?.cellarTab?.refreshEntry(wineKey) }
         ))
 
         you = you ?? makeYou()
@@ -223,8 +226,12 @@ final class AppCoordinator {
 
         try await home?.prepare()
         try Task.checkCancellation()
+        sendContributions()
 
         if quizExit == .youMap {
+            // The redone Quiz replaced the map: You › Map opens on the new one, not the one You still holds.
+            await you?.reloadMap()
+            try Task.checkCancellation()
             selectedTab = .you
             you?.tab = .map
         } else {
@@ -264,7 +271,7 @@ final class AppCoordinator {
     }
 
     private var cellarFactory: CellarFactory {
-        CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog)
+        CellarFactory(cellar: cellar, maps: maps, rewriter: maps, wines: catalog, labelCatalog: catalog)
     }
 
     /// CELLAR-R14: the same new note from the Home and the Cellar. With a wine, from the Home's Hero or wine sheet, it
@@ -277,8 +284,9 @@ final class AppCoordinator {
         let model = NewNoteViewModel(
             wine: wine, ratedVerdict: ratedVerdict, editing: editing,
             cellar: cellar, maps: maps, labelCatalog: catalog, reader: VisionLabelReader(),
-            structurer: DeviceLabelStructurer(), camera: DeviceCamera(), rewriter: maps, wines: catalog,
-            onSaved: { [weak self] in self?.newNoteSaved() })
+            structurer: DeviceLabelStructurer(), pairer: DevicePairingSuggester(), camera: DeviceCamera(),
+            rewriter: maps, wines: catalog,
+            onSaved: { [weak self] wineKey in self?.newNoteSaved(wineKey) })
         newNote = (origin, model)
     }
 
@@ -288,15 +296,31 @@ final class AppCoordinator {
     }
 
     /// Both tabs refresh after a save, while the note closes over its originating tab.
-    private func newNoteSaved() {
+    private func newNoteSaved(_ wineKey: String) {
         newNote = nil
-        cellarTab?.newNoteSaved()
+        cellarTab?.newNoteSaved(wineKey)
         // The match of every wine and "A wine for each strong trait" follow the new rating: the whole Home is read
         // again, under the curtain of every card. A note from the Hero also takes the Home back to its top.
         let returnsToTop = newNoteReturnsHomeToTop
         newNoteReturnsHomeToTop = false
         Task { await home?.reload(returningToTop: returnsToTop) }
         publishPublicProfile()
+        sendContributions()
+    }
+
+    /// The labels read and not yet in the public catalog go to it as this user's contributions (ARCHITECTURE §4.3).
+    /// Without an iCloud account or a network they wait for the next note or launch.
+    private func sendContributions() {
+        guard let userID = profile?.id else { return }
+        let sync = catalogSync
+        let logger = logger
+        Task.detached(priority: .utility) {
+            do {
+                try await sync.sendContributions(userID: userID)
+            } catch {
+                logger.info("Contributions wait: \(error.localizedDescription, privacy: .public)")
+            }
+        }
     }
 
     /// FRI-R20: "Set a table with your friends" opens the choice of who comes.
@@ -320,7 +344,7 @@ final class AppCoordinator {
 
     private func makeYou() -> YouViewModel {
         YouFactory(profiles: profiles, maps: maps, catalog: catalog, courses: courses, learning: learning, social: social,
-                     reminders: reminders, scheduler: scheduler)
+                     reminders: reminders, scheduler: scheduler, cellar: cellar)
             .makeViewModel(coordinator: YouCoordinator(
                      onRedoMap: { [weak self] in self?.openQuiz(.redo) },
                      onOpenLearn: { [weak self] in self?.selectedTab = .learn },
@@ -341,6 +365,8 @@ final class AppCoordinator {
 
     private func accountDeleted() {
         UserDefaults.standard.removeObject(forKey: Self.signedOutKey)
+        let sync = catalogSync
+        Task.detached { try? await sync.forgetContributions() }
         resetTabs()
         openOnboarding()
     }

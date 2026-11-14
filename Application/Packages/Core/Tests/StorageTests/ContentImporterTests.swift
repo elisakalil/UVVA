@@ -21,32 +21,18 @@ struct ContentImporterTests {
         try ModelContext(container).fetchCount(FetchDescriptor<T>())
     }
 
-    private func wines() throws -> [String: WineEntity] {
-        let all = try ModelContext(container).fetch(FetchDescriptor<WineEntity>())
-        return Dictionary(uniqueKeysWithValues: all.map { ($0.wineKey, $0) })
-    }
-
     // MARK: Primeira abertura
 
     @Test func firstLaunch_importsEveryKind_andReturnsTheVersion() async throws {
         let version = try await importer.importIfNeeded(from: source(ContentFixture()), currentVersion: nil)
         #expect(version == "v1")
-        #expect(try count(WineEntity.self) == 2)
+        // The wines come from the public catalog, not the bundle.
+        #expect(try count(WineEntity.self) == 0)
         #expect(try count(RecipeEntity.self) == 2)
         #expect(try count(ModuleEntity.self) == 1)
         #expect(try count(LessonEntity.self) == 2)
         #expect(try count(GlossaryTermEntity.self) == 1)
         #expect(try count(QuizQuestionEntity.self) == 24)
-    }
-
-    @Test func wine_keepsItsFields_andHasNoVintageWhenTheBundleHasNone() async throws {
-        _ = try await importer.importIfNeeded(from: source(ContentFixture()), currentVersion: nil)
-        let wines = try wines()
-        #expect(wines["a-wine-2020"]?.vintage == 2020)
-        #expect(wines["b-wine"]?.vintage == nil)
-        #expect(wines["a-wine-2020"]?.servingMax == 16)
-        #expect(wines["a-wine-2020"]?.palateMap[.acidity] == 5)
-        #expect(wines["a-wine-2020"]?.source == "bundle")
     }
 
     @Test func recipe_decodesTwistFlavorAndIngredients() async throws {
@@ -68,7 +54,7 @@ struct ContentImporterTests {
         #expect(steps?[1]["answer"] as? Int == 1)
     }
 
-    @Test func stages_runInOrder_quizFirst_winesLast() async throws {
+    @Test func stages_runInOrder_quizFirst_lessonsLast() async throws {
         let stages = StageRecorder()
         _ = try await importer.importIfNeeded(from: source(ContentFixture()), currentVersion: nil,
                                               onStage: { stages.append($0) })
@@ -101,28 +87,9 @@ struct ContentImporterTests {
         #expect(try count(GlossaryTermEntity.self) == 1)
     }
 
-    @Test func newVersion_updatesWines_removesDroppedOnes_butKeepsProtectedAndCatalogWines() async throws {
-        var first = ContentFixture()
-        first.wines.append(ContentFixture.wine("kept-in-cellar", name: "Kept", vintage: nil))
-        _ = try await importer.importIfNeeded(from: source(first), currentVersion: nil)
-        let context = ModelContext(container)
-        context.insert(WineEntity(wineKey: "from-catalog", source: "catalog"))
-        try context.save()
-
-        var next = ContentFixture()
-        next.version = "v2"
-        next.wines = [ContentFixture.wine("a-wine-2020", name: "A Wine", vintage: 2020, acidity: 8)]
-        _ = try await importer.importIfNeeded(from: source(next), currentVersion: "v1",
-                                              protectedWineKeys: ["kept-in-cellar"])
-
-        let wines = try wines()
-        #expect(Set(wines.keys) == ["a-wine-2020", "kept-in-cellar", "from-catalog"])
-        #expect(wines["a-wine-2020"]?.acidity == 8)
-    }
-
     @Test func importCutShort_throws_andTheRetryEndsWithNoDuplicates() async throws {
         var broken = ContentFixture()
-        broken.skipWines = true
+        broken.skipLearn = true
         await #expect(throws: (any Error).self) {
             try await importer.importIfNeeded(from: source(broken), currentVersion: nil)
         }
@@ -130,6 +97,6 @@ struct ContentImporterTests {
         #expect(version == "v1")
         #expect(try count(QuizQuestionEntity.self) == 24)
         #expect(try count(RecipeEntity.self) == 2)
-        #expect(try count(WineEntity.self) == 2)
+        #expect(try count(ModuleEntity.self) == 1)
     }
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1000000000000000000000C /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = B1000000000000000000001C /* CoreUI */; };
 		B10000000000000000000002 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000012 /* DesignSystem */; };
 		B10000000000000000000003 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000013 /* Core */; };
 		B10000000000000000000004 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000014 /* Storage */; };
@@ -18,6 +17,7 @@
 		B10000000000000000000009 /* You in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000019 /* You */; };
 		B1000000000000000000000A /* Cellar in Frameworks */ = {isa = PBXBuildFile; productRef = B1000000000000000000001A /* Cellar */; };
 		B1000000000000000000000B /* Friends in Frameworks */ = {isa = PBXBuildFile; productRef = B1000000000000000000001B /* Friends */; };
+		B1000000000000000000000C /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = B1000000000000000000001C /* CoreUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

@@ -7,6 +7,9 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
 
     @Binding var selectedStat: ProgressStat?
 
+    /// The map's place in the scroll, so the page can bring it above the Regions or Bottles sheet.
+    static var mapID: String { "progress.worldMap" }
+
     var body: some View {
         let model = viewModel.uiModel
         YouPanel {
@@ -29,8 +32,14 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
                 }
                 .padding(.top, 6)
 
+                // A little room above the map stays with it, so it does not touch the top edge when scrolled to.
+                ProgressWorldMap(model: model.map, focus: selectedStat?.mapKind)
+                    .padding(.top, 6)
+                    .id(Self.mapID)
+                    .padding(.top, 42)
+
                 SectionTitle(text: viewModel.uiModel.specialistInText)
-                    .padding(.top, 76)
+                    .padding(.top, 56)
                 Text(model.specialist)
                     .font(UVVAFont.sans(15)).lineSpacing(7)
                     .padding(.top, 16)

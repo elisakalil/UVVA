@@ -26,8 +26,8 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
         case .checkingCamera:
             NotePalette.cameraGround.ignoresSafeArea()
         case .front, .back, .reading:
-            NewNoteCaptureView(model: model, onCapture: { photo in
-                Task { await viewModel.capture(photo.kept, reading: photo.reading) }
+            NewNoteCaptureView(model: model, onCapture: { photo, scan in
+                Task { await viewModel.capture(photo.kept, reading: photo.reading, scan: scan) }
             })
                 .transition(.opacity)
         case .readFailed, .cameraDenied:

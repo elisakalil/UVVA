@@ -41,9 +41,12 @@ struct NewNotePaperView: View {
                             NotePaperTitle(title: content.title, producer: content.producer)
                             photo
                         }
-                        NotePaperMatch(match: content.match, resources: resources.paper)
+                        NotePaperMatch(match: content.match, shared: content.matchShared, apart: content.matchApart,
+                                       resources: resources.paper)
+                        if let certificate = content.certificate {
+                            WineCertificateCard(certificate: certificate)
+                        }
                         NotePaperFacts(content: content, resources: resources.paper)
-                        WineAppellationCard(appellation: content.appellation)
                         ForEach([NewNoteChipField.grapes, .notes, .pairings]) { field in
                             NotePaperChips(label: chipTitle(field), chips: content.chips(field),
                                            addLabel: resources.paper.addText(chipTitle(field))) {
@@ -58,7 +61,9 @@ struct NewNotePaperView: View {
                         noteField
                         end(findURL: content.findURL)
                         #if DEBUG
-                        if let text = model.readingDebugText { NewNoteReadingDebugView(text: text) }
+                        if let text = model.readingDebugText {
+                            NewNoteReadingDebugView(text: text, export: model.readingExportText)
+                        }
                         #endif
                     }
                     .padding(.horizontal, 26)

@@ -8,8 +8,9 @@ public protocol NewNoteViewModelProtocol: ObservableObject {
     /// Checks the camera, asking the system the first time (CELLAR-R15).
     func start() async
     /// The shutter: the front, then the back, which starts the reading (CELLAR-R16, R17). `photo` is kept;
-    /// `reading`, the same photo at full size, is what the label is read from, when there is one.
-    func capture(_ photo: Data, reading: Data?) async
+    /// `reading`, the same photo at full size, is what the label is read from, when there is one. `scan` is the back
+    /// label as the camera read it while moving over it, when it did.
+    func capture(_ photo: Data, reading: Data?, scan: LabelScan?) async
     func tryAgain()
     func fillInByHand()
     func updateManual(_ field: NewNoteField, text: String)
@@ -29,5 +30,7 @@ public protocol NewNoteViewModelProtocol: ObservableObject {
 
 public extension NewNoteViewModelProtocol {
     /// A photo that is kept and read as it is.
-    func capture(_ photo: Data) async { await capture(photo, reading: nil) }
+    func capture(_ photo: Data) async { await capture(photo, reading: nil, scan: nil) }
+
+    func capture(_ photo: Data, reading: Data?) async { await capture(photo, reading: reading, scan: nil) }
 }

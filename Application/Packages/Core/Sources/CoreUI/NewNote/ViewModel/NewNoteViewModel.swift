@@ -21,14 +21,17 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     private let readLabel: any ReadLabelUseCaseProtocol
     private let readManual: any ReadManualUseCaseProtocol
     private let saveNewNote: any SaveNewNoteUseCaseProtocol
-    /// The note was kept: the Cellar reads its entries again and says "Note saved".
-    private let onSaved: () -> Void
+    /// The note was kept: the Cellar refreshes the saved wine and says "Note saved".
+    private let onSaved: (String) -> Void
     /// The full-size copies of the label photos, held only until they are read.
     private var readingFront: Data?
     private var readingBack: Data?
+    /// The back label as the camera read it, moving over it (CELLAR-R17).
+    private var backScan: LabelScan?
     /// What the last reading saw, for the debug section of the note (CELLAR-R17).
     private let readingLog: LabelReadingLog?
     private var readingDebugText: String? { didSet { refresh() } }
+    private var readingExportText: String? { didSet { refresh() } }
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
     /// `wine` is one the app already knows: the note opens on paper, asking "Rate it again?" when it was rated before
@@ -38,7 +41,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
          prepareCamera: any PrepareCameraUseCaseProtocol, readLabel: any ReadLabelUseCaseProtocol,
          readManual: any ReadManualUseCaseProtocol, saveNewNote: any SaveNewNoteUseCaseProtocol,
          maps: (any PalateMapRepository)? = nil, catalog: LabelCatalogCache? = nil,
-         readingLog: LabelReadingLog? = nil, onSaved: @escaping () -> Void) {
+         readingLog: LabelReadingLog? = nil, onSaved: @escaping (String) -> Void) {
         if let wine, let entry = editing {
             flow = NewNoteFlow(editing: wine, verdict: entry.verdict, note: entry.note,
                                photoFront: entry.photoFront, photoBack: entry.photoBack)
@@ -59,10 +62,11 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     public convenience init(wine: Wine? = nil, ratedVerdict: Verdict? = nil,
                             editing: CellarEntry? = nil, cellar: any CellarRepository, maps: any PalateMapRepository,
                             labelCatalog: any LabelCatalogRepository, reader: any LabelReading,
-                            structurer: any LabelStructuring, camera: any CameraAuthorizing,
+                            structurer: any LabelStructuring, pairer: any PairingSuggesting,
+                            camera: any CameraAuthorizing,
                             rewriter: any PalateHistoryRewriting, wines: any WineLookup,
                             now: @escaping () -> Date = Date.init,
-                            onSaved: @escaping () -> Void) {
+                            onSaved: @escaping (String) -> Void) {
         let catalog = LabelCatalogCache(catalog: labelCatalog)
         #if DEBUG
         let readingLog: LabelReadingLog? = LabelReadingLog()
@@ -73,9 +77,9 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         self.init(
             wine: wine, ratedVerdict: ratedVerdict, editing: editing,
             prepareCamera: PrepareCameraUseCase(camera: camera),
-            readLabel: ReadLabelUseCase(reader: reader, structurer: structurer, catalog: catalog, now: now,
-                                        log: readingLog),
-            readManual: ReadManualUseCase(catalog: catalog),
+            readLabel: ReadLabelUseCase(reader: reader, structurer: structurer, pairer: pairer, catalog: catalog,
+                                        now: now, log: readingLog),
+            readManual: ReadManualUseCase(catalog: catalog, pairer: pairer),
             saveNewNote: SaveNewNoteUseCase(cellar: cellar, catalog: labelCatalog, maps: maps,
                                             recalculate: recalculate, now: now),
             maps: maps, catalog: catalog, readingLog: readingLog, onSaved: onSaved)
@@ -88,18 +92,21 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         palate = try? await maps?.currentMap()
     }
 
-    public func capture(_ photo: Data, reading: Data?) async {
+    public func capture(_ photo: Data, reading: Data?, scan: LabelScan?) async {
         switch flow.step {
         case .front: readingFront = reading
-        case .back: readingBack = reading
+        case .back:
+            readingBack = reading
+            backScan = scan
         default: break
         }
         flow.capture(photo)
         guard flow.step == .reading, let front = flow.photoFront, let back = flow.photoBack else { return }
         // The full-size copies are read when there are; the kept photos otherwise.
-        let result = await readLabel.execute(front: readingFront ?? front, back: readingBack ?? back)
+        let result = await readLabel.execute(front: readingFront ?? front, back: readingBack ?? back, backScan: backScan)
         readingFront = nil
         readingBack = nil
+        backScan = nil
         refreshDiagnostics()
         flow.labelRead(result)
     }
@@ -164,7 +171,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         defer { isWorking = false }
         do {
             try await saveNewNote.execute(draft)
-            onSaved()
+            onSaved(draft.wine.id)
         } catch {
             logger.error("New note not saved: \(error.localizedDescription, privacy: .public)")
             errorText = uiModel.resources.saveErrorText
@@ -174,6 +181,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     /// The last reading, as text, for the debug section of the note.
     private func refreshDiagnostics() {
         readingDebugText = readingLog?.last.map(LabelReadingLog.text)
+        readingExportText = readingLog?.last?.export?.json
     }
 
     private func refresh() {
@@ -182,6 +190,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             .build(into: &model)
         model.isWorking = isWorking
         model.readingDebugText = readingDebugText
+        model.readingExportText = readingExportText
         model.errorText = errorText
         uiModel = model
     }

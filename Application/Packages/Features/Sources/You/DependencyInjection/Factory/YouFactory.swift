@@ -11,10 +11,11 @@ public struct YouFactory: YouFactoryProtocol {
     private let social: any SocialService
     private let reminders: any ReminderRepository
     private let scheduler: any ReminderScheduling
+    private let cellar: any CellarRepository
 
     public init(profiles: any ProfileRepository, maps: any PalateMapRepository, catalog: any CatalogRepository,
                 courses: any CourseCatalog, learning: any LearningRepository, social: any SocialService,
-                reminders: any ReminderRepository, scheduler: any ReminderScheduling) {
+                reminders: any ReminderRepository, scheduler: any ReminderScheduling, cellar: any CellarRepository) {
         self.profiles = profiles
         self.maps = maps
         self.catalog = catalog
@@ -23,12 +24,13 @@ public struct YouFactory: YouFactoryProtocol {
         self.social = social
         self.reminders = reminders
         self.scheduler = scheduler
+        self.cellar = cellar
     }
 
     public func makeViewModel(coordinator: any YouCoordinatorProtocol) -> YouViewModel {
         YouViewModel(
             loadYouUseCase: LoadYouUseCase(profiles: profiles, maps: maps, catalog: catalog, courses: courses,
-                                          learning: learning, reminders: reminders),
+                                          learning: learning, reminders: reminders, cellar: cellar),
             makeScreens: { owner in
                 let readModel = { [weak owner] in owner?.contentModel ?? YouContentModel() }
                 return (

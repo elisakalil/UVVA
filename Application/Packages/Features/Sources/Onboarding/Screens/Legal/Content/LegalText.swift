@@ -26,6 +26,8 @@ enum LegalText {
                              body: String(localized: "Stored with your account. Your name and, if you choose, your map are public to the people you add as friends.", bundle: .module)),
                 LegalSection(title: String(localized: "Your phone", bundle: .module),
                              body: String(localized: "If you add your number, we publish a code made from it, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA.", bundle: .module)),
+                LegalSection(title: String(localized: "Wine labels", bundle: .module),
+                             body: String(localized: "When you read a label, the wine's facts (its name, producer, vintage, grapes and what the label says) go to UVVA's public wine catalog, never your photos, notes or ratings. Once two people have read the same wine, everyone can find it. Deleting your account deletes what you sent; the wines already in the catalog stay.", bundle: .module)),
                 LegalSection(title: String(localized: "Sharing", bundle: .module),
                              body: String(localized: "We do not sell your data and we have no servers of our own.", bundle: .module))
             ]

@@ -10,6 +10,7 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
     private let onOpenCellarNote: (Wine, Verdict?, _ fromHero: Bool) -> Void
     private let onOpenFriends: () -> Void
     private let onOpenLastTable: () -> Void
+    private let onWineAddedToCellar: (String) -> Void
     private let onOpenMapHistory: () -> Void
 
     public init(onOpenCourse: @escaping (String) -> Void,
@@ -19,8 +20,10 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
                 onOpenCellarNote: @escaping (Wine, Verdict?, _ fromHero: Bool) -> Void = { _, _, _ in },
                 onOpenFriends: @escaping () -> Void = {},
                 onOpenLastTable: @escaping () -> Void = {},
-                onOpenMapHistory: @escaping () -> Void = {}) {
+                onOpenMapHistory: @escaping () -> Void = {},
+                onWineAddedToCellar: @escaping (String) -> Void = { _ in }) {
         self.onOpenLastTable = onOpenLastTable
+        self.onWineAddedToCellar = onWineAddedToCellar
         self.onOpenMapHistory = onOpenMapHistory
         self.onScan = onScan
         self.onOpenCellarNote = onOpenCellarNote
@@ -42,5 +45,6 @@ public struct HomeCoordinator: HomeCoordinatorProtocol {
     }
     public func openFriends() { onOpenFriends() }
     public func openLastTable() { onOpenLastTable() }
+    public func wineAddedToCellar(_ wineKey: String) { onWineAddedToCellar(wineKey) }
     public func openMapHistory() { onOpenMapHistory() }
 }

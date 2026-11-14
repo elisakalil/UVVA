@@ -7,6 +7,8 @@ struct NoteCover: View {
     var front: Data?
     var back: Data?
     var tag: String?
+    var frontPreview: UIImage?
+    var isReading: Bool
 
     var body: some View {
         GeometryReader { proxy in
@@ -14,7 +16,7 @@ struct NoteCover: View {
             let frontWidth = both ? (proxy.size.width - 8) * 0.6 : proxy.size.width
             HStack(spacing: 8) {
                 if front != nil || back == nil {
-                    photo(front)
+                    photo(front, preview: frontPreview, isReading: isReading)
                         .frame(width: frontWidth)
                         .overlay(alignment: .topLeading) { tagLabel }
                 }
@@ -28,10 +30,20 @@ struct NoteCover: View {
         .frame(height: 196)
     }
 
-    private func photo(_ data: Data?) -> some View {
+    private func photo(_ data: Data?, preview: UIImage? = nil, isReading: Bool = false) -> some View {
         NotePalette.photoGround
             // The labels in black and white; the vineyard of a wine without photos keeps its colour.
-            .overlay { CellarPhoto(data: data).grayscale(data == nil ? 0 : 1).contrast(data == nil ? 1 : 1.08) }
+            .overlay {
+                if let data {
+                    CellarPhoto(data: data, preview: preview).grayscale(1).contrast(1.08)
+                } else if let preview, isReading {
+                    Image(uiImage: preview).resizable().scaledToFill().grayscale(1).contrast(1.08)
+                } else if isReading {
+                    GrapeLoop().frame(width: 30, height: 42)
+                } else {
+                    UVVAPhoto.background.resizable().scaledToFill()
+                }
+            }
             .clipped()
             .accessibilityHidden(true)
     }

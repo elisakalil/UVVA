@@ -15,6 +15,8 @@ public protocol HomeCoordinatorProtocol {
     func openFriends()
     /// The match card, with one friend (HOME-R11): the last table (FRI-R17).
     func openLastTable()
+    /// The Home added a wine directly to the Cellar.
+    func wineAddedToCellar(_ wineKey: String)
     /// The "axis that changed" card (HOME-R17): You › Map, at "Over time" (YOU-R03).
     func openMapHistory()
 }
@@ -25,5 +27,6 @@ extension HomeCoordinatorProtocol {
     public func openCellarNote(for wine: Wine, ratedVerdict: Verdict?, fromHero: Bool) {}
     public func openFriends() {}
     public func openLastTable() {}
+    public func wineAddedToCellar(_ wineKey: String) {}
     public func openMapHistory() {}
 }

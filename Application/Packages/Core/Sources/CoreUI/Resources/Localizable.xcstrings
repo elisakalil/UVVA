@@ -20,8 +20,30 @@
     "%@ · 1 year" : {
 
     },
+    "%lld awards" : {
+
+    },
+    "%lld lines read" : {
+
+    },
     "%lld%%" : {
 
+    },
+    "1 award" : {
+
+    },
+    "1 line read" : {
+
+    },
+    "About %lld%% of the world's wines show signals at least as strong: %@. An estimate from the label, measured on UVVA's catalog." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About %1$lld%% of the world's wines show signals at least as strong: %2$@. An estimate from the label, measured on UVVA's catalog."
+          }
+        }
+      }
     },
     "About intensity" : {
 
@@ -39,6 +61,9 @@
 
     },
     "Appellation" : {
+
+    },
+    "Awards" : {
 
     },
     "Back label" : {
@@ -80,6 +105,9 @@
     "Find the wine" : {
 
     },
+    "Finish scanning" : {
+
+    },
     "Fit the whole label inside the frame, flat and in focus." : {
 
     },
@@ -96,9 +124,6 @@
 
     },
     "Grape or blend" : {
-
-    },
-    "Grape, alcohol and producer are usually here." : {
 
     },
     "Grapes" : {
@@ -120,13 +145,25 @@
     "High in %@, like your map." : {
 
     },
+    "Hold the label inside the frame" : {
+
+    },
     "How to serve" : {
+
+    },
+    "How UVVA estimates it" : {
 
     },
     "In common" : {
 
     },
     "Intensity" : {
+
+    },
+    "Legal term" : {
+
+    },
+    "Less" : {
 
     },
     "Less %@ than you usually drink." : {
@@ -139,6 +176,9 @@
 
     },
     "Maybe" : {
+
+    },
+    "More" : {
 
     },
     "More %@ than you usually drink." : {
@@ -168,7 +208,7 @@
     "Notes" : {
 
     },
-    "Now the back label" : {
+    "Now scan the back label" : {
 
     },
     "Open Settings" : {
@@ -187,6 +227,9 @@
 
     },
     "Producer" : {
+
+    },
+    "Made by strict local rules" : {
 
     },
     "Quiet on every axis, like your map." : {
@@ -217,6 +260,9 @@
     "Region or appellation" : {
 
     },
+    "Regional, free to experiment" : {
+
+    },
     "Rosé" : {
 
     },
@@ -226,10 +272,16 @@
     "Sparkling" : {
 
     },
+    "Start scanning" : {
+
+    },
     "Style" : {
 
     },
     "Take photo" : {
+
+    },
+    "Tap the button, then turn the bottle slowly." : {
 
     },
     "Tasted it differently? Tap or slide a line to give your own reading. It's kept with your note, and the map of this wine follows it." : {
@@ -256,7 +308,16 @@
     "This wine and you" : {
 
     },
+    "Top %lld%% of the world's wines" : {
+
+    },
+    "Among its country's finest" : {
+
+    },
     "Try again" : {
+
+    },
+    "Turn the bottle slowly until the whole label has passed. Tap again when the count stops growing." : {
 
     },
     "Type" : {

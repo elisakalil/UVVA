@@ -28,9 +28,7 @@ public enum NewNoteChipField: String, Identifiable, Sendable {
     func values(in wine: Wine) -> [String] {
         switch self {
         case .grapes: wine.grapes
-        case .notes: wine.note?.split(separator: ",").map {
-            $0.trimmingCharacters(in: .whitespacesAndNewlines.union(CharacterSet(charactersIn: ".")))
-        }.filter { !$0.isEmpty } ?? []
+        case .notes: wine.noteItems
         case .pairings: wine.pairings
         }
     }

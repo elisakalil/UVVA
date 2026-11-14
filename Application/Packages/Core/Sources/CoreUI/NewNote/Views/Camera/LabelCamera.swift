@@ -2,9 +2,9 @@
 @preconcurrency import AVFoundation
 import UIKit
 
-/// The back camera for the label photos: a live preview and a still at full size. Each photo is then made into
-/// two copies: a light one the Cellar keeps, and a sharp one the label is read from. The session runs on its own
-/// queue, off the main thread, as AVFoundation asks.
+/// The back camera for the label photos: a live preview, a still at full size and, on the back label, its video read
+/// frame after frame (`scanner`). Each photo is then made into two copies: a light one the Cellar keeps, and a sharp
+/// one the label is read from. The session runs on its own queue, off the main thread, as AVFoundation asks.
 final class LabelCamera: NSObject, @unchecked Sendable {
     /// The longest side of a kept photo, in pixels: light enough for iCloud.
     static let maxSide: CGFloat = 1800
@@ -13,6 +13,8 @@ final class LabelCamera: NSObject, @unchecked Sendable {
     static let readingMaxSide: CGFloat = 4032
 
     let session = AVCaptureSession()
+    /// Reads the back label off the video while it moves over it (CELLAR-R17).
+    let scanner = LabelScanner()
     private let output = AVCapturePhotoOutput()
     private let queue = DispatchQueue(label: "app.uvva.label-camera")
     private var isConfigured = false
@@ -59,6 +61,7 @@ final class LabelCamera: NSObject, @unchecked Sendable {
         session.sessionPreset = .photo
         if session.canAddInput(input) { session.addInput(input) }
         if session.canAddOutput(output) { session.addOutput(output) }
+        if session.canAddOutput(scanner.output) { session.addOutput(scanner.output) }
         session.commitConfiguration()
         isConfigured = true
     }

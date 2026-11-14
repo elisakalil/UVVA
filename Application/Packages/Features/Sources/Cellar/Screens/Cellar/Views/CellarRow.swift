@@ -4,12 +4,19 @@ import SwiftUI
 /// A row of the list: the label, the name and vintage, where it comes from, and the tag (CELLAR-R06, R09).
 struct CellarRow: View {
     var model: CellarItemUIModel
+    var photo: UIImage?
 
     var body: some View {
         HStack(spacing: 16) {
             Circle()
                 .fill(CellarPalette.coverGround)
-                .overlay { CellarPhoto(data: model.photo) }
+                .overlay {
+                    if let photo {
+                        Image(uiImage: photo).resizable().scaledToFill()
+                    } else {
+                        UVVAPhoto.background.resizable().scaledToFill()
+                    }
+                }
                 .clipShape(Circle())
                 .overlay { Circle().strokeBorder(UVVAColor.creamFill.opacity(0.25), lineWidth: 0.5) }
                 .frame(width: 52, height: 52)

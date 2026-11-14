@@ -13,7 +13,6 @@ public actor ContentImporter: StoreActor {
     public func importIfNeeded(
         from source: ContentSource,
         currentVersion: String?,
-        protectedWineKeys: Set<String> = [],
         onStage: @Sendable (ContentImportStage) -> Void = { _ in }
     ) throws -> String? {
         let manifest = try decode(ContentManifest.self, at: source.manifest)
@@ -28,7 +27,6 @@ public actor ContentImporter: StoreActor {
         return try importCatalogIfNeeded(
             from: source,
             currentVersion: currentVersion,
-            protectedWineKeys: protectedWineKeys,
             onStage: onStage
         )
     }
@@ -53,10 +51,10 @@ public actor ContentImporter: StoreActor {
         )
     }
 
+    /// The recipes and the lessons. The wines are not in the bundle: they come from the public catalog (`CatalogSync`).
     public func importCatalogIfNeeded(
         from source: ContentSource,
         currentVersion: String?,
-        protectedWineKeys: Set<String> = [],
         onStage: @Sendable (ContentImportStage) -> Void = { _ in }
     ) throws -> String? {
         try Task.checkCancellation()
@@ -73,13 +71,6 @@ public actor ContentImporter: StoreActor {
         onStage(.learn)
         try replaceLearn(
             try decode(PackedLearnFile.self, at: source.learn).modules
-        )
-        try Task.checkCancellation()
-
-        onStage(.wines)
-        try upsertWines(
-            try decode(PackedWinesFile.self, at: source.wines).wines,
-            protecting: protectedWineKeys
         )
         try Task.checkCancellation()
 
@@ -191,65 +182,6 @@ public actor ContentImporter: StoreActor {
                 lesson.module = module
                 modelContext.insert(lesson)
             }
-        }
-        try modelContext.save()
-    }
-
-    private func upsertWines(_ wines: [PackedWine], protecting protected: Set<String>) throws {
-        let bundleSource = "bundle"
-        var existing: [String: WineEntity] = [:]
-        if try modelContext.fetchCount(FetchDescriptor<WineEntity>()) > 0 {
-            for wine in try modelContext.fetch(FetchDescriptor<WineEntity>()) {
-                existing[wine.wineKey] = wine
-            }
-        }
-
-        let incoming = Set(wines.map(\.id))
-        for wine in existing.values
-        where wine.source == bundleSource && !incoming.contains(wine.wineKey) && !protected.contains(wine.wineKey) {
-            modelContext.delete(wine)
-        }
-
-        for (index, packed) in wines.enumerated() {
-            try Task.checkCancellation()
-            
-            let entity: WineEntity
-            if let found = existing[packed.id] {
-                entity = found
-                // A wine once scanned and now in the bundle is the bundle's from here on.
-                if found.source == CatalogStore.scannedSource { found.source = bundleSource }
-            } else {
-                entity = WineEntity(wineKey: packed.id, source: bundleSource)
-                modelContext.insert(entity)
-            }
-            entity.name = packed.name
-            entity.producer = packed.producer
-            entity.vintage = packed.vintage
-            entity.origin = packed.origin
-            entity.region = packed.region
-            entity.country = packed.country
-            entity.grapes = packed.grapes
-            entity.type = packed.type
-            entity.alcohol = packed.alcohol
-            entity.servingMin = packed.servingTemperature.min
-            entity.servingMax = packed.servingTemperature.max
-            entity.pairings = packed.pairings
-            entity.classification = packed.classification
-            entity.findIt = packed.findIt
-            entity.note = packed.note ?? ""
-            entity.originInsight = packed.originInsight
-            entity.appellationInsight = packed.appellationInsight
-            entity.hasNotableAppellation = packed.hasNotableAppellation ?? false
-            entity.howToServe = packed.howToServe
-            entity.floral = packed.map.floral
-            entity.body = packed.map.body
-            entity.tannin = packed.map.tannin
-            entity.spice = packed.map.spice
-            entity.oak = packed.map.oak
-            entity.sweetness = packed.map.sweetness
-            entity.acidity = packed.map.acidity
-            entity.fruit = packed.map.fruit
-            if (index + 1) % Self.batchSize == 0 { try modelContext.save() }
         }
         try modelContext.save()
     }

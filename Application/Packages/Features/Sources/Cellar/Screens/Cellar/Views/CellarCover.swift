@@ -4,12 +4,17 @@ import SwiftUI
 /// A cover of the grid: the front label under the veil, with the tag in RedGrapes (CELLAR-R06, R09).
 struct CellarCover: View {
     var model: CellarItemUIModel
+    var photo: UIImage?
 
     var body: some View {
         // The photo sits in an overlay, so filling it never widens the cover past its column.
         CellarPalette.coverGround
             .overlay {
-                CellarPhoto(data: model.photo)
+                if let photo {
+                    Image(uiImage: photo).resizable().scaledToFill()
+                } else {
+                    UVVAPhoto.background.resizable().scaledToFill()
+                }
             }
             .overlay { CellarPalette.coverVeil }
             .overlay {
@@ -25,7 +30,7 @@ struct CellarCover: View {
             }
             .overlay {
                 // Without a label to look at, the cover names the wine, on the side the tag leaves free.
-                if model.photo == nil {
+                if photo == nil {
                     caption
                         .padding(12)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: captionAlignment)

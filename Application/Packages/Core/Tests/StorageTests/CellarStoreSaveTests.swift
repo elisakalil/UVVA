@@ -39,6 +39,42 @@ struct CellarStoreSaveTests {
         #expect(entry.createdAt == day1)
     }
 
+    @Test func CELLAR_R30_theEntry_keepsTheLegalTermTheAwardsAndItsTop() async throws {
+        var certified = wine
+        certified.country = "Portugal"
+        certified.classification = "Vinho Regional Alentejano"
+        certified.designation = "Reserva"
+        certified.awards = [WineAward(competition: "Mundus Vini", medal: .gold, year: 2022)]
+        try await store.save(NewNoteDraft(wine: certified, status: .wantToTry), at: day1)
+        let plain = Wine(id: "plain", name: "Plain", origin: "", profile: PalateMap([:]))
+        try await store.save(NewNoteDraft(wine: plain, status: .wantToTry), at: day2)
+        #expect(try await store.entry("plain")?.certificateTop == 0)
+        let entry = try #require(try await store.entry(certified.id))
+        #expect(entry.designation == "Reserva")
+        #expect(entry.awards == certified.awards)
+        // Vinho Regional, a Portuguese Reserva and gold at a major competition: kept as the new note showed it.
+        #expect(entry.certificateTop == 1)
+    }
+
+    @Test func browsingReadsOnlyRequestedFrontLabelsAndDetailReadsBoth() async throws {
+        let front = Data([1])
+        let back = Data([2])
+        try await store.save(NewNoteDraft(wine: wine, status: .wantToTry,
+                                          photoFront: front, photoBack: back), at: day1)
+
+        let repository: any CellarRepository = store
+        let summary = try #require(try await repository.entrySummaries().first)
+        #expect(summary.id == wine.id)
+        #expect(summary.photoFront == nil)
+        #expect(summary.photoBack == nil)
+        #expect(try await repository.frontPhotos(for: ["unknown"]) == [:])
+        #expect(try await repository.frontPhotos(for: [wine.id, "unknown"]) == [wine.id: front])
+
+        let detail = try #require(try await repository.entry(wine.id))
+        #expect(detail.photoFront == front)
+        #expect(detail.photoBack == back)
+    }
+
     @Test func CELLAR_R20_addToCellar_createsAWantToTryEntryWithoutVerdict() async throws {
         try await store.save(NewNoteDraft(wine: wine, status: .wantToTry, verdict: .yes), at: day1)
         let entry = try #require(try await entries().first)

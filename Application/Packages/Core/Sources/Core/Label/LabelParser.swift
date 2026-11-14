@@ -1,8 +1,9 @@
 import Foundation
 
 /// Reads the wine's facts out of the text of its two label photos (CELLAR-R17), without a network: the vintage,
-/// the alcohol, the type, the appellation, region and country, the grapes, and the lines that could be the name
-/// and the producer. What it cannot tell stays nil, for the catalog lookup or the person to fill in.
+/// the alcohol, the type, the appellation, region and country, the grapes, the lines that could be the name
+/// and the producer, and what certifies it: the appellation's category, the legal term and the medals (CELLAR-R30).
+/// What it cannot tell stays nil, for the catalog lookup or the person to fill in.
 public enum LabelParser {
     /// The vintages a label can show: older years are founding dates or solera years.
     static let earliestVintage = 1900
@@ -27,14 +28,60 @@ public enum LabelParser {
             ?? appellation.flatMap { vocabulary.appellationTypes[$0] }
             ?? grapes.lazy.compactMap { vocabulary.grapeTypes[$0] }.first
 
-        let known = Set(([appellation, region, country].compactMap { $0 } + grapes).flatMap(WineText.tokens))
+        let designation = CertificationKeywords.designation(in: text.front.map(\.text).joined(separator: " "))
+            ?? CertificationKeywords.designation(in: text.back.map(\.text).joined(separator: " "))
+        let known = Set(([appellation, region, country, designation].compactMap { $0 } + grapes).flatMap(WineText.tokens))
         let titles = titleLines(text.front, known: known)
         let producer = producerLine(front: text.front, back: text.back, titles: titles)
         let name = titles.first { WineText.tokens($0) != WineText.tokens(producer ?? "") }
 
         return LabelFacts(name: name, producer: producer, vintage: vintage(in: lines, currentYear: currentYear),
-                          type: type, appellation: appellation, region: region, country: country, grapes: grapes,
-                          alcohol: alcohol(in: lines), titleLines: titles, serving: serving(in: lines))
+                          type: type, appellation: certified(lines, name: appellation ?? region) ?? appellation,
+                          region: region, country: country, grapes: grapes, alcohol: alcohol(in: lines),
+                          titleLines: titles, serving: serving(in: lines), designation: designation,
+                          awards: awards(in: lines, currentYear: currentYear))
+    }
+
+    // MARK: Certification (CELLAR-R30)
+
+    /// The appellation with its category, from the first line that names one: "Douro DOC", "Vinho Regional Lisboa".
+    /// Without a name read elsewhere, the line as printed.
+    private static func certified(_ lines: [LabelLine], name: String?) -> String? {
+        for line in lines {
+            guard let found = CertificationKeywords.category(in: line.text) else { continue }
+            // "Vinho Regional Alentejano" already says its category.
+            if let name, CertificationKeywords.split(name).category != nil { return name }
+            guard let name else {
+                let words = line.text.split(whereSeparator: \.isWhitespace)
+                return words.count <= 8 ? line.text.trimmingCharacters(in: .whitespaces) : found.category
+            }
+            let categoryFirst = ["Vinho Regional", "Vin de Pays", "Vino de la Tierra", "Landwein", "IG"]
+            return categoryFirst.contains(found.category) ? "\(found.category) \(name)" : "\(name) \(found.category)"
+        }
+        return nil
+    }
+
+    /// Medals and critics' scores: a competition or critic the line names, with the medal or score and the year on
+    /// it or the lines around it on the same label. A medal word alone is not enough ("golden colour").
+    static func awards(in lines: [LabelLine], currentYear: Int) -> [WineAward] {
+        var awards: [WineAward] = []
+        for index in lines.indices {
+            guard let source = CertificationKeywords.source(in: lines[index].text) else { continue }
+            // The lines around it on the same label: a seal does not run from the front onto the back.
+            let around = [index - 1, index, index + 1]
+                .filter { lines.indices.contains($0) && lines[$0].side == lines[index].side }
+                .map { lines[$0].text }.joined(separator: " ")
+            let year = WineText.tokens(around).compactMap { Int($0) }.first { (1990...currentYear).contains($0) }
+            if source.isCritic {
+                let score = /([0-9]{2,3})\s*(?:pts|points|pontos|punti|puntos|pt|p)\b/
+                guard let match = around.lowercased().firstMatch(of: score), let points = Int(match.1),
+                      (80...100).contains(points) else { continue }
+                awards.append(WineAward(competition: source.name, points: points, year: year))
+            } else if let medal = CertificationKeywords.medal(in: around) {
+                awards.append(WineAward(competition: source.name, medal: medal, year: year))
+            }
+        }
+        return [WineAward]().adding(awards)
     }
 
     // MARK: Names from the catalog

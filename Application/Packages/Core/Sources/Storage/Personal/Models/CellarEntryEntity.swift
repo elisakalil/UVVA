@@ -21,6 +21,12 @@ public final class CellarEntryEntity {
     public var pairings: [String]?
     public var alcohol: Double?
     public var classification = ""
+    /// The legal term on the label, "Grande Reserva" (CELLAR-R30).
+    public var designation: String?
+    /// The medals and scores on the bottle, as `WineAward.text`.
+    public var awards: [String]?
+    /// The "Top X%" the note was saved with: 0 for none, nil for an entry saved before it was kept (CELLAR-R30).
+    public var certificateTop: Int?
     /// `tasted` or `wantToTry` (CELLAR-R01).
     public var status = Status.wantToTry.rawValue
     /// `yes`, `maybe` or `no`; only when tasted.

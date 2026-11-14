@@ -9,15 +9,17 @@ struct ProgressPresentationBuilder {
         let completed = lessons.values.filter(\.isCompleted)
         let stats = [
             stat(label: String(localized: "Grapes", bundle: .module), certificates: certificates.filter { $0.kind == .grape }, content: content),
-            stat(label: String(localized: "Regions", bundle: .module), certificates: certificates.filter { $0.kind == .region }, content: content),
+            stat(label: String(localized: "Regions", bundle: .module), certificates: certificates.filter { $0.kind == .region }, content: content,
+                 mapKind: .region),
             stat(label: String(localized: "Modules", bundle: .module), certificates: certificates, content: content),
             ProgressStat(value: "\(completed.reduce(0) { $0 + $1.xp })", label: String(localized: "XP", bundle: .module)),
-            ProgressStat(value: "0", label: String(localized: "Bottles", bundle: .module)),
+            bottles(content.tasted),
             ProgressStat(value: "\(certificates.count)", label: String(localized: "Certificates", bundle: .module))
         ]
         let module = recommendation?.course
         return ProgressUIModel(
             stats: stats,
+            map: ProgressMapBuilder().build(regions: certificates.filter { $0.kind == .region }, content: content),
             specialist: SpecialistReading().text(
                 completed: certificates.compactMap { content.certificateCourses[$0.courseID] },
                 regionCatalog: content.regionCatalog
@@ -40,7 +42,27 @@ struct ProgressPresentationBuilder {
         }
     }
 
-    private func stat(label: String, certificates: [Certificate], content: YouContentModel) -> ProgressStat {
+    /// The tasted wines, under their country (SHARED-R08).
+    private func bottles(_ tasted: [CellarEntry]) -> ProgressStat {
+        let items = tasted.map { entry -> ProgressStatItem in
+            let detail = [entry.producer, entry.vintage.map(String.init) ?? ""].filter { !$0.isEmpty }.joined(separator: " · ")
+            let verdict: String? = switch entry.verdict {
+            case .yes: String(localized: "Would drink again", bundle: .module)
+            case .maybe: String(localized: "Maybe again", bundle: .module)
+            case .no: String(localized: "Not again", bundle: .module)
+            case nil: nil
+            }
+            let chips = [verdict, entry.region, entry.type.isEmpty ? nil : entry.type].compactMap { $0 }
+            let country = entry.country.flatMap { $0.isEmpty ? nil : $0 }
+            return ProgressStatItem(id: entry.id, title: entry.name, detail: detail,
+                                    group: country ?? String(localized: "Other wines", bundle: .module), chips: chips)
+        }.sorted { $0.title.localizedStandardCompare($1.title) == .orderedAscending }
+        return ProgressStat(value: "\(items.count)", label: String(localized: "Bottles", bundle: .module), items: items,
+                            mapKind: .bottle)
+    }
+
+    private func stat(label: String, certificates: [Certificate], content: YouContentModel,
+                      mapKind: ProgressMapPin.Kind? = nil) -> ProgressStat {
         let items: [ProgressStatItem] = certificates.map { certificate -> ProgressStatItem in
             let course = content.certificateCourses[certificate.courseID]
             let countries = course?.countries ?? []
@@ -70,6 +92,6 @@ struct ProgressPresentationBuilder {
             return ProgressStatItem(id: certificate.courseID, title: course?.title ?? certificate.courseID,
                                     detail: course?.about ?? "", group: group, chips: chips)
         }.sorted { $0.title.localizedStandardCompare($1.title) == .orderedAscending }
-        return ProgressStat(value: "\(items.count)", label: label, items: items)
+        return ProgressStat(value: "\(items.count)", label: label, items: items, mapKind: mapKind)
     }
 }

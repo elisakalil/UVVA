@@ -12,6 +12,13 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
     @State private var headerHeight: CGFloat = 0
     @State private var position = ScrollPosition()
 
+    @State private var visibleItems: [CellarItemUIModel] = []
+    @State private var photos: [String: UIImage] = [:]
+    @State private var visibleMode: CellarViewMode?
+    @State private var requestedCount = 0
+    @State private var photoLoadFailed = false
+    @State private var retry = 0
+
     private var model: CellarUIModel { viewModel.uiModel }
     private var resources: CellarResourcesUIModel { model.resources }
 
@@ -44,7 +51,7 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
         // CELLAR-R13: the note in a sheet over the Cellar, dragged down to close.
         .sheet(item: Binding(get: { viewModel.note }, set: { if $0 == nil { viewModel.closeNote() } }),
                onDismiss: viewModel.noteDismissed) { note in
-            NoteView(viewModel: note)
+            NoteView(viewModel: note, frontPreview: photos[note.uiModel.wineKey])
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
                 .presentationCornerRadius(28)
@@ -165,7 +172,10 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
     @ViewBuilder private var list: some View {
         switch model.state {
         case .idle:
-            Color.clear.frame(height: 1)
+            loading
+        case .failed:
+            Button(resources.retryText) { Task { await viewModel.load() } }
+                .padding(.vertical, 28)
         case .empty:
             CellarEmptyView(resources: resources)
         case .noMatches:
@@ -173,11 +183,81 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
                 withAnimation(.easeOut(duration: 0.25)) { viewModel.clearFilters() }
             }
         case .items:
-            switch model.viewMode {
-            case .grid: CellarGrid(items: model.items, onOpen: viewModel.openNote).transition(.opacity)
-            case .list: CellarList(items: model.items, onOpen: viewModel.openNote).transition(.opacity)
+            VStack(spacing: 0) {
+                if !visibleItems.isEmpty && visibleMode == model.viewMode {
+                    switch model.viewMode {
+                    case .grid:
+                        CellarGrid(items: visibleItems, photos: photos, onApproachEnd: requestMore,
+                                   onOpen: viewModel.openNote)
+                    case .list:
+                        CellarList(items: visibleItems, photos: photos, onApproachEnd: requestMore,
+                                   onOpen: viewModel.openNote)
+                    }
+                }
+                if photoLoadFailed {
+                    Button(resources.retryText) { retry += 1 }
+                        .padding(.vertical, 28)
+                } else if visibleMode != model.viewMode || visibleItems.count < model.items.count {
+                    loading
+                        .onScrollVisibilityChange(threshold: 0.1) { isVisible in
+                            if isVisible { requestMore() }
+                        }
+                }
             }
+            .task(id: photoRequest) { await revealPhotos() }
         }
+    }
+
+    private var loading: some View {
+        GrapeLoop()
+            .frame(width: 44, height: 62)
+            .padding(.vertical, 24)
+            .frame(maxWidth: .infinity)
+            .accessibilityRepresentation { ProgressView(resources.loadingText) }
+    }
+
+    private var photoRequest: PhotoRequest {
+        let count = visibleMode == model.viewMode ? max(requestedCount, model.viewMode.photoBatchSize)
+                                                   : model.viewMode.photoBatchSize
+        return PhotoRequest(mode: model.viewMode, items: Array(model.items.prefix(count)), retry: retry)
+    }
+
+    private func requestMore() {
+        guard visibleMode == model.viewMode, !visibleItems.isEmpty, !photoLoadFailed,
+              visibleItems.count < model.items.count, requestedCount <= visibleItems.count else { return }
+        requestedCount = visibleItems.count + model.viewMode.photoBatchSize
+    }
+
+    private func revealPhotos() async {
+        let request = photoRequest
+        photoLoadFailed = false
+        let reusable = visibleMode == request.mode
+            ? Dictionary(visibleItems.map { ($0.id, $0.updatedAt) }, uniquingKeysWith: { first, _ in first }) : [:]
+        let pending = request.items.filter { reusable[$0.id] != $0.updatedAt }
+        do {
+            let loaded = try await viewModel.preparePhotos(for: pending, mode: request.mode)
+            try Task.checkCancellation()
+            guard request == photoRequest else { return }
+            var ready: [String: UIImage] = [:]
+            for item in request.items {
+                ready[item.id] = reusable[item.id] == item.updatedAt ? photos[item.id] : loaded[item.id]
+            }
+            photos = ready
+            if visibleMode != request.mode { requestedCount = request.mode.photoBatchSize }
+            visibleMode = request.mode
+            visibleItems = request.items
+        } catch is CancellationError {
+            return
+        } catch {
+            guard !Task.isCancelled, request == photoRequest else { return }
+            photoLoadFailed = true
+        }
+    }
+
+    private struct PhotoRequest: Equatable {
+        var mode: CellarViewMode
+        var items: [CellarItemUIModel]
+        var retry: Int
     }
 
     private var searchResults: some View {

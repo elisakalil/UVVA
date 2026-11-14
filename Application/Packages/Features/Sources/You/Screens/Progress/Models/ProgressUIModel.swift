@@ -3,6 +3,7 @@ import Foundation
 /// Progress (YOU-R04 to R07).
 public struct ProgressUIModel: Equatable {
     var stats: [ProgressStat]
+    var map = ProgressMapUIModel()
     var specialist: String
     var suggestionEyebrow: String
     var suggestionTitle: String

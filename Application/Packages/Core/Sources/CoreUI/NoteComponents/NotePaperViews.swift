@@ -41,45 +41,116 @@ public struct NotePaperTitle: View {
 /// "72% match with your map".
 public struct NotePaperMatch: View {
     var match: Int?
+    /// "High in body, like your map." and "More oak than you usually drink." (HOME-R10b), as on the wine sheet.
+    var shared: String?
+    var apart: String?
     var resources: NotePaperResources
 
-    public init(match: Int?, resources: NotePaperResources = NotePaperResources()) {
+    public init(match: Int?, shared: String? = nil, apart: String? = nil,
+                resources: NotePaperResources = NotePaperResources()) {
         self.match = match
+        self.shared = shared
+        self.apart = apart
         self.resources = resources
     }
 
     public var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 10) {
-            if let match {
-                Text("\(match)%")
-                    .font(UVVAFont.sans(44, .ultraLight))
-                    .tracking(-1.3)
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                if let match {
+                    Text("\(match)%")
+                        .font(UVVAFont.sans(44, .ultraLight))
+                        .tracking(-1.3)
+                }
+                Text(match == nil ? resources.noMapText : resources.matchText)
+                    .font(UVVAFont.sans(12.5))
+                    .foregroundStyle(NotePaper.ink.opacity(0.78))
             }
-            Text(match == nil ? resources.noMapText : resources.matchText)
-                .font(UVVAFont.sans(12.5))
-                .foregroundStyle(NotePaper.ink.opacity(0.78))
+            .accessibilityElement(children: .combine)
+            if shared != nil || apart != nil {
+                VStack(alignment: .leading, spacing: 8) {
+                    if let shared { line(shared) }
+                    if let apart { line(apart) }
+                }
+                .padding(.top, 16)
+            }
         }
-        .accessibilityElement(children: .combine)
+    }
+
+    private func line(_ text: String) -> some View {
+        Text(text)
+            .font(UVVAFont.sans(13))
+            .lineSpacing(4)
+            .foregroundStyle(NotePaper.ink.opacity(0.82))
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
 
-struct WineAppellationCard: View {
+/// The wine's certificate (CELLAR-R30). Closed, the seal and two lines: the "Top X%" or the appellation's level, and
+/// what it rests on. "More" opens one section per criterion, each with its small-capitals title.
+struct WineCertificateCard: View {
     @Environment(\.displayScale) private var displayScale
-    var appellation: String?
+    @State private var isOpen = false
+    var certificate: WineCertificateUIModel
     private let ink = Color(hex: 0x494038)
 
     var body: some View {
-        HStack(spacing: 12) {
-            UVVAIllustration.certificateSeal
-                .resizable()
-                .scaledToFit()
-                .frame(width: 44, height: 44)
-                .accessibilityHidden(true)
-            Text(appellation ?? "—")
-                .font(UVVAFont.sans(13))
-                .foregroundStyle(ink)
-                .fixedSize(horizontal: false, vertical: true)
+        VStack(alignment: .leading, spacing: 0) {
+            Button {
+                withAnimation(.easeInOut(duration: 0.25)) { isOpen.toggle() }
+            } label: {
+                HStack(alignment: .center, spacing: 12) {
+                    UVVAIllustration.certificateSeal
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 44, height: 44)
+                        .accessibilityHidden(true)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(certificate.headline).font(UVVAFont.sans(15, .medium))
+                        if let subline = certificate.subline {
+                            Text(subline).font(UVVAFont.sans(12)).opacity(0.7)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    if !certificate.sections.isEmpty {
+                        Image(systemName: isOpen ? "chevron.up" : "chevron.down")
+                            .font(.system(size: 12, weight: .medium))
+                            .opacity(0.6)
+                            .accessibilityHidden(true)
+                    }
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .disabled(certificate.sections.isEmpty)
+            .accessibilityHint(Text(isOpen ? certificate.lessText : certificate.moreText))
+
+            if isOpen {
+                VStack(alignment: .leading, spacing: 18) {
+                    ForEach(certificate.sections) { section in
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text(section.title.uppercased())
+                                .font(UVVAFont.sans(8.5, .medium))
+                                .tracking(2.2)
+                                .opacity(0.6)
+                                .accessibilityAddTraits(.isHeader)
+                            if let value = section.value {
+                                Text(value).font(UVVAFont.sans(13, .medium))
+                            }
+                            ForEach(section.lines, id: \.self) { line in
+                                Text(line).font(UVVAFont.sans(12)).opacity(0.78)
+                            }
+                        }
+                        .accessibilityElement(children: .combine)
+                    }
+                }
+                .padding(.top, 18)
+                .padding(.leading, 56)
+                .transition(.opacity)
+            }
         }
+        .foregroundStyle(ink)
+        .fixedSize(horizontal: false, vertical: true)
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .overlay {
@@ -87,9 +158,6 @@ struct WineAppellationCard: View {
                 .strokeBorder(ink, lineWidth: 1 / displayScale)
                 .allowsHitTesting(false)
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(String(localized: "Appellation", bundle: .module)))
-        .accessibilityValue(Text(appellation ?? "—"))
     }
 }
 

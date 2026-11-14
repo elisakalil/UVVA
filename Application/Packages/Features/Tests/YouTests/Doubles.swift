@@ -95,3 +95,15 @@ struct LearningStub: LearningRepository {
     func certificates() async throws -> [Certificate] { earned }
     func addCertificate(_ certificate: Certificate) async throws {}
 }
+
+struct CellarStub: CellarRepository {
+    var stored: [CellarEntry] = []
+    func entries() async throws -> [CellarEntry] { stored }
+    func wineKeys() async throws -> Set<String> { Set(stored.map(\.id)) }
+    func addWantToTry(_ wine: Wine) async throws {}
+    func tastedWineKeys() async throws -> Set<String> { Set(stored.filter { $0.verdict != nil }.map(\.id)) }
+    func addTasted(_ wine: Wine, verdict: Verdict) async throws {}
+    func save(_ draft: NewNoteDraft) async throws -> CellarEntry? { nil }
+    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {}
+    func delete(_ wineKey: String) async throws {}
+}

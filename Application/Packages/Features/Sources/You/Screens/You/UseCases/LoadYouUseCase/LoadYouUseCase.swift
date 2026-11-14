@@ -9,12 +9,14 @@ struct LoadYouUseCase: LoadYouUseCaseProtocol {
     let courses: any CourseCatalog
     let learning: any LearningRepository
     let reminders: any ReminderRepository
+    let cellar: any CellarRepository
 
     func execute(previous: YouContentModel) async -> YouContentModel {
         async let profile = try? profiles.currentProfile()
         async let map = try? maps.currentMap()
         async let history = try? maps.history()
         async let reminder = try? reminders.reminder()
+        async let cellarRead = try? cellar.entrySummaries()
         async let learningContent = loadLearning(previous: previous)
 
         var content = await learningContent
@@ -22,7 +24,19 @@ struct LoadYouUseCase: LoadYouUseCaseProtocol {
         content.map = await map
         content.history = await history ?? []
         content.reminder = await reminder
+        // A failed read keeps the bottles already shown.
+        if let entries = await cellarRead { content.tasted = entries.filter { $0.verdict != nil } }
         return content
+    }
+
+    func loadMap() async -> (map: PalateMap?, history: [MapChange])? {
+        do {
+            async let map = maps.currentMap()
+            async let history = maps.history()
+            return try await (map, history)
+        } catch {
+            return nil
+        }
     }
 
     private func loadLearning(previous: YouContentModel) async -> YouContentModel {

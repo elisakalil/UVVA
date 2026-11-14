@@ -35,6 +35,8 @@ public struct NewNoteUIModel {
 
     /// What the label reading saw at each step, in debug builds (CELLAR-R17).
     var readingDebugText: String?
+    /// The reading as the camera gave it, as JSON, to replay it in a test (`LabelScanExport`).
+    var readingExportText: String?
 
     var isWorking = false
     var errorText: String?

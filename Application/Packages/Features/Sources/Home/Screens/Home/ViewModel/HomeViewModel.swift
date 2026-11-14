@@ -222,6 +222,7 @@ public final class HomeViewModel: HomeViewModelProtocol {
     public func addToCellar(_ wine: Wine) async {
         guard !uiModel.cellarWineKeys.contains(wine.id) else { return }
         guard (try? await addWineToCellarUseCase.execute(wine)) != nil else { return }
+        coordinator.wineAddedToCellar(wine.id)
         uiModel.cellarWineKeys.insert(wine.id)
         show(uiModel.resources.savedToCellarNotice(wine))
         // HOME-R23: a wine in the Cellar leaves "Wines for your palate".

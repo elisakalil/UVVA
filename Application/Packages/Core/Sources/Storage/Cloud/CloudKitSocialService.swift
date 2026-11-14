@@ -103,7 +103,28 @@ public final class CloudKitSocialService: SocialService {
         // Requests made to this account belong to their senders and cannot be deleted here; without the
         // public profile they are left out of every list.
         ids += try await friendRequests(from: userID).map { Self.requestID(from: $0.from, to: $0.to) }
+        ids += try await contributions(of: userID)
         try await delete(ids)
+    }
+
+    /// The labels this account read for the public catalog (ARCHITECTURE §4.3). The wines the catalog already has
+    /// stay in it: they hold no one's data.
+    private func contributions(of userID: String) async throws -> [CKRecord.ID] {
+        let type = CatalogSchema.Contribution.type
+        let predicate = NSPredicate(format: "%K == %@", CatalogSchema.Contribution.contributor, userID)
+        var ids: [CKRecord.ID] = []
+        var page: (matchResults: [(CKRecord.ID, Result<CKRecord, any Error>)], queryCursor: CKQueryOperation.Cursor?)
+        do {
+            page = try await database.records(matching: CKQuery(recordType: type, predicate: predicate), desiredKeys: [])
+        } catch let error as CKError where error.code == .unknownItem {
+            return []
+        }
+        while true {
+            ids += page.matchResults.map(\.0)
+            guard let cursor = page.queryCursor else { break }
+            page = try await database.records(continuingMatchFrom: cursor, desiredKeys: [])
+        }
+        return ids
     }
 
     private func delete(_ ids: [CKRecord.ID]) async throws {

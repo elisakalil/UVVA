@@ -26,6 +26,13 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
     public var alcohol: Double?
     /// The appellation and strength, "Rioja DOCa · 13.5% abv".
     public var classification: String
+    /// The legal term on the label, "Grande Reserva" (CELLAR-R30).
+    public var designation: String?
+    /// The medals and scores on the bottle; nil for an entry saved before they were kept.
+    public var awards: [WineAward]?
+    /// The "Top X%" the note was saved with (CELLAR-R30): 0 when it had none, nil for an entry saved before it was
+    /// kept. A saved note shows this one; only a new note works it out again.
+    public var certificateTop: Int?
     /// The front and back labels, when the wine was photographed.
     public var photoFront: Data?
     public var photoBack: Data?
@@ -37,7 +44,8 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
                 status: CellarEntryStatus, verdict: Verdict? = nil, note: String? = nil, alcohol: Double? = nil,
                 classification: String = "", photoFront: Data? = nil, photoBack: Data? = nil,
                 createdAt: Date, updatedAt: Date? = nil, wineProfile: PalateMap? = nil,
-                wineNotes: String? = nil, pairings: [String]? = nil) {
+                wineNotes: String? = nil, pairings: [String]? = nil, designation: String? = nil,
+                awards: [WineAward]? = nil, certificateTop: Int? = nil) {
         self.id = id
         self.name = name
         self.producer = producer
@@ -55,6 +63,9 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
         self.note = note
         self.alcohol = alcohol
         self.classification = classification
+        self.designation = designation
+        self.awards = awards
+        self.certificateTop = certificateTop
         self.photoFront = photoFront
         self.photoBack = photoBack
         self.createdAt = createdAt

@@ -4,6 +4,12 @@ import Foundation
 public protocol CellarRepository: Sendable {
     /// Every entry, newest first by `createdAt` (CELLAR-R02).
     func entries() async throws -> [CellarEntry]
+    /// Entries for browsing and searching, with label data omitted.
+    func entrySummaries() async throws -> [CellarEntry]
+    /// A single persisted entry, including both labels.
+    func entry(_ wineKey: String) async throws -> CellarEntry?
+    /// Front labels for the requested portion of the collection.
+    func frontPhotos(for wineKeys: [String]) async throws -> [String: Data]
     /// The wineKeys of every entry, tasted or not.
     func wineKeys() async throws -> Set<String>
     /// Adds the wine as Want to try (CELLAR-R01). A wine already in the Cellar stays as it is, so a tasted
@@ -23,4 +29,28 @@ public protocol CellarRepository: Sendable {
     func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws
     /// "Delete" on a note (CELLAR-R28).
     func delete(_ wineKey: String) async throws
+}
+
+extension CellarRepository {
+    public func entrySummaries() async throws -> [CellarEntry] {
+        try await entries().map { entry in
+            var summary = entry
+            summary.photoFront = nil
+            summary.photoBack = nil
+            return summary
+        }
+    }
+
+    public func entry(_ wineKey: String) async throws -> CellarEntry? {
+        try await entries().first { $0.id == wineKey }
+    }
+
+    public func frontPhotos(for wineKeys: [String]) async throws -> [String: Data] {
+        let keys = Set(wineKeys)
+        var photos: [String: Data] = [:]
+        for entry in try await entries() where keys.contains(entry.id) {
+            photos[entry.id] = entry.photoFront
+        }
+        return photos
+    }
 }

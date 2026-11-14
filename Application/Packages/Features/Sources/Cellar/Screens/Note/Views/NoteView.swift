@@ -7,13 +7,19 @@ import SwiftUI
 /// sheet shows it, read only, with the photos after the name and the user's note after the maps. Edit opens the new note.
 public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
+    private var frontPreview: UIImage?
     @State private var search: URL?
 
     private var model: NoteUIModel { viewModel.uiModel }
     private var resources: NoteResourcesUIModel { model.resources }
 
     public init(viewModel: ViewModel) {
+        self.init(viewModel: viewModel, frontPreview: nil)
+    }
+
+    init(viewModel: ViewModel, frontPreview: UIImage?) {
         self.viewModel = viewModel
+        self.frontPreview = frontPreview
     }
 
     public var body: some View {
@@ -60,8 +66,9 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
 
     /// The labels, with the verdict on the front.
     @ViewBuilder private var photos: some View {
-        if model.photoFront != nil || model.photoBack != nil {
-            NoteCover(front: model.photoFront, back: model.photoBack, tag: model.coverTag)
+        if model.isReadingPhotos || model.photoFront != nil || model.photoBack != nil {
+            NoteCover(front: model.photoFront, back: model.photoBack, tag: model.coverTag,
+                      frontPreview: frontPreview, isReading: model.isReadingPhotos)
                 .clipShape(RoundedRectangle(cornerRadius: 18))
                 .padding(.top, 28)
         }
@@ -76,7 +83,7 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
                 .padding(.bottom, 12)
             }
             HStack(spacing: 32) {
-                linkButton(resources.editText) { viewModel.edit() }
+                linkButton(resources.editText) { viewModel.edit() }.disabled(model.isReadingPhotos)
                 linkButton(resources.deleteText) { viewModel.askToDelete() }
             }
             if let error = model.errorText {

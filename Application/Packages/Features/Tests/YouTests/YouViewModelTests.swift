@@ -1,5 +1,6 @@
 import Combine
 import Core
+import DesignSystem
 import Foundation
 import Testing
 import UIKit
@@ -17,10 +18,11 @@ struct YouViewModelTests {
 
     private func make(profiles: ProfilesSpy? = nil, social: SocialSpy = SocialSpy(), reminders: RemindersSpy = RemindersSpy(),
                       history: [MapChange]? = nil, learning: LearningStub = LearningStub(),
-                      actions: Actions = Actions(), courses: CoursesStub = CoursesStub()) async -> YouViewModel {
+                      actions: Actions = Actions(), courses: CoursesStub = CoursesStub(),
+                      cellar: CellarStub = CellarStub()) async -> YouViewModel {
         let viewModel = YouFactory(profiles: profiles ?? ProfilesSpy(elisa), maps: MapsStub(history: history ?? [quiz]),
                                      catalog: CatalogStub(), courses: courses, learning: learning, social: social,
-                                     reminders: reminders, scheduler: reminders)
+                                     reminders: reminders, scheduler: reminders, cellar: cellar)
             .makeViewModel(coordinator: YouCoordinator(
                                      onRedoMap: { actions.log.append("redo") }, onOpenLearn: { actions.log.append("learn") },
                                      onOpenCourse: { actions.log.append("course \($0)") },
@@ -140,6 +142,59 @@ struct YouViewModelTests {
         #expect(model.specialist.contains("beginner"))
         #expect(model.specialist.contains("Tannat"))
         #expect(model.specialist.contains("Canelones"))
+    }
+
+    // MARK: Progress · World map
+
+    private func tasted(_ id: String, region: String?, country: String?, verdict: Verdict?) -> CellarEntry {
+        CellarEntry(id: id, name: id, producer: "Quinta", vintage: 2019, type: "Red", region: region, country: country,
+                    status: verdict == nil ? .wantToTry : .tasted, verdict: verdict, createdAt: .now)
+    }
+
+    @Test func progress_bottles_countsOnlyWinesWithAVerdict() async {
+        let cellar = CellarStub(stored: [tasted("a", region: "Douro", country: "Portugal", verdict: .yes),
+                                         tasted("b", region: "Rioja", country: "Spain", verdict: .no),
+                                         tasted("c", region: "Tuscany", country: "Italy", verdict: .maybe),
+                                         tasted("d", region: "Mosel", country: "Germany", verdict: nil)])
+        let bottles = await make(cellar: cellar).progress.uiModel.stats[4]
+        #expect(bottles.label == "Bottles")
+        #expect(bottles.value == "3")
+        #expect(bottles.mapKind == .bottle)
+        #expect(bottles.groups.map(\.title) == ["Italy", "Portugal", "Spain"])
+        #expect(bottles.items.first { $0.id == "a" }?.chips.first == "Would drink again")
+        #expect(bottles.items.first { $0.id == "a" }?.detail == "Quinta · 2019")
+    }
+
+    @Test func progress_map_pinsFinishedRegionsAndTastedWines() {
+        let douro = Course(id: "region-pt-douro", kind: .region, order: 1, title: "Douro", about: "", countries: ["Portugal"], lessons: [])
+        let grape = Course(id: "grape-tannat", kind: .grape, order: 1, title: "Tannat", about: "", lessons: [])
+        var content = YouContentModel()
+        content.certificates = [douro, grape].map { Certificate(courseID: $0.id, date: .now) }
+        content.certificateCourses = [douro.id: douro, grape.id: grape]
+        content.tasted = [tasted("a", region: "Douro", country: "Portugal", verdict: .yes),
+                          tasted("b", region: "Douro", country: "Portugal", verdict: .maybe),
+                          tasted("c", region: "Somewhere new", country: "Italy", verdict: .no),
+                          tasted("d", region: nil, country: nil, verdict: .yes)]
+        let model = ProgressPresentationBuilder().build(from: content)
+        let regions = model.map.pins(.region)
+        #expect(regions.map(\.id) == ["region-pt-douro"])
+        #expect(regions.first.map { abs($0.lon - -7.55) < 0.01 && abs($0.lat - 41.15) < 0.01 } == true)
+        #expect(model.stats[1].mapKind == .region)
+        // Two Douro wines share a pin; an unknown region falls back to its country; no place, no pin.
+        let bottles = model.map.pins(.bottle)
+        #expect(bottles.map(\.count).sorted() == [1, 2])
+        let italy = bottles.first { $0.count == 1 }
+        #expect(italy.map { abs($0.lon - 12.22) < 0.01 && abs($0.lat - 43.47) < 0.01 } == true)
+    }
+
+    @Test func worldAtlas_findsRegionsIgnoringAccentsAndCase() {
+        let atlas = WorldAtlas.shared
+        #expect(atlas.coordinate(region: "dao", country: "PORTUGAL").map { $0.lat } == 40.5)
+        #expect(atlas.coordinate(region: "Hawkes Bay", country: "New Zealand") != nil)
+        #expect(atlas.coordinate(region: nil, country: "United States").map { $0.lon < -90 } == true)
+        #expect(atlas.coordinate(region: "Marlborough", country: nil).map { $0.lon } == 173.9)
+        #expect(atlas.coordinate(region: nil, country: "Atlantis") == nil)
+        #expect(!atlas.land.isEmpty)
     }
 
     @Test func specialist_connectsStudiedRegionsThroughGrapeAliases() {

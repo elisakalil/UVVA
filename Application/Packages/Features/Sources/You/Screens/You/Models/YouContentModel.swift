@@ -14,4 +14,6 @@ struct YouContentModel {
     var certificates: [Certificate] = []
     var regionCatalog: [Course] = []
     var certificateCourses: [String: Course] = [:]
+    /// The Cellar's wines with a verdict, Yes, Maybe or No (SHARED-R08).
+    var tasted: [CellarEntry] = []
 }

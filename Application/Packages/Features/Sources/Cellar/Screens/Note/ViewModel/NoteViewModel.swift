@@ -11,6 +11,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
     public nonisolated let id: String
 
     private var entry: CellarEntry { didSet { refresh() } }
+    private var isReadingPhotos = false
     private var wine: Wine? { didSet { refresh() } }
     /// The user's map, for the match and the second map.
     private var palate: PalateMap? { didSet { refresh() } }
@@ -46,12 +47,28 @@ public final class NoteViewModel: NoteViewModelProtocol {
         refresh()
     }
 
+    func startReadingPhotos() {
+        isReadingPhotos = true
+        refresh()
+    }
+
+    func finishReadingPhotos() {
+        isReadingPhotos = false
+        refresh()
+    }
+
+    func setFullEntry(_ fullEntry: CellarEntry) {
+        isReadingPhotos = false
+        entry = fullEntry
+    }
+
     public func load() async {
         wine = await loadNote.execute(entry.id)
         palate = try? await maps?.currentMap()
     }
 
     public func edit() {
+        guard !isReadingPhotos else { return }
         onEdit(entry, builder.paperWine)
     }
 
@@ -87,6 +104,8 @@ public final class NoteViewModel: NoteViewModelProtocol {
         model.coverTag = builder.coverTag
         model.photoFront = entry.photoFront
         model.photoBack = entry.photoBack
+        model.wineKey = entry.id
+        model.isReadingPhotos = isReadingPhotos
         model.content = builder.content
         model.note = entry.note
         model.isWorking = isWorking

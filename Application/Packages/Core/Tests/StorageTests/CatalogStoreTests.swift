@@ -11,8 +11,7 @@ struct CatalogStoreTests {
         fixture.wines = [ContentFixture.wine("far", name: "Far", vintage: nil, acidity: 0),
                          ContentFixture.wine("near-2020", name: "Near", vintage: 2020, acidity: 9),
                          ContentFixture.wine("mid", name: "Mid", vintage: nil, acidity: 6)]
-        _ = try await ContentImporter(modelContainer: container)
-            .importIfNeeded(from: ContentSource(directory: try fixture.write()), currentVersion: nil)
+        try await fixture.load(into: container)
         let user = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, $0 == .acidity ? 9 : 5) }))
         let wines = try await CatalogStore(modelContainer: container).winesClosest(to: user, limit: 2)
         #expect(wines.map(\.id) == ["near-2020", "mid"])
@@ -27,8 +26,7 @@ struct CatalogStoreTests {
         var fixture = ContentFixture()
         fixture.wines = ["twin-c", "twin-a", "twin-b"].map { ContentFixture.wine($0, name: $0, vintage: nil, acidity: 7) }
             + [ContentFixture.wine("far", name: "Far", vintage: nil, acidity: 0)]
-        _ = try await ContentImporter(modelContainer: container)
-            .importIfNeeded(from: ContentSource(directory: try fixture.write()), currentVersion: nil)
+        try await fixture.load(into: container)
         let user = PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, $0 == .acidity ? 9 : 5) }))
         let store = CatalogStore(modelContainer: container)
         for _ in 0..<3 {
@@ -43,8 +41,7 @@ struct CatalogStoreLookupTests {
         var fixture = ContentFixture()
         fixture.wines = [ContentFixture.wine("a", name: "A", vintage: nil, acidity: 3),
                          ContentFixture.wine("b", name: "B", vintage: nil, acidity: 7)]
-        _ = try await ContentImporter(modelContainer: container)
-            .importIfNeeded(from: ContentSource(directory: try fixture.write()), currentVersion: nil)
+        try await fixture.load(into: container)
         let wines = try await CatalogStore(modelContainer: container).wines(keys: ["b", "scanned"])
         #expect(Array(wines.keys) == ["b"])
         #expect(wines["b"]?.profile[.acidity] == 7)
@@ -63,8 +60,7 @@ struct CatalogStoreCoursesTests {
         region["countryCode"] = "PT"
         region["grapes"] = ["Touriga Nacional"]
         fixture.modules = [ContentFixture.module("path-01", lessons: 3), region]
-        _ = try await ContentImporter(modelContainer: container)
-            .importIfNeeded(from: ContentSource(directory: try fixture.write()), currentVersion: nil)
+        try await fixture.load(into: container)
         store = CatalogStore(modelContainer: container)
     }
 

@@ -3,105 +3,104 @@ import ImageIO
 import SwiftUI
 import UIKit
 
-/// The front label of a wine, filling its frame. A wine never photographed shows the Home's vineyard instead.
-///
-/// The label is decoded away from the main thread, at the size it is drawn, and kept for the next time it is drawn:
-/// decoded in `body`, every label of the Cellar was a full photo decoded on the main thread each time the list was
-/// drawn again, which froze the app when a new note made the Cellar read its entries again.
+/// A label in the detail. The browsing thumbnail can stay visible while the larger image is prepared.
 struct CellarPhoto: View {
-    var data: Data?
+    var data: Data
+    var preview: UIImage?
 
     @Environment(\.displayScale) private var displayScale
-    /// The longer side of the frame, in points.
     @State private var side: CGFloat = 0
-    /// Bumped when a label has been decoded, so `body` reads it from the cache.
-    @State private var decoded = 0
+    @State private var image: UIImage?
+    @State private var failed = false
 
     var body: some View {
-        image
-            // Filled past its frame, the photo would take taps meant for what sits around it.
-            .allowsHitTesting(false)
-            .onGeometryChange(for: CGFloat.self) { max($0.size.width, $0.size.height) } action: { side = $0 }
-            .task(id: request) {
-                guard let request, CellarPhotoCache.image(for: request) == nil else { return }
-                let image = await Task.detached(priority: .userInitiated) {
-                    CellarPhotoCache.decode(request.data, maxPixel: request.maxPixel)
-                }.value
-                guard !Task.isCancelled, let image else { return }
-                CellarPhotoCache.store(image, for: request)
-                withAnimation(.easeOut(duration: 0.2)) { decoded += 1 }
+        Group {
+            if let photo = image ?? preview ?? CellarPhotoCache.preview(for: data) {
+                Image(uiImage: photo).resizable().scaledToFill()
+                    .id(ObjectIdentifier(photo)).transition(.opacity)
+            } else if failed {
+                UVVAPhoto.background.resizable().scaledToFill()
+            } else {
+                GrapeLoop().frame(width: 30, height: 42)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-    }
-
-    @ViewBuilder private var image: some View {
-        if data == nil {
-            UVVAPhoto.background
-                .resizable()
-                .scaledToFill()
-        } else if let request, let image = CellarPhotoCache.image(for: request) {
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFill()
-                .transition(.opacity)
-        } else {
-            // The ground of the cover shows until the label is ready.
-            Color.clear
+        }
+        .allowsHitTesting(false)
+        .onGeometryChange(for: CGFloat.self) { max($0.size.width, $0.size.height) } action: { side = $0 }
+        .task(id: maxPixel) {
+            guard maxPixel > 0 else { return }
+            let photo = await CellarPhotoCache.load(data, maxPixel: maxPixel)
+            guard !Task.isCancelled else { return }
+            withAnimation(.easeOut(duration: 0.2)) {
+                image = photo
+                failed = photo == nil
+            }
         }
     }
 
-    private var request: CellarPhotoRequest? {
-        guard let data, side > 0 else { return nil }
-        return CellarPhotoRequest(data: data, maxPixel: CellarPhotoCache.maxPixel(side: side, scale: displayScale))
+    private var maxPixel: Int {
+        guard side > 0 else { return 0 }
+        return Int(min(1800, (side * displayScale * 1.5 / 128).rounded(.up) * 128))
     }
 }
 
-/// A label to decode, at most `maxPixel` on its longer side.
-struct CellarPhotoRequest: Hashable, Sendable {
-    var data: Data
-    var maxPixel: Int
+@MainActor
+enum CellarPhotoCache {
+    // A serial queue bounds ImageIO work across the prefetch, scrolling and the detail.
+    private static let decoder = DispatchQueue(label: "app.uvva.cellar.photos", qos: .userInitiated)
+    private static let images: NSCache<NSString, UIImage> = {
+        let cache = NSCache<NSString, UIImage>()
+        cache.totalCostLimit = 80 * 1024 * 1024
+        return cache
+    }()
+    private static var loading: [Key: Task<UIImage?, Never>] = [:]
 
-    /// Labels are compared by a sample of their bytes, not all of them: equal labels are the same `Data`, and
-    /// different photos differ well before a few dozen samples run out.
-    static func == (lhs: Self, rhs: Self) -> Bool { lhs.key == rhs.key }
-    func hash(into hasher: inout Hasher) { hasher.combine(key) }
+    static func preview(for data: Data) -> UIImage? {
+        let fingerprint = fingerprint(data)
+        return [CellarViewMode.grid, .list].lazy.compactMap {
+            images.object(forKey: Key(fingerprint: fingerprint, maxPixel: $0.thumbnailPixels).cacheKey)
+        }.first
+    }
 
-    var key: String {
+    static func load(_ data: Data, maxPixel: Int) async -> UIImage? {
+        let key = Key(fingerprint: fingerprint(data), maxPixel: maxPixel)
+        if let image = images.object(forKey: key.cacheKey) { return image }
+        if let task = loading[key] { return await task.value }
+
+        let task = Task {
+            let image: UIImage? = await withCheckedContinuation { continuation in
+                decoder.async { continuation.resume(returning: decode(data, maxPixel: maxPixel)) }
+            }
+            if let image {
+                let pixels = image.size.width * image.size.height * image.scale * image.scale
+                images.setObject(image, forKey: key.cacheKey, cost: Int(pixels) * 4)
+            }
+            loading[key] = nil
+            return image
+        }
+        loading[key] = task
+        return await task.value
+    }
+
+    private struct Key: Hashable {
+        var fingerprint: String
+        var maxPixel: Int
+
+        var cacheKey: NSString { "\(fingerprint)-\(maxPixel)" as NSString }
+    }
+
+    // Sample the JPEG to match the same label across the browsing and detail reads.
+    private static func fingerprint(_ data: Data) -> String {
         let samples = 48
-        let fingerprint = data.withUnsafeBytes { bytes -> UInt64 in
-            guard bytes.count > 0 else { return 0 }
+        let hash = data.withUnsafeBytes { bytes -> UInt64 in
+            guard !bytes.isEmpty else { return 0 }
             var hash: UInt64 = 0xCBF2_9CE4_8422_2325
             for index in 0..<samples {
                 hash = (hash ^ UInt64(bytes[index * (bytes.count - 1) / (samples - 1)])) &* 0x100_0000_01B3
             }
             return hash
         }
-        return "\(data.count)-\(fingerprint)-\(maxPixel)"
-    }
-}
-
-/// The labels already decoded, by label and size.
-@MainActor
-enum CellarPhotoCache {
-    private static let images: NSCache<NSString, UIImage> = {
-        let cache = NSCache<NSString, UIImage>()
-        cache.totalCostLimit = 80 * 1024 * 1024
-        return cache
-    }()
-
-    static func image(for request: CellarPhotoRequest) -> UIImage? {
-        images.object(forKey: request.key as NSString)
-    }
-
-    static func store(_ image: UIImage, for request: CellarPhotoRequest) {
-        let pixels = image.size.width * image.size.height * image.scale * image.scale
-        images.setObject(image, forKey: request.key as NSString, cost: Int(pixels) * 4)
-    }
-
-    /// Filled into its frame, a label is cut on one side: half as large again as the frame covers the usual 3:4 label.
-    /// Rounded up so a frame that moves by a point reuses what is there.
-    static func maxPixel(side: CGFloat, scale: CGFloat) -> Int {
-        let step: CGFloat = 128
-        return Int(min(1800, ((side * scale * 1.5) / step).rounded(.up) * step))
+        return "\(data.count)-\(hash)"
     }
 
     /// A thumbnail straight from the JPEG, never the full photo in memory.
@@ -117,4 +116,10 @@ enum CellarPhotoCache {
         guard let image = CGImageSourceCreateThumbnailAtIndex(source, 0, options as CFDictionary) else { return nil }
         return UIImage(cgImage: image)
     }
+}
+
+extension CellarViewMode {
+    var thumbnailPixels: Int { self == .grid ? 896 : 256 }
+    // Keep a complete three-column row at the end of each grid batch.
+    var photoBatchSize: Int { self == .grid ? 18 : 16 }
 }

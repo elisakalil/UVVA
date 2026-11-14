@@ -29,7 +29,7 @@ struct CellarPresentationBuilder {
             return CellarItemUIModel(
                 id: entry.id, name: entry.name, vintage: vintage,
                 meta: [entry.region, entry.country, grapes(entry)].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · "),
-                tag: tag, photo: entry.photoFront,
+                tag: tag, photo: entry.photoFront, updatedAt: entry.updatedAt,
                 cover: .at(index),
                 accessibilityLabel: [entry.name, vintage, tag].filter { !$0.isEmpty }.joined(separator: ", ")
             )
@@ -71,7 +71,8 @@ struct CellarPresentationBuilder {
     var isSearching: Bool { !CellarSearchText.fold(query).isEmpty }
 
     var searchResults: [CellarSearchResultUIModel] {
-        entries.filter { CellarSearchText.matches($0, query: query) }.map { entry in
+        guard isSearching else { return [] }
+        return entries.filter { CellarSearchText.matches($0, query: query) }.map { entry in
             CellarSearchResultUIModel(
                 id: entry.id,
                 title: [entry.name, entry.vintage.map(String.init)].compactMap { $0 }.joined(separator: " "),

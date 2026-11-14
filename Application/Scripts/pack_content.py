@@ -5,10 +5,18 @@ Run it every time something in Data/ changes:
 
     python3 Application/Scripts/pack_content.py
 
-It writes wines.json, recipes.json, learn.json, glossary.json, quiz.json and manifest.json.
+It writes recipes.json, learn.json, glossary.json, quiz.json and manifest.json, and the share of the catalog's wines
+at each level of appellation and legal term for the "Top X%" of CELLAR-R30 (Match's QualityPrevalence+Packed.swift:
+code, not a resource, so no build can leave it behind; the app uses it until it has the robot's).
 manifest.version is a hash of the packed files: the app imports the content again whenever it changes
 (ARCHITECTURE §2.2). The script stops with an error, and writes nothing, if the data breaks a rule.
+
+The wines are not in the bundle: they are the seed of the public catalog (ARCHITECTURE §4.1). The robot
+(Application/Robot, run by .github/workflows/catalog-robot.yml) asks for them, checked by the same rules:
+
+    python3 Application/Scripts/pack_content.py --seed /path/to/seed.json
 """
+import argparse
 import hashlib
 import json
 import re
@@ -19,6 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "Data"
 OUT = ROOT / "UVVA" / "Resources" / "Content"
+PREVALENCE = ROOT / "Packages" / "Core" / "Sources" / "Match" / "QualityPrevalence+Packed.swift"
 
 # Canonical chart order (QUIZ-R01, QUIZ-R02).
 AXES = ["floral", "body", "tannin", "spice", "oak", "sweetness", "acidity", "fruit"]
@@ -154,14 +163,117 @@ def pack_quiz():
     return questions
 
 
+# CELLAR-R30, "Top X%": the categories and legal terms of CertificationKeywords.swift, folded the same way. Keep
+# both in step.
+TIERS = {"regional": 1, "protected": 2, "top": 3}
+CATEGORY_TIERS = [
+    ("denominazione di origine controllata e garantita", 3), ("docg", 3), ("d o c g", 3),
+    ("denominacion de origen calificada", 3), ("doca", 3), ("d o ca", 3), ("doq", 3),
+    ("premier grand cru classe", 3), ("grand cru classe", 3), ("grand cru", 3), ("premier cru", 3), ("1er cru", 3),
+    ("cru classe", 3), ("grosse lage", 3),
+    ("denominacao de origem controlada", 2), ("denominazione di origine controllata", 2), ("doc", 2), ("d o c", 2),
+    ("denominacao de origem protegida", 2), ("dop", 2), ("denominacion de origen protegida", 2),
+    ("denominacion de origen", 2), ("d o", 2), ("appellation d origine controlee", 2), ("aoc", 2),
+    ("appellation d origine protegee", 2), ("aop", 2), ("american viticultural area", 2),
+    ("districtus austriae controllatus", 2), ("dac", 2), ("vqa", 2), ("wine of origin", 2), ("pradikatswein", 2),
+    ("qualitatswein", 2),
+    ("indicazione geografica tipica", 1), ("igt", 1), ("indicacao geografica protegida", 1),
+    ("indication geographique protegee", 1), ("igp", 1), ("vinho regional", 1), ("indicacao geografica", 1),
+    ("vin de pays", 1), ("vino de la tierra", 1), ("landwein", 1),
+]
+DESIGNATIONS = ["grande reserva", "gran reserva", "riserva", "reserva", "crianza", "reserve"]
+# The catalog has no medals or scores: the share of the world's wines at each level of recognition is an assumption,
+# written here and in CELLAR-R30. 4: trophy, platinum or double gold at a major competition, or 95+ points;
+# 3: gold at a major competition, or 92-94; 2: silver at a major competition, gold elsewhere, or 90-91; 1: any other.
+RECOGNITION = {"4": 0.005, "3": 0.02, "2": 0.05, "1": 0.10}
+
+
+def folded(text):
+    text = unicodedata.normalize("NFKD", (text or "").lower())
+    text = "".join(c for c in text if not unicodedata.combining(c))
+    return " " + " ".join(re.findall(r"[a-z0-9]+", text)) + " "
+
+
+def appellation_tier(wine):
+    appellation = (wine.get("classification") or "").split(" · ")[0].strip()
+    if not appellation or appellation.lower().endswith("% abv"):
+        return 0
+    text = folded(appellation)
+    tier = 0
+    if re.search(r" appellation( [a-z0-9]+){1,4} (controlee|protegee) ", text):
+        tier = 2
+    else:
+        for phrase, value in sorted(CATEGORY_TIERS, key=lambda e: -len(e[0])):
+            if f" {phrase} " in text:
+                tier = value
+                break
+    if tier == 0 and wine.get("appellationInsight"):
+        tier = 2
+    if wine.get("hasNotableAppellation"):
+        tier = 3
+    return tier
+
+
+def designation_strength(wine):
+    text = folded(wine.get("name"))
+    term = next((p for p in DESIGNATIONS if f" {p} " in text), None)
+    iberian = wine.get("country") in ("Portugal", "Spain")
+    if term in ("grande reserva", "gran reserva"):
+        return 3 if iberian else 1
+    if term == "riserva":
+        return 3 if wine.get("country") == "Italy" else 1
+    if term in ("reserva", "crianza"):
+        return 2 if iberian else 1
+    return 1 if term else 0
+
+
+def quality_prevalence(wines):
+    """The share of the catalog's wines at each level or above: the catalog stands for the world's wines."""
+    total = len(wines)
+
+    def shares(levels):
+        return {name: round(sum(1 for level in levels if level >= value) / total, 4)
+                for name, value in TIERS.items()} if total else {}
+
+    appellation = shares([appellation_tier(w) for w in wines])
+    designation = shares([designation_strength(w) for w in wines])
+    designation = {"weak": designation["regional"], "aged": designation["protected"], "strong": designation["top"]}
+    for name, value in list(appellation.items()) + list(designation.items()) + list(RECOGNITION.items()):
+        if not 0 < value <= 1:
+            fail(f"quality prevalence {name}: {value}")
+    return {"wines": total, "appellation": appellation, "designation": designation, "recognition": RECOGNITION}
+
+
+def prevalence_swift(prevalence):
+    def literal(values):
+        return "[" + ", ".join(f'"{k}": {v}' for k, v in values.items()) + "]"
+
+    return f"""// Written by Scripts/pack_content.py from {prevalence['wines']} catalog wines. Do not edit: run the script.
+
+public extension QualityPrevalence {{
+    /// The share of the world's wines at each level or above (CELLAR-R30): appellation and legal term measured on the
+    /// catalog, recognition assumed.
+    static let packed = QualityPrevalence(
+        appellation: {literal(prevalence['appellation'])},
+        designation: {literal(prevalence['designation'])},
+        recognition: {literal(prevalence['recognition'])})
+}}
+"""
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--seed", type=Path, help="also write the checked wines there, for the robot")
+    arguments = parser.parse_args()
+
+    wines = pack_wines()
     payloads = {
-        "wines.json": {"wines": pack_wines()},
         "recipes.json": {"recipes": pack_recipes()},
         "learn.json": {"modules": pack_learn()},
         "glossary.json": {"terms": pack_glossary()},
         "quiz.json": {"questions": pack_quiz()},
     }
+    prevalence = quality_prevalence(wines)
     if errors:
         print(f"{len(errors)} problem(s), nothing written:", file=sys.stderr)
         for message in errors[:50]:
@@ -176,7 +288,6 @@ def main():
         hashes[name] = hashlib.sha256(data).hexdigest()
     version = hashlib.sha256("".join(hashes[n] for n in sorted(hashes)).encode()).hexdigest()[:16]
     counts = {
-        "wines": len(payloads["wines.json"]["wines"]),
         "recipes": len(payloads["recipes.json"]["recipes"]),
         "modules": len(payloads["learn.json"]["modules"]),
         "lessons": sum(len(m["lessons"]) for m in payloads["learn.json"]["modules"]),
@@ -185,7 +296,13 @@ def main():
     }
     manifest = {"version": version, "counts": counts, "files": hashes}
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    PREVALENCE.write_text(prevalence_swift(prevalence), encoding="utf-8")
     print(f"Content {version}: " + ", ".join(f"{v} {k}" for k, v in counts.items()))
+    if arguments.seed:
+        arguments.seed.parent.mkdir(parents=True, exist_ok=True)
+        data = json.dumps({"wines": wines}, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        arguments.seed.write_bytes(data)
+        print(f"Seed: {len(wines)} wines in {arguments.seed}")
 
 
 if __name__ == "__main__":

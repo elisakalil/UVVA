@@ -7,17 +7,24 @@ struct ReadManualUseCase: ReadManualUseCaseProtocol {
     enum Failure: Error { case emptyCatalog }
 
     let catalog: LabelCatalogCache
+    let pairer: any PairingSuggesting
 
     func execute(_ facts: LabelFacts) async throws -> Wine {
         let prepared = try await catalog.load()
         var typed = canonical(facts, in: prepared.vocabulary)
         typed.titleLines = [typed.name, typed.producer].compactMap { $0 }
+        let wine: Wine
         if let match = LabelMatch.best(for: typed, in: prepared.index), match.isConfident {
-            return match.wine
+            wine = match.wine
+        } else if let match = await catalog.publicMatch(for: typed) {
+            wine = match.wine
+        } else {
+            guard let profile = ProfileEstimate.estimate(grapes: typed.grapes, type: typed.type, region: typed.region,
+                                                         in: prepared.wines) else { throw Failure.emptyCatalog }
+            wine = ScannedWine.make(typed, profile: profile)
         }
-        guard let profile = ProfileEstimate.estimate(grapes: typed.grapes, type: typed.type, region: typed.region,
-                                                     in: prepared.wines) else { throw Failure.emptyCatalog }
-        return ScannedWine.make(typed, profile: profile)
+        // The model adds dishes to the pairings, as for a label (CELLAR-R17).
+        return await pairer.enriching(prepared.vocabulary.describingAppellation(of: wine)).wine
     }
 
     /// The grapes and region as the catalog spells them ("syrah" → "Syrah", "Dao" → "Dão"), so the estimate finds

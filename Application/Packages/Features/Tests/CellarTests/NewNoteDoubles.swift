@@ -38,6 +38,23 @@ struct StructurerStub: LabelStructuring {
     }
 }
 
+/// The model on the phone adding dishes: `dishes`, or nothing and why when there are none.
+actor PairerStub: PairingSuggesting {
+    var dishes: [String]
+    var failure: String
+    private(set) var asked: [Wine] = []
+
+    init(_ dishes: [String] = [], failure: String = "Apple Intelligence is off in Settings (appleIntelligenceNotEnabled).") {
+        self.dishes = dishes
+        self.failure = failure
+    }
+
+    func suggestPairings(for wine: Wine) async -> PairingSuggestionResult {
+        asked.append(wine)
+        return PairingSuggestionResult(pairings: dishes, failure: dishes.isEmpty ? failure : nil)
+    }
+}
+
 actor LabelCatalogStub: LabelCatalogRepository {
     var wines: [Wine]
     private(set) var scanned: [Wine] = []
@@ -51,6 +68,9 @@ actor LabelCatalogStub: LabelCatalogRepository {
     }
 
     func addScanned(_ wine: Wine) async throws { scanned.append(wine) }
+
+    private(set) var forgotten: [String] = []
+    func forgetScanned(_ wineKey: String) async throws { forgotten.append(wineKey) }
 }
 
 enum Labels {

@@ -22,11 +22,15 @@ public struct LabelFacts: Equatable, Sendable {
     public var pairings: [String]
     /// The serving temperature in °C, "Serve at 16–18 °C".
     public var serving: ClosedRange<Int>?
+    /// The legal ageing or rank term, "Grande Reserva" (CELLAR-R30).
+    public var designation: String?
+    /// The medals and critics' scores on the bottle (CELLAR-R30).
+    public var awards: [WineAward]
 
     public init(name: String? = nil, producer: String? = nil, vintage: Int? = nil, type: String? = nil,
                 appellation: String? = nil, region: String? = nil, country: String? = nil, grapes: [String] = [],
                 alcohol: Double? = nil, titleLines: [String] = [], notes: [String] = [], pairings: [String] = [],
-                serving: ClosedRange<Int>? = nil) {
+                serving: ClosedRange<Int>? = nil, designation: String? = nil, awards: [WineAward] = []) {
         self.name = name
         self.producer = producer
         self.vintage = vintage
@@ -40,6 +44,8 @@ public struct LabelFacts: Equatable, Sendable {
         self.notes = notes
         self.pairings = pairings
         self.serving = serving
+        self.designation = designation
+        self.awards = awards
     }
 
     /// Without a name there is nothing to save (CELLAR-R23).

@@ -66,7 +66,7 @@ let package = Package(
                     dependencies: ["Quizz"] + Dependencies.tests),
 
         .testTarget(name: "YouTests",
-                    dependencies: ["You"] + Dependencies.tests)
+                    dependencies: ["You"] + Dependencies.tests + [.product(name: "DesignSystem", package: "DesignSystem")])
     ]
 )
 

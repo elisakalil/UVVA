@@ -57,7 +57,9 @@ struct NewNoteManualView: View {
                     }
                     #if DEBUG
                     // Why the reading gave no name.
-                    if let text = model.readingDebugText { NewNoteReadingDebugView(text: text).padding(.top, 40) }
+                    if let text = model.readingDebugText {
+                        NewNoteReadingDebugView(text: text, export: model.readingExportText).padding(.top, 40)
+                    }
                     #endif
                 }
                 .padding(.horizontal, 28)

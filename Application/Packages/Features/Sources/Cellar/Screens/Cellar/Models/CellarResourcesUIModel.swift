@@ -1,6 +1,8 @@
 import Foundation
 
 struct CellarResourcesUIModel {
+    var loadingText = String(localized: "Loading cellar", bundle: .module)
+    var retryText = String(localized: "Try again", bundle: .module)
     var titleText = String(localized: "Your Cellar", bundle: .module)
     var addText = String(localized: "Scan a label", bundle: .module)
     var searchPromptText = String(localized: "Search your cellar", bundle: .module)

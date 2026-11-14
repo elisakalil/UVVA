@@ -25,7 +25,8 @@ public struct WineSheetContent: Equatable {
     public var sharedLine: String?
     public var apartLine: String?
     public var facts: [Fact]
-    public var appellation: String?
+    /// The certificate card (CELLAR-R30); nil hides it.
+    public var certificate: WineCertificateUIModel?
     public var pairings: String?
     /// "14–16 °C", the first line of "How to serve".
     public var servingTemperature: String?
@@ -37,7 +38,7 @@ public struct WineSheetContent: Equatable {
 
     public init(title: String, eyebrow: String, percentage: String?, percentageCaption: String, sharedLine: String?,
                 apartLine: String?, facts: [Fact], pairings: String?, servingTemperature: String?, howToServe: String?,
-                profile: PalateMap, palate: PalateMap?, appellation: String? = nil) {
+                profile: PalateMap, palate: PalateMap?, certificate: WineCertificateUIModel? = nil) {
         self.title = title
         self.eyebrow = eyebrow
         self.percentage = percentage
@@ -45,7 +46,7 @@ public struct WineSheetContent: Equatable {
         self.sharedLine = sharedLine
         self.apartLine = apartLine
         self.facts = facts
-        self.appellation = appellation
+        self.certificate = certificate
         self.pairings = pairings
         self.servingTemperature = servingTemperature
         self.howToServe = howToServe
@@ -107,7 +108,7 @@ public extension WineSheetContent {
                   pairings: wine.pairings.isEmpty ? nil : wine.pairings.joined(separator: ", "),
                   servingTemperature: wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" },
                   howToServe: (wine.howToServe ?? "").isEmpty ? nil : wine.howToServe,
-                  profile: wine.profile, palate: palate, appellation: wine.appellation)
+                  profile: wine.profile, palate: palate, certificate: WineCertificateUIModel(wine: wine))
         findURL = WineSearch.url(for: wine)
     }
 }

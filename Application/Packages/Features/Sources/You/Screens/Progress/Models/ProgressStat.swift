@@ -4,6 +4,8 @@ struct ProgressStat: Equatable, Identifiable {
     var value: String
     var label: String
     var items: [ProgressStatItem] = []
+    /// The pins the world map keeps while this count's sheet is open; nil keeps them all.
+    var mapKind: ProgressMapPin.Kind?
     var id: String { label }
 
     var groups: [ProgressStatGroup] {

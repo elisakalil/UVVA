@@ -27,7 +27,7 @@ struct WineDetailView: View {
                          facts: model.facts.map { .init(label: $0.label, value: $0.value) },
                          pairings: model.pairings, servingTemperature: model.servingTemperature,
                          howToServe: model.howToServe, profile: model.wine.profile, palate: model.palateMap,
-                         appellation: model.wine.appellation)
+                         certificate: WineCertificateUIModel(wine: model.wine))
     }
 
     private var strings: WineSheetStrings {

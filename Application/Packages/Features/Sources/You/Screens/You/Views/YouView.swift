@@ -46,12 +46,23 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                         .padding(.top, 26)
                         // The tab bar already holds its own room at the foot of the scroll.
                         .padding(.bottom, 24)
+                        // While Regions or Bottles is open, room under the page lets the map rise to the top, above
+                        // the sheet; it goes with the sheet.
+                        .padding(.bottom, viewModel.uiModel.tab == .progress && selectedProgressStat?.mapKind != nil ? 420 : 0)
+                        .animation(.smooth(duration: 0.6), value: selectedProgressStat?.mapKind)
                     }
                     .scrollIndicators(.hidden)
                     .scrollEdgeFade(12, throughBottomInset: true)
                     .opacity(viewModel.uiModel.isLoaded ? 1 : 0)
                     // Each tab opens at its top, not at the offset the last one was left at.
                     .id(viewModel.uiModel.tab)
+                    // Regions and Bottles keep only their pins: the page brings the map up, above their sheet.
+                    .onChange(of: selectedProgressStat?.mapKind) { _, kind in
+                        guard kind != nil else { return }
+                        withAnimation(.smooth(duration: 0.6)) {
+                            proxy.scrollTo(ProgressTabView<ViewModel.ProgressModel>.mapID, anchor: .top)
+                        }
+                    }
                 }
             }
         }

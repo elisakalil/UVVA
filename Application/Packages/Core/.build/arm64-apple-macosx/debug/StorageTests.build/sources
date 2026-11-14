@@ -1,6 +1,8 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/BundledContentTests.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CatalogStoreForgetTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CatalogStoreScannedTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CatalogStoreTests.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CatalogSyncTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CellarStoreSaveTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/CellarStoreTests.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/StorageTests/ContactKeyTests.swift
