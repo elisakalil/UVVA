@@ -12,7 +12,7 @@ struct DeleteNoteUseCase: DeleteNoteUseCaseProtocol {
     func execute(_ entry: CellarEntry) async throws {
         try await cellar.delete(entry.id)
         // The map is worked out again first: it still looks the wine up.
-        if entry.verdict != nil { try await recalculate.execute(changing: entry.id, to: nil) }
+        if entry.verdict != nil { try await recalculate.execute(changing: entry.id, to: nil, at: nil) }
         try await catalog?.forgetScanned(entry.id)
     }
 }

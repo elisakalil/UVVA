@@ -36,11 +36,15 @@ struct PalateMapStoreTests {
 
     @Test func QUIZ_R18a_redo_replacesTheMap_andRestartsTheHistory() async throws {
         try await store.saveQuizMap(map(6.4), at: Date(timeIntervalSince1970: 1_000))
+        try await store.saveRatedMap(map(6), wineKey: "w", verdict: .yes, at: Date(timeIntervalSince1970: 1_500))
         try await store.saveQuizMap(map(3), at: Date(timeIntervalSince1970: 2_000))
         let all = try ModelContext(container).fetch(FetchDescriptor<PalateMapEntity>())
         #expect(all.count == 1)
         #expect(all.first?.map == map(3))
-        #expect(all.first?.history.count == 1)
+        let history = try await store.history()
+        #expect(history.map(\.cause) == [.quiz])
+        #expect(Rating.last(in: history) == nil)
+        #expect(Rating.verdicts(in: history).isEmpty)
     }
 
     // MARK: QUIZ-R22 · A rating moves the map

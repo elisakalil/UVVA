@@ -172,6 +172,7 @@ final class AppCoordinator {
     private func prepareTabs(after quizExit: QuizExit?) async throws {
         try await content.waitUntilReady()
 
+        if quizExit == .youMap { home = nil }
         home = home ?? HomeFactory(
             profiles: profiles,
             maps: maps,
@@ -339,7 +340,7 @@ final class AppCoordinator {
     /// HOME-R17: the "axis that changed" card opens You › Map, at "Over time" (YOU-R03).
     private func openMapHistory() {
         you?.showMapHistory()
-        withAnimation(.easeInOut(duration: 0.35)) { selectedTab = .you }
+        selectedTab = .you
     }
 
     private func makeYou() -> YouViewModel {

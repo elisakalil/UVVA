@@ -21,6 +21,7 @@ struct NewNoteFlow: Equatable {
     var manual = NewNoteManualForm()
     private(set) var tasting = NewNoteTasting.asking
     private(set) var verdict: Verdict?
+    private var selectedVerdict = false
     /// The verdict a wine from the Home was rated with before (CELLAR-R14a): the note asks "Rate it again?" instead of
     /// "Have you had this wine?", and keeps it unless a new one is given.
     private(set) var ratedVerdict: Verdict?
@@ -104,6 +105,7 @@ struct NewNoteFlow: Equatable {
     /// the verdict the wine had; Not yet leaves it untasted.
     mutating func answer(hasTasted: Bool) {
         guard step == .note else { return }
+        selectedVerdict = false
         if hasTasted {
             tasting = .tasted
         } else if let ratedVerdict {
@@ -118,6 +120,7 @@ struct NewNoteFlow: Equatable {
     mutating func pick(_ verdict: Verdict) {
         guard step == .note, tasting == .tasted else { return }
         self.verdict = verdict
+        selectedVerdict = true
     }
 
     mutating func addChip(_ value: String, to field: NewNoteChipField) {
@@ -155,12 +158,12 @@ struct NewNoteFlow: Equatable {
             guard let verdict else { return nil }
             return NewNoteDraft(wine: wine, status: .tasted, verdict: verdict, note: note,
                                 photoFront: photoFront, photoBack: photoBack, originalWine: originalWine,
-                                replacesNote: isEditing)
+                                replacesNote: isEditing, selectedVerdict: selectedVerdict)
         // Unanswered, a wine rated before keeps its verdict and goes in as Tasted.
         case .asking where ratedVerdict != nil:
             return NewNoteDraft(wine: wine, status: .tasted, verdict: ratedVerdict, note: note,
                                 photoFront: photoFront, photoBack: photoBack, originalWine: originalWine,
-                                replacesNote: isEditing)
+                                replacesNote: isEditing, selectedVerdict: false)
         // Unanswered, the wine has not been tasted as far as the note knows: it goes in as Not yet.
         case .asking, .notYet:
             return NewNoteDraft(wine: wine, status: .wantToTry, note: note.isEmpty ? nil : note,
@@ -176,6 +179,7 @@ struct NewNoteFlow: Equatable {
         originalWine = wine
         tasting = .asking
         verdict = nil
+        selectedVerdict = false
         step = .note
     }
 

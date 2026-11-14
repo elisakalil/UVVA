@@ -179,7 +179,7 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 ### 4.5 O eixo que mudou
 
-**HOME-R15 · Quando aparece.** Aparece a partir da primeira avaliação de um vinho (SHARED-R08) e fica até a próxima avaliação, que o substitui. Sem nenhuma avaliação, não aparece.
+**HOME-R15 · Quando aparece.** Aparece a partir da primeira avaliação de um vinho no mapa atual (SHARED-R08) e mostra a avaliação mais recente desse mapa. Ao guardar um novo mapa em “Redo My Map”, o card desaparece até à primeira avaliação do novo mapa.
 
 **HOME-R16 · Conteúdo.** Mostra o mini mapa e o eixo que mais mudou na última avaliação (SHARED-R10), por exemplo "Your last wine raised your tannin". Se for empate, mostra o primeiro eixo na ordem definida em `QUIZZ.md` (QUIZ-R02).
 

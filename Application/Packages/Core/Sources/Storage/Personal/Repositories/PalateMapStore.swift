@@ -40,7 +40,7 @@ public actor PalateMapStore: StoreActor, PalateMapRepository, PalateHistoryRewri
     }
 
     /// The new map replaces the old one completely; its history starts again with the Quiz (QUIZ-R18a).
-    /// Ratings live in their own table and are not touched.
+    /// Cellar notes keep their saved verdicts.
     public func saveQuizMap(_ map: PalateMap, at date: Date) throws {
         for old in try modelContext.fetch(FetchDescriptor<PalateMapEntity>()) {
             modelContext.delete(old)

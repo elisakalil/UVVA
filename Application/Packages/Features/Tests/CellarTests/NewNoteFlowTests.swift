@@ -61,12 +61,12 @@ struct NewNoteFlowTests {
         flow.answer(hasTasted: false)
         #expect(flow.tasting == .keptRating)
         #expect(!flow.needsVerdict)
-        #expect(flow.draft == NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .maybe, note: ""))
+        #expect(flow.draft == NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .maybe, note: "", selectedVerdict: false))
     }
 
     @Test func CELLAR_R14a_aWineRatedBefore_savedUnanswered_keepsTheVerdictItHad() {
         let flow = NewNoteFlow(wine: Labels.pontoForte, ratedVerdict: .yes)
-        #expect(flow.draft == NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .yes, note: ""))
+        #expect(flow.draft == NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .yes, note: "", selectedVerdict: false))
     }
 
     @Test func CELLAR_R27_aSavedNote_opensToBeEdited_withWhatItHas() throws {

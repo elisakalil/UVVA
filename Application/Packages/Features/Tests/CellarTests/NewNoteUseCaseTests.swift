@@ -272,6 +272,8 @@ struct NewNoteUseCaseTests {
     @Test func CELLAR_R13b_sameWine_newVerdict_replacesTheRating() async throws {
         let save = Save(now: now)
         await save.cellar.setExisting(Entries.entry(Labels.pontoForte.id, verdict: .maybe))
+        await save.maps.setHistory([MapChange(date: now, cause: .quiz, values: [:]),
+                                    MapChange(date: now, cause: .rating(wineKey: Labels.pontoForte.id, verdict: .maybe), values: [:])])
         try await save.useCase.execute(NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .yes))
         #expect(await save.maps.rated.isEmpty)
         #expect(save.recalculate.calls.map(\.0) == [Labels.pontoForte.id])
@@ -300,8 +302,25 @@ struct NewNoteUseCaseTests {
     @Test func CELLAR_R13b_sameWine_sameVerdict_leavesTheMap() async throws {
         let save = Save(now: now)
         await save.cellar.setExisting(Entries.entry(Labels.pontoForte.id, verdict: .yes))
+        await save.maps.setHistory([MapChange(date: now, cause: .quiz, values: [:]),
+                                    MapChange(date: now, cause: .rating(wineKey: Labels.pontoForte.id, verdict: .yes), values: [:])])
         try await save.useCase.execute(NewNoteDraft(wine: Labels.pontoForte, status: .tasted, verdict: .yes))
         #expect(await save.maps.rated.isEmpty)
+        #expect(save.recalculate.calls.isEmpty)
+    }
+
+    @Test func afterRedo_onlyASelectedVerdictRatesAPreviouslyTastedWine() async throws {
+        let save = Save(now: now)
+        await save.cellar.setExisting(Entries.entry(Labels.pontoForte.id, verdict: .yes))
+        await save.maps.setHistory([MapChange(date: now, cause: .quiz, values: [:])])
+        var flow = NewNoteFlow(editing: Labels.pontoForte, verdict: .yes, note: "Old note", photoFront: nil, photoBack: nil)
+        flow.note = "Edited note"
+        try await save.useCase.execute(try #require(flow.draft))
+        #expect(await save.maps.rated.isEmpty)
+
+        flow.pick(.yes)
+        try await save.useCase.execute(try #require(flow.draft))
+        #expect(await save.maps.rated.map(\.1) == [.yes])
         #expect(save.recalculate.calls.isEmpty)
     }
 

@@ -33,9 +33,7 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
                 .padding(.top, 6)
 
                 // A little room above the map stays with it, so it does not touch the top edge when scrolled to.
-                // The map runs to the edges of the panel; its legend keeps the panel's margin.
                 ProgressWorldMap(model: model.map, focus: selectedStat?.mapKind)
-                    .padding(.horizontal, -20)
                     .padding(.top, 6)
                     .id(Self.mapID)
                     .padding(.top, 42)

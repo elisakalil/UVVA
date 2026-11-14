@@ -158,6 +158,37 @@ struct HomeViewModelTests {
         #expect(viewModel.uiModel.content?.palateMap == loved.profile)
     }
 
+    @Test func HOME_R15_cardFollowsTheLatestRatingOfTheCurrentMap() async throws {
+        let maps = PalateMapStore(modelContainer: try AppStore.makeInMemoryContainer())
+        let viewModel = HomeFactory(profiles: ProfilesStub(), maps: maps, catalog: RankedCatalogStub(),
+                                    cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
+                                    friends: FriendsRepositoryStub())
+            .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
+        func card() -> HomeCardModel? {
+            viewModel.uiModel.content?.cards.first { $0.kind == "changedMapCard" }
+        }
+        try await maps.saveQuizMap(PalateMap([.fruit: 4]), at: day)
+        try await viewModel.prepare()
+        #expect(card() == nil)
+
+        try await maps.saveRatedMap(PalateMap([.fruit: 5]), wineKey: "a", verdict: .yes, at: day.addingTimeInterval(1))
+        await viewModel.load()
+        #expect(card() == .changedMapCard(axis: .fruit, delta: 1))
+        try await maps.saveRatedMap(PalateMap([.fruit: 3]), wineKey: "b", verdict: .no, at: day.addingTimeInterval(2))
+        await viewModel.load()
+        #expect(card() == .changedMapCard(axis: .fruit, delta: -2))
+
+        // Even an identical quiz map clears the last rating.
+        try await maps.saveQuizMap(PalateMap([.fruit: 3]), at: day.addingTimeInterval(3))
+        try await viewModel.prepare()
+        #expect(card() == nil)
+        #expect(viewModel.uiModel.ratedVerdicts.isEmpty)
+
+        try await maps.saveRatedMap(PalateMap([.fruit: 4]), wineKey: "a", verdict: .yes, at: day.addingTimeInterval(4))
+        await viewModel.load()
+        #expect(card() == .changedMapCard(axis: .fruit, delta: 1))
+    }
+
     @Test func HOME_R12_aLessonOpened_showsContinueAtItsLesson() async throws {
         let learning = LearningStub(saved: [
             LessonProgress(lessonID: "grape-tannat-l01", courseID: "grape-tannat", currentStep: 5, completedAt: day,

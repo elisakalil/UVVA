@@ -38,7 +38,7 @@ final class DeleteNoteSpy: DeleteNoteUseCaseProtocol {
 @MainActor
 final class RecalculateSpy: RecalculateMapUseCaseProtocol {
     var calls: [(String, Verdict?)] = []
-    func execute(changing wineKey: String, to verdict: Verdict?) async throws { calls.append((wineKey, verdict)) }
+    func execute(changing wineKey: String, to verdict: Verdict?, at date: Date?) async throws { calls.append((wineKey, verdict)) }
 }
 
 actor CellarSpy: CellarRepository {

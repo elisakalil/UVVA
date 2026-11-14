@@ -42,6 +42,18 @@ struct MapRebuildTests {
         #expect(rebuilt[1].cause == .rating(wineKey: "a", verdict: .no))
     }
 
+    @Test func aNewVerdictForAnEarlierWine_becomesTheLastRating() {
+        let a = wine("a", 9), b = wine("b", 1)
+        let date = Date(timeIntervalSince1970: 3)
+        let rebuilt = MapRebuild.rebuild(history([(a, .yes), (b, .maybe)]), wines: ["a": a, "b": b],
+                                         changing: "a", to: .no, at: date)
+        #expect(rebuilt.map(\.values) == history([(b, .maybe), (a, .no)]).map(\.values))
+        let rating = Rating.last(in: rebuilt)
+        #expect(rating?.wineKey == "a")
+        #expect(rating?.date == date)
+        #expect(rating?.deltas[.body] ?? 0 < 0)
+    }
+
     @Test func wineMissingFromTheCatalog_keepsItsMove() {
         let a = wine("a", 9), scanned = wine("scanned", 1)
         let original = history([(scanned, .yes), (a, .yes)])

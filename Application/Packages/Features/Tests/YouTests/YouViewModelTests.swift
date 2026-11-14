@@ -218,19 +218,35 @@ struct YouViewModelTests {
     @Test func mapZoom_pinch_keepsThePointUnderTheFingers() {
         let size = CGSize(width: 350, height: 160)
         let anchor = CGPoint(x: 200, y: 60)
-        let zoom = MapZoom().zoomed(to: 3, at: anchor, in: size)
+        let zoom = MapZoom().zoomed(to: 3, at: anchor, frame: size, content: size)
         #expect(zoom.scale == 3)
         #expect(zoom.apply(anchor) == anchor)
     }
 
     @Test func mapZoom_neverShowsPastTheEdges_norZoomsOutPastTheWholeMap() {
         let size = CGSize(width: 350, height: 160)
-        let zoomed = MapZoom().zoomed(to: 4, at: CGPoint(x: 10, y: 10), in: size)
-        #expect(zoomed.moved(by: CGSize(width: 900, height: 900), in: size).offset == .zero)
-        let farRight = zoomed.moved(by: CGSize(width: -9000, height: -9000), in: size)
+        let zoomed = MapZoom().zoomed(to: 4, at: CGPoint(x: 10, y: 10), frame: size, content: size)
+        #expect(zoomed.moved(by: CGSize(width: 900, height: 900), frame: size, content: size).offset == .zero)
+        let farRight = zoomed.moved(by: CGSize(width: -9000, height: -9000), frame: size, content: size)
         #expect(farRight.offset == CGSize(width: -350 * 3, height: -160 * 3))
-        #expect(zoomed.zoomed(to: 0.2, at: .zero, in: size) == MapZoom())
-        #expect(MapZoom().zoomed(to: 100, at: .zero, in: size).scale == MapZoom.maxScale)
+        #expect(zoomed.zoomed(to: 0.2, at: .zero, frame: size, content: size) == MapZoom())
+        #expect(MapZoom().zoomed(to: 100, at: .zero, frame: size, content: size).scale == MapZoom.maxScale)
+    }
+
+    @Test func mapZoom_aWorldWiderThanTheFrame_startsInTheMiddle_andMovesSideways() {
+        let frame = CGSize(width: 310, height: 194)
+        let world = CGSize(width: 427, height: 194)
+        let home = MapZoom.home(frame: frame, content: world)
+        #expect(home.scale == 1)
+        #expect(home.offset == CGSize(width: (310.0 - 427.0) / 2, height: 0))
+        // Sideways it goes as far as the world's edge; up and down there is nothing to move at full height.
+        let dragged = home.moved(by: CGSize(width: -500, height: 40), frame: frame, content: world)
+        #expect(dragged.offset == CGSize(width: 310 - 427, height: 0))
+        // Pinched out, the whole world fits, in the middle of the frame.
+        let whole = home.zoomed(to: 0.1, at: CGPoint(x: 155, y: 97), frame: frame, content: world)
+        #expect(abs(whole.scale - 310.0 / 427.0) < 0.000_001)
+        #expect(abs(whole.offset.width) < 0.001)
+        #expect(abs(whole.offset.height - (194.0 - 194.0 * 310.0 / 427.0) / 2) < 0.001)
     }
 
     @Test func specialist_connectsStudiedRegionsThroughGrapeAliases() {

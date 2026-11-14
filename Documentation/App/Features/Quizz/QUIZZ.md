@@ -173,7 +173,7 @@ func exit(for entry: QuizEntry) -> QuizExit
 - "Keep this map" guarda o mapa e abre a folha de partilha (3.4). A partir daí o usuário "tem mapa" (SHARED-R13), mesmo que feche a app na folha de partilha.
 - "Read it again" descarta as respostas, sem guardar nada, e volta à Leitura 1 com todas as barras vazias.
 
-**QUIZ-R18a · Refazer o Quiz.** O usuário pode refazer o Quiz depois de ter um mapa (entrada "refazer", QUIZ-R24). Ao tocar em "Keep this map", o mapa novo substitui o atual por completo: as avaliações anteriores não são reaplicadas sobre ele. O histórico de avaliações continua guardado. No fim, o usuário volta a You › Map, sem passar pelo tour (QUIZ-R25, HOME-R29).
+**QUIZ-R18a · Refazer o Quiz.** O usuário pode refazer o Quiz depois de ter um mapa (entrada "refazer", QUIZ-R24). Ao tocar em "Keep this map", o mapa novo substitui o atual por completo: o histórico do mapa recomeça com o resultado do Quiz. As notas e os vereditos guardados no Cellar continuam disponíveis, e só novas avaliações contam para o mapa. No fim, o usuário volta a You › Map, sem passar pelo tour (QUIZ-R25, HOME-R29).
 
 **Critérios**
 - Dado o mapa { Sweetness 1, Acidity 4, Tannin 3, Body 3, Fruit 4, Floral 2, Oak 2, Spice 3 }, então:

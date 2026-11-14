@@ -1,4 +1,5 @@
 import Core
+import Foundation
 
 /// CELLAR-R29: from the last Quiz, the ratings that still exist are applied again in date order.
 @MainActor
@@ -13,14 +14,14 @@ public struct RecalculateMapUseCase: RecalculateMapUseCaseProtocol {
         self.wines = wines
     }
 
-    public func execute(changing wineKey: String, to verdict: Verdict?) async throws {
+    public func execute(changing wineKey: String, to verdict: Verdict?, at date: Date? = nil) async throws {
         let current = try await history.history()
         let keys = Set(current.compactMap { change -> String? in
             if case let .rating(key, _) = change.cause { key } else { nil }
         })
         // A wine rated before the last Quiz is not in this map's history: nothing to change.
         guard keys.contains(wineKey) else { return }
-        let rebuilt = MapRebuild.rebuild(current, wines: try await wines.wines(keys: keys), changing: wineKey, to: verdict)
+        let rebuilt = MapRebuild.rebuild(current, wines: try await wines.wines(keys: keys), changing: wineKey, to: verdict, at: date)
         guard rebuilt != current else { return }
         try await rewriter.rewriteHistory(rebuilt)
     }
