@@ -42,11 +42,11 @@ struct CertificationTests {
         #expect(result.basis == ["Grande Reserva"])
     }
 
-    @Test func CELLAR_R30_aDOCG_alone_isTopTwenty_soTheCardLeadsWithItsLevel() throws {
+    @Test func CELLAR_R30_aDOCG_alone_isTopTwenty() throws {
         let result = try #require(certificate(wine("Chianti Classico", country: "Italy",
                                                    classification: "Chianti Classico DOCG")))
         #expect(result.tier == .top)
-        #expect(result.topPercent == nil)
+        #expect(result.topPercent == 20)
         #expect(result.printed == "Chianti Classico DOCG")
     }
 
@@ -167,10 +167,10 @@ struct CertificationTests {
         #expect(QualityEstimate.rounded(23) == 25)
     }
 
-    @Test func CELLAR_R30_top_onlyInTheTopTen() {
+    @Test func CELLAR_R30_top_onlyInTheTopTwenty() {
         #expect(QualityEstimate.topPercent(tier: .protected, strength: nil, recognition: 0, prevalence: prevalence)
             == nil)
-        #expect(QualityEstimate.topPercent(tier: .top, strength: nil, recognition: 0, prevalence: prevalence) == nil)
+        #expect(QualityEstimate.topPercent(tier: .top, strength: nil, recognition: 0, prevalence: prevalence) == 20)
         #expect(QualityEstimate.topPercent(tier: nil, strength: .aged, recognition: 0, prevalence: prevalence) == 7)
         #expect(QualityEstimate.topPercent(tier: nil, strength: nil, recognition: 0, prevalence: prevalence) == nil)
     }

@@ -38,10 +38,10 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
                               onContinue: { Task { await viewModel.continueManual() } })
                 .transition(.opacity)
         case .note:
-            NewNotePaperView(model: model, onAnswer: viewModel.answer(hasTasted:), onPick: viewModel.pick,
+            NewNotePaperView(model: model, onAnswer: viewModel.answer(hasTasted:), onRate: viewModel.rate(_:score:),
                              onNote: viewModel.updateNote, onAddChip: viewModel.addChip,
                              loadChipOptions: viewModel.chipOptions, onIntensity: viewModel.setIntensity,
-                             onReplacePhoto: viewModel.replacePhoto,
+                             onReplacePhoto: viewModel.replacePhoto(_:side:),
                              onSave: { Task { await viewModel.save() } })
                 .transition(.opacity)
         }

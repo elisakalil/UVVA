@@ -32,8 +32,10 @@ public enum MapEvolution {
         return MapSnapshot(kind: .endOfMonth, date: end, map: PalateMap(entry.change.values), winesRated: entry.rated)
     }
 
-    /// The change of each axis from a snapshot to the map of today.
+    /// The change of each axis from a snapshot to the map of today, in position on the ruler, as the map is shown.
     public static func deltas(from old: PalateMap, to current: PalateMap) -> [PalateAxis: Double] {
-        Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, current[$0] - old[$0]) })
+        Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { axis in
+            (axis, WineRuler.position(of: current[axis], on: axis) - WineRuler.position(of: old[axis], on: axis))
+        })
     }
 }

@@ -104,6 +104,6 @@ struct CellarStub: CellarRepository {
     func tastedWineKeys() async throws -> Set<String> { Set(stored.filter { $0.verdict != nil }.map(\.id)) }
     func addTasted(_ wine: Wine, verdict: Verdict) async throws {}
     func save(_ draft: NewNoteDraft) async throws -> CellarEntry? { nil }
-    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {}
+    func update(_ wineKey: String, verdict: Verdict?, score: Int?, note: String?) async throws {}
     func delete(_ wineKey: String) async throws {}
 }

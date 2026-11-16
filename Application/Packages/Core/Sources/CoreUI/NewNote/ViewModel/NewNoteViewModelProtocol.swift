@@ -17,9 +17,11 @@ public protocol NewNoteViewModelProtocol: ObservableObject {
     func pickType(_ type: String)
     func continueManual() async
     /// A new photo of the wine over the note, from the camera or the library (CELLAR-R24).
-    func replacePhoto(_ photo: Data)
+    func replacePhoto(_ photo: Data, side: NewNotePhotoSide)
     func answer(hasTasted: Bool)
     func pick(_ verdict: Verdict)
+    /// The rating sheet: the verdict and the score from 0 to 5, or none (CELLAR-R18).
+    func rate(_ verdict: Verdict, score: Int?)
     func updateNote(_ text: String)
     func chipOptions(for field: NewNoteChipField) async -> [String]
     func addChip(_ value: String, to field: NewNoteChipField)
@@ -28,7 +30,15 @@ public protocol NewNoteViewModelProtocol: ObservableObject {
     func save() async
 }
 
+public enum NewNotePhotoSide: String, Identifiable {
+    case front, back
+
+    public var id: Self { self }
+}
+
 public extension NewNoteViewModelProtocol {
+    func replacePhoto(_ photo: Data) { replacePhoto(photo, side: .front) }
+
     /// A photo that is kept and read as it is.
     func capture(_ photo: Data) async { await capture(photo, reading: nil, scan: nil) }
 

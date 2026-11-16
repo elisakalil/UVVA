@@ -43,8 +43,10 @@ struct MapEvolutionTests {
     }
 
     @Test func YOU_R10_deltas_areTodayMinusTheSnapshot() {
-        let deltas = MapEvolution.deltas(from: PalateMap([.fruit: 5]), to: PalateMap([.fruit: 6]))
-        #expect(deltas[.fruit] == 1)
+        // In position, as the map is shown.
+        let deltas = MapEvolution.deltas(from: PalateMap([.fruit: WineRuler.value(of: 5, on: .fruit)]),
+                                         to: PalateMap([.fruit: WineRuler.value(of: 6, on: .fruit)]))
+        #expect(abs(deltas[.fruit]! - 1) < 1e-9)
         #expect(deltas[.oak] == 0)
     }
 }

@@ -18,7 +18,7 @@ struct QuizPresentationBuilder {
             body: String(localized: "Answer eight questions about the food you love. We turn your answers into a taste map and use it to find wines you'll enjoy.", bundle: .module),
             steps: [
                 QuizIntroStepUIModel(number: "01", title: String(localized: "Your palate", bundle: .module),
-                                     body: String(localized: "Your answers give each of the eight axes an intensity. That shape is your taste map.", bundle: .module)),
+                                     body: String(localized: "Your answers are the starting point: we read them in wine terms and settle them among real wines. That shape is your taste map.", bundle: .module)),
                 QuizIntroStepUIModel(number: "02", title: String(localized: "Every wine", bundle: .module),
                                      body: String(localized: "We map each wine on the same eight axes, using its grape, how it was made, time in oak, residual sugar and more.", bundle: .module)),
                 QuizIntroStepUIModel(number: "03", title: String(localized: "The match", bundle: .module),
@@ -57,8 +57,8 @@ struct QuizPresentationBuilder {
             highlighted: reading.highlighted,
             caption: reading.caption,
             readings: PalateAxis.allCases.map { axis in
-                let level = MapReading.level(map[axis])
-                return QuizReadingRowUIModel(name: axis.label, level: level, word: MapReading.levelWord(level),
+                let level = MapReading.level(map, axis)
+                return QuizReadingRowUIModel(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
                                              isStrong: reading.leaders(3).contains(axis))
             },
             narrative: reading.narrative,

@@ -4,7 +4,213 @@
     "" : {
 
     },
+    "%@, by law requires:" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, por lei exige:"
+          }
+        }
+      }
+    },
+    "%@, fewer rules than a DOC:" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, menos regras que um DOC:"
+          }
+        }
+      }
+    },
+    "**Grapes:** international ones allowed." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Uva:** internacionais permitidas."
+          }
+        }
+      }
+    },
+    "**Grapes:** only the permitted ones." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Uva:** só as permitidas."
+          }
+        }
+      }
+    },
+    "**Method:** a yield limit and an official tasting." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Método:** limite de produção e prova oficial."
+          }
+        }
+      }
+    },
+    "**Method:** higher yields, freer blends." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Método:** mais produção, misturas livres."
+          }
+        }
+      }
+    },
+    "**Region:** 100% local grapes." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Região:** 100% das uvas locais."
+          }
+        }
+      }
+    },
+    "**Region:** 85% local grapes." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Região:** 85% das uvas locais."
+          }
+        }
+      }
+    },
+    "A US region: 85% local grapes, no other rules." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Região dos EUA: 85% das uvas locais, sem outras regras."
+          }
+        }
+      }
+    },
+    "Canada's seal: local grapes, an official tasting." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selo do Canadá: uvas locais e prova oficial."
+          }
+        }
+      }
+    },
+    "Germany's top vineyards." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os vinhedos de topo da Alemanha."
+          }
+        }
+      }
+    },
+    "It guarantees the origin, not the quality." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garante a origem, não a qualidade."
+          }
+        }
+      }
+    },
+    "Italy's top level, with an official tasting." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O topo da Itália, com prova oficial."
+          }
+        }
+      }
+    },
+    "Just below Grand Cru." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo abaixo do Grand Cru."
+          }
+        }
+      }
+    },
+    "Officially ranked among the region's best." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classificado entre os melhores da região."
+          }
+        }
+      }
+    },
+    "Only %lld%% of wines." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Só %lld%% dos vinhos."
+          }
+        }
+      }
+    },
+    "Only 1 in %lld wines." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Só 1 em cada %lld vinhos."
+          }
+        }
+      }
+    },
+    "South Africa's seal: local grapes." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selo da África do Sul: uvas locais."
+          }
+        }
+      }
+    },
+    "Spain's top level: only Rioja and Priorat." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O topo da Espanha: só Rioja e Priorat."
+          }
+        }
+      }
+    },
+    "The region's finest vineyards." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os melhores vinhedos da região."
+          }
+        }
+      }
+    },
+    "–" : {
+
+    },
     "—" : {
+
+    },
+    "/5" : {
 
     },
     "%@ · %lld years" : {
@@ -20,11 +226,31 @@
     "%@ · 1 year" : {
 
     },
+    "%@, unbound" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, sem amarras"
+          }
+        }
+      }
+    },
     "%lld awards" : {
 
     },
     "%lld lines read" : {
 
+    },
+    "%lld of 5" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld de 5"
+          }
+        }
+      }
     },
     "%lld%%" : {
 
@@ -35,18 +261,46 @@
     "1 line read" : {
 
     },
-    "About %lld%% of the world's wines show signals at least as strong: %@. An estimate from the label, measured on UVVA's catalog." : {
+    "A regional wine, unbound" : {
       "localizations" : {
-        "en" : {
+        "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "About %1$lld%% of the world's wines show signals at least as strong: %2$@. An estimate from the label, measured on UVVA's catalog."
+            "state" : "translated",
+            "value" : "Vinho regional, sem amarras"
           }
         }
       }
     },
-    "About intensity" : {
-
+    "A wine with a seal of origin" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vinho com selo de origem"
+          }
+        }
+      }
+    },
+    "Acidity" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acidez"
+          }
+        }
+      }
+    },
+    "Acidity is how much your mouth waters after the sip, from a little tingle to a full-on lemon face." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acidez é o quanto sua boca enche d’água depois do gole, de um leve arrepio até aquela careta de limão."
+          }
+        }
+      }
     },
     "Add" : {
 
@@ -60,14 +314,85 @@
     "Add what you can read on the label. Only the name is needed." : {
 
     },
+    "Among its country's finest" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entre os melhores do seu país"
+          }
+        }
+      }
+    },
+    "Among the top %lld%% of the world's wines" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entre os %lld%% melhores vinhos do mundo"
+          }
+        }
+      }
+    },
     "Appellation" : {
 
+    },
+    "At the nose" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No nariz"
+          }
+        }
+      }
+    },
+    "Authentic %@" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ autêntico"
+          }
+        }
+      }
     },
     "Awards" : {
 
     },
     "Back label" : {
 
+    },
+    "Barely there" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase nada"
+          }
+        }
+      }
+    },
+    "Body" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo"
+          }
+        }
+      }
+    },
+    "Body is the weight of the sip, from light like water to mouth-filling like whole milk." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo é o peso do gole, que vai de leve como água a cheio como leite integral."
+          }
+        }
+      }
     },
     "Bolder than your map, which has no high axis." : {
 
@@ -81,13 +406,7 @@
     "Choose from library" : {
 
     },
-    "Choose from the list" : {
-
-    },
     "Choose whether you would drink it again." : {
-
-    },
-    "Close" : {
 
     },
     "Close to your map on every axis." : {
@@ -98,6 +417,16 @@
     },
     "Different from the strongest axes on your map." : {
 
+    },
+    "Easy to spot" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dá pra notar"
+          }
+        }
+      }
     },
     "Fill in by hand" : {
 
@@ -114,11 +443,53 @@
     "Fit the whole label inside the frame." : {
 
     },
+    "Floral" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral"
+          }
+        }
+      }
+    },
+    "Floral intensity goes from a hint of violet to a whole flower shop." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A intensidade floral vai de um toque de violeta a uma floricultura inteira."
+          }
+        }
+      }
+    },
     "Fortified" : {
 
     },
     "Front" : {
 
+    },
+    "Fruit" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta"
+          }
+        }
+      }
+    },
+    "Fruit intensity goes from a hint of apple to a whole bowl of berries, so check what you smell against what you taste." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A intensidade da fruta vai de um toque de maçã a uma tigela cheia de frutas vermelhas, então confirme no gole o que sentiu no aroma."
+          }
+        }
+      }
     },
     "Grape" : {
 
@@ -148,14 +519,41 @@
     "Hold the label inside the frame" : {
 
     },
-    "How to serve" : {
-
+    "How loud is it?" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é o volume?"
+          }
+        }
+      }
     },
-    "How UVVA estimates it" : {
+    "How to serve" : {
 
     },
     "In common" : {
 
+    },
+    "In the finish" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No final"
+          }
+        }
+      }
+    },
+    "In the finish, oak can leave a hint of vanilla or toast or linger like a whole woodshop." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No final, o carvalho pode deixar um toque de baunilha ou torrada ou ficar na boca como uma marcenaria inteira."
+          }
+        }
+      }
     },
     "Intensity" : {
 
@@ -171,6 +569,39 @@
     },
     "Light" : {
 
+    },
+    "Look for actual sugar on the sip. Dry goes low, dessert-wine sweet goes high. A wine can smell like ripe peaches and still taste dry." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procure a sensação de açúcar no gole. Vinho seco fica embaixo, doçura de vinho de sobremesa fica no alto. Um vinho pode cheirar a pêssego maduro e ainda ser seco."
+          }
+        }
+      }
+    },
+    "Look for pepper, clove or cinnamon as the sip fades. A dusting is low. If the spice rack steals the show, go high." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procure pimenta, cravo ou canela quando o gole começa a sumir. Uma pitada fica embaixo. Se o armário de temperos rouba a cena, marque alto."
+          }
+        }
+      }
+    },
+    "Look for vanilla, toast or wood in the aroma and finish. A whiff of toast is low. If the wood and toast linger and dominate, go high." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procure baunilha, torrada ou madeira no aroma e no final. Um sopro de torrada fica baixo. Se a madeira e o tostado ficam na boca e dominam, marque alto."
+          }
+        }
+      }
     },
     "match with your map" : {
 
@@ -196,11 +627,31 @@
     "No matching suggestions" : {
 
     },
+    "No score" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem nota"
+          }
+        }
+      }
+    },
     "Non-vintage" : {
 
     },
     "Not high in %@, the strongest axis on your map." : {
 
+    },
+    "Not tasted yet" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda não provei"
+          }
+        }
+      }
     },
     "Not yet" : {
 
@@ -208,8 +659,51 @@
     "Notes" : {
 
     },
+    "Notice how much you salivate after the sip. A little mouthwatering is low. If your mouth reacts like it just met a lemon, go high." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repare em quanto você saliva depois do gole. Se a boca só encheu um pouquinho d’água, marque baixo. Se parece que acabou de encontrar um limão, marque alto."
+          }
+        }
+      }
+    },
+    "Notice the weight of the sip. Think water at one end, whole milk at the other. How much does the wine fill your mouth?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repare no peso do gole. Pense em água de um lado e leite integral do outro. Quanto o vinho preenche a boca?"
+          }
+        }
+      }
+    },
     "Now scan the back label" : {
 
+    },
+    "Oak" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho"
+          }
+        }
+      }
+    },
+    "On the palate" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na boca"
+          }
+        }
+      }
     },
     "Open Settings" : {
 
@@ -229,9 +723,6 @@
     "Producer" : {
 
     },
-    "Made by strict local rules" : {
-
-    },
     "Quiet on every axis, like your map." : {
 
     },
@@ -241,6 +732,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quer avaliar novamente?"
+          }
+        }
+      }
+    },
+    "Rate this wine" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaliar este vinho"
           }
         }
       }
@@ -260,17 +761,77 @@
     "Region or appellation" : {
 
     },
-    "Regional, free to experiment" : {
-
-    },
     "Rosé" : {
 
+    },
+    "Run your tongue along your gums after the sip. A little grip is low. That dry, strong-black-tea feeling goes high." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passe a língua pela gengiva depois do gole. Se ela prende só um pouco, marque baixo. Se a boca fica seca como depois de um chá preto forte, marque alto."
+          }
+        }
+      }
     },
     "Save note" : {
 
     },
+    "Save rating" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar avaliação"
+          }
+        }
+      }
+    },
+    "Score" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nota"
+          }
+        }
+      }
+    },
+    "Smell for fruit, then check on the sip. A hint of apple is low. A whole bowl of berries earns a higher mark." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procure fruta no aroma e confirme no gole. Um toque de maçã fica baixo. Uma tigela inteira de frutas vermelhas sobe na escala."
+          }
+        }
+      }
+    },
     "Sparkling" : {
 
+    },
+    "Spice" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias"
+          }
+        }
+      }
+    },
+    "Spice shows up as the sip fades, from a pinch of pepper or cinnamon to the whole spice rack." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As especiarias aparecem quando o gole vai sumindo, de uma pitada de pimenta ou canela até o armário de temperos inteiro."
+          }
+        }
+      }
     },
     "Start scanning" : {
 
@@ -278,14 +839,93 @@
     "Style" : {
 
     },
+    "Sweetness" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doçura"
+          }
+        }
+      }
+    },
+    "Sweetness is the sugar you taste on the sip, from dry to dessert-wine sweet, even if the aroma already smells like ripe peaches." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doçura é o açúcar que você sente no gole, de seco a doce como vinho de sobremesa, mesmo quando o aroma lembra pêssego maduro."
+          }
+        }
+      }
+    },
+    "Swirl the glass gently and smell. Take a small sip, let it coat your mouth, then notice what lingers. You can spit it out. The wine won’t take it personally." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gire a taça de leve e sinta os aromas. Tome um gole pequeno, deixe o vinho passar pela boca e repare no que fica. Pode cuspir. O vinho não vai levar para o lado pessoal."
+          }
+        }
+      }
+    },
+    "Swirl. Sniff. Sip." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gire. Cheire. Prove."
+          }
+        }
+      }
+    },
     "Take photo" : {
 
+    },
+    "Takes over" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domina a cena"
+          }
+        }
+      }
+    },
+    "Tannin" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanino"
+          }
+        }
+      }
+    },
+    "Tannin is the grip you feel on your gums, from a slight tug to the dry feel of strong black tea." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanino é o que faz a língua prender na gengiva, de leve até a secura de um chá preto forte."
+          }
+        }
+      }
     },
     "Tap the button, then turn the bottle slowly." : {
 
     },
-    "Tasted it differently? Tap or slide a line to give your own reading. It's kept with your note, and the map of this wine follows it." : {
-
+    "Tasting guide" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guia de prova"
+          }
+        }
+      }
     },
     "The camera is off" : {
 
@@ -299,6 +939,17 @@
     "The note wasn’t saved. Try again." : {
 
     },
+    "Think petals. A faint violet is low. If it smells like you walked into a flower shop, go high." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pense em pétalas. Um toque de violeta fica no começo da linha. Se parece que você entrou numa floricultura, vá para o outro extremo."
+          }
+        }
+      }
+    },
     "This takes a few seconds." : {
 
     },
@@ -306,12 +957,6 @@
 
     },
     "This wine and you" : {
-
-    },
-    "Top %lld%% of the world's wines" : {
-
-    },
-    "Among its country's finest" : {
 
     },
     "Try again" : {
@@ -327,9 +972,6 @@
 
     },
     "UVVA needs the camera to read labels. Turn it on in Settings, or add the wine by hand." : {
-
-    },
-    "UVVA read this wine and set how strong it is on each axis of the map, from barely there to as much as it gets." : {
 
     },
     "Vintage" : {
@@ -367,6 +1009,26 @@
     },
     "Your palate map is unavailable" : {
 
+    },
+    "Your rating: %@" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua avaliação: %@"
+          }
+        }
+      }
+    },
+    "Your rating: %@ · %lld/5" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua avaliação: %1$@ · %2$lld/5"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

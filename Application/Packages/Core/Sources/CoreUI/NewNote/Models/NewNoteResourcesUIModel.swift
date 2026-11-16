@@ -3,7 +3,8 @@ import Foundation
 struct NewNoteResourcesUIModel {
     /// The words of the wine on paper, shared with the saved note.
     var paper = NotePaperResources()
-    var closeText = String(localized: "Close", bundle: .module)
+    /// The rating under the photos and its sheet.
+    var rating = NoteRatingResources()
 
     // MARK: Photos (CELLAR-R16, R17)
     var frontTitleText = String(localized: "Photograph the front", bundle: .module)
@@ -56,23 +57,15 @@ struct NewNoteResourcesUIModel {
     var manualErrorText = String(localized: "UVVA couldn’t read this wine. Try again.", bundle: .module)
 
     // MARK: The note (CELLAR-R18 to R20)
-    var intensityInfoText = String(localized: "About intensity", bundle: .module)
-    var intensityInfoParagraphs = [
-        String(localized: "UVVA read this wine and set how strong it is on each axis of the map, from barely there to as much as it gets.", bundle: .module),
-        String(localized: "Tasted it differently? Tap or slide a line to give your own reading. It's kept with your note, and the map of this wine follows it.", bundle: .module)
-    ]
     var addText = String(localized: "Add", bundle: .module)
     var writeOptionText = String(localized: "Write your own", bundle: .module)
-    var selectOptionText = String(localized: "Choose from the list", bundle: .module)
     var noOptionsText = String(localized: "No matching suggestions", bundle: .module)
     var tastedQuestionText = String(localized: "Have you had this wine?", bundle: .module)
-    var rateAgainQuestionText = String(localized: "Rate it again?", bundle: .module)
     var yesText = String(localized: "Yes", bundle: .module)
     var noText = String(localized: "No", bundle: .module)
     var maybeText = String(localized: "Maybe", bundle: .module)
     var notePromptText = String(localized: "What stood out in the glass?", bundle: .module)
     var drinkAgainText = String(localized: "Would you drink it again?", bundle: .module)
-    var notYetText = String(localized: "Not yet", bundle: .module)
     var addPhotoText = String(localized: "Add photo", bundle: .module)
     var changePhotoText = String(localized: "Change photo", bundle: .module)
     var photoTitleText = String(localized: "Photograph the wine", bundle: .module)
@@ -81,7 +74,6 @@ struct NewNoteResourcesUIModel {
     var saveNoteText = String(localized: "Save note", bundle: .module)
     var saveErrorText = String(localized: "The note wasn’t saved. Try again.", bundle: .module)
 
-    var closeIcon = "xmark"
     var libraryIcon = "photo.on.rectangle"
     var addPhotoIcon = "plus"
 

@@ -27,8 +27,8 @@ struct MapPresentationBuilder {
             highlighted: reading.highlighted,
             dominantPhrase: reading.dominantPhrase,
             readings: PalateAxis.allCases.map { axis in
-                let level = MapReading.level(map[axis])
-                return MapReadingRow(name: axis.label, level: level, word: MapReading.levelWord(level),
+                let level = MapReading.level(map, axis)
+                return MapReadingRow(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
                                      isStrong: reading.leaders(3).contains(axis))
             },
             snapshots: recent,

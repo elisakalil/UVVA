@@ -21,6 +21,8 @@ struct NewNoteFlow: Equatable {
     var manual = NewNoteManualForm()
     private(set) var tasting = NewNoteTasting.asking
     private(set) var verdict: Verdict?
+    /// The score from 0 to 5 given with the verdict (CELLAR-R18); nil for none.
+    private(set) var score: Int?
     private var selectedVerdict = false
     /// The verdict a wine from the Home was rated with before (CELLAR-R14a): the note asks "Rate it again?" instead of
     /// "Have you had this wine?", and keeps it unless a new one is given.
@@ -92,11 +94,14 @@ struct NewNoteFlow: Equatable {
 
     // MARK: The photo (CELLAR-R24)
 
-    /// A new photo of the wine, taken over the note: it replaces the one at the top and keeps what was read and
+    /// Replaces one label photo while keeping what was read and
     /// written.
-    mutating func replacePhoto(_ photo: Data) {
+    mutating func replacePhoto(_ photo: Data, side: NewNotePhotoSide = .front) {
         guard step == .note else { return }
-        photoFront = photo
+        switch side {
+        case .front: photoFront = photo
+        case .back: photoBack = photo
+        }
     }
 
     // MARK: Have you had this wine? (CELLAR-R18, R20)
@@ -115,12 +120,21 @@ struct NewNoteFlow: Equatable {
             tasting = .notYet
             verdict = nil
         }
+        score = nil
     }
 
     mutating func pick(_ verdict: Verdict) {
         guard step == .note, tasting == .tasted else { return }
         self.verdict = verdict
         selectedVerdict = true
+    }
+
+    /// The rating sheet (CELLAR-R18): the verdict, with the score from 0 to 5 or none.
+    mutating func rate(_ verdict: Verdict, score: Int?) {
+        guard step == .note else { return }
+        answer(hasTasted: true)
+        pick(verdict)
+        self.score = score.map { min(max($0, 0), 5) }
     }
 
     mutating func addChip(_ value: String, to field: NewNoteChipField) {
@@ -158,7 +172,7 @@ struct NewNoteFlow: Equatable {
             guard let verdict else { return nil }
             return NewNoteDraft(wine: wine, status: .tasted, verdict: verdict, note: note,
                                 photoFront: photoFront, photoBack: photoBack, originalWine: originalWine,
-                                replacesNote: isEditing, selectedVerdict: selectedVerdict)
+                                replacesNote: isEditing, selectedVerdict: selectedVerdict, score: score)
         // Unanswered, a wine rated before keeps its verdict and goes in as Tasted.
         case .asking where ratedVerdict != nil:
             return NewNoteDraft(wine: wine, status: .tasted, verdict: ratedVerdict, note: note,
@@ -179,6 +193,7 @@ struct NewNoteFlow: Equatable {
         originalWine = wine
         tasting = .asking
         verdict = nil
+        score = nil
         selectedVerdict = false
         step = .note
     }
@@ -192,6 +207,7 @@ struct NewNoteFlow: Equatable {
         manual = NewNoteManualForm()
         tasting = .asking
         verdict = nil
+        score = nil
         step = .front
     }
 }
@@ -208,9 +224,11 @@ extension NewNoteFlow {
 
     /// CELLAR-R27: a saved note, opened here to be edited, with its verdict, its note and its photos. A wine not
     /// tasted yet is asked "Have you had this wine?" again.
-    init(editing wine: Wine, verdict: Verdict?, note: String?, photoFront: Data?, photoBack: Data?) {
+    init(editing wine: Wine, verdict: Verdict?, score: Int? = nil, note: String?, photoFront: Data?,
+         photoBack: Data?) {
         self.init(wine: wine)
         self.verdict = verdict
+        self.score = verdict == nil ? nil : score
         if verdict != nil { tasting = .tasted }
         self.note = note ?? ""
         self.photoFront = photoFront

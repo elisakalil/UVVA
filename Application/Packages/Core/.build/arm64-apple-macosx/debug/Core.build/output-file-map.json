@@ -688,6 +688,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineSearch.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineSearch.swift.o",

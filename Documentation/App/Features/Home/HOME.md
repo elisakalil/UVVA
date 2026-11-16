@@ -247,7 +247,7 @@ A direção é a primeira escolha do formulário. **Para o meu paladar** vem sel
 - o nome do vinho em maiúsculas desenhadas, menor quanto mais longo;
 - por baixo, o produtor; num resultado do formulário, "Your pick · [produtor]";
 - num resultado, "2 of 5 red wines for your choices" e "Show another ›", que mostra o seguinte e volta ao primeiro no fim;
-- o match (HOME-R10b), sem título; em "Surprise me", a distância ("away from your map");
+- o match (HOME-R10b), sem título, "match with your map"; em "Surprise me" também, o match real, mesmo baixo, nunca invertido (2026-11-16);
 - os factos, sem título, em duas colunas onde há par: Origin | Vintage ("2023 · 3 years", ou "Non-vintage"); Style | Grape & notes; Pairings. Os que o vinho não tem ficam fora;
 - How to serve: a temperatura de servir ("8–10 °C") e, por baixo, a frase sobre como servir; aparece com uma das duas. Não há campo "Serve at" (2026-11-11);
 - a lista dos eixos do vinho em pontos, como no card do melhor match (2026-11-11);

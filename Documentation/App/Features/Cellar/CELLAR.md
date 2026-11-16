@@ -36,7 +36,7 @@ struct CellarEntry {
 | No | Tasted, veredito No |
 | Not yet | Want to try |
 
-**CELLAR-R01b · De Not yet a provado.** Abrir uma entrada Not yet mostra "Have you had this wine?". Responder Yes e escolher o veredito transforma a entrada em Tasted, com essa tag, e cria a avaliação. A entrada mantém o `createdAt` (não sobe para o topo).
+**CELLAR-R01b · De Not yet a provado.** Abrir uma entrada Not yet mostra o link "Rate this wine" (CELLAR-R18). Escolher o veredito na folha transforma a entrada em Tasted, com essa tag, e cria a avaliação. A entrada mantém o `createdAt` (não sobe para o topo).
 
 **CELLAR-R02 · Ordem.** As entradas aparecem da mais recente para a mais antiga, por `createdAt`. Uma entrada nova entra no topo.
 
@@ -116,9 +116,8 @@ struct CellarEntry {
 
 ```
 + → [pedido de câmara, só na 1.ª vez] → Foto da frente → Foto do contrarrótulo → A ler o rótulo
-  → "Have you had this wine?"            ("Rate it again?" num vinho da Home avaliado antes, CELLAR-R14a)
-       ├─ Yes · would you drink it again → "Would you drink it again?" Yes / Maybe / No → Your note → Save note
-       └─ Not yet · add to cellar or find it → Add to cellar
+  → o vinho em papel → [opcional] "Rate this wine" → folha: Yes / Maybe / No (CELLAR-R18)
+  → Your note → Save note            (sem veredito, entra como Want to try)
 ```
 
 **CELLAR-R13a · O mesmo vinho.** Dois vinhos são o mesmo quando têm o mesmo nome, produtor e ano, ignorando maiúsculas, minúsculas e acentos (ver D12). Cada vinho tem no máximo uma entrada no Cellar.
@@ -146,14 +145,14 @@ struct CellarEntry {
 **CELLAR-R14 · O botão +.** O `+` do Cellar e o da Home (HOME-R03) abrem este mesmo fluxo. A nota aparece como uma folha sobre a aba de origem e volta a essa aba ao fechar ou guardar. Nenhum passo tem barra, logo, título nem botão de fechar: a folha fecha-se arrastando para baixo (CELLAR-R25).
 
 **CELLAR-R14a · Vinho vindo da Home (2026-11-12).** "Add to cellar" no card do melhor match ou na folha do vinho da Home (HOME-R24) abre este fluxo já no vinho em papel (CELLAR-R18), sem câmara nem fotos, com o vinho do catálogo. A folha não avalia: a nota é o único lugar onde um vinho é avaliado.
-- Um vinho ainda não avaliado abre com "Have you had this wine?" (CELLAR-R18).
-- Um vinho avaliado antes (na Home, antes desta regra, ou numa nota) abre com "Rate it again?" ("Quer avaliar novamente?"), com Yes e No. Yes leva a "Would you drink it again?" e o veredito novo substitui o anterior (CELLAR-R13b). No mantém o veredito que o vinho tinha e a pergunta some. Guardada sem resposta, a nota também mantém esse veredito: a entrada entra como Tasted.
+- Um vinho ainda não avaliado abre com o link "Rate this wine" (CELLAR-R18).
+- Um vinho avaliado antes (na Home, antes desta regra, ou numa nota) abre com o link mostrando o veredito que tinha ("Your rating: Maybe"). Escolher outro na folha substitui o anterior (CELLAR-R13b). Guardada sem mexer, a nota mantém esse veredito: a entrada entra como Tasted (2026-11-14).
 - Sem fotos, o topo mostra "ADD PHOTO +" (CELLAR-R24). Guardar e fechar seguem a CELLAR-R19, R20 e R25.
 - Um vinho guardado com o mesmo veredito que já tinha não é avaliado outra vez: o mapa fica como está. Um veredito diferente substitui a avaliação (CELLAR-R13b).
 
 **Critérios**
-- Dado um vinho da Home nunca avaliado, quando a nota abre, então pergunta "Have you had this wine?".
-- Dado um vinho avaliado antes com Maybe, quando a nota abre, então pergunta "Rate it again?"; com No e "Save note", a entrada fica Tasted com Maybe e o mapa não muda.
+- Dado um vinho da Home nunca avaliado, quando a nota abre, então mostra "Rate this wine".
+- Dado um vinho avaliado antes com Maybe, quando a nota abre, então mostra "Your rating: Maybe"; com "Save note" sem abrir a folha, a entrada fica Tasted com Maybe e o mapa não muda.
 - Dado o mesmo vinho, quando o usuário responde Yes e escolhe No, então a entrada fica com No e a avaliação é substituída.
 
 **CELLAR-R15 · Câmara.** A primeira vez, o iOS pede acesso à câmara com o texto "UVVA photographs the front and back label to read the wine." Com acesso dado, o fluxo segue.
@@ -189,15 +188,27 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 - **A denominação sem categoria (2026-11-13).** Quando o rótulo só diz o lugar ("Lisboa") e o catálogo escreve essa denominação sempre com a mesma categoria ("Vinho Regional Lisboa"), o vinho fica com a do catálogo e é classificado por ela. Quando o catálogo tem o mesmo lugar em categorias de níveis diferentes ("Tejo DOC" e "Vinho Regional Tejo"), não dá para saber qual é: o vinho fica sem explicação e sem nível. Só uma denominação que o catálogo escreve sem categoria nenhuma ("Napa Valley") e explica conta como protegida, como no `pack_content.py`.
 - **Medalhas com prova (2026-11-13).** O catálogo não tem medalhas, por isso um concurso desconhecido continua a contar, mas só se o nome parecer de um concurso: escrito com letras (sem "@", "|"…) e com uma palavra de concurso ("Concurso", "Concours", "Awards", "Feira", "Vinhos", "Internacional", "Sélection"…). "Trophy · SENTENA COM." não conta. A medalha que o modelo no aparelho dá só entra se o nome do concurso e a medalha (ou os pontos) estiverem no texto que o OCR leu com confiança de pelo menos 0,5: o modelo organiza o texto, não acrescenta. Prémios guardados antes por leituras com ruído deixam de aparecer, e uma nota guardada com "Top X%" deixa de o mostrar quando, sem eles, o vinho já não chega ao top 10%.
 - **Classificação**, sem IA. Denominação: de topo (DOCG, DOCa, Grand Cru, Premier Cru, Cru Classé, ou uma denominação que o catálogo marca como notável), protegida (DOC, AOC, DO, DAC, AVA…) ou regional (IGT, IGP, Vinho Regional…). Menção: forte (Grande Reserva e Gran Reserva em Portugal e Espanha, Riserva em Itália), com envelhecimento (Reserva e Crianza em Portugal e Espanha) ou fraca (a mesma palavra noutro país, onde a lei não a define). Reconhecimento: 4 (troféu, platina ou duplo ouro num grande concurso, ou 95+ pontos), 3 (ouro num grande concurso, ou 92–94), 2 (prata num grande concurso, ouro noutro conhecido, ou 90–91), 1 (outra medalha ou pontuação).
-- **"Top X% of the world's wines".** É a parte estimada dos vinhos do mundo com sinais pelo menos tão fortes quanto os deste vinho nos três critérios, tomados como independentes: P(denominação) × P(menção) × P(reconhecimento). P da denominação e da menção é medida nos 10.000 vinhos do catálogo, a nossa amostra do mundo (`pack_content.py` escreve-a como código, `QualityPrevalence+Packed.swift`, a cada empacotamento, para que nenhum build a deixe de fora: topo 20%, Grande/Gran Reserva/Riserva 2,2%). O catálogo não tem medalhas, por isso P do reconhecimento é uma premissa, escrita no mesmo ficheiro: nível 4 = 0,5%, 3 = 2%, 2 = 5%, 1 = 10%. Arredondamento: abaixo de 1% é "Top 1%"; até 10%, inteiro; acima, de 5 em 5. Só aparece até 10%, para continuar a ser uma distinção. Ex.: Colossal (Vinho Regional Lisboa, Grande Reserva) → Top 2%.
-- **O card.** Fechado, mostra o selo e duas linhas. Em cima, "Top X% of the world's wines" quando o vinho está no top 10%; senão, o nível da denominação: "Top-tier appellation", "Protected appellation" ou "Regional wine". Por baixo, o que sustenta isso: o nível (quando o título é o Top X%), o lugar (num vinho regional, só o lugar; nos outros, com a categoria, "Douro DOC"), a menção e o número de prémios ("Regional wine · Lisboa · Grande Reserva"). Sem denominação, o título é a menção ou o prémio. "More" abre uma secção por critério, cada uma com o título em versaletes: Appellation (como está escrita, o nível e a explicação), Legal term (a menção e o que a lei faz dela ali), Awards (um por linha) e, com o Top X%, "How UVVA estimates it" (a percentagem e os critérios que contaram). "Less" fecha.
+- **"Among the top X% of the world's wines".** É a parte estimada dos vinhos do mundo com sinais pelo menos tão fortes quanto os deste vinho nos três critérios, tomados como independentes: P(denominação) × P(menção) × P(reconhecimento). P da denominação e da menção é medida nos 10.000 vinhos do catálogo, a nossa amostra do mundo (`pack_content.py` escreve-a como código, `QualityPrevalence+Packed.swift`, a cada empacotamento, para que nenhum build a deixe de fora: topo 20%, Grande/Gran Reserva/Riserva 2,2%). O catálogo não tem medalhas, por isso P do reconhecimento é uma premissa, escrita no mesmo ficheiro: nível 4 = 0,5%, 3 = 2%, 2 = 5%, 1 = 10%. Arredondamento: abaixo de 1% é "Top 1%"; até 10%, inteiro; acima, de 5 em 5. Só aparece até 20% (2026-11-14): uma denominação de topo sozinha chega lá. Ex.: Colossal (Vinho Regional Lisboa, Grande Reserva) → Top 2%.
+- **O card (2026-11-14).** Dois casos:
+  - **No top 20%** ("Among the top 2% of the world's wines" / "Entre os 2% melhores vinhos do mundo"): selo, título e, por baixo, o que o põe lá ("DOCG · Grande Reserva · Gold · Decanter…"). Aberto, uma secção por motivo, com o que é e quão raro é: "O topo da Itália: regras rígidas e prova oficial antes de sair." + "Só 1 em cada 5 vinhos chega a esse nível."; "Grande Reserva" + a nota da lei + "Só 2% dos vinhos têm."; os prémios, um por linha.
+  - **Fora do top 20%**: sem selo. Título sobre a denominação: protegida, "Authentic Bordeaux Supérieur" ("Bordeaux Supérieur autêntico"); regional, "Lisboa, unbound" ("Lisboa, sem amarras"). Por baixo, a denominação como escrita, a menção e o número de prémios. Aberto, o que o selo exige:
+    - Selo de origem (DOC, DOP, DO, AOC, AOP, DAC, Qualitätswein, Prädikatswein): "Bordeaux Supérieur AOC, por lei exige:" **Região:** 100% das uvas locais. **Uva:** só as permitidas. **Método:** limite de produção e prova oficial. "Garante a origem, não a qualidade." (esta última não aparece num vinho do top).
+    - Regional (IGT, IGP, Vinho Regional, Vin de Pays, Vino de la Tierra, Landwein): "Vinho Regional Lisboa, menos regras que um DOC:" **Região:** 85% das uvas locais. **Uva:** internacionais permitidas. **Método:** mais produção, misturas livres.
+    - AVA, VQA e WO têm uma linha curta própria; uma denominação sem categoria usa a explicação do catálogo.
+    - Textos curtos e diretos (2026-11-15): no top, cada motivo numa linha ("O topo da Itália, com prova oficial." + "Só 1 em cada 5 vinhos."; a menção com a regra da lei em poucas palavras + "Só 2% dos vinhos.").
+  - Sem denominação, o título é a menção ou o prémio. Não há mais a secção "How UVVA estimates it".
 - **Limites.** O OCR lê mal os selos redondos; só se conhecem as medalhas que estão na garrafa. Quando houver avaliações de utilizadores da UVVA em número, as premissas podem ser recalibradas.
 
-**CELLAR-R18 · Já provou?** "Have you had this wine?" (num vinho da Home avaliado antes, "Rate it again?", CELLAR-R14a)
-- "Yes · would you drink it again" leva a "Would you drink it again?", com Yes, Maybe ou No (SHARED-R08). Depois vêm a nota livre ("Your note") e "Save note". Escolhido o veredito, o botão fica marcado um instante, a pergunta some no lugar (fade, sem se mexer) e depois o conteúdo de cima desce e ocupa o espaço dela; "Save note" fica onde estava (2026-11-11).
-- "Not yet · add to cellar or find it" leva a "Add to cellar", que guarda a entrada como Want to try (ver D6 para "find it").
+**CELLAR-R18 · Avaliar (2026-11-14).** A avaliação abre-se numa folha própria, pelo botão fixo no pé: acima de "Save note" na nota nova, e acima de "Edit" na nota guardada (CELLAR-R26).
+- O link diz "Rate this wine" ("Avaliar este vinho") enquanto não há veredito, e "Your rating: Yes · 4/5" ("Sua avaliação: Yes · 4/5") quando há; sem nota, só "Your rating: Yes". Um vinho avaliado antes mostra o veredito que mantém (CELLAR-R14a).
+- A folha sobe do pé, em papel: a pergunta "Would you drink it again?" na letra desenhada, sem subtítulo; Yes, Maybe ou No (SHARED-R08); a nota ("Score") de 0 a 5; "Your note" (duas linhas pautadas, "What stood out in the glass?"); e "Save rating". Ao tocar em "Your note", a folha abre por inteiro, para o teclado não cobrir o botão. Na nota guardada, "Save rating" guarda também a nota escrita; apagada, ela sai (2026-11-14). O veredito e a nota atuais vêm marcados. "Save rating" só fica ativo com um veredito; a nota é opcional.
+- **A nota de 0 a 5.** Seis pontos pequenos ligados por uma linha fina, como os eixos da intensidade: o primeiro é 0, marcados com um toque ou deslizando o dedo para o lado, e o ponto atual pulsa. Sem nota, todos ficam vazios. Ao lado, o número ("4/5", ou "–" sem nota). A nota fica na entrada do Cellar (`score`) e **não mexe no mapa do paladar**: só o veredito mexe (SHARED-R09).
+- Abrir o link já é dizer que provou: não há mais o passo "Have you had this wine?".
+- Na nota nova, veredito e nota só valem ao guardar (CELLAR-R19). Com veredito dado ali, a folha mostra também "Not tasted yet" ("Ainda não provei"), que tira os dois; num vinho avaliado antes esse link não aparece.
+- Na nota guardada (CELLAR-R26), "Save rating" guarda na hora e recalcula o mapa pelo veredito. Se falhar, a folha fica aberta com "The rating wasn't saved. Try again.".
+- **Ordem da nota nova (2026-11-14):** nome e produtor; fotos; card da certificação (CELLAR-R30); "X% match with your map"; os mapas; as frases ("High in body, like your map.", "Close to your map on every axis."); os factos; os chips (Grapes, Notes, Pairings); e a intensidade, com menos espaço entre as secções que antes. "Your note" não fica mais na página: está na folha de avaliação. No pé, fixos e sempre visíveis, com o papel a desvanecer por baixo: o botão de avaliação (contorno, fundo transparente, letra desenhada: "Rate this wine" ou "Your rating: Yes · 4/5"), que abre a folha, e "Save note" por baixo; a nota nova não tem "Find the wine".
 
-**CELLAR-R19 · Guardar.** "Save note" é o único botão no fim da nota e está sempre ativo (2026-11-11). Guarda a entrada no topo do Cellar e mostra "Note saved": Tasted com o veredito, que gera uma avaliação e recalcula o mapa (SHARED-R09, QUIZ-R22); Want to try com Not yet ou sem resposta a "Have you had this wine?". Com Yes e sem veredito, não guarda e diz "Choose whether you would drink it again."; a frase sai quando o veredito é escolhido.
+**CELLAR-R19 · Guardar.** "Save note" é o único botão no fim da nota e está sempre ativo (2026-11-11). Guarda a entrada no topo do Cellar e mostra "Note saved": Tasted com o veredito, que gera uma avaliação e recalcula o mapa (SHARED-R09, QUIZ-R22); Want to try sem veredito (2026-11-14: a folha de avaliação dá o veredito junto com o "provei", então não existe mais "Yes" sem veredito).
 
 **CELLAR-R20 · Nota livre opcional.** O veredito é obrigatório ("Required"); "Your note" é opcional ("What stood out in the glass?"). A nota não é só para o usuário: poderá ser mostrada a outras pessoas no futuro, por isso o texto de ajuda não promete privacidade (2026-11-11). Dá para guardar só com o veredito.
 
@@ -217,7 +228,7 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 
 **CELLAR-R22 · Câmara recusada.** Se o usuário recusar a câmara, o `+` passa a abrir "The camera is off", "UVVA needs the camera to read labels. Turn it on in Settings, or add the wine by hand." "Open Settings" abre os Ajustes do iOS. "Fill in by hand" abre o preenchimento à mão.
 
-**CELLAR-R23 · Preencher à mão.** "Add what you can read on the label. Only the name is needed." Os campos são nome, produtor, ano, região, casta e tipo (Red, White, …). Só o nome é obrigatório: "Continue" fica ativo assim que há um nome. A UVVA faz a leitura a partir dos dados escritos, e o fluxo segue em "Have you had this wine?".
+**CELLAR-R23 · Preencher à mão.** "Add what you can read on the label. Only the name is needed." Os campos são nome, produtor, ano, região, casta e tipo (Red, White, …). Só o nome é obrigatório: "Continue" fica ativo assim que há um nome. A UVVA faz a leitura a partir dos dados escritos, e o fluxo segue no vinho em papel (CELLAR-R18).
 
 **CELLAR-R24 · A foto da nota (2026-11-11).** O topo da nova nota mostra a foto da frente do rótulo. Sem foto (um vinho vindo da Home, ou preenchido à mão), mostra a imagem de fundo da Home com "ADD PHOTO +". Tocar na foto, ou na imagem, abre a câmara para uma foto nova, com a galeria ao lado; a foto nova substitui a do topo e o resto da nota (leitura, respostas e nota) fica como estava. Não há "Redo": substitui o botão que apagava as fotos e a leitura.
 
@@ -236,18 +247,34 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 
 ## 5. A nota guardada
 
-**CELLAR-R26 · Conteúdo (2026-11-11).** A nota guardada mostra o vinho com o desenho da folha do vinho da Home (HOME-R28a), só para ler. É o mesmo componente: não há chips, nem as linhas de intensidade de deslizar, nem a pergunta "Would you drink it again?" (esses são da edição, CELLAR-R27). De cima para baixo:
-- o nome em maiúsculas desenhadas, o produtor e "Added 29 Aug";
-- a capa (fotos da frente e do verso), com o veredito na frente, e "Your note", quando há;
-- o match com o mapa e as duas frases (HOME-R10b), quando há mapa;
-- os factos: Origin | Vintage ("2023 · 3 years"), Style | Grape & notes;
-- "Find the wine" (HOME-R09a), Pairings e How to serve (temperatura e frase), quando há;
-- os eixos em pontos e os dois mapas;
-- os botões Edit e Delete.
+**CELLAR-R26 · Conteúdo (2026-11-15).** A nota guardada mostra o vinho só para ler. Não há chips, nem as linhas de intensidade de deslizar (esses são da edição, CELLAR-R27). A ordem depende de a nota ter fotos.
+
+Com fotos, de cima para baixo:
+- o nome em maiúsculas desenhadas e, na linha de baixo, o produtor à esquerda e "Added 29 Aug" à direita;
+- a capa, com o veredito na frente; só as fotos que a nota tem: uma sozinha ocupa a largura toda;
+- o card da certificação (CELLAR-R30);
+- os factos: Origin | Producer, Style | Vintage ("2023 · 3 years"), depois Grapes, Notes, Pairings e How to serve (temperatura e frase), quando há;
+- só "X% match with your map", sem as frases;
+- os dois mapas;
+- os eixos em pontos juntos, sem título, como na folha do vinho da Home;
+- "Your note", quando há.
+
+Sem fotos, não há capa nem a imagem padrão, e o match vem primeiro:
+- o nome, o produtor e "Added 29 Aug", como acima;
+- "X% match with your map" e, por baixo, as frases ("High in oak and body, like your map.");
+- o card da certificação;
+- os factos, Pairings e How to serve;
+- os eixos em pontos;
+- os dois mapas;
+- "Your note", quando há.
+
+Enquanto as fotos são lidas, a nota usa a ordem com fotos só se a Adega já mostrava a miniatura dela; assim a ordem não muda quando as fotos chegam.
+
+No pé, fixos e sempre visíveis, com o papel a desvanecer por baixo: o botão de avaliação (contorno, letra desenhada, "Rate this wine" ou "Your rating: Yes · 4/5"), que abre a folha de avaliação; e por baixo, numa linha, a lupa ("Find the wine", HOME-R09a), "Edit" e a lixeira ("Delete", CELLAR-R28), as duas em botões redondos só com ícone.
 
 Os dados vêm da cópia guardada na entrada e, por trás, do catálogo (How to serve só existe lá).
 
-**CELLAR-R27 · Editar (2026-11-11).** "Edit" fecha a nota e abre a nova nota (CELLAR-R18) já nesse vinho, com tudo editável: a foto, os chips, a intensidade, "Your note" e a pergunta ("Would you drink it again?" com o veredito marcado; num vinho Not yet, "Have you had this wine?"). "Save note" guarda por cima da mesma entrada: um veredito diferente substitui a avaliação (CELLAR-R13b, D8), e a nota fica como foi escrita, mesmo apagada. Fechar a nova nota sem guardar não muda nada.
+**CELLAR-R27 · Editar (2026-11-11).** "Edit" fecha a nota e abre a nova nota (CELLAR-R18) já nesse vinho, com tudo editável: a foto, os chips, a intensidade, "Your note" e o link de avaliação ("Your rating: Yes · 4/5", ou "Rate this wine" num vinho Not yet, CELLAR-R18). "Save note" guarda por cima da mesma entrada: um veredito diferente substitui a avaliação (CELLAR-R13b, D8), e a nota fica como foi escrita, mesmo apagada. Fechar a nova nota sem guardar não muda nada.
 
 **CELLAR-R28 · Apagar.** "Delete" pede confirmação: "Delete this note?", "It leaves your cellar and stops counting towards your palate map. This can't be undone." "Delete" apaga a entrada e retira a sua avaliação do mapa. Um vinho que só existia por causa do scan dessa nota sai também do catálogo do aparelho, com tudo o que as leituras lhe juntaram, e a leitura dele que ainda esperava para ir ao catálogo público deixa de ser enviada; assim um scan ruim não volta no próximo. Um vinho do catálogo da UVVA fica (2026-11-13). "Cancel" fecha a folha e mantém a nota.
 

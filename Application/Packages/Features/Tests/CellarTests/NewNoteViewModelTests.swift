@@ -264,7 +264,7 @@ struct NewNoteViewModelTests {
         #expect(reads.first?.0 == Data([11]))
         #expect(reads.first?.1 == Data([22]))
         // The note keeps the light photo.
-        #expect(viewModel.uiModel.photo == Data([1]))
+        #expect(viewModel.uiModel.photoFront == Data([1]))
     }
 
     @Test func CELLAR_R17_theBackLabelsScan_goesWithItsPhotoToTheReading() async throws {
@@ -295,18 +295,26 @@ struct NewNoteViewModelTests {
 
     // MARK: CELLAR-R24
 
-    @Test func CELLAR_R24_theNoteShowsItsPhoto_andTakesANewOne() async {
+    @Test func CELLAR_R24_theNoteShowsBothPhotos_andReplacesEachIndependently() async {
         let viewModel = await atTheNote()
-        #expect(viewModel.uiModel.photo == Data([1]))
+        #expect(viewModel.uiModel.photoFront == Data([1]))
+        #expect(viewModel.uiModel.photoBack == Data([2]))
         viewModel.replacePhoto(Data([5]))
-        #expect(viewModel.uiModel.photo == Data([5]))
+        #expect(viewModel.uiModel.photoFront == Data([5]))
+        #expect(viewModel.uiModel.photoBack == Data([2]))
+        viewModel.replacePhoto(Data([6]), side: .back)
+        #expect(viewModel.uiModel.photoFront == Data([5]))
+        #expect(viewModel.uiModel.photoBack == Data([6]))
         #expect(viewModel.uiModel.step == .note)
     }
 }
 
 struct NewNoteMatchLinesTests {
+    /// A map given by its positions on the ruler, as the lines read it (QUIZ-R04a).
     private func map(_ highs: [PalateAxis: Double]) -> PalateMap {
-        PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, highs[$0] ?? 3) }))
+        PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map {
+            ($0, WineRuler.value(atPosition: highs[$0] ?? 3, on: $0))
+        }))
     }
 
     @Test func HOME_R10b_theNewNote_saysHowTheWineSitsWithTheMap_asTheWineSheetDoes() throws {

@@ -9,6 +9,8 @@ struct MapTabView<ViewModel: MapViewModelProtocol>: View {
     var focusesHistory = false
     var onHistoryShown: () -> Void = {}
     @State private var sharing = false
+    /// QUIZ-R04a to R04c: the sheet that says how the map was drawn from the Quiz answers.
+    @State private var isExplainingMap = false
 
     static var historyID: String { "you.map.history" }
 
@@ -43,15 +45,29 @@ struct MapTabView<ViewModel: MapViewModelProtocol>: View {
                             }
                     }
 
-                    SectionTitle(text: viewModel.uiModel.whereTheMapPointsText).padding(.top, 60)
+                    Button { isExplainingMap = true } label: {
+                        HStack(spacing: 10) {
+                            SectionTitle(text: viewModel.uiModel.whereTheMapPointsText)
+                            Spacer(minLength: 12)
+                            InfoMark()
+                        }
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(Text(viewModel.uiModel.howTheMapIsDrawnText))
+                    .padding(.top, 48)
                     Text(model.narrative).font(UVVAFont.sans(14)).lineSpacing(9).opacity(0.86)
-                        .padding(.top, 14)
+                        .padding(.top, 2)
 
                     ActionButton(viewModel.uiModel.shareMyMapText) { sharing = true }
                         .padding(.top, 40)
                     ActionButton(viewModel.uiModel.redoTheMapText, style: .outline, action: viewModel.redoMap)
                         .padding(.top, 10)
                 }
+            }
+            .sheet(isPresented: $isExplainingMap) {
+                InfoSheet(title: viewModel.uiModel.howTheMapIsDrawnText, text: viewModel.uiModel.mapDrawnText)
             }
             .fullScreenCover(isPresented: $sharing) {
                 ShareScreen(title: viewModel.uiModel.shareMyMapText, message: viewModel.uiModel.shareMessage) { format in

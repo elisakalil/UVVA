@@ -16,7 +16,7 @@ public enum Pairing {
         let meals = forType.filter { mealCourses.contains($0.course) }
         let pool = meals.isEmpty ? forType : meals
         let target = crossed(user, wine.profile)
-        return pool.max { Similarity.between($0.profile, target) < Similarity.between($1.profile, target) }
+        return pool.min { Similarity.distance($0.profile, target) < Similarity.distance($1.profile, target) }
     }
 
     /// The recipe as the Home shows it (HOME-R09).

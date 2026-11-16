@@ -3,9 +3,11 @@ import Testing
 @testable import Match
 
 struct WineFitTests {
+    /// A map given by its positions on the ruler, as the card reads it.
     private func map(_ value: Double, except: [PalateAxis: Double] = [:]) -> PalateMap {
-        let values = Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, value) })
-        return PalateMap(values.merging(except) { $1 })
+        PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map {
+            ($0, WineRuler.value(atPosition: except[$0] ?? value, on: $0))
+        }))
     }
 
     // MARK: HOME-R10a, R10b · Leitura do vinho do dia

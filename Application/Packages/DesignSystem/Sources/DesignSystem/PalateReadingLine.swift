@@ -75,15 +75,35 @@ private struct Pip: View {
     }
 }
 
+/// A row of pips over a hairline, set by a tap or a sideways slide, as the axes of a note are: the score of a rating
+/// (CELLAR-R18) uses six, 0 to 5. With no level, every pip is hollow and none glows.
+public struct PipScale: View {
+    var count: Int
+    var level: Int?
+    var onPick: (Int) -> Void
+
+    public init(count: Int, level: Int?, onPick: @escaping (Int) -> Void) {
+        self.count = count
+        self.level = level
+        self.onPick = onPick
+    }
+
+    public var body: some View {
+        EditablePips(count: count, level: level, onPick: onPick)
+    }
+}
+
 /// The pips of an editable line: spread across its width over a hairline, set where the finger lands or slides.
 private struct EditablePips: View {
-    var level: Int
+    var count = PalateReadingLine.count
+    /// Nil before any is set: every pip hollow.
+    var level: Int?
     /// Nil on a saved note: the line only reads, and its pip does not glow.
     var onPick: ((Int) -> Void)?
 
     private func pick(at x: CGFloat, width: CGFloat) {
-        let slot = width / CGFloat(PalateReadingLine.count)
-        let index = min(max(Int(x / slot), 0), PalateReadingLine.count - 1)
+        let slot = width / CGFloat(count)
+        let index = min(max(Int(x / slot), 0), count - 1)
         if index != level { onPick?(index) }
     }
 
@@ -94,17 +114,18 @@ private struct EditablePips: View {
                 // The line the pips sit on, so the row reads as something to slide along: from the centre of the
                 // first pip to the centre of the last, with no loose ends.
                 Rectangle().frame(height: 0.5).opacity(0.22)
-                    .padding(.horizontal, width / CGFloat(PalateReadingLine.count) / 2)
+                    .padding(.horizontal, width / CGFloat(count) / 2)
                 HStack(spacing: 0) {
-                    ForEach(0..<PalateReadingLine.count, id: \.self) { index in
+                    ForEach(0..<count, id: \.self) { index in
+                        let lit = level ?? -1
                         Group {
                             if index == level && onPick != nil {
                                 GlowingPip()
                             } else if index == level {
                                 Pip(isLit: true, isStrong: true, size: 6)
                             } else {
-                                Pip(isLit: index < level, isStrong: true, size: 5)
-                                    .background { if index > level { Circle().fill(UVVAColor.parchment) } }
+                                Pip(isLit: index < lit, isStrong: true, size: 5)
+                                    .background { if index > lit { Circle().fill(UVVAColor.parchment) } }
                             }
                         }
                         .frame(maxWidth: .infinity)

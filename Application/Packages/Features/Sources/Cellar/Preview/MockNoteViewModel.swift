@@ -26,6 +26,11 @@ final class MockNoteViewModel: NoteViewModelProtocol {
 
     func load() async {}
     func edit() {}
+    func rate(_ verdict: Verdict, score: Int?, note: String) async -> Bool {
+        uiModel.coverTag = uiModel.resources.paper.verdict(verdict)
+        return true
+    }
+
     func askToDelete() { uiModel.isConfirmingDelete = true }
     func cancelDelete() { uiModel.isConfirmingDelete = false }
     func confirmDelete() async {}

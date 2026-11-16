@@ -15,7 +15,8 @@ struct QuizReadingView: View {
             QuizBackground(photoOpacity: 1, shade: [0.35, 0.55])
             VStack(alignment: .leading, spacing: 0) {
                 FlowTopBar(caption: model.counter, onBack: onBack)
-                ReadingProgress(resources: resources, count: model.count, current: model.index)
+                StepDots(current: model.index, total: model.count, ink: UVVAColor.cream,
+                         accessibilityLabel: resources.readingAccessibility(current: model.index, count: model.count))
                     .padding(.top, 22)
 
                 Text(model.prompt)

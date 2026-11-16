@@ -28,8 +28,8 @@ public struct Rating: Equatable, Sendable {
         return verdicts
     }
 
-    /// The last rating in a map's history, with how far it moved each axis from the entry before it (SHARED-R10).
-    /// Nil when nothing after the Quiz is a rating.
+    /// The last rating in a map's history, with how far it moved each axis from the entry before it (SHARED-R10),
+    /// in position on the ruler, as the map is shown (QUIZ-R05). Nil when nothing after the Quiz is a rating.
     public static func last(in history: [MapChange]) -> Rating? {
         guard let index = history.lastIndex(where: { if case .rating = $0.cause { true } else { false } }),
               index > 0,
@@ -39,7 +39,8 @@ public struct Rating: Equatable, Sendable {
         let before = history[index - 1].values
         var deltas: [PalateAxis: Double] = [:]
         for axis in PalateAxis.allCases {
-            deltas[axis] = (after[axis] ?? 0) - (before[axis] ?? 0)
+            deltas[axis] = WineRuler.position(of: after[axis] ?? 0, on: axis)
+                - WineRuler.position(of: before[axis] ?? 0, on: axis)
         }
         return Rating(wineKey: wineKey, verdict: verdict, date: history[index].date, deltas: deltas)
     }

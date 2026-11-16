@@ -96,6 +96,7 @@ public actor CellarStore: StoreActor, CellarRepository {
         if draft.status == .tasted, let verdict = draft.verdict {
             entry.status = CellarEntryEntity.Status.tasted.rawValue
             entry.verdict = verdict.rawValue
+            if let score = draft.score { entry.score = score }
         }
         if let photo = draft.photoFront { entry.photoFront = photo }
         if let photo = draft.photoBack { entry.photoBack = photo }
@@ -111,15 +112,20 @@ public actor CellarStore: StoreActor, CellarRepository {
         return before
     }
 
-    public func update(_ wineKey: String, verdict: Verdict?, note: String?) throws {
-        try update(wineKey, verdict: verdict, note: note, at: Date())
+    public func update(_ wineKey: String, verdict: Verdict?, score: Int?, note: String?) throws {
+        try update(wineKey, verdict: verdict, score: score, note: note, at: Date())
     }
 
-    func update(_ wineKey: String, verdict: Verdict?, note: String?, at date: Date) throws {
+    public func update(_ wineKey: String, verdict: Verdict?, note: String?) throws {
+        try update(wineKey, verdict: verdict, score: nil, note: note, at: Date())
+    }
+
+    func update(_ wineKey: String, verdict: Verdict?, score: Int? = nil, note: String?, at date: Date) throws {
         guard let entry = try entry(for: wineKey) else { return }
         if let verdict {
             entry.status = CellarEntryEntity.Status.tasted.rawValue
             entry.verdict = verdict.rawValue
+            entry.score = score
         }
         let trimmed = note?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         entry.note = trimmed.isEmpty ? nil : trimmed
@@ -179,6 +185,7 @@ private extension CellarEntryEntity {
                            photoFront: includingPhotos ? photoFront : nil, photoBack: includingPhotos ? photoBack : nil,
                            createdAt: createdAt, updatedAt: updatedAt,
                            wineProfile: profile, wineNotes: wineNotes, pairings: pairings, designation: designation,
-                           awards: awards?.compactMap(WineAward.init(text:)), certificateTop: certificateTop)
+                           awards: awards?.compactMap(WineAward.init(text:)), certificateTop: certificateTop,
+                           score: score)
     }
 }

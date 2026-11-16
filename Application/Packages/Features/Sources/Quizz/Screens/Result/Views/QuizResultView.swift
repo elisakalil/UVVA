@@ -10,6 +10,8 @@ struct QuizResultView: View {
     var onBack: () -> Void
 
     @State private var footerHeight: CGFloat = 0
+    /// QUIZ-R04a to R04c: the sheet that says how the map was drawn from the answers.
+    @State private var isExplainingMap = false
     /// The clear top of the footer, where its shade fades in over the page.
     static let footerFade: CGFloat = 70
     /// Room between the last card and the button once the page is scrolled to the end.
@@ -55,8 +57,18 @@ struct QuizResultView: View {
                     }
                     .padding(.top, 18)
 
-                    SectionTitle(resources.whereTheMapPointsText)
-                        .padding(.top, 40)
+                    Button { isExplainingMap = true } label: {
+                        HStack(spacing: 10) {
+                            SectionTitle(resources.whereTheMapPointsText)
+                            Spacer(minLength: 12)
+                            InfoMark()
+                        }
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(Text(resources.howTheMapIsDrawnText))
+                    .padding(.top, 28)
                     Text(model.narrative)
                         .font(UVVAFont.sans(14.5))
                         .lineSpacing(9)
@@ -96,6 +108,9 @@ struct QuizResultView: View {
                     .ignoresSafeArea(edges: .bottom)
                     .allowsHitTesting(false)
             }
+        }
+        .sheet(isPresented: $isExplainingMap) {
+            InfoSheet(title: resources.howTheMapIsDrawnText, text: resources.answersStartingPointText)
         }
     }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-/// Intensity 0...9 per axis (QUIZ-R04).
+/// Intensity 0...9 per axis, on the `WineRuler` the user's map and the wines' share (QUIZ-R04a).
 public struct PalateMap: Equatable, Sendable {
     public static let range: ClosedRange<Double> = 0...9
 
@@ -26,5 +26,8 @@ public struct PalateMap: Equatable, Sendable {
             .map(\.element)
     }
 
-    public var chartValues: [Double] { PalateAxis.allCases.map { self[$0] / PalateMap.range.upperBound } }
+    /// The radar, 0...1 per axis: the position on the ruler, as every map is shown (QUIZ-R05, WineRuler).
+    public var chartValues: [Double] {
+        PalateAxis.allCases.map { WineRuler.position(of: self[$0], on: $0) / PalateMap.range.upperBound }
+    }
 }

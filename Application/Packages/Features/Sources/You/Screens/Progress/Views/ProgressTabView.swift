@@ -1,7 +1,8 @@
 import DesignSystem
 import SwiftUI
 
-/// Progress (YOU-R04 to R07). The level (D5) waits for its rules.
+/// Progress (YOU-R04 to R07a): the counts, Specialist in, a course, and the world map last. The level (D5) waits
+/// for its rules.
 struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
 
@@ -32,14 +33,8 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
                 }
                 .padding(.top, 6)
 
-                // A little room above the map stays with it, so it does not touch the top edge when scrolled to.
-                ProgressWorldMap(model: model.map, focus: selectedStat?.mapKind)
-                    .padding(.top, 6)
-                    .id(Self.mapID)
-                    .padding(.top, 42)
-
                 SectionTitle(text: viewModel.uiModel.specialistInText)
-                    .padding(.top, 56)
+                    .padding(.top, 50)
                 Text(model.specialist)
                     .font(UVVAFont.sans(15)).lineSpacing(7)
                     .padding(.top, 16)
@@ -72,6 +67,15 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
                         .font(UVVAFont.sans(12.5)).opacity(0.84)
                         .padding(.top, 16)
                 }
+
+                // Last, the world: where the glass has been and the regions learned (YOU-R07a). Its title stays
+                // with it, so the page brings both up above the Regions or Bottles sheet.
+                VStack(alignment: .leading, spacing: 18) {
+                    SectionTitle(text: model.mapTitle)
+                    ProgressWorldMap(model: model.map, focus: selectedStat?.mapKind)
+                }
+                .id(Self.mapID)
+                .padding(.top, 56)
             }
         }
     }

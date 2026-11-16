@@ -68,7 +68,7 @@ struct NoteViewModelTests {
         #expect(content.facts.suffix(2).map(\.label) == ["Grapes", "Notes"])
         #expect(content.facts.suffix(2).map(\.value) == ["Syrah, Viognier", "Cherry"])
         #expect(content.pairings == "Cheese")
-        #expect(content.certificate?.headline == "Made by strict local rules")
+        #expect(content.certificate?.headline == "Authentic Alentejo")
         #expect(content.certificate?.subline == "Alentejo DOC")
     }
 
@@ -90,7 +90,7 @@ struct NoteViewModelTests {
         let model = make(entry, wine: wine)
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
-        #expect(certificate.headline == "Top 9% of the world's wines")
+        #expect(certificate.headline == "Among the top 9% of the world's wines")
         #expect(certificate.sections.first { $0.title == "Awards" }?.lines == ["Bronze · Feira da Vila"])
     }
 
@@ -103,11 +103,11 @@ struct NoteViewModelTests {
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
         // Not the kept 1 %: only the regional label remains, outside the top.
-        #expect(certificate.headline == "Regional, free to experiment")
+        #expect(certificate.headline == "Lisboa, unbound")
         #expect(certificate.sections.first { $0.title == "Awards" } == nil)
     }
 
-    @Test func CELLAR_R30_anAwardEndingInAFullStop_endsTheSentenceOnce() async throws {
+    @Test func CELLAR_R30_aTopCard_endsAnAwardOnce_andShowsNoEstimate() async throws {
         var entry = tasted
         entry.classification = "Alentejo DOC"
         entry.designation = "Reserva"
@@ -116,9 +116,10 @@ struct NoteViewModelTests {
         let model = make(entry, wine: Maps.wine("ponto-forte", 9))
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
-        let estimate = try #require(certificate.sections.first { $0.title == "How UVVA estimates it" }?.lines.first)
-        #expect(estimate.contains("Trophy · Concurso Int. de Vinhos. An estimate"))
-        #expect(!estimate.contains(".."))
+        #expect(certificate.showsSeal)
+        #expect(certificate.subline?.contains("Trophy · Concurso Int. de Vinhos.") == true)
+        #expect(certificate.subline?.contains("..") == false)
+        #expect(!certificate.sections.map(\.title).contains("How UVVA estimates it"))
     }
 
     @Test func CELLAR_R30_aSavedNoteWithoutATop_isWorkedOutFromTheNotesOwnSignals() async throws {
@@ -132,12 +133,13 @@ struct NoteViewModelTests {
         let model = make(entry, wine: wine)
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
-        // The note's own DOC, not the catalog's gold and Reserva learnt since: outside the top.
-        #expect(certificate.headline == "Made by strict local rules")
+        // The note's own DOC, not the catalog's gold and Reserva learnt since: outside the top, with no seal.
+        #expect(certificate.headline == "Authentic Alentejo")
+        #expect(!certificate.showsSeal)
         #expect(certificate.subline == "Alentejo DOC")
     }
 
-    @Test func CELLAR_R30_theEntrysAwards_andTheCatalogsLine_reachTheCard() async throws {
+    @Test func CELLAR_R30_theEntrysAwards_reachTheCard_andTheDOCSaysWhatItRequires() async throws {
         var entry = tasted
         entry.classification = "Alentejo DOC"
         entry.designation = "Reserva"
@@ -147,12 +149,15 @@ struct NoteViewModelTests {
         let model = make(entry, wine: wine)
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
-        // The card leads with the top, and says what it rests on.
-        #expect(certificate.headline == "Top 1% of the world's wines")
-        #expect(certificate.subline == "Made by strict local rules · Alentejo DOC · Reserva · 1 award")
-        #expect(certificate.sections.map(\.title) == ["Appellation", "Legal term", "Awards", "How UVVA estimates it"])
-        #expect(certificate.sections[0].value == "Alentejo DOC · Made by strict local rules")
-        #expect(certificate.sections[0].lines == ["The Alentejo's own rules."])
+        // The card leads with the top and the seal, and says what it rests on.
+        #expect(certificate.headline == "Among the top 1% of the world's wines")
+        #expect(certificate.showsSeal)
+        #expect(certificate.subline == "DOC · Reserva · Gold · Mundus Vini · 2022")
+        #expect(certificate.sections.map(\.title) == ["Appellation", "Legal term", "Awards"])
+        #expect(certificate.sections[0].value == "Alentejo DOC, by law requires:")
+        // What a DOC requires, in place of the catalog's line; in the top, without "not the quality".
+        #expect(certificate.sections[0].lines.first == "**Region:** 100% local grapes.")
+        #expect(certificate.sections[0].lines.count == 3)
         #expect(certificate.sections[2].lines == ["Gold · Mundus Vini · 2022"])
     }
 

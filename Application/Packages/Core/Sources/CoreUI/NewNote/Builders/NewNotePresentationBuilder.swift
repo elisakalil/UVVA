@@ -66,9 +66,12 @@ struct NewNotePresentationBuilder {
         model.palate = palate
         model.tasting = flow.tasting
         model.isRatedBefore = flow.ratedVerdict != nil
+        model.currentVerdict = flow.draft?.verdict
+        model.currentScore = flow.draft?.score
         model.draftNote = flow.note
         model.canSave = flow.canSave
-        model.photo = flow.photoFront
+        model.photoFront = flow.photoFront
+        model.photoBack = flow.photoBack
         guard let wine = flow.wine else { return }
         let content = NotePaperContent(wine: wine, palate: palate, resources: resources.paper)
         model.content = content

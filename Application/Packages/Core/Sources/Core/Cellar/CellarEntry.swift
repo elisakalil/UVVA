@@ -21,6 +21,8 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
     public var status: CellarEntryStatus
     /// Only when tasted.
     public var verdict: Verdict?
+    /// The score from 0 to 5 given with the verdict (CELLAR-R18); it does not move the palate map.
+    public var score: Int?
     /// "Your note", kept for the user only (CELLAR-R20).
     public var note: String?
     public var alcohol: Double?
@@ -45,7 +47,7 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
                 classification: String = "", photoFront: Data? = nil, photoBack: Data? = nil,
                 createdAt: Date, updatedAt: Date? = nil, wineProfile: PalateMap? = nil,
                 wineNotes: String? = nil, pairings: [String]? = nil, designation: String? = nil,
-                awards: [WineAward]? = nil, certificateTop: Int? = nil) {
+                awards: [WineAward]? = nil, certificateTop: Int? = nil, score: Int? = nil) {
         self.id = id
         self.name = name
         self.producer = producer
@@ -60,6 +62,7 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
         self.pairings = pairings
         self.status = status
         self.verdict = verdict
+        self.score = score
         self.note = note
         self.alcohol = alcohol
         self.classification = classification

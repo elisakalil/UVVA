@@ -30,11 +30,14 @@ struct QuizFlow: Equatable, Sendable {
 
     var isLastReading: Bool { step == .reading(Self.order.count - 1) }
 
-    /// The map drawn from the answers, once all eight are given (QUIZ-R04).
+    /// The answers read on the ruler, once all eight are given (QUIZ-R04, R04a). Only the starting point: the map
+    /// kept is these settled among real wines (`QuizMapBuilder`).
     var map: PalateMap? {
-        guard answers.count == Self.order.count else { return nil }
-        return PalateMap(answers.mapValues(Double.init))
+        guard isComplete else { return nil }
+        return WineRuler.map(answers)
     }
+
+    var isComplete: Bool { answers.count == Self.order.count }
 
     /// "Read my palate" (QUIZ-R06).
     mutating func start() {

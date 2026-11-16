@@ -17,15 +17,7 @@ struct SaveNewNoteUseCase: SaveNewNoteUseCaseProtocol {
         try await catalog.addScanned(catalogWine)
         try await cellar.save(draft)
         guard draft.selectedVerdict, let verdict = draft.verdict else { return }
-        // The map's history determines whether this wine has been rated since the last Quiz.
-        if let old = Rating.verdicts(in: try await maps.history())[draft.wine.id] {
-            // CELLAR-R13b, D8: a new verdict for the same wine replaces its rating.
-            if old != verdict { try await recalculate.execute(changing: draft.wine.id, to: verdict, at: now()) }
-        } else {
-            // CELLAR-R19: the first rating moves the map once (SHARED-R09, QUIZ-R22).
-            guard let map = try await maps.currentMap() else { return }
-            let update = MapUpdate.apply(verdict, wine: catalogWine.profile, to: map)
-            try await maps.saveRatedMap(update.map, wineKey: draft.wine.id, verdict: verdict, at: now())
-        }
+        try await RecordWineRatingUseCase(maps: maps, recalculate: recalculate)
+            .execute(verdict, for: draft.wine.id, profile: catalogWine.profile, at: now)
     }
 }

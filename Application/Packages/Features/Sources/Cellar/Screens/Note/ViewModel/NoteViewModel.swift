@@ -3,7 +3,7 @@ import Core
 import Foundation
 import OSLog
 
-/// A saved note (CELLAR.md §5): the wine as the Home's wine sheet shows it, with the photos and the note, read only.
+/// A saved note (CELLAR.md §5): the wine as the Home's wine sheet shows it, with the photos and the note.
 /// Edit opens it in the new note; Delete takes it out of the Cellar.
 @MainActor
 public final class NoteViewModel: NoteViewModelProtocol {
@@ -21,6 +21,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
 
     private let loadNote: any LoadNoteUseCaseProtocol
     private let deleteNote: any DeleteNoteUseCaseProtocol
+    private let saveRating: ((CellarEntry, Wine, Verdict, Int?, String?) async throws -> Void)?
     private let maps: (any PalateMapRepository)?
     /// The Cellar reads its entries again; `true` when the note left it.
     private let onChange: (_ deleted: Bool) -> Void
@@ -34,12 +35,14 @@ public final class NoteViewModel: NoteViewModelProtocol {
     init(entry: CellarEntry, loadNote: any LoadNoteUseCaseProtocol, deleteNote: any DeleteNoteUseCaseProtocol,
          maps: (any PalateMapRepository)? = nil, now: @escaping () -> Date = Date.init,
          onChange: @escaping (Bool) -> Void, onClose: @escaping () -> Void,
-         onEdit: @escaping (CellarEntry, Wine) -> Void = { _, _ in }) {
+         onEdit: @escaping (CellarEntry, Wine) -> Void = { _, _ in },
+         saveRating: ((CellarEntry, Wine, Verdict, Int?, String?) async throws -> Void)? = nil) {
         id = entry.id
         self.entry = entry
         self.loadNote = loadNote
         self.deleteNote = deleteNote
         self.maps = maps
+        self.saveRating = saveRating
         self.now = now
         self.onChange = onChange
         self.onClose = onClose
@@ -68,8 +71,34 @@ public final class NoteViewModel: NoteViewModelProtocol {
     }
 
     public func edit() {
-        guard !isReadingPhotos else { return }
+        guard !isReadingPhotos, !isWorking else { return }
         onEdit(entry, builder.paperWine)
+    }
+
+    /// The rating sheet (CELLAR-R18): the verdict, the score and "Your note", kept together; an emptied note goes.
+    public func rate(_ verdict: Verdict, score: Int?, note: String) async -> Bool {
+        guard !isWorking, !isReadingPhotos, let saveRating else { return false }
+        isWorking = true
+        errorText = nil
+        defer { isWorking = false }
+        do {
+            let trimmed = note.trimmingCharacters(in: .whitespacesAndNewlines)
+            let kept = trimmed.isEmpty ? nil : trimmed
+            try await saveRating(entry, wine ?? builder.paperWine, verdict, score, kept)
+            var ratedEntry = entry
+            ratedEntry.note = kept
+            ratedEntry.status = .tasted
+            ratedEntry.verdict = verdict
+            ratedEntry.score = score
+            entry = ratedEntry
+            palate = try? await maps?.currentMap()
+            onChange(false)
+            return true
+        } catch {
+            logger.error("Rating not saved: \(error.localizedDescription, privacy: .public)")
+            errorText = uiModel.resources.ratingErrorText
+            return false
+        }
     }
 
     public func askToDelete() { isConfirmingDelete = true }
@@ -102,6 +131,8 @@ public final class NoteViewModel: NoteViewModelProtocol {
         var model = uiModel
         model.addedText = model.resources.added(builder.date)
         model.coverTag = builder.coverTag
+        model.verdict = entry.verdict
+        model.score = entry.score
         model.photoFront = entry.photoFront
         model.photoBack = entry.photoBack
         model.wineKey = entry.id

@@ -25,13 +25,19 @@ public protocol CellarRepository: Sendable {
     /// Tasted entry never goes back to Want to try. Returns the entry as it was before, nil when it is new.
     @discardableResult
     func save(_ draft: NewNoteDraft) async throws -> CellarEntry?
-    /// "Save changes" on a note (CELLAR-R27): a verdict makes the entry Tasted; an empty note is cleared.
-    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws
+    /// A rating on a saved note (CELLAR-R18, R27): a verdict makes the entry Tasted and keeps the score given with it
+    /// (nil for none); an empty note is cleared.
+    func update(_ wineKey: String, verdict: Verdict?, score: Int?, note: String?) async throws
     /// "Delete" on a note (CELLAR-R28).
     func delete(_ wineKey: String) async throws
 }
 
 extension CellarRepository {
+    /// A rating with no score.
+    public func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {
+        try await update(wineKey, verdict: verdict, score: nil, note: note)
+    }
+
     public func entrySummaries() async throws -> [CellarEntry] {
         try await entries().map { entry in
             var summary = entry

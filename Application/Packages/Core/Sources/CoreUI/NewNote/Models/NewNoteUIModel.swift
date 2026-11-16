@@ -26,11 +26,15 @@ public struct NewNoteUIModel {
     var tasting = NewNoteTasting.asking
     /// A wine from the Home rated before: the first question is "Rate it again?" (CELLAR-R14a).
     var isRatedBefore = false
+    /// The verdict the note goes in with as it stands: the one given here, or the one a wine rated before keeps.
+    var currentVerdict: Verdict?
+    /// The score that goes with it, 0 to 5.
+    var currentScore: Int?
     var verdicts: [NoteVerdictUIModel] = []
     var draftNote = ""
     var canSave = false
-    /// The photo at the top of the note: the front label, or none for a wine opened from the Home.
-    var photo: Data?
+    var photoFront: Data?
+    var photoBack: Data?
     var findURL: URL?
 
     /// What the label reading saw at each step, in debug builds (CELLAR-R17).

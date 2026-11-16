@@ -33,7 +33,8 @@ struct LessonTopBar: View {
             }
             if let current = model.current {
                 HStack(spacing: 14) {
-                    StepDots(resources: resources, current: current, total: model.total, ink: ink)
+                    StepDots(current: current, total: model.total, ink: ink,
+                             accessibilityLabel: resources.stepAccessibility(current: current, total: model.total))
                     Text(model.counter)
                         .font(UVVAFont.sans(9).monospacedDigit())
                         .tracking(2.7)

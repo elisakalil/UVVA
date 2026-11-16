@@ -17,28 +17,16 @@ struct NewNotePhotoSheet: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(resources.photoTitleText)
-                        .font(UVVAFont.sans(26, .ultraLight))
-                        .tracking(-0.4)
-                        .accessibilityAddTraits(.isHeader)
-                    Text(resources.photoBodyText)
-                        .font(UVVAFont.sans(12.5))
-                        .opacity(0.8)
-                }
-                Spacer(minLength: 12)
-                Button { dismiss() } label: {
-                    Image(systemName: resources.closeIcon)
-                        .font(.system(size: 11))
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(resources.closeText)
+            VStack(alignment: .leading, spacing: 8) {
+                Text(resources.photoTitleText)
+                    .font(UVVAFont.sans(26, .ultraLight))
+                    .tracking(-0.4)
+                    .accessibilityAddTraits(.isHeader)
+                Text(resources.photoBodyText)
+                    .font(UVVAFont.sans(12.5))
+                    .opacity(0.8)
             }
-            .padding(.leading, 30)
-            .padding(.trailing, 16)
+            .padding(.horizontal, 30)
             .padding(.top, 40)
 
             viewfinder

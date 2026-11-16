@@ -7,7 +7,7 @@ import Testing
 struct FriendProfileTests {
     let social = SocialFake()
     let repository = FriendsRepositoryFake()
-    let userMap = PalateMap([.acidity: 7, .fruit: 6])
+    let userMap = PalateMap.positions([.acidity: 7, .fruit: 6])
 
     func makeList() -> FriendsViewModel {
         FriendsFactory(profiles: ProfilesStub(), maps: MapStub(map: userMap), friends: repository, catalog: CatalogStub(),
@@ -44,7 +44,7 @@ struct FriendProfileTests {
     // MARK: FRI-R11 · Palate
 
     @Test func FRI_R11_readings_everyAxis_leadersStronger() {
-        let readings = builder(friend: PalateMap([.acidity: 8, .fruit: 7, .body: 6])).readings
+        let readings = builder(friend: PalateMap.positions([.acidity: 8, .fruit: 7, .body: 6])).readings
         #expect(readings.count == PalateAxis.allCases.count)
         #expect(readings.filter(\.isStrong).map(\.name).sorted() == ["Acidity", "Body", "Fruit"])
         #expect(readings.first { $0.name == "Acidity" }?.level == 8)
@@ -59,19 +59,19 @@ struct FriendProfileTests {
     }
 
     @Test func FRI_R12_twoSharedAxes() {
-        #expect(builder(friend: PalateMap([.acidity: 7.5, .fruit: 6.5])).overlapPhrase
+        #expect(builder(friend: PalateMap.positions([.acidity: 7.5, .fruit: 6.5])).overlapPhrase
                 == "You both want acidity and fruit in a glass.")
     }
 
     @Test func FRI_R12_threeSharedAxes() {
-        let both = PalateMap([.acidity: 8, .fruit: 7, .spice: 6])
+        let both = PalateMap.positions([.acidity: 8, .fruit: 7, .spice: 6])
         let builder = FriendProfilePresentationBuilder(friend: Friend(id: "m", name: "M", map: both, addedAt: .now),
                                                        userMap: both, bottles: nil, resources: FriendProfileResourcesUIModel())
         #expect(builder.overlapPhrase == "You both want acidity, fruit and spice in a glass.")
     }
 
     @Test func FRI_R12_noSharedAxes() {
-        #expect(builder(friend: PalateMap([.tannin: 8, .oak: 8])).overlapPhrase
+        #expect(builder(friend: PalateMap.positions([.tannin: 8, .oak: 8])).overlapPhrase
                 == "You barely overlap — you like different things.")
     }
 
@@ -115,7 +115,7 @@ struct FriendProfileTests {
 
     @Test func HOME_R11_matchCard_opensTheLastTable() async throws {
         befriend("marina", "Marina", map: userMap)
-        befriend("rui", "Rui", map: PalateMap([.spice: 8]))
+        befriend("rui", "Rui", map: PalateMap.positions([.spice: 8]))
         try await repository.saveLastTable(["rui"])
         let list = makeList()
         await list.openLastTable()

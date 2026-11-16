@@ -43,6 +43,7 @@ public struct CellarFactory: CellarFactoryProtocol {
         let recalculate = recalculate
         let load = LoadNoteUseCase(wines: wines)
         let delete = DeleteNoteUseCase(cellar: cellar, recalculate: recalculate, catalog: labelCatalog)
+        let cellar = cellar
         let maps = maps
         let now = now
         return CellarViewModel(
@@ -53,9 +54,20 @@ public struct CellarFactory: CellarFactoryProtocol {
             onEditNote: onEditNote
         ) { entry, owner in
             NoteViewModel(entry: entry, loadNote: load, deleteNote: delete, maps: maps, now: now,
-                          onChange: { [weak owner] _ in owner?.noteDeleted(entry.id) },
+                          onChange: { [weak owner] deleted in
+                              if deleted {
+                                  owner?.noteDeleted(entry.id)
+                              } else {
+                                  owner?.noteRated(entry.id)
+                              }
+                          },
                           onClose: { [weak owner] in owner?.closeNote() },
-                          onEdit: { [weak owner] entry, wine in owner?.editNote(entry, wine: wine) })
+                          onEdit: { [weak owner] entry, wine in owner?.editNote(entry, wine: wine) },
+                          saveRating: { entry, wine, verdict, score, note in
+                              try await cellar.update(entry.id, verdict: verdict, score: score, note: note)
+                              try await RecordWineRatingUseCase(maps: maps, recalculate: recalculate)
+                                  .execute(verdict, for: entry.id, profile: wine.profile, at: now)
+                          })
         }
     }
 }

@@ -219,6 +219,11 @@ public final class CellarViewModel: CellarViewModelProtocol {
         }
     }
 
+    func noteRated(_ wineKey: String) {
+        refreshEntry(wineKey)
+        onNoteChange()
+    }
+
     func noteDeleted(_ wineKey: String) {
         let previous = mutations
         mutationVersion += 1

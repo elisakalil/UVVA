@@ -65,6 +65,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ProfileEstimateTests.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ProfileEstimateTests.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/QuizMapBuilderTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/ScannedWineTests.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ScannedWineTests.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ScannedWineTests.swift.o",
@@ -92,5 +99,12 @@
     "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests~partial.swiftmodule",
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.dia"
   }
 }

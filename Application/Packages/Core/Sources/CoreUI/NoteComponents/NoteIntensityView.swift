@@ -19,13 +19,13 @@ public struct NoteIntensityView: View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(PalateAxis.allCases, id: \.self) { axis in
                 if let onPick {
-                    // A pip is a step of the palate scale (0...9).
-                    PalateReadingLine(name: axis.label, level: MapReading.level(profile[axis]), isStrong: true,
+                    // A pip is a position on the ruler (QUIZ-R05): what is kept is the ruler value there.
+                    PalateReadingLine(name: axis.label, level: MapReading.level(profile, axis), isStrong: true,
                                       isCompact: true) {
-                        onPick(Double($0), axis)
+                        onPick(WineRuler.value(atPosition: Double($0), on: axis), axis)
                     }
                 } else {
-                    PalateReadingLine(name: axis.label, level: MapReading.level(profile[axis]), isStrong: true,
+                    PalateReadingLine(name: axis.label, level: MapReading.level(profile, axis), isStrong: true,
                                       isCompact: true)
                 }
             }

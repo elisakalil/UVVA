@@ -136,7 +136,7 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
         var descriptor = FetchDescriptor<WineEntity>()
         descriptor.propertiesToFetch = [\.wineKey, \.floral, \.body, \.tannin, \.spice, \.oak, \.sweetness, \.acidity, \.fruit]
         let scored: [(entity: WineEntity, score: Double)] = try modelContext.fetch(descriptor)
-            .map { (entity: $0, score: Similarity.between($0.palateMap, map)) }
+            .map { (entity: $0, score: -Similarity.distance($0.palateMap, map)) }
         let ranked = scored
             .sorted { lhs, rhs in
                 if lhs.score != rhs.score { return lhs.score > rhs.score }

@@ -10,7 +10,7 @@ private struct EmptyQuestions: QuizQuestionRepository {
 @MainActor
 private final class RetryMapSave: SaveQuizMapUseCaseProtocol {
     private(set) var attempts = 0
-    func execute(_ map: PalateMap) async throws {
+    func execute(_ map: PalateMap, answers: [PalateAxis: Int]) async throws {
         attempts += 1
         if attempts == 1 { throw CocoaError(.fileWriteUnknown) }
     }
@@ -34,6 +34,7 @@ struct QuizPreparationTests {
         let save = RetryMapSave()
         let model = QuizViewModel(entry: .firstMap, firstName: nil,
                                    loadQuestionsUseCase: LoadQuizQuestionsUseCase(questions: QuestionRepositoryStub()),
+                                   drawMapUseCase: DrawQuizMapUseCase(catalog: nil),
                                    saveMapUseCase: save,
                                    coordinator: QuizCoordinator(entry: .firstMap, onExit: { _ in }))
         try await model.prepare()

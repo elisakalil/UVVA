@@ -7,6 +7,10 @@ public struct NoteUIModel {
     var addedText = ""
     /// On the front label, for a tasted wine.
     var coverTag: String?
+    /// The answer to "Would you drink it again?"; nil before it is tasted.
+    var verdict: Verdict?
+    /// The score from 0 to 5 given with it.
+    var score: Int?
     var photoFront: Data?
     var photoBack: Data?
     var isReadingPhotos = false

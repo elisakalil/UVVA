@@ -42,10 +42,21 @@ public actor PalateMapStore: StoreActor, PalateMapRepository, PalateHistoryRewri
     /// The new map replaces the old one completely; its history starts again with the Quiz (QUIZ-R18a).
     /// Cellar notes keep their saved verdicts.
     public func saveQuizMap(_ map: PalateMap, at date: Date) throws {
+        try saveQuiz(MapChange(date: date, cause: .quiz, values: map.values), map: map)
+    }
+
+    /// The same, keeping the answers and the ruler they were read on (QUIZ-R04a).
+    public func saveQuizMap(_ map: PalateMap, answers: [PalateAxis: Int], at date: Date) throws {
+        try saveQuiz(MapChange(date: date, cause: .quiz, values: map.values, answers: answers,
+                               rulerVersion: WineRuler.version), map: map)
+    }
+
+    private func saveQuiz(_ quiz: MapChange, map: PalateMap) throws {
+        let date = quiz.date
         for old in try modelContext.fetch(FetchDescriptor<PalateMapEntity>()) {
             modelContext.delete(old)
         }
-        let history = [MapChange(date: date, cause: .quiz, values: map.values)]
+        let history = [quiz]
         modelContext.insert(PalateMapEntity(map: map, createdAt: date, history: history))
         try modelContext.save()
     }

@@ -2,9 +2,10 @@ import DesignSystem
 import SwiftUI
 import UIKit
 
-/// The world under the counts of Progress, drawn like the maps of By region: the plain shape of the coasts filled in
-/// white, without the poles, the regions of finished courses as solid dots with a ring, the places of tasted wines as
-/// small white dots. While the Regions or Bottles sheet is open only its pins stay.
+/// The world at the foot of Progress, drawn like the maps of By region: the plain shape of the coasts filled in
+/// white, without the poles, the regions of finished courses as solid dots with a ring, and the places of tasted wines
+/// as heat painted on the land: a wash fading out from each place, rose for one bottle, hotter and wider up to gold as
+/// the bottles from there add up, washes that meet adding up too. While the Regions or Bottles sheet is open only its pins stay.
 ///
 /// The map fills the height of its frame, so the world runs past its sides: a sideways drag moves along it, and it
 /// glides on when the finger lets go. A pinch zooms in where the fingers are; zoomed in, a drag moves the map any way.
@@ -191,8 +192,13 @@ struct ProgressWorldMap: View {
     private func coastline(frame: CGSize, content: CGSize) -> some View {
         let ratio = zoom.scale / drawnZoom.scale
         let shift = coastlineShift(ratio: ratio)
-        return WorldCoastline(frame: frame, contentWidth: content.width, zoom: drawnZoom)
-            .equatable()
+        return ZStack {
+            WorldCoastline(frame: frame, contentWidth: content.width, zoom: drawnZoom)
+                .equatable()
+            WorldHeat(frame: frame, contentWidth: content.width, zoom: drawnZoom, places: model.pins(.bottle))
+                .equatable()
+                .opacity(isShown(.bottle) ? 1 : 0)
+        }
             .frame(width: frame.width * 3, height: frame.height * 3)
             .scaleEffect(ratio, anchor: UnitPoint(x: 1.0 / 3, y: 1.0 / 3))
             .offset(x: -frame.width + shift.width, y: -frame.height + shift.height)
@@ -225,16 +231,37 @@ struct ProgressWorldMap: View {
             .frame(width: 12, height: 12)
             .overlay(alignment: .leading) { label(pin.name).offset(x: 15) }
         case .bottle:
-            // A place of tasted wines: a small white dot, a little wider when several wines come from there.
-            let diameter = Self.bottleDiameter(count: pin.count)
-            Circle()
-                .fill(ink)
-                .frame(width: diameter, height: diameter)
+            // The place is painted on the land (`WorldHeat`); here only its name, beside it.
+            Color.clear
+                .frame(width: 1, height: 1)
                 .overlay(alignment: .leading) {
-                    label(pin.count > 1 ? "\(pin.name) · \(pin.count)" : pin.name).offset(x: diameter + 5)
+                    label(pin.count > 1 ? "\(pin.name) · \(pin.count)" : pin.name)
+                        .offset(x: 6)
                 }
         }
     }
+
+    // MARK: Heat
+
+    /// From this many bottles a place is at its hottest.
+    static let hottest = 8
+
+    /// 0 for one bottle, 1 from `hottest`, rising fast at first: the second bottle from a place shows.
+    static func heat(_ count: Int) -> Double {
+        guard count > 1 else { return 0 }
+        return min(log2(Double(count)) / log2(Double(hottest)), 1)
+    }
+
+    /// Claret, then amber, then gold.
+    static func heatColor(_ heat: Double) -> Color {
+        heat < 0.5
+            ? UVVAColor.heatClaret.mix(with: UVVAColor.heatAmber, by: heat * 2)
+            : UVVAColor.heatAmber.mix(with: UVVAColor.heatGold, by: (heat - 0.5) * 2)
+    }
+
+    /// How far a place's paint reaches on the land, at home: wider as it heats up, from about a country to about
+    /// a region of countries.
+    static func paintRadius(_ heat: Double) -> CGFloat { 22 + 24 * heat }
 
     /// The pin's name to its right, fading in as the map closes in.
     private func label(_ name: String) -> some View {
@@ -246,15 +273,12 @@ struct ProgressWorldMap: View {
             .opacity(min(max((zoom.scale - Self.labelScale + 0.5) / 0.5, 0), 1))
     }
 
-    static func bottleDiameter(count: Int) -> CGFloat { min(5 + CGFloat(count - 1), 8) }
-
     // MARK: Legend
 
     private var legend: some View {
         HStack(spacing: 22) {
             legendItem(String(localized: "Bottles", bundle: .module), kind: .bottle) {
-                Circle().fill(ink).frame(width: 5, height: 5)
-                    .frame(width: 12, height: 12)
+                heatScale
             }
             Spacer(minLength: 8)
             homeControl
@@ -290,12 +314,25 @@ struct ProgressWorldMap: View {
         }
     }
 
+    /// "1 ━━ 8+": the heat from one bottle to the hottest, after "Bottles".
+    private var heatScale: some View {
+        HStack(spacing: 6) {
+            Text(verbatim: "1")
+            Capsule()
+                .fill(LinearGradient(colors: [UVVAColor.heatClaret, UVVAColor.heatAmber, UVVAColor.heatGold],
+                                     startPoint: .leading, endPoint: .trailing))
+                .frame(width: 38, height: 4)
+            Text(verbatim: "\(Self.hottest)+")
+        }
+        .font(UVVAFont.sans(9)).monospacedDigit()
+    }
+
     private func legendItem(_ label: String, kind: ProgressMapPin.Kind, @ViewBuilder symbol: () -> some View) -> some View {
-        HStack(spacing: 8) {
-            symbol()
+        HStack(spacing: 10) {
             Text(label.uppercased()).font(UVVAFont.sans(9)).tracking(2.2)
                 .lineLimit(1)
                 .fixedSize()
+            symbol()
         }
         .opacity(isShown(kind) ? 0.82 : 0.3)
         .accessibilityHidden(true)
@@ -420,22 +457,68 @@ private struct WorldCoastline: View, Equatable {
     var contentWidth: CGFloat
     var zoom: MapZoom
 
-    /// The land projected once, onto a map 1 point wide.
-    private static let unitPath: CGPath = {
-        let atlas = WorldAtlas.shared
-        let aspect = WorldProjection.aspectRatio(box: atlas.box)
-        return WorldProjection(box: atlas.box, size: CGSize(width: 1, height: 1 / aspect)).path(atlas.land)
-    }()
-
     var body: some View {
         Canvas { context, _ in
-            let place = CGAffineTransform(scaleX: contentWidth, y: contentWidth)
-                .concatenating(zoom.transform)
-                .concatenating(CGAffineTransform(translationX: frame.width, y: frame.height))
-            let path = Path(Self.unitPath).applying(place)
+            let place = WorldLand.placement(frame: frame, contentWidth: contentWidth, zoom: zoom)
+            let path = Path(WorldLand.unitPath).applying(place)
             let ink = UVVAColor.creamFill
             context.fill(path, with: .color(ink.opacity(0.1)), style: FillStyle(eoFill: true))
             context.stroke(path, with: .color(ink.opacity(0.5)), lineWidth: 0.6)
+        }
+    }
+}
+
+/// The land on a map 1 point wide, projected once, and where it goes in the drawing of a coastline or of the heat.
+@MainActor
+private enum WorldLand {
+    static let unitProjection: WorldProjection = {
+        let atlas = WorldAtlas.shared
+        let aspect = WorldProjection.aspectRatio(box: atlas.box)
+        return WorldProjection(box: atlas.box, size: CGSize(width: 1, height: 1 / aspect))
+    }()
+
+    static let unitPath: CGPath = unitProjection.path(WorldAtlas.shared.land)
+
+    /// The world at `contentWidth`, shown at `zoom`, inside a drawing with a frame of land around the map.
+    static func placement(frame: CGSize, contentWidth: CGFloat, zoom: MapZoom) -> CGAffineTransform {
+        CGAffineTransform(scaleX: contentWidth, y: contentWidth)
+            .concatenating(zoom.transform)
+            .concatenating(CGAffineTransform(translationX: frame.width, y: frame.height))
+    }
+}
+
+/// The places of tasted wines painted on the land: from each, a wash of its heat's colour, strong at the place and
+/// fading out across the land around it, never over the sea. Washes that meet add up, so a region dense with places
+/// warms as a whole. Drawn, like the coastline, only when its size or zoom changes.
+private struct WorldHeat: View, Equatable {
+    var frame: CGSize
+    var contentWidth: CGFloat
+    var zoom: MapZoom
+    var places: [ProgressMapPin]
+
+    var body: some View {
+        Canvas { context, _ in
+            let place = WorldLand.placement(frame: frame, contentWidth: contentWidth, zoom: zoom)
+            context.clip(to: Path(WorldLand.unitPath).applying(place), style: FillStyle(eoFill: true))
+            context.blendMode = .screen
+            // Closer in, the paint covers more of the map, though less of the land.
+            let reach = pow(zoom.scale, 0.6)
+            for wine in places {
+                let center = WorldLand.unitProjection.point(lon: wine.lon, lat: wine.lat).applying(place)
+                let heat = ProgressWorldMap.heat(wine.count)
+                let color = ProgressWorldMap.heatColor(heat)
+                let radius = ProgressWorldMap.paintRadius(heat) * reach
+                let wash = Gradient(stops: [
+                    .init(color: color.opacity(0.92), location: 0),
+                    .init(color: color.opacity(0.74), location: 0.22),
+                    .init(color: color.opacity(0.4), location: 0.5),
+                    .init(color: color.opacity(0.14), location: 0.78),
+                    .init(color: color.opacity(0), location: 1)
+                ])
+                context.fill(Path(ellipseIn: CGRect(x: center.x - radius, y: center.y - radius,
+                                                    width: radius * 2, height: radius * 2)),
+                             with: .radialGradient(wash, center: center, startRadius: 0, endRadius: radius))
+            }
         }
     }
 }

@@ -9,6 +9,9 @@ import UIKit
 @MainActor
 struct YouViewModelTests {
     let elisa = Profile(id: "u1", authProvider: .apple, authUserID: "a1", firstName: "Elisa", phone: "+351912345678")
+    /// Where a fruit value sits on the ruler, as the map is shown (QUIZ-R05).
+    private func position(_ fruit: Double) -> Double { WineRuler.position(of: fruit, on: .fruit) }
+
     let quiz = MapChange(date: Date(timeIntervalSince1970: 1_790_000_000), cause: .quiz,
                          values: [.acidity: 7, .fruit: 6, .body: 5, .sweetness: 1])
 
@@ -283,8 +286,9 @@ struct YouViewModelTests {
         #expect(map.snapshots.count == 1)
         let selected = try #require(map.snapshots.last)
         #expect(selected.map[.fruit] == 7)
-        #expect(selected.deltas.first { $0.axis == .fruit }?.value == 1)
-        #expect(selected.deltas.first { $0.axis == .sweetness }?.value == -0.5)
+        // Deltas are in position, as the map is shown: dry (1.0) reads 1.5, bone dry (0.5) reads 0.
+        #expect(selected.deltas.first { $0.axis == .fruit }?.value == position(7) - position(6))
+        #expect(selected.deltas.first { $0.axis == .sweetness }?.value == -1.5)
         #expect(selected.deltas.count == 2)
         #expect(map.lastChange == "Your last wine raised your fruit.")
     }
@@ -303,7 +307,7 @@ struct YouViewModelTests {
         #expect(latest.snapshots.map { $0.map[.fruit] } == [6, 8, 6, 8, 6, 8])
         let oldest = try #require(latest.snapshots.first)
         #expect(oldest.map[.fruit] == 6)
-        #expect(oldest.deltas == [MapDeltaRow(axis: .fruit, value: -2)])
+        #expect(oldest.deltas == [MapDeltaRow(axis: .fruit, value: position(6) - position(8))])
     }
 
     @Test func YOU_R10_animatesCoordinatesAndFinishesAtTheSelectedMeasurement() {
@@ -327,7 +331,8 @@ struct YouViewModelTests {
     }
 
     @Test func YOU_R10_magnifiesSmallMovementsOnlyInTheHistoryChart() async throws {
-        let ratings = [6.0, 6.27].enumerated().map { index, fruit in
+        // 0.27 of a position apart on fruit.
+        let ratings = [6.0, 6.135].enumerated().map { index, fruit in
             MapChange(date: quiz.date.addingTimeInterval(Double(index)), cause: .rating(wineKey: "w", verdict: .yes),
                       values: [.acidity: 7, .fruit: fruit, .body: 5, .sweetness: 1.2])
         }
@@ -335,7 +340,7 @@ struct YouViewModelTests {
         let fruit = try #require(PalateAxis.allCases.firstIndex(of: .fruit))
         let coordinates = model.historyChartValues
         #expect(abs(coordinates[1][fruit] - coordinates[0][fruit] - 0.3) < 0.000001)
-        #expect(model.snapshots.map { $0.map[.fruit] } == [6, 6.27])
+        #expect(model.snapshots.map { $0.map[.fruit] } == [6, 6.135])
     }
 
     @Test func YOU_R10_fitsLargeMovementsWithoutCollapsingDistinctCoordinates() async throws {
@@ -359,7 +364,7 @@ struct YouViewModelTests {
         }
         let model = try #require(await make(history: [quiz] + ratings).map.uiModel.content)
         let fruit = try #require(model.historyDeltas.first { $0.axis == .fruit })
-        #expect(abs(fruit.value - (-0.72)) < 0.000001)
+        #expect(abs(fruit.value - (position(7.28) - position(8))) < 0.000001)
         #expect(model.historyDeltas.map(\.axis) == [.fruit])
     }
 

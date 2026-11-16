@@ -96,15 +96,22 @@ struct QuizFlowTests {
 
     // MARK: QUIZ-R04 · Intensidade
 
-    @Test func QUIZ_R04_mapKeepsEachPositionAsItIs() {
+    @Test func QUIZ_R04a_mapReadsEachAnswerOnTheRuler() {
         var flow = QuizFlow()
         flow.start()
-        for position in [1, 6, 3, 3, 4, 2, 2, 3] {
+        let answers = [1, 6, 3, 3, 4, 2, 2, 3]
+        for position in answers {
             flow.select(position)
             flow.next()
         }
-        #expect(flow.map?[.acidity] == 6)
-        #expect(flow.map?[.sweetness] == 1)
+        for (axis, answer) in zip(QuizFlow.order, answers) {
+            #expect(flow.map?[axis] == WineRuler.value(of: answer, on: axis))
+        }
+    }
+
+    @Test func QUIZ_R04a_sweetness_onlyReachesASweetWineWhenItRunsHigh() {
+        #expect(flow(answering: 8, with: 5).map![.sweetness] <= 2)
+        #expect(flow(answering: 8, with: 9).map![.sweetness] >= 8)
     }
 
     // MARK: QUIZ-R18 · Read it again

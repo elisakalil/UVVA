@@ -130,19 +130,19 @@ public enum Certification {
     static func note(for designation: String, strength: DesignationStrength?, country: String?) -> String? {
         switch (designation, country, strength) {
         case ("Grande Reserva", "Portugal", .strong?):
-            "In Portugal, Grande Reserva is granted by the regional wine commission, after tasting, only to wines of outstanding quality."
+            "In Portugal: approved by tasting, for outstanding wines."
         case ("Gran Reserva", "Spain", .strong?):
-            "In Spain, a red Gran Reserva ages at least five years before release, a year and a half or more of it in oak."
+            "In Spain: 5 years of ageing, 18 months in oak."
         case ("Riserva", "Italy", .strong?):
-            "In Italy, Riserva means longer ageing than the appellation's standard wine, as its rules set."
+            "In Italy: longer ageing than the standard wine."
         case ("Reserva", "Portugal", .aged?):
-            "In Portugal, Reserva is granted by the regional wine commission, after tasting, to wines of distinct quality."
+            "In Portugal: approved by tasting."
         case ("Reserva", "Spain", .aged?):
-            "In Spain, a red Reserva ages at least three years before release, one of them in oak."
+            "In Spain: 3 years of ageing, 1 in oak."
         case ("Crianza", "Spain", .aged?):
-            "In Spain, a red Crianza ages at least two years before release, six months or more of it in oak."
+            "In Spain: 2 years of ageing, 6 months in oak."
         case (_, _, .weak?):
-            "A term the law does not define here: the producer's own mark of a selected wine."
+            "Not defined by law here: the producer's own term."
         default:
             nil
         }

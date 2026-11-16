@@ -16,10 +16,13 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
     var headerAccessory: HeaderAccessory
     /// After the name: the photos and "Your note" of a saved note.
     var afterHeader: AfterHeader
+    private let sectionSpacing: CGFloat?
+    private let standaloneFactLabels: [String]
 
     private let ink = UVVAColor.mossDeep
 
     public init(content: WineSheetContent, strings: WineSheetStrings, onFindWine: (() -> Void)?,
+                sectionSpacing: CGFloat? = nil, standaloneFactLabels: [String] = [],
                 @ViewBuilder headerAccessory: () -> HeaderAccessory,
                 @ViewBuilder afterHeader: () -> AfterHeader) {
         self.content = content
@@ -27,6 +30,8 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
         self.onFindWine = onFindWine
         self.headerAccessory = headerAccessory()
         self.afterHeader = afterHeader()
+        self.sectionSpacing = sectionSpacing
+        self.standaloneFactLabels = standaloneFactLabels
     }
 
     public var body: some View {
@@ -34,26 +39,15 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
             header
             afterHeader
             if content.percentage != nil {
-                palate.padding(.top, 40)
+                palate.padding(.top, sectionSpacing ?? 40)
             }
             // After the match and before the facts, as in the new note (CELLAR-R30).
             if let certificate = content.certificate {
-                WineCertificateCard(certificate: certificate).padding(.top, 40)
+                WineCertificateCard(certificate: certificate).padding(.top, sectionSpacing ?? 40)
             }
-            facts.padding(.top, 44)
-            if let pairings = content.pairings {
-                section(strings.pairings, top: 44, gap: 14) { paragraph(pairings) }
-            }
-            if content.showsServing {
-                section(strings.serve, top: 44, gap: 14) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        if let temperature = content.servingTemperature {
-                            Text(temperature).font(UVVAFont.sans(12.5, .regular))
-                        }
-                        if let howToServe = content.howToServe { paragraph(howToServe) }
-                    }
-                }
-            }
+            WineSheetFacts(content: content, strings: strings, spacing: sectionSpacing ?? 44,
+                           standaloneFactLabels: standaloneFactLabels)
+                .padding(.top, sectionSpacing ?? 44)
             if let onFindWine {
                 WineSheetButton(title: strings.findWine, style: .outlined, action: onFindWine)
                     .padding(.top, 32)
@@ -61,16 +55,18 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
             // The axes in dots over the maps, as in the Hero.
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(PalateAxis.allCases, id: \.self) { axis in
-                    PalateReadingLine(name: axis.label, level: MapReading.level(content.profile[axis]), isStrong: true)
+                    let level = MapReading.level(content.profile, axis)
+                    PalateReadingLine(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
+                                      isStrong: true)
                 }
             }
-            .padding(.top, 44)
+            .padding(.top, sectionSpacing ?? 44)
             WineMapCarousel(copy: .init(wineTitle: strings.wineMap, comparisonTitle: strings.comparison,
                                         wineLegend: strings.wineLegend, palateLegend: strings.palateLegend,
                                         overlapLegend: strings.overlapLegend),
                             labels: PalateAxis.allCases.map(\.label), wine: content.profile.chartValues,
                             palate: content.palate?.chartValues, tint: ink)
-                .padding(.top, 44)
+                .padding(.top, sectionSpacing ?? 44)
         }
         .foregroundStyle(ink)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -113,24 +109,70 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
         }
     }
 
-    private var facts: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 24, alignment: .topLeading), count: 2),
-                  alignment: .leading, spacing: 22) {
-            ForEach(content.facts) { fact in
-                VStack(alignment: .leading, spacing: 6) {
-                    label(fact.label)
-                    Text(fact.value.isEmpty ? "—" : fact.value)
-                        .font(UVVAFont.sans(12.5, .regular))
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .accessibilityElement(children: .combine)
-            }
-        }
+    private func paragraph(_ text: String) -> some View {
+        Text(text)
+            .font(UVVAFont.sans(13))
+            .lineSpacing(4)
+            .foregroundStyle(ink.opacity(0.82))
+            .fixedSize(horizontal: false, vertical: true)
+    }
+}
+
+/// The wine's facts (HOME-R28a): Origin, Producer, Style and Vintage in two columns, the facts shown on their own
+/// (a note's Grapes and Notes), Pairings and How to serve, `spacing` apart.
+public struct WineSheetFacts: View {
+    var content: WineSheetContent
+    var strings: WineSheetStrings
+    var spacing: CGFloat
+    var standaloneFactLabels: [String]
+
+    private let ink = UVVAColor.mossDeep
+
+    public init(content: WineSheetContent, strings: WineSheetStrings, spacing: CGFloat,
+                standaloneFactLabels: [String] = []) {
+        self.content = content
+        self.strings = strings
+        self.spacing = spacing
+        self.standaloneFactLabels = standaloneFactLabels
     }
 
-    private func section<Content: View>(_ title: String, top: CGFloat, gap: CGFloat = 18,
-                                        @ViewBuilder content: () -> Content) -> some View {
-        VStack(alignment: .leading, spacing: gap) {
+    public var body: some View {
+        VStack(alignment: .leading, spacing: spacing) {
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 24, alignment: .topLeading), count: 2),
+                      alignment: .leading, spacing: 22) {
+                ForEach(content.facts.filter { !standaloneFactLabels.contains($0.label) }) { fact in
+                    VStack(alignment: .leading, spacing: 6) {
+                        label(fact.label)
+                        Text(fact.value.isEmpty ? "—" : fact.value)
+                            .font(UVVAFont.sans(12.5, .regular))
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+            }
+            ForEach(content.facts.filter { standaloneFactLabels.contains($0.label) }) { fact in
+                section(fact.label) { paragraph(fact.value.isEmpty ? "—" : fact.value) }
+            }
+            if let pairings = content.pairings {
+                section(strings.pairings) { paragraph(pairings) }
+            }
+            if content.showsServing {
+                section(strings.serve) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        if let temperature = content.servingTemperature {
+                            Text(temperature).font(UVVAFont.sans(12.5, .regular))
+                        }
+                        if let howToServe = content.howToServe { paragraph(howToServe) }
+                    }
+                }
+            }
+        }
+        .foregroundStyle(ink)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func section<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
             Text(title.uppercased())
                 .font(UVVAFont.sans(9, .medium))
                 .tracking(3.1)
@@ -139,7 +181,6 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
             content()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.top, top)
     }
 
     private func label(_ text: String) -> some View {

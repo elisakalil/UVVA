@@ -16,7 +16,7 @@ public struct QualityPrevalence: Codable, Equatable, Sendable {
         self.recognition = recognition
     }
 
-    func share(_ tier: AppellationTier?) -> Double {
+    public func share(_ tier: AppellationTier?) -> Double {
         switch tier {
         case .top: appellation["top"] ?? 1
         case .protected: appellation["protected"] ?? 1
@@ -25,7 +25,7 @@ public struct QualityPrevalence: Codable, Equatable, Sendable {
         }
     }
 
-    func share(_ strength: DesignationStrength?) -> Double {
+    public func share(_ strength: DesignationStrength?) -> Double {
         switch strength {
         case .strong: designation["strong"] ?? 1
         case .aged: designation["aged"] ?? 1
@@ -40,10 +40,11 @@ public struct QualityPrevalence: Codable, Equatable, Sendable {
 }
 
 /// "Top X% of the world's wines" (CELLAR-R30): the share of the world's wines with signals at least as strong as this
-/// wine's on all three criteria, taken as independent. Shown only in the top 10 %, so it stays a mark of note.
+/// wine's on all three criteria, taken as independent. Shown only in the top 20 %: a top appellation alone gets there,
+/// and the card then shows the seal (2026-11-14).
 public enum QualityEstimate {
-    /// Above this, the card leads with the appellation's level in plain words instead.
-    public static let shownUpTo = 10
+    /// Above this, the card leads with a title on the appellation instead, and no seal.
+    public static let shownUpTo = 20
 
     public static func topPercent(tier: AppellationTier?, strength: DesignationStrength?, recognition: Int,
                                   prevalence: QualityPrevalence) -> Int? {

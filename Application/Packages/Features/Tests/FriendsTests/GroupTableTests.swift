@@ -7,7 +7,7 @@ import Testing
 struct GroupTableTests {
     let social = SocialFake()
     let repository = FriendsRepositoryFake()
-    let userMap = PalateMap([.acidity: 7, .fruit: 7])
+    let userMap = PalateMap.positions([.acidity: 7, .fruit: 7])
 
     func makeList() -> FriendsViewModel {
         FriendsFactory(profiles: ProfilesStub(), maps: MapStub(map: userMap), friends: repository, catalog: CatalogStub(),
@@ -99,16 +99,16 @@ struct GroupTableTests {
     // MARK: FRI-R19 · Resultado
 
     @Test func FRI_R19_rangeFromLowestToHighest() {
-        let friends = [7.0, 7, 8].enumerated().map { friend("f\($0.offset)", PalateMap([.acidity: $0.element])) }
-        let builder = GroupTablePresentationBuilder(userMap: PalateMap([.acidity: 6]), friends: friends, bottles: nil,
+        let friends = [7.0, 7, 8].enumerated().map { friend("f\($0.offset)", PalateMap.positions([.acidity: $0.element])) }
+        let builder = GroupTablePresentationBuilder(userMap: PalateMap.positions([.acidity: 6]), friends: friends, bottles: nil,
                                                     resources: GroupTableResourcesUIModel())
         #expect(builder.readings.first { $0.name == "Acidity" }?.rangeText == "6–8")
     }
 
     @Test func FRI_R19_noSharedAxes_tableOfFour() {
-        let friends = [friend("a", PalateMap([.tannin: 8])), friend("b", PalateMap([.sweetness: 8])),
-                       friend("c", PalateMap([.floral: 8]))]
-        let builder = GroupTablePresentationBuilder(userMap: PalateMap([.acidity: 8]), friends: friends, bottles: nil,
+        let friends = [friend("a", PalateMap.positions([.tannin: 8])), friend("b", PalateMap.positions([.sweetness: 8])),
+                       friend("c", PalateMap.positions([.floral: 8]))]
+        let builder = GroupTablePresentationBuilder(userMap: PalateMap.positions([.acidity: 8]), friends: friends, bottles: nil,
                                                     resources: GroupTableResourcesUIModel())
         #expect(builder.phrase == "Nothing lines up across all 4 — the menu is built on compromise.")
     }

@@ -43,7 +43,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
          maps: (any PalateMapRepository)? = nil, catalog: LabelCatalogCache? = nil,
          readingLog: LabelReadingLog? = nil, onSaved: @escaping (String) -> Void) {
         if let wine, let entry = editing {
-            flow = NewNoteFlow(editing: wine, verdict: entry.verdict, note: entry.note,
+            flow = NewNoteFlow(editing: wine, verdict: entry.verdict, score: entry.score, note: entry.note,
                                photoFront: entry.photoFront, photoBack: entry.photoBack)
         } else if let wine {
             flow = NewNoteFlow(wine: wine, ratedVerdict: ratedVerdict)
@@ -137,7 +137,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         }
     }
 
-    public func replacePhoto(_ photo: Data) { flow.replacePhoto(photo) }
+    public func replacePhoto(_ photo: Data, side: NewNotePhotoSide) { flow.replacePhoto(photo, side: side) }
 
     public func answer(hasTasted: Bool) {
         errorText = nil
@@ -147,6 +147,11 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     public func pick(_ verdict: Verdict) {
         errorText = nil
         flow.pick(verdict)
+    }
+
+    public func rate(_ verdict: Verdict, score: Int?) {
+        errorText = nil
+        flow.rate(verdict, score: score)
     }
 
     public func updateNote(_ text: String) { flow.note = text }

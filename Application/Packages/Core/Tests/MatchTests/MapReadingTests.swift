@@ -4,14 +4,14 @@ import Testing
 @testable import Match
 
 struct MapReadingTests {
-    let example = MapReading(map: PalateMap([.sweetness: 1, .acidity: 4, .tannin: 3, .body: 3,
+    let example = MapReading(position: PalateMap([.sweetness: 1, .acidity: 4, .tannin: 3, .body: 3,
                                              .fruit: 4, .floral: 2, .oak: 2, .spice: 3]))
-    let shaped = MapReading(map: PalateMap([.acidity: 8, .fruit: 7, .body: 6, .tannin: 5,
+    let shaped = MapReading(position: PalateMap([.acidity: 8, .fruit: 7, .body: 6, .tannin: 5,
                                             .spice: 4, .floral: 3, .oak: 2, .sweetness: 1]))
 
     private func reading(_ value: Double, except: [PalateAxis: Double] = [:]) -> MapReading {
         let values = Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, value) })
-        return MapReading(map: PalateMap(values.merging(except) { $1 }))
+        return MapReading(position: PalateMap(values.merging(except) { $1 }))
     }
 
     // MARK: QUIZ-R14, R14a · Ranking e empates
@@ -144,6 +144,17 @@ struct MapReadingTests {
         #expect(MapReading.levelWord(6) == "Quite a lot")
         #expect(MapReading.levelWord(0) == "None")
         #expect(MapReading.levelWord(9) == "As much as possible")
+    }
+
+    @Test func QUIZ_R04a_aMapIsReadByItsPosition_notItsRawValues() {
+        // Floral 5.5 is more floral than most wines; acidity 6.5 is an ordinary wine.
+        let reading = MapReading(map: WineRuler.map([.floral: 8, .acidity: 5, .body: 4, .tannin: 4, .spice: 4,
+                                                     .oak: 4, .sweetness: 4, .fruit: 4]))
+        #expect(reading.map[.floral] == 5.5)
+        #expect(reading.map[.acidity] == 6.5)
+        #expect(reading.highlighted.first == .floral)
+        #expect(MapReading.level(reading.map, .floral) == 8)
+        #expect(AxisTone(reading.map, .acidity) == .neutral)
     }
 
     @Test func QUIZ_R14a_fiveIsNeitherHighNorLow() {

@@ -11,6 +11,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityEstimate.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Current.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Packed.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLore.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapEvolution.swift
@@ -18,6 +19,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapShape.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapSnapshot.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecalculateMapUseCase.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/ScannedWine.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Similarity.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/TableMatch.swift

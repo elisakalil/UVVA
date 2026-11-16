@@ -143,7 +143,7 @@ final class AppCoordinator {
     private func prepareQuiz(_ entry: QuizEntry) async throws {
         try await content.waitForQuestions()
 
-        let model = QuizFactory(questions: questions, maps: maps).makeViewModel(
+        let model = QuizFactory(questions: questions, maps: maps, catalog: catalog).makeViewModel(
             entry: entry, firstName: profile?.firstName,
             coordinator: QuizCoordinator(entry: entry) { [weak self] exit in
                 self?.finishQuiz(exit)

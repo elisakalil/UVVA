@@ -40,6 +40,15 @@
         }
       }
     },
+    "A faint blossom" : {
+
+    },
+    "A hint of flowers" : {
+
+    },
+    "A hint of oak" : {
+
+    },
     "A little" : {
 
     },
@@ -49,7 +58,13 @@
     "A lot" : {
 
     },
+    "A touch of pepper" : {
+
+    },
     "A trace" : {
+
+    },
+    "A whisper of grip" : {
 
     },
     "acidity is the first thing you notice, and it is what keeps a wine awake for you" : {
@@ -67,7 +82,49 @@
     "balance, most axes in the middle" : {
 
     },
+    "Balanced" : {
+
+    },
+    "Barely any grip" : {
+
+    },
+    "Barely any oak" : {
+
+    },
+    "Barely floral" : {
+
+    },
+    "Barely spiced" : {
+
+    },
+    "Bone dry" : {
+
+    },
+    "Bright" : {
+
+    },
+    "Bursting with fruit" : {
+
+    },
+    "Clearly floral" : {
+
+    },
+    "Clearly fruity" : {
+
+    },
+    "Clearly spicy" : {
+
+    },
+    "Crisp" : {
+
+    },
     "Drinks for %@." : {
+
+    },
+    "Dry" : {
+
+    },
+    "Dry, a touch of sugar" : {
 
     },
     "Even on seven axes, quietest on %@." : {
@@ -91,7 +148,49 @@
     "Everything but %@" : {
 
     },
+    "Feather-light" : {
+
+    },
+    "Firm" : {
+
+    },
+    "Firm and drying" : {
+
+    },
+    "Flat, very soft" : {
+
+    },
+    "Floral" : {
+
+    },
     "floral aromatics read as soap to you" : {
+
+    },
+    "Fresh" : {
+
+    },
+    "Fruity" : {
+
+    },
+    "Full" : {
+
+    },
+    "Full and broad" : {
+
+    },
+    "Gentle" : {
+
+    },
+    "Gentle grip" : {
+
+    },
+    "Gently floral" : {
+
+    },
+    "Gently spicy" : {
+
+    },
+    "Grippy" : {
 
     },
     "High on all eight axes." : {
@@ -109,16 +208,85 @@
     "In the middle on most axes" : {
 
     },
+    "Juicy" : {
+
+    },
+    "Just off-dry" : {
+
+    },
     "Leaning most toward %@" : {
 
     },
+    "Light" : {
+
+    },
+    "Light fruit" : {
+
+    },
+    "Light oak" : {
+
+    },
+    "Light to medium" : {
+
+    },
+    "Lightly floral" : {
+
+    },
+    "Lightly spiced" : {
+
+    },
+    "Lusciously sweet" : {
+
+    },
+    "Lush fruit" : {
+
+    },
     "many things at once" : {
+
+    },
+    "Medium" : {
+
+    },
+    "Medium grip" : {
+
+    },
+    "Medium-dry" : {
+
+    },
+    "Medium-full" : {
+
+    },
+    "Medium-light" : {
+
+    },
+    "Medium-sweet" : {
+
+    },
+    "Medium, rounded" : {
+
+    },
+    "Moderate" : {
 
     },
     "most of the map runs high: you want a wine that does a lot at once, with no single axis in charge" : {
 
     },
     "most of the map stays quiet: you want restraint more than power" : {
+
+    },
+    "Mouth-filling" : {
+
+    },
+    "New oak up front" : {
+
+    },
+    "No flowers" : {
+
+    },
+    "No grip, like a white" : {
+
+    },
+    "No spice" : {
 
     },
     "None" : {
@@ -130,13 +298,31 @@
     "nothing on the map is truly low: you leave room for every part of a wine" : {
 
     },
+    "Noticeable oak" : {
+
+    },
     "Noticeably" : {
+
+    },
+    "Oaky, vanilla and toast" : {
+
+    },
+    "Off-dry" : {
+
+    },
+    "Old oak, hardly felt" : {
 
     },
     "pepper and clove are what you go looking for" : {
 
     },
+    "Peppery and bold" : {
+
+    },
     "perfume pulls you in before structure ever does" : {
+
+    },
+    "Perfumed" : {
 
     },
     "Pour almost anything: nothing on this map sends a glass back." : {
@@ -146,6 +332,9 @@
 
     },
     "Pour something loud and the glass comes back. Politely." : {
+
+    },
+    "Powerful, mouth-drying" : {
 
     },
     "Quiet on all eight axes." : {
@@ -160,10 +349,19 @@
     "Quite a lot" : {
 
     },
+    "Racy, mouth-watering" : {
+
+    },
+    "Restrained, little fruit" : {
+
+    },
     "restraint, every axis kept low" : {
 
     },
     "restraint, most axes kept low" : {
+
+    },
+    "Ripe fruit" : {
 
     },
     "ripe fruit is the point for you, not a beginner's phase to grow out of" : {
@@ -175,16 +373,40 @@
     "sharpness tires you out; you want a rounder line through the middle" : {
 
     },
+    "Soft" : {
+
+    },
+    "Soft, like a light red" : {
+
+    },
     "Some" : {
+
+    },
+    "Some fruit" : {
+
+    },
+    "Some oak" : {
+
+    },
+    "Some spice" : {
 
     },
     "spice distracts you from the fruit" : {
 
     },
+    "Spicy" : {
+
+    },
     "Strongest on %@" : {
 
     },
+    "Subtle fruit" : {
+
+    },
     "sugar reads as a flaw to you, and dry means dry" : {
+
+    },
+    "Sweet" : {
 
     },
     "tannin gets in the way for you; you want fruit without the scaffolding" : {
@@ -193,10 +415,22 @@
     "The shape of what you reach for in a glass." : {
 
     },
+    "Unoaked" : {
+
+    },
     "vanilla, smoke and toast are part of the pleasure, not a cover-up" : {
 
     },
+    "Very floral" : {
+
+    },
     "Very much" : {
+
+    },
+    "Very oaky" : {
+
+    },
+    "Very spicy" : {
 
     },
     "you look past fruit for earth, salt and stone" : {
@@ -212,6 +446,9 @@
 
     },
     "you want weight in the glass, something that coats and stays" : {
+
+    },
+    "Zesty" : {
 
     }
   },

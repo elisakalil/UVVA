@@ -126,7 +126,7 @@ public actor CatalogWriter: StoreActor {
                                         \.acidity, \.fruit]
         let removable = try modelContext.fetch(descriptor)
             .filter { $0.source != WineEntity.scannedSource && !protected.contains($0.wineKey) }
-            .map { (entity: $0, score: Similarity.between($0.palateMap, map)) }
+            .map { (entity: $0, score: -Similarity.distance($0.palateMap, map)) }
             .sorted { lhs, rhs in
                 if lhs.score != rhs.score { return lhs.score < rhs.score }
                 return lhs.entity.wineKey > rhs.entity.wineKey

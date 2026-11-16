@@ -22,7 +22,8 @@ struct MapChangeTests {
         let rating = Rating.last(in: history)
         #expect(rating?.wineKey == "b")
         #expect(rating?.verdict == .yes)
-        #expect(rating?.deltas[.acidity] == 1)
+        // In position on the ruler, as the map is shown: acidity 4.5 → 5.5 is answer 1 → answer 3.
+        #expect(rating?.deltas[.acidity] == 2)
         #expect(abs((rating?.deltas[.oak] ?? 0) + 0.2) < 0.0001)
     }
 

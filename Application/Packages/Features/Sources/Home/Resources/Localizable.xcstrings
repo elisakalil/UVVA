@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "·" : {
+
+    },
     "/%lld" : {
 
     },
@@ -34,6 +37,9 @@
 
     },
     "%lld%%" : {
+
+    },
+    "© %@ UVVA" : {
 
     },
     "+" : {
@@ -99,9 +105,6 @@
     },
     "Austria" : {
       "extractionState" : "manual"
-    },
-    "away from your map" : {
-
     },
     "Back" : {
 
@@ -1414,6 +1417,9 @@
           }
         }
       }
+    },
+    "version %@" : {
+
     },
     "Vintage" : {
 

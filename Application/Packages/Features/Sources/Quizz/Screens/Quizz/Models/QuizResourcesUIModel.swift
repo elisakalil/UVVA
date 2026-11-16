@@ -8,6 +8,10 @@ struct QuizResourcesUIModel {
     var palateMapText = String(localized: "Palate map", bundle: .module)
     var yourTasteIsText = String(localized: "Your taste is", bundle: .module)
     var yourReadingsText = String(localized: "Your readings", bundle: .module)
+    /// QUIZ-R04a to R04c, in the sheet of "Where the map points": the map is the answers settled among real wines,
+    /// not the answers.
+    var howTheMapIsDrawnText = String(localized: "How your map is drawn", bundle: .module)
+    var answersStartingPointText = String(localized: "Your answers were the starting point. We read them in wine terms and settled them among real wines, so your map points to bottles that exist. What you lean toward stays: love floral, and your map leans to the more floral wines.", bundle: .module)
     var whereTheMapPointsText = String(localized: "Where the map points", bundle: .module)
     var keepThisMapText = String(localized: "Keep this map", bundle: .module)
     var readItAgainText = String(localized: "Read it again", bundle: .module)

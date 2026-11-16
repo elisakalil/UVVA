@@ -31,6 +31,8 @@ public final class CellarEntryEntity {
     public var status = Status.wantToTry.rawValue
     /// `yes`, `maybe` or `no`; only when tasted.
     public var verdict: String?
+    /// 0 to 5, given with the verdict (CELLAR-R18).
+    public var score: Int?
     public var note: String?
     @Attribute(.externalStorage) public var photoFront: Data?
     @Attribute(.externalStorage) public var photoBack: Data?

@@ -2,10 +2,9 @@ import Core
 import Foundation
 import Match
 
-/// The certificate card of a wine (CELLAR-R30), in WineDetail, the new note and a saved note. Closed, two lines: the
-/// "Top X%" when the wine is in the top 10 %, or else the appellation's level in plain words, and under it what it
-/// rests on. Open,
-/// one section per criterion: the appellation, the legal term, the awards, and how the "Top X%" is worked out.
+/// The certificate card of a wine (CELLAR-R30), in WineDetail, the new note and a saved note. Closed, two lines: "Among
+/// the top X% of the world's wines" with the seal when the wine is in the top 20 %, or else a title on its appellation,
+/// and under it what it rests on. Open, one section per criterion: the appellation, the legal term and the awards.
 public struct WineCertificateUIModel: Equatable {
     public struct Section: Equatable, Identifiable {
         /// "Appellation", in small capitals.
@@ -28,19 +27,22 @@ public struct WineCertificateUIModel: Equatable {
     /// "Regional, free to experiment · Lisboa · Grande Reserva".
     public var subline: String?
     public var sections: [Section]
+    /// The seal, only for an appellation at the top of its country's ladder (DOCG, Grand Cru…).
+    public var showsSeal = false
     public var moreText = String(localized: "More", bundle: .module)
     public var lessText = String(localized: "Less", bundle: .module)
 
-    public init(headline: String, subline: String? = nil, sections: [Section] = []) {
+    public init(headline: String, subline: String? = nil, sections: [Section] = [], showsSeal: Bool = false) {
         self.headline = headline
         self.subline = subline
         self.sections = sections
+        self.showsSeal = showsSeal
     }
 
     /// Nil for a wine with nothing that certifies it: the card is not shown.
     public init?(wine: Wine, prevalence: QualityPrevalence? = .current) {
         guard let certificate = Certification.make(for: wine, prevalence: prevalence) else { return nil }
-        self.init(certificate)
+        self.init(certificate, prevalence: prevalence)
     }
 
     /// A saved note's card: the "Top X%" it was saved with (`CellarEntry.certificateTop`), not one worked out again.
@@ -55,22 +57,22 @@ public struct WineCertificateUIModel: Equatable {
         self.init(certificate)
     }
 
-    init(_ certificate: WineCertificate) {
-        let level = certificate.tier.map(Self.level)
-        // A regional wine says its place; the others say their category too, which is what ranks them.
-        let place = certificate.tier == .regional
-            ? certificate.appellation ?? certificate.category
-            : certificate.printed ?? certificate.category
+    /// A wine in the top 20 % shows the seal, "Among the top 2% of the world's wines" and what puts it there; open,
+    /// each reason in a line and how rare it is. Any other wine gets a title on its appellation, no seal, and open,
+    /// what its seal requires (CELLAR-R30).
+    init(_ certificate: WineCertificate, prevalence: QualityPrevalence? = .current) {
+        let isTop = certificate.topPercent != nil
+        showsSeal = isTop || certificate.tier == .top
         let count = certificate.awards.count
         let awards = count == 0 ? nil : count == 1
             ? String(localized: "1 award", bundle: .module)
             : String(localized: "\(count) awards", bundle: .module)
         if let top = certificate.topPercent {
-            headline = String(localized: "Top \(top)% of the world's wines", bundle: .module)
-            subline = Self.joined([level, place, certificate.designation, awards])
-        } else if let level {
-            headline = level
-            subline = Self.joined([place, certificate.designation, awards])
+            headline = String(localized: "Among the top \(top)% of the world's wines", bundle: .module)
+            subline = Self.joined(certificate.basis) ?? Self.joined([certificate.printed, certificate.designation])
+        } else if let tier = certificate.tier {
+            headline = Self.headline(tier, place: certificate.appellation)
+            subline = Self.joined([certificate.printed ?? certificate.category, certificate.designation, awards])
         } else if let designation = certificate.designation {
             headline = designation
             subline = awards
@@ -80,36 +82,80 @@ public struct WineCertificateUIModel: Equatable {
         }
 
         var sections: [Section] = []
-        if certificate.printed != nil || certificate.category != nil {
+        if let name = certificate.printed ?? certificate.category {
+            var lines = Self.explanation(of: certificate.category, isTop: isTop)
+                ?? [certificate.insight].compactMap { $0 }
+            if isTop, certificate.tier == .top, let share = prevalence?.share(.top), share > 0 {
+                lines.append(String(localized: "Only 1 in \(Int((1 / share).rounded())) wines.", bundle: .module))
+            }
             sections.append(Section(title: String(localized: "Appellation", bundle: .module),
-                                    value: Self.joined([certificate.printed ?? certificate.category, level]),
-                                    lines: [certificate.insight].compactMap { $0 }))
+                                    value: Self.lead(name, category: certificate.category), lines: lines))
         }
         if let designation = certificate.designation {
+            var lines = [certificate.designationNote].compactMap { $0 }
+            if isTop, let strength = certificate.designationStrength, strength >= .aged,
+               let share = prevalence?.share(strength) {
+                let percent = max(1, Int((share * 100).rounded()))
+                lines.append(String(localized: "Only \(percent)% of wines.", bundle: .module))
+            }
             sections.append(Section(title: String(localized: "Legal term", bundle: .module), value: designation,
-                                    lines: [certificate.designationNote].compactMap { $0 }))
+                                    lines: lines))
         }
         if !certificate.awards.isEmpty {
             sections.append(Section(title: String(localized: "Awards", bundle: .module),
                                     lines: certificate.awards.map(\.text)))
         }
-        if let top = certificate.topPercent {
-            // "Trophy · Concurso Vinhos de Portugal." ends its own sentence: one full stop, not two.
-            let basis = certificate.basis.map { $0.trimmingCharacters(in: CharacterSet(charactersIn: ". ")) }
-                .joined(separator: ", ")
-            sections.append(Section(
-                title: String(localized: "How UVVA estimates it", bundle: .module),
-                lines: [String(localized: "About \(top)% of the world's wines show signals at least as strong: \(basis). An estimate from the label, measured on UVVA's catalog.", bundle: .module)]))
-        }
         self.sections = sections
     }
 
-    /// The appellation's level, as the card names it: what it promises the drinker, not the legal term.
-    static func level(_ tier: AppellationTier) -> String {
-        switch tier {
-        case .top: String(localized: "Among its country's finest", bundle: .module)
-        case .protected: String(localized: "Made by strict local rules", bundle: .module)
-        case .regional: String(localized: "Regional, free to experiment", bundle: .module)
+    /// The title of a wine outside the top: "Authentic Bordeaux Supérieur", "Lisboa, unbound".
+    static func headline(_ tier: AppellationTier, place: String?) -> String {
+        switch (tier, place) {
+        case (.top, _): String(localized: "Among its country's finest", bundle: .module)
+        case let (.protected, place?): String(localized: "Authentic \(place)", bundle: .module)
+        case (.protected, nil): String(localized: "A wine with a seal of origin", bundle: .module)
+        case let (.regional, place?): String(localized: "\(place), unbound", bundle: .module)
+        case (.regional, nil): String(localized: "A regional wine, unbound", bundle: .module)
+        }
+    }
+
+    /// The appellation, leading into what its seal requires: "Bordeaux Supérieur AOC, by law requires:".
+    static func lead(_ name: String, category: String?) -> String {
+        switch category {
+        case "DOC", "DOP", "DO", "AOC", "AOP", "DAC", "Prädikatswein", "Qualitätswein":
+            String(localized: "\(name), by law requires:", bundle: .module)
+        case "IGT", "IGP", "IG", "Vinho Regional", "Vin de Pays", "Vino de la Tierra", "Landwein":
+            String(localized: "\(name), fewer rules than a DOC:", bundle: .module)
+        default:
+            name
+        }
+    }
+
+    /// What the seal means, short; lines may bold their lead word. Nil for a category without its own lines, which
+    /// falls back on the catalog's.
+    static func explanation(of category: String?, isTop: Bool) -> [String]? {
+        switch category {
+        case "DOCG": [String(localized: "Italy's top level, with an official tasting.", bundle: .module)]
+        case "DOCa", "DOQ": [String(localized: "Spain's top level: only Rioja and Priorat.", bundle: .module)]
+        case "Grand Cru": [String(localized: "The region's finest vineyards.", bundle: .module)]
+        case "Premier Cru": [String(localized: "Just below Grand Cru.", bundle: .module)]
+        case "Cru Classé", "Grand Cru Classé", "Premier Grand Cru Classé":
+            [String(localized: "Officially ranked among the region's best.", bundle: .module)]
+        case "Grosse Lage": [String(localized: "Germany's top vineyards.", bundle: .module)]
+        case "DOC", "DOP", "DO", "AOC", "AOP", "DAC", "Prädikatswein", "Qualitätswein":
+            [String(localized: "**Region:** 100% local grapes.", bundle: .module),
+             String(localized: "**Grapes:** only the permitted ones.", bundle: .module),
+             String(localized: "**Method:** a yield limit and an official tasting.", bundle: .module)]
+                + (isTop ? [] : [String(localized: "It guarantees the origin, not the quality.", bundle: .module)])
+        case "AVA": [String(localized: "A US region: 85% local grapes, no other rules.", bundle: .module)]
+        case "VQA": [String(localized: "Canada's seal: local grapes, an official tasting.", bundle: .module)]
+        case "WO": [String(localized: "South Africa's seal: local grapes.", bundle: .module)]
+        case "IGT", "IGP", "IG", "Vinho Regional", "Vin de Pays", "Vino de la Tierra", "Landwein":
+            [String(localized: "**Region:** 85% local grapes.", bundle: .module),
+             String(localized: "**Grapes:** international ones allowed.", bundle: .module),
+             String(localized: "**Method:** higher yields, freer blends.", bundle: .module)]
+        default:
+            nil
         }
     }
 

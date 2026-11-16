@@ -39,20 +39,77 @@ Esta feature também é dona das três funções que as outras features usam:
 
 **QUIZ-R03 · Resposta.** Cada pergunta é respondida numa barra de 10 posições, de 0 a 9.
 
-**QUIZ-R04 · Intensidade do eixo.** A posição escolhida é a intensidade do eixo e é guardada como está, de 0 a 9, sem conversão nem arredondamento. Depois das avaliações (QUIZ-R22), a intensidade pode ter casas decimais, mas fica sempre entre 0 e 9.
+**QUIZ-R04 · Intensidade do eixo.** As respostas são só o ponto de partida. Ao tocar em "Draw the map", cada resposta é lida na régua dos vinhos (QUIZ-R04a), assentada entre vinhos reais (QUIZ-R04b) e mantida perto do que foi respondido (QUIZ-R04c). O mapa guardado e mostrado é o resultado, de 0 a 9 na régua; as respostas nunca aparecem na app. Depois das avaliações (QUIZ-R22), a intensidade pode ter casas decimais, mas fica sempre entre 0 e 9.
 
-**QUIZ-R05 · Nível exibido.** Os pips e a palavra de um eixo usam `round(intensidade)`, de 0 a 9. As palavras são: None, Almost none, A trace, A little, Some, Noticeably, Quite a lot, A lot, Very much, As much as possible.
+**QUIZ-R04a · A régua (2026-11-15).** Usuários e vinhos usam a mesma régua fixa de 0 a 9 (`WineRuler`, package `Core`): quanto de cada eixo um vinho tem. A régua é escrita uma vez e nunca recalculada a partir do catálogo, por isso um vinho mapeado amanhã e um mapa desenhado hoje ficam na mesma escala, com 10 mil ou 350 mil vinhos. Cada resposta r vale o valor da régua na linha r da tabela:
+
+| Eixo | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Floral | 1.0 | 1.5 | 2.0 | 2.5 | 3.0 | 3.5 | 4.0 | 4.5 | 5.5 | 7.0 |
+| Body | 2.0 | 3.5 | 4.5 | 5.0 | 5.5 | 6.0 | 6.5 | 7.0 | 7.5 | 8.5 |
+| Tannin | 0.0 | 0.5 | 1.0 | 2.0 | 4.0 | 5.0 | 6.0 | 6.5 | 7.0 | 8.5 |
+| Spice | 0.5 | 1.0 | 2.0 | 2.5 | 3.0 | 3.5 | 4.0 | 5.0 | 6.0 | 7.0 |
+| Oak | 0.5 | 1.0 | 1.5 | 2.0 | 2.5 | 3.0 | 3.5 | 4.5 | 5.5 | 7.0 |
+| Sweetness | 1.0 | 1.0 | 1.0 | 1.0 | 1.5 | 2.0 | 3.0 | 5.0 | 7.0 | 8.5 |
+| Acidity | 3.5 | 4.5 | 5.0 | 5.5 | 6.0 | 6.5 | 7.0 | 7.5 | 8.0 | 9.0 |
+| Fruit | 3.0 | 4.5 | 5.0 | 5.5 | 6.0 | 6.5 | 7.0 | 7.5 | 8.0 | 9.0 |
+
+Porquê: os vinhos ocupam uma zona pequena de cada eixo (quase todos secos, pouco florais, ácidos), por causa de como o vinho é feito. Lida à letra, "doçura 5" procuraria um vinho meio-doce que quase não existe. A régua lê "gosto bastante de floral" como "quero um vinho mais floral que a maioria". Os valores são um rascunho perto dos percentis da seed de 10.000 vinhos; a doçura é feita à mão, para quem gosta de doce só chegar a um vinho doce quando a resposta é alta. Uma nova versão da régua (`WineRuler.version`) é uma decisão, nunca um recálculo automático.
+
+A **posição** é o caminho inverso: o valor da régua lido como a resposta que cairia ali, de 0 a 9, em linha reta entre duas respostas. Num trecho plano vale o meio: um vinho seco (doçura 1.0, respostas 0 a 3) lê 1,5, nível 2, "Dry". Assim as respostas 0 a 3 mantêm a ordem contra os outros eixos, em vez de caírem todas em 0 (o que faria da doçura o "Never" de ~40% dos usuários). Abaixo do primeiro valor lê 0 ("Bone dry"). Tudo o que a app mostra (radar, pips, palavras, textos, deltas) usa a posição; o match, as avaliações e o que se guarda usam a régua. Nas notas, tocar num pip guarda o valor da régua nessa posição.
+
+**QUIZ-R04b · Assentar entre vinhos reais.** O mapa lido na régua é puxado para o meio dos 20 vinhos do catálogo mais parecidos com as respostas (distância em posição), cada vinho uma vez só, sejam quantas forem as colheitas, com peso maior para os mais próximos. É isto que respeita as ligações entre eixos (corpo com tanino, carvalho com corpo). Sem catálogo no aparelho, o mapa é só a leitura na régua.
+
+**QUIZ-R04c · A alma.** Nenhum eixo fica a mais de 1,5 posição da resposta. Uma resposta ≥ 6 fica sempre ≥ 5,5 (acima do meio); uma resposta ≤ 3 fica sempre ≤ 3,5 (abaixo). Quem gosta de floral fica sempre com um mapa que pede vinhos mais florais que a maioria.
+
+As respostas e a versão da régua ficam guardadas com o Quiz no histórico do mapa, fora da vista, para o mapa poder ser refeito se a régua mudar.
+
+**QUIZ-R05 · Nível exibido.** Os pips de um eixo usam `round(posição)` (QUIZ-R04a), de 0 a 9, no mapa do usuário, no dos amigos e no dos vinhos. A palavra ao lado diz o que esse nível quer dizer num copo, por eixo (`AxisLevels`), a mesma para um vinho e para um mapa: um mapa em floral 8 pede um vinho muito floral; um vinho em floral 8 é um.
+
+| Nível | Floral | Body | Tannin | Spice |
+| --- | --- | --- | --- | --- |
+| 0 | No flowers | Feather-light | No grip, like a white | No spice |
+| 1 | Barely floral | Light | Barely any grip | Barely spiced |
+| 2 | A faint blossom | Light to medium | A whisper of grip | A touch of pepper |
+| 3 | A hint of flowers | Medium-light | Soft, like a light red | Lightly spiced |
+| 4 | Lightly floral | Medium | Gentle grip | Some spice |
+| 5 | Gently floral | Medium, rounded | Medium grip | Gently spicy |
+| 6 | Clearly floral | Medium-full | Firm | Spicy |
+| 7 | Floral | Full | Firm and drying | Clearly spicy |
+| 8 | Very floral | Full and broad | Grippy | Very spicy |
+| 9 | Perfumed | Mouth-filling | Powerful, mouth-drying | Peppery and bold |
+
+| Nível | Oak | Sweetness | Acidity | Fruit |
+| --- | --- | --- | --- | --- |
+| 0 | Unoaked | Bone dry | Flat, very soft | Restrained, little fruit |
+| 1 | Barely any oak | Dry | Soft | Subtle fruit |
+| 2 | Old oak, hardly felt | Dry | Gentle | Light fruit |
+| 3 | A hint of oak | Dry, a touch of sugar | Moderate | Some fruit |
+| 4 | Light oak | Just off-dry | Balanced | Fruity |
+| 5 | Some oak | Off-dry | Fresh | Clearly fruity |
+| 6 | Noticeable oak | Medium-dry | Bright | Ripe fruit |
+| 7 | Oaky, vanilla and toast | Medium-sweet | Crisp | Juicy |
+| 8 | Very oaky | Sweet | Zesty | Lush fruit |
+| 9 | New oak up front | Lusciously sweet | Racy, mouth-watering | Bursting with fruit |
+
+As palavras aparecem nas leituras do resultado do Quiz, de You › Map e do perfil de um amigo, e ao lado dos pips do vinho na ficha, no Hero e na nota. As palavras genéricas de antes (None … As much as possible) ficam só para o nível sem eixo.
 
 ```swift
 struct PalateMap: Equatable {
-    var values: [PalateAxis: Double]   // 0...9, exatamente 8 chaves
+    var values: [PalateAxis: Double]   // 0...9 na régua, exatamente 8 chaves
 }
 ```
 
 **Critérios**
-- Dada a posição 6 na leitura de Acidity, quando o mapa é desenhado, então Acidity vale 6.
-- Dadas as posições 1 e 2 em eixos diferentes, então os dois eixos têm intensidades diferentes (1 e 2).
-- Dada a intensidade 6.4, então o nível exibido é 6, "Quite a lot".
+- Dadas as respostas, então o mapa lido é `WineRuler.value(of:on:)` de cada uma.
+- Dada a doçura 5, então o mapa lido tem doçura ≤ 2; dada a doçura 9, ≥ 8.
+- Dado um vinho com doçura 1.0, então a posição da doçura é 1,5 e a palavra é "Dry"; com doçura abaixo de 1.0, posição 0, "Bone dry".
+- Dada uma doçura 1.01, então a posição fica logo acima de 1,5, sem salto.
+- Dado floral 8 e os vinhos vizinhos menos florais, então o floral fica na posição ≥ 6,5.
+- Dada uma resposta 6 e vizinhos baixos, então o eixo fica na posição 5,5; dada uma resposta 3 e vizinhos altos, fica em 3,5.
+- Dadas 30 colheitas do mesmo vinho entre os vizinhos, então contam como um vinho.
+- Sem catálogo, então o mapa é a leitura na régua.
+- Dada a posição 6.4 em floral, então o nível exibido é 6, "Clearly floral".
 
 ## 3. Fluxo
 
@@ -100,13 +157,13 @@ func exit(for entry: QuizEntry) -> QuizExit
 
 | # | Passo | Texto |
 | --- | --- | --- |
-| 01 | Your palate | Your answers give each of the eight axes an intensity, from sweetness to spice. That shape is your taste map. |
+| 01 | Your palate | Your answers are the starting point: we read them in wine terms and settle them among real wines. That shape is your taste map. |
 | 02 | Every wine | We map each wine on the same eight axes, using its grape, how it was made, time in oak, residual sugar and region. |
 | 03 | The match | We compare the two maps to find the wines closest to your taste, and the recipes that go with them. |
 
 ### 3.2 Leituras (perguntas)
 
-**QUIZ-R07 · Uma pergunta por eixo.** São 8 leituras, uma por eixo, na ordem das perguntas (QUIZ-R01). O topo mostra "Reading N · [Eixo]", o contador "N of 8" e uma barra de progresso com 8 marcas: as anteriores preenchidas, a atual em destaque, as seguintes apagadas.
+**QUIZ-R07 · Uma pergunta por eixo.** São 8 leituras, uma por eixo, na ordem das perguntas (QUIZ-R01). O topo mostra "Reading N · [Eixo]", o contador "N of 8" e a mesma barra de progresso das lições (`StepDots`, DesignSystem): 8 pontos unidos por uma linha, os anteriores preenchidos, o atual a brilhar, os seguintes vazios.
 
 **QUIZ-R08 · Três versões da pergunta.** Cada eixo tem 3 perguntas alternativas, cada uma com as suas 10 respostas (uma palavra para cada posição da barra). A primeira mostrada é a versão 1.
 
@@ -165,7 +222,7 @@ func exit(for entry: QuizEntry) -> QuizExit
   - Base: se a base não é baixa, "nada baixo". Se 3 ou mais eixos empatam na base, "a maior parte baixa". Senão, o texto "baixo" de cada eixo da base (1 ou 2).
   - Um texto "alto" nunca sai para um eixo que não é alto, nem um "baixo" para um eixo que não é baixo.
 
-**QUIZ-R16 · Leituras.** Lista os 8 eixos na ordem do gráfico, cada um com a palavra do nível (QUIZ-R05) e 10 pips. Os líderes até 3 (QUIZ-R14a) aparecem em destaque; no gráfico, os líderes até 2. Mapa plano: nenhum destaque.
+**QUIZ-R16 · Leituras.** Lista os 8 eixos na ordem do gráfico, cada um com a palavra do nível (QUIZ-R05) e 10 pips. Os líderes até 3 (QUIZ-R14a) aparecem em destaque; no gráfico, os líderes até 2. Mapa plano: nenhum destaque. O título "Where the map points" tem um botão de info (ⓘ) ao lado; tocar no título ou no botão abre uma folha, "How your map is drawn", que explica que o mapa vem das respostas lidas em termos de vinho e assentadas entre vinhos reais: "Your answers were the starting point. We read them in wine terms and settled them among real wines, so your map points to bottles that exist. What you lean toward stays: love floral, and your map leans to the more floral wines."
 
 **QUIZ-R17 · O mapa se move.** O resultado mostra "This map keeps moving": o mapa é recalculado a cada avaliação de vinho (QUIZ-R22).
 
@@ -227,20 +284,26 @@ O canvas ainda mostra o formato Link e a linha Never antiga ("Pour her something
 
 ### 4.1 Similaridade (SHARED-R07)
 
-**QUIZ-R21 · Similaridade.** Cada vinho tem um perfil nos mesmos 8 eixos, de 0 a 9. A similaridade mede a distância entre o vinho e o mapa nos 8 eixos, todos com o mesmo peso, e vai de 0 a 1:
+**QUIZ-R21 · Similaridade.** Cada vinho tem um perfil nos mesmos 8 eixos, na mesma régua do mapa (QUIZ-R04a). A similaridade mede a distância entre o vinho e o mapa nos 8 eixos, todos com o mesmo peso, e vai de 0 a 1:
 
 ```
 distância    = √ Σ (mapa[eixo] − vinho[eixo])²
-similaridade = max(0, 1 − distância / 12)
+similaridade = max(0, 1 − distância / 13)
 ```
 
-12 é a distância de um vinho "nada parecido": cerca de 4 pontos de diferença em cada eixo. A versão anterior dividia pelo máximo teórico (9 × √8 ≈ 25,5), que nenhum vinho real atinge, e todos os matches ficavam entre 70% e 90%. Com 12, um vinho a 1 ponto em todos os eixos dá 76%, a 2 pontos dá 53% e a 3 pontos dá 29% (2026-11-01).
+13 é a distância de um vinho "nada parecido": cerca de 4,6 pontos em cada eixo. É uma reta, sem topo plano: distância 1 → 92%, 2 → 85%, 3 → 77%, 4 → 69%, 5 → 62%. 100% só para um vinho igual ao mapa. Para ordenar vinhos e receitas usa-se a distância, não a percentagem. Vale também para a compatibilidade entre amigos (FRI).
+
+Histórico: 1 − distância/12 com as respostas lidas à letra deixava o melhor vinho em ~60% (2026-11-01). 1 − (distância/8)² (2026-11-15) foi pensada para mapas longe dos vinhos; com o mapa já assentado entre vinhos reais (QUIZ-R04b), o topo plano punha o Hero e os cards em 91–99% e 10% do catálogo em 0%.
+
+Simulação com a seed (mapas do Quiz, respostas ao acaso; medianas por usuário): melhor vinho 87% (entre 78% e 93%), 5.º 85%, 20.º 81%, vinho do meio do catálogo 51%, 90.º percentil 29%.
 
 **Critérios**
 - Dado um vinho com perfil igual ao mapa, então a similaridade é 1.
-- Dado um mapa todo 0 e um vinho todo 9, então a similaridade é 0.
-- Dado um mapa todo 3 e um vinho todo 6, então o match é 29%.
-- Dado um vinho a mais de 12 do mapa, então a similaridade é 0, nunca negativa.
+- Dado um mapa todo 3 e um vinho todo 4, então o match é 78%.
+- Dado um mapa todo 3 e um vinho todo 5, então o match é 56%.
+- Dado um vinho a 1 ponto em 2 eixos, então o match é 89%.
+- Dado um vinho a 1, 2, 3, 4 e 5 pontos num só eixo, então o match é 92%, 85%, 77%, 69% e 62%.
+- Dado um mapa todo 1 e um vinho todo 6 (mais de 13), então a similaridade é 0, nunca negativa.
 - Dados dois vinhos, o mais próximo do mapa tem a maior similaridade.
 - Dados dois vinhos que diferem do mapa pela mesma quantidade, um só em Acidity e outro só em Oak, então os dois têm a mesma similaridade.
 
@@ -284,7 +347,7 @@ Os pesos são constantes num único lugar (`RatingWeights`), para que possam ser
 
 | # | Pergunta | Decisão (2026-10-27) | Regra |
 | --- | --- | --- | --- |
-| D1 | Precisão da escala | A posição de 0 a 9 é a intensidade do eixo, guardada sem conversão | QUIZ-R04 |
+| D1 | Precisão da escala | As respostas são o ponto de partida: lidas numa régua fixa comum a usuários e vinhos, assentadas entre vinhos reais e mantidas a ±1,5 da resposta; a app mostra a posição na régua (2026-11-15) | QUIZ-R04, R04a–c, R05 |
 | D2 | Posição inicial | A barra começa vazia | QUIZ-R10 |
 | D3 | Similaridade | Distância entre vinho e mapa nos 8 eixos, mesmo peso | QUIZ-R21 |
 | D4 | Pesos da avaliação | Yes 10%, Maybe 3%, No −10% | QUIZ-R22 |
@@ -293,7 +356,7 @@ Os pesos são constantes num único lugar (`RatingWeights`), para que possam ser
 | D7 | Sair no meio | Recomeça do início | QUIZ-R13a |
 | D8 | Vinho e prato por eixo | Calculados na primeira abertura do dia, na Home | Fora de escopo, HOME-R07 |
 | D9 | Empates e mapas planos | Eixos com o mesmo nível exibido empatam; nenhum texto desempata pela ordem canônica; 5 é neutro (2026-11-01) | QUIZ-R14a, R15 |
-| D10 | Escala do match | Distância de referência 12 em vez de 9 × √8, com mínimo de 0% (2026-11-01) | QUIZ-R21 |
+| D10 | Escala do match | 1 − distância / 13, reta, com mínimo de 0%; substitui 1 − (distância/8)², que com mapas assentados entre vinhos dava 91–99% aos próximos e 0% a 10% do catálogo (2026-11-15) | QUIZ-R21 |
 
 ## 7. Dúvidas em aberto
 

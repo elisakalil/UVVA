@@ -44,6 +44,9 @@
     "Every wine" : {
 
     },
+    "How your map is drawn" : {
+
+    },
     "Keep this map" : {
 
     },
@@ -108,7 +111,10 @@
     "Where the map points" : {
 
     },
-    "Your answers give each of the eight axes an intensity. That shape is your taste map." : {
+    "Your answers are the starting point: we read them in wine terms and settle them among real wines. That shape is your taste map." : {
+
+    },
+    "Your answers were the starting point. We read them in wine terms and settled them among real wines, so your map points to bottles that exist. What you lean toward stays: love floral, and your map leans to the more floral wines." : {
 
     },
     "Your palate" : {

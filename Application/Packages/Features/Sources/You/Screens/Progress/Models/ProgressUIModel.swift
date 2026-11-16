@@ -12,4 +12,5 @@ public struct ProgressUIModel: Equatable {
     var suggestedCourseID: String?
     var cta: String?
     var specialistInText = String(localized: "Specialist in", bundle: .module)
+    var mapTitle = String(localized: "Where your glass has been", bundle: .module)
 }

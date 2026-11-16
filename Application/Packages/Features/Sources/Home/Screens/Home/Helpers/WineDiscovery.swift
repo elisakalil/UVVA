@@ -83,10 +83,14 @@ enum WineDiscovery {
                   }) else { return nil }
 
             if direction == .surprise {
-                let familiarAxes = PalateAxis.allCases.count { abs(palate[$0] - wine.profile[$0]) < WineFit.close }
+                let familiarAxes = PalateAxis.allCases.count { axis in
+                    abs(WineRuler.position(of: palate[axis], on: axis) - WineRuler.position(of: wine.profile[axis], on: axis))
+                        < WineFit.close
+                }
                 guard familiarAxes >= PalateAxis.allCases.count / 2, familiarAxes < PalateAxis.allCases.count else { return nil }
             }
-            return (wine, Similarity.between(wine.profile, palate))
+            // By distance, not the shown match: every wine past `farDistance` would tie at 0.
+            return (wine, -Similarity.distance(wine.profile, palate))
         }
 
         return ranked.sorted { lhs, rhs in

@@ -6,8 +6,8 @@ import SwiftUI
 /// The parts of the wine on paper, the same in the new note and in a saved note of the Cellar. Each part reads
 /// only; the new note adds its own controls through the optional actions.
 public enum NotePaper {
-    /// Between two sections of the paper.
-    public static let sectionSpacing: CGFloat = 48
+    /// Between two sections of the paper (2026-11-14: tighter, so the page reads as one).
+    public static let sectionSpacing: CGFloat = 36
     public static let ink = UVVAColor.mossDeep
 }
 
@@ -15,10 +15,13 @@ public enum NotePaper {
 public struct NotePaperTitle: View {
     var title: String
     var producer: String
+    /// At the right of the producer: "Added Nov 13" on a saved note.
+    var detail: String?
 
-    public init(title: String, producer: String) {
+    public init(title: String, producer: String, detail: String? = nil) {
         self.title = title
         self.producer = producer
+        self.detail = detail
     }
 
     public var body: some View {
@@ -28,11 +31,20 @@ public struct NotePaperTitle: View {
                 .font(UVVAFont.redGrapes(size))
                 .lineSpacing(-size * 0.1)
                 .accessibilityAddTraits(.isHeader)
-            if !producer.isEmpty {
-                Text(producer.uppercased())
-                    .font(UVVAFont.sans(8.5, .medium))
-                    .tracking(2.2)
-                    .foregroundStyle(NotePaper.ink.opacity(0.6))
+            if !producer.isEmpty || detail != nil {
+                HStack(alignment: .firstTextBaseline, spacing: 12) {
+                    Text(producer.uppercased())
+                        .font(UVVAFont.sans(8.5, .medium))
+                        .tracking(2.2)
+                        .foregroundStyle(NotePaper.ink.opacity(0.6))
+                    Spacer(minLength: 0)
+                    if let detail {
+                        Text(detail)
+                            .font(UVVAFont.sans(11))
+                            .foregroundStyle(NotePaper.ink.opacity(0.62))
+                            .fixedSize()
+                    }
+                }
             }
         }
     }
@@ -86,25 +98,56 @@ public struct NotePaperMatch: View {
     }
 }
 
-/// The wine's certificate (CELLAR-R30). Closed, the seal and two lines: the "Top X%" or the appellation's level, and
+/// "High in body, like your map." and "More oak than you usually drink." (HOME-R10b), on their own: the new note shows
+/// them after the maps they describe.
+public struct NotePaperMatchReasons: View {
+    var shared: String?
+    var apart: String?
+
+    public init(shared: String?, apart: String?) {
+        self.shared = shared
+        self.apart = apart
+    }
+
+    public var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            ForEach([shared, apart].compactMap { $0 }, id: \.self) { text in
+                Text(text)
+                    .font(UVVAFont.sans(13))
+                    .lineSpacing(4)
+                    .foregroundStyle(NotePaper.ink.opacity(0.82))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+/// The wine's certificate (CELLAR-R30). Closed, the seal (only for a top appellation) and two lines: the "Top X%" or the appellation's level, and
 /// what it rests on. "More" opens one section per criterion, each with its small-capitals title.
-struct WineCertificateCard: View {
+public struct WineCertificateCard: View {
     @Environment(\.displayScale) private var displayScale
     @State private var isOpen = false
     var certificate: WineCertificateUIModel
+
+    public init(certificate: WineCertificateUIModel) {
+        self.certificate = certificate
+    }
     private let ink = Color(hex: 0x494038)
 
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Button {
                 withAnimation(.easeInOut(duration: 0.25)) { isOpen.toggle() }
             } label: {
                 HStack(alignment: .center, spacing: 12) {
-                    UVVAIllustration.certificateSeal
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 44, height: 44)
-                        .accessibilityHidden(true)
+                    if certificate.showsSeal {
+                        UVVAIllustration.certificateSeal
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 44, height: 44)
+                            .accessibilityHidden(true)
+                    }
                     VStack(alignment: .leading, spacing: 4) {
                         Text(certificate.headline).font(UVVAFont.sans(15, .medium))
                         if let subline = certificate.subline {
@@ -138,14 +181,17 @@ struct WineCertificateCard: View {
                                 Text(value).font(UVVAFont.sans(13, .medium))
                             }
                             ForEach(section.lines, id: \.self) { line in
-                                Text(line).font(UVVAFont.sans(12)).opacity(0.78)
+                                // A line may bold its lead word: "**Region:** 100% of the grapes…".
+                                Text((try? AttributedString(markdown: line)) ?? AttributedString(line))
+                                    .font(UVVAFont.sans(12)).opacity(0.78)
                             }
                         }
                         .accessibilityElement(children: .combine)
                     }
                 }
                 .padding(.top, 18)
-                .padding(.leading, 56)
+                // Under the text, past the seal when there is one.
+                .padding(.leading, certificate.showsSeal ? 56 : 0)
                 .transition(.opacity)
             }
         }
@@ -197,22 +243,57 @@ public struct NotePaperFacts: View {
 
 /// "Find the wine": a search for it in the browser, in a sheet (HOME-R09a).
 public struct NotePaperFindWine: View {
+    /// An outlined button, or a small link under the main button of the page.
+    public enum Style { case button, link }
+
     var title: String
     var url: URL?
+    var style: Style
 
     @State private var isFinding = false
 
-    public init(title: String, url: URL?) {
+    public init(title: String, url: URL?, style: Style = .button) {
         self.title = title
         self.url = url
+        self.style = style
     }
 
     public var body: some View {
-        WineSheetButton(title: title, style: .outlined) { isFinding = true }
-            .disabled(url == nil)
-            .sheet(isPresented: $isFinding) {
-                if let url { SafariSheet(url: url).ignoresSafeArea() }
+        Group {
+            switch style {
+            case .button:
+                WineSheetButton(title: title, style: .outlined) { isFinding = true }
+            case .link:
+                NotePaperLink(title: title) { isFinding = true }
             }
+        }
+        .disabled(url == nil)
+        .sheet(isPresented: $isFinding) {
+            if let url { SafariSheet(url: url).ignoresSafeArea() }
+        }
+    }
+}
+
+/// A small action in capitals under the main button of the page: "Find the wine", "Delete".
+public struct NotePaperLink: View {
+    var title: String
+    var action: () -> Void
+
+    public init(title: String, action: @escaping () -> Void) {
+        self.title = title
+        self.action = action
+    }
+
+    public var body: some View {
+        Button(action: action) {
+            Text(title.uppercased())
+                .font(UVVAFont.sans(9, .regular))
+                .tracking(2.3)
+                .opacity(0.7)
+                .frame(minWidth: 44, minHeight: 44)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 }
 
@@ -272,12 +353,17 @@ public struct NotePaperIntensity: View {
             HStack(spacing: 2) {
                 NoteEyebrow(text: title)
                 if let onInfo {
+                    Spacer(minLength: 12)
                     Button(action: onInfo) {
-                        Image(systemName: "info.circle")
-                            .font(.system(size: 12))
-                            .foregroundStyle(NotePaper.ink.opacity(0.62))
-                            .frame(width: 44, height: 44)
-                            .contentShape(Rectangle())
+                        HStack(spacing: 6) {
+                            if let infoLabel {
+                                Text(infoLabel).font(UVVAFont.redGrapes(16))
+                            }
+                            Image(systemName: "info.circle").font(.system(size: 12))
+                        }
+                        .foregroundStyle(NotePaper.ink)
+                        .frame(minWidth: 44, minHeight: 44)
+                        .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel(infoLabel ?? title)

@@ -35,6 +35,76 @@
         }
       ]
     },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideNose.png" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/Resources/TastingGuideNose.png"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideNose.png"
+        }
+      ]
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuidePalate.png" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/Resources/TastingGuidePalate.png"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuidePalate.png"
+        }
+      ]
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideScaleBorder.png" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/Resources/TastingGuideScaleBorder.png"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideScaleBorder.png"
+        }
+      ]
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideSharing.png" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/Resources/TastingGuideSharing.png"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideSharing.png"
+        }
+      ]
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideWineGlass.png" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/Resources/TastingGuideWineGlass.png"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/TastingGuideWineGlass.png"
+        }
+      ]
+    },
     "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_Match.bundle/Info.plist" : {
       "inputs" : [
         {
@@ -573,6 +643,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift"
         },
         {
@@ -686,6 +760,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineAward.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineSearch.swift.o"
       ],
       "otherArguments" : [
@@ -1133,6 +1208,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineSearch.swift.o"
         },
         {
@@ -1240,6 +1319,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineAward.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build",
@@ -1695,10 +1775,6 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteInfoSheet.swift"
-        },
-        {
-          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteManualView.swift"
         },
         {
@@ -1720,6 +1796,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteReadingDebugView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteTastingGuide.swift"
         },
         {
           "kind" : "file",
@@ -1752,6 +1832,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperViews.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePhotoPair.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteRating.swift"
         },
         {
           "kind" : "file",
@@ -1836,13 +1924,13 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteCaptureView.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteChipSheet.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteFlowLayout.swift.o",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteInfoSheet.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteManualView.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteMessageView.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNotePaperView.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNotePhotoSheet.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNotePill.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteReadingDebugView.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteTastingGuide.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteView.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/CellarPaperSheet.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteEyebrow.swift.o",
@@ -1851,6 +1939,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePalette.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperContent.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperViews.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePhotoPair.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteRating.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteVerdictUIModel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/WineCertificateUIModel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/PalateMatchUIModel.swift.o",
@@ -2047,10 +2137,6 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteInfoSheet.swift.o"
-        },
-        {
-          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteManualView.swift.o"
         },
         {
@@ -2072,6 +2158,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteReadingDebugView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteTastingGuide.swift.o"
         },
         {
           "kind" : "file",
@@ -2104,6 +2194,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperViews.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePhotoPair.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteRating.swift.o"
         },
         {
           "kind" : "file",
@@ -2170,13 +2268,13 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteCaptureView.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteChipSheet.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteFlowLayout.swift",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteInfoSheet.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteManualView.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteMessageView.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNotePaperView.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNotePhotoSheet.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNotePill.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteReadingDebugView.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteTastingGuide.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteView.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/CellarPaperSheet.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteEyebrow.swift",
@@ -2185,6 +2283,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePalette.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperContent.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperViews.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePhotoPair.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteRating.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteVerdictUIModel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/WineCertificateUIModel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/PalateMatchUIModel.swift",
@@ -2949,6 +3049,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift"
         },
         {
@@ -2974,6 +3078,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecalculateMapUseCase.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift"
         },
         {
           "kind" : "file",
@@ -3029,6 +3137,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QualityEstimate.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QualityPrevalence+Current.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QualityPrevalence+Packed.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o",
@@ -3036,6 +3145,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapShape.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecalculateMapUseCase.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/ScannedWine.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/TableMatch.swift.o",
@@ -3147,6 +3257,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o"
         },
         {
@@ -3172,6 +3286,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecalculateMapUseCase.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.swift.o"
         },
         {
           "kind" : "file",
@@ -3213,6 +3331,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityEstimate.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Current.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Packed.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapEvolution.swift",
@@ -3220,6 +3339,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapShape.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapSnapshot.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecalculateMapUseCase.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/ScannedWine.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Similarity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/TableMatch.swift",
@@ -3272,6 +3392,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/QuizMapBuilderTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/ScannedWineTests.swift"
         },
         {
@@ -3285,6 +3409,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineFitTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift"
         },
         {
           "kind" : "file",
@@ -3316,10 +3444,12 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/MapUpdateTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/PairingTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ProfileEstimateTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ScannedWineTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/TableMatchTests.swift.o",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests.swift.o"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -3409,6 +3539,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ScannedWineTests.swift.o"
         },
         {
@@ -3422,6 +3556,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swift.o"
         },
         {
           "kind" : "file",
@@ -3439,10 +3577,12 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapUpdateTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/PairingTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/ProfileEstimateTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/QuizMapBuilderTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/ScannedWineTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/SimilarityTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/TableMatchTests.swift",
-        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineFitTests.swift"
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineFitTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build",
       "wholeModuleOptimization" : false
@@ -4464,6 +4604,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineAward.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules",
@@ -4688,13 +4829,13 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteCaptureView.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteChipSheet.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteFlowLayout.swift",
-      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteInfoSheet.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteManualView.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteMessageView.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNotePaperView.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNotePhotoSheet.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNotePill.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteReadingDebugView.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteTastingGuide.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteView.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/CellarPaperSheet.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteEyebrow.swift",
@@ -4703,6 +4844,8 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePalette.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperContent.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperViews.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePhotoPair.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteRating.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteVerdictUIModel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/WineCertificateUIModel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/PalateMatchUIModel.swift",
@@ -4901,6 +5044,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityEstimate.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Current.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Packed.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapEvolution.swift",
@@ -4908,6 +5052,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapShape.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapSnapshot.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecalculateMapUseCase.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/ScannedWine.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Similarity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/TableMatch.swift",
@@ -4981,10 +5126,12 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/MapUpdateTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/PairingTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/ProfileEstimateTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/QuizMapBuilderTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/ScannedWineTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/SimilarityTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/TableMatchTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineFitTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -5689,6 +5836,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift"
         }
       ],
@@ -6105,6 +6256,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineSearch.swift.o"
         },
         {
@@ -6237,11 +6392,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecalculateMapUseCase.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.swift.o"
         },
         {
           "kind" : "file",
@@ -6301,6 +6464,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/QuizMapBuilderTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/ScannedWineTests.swift.o"
         },
         {
@@ -6314,6 +6481,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swift.o"
         },
         {
           "kind" : "file",
@@ -6813,10 +6984,6 @@
         },
         {
           "kind" : "file",
-          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteInfoSheet.swift"
-        },
-        {
-          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteManualView.swift"
         },
         {
@@ -6838,6 +7005,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteReadingDebugView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/NewNoteTastingGuide.swift"
         },
         {
           "kind" : "file",
@@ -6870,6 +7041,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperViews.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePhotoPair.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteRating.swift"
         },
         {
           "kind" : "file",
@@ -7213,6 +7392,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift"
         },
         {
@@ -7238,6 +7421,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecalculateMapUseCase.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift"
         },
         {
           "kind" : "file",
@@ -7307,6 +7494,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/QuizMapBuilderTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/ScannedWineTests.swift"
         },
         {
@@ -7320,6 +7511,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineFitTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift"
         }
       ],
       "outputFilePath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/sources"

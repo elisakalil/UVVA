@@ -4,13 +4,13 @@ import Foundation
 /// User × user (MATCH.md): compatibility between maps and the tables of FRI §6. Every map at the table counts the
 /// same, the user's included.
 public enum TableMatch {
-    /// An axis is shared when everyone is at least this high on it…
+    /// An axis is shared when everyone is at least this high on it, in position on the ruler (QUIZ-R04a)…
     public static let sharedMinimum = 5.5
     /// …and the lowest and highest readings are at most this far apart.
     public static let sharedMaxGap = 1.5
     /// At most this many shared axes are named (FRI §3).
     public static let sharedLimit = 3
-    /// The upper gap of each `AxisSpread`; above `someGive` it is `widest`.
+    /// The upper gap in position of each `AxisSpread`; above `someGive` it is `widest`.
     public static let spreadLimits: [(AxisSpread, Double)] = [(.same, 0.5), (.closest, 1.5), (.someGive, 3)]
 
     /// FRI-R04, R12, HOME-R11: the same distance as user × wine (QUIZ-R21), 0...100.
@@ -43,16 +43,16 @@ public enum TableMatch {
         }))
     }
 
-    /// From the lowest to the highest reading of an axis at the table.
+    /// From the lowest to the highest reading of an axis at the table, in position on the ruler (QUIZ-R04a).
     public static func range(_ maps: [PalateMap], _ axis: PalateAxis) -> ClosedRange<Double> {
-        let values = maps.map { $0[axis] }
+        let values = maps.map { WineRuler.position(of: $0[axis], on: axis) }
         return (values.min() ?? 0)...(values.max() ?? 0)
     }
 
     /// FRI-R12, R19: the axes everyone wants, by the table's average, at most `sharedLimit`.
     public static func sharedAxes(_ maps: [PalateMap]) -> [PalateAxis] {
         guard !maps.isEmpty else { return [] }
-        let average = crossed(maps)
+        let average = WineRuler.positions(of: crossed(maps))
         return average.ranked
             .filter { axis in
                 let range = range(maps, axis)
@@ -75,22 +75,23 @@ public enum TableMatch {
     public static func tableBottles(_ maps: [PalateMap], wines: [Wine], recipes: [Recipe]) -> [TableBottle] {
         let table = crossed(maps)
         let shared = sharedAxes(maps)
-        let candidates = shared.isEmpty ? Array(table.ranked.prefix(sharedLimit)) : shared
+        let candidates = shared.isEmpty ? Array(WineRuler.positions(of: table).ranked.prefix(sharedLimit)) : shared
         var used = Set<String>()
         var bottles: [TableBottle] = []
 
         for course in TableCourse.allCases {
             let ranked = recipes.filter { $0.course == course.rawValue }
-                .sorted { Similarity.between($0.profile, table) > Similarity.between($1.profile, table) }
+                .sorted { Similarity.distance($0.profile, table) < Similarity.distance($1.profile, table) }
             for recipe in ranked {
                 let types = Set(recipe.wineTypes.map { $0.lowercased() })
                 let target = Pairing.crossed(table, recipe.profile)
                 let wine = wines
                     .filter { types.contains($0.type.lowercased()) && !used.contains($0.id) }
-                    .max { Similarity.between($0.profile, target) < Similarity.between($1.profile, target) }
+                    .min { Similarity.distance($0.profile, target) < Similarity.distance($1.profile, target) }
                 guard let wine else { continue }
                 used.insert(wine.id)
-                let axis = candidates.max { wine.profile[$0] < wine.profile[$1] } ?? table.ranked[0]
+                let standsOut = WineRuler.positions(of: wine.profile)
+                let axis = candidates.max { standsOut[$0] < standsOut[$1] } ?? WineRuler.positions(of: table).ranked[0]
                 bottles.append(TableBottle(course: course, wine: wine, recipe: recipe, axis: axis))
                 break
             }

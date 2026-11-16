@@ -93,6 +93,13 @@
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QualityPrevalence+Packed.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QualityPrevalence+Packed.dia"
   },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.dia"
+  },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.d",
     "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
@@ -141,6 +148,13 @@
     "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecalculateMapUseCase~partial.swiftmodule",
     "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecalculateMapUseCase.swiftdeps",
     "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecalculateMapUseCase.dia"
+  },
+  "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift": {
+    "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.d",
+    "object": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.swift.o",
+    "swiftmodule": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase~partial.swiftmodule",
+    "swift-dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.swiftdeps",
+    "diagnostics": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.dia"
   },
   "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/ScannedWine.swift": {
     "dependencies": "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/ScannedWine.d",

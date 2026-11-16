@@ -1,5 +1,6 @@
 import Combine
 import Core
+import Match
 import Testing
 @testable import Quizz
 
@@ -83,7 +84,8 @@ struct QuizViewModelTests {
         answerAll(viewModel, with: 5)
         await viewModel.keep()
         #expect(maps.savedMaps.count == 1)
-        #expect(maps.savedMaps.first?[.oak] == 5)
+        #expect(maps.savedMaps.first?[.oak] == WineRuler.value(of: 5, on: .oak))
+        #expect(maps.savedAnswers.first?[.oak] == 5)
         guard case let .share(model) = viewModel.uiModel.screen else { Issue.record("not share"); return }
         #expect(model.loves.hasPrefix("Elisa drinks for"))
     }
@@ -95,6 +97,24 @@ struct QuizViewModelTests {
         await viewModel.keep()
         guard case let .result(model) = viewModel.uiModel.screen else { Issue.record("not result"); return }
         #expect(model.failedToSave)
+    }
+
+    // MARK: QUIZ-R04a to R04c · Draw the map
+
+    @Test func QUIZ_R04b_drawTheMap_showsTheMapSettledAmongTheWines() async {
+        let wine = Wine(id: "w", name: "w", origin: "", profile: PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map {
+            ($0, WineRuler.value(atPosition: 6, on: $0))
+        })))
+        let viewModel = QuizFactory(questions: QuestionRepositoryStub(), maps: maps, catalog: CatalogStub(wines: [wine]))
+            .makeViewModel(entry: .firstMap, firstName: "Elisa", coordinator: QuizCoordinator(entry: .firstMap, onExit: { _ in }))
+        await viewModel.load()
+        answerAll(viewModel, with: 5)
+        await viewModel.waitForMap()
+        guard case let .result(model) = viewModel.uiModel.screen else { Issue.record("not result"); return }
+        // Every axis moved toward the wine at 6, held within the band of the answer 5.
+        for axis in PalateAxis.allCases {
+            #expect(abs(model.map[axis] - WineRuler.value(atPosition: 6, on: axis)) < 1e-9)
+        }
     }
 
     // MARK: QUIZ-R25, R26 · Saídas

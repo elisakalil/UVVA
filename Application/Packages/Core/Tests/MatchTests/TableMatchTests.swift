@@ -3,8 +3,11 @@ import Testing
 @testable import Match
 
 struct TableMatchTests {
+    /// A map given by its positions on the ruler, as the table reads it.
     private func map(_ values: [PalateAxis: Double], rest: Double = 3) -> PalateMap {
-        PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, values[$0] ?? rest) }))
+        PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map {
+            ($0, WineRuler.value(atPosition: values[$0] ?? rest, on: $0))
+        }))
     }
 
     private func wine(_ id: String, type: String = "Red", _ values: [PalateAxis: Double]) -> Wine {
@@ -69,8 +72,10 @@ struct TableMatchTests {
 
     @Test func FRI_R19_crossedAndBoldest() {
         let maps = [map([.acidity: 6]), map([.acidity: 8])]
-        #expect(TableMatch.crossed(maps)[.acidity] == 7)
-        #expect(TableMatch.boldest(maps)[.acidity] == 8)
+        // Crossed on the ruler, where maps are kept.
+        let (six, eight) = (WineRuler.value(of: 6, on: .acidity), WineRuler.value(of: 8, on: .acidity))
+        #expect(TableMatch.crossed(maps)[.acidity] == (six + eight) / 2)
+        #expect(TableMatch.boldest(maps)[.acidity] == eight)
     }
 
     // MARK: FRI-R14, R15 · Garrafas

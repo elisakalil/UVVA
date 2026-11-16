@@ -28,9 +28,6 @@ struct WineDetailUIModel: Equatable {
     }
 
     private var match: PalateMatchUIModel { PalateMatchUIModel(wine: wine.profile, palate: palateMap) }
-    private var isSurprise: Bool {
-        if case .discovery(.surprise, _, _) = source { true } else { false }
-    }
 
     // MARK: Header
 
@@ -69,9 +66,9 @@ struct WineDetailUIModel: Equatable {
 
     // MARK: With your palate
 
-    /// "Surprise me" turns the match around: how far the wine sits from the map.
-    var percentage: String { "\(isSurprise ? 100 - match.percent : match.percent)%" }
-    var percentageCaption: String { isSurprise ? resources.wineDetailAwayCaption : resources.palateMatchCaption }
+    /// The match with the map, as everywhere else, "Surprise me" included: a surprise reads low, and says so.
+    var percentage: String { "\(match.percent)%" }
+    var percentageCaption: String { resources.palateMatchCaption }
     var sharedLine: String { match.shared }
     var apartLine: String { match.apart }
 

@@ -7,84 +7,94 @@ import SwiftUI
 struct NewNotePaperView: View {
     var model: NewNoteUIModel
     var onAnswer: (Bool) -> Void
-    var onPick: (Verdict) -> Void
+    var onRate: (Verdict, Int?) -> Void
     var onNote: (String) -> Void
     var onAddChip: (String, NewNoteChipField) -> Void
     var loadChipOptions: (NewNoteChipField) async -> [String]
     var onIntensity: (Double, PalateAxis) -> Void
-    var onReplacePhoto: (Data) -> Void
+    var onReplacePhoto: (Data, NewNotePhotoSide) -> Void
     var onSave: () -> Void
 
-    @FocusState private var isNoteFocused: Bool
     @State private var chipField: NewNoteChipField?
     @State private var isExplainingIntensity = false
-    @State private var isTakingPhoto = false
-    /// A verdict was just given here: the question has shown it marked and gone.
-    @State private var isVerdictGiven = false
-    /// The question fades where it stands, then its place closes from above.
-    @State private var isQuestionFading = false
-    /// While the place closes, the page holds its bottom, so what is above comes down into it.
-    @State private var holdsBottom = false
-    @State private var verdictFade: Task<Void, Never>?
+    @State private var photoSide: NewNotePhotoSide?
+    @State private var isRating = false
 
     private let ink = UVVAColor.mossDeep
 
     private var resources: NewNoteResourcesUIModel { model.resources }
 
     var body: some View {
-        VStack(spacing: 0) {
-            ScrollView {
-                if let content = model.content {
-                    // The same parts, in the same order, as a saved note of the Cellar; here they can be added to.
-                    VStack(alignment: .leading, spacing: NotePaper.sectionSpacing) {
-                        VStack(alignment: .leading, spacing: 28) {
-                            NotePaperTitle(title: content.title, producer: content.producer)
-                            photo
+        ScrollView {
+            if let content = model.content {
+                // From what the wine is to what the user adds: the name and photos, the certificate, the match and
+                // the maps with what they show, the facts, the chips and the intensity. The rating is at the foot.
+                VStack(alignment: .leading, spacing: NotePaper.sectionSpacing) {
+                    VStack(alignment: .leading, spacing: 28) {
+                        NotePaperTitle(title: content.title, producer: content.producer)
+                        NotePhotoPair {
+                            photo(model.photoFront, side: .front, label: resources.frontStepText)
+                        } back: {
+                            photo(model.photoBack, side: .back, label: resources.backStepText)
                         }
-                        NotePaperMatch(match: content.match, shared: content.matchShared, apart: content.matchApart,
-                                       resources: resources.paper)
-                        if let certificate = content.certificate {
-                            WineCertificateCard(certificate: certificate)
+                    }
+                    if let certificate = content.certificate {
+                        WineCertificateCard(certificate: certificate)
+                    }
+                    VStack(alignment: .leading, spacing: 28) {
+                        NotePaperMatch(match: content.match, resources: resources.paper)
+                        NotePaperMaps(profile: content.profile, palate: content.palate, resources: resources.paper)
+                        if content.matchShared != nil || content.matchApart != nil {
+                            NotePaperMatchReasons(shared: content.matchShared, apart: content.matchApart)
                         }
-                        NotePaperFacts(content: content, resources: resources.paper)
+                    }
+                    NotePaperFacts(content: content, resources: resources.paper)
+                    VStack(alignment: .leading, spacing: 20) {
                         ForEach([NewNoteChipField.grapes, .notes, .pairings]) { field in
                             NotePaperChips(label: chipTitle(field), chips: content.chips(field),
                                            addLabel: resources.paper.addText(chipTitle(field))) {
-                                isNoteFocused = false
                                 chipField = field
                             }
                         }
-                        NotePaperIntensity(title: resources.paper.intensityText, profile: content.profile,
-                                           infoLabel: resources.intensityInfoText,
-                                           onInfo: { isExplainingIntensity = true }, onPick: onIntensity)
-                        NotePaperMaps(profile: content.profile, palate: content.palate, resources: resources.paper)
-                        noteField
-                        end(findURL: content.findURL)
-                        #if DEBUG
-                        if let text = model.readingDebugText {
-                            NewNoteReadingDebugView(text: text, export: model.readingExportText)
-                        }
-                        #endif
                     }
-                    .padding(.horizontal, 26)
-                    .padding(.top, 42)
-                    .padding(.bottom, 16)
+                    NotePaperIntensity(title: resources.paper.intensityText, profile: content.profile,
+                                       infoLabel: TastingGuideCopy.title,
+                                       onInfo: { isExplainingIntensity = true }, onPick: onIntensity)
+                    #if DEBUG
+                    if let text = model.readingDebugText {
+                        NewNoteReadingDebugView(text: text, export: model.readingExportText)
+                    }
+                    #endif
                 }
+                .padding(.horizontal, 26)
+                .padding(.top, 42)
+                .padding(.bottom, 24)
             }
-            .defaultScrollAnchor(holdsBottom ? .bottom : nil, for: .sizeChanges)
-            .scrollDismissesKeyboard(.interactively)
-            .scrollIndicators(.hidden)
         }
+        .scrollIndicators(.hidden)
+        // "Save note" stays at the foot while the paper scrolls under it.
+        .safeAreaInset(edge: .bottom, spacing: 0) { footer }
         .disabled(model.isWorking)
         .foregroundStyle(ink)
         .background(UVVAColor.parchment.ignoresSafeArea())
         .preferredColorScheme(.light)
-        .sheet(isPresented: $isTakingPhoto) {
-            NewNotePhotoSheet(resources: resources, onPhoto: onReplacePhoto)
+        .sheet(item: $photoSide) { side in
+            NewNotePhotoSheet(resources: resources) { data in
+                onReplacePhoto(data, side)
+            }
+        }
+        .sheet(isPresented: $isRating) {
+            NoteRatingSheet(resources: resources.rating, verdict: model.currentVerdict, score: model.currentScore,
+                            note: model.draftNote,
+                            onSave: { verdict, score, note in
+                                onRate(verdict, score)
+                                onNote(note)
+                                return true
+                            },
+                            onNotTasted: model.isRatedBefore || model.currentVerdict == nil ? nil : { onAnswer(false) })
         }
         .sheet(isPresented: $isExplainingIntensity) {
-            NewNoteInfoSheet(title: resources.paper.intensityText, paragraphs: resources.intensityInfoParagraphs,
-                             resources: resources)
+            NewNoteTastingGuide()
         }
         .sheet(item: $chipField) { field in
             NewNoteChipSheet(title: chipTitle(field), resources: resources,
@@ -95,30 +105,63 @@ struct NewNotePaperView: View {
         }
     }
 
-    /// The photo taken, or the vineyard with "Add photo +" when there is none; either way a tap takes another
-    /// (CELLAR-R24).
-    private var photo: some View {
+    /// The rating, outlined, over "Save note", both always there: unrated, the wine goes in as Not yet.
+    private var footer: some View {
+        VStack(spacing: 10) {
+            if let error = model.errorText {
+                Text(error).font(UVVAFont.sans(12)).opacity(0.74)
+            }
+            WineSheetButton(title: resources.rating.linkText(model.currentVerdict, score: model.currentScore),
+                            style: .choice) {
+                isRating = true
+            }
+            WineTastingActions(question: nil, primaryTitle: resources.saveNoteText,
+                               isPrimaryEnabled: !model.isWorking) {
+                onSave()
+            }
+        }
+        .padding(.horizontal, 26)
+        .padding(.top, 12)
+        .padding(.bottom, 8)
+        .frame(maxWidth: .infinity)
+        .background {
+            UVVAColor.parchment.ignoresSafeArea(edges: .bottom)
+                // The paper fades into the foot instead of being cut by it.
+                .overlay(alignment: .top) {
+                    LinearGradient(colors: [UVVAColor.parchment.opacity(0), UVVAColor.parchment],
+                                   startPoint: .top, endPoint: .bottom)
+                        .frame(height: 24)
+                        .offset(y: -24)
+                        .allowsHitTesting(false)
+                }
+        }
+    }
+
+    /// The photo or vineyard placeholder. The front placeholder shows the add prompt.
+    private func photo(_ data: Data?, side: NewNotePhotoSide, label: String) -> some View {
         Button {
-            isNoteFocused = false
-            isTakingPhoto = true
+            photoSide = side
         } label: {
             Color.clear
                 .frame(height: 220)
                 .overlay {
-                    if let data = model.photo, let image = UIImage(data: data) {
+                    if let data, let image = UIImage(data: data) {
                         Image(uiImage: image).resizable().scaledToFill()
                     } else {
                         UVVAPhoto.background.resizable().scaledToFill()
-                            .overlay { NotePalette.veil.opacity(0.5) }
                             .overlay {
-                                HStack(spacing: 8) {
-                                    Text(resources.addPhotoText.uppercased())
-                                        .font(UVVAFont.sans(10, .medium))
-                                        .tracking(2.6)
-                                    Image(systemName: resources.addPhotoIcon)
-                                        .font(.system(size: 12, weight: .regular))
+                                if side == .front {
+                                    NotePalette.veil.opacity(0.5)
+                                    HStack(spacing: 8) {
+                                        Text(resources.addPhotoText.uppercased())
+                                            .font(UVVAFont.sans(10, .medium))
+                                            .tracking(2.6)
+                                        Image(systemName: resources.addPhotoIcon)
+                                            .font(.system(size: 12, weight: .regular))
+                                    }
+                                    .foregroundStyle(UVVAColor.creamFill)
+                                    .padding(.horizontal, 8)
                                 }
-                                .foregroundStyle(UVVAColor.creamFill)
                             }
                     }
                 }
@@ -126,7 +169,8 @@ struct NewNotePaperView: View {
                 .contentShape(RoundedRectangle(cornerRadius: 18))
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(model.photo == nil ? resources.addPhotoText : resources.changePhotoText)
+        .accessibilityLabel(data == nil ? resources.addPhotoText : resources.changePhotoText)
+        .accessibilityHint(label)
     }
 
     private func chipTitle(_ field: NewNoteChipField) -> String {
@@ -135,117 +179,6 @@ struct NewNotePaperView: View {
         case .notes: resources.paper.notesText
         case .pairings: resources.paper.pairingsText
         }
-    }
-
-    private var noteField: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            NoteEyebrow(text: resources.paper.yourNoteText)
-            TextField("", text: Binding(get: { model.draftNote }, set: { onNote($0) }),
-                      prompt: Text(resources.notePromptText).foregroundStyle(NotePalette.ink.opacity(0.4)),
-                      axis: .vertical)
-                .font(UVVAFont.sans(15))
-                .lineSpacing(NoteRule.lineSpacing)
-                .tint(NotePalette.ink)
-                .focused($isNoteFocused)
-                .padding(.bottom, NoteRule.belowText)
-                .background(alignment: .top) { NoteRule(color: NotePalette.ink) }
-                .accessibilityLabel(resources.paper.yourNoteText)
-        }
-    }
-
-    /// "Have you had this wine?", then the verdict; "Not yet" leaves only the button (CELLAR-R18). A wine rated
-    /// before is asked "Rate it again?": Yes asks for the verdict, No keeps the one it had (CELLAR-R14a).
-    private var tastingQuestion: WineTastingActions.Question? {
-        switch model.tasting {
-        case .asking where model.isRatedBefore:
-            .init(text: resources.rateAgainQuestionText, choices: [
-                .init(title: resources.yesText) { answer(true) },
-                .init(title: resources.noText) { answer(false) }
-            ])
-        case .asking:
-            .init(text: resources.tastedQuestionText, choices: [
-                .init(title: resources.yesText) { answer(true) },
-                .init(title: resources.notYetText) { answer(false) }
-            ])
-        // Answered here, the question has nothing left to ask.
-        case .tasted where isVerdictGiven:
-            nil
-        case .tasted:
-            .init(text: resources.drinkAgainText, choices: model.verdicts.map { option in
-                .init(title: option.label, isSelected: option.isSelected) { give(option.verdict) }
-            })
-        case .notYet, .keptRating:
-            nil
-        }
-    }
-
-    /// The verdict fills its button, and after a moment the question fades away and the button below rises into
-    /// its place.
-    private func give(_ verdict: Verdict) {
-        onPick(verdict)
-        verdictFade?.cancel()
-        verdictFade = Task {
-            // The verdict shows marked for a moment.
-            try? await Task.sleep(for: .milliseconds(400))
-            guard !Task.isCancelled else { return }
-            withAnimation(.easeOut(duration: 0.35)) { isQuestionFading = true }
-            try? await Task.sleep(for: .milliseconds(380))
-            guard !Task.isCancelled else { return }
-            holdsBottom = true
-            withAnimation(.easeInOut(duration: 0.45)) { isVerdictGiven = true }
-            try? await Task.sleep(for: .milliseconds(500))
-            holdsBottom = false
-        }
-    }
-
-    private func answer(_ hasTasted: Bool) {
-        withAnimation(.smooth(duration: 0.25)) { onAnswer(hasTasted) }
-    }
-
-    /// The same question and button as the foot of the Home's wine sheet.
-    private func end(findURL: URL?) -> some View {
-        VStack(spacing: 12) {
-            if let tastingQuestion {
-                WineTastingActions(question: tastingQuestion, primaryTitle: nil,
-                                   questionOpacity: isQuestionFading ? 0 : 1)
-            }
-            NotePaperFindWine(title: resources.paper.findWineText, url: findURL)
-            // Always there: unanswered, the wine goes in as Not yet; a "Yes" with no verdict is asked for it.
-            WineTastingActions(question: nil, primaryTitle: resources.saveNoteText,
-                               isPrimaryEnabled: !model.isWorking) {
-                isNoteFocused = false
-                onSave()
-            }
-            if let error = model.errorText {
-                Text(error).font(UVVAFont.sans(12)).opacity(0.74)
-            }
-        }
-        .frame(maxWidth: .infinity)
-    }
-}
-
-/// Ruled paper under the note: one rule beneath each line written, so a new line gets its own rule as it appears.
-private struct NoteRule: View {
-    var color: Color
-
-    static let lineSpacing: CGFloat = 14
-    /// How far a rule sits below its line of text.
-    static let belowText: CGFloat = 9
-    /// The height of one line of `UVVAFont.sans(15)`, drawn one step heavier than its light weight.
-    private static let lineHeight = UIFont.systemFont(ofSize: 15, weight: .regular).lineHeight
-    private static let pitch = lineHeight + lineSpacing
-
-    var body: some View {
-        Canvas { context, size in
-            let textHeight = size.height - Self.belowText
-            let lines = max(1, Int(((textHeight + Self.lineSpacing) / Self.pitch).rounded()))
-            for line in 0..<lines {
-                let y = CGFloat(line) * Self.pitch + Self.lineHeight + Self.belowText
-                context.fill(Path(CGRect(x: 0, y: y - 0.5, width: size.width, height: 0.5)), with: .color(color))
-            }
-        }
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
     }
 }
 #endif

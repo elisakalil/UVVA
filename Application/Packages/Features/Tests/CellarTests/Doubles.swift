@@ -53,7 +53,7 @@ actor CellarSpy: CellarRepository {
     func addWantToTry(_ wine: Wine) async throws {}
     func tastedWineKeys() async throws -> Set<String> { [] }
     func addTasted(_ wine: Wine, verdict: Verdict) async throws {}
-    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws { updates.append((wineKey, verdict, note)) }
+    func update(_ wineKey: String, verdict: Verdict?, score: Int?, note: String?) async throws { updates.append((wineKey, verdict, note)) }
     func delete(_ wineKey: String) async throws { deletes.append(wineKey) }
     func save(_ draft: NewNoteDraft) async throws -> CellarEntry? {
         saved.append(draft)

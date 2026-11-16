@@ -38,8 +38,8 @@ struct FriendProfilePresentationBuilder {
     var readings: [FriendReadingUIModel] {
         let leaders = reading.leaders(3)
         return PalateAxis.allCases.map { axis in
-            let level = MapReading.level(friend.map[axis])
-            return FriendReadingUIModel(name: axis.label, level: level, word: MapReading.levelWord(level),
+            let level = MapReading.level(friend.map, axis)
+            return FriendReadingUIModel(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
                                         isStrong: leaders.contains(axis))
         }
     }

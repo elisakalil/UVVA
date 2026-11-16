@@ -9,6 +9,8 @@ public struct NewNoteDraft: Equatable, Sendable {
     public var status: CellarEntryStatus
     /// Only for Tasted (CELLAR-R01).
     public var verdict: Verdict?
+    /// The score from 0 to 5, only with a verdict (CELLAR-R18).
+    public var score: Int?
     public var note: String?
     public var photoFront: Data?
     public var photoBack: Data?
@@ -19,11 +21,12 @@ public struct NewNoteDraft: Equatable, Sendable {
 
     public init(wine: Wine, status: CellarEntryStatus, verdict: Verdict? = nil, note: String? = nil,
                 photoFront: Data? = nil, photoBack: Data? = nil, originalWine: Wine? = nil, replacesNote: Bool = false,
-                selectedVerdict: Bool = true) {
+                selectedVerdict: Bool = true, score: Int? = nil) {
         self.wine = wine
         self.originalWine = originalWine == wine ? nil : originalWine
         self.status = status
         self.verdict = status == .tasted ? verdict : nil
+        self.score = status == .tasted && verdict != nil ? score : nil
         self.note = note
         self.photoFront = photoFront
         self.photoBack = photoBack

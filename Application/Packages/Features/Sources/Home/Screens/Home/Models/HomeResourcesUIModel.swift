@@ -5,7 +5,12 @@ import SwiftUI
 
 /// Localized content and asset identifiers shared by Home and its visual components.
 struct HomeResourcesUIModel {
-    var homeFooterVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    var homeFooterVersion = (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String)
+        .map { String(localized: "version \($0)", bundle: .module) }
+    var homeFooterCopyright: String {
+        let year = Calendar(identifier: .gregorian).component(.year, from: .now)
+        return String(localized: "© \(String(year)) UVVA", bundle: .module)
+    }
     var homeFooterOrigin = String(localized: "Made in Portugal", bundle: .module)
     var homeHeaderBrand = String(localized: "UVVA", bundle: .module)
     var homeHeaderScanSymbol = "+"
@@ -67,7 +72,6 @@ struct HomeResourcesUIModel {
     var wineMapPagerOverlapLegend = String(localized: "In common", bundle: .module)
     var wineDetailPickTitle = String(localized: "Your pick", bundle: .module)
     var wineDetailShowAnother = String(localized: "Show another ›", bundle: .module)
-    var wineDetailAwayCaption = String(localized: "away from your map", bundle: .module)
     var wineDetailProducerTitle = String(localized: "Producer", bundle: .module)
     var wineDetailStyleTitle = String(localized: "Style", bundle: .module)
     var wineDetailPairingsTitle = String(localized: "Pairings", bundle: .module)

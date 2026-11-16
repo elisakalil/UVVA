@@ -116,12 +116,11 @@ struct WineDetailUIModelTests {
         #expect(model(wine(), .discovery(.familiar, index: 0, count: 1)).resultCount == "The only white for your choices")
     }
 
-    @Test func surpriseMe_readsHowFarFromTheMap() {
+    @Test func HOME_R28a_surpriseMe_showsTheRealMatch_evenWhenLow() {
         let familiar = model(wine(), .discovery(.familiar, index: 0, count: 1))
         let surprise = model(wine(), .discovery(.surprise, index: 0, count: 1))
-        let percent = Int(familiar.percentage.dropLast()) ?? 0
-        #expect(surprise.percentage == "\(100 - percent)%")
-        #expect(surprise.percentageCaption == "away from your map")
+        #expect(surprise.percentage == familiar.percentage)
+        #expect(surprise.percentageCaption == "match with your map")
     }
 
     @Test func HOME_R28a_howToServe_startsWithTheTemperature() {

@@ -113,23 +113,29 @@ struct HomeContent: View {
     }
 
     private var footer: some View {
-        let fontSize: CGFloat = 10
-        return VStack(spacing: 8) {
+        let fontSize: CGFloat = 11
+        return VStack(spacing: 5) {
             HStack(alignment: .firstTextBaseline, spacing: 6) {
                 Text(resources.homeHeaderBrand)
                     .font(UVVAFont.whiteGrape(fontSize))
-                    .tracking(0.4)
+
                 if let version = resources.homeFooterVersion {
+                    Text("·")
+                        .accessibilityHidden(true)
                     Text(version)
-                        .font(UVVAFont.sans(fontSize))
-                        .tracking(1)
+                        .monospacedDigit()
                 }
             }
+            Text(resources.homeFooterCopyright)
+                .font(UVVAFont.sans(fontSize - 2, .light))
             Text(resources.homeFooterOrigin)
-                .font(UVVAFont.sans(fontSize))
-                .tracking(1.8)
+                .font(UVVAFont.sans(fontSize, .regular))
+                .padding(.top, 5)
         }
-        .foregroundStyle(Color.white.opacity(0.6))
+        .font(UVVAFont.sans(fontSize, .light))
+        .tracking(0.4)
+        .foregroundStyle(.white.opacity(0.75))
+        .multilineTextAlignment(.center)
         .accessibilityElement(children: .combine)
         .frame(maxWidth: .infinity)
         .padding(.top, 16)

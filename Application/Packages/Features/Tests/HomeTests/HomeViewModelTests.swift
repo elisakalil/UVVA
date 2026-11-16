@@ -94,7 +94,7 @@ private struct LearningStub: LearningRepository {
 private actor CellarStub: CellarRepository {
     private(set) var added: [String] = []
     func entries() async throws -> [CellarEntry] { [] }
-    func update(_ wineKey: String, verdict: Verdict?, note: String?) async throws {}
+    func update(_ wineKey: String, verdict: Verdict?, score: Int?, note: String?) async throws {}
     func delete(_ wineKey: String) async throws {}
     func save(_ draft: NewNoteDraft) async throws -> CellarEntry? { nil }
     func wineKeys() async throws -> Set<String> { Set(added) }
@@ -164,27 +164,29 @@ struct HomeViewModelTests {
                                     cellar: CellarStub(), courses: CoursesStub(), learning: LearningStub(),
                                     friends: FriendsRepositoryStub())
             .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
+        // Fruit by its position on the ruler: the card's delta is in position, as the map is shown.
+        func fruit(_ position: Double) -> PalateMap { PalateMap([.fruit: WineRuler.value(atPosition: position, on: .fruit)]) }
         func card() -> HomeCardModel? {
             viewModel.uiModel.content?.cards.first { $0.kind == "changedMapCard" }
         }
-        try await maps.saveQuizMap(PalateMap([.fruit: 4]), at: day)
+        try await maps.saveQuizMap(fruit(4), at: day)
         try await viewModel.prepare()
         #expect(card() == nil)
 
-        try await maps.saveRatedMap(PalateMap([.fruit: 5]), wineKey: "a", verdict: .yes, at: day.addingTimeInterval(1))
+        try await maps.saveRatedMap(fruit(5), wineKey: "a", verdict: .yes, at: day.addingTimeInterval(1))
         await viewModel.load()
         #expect(card() == .changedMapCard(axis: .fruit, delta: 1))
-        try await maps.saveRatedMap(PalateMap([.fruit: 3]), wineKey: "b", verdict: .no, at: day.addingTimeInterval(2))
+        try await maps.saveRatedMap(fruit(3), wineKey: "b", verdict: .no, at: day.addingTimeInterval(2))
         await viewModel.load()
         #expect(card() == .changedMapCard(axis: .fruit, delta: -2))
 
         // Even an identical quiz map clears the last rating.
-        try await maps.saveQuizMap(PalateMap([.fruit: 3]), at: day.addingTimeInterval(3))
+        try await maps.saveQuizMap(fruit(3), at: day.addingTimeInterval(3))
         try await viewModel.prepare()
         #expect(card() == nil)
         #expect(viewModel.uiModel.ratedVerdicts.isEmpty)
 
-        try await maps.saveRatedMap(PalateMap([.fruit: 4]), wineKey: "a", verdict: .yes, at: day.addingTimeInterval(4))
+        try await maps.saveRatedMap(fruit(4), wineKey: "a", verdict: .yes, at: day.addingTimeInterval(4))
         await viewModel.load()
         #expect(card() == .changedMapCard(axis: .fruit, delta: 1))
     }

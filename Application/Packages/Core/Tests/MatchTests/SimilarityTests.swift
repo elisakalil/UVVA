@@ -17,14 +17,31 @@ struct SimilarityTests {
         #expect(abs(Similarity.between(map(0), map(9))) < 1e-12)
     }
 
-    @Test func QUIZ_R21_scaleIsTwelve() {
-        // One point apart on every axis: √8 ≈ 2.83 out of 12.
-        #expect(abs(Similarity.between(map(3), map(4)) - (1 - 8.0.squareRoot() / 12)) < 1e-12)
-        #expect(Int((Similarity.between(map(3), map(6)) * 100).rounded()) == 29)
+    @Test func QUIZ_R21_onePointApartOnEveryAxis_is78() {
+        // √8 ≈ 2.83 out of 13.
+        #expect(abs(Similarity.between(map(3), map(4)) - (1 - 8.0.squareRoot() / 13)) < 1e-12)
+        #expect(Similarity.percent(map(3), map(4)) == 78)
     }
 
-    @Test func QUIZ_R21_fartherThanTwelve_isZero() {
+    @Test func QUIZ_R21_twoPointsApartOnEveryAxis_is56() {
+        #expect(Similarity.percent(map(3), map(5)) == 56)
+    }
+
+    @Test func QUIZ_R21_onePointOffOnTwoAxes_is89() {
+        let user = map(5)
+        let wine = PalateMap(user.values.merging([.acidity: 6, .oak: 4]) { $1 })
+        #expect(Similarity.percent(user, wine) == 89)
+    }
+
+    @Test func QUIZ_R21_fartherThanThirteen_isZero() {
         #expect(Similarity.between(map(1), map(6)) == 0)
+        #expect(Similarity.percent(map(2), map(5)) == 35)
+    }
+
+    @Test func QUIZ_R21_aStraightLine_keepsCloseWinesApart() {
+        let user = map(5)
+        let percent: (Double) -> Int = { Similarity.percent(user, PalateMap(user.values.merging([.body: 5 - $0]) { $1 })) }
+        #expect([1.0, 2, 3, 4, 5].map(percent) == [92, 85, 77, 69, 62])
     }
 
     @Test func QUIZ_R21_closerWine_scoresHigher() {

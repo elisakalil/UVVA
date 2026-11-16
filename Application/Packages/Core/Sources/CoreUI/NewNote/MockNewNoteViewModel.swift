@@ -39,9 +39,10 @@ final class MockNewNoteViewModel: NewNoteViewModelProtocol {
     func updateManual(_ field: NewNoteField, text: String) { flow.manual[field] = text }
     func pickType(_ type: String) { flow.manual.type = type }
     func continueManual() async { flow.manualRead(Self.wine) }
-    func replacePhoto(_ photo: Data) { flow.replacePhoto(photo) }
+    func replacePhoto(_ photo: Data, side: NewNotePhotoSide) { flow.replacePhoto(photo, side: side) }
     func answer(hasTasted: Bool) { flow.answer(hasTasted: hasTasted) }
     func pick(_ verdict: Verdict) { flow.pick(verdict) }
+    func rate(_ verdict: Verdict, score: Int?) { flow.rate(verdict, score: score) }
     func updateNote(_ text: String) { flow.note = text }
     func chipOptions(for field: NewNoteChipField) async -> [String] {
         switch field {

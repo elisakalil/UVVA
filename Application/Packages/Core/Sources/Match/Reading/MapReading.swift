@@ -2,17 +2,32 @@ import Core
 import Foundation
 
 /// The texts that read a palate map (QUIZ-R05, R14 to R16, R19). Neutral: no pronoun for the person (QUIZ-R20a).
+/// A map is read by its position on the ruler, not its raw values (QUIZ-R04a): floral 4.5 is more floral than most
+/// wines and reads high, while acidity 6 is an ordinary wine and reads in the middle.
 public struct MapReading: Sendable {
     public let map: PalateMap
+    /// Every axis by its position on the ruler, 0...9: what the texts read.
+    public let position: PalateMap
     /// QUIZ-R14a: the axes grouped by displayed level, highest first. Axes in one tier are tied: no text picks
     /// some of them over the others by the canonical order.
     public let tiers: [[PalateAxis]]
 
     public init(map: PalateMap) {
+        self.init(map: map, position: WineRuler.positions(of: map))
+    }
+
+    /// A map given by its positions, as the screen shows it.
+    init(position: PalateMap) {
+        let values = PalateAxis.allCases.map { ($0, WineRuler.value(atPosition: position[$0], on: $0)) }
+        self.init(map: PalateMap(Dictionary(uniqueKeysWithValues: values)), position: position)
+    }
+
+    private init(map: PalateMap, position: PalateMap) {
         self.map = map
+        self.position = position
         var tiers: [[PalateAxis]] = []
-        for axis in map.ranked {
-            if let last = tiers.last?.first, Self.level(map[last]) == Self.level(map[axis]) {
+        for axis in position.ranked {
+            if let last = tiers.last?.first, Self.level(position[last]) == Self.level(position[axis]) {
                 tiers[tiers.count - 1].append(axis)
             } else {
                 tiers.append([axis])
@@ -22,11 +37,11 @@ public struct MapReading: Sendable {
     }
 
     /// QUIZ-R14: by value, ties in the canonical order.
-    public var ranked: [PalateAxis] { map.ranked }
+    public var ranked: [PalateAxis] { position.ranked }
 
     /// QUIZ-R14a
     public var shape: MapShape {
-        guard tiers.count > 1 else { return .flat(AxisTone(map[tiers[0][0]])) }
+        guard tiers.count > 1 else { return .flat(AxisTone(position[tiers[0][0]])) }
         if tiers.count == 2 {
             if tiers[1].count == 1 { return .allButOneLower(tiers[1][0]) }
             if tiers[0].count == 1 { return .allButOneHigher(tiers[0][0]) }
@@ -91,7 +106,7 @@ public struct MapReading: Sendable {
     }
 
     /// The top's tone (QUIZ-R14a).
-    private var topTone: AxisTone { AxisTone(map[tiers[0][0]]) }
+    private var topTone: AxisTone { AxisTone(position[tiers[0][0]]) }
 
     /// The caption's opening (QUIZ-R15): "Strongest on" only for a high top. A low or middle top is only leaned
     /// toward, and a tie of more than three of them is the map at large.
@@ -123,14 +138,14 @@ public struct MapReading: Sendable {
 
     private var topSentences: [String] {
         let top = tiers[0]
-        guard AxisTone(map[top[0]]) == .high else { return [AxisLore.nothingHigh] }
+        guard AxisTone(position[top[0]]) == .high else { return [AxisLore.nothingHigh] }
         guard top.count <= 2 else { return [AxisLore.mostHigh] }
-        return leaders(2).filter { AxisTone(map[$0]) == .high }.map(AxisLore.high)
+        return leaders(2).filter { AxisTone(position[$0]) == .high }.map(AxisLore.high)
     }
 
     private var bottomSentences: [String] {
         let bottom = tiers[tiers.count - 1]
-        guard AxisTone(map[bottom[0]]) == .low else { return [AxisLore.nothingLow] }
+        guard AxisTone(position[bottom[0]]) == .low else { return [AxisLore.nothingLow] }
         return bottom.count <= 2 ? bottom.map(AxisLore.low) : [AxisLore.mostLow]
     }
 
@@ -160,7 +175,7 @@ public struct MapReading: Sendable {
             case 1: return String(localized: "\(top[0].label.lowercased()) above all", bundle: .module)
             default:
                 // "In that order" only when there is one: tied axes have none.
-                let levels = top.map { Self.level(map[$0]) }
+                let levels = top.map { Self.level(position[$0]) }
                 return Set(levels).count == levels.count
                     ? String(localized: "\(Self.list(top)), in that order", bundle: .module)
                     : Self.list(top)
@@ -171,10 +186,10 @@ public struct MapReading: Sendable {
     /// QUIZ-R19, Never.
     public var never: String {
         let bottom = tiers[tiers.count - 1]
-        if shape == .flat(.low) || (AxisTone(map[bottom[0]]) == .low && bottom.count > 2) {
+        if shape == .flat(.low) || (AxisTone(position[bottom[0]]) == .low && bottom.count > 2) {
             return String(localized: "Pour something loud and the glass comes back. Politely.", bundle: .module)
         }
-        guard AxisTone(map[bottom[0]]) == .low else {
+        guard AxisTone(position[bottom[0]]) == .low else {
             return String(localized: "Pour almost anything: nothing on this map sends a glass back.", bundle: .module)
         }
         return String(localized: "Pour something built on \(Self.list(bottom)) and the glass comes back. Politely.", bundle: .module)
@@ -193,12 +208,22 @@ public struct MapReading: Sendable {
         tier.count <= 3 ? list(tier) : String(localized: "several axes at once", bundle: .module)
     }
 
-    /// QUIZ-R05: the displayed level, 0...9.
-    public static func level(_ value: Double) -> Int {
-        Int(min(max(value.rounded(), 0), 9))
+    /// QUIZ-R05: the displayed level of a position, 0...9.
+    public static func level(_ position: Double) -> Int {
+        Int(min(max(position.rounded(), 0), 9))
     }
 
-    /// QUIZ-R05
+    /// QUIZ-R05: the displayed level of an axis of any map, the user's or a wine's: its position on the ruler.
+    public static func level(_ map: PalateMap, _ axis: PalateAxis) -> Int {
+        level(WineRuler.position(of: map[axis], on: axis))
+    }
+
+    /// QUIZ-R05: what a level means on an axis, in a glass (`AxisLevels`).
+    public static func levelWord(_ level: Int, on axis: PalateAxis) -> String {
+        AxisLevels.word(level, on: axis)
+    }
+
+    /// QUIZ-R05: the level alone, the same words on every axis.
     public static func levelWord(_ level: Int) -> String {
         let words = [
             String(localized: "None", bundle: .module),
