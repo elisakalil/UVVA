@@ -256,7 +256,7 @@ struct FriendProfileView<ViewModel: FriendProfileViewModelProtocol>: View {
 
     /// The choices of the dinner, as chips, and "Set the perfect dinner".
     private var dinner: some View {
-        DinnerChoicesSection(dinner: model.dinner, resources: resources.dinner, intro: resources.dinnerIntroText,
+        DinnerChoicesSection(dinner: model.dinner, resources: resources.dinner,
                              onToggleCourse: viewModel.toggleCourse, onPickFood: viewModel.pickFood,
                              onToggleInSeason: viewModel.toggleInSeason, onPickTime: viewModel.pickTime,
                              onSetTable: { Task { await viewModel.setTable() } })

@@ -126,7 +126,7 @@ struct GroupTableView<ViewModel: GroupTableViewModelProtocol>: View {
                             loadingText: resources.table.buildingText, emptyText: resources.table.noBottlesText,
                             onOpen: viewModel.openTableWine)
                 .padding(.top, sectionGap)
-            DinnerChoicesSection(dinner: model.dinner, resources: resources.dinner, intro: model.dinnerIntro,
+            DinnerChoicesSection(dinner: model.dinner, resources: resources.dinner,
                                  onToggleCourse: viewModel.toggleCourse, onPickFood: viewModel.pickFood,
                                  onToggleInSeason: viewModel.toggleInSeason, onPickTime: viewModel.pickTime,
                                  onSetTable: { Task { await viewModel.setTable() } })

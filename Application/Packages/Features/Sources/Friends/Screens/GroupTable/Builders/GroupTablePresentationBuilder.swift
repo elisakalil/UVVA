@@ -28,7 +28,6 @@ struct GroupTablePresentationBuilder {
         model.readings = readings
         model.dinnerTitle = resources.dinnerTitle(count)
         model.guestsText = resources.guests(count)
-        model.dinnerIntro = resources.dinnerIntro(count)
         model.footerText = resources.footer(count)
         model.share = bottles.flatMap { $0.isEmpty ? nil : TableShareBuilder(friendNames: friends.map(\.name), userName: userName,
                                                                               bottles: $0, resources: resources.table).build() }

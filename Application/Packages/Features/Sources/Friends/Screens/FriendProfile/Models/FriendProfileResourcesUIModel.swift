@@ -7,7 +7,6 @@ struct FriendProfileResourcesUIModel {
     var readingByReadingText = String(localized: "Reading by reading", bundle: .module)
     var youText = String(localized: "You", bundle: .module)
     var scanButtonText = String(localized: "Scan a wine", bundle: .module)
-    var dinnerIntroText = String(localized: "Choose how the evening goes. The dishes follow your choices; the bottles, both your maps.", bundle: .module)
     var dinner = DinnerResourcesUIModel()
 
     var removeText = String(localized: "Remove friend", bundle: .module)

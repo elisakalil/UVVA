@@ -29,7 +29,6 @@ final class MockGroupTableViewModel: GroupTableViewModelProtocol {
         model.dinnerTitle = "The perfect dinner for The 4 of you"
         model.footerText = "Read from all 4 palate maps · UVVA"
         model.guestsText = "The 4 of you"
-        model.dinnerIntro = "Choose how the evening goes. The dishes follow your choices; the bottles, all 4 maps."
         let friend = MockFriendProfileViewModel().uiModel
         model.bottles = friend.bottles
         model.togetherWines = friend.bottles?.map {

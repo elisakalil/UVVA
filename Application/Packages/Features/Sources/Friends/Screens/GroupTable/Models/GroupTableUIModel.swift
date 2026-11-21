@@ -27,9 +27,8 @@ public struct GroupTableUIModel {
     var togetherWines: [WineCardRowUIModel]?
 
     // FRI-R13, R15 · Set a table, as on a friend
-    /// FRI-R13a: the choices of the dinner, and what they change.
+    /// FRI-R13a: the choices of the dinner.
     var dinner = DinnerUIModel()
-    var dinnerIntro = ""
     /// FRI-R15a: "Set the perfect dinner" opens the table in a sheet: the menu, how to make it, how to share it.
     var isTableOpen = false
     /// The dish of each course and how to make it; nil while the bottles are worked out.

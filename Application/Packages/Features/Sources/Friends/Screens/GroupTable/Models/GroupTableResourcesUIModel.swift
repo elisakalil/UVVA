@@ -31,11 +31,6 @@ struct GroupTableResourcesUIModel {
 
     func guests(_ count: Int) -> String { String(localized: "The \(count) of you", bundle: .module) }
 
-    /// FRI-R13a, at the foot of the table: what the choices change.
-    func dinnerIntro(_ count: Int) -> String {
-        String(localized: "Choose how the evening goes. The dishes follow your choices; the bottles, all \(count) maps.", bundle: .module)
-    }
-
     func allWant(_ list: String) -> String {
         String(localized: "You all want \(list) in a glass.", bundle: .module)
     }

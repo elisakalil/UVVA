@@ -3,27 +3,34 @@ import DesignSystem
 import SwiftUI
 
 /// "Set the perfect dinner" (FRI-R13, R13a), at the foot of a friend's Compatibility and of a group table: the
-/// choices of the evening as chips, and the button that sets the table in its sheet (FRI-R15a).
+/// title with an info button that explains the feature in a sheet, the choices of the evening as chips, and the
+/// button that sets the table in its sheet (FRI-R15a).
 struct DinnerChoicesSection: View {
     var dinner: DinnerUIModel
     var resources: DinnerResourcesUIModel
-    /// "The dishes follow your choices; the bottles, both your maps" / "all 4 maps".
-    var intro: String
     var onToggleCourse: (TableCourse) -> Void
     var onPickFood: (DinnerPreferences.Food) -> Void
     var onToggleInSeason: () -> Void
     var onPickTime: (DinnerPreferences.Time) -> Void
     var onSetTable: () -> Void
 
+    @State private var isInfoPresented = false
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            FriendsCardTitle(text: resources.setTableButtonText)
-            Text(intro)
-                .font(UVVAFont.sans(12.5))
-                .lineSpacing(3)
-                .opacity(0.6)
-                .fixedSize(horizontal: false, vertical: true)
-                .padding(.top, 12)
+            HStack(alignment: .center, spacing: 12) {
+                FriendsCardTitle(text: resources.setTableButtonText)
+                Button { isInfoPresented = true } label: {
+                    InfoMark()
+                        .frame(width: 44, height: 44)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(resources.info.title)
+                // The 44 pt target reaches past the title's line without pushing the chips down.
+                .padding(.vertical, -12)
+                .padding(.trailing, -12)
+            }
             choices(resources.coursesText, dinner.courses, pick: onToggleCourse)
                 .padding(.top, 24)
             choices(resources.onTheTableText, dinner.food, pick: onPickFood)
@@ -42,6 +49,9 @@ struct DinnerChoicesSection: View {
                 .padding(.top, 28)
         }
         .animation(.easeOut(duration: 0.18), value: dinner)
+        .sheet(isPresented: $isInfoPresented) {
+            DinnerInfoSheet(resources: resources, onClose: { isInfoPresented = false })
+        }
     }
 
     private func choices<Value: Equatable>(_ title: String, _ options: [DinnerUIModel.Option<Value>],

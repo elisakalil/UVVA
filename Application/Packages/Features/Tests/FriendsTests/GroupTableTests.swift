@@ -161,7 +161,6 @@ struct GroupTableTests {
 
     @Test func FRI_R13a_settingTheDinner_buildsTheCoursesChosen_inItsSheet() async throws {
         let table = try await loadedTable(["Marina", "Bia"])
-        #expect(table.uiModel.dinnerIntro == "Choose how the evening goes. The dishes follow your choices; the bottles, all 3 maps.")
         #expect(table.uiModel.bottles?.map(\.courseText) == ["Starter", "Main", "Dessert"])
         #expect(table.uiModel.togetherWines?.map(\.id) == table.uiModel.bottles?.map(\.id))
         #expect(!table.uiModel.isTableOpen)
