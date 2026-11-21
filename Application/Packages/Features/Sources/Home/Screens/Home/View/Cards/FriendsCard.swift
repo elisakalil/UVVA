@@ -16,11 +16,13 @@ struct FriendsCard: View {
                         .textCase(.uppercase)
                         .lineSpacing(2)
                         .foregroundStyle(.white)
-                case let .hasMatch(name, compatibility):
+                case let .hasMatch(_, name, compatibility):
                     VStack(alignment: .leading, spacing: 12) {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(resources.compatibility(compatibility))
-                                .font(UVVAFont.sans(46, .ultraLight))
+                                .font(UVVAFont.sans(64, .ultraLight))
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.6)
                             Text(resources.friendMatch(name))
                                 .font(UVVAFont.sans(12.5))
                                 .foregroundStyle(.white)
@@ -32,10 +34,12 @@ struct FriendsCard: View {
                     .frame(maxHeight: .infinity, alignment: .topLeading)
                 case .hasFriends:
                     Text(resources.friendsCardTableTitle)
-                        .font(UVVAFont.redGrapes(21))
+                        .font(UVVAFont.redGrapes(24))
                         .textCase(.uppercase)
+                        .lineSpacing(2)
                         .foregroundStyle(.white)
-                    Text(resources.friendsCardPickFriendsTitle).font(UVVAFont.sans(12)).foregroundStyle(.white)
+                        .minimumScaleFactor(0.7)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }
             }
         }

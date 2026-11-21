@@ -21,7 +21,14 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
     private var isSelecting = false { didSet { refresh() } }
     /// In the order they were picked.
     private var selected: [String] = [] { didSet { refresh() } }
+    private var query = "" { didSet { refresh() } }
     private var lastRefresh: Date?
+    /// FRI-R11c: the wine received open full screen, the wines the Cellar held when it opened, and the one handed to
+    /// the new note once it is gone.
+    private var openedReceived: ReceivedWine? { didSet { refresh() } }
+    private var cellarWineKeys: Set<String> = []
+    private var wineForCellar: Wine?
+    private var toldHasFriends = false
     private var toastTask: Task<Void, Never>?
 
     private let loadUser: any LoadUserUseCaseProtocol
@@ -33,12 +40,22 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
     private let cancel: any CancelRequestUseCaseProtocol
     private let contacts: any ContactsAccessUseCaseProtocol
     private let lastTable: any LastTableUseCaseProtocol
-    private let makeProfile: (Friend, FriendsUser, FriendProfileTab, _ owner: FriendsViewModel) -> FriendProfileViewModel
+    private let shareWine: any ShareWineUseCaseProtocol
+    private let cellarWines: any CellarWinesUseCaseProtocol
+    private let pendingInvites: (any PendingInvitesUseCaseProtocol)?
+    /// The friend, the user, and whether the profile opens with the table set (HOME-R11).
+    private let makeProfile: (Friend, FriendsUser, _ setsTable: Bool, _ owner: FriendsViewModel) -> FriendProfileViewModel
     private let makeGroupTable: ([Friend], FriendsUser, _ owner: FriendsViewModel) -> GroupTableViewModel
     private let toastDuration: Duration
     private let now: () -> Date
     /// The friends changed: the app tells the Home (HOME-R11).
     private let onFriendsChange: () -> Void
+    /// FRI-R06: the app opens the contacts list of the Onboarding.
+    private let onAddFriends: () -> Void
+    /// "Add to cellar" on a wine received: the app opens the Cellar's new note.
+    private let onAddToCellar: (Wine) -> Void
+    /// FRI-R11c: the user has a friend, so the app asks to send pushes for the wines they will send. Once per session.
+    private let onHasFriends: () -> Void
     private let logger = Logger(subsystem: "app.uvva", category: "friends")
 
     init(loadUser: any LoadUserUseCaseProtocol, refreshFriends: any RefreshFriendsUseCaseProtocol,
@@ -46,10 +63,14 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
          declineRequest: any DeclineRequestUseCaseProtocol, dismiss: any DismissSuggestionUseCaseProtocol,
          cancel: any CancelRequestUseCaseProtocol, contacts: any ContactsAccessUseCaseProtocol,
          lastTable: any LastTableUseCaseProtocol,
-         makeProfile: @escaping (Friend, FriendsUser, FriendProfileTab, FriendsViewModel) -> FriendProfileViewModel,
+         shareWine: any ShareWineUseCaseProtocol = ShareWineUseCase(sharing: nil, wines: nil),
+         cellarWines: any CellarWinesUseCaseProtocol = CellarWinesUseCase(cellar: nil),
+         pendingInvites: (any PendingInvitesUseCaseProtocol)? = nil,
+         makeProfile: @escaping (Friend, FriendsUser, Bool, FriendsViewModel) -> FriendProfileViewModel,
          makeGroupTable: @escaping ([Friend], FriendsUser, FriendsViewModel) -> GroupTableViewModel,
          toastDuration: Duration = .seconds(3), now: @escaping () -> Date = Date.init,
-         onFriendsChange: @escaping () -> Void = {}) {
+         onFriendsChange: @escaping () -> Void = {}, onAddFriends: @escaping () -> Void = {},
+         onAddToCellar: @escaping (Wine) -> Void = { _ in }, onHasFriends: @escaping () -> Void = {}) {
         self.loadUser = loadUser
         self.refreshFriends = refreshFriends
         self.findQuickAdd = findQuickAdd
@@ -59,11 +80,17 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
         self.cancel = cancel
         self.contacts = contacts
         self.lastTable = lastTable
+        self.shareWine = shareWine
+        self.cellarWines = cellarWines
+        self.pendingInvites = pendingInvites
+        self.onAddToCellar = onAddToCellar
+        self.onHasFriends = onHasFriends
         self.makeProfile = makeProfile
         self.makeGroupTable = makeGroupTable
         self.toastDuration = toastDuration
         self.now = now
         self.onFriendsChange = onFriendsChange
+        self.onAddFriends = onAddFriends
         refresh()
     }
 
@@ -104,8 +131,50 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
         }
         content.isLoading = false
         await findSuggestions()
+        content.received = await shareWine.received(userID: user.id)
+        content.invites = await pendingInvites?.execute() ?? []
         content.isReady = true
         if Set(content.snapshot.friends.map(\.id)) != before { onFriendsChange() }
+        if !content.snapshot.friends.isEmpty, !toldHasFriends {
+            toldHasFriends = true
+            onHasFriends()
+        }
+    }
+
+    // MARK: FRI-R11c · Sent to you
+
+    public func openReceived(_ id: String) async {
+        let fetched: ReceivedWine?
+        if let known = content.received.first(where: { $0.id == id }) {
+            fetched = known
+        } else {
+            // From a push, before the tab read it.
+            fetched = await shareWine.received(id: id)
+            if let fetched { content.received.insert(fetched, at: 0) }
+        }
+        guard let fetched else { return }
+        cellarWineKeys = await cellarWines.wineKeys()
+        // From a push, over whatever was open: it closes first, so the wine can open over the tab.
+        if profile != nil || groupTable != nil || isInviting {
+            profile = nil
+            groupTable = nil
+            isInviting = false
+            try? await Task.sleep(for: .milliseconds(600))
+        }
+        openedReceived = fetched
+    }
+
+    public func closeReceived() { openedReceived = nil }
+
+    public func addReceivedToCellar() {
+        wineForCellar = openedReceived?.wine
+        openedReceived = nil
+    }
+
+    public func receivedDismissed() {
+        guard let wine = wineForCellar else { return }
+        wineForCellar = nil
+        onAddToCellar(wine)
     }
 
     /// Quick add leaves out friends and whoever already asked the user; those the user asked stay, as "Requested".
@@ -182,13 +251,38 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
         await findSuggestions()
     }
 
+    /// FRI-R06 "Invite friends": asks for the contacts first if iOS never did, then opens the contacts
+    /// list. Refused, nothing opens: the tab offers the Settings instead.
+    public func addFriends() async {
+        if content.contactsAccess == .notDetermined {
+            content.contactsAccess = await contacts.request()
+            await findSuggestions()
+        }
+        guard content.contactsAccess == .granted else { return }
+        onAddFriends()
+    }
+
     // MARK: FRI-R10 · Um amigo
 
     public func openFriend(_ id: String) {
-        open(id, tab: .palate)
+        open(id)
     }
 
     public func closeFriend() { profile = nil }
+
+    /// HOME-R04b: a new-friend notification opens only that friend's profile, on its Map, with no table set. The
+    /// friend may have just come in, so the public database is read again when they are not in the list yet.
+    public func openFriendProfile(_ id: String) async {
+        await load()
+        if !content.snapshot.friends.contains(where: { $0.id == id }) { await reload() }
+        open(id)
+    }
+
+    /// HOME-R11: the Home's match card opens the table with that friend (FRI-R13).
+    public func openFriendTable(_ id: String) async {
+        await load()
+        open(id, setsTable: true)
+    }
 
     /// HOME-R11, FRI-R17: the Home's match card opens the last table; before any, the table with the only friend.
     public func openLastTable() async {
@@ -206,12 +300,12 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
         } else {
             nil
         }
-        if let id { open(id, tab: .table) }
+        if let id { open(id, setsTable: true) }
     }
 
-    private func open(_ id: String, tab: FriendProfileTab) {
+    private func open(_ id: String, setsTable: Bool = false) {
         guard let user = content.user, let friend = content.snapshot.friends.first(where: { $0.id == id }) else { return }
-        profile = makeProfile(friend, user, tab, self)
+        profile = makeProfile(friend, user, setsTable, self)
     }
 
     /// D4: the friend leaves the list, and the profile closes.
@@ -221,10 +315,17 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
         onFriendsChange()
     }
 
+    // MARK: Busca
+
+    public func updateQuery(_ query: String) {
+        self.query = query
+    }
+
     // MARK: FRI-R18 · Mesa de grupo
 
     public func startSelecting() {
         selected = []
+        query = ""
         isSelecting = true
     }
 
@@ -279,8 +380,18 @@ public final class FriendsViewModel: FriendsViewModelProtocol {
         let builder = FriendsPresentationBuilder(content: content, resources: uiModel.resources)
         var model = uiModel
         model.countText = builder.countText
-        model.friends = builder.friends
+        model.friends = builder.friends(matching: query)
+        model.pending = builder.pending
+        model.query = query
+        model.isSearching = !query.trimmingCharacters(in: .whitespaces).isEmpty
         model.requests = builder.requests
+        model.received = builder.received
+        model.receivedWine = openedReceived.flatMap { received in
+            content.user.map { user in
+                FriendWinePresentationBuilder(wine: received.wine, reader: .you(senderName: received.fromName, map: user.map),
+                                              isInCellar: cellarWineKeys.contains(received.wine.id)).build()
+            }
+        }
         model.quickAdd = builder.quickAdd
         model.isEmpty = builder.isEmpty
         model.isLoading = content.isLoading

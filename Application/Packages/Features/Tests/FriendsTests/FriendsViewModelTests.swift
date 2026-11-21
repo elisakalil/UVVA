@@ -10,12 +10,13 @@ struct FriendsViewModelTests {
     var contacts = ContactsFake()
     let marinaMap = PalateMap([.acidity: 8, .fruit: 7, .body: 6])
 
-    func makeViewModel(contacts: ContactsFake? = nil, onFriendsChange: @escaping () -> Void = {}) -> FriendsViewModel {
+    func makeViewModel(contacts: ContactsFake? = nil, onFriendsChange: @escaping () -> Void = {},
+                       onAddFriends: @escaping () -> Void = {}) -> FriendsViewModel {
         FriendsFactory(profiles: ProfilesStub(), maps: MapStub(), friends: repository, catalog: CatalogStub(),
                        social: social,
                        contacts: contacts ?? self.contacts,
                        homeCountry: PhoneCountries.country(region: "PT")!)
-            .makeViewModel(onFriendsChange: onFriendsChange)
+            .makeViewModel(onFriendsChange: onFriendsChange, onAddFriends: onAddFriends)
     }
 
     func friends(of me: String, _ name: String, map: PalateMap? = nil) {
@@ -33,6 +34,30 @@ struct FriendsViewModelTests {
         #expect(viewModel.uiModel.friends.map(\.name) == ["Bia", "Marina", "Rui"])
         #expect(viewModel.uiModel.countText == "3 friends")
         #expect(viewModel.uiModel.isEmpty == false)
+    }
+
+    @Test func search_keepsTheFriendsWhoseNameHoldsIt_ignoringCaseAndAccents() async {
+        for name in ["Marina", "Mário", "Rui"] { friends(of: "elisa", name) }
+        let viewModel = makeViewModel()
+        await viewModel.load()
+        viewModel.updateQuery("mar")
+        #expect(viewModel.uiModel.friends.map(\.name) == ["Marina", "Mário"])
+        #expect(viewModel.uiModel.isSearching)
+        viewModel.updateQuery("MARIO")
+        #expect(viewModel.uiModel.friends.map(\.name) == ["Mário"])
+        viewModel.updateQuery(" ")
+        #expect(viewModel.uiModel.friends.count == 3)
+        #expect(!viewModel.uiModel.isSearching)
+    }
+
+    @Test func search_endsWhenChoosingWhoComes() async {
+        for name in ["Marina", "Bia"] { friends(of: "elisa", name) }
+        let viewModel = makeViewModel()
+        await viewModel.load()
+        viewModel.updateQuery("bia")
+        viewModel.startSelecting()
+        #expect(viewModel.uiModel.query.isEmpty)
+        #expect(viewModel.uiModel.friends.count == 2)
     }
 
     @Test func FRI_R04_row_showsSignatureAndCompatibility() async {
@@ -122,6 +147,45 @@ struct FriendsViewModelTests {
         #expect(try await repository.declinedRequests() == ["marina"])
         await viewModel.reload()
         #expect(viewModel.uiModel.requests.isEmpty)
+    }
+
+    // MARK: FRI-R04b · Adicionados e convidados
+
+    @Test func FRI_R04b_added_isFadedAtTheEnd_byTheirContactName() async {
+        friends(of: "elisa", "Marina")
+        let viewModel = makeViewModel(contacts: sofiaContact())
+        await viewModel.load()
+        #expect(viewModel.uiModel.pending.isEmpty)
+        await viewModel.add("sofia")
+        #expect(viewModel.uiModel.friends.map(\.name) == ["Marina"])
+        #expect(viewModel.uiModel.pending.map(\.name) == ["Sofia Reis"])
+        #expect(viewModel.uiModel.pending.first?.statusText == "ADDED")
+        await viewModel.cancelRequest("sofia")
+        #expect(viewModel.uiModel.pending.isEmpty)
+    }
+
+    @Test func FRI_R04b_added_withoutQuickAdd_goesByTheirFirstName() async {
+        social.profile("rui", "Rui")
+        social.request("elisa", "rui")
+        let viewModel = makeViewModel()
+        await viewModel.load()
+        #expect(viewModel.uiModel.pending.map(\.name) == ["Rui"])
+        #expect(viewModel.uiModel.friends.isEmpty)
+    }
+
+    @Test func FRI_R04b_invited_followTheAdded_untilTheyJoin() async {
+        social.profile("rui", "Rui")
+        social.request("elisa", "rui")
+        try? await repository.saveInvite(InvitedContact(id: "c2", name: "Carla Souza", phones: ["913 000 000"], invitedAt: .now))
+        try? await repository.saveInvite(InvitedContact(id: "c3", name: "Bruno", phones: ["914 000 000"], invitedAt: .now))
+        social.profile("bruno", "Bruno", phone: "+351914000000")
+        let viewModel = makeViewModel()
+        await viewModel.load()
+        #expect(viewModel.uiModel.pending.map(\.name) == ["Rui", "Carla Souza"])
+        #expect(viewModel.uiModel.pending.map(\.statusText) == ["ADDED", "INVITED"])
+        // Bruno joined: his invite is forgotten.
+        let left = try? await repository.invitedContacts()
+        #expect(left?.map(\.id) == ["c2"])
     }
 
     // MARK: FRI-R07, R08, R09 · Quick add
@@ -215,6 +279,47 @@ struct FriendsViewModelTests {
         #expect(viewModel.uiModel.quickAdd == .askAccess)
         await viewModel.askForContacts()
         guard case .suggestions = viewModel.uiModel.quickAdd else { Issue.record("no suggestions"); return }
+    }
+
+    // MARK: FRI-R06 · Add friends to compare maps
+
+    @Test func FRI_R06_addFriends_withAccess_opensTheContacts() async {
+        var opened = 0
+        let viewModel = makeViewModel(contacts: ContactsFake(access: .granted), onAddFriends: { opened += 1 })
+        await viewModel.load()
+        await viewModel.addFriends()
+        #expect(opened == 1)
+    }
+
+    @Test func FRI_R07b_friends_butNobodyToAdd_invite_opensTheContacts() async {
+        friends(of: "elisa", "Marina")
+        var opened = 0
+        let viewModel = makeViewModel(contacts: ContactsFake(access: .granted), onAddFriends: { opened += 1 })
+        await viewModel.load()
+        #expect(!viewModel.uiModel.isEmpty)
+        #expect(viewModel.uiModel.quickAdd == .noSuggestions)
+        await viewModel.addFriends()
+        #expect(opened == 1)
+    }
+
+    @Test func FRI_R06_addFriends_neverAsked_asksFirst_thenOpens() async {
+        var opened = 0
+        let contacts = ContactsFake(access: .notDetermined)
+        let viewModel = makeViewModel(contacts: contacts, onAddFriends: { opened += 1 })
+        await viewModel.load()
+        await viewModel.addFriends()
+        #expect(contacts.access() == .granted)
+        #expect(opened == 1)
+    }
+
+    @Test func FRI_R06_addFriends_refused_opensNothing() async {
+        var opened = 0
+        let viewModel = makeViewModel(contacts: ContactsFake(access: .notDetermined, grantOnRequest: false),
+                                      onAddFriends: { opened += 1 })
+        await viewModel.load()
+        await viewModel.addFriends()
+        #expect(opened == 0)
+        #expect(viewModel.uiModel.quickAdd == .openSettings)
     }
 
     @Test func FRI_R07a_refused_offersTheSettings() async {

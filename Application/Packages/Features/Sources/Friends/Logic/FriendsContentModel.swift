@@ -6,6 +6,10 @@ struct FriendsContentModel: Equatable, Sendable {
     var user: FriendsUser?
     var snapshot = FriendsSnapshot()
     var suggestions: [QuickAddSuggestion] = []
+    /// FRI-R11c: the wines friends sent the user, newest first.
+    var received: [ReceivedWine] = []
+    /// FRI-R04b: contacts invited who are not on UVVA yet.
+    var invites: [InvitedContact] = []
     var contactsAccess: ContactsAccess = .notDetermined
     /// The friends were read from the device and the public database was not reached yet.
     var isLoading = true

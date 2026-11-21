@@ -38,6 +38,7 @@ public struct FrostedGlass: View {
     static let grainOpacity = 1.0
 
     @Environment(\.backdropFrame) private var backdropFrame
+    @Environment(\.glassPhoto) private var glassPhoto
     @Environment(\.sharesGlassBackdrop) private var sharesBackdrop
     @Environment(\.glassRimOpacity) private var rimOpacity
     /// The grain is drawn at the screen's own scale, so one speck is one device pixel.
@@ -140,22 +141,22 @@ public struct FrostedGlass: View {
 
     /// The photo is drawn by the scroll view's `glassBackdrop()`, not by this pane.
     private var usesSharedBackdrop: Bool {
-        sharesBackdrop && !pinsPhoto && backdropFrame != nil && GlassTextures.blurredPhoto != nil
+        sharesBackdrop && !pinsPhoto && backdropFrame != nil && GlassTextures.blurred(glassPhoto) != nil
     }
 
     /// The photo fills the glass edge to edge, so a shape behind it can cast the shadow without showing through.
     /// With a shared backdrop, the backdrop casts it.
     private var isOpaque: Bool {
-        !usesSharedBackdrop && GlassTextures.blurredPhoto != nil && (pinsPhoto || backdropFrame != nil)
+        !usesSharedBackdrop && GlassTextures.blurred(glassPhoto) != nil && (pinsPhoto || backdropFrame != nil)
     }
 
     /// The blurred photo, cut to the part that sits behind this glass.
     @ViewBuilder private var diffusedPhoto: some View {
         if usesSharedBackdrop {
             EmptyView()
-        } else if pinsPhoto, let photo = GlassTextures.blurredPhoto {
+        } else if pinsPhoto, let photo = GlassTextures.blurred(glassPhoto) {
             photoPinned(photo)
-        } else if let backdropFrame, let photo = GlassTextures.blurredPhoto {
+        } else if let backdropFrame, let photo = GlassTextures.blurred(glassPhoto) {
             FixedPhoto(photo: photo, backdropFrame: backdropFrame)
         } else {
             Rectangle().fill(.ultraThinMaterial).environment(\.colorScheme, .light).opacity(0.7)
@@ -166,10 +167,10 @@ public struct FrostedGlass: View {
     @ViewBuilder private var clearerCenter: some View {
         if usesSharedBackdrop {
             EmptyView()
-        } else if pinsPhoto, let photo = GlassTextures.lightlyBlurredPhoto {
+        } else if pinsPhoto, let photo = GlassTextures.lightlyBlurred(glassPhoto) {
             photoPinned(photo)
                 .mask { PanePiece.center(radius: radius).view(scale: displayScale) }
-        } else if let backdropFrame, let photo = GlassTextures.lightlyBlurredPhoto {
+        } else if let backdropFrame, let photo = GlassTextures.lightlyBlurred(glassPhoto) {
             FixedPhoto(photo: photo, backdropFrame: backdropFrame)
                 .mask { inset(by: Self.frostedEdge, fade: Self.edgeFade).drawingGroup() }
         }

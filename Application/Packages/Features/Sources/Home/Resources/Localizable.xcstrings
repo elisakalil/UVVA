@@ -23,6 +23,59 @@
     "%@ · 1 year" : {
 
     },
+    "%@ is now your friend. You are a %lld%% match." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ is now your friend. You are a %2$lld%% match."
+          }
+        }
+      }
+    },
+    "%@ sent you a wine: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ sent you a wine: %2$@"
+          }
+        }
+      }
+    },
+    "%@ wants to compare palates with you" : {
+
+    },
+    "%@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        }
+      }
+    },
+    "%@, %@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@, %3$@"
+          }
+        }
+      }
+    },
+    "%@, lesson %lld is waiting" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, lesson %2$lld is waiting"
+          }
+        }
+      }
+    },
     "%lld of %lld" : {
       "localizations" : {
         "en" : {
@@ -139,6 +192,9 @@
 
     },
     "Clear selection" : {
+
+    },
+    "Close" : {
 
     },
     "Close definition" : {
@@ -536,6 +592,9 @@
         }
       }
     },
+    "Just now" : {
+
+    },
     "Learn a grape" : {
 
     },
@@ -711,13 +770,13 @@
     "Notes" : {
 
     },
+    "Nothing new yet. Requests and wines from friends, and changes to your map, will show here." : {
+
+    },
     "Nothing runs high on your map, and nothing runs high on this wine." : {
 
     },
     "Notifications" : {
-
-    },
-    "Notifications, unread" : {
 
     },
     "Oak stays in the background as you sip." : {
@@ -763,9 +822,6 @@
 
     },
     "Pick up to three" : {
-
-    },
-    "Pick who is coming →" : {
 
     },
     "Portugal" : {
@@ -1404,6 +1460,9 @@
     "United States" : {
       "extractionState" : "manual"
     },
+    "Unread" : {
+
+    },
     "UVVA" : {
 
     },
@@ -1541,6 +1600,12 @@
       }
     },
     "Your map likes %@, and this wine is high on it." : {
+
+    },
+    "Your palate map moved: less %@" : {
+
+    },
+    "Your palate map moved: more %@" : {
 
     },
     "Your pick" : {

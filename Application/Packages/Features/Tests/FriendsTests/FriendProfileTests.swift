@@ -1,5 +1,6 @@
 import Core
 import Foundation
+import Match
 import Testing
 @testable import Friends
 
@@ -33,7 +34,7 @@ struct FriendProfileTests {
         let list = makeList()
         await list.load()
         list.openFriend("marina")
-        #expect(list.profile?.uiModel.tab == .palate)
+        #expect(list.profile?.uiModel.tab == .map)
         #expect(list.profile?.uiModel.name == "Marina")
         list.profile?.selectTab(.compatibility)
         #expect(list.profile?.uiModel.tab == .compatibility)
@@ -50,12 +51,97 @@ struct FriendProfileTests {
         #expect(readings.first { $0.name == "Acidity" }?.level == 8)
     }
 
+    @Test func FRI_R11_giftWines_leanOnTheirLeadingReadings() async {
+        let map = PalateMap.positions([.acidity: 8, .fruit: 7, .body: 6])
+        befriend("marina", "Marina", map: map)
+        let list = makeList()
+        await list.load()
+        list.openFriend("marina")
+        #expect(list.profile?.uiModel.giftWines == nil)
+        await list.profile?.load()
+        let model = list.profile?.uiModel
+        let wines = model?.giftWines ?? []
+        #expect(model?.giftTitle == "Picks for Marina")
+        #expect(!wines.isEmpty)
+        #expect(wines.allSatisfy { ["Acidity", "Fruit", "Body"].contains($0.axisName) })
+        // Under the wine, only the reading and how strong, as the Home: "High acidity", "Full body".
+        #expect(wines.allSatisfy { row in
+            row.axisName == "Body" ? row.axisText.hasSuffix("body") : row.axisText.hasSuffix(row.axisName.lowercased())
+        })
+    }
+
+    @Test func FRI_R11_cardTitles_useTheFirstName() {
+        var model = FriendProfileUIModel()
+        FriendProfilePresentationBuilder(friend: Friend(id: "b", name: "Beatriz Damas", map: userMap, addedAt: .now),
+                                         userMap: userMap, resources: FriendProfileResourcesUIModel())
+            .build(into: &model)
+        #expect(model.mapTitle == "Beatriz Map")
+        #expect(model.giftTitle == "Picks for Beatriz")
+    }
+
+    @Test func FRI_R11_friendWine_readsTheMatchOnTheFriendsMap() {
+        let wine = CatalogStub.wines[0]
+        let friendMap = PalateMap.positions([.acidity: 8, .fruit: 6])
+        let model = FriendWinePresentationBuilder(wine: wine, reader: .friend(name: "Marina", map: friendMap),
+                                                  sending: .sent).build()
+        #expect(model.content.percentage == "\(Similarity.percent(wine.profile, friendMap))%")
+        #expect(model.content.palate == friendMap)
+        #expect(model.content.percentageCaption == "match with Marina's map")
+        #expect(model.content.sharedLine?.hasSuffix("Marina's map.") == true)
+        #expect(model.strings.comparison == "This wine and Marina")
+        #expect(model.strings.palateLegend == "Marina's map")
+        #expect(model.footer == .send(title: "Sent to Marina", isEnabled: false, failed: nil))
+        #expect(model.content.findURL != nil)
+    }
+
+    @Test func FRI_R12a_scannedWine_readsTheMatchOnBothMaps_andEachOne() {
+        let wine = CatalogStub.wines[1]
+        let friendMap = PalateMap.positions([.tannin: 8, .oak: 7])
+        let both = TableMatch.crossed([userMap, friendMap])
+        let model = FriendWinePresentationBuilder(
+            wine: wine, reader: .both(friendName: "Marina", userMap: userMap, friendMap: friendMap)).build()
+        #expect(model.content.percentage == "\(Similarity.percent(wine.profile, both))%")
+        #expect(model.content.palate == both)
+        #expect(model.content.percentageCaption == "match with your two maps")
+        #expect(model.strings.comparison == "This wine and you two")
+        #expect(model.people.map(\.name) == ["You", "Marina"])
+        #expect(model.people.map(\.percentage) == ["\(Similarity.percent(wine.profile, userMap))%",
+                                                    "\(Similarity.percent(wine.profile, friendMap))%"])
+    }
+
+    @Test func FRI_R12a_withoutAScanner_thereIsNoScan() async throws {
+        befriend("marina", "Marina", map: userMap)
+        let list = makeList()
+        await list.load()
+        list.openFriend("marina")
+        let profile = try #require(list.profile)
+        #expect(profile.uiModel.canScan == false)
+        profile.scanWine()
+        #expect(profile.uiModel.scanner == nil)
+    }
+
     // MARK: FRI-R12 · Compatibility
 
     @Test func FRI_R12_title_withTheCompatibility() {
         var model = FriendProfileUIModel()
         builder(friend: userMap).build(into: &model)
         #expect(model.matchTitle == "100% of your palate map matches Marina")
+    }
+
+    @Test func FRI_R12_readingByReading_bothReadings_andHowFarApart() {
+        var model = FriendProfileUIModel()
+        builder(friend: userMap).build(into: &model)
+        #expect(model.compareRows.count == PalateAxis.allCases.count)
+        #expect(model.compareRows.allSatisfy { $0.verdict == "Same" && $0.isSame && $0.mineLevel == $0.theirsLevel })
+        #expect(model.compatibilityText == "100%")
+        #expect(model.matchCaption == "of your palate map matches Marina")
+        #expect(model.guestsText == "You & Marina")
+    }
+
+    @Test func FRI_R12_readingByReading_farApart_isOpposed() {
+        let row = builder(friend: PalateMap.positions([.tannin: 9])).compareRows.first { $0.name == "Tannin" }
+        #expect(row?.verdict == "Opposed")
+        #expect(row?.isSame == false)
     }
 
     @Test func FRI_R12_twoSharedAxes() {
@@ -102,14 +188,14 @@ struct FriendProfileTests {
 
     // MARK: FRI-R17 · Última mesa
 
-    @Test func FRI_R17_openingTheTable_keepsItAsTheLast() async throws {
+    @Test func FRI_R17_settingTheTable_keepsItAsTheLast() async throws {
         befriend("marina", "Marina", map: userMap)
         let list = makeList()
         await list.load()
         list.openFriend("marina")
         #expect(try await repository.lastTable() == nil)
-        list.profile?.selectTab(.table)
-        await list.profile?.load()
+        await list.profile?.setTable()
+        #expect(list.profile?.uiModel.isTableOpen == true)
         #expect(try await repository.lastTable() == ["marina"])
     }
 
@@ -120,7 +206,8 @@ struct FriendProfileTests {
         let list = makeList()
         await list.openLastTable()
         #expect(list.profile?.id == "rui")
-        #expect(list.profile?.uiModel.tab == .table)
+        #expect(list.profile?.uiModel.tab == .compatibility)
+        #expect(list.profile?.uiModel.isTableOpen == true)
     }
 
     @Test func HOME_R11_noLastTable_opensTheOnlyFriend() async {
@@ -128,7 +215,21 @@ struct FriendProfileTests {
         let list = makeList()
         await list.openLastTable()
         #expect(list.profile?.id == "marina")
-        #expect(list.profile?.uiModel.tab == .table)
+        #expect(list.profile?.uiModel.tab == .compatibility)
+        #expect(list.profile?.uiModel.isTableOpen == true)
+    }
+
+    @Test func HOME_R04b_newFriendNotification_opensOnlyTheProfile_withoutATable() async throws {
+        befriend("marina", "Marina", map: userMap)
+        let list = makeList()
+        await list.openFriendProfile("marina")
+        #expect(list.profile?.id == "marina")
+        #expect(list.profile?.uiModel.tab == .map)
+        #expect(list.profile?.uiModel.isTableOpen == false)
+        await list.profile?.load()
+        #expect(list.profile?.uiModel.isTableOpen == false)
+        #expect(try await repository.lastTable() == nil)
+        #expect(list.groupTable == nil)
     }
 
     // MARK: D4 · Remover

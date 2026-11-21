@@ -98,7 +98,7 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             onSaveToCellar: { viewModel.openCellarNote(for: $0, fromHero: true) },
             onScan: viewModel.scan,
             onOpenFriends: viewModel.openFriends,
-            onOpenLastTable: viewModel.openLastTable,
+            onOpenFriendTable: viewModel.openFriendTable,
             onOpenMapHistory: viewModel.openMapHistory)
     }
 

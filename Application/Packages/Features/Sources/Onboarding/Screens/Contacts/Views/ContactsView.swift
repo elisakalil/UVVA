@@ -1,10 +1,14 @@
 import DesignSystem
 import SwiftUI
+import UIKit
 
 /// Contacts (ONB-R37): who is on UVVA, who to invite, an A–Z bar, a search bar once scrolled and "Next".
 struct ContactsView<ViewModel: ContactsViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
-    @State private var inviting: ContactRowUIModel?
+    /// The invite going out by the share sheet, when Messages cannot send it.
+    @State private var sharing: SharedInvite?
+    /// The invite open in Messages (ONB-R37a).
+    @State private var messaging: InviteMessage?
     @State private var scrolled = false
     @FocusState private var searching: Bool
 
@@ -107,11 +111,22 @@ struct ContactsView<ViewModel: ContactsViewModelProtocol>: View {
             }
         }
         .task { await viewModel.loadContacts() }
-        .sheet(item: $inviting) { row in
-            if let link = viewModel.uiModel.inviteLink {
-                ActivityShareSheet(message: viewModel.uiModel.inviteMessage, link: link) { inviting = nil }
-                    .presentationDetents([.medium, .large])
+        .sheet(item: $sharing) { invite in
+            Group {
+                if let image = invite.image {
+                    ActivityShareSheet(image: image, message: viewModel.uiModel.inviteText) { sharing = nil }
+                } else if let link = viewModel.uiModel.inviteLink {
+                    ActivityShareSheet(message: viewModel.uiModel.inviteMessage, link: link) { sharing = nil }
+                }
             }
+            .presentationDetents([.medium, .large])
+        }
+        .sheet(item: $messaging) { message in
+            MessageComposer(message: message) { sent in
+                if sent { viewModel.markInvited(message.rowID) }
+                messaging = nil
+            }
+            .ignoresSafeArea()
         }
     }
 
@@ -147,9 +162,27 @@ struct ContactsView<ViewModel: ContactsViewModelProtocol>: View {
         switch row.state {
         case .add: Task { await viewModel.add(row.id) }
         case .invite, .invited:
-            viewModel.markInvited(row.id)
-            inviting = row
+            invite(row)
         case .requested: break
         }
     }
+
+    /// ONB-R37a: by SMS to the contact's number, with the text, the link and the picture; without Messages,
+    /// through the share sheet.
+    private func invite(_ row: ContactRowUIModel) {
+        let model = viewModel.uiModel
+        let art = InviteArt(name: model.inviteName, map: model.inviteMap).jpeg()
+        if MessageComposer.canSend, let phone = row.phone {
+            messaging = InviteMessage(rowID: row.id, phone: phone, text: model.inviteText, image: art)
+        } else {
+            viewModel.markInvited(row.id)
+            sharing = SharedInvite(image: art.flatMap(UIImage.init(data:)))
+        }
+    }
+}
+
+/// An invite going out by the share sheet.
+private struct SharedInvite: Identifiable {
+    let id = UUID()
+    var image: UIImage?
 }

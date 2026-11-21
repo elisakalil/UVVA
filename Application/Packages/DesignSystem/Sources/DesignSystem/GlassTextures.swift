@@ -7,14 +7,34 @@ import UIKit
 /// the Splash, so the app prepares them off it during the Splash (`prepare()`).
 public enum GlassTextures {
     static let photoName = "Background"
+    static let hillsPhotoName = "BackgroundHills"
     /// Blur of the glass in points, measured on the photo as it fills a 402 pt-wide screen.
     static let blurPoints: CGFloat = 9
     /// A lighter blur for the centre of cards, which is a touch clearer than the edge.
     static let centerBlurPoints: CGFloat = 7
 
     /// The photo blurred far beyond what a system material does, so the vineyard reads as soft patches of colour.
-    static let blurredPhoto = blurred(by: blurPoints)
-    static let lightlyBlurredPhoto = blurred(by: centerBlurPoints)
+    static let blurredPhoto = blurred(photoName, by: blurPoints)
+    static let lightlyBlurredPhoto = blurred(photoName, by: centerBlurPoints)
+    /// The same for the hills (bg2), for glass over a page that shows them (Friends).
+    static let blurredHills = blurred(hillsPhotoName, by: blurPoints)
+    static let lightlyBlurredHills = blurred(hillsPhotoName, by: centerBlurPoints)
+
+    /// The heavily blurred copy of the page photo behind the glass.
+    static func blurred(_ photo: GlassPhoto) -> UIImage? {
+        switch photo {
+        case .vineyard: blurredPhoto
+        case .hills: blurredHills
+        }
+    }
+
+    /// The lightly blurred copy, for the clearer centre of cards.
+    static func lightlyBlurred(_ photo: GlassPhoto) -> UIImage? {
+        switch photo {
+        case .vineyard: lightlyBlurredPhoto
+        case .hills: lightlyBlurredHills
+        }
+    }
 
     /// One Core Image context for all the glass: each one is slow to create.
     static let context = CIContext()
@@ -24,12 +44,14 @@ public enum GlassTextures {
         await Task.detached(priority: .userInitiated) {
             _ = blurredPhoto
             _ = lightlyBlurredPhoto
+            _ = blurredHills
+            _ = lightlyBlurredHills
             _ = grain
         }.value
     }
 
-    private static func blurred(by points: CGFloat) -> UIImage? {
-        guard let source = UIImage(named: photoName, in: .module, with: nil), let input = CIImage(image: source) else { return nil }
+    private static func blurred(_ name: String, by points: CGFloat) -> UIImage? {
+        guard let source = UIImage(named: name, in: .module, with: nil), let input = CIImage(image: source) else { return nil }
         let blur = CIFilter.gaussianBlur()
         // Clamp first so the edges blur into the photo's own colours instead of into transparency.
         blur.inputImage = input.clampedToExtent()

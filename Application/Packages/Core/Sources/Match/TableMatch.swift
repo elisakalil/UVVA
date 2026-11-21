@@ -69,17 +69,19 @@ public enum TableMatch {
         return spreadLimits.first { gap <= $0.1 + 1e-9 }?.0 ?? .widest
     }
 
-    /// FRI-R14, R15: one bottle per course, Starter, Main and Dessert. For each course, the dish is the recipe
-    /// closest to the crossed map, and the wine is the one, of a type the dish goes with, closest to the dish and the
-    /// table together. A wine is used once. A course with no recipe, or no wine of its types, is left out.
-    public static func tableBottles(_ maps: [PalateMap], wines: [Wine], recipes: [Recipe]) -> [TableBottle] {
+    /// FRI-R14, R15: one bottle per course, Starter, Main and Dessert unless `courses` says otherwise (FRI-R13a), in
+    /// the order they are served. For each course, the dish is the recipe closest to the crossed map, and the wine is
+    /// the one, of a type the dish goes with, closest to the dish and the table together. A wine is used once. A course
+    /// with no recipe, or no wine of its types, is left out.
+    public static func tableBottles(_ maps: [PalateMap], wines: [Wine], recipes: [Recipe],
+                                    courses: [TableCourse] = TableCourse.standard) -> [TableBottle] {
         let table = crossed(maps)
         let shared = sharedAxes(maps)
         let candidates = shared.isEmpty ? Array(WineRuler.positions(of: table).ranked.prefix(sharedLimit)) : shared
         var used = Set<String>()
         var bottles: [TableBottle] = []
 
-        for course in TableCourse.allCases {
+        for course in TableCourse.allCases where courses.contains(course) {
             let ranked = recipes.filter { $0.course == course.rawValue }
                 .sorted { Similarity.distance($0.profile, table) < Similarity.distance($1.profile, table) }
             for recipe in ranked {

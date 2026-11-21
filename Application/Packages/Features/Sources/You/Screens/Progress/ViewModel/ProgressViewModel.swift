@@ -21,4 +21,6 @@ public final class ProgressViewModel: ProgressViewModelProtocol {
         if let id = uiModel.suggestedCourseID { coordinator.openCourse(id) }
         else { coordinator.openLearn() }
     }
+
+    public func openWine(_ id: String) { coordinator.openWine(id) }
 }

@@ -114,6 +114,7 @@ As tabelas da Loja Pessoal (2.1), criadas e sincronizadas pelo SwiftData. Ficam 
 | `PublicProfile` | id do usuário | firstName, avatar, values (vazio se o mapa não é público) | O dono |
 | `ContactKey` | SHA-256(telefone E.164 + sal) | userID | O dono |
 | `FriendRequest` | `<id de>-<id para>` | from, to, status (`pending`, só informativo) | Quem envia (só o criador altera ou apaga) |
+| `SharedWine` | `<id de>-<id para>-<wineKey>` | from, fromName, to, wineID, wineName, sentAt, snapshot (o vinho em JSON, `SharedWineSnapshot`) | Quem envia (só o criador altera ou apaga); FRIENDS FRI-R11b |
 | `Announcement` | id | title, body, date | A Elisa (Dashboard) |
 
 - `recordName` igual à chave impede duplicados sem servidor: criar um registo que já existe falha.
@@ -196,8 +197,10 @@ Cada corrida:
    - `CatalogWine`: `data` (String), `status` (String), `tokens` (String List).
    - `CatalogSnapshot`: `version` (String), `builtAt` (Date/Time), `wineCount` (Int(64)), `prevalence` (String), `wines` (Asset), `state` (Asset).
    - A `WineContribution` nasce com a primeira nota guardada num build de Debug com iCloud.
+   - `SharedWine` (enviar um vinho a um amigo, FRIENDS FRI-R11b): `from`, `fromName`, `to`, `wineID`, `wineName`, `snapshot` (String), `sentAt` (Date/Time). Ainda por fazer: ver a nota "Falta no CloudKit" no FRIENDS.md.
 4. **Índices** (Schema › Indexes), *queryable*: `recordName` e `modificationDate` em `CatalogWine` e `WineContribution`; `CatalogWine.status`, `CatalogWine.tokens`; `WineContribution.wineKey`, `WineContribution.contributor`. Sem o de `modificationDate`, o robô para com «Field '___modTime' is not marked queryable». Depois disso, *Run workflow* publica os 10 000 vinhos em Development.
-5. **Permissões** (Schema › Security Roles): em `CatalogWine` e `CatalogSnapshot`, `_icloud` só lê (sem *create*); um papel `Robot` com *create* e *write* nas duas, dado ao usuário dono da chave. Em `WineContribution`, `_world` sem nada, `_icloud` *create*, `_creator` *read* e *write*, e `Robot` *read*.
+   - `SharedWine` (FRIENDS FRI-R11b) nasce com o primeiro vinho enviado num build de Debug com iCloud; precisa de `recordName`, `to` e `from` *queryable* e `sentAt` *sortable*. Sem o de `to`, nem a lista "Sent to you" nem a subscrição das notificações funcionam.
+5. **Permissões** (Schema › Security Roles): em `CatalogWine` e `CatalogSnapshot`, `_icloud` só lê (sem *create*); um papel `Robot` com *create* e *write* nas duas, dado ao usuário dono da chave. Em `WineContribution`, `_world` sem nada, `_icloud` *create*, `_creator` *read* e *write*, e `Robot` *read*. Em `SharedWine`, `_icloud` *create* e *read* (quem recebe lê o registo de quem enviou), `_creator` *write*.
 6. **Deploy Schema Changes** para Production, e correr o workflow outra vez para publicar em Production. Só então um build de TestFlight ou da App Store tem catálogo.
 
 ## 5. Notificações
@@ -205,6 +208,7 @@ Cada corrida:
 | Notificação | Quem envia |
 | --- | --- |
 | Pedido de amizade recebido ou aceito | **CloudKit:** `CKQuerySubscription` em `FriendRequest` com `to` = meu `id` |
+| Vinho enviado por um amigo | **CloudKit:** `CKQuerySubscription` `shared-wines-<id>` em `SharedWine` com `to` = meu `id`, criada quando o usuário passa a ter um amigo; o texto é `SHARED_WINE_ALERT` (Localizable da app) com `fromName` e `wineName`; tocar abre o vinho na aba Friends (FRIENDS FRI-R11c) |
 | Avisos da UVVA (lição nova, novidades) | **CloudKit:** `CKQuerySubscription` em `Announcement`; a Elisa cria o registo no Dashboard e todos recebem |
 | Mudanças nos dados pessoais | **CloudKit**, silenciosa (o SwiftData usa-a para sincronizar) |
 | Lembrete diário | **Local**, agendada no aparelho (`UNUserNotificationCenter`) |

@@ -22,6 +22,8 @@ struct AppStores: Sendable {
     let cellar: CellarStore
     let learning: LearningStore
     let friends: FriendsStore
+    /// The Home's notifications the user opened (HOME-R04).
+    let notifications: NotificationStore
     let social: any SocialService
     /// The phone's copy of the public catalog, and the readings sent to it (ARCHITECTURE §4.1, §4.3).
     let catalogSync: CatalogSync
@@ -47,6 +49,7 @@ struct AppStores: Sendable {
                       cellar: CellarStore(modelContainer: container),
                       learning: LearningStore(modelContainer: container),
                       friends: FriendsStore(modelContainer: container),
+                      notifications: NotificationStore(modelContainer: container),
                       social: makeSocial(),
                       catalogSync: CatalogSync(cloud: catalogCloud, writer: CatalogWriter(modelContainer: container)))
         }.value

@@ -33,7 +33,18 @@ final class MockNewNoteViewModel: NewNoteViewModelProtocol {
     }
 
     func start() async {}
-    func capture(_ photo: Data, reading: Data?, scan: LabelScan?) async { flow.capture(photo) }
+    /// The whole reading, step by step, so the preview shows it as the app does.
+    func capture(_ photo: Data, reading: Data?, scan: LabelScan?) async {
+        flow.capture(photo)
+        guard flow.step == .reading else { return }
+        for stage in LabelReadStage.allCases {
+            uiModel.readingStage = stage
+            try? await Task.sleep(for: .seconds(1.2))
+        }
+        uiModel.isReadingDone = true
+        try? await Task.sleep(for: .milliseconds(450))
+        flow.labelRead(.read(Self.wine))
+    }
     func tryAgain() { flow.tryAgain() }
     func fillInByHand() { flow.fillInByHand() }
     func updateManual(_ field: NewNoteField, text: String) { flow.manual[field] = text }

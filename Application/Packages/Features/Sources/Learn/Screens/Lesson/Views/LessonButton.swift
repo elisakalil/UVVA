@@ -27,7 +27,7 @@ struct LessonButton: View {
                 switch (style, isEnabled) {
                 case (.filled, true): Capsule().fill(LessonPalette.ink)
                 case (.onTip, true): Capsule().fill(LessonPalette.wine)
-                case (_, false): Capsule().strokeBorder(LessonPalette.ink.opacity(0.22), lineWidth: 1)
+                case (_, false): Capsule().strokeBorder(LessonPalette.ink.opacity(DisabledPill.ringOpacity), lineWidth: 1)
                 }
             }
             .contentShape(Capsule())
@@ -37,7 +37,7 @@ struct LessonButton: View {
     }
 
     private var foreground: Color {
-        guard isEnabled else { return LessonPalette.ink.opacity(0.45) }
+        guard isEnabled else { return LessonPalette.ink.opacity(DisabledPill.textOpacity) }
         return switch style {
         case .filled: LessonPalette.wine
         case .onTip: LessonPalette.ink

@@ -14,11 +14,16 @@ public final class HomeViewModel: HomeViewModelProtocol {
     private var matchesMayBeStale = false
     private var loadTask: Task<Void, Error>?
     private var noticeTask: Task<Void, Never>?
+    /// What friends sent and what was read, from the last read of the notifications (HOME-R04a). The list is worked
+    /// out again from it on every load, so the bell is right at once; the public database is read again after.
+    private var notificationSources = HomeNotificationSources()
+    private var notificationsTask: Task<Void, Never>?
 
     private let loadHomeUseCase: any LoadHomeUseCaseProtocol
     private let loadPalateStateUseCase: any LoadPalateStateUseCaseProtocol
     private let rankWinesUseCase: any RankWinesUseCaseProtocol
     private let addWineToCellarUseCase: any AddWineToCellarUseCaseProtocol
+    private let loadNotificationsUseCase: (any LoadNotificationsUseCaseProtocol)?
     private let coordinator: any HomeCoordinatorProtocol
     private let now: () -> Date
     private let calendar: Calendar
@@ -33,6 +38,7 @@ public final class HomeViewModel: HomeViewModelProtocol {
         loadPalateStateUseCase: any LoadPalateStateUseCaseProtocol,
         rankWinesUseCase: any RankWinesUseCaseProtocol,
         addWineToCellarUseCase: any AddWineToCellarUseCaseProtocol,
+        loadNotificationsUseCase: (any LoadNotificationsUseCaseProtocol)? = nil,
         coordinator: any HomeCoordinatorProtocol,
         now: @escaping () -> Date,
         calendar: Calendar,
@@ -44,6 +50,7 @@ public final class HomeViewModel: HomeViewModelProtocol {
         self.rankWinesUseCase = rankWinesUseCase
         self.curtainDuration = curtainDuration
         self.addWineToCellarUseCase = addWineToCellarUseCase
+        self.loadNotificationsUseCase = loadNotificationsUseCase
         self.coordinator = coordinator
         self.now = now
         self.calendar = calendar
@@ -52,6 +59,8 @@ public final class HomeViewModel: HomeViewModelProtocol {
 
     public func loadIfNeeded() async {
         guard uiModel.content == nil || presentedDay.map({ !calendar.isDate($0, inSameDayAs: now()) }) == true else {
+            // Requests and wines may have come in while the Home was away.
+            Task { await refreshNotifications() }
             if matchesMayBeStale { await refreshMatches() }
             return
         }
@@ -183,6 +192,7 @@ public final class HomeViewModel: HomeViewModelProtocol {
         if underCurtain, rest > .zero { try await Task.sleep(for: rest) }
         try Task.checkCancellation()
         present(content, cards: cards, at: date)
+        Task { await refreshNotifications() }
     }
 
     /// The cards read the whole catalog (the top of the match list, a wine per axis), so they are built away from the
@@ -198,14 +208,71 @@ public final class HomeViewModel: HomeViewModelProtocol {
     /// One assignment: the new cards and the end of any loading reach the views together.
     private func present(_ content: HomeLoadResultModel, cards: [HomeCardModel], at date: Date) {
         presentedDay = date
+        var content = content
+        content.model.notifications = notifications(for: content.model)
         loaded = content
         let notice = uiModel.notice
         uiModel = HomeUIModel(
-            content: HomeContentUIModel(cards: cards,
+            content: HomeContentUIModel(cards: withHeader(cards, for: content.model),
                                          glossary: content.model.glossary, firstName: content.model.firstName, palateMap: content.model.palateMap),
             inviteLink: content.inviteLink, cellarWineKeys: content.model.cellarWineKeys,
-            ratedVerdicts: content.model.ratedVerdicts, isLoading: false, notice: notice
+            ratedVerdicts: content.model.ratedVerdicts, isLoading: false, notice: notice,
+            notifications: content.model.notifications
         )
+    }
+
+    // MARK: Notifications (HOME-R04)
+
+    public func refreshNotifications() async {
+        guard let loadNotificationsUseCase else { return }
+        if let notificationsTask { return await notificationsTask.value }
+        let task = Task {
+            let sources = await loadNotificationsUseCase.sources()
+            // A notification opened while the read was out stays read.
+            self.notificationSources = HomeNotificationSources(requests: sources.requests, wines: sources.wines,
+                                                               read: sources.read.union(self.notificationSources.read))
+            self.applyNotifications()
+        }
+        notificationsTask = task
+        await task.value
+        notificationsTask = nil
+    }
+
+    public func openNotification(_ notification: AppNotification) async {
+        let isNew = !notification.isRead
+        if isNew {
+            notificationSources.read.insert(notification.id)
+            applyNotifications()
+        }
+        switch notification.kind {
+        case .friendRequest: coordinator.openFriendRequests()
+        case let .newFriend(friendID, _, _): coordinator.openFriend(friendID)
+        case let .wineReceived(id, _, _): coordinator.openReceivedWine(id)
+        case .mapMoved: coordinator.openMapHistory()
+        case let .lessonWaiting(courseID, _, _): coordinator.openCourse(courseID)
+        }
+        if isNew { await loadNotificationsUseCase?.markRead(notification.id) }
+    }
+
+    private func notifications(for model: HomeContentModel) -> [AppNotification] {
+        HomeNotificationsBuilder().build(from: model, sources: notificationSources, now: now())
+    }
+
+    /// The list and the bell's dot follow the sources, without reading the Home again.
+    private func applyNotifications() {
+        guard var result = loaded, let content = uiModel.content else { return }
+        result.model.notifications = notifications(for: result.model)
+        loaded = result
+        uiModel.notifications = result.model.notifications
+        let cards = withHeader(content.cards, for: result.model)
+        if cards != content.cards { uiModel.content?.cards = cards }
+    }
+
+    private func withHeader(_ cards: [HomeCardModel], for model: HomeContentModel) -> [HomeCardModel] {
+        guard case .header = cards.first else { return cards }
+        var cards = cards
+        cards[0] = HomeCardsBuilder(calendar: calendar).header(model)
+        return cards
     }
 
     public func openCourse(_ id: String) { coordinator.openCourse(id) }
@@ -216,7 +283,7 @@ public final class HomeViewModel: HomeViewModelProtocol {
 
     public func scan() { coordinator.scan() }
     public func openFriends() { coordinator.openFriends() }
-    public func openLastTable() { coordinator.openLastTable() }
+    public func openFriendTable(_ id: String) { coordinator.openFriendTable(id) }
     public func openMapHistory() { coordinator.openMapHistory() }
 
     public func addToCellar(_ wine: Wine) async {

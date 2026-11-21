@@ -256,6 +256,22 @@ struct OnboardingModuleTests {
         #expect(module.contacts.uiModel.inviteLink?.absoluteString.hasPrefix("https://uvva.app/invite/") == true)
     }
 
+    @Test func ONB_R37a_invite_goesByTextToTheContactsNumber_withTheLink() async {
+        let contacts = ContactsStub(contacts: [DeviceContact(id: "3", givenName: "Ana", familyName: "",
+                                                             phones: ["912 000 003", "213 000 003"])])
+        let module = await makeModule(contacts: contacts)
+        await module.welcome.signIn()
+        module.name.continueFromName()
+        await module.phone.skipPhone()
+        await module.findFriends.findFriends()
+        if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
+        let model = module.contacts.uiModel
+        #expect(model.toInvite.first?.phone == "912 000 003")
+        // No map yet in the Onboarding: the welcome message, then the link.
+        #expect(model.inviteMap == nil)
+        #expect(model.inviteText.hasPrefix("Map your taste in wine with me on UVVA. https://uvva.app/invite/"))
+    }
+
     @Test func accountSaveFailure_keepsPhoneAndDraftWithoutPublishing() async {
         let profiles = ProfileRepositorySpy(failsToSave: true)
         let social = SocialSpy()

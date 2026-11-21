@@ -1,7 +1,8 @@
 import SwiftUI
 import UIKit
 
-/// The person's photo in a circle; without one, the cream figure over the vineyard (YOU-R01).
+/// The person's photo in a circle; without one, the default picture (YOU-R01): the cream figure over the hills of the
+/// page photo, as a still crop (`DefaultAvatar`, 480 px), so no avatar loads the whole page photo to show a corner of it.
 public struct Avatar: View {
     var photo: Data?
     var size: CGFloat
@@ -12,17 +13,11 @@ public struct Avatar: View {
     }
 
     public var body: some View {
-        ZStack {
+        Group {
             if let photo, let image = UIImage(data: photo) {
                 Image(uiImage: image).resizable().scaledToFill()
             } else {
-                Color(hex: 0x5E7A80)
-                UVVAPhoto.background.resizable().scaledToFill().scaleEffect(1.8, anchor: UnitPoint(x: 0.3, y: 0.22))
-                Image("Avatar", bundle: .module)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: size * 0.72, height: size * 0.72)
-                    .offset(y: size * 0.14)
+                Image("DefaultAvatar", bundle: .module).resizable().scaledToFill()
             }
         }
         .frame(width: size, height: size)

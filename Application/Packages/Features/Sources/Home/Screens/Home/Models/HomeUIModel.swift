@@ -19,6 +19,8 @@ public struct HomeUIModel {
     var isReturningToTop = false
     /// The line shown for a few seconds after saving or rating a wine (HOME-R24, R28).
     var notice: String?
+    /// HOME-R04: what the bell lists, newest first.
+    var notifications: [AppNotification] = []
     var inviteMessage = String(localized: "Map your taste in wine with me on UVVA.", bundle: .module)
     var resources = HomeResourcesUIModel()
 }

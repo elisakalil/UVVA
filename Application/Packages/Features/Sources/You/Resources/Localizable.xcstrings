@@ -27,6 +27,9 @@
         }
       }
     },
+    "%lld bottles" : {
+
+    },
     "%lld lessons · %lld min" : {
       "localizations" : {
         "en" : {
@@ -36,6 +39,9 @@
           }
         }
       }
+    },
+    "1 bottle" : {
+
     },
     "A course for you" : {
 
@@ -74,6 +80,9 @@
     "At the intermediate stage of The Path, these studies are giving you more ways to connect what you learn to what’s in the glass." : {
 
     },
+    "Back" : {
+
+    },
     "Before dinner" : {
 
     },
@@ -108,12 +117,6 @@
 
     },
     "Delete your account?" : {
-
-    },
-    "Drag · pinch" : {
-
-    },
-    "Drag to move along the map, pinch to zoom" : {
 
     },
     "Every wine story begins somewhere. Finish your first course and see where yours takes you." : {
@@ -182,6 +185,12 @@
     "Nothing was removed. Check your connection and try again." : {
 
     },
+    "Notifications" : {
+
+    },
+    "Notifications, unread" : {
+
+    },
     "Now I know" : {
 
     },
@@ -189,6 +198,12 @@
 
     },
     "Only friends you share a table with can see your map." : {
+
+    },
+    "Open" : {
+
+    },
+    "Opens the map full screen" : {
 
     },
     "Other modules" : {
@@ -210,6 +225,12 @@
 
     },
     "Pick the moment of the day and the days of the week. Change it whenever you like." : {
+
+    },
+    "Pinch · tap" : {
+
+    },
+    "Pinch to zoom, tap a place to see its wines" : {
 
     },
     "Profile photo" : {

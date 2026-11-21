@@ -24,7 +24,7 @@ let package = Package(
                 resources: [.process("Resources")]),
 
         .target(name: "Friends",
-                dependencies: Dependencies.common + [Dependencies.match],
+                dependencies: Dependencies.common + [Dependencies.match, Dependencies.coreUI],
                 resources: [.process("Resources")]),
 
         .target(name: "Home",

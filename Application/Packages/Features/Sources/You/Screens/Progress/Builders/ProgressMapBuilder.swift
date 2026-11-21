@@ -31,14 +31,24 @@ struct ProgressMapBuilder {
         for entry in tasted {
             guard let at = atlas.coordinate(region: entry.region, country: entry.country) else { continue }
             let id = "\(at.lon),\(at.lat)"
+            let wine = ProgressMapWine(id: entry.id, name: entry.name,
+                                       detail: [entry.producer, entry.vintage.map(String.init)]
+                                           .compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · "))
             if pins[id] != nil {
                 pins[id]?.count += 1
+                pins[id]?.wines.append(wine)
             } else {
                 // A wine pinned at the middle of its country is named by the country, not by a region found nowhere.
                 let name = at.region ?? entry.country.flatMap { $0.isEmpty ? nil : $0 } ?? entry.name
-                pins[id] = ProgressMapPin(id: id, kind: .bottle, lon: at.lon, lat: at.lat, name: name)
+                pins[id] = ProgressMapPin(id: id, kind: .bottle, lon: at.lon, lat: at.lat, name: name, wines: [wine])
             }
         }
-        return pins.values.sorted { $0.id < $1.id }
+        return pins.values
+            .map { pin in
+                var pin = pin
+                pin.wines.sort { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
+                return pin
+            }
+            .sorted { $0.id < $1.id }
     }
 }

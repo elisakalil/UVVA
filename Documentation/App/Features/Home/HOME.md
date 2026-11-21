@@ -72,6 +72,23 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 - Mostra um ponto quando existe pelo menos uma notificação não lida.
 - Tocar no sino abre a lista de notificações.
 - Uma notificação passa a lida quando o usuário a abre (toca nela). Abrir a lista não marca nada como lido.
+- A lista cobre a tela, sobre a Home desfocada: "Notifications" e "Close" no topo; cada linha tem um ponto (cheio se não lida), o texto e quando aconteceu ("Just now", "2 hours ago", "Yesterday"). Sem notificações, uma frase diz o que vai aparecer ali.
+
+**HOME-R04a · O que gera as notificações.** Nada é escrito à mão nem por um servidor: a lista é calculada no aparelho a cada carga da Home, a partir do que já aconteceu. Fica guardado só quais foram lidas (store Personal, sincronizado pelo iCloud).
+
+| Notificação | Vem de | Texto |
+| --- | --- | --- |
+| Pedido de amizade | Pedidos recebidos e não respondidos, como na aba Friends (FRI-R08a) | "[nome] wants to compare palates with you" |
+| Novo amigo | Amigos, pela data em que a amizade se fez | "[nome] is now your friend. You are a [n]% match." |
+| Vinho recebido | Vinhos enviados ao usuário (FRI-R11c) | "[nome] sent you a wine: [vinho]" |
+| Mapa mexeu | A última avaliação, pelo eixo que mais mexeu (HOME-R15) | "Your palate map moved: more/less [eixo]" |
+| Lição à espera | A lição do card Continuar (HOME-R13), um dia depois de aberta pela última vez | "[curso], lesson [n] is waiting" |
+
+- Mostra só os últimos 30 dias, até 30 notificações, as mais recentes primeiro.
+- Cada notificação tem um id do acontecimento (ex.: o pedido e a sua data). Um vinho enviado de novo, ou outra lição do mesmo curso, é uma notificação nova.
+- Os pedidos e os vinhos vêm da base pública: são lidos depois da Home aparecer, ao voltar à Home e ao tocar no sino. Sem rede, a lista mostra o resto.
+
+**HOME-R04b · Para onde leva.** Pedido de amizade: aba Friends. Novo amigo: a mesa com esse amigo (FRI-R13). Vinho recebido: o vinho, sobre a aba Friends. Mapa mexeu: You › Map, em "Over time" (YOU-R03). Lição à espera: o curso.
 
 **HOME-R05 · Scroll.** Ao rolar, o logo encolhe e a saudação desaparece. O `+` e o sino ficam visíveis.
 
@@ -80,6 +97,9 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 - Dadas 2 não lidas, quando o usuário abre a lista sem tocar em nenhuma, então o ponto continua.
 - Dadas 2 não lidas, quando o usuário abre uma delas, então resta 1 não lida e o ponto continua.
 - Dada 1 não lida, quando o usuário a abre, então o ponto some.
+- Dado um pedido de amizade recebido há 1 hora, quando a Home carrega, então a lista mostra "[nome] wants to compare palates with you" e o sino tem ponto.
+- Dados dois cursos começados, quando a Home carrega, então só a lição do curso aberto por último aparece como à espera.
+- Dada uma notificação lida, quando a app abre de novo, então continua lida.
 
 ### 4.2 Melhor match (vinho e prato)
 
@@ -314,7 +334,6 @@ No passo 2, a Home rola até o card "Escolha o seu vinho", que fica no fim da li
 ## 6. Fora de escopo
 
 - Planos, paywall e limites (SHARED-R01).
-- O conteúdo das notificações e o que as gera.
 - O fluxo de câmera e de nota (ver `CELLAR.md`).
 - O Quiz e a folha de partilha do mapa, que vêm antes do tour (ver `QUIZZ.md`).
 

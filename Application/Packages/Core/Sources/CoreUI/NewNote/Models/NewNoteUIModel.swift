@@ -3,13 +3,17 @@ import Foundation
 
 public struct NewNoteUIModel {
     var step = NewNoteStep.checkingCamera
+    /// Scan only (FRI-R12a): the note never opens on paper; the wine is handed over once read.
+    var isScanOnly = false
 
     // MARK: Camera
     var captureTitle = ""
-    var captureBody = ""
     var captureSteps: [NewNoteCaptureStepUIModel] = []
     /// The back photo, held still while it is read.
     var readingPhoto: Data?
+    /// The step the reading is at, nil before it starts; done once it has an answer (CELLAR-R17).
+    var readingStage: LabelReadStage?
+    var isReadingDone = false
 
     // MARK: By hand
     var manualFields: [NewNoteManualFieldUIModel] = []

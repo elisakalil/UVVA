@@ -25,7 +25,8 @@ struct RefreshFriendsUseCase: RefreshFriendsUseCaseProtocol {
             try? await social.deleteFriendRequest(from: request.from, to: request.to)
         }
 
-        let profiles = try await social.profiles(ids: Array(friendship.friends.keys) + friendship.incoming.map(\.from))
+        let profiles = try await social.profiles(ids: Array(friendship.friends.keys) + friendship.incoming.map(\.from)
+                                                 + friendship.outgoing.map(\.to))
         // FRI-R01: every friend has a map. A profile without one (gone, or the map made private, N5) is left out.
         let list = friendship.friends.compactMap { id, addedAt -> Friend? in
             guard let profile = profiles[id], let map = profile.map else { return nil }
@@ -37,6 +38,8 @@ struct RefreshFriendsUseCase: RefreshFriendsUseCaseProtocol {
             guard let profile = profiles[request.from], let map = profile.map else { return nil }
             return IncomingRequest(id: request.from, name: profile.firstName, map: map, sentAt: request.createdAt)
         }
-        return FriendsSnapshot(friends: list, incoming: incoming, requested: Set(friendship.outgoing.map(\.to)))
+        let requested = Set(friendship.outgoing.map(\.to))
+        let requestedNames = Dictionary(requested.compactMap { id in profiles[id].map { (id, $0.firstName) } }) { first, _ in first }
+        return FriendsSnapshot(friends: list, incoming: incoming, requested: requested, requestedNames: requestedNames)
     }
 }

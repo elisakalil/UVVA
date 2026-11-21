@@ -7,16 +7,19 @@ public struct YouCoordinator: YouCoordinatorProtocol {
     private let onOpenCertificate: (String) -> Void
     private let onSignOut: () -> Void
     private let onAccountDeleted: () -> Void
+    private let onOpenWine: (String) -> Void
 
     public init(onRedoMap: @escaping () -> Void, onOpenLearn: @escaping () -> Void,
                 onOpenCourse: @escaping (String) -> Void, onOpenCertificate: @escaping (String) -> Void,
-                onSignOut: @escaping () -> Void, onAccountDeleted: @escaping () -> Void) {
+                onSignOut: @escaping () -> Void, onAccountDeleted: @escaping () -> Void,
+                onOpenWine: @escaping (String) -> Void = { _ in }) {
         self.onRedoMap = onRedoMap
         self.onOpenLearn = onOpenLearn
         self.onOpenCourse = onOpenCourse
         self.onOpenCertificate = onOpenCertificate
         self.onSignOut = onSignOut
         self.onAccountDeleted = onAccountDeleted
+        self.onOpenWine = onOpenWine
     }
 
     public func redoMap() { onRedoMap() }
@@ -25,4 +28,5 @@ public struct YouCoordinator: YouCoordinatorProtocol {
     public func openCertificate(_ id: String) { onOpenCertificate(id) }
     public func signOut() { onSignOut() }
     public func accountDeleted() { onAccountDeleted() }
+    public func openWine(_ id: String) { onOpenWine(id) }
 }

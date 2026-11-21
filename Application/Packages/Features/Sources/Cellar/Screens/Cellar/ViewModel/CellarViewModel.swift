@@ -28,9 +28,12 @@ public final class CellarViewModel: CellarViewModelProtocol {
     private var isBannerVisible = false { didSet { refresh() } }
     private var bannerTask: Task<Void, Never>?
     private var isNoteSavedVisible = false { didSet { refresh() } }
+    /// The user's map, for the match of each wine and the Match filter.
+    private var palate: PalateMap? { didSet { if palate != oldValue { refresh() } } }
     private var noteSavedTask: Task<Void, Never>?
 
     private let loadCellar: any LoadCellarUseCaseProtocol
+    private let maps: (any PalateMapRepository)?
     private let preferences: any CellarPreferencesProtocol
     private let makeNote: (CellarEntry, _ owner: CellarViewModel) -> NoteViewModel
     private let bannerDuration: Duration
@@ -45,6 +48,7 @@ public final class CellarViewModel: CellarViewModelProtocol {
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
     init(loadCellar: any LoadCellarUseCaseProtocol, preferences: any CellarPreferencesProtocol,
+         maps: (any PalateMapRepository)? = nil,
          bannerDuration: Duration = .seconds(5), onAdd: @escaping () -> Void = {},
          onNoteChange: @escaping () -> Void = {},
          onEditNote: @escaping (CellarEntry, Wine) -> Void = { _, _ in },
@@ -53,6 +57,7 @@ public final class CellarViewModel: CellarViewModelProtocol {
         self.onNoteChange = onNoteChange
         self.onEditNote = onEditNote
         self.loadCellar = loadCellar
+        self.maps = maps
         self.preferences = preferences
         self.makeNote = makeNote
         self.bannerDuration = bannerDuration
@@ -79,6 +84,8 @@ public final class CellarViewModel: CellarViewModelProtocol {
         await readIfNeeded()
         guard !Task.isCancelled else { return }
         if didOpen, isLoaded, mutations == nil {
+            // A rating on the Home may have moved the map since the last visit.
+            await readPalate()
             await refreshSummaries()
         }
         didOpen = isLoaded
@@ -213,6 +220,8 @@ public final class CellarViewModel: CellarViewModelProtocol {
                     updated.insert(entry, at: index)
                 }
                 entries = updated
+                // A saved or rated note may have moved the map.
+                await readPalate()
             } catch {
                 logger.error("Cellar entry did not refresh: \(error.localizedDescription, privacy: .public)")
             }
@@ -232,12 +241,23 @@ public final class CellarViewModel: CellarViewModelProtocol {
             await previous?.value
             guard let self else { return }
             entries.removeAll { $0.id == wineKey }
+            await readPalate()
             if version == mutationVersion { mutations = nil }
         }
         onNoteChange()
     }
 
+    private func readPalate() async {
+        guard let maps else { return }
+        do {
+            palate = try await maps.currentMap()
+        } catch {
+            logger.error("Palate map did not load: \(error.localizedDescription, privacy: .public)")
+        }
+    }
+
     private func reload() async {
+        await readPalate()
         do {
             let loaded = try await loadCellar.execute()
             isLoaded = true
@@ -291,7 +311,8 @@ public final class CellarViewModel: CellarViewModelProtocol {
 
     private func refresh() {
         let builder = CellarPresentationBuilder(entries: entries, filters: filters, openFacet: openFacet,
-                                                query: query, isLoaded: isLoaded, resources: uiModel.resources)
+                                                query: query, isLoaded: isLoaded, palate: palate,
+                                                resources: uiModel.resources)
         var model = uiModel
         model.viewMode = preferences.viewMode
         model.state = readFailed && !isLoaded ? .failed : builder.state

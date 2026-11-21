@@ -35,13 +35,13 @@ struct HomeCardsBuilderTests {
 
     @Test func HOME_R04_unreadNotification_showsDot() {
         var model = HomeContentModel.full
-        model.notifications = [.init(id: "1", text: "a", isRead: true), .init(id: "2", text: "b", isRead: false)]
+        model.notifications = [.read("1"), .unread("2")]
         #expect(builder.header(model) == .header(greeting: "Welcome back, Elisa", hasUnread: true))
     }
 
     @Test func HOME_R04_allRead_hidesDot() {
         var model = HomeContentModel.full
-        model.notifications = [.init(id: "1", text: "a", isRead: true)]
+        model.notifications = [.read("1")]
         #expect(builder.header(model) == .header(greeting: "Welcome back, Elisa", hasUnread: false))
     }
 
@@ -98,19 +98,27 @@ struct HomeCardsBuilderTests {
     // MARK: HOME-R11 · Amigos
 
     @Test func HOME_R11_noFriends_showsInvite() {
-        #expect(builder.friendsCardState([], map: PalateMap([:])) == .noFriends)
+        #expect(builder.friendsCardStates([], map: PalateMap([:])) == [.noFriends])
     }
 
     @Test func HOME_R11_oneFriend_showsMatch() {
         let map = PalateMap([.acidity: 7, .fruit: 6])
         let marina = Friend(id: "m", name: "Marina", map: map, addedAt: .now)
-        #expect(builder.friendsCardState([marina], map: map) == .hasMatch(name: "Marina", compatibility: 100))
+        #expect(builder.friendsCardStates([marina], map: map) == [.hasMatch(friendID: "m", name: "Marina", compatibility: 100)])
     }
 
-    @Test func HOME_R11_twoFriends_showsSetTable() {
-        let friends = [Friend(id: "a", name: "A", map: PalateMap([:]), addedAt: .now),
-                       Friend(id: "b", name: "B", map: PalateMap([:]), addedAt: .now)]
-        #expect(builder.friendsCardState(friends, map: PalateMap([:])) == .hasFriends(count: 2))
+    @Test func HOME_R11_twoFriends_showsBestMatchAndSetTable() {
+        let map = PalateMap([.acidity: 7, .fruit: 6])
+        let far = Friend(id: "a", name: "A", map: PalateMap([.acidity: 1, .fruit: 1]), addedAt: .now)
+        let close = Friend(id: "b", name: "B", map: map, addedAt: .now)
+        #expect(builder.friendsCardStates([far, close], map: map) == [.hasMatch(friendID: "b", name: "B", compatibility: 100),
+                                                                       .hasFriends(count: 2)])
+    }
+
+    @Test func HOME_R11_matchAndTable_shareARow() {
+        #expect(HomeCardModel.friends(.hasMatch(friendID: "b", name: "B", compatibility: 90)).isHalfWidth)
+        #expect(HomeCardModel.friends(.hasFriends(count: 2)).isHalfWidth)
+        #expect(!HomeCardModel.friends(.noFriends).isHalfWidth)
     }
 
     // MARK: HOME-R12, R13 · Continuar lição

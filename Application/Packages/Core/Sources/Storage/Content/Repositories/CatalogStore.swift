@@ -150,7 +150,8 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
         try modelContext.fetch(FetchDescriptor<RecipeEntity>()).map { entity in
             Recipe(id: entity.id, title: entity.title, why: entity.why, course: entity.course,
                    wineTypes: entity.wineTypes, profile: entity.palateMap, ingredients: entity.ingredients,
-                   steps: entity.steps, servings: entity.servings, minutes: entity.prepMinutes + entity.cookMinutes)
+                   steps: entity.steps, servings: entity.servings, minutes: entity.prepMinutes + entity.cookMinutes,
+                   mainIngredient: entity.mainIngredient, diet: entity.diet, season: entity.season)
         }
     }
 

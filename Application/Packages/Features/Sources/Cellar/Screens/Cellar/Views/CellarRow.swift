@@ -1,7 +1,7 @@
 import DesignSystem
 import SwiftUI
 
-/// A row of the list: the label, the name and vintage, where it comes from, and the tag (CELLAR-R06, R09).
+/// A row of the list: the label, the name and vintage, the match and where it comes from, and the tag (CELLAR-R06, R09).
 struct CellarRow: View {
     var model: CellarItemUIModel
     var photo: UIImage?
@@ -24,8 +24,8 @@ struct CellarRow: View {
                 Text("\(Text(model.name)) \(Text(model.vintage).font(UVVAFont.whiteGrape(13)).foregroundStyle(UVVAColor.creamFill.opacity(0.78)))")
                     .font(UVVAFont.sans(15))
                     .lineLimit(1)
-                if !model.meta.isEmpty {
-                    Text(model.meta)
+                if !subtitle.isEmpty {
+                    Text(subtitle)
                         .font(UVVAFont.sans(11.5))
                         .opacity(0.8)
                         .lineLimit(1)
@@ -44,5 +44,10 @@ struct CellarRow: View {
         .padding(.trailing, 26)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(model.accessibilityLabel)
+    }
+
+    /// "82% match · Douro": the match, then the region or, without one, the country.
+    private var subtitle: String {
+        [model.match, model.place].filter { !$0.isEmpty }.joined(separator: " · ")
     }
 }

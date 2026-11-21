@@ -16,7 +16,8 @@ final class ReadLabelStub: ReadLabelUseCaseProtocol {
     private(set) var reads: [(Data, Data)] = []
     private(set) var scans: [LabelScan?] = []
     init(_ result: LabelReadResult) { self.result = result }
-    func execute(front: Data, back: Data, backScan: LabelScan?) async -> LabelReadResult {
+    func execute(front: Data, back: Data, backScan: LabelScan?,
+                 onStage: @MainActor (LabelReadStage) -> Void) async -> LabelReadResult {
         reads.append((front, back))
         scans.append(backScan)
         return result

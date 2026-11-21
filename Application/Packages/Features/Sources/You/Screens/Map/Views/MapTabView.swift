@@ -67,7 +67,8 @@ struct MapTabView<ViewModel: MapViewModelProtocol>: View {
                 }
             }
             .sheet(isPresented: $isExplainingMap) {
-                InfoSheet(title: viewModel.uiModel.howTheMapIsDrawnText, text: viewModel.uiModel.mapDrawnText)
+                InfoSheet(title: viewModel.uiModel.howTheMapIsDrawnText, text: viewModel.uiModel.mapDrawnText,
+                          style: .handwritten)
             }
             .fullScreenCover(isPresented: $sharing) {
                 ShareScreen(title: viewModel.uiModel.shareMyMapText, message: viewModel.uiModel.shareMessage) { format in

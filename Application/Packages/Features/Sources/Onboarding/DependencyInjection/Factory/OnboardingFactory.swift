@@ -9,11 +9,14 @@ public struct OnboardingFactory: OnboardingFactoryProtocol {
     private let social: any SocialService
     private let cloud: any CloudAccountStatus
     private let contacts: any ContactsProviding
+    /// Where the invites sent from Contacts are kept (FRI-R04b).
+    private let friends: (any FriendsRepository)?
     private let homeCountry: PhoneCountry
     private let lookUpTimeout: Duration
 
     public init(auth: any Authenticating, profiles: any ProfileRepository, maps: any PalateMapRepository,
                 social: any SocialService, cloud: any CloudAccountStatus, contacts: any ContactsProviding,
+                friends: (any FriendsRepository)? = nil,
                 homeCountry: PhoneCountry = PhoneCountries.defaultCountry(), lookUpTimeout: Duration = .seconds(4)) {
         self.auth = auth
         self.profiles = profiles
@@ -21,6 +24,7 @@ public struct OnboardingFactory: OnboardingFactoryProtocol {
         self.social = social
         self.cloud = cloud
         self.contacts = contacts
+        self.friends = friends
         self.homeCountry = homeCountry
         self.lookUpTimeout = lookUpTimeout
     }
@@ -42,6 +46,22 @@ public struct OnboardingFactory: OnboardingFactoryProtocol {
         )
     }
 
+    /// Contacts again, from the Friends tab (FRI-R06): the user's own account is the one that adds and invites.
+    public func makeAddFriends(profile: Profile, onClose: @escaping () -> Void) -> AddFriendsModule {
+        let draft = OnboardingDraft()
+        draft.profile = profile
+        let coordinator = AddFriendsCoordinator(onClose: onClose)
+        let contacts = ContactsViewModel(draft: draft,
+                                         findContactsUseCase: FindContactsOnUVVAUseCase(contacts: contacts, social: social,
+                                                                                       homeCountry: homeCountry),
+                                         sendRequestUseCase: SendFriendRequestUseCase(social: social),
+                                         coordinator: coordinator,
+                                         finishText: String(localized: "Done", bundle: .module),
+                                         loadMap: { [maps] in try? await maps.currentMap() },
+                                         invites: friends)
+        return AddFriendsModule(contacts: contacts, coordinator: coordinator)
+    }
+
     private func makeWelcome(_ coordinator: OnboardingCoordinator) -> WelcomeViewModel {
         WelcomeViewModel(cloud: cloud, signInUseCase: SignInUseCase(auth: auth),
                          findAccountUseCase: FindExistingAccountUseCase(profiles: profiles, maps: maps,
@@ -53,6 +73,7 @@ public struct OnboardingFactory: OnboardingFactoryProtocol {
         ContactsViewModel(draft: draft,
                           findContactsUseCase: FindContactsOnUVVAUseCase(contacts: contacts, social: social,
                                                                         homeCountry: homeCountry),
-                          sendRequestUseCase: SendFriendRequestUseCase(social: social), coordinator: coordinator)
+                          sendRequestUseCase: SendFriendRequestUseCase(social: social), coordinator: coordinator,
+                          invites: friends)
     }
 }

@@ -8,8 +8,11 @@ struct FriendsPresentationBuilder {
     var resources: FriendsResourcesUIModel
 
     /// FRI-R04: by name, with the signature and the compatibility with the user.
-    var friends: [FriendRowUIModel] {
-        content.snapshot.friends
+    /// "Search by name" keeps only the friends whose name holds the query, ignoring case and accents.
+    func friends(matching query: String) -> [FriendRowUIModel] {
+        let query = query.trimmingCharacters(in: .whitespaces)
+        return content.snapshot.friends
+            .filter { query.isEmpty || $0.name.localizedStandardContains(query) }
             .sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
             .map { friend in
                 let compatibility = content.user.map { TableMatch.compatibility($0.map, friend.map) } ?? 0
@@ -20,11 +23,39 @@ struct FriendsPresentationBuilder {
 
     var countText: String { resources.count(content.snapshot.friends.count) }
 
+    /// FRI-R04b: who the user added (a request not answered yet), then who they invited (not on UVVA yet), each by
+    /// name. An added contact goes by the name in the address book when Quick add knows it.
+    var pending: [PendingFriendRowUIModel] {
+        let friendIDs = Set(content.snapshot.friends.map(\.id))
+        let contactNames = Dictionary(content.suggestions.map { ($0.id, $0.contactName) }) { first, _ in first }
+        let added = content.snapshot.requested
+            .subtracting(friendIDs)
+            .compactMap { id -> PendingFriendRowUIModel? in
+                guard let name = contactNames[id] ?? content.snapshot.requestedNames[id] else { return nil }
+                return PendingFriendRowUIModel(id: "added-\(id)", name: name, statusText: resources.addedText.uppercased())
+            }
+        let invited = content.invites.map {
+            PendingFriendRowUIModel(id: "invited-\($0.id)", name: $0.name, statusText: resources.invitedText.uppercased())
+        }
+        return byName(added) + byName(invited)
+    }
+
+    private func byName(_ rows: [PendingFriendRowUIModel]) -> [PendingFriendRowUIModel] {
+        rows.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
+    }
+
     /// FRI-R08a: newest first.
     var requests: [FriendRequestRowUIModel] {
         content.snapshot.incoming
             .sorted { $0.sentAt > $1.sentAt }
             .map { FriendRequestRowUIModel(id: $0.id, name: $0.name, signature: MapReading(map: $0.map).signature) }
+    }
+
+    /// FRI-R11c: "Sent to you", newest first.
+    var received: [ReceivedWineRowUIModel] {
+        content.received.map {
+            ReceivedWineRowUIModel(id: $0.id, title: resources.sentYouAWine($0.fromName), wineName: $0.wine.name)
+        }
     }
 
     /// FRI-R07, R07a, R08.

@@ -12,7 +12,8 @@ final class MockHomeViewModel: HomeViewModelProtocol {
         uiModel = HomeUIModel(
             content: HomeContentUIModel(cards: HomeCardsBuilder().build(from: .full, now: .now),
                                          glossary: MockData.glossary, palateMap: HomeContentModel.full.palateMap),
-            isLoading: false
+            isLoading: false,
+            notifications: HomeContentModel.full.notifications
         )
     }
 
@@ -21,7 +22,7 @@ final class MockHomeViewModel: HomeViewModelProtocol {
     func openLearn(_ kind: CourseKind) {}
     func scan() {}
     func openFriends() {}
-    func openLastTable() {}
+    func openFriendTable(_ id: String) {}
     func openMapHistory() {}
     func addToCellar(_ wine: Wine) async {
         uiModel.cellarWineKeys.insert(wine.id)

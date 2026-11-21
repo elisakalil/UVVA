@@ -4,25 +4,11 @@
     "" : {
 
     },
-    "%@, by law requires:" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@, por lei exige:"
-          }
-        }
-      }
+    "–" : {
+
     },
-    "%@, fewer rules than a DOC:" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@, menos regras que um DOC:"
-          }
-        }
-      }
+    "—" : {
+
     },
     "**Grapes:** international ones allowed." : {
       "localizations" : {
@@ -64,16 +50,6 @@
         }
       }
     },
-    "**Region:** 100% local grapes." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**Região:** 100% das uvas locais."
-          }
-        }
-      }
-    },
     "**Region:** 85% local grapes." : {
       "localizations" : {
         "pt-BR" : {
@@ -84,131 +60,15 @@
         }
       }
     },
-    "A US region: 85% local grapes, no other rules." : {
+    "**Region:** 100% local grapes." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Região dos EUA: 85% das uvas locais, sem outras regras."
+            "value" : "**Região:** 100% das uvas locais."
           }
         }
       }
-    },
-    "Canada's seal: local grapes, an official tasting." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selo do Canadá: uvas locais e prova oficial."
-          }
-        }
-      }
-    },
-    "Germany's top vineyards." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Os vinhedos de topo da Alemanha."
-          }
-        }
-      }
-    },
-    "It guarantees the origin, not the quality." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Garante a origem, não a qualidade."
-          }
-        }
-      }
-    },
-    "Italy's top level, with an official tasting." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O topo da Itália, com prova oficial."
-          }
-        }
-      }
-    },
-    "Just below Grand Cru." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo abaixo do Grand Cru."
-          }
-        }
-      }
-    },
-    "Officially ranked among the region's best." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Classificado entre os melhores da região."
-          }
-        }
-      }
-    },
-    "Only %lld%% of wines." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Só %lld%% dos vinhos."
-          }
-        }
-      }
-    },
-    "Only 1 in %lld wines." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Só 1 em cada %lld vinhos."
-          }
-        }
-      }
-    },
-    "South Africa's seal: local grapes." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selo da África do Sul: uvas locais."
-          }
-        }
-      }
-    },
-    "Spain's top level: only Rioja and Priorat." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O topo da Espanha: só Rioja e Priorat."
-          }
-        }
-      }
-    },
-    "The region's finest vineyards." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Os melhores vinhedos da região."
-          }
-        }
-      }
-    },
-    "–" : {
-
-    },
-    "—" : {
-
     },
     "/5" : {
 
@@ -226,6 +86,26 @@
     "%@ · 1 year" : {
 
     },
+    "%@, by law requires:" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, por lei exige:"
+          }
+        }
+      }
+    },
+    "%@, fewer rules than a DOC:" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, menos regras que um DOC:"
+          }
+        }
+      }
+    },
     "%@, unbound" : {
       "localizations" : {
         "pt-BR" : {
@@ -239,7 +119,7 @@
     "%lld awards" : {
 
     },
-    "%lld lines read" : {
+    "%lld lines" : {
 
     },
     "%lld of 5" : {
@@ -258,7 +138,7 @@
     "1 award" : {
 
     },
-    "1 line read" : {
+    "1 line" : {
 
     },
     "A regional wine, unbound" : {
@@ -267,6 +147,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vinho regional, sem amarras"
+          }
+        }
+      }
+    },
+    "A US region: 85% local grapes, no other rules." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Região dos EUA: 85% das uvas locais, sem outras regras."
           }
         }
       }
@@ -397,6 +287,16 @@
     "Bolder than your map, which has no high axis." : {
 
     },
+    "Canada's seal: local grapes, an official tasting." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selo do Canadá: uvas locais e prova oficial."
+          }
+        }
+      }
+    },
     "Change photo" : {
 
     },
@@ -434,13 +334,10 @@
     "Find the wine" : {
 
     },
-    "Finish scanning" : {
+    "Finding the wine" : {
 
     },
     "Fit the whole label inside the frame, flat and in focus." : {
-
-    },
-    "Fit the whole label inside the frame." : {
 
     },
     "Floral" : {
@@ -470,6 +367,9 @@
     "Front" : {
 
     },
+    "Front label" : {
+
+    },
     "Fruit" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -490,6 +390,19 @@
           }
         }
       }
+    },
+    "Germany's top vineyards." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os vinhedos de topo da Alemanha."
+          }
+        }
+      }
+    },
+    "Got it" : {
+
     },
     "Grape" : {
 
@@ -514,9 +427,6 @@
       }
     },
     "High in %@, like your map." : {
-
-    },
-    "Hold the label inside the frame" : {
 
     },
     "How loud is it?" : {
@@ -557,6 +467,36 @@
     },
     "Intensity" : {
 
+    },
+    "It guarantees the origin, not the quality." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garante a origem, não a qualidade."
+          }
+        }
+      }
+    },
+    "Italy's top level, with an official tasting." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O topo da Itália, com prova oficial."
+          }
+        }
+      }
+    },
+    "Just below Grand Cru." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo abaixo do Grand Cru."
+          }
+        }
+      }
     },
     "Legal term" : {
 
@@ -681,7 +621,7 @@
         }
       }
     },
-    "Now scan the back label" : {
+    "Now the back" : {
 
     },
     "Oak" : {
@@ -691,6 +631,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Carvalho"
+          }
+        }
+      }
+    },
+    "Officially ranked among the region's best." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classificado entre os melhores da região."
           }
         }
       }
@@ -705,16 +655,36 @@
         }
       }
     },
+    "Only %lld%% of wines." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Só %lld%% dos vinhos."
+          }
+        }
+      }
+    },
+    "Only 1 in %lld wines." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Só 1 em cada %lld vinhos."
+          }
+        }
+      }
+    },
     "Open Settings" : {
 
     },
     "Origin" : {
 
     },
-    "Pairings" : {
+    "Pairing dishes" : {
 
     },
-    "Photograph the front" : {
+    "Pairings" : {
 
     },
     "Photograph the wine" : {
@@ -746,10 +716,16 @@
         }
       }
     },
-    "Reading grape, region, vintage" : {
+    "Reading" : {
 
     },
-    "Reading your label" : {
+    "Reading the text" : {
+
+    },
+    "REC" : {
+
+    },
+    "Record, then turn" : {
 
     },
     "Red" : {
@@ -809,6 +785,26 @@
         }
       }
     },
+    "South Africa's seal: local grapes." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selo da África do Sul: uvas locais."
+          }
+        }
+      }
+    },
+    "Spain's top level: only Rioja and Priorat." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O topo da Espanha: só Rioja e Priorat."
+          }
+        }
+      }
+    },
     "Sparkling" : {
 
     },
@@ -833,7 +829,10 @@
         }
       }
     },
-    "Start scanning" : {
+    "Start recording" : {
+
+    },
+    "Stop recording" : {
 
     },
     "Style" : {
@@ -914,7 +913,7 @@
         }
       }
     },
-    "Tap the button, then turn the bottle slowly." : {
+    "Tap to finish" : {
 
     },
     "Tasting guide" : {
@@ -939,6 +938,16 @@
     "The note wasn’t saved. Try again." : {
 
     },
+    "The region's finest vineyards." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os melhores vinhedos da região."
+          }
+        }
+      }
+    },
     "Think petals. A faint violet is low. If it smells like you walked into a flower shop, go high." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -950,9 +959,6 @@
         }
       }
     },
-    "This takes a few seconds." : {
-
-    },
     "This wine" : {
 
     },
@@ -962,10 +968,13 @@
     "Try again" : {
 
     },
-    "Turn the bottle slowly until the whole label has passed. Tap again when the count stops growing." : {
+    "Turn slowly" : {
 
     },
     "Type" : {
+
+    },
+    "Understanding it" : {
 
     },
     "UVVA couldn’t read this wine. Try again." : {

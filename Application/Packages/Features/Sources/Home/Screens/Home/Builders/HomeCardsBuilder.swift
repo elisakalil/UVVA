@@ -12,7 +12,7 @@ struct HomeCardsBuilder: Sendable {
     func build(from model: HomeContentModel, now: Date) -> [HomeCardModel] {
         var cards: [HomeCardModel] = [header(model)]
         if let wine = topMatch(model) { cards.append(.topMatch(wine)) }
-        cards.append(.friends(friendsCardState(model.friends, map: model.palateMap)))
+        cards += friendsCardStates(model.friends, map: model.palateMap).map(HomeCardModel.friends)
         if let course = continueLesson(model.courses) { cards.append(.continueLesson(course)) }
         if let changed = axisChanged(model.lastRating) { cards.append(.changedMapCard(axis: changed.axis, delta: changed.delta)) }
         let lessons = dailyLessons(model, now: now)
@@ -66,13 +66,19 @@ struct HomeCardsBuilder: Sendable {
         text.utf8.reduce(UInt64(14695981039346656037)) { ($0 ^ UInt64($1)) &* 1099511628211 }
     }
 
-    // HOME-R11
-    func friendsCardState(_ friends: [Friend], map: PalateMap) -> HomeCardModel.FriendsCardState {
-        switch friends.count {
-        case 0: .noFriends
-        case 1: .hasMatch(name: friends[0].name, compatibility: TableMatch.compatibility(map, friends[0].map))
-        default: .hasFriends(count: friends.count)
-        }
+    // HOME-R11: no friend, the invite; one or more, the match with the closest friend; two or more, also the table.
+    func friendsCardStates(_ friends: [Friend], map: PalateMap) -> [HomeCardModel.FriendsCardState] {
+        let matches = friends.map { (friend: $0, compatibility: TableMatch.compatibility(map, $0.map)) }
+        // Ties keep the first friend in the list.
+        guard let best = matches.enumerated().max(by: { lhs, rhs in
+            lhs.element.compatibility == rhs.element.compatibility ? lhs.offset > rhs.offset
+                : lhs.element.compatibility < rhs.element.compatibility
+        })?.element else { return [.noFriends] }
+        var states: [HomeCardModel.FriendsCardState] = [
+            .hasMatch(friendID: best.friend.id, name: best.friend.name, compatibility: best.compatibility),
+        ]
+        if friends.count >= 2 { states.append(.hasFriends(count: friends.count)) }
+        return states
     }
 
     // HOME-R12, R13

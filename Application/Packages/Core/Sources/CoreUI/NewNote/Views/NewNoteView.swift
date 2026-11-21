@@ -37,6 +37,9 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
             NewNoteManualView(model: model, onChange: viewModel.updateManual(_:text:), onPickType: viewModel.pickType,
                               onContinue: { Task { await viewModel.continueManual() } })
                 .transition(.opacity)
+        case .note where model.isScanOnly:
+            // The wine is on its way to whoever asked: the camera's ground stays while the sheet closes.
+            NotePalette.cameraGround.ignoresSafeArea()
         case .note:
             NewNotePaperView(model: model, onAnswer: viewModel.answer(hasTasted:), onRate: viewModel.rate(_:score:),
                              onNote: viewModel.updateNote, onAddChip: viewModel.addChip,
@@ -74,6 +77,10 @@ public extension View {
 
 #Preview("Camera") {
     NewNoteView(viewModel: MockNewNoteViewModel(step: .front))
+}
+
+#Preview("Back label") {
+    NewNoteView(viewModel: MockNewNoteViewModel(step: .back))
 }
 #endif
 #endif

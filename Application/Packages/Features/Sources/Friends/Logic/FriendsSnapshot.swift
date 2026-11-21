@@ -7,4 +7,6 @@ struct FriendsSnapshot: Equatable, Sendable {
     var incoming: [IncomingRequest] = []
     /// Ids the user asked and who did not answer yet ("Requested", FRI-R08).
     var requested: Set<String> = []
+    /// The first names of the accounts in `requested`, for the faded rows at the end of the list (FRI-R04b).
+    var requestedNames: [String: String] = [:]
 }

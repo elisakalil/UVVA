@@ -29,8 +29,9 @@ struct CellarCover: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
             }
             .overlay {
-                // Without a label to look at, the cover names the wine, on the side the tag leaves free.
-                if photo == nil {
+                // Without a label to look at, the cover names the wine, on the side the tag leaves free; the match
+                // shows under it, or alone over a label.
+                if photo == nil || !model.match.isEmpty {
                     caption
                         .padding(12)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: captionAlignment)
@@ -46,13 +47,23 @@ struct CellarCover: View {
             .accessibilityLabel(model.accessibilityLabel)
     }
 
-    /// The name alone, on as many lines as it needs: never cut short with "…".
+    /// The name, on as many lines as it needs: never cut short with "…". Under it, the match.
     private var caption: some View {
-        Text(model.name)
-            .font(UVVAFont.sans(13))
-            .lineLimit(nil)
-            .fixedSize(horizontal: false, vertical: true)
-            .multilineTextAlignment(.leading)
+        VStack(alignment: .leading, spacing: 4) {
+            if photo == nil {
+                Text(model.name)
+                    .font(UVVAFont.sans(13))
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.leading)
+            }
+            if !model.match.isEmpty {
+                Text(model.match)
+                    .font(UVVAFont.sans(11))
+                    .lineLimit(1)
+                    .opacity(0.85)
+            }
+        }
         .foregroundStyle(.white)
         .shadow(color: .black.opacity(0.45), radius: 3, y: 1)
     }

@@ -16,11 +16,6 @@ public enum UVVAColor {
     public static let ink = Color(hex: 0x22271C)
     public static let grape = Color(hex: 0x9D8FF0)
     public static let burgundy = Color(hex: 0x4B1D2D)
-    /// The heat of tasted places on a map: a warm ramp that stands out from the greens and the cream, from claret
-    /// (one bottle) through amber to a pale gold (many).
-    public static let heatClaret = Color(hex: 0xE05A74)
-    public static let heatAmber = Color(hex: 0xEE9A55)
-    public static let heatGold = Color(hex: 0xFFE2AE)
     public static let cream84 = cream.opacity(0.84)
     public static let cream60 = cream.opacity(0.6)
     public static let cream14 = cream.opacity(0.14)

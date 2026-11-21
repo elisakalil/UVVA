@@ -81,6 +81,7 @@ final class FriendsRepositoryFake: FriendsRepository {
         var declined: Set<String> = []
         var dismissed: Set<String> = []
         var lastTable: [String]?
+        var invites: [InvitedContact] = []
     }
     let state = Mutex(State())
 
@@ -92,6 +93,13 @@ final class FriendsRepositoryFake: FriendsRepository {
     func dismissSuggestion(_ userID: String) async throws { state.withLock { _ = $0.dismissed.insert(userID) } }
     func lastTable() async throws -> [String]? { state.withLock { $0.lastTable } }
     func saveLastTable(_ friendIDs: [String]) async throws { state.withLock { $0.lastTable = friendIDs } }
+    func invitedContacts() async throws -> [InvitedContact] { state.withLock { $0.invites } }
+    func saveInvite(_ invite: InvitedContact) async throws {
+        state.withLock { $0.invites.removeAll { $0.id == invite.id }; $0.invites.append(invite) }
+    }
+    func removeInvites(_ contactIDs: Set<String>) async throws {
+        state.withLock { $0.invites.removeAll { contactIDs.contains($0.id) } }
+    }
 }
 
 final class ContactsFake: ContactsProviding {
@@ -127,4 +135,51 @@ struct CatalogStub: CatalogRepository {
     func recipes() async throws -> [Recipe] { Self.recipes }
     func glossary() async throws -> [GlossaryTerm] { [] }
     func firstPathModule() async throws -> CourseSummary? { nil }
+}
+
+/// The public database's wines sent, in memory (FRI-R11b, R11c).
+final class SharingFake: WineSharingService {
+    struct State {
+        var records: [SharedWineRecord] = []
+        var failsSending = false
+        /// The friends a wine does not reach.
+        var failsSendingTo: Set<String> = []
+        var subscribed: [String] = []
+    }
+    let state = Mutex(State())
+
+    var records: [SharedWineRecord] { state.withLock { $0.records } }
+    func failSending() { state.withLock { $0.failsSending = true } }
+    func failSending(to friendIDs: Set<String>) { state.withLock { $0.failsSendingTo = friendIDs } }
+
+    func sent(_ wine: Wine, from: String, fromName: String, to: String, at date: Date = .now, withSnapshot: Bool = true) {
+        state.withLock {
+            $0.records.append(SharedWineRecord(id: "\(from)-\(to)-\(wine.id)", from: from, fromName: fromName, to: to,
+                                               wineID: wine.id, wineName: wine.name, sentAt: date,
+                                               snapshot: withSnapshot ? SharedWineSnapshot(wine) : nil))
+        }
+    }
+
+    func sendWine(_ wine: Wine, from userID: String, fromName: String, to friendID: String) async throws {
+        if state.withLock({ $0.failsSending || $0.failsSendingTo.contains(friendID) }) {
+            throw URLError(.notConnectedToInternet)
+        }
+        sent(wine, from: userID, fromName: fromName, to: friendID)
+    }
+
+    func sharedWines(to userID: String) async throws -> [SharedWineRecord] {
+        state.withLock { $0.records.filter { $0.to == userID }.sorted { $0.sentAt > $1.sentAt } }
+    }
+
+    func sharedWine(id: String) async throws -> SharedWineRecord? { state.withLock { $0.records.first { $0.id == id } } }
+
+    func subscribeToSharedWines(userID: String) async throws { state.withLock { $0.subscribed.append(userID) } }
+}
+
+/// The catalog's wines by key, for the wines received.
+struct WineLookupStub: WineLookup {
+    var known: [Wine] = CatalogStub.wines
+    func wines(keys: Set<String>) async throws -> [String: Wine] {
+        Dictionary(uniqueKeysWithValues: known.filter { keys.contains($0.id) }.map { ($0.id, $0) })
+    }
 }

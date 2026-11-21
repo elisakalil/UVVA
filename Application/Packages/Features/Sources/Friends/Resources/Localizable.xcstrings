@@ -14,13 +14,48 @@
     "%@ is now your friend." : {
 
     },
+    "%@ Map" : {
+
+    },
+    "%@ sent you a wine" : {
+
+    },
+    "%@ sent you this wine" : {
+
+    },
+    "%@ usually drinks" : {
+
+    },
     "%@ won't be told. You can add each other again later." : {
 
     },
-    "%@'s palate" : {
+    "%@. %@ %lld of 10, %@ %lld of 10" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@. %2$@ %3$lld of 10, %4$@ %5$lld of 10"
+          }
+        }
+      }
+    },
+    "%@. %@. %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@. %2$@. %3$@"
+          }
+        }
+      }
+    },
+    "%@'s map" : {
 
     },
     "%lld friends" : {
+
+    },
+    "%lld maps · one bottle" : {
 
     },
     "%lld%% match across all %lld palate maps at the table" : {
@@ -55,22 +90,61 @@
     "Add" : {
 
     },
+    "Add at least two friends to set a table." : {
+
+    },
     "Add the people you drink with. Once they accept, you will see where your palates meet and what to open together." : {
+
+    },
+    "Add to cellar" : {
+
+    },
+    "Added" : {
 
     },
     "Allow contacts" : {
 
     },
+    "Anything" : {
+
+    },
+    "Apart" : {
+
+    },
     "Ask for: %@" : {
 
     },
+    "Autumn" : {
+
+    },
+    "Back" : {
+
+    },
+    "Bolder than %@, which has no high axis." : {
+
+    },
+    "Build a table" : {
+
+    },
     "Cancel" : {
+
+    },
+    "Cheese" : {
+
+    },
+    "Choose how the evening goes. The dishes follow your choices; the bottles, all %lld maps." : {
+
+    },
+    "Choose how the evening goes. The dishes follow your choices; the bottles, both your maps." : {
 
     },
     "Close" : {
 
     },
     "Close enough to share a bottle." : {
+
+    },
+    "Close to %@ on every axis." : {
 
     },
     "Closest" : {
@@ -82,10 +156,16 @@
     "Compatibility" : {
 
     },
+    "Courses" : {
+
+    },
     "Decline" : {
 
     },
     "Dessert" : {
+
+    },
+    "Different from the strongest axes on %@." : {
 
     },
     "Dinner at mine? I built the menu from all our palate maps. Three courses, three bottles." : {
@@ -103,31 +183,156 @@
     "Find a bottle for these %lld" : {
 
     },
-    "Friends" : {
+    "Find out what your friends like to drink" : {
 
     },
-    "Hosting tonight?" : {
+    "Find the wine" : {
+
+    },
+    "Fish" : {
+
+    },
+    "Full body" : {
+
+    },
+    "High %@" : {
+
+    },
+    "High in %@ and %@, like %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "High in %1$@ and %2$@, like %3$@."
+          }
+        }
+      }
+    },
+    "High in %@, like %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "High in %1$@, like %2$@."
+          }
+        }
+      }
+    },
+    "How to make it" : {
+
+    },
+    "How to serve" : {
+
+    },
+    "In common" : {
+
+    },
+    "In season · %@" : {
+
+    },
+    "In your cellar" : {
+
+    },
+    "Instagram" : {
 
     },
     "Invite friends" : {
 
     },
+    "Invite your friends and find out what they like to drink." : {
+
+    },
+    "Invited" : {
+
+    },
+    "It did not send. Try again." : {
+
+    },
     "Leans on %@, the strongest reading at the table." : {
+
+    },
+    "Less %@ than %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Less %1$@ than %2$@."
+          }
+        }
+      }
+    },
+    "Light body" : {
+
+    },
+    "Low %@" : {
 
     },
     "Main" : {
 
     },
+    "Map" : {
+
+    },
+    "match across all %lld palate maps at the table" : {
+
+    },
+    "match with %@" : {
+
+    },
+    "Meat" : {
+
+    },
+    "Medium %@" : {
+
+    },
+    "Medium body" : {
+
+    },
+    "Method" : {
+
+    },
+    "Middle" : {
+
+    },
+    "More %@ than %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "More %1$@ than %2$@."
+          }
+        }
+      }
+    },
     "No bottle on your phone fits this table yet." : {
 
     },
-    "None of your contacts are on UVVA yet. Invite them with your palate." : {
+    "No friend by that name." : {
 
+    },
+    "No rush" : {
+
+    },
+    "Not high in %@, the strongest axis on %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Not high in %1$@, the strongest axis on %2$@."
+          }
+        }
+      }
     },
     "Not now" : {
 
     },
     "Nothing lines up across all %lld — the menu is built on compromise." : {
+
+    },
+    "of your palate map matches %@" : {
+
+    },
+    "On the table" : {
 
     },
     "Open Settings" : {
@@ -139,13 +344,37 @@
     "Open this together" : {
 
     },
-    "Palate" : {
+    "Opposed" : {
+
+    },
+    "Pairings" : {
+
+    },
+    "Pasta" : {
 
     },
     "Pick at least two friends" : {
 
     },
+    "Pick who’s coming. We’ll set the perfect table: the bottles and the dinner everyone will love." : {
+
+    },
+    "Picks for %@" : {
+
+    },
+    "Pork" : {
+
+    },
+    "Poultry" : {
+
+    },
     "Quick add" : {
+
+    },
+    "Quiet on every axis, like %@." : {
+
+    },
+    "Range at the table" : {
 
     },
     "Read from all %lld palate maps · UVVA" : {
@@ -160,9 +389,6 @@
     "Reading the maps at the table…" : {
 
     },
-    "Readings" : {
-
-    },
     "Remove %@?" : {
 
     },
@@ -175,16 +401,49 @@
     "Requests" : {
 
     },
+    "Risotto" : {
+
+    },
     "Same" : {
+
+    },
+    "Save image" : {
+
+    },
+    "Scan a wine" : {
+
+    },
+    "Seafood" : {
+
+    },
+    "Search by name" : {
 
     },
     "See which of your contacts are already on UVVA. Their numbers never leave your phone." : {
 
     },
-    "Select" : {
+    "Send to %@" : {
 
     },
-    "Share" : {
+    "Send to the table" : {
+
+    },
+    "Sending…" : {
+
+    },
+    "Sent to %@" : {
+
+    },
+    "Sent to the table" : {
+
+    },
+    "Sent to you" : {
+
+    },
+    "Set it again" : {
+
+    },
+    "Set the perfect dinner" : {
 
     },
     "Share this table" : {
@@ -199,16 +458,34 @@
     "Someone gives a little here." : {
 
     },
+    "Spring" : {
+
+    },
     "Starter" : {
 
     },
-    "Table" : {
+    "Summer" : {
 
     },
     "Takes the request back" : {
 
     },
+    "the %lld of you" : {
+
+    },
+    "The %lld of you" : {
+
+    },
+    "the %lld of you usually drink" : {
+
+    },
     "The boldest reading" : {
+
+    },
+    "The map of this wine" : {
+
+    },
+    "The perfect dinner for" : {
 
     },
     "The perfect dinner for The %lld of you" : {
@@ -232,13 +509,34 @@
     "This is where the table splits." : {
 
     },
+    "This wine" : {
+
+    },
+    "This wine and %@" : {
+
+    },
     "Tonight's table" : {
+
+    },
+    "Under %lld min" : {
 
     },
     "UVVA can't see your contacts. Allow it in Settings to find friends who are already here." : {
 
     },
+    "Vegan" : {
+
+    },
+    "Vegetarian" : {
+
+    },
     "What to buy" : {
+
+    },
+    "WhatsApp" : {
+
+    },
+    "When" : {
 
     },
     "Where the table lands" : {
@@ -250,13 +548,16 @@
     "Widest" : {
 
     },
+    "Winter" : {
+
+    },
     "You" : {
 
     },
-    "You all want %@ in a glass." : {
+    "You & %@" : {
 
     },
-    "You and %@" : {
+    "You all want %@ in a glass." : {
 
     },
     "You barely overlap — you like different things." : {
@@ -265,10 +566,40 @@
     "You both want %@ in a glass." : {
 
     },
+    "you two" : {
+
+    },
+    "you two usually drink" : {
+
+    },
+    "you usually drink" : {
+
+    },
+    "You'll need" : {
+
+    },
     "You're invited to dinner" : {
 
     },
-    "Your table is empty" : {
+    "your %lld maps" : {
+
+    },
+    "Your %lld maps" : {
+
+    },
+    "Your Friends" : {
+
+    },
+    "your map" : {
+
+    },
+    "Your map" : {
+
+    },
+    "your two maps" : {
+
+    },
+    "Your two maps" : {
 
     }
   },

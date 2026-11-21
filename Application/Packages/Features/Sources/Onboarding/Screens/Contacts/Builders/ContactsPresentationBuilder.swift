@@ -32,7 +32,8 @@ struct ContactsPresentationBuilder {
         contacts.filter { matchesQuery($0, query: query) }.map { contact in
             ContactRowUIModel(id: contact.id, name: contact.displayName, initials: contact.initials, note: nil,
                               letter: contact.indexLetter,
-                              state: invited.contains(contact.id) ? .invited : .invite)
+                              state: invited.contains(contact.id) ? .invited : .invite,
+                              phone: contact.phones.first)
         }
     }
 

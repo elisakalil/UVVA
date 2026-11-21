@@ -23,11 +23,19 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     private let saveNewNote: any SaveNewNoteUseCaseProtocol
     /// The note was kept: the Cellar refreshes the saved wine and says "Note saved".
     private let onSaved: (String) -> Void
+    /// Scan only (FRI-R12a): the wine read from the label is handed over instead of opening on paper.
+    private let onScanned: ((Wine) -> Void)?
+    private var hasScanned = false
     /// The full-size copies of the label photos, held only until they are read.
     private var readingFront: Data?
     private var readingBack: Data?
     /// The back label as the camera read it, moving over it (CELLAR-R17).
     private var backScan: LabelScan?
+    /// The step "Reading your label" is at, and whether it has come to an end (CELLAR-R17).
+    private var readingStage: LabelReadStage? { didSet { refresh() } }
+    private var isReadingDone = false { didSet { refresh() } }
+    /// How long the full reading line shows before the note opens, so the wait is seen to end.
+    private let readingSettle: Duration
     /// What the last reading saw, for the debug section of the note (CELLAR-R17).
     private let readingLog: LabelReadingLog?
     private var readingDebugText: String? { didSet { refresh() } }
@@ -41,7 +49,8 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
          prepareCamera: any PrepareCameraUseCaseProtocol, readLabel: any ReadLabelUseCaseProtocol,
          readManual: any ReadManualUseCaseProtocol, saveNewNote: any SaveNewNoteUseCaseProtocol,
          maps: (any PalateMapRepository)? = nil, catalog: LabelCatalogCache? = nil,
-         readingLog: LabelReadingLog? = nil, onSaved: @escaping (String) -> Void) {
+         readingLog: LabelReadingLog? = nil, readingSettle: Duration = .milliseconds(450),
+         onScanned: ((Wine) -> Void)? = nil, onSaved: @escaping (String) -> Void) {
         if let wine, let entry = editing {
             flow = NewNoteFlow(editing: wine, verdict: entry.verdict, score: entry.score, note: entry.note,
                                photoFront: entry.photoFront, photoBack: entry.photoBack)
@@ -49,6 +58,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             flow = NewNoteFlow(wine: wine, ratedVerdict: ratedVerdict)
         }
         self.readingLog = readingLog
+        self.readingSettle = readingSettle
         self.maps = maps
         self.catalog = catalog
         self.prepareCamera = prepareCamera
@@ -56,6 +66,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         self.readManual = readManual
         self.saveNewNote = saveNewNote
         self.onSaved = onSaved
+        self.onScanned = onScanned
         refresh()
     }
 
@@ -66,6 +77,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
                             camera: any CameraAuthorizing,
                             rewriter: any PalateHistoryRewriting, wines: any WineLookup,
                             now: @escaping () -> Date = Date.init,
+                            onScanned: ((Wine) -> Void)? = nil,
                             onSaved: @escaping (String) -> Void) {
         let catalog = LabelCatalogCache(catalog: labelCatalog)
         #if DEBUG
@@ -82,7 +94,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             readManual: ReadManualUseCase(catalog: catalog, pairer: pairer),
             saveNewNote: SaveNewNoteUseCase(cellar: cellar, catalog: labelCatalog, maps: maps,
                                             recalculate: recalculate, now: now),
-            maps: maps, catalog: catalog, readingLog: readingLog, onSaved: onSaved)
+            maps: maps, catalog: catalog, readingLog: readingLog, onScanned: onScanned, onSaved: onSaved)
     }
 
     public func start() async {
@@ -103,12 +115,23 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         flow.capture(photo)
         guard flow.step == .reading, let front = flow.photoFront, let back = flow.photoBack else { return }
         // The full-size copies are read when there are; the kept photos otherwise.
-        let result = await readLabel.execute(front: readingFront ?? front, back: readingBack ?? back, backScan: backScan)
+        readingStage = nil
+        isReadingDone = false
+        let result = await readLabel.execute(front: readingFront ?? front, back: readingBack ?? back,
+                                             backScan: backScan) { [weak self] stage in self?.readingStage = stage }
         readingFront = nil
         readingBack = nil
         backScan = nil
         refreshDiagnostics()
+        if result != .failed {
+            // The line fills to the end before the wine shows: a reading that stops at 90% looks stuck.
+            isReadingDone = true
+            try? await Task.sleep(for: readingSettle)
+        }
         flow.labelRead(result)
+        readingStage = nil
+        isReadingDone = false
+        handOverIfScanned()
     }
 
     public func tryAgain() { flow.tryAgain() }
@@ -131,6 +154,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             let wine = try await readManual.execute(flow.manual.facts)
             errorText = nil
             flow.manualRead(wine)
+            handOverIfScanned()
         } catch {
             logger.error("Wine not read by hand: \(error.localizedDescription, privacy: .public)")
             errorText = uiModel.resources.manualErrorText
@@ -183,6 +207,13 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         }
     }
 
+    /// Scan only: once the label (or the form) gives a wine, it goes to whoever asked, once.
+    private func handOverIfScanned() {
+        guard let onScanned, !hasScanned, flow.step == .note, let wine = flow.wine else { return }
+        hasScanned = true
+        onScanned(wine)
+    }
+
     /// The last reading, as text, for the debug section of the note.
     private func refreshDiagnostics() {
         readingDebugText = readingLog?.last.map(LabelReadingLog.text)
@@ -194,6 +225,9 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         NewNotePresentationBuilder(flow: flow, palate: palate, resources: model.resources)
             .build(into: &model)
         model.isWorking = isWorking
+        model.readingStage = readingStage
+        model.isReadingDone = isReadingDone
+        model.isScanOnly = onScanned != nil
         model.readingDebugText = readingDebugText
         model.readingExportText = readingExportText
         model.errorText = errorText

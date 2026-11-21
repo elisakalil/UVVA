@@ -17,13 +17,31 @@
     "%lld notes" : {
 
     },
+    "%lld%% match" : {
+
+    },
     "1 note" : {
+
+    },
+    "60–69%" : {
+
+    },
+    "70–79%" : {
+
+    },
+    "80–89%" : {
+
+    },
+    "90–100%" : {
 
     },
     "Added %@" : {
 
     },
     "Any grape" : {
+
+    },
+    "Any match" : {
 
     },
     "Any producer" : {
@@ -39,6 +57,9 @@
 
     },
     "Any vintage" : {
+
+    },
+    "Below 60%" : {
 
     },
     "Bottles marked Not yet wait in your cellar until you taste them." : {
@@ -78,6 +99,9 @@
 
     },
     "Loading cellar" : {
+
+    },
+    "Match" : {
 
     },
     "Maybe" : {

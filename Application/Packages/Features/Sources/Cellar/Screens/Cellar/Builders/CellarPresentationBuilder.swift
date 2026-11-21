@@ -9,6 +9,8 @@ struct CellarPresentationBuilder {
     var query: String
     /// False until the entries are read for the first time.
     var isLoaded = true
+    /// The user's map, for the match of each wine; nil before the Quiz.
+    var palate: PalateMap? = nil
     var resources = CellarResourcesUIModel()
     var dateStyle = Date.FormatStyle().day().month(.abbreviated)
 
@@ -26,18 +28,20 @@ struct CellarPresentationBuilder {
         filtered.enumerated().map { index, entry in
             let tag = resources.tag(CellarTag(entry))
             let vintage = entry.vintage.map(String.init) ?? ""
+            let match = CellarMatch.percent(entry, palate: palate).map(resources.match) ?? ""
+            let place = [entry.region, entry.country].compactMap { $0 }.first { !$0.isEmpty } ?? ""
             return CellarItemUIModel(
-                id: entry.id, name: entry.name, vintage: vintage,
-                meta: [entry.region, entry.country, grapes(entry)].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: " · "),
+                id: entry.id, name: entry.name, vintage: vintage, match: match, place: place,
                 tag: tag, photo: entry.photoFront, updatedAt: entry.updatedAt,
                 cover: .at(index),
-                accessibilityLabel: [entry.name, vintage, tag].filter { !$0.isEmpty }.joined(separator: ", ")
+                accessibilityLabel: [entry.name, vintage, match, place, tag].filter { !$0.isEmpty }.joined(separator: ", ")
             )
         }
     }
 
     var chips: [CellarChipUIModel] {
-        CellarFacet.allCases.map { facet in
+        // Without a map there is nothing to match against: the Match filter waits for the Quiz.
+        CellarFacet.allCases.filter { $0 != .match || palate != nil }.map { facet in
             CellarChipUIModel(facet: facet, label: filters[facet] ?? resources.facet(facet), isActive: filters[facet] != nil)
         }
     }
@@ -48,13 +52,15 @@ struct CellarPresentationBuilder {
         let others = entries.filter { matches($0, skipping: facet) }
         var counts: [String: Int] = [:]
         for entry in others {
-            for value in Set(facet.values(of: entry, resources: resources)) { counts[value, default: 0] += 1 }
+            for value in Set(facet.values(of: entry, palate: palate, resources: resources)) { counts[value, default: 0] += 1 }
         }
         // The other filters show only what the user's entries have.
-        let present = Set(entries.flatMap { facet.values(of: $0, resources: resources) })
+        let present = Set(entries.flatMap { facet.values(of: $0, palate: palate, resources: resources) })
         let values: [String] = switch facet {
         // Tag always shows its four values, in their own order.
         case .tag: CellarTag.allCases.map(resources.tag)
+        // Match shows its bands closest first, those no bottle has faded.
+        case .match: CellarMatch.Band.allCases.map(resources.matchBand)
         // Vintages run newest first.
         case .vintage: present.sorted { $0.localizedStandardCompare($1) == .orderedDescending }
         default: present.sorted { $0.localizedStandardCompare($1) == .orderedAscending }
@@ -85,7 +91,7 @@ struct CellarPresentationBuilder {
 
     private func matches(_ entry: CellarEntry, skipping skipped: CellarFacet? = nil) -> Bool {
         filters.allSatisfy { facet, value in
-            facet == skipped || facet.values(of: entry, resources: resources).contains(value)
+            facet == skipped || facet.values(of: entry, palate: palate, resources: resources).contains(value)
         }
     }
 

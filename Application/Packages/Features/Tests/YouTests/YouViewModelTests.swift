@@ -190,6 +190,16 @@ struct YouViewModelTests {
         #expect(italy.map { abs($0.lon - 12.22) < 0.01 && abs($0.lat - 43.47) < 0.01 } == true)
     }
 
+    /// YOU-R07a: a place keeps its wines, by name, each with the Cellar entry its note opens on.
+    @Test func progress_map_placeListsItsWines() {
+        var content = YouContentModel()
+        content.tasted = [tasted("z-douro", region: "Douro", country: "Portugal", verdict: .yes),
+                          tasted("a-douro", region: "Douro", country: "Portugal", verdict: .maybe)]
+        let place = ProgressPresentationBuilder().build(from: content).map.pins(.bottle).first
+        #expect(place?.wines.map(\.id) == ["a-douro", "z-douro"])
+        #expect(place?.wines.first?.detail == "Quinta · 2019")
+    }
+
     @Test func worldAtlas_findsRegionsIgnoringAccentsAndCase() {
         let atlas = WorldAtlas.shared
         #expect(atlas.coordinate(region: "dao", country: "PORTUGAL").map { $0.lat } == 40.5)
@@ -236,20 +246,21 @@ struct YouViewModelTests {
         #expect(MapZoom().zoomed(to: 100, at: .zero, frame: size, content: size).scale == MapZoom.maxScale)
     }
 
-    @Test func mapZoom_aWorldWiderThanTheFrame_startsInTheMiddle_andMovesSideways() {
+    /// YOU-R07a: the map opens as far out as it goes, the whole world in the frame, in its middle; there is nothing
+    /// to move until it is zoomed in.
+    @Test func mapZoom_home_isTheWholeWorld_inTheMiddle() {
         let frame = CGSize(width: 310, height: 194)
         let world = CGSize(width: 427, height: 194)
         let home = MapZoom.home(frame: frame, content: world)
-        #expect(home.scale == 1)
-        #expect(home.offset == CGSize(width: (310.0 - 427.0) / 2, height: 0))
-        // Sideways it goes as far as the world's edge; up and down there is nothing to move at full height.
-        let dragged = home.moved(by: CGSize(width: -500, height: 40), frame: frame, content: world)
-        #expect(dragged.offset == CGSize(width: 310 - 427, height: 0))
-        // Pinched out, the whole world fits, in the middle of the frame.
-        let whole = home.zoomed(to: 0.1, at: CGPoint(x: 155, y: 97), frame: frame, content: world)
-        #expect(abs(whole.scale - 310.0 / 427.0) < 0.000_001)
-        #expect(abs(whole.offset.width) < 0.001)
-        #expect(abs(whole.offset.height - (194.0 - 194.0 * 310.0 / 427.0) / 2) < 0.001)
+        #expect(abs(home.scale - 310.0 / 427.0) < 0.000_001)
+        #expect(home.scale == MapZoom.minScale(frame: frame, content: world))
+        #expect(abs(home.offset.width) < 0.001)
+        #expect(abs(home.offset.height - (194.0 - 194.0 * 310.0 / 427.0) / 2) < 0.001)
+        #expect(home.moved(by: CGSize(width: -500, height: 40), frame: frame, content: world) == home)
+        // Zoomed in, sideways it goes as far as the world's edge.
+        let zoomed = home.zoomed(to: 1, at: CGPoint(x: 155, y: 97), frame: frame, content: world)
+        let dragged = zoomed.moved(by: CGSize(width: -500, height: 0), frame: frame, content: world)
+        #expect(abs(dragged.offset.width - (310 - 427)) < 0.001)
     }
 
     @Test func specialist_connectsStudiedRegionsThroughGrapeAliases() {

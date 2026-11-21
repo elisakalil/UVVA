@@ -16,7 +16,8 @@ enum HomeCardModel: Equatable, Sendable {
 
     enum FriendsCardState: Equatable, Sendable {
         case noFriends
-        case hasMatch(name: String, compatibility: Int)
+        /// The friend whose palate is closest to the user's (HOME-R11).
+        case hasMatch(friendID: String, name: String, compatibility: Int)
         case hasFriends(count: Int)
     }
 
@@ -24,6 +25,7 @@ enum HomeCardModel: Equatable, Sendable {
         switch self {
         case .header: "header"
         case .topMatch: "topMatch"
+        case .friends(.hasMatch): "friendMatch"
         case .friends: "friends"
         case .continueLesson: "continueLesson"
         case .changedMapCard: "changedMapCard"
@@ -36,7 +38,7 @@ enum HomeCardModel: Equatable, Sendable {
     
     var isHalfWidth: Bool {
         switch self {
-        case .friends(.hasMatch), .continueLesson, .changedMapCard: true
+        case .friends(.hasMatch), .friends(.hasFriends), .continueLesson, .changedMapCard: true
         default: false
         }
     }
@@ -44,6 +46,8 @@ enum HomeCardModel: Equatable, Sendable {
     var spotlightID: String? {
         switch self {
         case .topMatch: HomeSpotlightID.today
+        // With friends, the match card comes first and takes the spotlight.
+        case .friends(.hasFriends): nil
         case .friends: HomeSpotlightID.friends
         case .chooseYourWine: HomeSpotlightID.chooseYourWine
         default: nil

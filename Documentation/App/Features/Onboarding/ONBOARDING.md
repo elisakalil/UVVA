@@ -157,14 +157,21 @@ Depois do login, uma conta nova segue para o Nome; uma conta que já existe segu
 
 **ONB-R37 · Conteúdo.** "Contacts" no topo, com o voltar, e duas listas:
 - **"[n] of your contacts are on UVVA":** os contatos da agenda que têm conta e mapa (FRI-R01, FRI-R07). Cada linha tem a foto, o nome, uma frase do paladar e "Add". Tocar em "Add" envia um pedido de amizade e o botão passa a "Requested" (FRI-R08).
-- **"Invite contacts who aren't on UVVA":** os outros contatos, com as iniciais, o nome e "Invite". Tocar em "Invite" abre a partilha do convite (HOME-R11, SHARED-R20) e o botão passa a "Invited".
+- **"Invite contacts who aren't on UVVA":** os outros contatos, com as iniciais, o nome e "Invite". Tocar em "Invite" envia o convite por SMS (ONB-R37a).
 
 Uma barra de A a Z permite saltar na lista. "Next" acaba o Onboarding (ONB-R21).
+
+**ONB-R37a · Convite por SMS.** "Invite" abre a folha de mensagem do iOS já preenchida: para o primeiro número do contato, com o texto, o link `uvva.app/invite/<id>` e a imagem do convite. O usuário só toca em Enviar (o iOS não deixa uma app enviar SMS sozinha). Enviado, o botão passa a "Invited"; cancelado, fica "Invite".
+- **Texto e imagem:** no Onboarding ainda não há mapa (o Quiz vem depois), por isso o texto é "Map your taste in wine with me on UVVA." e a imagem é a vinha com as uvas e "Map your taste in wine with me". Aberto pela aba Friends (FRI-R06), com mapa, o texto é "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." e a imagem é o cartão do paladar do usuário (SHARED-R20).
+- **Sem Mensagens:** num aparelho que não envia mensagens (`canSendText` falso, como no Simulador), o convite abre a partilha do iOS com a imagem e o texto, e o botão passa logo a "Invited".
+
+**ONB-R37b · Aberto pela aba Friends.** A mesma tela abre pelo botão "Invite friends" do Friends vazio (FRI-R06), com "Done" em vez de "Next". `‹` e "Done" fecham-na e voltam à aba.
 
 **Critérios**
 - Dado um contato com conta e mapa, então ele aparece na primeira lista.
 - Dado um contato com conta e sem mapa, então ele não aparece em nenhuma das listas (FRI-R01).
 - Quando o usuário toca em "Add" num contato, então é criado 1 pedido de amizade e o botão diz "Requested".
+- Quando o usuário toca em "Invite" num contato com o número 912 000 003, então a mensagem vai para 912 000 003, com o texto e o link do convite.
 
 ### 4.6 Voltar
 

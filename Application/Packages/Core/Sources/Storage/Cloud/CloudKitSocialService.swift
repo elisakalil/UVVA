@@ -5,7 +5,7 @@ import Foundation
 /// `SocialService` on the public CloudKit database (ARCHITECTURE §3.2, §4.4).
 /// Records are named after their key, so a duplicate cannot be created without a server.
 public final class CloudKitSocialService: SocialService {
-    private let database: CKDatabase
+    let database: CKDatabase
 
     public init(containerIdentifier: String = PersonalStore.cloudKitContainer) {
         database = CKContainer(identifier: containerIdentifier).publicCloudDatabase
@@ -15,6 +15,7 @@ public final class CloudKitSocialService: SocialService {
         static let contactKey = "ContactKey"
         static let publicProfile = "PublicProfile"
         static let friendRequest = "FriendRequest"
+        static let sharedWine = "SharedWine"
     }
 
     public func publishContactKey(phone: String, userID: String) async throws -> Bool {
@@ -104,6 +105,7 @@ public final class CloudKitSocialService: SocialService {
         // public profile they are left out of every list.
         ids += try await friendRequests(from: userID).map { Self.requestID(from: $0.from, to: $0.to) }
         ids += try await contributions(of: userID)
+        ids += try await sharedWineIDs(from: userID)
         try await delete(ids)
     }
 

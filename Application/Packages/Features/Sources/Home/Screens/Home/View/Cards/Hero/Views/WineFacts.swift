@@ -2,7 +2,8 @@ import Core
 import DesignSystem
 import SwiftUI
 
-/// Origin and vintage at the top, then grapes and notes side by side.
+/// After the match, in this order: producer and vintage side by side, grapes and notes side by side, then origin,
+/// appellation and serving, each across the whole width.
 struct WineFacts: View {
     var resources = HomeResourcesUIModel()
     var wine: Wine
@@ -11,27 +12,29 @@ struct WineFacts: View {
     private var uiModel: WineFactsUIModel { WineFactsUIModel(wine: wine, now: now, resources: resources) }
 
     var body: some View {
-        let origins = VStack(alignment: .leading, spacing: 22) {
-            ForEach(uiModel.originFacts) { cell($0) }
-        }
+        let facts = uiModel
         VStack(alignment: .leading, spacing: 22) {
-            if let vintage = wine.vintage {
-                ThirdColumnLayout {
-                    origins
-                    cell(WineFactsUIModel.Fact(label: resources.wineFactsVintageTitle, value: uiModel.vintageLine(vintage)))
-                }
-            } else if !uiModel.originFacts.isEmpty {
-                origins
-            }
-            if uiModel.grapes != nil || uiModel.notes != nil {
-                HStack(alignment: .top, spacing: 16) {
-                    if let grapes = uiModel.grapes { cell(grapes) }
-                    if let notes = uiModel.notes { cell(notes) }
-                }
-            }
-            if let serving = uiModel.serving { cell(serving) }
+            pair(facts.producer, facts.vintage)
+            pair(facts.grapes, facts.notes)
+            if let origin = facts.origin { cell(origin) }
+            if let appellation = facts.appellation { cell(appellation) }
+            if let serving = facts.serving { cell(serving) }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    /// Two facts in two equal columns; one alone keeps its column, so the rows line up.
+    @ViewBuilder private func pair(_ first: WineFactsUIModel.Fact?, _ second: WineFactsUIModel.Fact?) -> some View {
+        if first != nil || second != nil {
+            HStack(alignment: .top, spacing: 16) {
+                column(first)
+                column(second)
+            }
+        }
+    }
+
+    @ViewBuilder private func column(_ fact: WineFactsUIModel.Fact?) -> some View {
+        if let fact { cell(fact) } else { Color.clear.frame(maxWidth: .infinity, maxHeight: 0) }
     }
 
     private func cell(_ fact: WineFactsUIModel.Fact) -> some View {
@@ -55,28 +58,5 @@ struct WineFacts: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
-
-/// Gives the origin two thirds of the width and the vintage the last third.
-private struct ThirdColumnLayout: Layout {
-    var gutter: CGFloat = 16
-
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let width = proposal.width ?? 320
-        let height = zip(subviews, frames(width: width)).map { $0.sizeThatFits(ProposedViewSize(width: $1.width, height: nil)).height }.max()
-        return CGSize(width: width, height: height ?? 0)
-    }
-
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        for (subview, frame) in zip(subviews, frames(width: bounds.width)) {
-            subview.place(at: CGPoint(x: bounds.minX + frame.minX, y: bounds.minY),
-                          proposal: ProposedViewSize(width: frame.width, height: nil))
-        }
-    }
-
-    private func frames(width: CGFloat) -> [(minX: CGFloat, width: CGFloat)] {
-        let third = width / 3
-        return [(0, 2 * third - gutter), (2 * third, third)]
     }
 }

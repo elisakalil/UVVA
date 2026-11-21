@@ -53,6 +53,31 @@ public actor FriendsStore: StoreActor, FriendsRepository {
         try modelContext.save()
     }
 
+    /// One per contact, the latest invite.
+    public func invitedContacts() throws -> [InvitedContact] {
+        let all = try modelContext.fetch(FetchDescriptor<InvitedContactEntity>()).map(\.invite)
+        return Dictionary(all.map { ($0.id, $0) }) { $0.invitedAt >= $1.invitedAt ? $0 : $1 }
+            .values
+            .sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
+    }
+
+    public func saveInvite(_ invite: InvitedContact) throws {
+        for old in try modelContext.fetch(FetchDescriptor<InvitedContactEntity>()) where old.contactID == invite.id {
+            modelContext.delete(old)
+        }
+        modelContext.insert(InvitedContactEntity(invite))
+        try modelContext.save()
+    }
+
+    public func removeInvites(_ contactIDs: Set<String>) throws {
+        guard !contactIDs.isEmpty else { return }
+        for entity in try modelContext.fetch(FetchDescriptor<InvitedContactEntity>())
+        where contactIDs.contains(entity.contactID) {
+            modelContext.delete(entity)
+        }
+        try modelContext.save()
+    }
+
     public func lastTable() throws -> [String]? {
         try modelContext.fetch(FetchDescriptor<LastTableEntity>())
             .max { $0.openedAt < $1.openedAt }?

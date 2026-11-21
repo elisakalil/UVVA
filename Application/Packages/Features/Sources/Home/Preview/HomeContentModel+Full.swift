@@ -11,6 +11,6 @@ extension HomeContentModel {
         ratedVerdicts: ["pontoforte": .yes],
         catalog: MockData.catalog,
         glossary: MockData.glossary,
-        notifications: [AppNotification(id: "n1", text: "Marina Alves mapped a palate. You are an 82% match.", isRead: false)]
+        notifications: [AppNotification(id: "n1", kind: .newFriend(friendID: "marina", name: "Marina", compatibility: 82), date: .now, isRead: false)]
     )
 }

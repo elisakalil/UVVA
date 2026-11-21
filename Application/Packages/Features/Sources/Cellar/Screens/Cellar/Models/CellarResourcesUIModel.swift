@@ -34,6 +34,7 @@ struct CellarResourcesUIModel {
     func facet(_ facet: CellarFacet) -> String {
         switch facet {
         case .tag: String(localized: "Tag", bundle: .module)
+        case .match: String(localized: "Match", bundle: .module)
         case .type: String(localized: "Type", bundle: .module)
         case .grape: String(localized: "Grape", bundle: .module)
         case .region: String(localized: "Region", bundle: .module)
@@ -46,11 +47,28 @@ struct CellarResourcesUIModel {
     func anyValue(_ facet: CellarFacet) -> String {
         switch facet {
         case .tag: String(localized: "Any tag", bundle: .module)
+        case .match: String(localized: "Any match", bundle: .module)
         case .type: String(localized: "Any type", bundle: .module)
         case .grape: String(localized: "Any grape", bundle: .module)
         case .region: String(localized: "Any region", bundle: .module)
         case .producer: String(localized: "Any producer", bundle: .module)
         case .vintage: String(localized: "Any vintage", bundle: .module)
+        }
+    }
+
+    /// "82% match", under the name of a wine.
+    func match(_ percent: Int) -> String {
+        String(localized: "\(percent)% match", bundle: .module)
+    }
+
+    /// A value of the Match filter.
+    func matchBand(_ band: CellarMatch.Band) -> String {
+        switch band {
+        case .ninety: String(localized: "90–100%", bundle: .module)
+        case .eighty: String(localized: "80–89%", bundle: .module)
+        case .seventy: String(localized: "70–79%", bundle: .module)
+        case .sixty: String(localized: "60–69%", bundle: .module)
+        case .below: String(localized: "Below 60%", bundle: .module)
         }
     }
 

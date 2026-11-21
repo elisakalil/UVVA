@@ -8,4 +8,6 @@ struct ContactRowUIModel: Equatable, Identifiable {
     var note: String?
     var letter: String
     var state: ContactRowState
+    /// The number the invite goes to by SMS: the contact's first.
+    var phone: String? = nil
 }

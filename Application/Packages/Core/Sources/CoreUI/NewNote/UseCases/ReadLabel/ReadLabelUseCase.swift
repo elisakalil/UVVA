@@ -29,8 +29,10 @@ struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
         self.log = log
     }
 
-    func execute(front: Data, back: Data, backScan: LabelScan?) async -> LabelReadResult {
+    func execute(front: Data, back: Data, backScan: LabelScan?,
+                 onStage: @MainActor (LabelReadStage) -> Void) async -> LabelReadResult {
         do {
+            onStage(.text)
             let photos = try await reader.read(front: front, back: back)
             let read = Self.merging(photos, backScan: backScan)
             // Allergens in every language, the nutrition table, codes and repeats say nothing of the wine.
@@ -46,6 +48,7 @@ struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
             guard !text.isEmpty else { return .failed }
             let prepared = try await catalog.load()
             let year = Calendar(identifier: .gregorian).component(.year, from: now())
+            onStage(.wine)
             let parsed = LabelParser.parse(text, vocabulary: prepared.vocabulary, currentYear: year)
             // The model's window is small: it gets the back label's surest lines, not all of them.
             let result = await structurer.structure(LabelTextCleaner.forModel(text))
@@ -60,6 +63,7 @@ struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
             entry.modelContext = result.context
             // Notes that name no aroma are noise; a producer a letter off the catalog's is the catalog's.
             let facts = prepared.vocabulary.cleaning(structured?.filling(from: parsed) ?? parsed)
+            onStage(.catalog)
             let wine: Wine
             if let match = LabelMatch.best(for: facts, in: prepared.index), match.isConfident {
                 entry.match = match.wine.displayName
@@ -75,6 +79,7 @@ struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
                 return .nameless(facts)
             }
             entry.pairingsFound = wine.pairings
+            onStage(.pairings)
             // What the catalog says of the appellation read, for the certificate (CELLAR-R30).
             let enriched = await pairer.enriching(prepared.vocabulary.describingAppellation(of: wine))
             entry.pairingSuggestion = enriched.suggestion

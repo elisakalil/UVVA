@@ -6,29 +6,46 @@ struct NewNoteResourcesUIModel {
     /// The rating under the photos and its sheet.
     var rating = NoteRatingResources()
 
-    // MARK: Photos (CELLAR-R16, R17)
-    var frontTitleText = String(localized: "Photograph the front", bundle: .module)
-    var frontBodyText = String(localized: "Fit the whole label inside the frame.", bundle: .module)
-    var backTitleText = String(localized: "Now scan the back label", bundle: .module)
-    var backBodyText = String(localized: "Tap the button, then turn the bottle slowly.", bundle: .module)
-    /// While the back label is scanned (CELLAR-R16, R17).
-    var scanningBodyText = String(localized: "Turn the bottle slowly until the whole label has passed. Tap again when the count stops growing.", bundle: .module)
-    /// Before the scan is sure of any line.
-    var scanStartText = String(localized: "Hold the label inside the frame", bundle: .module)
-    var scanStartButtonText = String(localized: "Start scanning", bundle: .module)
-    var scanDoneText = String(localized: "Finish scanning", bundle: .module)
+    // MARK: Photos (CELLAR-R16, R17): a word or two, the motion says the rest
+    var frontTitleText = String(localized: "Front label", bundle: .module)
+    var backTitleText = String(localized: "Now the back", bundle: .module)
+    /// Inside the frame before the back label is recorded.
+    var backHintText = String(localized: "Record, then turn", bundle: .module)
+    /// While the back label is recorded, and once the count stops growing.
+    var scanningTitleText = String(localized: "Turn slowly", bundle: .module)
+    var scanSettledTitleText = String(localized: "Tap to finish", bundle: .module)
+    var recordingText = String(localized: "REC", bundle: .module)
+    var scanStartButtonText = String(localized: "Start recording", bundle: .module)
+    var scanDoneText = String(localized: "Stop recording", bundle: .module)
     func scannedLinesText(_ count: Int) -> String {
-        count == 1 ? String(localized: "1 line read", bundle: .module)
-            : String(localized: "\(count) lines read", bundle: .module)
+        count == 1 ? String(localized: "1 line", bundle: .module)
+            : String(localized: "\(count) lines", bundle: .module)
     }
-    var readingTitleText = String(localized: "Reading your label", bundle: .module)
-    var readingBodyText = String(localized: "This takes a few seconds.", bundle: .module)
-    var readingProgressText = String(localized: "Reading grape, region, vintage", bundle: .module)
+    var readingTitleText = String(localized: "Reading", bundle: .module)
+    /// What each step of the reading is doing, and its end.
+    func readingStageText(_ stage: LabelReadStage?) -> String {
+        switch stage {
+        case .text, nil: String(localized: "Reading the text", bundle: .module)
+        case .wine: String(localized: "Understanding it", bundle: .module)
+        case .catalog: String(localized: "Finding the wine", bundle: .module)
+        case .pairings: String(localized: "Pairing dishes", bundle: .module)
+        }
+    }
+    var readingDoneText = String(localized: "Got it", bundle: .module)
+    func readingStageIcon(_ stage: LabelReadStage) -> String {
+        switch stage {
+        case .text: "text.viewfinder"
+        case .wine: "sparkles"
+        case .catalog: "magnifyingglass"
+        case .pairings: "fork.knife"
+        }
+    }
     var frontStepText = String(localized: "Front", bundle: .module)
     var backStepText = String(localized: "Back label", bundle: .module)
     var shutterText = String(localized: "Take photo", bundle: .module)
     var libraryText = String(localized: "Choose from library", bundle: .module)
     var cameraUnavailableText = String(localized: "No camera on this device", bundle: .module)
+    var turnIcon = "arrow.left.and.right"
 
     // MARK: Messages (CELLAR-R21, R22)
     var errorTitleText = String(localized: "We couldn’t read your label", bundle: .module)

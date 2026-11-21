@@ -16,6 +16,12 @@ public protocol FriendsRepository: Sendable {
     func dismissedSuggestions() async throws -> Set<String>
     func dismissSuggestion(_ userID: String) async throws
 
+    /// Contacts invited from the contacts list who are not on UVVA yet (ONB-R37a, FRI-R04b).
+    func invitedContacts() async throws -> [InvitedContact]
+    func saveInvite(_ invite: InvitedContact) async throws
+    /// They joined UVVA: from then on they are a suggestion, a request or a friend.
+    func removeInvites(_ contactIDs: Set<String>) async throws
+
     /// The friends at the last table opened (FRI-R17); the table is worked out again when opened.
     func lastTable() async throws -> [String]?
     func saveLastTable(_ friendIDs: [String]) async throws

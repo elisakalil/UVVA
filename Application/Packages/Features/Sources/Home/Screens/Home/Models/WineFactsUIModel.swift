@@ -12,18 +12,28 @@ struct WineFactsUIModel {
         var id: String { label }
     }
 
-    var originFacts: [Fact] {
-        var facts: [Fact] = []
-        if !wine.originLine.isEmpty {
-            // A wine known only by its country shows the country alone: a line on a whole country says little.
-            let hasRegion = !(wine.region ?? "").isEmpty
-            facts.append(Fact(label: resources.wineFactsOriginTitle, value: wine.originLine, insight: hasRegion ? wine.originInsight : nil))
-        }
-        // A plain origin label (a regional DOC, an IGT) says nothing the origin does not; only a notable one shows.
-        if wine.hasNotableAppellation, !wine.classification.isEmpty {
-            facts.append(Fact(label: resources.wineFactsAppellationTitle, value: wine.classification, insight: wine.appellationInsight))
-        }
-        return facts
+    var producer: Fact? {
+        guard !wine.producer.isEmpty else { return nil }
+        return Fact(label: resources.wineFactsProducerTitle, value: wine.producer)
+    }
+
+    var vintage: Fact? {
+        wine.vintage.map { Fact(label: resources.wineFactsVintageTitle, value: vintageLine($0)) }
+    }
+
+    var origin: Fact? {
+        guard !wine.originLine.isEmpty else { return nil }
+        // A wine known only by its country shows the country alone: a line on a whole country says little.
+        let hasRegion = !(wine.region ?? "").isEmpty
+        return Fact(label: resources.wineFactsOriginTitle, value: wine.originLine,
+                    insight: hasRegion ? wine.originInsight : nil)
+    }
+
+    /// A plain origin label (a regional DOC, an IGT) says nothing the origin does not; only a notable one shows.
+    var appellation: Fact? {
+        guard wine.hasNotableAppellation, !wine.classification.isEmpty else { return nil }
+        return Fact(label: resources.wineFactsAppellationTitle, value: wine.classification,
+                    insight: wine.appellationInsight)
     }
 
     var grapes: Fact? {

@@ -6,8 +6,10 @@ public struct CellarItemUIModel: Identifiable, Equatable {
     var name: String
     /// "2019", or empty for a wine without a vintage.
     var vintage: String
-    /// "Douro · Portugal · Touriga Nacional".
-    var meta: String
+    /// "82% match", or empty without a map or a profile to compare.
+    var match: String
+    /// The region, or the country when there is no region.
+    var place: String
     /// Yes, Maybe, No or Not yet.
     var tag: String
     var photo: Data?

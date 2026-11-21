@@ -23,6 +23,8 @@ final class AppCoordinator {
     private(set) var learn: LearnViewModel?
     private(set) var cellarTab: CellarViewModel?
     private(set) var friends: FriendsViewModel?
+    /// FRI-R06: the Onboarding's contacts list, opened over the Friends tab.
+    private(set) var addFriends: AddFriendsModule?
     /// The originating feature presents the note (CELLAR-R14).
     private(set) var newNote: (origin: AppTab, model: NewNoteViewModel)?
     /// The open note came from the Hero's "Add to cellar": once saved, the Home goes back to its top (HOME-R10c).
@@ -44,6 +46,7 @@ final class AppCoordinator {
     private let cellar: CellarStore
     private let learning: LearningStore
     private let friendsStore: FriendsStore
+    private let notifications: NotificationStore
     private let scheduler = LocalReminderScheduler()
     private let auth: any Authenticating
     private let cloud: any CloudAccountStatus
@@ -67,6 +70,7 @@ final class AppCoordinator {
         cellar = stores.cellar
         learning = stores.learning
         friendsStore = stores.friends
+        notifications = stores.notifications
 
         auth = AppleAuthProvider()
         cloud = ICloudAccountStatus()
@@ -115,7 +119,7 @@ final class AppCoordinator {
 
     private func openOnboarding() {
         onboarding = OnboardingFactory(auth: auth, profiles: profiles, maps: maps, social: social, cloud: cloud,
-                                         contacts: DeviceContacts()).makeModule { [weak self] result in
+                                         contacts: DeviceContacts(), friends: friendsStore).makeModule { [weak self] result in
             self?.finishOnboarding(result)
         }
         route = .onboarding
@@ -180,7 +184,10 @@ final class AppCoordinator {
             cellar: cellar,
             courses: courses,
             learning: learning,
-            friends: friendsStore
+            friends: friendsStore,
+            notifications: notifications,
+            social: social,
+            sharing: social as? any WineSharingService
         ).makeViewModel(coordinator: HomeCoordinator(
             onOpenCourse: { [weak self] id in
                 self?.openCourse(id)
@@ -196,8 +203,11 @@ final class AppCoordinator {
                 self?.openNewNote(from: .home, for: wine, ratedVerdict: ratedVerdict, returnsHomeToTop: fromHero)
             },
             onOpenFriends: { [weak self] in self?.openFriendsSelection() },
-            onOpenLastTable: { [weak self] in self?.openLastTable() },
+            onOpenFriendTable: { [weak self] id in self?.openFriendTable(id) },
+            onOpenFriend: { [weak self] id in self?.openFriendProfile(id) },
             onOpenMapHistory: { [weak self] in self?.openMapHistory() },
+            onOpenFriendRequests: { [weak self] in self?.openFriendRequests() },
+            onOpenReceivedWine: { [weak self] id in self?.openSharedWine(id) },
             onWineAddedToCellar: { [weak self] wineKey in self?.cellarTab?.refreshEntry(wineKey) }
         ))
 
@@ -210,11 +220,22 @@ final class AppCoordinator {
             onEditNote: { [weak self] entry, wine in self?.openNewNote(from: .cellar, for: wine, editing: entry) })
 
         friends = friends ?? FriendsFactory(profiles: profiles, maps: maps, friends: friendsStore, catalog: catalog,
-                                            social: social, contacts: DeviceContacts())
+                                            social: social, contacts: DeviceContacts(), cellar: cellar,
+                                            sharing: social as? any WineSharingService, wines: catalog,
+                                            makeWineScan: { [cellar, maps, catalog] onScanned in
+                                                // FRI-R12a: the new note's camera and reading, scan only.
+                                                Self.makeWineScan(cellar: cellar, maps: maps, catalog: catalog,
+                                                                  onScanned: onScanned)
+                                            })
             .makeViewModel(onFriendsChange: { [weak self] in
                 guard let home = self?.home else { return }
                 Task { await home.load() }
-            })
+            }, onAddFriends: { [weak self] in self?.openAddFriends() },
+            // FRI-R11c: "Add to cellar" on a wine a friend sent opens the same new note as the Home.
+            onAddToCellar: { [weak self] wine in self?.openNewNote(from: .friends, for: wine) },
+            onHasFriends: { [weak self] in self?.prepareSharedWinePushes() })
+        // FRI-R11c: a tapped push opens the wine in the Friends tab, now or once it is there.
+        SharedWinePushes.shared.onOpen = { [weak self] id in self?.openSharedWine(id) }
 
         learn = learn ?? LearnFactory(
             catalog: courses,
@@ -291,6 +312,31 @@ final class AppCoordinator {
         newNote = (origin, model)
     }
 
+    /// FRI-R11c: with a friend, the user is asked for notifications, and the wines sent to them push.
+    private func prepareSharedWinePushes() {
+        guard let sharing = social as? any WineSharingService else { return }
+        Task { [profiles] in
+            guard let userID = try? await profiles.currentProfile()?.id else { return }
+            await SharedWinePushes.shared.prepare(userID: userID, sharing: sharing)
+        }
+    }
+
+    /// FRI-R11c: a tapped push opens the wine sent, full screen over the Friends tab.
+    private func openSharedWine(_ id: String) {
+        selectedTab = .friends
+        guard let friends else { return }
+        Task { await friends.openReceived(id) }
+    }
+
+    /// FRI-R12a: the new note's camera and label reading, handing over the wine it reads instead of saving a note.
+    private static func makeWineScan(cellar: CellarStore, maps: PalateMapStore, catalog: CatalogStore,
+                                     onScanned: @escaping (Wine) -> Void) -> NewNoteViewModel {
+        NewNoteViewModel(
+            cellar: cellar, maps: maps, labelCatalog: catalog, reader: VisionLabelReader(),
+            structurer: DeviceLabelStructurer(), pairer: DevicePairingSuggester(), camera: DeviceCamera(),
+            rewriter: maps, wines: catalog, onScanned: onScanned, onSaved: { _ in })
+    }
+
     func closeNewNote(from origin: AppTab) {
         guard newNote?.origin == origin else { return }
         newNote = nil
@@ -324,17 +370,47 @@ final class AppCoordinator {
         }
     }
 
+    /// FRI-R06: "Add friends to compare maps" opens the contacts list of the Onboarding, for the user's account.
+    private func openAddFriends() {
+        guard let profile else { return }
+        addFriends = OnboardingFactory(auth: auth, profiles: profiles, maps: maps, social: social, cloud: cloud,
+                                       contacts: DeviceContacts(), friends: friendsStore)
+            .makeAddFriends(profile: profile) { [weak self] in self?.closeAddFriends() }
+    }
+
+    /// Closing reads the friends again: the requests just sent show as "Requested" in Quick add.
+    func closeAddFriends() {
+        addFriends = nil
+        guard let friends else { return }
+        Task { await friends.reload() }
+    }
+
+    /// HOME-R04b: a friend request notification opens the Friends tab, read again so the request the Home just saw is
+    /// there to answer (FRI-R08a).
+    private func openFriendRequests() {
+        selectedTab = .friends
+        guard let friends else { return }
+        Task { await friends.reload() }
+    }
+
     /// FRI-R20: "Set a table with your friends" opens the choice of who comes.
     private func openFriendsSelection() {
         selectedTab = .friends
         friends?.startSelecting()
     }
 
-    /// HOME-R11: the match card opens the last table, in the Friends tab (FRI-R17).
-    private func openLastTable() {
+    /// HOME-R11: the match card opens the table with that friend, in the Friends tab (FRI-R13).
+    private func openFriendTable(_ id: String) {
         selectedTab = .friends
         guard let friends else { return }
-        Task { await friends.openLastTable() }
+        Task { await friends.openFriendTable(id) }
+    }
+
+    /// HOME-R04b: a new-friend notification opens only that friend's profile, in the Friends tab, with no table set.
+    private func openFriendProfile(_ id: String) {
+        selectedTab = .friends
+        guard let friends else { return }
+        Task { await friends.openFriendProfile(id) }
     }
 
     /// HOME-R17: the "axis that changed" card opens You › Map, at "Over time" (YOU-R03).
@@ -355,7 +431,14 @@ final class AppCoordinator {
                          Task { await learn.showCertificate(courseID: id) }
                      },
                      onSignOut: { [weak self] in self?.signOut() },
-                     onAccountDeleted: { [weak self] in self?.accountDeleted() }))
+                     onAccountDeleted: { [weak self] in self?.accountDeleted() },
+                     onOpenWine: { [weak self] id in self?.openCellarNote(id) }))
+    }
+
+    /// YOU-R07a: a wine picked from a place of the Progress map opens its note in the Cellar.
+    private func openCellarNote(_ wineKey: String) {
+        selectedTab = .cellar
+        cellarTab?.openNote(wineKey)
     }
 
     private func signOut() {
@@ -418,6 +501,7 @@ final class AppCoordinator {
         learn = nil
         cellarTab = nil
         friends = nil
+        addFriends = nil
         newNote = nil
         tour = nil
         selectedTab = .home

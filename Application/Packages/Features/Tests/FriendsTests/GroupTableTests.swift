@@ -1,5 +1,6 @@
 import Core
 import Foundation
+import Match
 import Testing
 @testable import Friends
 
@@ -9,10 +10,23 @@ struct GroupTableTests {
     let repository = FriendsRepositoryFake()
     let userMap = PalateMap.positions([.acidity: 7, .fruit: 7])
 
+    let sharing = SharingFake()
+
     func makeList() -> FriendsViewModel {
         FriendsFactory(profiles: ProfilesStub(), maps: MapStub(map: userMap), friends: repository, catalog: CatalogStub(),
-                       social: social, contacts: ContactsFake(access: .denied))
+                       social: social, contacts: ContactsFake(access: .denied), sharing: sharing, wines: WineLookupStub())
             .makeViewModel()
+    }
+
+    /// The table of the friends named, loaded.
+    func loadedTable(_ names: [String]) async throws -> GroupTableViewModel {
+        let list = await loadedList(names)
+        list.startSelecting()
+        for name in names { list.toggle(name.lowercased()) }
+        list.findBottle()
+        let table = try #require(list.groupTable)
+        await table.load()
+        return table
     }
 
     func befriend(_ names: [String]) {
@@ -102,7 +116,11 @@ struct GroupTableTests {
         let friends = [7.0, 7, 8].enumerated().map { friend("f\($0.offset)", PalateMap.positions([.acidity: $0.element])) }
         let builder = GroupTablePresentationBuilder(userMap: PalateMap.positions([.acidity: 6]), friends: friends, bottles: nil,
                                                     resources: GroupTableResourcesUIModel())
-        #expect(builder.readings.first { $0.name == "Acidity" }?.rangeText == "6–8")
+        let acidity = builder.readings.first { $0.name == "Acidity" }
+        #expect(acidity?.rangeText == "6–8")
+        #expect(acidity?.low == 6.0 / 9)
+        #expect(acidity?.high == 8.0 / 9)
+        #expect((acidity?.middle ?? 0) > 6.0 / 9 && (acidity?.middle ?? 1) < 8.0 / 9)
     }
 
     @Test func FRI_R19_noSharedAxes_tableOfFour() {
@@ -122,6 +140,10 @@ struct GroupTableTests {
         #expect(model.phrase == "You all want acidity and fruit in a glass.")
         #expect(model.dinnerTitle == "The perfect dinner for The 3 of you")
         #expect(model.membersText == "You, Marina and Bia")
+        #expect(model.memberNames == ["Marina", "Bia", "You"])
+        #expect(model.matchValueText == "100%")
+        #expect(model.mapsText == "3 maps · one bottle")
+        #expect(model.guestsText == "The 3 of you")
     }
 
     @Test func FRI_R19_readings_startCollapsed() async {
@@ -133,6 +155,78 @@ struct GroupTableTests {
         #expect(list.groupTable?.uiModel.isReadingsExpanded == false)
         list.groupTable?.toggleReadings()
         #expect(list.groupTable?.uiModel.isReadingsExpanded == true)
+    }
+
+    // MARK: FRI-R13, R15a · Set a table, as on a friend
+
+    @Test func FRI_R13a_settingTheDinner_buildsTheCoursesChosen_inItsSheet() async throws {
+        let table = try await loadedTable(["Marina", "Bia"])
+        #expect(table.uiModel.dinnerIntro == "Choose how the evening goes. The dishes follow your choices; the bottles, all 3 maps.")
+        #expect(table.uiModel.bottles?.map(\.courseText) == ["Starter", "Main", "Dessert"])
+        #expect(table.uiModel.togetherWines?.map(\.id) == table.uiModel.bottles?.map(\.id))
+        #expect(!table.uiModel.isTableOpen)
+        table.toggleCourse(.starter)
+        await table.setTable()
+        #expect(table.uiModel.isTableOpen)
+        #expect(table.uiModel.bottles?.map(\.courseText) == ["Main", "Dessert"])
+        #expect(table.uiModel.recipes?.map(\.courseText) == ["Main", "Dessert"])
+        table.closeTable()
+        #expect(!table.uiModel.isTableOpen)
+        #expect(table.uiModel.dinner.buttonTitle == "Set the perfect dinner")
+        table.pickFood(.vegetarian)
+        #expect(table.uiModel.dinner.buttonTitle == "Set it again")
+    }
+
+    // MARK: Friend Wine at a group table
+
+    @Test func aBottleToOpenTogether_readsOnEveryMap_andGoesToTheWholeTable() async throws {
+        let table = try await loadedTable(["Marina", "Bia"])
+        let bottle = try #require(table.uiModel.togetherWines?.first)
+        table.openTableWine(bottle.id)
+        let wine = try #require(table.uiModel.friendWine)
+        #expect(wine.content.percentageCaption == "match with your 3 maps")
+        #expect(wine.people.map(\.name) == ["You", "Marina", "Bia"])
+        #expect(wine.footer == .send(title: "Send to the table", isEnabled: true, failed: nil))
+        await table.sendWine()
+        #expect(Set(sharing.records.map(\.to)) == ["marina", "bia"])
+        #expect(table.uiModel.friendWine?.footer == .send(title: "Sent to the table", isEnabled: false, failed: nil))
+        await table.sendWine()
+        #expect(sharing.records.count == 2)
+    }
+
+    @Test func sendingAgain_afterAFailure_onlyGoesToThoseItMissed() async throws {
+        let table = try await loadedTable(["Marina", "Bia"])
+        sharing.failSending(to: ["bia"])
+        let bottle = try #require(table.uiModel.togetherWines?.first)
+        table.openTableWine(bottle.id)
+        await table.sendWine()
+        #expect(sharing.records.map(\.to) == ["marina"])
+        #expect(table.uiModel.friendWine?.footer
+                == .send(title: "Send to the table", isEnabled: true, failed: "It did not send. Try again."))
+        sharing.failSending(to: [])
+        await table.sendWine()
+        #expect(sharing.records.map(\.to) == ["marina", "bia"])
+    }
+
+    @Test func scannedWine_readsTheMatchOnEveryMap_andEachOne() {
+        let wine = CatalogStub.wines[1]
+        let maps = [PalateMap.positions([.tannin: 8]), PalateMap.positions([.oak: 7])]
+        let all = TableMatch.crossed([userMap] + maps)
+        let model = FriendWinePresentationBuilder(
+            wine: wine, reader: .table(friendNames: ["Marina", "Bia"], userMap: userMap, friendMaps: maps)).build()
+        #expect(model.content.palate == all)
+        #expect(model.content.percentage == "\(Similarity.percent(wine.profile, all))%")
+        #expect(model.strings.comparison == "This wine and the 3 of you")
+        #expect(model.people.map(\.percentage) == ["\(Similarity.percent(wine.profile, userMap))%",
+                                                    "\(Similarity.percent(wine.profile, maps[0]))%",
+                                                    "\(Similarity.percent(wine.profile, maps[1]))%"])
+    }
+
+    @Test func withoutAScanner_thereIsNoPlus() async throws {
+        let table = try await loadedTable(["Marina", "Bia"])
+        #expect(table.uiModel.canScan == false)
+        table.scanWine()
+        #expect(table.uiModel.scanner == nil)
     }
 
     // MARK: FRI-R17 · Última mesa de grupo

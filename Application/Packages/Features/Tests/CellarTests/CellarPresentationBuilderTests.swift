@@ -125,4 +125,41 @@ struct CellarPresentationBuilderTests {
     @Test func blankQuery_isNotASearch() {
         #expect(!builder(mixed, query: "   ").isSearching)
     }
+
+    // MARK: Match
+
+    /// Flat maps: the same value is 100%, one point apart on every axis 78%, two points 56%.
+    private func profiled(_ id: String, _ value: Double?, region: String? = nil, country: String? = nil) -> CellarEntry {
+        var entry = Entries.entry(id, region: region, country: country)
+        entry.wineProfile = value.map(Maps.flat)
+        return entry
+    }
+
+    @Test func match_isShownUnderTheName_withTheRegionOrElseTheCountry() {
+        var matched = CellarPresentationBuilder(entries: [profiled("a", 5, region: "Douro", country: "Portugal"),
+                                                          profiled("b", 6, country: "Italy"),
+                                                          profiled("c", nil, region: "Dão")],
+                                                filters: [:], openFacet: nil, query: "")
+        matched.palate = Maps.flat(5)
+        #expect(matched.items.map(\.match) == ["100% match", "78% match", ""])
+        #expect(matched.items.map(\.place) == ["Douro", "Italy", "Dão"])
+    }
+
+    @Test func matchFilter_followsTag_onlyWithAMap() {
+        let entries = [profiled("a", 5)]
+        #expect(!builder(entries).chips.map(\.facet).contains(.match))
+        let withMap = CellarPresentationBuilder(entries: entries, filters: [:], openFacet: nil, query: "", palate: Maps.flat(5))
+        #expect(withMap.chips.map(\.facet).prefix(2) == [.tag, .match])
+    }
+
+    @Test func matchFilter_bandsTheBottles() {
+        let entries = [profiled("a", 5), profiled("b", 6), profiled("c", 7), profiled("d", nil)]
+        let sheet = CellarPresentationBuilder(entries: entries, filters: [:], openFacet: .match, query: "",
+                                              palate: Maps.flat(5)).filterSheet
+        #expect(sheet?.options.map(\.value) == ["90–100%", "80–89%", "70–79%", "60–69%", "Below 60%"])
+        #expect(sheet?.options.map(\.count) == ["1", "0", "1", "0", "1"])
+        let filtered = CellarPresentationBuilder(entries: entries, filters: [.match: "70–79%"], openFacet: nil,
+                                                 query: "", palate: Maps.flat(5))
+        #expect(filtered.items.map(\.id) == ["b"])
+    }
 }

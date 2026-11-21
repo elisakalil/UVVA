@@ -22,7 +22,7 @@ struct HomeContent: View {
     var onSaveToCellar: (Wine) -> Void = { _ in }
     var onScan: () -> Void = {}
     var onOpenFriends: () -> Void = {}
-    var onOpenLastTable: () -> Void = {}
+    var onOpenFriendTable: (String) -> Void = { _ in }
     var onOpenMapHistory: () -> Void = {}
 
     @State private var scroll = HeaderScrollModel()
@@ -95,9 +95,8 @@ struct HomeContent: View {
                 }
             }
 
-            if case let .header(greeting, hasUnread) = model.cards.first {
-                HomeHeader(resources: resources, greeting: greeting, hasUnread: hasUnread, scroll: scroll,
-                           onScan: onScan)
+            if case let .header(greeting, _) = model.cards.first {
+                HomeHeader(resources: resources, greeting: greeting, scroll: scroll, onScan: onScan)
             }
         }
         .foregroundStyle(Color.white)
@@ -144,7 +143,7 @@ struct HomeContent: View {
     @ViewBuilder private func card(_ card: HomeCardModel, proxy: ScrollViewProxy) -> some View {
         HomeCardView(resources: resources, card: card, palateMap: model.palateMap, cellarWineKeys: cellarWineKeys, isRefreshingMatches: isRefreshingMatches, isReloading: isReloading,
                      heroHoldsOpen: isReturningToTop && !reachedTop, onInvite: onInvite, onOpenFriends: onOpenFriends,
-                     onOpenLastTable: onOpenLastTable, onOpenMapHistory: onOpenMapHistory,
+                     onOpenFriendTable: onOpenFriendTable, onOpenMapHistory: onOpenMapHistory,
                      onOpenLesson: onOpenLesson, onOpenCourse: onOpenCourse, onOpenGlossary: onOpenGlossary, onOpenLearn: onOpenLearn,
                      onShowLess: { then in
                          withAnimation(.smooth) { proxy.scrollTo(Self.topID, anchor: .top) } completion: { then() }

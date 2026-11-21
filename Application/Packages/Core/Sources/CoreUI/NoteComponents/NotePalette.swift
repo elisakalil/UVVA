@@ -8,6 +8,8 @@ public enum NotePalette {
     public static let ink = UVVAColor.ink
     static let cameraGround = Color(hex: 0x0F130C)
     static let veil = Color(hex: 0x0E130A).opacity(0.58)
+    /// The camera is recording the back label: the shutter, its ring and the frame.
+    static let record = Color(hex: 0xE5543F)
     /// Behind a label photo while it loads.
     public static let photoGround = Color(hex: 0x1C2017)
     /// The tag on the front label.

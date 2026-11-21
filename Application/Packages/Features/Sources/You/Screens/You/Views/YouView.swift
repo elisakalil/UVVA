@@ -4,6 +4,9 @@ import SwiftUI
 /// The You tab: the header, the three tabs and their panels (YOU.md).
 public struct YouView<ViewModel: YouViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
+    /// HOME-R04: the bell at the top, the notifications gathered by the Home.
+    var hasUnreadNotifications: Bool
+    var onOpenNotifications: (() -> Void)?
 
     @State private var selectedProgressStat: ProgressStat?
     /// How far a Progress sheet is open: it opens at half of the half screen it used to open at.
@@ -11,15 +14,19 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
 
     private static var progressOpeningDetent: PresentationDetent { .fraction(0.25) }
 
-    public init(viewModel: ViewModel) {
+    public init(viewModel: ViewModel, hasUnreadNotifications: Bool = false,
+                onOpenNotifications: (() -> Void)? = nil) {
         self.viewModel = viewModel
+        self.hasUnreadNotifications = hasUnreadNotifications
+        self.onOpenNotifications = onOpenNotifications
     }
 
     public var body: some View {
         ZStack(alignment: .top) {
             PageBackground(photo: viewModel.uiModel.backgroundPhoto, veiled: true)
             VStack(spacing: 0) {
-                YouHeader(model: viewModel.uiModel.header)
+                YouHeader(model: viewModel.uiModel.header, hasUnreadNotifications: hasUnreadNotifications,
+                          onOpenNotifications: onOpenNotifications)
                     .padding(.horizontal, 30)
                     .padding(.top, 36)
                     .opacity(viewModel.uiModel.isLoaded ? 1 : 0)
@@ -50,29 +57,12 @@ public struct YouView<ViewModel: YouViewModelProtocol>: View {
                         .padding(.top, 26)
                         // The tab bar already holds its own room at the foot of the scroll.
                         .padding(.bottom, 24)
-                        // While Regions or Bottles is open, room under the page lets the map rise to the top, above
-                        // the sheet; it goes with the sheet.
-                        .padding(.bottom, viewModel.uiModel.tab == .progress && selectedProgressStat?.mapKind != nil ? 420 : 0)
-                        // It comes at once, so the scroll to the map has it; it leaves smoothly.
-                        .animation(selectedProgressStat?.mapKind == nil ? .smooth(duration: 0.6) : nil,
-                                   value: selectedProgressStat?.mapKind)
                     }
                     .scrollIndicators(.hidden)
                     .scrollEdgeFade(12, throughBottomInset: true)
                     .opacity(viewModel.uiModel.isLoaded ? 1 : 0)
                     // Each tab opens at its top, not at the offset the last one was left at.
                     .id(viewModel.uiModel.tab)
-                    // Regions and Bottles keep only their pins: the page brings the map up, above their sheet.
-                    .onChange(of: selectedProgressStat?.mapKind) { _, kind in
-                        guard kind != nil else { return }
-                        // After the room under the page is laid out: scrolled before it, the page stops short.
-                        Task { @MainActor in
-                            try? await Task.sleep(for: .milliseconds(250))
-                            withAnimation(.smooth(duration: 0.6)) {
-                                proxy.scrollTo(ProgressTabView<ViewModel.ProgressModel>.mapID, anchor: UnitPoint(x: 0.5, y: -0.1))
-                            }
-                        }
-                    }
                 }
             }
         }

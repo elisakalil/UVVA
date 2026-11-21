@@ -1,0 +1,30 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Could not open UVVA" : {
+
+    },
+    "Five minutes for wine. Your next lesson is waiting." : {
+
+    },
+    "SHARED_WINE_ALERT" : {
+      "comment" : "FRI-R11c: the push of a wine a friend sent. %1$@ is the friend's first name, %2$@ the wine.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ sent you a wine: %2$@"
+          }
+        }
+      }
+    },
+    "Try again" : {
+
+    },
+    "UVVA" : {
+
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,23 +1,18 @@
 import DesignSystem
 import SwiftUI
 
-/// The three bottles, or what stands in for them while they are worked out.
-struct TableBottlesList: View {
+/// The bottles once they are there; until then, a line that says they are being read, or that none fits.
+struct TableBottlesState<Content: View>: View {
     var resources: TableResourcesUIModel
     var bottles: [TableBottleUIModel]?
-    var style: TableBottleRow.Style
+    @ViewBuilder var content: ([TableBottleUIModel]) -> Content
 
     var body: some View {
         if let bottles {
             if bottles.isEmpty {
                 Text(resources.noBottlesText).font(UVVAFont.sans(12.5)).opacity(0.75).padding(.vertical, 16)
             } else {
-                VStack(spacing: 0) {
-                    ForEach(bottles) { bottle in
-                        TableBottleRow(bottle: bottle, style: style)
-                        if bottle.id != bottles.last?.id { FriendsRule() }
-                    }
-                }
+                content(bottles)
             }
         } else {
             HStack(spacing: 10) {

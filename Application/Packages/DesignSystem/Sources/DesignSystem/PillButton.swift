@@ -9,6 +9,8 @@ public struct PillButton<Label: View>: View {
     var action: () -> Void
     var label: Label
 
+    @Environment(\.isEnabled) private var isEnabled
+
     public init(style: Style = .filled, tint: Color? = nil, action: @escaping () -> Void, @ViewBuilder label: () -> Label) {
         self.style = style
         self.tint = tint
@@ -20,17 +22,31 @@ public struct PillButton<Label: View>: View {
         Button(action: action) {
             label
                 .font(UVVAFont.sans(14, .regular))
-                .foregroundStyle(style == .filled ? UVVAColor.ink : (tint ?? UVVAColor.cream))
+                .foregroundStyle(foreground)
                 .frame(maxWidth: .infinity, minHeight: 44)
                 .background {
-                    if style == .filled {
-                        Capsule().fill(tint ?? UVVAColor.creamFill)
-                    } else {
+                    switch (style, isEnabled) {
+                    case (.filled, true):
+                        Capsule().fill(fill)
+                    case (.filled, false):
+                        Capsule().strokeBorder(fill.opacity(DisabledPill.ringOpacity), lineWidth: 0.75)
+                    case (.outline, _):
                         Capsule().strokeBorder((tint ?? UVVAColor.cream).opacity(0.4), lineWidth: 0.75)
                     }
                 }
                 .contentShape(Capsule())
         }
         .buttonStyle(.plain)
+        .animation(.easeOut(duration: 0.2), value: isEnabled)
+    }
+
+    private var fill: Color { tint ?? UVVAColor.creamFill }
+
+    private var foreground: Color {
+        switch (style, isEnabled) {
+        case (.filled, true): UVVAColor.ink
+        case (.filled, false): fill.opacity(DisabledPill.textOpacity)
+        case (.outline, _): tint ?? UVVAColor.cream
+        }
     }
 }

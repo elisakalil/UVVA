@@ -74,11 +74,12 @@ private final class ScrollOffset {
 
 private struct GlassBackdropModifier: ViewModifier {
     @Environment(\.backdropFrame) private var backdropFrame
+    @Environment(\.glassPhoto) private var glassPhoto
     @State private var offset = ScrollOffset()
     @State private var scrollFrame: CGRect = .zero
 
     func body(content: Content) -> some View {
-        if let backdropFrame, let photo = GlassTextures.blurredPhoto {
+        if let backdropFrame, let photo = GlassTextures.blurred(glassPhoto) {
             content
                 // How far the content has moved from its resting place. The scroll view's measured frame already
                 // starts below the top inset, so the inset is added back.
@@ -87,7 +88,7 @@ private struct GlassBackdropModifier: ViewModifier {
                 }
                 .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { scrollFrame = $0 }
                 .backgroundPreferenceValue(GlassPaneFrames.self) { panes in
-                    GlassBackdropLayer(photo: photo, light: GlassTextures.lightlyBlurredPhoto, panes: panes,
+                    GlassBackdropLayer(photo: photo, light: GlassTextures.lightlyBlurred(glassPhoto), panes: panes,
                                        backdropFrame: backdropFrame, scrollFrame: scrollFrame, offset: offset)
                 }
         } else {

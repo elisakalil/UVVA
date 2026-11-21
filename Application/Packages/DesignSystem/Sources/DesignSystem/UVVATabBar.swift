@@ -4,8 +4,13 @@ import SwiftUI
 /// The active tab is a brighter glass capsule with cream text in 400; the others are cream in 300.
 public struct UVVATabBar: View {
     @Binding var active: AppTab
+    /// Tabs with something new behind them: a small dot beside the name (You, for an unread notification).
+    var marked: Set<AppTab>
 
-    public init(active: Binding<AppTab>) { _active = active }
+    public init(active: Binding<AppTab>, marked: Set<AppTab> = []) {
+        _active = active
+        self.marked = marked
+    }
 
     public var body: some View {
         HStack(spacing: 0) {
@@ -17,6 +22,16 @@ public struct UVVATabBar: View {
                         .tracking(0.66)
                         .lineLimit(1)
                         .foregroundStyle(isActive ? UVVAColor.cream : UVVAColor.cream.opacity(0.72))
+                        .overlay(alignment: .topTrailing) {
+                            if marked.contains(tab) {
+                                Circle()
+                                    .fill(UVVAColor.cream)
+                                    .frame(width: 4, height: 4)
+                                    .offset(x: 6, y: -1)
+                                    .transition(.scale.combined(with: .opacity))
+                            }
+                        }
+                        .animation(.easeOut(duration: 0.2), value: marked.contains(tab))
                         .padding(.horizontal, 4)
                         .frame(minWidth: 61, minHeight: 30)
                         .background {
@@ -32,6 +47,7 @@ public struct UVVATabBar: View {
                 }
                 .buttonStyle(.plain)
                 .accessibilityAddTraits(isActive ? .isSelected : [])
+                .accessibilityValue(marked.contains(tab) ? String(localized: "New", bundle: .module) : "")
                 .spotlightAnchor(tab.spotlightID)
             }
         }

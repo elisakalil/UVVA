@@ -9,6 +9,8 @@ public protocol FriendsViewModelProtocol: ObservableObject {
     var profile: ProfileModel? { get }
     func openFriend(_ id: String)
     func closeFriend()
+    /// "Search by name".
+    func updateQuery(_ query: String)
     /// The group table open over the list (FRI-R19).
     var groupTable: GroupTableModel? { get }
     func startSelecting()
@@ -27,6 +29,14 @@ public protocol FriendsViewModelProtocol: ObservableObject {
     func cancelRequest(_ id: String) async
     func dismissSuggestion(_ id: String) async
     func askForContacts() async
+    /// FRI-R06: the contacts list, to add and invite friends.
+    func addFriends() async
     func openInvite()
     func closeInvite()
+    /// FRI-R11c: a wine a friend sent opens full screen, from "Sent to you" or its push.
+    func openReceived(_ id: String) async
+    func closeReceived()
+    /// "Add to cellar" on a wine received: closes it, then the Cellar's new note opens.
+    func addReceivedToCellar()
+    func receivedDismissed()
 }

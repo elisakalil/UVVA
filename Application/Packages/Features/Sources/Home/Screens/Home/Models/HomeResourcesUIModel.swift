@@ -15,8 +15,6 @@ struct HomeResourcesUIModel {
     var homeHeaderBrand = String(localized: "UVVA", bundle: .module)
     var homeHeaderScanSymbol = "+"
     var homeHeaderScanLabel = String(localized: "Scan a label", bundle: .module)
-    var homeHeaderUnreadLabel = String(localized: "Notifications, unread", bundle: .module)
-    var homeHeaderNotificationsLabel = String(localized: "Notifications", bundle: .module)
     var dailySuggestionCardFindWineTitle = String(localized: "Find the wine", bundle: .module)
     var dailySuggestionCardSavedTitle = String(localized: "In your cellar", bundle: .module)
     var dailySuggestionCardAddTitle = String(localized: "Add to cellar", bundle: .module)
@@ -28,7 +26,6 @@ struct HomeResourcesUIModel {
     var friendsCardInviteTitle = String(localized: "Invite friends to discover their palate and find a wine you'll both love", bundle: .module)
     var friendsCardOpenTableTitle = String(localized: "Open the table →", bundle: .module)
     var friendsCardTableTitle = String(localized: "Set a table with your friends", bundle: .module)
-    var friendsCardPickFriendsTitle = String(localized: "Pick who is coming →", bundle: .module)
     var continueLessonCardContinueTitle = String(localized: "Continue  →", bundle: .module)
     var learnShortcutsCardRegionEyebrow = String(localized: "Learn a region", bundle: .module)
     var learnShortcutsCardRegionTitle = String(localized: "Uco Valley", bundle: .module)
@@ -62,6 +59,7 @@ struct HomeResourcesUIModel {
     var wineMapPagerWineLegend = String(localized: "This wine", bundle: .module)
     var wineMapPagerPalateLegend = String(localized: "Your map", bundle: .module)
     var wineRowChevronIcon = "chevron.right"
+    var wineFactsProducerTitle = String(localized: "Producer", bundle: .module)
     var wineFactsOriginTitle = String(localized: "Origin", bundle: .module)
     var wineFactsAppellationTitle = String(localized: "Appellation", bundle: .module)
     var wineFactsGrapesTitle = String(localized: "Grapes", bundle: .module)
@@ -254,6 +252,40 @@ struct HomeResourcesUIModel {
                 String(localized: "There's a faint fruit note in the background.", bundle: .module)
             ]
         }
+    }
+
+    // MARK: Notifications (HOME-R04a)
+
+    var notificationsTitle = String(localized: "Notifications", bundle: .module)
+    var notificationsClose = String(localized: "Close", bundle: .module)
+    var notificationsEmpty = String(localized: "Nothing new yet. Requests and wines from friends, and changes to your map, will show here.", bundle: .module)
+    var notificationsJustNow = String(localized: "Just now", bundle: .module)
+    var notificationUnreadLabel = String(localized: "Unread", bundle: .module)
+
+    func notificationText(_ kind: AppNotification.Kind) -> String {
+        switch kind {
+        case let .friendRequest(_, name):
+            String(localized: "\(name) wants to compare palates with you", bundle: .module)
+        case let .newFriend(_, name, compatibility):
+            String(localized: "\(name) is now your friend. You are a \(compatibility)% match.", bundle: .module)
+        case let .wineReceived(_, from, wine):
+            String(localized: "\(from) sent you a wine: \(wine)", bundle: .module)
+        case let .mapMoved(axis, delta):
+            delta > 0
+                ? String(localized: "Your palate map moved: more \(axis.rawValue)", bundle: .module)
+                : String(localized: "Your palate map moved: less \(axis.rawValue)", bundle: .module)
+        case let .lessonWaiting(_, course, lesson):
+            String(localized: "\(course), lesson \(lesson) is waiting", bundle: .module)
+        }
+    }
+
+    /// "Just now", "2 hours ago", "Yesterday", "3 days ago".
+    func notificationWhen(_ date: Date, now: Date) -> String {
+        guard now.timeIntervalSince(date) >= 60 else { return notificationsJustNow }
+        let formatter = RelativeDateTimeFormatter()
+        formatter.dateTimeStyle = .named
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: date, relativeTo: now)
     }
 
     /// "Saved to Cellar · Pontoforte" (HOME-R28).

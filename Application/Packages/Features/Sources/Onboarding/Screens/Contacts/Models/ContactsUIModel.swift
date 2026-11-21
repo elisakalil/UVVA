@@ -1,3 +1,4 @@
+import Core
 import Foundation
 import SwiftUI
 import DesignSystem
@@ -8,7 +9,19 @@ struct ContactsUIModel: Equatable {
     var inviteIllustration: Image { UVVAIllustration.grape(5) }
     var query = ""
     var inviteLink: URL?
-    var inviteMessage = String(localized: "Map your taste in wine with me on UVVA.", bundle: .module)
+    /// The user's first name and map, for the picture sent with the invite. No map during the Onboarding:
+    /// the Quiz comes after Contacts.
+    var inviteName = ""
+    var inviteMap: PalateMap?
+    var inviteMessage: String {
+        inviteMap == nil
+            ? String(localized: "Map your taste in wine with me on UVVA.", bundle: .module)
+            : String(localized: "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together.", bundle: .module)
+    }
+    /// The SMS: the message, then the link.
+    var inviteText: String {
+        [inviteMessage, inviteLink?.absoluteString].compactMap { $0 }.joined(separator: " ")
+    }
     var noResultsMessage: String { String(localized: "No contacts match “\(query)”", bundle: .module) }
     var isLoading: Bool
     /// "Contacts"; none when nobody is on UVVA and that section is left out.

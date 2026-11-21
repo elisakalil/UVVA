@@ -12,4 +12,7 @@ struct FriendsRepositoryStub: FriendsRepository {
     func dismissSuggestion(_ userID: String) async throws {}
     func lastTable() async throws -> [String]? { nil }
     func saveLastTable(_ friendIDs: [String]) async throws {}
+    func invitedContacts() async throws -> [InvitedContact] { [] }
+    func saveInvite(_ invite: InvitedContact) async throws {}
+    func removeInvites(_ contactIDs: Set<String>) async throws {}
 }

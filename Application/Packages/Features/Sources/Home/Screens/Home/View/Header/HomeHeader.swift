@@ -4,7 +4,6 @@ import SwiftUI
 struct HomeHeader: View {
     var resources = HomeResourcesUIModel()
     var greeting: String
-    var hasUnread: Bool
     var scroll: HeaderScrollModel
     /// The `+` (HOME-R03): the new note, the same as the Cellar's (CELLAR-R14).
     var onScan: () -> Void = {}
@@ -21,6 +20,9 @@ struct HomeHeader: View {
     /// Extra room between the header at full size and the first card.
     static let cardsGap: CGFloat = 16
     static let buttonSize: CGFloat = 38
+    /// The `+`, the Home's one action, large at the edge (the notifications are in You).
+    static let scanButtonSize: CGFloat = 50
+    static let scanSymbolSize: CGFloat = 44
     /// Past this offset the header no longer changes, so the scroll stops reporting to it.
     static let collapseDistance: CGFloat = 150
 
@@ -43,28 +45,17 @@ struct HomeHeader: View {
                     .scaleEffect(logoScale, anchor: .topLeading)
                     .frame(width: logoSize.width * logoScale, height: logoSize.height * logoScale, alignment: .topLeading)
                 Spacer(minLength: 0)
-                HStack(alignment: .top, spacing: 6) {
-                    Button(action: onScan) {
-                        Text(resources.homeHeaderScanSymbol)
-                            .font(UVVAFont.sans(29, .ultraLight))
-                            .frame(width: Self.buttonSize, height: Self.buttonSize)
-                    }
-                    .accessibilityLabel(resources.homeHeaderScanLabel)
-                    .spotlightAnchor(HomeSpotlightID.scan)
-                    Button {} label: {
-                        BellIcon()
-                            .stroke(Color.white, style: StrokeStyle(lineWidth: 1.1, lineCap: .round, lineJoin: .round))
-                            .frame(width: 21, height: 21)
-                            .frame(width: Self.buttonSize, height: Self.buttonSize)
-                            .overlay(alignment: .topTrailing) {
-                                if hasUnread {
-                                    Circle().fill(Color.white).frame(width: 3, height: 3)
-                                        .padding(.top, 5).padding(.trailing, 6)
-                                }
-                            }
-                    }
-                    .accessibilityLabel(hasUnread ? resources.homeHeaderUnreadLabel : resources.homeHeaderNotificationsLabel)
+                Button(action: onScan) {
+                    Text(resources.homeHeaderScanSymbol)
+                        .font(UVVAFont.sans(Self.scanSymbolSize, .ultraLight))
+                        .frame(width: Self.scanButtonSize, height: Self.scanButtonSize)
+                        .contentShape(Rectangle())
                 }
+                .accessibilityLabel(resources.homeHeaderScanLabel)
+                .spotlightAnchor(HomeSpotlightID.scan)
+                // Its stroke on the edge of the page, level with the logo.
+                .padding(.trailing, -6)
+                .padding(.top, -3)
                 .buttonStyle(.plain)
                 .foregroundStyle(Color.white)
             }

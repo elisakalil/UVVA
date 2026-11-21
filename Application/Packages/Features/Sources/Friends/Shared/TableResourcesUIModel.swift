@@ -6,8 +6,13 @@ struct TableResourcesUIModel {
     var openTogetherText = String(localized: "Open this together", bundle: .module)
     var buildingText = String(localized: "Reading the maps at the table…", bundle: .module)
     var noBottlesText = String(localized: "No bottle on your phone fits this table yet.", bundle: .module)
+    var perfectTableText = String(localized: "The perfect table", bundle: .module)
+    var dinnerForText = String(localized: "The perfect dinner for", bundle: .module)
+    var backText = String(localized: "Back", bundle: .module)
 
-    var shareText = String(localized: "Share", bundle: .module)
+    var whatsAppText = String(localized: "WhatsApp", bundle: .module)
+    var instagramText = String(localized: "Instagram", bundle: .module)
+    var saveImageText = String(localized: "Save image", bundle: .module)
     var shareTitleText = String(localized: "Share this table", bundle: .module)
     var invitedText = String(localized: "You're invited to dinner", bundle: .module)
     var tonightText = String(localized: "Tonight's table", bundle: .module)
@@ -24,6 +29,7 @@ struct TableResourcesUIModel {
     func course(_ course: TableCourse) -> String {
         switch course {
         case .starter: String(localized: "Starter", bundle: .module)
+        case .cheese: String(localized: "Cheese", bundle: .module)
         case .main: String(localized: "Main", bundle: .module)
         case .dessert: String(localized: "Dessert", bundle: .module)
         }

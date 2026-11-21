@@ -239,7 +239,7 @@ struct HomeViewModelTests {
                                 friends: FriendsRepositoryStub(list: [marina]))
             .makeViewModel(coordinator: HomeCoordinator(onOpenCourse: { _ in }, onOpenLearn: { _ in }))
         try await model.prepare()
-        #expect(model.uiModel.content?.cards.contains(.friends(.hasMatch(name: "Marina", compatibility: 100))) == true)
+        #expect(model.uiModel.content?.cards.contains(.friends(.hasMatch(friendID: "m", name: "Marina", compatibility: 100))) == true)
     }
 
     @Test func HOME_R11_cardWithFriends_opensTheFriendsTab() {

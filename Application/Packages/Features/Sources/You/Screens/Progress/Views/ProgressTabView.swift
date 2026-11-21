@@ -7,9 +7,10 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
 
     @Binding var selectedStat: ProgressStat?
-
-    /// The map's place in the scroll, so the page can bring it above the Regions or Bottles sheet.
-    static var mapID: String { "progress.worldMap" }
+    /// The map full screen, opened by one tap on it.
+    @State private var showsMap = false
+    /// The wine picked from a place of the full-screen map: its note opens once the map has gone.
+    @State private var pickedWine: String?
 
     var body: some View {
         let model = viewModel.uiModel
@@ -68,15 +69,40 @@ struct ProgressTabView<ViewModel: ProgressViewModelProtocol>: View {
                         .padding(.top, 16)
                 }
 
-                // Last, the world: where the glass has been and the regions learned (YOU-R07a). Its title stays
-                // with it, so the page brings both up above the Regions or Bottles sheet.
+                // Last, the world: where the glass has been and the regions learned (YOU-R07a).
                 VStack(alignment: .leading, spacing: 18) {
                     SectionTitle(text: model.mapTitle)
-                    ProgressWorldMap(model: model.map, focus: selectedStat?.mapKind)
+                    ProgressWorldMap(model: model.map, focus: selectedStat?.mapKind, onExpand: expandMap)
                 }
-                .id(Self.mapID)
                 .padding(.top, 56)
             }
         }
+        .fullScreenCover(isPresented: $showsMap, onDismiss: openPickedWine) {
+            ProgressMapScreen(title: model.mapTitle, model: model.map,
+                              onPickWine: { wine in
+                                  pickedWine = wine
+                                  showsMap = false
+                              },
+                              onClose: { showsMap = false })
+        }
+    }
+
+    /// One screen at a time: an open Regions or Bottles sheet leaves first.
+    private func expandMap() {
+        guard selectedStat != nil else {
+            showsMap = true
+            return
+        }
+        selectedStat = nil
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(450))
+            showsMap = true
+        }
+    }
+
+    private func openPickedWine() {
+        guard let id = pickedWine else { return }
+        pickedWine = nil
+        viewModel.openWine(id)
     }
 }

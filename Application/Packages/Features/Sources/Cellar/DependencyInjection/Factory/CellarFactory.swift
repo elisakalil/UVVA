@@ -49,6 +49,7 @@ public struct CellarFactory: CellarFactoryProtocol {
         return CellarViewModel(
             loadCellar: LoadCellarUseCase(cellar: cellar),
             preferences: preferences,
+            maps: maps,
             onAdd: onAdd,
             onNoteChange: onNoteChange,
             onEditNote: onEditNote

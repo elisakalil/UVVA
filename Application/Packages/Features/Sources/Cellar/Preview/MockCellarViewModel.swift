@@ -10,7 +10,7 @@ final class MockCellarViewModel: CellarViewModelProtocol {
     @Published var note: MockNoteViewModel?
 
     init() {
-        let entries = [
+        var entries = [
             CellarEntry(id: "1", name: "Quinta do Vale Meão", vintage: 2019, type: "Red", region: "Douro", country: "Portugal",
                         grapes: ["Touriga Nacional"], status: .tasted, verdict: .yes, createdAt: .now),
             CellarEntry(id: "2", name: "Barolo Bussia", producer: "Aldo Conterno", vintage: 2016, type: "Red", region: "Piemonte",
@@ -18,7 +18,10 @@ final class MockCellarViewModel: CellarViewModelProtocol {
             CellarEntry(id: "3", name: "Baga Bruto", producer: "Luís Pato", vintage: 2020, type: "Sparkling", region: "Bairrada",
                         country: "Portugal", grapes: ["Baga"], status: .wantToTry, createdAt: .now)
         ]
-        let builder = CellarPresentationBuilder(entries: entries, filters: [:], openFacet: nil, query: "")
+        let profile = { (value: Double) in PalateMap(Dictionary(uniqueKeysWithValues: PalateAxis.allCases.map { ($0, value) })) }
+        for index in entries.indices { entries[index].wineProfile = profile(Double(4 + index)) }
+        let builder = CellarPresentationBuilder(entries: entries, filters: [:], openFacet: nil, query: "",
+                                                palate: profile(5))
         var model = CellarUIModel()
         model.state = builder.state
         model.items = builder.items

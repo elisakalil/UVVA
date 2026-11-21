@@ -15,7 +15,7 @@ struct HomeCardView: View {
     var heroHoldsOpen = false
     var onInvite: () -> Void = {}
     var onOpenFriends: () -> Void = {}
-    var onOpenLastTable: () -> Void = {}
+    var onOpenFriendTable: (String) -> Void = { _ in }
     var onOpenMapHistory: () -> Void = {}
     var onOpenLesson: (HomeLessonSuggestion) -> Void = { _ in }
     var onOpenCourse: (String) -> Void = { _ in }
@@ -43,13 +43,13 @@ struct HomeCardView: View {
                     holdsOpen: heroHoldsOpen,
                     onShowLess: onShowLess, onSaveToCellar: { onSaveToCellar(wine) })
         case let .friends(state):
-            // HOME-R11: no friend, the invite; one, the last table (FRI-R17); more, the Friends tab.
+            // HOME-R11: no friend, the invite; the match, a table with that friend; the table, the Friends tab.
             FriendsCard(resources: resources, state: state)
                 .contentShape(Rectangle())
                 .onTapGesture {
                     switch state {
                     case .noFriends: onInvite()
-                    case .hasMatch: onOpenLastTable()
+                    case let .hasMatch(id, _, _): onOpenFriendTable(id)
                     case .hasFriends: onOpenFriends()
                     }
                 }

@@ -12,14 +12,25 @@ final class ContactsViewModel: ContactsViewModelProtocol {
     private var profileSubscription: AnyCancellable?
 
     private let draft: OnboardingDraft
+    /// "Next" in the Onboarding; "Done" when opened from the Friends tab.
+    private let finishText: String?
+    /// The user's map for the invite picture; none during the Onboarding.
+    private let loadMap: () async -> PalateMap?
+    private var inviteMap: PalateMap? { didSet { refresh() } }
+    /// Invites kept on the device, so they show as "Invited" here and, faded, in the Friends tab (FRI-R04b).
+    private let invites: (any FriendsRepository)?
     private let findContactsUseCase: any FindContactsOnUVVAUseCaseProtocol
     private let sendRequestUseCase: any SendFriendRequestUseCaseProtocol
     private weak var coordinator: (any OnboardingCoordinatorProtocol)?
 
     init(draft: OnboardingDraft, findContactsUseCase: any FindContactsOnUVVAUseCaseProtocol,
          sendRequestUseCase: any SendFriendRequestUseCaseProtocol,
-         coordinator: any OnboardingCoordinatorProtocol) {
+         coordinator: any OnboardingCoordinatorProtocol, finishText: String? = nil,
+         loadMap: @escaping () async -> PalateMap? = { nil }, invites: (any FriendsRepository)? = nil) {
         self.draft = draft
+        self.invites = invites
+        self.finishText = finishText
+        self.loadMap = loadMap
         self.findContactsUseCase = findContactsUseCase
         self.sendRequestUseCase = sendRequestUseCase
         self.coordinator = coordinator
@@ -38,6 +49,10 @@ final class ContactsViewModel: ContactsViewModelProtocol {
             refresh()
         }
         discovered = await findContactsUseCase.execute(excluding: draft.profile?.id)
+        inviteMap = await loadMap()
+        if let saved = try? await invites?.invitedContacts() {
+            invited.formUnion(saved.map(\.id))
+        }
     }
 
     func add(_ contactID: String) async {
@@ -52,7 +67,12 @@ final class ContactsViewModel: ContactsViewModelProtocol {
         }
     }
 
-    func markInvited(_ contactID: String) { invited.insert(contactID) }
+    func markInvited(_ contactID: String) {
+        invited.insert(contactID)
+        guard let invites, let contact = discovered.toInvite.first(where: { $0.id == contactID }) else { return }
+        let invite = InvitedContact(id: contact.id, name: contact.displayName, phones: contact.phones, invitedAt: .now)
+        Task { try? await invites.saveInvite(invite) }
+    }
 
     func finishContacts() { coordinator?.finishContacts() }
 
@@ -67,6 +87,9 @@ final class ContactsViewModel: ContactsViewModelProtocol {
                                                         isLoadingContacts: uiModel.isLoading)
         model.query = uiModel.query
         model.inviteLink = uiModel.inviteLink
+        model.inviteName = draft.profile?.firstName ?? draft.name
+        model.inviteMap = inviteMap
+        if let finishText { model.nextText = finishText }
         uiModel = model
     }
 }

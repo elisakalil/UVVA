@@ -26,10 +26,7 @@ struct HeroCard: View {
                 Text(wine.name)
                     .font(UVVAFont.sans(32))
                     .lineSpacing(-2)
-                if !wine.producer.isEmpty {
-                    Caption(text: wine.producer, color: .white)
-                        .padding(.top, 14)
-                }
+                // The producer shows once, among the facts of the open card.
 
                 PalateMatch(resources: resources, wine: wine.profile, palate: palateMap)
                     .padding(.top, 36)

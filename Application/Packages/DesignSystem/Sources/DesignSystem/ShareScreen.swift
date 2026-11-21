@@ -21,9 +21,12 @@ public struct ShareScreen<Card: View>: View {
     @State private var sharedImage: SharedImage?
     @State private var isSharing = false
 
-    public init(title: String, message: String, showsMessage: Bool = false, isCertificate: Bool = false, dismissAfterAction: Bool = true,
+    /// `format` is the shape the screen opens on: a table's WhatsApp pill opens it on WhatsApp (FRI-R21).
+    public init(title: String, message: String, format: ShareFormat = .story, showsMessage: Bool = false,
+                isCertificate: Bool = false, dismissAfterAction: Bool = true,
                 savedCard: (() -> AnyView)? = nil, @ViewBuilder card: @escaping (ShareFormat) -> Card,
                 onFinish: @escaping () -> Void) {
+        _format = State(initialValue: format)
         self.savedCard = savedCard
         self.isCertificate = isCertificate
         self.dismissAfterAction = dismissAfterAction

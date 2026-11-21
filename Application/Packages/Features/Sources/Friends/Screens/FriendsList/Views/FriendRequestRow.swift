@@ -15,8 +15,8 @@ struct FriendRequestRow: View {
                 FriendsPillButton(title: resources.acceptText, isSolid: true, action: onAccept)
                 FriendsPillButton(title: resources.declineText, isSolid: false, action: onDecline)
             }
-            .padding(.leading, 53)
+            .padding(.leading, 52)
         }
-        .padding(.vertical, 14)
+        .padding(.vertical, 15)
     }
 }

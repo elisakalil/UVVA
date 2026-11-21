@@ -10,7 +10,7 @@ struct TableShareTests {
     let userMap = PalateMap([.acidity: 7, .fruit: 7])
 
     var bottles: [TableBottle] {
-        zip(TableCourse.allCases, zip(CatalogStub.wines, CatalogStub.recipes)).map { course, pair in
+        zip(TableCourse.standard, zip(CatalogStub.wines, CatalogStub.recipes)).map { course, pair in
             TableBottle(course: course, wine: pair.0, recipe: pair.1, axis: .acidity)
         }
     }

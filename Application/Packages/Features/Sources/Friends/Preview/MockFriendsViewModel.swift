@@ -27,12 +27,22 @@ final class MockFriendsViewModel: FriendsViewModelProtocol {
                 FriendRowUIModel(id: "marina", name: "Marina Alves", signature: "ACIDITY · FRUIT · BODY", compatibilityText: "82%"),
                 FriendRowUIModel(id: "rui", name: "Rui das Neves", signature: "SPICE · FRUIT · SWEETNESS", compatibilityText: "61%")
             ]
+            model.pending = [
+                PendingFriendRowUIModel(id: "added-joao", name: "João Lima", statusText: "ADDED"),
+                PendingFriendRowUIModel(id: "invited-carla", name: "Carla Souza", statusText: "INVITED")
+            ]
         }
         uiModel = model
     }
 
     func openFriend(_ id: String) { profile = MockFriendProfileViewModel() }
     func closeFriend() { profile = nil }
+    func updateQuery(_ query: String) {
+        var model = uiModel
+        model.query = query
+        model.isSearching = !query.isEmpty
+        uiModel = model
+    }
     func startSelecting() {
         var model = uiModel
         model.isSelecting = true
@@ -62,7 +72,12 @@ final class MockFriendsViewModel: FriendsViewModelProtocol {
     func cancelRequest(_ id: String) async {}
     func dismissSuggestion(_ id: String) async {}
     func askForContacts() async {}
+    func addFriends() async {}
     func openInvite() {}
     func closeInvite() {}
+    func openReceived(_ id: String) async {}
+    func closeReceived() {}
+    func addReceivedToCellar() {}
+    func receivedDismissed() {}
 }
 #endif

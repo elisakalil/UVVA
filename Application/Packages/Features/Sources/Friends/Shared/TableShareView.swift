@@ -5,10 +5,12 @@ import SwiftUI
 /// shopping guide.
 struct TableShareView: View {
     var model: TableShareUIModel
+    /// The pill that opened it: WhatsApp opens on WhatsApp, Instagram and Save image on the Story.
+    var format: ShareFormat = .story
     var onFinish: () -> Void
 
     var body: some View {
-        ShareScreen(title: model.title, message: model.message,
+        ShareScreen(title: model.title, message: model.message, format: format,
                     savedCard: { [model] in AnyView(TableShareCard(model: model, style: .guide)) }) { format in
             TableShareCard(model: model, style: format == .story ? .story : .whatsApp)
         } onFinish: {

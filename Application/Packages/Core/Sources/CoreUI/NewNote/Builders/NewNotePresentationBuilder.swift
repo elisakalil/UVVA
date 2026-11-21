@@ -18,16 +18,11 @@ struct NewNotePresentationBuilder {
     // MARK: Camera (CELLAR-R16, R17)
 
     private func buildCapture(into model: inout NewNoteUIModel) {
-        switch flow.step {
-        case .back:
-            model.captureTitle = resources.backTitleText
-            model.captureBody = resources.backBodyText
-        case .reading:
-            model.captureTitle = resources.readingTitleText
-            model.captureBody = resources.readingBodyText
-        default:
-            model.captureTitle = resources.frontTitleText
-            model.captureBody = resources.frontBodyText
+        // A word or two: the frame, the shutter and the motion say the rest.
+        model.captureTitle = switch flow.step {
+        case .back: resources.backTitleText
+        case .reading: resources.readingTitleText
+        default: resources.frontTitleText
         }
         let frontDone = flow.photoFront != nil
         let backDone = flow.photoBack != nil

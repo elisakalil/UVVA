@@ -18,4 +18,9 @@ public enum UVVAIllustration {
     public static var plate: Image {
         Image("Plate", bundle: .module).renderingMode(.template)
     }
+
+    /// Three figures around a table: the Friends button that starts a group table.
+    public static var table: Image {
+        Image("Table", bundle: .module).renderingMode(.template)
+    }
 }

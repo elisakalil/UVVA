@@ -1,7 +1,7 @@
 import DesignSystem
 import SwiftUI
 
-/// Quick add (FRI-R07, R07a): the suggestions, or what is needed to get them.
+/// Quick add (FRI-R07, R07a): the suggestions in a strip across the page, or what is needed to get them.
 struct QuickAddSection: View {
     var resources: FriendsResourcesUIModel
     var state: QuickAddState
@@ -13,33 +13,41 @@ struct QuickAddSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            SectionLabel(text: resources.quickAddText)
-                .padding(.bottom, 6)
+            FriendsSectionLabel(text: resources.quickAddText)
             switch state {
             case .askAccess:
                 message(resources.askAccessText, action: resources.allowContactsText, perform: onAskAccess)
             case .openSettings:
                 message(resources.deniedAccessText, action: resources.openSettingsText, perform: onOpenSettings)
             case .noSuggestions:
-                Text(resources.noSuggestionsText)
-                    .font(UVVAFont.sans(12.5)).lineSpacing(3).opacity(0.75)
-                    .padding(.vertical, 12)
+                // The tab shows `FriendsInviteCard` instead of this section (FRI-R07b).
+                EmptyView()
             case let .suggestions(rows):
-                ForEach(rows) { row in
-                    QuickAddRow(resources: resources, row: row,
-                                onAdd: { onAdd(row.id) }, onCancel: { onCancel(row.id) }, onDismiss: { onDismiss(row.id) })
-                    if row.id != rows.last?.id { FriendsRule() }
+                ScrollView(.horizontal) {
+                    HStack(alignment: .top, spacing: 20) {
+                        ForEach(rows) { row in
+                            QuickAddCard(resources: resources, row: row,
+                                         onAdd: { onAdd(row.id) }, onCancel: { onCancel(row.id) },
+                                         onDismiss: { onDismiss(row.id) })
+                                .transition(.opacity)
+                        }
+                    }
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 4)
                 }
+                .scrollIndicators(.hidden)
+                .padding(.horizontal, -30)
+                .padding(.top, 10)
             }
         }
     }
 
     private func message(_ text: String, action: String, perform: @escaping () -> Void) -> some View {
         VStack(alignment: .leading, spacing: 14) {
-            Text(text).font(UVVAFont.sans(12.5)).lineSpacing(3).opacity(0.75)
+            Text(text).font(UVVAFont.sans(12.5)).lineSpacing(3).opacity(0.76)
                 .fixedSize(horizontal: false, vertical: true)
             FriendsPillButton(title: action, isSolid: false, action: perform)
         }
-        .padding(.vertical, 12)
+        .padding(.top, 12)
     }
 }
