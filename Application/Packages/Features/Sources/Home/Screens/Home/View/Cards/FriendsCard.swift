@@ -17,21 +17,26 @@ struct FriendsCard: View {
                         .lineSpacing(2)
                         .foregroundStyle(.white)
                 case let .hasMatch(_, name, compatibility):
-                    VStack(alignment: .leading, spacing: 12) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(resources.compatibility(compatibility))
-                                .font(UVVAFont.sans(64, .ultraLight))
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.6)
-                            Text(resources.friendMatch(name))
-                                .font(UVVAFont.sans(12.5))
-                                .foregroundStyle(.white)
-                                .lineLimit(2)
-                        }
-                        Spacer(minLength: 0)
-                        Text(resources.friendsCardOpenTableTitle).font(UVVAFont.sans(12)).foregroundStyle(.white)
+                    VStack(alignment: .leading, spacing: 0) {
+                        // The number fills the card's width from its top, the sign small beside it so the digits
+                        // can grow; it starts oversized and shrinks until it fits.
+                        Text("\(Text(resources.compatibilityNumber(compatibility)))\(Text(resources.compatibilitySign).font(UVVAFont.sans(90, .ultraLight)))")
+                            .font(UVVAFont.sans(200, .ultraLight))
+                            .tracking(-2)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.1)
+                            .accessibilityLabel(resources.compatibility(compatibility))
+                            // The top of the digits, not of the line, meets the card's padding.
+                            .alignmentGuide(.top) { $0[.firstTextBaseline] * 0.26 }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        Text(resources.friendMatch(name))
+                            .font(UVVAFont.sans(14))
+                            .foregroundStyle(.white)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.8)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
-                    .frame(maxHeight: .infinity, alignment: .topLeading)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 case .hasFriends:
                     Text(resources.friendsCardTableTitle)
                         .font(UVVAFont.redGrapes(24))

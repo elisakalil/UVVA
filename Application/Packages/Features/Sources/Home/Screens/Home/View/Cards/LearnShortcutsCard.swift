@@ -25,9 +25,7 @@ struct LearnShortcutsCard: View {
                                 .padding(.top, 12)
                             RegionMapPreview(country: region.course.countries.first ?? "", courseID: region.course.id)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .padding(.vertical, 18)
-                            Spacer(minLength: 16)
-                            ActionLabel(text: resources.learnShortcutsCardStartTitle)
+                                .padding(.top, 18)
                         }
                         .frame(height: max(2 * smallCardHeight + 14, shortcutStackHeight) - 36, alignment: .topLeading)
                     }
@@ -45,7 +43,6 @@ struct LearnShortcutsCard: View {
                                     ? resources.learnShortcutsCardGrapeEyebrow : resources.learnShortcutsCardLessonEyebrow,
                                 title: suggestion.course.kind == .grape ? suggestion.course.title : suggestion.lesson.title,
                                 subtitle: suggestion.course.kind == .grape ? suggestion.lesson.title : suggestion.lesson.subtitle,
-                                action: resources.learnShortcutsCardStartTitle,
                                 height: smallCardHeight
                             )
                         }

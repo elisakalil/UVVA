@@ -17,6 +17,10 @@ public struct NoteUIModel {
     var wineKey = ""
     /// The wine as the Home's wine sheet shows it (HOME-R28a).
     var content: WineSheetContent?
+    /// "72%" as a number, for the match over the user's own lines; nil before the Quiz.
+    var match: Int?
+    /// The grape, the region and why it suits the map, folded away with the maps by Hide.
+    var insights: [NoteInsightUIModel] = []
     var note: String?
     var isWorking = false
     var isConfirmingDelete = false

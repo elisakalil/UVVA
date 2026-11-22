@@ -123,8 +123,8 @@ public struct NotePaperMatchReasons: View {
     }
 }
 
-/// The wine's certificate (CELLAR-R30). Closed, the seal (only for a top appellation) and two lines: the "Top X%" or the appellation's level, and
-/// what it rests on. "More" opens one section per criterion, each with its small-capitals title.
+/// The wine's certificate (CELLAR-R30). Closed, the UVVA seal, "UVVA seal of quality" in small capitals and two lines: the
+/// "Top X%" or the appellation's level, and what it rests on. "More" opens one section per criterion, each with its small-capitals title.
 public struct WineCertificateCard: View {
     @Environment(\.displayScale) private var displayScale
     @State private var isOpen = false
@@ -141,14 +141,17 @@ public struct WineCertificateCard: View {
                 withAnimation(.easeInOut(duration: 0.25)) { isOpen.toggle() }
             } label: {
                 HStack(alignment: .center, spacing: 12) {
-                    if certificate.showsSeal {
-                        UVVAIllustration.certificateSeal
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 44, height: 44)
-                            .accessibilityHidden(true)
-                    }
+                    UVVAIllustration.certificateSeal
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 44, height: 52)
+                        .accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 4) {
+                        Text(certificate.sealTitle.uppercased())
+                            .font(UVVAFont.sans(8.5, .medium))
+                            .tracking(2.2)
+                            .opacity(0.6)
+                            .padding(.bottom, 2)
                         Text(certificate.headline).font(UVVAFont.sans(15, .medium))
                         if let subline = certificate.subline {
                             Text(subline).font(UVVAFont.sans(12)).opacity(0.7)
@@ -190,8 +193,8 @@ public struct WineCertificateCard: View {
                     }
                 }
                 .padding(.top, 18)
-                // Under the text, past the seal when there is one.
-                .padding(.leading, certificate.showsSeal ? 56 : 0)
+                // Under the text, past the seal.
+                .padding(.leading, 56)
                 .transition(.opacity)
             }
         }

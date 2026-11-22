@@ -33,6 +33,11 @@ final class AppCoordinator {
     private var isOpeningCourse = false
     private var navigationTask: Task<Void, Never>?
     private var prefetchTask: Task<Void, Never>?
+    /// The tabs are loading under the Splash: a change of friends is read with the Home there, not after.
+    private var isLoadingTabs = false
+    private var friendsChangedWhileLoading = false
+    /// The user has friends, found under the Splash: notifications are asked for once it has faded out.
+    private var pushesAwaitReveal = false
     
     var launchError: String?
     var selectedTab: AppTab = .home
@@ -56,6 +61,9 @@ final class AppCoordinator {
     private let content: ContentLoader
 
     static let minimumSplash = Duration.milliseconds(1260)
+    /// The longest the Splash waits for what depends on the network (friends, the day's catalog changes, the
+    /// contributions); past it they finish behind the tabs. What is read from the phone is always waited for.
+    static let networkWaitLimit = Duration.seconds(8)
     static let signedOutKey = "session.signedOut"
 
     init(stores: AppStores, content: ContentLoader) {
@@ -228,12 +236,16 @@ final class AppCoordinator {
                                                                   onScanned: onScanned)
                                             })
             .makeViewModel(onFriendsChange: { [weak self] in
-                guard let home = self?.home else { return }
-                Task { await home.load() }
+                guard let self, let home = self.home else { return }
+                if self.isLoadingTabs {
+                    self.friendsChangedWhileLoading = true
+                } else {
+                    Task { await home.load() }
+                }
             }, onAddFriends: { [weak self] in self?.openAddFriends() },
             // FRI-R11c: "Add to cellar" on a wine a friend sent opens the same new note as the Home.
             onAddToCellar: { [weak self] wine in self?.openNewNote(from: .friends, for: wine) },
-            onHasFriends: { [weak self] in self?.prepareSharedWinePushes() })
+            onHasFriends: { [weak self] in self?.friendsFound() })
         // FRI-R11c: a tapped push opens the wine in the Friends tab, now or once it is there.
         SharedWinePushes.shared.onOpen = { [weak self] id in self?.openSharedWine(id) }
 
@@ -246,9 +258,29 @@ final class AppCoordinator {
             }
         )
 
-        try await home?.prepare()
+        // ONB-R01: everything the tabs show loads under the Splash, at once and off the main thread, so the Home is
+        // usable as soon as it is seen: the Home itself, the Cellar, You and Friends, the day's catalog changes and the
+        // contributions. Nothing of it is left to start behind the Home.
+        isLoadingTabs = true
+        friendsChangedWhileLoading = false
+        defer { isLoadingTabs = false }
+        let others = Task { await self.loadOtherTabs() }
+        prefetchTask = others
+        try await withTaskCancellationHandler {
+            try await self.home?.prepare()
+        } onCancel: {
+            others.cancel()
+        }
         try Task.checkCancellation()
-        sendContributions()
+        await Self.wait(for: others, atMost: Self.networkWaitLimit)
+        try Task.checkCancellation()
+        // A friend came or left while the Home was read: it is read again, still under the Splash.
+        if friendsChangedWhileLoading {
+            friendsChangedWhileLoading = false
+            await home?.load()
+        }
+        await home?.refreshNotifications()
+        try Task.checkCancellation()
 
         if quizExit == .youMap {
             // The redone Quiz replaced the map: You › Map opens on the new one, not the one You still holds.
@@ -276,19 +308,53 @@ final class AppCoordinator {
         onboarding = nil
         quiz = nil
         route = .tabs(showTour: showTour)
-        prefetchTabs()
     }
 
-    /// The Cellar, You and Friends read their data while the Home shows, so each opens complete on the first visit
-    /// instead of flashing an empty state. The reads suspend without holding the main thread.
-    private func prefetchTabs() {
-        prefetchTask?.cancel()
-        let (cellar, you, friends) = (cellarTab, you, friends)
-        prefetchTask = Task(priority: .utility) {
-            async let readCellar: Void = cellar?.prefetch() ?? ()
-            async let readYou: Void = you?.prefetch() ?? ()
-            async let readFriends: Void = friends?.prefetch() ?? ()
-            _ = await (readCellar, readYou, readFriends)
+    /// The Splash has faded out over the next screen. Only what asks the user waits for this (the notifications);
+    /// over the Onboarding, the catalog import starts, as the Onboarding has nothing to wait for it.
+    func splashRevealed() {
+        content.screenRevealed()
+        if pushesAwaitReveal, route != .launching {
+            pushesAwaitReveal = false
+            prepareSharedWinePushes()
+        }
+    }
+
+    /// FRI-R11c: with a friend, notifications are asked for; never over the Splash.
+    private func friendsFound() {
+        if route == .launching || isLoadingTabs {
+            pushesAwaitReveal = true
+        } else {
+            prepareSharedWinePushes()
+        }
+    }
+
+    /// The Cellar, You and Friends read their data under the Splash, alongside the Home, so each opens complete on
+    /// the first visit; the day's catalog changes and the contributions go then too. The reads run on the stores'
+    /// own queues; only their results come back to the main thread.
+    private func loadOtherTabs() async {
+        let (cellar, you, friends, content) = (cellarTab, you, friends, content)
+        async let readCellar: Void = cellar?.prefetch() ?? ()
+        async let readYou: Void = you?.prefetch() ?? ()
+        async let readFriends: Void = friends?.prefetch() ?? ()
+        async let syncCatalog: Void = content.waitForDailySync()
+        async let contribute: Void = contributions()
+        _ = await (readCellar, readYou, readFriends, syncCatalog, contribute)
+    }
+
+    /// Waits for `work` or for `limit`, whichever comes first; the work goes on after.
+    private static func wait(for work: Task<Void, Never>, atMost limit: Duration) async {
+        let race = LaunchRace()
+        await withCheckedContinuation { continuation in
+            race.continuation = continuation
+            race.timer = Task { @MainActor in
+                try? await Task.sleep(for: limit)
+                race.finish()
+            }
+            Task { @MainActor in
+                await work.value
+                race.finish()
+            }
         }
     }
 
@@ -358,16 +424,20 @@ final class AppCoordinator {
     /// The labels read and not yet in the public catalog go to it as this user's contributions (ARCHITECTURE §4.3).
     /// Without an iCloud account or a network they wait for the next note or launch.
     private func sendContributions() {
+        Task { await contributions() }
+    }
+
+    private func contributions() async {
         guard let userID = profile?.id else { return }
         let sync = catalogSync
         let logger = logger
-        Task.detached(priority: .utility) {
+        await Task.detached(priority: .utility) {
             do {
                 try await sync.sendContributions(userID: userID)
             } catch {
                 logger.info("Contributions wait: \(error.localizedDescription, privacy: .public)")
             }
-        }
+        }.value
     }
 
     /// FRI-R06: "Add friends to compare maps" opens the contacts list of the Onboarding, for the user's account.
@@ -494,6 +564,8 @@ final class AppCoordinator {
     private func resetTabs() {
         prefetchTask?.cancel()
         prefetchTask = nil
+        friendsChangedWhileLoading = false
+        pushesAwaitReveal = false
         isOpeningCourse = false
         profile = nil
         home = nil
@@ -562,5 +634,18 @@ final class AppCoordinator {
         await content.stop()
         await navigationTask?.value
         navigationTask = nil
+    }
+}
+
+/// The first of two tasks to finish resumes the wait (`AppCoordinator.wait(for:atMost:)`).
+@MainActor
+private final class LaunchRace {
+    var continuation: CheckedContinuation<Void, Never>?
+    var timer: Task<Void, Never>?
+
+    func finish() {
+        timer?.cancel()
+        continuation?.resume()
+        continuation = nil
     }
 }

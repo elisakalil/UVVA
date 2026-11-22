@@ -10,6 +10,7 @@ struct PackedStep: Decodable {
     var highlight: String?
     var prompt: String?
     var options: [String]?
+    var canonicalOptions: [String]?
     var answer: JSONValue?
     var answers: [Int]?
     var items: [String]?
@@ -38,7 +39,8 @@ struct PackedStep: Decodable {
         case let ("trueFalse", .bool(value)?):
             return .trueFalse(prompt: prompt, answer: value, explanation: explanation)
         case let ("fillBlank", .string(word)?):
-            return .fillBlank(prompt: prompt, options: options ?? [], answer: word, explanation: explanation)
+            return .fillBlank(prompt: prompt, options: options ?? [], answer: word, explanation: explanation,
+                              canonicalOptions: canonicalOptions)
         case ("ordering", _):
             return .ordering(prompt: prompt, items: items ?? [], explanation: explanation)
         case ("matchPairs", _):

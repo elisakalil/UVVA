@@ -1,0 +1,820 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "A US origin name: at least 85% of the grapes come from the area named; it does not rank quality." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma indicação de origem dos Estados Unidos. Pelo menos 85% das uvas vêm da área indicada no rótulo."
+          }
+        }
+      }
+    },
+    "Aged Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo curado"
+          }
+        }
+      }
+    },
+    "An Argentine Geographical Indication: the grapes come from the area named; it does not rank quality." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A indicação geográfica argentina informa que as uvas vêm da área indicada no rótulo."
+          }
+        }
+      }
+    },
+    "An origin name: the grapes come from the area named; it does not rank quality." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma indicação de origem. As uvas vêm da área indicada no rótulo."
+          }
+        }
+      }
+    },
+    "Aperitif" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperitivo"
+          }
+        }
+      }
+    },
+    "Appetizer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrada"
+          }
+        }
+      }
+    },
+    "Argentina's most important region, about 70% of its wine, and the world reference for Malbec." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mendoza é a principal região vinícola da Argentina. Responde por cerca de 70% da produção do país e é referência mundial em Malbec."
+          }
+        }
+      }
+    },
+    "Arguably the world's most famous wine region: the reference for Cabernet and Merlot blends and for great châteaux." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma das regiões vinícolas mais famosas do mundo, referência em cortes de Cabernet e Merlot e conhecida por seus grandes châteaux."
+          }
+        }
+      }
+    },
+    "Austria's largest region, home of the Wachau and the reference for Grüner Veltliner." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior região vinícola da Áustria, abriga Wachau e é referência em Grüner Veltliner."
+          }
+        }
+      }
+    },
+    "Austria's origin label (DAC) for wines typical of their area, often tied to one or two grapes." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A denominação de origem austríaca (DAC) identifica vinhos típicos da área, muitas vezes associados a uma ou duas castas."
+          }
+        }
+      }
+    },
+    "Baked Potato" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batata assada"
+          }
+        }
+      }
+    },
+    "Barbecue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Churrasco"
+          }
+        }
+      }
+    },
+    "Beef" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne bovina"
+          }
+        }
+      }
+    },
+    "Blue Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo azul"
+          }
+        }
+      }
+    },
+    "Cake" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolo"
+          }
+        }
+      }
+    },
+    "Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo"
+          }
+        }
+      }
+    },
+    "Chicken" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frango"
+          }
+        }
+      }
+    },
+    "Chile's main wine region, home of Maipo and Colchagua, where most of its famous reds come from." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Principal região vinícola do Chile, abriga Maipo e Colchagua, de onde vêm muitos dos tintos mais conhecidos do país."
+          }
+        }
+      }
+    },
+    "Chile's origin label (DO): at least 85% of the grapes come from the area named; it does not rank quality." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A denominação de origem chilena (DO) indica que pelo menos 85% das uvas vêm da área indicada no rótulo."
+          }
+        }
+      }
+    },
+    "Chocolate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chocolate"
+          }
+        }
+      }
+    },
+    "Cured Meat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carnes curadas"
+          }
+        }
+      }
+    },
+    "DOCa is Spain's highest tier, held only by Rioja and Priorat. Crianza, Reserva or Gran Reserva on the label tell how long it aged." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A DOCa é a categoria mais alta da Espanha, reservada a Rioja e Priorat. Crianza, Reserva ou Gran Reserva indicam o tempo de envelhecimento."
+          }
+        }
+      }
+    },
+    "Dessert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobremesa"
+          }
+        }
+      }
+    },
+    "Eggplant Parmigiana" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berinjela à parmegiana"
+          }
+        }
+      }
+    },
+    "Fish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peixe"
+          }
+        }
+      }
+    },
+    "France's protected origin label (AOC): it guarantees the area, grapes and methods, but this is a regional level, not a mark of rank." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A denominação de origem protegida francesa (AOC) garante a área, as castas e os métodos. Neste nível regional, indica procedência."
+          }
+        }
+      }
+    },
+    "French Fries" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batata frita"
+          }
+        }
+      }
+    },
+    "Fruit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutas"
+          }
+        }
+      }
+    },
+    "Fruit Dessert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobremesa de frutas"
+          }
+        }
+      }
+    },
+    "Game" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carnes de caça"
+          }
+        }
+      }
+    },
+    "Goat Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo de cabra"
+          }
+        }
+      }
+    },
+    "Grilled" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grelhados"
+          }
+        }
+      }
+    },
+    "Hard Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo duro"
+          }
+        }
+      }
+    },
+    "Italy's largest wine producer: home of Prosecco, Soave, Valpolicella and Amarone." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior região produtora de vinho da Itália, conhecida por Prosecco, Soave, Valpolicella e Amarone."
+          }
+        }
+      }
+    },
+    "Italy's protected origin label (DOC): a defined area and set rules, one step below the top DOCG tier." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A denominação de origem protegida italiana (DOC) delimita a área e estabelece regras, um nível abaixo da DOCG."
+          }
+        }
+      }
+    },
+    "Italy's regional label (IGT): a broad area and free rules, below DOC; it says where, not how good." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A indicação geográfica italiana (IGT) abrange uma área ampla e tem regras mais flexíveis que as da DOC."
+          }
+        }
+      }
+    },
+    "Lamb" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cordeiro"
+          }
+        }
+      }
+    },
+    "Lasagna" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lasanha"
+          }
+        }
+      }
+    },
+    "Lean Fish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peixe magro"
+          }
+        }
+      }
+    },
+    "Meat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne"
+          }
+        }
+      }
+    },
+    "Mild Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo suave"
+          }
+        }
+      }
+    },
+    "Mushrooms" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cogumelos"
+          }
+        }
+      }
+    },
+    "One of France's great white wine regions and the world reference for dry, aromatic Riesling and Gewurztraminer." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma das grandes regiões francesas de vinhos brancos, referência mundial em Riesling e Gewurztraminer secos e aromáticos."
+          }
+        }
+      }
+    },
+    "One of Spain's most important regions, home of Ribera del Duero, Toro and Rueda." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma das principais regiões vinícolas da Espanha, lar de Ribera del Duero, Toro e Rueda."
+          }
+        }
+      }
+    },
+    "One of the most prestigious regions in the world: the birthplace of Pinot Noir and Chardonnay, mapped plot by plot." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma das regiões vinícolas mais prestigiadas do mundo, berço de Pinot Noir e Chardonnay, com vinhedos mapeados parcela por parcela."
+          }
+        }
+      }
+    },
+    "One of the world's great regions: home of Barolo and Barbaresco, the summit of Nebbiolo." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma das grandes regiões vinícolas do mundo, lar do Barolo e do Barbaresco, dois vinhos de referência da casta Nebbiolo."
+          }
+        }
+      }
+    },
+    "One of the world's great wine regions: home of Chianti, Brunello di Montalcino and the Super Tuscans." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma das grandes regiões vinícolas do mundo, berço do Chianti, do Brunello di Montalcino e dos supertoscanos."
+          }
+        }
+      }
+    },
+    "Paella" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paella"
+          }
+        }
+      }
+    },
+    "Pasta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Massas"
+          }
+        }
+      }
+    },
+    "Pizza" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pizza"
+          }
+        }
+      }
+    },
+    "Pork" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne suína"
+          }
+        }
+      }
+    },
+    "Portugal's protected origin label (DOC): it guarantees the region and its rules, but is not a mark of higher rank." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A denominação de origem protegida portuguesa (DOC) garante a região de origem e o cumprimento das regras locais."
+          }
+        }
+      }
+    },
+    "Portugal's regional label: a broad area and freer rules than a DOC; it says where, not how good." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A indicação regional portuguesa cobre uma área mais ampla e adota regras mais flexíveis que as de uma DOC."
+          }
+        }
+      }
+    },
+    "Poultry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aves"
+          }
+        }
+      }
+    },
+    "Rich Fish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peixe gorduroso"
+          }
+        }
+      }
+    },
+    "Risotto" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Risoto"
+          }
+        }
+      }
+    },
+    "Salad" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salada"
+          }
+        }
+      }
+    },
+    "Salt Cod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bacalhau salgado"
+          }
+        }
+      }
+    },
+    "Sashimi" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sashimi"
+          }
+        }
+      }
+    },
+    "Seafood" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutos do mar"
+          }
+        }
+      }
+    },
+    "Shellfish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crustáceos e moluscos"
+          }
+        }
+      }
+    },
+    "Snack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petisco"
+          }
+        }
+      }
+    },
+    "Soft Cheese" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo macio"
+          }
+        }
+      }
+    },
+    "Soufflé" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suflê"
+          }
+        }
+      }
+    },
+    "Spain's most famous wine region and one of its two top-tier appellations." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Região vinícola mais famosa da Espanha e uma das duas denominações da categoria mais alta do país."
+          }
+        }
+      }
+    },
+    "Spain's protected origin label (DO): it guarantees the area and rules on grapes and ageing, below the top DOCa tier." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A denominação de origem espanhola (DO) estabelece a área e as regras de castas e envelhecimento. Fica abaixo da categoria DOCa."
+          }
+        }
+      }
+    },
+    "Spicy Food" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comida apimentada"
+          }
+        }
+      }
+    },
+    "Sushi" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sushi"
+          }
+        }
+      }
+    },
+    "Sweet Dessert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobremesa doce"
+          }
+        }
+      }
+    },
+    "Tagliatelle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tagliatelle"
+          }
+        }
+      }
+    },
+    "The heart of American wine, about 80% of it, and home of world-class Napa Cabernet." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O coração da produção de vinho nos Estados Unidos, com cerca de 80% do total, e lar dos grandes Cabernet de Napa."
+          }
+        }
+      }
+    },
+    "Tomato Dishes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pratos com tomate"
+          }
+        }
+      }
+    },
+    "Veal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vitela"
+          }
+        }
+      }
+    },
+    "Vegetarian" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pratos vegetarianos"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

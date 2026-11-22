@@ -1,0 +1,16 @@
+{
+  "version": "pt-BR-c0cca36d90b2ddfb",
+  "counts": {
+    "recipes": 500,
+    "modules": 130,
+    "lessons": 749,
+    "glossary": 40,
+    "quiz": 24
+  },
+  "files": {
+    "recipes.json": "b64aff94f361f3c24c4e3959bf5be3316e59fb77fd324147aa953bda05ed4637",
+    "learn.json": "0e2b582546979b9dc02a2050c493cc08a329b816c44df6d133cb4adc956cc668",
+    "glossary.json": "23460134d2062ac4662e6acfe4d3a3841f20ea730188bee85b6b1deb5f7546e7",
+    "quiz.json": "32289694a2b633b77d20e12375fb9cb8ab50362ca3a804ecde05b92b5cc941c6"
+  }
+}

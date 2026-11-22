@@ -213,17 +213,32 @@ struct LessonPlayerViewModelTests {
 
     // MARK: LEARN-R19a · Revisão
 
-    @Test func LEARN_R19a_reviewingACompletedLesson_preservesCompletionAndXP() async throws {
+    @Test func LEARN_R19a_reviewingACompletedLesson_startsOnTheCover_andEarnsItsXPAgain() async throws {
         let done = LessonProgress(lessonID: "grape-tannat-l01", courseID: course.id, currentStep: 5,
+                                  answers: [2: .options([2])],
                                   completedAt: Fixture.day.addingTimeInterval(-86_400), lastOpenedAt: Fixture.day, xp: 15)
         let player = player(progress: done)
         #expect(player.isReview)
-        playToSummary(player, right: true)
+        #expect(player.playerState == .cover)
+        #expect(player.drafts.isEmpty)
+        player.begin()
+        player.close()
         try await player.saveOnExit()
-        #expect(learning.saved[done.lessonID]?.completedAt == done.completedAt)
-        #expect(learning.saved[done.lessonID]?.xp == done.xp)
+        #expect(learning.saved[done.lessonID] == nil)
+        playToSummary(player, right: true)
+        #expect(!player.hasSavedSummary)
+        try await player.saveOnExit()
+        let saved = try #require(learning.saved[done.lessonID])
+        #expect(saved.xp == 30)
+        #expect(saved.completedAt == done.completedAt)
+        #expect(saved.currentStep == done.currentStep)
+        #expect(saved.answers == done.answers)
+        #expect(player.hasSavedSummary)
+        // Once per opening: leaving again adds nothing.
+        try await player.saveOnExit()
+        #expect(learning.saved[done.lessonID]?.xp == 30)
         guard case let .summary(summary) = player.stepModel else { Issue.record("Not on the Summary"); return }
-        #expect(summary.completion == "Lesson complete")
+        #expect(summary.completion == "Lesson complete +15 XP")
     }
 
     // MARK: LEARN-R18 · matchPairs

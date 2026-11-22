@@ -46,7 +46,7 @@ private struct InvitePalateCard: View {
                 .minimumScaleFactor(0.5)
                 .padding(.top, 10)
             Spacer(minLength: 8)
-            PalateMapChart(values: map.chartValues, labels: PalateAxis.allCases.map(\.label),
+            PalateMapChart(values: map.chartValues, labels: PalateAxis.allCases.map(\.localizedLabel),
                            labelSize: 9, labelOpacity: 1, ink: ink)
                 .scaleEffect(format == .story ? 0.67 : 0.5)
                 .frame(width: format == .story ? 221 : 165, height: format == .story ? 201 : 150)

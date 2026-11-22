@@ -13,7 +13,7 @@ struct DailySuggestionUIModel {
     /// Why it was picked: the user's high axes on which this wine is also high (HOME-R10a).
     var reason: String? {
         let fit = fit
-        let shared = fit.shared.map { $0.label.lowercased() }
+        let shared = fit.shared.map { $0.localizedLabel.lowercased() }
         switch shared.count {
         case 2: return String(localized: "Your map likes \(shared[0]) and \(shared[1]), and this wine is high on both.", bundle: .module)
         case 1: return String(localized: "Your map likes \(shared[0]), and this wine is high on it.", bundle: .module)

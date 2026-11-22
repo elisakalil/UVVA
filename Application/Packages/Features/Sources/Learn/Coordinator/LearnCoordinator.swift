@@ -164,8 +164,10 @@ final class LearnCoordinator: LearnCoordinatorProtocol {
         case .close: players = []
         case .back:
             players.removeLast()
-            // A stacked parent also comes from a fresh read, never its previous in-memory cursor.
-            if let parent = players.last {
+            // A parent on a saved Summary (or a review, which saves nothing) stays where it was left: a fresh read
+            // would reopen a completed lesson as a review, on its cover. Any other stacked parent comes from a fresh
+            // read, never its previous in-memory cursor.
+            if let parent = players.last, !parent.hasSavedSummary {
                 let lessonID = parent.lesson.id
                 players.removeLast()
                 await open(course, lessonID: lessonID, stacking: !players.isEmpty, showsLoading: showsLoading)

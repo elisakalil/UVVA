@@ -18,9 +18,12 @@ public final class HomeViewModel: HomeViewModelProtocol {
     /// out again from it on every load, so the bell is right at once; the public database is read again after.
     private var notificationSources = HomeNotificationSources()
     private var notificationsTask: Task<Void, Never>?
+    /// When the notifications were last read: the Home read under the Splash is not read again as it first shows.
+    private var notificationsReadAt: Date?
 
     private let loadHomeUseCase: any LoadHomeUseCaseProtocol
     private let loadPalateStateUseCase: any LoadPalateStateUseCaseProtocol
+    private let loadTasteHistoryUseCase: (any LoadTasteHistoryUseCaseProtocol)?
     private let rankWinesUseCase: any RankWinesUseCaseProtocol
     private let addWineToCellarUseCase: any AddWineToCellarUseCaseProtocol
     private let loadNotificationsUseCase: (any LoadNotificationsUseCaseProtocol)?
@@ -39,6 +42,7 @@ public final class HomeViewModel: HomeViewModelProtocol {
         rankWinesUseCase: any RankWinesUseCaseProtocol,
         addWineToCellarUseCase: any AddWineToCellarUseCaseProtocol,
         loadNotificationsUseCase: (any LoadNotificationsUseCaseProtocol)? = nil,
+        loadTasteHistoryUseCase: (any LoadTasteHistoryUseCaseProtocol)? = nil,
         coordinator: any HomeCoordinatorProtocol,
         now: @escaping () -> Date,
         calendar: Calendar,
@@ -51,16 +55,25 @@ public final class HomeViewModel: HomeViewModelProtocol {
         self.curtainDuration = curtainDuration
         self.addWineToCellarUseCase = addWineToCellarUseCase
         self.loadNotificationsUseCase = loadNotificationsUseCase
+        self.loadTasteHistoryUseCase = loadTasteHistoryUseCase
         self.coordinator = coordinator
         self.now = now
         self.calendar = calendar
         self.noticeDuration = noticeDuration
     }
 
+    /// Read each time the sheet opens, so a note saved meanwhile counts.
+    public func loadTasteHistory() async {
+        guard let loadTasteHistoryUseCase, let history = try? await loadTasteHistoryUseCase.execute() else { return }
+        uiModel.tasteHistory = history
+    }
+
     public func loadIfNeeded() async {
         guard uiModel.content == nil || presentedDay.map({ !calendar.isDate($0, inSameDayAs: now()) }) == true else {
-            // Requests and wines may have come in while the Home was away.
-            Task { await refreshNotifications() }
+            // Requests and wines may have come in while the Home was away (not when just read, under the Splash).
+            if notificationsReadAt.map({ now().timeIntervalSince($0) > 30 }) ?? true {
+                Task { await refreshNotifications() }
+            }
             if matchesMayBeStale { await refreshMatches() }
             return
         }
@@ -216,7 +229,8 @@ public final class HomeViewModel: HomeViewModelProtocol {
             content: HomeContentUIModel(cards: withHeader(cards, for: content.model),
                                          glossary: content.model.glossary, firstName: content.model.firstName, palateMap: content.model.palateMap),
             inviteLink: content.inviteLink, cellarWineKeys: content.model.cellarWineKeys,
-            ratedVerdicts: content.model.ratedVerdicts, isLoading: false, notice: notice,
+            ratedVerdicts: content.model.ratedVerdicts, tasteHistory: uiModel.tasteHistory, isLoading: false,
+            notice: notice,
             notifications: content.model.notifications
         )
     }
@@ -232,6 +246,7 @@ public final class HomeViewModel: HomeViewModelProtocol {
             self.notificationSources = HomeNotificationSources(requests: sources.requests, wines: sources.wines,
                                                                read: sources.read.union(self.notificationSources.read))
             self.applyNotifications()
+            self.notificationsReadAt = self.now()
         }
         notificationsTask = task
         await task.value
@@ -263,7 +278,8 @@ public final class HomeViewModel: HomeViewModelProtocol {
         guard var result = loaded, let content = uiModel.content else { return }
         result.model.notifications = notifications(for: result.model)
         loaded = result
-        uiModel.notifications = result.model.notifications
+        // Only a change redraws the Home: the whole of it follows `uiModel`.
+        if uiModel.notifications != result.model.notifications { uiModel.notifications = result.model.notifications }
         let cards = withHeader(content.cards, for: result.model)
         if cards != content.cards { uiModel.content?.cards = cards }
     }

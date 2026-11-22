@@ -4,6 +4,19 @@ import DesignSystem
 import Match
 import SwiftUI
 
+/// The user's own part of a wine sheet: the match as a number and the grape, region and palate lines. With it,
+/// the sheet reads in the order of a note (CELLAR-R26): the certificate, then the wine and you, its axes under the
+/// maps, then the facts.
+public struct WineSheetPersonal: Equatable {
+    public var match: Int?
+    public var insights: [NoteInsightUIModel]
+
+    public init(match: Int?, insights: [NoteInsightUIModel]) {
+        self.match = match
+        self.insights = insights
+    }
+}
+
 /// The wine sheet's body, ink on parchment (HOME-R28a): the name and producer, how the wine sits with the map, its
 /// certificate, its facts, "Find the wine" (unless the sheet keeps it at its foot), pairings, how to serve it, its axes in dots and its two maps. The Home shows it over its
 /// cards; a saved note of the Cellar shows it read only, with its photos and the user's note after the name.
@@ -18,11 +31,15 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
     var afterHeader: AfterHeader
     private let sectionSpacing: CGFloat?
     private let standaloneFactLabels: [String]
+    /// The Home's sheet: the note's order and its Hide block. Nil keeps the order of a friend's wine, whose match
+    /// is with another map.
+    private let personal: WineSheetPersonal?
 
     private let ink = UVVAColor.mossDeep
 
     public init(content: WineSheetContent, strings: WineSheetStrings, onFindWine: (() -> Void)?,
                 sectionSpacing: CGFloat? = nil, standaloneFactLabels: [String] = [],
+                personal: WineSheetPersonal? = nil,
                 @ViewBuilder headerAccessory: () -> HeaderAccessory,
                 @ViewBuilder afterHeader: () -> AfterHeader) {
         self.content = content
@@ -32,9 +49,52 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
         self.afterHeader = afterHeader()
         self.sectionSpacing = sectionSpacing
         self.standaloneFactLabels = standaloneFactLabels
+        self.personal = personal
     }
 
     public var body: some View {
+        if let personal { noteOrder(personal) } else { sheetOrder }
+    }
+
+    /// As a note: the name, the certificate, the match with the user's lines and the maps under Hide, the axes
+    /// under the maps, the facts and "Find the wine".
+    private func noteOrder(_ personal: WineSheetPersonal) -> some View {
+        VStack(alignment: .leading, spacing: sectionSpacing ?? NotePaper.sectionSpacing) {
+            VStack(alignment: .leading, spacing: 0) {
+                header
+                afterHeader
+            }
+            if let certificate = content.certificate {
+                WineCertificateCard(certificate: certificate)
+            }
+            NotePaperPersonal(match: personal.match, insights: personal.insights, profile: content.profile,
+                              palate: content.palate, shared: content.sharedLine, apart: content.apartLine,
+                              remembersChoice: false)
+            axes
+            VStack(alignment: .leading, spacing: 32) {
+                WineSheetFacts(content: content, strings: strings, spacing: sectionSpacing ?? 44,
+                               standaloneFactLabels: standaloneFactLabels)
+                if let onFindWine {
+                    WineSheetButton(title: strings.findWine, style: .outlined, action: onFindWine)
+                }
+            }
+        }
+        .foregroundStyle(ink)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    /// The axes in dots, as in the Hero.
+    private var axes: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(PalateAxis.allCases, id: \.self) { axis in
+                let level = MapReading.level(content.profile, axis)
+                PalateReadingLine(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
+                                  isStrong: true)
+            }
+        }
+    }
+
+    private var sheetOrder: some View {
         VStack(alignment: .leading, spacing: 0) {
             header
             afterHeader
@@ -53,14 +113,7 @@ public struct WineSheetBody<HeaderAccessory: View, AfterHeader: View>: View {
                     .padding(.top, 32)
             }
             // The axes in dots over the maps, as in the Hero.
-            VStack(alignment: .leading, spacing: 0) {
-                ForEach(PalateAxis.allCases, id: \.self) { axis in
-                    let level = MapReading.level(content.profile, axis)
-                    PalateReadingLine(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
-                                      isStrong: true)
-                }
-            }
-            .padding(.top, sectionSpacing ?? 44)
+            axes.padding(.top, sectionSpacing ?? 44)
             WineMapCarousel(copy: .init(wineTitle: strings.wineMap, comparisonTitle: strings.comparison,
                                         wineLegend: strings.wineLegend, palateLegend: strings.palateLegend,
                                         overlapLegend: strings.overlapLegend),
@@ -201,9 +254,9 @@ public struct WineSheetFacts: View {
 
 public extension WineSheetBody where AfterHeader == EmptyView {
     init(content: WineSheetContent, strings: WineSheetStrings, onFindWine: (() -> Void)?,
-         @ViewBuilder headerAccessory: () -> HeaderAccessory) {
-        self.init(content: content, strings: strings, onFindWine: onFindWine, headerAccessory: headerAccessory,
-                  afterHeader: { EmptyView() })
+         personal: WineSheetPersonal? = nil, @ViewBuilder headerAccessory: () -> HeaderAccessory) {
+        self.init(content: content, strings: strings, onFindWine: onFindWine, personal: personal,
+                  headerAccessory: headerAccessory, afterHeader: { EmptyView() })
     }
 }
 

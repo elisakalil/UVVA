@@ -337,4 +337,38 @@ struct NewNoteMatchLinesTests {
         #expect(content.matchShared == nil)
         #expect(content.matchApart == nil)
     }
+
+    @Test func insights_tellTheGrapeTheRegionAndWhy() {
+        var wine = Maps.wine("w", 3)
+        wine.grapes = ["Merlot", "Syrah"]
+        wine.region = "Alentejo"
+        wine.profile = map([.body: 8, .fruit: 8])
+        let tasted = (0..<3).map { index in
+            CellarEntry(id: "t\(index)", name: "t", region: index == 0 ? "Alentejo" : "Douro", grapes: ["Syrah"],
+                        status: .tasted, verdict: .yes, createdAt: Date())
+        }
+        let content = NotePaperContent(wine: wine, palate: map([.body: 8, .fruit: 8]),
+                                       history: TasteHistory(entries: tasted))
+        #expect(content.insights.map(\.icon) == [.grape, .region, .palate])
+        #expect(content.insights.map(\.category) == ["Grape", "Region", "For you"])
+        #expect(content.insights.map(\.tone) == [.liked, .known, .liked])
+        #expect(content.insights[0].text == "You like **Syrah**")
+        #expect(content.insights[0].detail == "You said yes to 3 of 3")
+        #expect(content.insights[1].text == "You know **Alentejo**, but have had little from it")
+        #expect(content.insights[1].detail == "1 rated so far")
+        #expect(content.insights[2].text == "You'll likely enjoy it")
+        #expect(content.insights[2].detail == "High in body and fruit, like your map.")
+    }
+
+    @Test func insights_withNothingTasted_sayTheUserDoesNotKnowThem_andNeedTheHistory() {
+        var wine = Maps.wine("w", 3)
+        wine.grapes = ["Syrah"]
+        wine.region = "Alentejo"
+        let content = NotePaperContent(wine: wine, palate: nil, history: TasteHistory(entries: []))
+        #expect(content.insights.map(\.text) == ["**Syrah** is new to you, worth exploring",
+                                                  "**Alentejo** is new to you, worth exploring"])
+        #expect(content.insights.map(\.tone) == [.new, .new])
+        #expect(content.insights.allSatisfy { $0.detail == nil })
+        #expect(NotePaperContent(wine: wine, palate: nil).insights.isEmpty)
+    }
 }

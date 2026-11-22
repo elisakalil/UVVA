@@ -17,10 +17,11 @@ public struct UVVATabBar: View {
             ForEach(AppTab.allCases) { tab in
                 let isActive = tab == active
                 Button { active = tab } label: {
-                    Text(tab.rawValue)
+                    Text(tab.localizedTitle)
                         .font(UVVAFont.sans(11.5, isActive ? .regular : .light))
                         .tracking(0.66)
                         .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                         .foregroundStyle(isActive ? UVVAColor.cream : UVVAColor.cream.opacity(0.72))
                         .overlay(alignment: .topTrailing) {
                             if marked.contains(tab) {

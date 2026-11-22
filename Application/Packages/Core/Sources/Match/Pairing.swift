@@ -24,14 +24,16 @@ public enum Pairing {
         Dish(title: recipe.title, why: recipe.why,
              ingredients: recipe.ingredients.map(Self.line),
              steps: recipe.steps,
-             serves: recipe.minutes > 0 ? "Serves \(recipe.servings) · \(recipe.minutes) min" : "Serves \(recipe.servings)")
+             serves: recipe.minutes > 0
+                ? String(localized: "Serves \(recipe.servings) · \(recipe.minutes) min", bundle: .module)
+                : String(localized: "Serves \(recipe.servings)", bundle: .module))
     }
 
     /// "600 g watermelon, rind removed", "½ red onion", "1 pinch flaky salt".
     static func line(_ ingredient: RecipeIngredient) -> String {
         var parts: [String] = []
         if let quantity = ingredient.quantity { parts.append(amount(quantity)) }
-        if let unit = ingredient.unit, unit != "whole" { parts.append(unit) }
+        if let unit = ingredient.unit, unit != "whole" { parts.append(String(localized: String.LocalizationValue(unit), bundle: .module)) }
         parts.append(ingredient.name)
         let line = parts.joined(separator: " ")
         guard let note = ingredient.note, !note.isEmpty else { return line }

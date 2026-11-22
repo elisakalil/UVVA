@@ -19,6 +19,11 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
     @State private var openRowTop: CGFloat = 0
     /// The height of the scroll view, between the status bar and the tab bar.
     @State private var visibleHeight: CGFloat = 0
+    /// A sideways swipe on the list: it follows the finger, then the list of the filter beside it slides in
+    /// (France to Italy, Red to White, Essentials to Intermediate).
+    @State private var swipeOffset: CGFloat = 0
+    /// The side the next filter's list slides in from.
+    @State private var filterEdge: Edge = .trailing
 
     /// The search bar with its padding: the room the list keeps for it.
     private static var searchSlot: CGFloat { 56 }
@@ -69,8 +74,8 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
             Button { isInfoPresented = true } label: {
                 // A hairline ring and a light "i" in the app's own type, like the title beside it.
                 Text(verbatim: "i")
-                    .font(UVVAFont.sans(17, .thin))
-                    .frame(width: 28, height: 28)
+                    .font(UVVAFont.sans(14, .thin))
+                    .frame(width: 22, height: 22)
                     .overlay(Circle().strokeBorder(lineWidth: 0.75))
                     .foregroundStyle(UVVAColor.creamFill)
                     .frame(width: 52, height: 44)
@@ -177,46 +182,107 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
         }
     }
 
+    // MARK: Filters, tapped or swiped through
+
+    /// The filters of the tab on screen: countries, grape colours and countries, or levels.
+    private var filters: [FilterUIModel] {
+        switch viewModel.uiModel.tab {
+        case .region: viewModel.uiModel.countryFilters
+        case .grape: viewModel.uiModel.grapeFilters
+        case .path: viewModel.uiModel.pathFilters
+        }
+    }
+
+    private var selectedFilter: String? { filters.first(where: \.isSelected)?.id }
+
+    private func neighbour(_ step: Int) -> String? {
+        let filters = filters
+        guard let index = filters.firstIndex(where: \.isSelected), filters.indices.contains(index + step) else { return nil }
+        return filters[index + step].id
+    }
+
+    /// A filter tapped or swiped to: its list slides in from the filter's side.
+    private func selectFilter(_ id: String) {
+        let ids = filters.map(\.id)
+        guard id != selectedFilter, let to = ids.firstIndex(of: id) else { return }
+        filterEdge = to > (selectedFilter.flatMap(ids.firstIndex(of:)) ?? -1) ? .trailing : .leading
+        let tab = viewModel.uiModel.tab
+        // The leaving list takes its side from the render before the change.
+        Task { @MainActor in
+            withAnimation(.easeOut(duration: 0.3)) {
+                switch tab {
+                case .region: viewModel.selectCountry(id)
+                case .grape: viewModel.selectGrapeFilter(id: id)
+                case .path: viewModel.selectPathLevel(id == "all" ? nil : id)
+                }
+                swipeOffset = 0
+            }
+        }
+    }
+
+    private var filterSwipe: SidewaysSwipe {
+        SidewaysSwipe { dx in
+            // At the first and last filter the list gives a little, then holds.
+            swipeOffset = neighbour(dx < 0 ? 1 : -1) == nil ? dx * 0.2 : dx
+        } onEnded: { dx, velocity in
+            if dx < -70 || (dx < -20 && velocity < -500), let next = neighbour(1) {
+                selectFilter(next)
+            } else if dx > 70 || (dx > 20 && velocity > 500), let previous = neighbour(-1) {
+                selectFilter(previous)
+            } else {
+                withAnimation(.spring(duration: 0.3)) { swipeOffset = 0 }
+            }
+        }
+    }
+
+    /// What a filter shows, below the filter row: it slides sideways with the swipe, and the next one slides in.
+    private func filterPage(@ViewBuilder _ content: () -> some View) -> some View {
+        VStack(alignment: .leading, spacing: 0, content: content)
+            .id(selectedFilter)
+            .transition(.asymmetric(insertion: .move(edge: filterEdge).combined(with: .opacity),
+                                    removal: .move(edge: filterEdge == .trailing ? .leading : .trailing).combined(with: .opacity)))
+            .offset(x: swipeOffset)
+            // Takes the swipe on its empty space too. The filter row above keeps its own sideways scroll.
+            .contentShape(Rectangle())
+            .gesture(filterSwipe)
+    }
+
     @ViewBuilder private var tabContent: some View {
         switch viewModel.uiModel.tab {
         case .region:
             VStack(alignment: .leading, spacing: 0) {
-                FilterRow(filters: viewModel.uiModel.countryFilters) { name in
-                    withAnimation(.easeOut(duration: 0.28)) { viewModel.selectCountry(name) }
-                }
-                .padding(.top, 30)
-                if let map = viewModel.uiModel.regionMap {
-                    RegionMapView(resources: resources, model: map) { id in
-                        withAnimation(.easeOut(duration: 0.28)) { viewModel.selectRegion(id) }
-                        scrollToRegionList()
+                FilterRow(filters: viewModel.uiModel.countryFilters) { selectFilter($0) }
+                    .padding(.top, 30)
+                filterPage {
+                    if let map = viewModel.uiModel.regionMap {
+                        RegionMapView(resources: resources, model: map) { id in
+                            withAnimation(.easeOut(duration: 0.28)) { viewModel.selectRegion(id) }
+                            scrollToRegionList()
+                        }
+                        .id(map.country.name)
+                        .transition(.opacity)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 24)
                     }
-                    .id(map.country.name)
-                    .transition(.opacity)
-                    .padding(.horizontal, 20)
-                    .padding(.top, 24)
+                    list(viewModel.uiModel.regionGroups)
+                        // A short list (Portugal's five regions) still reaches up to the search bar.
+                        .frame(minHeight: max(0, visibleHeight - Self.searchSlot), alignment: .top)
+                        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView(axis: .vertical)).minY } action: {
+                            regionListTop = $0
+                        }
                 }
-                list(viewModel.uiModel.regionGroups)
-                    // A short list (Portugal's five regions) still reaches up to the search bar.
-                    .frame(minHeight: max(0, visibleHeight - Self.searchSlot), alignment: .top)
-                    .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView(axis: .vertical)).minY } action: {
-                        regionListTop = $0
-                    }
             }
         case .grape:
             VStack(alignment: .leading, spacing: 0) {
-                FilterRow(filters: viewModel.uiModel.grapeFilters) { id in
-                    withAnimation(.easeOut(duration: 0.28)) { viewModel.selectGrapeFilter(id: id) }
-                }
-                .padding(.top, 24)
-                list(viewModel.uiModel.grapeGroups)
+                FilterRow(filters: viewModel.uiModel.grapeFilters) { selectFilter($0) }
+                    .padding(.top, 24)
+                filterPage { list(viewModel.uiModel.grapeGroups) }
             }
         case .path:
             VStack(alignment: .leading, spacing: 0) {
-                FilterRow(filters: viewModel.uiModel.pathFilters) { id in
-                    withAnimation(.easeOut(duration: 0.28)) { viewModel.selectPathLevel(id == "all" ? nil : id) }
-                }
-                .padding(.top, 24)
-                list(viewModel.uiModel.pathGroups)
+                FilterRow(filters: viewModel.uiModel.pathFilters) { selectFilter($0) }
+                    .padding(.top, 24)
+                filterPage { list(viewModel.uiModel.pathGroups) }
             }
         }
     }
@@ -245,6 +311,7 @@ public struct LearnView<ViewModel: LearnViewModelProtocol>: View {
         }
         .padding(.horizontal, 24)
         .padding(.top, 12)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

@@ -26,11 +26,13 @@ public struct PalateReadingLine: View {
     }
 
     public var body: some View {
-        HStack(spacing: 14) {
+        HStack(spacing: word == nil ? 14 : 10) {
             Text(name.uppercased())
                 .font(UVVAFont.sans(isCompact ? 9.5 : 11.5, .regular))
                 .tracking(isCompact ? 1.7 : 1.8)
                 .opacity(isCompact ? 0.84 : isStrong ? 1 : 0.62)
+                .lineLimit(1)
+                .minimumScaleFactor(0.65)
                 .frame(width: isCompact ? 80 : 92, alignment: .leading)
             // On a note the pips spread along a line, set or only read; elsewhere they sit close together.
             if isCompact || onPick != nil {
@@ -46,7 +48,7 @@ public struct PalateReadingLine: View {
                     .tracking(1)
                     .opacity(0.82)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.8)
+                    .minimumScaleFactor(0.5)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
@@ -211,7 +213,7 @@ private struct AdjustableReading: ViewModifier {
         if let onPick {
             content
                 .accessibilityLabel(name)
-                .accessibilityValue("\(level + 1) of \(PalateReadingLine.count)")
+                .accessibilityValue(Text("\(level + 1) of \(PalateReadingLine.count)", bundle: .module))
                 .accessibilityAdjustableAction { direction in
                     switch direction {
                     case .increment: if level < PalateReadingLine.count - 1 { onPick(level + 1) }

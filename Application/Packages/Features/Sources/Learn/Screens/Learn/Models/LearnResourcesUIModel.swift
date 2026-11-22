@@ -24,7 +24,14 @@ struct LearnResourcesUIModel {
     func noResults(_ query: String) -> String {
         String(localized: "Nothing matches “\(query.trimmingCharacters(in: .whitespaces))”. Try a region, a grape or a country.", bundle: .module)
     }
-    func mapAccessibility(_ name: String) -> String { String(localized: "Map of \(name)", bundle: .module) }
+    static func countryLabel(_ country: String) -> String {
+        String(localized: String.LocalizationValue(country), bundle: .module)
+    }
+
+    func mapAccessibility(_ name: String) -> String {
+        let country = Self.countryLabel(name)
+        return String(localized: "Map of \(country)", bundle: .module)
+    }
     func stepAccessibility(current: Int, total: Int) -> String {
         String(localized: "Step \(current + 1) of \(total)", bundle: .module)
     }

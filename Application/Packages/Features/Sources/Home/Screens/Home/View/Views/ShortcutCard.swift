@@ -5,7 +5,6 @@ struct ShortcutCard: View {
     var eyebrow: String
     var title: String
     var subtitle: String
-    var action: String
     var height: CGFloat? = nil
 
     var body: some View {
@@ -25,8 +24,6 @@ struct ShortcutCard: View {
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.top, 8)
-                Spacer(minLength: 18)
-                ActionLabel(text: action)
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
             .frame(minHeight: height.map { max(0, $0 - 36) }, alignment: .topLeading)

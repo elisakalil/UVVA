@@ -11,7 +11,7 @@ struct WineIntensityList: View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(PalateAxis.allCases, id: \.self) { axis in
                 let level = MapReading.level(profile, axis)
-                PalateReadingLine(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
+                PalateReadingLine(name: axis.localizedLabel, level: level, word: MapReading.levelWord(level, on: axis),
                                   isStrong: true)
             }
         }

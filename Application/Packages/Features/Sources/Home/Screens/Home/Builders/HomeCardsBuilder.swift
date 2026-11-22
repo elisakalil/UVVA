@@ -27,7 +27,7 @@ struct HomeCardsBuilder: Sendable {
 
     // HOME-R02, HOME-R04
     func header(_ model: HomeContentModel) -> HomeCardModel {
-        .header(greeting: "Welcome back, \(model.firstName)",
+        .header(greeting: String(localized: "Welcome back, \(model.firstName)", bundle: .module),
                 hasUnread: model.notifications.contains { !$0.isRead })
     }
 

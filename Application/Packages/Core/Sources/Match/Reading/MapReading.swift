@@ -69,17 +69,17 @@ public struct MapReading: Sendable {
         case .flat(.neutral): return String(localized: "In the middle on every axis", bundle: .module)
         case .flat(.high): return String(localized: "High on every axis", bundle: .module)
         case let .allButOneLower(axis) where topTone == .high:
-            return String(localized: "Everything but \(axis.label.lowercased())", bundle: .module)
+            return String(localized: "Everything but \(axis.localizedLabel.lowercased())", bundle: .module)
         case .allButOneLower, .allButOneHigher, .shaped:
             let top = leaders(3)
-            if !top.isEmpty { return top.map(\.label).joined(separator: " · ") }
+            if !top.isEmpty { return top.map(\.localizedLabel).joined(separator: " · ") }
             // Four to seven axes tied on top. Not high, they are not what the person reaches for.
             if let mostAxes { return mostAxes }
             // High: name the few left out, or else the tie itself.
             let rest = tiers.dropFirst().flatMap { $0 }
             return rest.count <= 2
                 ? String(localized: "Everything but \(Self.list(rest))", bundle: .module)
-                : tiers[0].map(\.label).joined(separator: " · ")
+                : tiers[0].map(\.localizedLabel).joined(separator: " · ")
         }
     }
 
@@ -93,7 +93,7 @@ public struct MapReading: Sendable {
         case .flat(.neutral): String(localized: "In the middle on all eight axes.", bundle: .module)
         case .flat(.high): String(localized: "High on all eight axes.", bundle: .module)
         case let .allButOneLower(axis):
-            String(localized: "Even on seven axes, quietest on \(axis.label.lowercased()).", bundle: .module)
+            String(localized: "Even on seven axes, quietest on \(axis.localizedLabel.lowercased()).", bundle: .module)
         case .allButOneHigher:
             String(localized: "\(topPhrase), even on the other seven.", bundle: .module)
         case .shaped:
@@ -165,14 +165,14 @@ public struct MapReading: Sendable {
         case .flat(.neutral): return String(localized: "balance, every axis in the middle", bundle: .module)
         case .flat(.high): return String(localized: "everything at once, every axis turned up", bundle: .module)
         case let .allButOneLower(axis) where topTone == .high:
-            return String(localized: "everything but \(axis.label.lowercased())", bundle: .module)
+            return String(localized: "everything but \(axis.localizedLabel.lowercased())", bundle: .module)
         case .allButOneLower, .allButOneHigher, .shaped:
             let top = leaders(3)
             switch top.count {
             case 0 where topTone == .low: return String(localized: "restraint, most axes kept low", bundle: .module)
             case 0 where topTone == .neutral: return String(localized: "balance, most axes in the middle", bundle: .module)
             case 0: return String(localized: "many things at once", bundle: .module)
-            case 1: return String(localized: "\(top[0].label.lowercased()) above all", bundle: .module)
+            case 1: return String(localized: "\(top[0].localizedLabel.lowercased()) above all", bundle: .module)
             default:
                 // "In that order" only when there is one: tied axes have none.
                 let levels = top.map { Self.level(position[$0]) }
@@ -197,7 +197,7 @@ public struct MapReading: Sendable {
 
     /// "acidity", "acidity and fruit", "floral, body and tannin".
     static func list(_ axes: [PalateAxis]) -> String {
-        let names = axes.map { $0.label.lowercased() }
+        let names = axes.map { $0.localizedLabel.lowercased() }
         guard let last = names.last else { return "" }
         guard names.count > 1 else { return last }
         return String(localized: "\(names.dropLast().joined(separator: ", ")) and \(last)", bundle: .module)

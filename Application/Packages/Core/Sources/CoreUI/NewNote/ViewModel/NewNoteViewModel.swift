@@ -15,6 +15,8 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     private var errorText: String? { didSet { refresh() } }
 
     private var palate: PalateMap? { didSet { refresh() } }
+    private var history: TasteHistory? { didSet { refresh() } }
+    private let cellar: (any CellarRepository)?
     private let catalog: LabelCatalogCache?
     private let maps: (any PalateMapRepository)?
     private let prepareCamera: any PrepareCameraUseCaseProtocol
@@ -48,8 +50,8 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     init(wine: Wine? = nil, ratedVerdict: Verdict? = nil, editing: CellarEntry? = nil,
          prepareCamera: any PrepareCameraUseCaseProtocol, readLabel: any ReadLabelUseCaseProtocol,
          readManual: any ReadManualUseCaseProtocol, saveNewNote: any SaveNewNoteUseCaseProtocol,
-         maps: (any PalateMapRepository)? = nil, catalog: LabelCatalogCache? = nil,
-         readingLog: LabelReadingLog? = nil, readingSettle: Duration = .milliseconds(450),
+         maps: (any PalateMapRepository)? = nil, cellar: (any CellarRepository)? = nil,
+         catalog: LabelCatalogCache? = nil, readingLog: LabelReadingLog? = nil, readingSettle: Duration = .milliseconds(450),
          onScanned: ((Wine) -> Void)? = nil, onSaved: @escaping (String) -> Void) {
         if let wine, let entry = editing {
             flow = NewNoteFlow(editing: wine, verdict: entry.verdict, score: entry.score, note: entry.note,
@@ -60,6 +62,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
         self.readingLog = readingLog
         self.readingSettle = readingSettle
         self.maps = maps
+        self.cellar = cellar
         self.catalog = catalog
         self.prepareCamera = prepareCamera
         self.readLabel = readLabel
@@ -94,7 +97,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             readManual: ReadManualUseCase(catalog: catalog, pairer: pairer),
             saveNewNote: SaveNewNoteUseCase(cellar: cellar, catalog: labelCatalog, maps: maps,
                                             recalculate: recalculate, now: now),
-            maps: maps, catalog: catalog, readingLog: readingLog, onScanned: onScanned, onSaved: onSaved)
+            maps: maps, cellar: cellar, catalog: catalog, readingLog: readingLog, onScanned: onScanned, onSaved: onSaved)
     }
 
     public func start() async {
@@ -102,6 +105,9 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             flow.cameraChecked(await prepareCamera.execute())
         }
         palate = try? await maps?.currentMap()
+        if let entries = try? await cellar?.entrySummaries() {
+            history = TasteHistory(entries: entries)
+        }
     }
 
     public func capture(_ photo: Data, reading: Data?, scan: LabelScan?) async {
@@ -222,7 +228,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
 
     private func refresh() {
         var model = uiModel
-        NewNotePresentationBuilder(flow: flow, palate: palate, resources: model.resources)
+        NewNotePresentationBuilder(flow: flow, palate: palate, history: history, resources: model.resources)
             .build(into: &model)
         model.isWorking = isWorking
         model.readingStage = readingStage

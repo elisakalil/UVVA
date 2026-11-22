@@ -198,7 +198,7 @@ struct LearnNavigationRaceTests {
         #expect(learning.state.withLock { $0.progress[id]?.currentStep } == -1)
     }
 
-    @Test func completedLesson_resumesItsSavedScreen_withoutResettingOrAwardingAgain() async throws {
+    @Test func completedLesson_reopensOnItsCover_withoutResettingOrAwardingAgain() async throws {
         let course = Fixture.course("grape-tannat")
         let learning = ControlledLearning()
         let id = course.lessons[0].id
@@ -208,11 +208,14 @@ struct LearnNavigationRaceTests {
         }
         let model = model(learning, course: course)
         await model.openCourse(id: course.id, lessonID: id)
-        #expect(model.player?.stepIndex == 3)
+        #expect(model.player?.playerState == .cover)
         #expect(model.player?.isReview == true)
+        model.player?.begin()
+        model.player?.primary()
         model.player?.close()
         await model.openCourse(id: course.id, lessonID: id)
-        #expect(model.player?.stepIndex == 3)
+        #expect(model.player?.playerState == .cover)
+        #expect(learning.state.withLock { $0.progress[id]?.currentStep } == 3)
         #expect(learning.state.withLock { $0.progress[id]?.xp } == 15)
     }
 

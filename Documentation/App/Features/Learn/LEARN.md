@@ -151,25 +151,26 @@ struct LessonProgress { lessonId; currentStep; completedAt?; lastOpenedAt; answe
 
 **LEARN-R19 · Resumo.** O último passo de toda lição é o Summary:
 - **Brinde:** uma palavra entre 10 línguas, com "Means “cheers” in [língua]" na mesma cor (sem a tradução literal). As línguas são Santé (francês), Salud (espanhol), Cin cin (italiano), Saúde (português), Prost (alemão), Proost (neerlandês), Sláinte (irlandês), Yamas (grego), Kanpai (japonês) e Na zdrowie (polaco). A escolha é aleatória (o gerador é injetado nos testes).
-- **Aviso:** ao abrir o Summary, um aviso "Lesson complete +[XP] XP" aparece no topo por alguns segundos. Numa revisão, só "Lesson complete".
+- **Aviso:** ao abrir o Summary, um aviso "Lesson complete +[XP] XP" aparece no topo por alguns segundos, também numa revisão.
 - "What you've learned", com os pontos do resumo.
 - **Botão:** "Next lesson", que mostra o título da seguinte. Na última lição do curso, o botão é "Finish module".
 
 Chegar ao Summary marca a lição como concluída (SHARED-R15).
 
-**LEARN-R19a · Revisão.** Uma lição já concluída pode ser feita de novo a qualquer momento. A revisão não dá XP outra vez e não muda a data de conclusão (ver D3).
+**LEARN-R19a · Revisão.** Uma lição já concluída pode ser feita de novo a qualquer momento. A revisão começa sempre na capa, sem as respostas antigas, e o passo e as respostas da revisão nunca são guardados: quem sai a meio e volta a rever recomeça da lição 1 do módulo. Cada lição revista até ao Summary dá o seu XP outra vez, uma vez por abertura. A data de conclusão e o certificado não mudam.
 
 **Critérios**
 - Dado o brinde "Santé", então o resumo diz "Means “cheers” in French".
 - Dada uma lição de 15 XP, então o aviso diz "Lesson complete +15 XP".
 - Dada a lição 6 de 6, então o botão diz "Finish module".
-- Dada uma lição concluída e revista, então o XP total do usuário não muda.
+- Dada uma lição de 15 XP já concluída e revista até ao Summary, então o XP total do usuário sobe 15.
+- Dada uma revisão deixada a meio, então nada é guardado e a próxima revisão do módulo começa na capa da lição 1.
 
 ## 5. XP
 
 **LEARN-R20 · XP por lição.** Toda lição vale 15 XP, incluindo a lição de revisão que fecha cada curso (LESSON-R04). O total de um curso é `15 × lições`, sem bónus (LESSON-R06).
 
-**LEARN-R21 · Quando conta.** O XP de uma lição é somado uma única vez, quando ela é concluída pela primeira vez, e não depende do número de acertos.
+**LEARN-R21 · Quando conta.** O XP de uma lição é somado quando ela é concluída pela primeira vez e de novo a cada revisão terminada (LEARN-R19a). Não depende do número de acertos.
 
 **Critérios**
 - Dado um curso de 5 lições, então ele vale 75 XP.
@@ -206,7 +207,7 @@ Não existe formato Link (as telas "Certificate · Link" do canvas estão fora d
 
 - [ ] **D1 · Bloqueio do curriculum.** O canvas tem "Locked until module N−1". Com a app toda aberta, eu tirei o bloqueio. Ele era uma regra de plano (sai) ou uma regra de ensino, para seguir a ordem (fica)?
 - [ ] **D2 · Lições dentro do curso.** Dentro de um curso, as lições também podem ser feitas em qualquer ordem, ou a lição N só abre depois da N−1?
-- [ ] **D3 · Revisão e XP.** Rever uma lição não dá XP outra vez. Confirma? E a revisão substitui as respostas guardadas da primeira vez?
+- [x] **D3 · Revisão e XP.** A revisão dá XP outra vez por cada lição terminada e não substitui as respostas guardadas (LEARN-R19a).
 - [x] **D4 · Conteúdo dos cursos.** Definido em `Documentation/Lesson/`. Em By region, o curso é por região dentro do país.
 - [ ] **D5 · Mais de um curso em andamento.** Se houver vários, a Home mostra o último aberto (HOME-R13). Na aba Learn, algum deles aparece em destaque?
 - [x] **D8 · Países e regiões.** Definidos em [`../Lesson/REGION.MD`](../Lesson/REGION.MD).

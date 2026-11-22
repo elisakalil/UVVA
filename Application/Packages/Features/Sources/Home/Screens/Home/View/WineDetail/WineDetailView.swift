@@ -16,6 +16,7 @@ struct WineDetailView: View {
 
     var body: some View {
         WineSheetBody(content: content, strings: strings, onFindWine: nil,
+                      personal: WineSheetPersonal(match: model.matchPercent, insights: model.insights),
                       headerAccessory: { resultCount })
         .id(model.wine.id)
     }

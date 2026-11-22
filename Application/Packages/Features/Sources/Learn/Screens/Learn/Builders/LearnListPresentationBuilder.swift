@@ -17,7 +17,14 @@ struct LearnListPresentationBuilder {
 
     var pathFilters: [FilterUIModel] {
         [FilterUIModel(id: "all", label: String(localized: "All", bundle: .module), isSelected: pathLevel == nil)]
-            + Self.levels.map { FilterUIModel(id: $0, label: $0, isSelected: pathLevel == $0) }
+            + Self.levels.map {
+                FilterUIModel(id: $0, label: Self.levelLabel($0),
+                              isSelected: pathLevel == $0)
+            }
+    }
+
+    static func levelLabel(_ level: String) -> String {
+        String(localized: String.LocalizationValue(level), bundle: .module)
     }
 
     var pathGroups: [CourseGroupUIModel] {
@@ -34,7 +41,7 @@ struct LearnListPresentationBuilder {
         let filters: [(GrapeFilter, String)] = [(.all, String(localized: "All", bundle: .module)),
                                                 (.red, String(localized: "Red", bundle: .module)),
                                                 (.white, String(localized: "White", bundle: .module))]
-            + countries.map { (GrapeFilter.country($0), $0) }
+            + countries.map { (GrapeFilter.country($0), LearnResourcesUIModel.countryLabel($0)) }
         return filters.map { FilterUIModel(id: $0.0.id, label: $0.1, isSelected: $0.0 == grapeFilter) }
     }
 
@@ -63,7 +70,7 @@ struct LearnListPresentationBuilder {
     // MARK: By region (LEARN-R05, R06)
 
     var countryFilters: [FilterUIModel] {
-        countries.map { FilterUIModel(id: $0, label: $0, isSelected: $0 == country) }
+        countries.map { FilterUIModel(id: $0, label: LearnResourcesUIModel.countryLabel($0), isSelected: $0 == country) }
     }
 
     var regionGroups: [CourseGroupUIModel] {

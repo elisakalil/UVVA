@@ -24,7 +24,6 @@ struct HomeResourcesUIModel {
     var dailySuggestionCardExpandIcon = "chevron.down"
     var dailySuggestionCardCollapseIcon = "chevron.up"
     var friendsCardInviteTitle = String(localized: "Invite friends to discover their palate and find a wine you'll both love", bundle: .module)
-    var friendsCardOpenTableTitle = String(localized: "Open the table →", bundle: .module)
     var friendsCardTableTitle = String(localized: "Set a table with your friends", bundle: .module)
     var continueLessonCardContinueTitle = String(localized: "Continue  →", bundle: .module)
     var learnShortcutsCardRegionEyebrow = String(localized: "Learn a region", bundle: .module)
@@ -37,7 +36,6 @@ struct HomeResourcesUIModel {
     var learnShortcutsCardLessonEyebrow = String(localized: "Learn a lesson", bundle: .module)
     var learnShortcutsCardLessonTitle = String(localized: "Organic, biodynamic and natural", bundle: .module)
     var learnShortcutsCardLessonSubtitle = String(localized: "What the labels really mean", bundle: .module)
-    var learnShortcutsCardStartTitle = String(localized: "Start", bundle: .module)
     var winesForPalateCardTitle = String(localized: "A wine for each strong trait of your map", bundle: .module)
     var wordOfTheDayCardSectionTitle = String(localized: "Word of the day", bundle: .module)
     var chooseYourWineCardTitle = String(localized: "Choose yourself", bundle: .module)
@@ -294,6 +292,9 @@ struct HomeResourcesUIModel {
     }
 
     func compatibility(_ value: Int) -> String { "\(value)%" }
+    /// The friend card's match is drawn as the number large and the sign small beside it.
+    func compatibilityNumber(_ value: Int) -> String { "\(value)" }
+    let compatibilitySign = "%"
     func friendMatch(_ name: String) -> String { String(localized: "match with \(name)", bundle: .module) }
     func lessonTotal(_ count: Int) -> String { "/\(count)" }
 }

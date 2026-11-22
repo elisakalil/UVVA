@@ -18,7 +18,8 @@ enum LessonGrader {
         switch step {
         case .multipleChoice, .selectMultiple: .options(draft.selection)
         case .trueFalse: draft.selection.first.map { .trueFalse($0 == 0) }
-        case .fillBlank: draft.word.map(LessonAnswer.word)
+        case let .fillBlank(_, options, _, _, canonical):
+            draft.word.map { .word(option($0, from: options, to: canonical)) }
         case .ordering: .order(draft.order)
         case .matchPairs: .pairs(misses: draft.misses)
         case .concept, .tip, .summary: nil
@@ -31,18 +32,29 @@ enum LessonGrader {
         // Exactly the right set: missing one or adding one is wrong.
         case let (.selectMultiple(_, _, right, _), .options(picked)): picked == right
         case let (.trueFalse(_, right, _), .trueFalse(picked)): picked == right
-        case let (.fillBlank(_, _, right, _), .word(picked)): picked == right
+        case let (.fillBlank(_, _, right, _, _), .word(picked)): displayedWord(picked, on: step) == right
         case let (.ordering(_, items, _), .order(order)): order == Array(items.indices)
         case let (.matchPairs, .pairs(misses)): misses == 0
         default: false
         }
     }
 
+    /// Fill-in answers use the original word on disk so older versions can still read them.
+    static func displayedWord(_ stored: String, on step: LessonStep) -> String {
+        guard case let .fillBlank(_, options, _, _, canonical?) = step else { return stored }
+        return option(stored, from: canonical, to: options)
+    }
+
+    private static func option(_ word: String, from source: [String], to target: [String]?) -> String {
+        guard let target, let index = source.firstIndex(of: word), target.indices.contains(index) else { return word }
+        return target[index]
+    }
+
     /// LEARN-R17, R17a, R18: the explanation under "Correct" or "Not quite".
     static func explanation(_ step: LessonStep, _ answer: LessonAnswer) -> String {
         switch (step, answer) {
         case let (.multipleChoice(_, _, _, text), _), let (.selectMultiple(_, _, _, text), _),
-             let (.trueFalse(_, _, text), _), let (.fillBlank(_, _, _, text), _):
+             let (.trueFalse(_, _, text), _), let (.fillBlank(_, _, _, text, _), _):
             return text
         case let (.ordering(_, items, text), _):
             guard !isCorrect(step, answer) else { return text }

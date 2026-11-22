@@ -7,7 +7,7 @@ public enum LessonStep: Equatable, Sendable {
     case multipleChoice(prompt: String, options: [String], answer: Int, explanation: String)
     case selectMultiple(prompt: String, options: [String], answers: Set<Int>, explanation: String)
     case trueFalse(prompt: String, answer: Bool, explanation: String)
-    case fillBlank(prompt: String, options: [String], answer: String, explanation: String)
+    case fillBlank(prompt: String, options: [String], answer: String, explanation: String, canonicalOptions: [String]? = nil)
     case ordering(prompt: String, items: [String], explanation: String)
     case matchPairs(prompt: String, pairs: [MatchPair], explanation: String?)
     case summary(title: String, points: [String])

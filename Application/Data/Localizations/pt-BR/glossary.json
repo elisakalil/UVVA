@@ -1,0 +1,222 @@
+{
+  "terms": [
+    {
+      "id": "acidity",
+      "term": "Acidez",
+      "definition": "A sensação de frescor do vinho, que faz salivar e dá vontade de tomar outro gole. Costuma ser mais alta em climas frios."
+    },
+    {
+      "id": "alcohol-content",
+      "term": "Teor alcoólico",
+      "definition": "A porcentagem de álcool no volume total do vinho."
+    },
+    {
+      "id": "alcoholic-fermentation",
+      "term": "Fermentação alcoólica",
+      "definition": "Processo em que as leveduras consomem o açúcar da uva e produzem álcool, CO₂ e calor."
+    },
+    {
+      "id": "appellation-of-origin",
+      "term": "Denominação de origem",
+      "definition": "Área delimitada com regras próprias, como castas permitidas, rendimento máximo por hectare e tempo mínimo de envelhecimento."
+    },
+    {
+      "id": "back-label",
+      "term": "Contrarrótulo",
+      "definition": "Rótulo na parte de trás da garrafa. É onde costumam aparecer a casta, o produtor e as notas de degustação."
+    },
+    {
+      "id": "blanc-de-noirs",
+      "term": "Blanc de Noirs",
+      "definition": "Vinho branco feito com uvas tintas prensadas sem deixar o suco em contato com as cascas.",
+      "pronunciation": "blã de nuár"
+    },
+    {
+      "id": "body",
+      "term": "Corpo",
+      "definition": "Sensação de peso e densidade do vinho na boca. Pode ser leve, médio ou encorpado."
+    },
+    {
+      "id": "botrytis",
+      "term": "Botrytis",
+      "definition": "Fungo que desidrata as uvas na videira e concentra açúcar e aromas. É a base de vinhos doces como Sauternes e Tokaji.",
+      "aka": "podridão nobre",
+      "pronunciation": "botrítis"
+    },
+    {
+      "id": "direct-press",
+      "term": "Prensagem direta",
+      "definition": "Prensagem suave de uvas tintas que já dá um suco rosado. É um método de produção de rosé."
+    },
+    {
+      "id": "dry",
+      "term": "Seco",
+      "definition": "Vinho com pouco ou nenhum açúcar residual. Um vinho seco pode ter bastante sabor."
+    },
+    {
+      "id": "fortified-wine",
+      "term": "Vinho fortificado",
+      "definition": "Vinho ao qual se acrescenta destilado de uva, chegando a 15–22% de álcool. Porto, Madeira e Jerez são exemplos.",
+      "aka": "vinho licoroso"
+    },
+    {
+      "id": "grape-skin",
+      "term": "Casca da uva",
+      "definition": "Parte externa da uva, onde se concentram cor, taninos e boa parte dos aromas."
+    },
+    {
+      "id": "grape-spirit",
+      "term": "Destilado de uva",
+      "definition": "Bebida destilada de uva usada para fortificar vinhos. Costuma ser neutra e ter alto teor alcoólico."
+    },
+    {
+      "id": "grape-variety",
+      "term": "Casta",
+      "definition": "Variedade de uva da espécie Vitis vinifera, como Chardonnay, Touriga Nacional ou Merlot.",
+      "aka": "variedade · cultivar · cépage"
+    },
+    {
+      "id": "harvest",
+      "term": "Vindima",
+      "definition": "Colheita das uvas e época do ano em que ela acontece.",
+      "aka": "colheita · vendange"
+    },
+    {
+      "id": "ice-wine",
+      "term": "Vinho de gelo",
+      "definition": "Vinho doce feito com uvas que congelaram na videira. Os cristais de gelo ficam na prensa e sai um suco muito concentrado."
+    },
+    {
+      "id": "late-harvest",
+      "term": "Colheita tardia",
+      "definition": "Colheita feita depois do ponto habitual de maturação, quando as uvas têm açúcar mais concentrado."
+    },
+    {
+      "id": "maceration",
+      "term": "Maceração",
+      "definition": "Contato entre o suco e as cascas, que extrai cor, taninos e aromas.",
+      "aka": "contato com as cascas"
+    },
+    {
+      "id": "maturation",
+      "term": "Maturação",
+      "definition": "Período de repouso do vinho antes do engarrafamento, em aço inoxidável, concreto, ânfora ou barrica.",
+      "aka": "élevage"
+    },
+    {
+      "id": "must",
+      "term": "Mosto",
+      "definition": "Suco de uva antes e durante a fermentação, ainda com pouco ou nenhum álcool."
+    },
+    {
+      "id": "new-world",
+      "term": "Novo Mundo",
+      "definition": "Regiões vinícolas fora da Europa, como as Américas, a Oceania e a África do Sul. Seus rótulos costumam destacar a casta."
+    },
+    {
+      "id": "non-vintage",
+      "term": "Sem safra",
+      "definition": "Vinho que combina colheitas de anos diferentes para manter o estilo da casa. É comum em espumantes e fortificados.",
+      "aka": "NV · multissafra"
+    },
+    {
+      "id": "off-dry",
+      "term": "Meio seco",
+      "definition": "Vinho entre o seco e o doce, com doçura perceptível e discreta.",
+      "aka": "demi-sec"
+    },
+    {
+      "id": "old-world",
+      "term": "Velho Mundo",
+      "definition": "Regiões vinícolas históricas da Europa e do Mediterrâneo. Seus rótulos costumam destacar a origem."
+    },
+    {
+      "id": "orange-wine",
+      "term": "Vinho laranja",
+      "definition": "Vinho branco fermentado em contato com as cascas, o que dá cor âmbar e taninos. É o tema do módulo 14.",
+      "aka": "vinho âmbar · branco de maceração"
+    },
+    {
+      "id": "pressing",
+      "term": "Prensagem",
+      "definition": "Extração do suco das uvas por pressão. Nos brancos, costuma vir antes da fermentação. Nos tintos, depois."
+    },
+    {
+      "id": "residual-sugar",
+      "term": "Açúcar residual",
+      "definition": "Açúcar que permanece no vinho quando a fermentação termina sem consumir todo o açúcar do mosto.",
+      "aka": "AR · RS"
+    },
+    {
+      "id": "saignee",
+      "term": "Saignée",
+      "definition": "Retirada de parte do suco no início da fermentação de um tinto. O líquido retirado vira rosé e o tinto restante ganha concentração.",
+      "aka": "sangria",
+      "pronunciation": "sẽ-iê"
+    },
+    {
+      "id": "second-fermentation",
+      "term": "Segunda fermentação",
+      "definition": "Fermentação adicional em recipiente fechado, como uma garrafa ou um tanque, que retém o CO₂ e cria as bolhas."
+    },
+    {
+      "id": "short-maceration",
+      "term": "Maceração curta",
+      "definition": "Contato com as cascas por algumas horas para elaborar rosé. É o método mais comum para esse estilo.",
+      "aka": "contato breve com as cascas"
+    },
+    {
+      "id": "sparkling-wine",
+      "term": "Espumante",
+      "definition": "Vinho com bolhas produzidas pelo CO₂ dissolvido sob pressão."
+    },
+    {
+      "id": "still-wine",
+      "term": "Vinho tranquilo",
+      "definition": "Vinho sem borbulhas, geralmente com 8% a 15% de álcool."
+    },
+    {
+      "id": "sulfites",
+      "term": "Sulfitos",
+      "definition": "Conservantes e antioxidantes presentes em quase todo vinho. A própria fermentação produz parte deles. O aviso no rótulo é obrigatório acima de um limite e, por si só, nada diz sobre a qualidade.",
+      "aka": "SO₂"
+    },
+    {
+      "id": "sweet-wine",
+      "term": "Vinho doce",
+      "definition": "Vinho com açúcar residual perceptível, que pode vir da interrupção da fermentação ou de uvas muito concentradas."
+    },
+    {
+      "id": "tannin",
+      "term": "Taninos",
+      "definition": "Compostos das cascas, sementes e do carvalho. Dão textura ao vinho e causam a sensação de secura e aspereza típica dos tintos."
+    },
+    {
+      "id": "terroir",
+      "term": "Terroir",
+      "definition": "Combinação de solo, clima, altitude, exposição e tradição humana de um lugar, refletida no vinho.",
+      "pronunciation": "terr-uár"
+    },
+    {
+      "id": "vintage",
+      "term": "Safra",
+      "definition": "Ano em que as uvas foram colhidas.",
+      "aka": "ano da colheita · millésime"
+    },
+    {
+      "id": "vitis-vinifera",
+      "term": "Vitis vinifera",
+      "definition": "Espécie de videira da qual vem quase todo o vinho do mundo. Abrange milhares de castas."
+    },
+    {
+      "id": "wine",
+      "term": "Vinho",
+      "definition": "Bebida obtida exclusivamente pela fermentação alcoólica do suco de uvas frescas."
+    },
+    {
+      "id": "yeast",
+      "term": "Levedura",
+      "definition": "Microrganismo que transforma o açúcar da uva em álcool e CO₂. Pode vir do próprio vinhedo ou ser selecionado em laboratório."
+    }
+  ]
+}

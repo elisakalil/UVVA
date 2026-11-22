@@ -9,7 +9,9 @@ It writes recipes.json, learn.json, glossary.json, quiz.json and manifest.json, 
 at each level of appellation and legal term for the "Top X%" of CELLAR-R30 (Match's QualityPrevalence+Packed.swift:
 code, not a resource, so no build can leave it behind; the app uses it until it has the robot's).
 manifest.version is a hash of the packed files: the app imports the content again whenever it changes
-(ARCHITECTURE §2.2). The script stops with an error, and writes nothing, if the data breaks a rule.
+(ARCHITECTURE §2.2). The pt-BR files apply the editorial translations in Data/Localizations/pt-BR
+by stable record ID and fall back to the English content wherever a translation is missing.
+The script stops with an error, and writes nothing, if the data breaks a rule.
 
 The wines are not in the bundle: they are the seed of the public catalog (ARCHITECTURE §4.1). The robot
 (Application/Robot, run by .github/workflows/catalog-robot.yml) asks for them, checked by the same rules:
@@ -151,6 +153,93 @@ def pack_glossary():
     return terms
 
 
+def localized_record(base, translated, text_fields):
+    """Apply editorial fields while keeping IDs, scoring and other metadata canonical."""
+    unknown = translated.keys() - text_fields - {"id"}
+    if unknown:
+        fail(f"{base.get('id', 'recipe detail')}: unexpected translation fields {sorted(unknown)}")
+    return {**base, **{k: v for k, v in translated.items() if k in text_fields}}
+
+
+def pack_localized_content(payloads, language):
+    source = DATA / "Localizations" / language
+    glossary = load(source / "glossary.json")
+    learn = load(source / "learn.json")
+    recipes = payloads["recipes.json"]["recipes"]
+
+    def by_id(records, original, label):
+        unique(records, "id", label)
+        unknown = {r["id"] for r in records} - {r["id"] for r in original}
+        if unknown:
+            fail(f"{label}: unknown IDs {sorted(unknown)}")
+        return {r["id"]: r for r in records}
+
+    terms = payloads["glossary.json"]["terms"]
+    translated_terms = by_id(glossary["terms"], terms, "glossary translation")
+    modules = payloads["learn.json"]["modules"]
+    translated_modules = by_id(learn["modules"], modules, "module translation")
+    lessons = [lesson for module in modules for lesson in module["lessons"]]
+    translated_lessons = by_id(learn["lessons"], lessons, "lesson translation")
+
+    translated_recipes = by_id(load(source / "recipes.json")["recipes"], recipes, "recipe translation")
+
+    def localize_recipe(recipe):
+        translation = translated_recipes.get(recipe["id"])
+        if translation is None:
+            return recipe
+        result = localized_record(recipe, translation, {"title", "why", "steps", "ingredients", "twist"})
+        if len(result["steps"]) != len(recipe["steps"]) or len(result["ingredients"]) != len(recipe["ingredients"]):
+            fail(f"{recipe['id']}: translation must keep the same ingredient and step counts")
+        result["ingredients"] = [
+            {**base, **localized_record({}, text, {"name", "note"})}
+            for base, text in zip(recipe["ingredients"], translation["ingredients"])
+        ]
+        result["twist"] = {**recipe["twist"], **localized_record({}, translation["twist"], {"ingredient"})}
+        return result
+
+    def localize_lesson(lesson):
+        translation = translated_lessons.get(lesson["id"])
+        if translation is None:
+            return lesson
+        steps = translation["steps"]
+        if len(steps) != len(lesson["steps"]):
+            fail(f"{lesson['id']}: translation must keep the same step count")
+        result = localized_record(lesson, translation, {"title", "subtitle", "objectives", "steps"})
+        result["steps"] = []
+        for base, localized in zip(lesson["steps"], steps):
+            text_fields = set(base) - {"type", "answer", "answers"}
+            if base["type"] == "fillBlank":
+                text_fields.add("answer")
+            if set(localized) != text_fields:
+                fail(f"{lesson['id']}: expected step translation fields {sorted(text_fields)}")
+            for field in ("options", "items", "points", "pairs"):
+                if field in localized and len(localized[field]) != len(base[field]):
+                    fail(f"{lesson['id']}: translation must keep the number of {field}")
+            if base["type"] == "fillBlank":
+                answer_index = base["options"].index(base["answer"])
+                options = localized.get("options", [])
+                if answer_index >= len(options) or localized.get("answer") != options[answer_index]:
+                    fail(f"{lesson['id']}: translated answer must keep its option index")
+            packed = {**base, **localized}
+            if base["type"] == "fillBlank":
+                packed["canonicalOptions"] = base["options"]
+            result["steps"].append(packed)
+        return result
+
+    return {
+        f"recipes-{language}.json": {"recipes": [localize_recipe(recipe) for recipe in recipes]},
+        f"glossary-{language}.json": {"terms": [
+            localized_record(t, translated_terms.get(t["id"], {}), {"term", "definition", "pronunciation", "aka"})
+            for t in terms
+        ]},
+        f"learn-{language}.json": {"modules": [
+            {**localized_record(m, translated_modules.get(m["id"], {}), {"title", "description"}),
+             "lessons": [localize_lesson(lesson) for lesson in m["lessons"]]}
+            for m in modules
+        ]},
+    }
+
+
 def pack_quiz():
     questions = load(DATA / "Quiz" / "questions.json")["questions"]
     for axis in AXES:
@@ -273,6 +362,7 @@ def main():
         "glossary.json": {"terms": pack_glossary()},
         "quiz.json": {"questions": pack_quiz()},
     }
+    localized = pack_localized_content(payloads, "pt-BR")
     prevalence = quality_prevalence(wines)
     if errors:
         print(f"{len(errors)} problem(s), nothing written:", file=sys.stderr)
@@ -298,6 +388,16 @@ def main():
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     PREVALENCE.write_text(prevalence_swift(prevalence), encoding="utf-8")
     print(f"Content {version}: " + ", ".join(f"{v} {k}" for k, v in counts.items()))
+    localized_hashes = dict(hashes)
+    for name, payload in localized.items():
+        data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        (OUT / name).write_bytes(data)
+        localized_hashes[name.removesuffix("-pt-BR.json") + ".json"] = hashlib.sha256(data).hexdigest()
+    localized_version = hashlib.sha256(
+        "".join(localized_hashes[n] for n in sorted(localized_hashes)).encode()
+    ).hexdigest()[:16]
+    localized_manifest = {"version": f"pt-BR-{localized_version}", "counts": counts, "files": localized_hashes}
+    (OUT / "manifest-pt-BR.json").write_text(json.dumps(localized_manifest, indent=2) + "\n", encoding="utf-8")
     if arguments.seed:
         arguments.seed.parent.mkdir(parents=True, exist_ok=True)
         data = json.dumps({"wines": wines}, ensure_ascii=False, separators=(",", ":")).encode("utf-8")

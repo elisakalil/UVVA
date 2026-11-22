@@ -64,8 +64,8 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
         model.photoFront != nil || model.photoBack != nil || (model.isReadingPhotos && frontPreview != nil)
     }
 
-    /// With photos (CELLAR-R26): the name and the photos, the certificate, the facts, the match and the maps, the
-    /// intensity and the user's note.
+    /// With photos (CELLAR-R26): the name and the photos, the certificate, the wine and you with the intensity of
+    /// each axis under the maps, the facts and the user's note.
     @ViewBuilder private func withPhotos(_ content: WineSheetContent) -> some View {
         VStack(alignment: .leading, spacing: 28) {
             title(content)
@@ -73,27 +73,20 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
                       frontPreview: frontPreview, isReading: model.isReadingPhotos)
         }
         certificate(content)
-        facts(content)
-        VStack(alignment: .leading, spacing: 28) {
-            match(content)
-            maps(content)
-        }
+        personal(content)
         intensity(content)
+        facts(content)
         yourNote
     }
 
-    /// Without photos (CELLAR-R26): the name, the match and what it rests on, the certificate, the facts, the
-    /// intensity, the maps and the user's note.
+    /// Without photos (CELLAR-R26): the order with photos, without them: the name, the certificate, the wine and you
+    /// with the intensity of each axis under the maps, the facts and the user's note.
     @ViewBuilder private func withoutPhotos(_ content: WineSheetContent) -> some View {
         title(content)
-        VStack(alignment: .leading, spacing: 14) {
-            match(content)
-            NotePaperMatchReasons(shared: content.sharedLine, apart: content.apartLine)
-        }
         certificate(content)
-        facts(content)
+        personal(content)
         intensity(content)
-        maps(content)
+        facts(content)
         yourNote
     }
 
@@ -113,16 +106,6 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
                        standaloneFactLabels: [resources.paper.grapesText, resources.paper.notesText])
     }
 
-    private func maps(_ content: WineSheetContent) -> some View {
-        WineMapCarousel(copy: .init(wineTitle: resources.paper.wineMapText,
-                                    comparisonTitle: resources.paper.comparisonText,
-                                    wineLegend: resources.paper.wineText,
-                                    palateLegend: resources.paper.palateText,
-                                    overlapLegend: resources.paper.overlapText),
-                        labels: PalateAxis.allCases.map(\.label), wine: content.profile.chartValues,
-                        palate: content.palate?.chartValues, tint: NotePaper.ink)
-    }
-
     /// The axes in dots, close together, as the wine sheet draws them.
     private func intensity(_ content: WineSheetContent) -> some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -140,19 +123,12 @@ public struct NoteView<ViewModel: NoteViewModelProtocol>: View {
         }
     }
 
-    /// "72% match with your map", alone: the maps under it show the rest.
-    private func match(_ content: WineSheetContent) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: 10) {
-            if let percentage = content.percentage {
-                Text(percentage)
-                    .font(UVVAFont.sans(44, .ultraLight))
-                    .tracking(-1.3)
-            }
-            Text(content.percentageCaption)
-                .font(UVVAFont.sans(12.5))
-                .foregroundStyle(NotePaper.ink.opacity(0.78))
-        }
-        .accessibilityElement(children: .combine)
+    /// The match and, under its Hide button, the user's own lines and the two maps, as on the new note; open each
+    /// time the note opens.
+    private func personal(_ content: WineSheetContent) -> some View {
+        NotePaperPersonal(match: model.match, insights: model.insights, profile: content.profile,
+                          palate: content.palate, shared: content.sharedLine, apart: content.apartLine,
+                          remembersChoice: false, resources: resources.paper)
     }
 
     /// Fixed at the foot, the paper fading under it: the rating, outlined, and under it the search for the wine,

@@ -71,7 +71,7 @@ struct HomeCardView: View {
                     .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .accessibilityHint("Open glossary")
+            .accessibilityHint(Text("Open glossary", bundle: .module))
         case let .winesForPalate(suggestions):
             WinesForPalateCard(resources: resources, suggestions: suggestions, isLoading: followsMapLoading) { onOpenWine(.palate($0)) }
         case let .chooseYourWine(catalog):

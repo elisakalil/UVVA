@@ -99,6 +99,25 @@ struct LabelParserTests {
         #expect(facts.name == "Crasto")
     }
 
+    @Test func CELLAR_R17_producer_afterBottledByInSeveralLanguages() {
+        let nextLine = parse([
+            LabelLine("engarrafado por | bottled by | mis en bouteille par", side: .back),
+            LabelLine("ravasqueira vinhos, S.A. Arraiolos, Portugal", side: .back)
+        ])
+        #expect(nextLine.producer == "ravasqueira vinhos")
+
+        let sameLine = parse([
+            LabelLine("engarrafado por | bottled by | mis en bouteille par Ravasqueira Vinhos, S.A.", side: .back)
+        ])
+        #expect(sameLine.producer == "Ravasqueira Vinhos")
+
+        let wrapped = parse([
+            LabelLine("engarrafado por | bottled by | mis en", side: .back),
+            LabelLine("bouteille par Ravasqueira Vinhos, S.A.", side: .back)
+        ])
+        #expect(wrapped.producer == "Ravasqueira Vinhos")
+    }
+
     @Test func CELLAR_R17_titleLines_leaveOutWhatIsNotAName() {
         let facts = parse([LabelLine("DOURO", height: 0.2), LabelLine("Denominação de Origem Controlada", height: 0.1),
                            LabelLine("Touriga Nacional", height: 0.09), LabelLine("2019", height: 0.08),

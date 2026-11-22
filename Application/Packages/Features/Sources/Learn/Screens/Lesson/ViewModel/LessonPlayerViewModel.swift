@@ -36,12 +36,19 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     private(set) var drafts: [Int: StepDraft] = [:] { didSet { refresh() } }
     /// The certificate on screen, over the Summary (LEARN-R22).
     private(set) var certificate: CertificateUIModel? { didSet { refresh() } }
-    /// A completed lesson keeps its cursor, without awarding XP or a certificate again.
+    /// Replaying a completed lesson (LEARN-R19a): it starts on its cover with no answers, and its step and answers are
+    /// never saved. Reaching the Summary adds the lesson's XP again, once per opening; the completion date and the
+    /// certificate stay as they were.
     let isReview: Bool
+    /// A review reached its Summary in this opening and earned the lesson's XP again.
+    private var reviewXPEarned = false
+    private var reviewXPSaved = false
 
     var progressSnapshot: LessonProgress? { progress }
-    /// The Summary already has a durable completion; leaving it requires no second save.
-    var hasSavedSummary: Bool { isSummary && saving == nil && (isReview || completionHandled) }
+    /// The Summary already has a durable completion (or review XP); leaving it requires no second save.
+    var hasSavedSummary: Bool {
+        isSummary && saving == nil && (isReview ? reviewXPEarned == reviewXPSaved : completionHandled)
+    }
     private var progress: LessonProgress?
     private var earnedCertificate: CertificateUIModel?
     private var saving: Task<Void, Error>?
@@ -55,7 +62,8 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     private let onCompleted: () async -> CertificateUIModel?
     private let onExit: (Exit) -> Void
 
-    /// The persisted progress alone chooses the initial screen. `pickToast` picks an index in 0..<count.
+    /// The persisted progress alone chooses the initial screen; a review always starts on the cover.
+    /// `pickToast` picks an index in 0..<count.
     init(course: Course, lesson: Lesson, progress: LessonProgress?, isFirst: Bool = true,
          saveProgressUseCase: any SaveLessonProgressUseCaseProtocol,
          now: @escaping () -> Date = Date.init, pickToast: (Int) -> Int = { Int.random(in: 0..<$0) },
@@ -78,14 +86,14 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
         self.toast = Toast.all[pickToast(Toast.all.count)]
         self.onCompleted = onCompleted
         self.onExit = onExit
-        let first: LessonPlayerState = if let startStep = progress?.currentStep, startStep >= 0, !lesson.steps.isEmpty {
+        let first: LessonPlayerState = if !isReview, let startStep = progress?.currentStep, startStep >= 0, !lesson.steps.isEmpty {
             .step(min(max(startStep, 0), lesson.steps.count - 1))
         } else {
             .cover
         }
         playerState = first
         entry = first
-        if let answers = progress?.answers { restore(answers) }
+        if !isReview, let answers = progress?.answers { restore(answers) }
         presentationReady = true
         refresh()
         // A lesson left on its Summary before it was saved as completed completes now.
@@ -261,9 +269,15 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
 
     // MARK: Summary, XP and certificate (LEARN-R19 to R22)
 
-    /// Reaching the Summary completes the lesson, once (SHARED-R15, LEARN-R21).
+    /// Reaching the Summary completes the lesson, once (SHARED-R15, LEARN-R21). A review earns the XP again instead.
     private func complete() {
-        guard !isReview, progress?.completedAt == nil else { return }
+        if isReview {
+            guard !reviewXPEarned else { return }
+            reviewXPEarned = true
+            onExit(.checkpoint)
+            return
+        }
+        guard progress?.completedAt == nil else { return }
         updateProgress(markingCompleted: true)
         onExit(.checkpoint)
     }
@@ -303,6 +317,8 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     // MARK: Saving (LEARN-R14)
 
     private func updateProgress(markingCompleted: Bool = false) {
+        // A review keeps the saved lesson as it was loaded.
+        guard !isReview else { return }
         var record = progress ?? LessonProgress(lessonID: lesson.id, courseID: course.id, lastOpenedAt: now())
         record.currentStep = stepIndex ?? -1
         record.answers = drafts.reduce(into: [:]) { answers, entry in
@@ -321,24 +337,38 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
     /// A failed save keeps the player alive; the same snapshot can be retried.
     func saveOnExit() async throws {
         if let saving { try await saving.value; return }
+        guard !isReview else { try await saveReviewXP(); return }
         // A lesson is recorded only once "Begin lesson" is tapped: opening its cover and leaving keeps no trace.
         // `progress` is nil until then, unless the lesson was already begun before.
         guard progress != nil else { return }
         updateProgress()
         guard var snapshot = progress else { return }
         snapshot.revision += 1
+        try await persist(snapshot)
+        if snapshot.isCompleted, !completionHandled {
+            completionHandled = true
+            earnedCertificate = await onCompleted()
+        }
+    }
+
+    /// A review saves only the XP it earned, on the lesson as it was loaded: its step, answers and date stay.
+    private func saveReviewXP() async throws {
+        guard reviewXPEarned, !reviewXPSaved, var snapshot = progress else { return }
+        snapshot.xp += lesson.summary.xp
+        snapshot.lastOpenedAt = now()
+        snapshot.revision += 1
+        try await persist(snapshot)
+        reviewXPSaved = true
+    }
+
+    private func persist(_ snapshot: LessonProgress) async throws {
         let useCase = saveProgressUseCase
-        let record = snapshot
         let course = course
-        let task = Task.detached(priority: .utility) { try await useCase.execute(record, in: course) }
+        let task = Task.detached(priority: .utility) { try await useCase.execute(snapshot, in: course) }
         saving = task
         defer { saving = nil }
         try await task.value
         progress = snapshot
-        if snapshot.isCompleted, !isReview, !completionHandled {
-            completionHandled = true
-            earnedCertificate = await onCompleted()
-        }
     }
 
     private func restore(_ answers: [Int: LessonAnswer]) {
@@ -347,7 +377,7 @@ public final class LessonPlayerViewModel: LessonPlayerViewModelProtocol {
             switch answer {
             case let .options(selection): draft.selection = selection
             case let .trueFalse(value): draft.selection = [value ? 0 : 1]
-            case let .word(word): draft.word = word
+            case let .word(word): draft.word = LessonGrader.displayedWord(word, on: lesson.steps[index])
             case let .order(order): draft.order = order
             case let .pairs(misses):
                 if case let .matchPairs(_, pairs, _) = lesson.steps[index] { draft.links = Set(pairs.indices) }

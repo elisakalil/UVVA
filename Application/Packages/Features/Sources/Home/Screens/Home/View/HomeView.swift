@@ -60,10 +60,13 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
             if let model = viewModel.uiModel.content {
                 WineSheet(resources: viewModel.uiModel.resources, sheet: sheet, palateMap: model.palateMap,
                           cellarWineKeys: viewModel.uiModel.cellarWineKeys,
+                          tasteHistory: viewModel.uiModel.tasteHistory,
                           onAddToCellar: { wine in
                               cellarNote = wine
                               wineSheet = nil
                           })
+                // The Cellar as it is now, for the grape and region lines.
+                .task { await viewModel.loadTasteHistory() }
             }
         }
         .newNoteSheet($newNote)

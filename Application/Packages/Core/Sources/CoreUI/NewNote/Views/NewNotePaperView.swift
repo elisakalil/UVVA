@@ -41,13 +41,9 @@ struct NewNotePaperView: View {
                     if let certificate = content.certificate {
                         WineCertificateCard(certificate: certificate)
                     }
-                    VStack(alignment: .leading, spacing: 28) {
-                        NotePaperMatch(match: content.match, resources: resources.paper)
-                        NotePaperMaps(profile: content.profile, palate: content.palate, resources: resources.paper)
-                        if content.matchShared != nil || content.matchApart != nil {
-                            NotePaperMatchReasons(shared: content.matchShared, apart: content.matchApart)
-                        }
-                    }
+                    NotePaperPersonal(match: content.match, insights: content.insights, profile: content.profile,
+                                      palate: content.palate, shared: content.matchShared,
+                                      apart: content.matchApart, resources: resources.paper)
                     NotePaperFacts(content: content, resources: resources.paper)
                     VStack(alignment: .leading, spacing: 20) {
                         ForEach([NewNoteChipField.grapes, .notes, .pairings]) { field in

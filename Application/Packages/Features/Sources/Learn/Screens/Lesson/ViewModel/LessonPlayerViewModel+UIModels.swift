@@ -5,7 +5,7 @@ import Foundation
 extension LessonPlayerViewModel {
     private static let lessonWordFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
-        formatter.locale = Locale(identifier: "en_US")
+        formatter.locale = Locale(identifier: Bundle.main.preferredLocalizations.first == "pt-BR" ? "pt_BR" : "en_US")
         formatter.numberStyle = .spellOut
         return formatter
     }()
@@ -27,7 +27,7 @@ extension LessonPlayerViewModel {
             xp: "\(summary.xp)",
             steps: "\(lesson.steps.count)",
             objectives: summary.objectives,
-            position: "LESSON\n\(Self.word(summary.order))\nOF \(Self.word(course.lessons.count))"
+            position: String(localized: "LESSON\n\(Self.word(summary.order))\nOF \(Self.word(course.lessons.count))", bundle: .module)
         )
     }
 
@@ -62,7 +62,7 @@ extension LessonPlayerViewModel {
         case let .trueFalse(prompt, answer, _):
             let labels = [String(localized: "True", bundle: .module), String(localized: "False", bundle: .module)]
             return .choice(ChoiceUIModel(kind: .trueFalse, prompt: prompt, options: choices(labels, right: [answer ? 0 : 1], draft: draft, numbered: false)))
-        case let .fillBlank(prompt, options, answer, _):
+        case let .fillBlank(prompt, options, answer, _, _):
             let parts = prompt.components(separatedBy: "____")
             let wordState: OptionState = draft.isChecked ? (draft.word == answer ? .correct : .wrong)
                 : draft.word == nil ? .idle : .selected
@@ -124,8 +124,7 @@ extension LessonPlayerViewModel {
         return LessonSummaryUIModel(
             toast: toast.word,
             toastMeaning: String(localized: "means “cheers” in \(toast.language)", bundle: .module),
-            completion: isReview ? String(localized: "Lesson complete", bundle: .module)
-                : String(localized: "Lesson complete +\(lesson.summary.xp) XP", bundle: .module),
+            completion: String(localized: "Lesson complete +\(lesson.summary.xp) XP", bundle: .module),
             points: points,
             nextEyebrow: next == nil ? String(localized: "Module complete", bundle: .module) : String(localized: "Next lesson", bundle: .module),
             nextTitle: next?.title ?? course.title

@@ -15,6 +15,8 @@ public final class NoteViewModel: NoteViewModelProtocol {
     private var wine: Wine? { didSet { refresh() } }
     /// The user's map, for the match and the second map.
     private var palate: PalateMap? { didSet { refresh() } }
+    /// The wines the user rated, for what they know of the grape and the region. Nil until it loads.
+    private var history: TasteHistory? { didSet { refresh() } }
     private var isWorking = false { didSet { refresh() } }
     private var isConfirmingDelete = false { didSet { refresh() } }
     private var errorText: String? { didSet { refresh() } }
@@ -23,6 +25,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
     private let deleteNote: any DeleteNoteUseCaseProtocol
     private let saveRating: ((CellarEntry, Wine, Verdict, Int?, String?) async throws -> Void)?
     private let maps: (any PalateMapRepository)?
+    private let cellar: (any CellarRepository)?
     /// The Cellar reads its entries again; `true` when the note left it.
     private let onChange: (_ deleted: Bool) -> Void
     /// The note was deleted: its sheet closes (CELLAR-R28).
@@ -33,7 +36,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
 
     init(entry: CellarEntry, loadNote: any LoadNoteUseCaseProtocol, deleteNote: any DeleteNoteUseCaseProtocol,
-         maps: (any PalateMapRepository)? = nil, now: @escaping () -> Date = Date.init,
+         maps: (any PalateMapRepository)? = nil, cellar: (any CellarRepository)? = nil, now: @escaping () -> Date = Date.init,
          onChange: @escaping (Bool) -> Void, onClose: @escaping () -> Void,
          onEdit: @escaping (CellarEntry, Wine) -> Void = { _, _ in },
          saveRating: ((CellarEntry, Wine, Verdict, Int?, String?) async throws -> Void)? = nil) {
@@ -42,6 +45,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
         self.loadNote = loadNote
         self.deleteNote = deleteNote
         self.maps = maps
+        self.cellar = cellar
         self.saveRating = saveRating
         self.now = now
         self.onChange = onChange
@@ -68,6 +72,14 @@ public final class NoteViewModel: NoteViewModelProtocol {
     public func load() async {
         wine = await loadNote.execute(entry.id)
         palate = try? await maps?.currentMap()
+        await loadHistory()
+    }
+
+    /// The verdicts of the Cellar, this note's included: a new rating moves the grape and region lines.
+    private func loadHistory() async {
+        if let entries = try? await cellar?.entrySummaries() {
+            history = TasteHistory(entries: entries)
+        }
     }
 
     public func edit() {
@@ -92,6 +104,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
             ratedEntry.score = score
             entry = ratedEntry
             palate = try? await maps?.currentMap()
+            await loadHistory()
             onChange(false)
             return true
         } catch {
@@ -123,7 +136,7 @@ public final class NoteViewModel: NoteViewModelProtocol {
     }
 
     private var builder: NotePresentationBuilder {
-        NotePresentationBuilder(entry: entry, wine: wine, palate: palate, resources: uiModel.resources, now: now())
+        NotePresentationBuilder(entry: entry, wine: wine, palate: palate, history: history, resources: uiModel.resources, now: now())
     }
 
     private func refresh() {
@@ -138,6 +151,8 @@ public final class NoteViewModel: NoteViewModelProtocol {
         model.wineKey = entry.id
         model.isReadingPhotos = isReadingPhotos
         model.content = builder.content
+        model.match = builder.match
+        model.insights = builder.insights
         model.note = entry.note
         model.isWorking = isWorking
         model.isConfirmingDelete = isConfirmingDelete

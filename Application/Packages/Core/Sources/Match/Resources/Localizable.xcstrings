@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@ above all" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ acima de tudo"
+          }
+        }
+      }
     },
     "%@ and %@" : {
       "localizations" : {
@@ -10,6 +17,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@ and %2$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ e %2$@"
           }
         }
       }
@@ -21,14 +34,34 @@
             "state" : "new",
             "value" : "%1$@ drinks for %2$@."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ aprecia vinhos com %2$@."
+          }
         }
       }
     },
     "%@, even on the other seven." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, com equilíbrio nos outros sete eixos."
+          }
+        }
+      }
     },
     "%@, in that order" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, nessa ordem"
+          }
+        }
+      }
     },
     "%@, quietest on %@." : {
       "localizations" : {
@@ -37,419 +70,1628 @@
             "state" : "new",
             "value" : "%1$@, quietest on %2$@."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, com menor intensidade em %2$@."
+          }
         }
       }
     },
     "A faint blossom" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um floral delicado"
+          }
+        }
+      }
     },
     "A hint of flowers" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um toque floral"
+          }
+        }
+      }
     },
     "A hint of oak" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um toque de carvalho"
+          }
+        }
+      }
     },
     "A little" : {
-
-    },
-    "a little residual sugar reads as generosity to you, not as a flaw" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um pouco"
+          }
+        }
+      }
     },
     "A lot" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muito"
+          }
+        }
+      }
     },
     "A touch of pepper" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um toque de pimenta"
+          }
+        }
+      }
     },
     "A trace" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um vestígio"
+          }
+        }
+      }
     },
     "A whisper of grip" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leve secura"
+          }
+        }
+      }
     },
-    "acidity is the first thing you notice, and it is what keeps a wine awake for you" : {
-
+    "Acidity" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acidez"
+          }
+        }
+      }
     },
     "Almost none" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase nada"
+          }
+        }
+      }
     },
     "As much as possible" : {
-
-    },
-    "balance, every axis in the middle" : {
-
-    },
-    "balance, most axes in the middle" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O máximo possível"
+          }
+        }
+      }
     },
     "Balanced" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Equilibrado"
+          }
+        }
+      }
     },
     "Barely any grip" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase sem adstringência"
+          }
+        }
+      }
     },
     "Barely any oak" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase sem carvalho"
+          }
+        }
+      }
     },
     "Barely floral" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase sem aroma floral"
+          }
+        }
+      }
     },
     "Barely spiced" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase sem especiarias"
+          }
+        }
+      }
+    },
+    "Body" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo"
+          }
+        }
+      }
     },
     "Bone dry" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Totalmente seco"
+          }
+        }
+      }
     },
     "Bright" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vibrante"
+          }
+        }
+      }
     },
     "Bursting with fruit" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explosão de fruta"
+          }
+        }
+      }
     },
     "Clearly floral" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral evidente"
+          }
+        }
+      }
     },
     "Clearly fruity" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutado evidente"
+          }
+        }
+      }
     },
     "Clearly spicy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias evidentes"
+          }
+        }
+      }
     },
     "Crisp" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vivo"
+          }
+        }
+      }
     },
     "Drinks for %@." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aprecia vinhos com %@."
+          }
+        }
+      }
     },
     "Dry" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seco"
+          }
+        }
+      }
     },
     "Dry, a touch of sugar" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seco, com um toque de açúcar"
+          }
+        }
+      }
     },
     "Even on seven axes, quietest on %@." : {
-
-    },
-    "every axis runs high on your map: you want a wine that does a lot at once, with nothing held back" : {
-
-    },
-    "every axis sits in the middle: you want balance, a wine where nothing is too much or too little" : {
-
-    },
-    "every axis sits low on your map: you want a quiet wine, one that whispers instead of making a point" : {
-
-    },
-    "everything at once, every axis turned up" : {
-
-    },
-    "everything but %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Equilíbrio em sete eixos, com menor intensidade em %@."
+          }
+        }
+      }
     },
     "Everything but %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tudo, com exceção de %@"
+          }
+        }
+      }
     },
     "Feather-light" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leve como uma pluma"
+          }
+        }
+      }
     },
     "Firm" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firme"
+          }
+        }
+      }
     },
     "Firm and drying" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firme e adstringente"
+          }
+        }
+      }
     },
     "Flat, very soft" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem vivacidade, muito suave"
+          }
+        }
+      }
     },
     "Floral" : {
-
-    },
-    "floral aromatics read as soap to you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral"
+          }
+        }
+      }
     },
     "Fresh" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fresco"
+          }
+        }
+      }
+    },
+    "Fruit" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta"
+          }
+        }
+      }
     },
     "Fruity" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutado"
+          }
+        }
+      }
     },
     "Full" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encorpado"
+          }
+        }
+      }
     },
     "Full and broad" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encorpado e amplo"
+          }
+        }
+      }
     },
     "Gentle" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suave"
+          }
+        }
+      }
     },
     "Gentle grip" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adstringência suave"
+          }
+        }
+      }
     },
     "Gently floral" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral delicado"
+          }
+        }
+      }
     },
     "Gently spicy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias delicadas"
+          }
+        }
+      }
     },
     "Grippy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adstringente"
+          }
+        }
+      }
     },
     "High on all eight axes." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alta intensidade nos oito eixos."
+          }
+        }
+      }
     },
     "High on every axis" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alta intensidade em todos os eixos"
+          }
+        }
+      }
     },
     "In the middle on all eight axes." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensidade média nos oito eixos."
+          }
+        }
+      }
     },
     "In the middle on every axis" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensidade média em todos os eixos"
+          }
+        }
+      }
     },
     "In the middle on most axes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensidade média na maioria dos eixos"
+          }
+        }
+      }
     },
     "Juicy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suculento"
+          }
+        }
+      }
     },
     "Just off-dry" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase meio seco"
+          }
+        }
+      }
     },
     "Leaning most toward %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior preferência por %@"
+          }
+        }
+      }
     },
     "Light" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leve"
+          }
+        }
+      }
     },
     "Light fruit" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta discreta"
+          }
+        }
+      }
     },
     "Light oak" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho discreto"
+          }
+        }
+      }
     },
     "Light to medium" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De leve a médio"
+          }
+        }
+      }
     },
     "Lightly floral" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Levemente floral"
+          }
+        }
+      }
     },
     "Lightly spiced" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Levemente condimentado"
+          }
+        }
+      }
     },
     "Lusciously sweet" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensamente doce"
+          }
+        }
+      }
     },
     "Lush fruit" : {
-
-    },
-    "many things at once" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta exuberante"
+          }
+        }
+      }
     },
     "Medium" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Médio"
+          }
+        }
+      }
     },
     "Medium grip" : {
-
-    },
-    "Medium-dry" : {
-
-    },
-    "Medium-full" : {
-
-    },
-    "Medium-light" : {
-
-    },
-    "Medium-sweet" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adstringência média"
+          }
+        }
+      }
     },
     "Medium, rounded" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Médio e redondo"
+          }
+        }
+      }
+    },
+    "Medium-dry" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meio seco"
+          }
+        }
+      }
+    },
+    "Medium-full" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De médio a encorpado"
+          }
+        }
+      }
+    },
+    "Medium-light" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De leve a médio"
+          }
+        }
+      }
+    },
+    "Medium-sweet" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meio doce"
+          }
+        }
+      }
     },
     "Moderate" : {
-
-    },
-    "most of the map runs high: you want a wine that does a lot at once, with no single axis in charge" : {
-
-    },
-    "most of the map stays quiet: you want restraint more than power" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moderado"
+          }
+        }
+      }
     },
     "Mouth-filling" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preenche a boca"
+          }
+        }
+      }
     },
     "New oak up front" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho novo em destaque"
+          }
+        }
+      }
     },
     "No flowers" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem aromas florais"
+          }
+        }
+      }
     },
     "No grip, like a white" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem adstringência, como um branco"
+          }
+        }
+      }
     },
     "No spice" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem especiarias"
+          }
+        }
+      }
     },
     "None" : {
-
-    },
-    "nothing on the map climbs high, so no single part of a wine has to lead" : {
-
-    },
-    "nothing on the map is truly low: you leave room for every part of a wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada"
+          }
+        }
+      }
     },
     "Noticeable oak" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho perceptível"
+          }
+        }
+      }
     },
     "Noticeably" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bem perceptível"
+          }
+        }
+      }
+    },
+    "Oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho"
+          }
+        }
+      }
     },
     "Oaky, vanilla and toast" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho marcado, com baunilha e tostado"
+          }
+        }
+      }
     },
     "Off-dry" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Levemente adocicado"
+          }
+        }
+      }
     },
     "Old oak, hardly felt" : {
-
-    },
-    "pepper and clove are what you go looking for" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho antigo, quase imperceptível"
+          }
+        }
+      }
     },
     "Peppery and bold" : {
-
-    },
-    "perfume pulls you in before structure ever does" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apimentado e intenso"
+          }
+        }
+      }
     },
     "Perfumed" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfumado"
+          }
+        }
+      }
     },
     "Pour almost anything: nothing on this map sends a glass back." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pode servir quase tudo: seu mapa mostra abertura para muitos estilos."
+          }
+        }
+      }
     },
     "Pour something built on %@ and the glass comes back. Politely." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o vinho tiver %@ em destaque, a taça volta. Com toda a educação."
+          }
+        }
+      }
     },
     "Pour something loud and the glass comes back. Politely." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o vinho for intenso demais, a taça volta. Com toda a educação."
+          }
+        }
+      }
     },
     "Powerful, mouth-drying" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potente, seca a boca"
+          }
+        }
+      }
     },
     "Quiet on all eight axes." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baixa intensidade nos oito eixos."
+          }
+        }
+      }
     },
     "Quiet on every axis" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baixa intensidade em todos os eixos"
+          }
+        }
+      }
     },
     "Quiet on most axes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baixa intensidade na maioria dos eixos"
+          }
+        }
+      }
     },
     "Quite a lot" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bastante"
+          }
+        }
+      }
     },
     "Racy, mouth-watering" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vibrante, faz salivar"
+          }
+        }
+      }
     },
     "Restrained, little fruit" : {
-
-    },
-    "restraint, every axis kept low" : {
-
-    },
-    "restraint, most axes kept low" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discreto, com pouca fruta"
+          }
+        }
+      }
     },
     "Ripe fruit" : {
-
-    },
-    "ripe fruit is the point for you, not a beginner's phase to grow out of" : {
-
-    },
-    "several axes at once" : {
-
-    },
-    "sharpness tires you out; you want a rounder line through the middle" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta madura"
+          }
+        }
+      }
     },
     "Soft" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macio"
+          }
+        }
+      }
     },
     "Soft, like a light red" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macio, como um tinto leve"
+          }
+        }
+      }
     },
     "Some" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moderado"
+          }
+        }
+      }
     },
     "Some fruit" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um pouco de fruta"
+          }
+        }
+      }
     },
     "Some oak" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um pouco de carvalho"
+          }
+        }
+      }
     },
     "Some spice" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um pouco de especiarias"
+          }
+        }
+      }
     },
-    "spice distracts you from the fruit" : {
-
+    "Spice" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias"
+          }
+        }
+      }
     },
     "Spicy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condimentado"
+          }
+        }
+      }
     },
     "Strongest on %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maior intensidade em %@"
+          }
+        }
+      }
     },
     "Subtle fruit" : {
-
-    },
-    "sugar reads as a flaw to you, and dry means dry" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fruta sutil"
+          }
+        }
+      }
     },
     "Sweet" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doce"
+          }
+        }
+      }
     },
-    "tannin gets in the way for you; you want fruit without the scaffolding" : {
-
+    "Sweetness" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doçura"
+          }
+        }
+      }
+    },
+    "Tannin" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taninos"
+          }
+        }
+      }
     },
     "The shape of what you reach for in a glass." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O mapa do que você procura em uma taça."
+          }
+        }
+      }
     },
     "Unoaked" : {
-
-    },
-    "vanilla, smoke and toast are part of the pleasure, not a cover-up" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem passagem por carvalho"
+          }
+        }
+      }
     },
     "Very floral" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muito floral"
+          }
+        }
+      }
     },
     "Very much" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muitíssimo"
+          }
+        }
+      }
     },
     "Very oaky" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho intenso"
+          }
+        }
+      }
     },
     "Very spicy" : {
-
-    },
-    "you look past fruit for earth, salt and stone" : {
-
-    },
-    "you want a wine that stays light and gets out of the way" : {
-
-    },
-    "you want grip, the drying pull that holds a red upright" : {
-
-    },
-    "you want the grape, not the barrel" : {
-
-    },
-    "you want weight in the glass, something that coats and stays" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muitas especiarias"
+          }
+        }
+      }
     },
     "Zesty" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cítrico e vivo"
+          }
+        }
+      }
+    },
+    "a little residual sugar reads as generosity to you, not as a flaw" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "um pouco de açúcar residual deixa o vinho mais agradável para você"
+          }
+        }
+      }
+    },
+    "acidity is the first thing you notice, and it is what keeps a wine awake for you" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a acidez é a primeira coisa que você nota e dá vida ao vinho"
+          }
+        }
+      }
+    },
+    "balance, every axis in the middle" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "equilíbrio, com todos os eixos no meio da escala"
+          }
+        }
+      }
+    },
+    "balance, most axes in the middle" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "equilíbrio, com a maioria dos eixos no meio da escala"
+          }
+        }
+      }
+    },
+    "every axis runs high on your map: you want a wine that does a lot at once, with nothing held back" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "todos os eixos do seu mapa estão em alta: você gosta de um vinho intenso em vários aspectos"
+          }
+        }
+      }
+    },
+    "every axis sits in the middle: you want balance, a wine where nothing is too much or too little" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "todos os eixos estão no meio da escala: você gosta de um vinho equilibrado, na medida certa"
+          }
+        }
+      }
+    },
+    "every axis sits low on your map: you want a quiet wine, one that whispers instead of making a point" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "todos os eixos têm intensidade baixa: você prefere um vinho discreto, que fala baixinho"
+          }
+        }
+      }
+    },
+    "everything at once, every axis turned up" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "intensidade em todos os eixos de uma vez"
+          }
+        }
+      }
+    },
+    "everything but %@" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tudo, com exceção de %@"
+          }
+        }
+      }
+    },
+    "floral aromatics read as soap to you" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "para você, aromas florais lembram sabonete"
+          }
+        }
+      }
+    },
+    "many things at once" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "muitas características de uma só vez"
+          }
+        }
+      }
+    },
+    "most of the map runs high: you want a wine that does a lot at once, with no single axis in charge" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a maior parte do mapa tem intensidade alta: você gosta de vinhos intensos, com várias características em destaque"
+          }
+        }
+      }
+    },
+    "most of the map stays quiet: you want restraint more than power" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a maior parte do mapa tem intensidade baixa: você prefere vinhos discretos e delicados"
+          }
+        }
+      }
+    },
+    "nothing on the map climbs high, so no single part of a wine has to lead" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nenhum eixo tem intensidade alta, então você dispensa um sabor dominante"
+          }
+        }
+      }
+    },
+    "nothing on the map is truly low: you leave room for every part of a wine" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nenhum eixo tem intensidade muito baixa: há espaço para cada característica do vinho"
+          }
+        }
+      }
+    },
+    "pepper and clove are what you go looking for" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pimenta e cravo são os aromas que você procura"
+          }
+        }
+      }
+    },
+    "perfume pulls you in before structure ever does" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o perfume conquista você antes mesmo de perceber a estrutura"
+          }
+        }
+      }
+    },
+    "restraint, every axis kept low" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "delicadeza, com intensidade baixa em todos os eixos"
+          }
+        }
+      }
+    },
+    "restraint, most axes kept low" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "delicadeza, com intensidade baixa na maioria dos eixos"
+          }
+        }
+      }
+    },
+    "ripe fruit is the point for you, not a beginner's phase to grow out of" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fruta madura é essencial para você, um gosto que vai além da primeira taça"
+          }
+        }
+      }
+    },
+    "several axes at once" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vários eixos ao mesmo tempo"
+          }
+        }
+      }
+    },
+    "sharpness tires you out; you want a rounder line through the middle" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a acidez cortante cansa seu paladar, que prefere sabores mais redondos"
+          }
+        }
+      }
+    },
+    "spice distracts you from the fruit" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "as especiarias tiram sua atenção da fruta"
+          }
+        }
+      }
+    },
+    "sugar reads as a flaw to you, and dry means dry" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "você percebe açúcar e prefere que um vinho seco seja bem seco"
+          }
+        }
+      }
+    },
+    "tannin gets in the way for you; you want fruit without the scaffolding" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o tanino atrapalha: você quer sentir a fruta com pouca adstringência"
+          }
+        }
+      }
+    },
+    "vanilla, smoke and toast are part of the pleasure, not a cover-up" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "baunilha, fumaça e tostado fazem parte do prazer para você"
+          }
+        }
+      }
+    },
+    "you look past fruit for earth, salt and stone" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "além da fruta, você procura notas de terra, sal e pedra"
+          }
+        }
+      }
+    },
+    "you want a wine that stays light and gets out of the way" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "você quer um vinho leve, que deixe os outros sabores aparecerem"
+          }
+        }
+      }
+    },
+    "you want grip, the drying pull that holds a red upright" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "você gosta da adstringência que dá estrutura a um tinto"
+          }
+        }
+      }
+    },
+    "you want the grape, not the barrel" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "você quer sentir a uva, com pouca influência da barrica"
+          }
+        }
+      }
+    },
+    "you want weight in the glass, something that coats and stays" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "você gosta de um vinho encorpado, que preenche a boca e permanece"
+          }
+        }
+      }
+    },
+    "Serves %lld" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rende %lld porções"
+          }
+        }
+      }
+    },
+    "Serves %lld · %lld min" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rende %1$lld porções · %2$lld min"
+          }
+        }
+      }
+    },
+    "tbsp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "col. de sopa"
+          }
+        }
+      }
+    },
+    "tsp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "col. de chá"
+          }
+        }
+      }
+    },
+    "sprigs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ramos"
+          }
+        }
+      }
+    },
+    "clove" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dentes"
+          }
+        }
+      }
+    },
+    "pinch" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pitada"
+          }
+        }
+      }
+    },
+    "slices" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fatias"
+          }
+        }
+      }
+    },
+    "leaves" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "folhas"
+          }
+        }
+      }
+    },
+    "stalks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "talos"
+          }
+        }
+      }
+    },
+    "pods" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vagens"
+          }
+        }
+      }
+    },
+    "sheets" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "folhas"
+          }
+        }
+      }
+    },
+    "stick" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pedaços"
+          }
+        }
+      }
+    },
+    "scoops" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bolas"
+          }
+        }
+      }
+    },
+    "g" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "g"
+          }
+        }
+      }
+    },
+    "ml" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mL"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

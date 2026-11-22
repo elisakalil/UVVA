@@ -10,9 +10,21 @@ struct AppRootView: View {
     @State private var attempt = 0
     @State private var isStarting = false
     @State private var isRetrying = false
+    /// The screen under the Splash has been shown. The Splash leaves by fading out over a screen already drawn and
+    /// still: the Home faded in under an opacity animation had its whole tree of glass panes (blurs, masks, Liquid
+    /// Glass) drawn again offscreen on every frame, while it was still laying out, and the fade crawled on a phone.
+    @State private var revealed = false
 
     private var errorMessage: String? {
         failure ?? coordinator?.launchError
+    }
+
+    private var isLaunching: Bool {
+        coordinator == nil || coordinator?.route == .launching
+    }
+
+    private var showsSplash: Bool {
+        errorMessage == nil && (isLaunching || !revealed)
     }
 
     var body: some View {
@@ -41,7 +53,8 @@ struct AppRootView: View {
             } else {
                 switch coordinator?.route {
                 case nil, .launching:
-                    SplashView()
+                    // The Splash is drawn above, so it can stay over the next screen until that one is ready.
+                    Color.clear
 
                 case .onboarding:
                     if let model = coordinator?.onboarding {
@@ -59,10 +72,41 @@ struct AppRootView: View {
                     }
                 }
             }
+
+            if showsSplash {
+                SplashView()
+                    .transition(.opacity)
+                    .zIndex(1)
+            }
         }
-        .animation(.smooth, value: coordinator?.route)
+        // From a screen to the Splash (onboarding to quiz, quiz to tabs), the two cross-fade. Out of the Splash, the
+        // next screen comes in at once, under it, and `reveal()` fades the Splash out once that screen is drawn.
+        .animation(revealed ? .smooth : nil, value: coordinator?.route)
         .task(id: attempt) {
             await start()
+        }
+        .task(id: isLaunching) {
+            if isLaunching {
+                revealed = false
+            } else {
+                await reveal()
+            }
+        }
+    }
+
+    /// Fades the Splash out once the screen under it has laid out and been drawn (the glass of the Home takes its
+    /// backdrop from a second layout pass). The work that can wait (prefetching the other tabs, the catalog sync,
+    /// the contributions) starts when the fade is over, so it does not take its frames.
+    @MainActor
+    private func reveal() async {
+        guard !revealed else { return }
+        // Wakes only once the main thread is free again, so after the new screen's first commit.
+        try? await Task.sleep(for: .milliseconds(150))
+        guard !Task.isCancelled, !isLaunching else { return }
+        withAnimation(.easeOut(duration: 0.45)) {
+            revealed = true
+        } completion: {
+            coordinator?.splashRevealed()
         }
     }
 
@@ -113,7 +157,6 @@ struct AppRootView: View {
             try Task.checkCancellation()
 
             coordinator = candidate
-            loader.startCatalogImport()
         } catch is CancellationError {
             await content?.stop()
         } catch {

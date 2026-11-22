@@ -25,6 +25,18 @@ struct LessonGraderTests {
         #expect(LessonGrader.canCheck(step, StepDraft(word: "lees")))
     }
 
+    @Test func fillBlankKeepsTheOriginalAnswerWhenChangingLanguage() {
+        let step = LessonStep.fillBlank(prompt: "Suco é ____.", options: ["mosto", "borras"], answer: "mosto",
+                                        explanation: "", canonicalOptions: ["must", "lees"])
+
+        #expect(LessonGrader.displayedWord("must", on: step) == "mosto")
+        #expect(LessonGrader.displayedWord("lees", on: step) == "borras")
+        #expect(LessonGrader.answer(step, StepDraft(word: "mosto")) == .word("must"))
+        #expect(LessonGrader.answer(step, StepDraft(word: "borras")) == .word("lees"))
+        #expect(LessonGrader.isCorrect(step, .word("must")))
+        #expect(!LessonGrader.isCorrect(step, .word("lees")))
+    }
+
     @Test func LEARN_R17_ordering_canAlwaysCheck() {
         #expect(LessonGrader.canCheck(.ordering(prompt: "", items: ["A", "B"], explanation: ""), StepDraft()))
     }

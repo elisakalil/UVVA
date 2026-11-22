@@ -22,7 +22,7 @@ public struct PalateMatchUIModel {
     /// "High in acidity and fruit, like your map." (HOME-R10b)
     public var shared: String {
         let fit = fit
-        let both = fit.shared.map { $0.label.lowercased() }
+        let both = fit.shared.map { $0.localizedLabel.lowercased() }
         switch both.count {
         case 2: return String(localized: "High in \(both[0]) and \(both[1]), like your map.", bundle: .module)
         case 1: return String(localized: "High in \(both[0]), like your map.", bundle: .module)
@@ -34,7 +34,7 @@ public struct PalateMatchUIModel {
                 ? String(localized: "Bolder than your map, which has no high axis.", bundle: .module)
                 : String(localized: "Quiet on every axis, like your map.", bundle: .module)
         case 1:
-            return String(localized: "Not high in \(fit.mapHighs[0].label.lowercased()), the strongest axis on your map.", bundle: .module)
+            return String(localized: "Not high in \(fit.mapHighs[0].localizedLabel.lowercased()), the strongest axis on your map.", bundle: .module)
         default:
             return String(localized: "Different from the strongest axes on your map.", bundle: .module)
         }
@@ -43,7 +43,7 @@ public struct PalateMatchUIModel {
     /// "More oak than you usually drink." (HOME-R10b)
     public var apart: String {
         guard let far = fit.apart else { return String(localized: "Close to your map on every axis.", bundle: .module) }
-        let axis = far.label.lowercased()
+        let axis = far.localizedLabel.lowercased()
         return wine[far] > palate[far]
             ? String(localized: "More \(axis) than you usually drink.", bundle: .module)
             : String(localized: "Less \(axis) than you usually drink.", bundle: .module)

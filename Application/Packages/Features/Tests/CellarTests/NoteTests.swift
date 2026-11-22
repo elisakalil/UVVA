@@ -13,11 +13,30 @@ struct NoteViewModelTests {
     private let now = Date(timeIntervalSince1970: 1_793_000_000) // 2026
 
     private func make(_ entry: CellarEntry? = nil, wine: Wine? = nil, maps: MapsSpy? = nil,
-                      delete: DeleteNoteSpy = DeleteNoteSpy(),
+                      cellar: CellarSpy? = nil, delete: DeleteNoteSpy = DeleteNoteSpy(),
                       onChange: @escaping (Bool) -> Void = { _ in }, onClose: @escaping () -> Void = {},
                       onEdit: @escaping (CellarEntry, Wine) -> Void = { _, _ in }) -> NoteViewModel {
         NoteViewModel(entry: entry ?? tasted, loadNote: NoteLoaderStub(wine: wine), deleteNote: delete, maps: maps,
-                      now: { [now] in now }, onChange: onChange, onClose: onClose, onEdit: onEdit)
+                      cellar: cellar, now: { [now] in now }, onChange: onChange, onClose: onClose, onEdit: onEdit)
+    }
+
+    // MARK: A wine and you
+
+    @Test func insights_waitForTheCellar_thenTellTheGrapeTheRegionAndWhy() async {
+        let others = (0..<3).map { index in
+            CellarEntry(id: "s\(index)", name: "S", region: "Douro", grapes: ["Syrah"], status: .tasted,
+                        verdict: .yes, createdAt: .now)
+        }
+        let viewModel = make(maps: MapsSpy(map: Maps.flat(5)), cellar: CellarSpy(entries: [tasted] + others))
+        #expect(viewModel.uiModel.insights.isEmpty)
+        await viewModel.load()
+        let model = viewModel.uiModel
+        #expect(model.match != nil)
+        #expect(model.insights.map(\.icon) == [.grape, .region, .palate])
+        // Syrah: this note and three more, all Yes. Alentejo: this note only.
+        #expect(model.insights[0].text == "You like **Syrah**")
+        #expect(model.insights[0].detail == "You said yes to 4 of 4")
+        #expect(model.insights[1].text == "You know **Alentejo**, but have had little from it")
     }
 
     // MARK: CELLAR-R26 · Conteúdo
@@ -116,7 +135,6 @@ struct NoteViewModelTests {
         let model = make(entry, wine: Maps.wine("ponto-forte", 9))
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
-        #expect(certificate.showsSeal)
         #expect(certificate.subline?.contains("Trophy · Concurso Int. de Vinhos.") == true)
         #expect(certificate.subline?.contains("..") == false)
         #expect(!certificate.sections.map(\.title).contains("How UVVA estimates it"))
@@ -133,9 +151,8 @@ struct NoteViewModelTests {
         let model = make(entry, wine: wine)
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
-        // The note's own DOC, not the catalog's gold and Reserva learnt since: outside the top, with no seal.
+        // The note's own DOC, not the catalog's gold and Reserva learnt since: outside the top.
         #expect(certificate.headline == "Authentic Alentejo")
-        #expect(!certificate.showsSeal)
         #expect(certificate.subline == "Alentejo DOC")
     }
 
@@ -149,9 +166,8 @@ struct NoteViewModelTests {
         let model = make(entry, wine: wine)
         await model.load()
         let certificate = try #require(model.uiModel.content?.certificate)
-        // The card leads with the top and the seal, and says what it rests on.
+        // The card leads with the top and says what it rests on.
         #expect(certificate.headline == "Among the top 1% of the world's wines")
-        #expect(certificate.showsSeal)
         #expect(certificate.subline == "DOC · Reserva · Gold · Mundus Vini · 2022")
         #expect(certificate.sections.map(\.title) == ["Appellation", "Legal term", "Awards"])
         #expect(certificate.sections[0].value == "Alentejo DOC, by law requires:")

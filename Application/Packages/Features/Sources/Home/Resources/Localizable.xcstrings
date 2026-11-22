@@ -2,13 +2,34 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "·" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "·"
+          }
+        }
+      }
     },
     "/%lld" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/%lld"
+          }
+        }
+      }
     },
     "%@ · %lld years" : {
       "localizations" : {
@@ -17,11 +38,24 @@
             "state" : "new",
             "value" : "%1$@ · %2$lld years"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ · %2$lld anos"
+          }
         }
       }
     },
     "%@ · 1 year" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · 1 ano"
+          }
+        }
+      }
     },
     "%@ is now your friend. You are a %lld%% match." : {
       "localizations" : {
@@ -29,6 +63,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@ is now your friend. You are a %2$lld%% match."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ agora é seu amigo na UVVA. Vocês têm %2$lld%% de match."
           }
         }
       }
@@ -40,17 +80,36 @@
             "state" : "new",
             "value" : "%1$@ sent you a wine: %2$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ enviou um vinho para você: %2$@"
+          }
         }
       }
     },
     "%@ wants to compare palates with you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ quer comparar paladares com você"
+          }
+        }
+      }
     },
     "%@, %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$@, %2$@"
           }
         }
@@ -63,6 +122,12 @@
             "state" : "new",
             "value" : "%1$@, %2$@, %3$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, %2$@, %3$@"
+          }
         }
       }
     },
@@ -72,6 +137,22 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@, lesson %2$lld is waiting"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, a lição %2$lld está esperando por você"
+          }
+        }
+      }
+    },
+    "%@%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@%2$@"
           }
         }
       }
@@ -83,32 +164,94 @@
             "state" : "new",
             "value" : "%1$lld of %2$lld"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld de %2$lld"
+          }
         }
       }
     },
     "%lld of %lld %@ wines for your choices" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld de %2$lld vinhos do tipo %3$@ para suas escolhas"
+          }
+        }
+      }
     },
     "%lld%%" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        }
+      }
     },
     "© %@ UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© %@ UVVA"
+          }
+        }
+      }
     },
     "+" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+"
+          }
+        }
+      }
     },
     "6 lessons" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6 lições"
+          }
+        }
+      }
     },
     "A pairing drawn for your palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma harmonização para o seu paladar"
+          }
+        }
+      }
     },
     "A quick\nlook around" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma visita\nrápida"
+          }
+        }
+      }
     },
     "A short walk through where things live in UVVA." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma visita rápida para descobrir onde encontrar tudo na UVVA."
+          }
+        }
+      }
     },
     "A wine for each strong trait of your map" : {
       "localizations" : {
@@ -121,7 +264,14 @@
       }
     },
     "Add to cellar" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar à adega"
+          }
+        }
+      }
     },
     "Another one" : {
       "localizations" : {
@@ -145,25 +295,111 @@
       }
     },
     "Anywhere" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qualquer lugar"
+          }
+        }
+      }
     },
     "Appellation" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denominação"
+          }
+        }
+      }
     },
     "Argentina" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Argentina"
+          }
+        }
+      }
     },
     "Australia" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Austrália"
+          }
+        }
+      }
     },
     "Austria" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Áustria"
+          }
+        }
+      }
     },
     "Back" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar"
+          }
+        }
+      }
     },
     "Back to Home" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar ao início"
+          }
+        }
+      }
+    },
+    "Brazil" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brasil"
+          }
+        }
+      }
+    },
+    "Bulgaria" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulgária"
+          }
+        }
+      }
+    },
+    "Canada" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canadá"
+          }
+        }
+      }
     },
     "Cheese" : {
       "extractionState" : "manual",
@@ -177,34 +413,129 @@
       }
     },
     "Chile" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chile"
+          }
+        }
+      }
     },
     "Choose your wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha seu vinho"
+          }
+        }
+      }
     },
     "Choose yourself" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha por conta própria"
+          }
+        }
+      }
     },
     "Citrus" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cítrico"
+          }
+        }
+      }
     },
     "Clear search" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpar busca"
+          }
+        }
+      }
     },
     "Clear selection" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpar seleção"
+          }
+        }
+      }
     },
     "Close" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
+          }
+        }
+      }
     },
     "Close definition" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar definição"
+          }
+        }
+      }
     },
     "Continue  →" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar  →"
+          }
+        }
+      }
+    },
+    "Croatia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Croácia"
+          }
+        }
+      }
+    },
+    "Cyprus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chipre"
+          }
+        }
+      }
     },
     "Dark fruit" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutas escuras"
+          }
+        }
+      }
     },
     "Dessert" : {
       "extractionState" : "manual",
@@ -218,10 +549,25 @@
       }
     },
     "Earthy" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terroso"
+          }
+        }
+      }
     },
     "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos os dias, a UVVA usa seu mapa para criar uma experiência completa: um vinho com as notas que você mais gosta e uma receita que equilibra os demais sabores."
+          }
+        }
+      }
     },
     "Expect a bright, tangy sip." : {
       "localizations" : {
@@ -264,10 +610,24 @@
       }
     },
     "Find my wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encontrar meu vinho"
+          }
+        }
+      }
     },
     "Find the wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encontrar o vinho"
+          }
+        }
+      }
     },
     "Fish" : {
       "extractionState" : "manual",
@@ -281,7 +641,15 @@
       }
     },
     "Floral" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Floral"
+          }
+        }
+      }
     },
     "Food pairing" : {
       "localizations" : {
@@ -304,10 +672,26 @@
       }
     },
     "Fortified" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortificado"
+          }
+        }
+      }
     },
     "France" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "França"
+          }
+        }
+      }
     },
     "Fruit is front and center in this one." : {
       "localizations" : {
@@ -339,11 +723,37 @@
         }
       }
     },
+    "Georgia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geórgia"
+          }
+        }
+      }
+    },
     "Germany" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alemanha"
+          }
+        }
+      }
     },
     "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conheça melhor a região à qual você sempre volta, a uva do seu vinho favorito e o que observar na taça. Cinco minutos de cada vez."
+          }
+        }
+      }
     },
     "Go for this if you want something light-bodied." : {
       "localizations" : {
@@ -366,10 +776,36 @@
       }
     },
     "Grapes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Castas"
+          }
+        }
+      }
+    },
+    "Greece" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grécia"
+          }
+        }
+      }
     },
     "Herbal" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herbáceo"
+          }
+        }
+      }
     },
     "High acidity" : {
       "localizations" : {
@@ -442,10 +878,35 @@
       }
     },
     "How to make it" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de preparo"
+          }
+        }
+      }
     },
     "How to serve" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como servir"
+          }
+        }
+      }
+    },
+    "Hungary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hungria"
+          }
+        }
+      }
     },
     "If a sweet sip sounds good, pour this one." : {
       "localizations" : {
@@ -508,7 +969,14 @@
       }
     },
     "In common" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em comum"
+          }
+        }
+      }
     },
     "In the mood for a lighter wine? Here's one." : {
       "localizations" : {
@@ -531,13 +999,34 @@
       }
     },
     "In your cellar" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua adega"
+          }
+        }
+      }
     },
     "Invite friends to discover their palate and find a wine you'll both love" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convide seus amigos para descobrir o paladar deles e encontrar um vinho que vocês vão adorar"
+          }
+        }
+      }
     },
     "Invite the people you drink with. UVVA reads every map at the table and suggests one bottle for all of you." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convide quem vai beber com você. A UVVA compara os mapas de todos à mesa e sugere uma garrafa para o grupo."
+          }
+        }
+      }
     },
     "It feels full and substantial on the palate." : {
       "localizations" : {
@@ -560,7 +1049,15 @@
       }
     },
     "Italy" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Itália"
+          }
+        }
+      }
     },
     "Just a hint of flowers here." : {
       "localizations" : {
@@ -593,19 +1090,54 @@
       }
     },
     "Just now" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agora mesmo"
+          }
+        }
+      }
     },
     "Learn a grape" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conheça uma casta"
+          }
+        }
+      }
     },
     "Learn a lesson" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faça uma lição"
+          }
+        }
+      }
     },
     "Learn a region" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conheça uma região"
+          }
+        }
+      }
     },
     "Learn the wines you love" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aprenda sobre os vinhos que você adora"
+          }
+        }
+      }
     },
     "Light body" : {
       "localizations" : {
@@ -727,32 +1259,141 @@
         }
       }
     },
+    "Luxembourg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luxemburgo"
+          }
+        }
+      }
+    },
     "Made in Portugal" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feito em Portugal"
+          }
+        }
+      }
     },
     "Malbec at altitude" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malbec de altitude"
+          }
+        }
+      }
     },
     "Map your taste in wine with me on UVVA." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubra seu paladar para vinhos comigo na UVVA."
+          }
+        }
+      }
     },
     "Map yours · uvva.app" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapeie o seu · uvva.app"
+          }
+        }
+      }
     },
     "match with %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de match com %@"
+          }
+        }
+      }
     },
     "match with your map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de match com seu mapa"
+          }
+        }
+      }
+    },
+    "Mexico" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "México"
+          }
+        }
+      }
     },
     "Mineral" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mineral"
+          }
+        }
+      }
+    },
+    "Moldova" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moldávia"
+          }
+        }
+      }
+    },
+    "Netherlands" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Países Baixos"
+          }
+        }
+      }
     },
     "New Zealand" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Zelândia"
+          }
+        }
+      }
     },
     "Next" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avançar"
+          }
+        }
+      }
     },
     "No wines match these choices. Try changing a filter." : {
       "localizations" : {
@@ -765,19 +1406,65 @@
       }
     },
     "Non-vintage" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem safra"
+          }
+        }
+      }
+    },
+    "North Macedonia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macedônia do Norte"
+          }
+        }
+      }
     },
     "Notes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas"
+          }
+        }
+      }
     },
     "Nothing new yet. Requests and wines from friends, and changes to your map, will show here." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por enquanto, tudo em dia. Solicitações de amizade, vinhos enviados por amigos e mudanças no seu mapa aparecem aqui."
+          }
+        }
+      }
     },
     "Nothing runs high on your map, and nothing runs high on this wine." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa e este vinho têm um perfil equilibrado, com todos os eixos em baixa ou média intensidade."
+          }
+        }
+      }
     },
     "Notifications" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificações"
+          }
+        }
+      }
     },
     "Oak stays in the background as you sip." : {
       "localizations" : {
@@ -790,22 +1477,55 @@
       }
     },
     "Open glossary" : {
-
-    },
-    "Open the table →" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir glossário"
+          }
+        }
+      }
     },
     "Orchard fruit" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutas de pomar"
+          }
+        }
+      }
     },
     "Organic, biodynamic and natural" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orgânico, biodinâmico e natural"
+          }
+        }
+      }
     },
     "Origin" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Origem"
+          }
+        }
+      }
     },
     "Pairings" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harmonizações"
+          }
+        }
+      }
     },
     "Pasta" : {
       "extractionState" : "manual",
@@ -818,14 +1538,47 @@
         }
       }
     },
+    "Peru" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peru"
+          }
+        }
+      }
+    },
     "Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha uma direção, um tipo, uma região e até três notas. A UVVA encontra o vinho que mais combina com seu mapa para hoje à noite."
+          }
+        }
+      }
     },
     "Pick up to three" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha até três"
+          }
+        }
+      }
     },
     "Portugal" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portugal"
+          }
+        }
+      }
     },
     "Poultry" : {
       "extractionState" : "manual",
@@ -839,13 +1592,36 @@
       }
     },
     "Producer" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Produtor"
+          }
+        }
+      }
     },
     "Red" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinto"
+          }
+        }
+      }
     },
     "Red fruit" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutas vermelhas"
+          }
+        }
+      }
     },
     "Red meat" : {
       "extractionState" : "manual",
@@ -859,16 +1635,56 @@
       }
     },
     "Region" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Região"
+          }
+        }
+      }
+    },
+    "Romania" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romênia"
+          }
+        }
+      }
     },
     "Rosé" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosé"
+          }
+        }
+      }
     },
     "Saved to Cellar · %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvo na adega · %@"
+          }
+        }
+      }
     },
     "Scan a label" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escaneie um rótulo"
+          }
+        }
+      }
     },
     "Seafood" : {
       "extractionState" : "manual",
@@ -882,31 +1698,127 @@
       }
     },
     "Search a term" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar um termo"
+          }
+        }
+      }
     },
     "See the wine & the dish" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver o vinho e o prato"
+          }
+        }
+      }
+    },
+    "Serbia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sérvia"
+          }
+        }
+      }
     },
     "Serve at" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sirva a"
+          }
+        }
+      }
     },
     "Set a table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monte uma mesa"
+          }
+        }
+      }
     },
     "Set a table with your friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monte uma mesa com seus amigos"
+          }
+        }
+      }
     },
     "Share your palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhe seu paladar"
+          }
+        }
+      }
     },
     "Show another ›" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar outro ›"
+          }
+        }
+      }
     },
     "Show less" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar menos"
+          }
+        }
+      }
     },
     "Show me" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quero ver"
+          }
+        }
+      }
+    },
+    "Slovakia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eslováquia"
+          }
+        }
+      }
+    },
+    "Slovenia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eslovênia"
+          }
+        }
+      }
     },
     "Soft tannins, so it won't dry out your mouth as much." : {
       "localizations" : {
@@ -919,16 +1831,47 @@
       }
     },
     "South Africa" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "África do Sul"
+          }
+        }
+      }
     },
     "Spain" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espanha"
+          }
+        }
+      }
     },
     "Spain's great red" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O grande tinto da Espanha"
+          }
+        }
+      }
     },
     "Sparkling" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espumante"
+          }
+        }
+      }
     },
     "Spice is one of the first things you'll notice." : {
       "localizations" : {
@@ -941,13 +1884,35 @@
       }
     },
     "Spiced" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especiarias"
+          }
+        }
+      }
     },
     "Start" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Começar"
+          }
+        }
+      }
     },
     "Style" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estilo"
+          }
+        }
+      }
     },
     "Surprise me" : {
       "localizations" : {
@@ -960,7 +1925,26 @@
       }
     },
     "Sweet" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doce"
+          }
+        }
+      }
+    },
+    "Switzerland" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suíça"
+          }
+        }
+      }
     },
     "Take a sniff. The floral aromas stand out." : {
       "localizations" : {
@@ -973,13 +1957,34 @@
       }
     },
     "Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em + e aponte a câmera para uma garrafa. A UVVA lê o rótulo, classifica o vinho e o adiciona à sua adega. Cada nota que você salva atualiza seu mapa."
+          }
+        }
+      }
     },
     "TAP ANYWHERE TO LEAVE" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOQUE EM QUALQUER LUGAR PARA SAIR"
+          }
+        }
+      }
     },
     "Tempranillo" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempranillo"
+          }
+        }
+      }
     },
     "That mouthwatering acidity you like? It's here." : {
       "localizations" : {
@@ -1072,7 +2077,14 @@
       }
     },
     "The map of this wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O mapa deste vinho"
+          }
+        }
+      }
     },
     "The oak is subtle in this one." : {
       "localizations" : {
@@ -1095,10 +2107,24 @@
       }
     },
     "The only %@ for your choices" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O único vinho do tipo %@ para suas escolhas"
+          }
+        }
+      }
     },
     "The perfect table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A mesa perfeita"
+          }
+        }
+      }
     },
     "The spice is there in small doses." : {
       "localizations" : {
@@ -1301,10 +2327,24 @@
       }
     },
     "This is my wine palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos"
+          }
+        }
+      }
     },
     "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos. Mapeie o seu na UVVA e vamos encontrar o vinho perfeito para beber juntos."
+          }
+        }
+      }
     },
     "This leans toward the dry side." : {
       "localizations" : {
@@ -1387,19 +2427,56 @@
       }
     },
     "This wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este vinho"
+          }
+        }
+      }
     },
     "This wine and you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este vinho e você"
+          }
+        }
+      }
     },
     "Toasty" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tostado"
+          }
+        }
+      }
     },
     "Tour" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visita guiada"
+          }
+        }
+      }
     },
     "Tropical" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tropical"
+          }
+        }
+      }
     },
     "Try this for something less spiced." : {
       "localizations" : {
@@ -1451,20 +2528,100 @@
         }
       }
     },
+    "Turkey" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turquia"
+          }
+        }
+      }
+    },
     "Type" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo"
+          }
+        }
+      }
     },
     "Uco Valley" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vale do Uco"
+          }
+        }
+      }
+    },
+    "Ukraine" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ucrânia"
+          }
+        }
+      }
+    },
+    "United Kingdom" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reino Unido"
+          }
+        }
+      }
     },
     "United States" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estados Unidos"
+          }
+        }
+      }
     },
     "Unread" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não lidas"
+          }
+        }
+      }
+    },
+    "Uruguay" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruguai"
+          }
+        }
+      }
     },
     "UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UVVA"
+          }
+        }
+      }
     },
     "Vegetables" : {
       "extractionState" : "manual",
@@ -1478,10 +2635,24 @@
       }
     },
     "version %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "versão %@"
+          }
+        }
+      }
     },
     "Vintage" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Safra"
+          }
+        }
+      }
     },
     "Want a wine with less sweetness? Go for this." : {
       "localizations" : {
@@ -1513,26 +2684,86 @@
         }
       }
     },
+    "Welcome back, %@" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que bom ter você de volta, %@"
+          }
+        }
+      }
+    },
     "Welcome in, %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boas-vindas, %@"
+          }
+        }
+      }
     },
     "What the labels really mean" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que os rótulos realmente dizem"
+          }
+        }
+      }
     },
     "What you need" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingredientes"
+          }
+        }
+      }
     },
     "White" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Branco"
+          }
+        }
+      }
     },
     "Wines you have tasted and wines you want to try, each one measured against your map." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veja os vinhos que você já provou e os que quer experimentar, com o match de cada um com seu mapa."
+          }
+        }
+      }
     },
     "With your palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com o seu paladar"
+          }
+        }
+      }
     },
     "Word of the day" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palavra do dia"
+          }
+        }
+      }
     },
     "You might just catch a hint of oak." : {
       "localizations" : {
@@ -1575,19 +2806,54 @@
       }
     },
     "Your cellar" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua adega"
+          }
+        }
+      }
     },
     "Your last wine lowered your %@ notes." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu último vinho reduziu a intensidade de %@ no seu mapa."
+          }
+        }
+      }
     },
     "Your last wine raised your %@ notes." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu último vinho aumentou a intensidade de %@ no seu mapa."
+          }
+        }
+      }
     },
     "Your map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa"
+          }
+        }
+      }
     },
     "Your map is ready" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa está pronto"
+          }
+        }
+      }
     },
     "Your map likes %@ and %@, and this wine is high on both." : {
       "localizations" : {
@@ -1596,20 +2862,54 @@
             "state" : "new",
             "value" : "Your map likes %1$@ and %2$@, and this wine is high on both."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa aponta para %1$@ e %2$@, dois destaques deste vinho."
+          }
         }
       }
     },
     "Your map likes %@, and this wine is high on it." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa aponta para %@, um destaque deste vinho."
+          }
+        }
+      }
     },
     "Your palate map moved: less %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa mudou: menos %@"
+          }
+        }
+      }
     },
     "Your palate map moved: more %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa mudou: mais %@"
+          }
+        }
+      }
     },
     "Your pick" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua escolha"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

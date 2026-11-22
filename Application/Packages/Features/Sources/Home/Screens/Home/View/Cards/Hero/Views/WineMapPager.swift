@@ -1,3 +1,4 @@
+import Match
 import Core
 import DesignSystem
 import SwiftUI
@@ -16,7 +17,7 @@ struct WineMapPager: View {
                                     wineLegend: resources.wineMapPagerWineLegend,
                                     palateLegend: resources.wineMapPagerPalateLegend,
                                     overlapLegend: showsOverlapLegend ? resources.wineMapPagerOverlapLegend : nil),
-                        labels: PalateAxis.allCases.map(\.label), wine: wine.chartValues,
+                        labels: PalateAxis.allCases.map(\.localizedLabel), wine: wine.chartValues,
                         palate: palate.chartValues, active: active, tint: tint)
     }
 }

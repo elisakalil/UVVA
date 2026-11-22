@@ -100,12 +100,12 @@ public extension WineSheetContent {
             Fact(label: resources.styleText, value: resources.type(wine.type)),
             Fact(label: resources.vintageText, value: resources.vintageLine(wine.vintage, now: now)),
             Fact(label: resources.grapesText, value: wine.grapes.joined(separator: ", ")),
-            Fact(label: resources.notesText, value: wine.note ?? "")
+            Fact(label: resources.notesText, value: WineCatalogText.notes(wine.note))
         ]
         self.init(title: wine.name, eyebrow: wine.producer, percentage: match?.percentage,
                   percentageCaption: match == nil ? resources.noMapText : resources.matchText,
                   sharedLine: match?.shared, apartLine: match?.apart, facts: facts,
-                  pairings: wine.pairings.isEmpty ? nil : wine.pairings.joined(separator: ", "),
+                  pairings: wine.pairings.isEmpty ? nil : wine.pairings.map(WineCatalogText.editorial).joined(separator: ", "),
                   servingTemperature: wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" },
                   howToServe: (wine.howToServe ?? "").isEmpty ? nil : wine.howToServe,
                   profile: wine.profile, palate: palate, certificate: WineCertificateUIModel(wine: wine))

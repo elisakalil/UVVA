@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Could not open UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível abrir a UVVA"
+          }
+        }
+      }
     },
     "Five minutes for wine. Your next lesson is waiting." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cinco minutos para o vinho. Sua próxima lição está esperando."
+          }
+        }
+      }
     },
     "SHARED_WINE_ALERT" : {
       "comment" : "FRI-R11c: the push of a wine a friend sent. %1$@ is the friend's first name, %2$@ the wine.",
@@ -16,14 +30,44 @@
             "state" : "translated",
             "value" : "%1$@ sent you a wine: %2$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ enviou um vinho para você: %2$@"
+          }
         }
       }
     },
     "Try again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tentar novamente"
+          }
+        }
+      }
     },
     "UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UVVA"
+          }
+        }
+      }
+    },
+    "The bundled content manifest could not be found." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível encontrar o índice de conteúdo da app."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

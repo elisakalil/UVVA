@@ -11,6 +11,8 @@ struct WineSheet: View {
     var sheet: WineSheetModel
     var palateMap: PalateMap
     var cellarWineKeys: Set<String> = []
+    /// The wines the user rated, for the grape and region lines; nil until read.
+    var tasteHistory: TasteHistory?
     /// "Add to cellar": the Cellar's new note for the wine shown.
     var onAddToCellar: (Wine) -> Void = { _ in }
 
@@ -47,12 +49,13 @@ struct WineSheet: View {
     private var model: WineDetailUIModel? {
         switch sheet {
         case let .palate(suggestion):
-            return WineDetailUIModel(wine: suggestion.wine, source: .palate(suggestion), palateMap: palateMap, resources: resources)
+            return WineDetailUIModel(wine: suggestion.wine, source: .palate(suggestion), palateMap: palateMap,
+                                     history: tasteHistory, resources: resources)
         case let .discovery(suggestions, direction):
             guard !suggestions.isEmpty else { return nil }
             let index = resultIndex % suggestions.count
             return WineDetailUIModel(wine: suggestions[index], source: .discovery(direction, index: index, count: suggestions.count),
-                                     palateMap: palateMap, resources: resources)
+                                     palateMap: palateMap, history: tasteHistory, resources: resources)
         }
     }
 

@@ -1,6 +1,7 @@
 import CoreUI
 import Core
 import Foundation
+import Match
 
 /// What a saved note shows (CELLAR-R26): the wine as the Home's wine sheet shows it, with the photos and the note.
 /// Pure: the entry, the catalog wine and the user's map in, the UI model's parts out.
@@ -8,6 +9,8 @@ struct NotePresentationBuilder {
     var entry: CellarEntry
     var wine: Wine?
     var palate: PalateMap?
+    /// The wines the user rated; nil until it loads, and the grape and region lines wait for it.
+    var history: TasteHistory?
     var resources = NoteResourcesUIModel()
     var dateStyle = Date.FormatStyle().day().month(.abbreviated)
     var now = Date()
@@ -36,6 +39,15 @@ struct NotePresentationBuilder {
 
     /// The entry was saved with its certification: what it kept is the note's, even when it kept nothing.
     private var isCertified: Bool { entry.awards != nil }
+
+    /// The match with the user's map, as a number; nil before the Quiz.
+    var match: Int? { palate.map { Similarity.percent(paperWine.profile, $0) } }
+
+    /// The grape, the region and the palate lines, as on the new note.
+    var insights: [NoteInsightUIModel] {
+        history.map { NoteInsightUIModel.lines(wine: paperWine, palate: palate, history: $0, resources: resources.paper) }
+            ?? []
+    }
 
     var content: WineSheetContent {
         var content = WineSheetContent(wine: paperWine, palate: palate, now: now, resources: resources.paper)

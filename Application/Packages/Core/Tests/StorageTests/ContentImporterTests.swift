@@ -87,6 +87,49 @@ struct ContentImporterTests {
         #expect(try count(GlossaryTermEntity.self) == 1)
     }
 
+    @Test func changingLanguage_reimportsContentUsingTheSameIDsAndKeepsPersonalProgress() async throws {
+        let english = ContentFixture()
+        let directory = try english.write()
+        defer { try? FileManager.default.removeItem(at: directory) }
+        var portuguese = english
+        portuguese.version = "pt-BR-v1"
+        portuguese.modules[0]["title"] = "O que é vinho"
+        portuguese.terms[0]["term"] = "Acidez"
+        let translation = try portuguese.write()
+        defer { try? FileManager.default.removeItem(at: translation) }
+        for name in ["manifest", "learn", "glossary", "recipes"] {
+            try FileManager.default.copyItem(at: translation.appending(path: "\(name).json"),
+                                             to: directory.appending(path: "\(name)-pt-BR.json"))
+        }
+
+        let learning = LearningStore(modelContainer: try AppStore.makeInMemoryContainer())
+        let progress = LessonProgress(lessonID: "path-01-l01", courseID: "path-01", currentStep: 1,
+                                      answers: [1: .options([1])], lastOpenedAt: .now)
+        let certificate = Certificate(courseID: "path-01", date: .now)
+        try await learning.save(progress)
+        try await learning.addCertificate(certificate)
+
+        let base = ContentSource(directory: directory, language: "en")
+        let localized = ContentSource(directory: directory, language: "pt-BR")
+        let englishVersion = try await importer.importIfNeeded(from: base, currentVersion: nil)
+        let portugueseVersion = try await importer.importIfNeeded(from: localized, currentVersion: englishVersion)
+
+        #expect(portugueseVersion == "pt-BR-v1")
+        let context = ModelContext(container)
+        let modules = try context.fetch(FetchDescriptor<ModuleEntity>())
+        #expect(modules.first?.title == "O que é vinho")
+        #expect(modules.first?.lessons.contains { $0.id == progress.lessonID } == true)
+        #expect(try context.fetch(FetchDescriptor<GlossaryTermEntity>()).first?.term == "Acidez")
+        #expect(try await learning.progress()[progress.lessonID] == progress)
+        #expect(try await learning.certificates().map(\.courseID) == [certificate.courseID])
+
+        let fallback = ContentSource(directory: directory, language: "fr")
+        #expect(fallback.manifest == base.manifest)
+        let restoredVersion = try await importer.importIfNeeded(from: base, currentVersion: portugueseVersion)
+        #expect(restoredVersion == englishVersion)
+        #expect(try ModelContext(container).fetch(FetchDescriptor<ModuleEntity>()).first?.title == "What Wine Is")
+    }
+
     @Test func importCutShort_throws_andTheRetryEndsWithNoDuplicates() async throws {
         var broken = ContentFixture()
         broken.skipLearn = true

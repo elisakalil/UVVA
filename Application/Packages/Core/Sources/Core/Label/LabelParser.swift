@@ -213,19 +213,49 @@ public enum LabelParser {
         }) {
             return marked
         }
-        for line in front + back {
-            let folded = WineText.folded(line.text)
-            for phrase in LabelKeywords.bottledBy.sorted(by: { $0.count > $1.count }) {
+        // Each label read as one text, so the producer can sit on the line after the phrase, and a phrase given in
+        // several languages ("engarrafado por | bottled by | mis en bouteille par") can wrap.
+        for side in [front, back] where !side.isEmpty {
+            let text = side.map(\.text).joined(separator: "\n")
+            let folded = WineText.folded(text)
+            for phrase in bottledByLongestFirst {
                 guard let range = folded.range(of: " \(phrase) ") else { continue }
-                // Keep the original spelling: drop as many words from the line as the phrase took.
+                // Keep the original spelling: drop as many words from the text as the phrase took.
                 let skipped = WineText.tokens(String(folded[..<range.upperBound])).count
-                let words = line.text.split(whereSeparator: \.isWhitespace)
-                let rest = words.dropFirst(skipped).joined(separator: " ")
-                let producer = rest.split(whereSeparator: { ",.;".contains($0) }).first
+                let rest = droppingBottledBy(droppingWords(skipped, from: text[...]))
+                let producer = rest.split(whereSeparator: { ",.;|\n".contains($0) }).first
                     .map { $0.trimmingCharacters(in: .whitespaces) } ?? ""
                 if producer.filter(\.isLetter).count >= 3 { return producer }
             }
         }
         return nil
+    }
+
+    private static let bottledByLongestFirst = LabelKeywords.bottledBy.sorted { $0.count > $1.count }
+
+    /// The text from its word after the first `count`, as `WineText.tokens` counts words: "|", "·" and line
+    /// breaks are not words, so they are skipped, not counted.
+    private static func droppingWords(_ count: Int, from text: Substring) -> Substring {
+        var seen = 0
+        var inWord = false
+        for index in text.indices {
+            let isWordCharacter = !WineText.tokens(String(text[index])).isEmpty
+            if isWordCharacter, !inWord {
+                if seen == count { return text[index...] }
+                seen += 1
+            }
+            inWord = isWordCharacter
+        }
+        return text[text.endIndex...]
+    }
+
+    /// The text after the "Bottled by" phrases it starts with: "bottled by | mis en bouteille par Ravasqueira"
+    /// → "Ravasqueira".
+    private static func droppingBottledBy(_ text: Substring) -> Substring {
+        var rest = droppingWords(0, from: text)
+        while let phrase = bottledByLongestFirst.first(where: { WineText.folded(String(rest)).hasPrefix(" \($0) ") }) {
+            rest = droppingWords(WineText.tokens(phrase).count, from: rest)
+        }
+        return rest
     }
 }

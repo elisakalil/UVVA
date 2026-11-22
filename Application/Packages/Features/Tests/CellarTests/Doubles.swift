@@ -47,8 +47,11 @@ actor CellarSpy: CellarRepository {
     private(set) var saved: [NewNoteDraft] = []
     /// What `save` reports as the entry before it, keyed by wineKey.
     var existing: [String: CellarEntry] = [:]
+    /// What `entries` returns: the Cellar the insights are read from.
+    private let stored: [CellarEntry]
+    init(entries: [CellarEntry] = []) { stored = entries }
     func setExisting(_ entry: CellarEntry) { existing[entry.id] = entry }
-    func entries() async throws -> [CellarEntry] { [] }
+    func entries() async throws -> [CellarEntry] { stored }
     func wineKeys() async throws -> Set<String> { [] }
     func addWantToTry(_ wine: Wine) async throws {}
     func tastedWineKeys() async throws -> Set<String> { [] }

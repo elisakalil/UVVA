@@ -2,19 +2,46 @@
   "sourceLanguage" : "en",
   "strings" : {
     "        " : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "        "
+          }
+        }
+      }
     },
     " %@ " : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " %@ "
+          }
+        }
+      }
     },
     "%@ now knows" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ agora sabe"
+          }
+        }
+      }
     },
     "%@%@%@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$@%2$@%3$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$@%2$@%3$@"
           }
         }
@@ -27,17 +54,55 @@
             "state" : "new",
             "value" : "%1$lld lessons · %2$lld min · %3$lld XP"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld lições · %2$lld min · %3$lld XP"
+          }
         }
       }
     },
     "About Learn" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobre a seção Aprender"
+          }
+        }
+      }
+    },
+    "Advanced" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avançado"
+          }
+        }
+      }
     },
     "All" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos"
+          }
+        }
+      }
     },
     "All %lld pairs matched on the first try." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acertou os %lld pares na primeira tentativa."
+          }
+        }
+      }
     },
     "All %lld pairs matched, with %lld wrong tries." : {
       "localizations" : {
@@ -46,191 +111,668 @@
             "state" : "new",
             "value" : "All %1$lld pairs matched, with %2$lld wrong tries."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acertou os %1$lld pares, com %2$lld tentativas incorretas."
+          }
         }
       }
     },
     "All %lld pairs matched, with 1 wrong try." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você acertou os %lld pares, com 1 tentativa incorreta."
+          }
+        }
+      }
     },
     "Back" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar"
+          }
+        }
+      }
     },
     "Begin lesson" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Começar lição"
+          }
+        }
+      }
     },
     "By grape" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por casta"
+          }
+        }
+      }
     },
     "By region" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por região"
+          }
+        }
+      }
     },
     "By the end you can" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ao final, você vai saber"
+          }
+        }
+      }
     },
     "Check" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conferir"
+          }
+        }
+      }
     },
     "Closes the course" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encerra o curso"
+          }
+        }
+      }
     },
     "Continue" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        }
+      }
     },
     "Correct" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correto"
+          }
+        }
+      }
     },
     "Correct order: %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordem correta: %@"
+          }
+        }
+      }
     },
     "Couldn't load the lesson. Please try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível carregar a lição. Tente novamente."
+          }
+        }
+      }
     },
     "Couldn't save your lesson. Please try again before leaving." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível salvar a lição. Tente novamente antes de sair."
+          }
+        }
+      }
     },
     "Dutch" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "holandês"
+          }
+        }
+      }
+    },
+    "Essentials" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fundamentos"
+          }
+        }
+      }
+    },
+    "Expert" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especialista"
+          }
+        }
+      }
     },
     "Explore wine by country and region. Each course introduces the local grapes and what makes the region’s wines distinctive." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore vinhos por país e região. Cada curso apresenta as uvas locais e o que distingue os vinhos daquela região."
+          }
+        }
+      }
     },
     "False" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falso"
+          }
+        }
+      }
     },
     "Finish module" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concluir módulo"
+          }
+        }
+      }
     },
     "Follow a sommelier’s curriculum from Essentials to Expert. You can take the modules in any order." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siga a trilha de um sommelier, dos fundamentos ao nível avançado. Você pode fazer os módulos em qualquer ordem."
+          }
+        }
+      }
     },
     "French" : {
-
-    },
-    "Get to know red and white grape varieties, where they grow and the styles of wine they produce." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "francês"
+          }
+        }
+      }
     },
     "German" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "alemão"
+          }
+        }
+      }
+    },
+    "Get to know red and white grape varieties, where they grow and the styles of wine they produce." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conheça as castas tintas e brancas, onde crescem e os estilos de vinho que produzem."
+          }
+        }
+      }
     },
     "Got it" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entendi"
+          }
+        }
+      }
     },
     "Grape" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Casta"
+          }
+        }
+      }
     },
     "Grapes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Castas"
+          }
+        }
+      }
     },
     "Greek" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "grego"
+          }
+        }
+      }
     },
     "I just finished %@ on UVVA." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acabei de concluir %@ na UVVA."
+          }
+        }
+      }
+    },
+    "Intermediate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intermediário"
+          }
+        }
+      }
     },
     "Irish" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "irlandês"
+          }
+        }
+      }
     },
     "Italian" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "italiano"
+          }
+        }
+      }
     },
     "Japanese" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "japonês"
+          }
+        }
+      }
     },
     "Learn" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aprender"
+          }
+        }
+      }
     },
     "Learning tracks" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trilhas de aprendizado"
+          }
+        }
+      }
     },
     "Leave the lesson" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sair da lição"
+          }
+        }
+      }
+    },
+    "LESSON\n%@\nOF %@" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LIÇÃO\n%1$@\nDE %2$@"
+          }
+        }
+      }
     },
     "Lesson %lld" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lição %lld"
+          }
+        }
+      }
     },
     "Lesson complete" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lição concluída"
+          }
+        }
+      }
     },
     "Lesson complete +%lld XP" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lição concluída +%lld XP"
+          }
+        }
+      }
     },
     "Lessons" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lições"
+          }
+        }
+      }
     },
     "Map of %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa de %@"
+          }
+        }
+      }
     },
     "means “cheers” in %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "significa “saúde” em %@"
+          }
+        }
+      }
     },
     "Minutes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minutos"
+          }
+        }
+      }
     },
     "Module" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Módulo"
+          }
+        }
+      }
     },
     "Module complete" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Módulo concluído"
+          }
+        }
+      }
     },
     "Next lesson" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próxima lição"
+          }
+        }
+      }
     },
     "Not a pair. Try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse par não combina. Tente novamente."
+          }
+        }
+      }
     },
     "Not quite" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase"
+          }
+        }
+      }
     },
     "Nothing matches “%@”. Try a region, a grape or a country." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum resultado para “%@”. Tente uma região, uma casta ou um país."
+          }
+        }
+      }
     },
     "Now I know" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agora eu sei"
+          }
+        }
+      }
     },
     "Now tap where it should go." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agora toque onde o item deve ficar."
+          }
+        }
+      }
     },
     "Opens the course" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre o curso"
+          }
+        }
+      }
     },
     "Polish" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "polonês"
+          }
+        }
+      }
     },
     "Portuguese" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "português"
+          }
+        }
+      }
     },
     "Previous screen" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tela anterior"
+          }
+        }
+      }
     },
     "Red" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tinto"
+          }
+        }
+      }
     },
     "Reds" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tintos"
+          }
+        }
+      }
     },
     "Region" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Região"
+          }
+        }
+      }
     },
     "Regions" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regiões"
+          }
+        }
+      }
     },
     "Review" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisão"
+          }
+        }
+      }
     },
     "saving your progress" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvando seu progresso"
+          }
+        }
+      }
     },
     "Search modules" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar módulos"
+          }
+        }
+      }
     },
     "Share what you learned" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhe o que aprendeu"
+          }
+        }
+      }
     },
     "Spanish" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "espanhol"
+          }
+        }
+      }
     },
     "Start" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Começar"
+          }
+        }
+      }
     },
     "Step %lld of %lld" : {
       "localizations" : {
@@ -239,44 +781,310 @@
             "state" : "new",
             "value" : "Step %1$lld of %2$lld"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etapa %1$lld de %2$lld"
+          }
         }
       }
     },
     "Steps" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etapas"
+          }
+        }
+      }
     },
     "Tap a term, then its match. Tap a matched term to undo." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em um termo e depois no seu par. Para desfazer, toque em um termo já associado."
+          }
+        }
+      }
     },
     "Tap two items to swap them." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toque em dois itens para trocar a posição deles."
+          }
+        }
+      }
     },
     "The path" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A trilha"
+          }
+        }
+      }
     },
     "True" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verdadeiro"
+          }
+        }
+      }
     },
     "Try again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tentar novamente"
+          }
+        }
+      }
     },
     "View certificate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver certificado"
+          }
+        }
+      }
     },
     "What you've learned" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você aprendeu"
+          }
+        }
+      }
     },
     "White" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Branco"
+          }
+        }
+      }
     },
     "Whites" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brancos"
+          }
+        }
+      }
     },
     "XP" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XP"
+          }
+        }
+      }
     },
     "Your pick" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua escolha"
+          }
+        }
+      }
+    },
+    "Argentina" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Argentina"
+          }
+        }
+      }
+    },
+    "Australia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Austrália"
+          }
+        }
+      }
+    },
+    "Austria" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Áustria"
+          }
+        }
+      }
+    },
+    "Chile" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chile"
+          }
+        }
+      }
+    },
+    "France" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "França"
+          }
+        }
+      }
+    },
+    "Georgia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geórgia"
+          }
+        }
+      }
+    },
+    "Germany" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alemanha"
+          }
+        }
+      }
+    },
+    "Greece" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grécia"
+          }
+        }
+      }
+    },
+    "Hungary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hungria"
+          }
+        }
+      }
+    },
+    "Italy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Itália"
+          }
+        }
+      }
+    },
+    "New Zealand" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova Zelândia"
+          }
+        }
+      }
+    },
+    "Portugal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portugal"
+          }
+        }
+      }
+    },
+    "South Africa" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "África do Sul"
+          }
+        }
+      }
+    },
+    "Spain" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espanha"
+          }
+        }
+      }
+    },
+    "United States" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estados Unidos"
+          }
+        }
+      }
+    },
+    "Uruguay" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruguai"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

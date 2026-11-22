@@ -2,9 +2,10 @@ import Core
 import Foundation
 import Match
 
-/// The certificate card of a wine (CELLAR-R30), in WineDetail, the new note and a saved note. Closed, two lines: "Among
-/// the top X% of the world's wines" with the seal when the wine is in the top 20 %, or else a title on its appellation,
-/// and under it what it rests on. Open, one section per criterion: the appellation, the legal term and the awards.
+/// The certificate card of a wine (CELLAR-R30), in WineDetail, the new note and a saved note. Closed, the UVVA seal,
+/// "UVVA seal of quality" and two lines: "Among the top X% of the world's wines" when the wine is in the top 20 %, or
+/// else a title on its appellation, and under it what it rests on. Open, one section per criterion: the appellation, the
+/// legal term and the awards.
 public struct WineCertificateUIModel: Equatable {
     public struct Section: Equatable, Identifiable {
         /// "Appellation", in small capitals.
@@ -27,16 +28,15 @@ public struct WineCertificateUIModel: Equatable {
     /// "Regional, free to experiment · Lisboa · Grande Reserva".
     public var subline: String?
     public var sections: [Section]
-    /// The seal, only for an appellation at the top of its country's ladder (DOCG, Grand Cru…).
-    public var showsSeal = false
+    /// Over the headline, in small capitals, beside the seal every card shows: what the card is, UVVA's own rating.
+    public var sealTitle = String(localized: "UVVA seal of quality", bundle: .module)
     public var moreText = String(localized: "More", bundle: .module)
     public var lessText = String(localized: "Less", bundle: .module)
 
-    public init(headline: String, subline: String? = nil, sections: [Section] = [], showsSeal: Bool = false) {
+    public init(headline: String, subline: String? = nil, sections: [Section] = []) {
         self.headline = headline
         self.subline = subline
         self.sections = sections
-        self.showsSeal = showsSeal
     }
 
     /// Nil for a wine with nothing that certifies it: the card is not shown.
@@ -57,12 +57,11 @@ public struct WineCertificateUIModel: Equatable {
         self.init(certificate)
     }
 
-    /// A wine in the top 20 % shows the seal, "Among the top 2% of the world's wines" and what puts it there; open,
-    /// each reason in a line and how rare it is. Any other wine gets a title on its appellation, no seal, and open,
-    /// what its seal requires (CELLAR-R30).
+    /// A wine in the top 20 % shows "Among the top 2% of the world's wines" and what puts it there; open, each reason
+    /// in a line and how rare it is. Any other wine gets a title on its appellation and, open, what its seal requires
+    /// (CELLAR-R30). Every card shows the UVVA seal.
     init(_ certificate: WineCertificate, prevalence: QualityPrevalence? = .current) {
         let isTop = certificate.topPercent != nil
-        showsSeal = isTop || certificate.tier == .top
         let count = certificate.awards.count
         let awards = count == 0 ? nil : count == 1
             ? String(localized: "1 award", bundle: .module)

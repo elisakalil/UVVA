@@ -89,6 +89,9 @@ public struct NotePaperContent: Equatable {
     public var matchShared: String?
     /// "More oak than you usually drink." Nil without a map.
     public var matchApart: String?
+    /// The grape, the region and why it suits the map, behind the expand button by the match. Empty without the
+    /// user's history.
+    public var insights: [NoteInsightUIModel]
     public var grapes: [String]
     public var notes: [String]
     public var pairings: [String]
@@ -96,7 +99,8 @@ public struct NotePaperContent: Equatable {
     public var palate: PalateMap?
     public var findURL: URL?
 
-    public init(wine: Wine, palate: PalateMap?, resources: NotePaperResources = NotePaperResources()) {
+    public init(wine: Wine, palate: PalateMap?, history: TasteHistory? = nil,
+                resources: NotePaperResources = NotePaperResources()) {
         title = wine.name
         producer = wine.producer
         origin = wine.origin
@@ -111,6 +115,8 @@ public struct NotePaperContent: Equatable {
         match = fit?.percent
         matchShared = fit?.shared
         matchApart = fit?.apart
+        insights = history.map { NoteInsightUIModel.lines(wine: wine, palate: palate, history: $0, resources: resources) }
+            ?? []
         grapes = NewNoteChipField.grapes.values(in: wine)
         notes = NewNoteChipField.notes.values(in: wine)
         pairings = NewNoteChipField.pairings.values(in: wine)

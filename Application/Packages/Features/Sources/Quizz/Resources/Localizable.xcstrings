@@ -2,13 +2,34 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%@ taste in wine is" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O paladar de %@ para vinhos é"
+          }
+        }
+      }
     },
     "%lld" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "%lld of %lld" : {
       "localizations" : {
@@ -17,62 +38,194 @@
             "state" : "new",
             "value" : "%1$lld of %2$lld"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld de %2$lld"
+          }
         }
       }
     },
     "Answer eight questions about the food you love. We turn your answers into a taste map and use it to find wines you'll enjoy." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Responda a oito perguntas sobre os sabores que você adora. Usamos suas respostas para mapear seu paladar e encontrar vinhos de que você vai gostar."
+          }
+        }
+      }
     },
     "Answer for the food, not the bottle." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pense na comida ao responder."
+          }
+        }
+      }
     },
     "Change question" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trocar pergunta"
+          }
+        }
+      }
     },
     "Discover your taste in wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubra seu paladar para vinhos"
+          }
+        }
+      }
     },
     "Draw the map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Criar meu mapa"
+          }
+        }
+      }
     },
     "Eight readings · two minutes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oito respostas · dois minutos"
+          }
+        }
+      }
     },
     "Every time you save a note on a wine you liked, UVVA recalculates your eight readings. The map you see here is your taste today, not a verdict." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sempre que você salva uma nota sobre um vinho de que gostou, a UVVA recalcula os oito eixos. O mapa mostra seu paladar de hoje, que pode mudar com o tempo."
+          }
+        }
+      }
     },
     "Every wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada vinho"
+          }
+        }
+      }
     },
     "How your map is drawn" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seu mapa é criado"
+          }
+        }
+      }
     },
     "Keep this map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar este mapa"
+          }
+        }
+      }
     },
     "Loves" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adora"
+          }
+        }
+      }
     },
     "My taste in wine is %@. Map yours on uvva.app" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meu paladar para vinhos é %@. Mapeie o seu em uvva.app"
+          }
+        }
+      }
     },
     "Never" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca"
+          }
+        }
+      }
     },
     "Next" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avançar"
+          }
+        }
+      }
     },
     "Palate map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa do paladar"
+          }
+        }
+      }
     },
     "Position" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posição"
+          }
+        }
+      }
     },
     "Read it again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refazer o quiz"
+          }
+        }
+      }
     },
     "Read my palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapear meu paladar"
+          }
+        }
+      }
     },
     "Reading %lld of %lld" : {
       "localizations" : {
@@ -81,53 +234,164 @@
             "state" : "new",
             "value" : "Reading %1$lld of %2$lld"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergunta %1$lld de %2$lld"
+          }
         }
       }
     },
     "Share your map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhe seu mapa"
+          }
+        }
+      }
     },
     "The map could not be saved. Try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível salvar o mapa. Tente novamente."
+          }
+        }
+      }
     },
     "The match" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O match"
+          }
+        }
+      }
     },
     "This map keeps moving" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa evolui"
+          }
+        }
+      }
     },
     "We compare the two maps to find the wines closest to your taste, and the recipes that go with them." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comparamos os dois mapas para encontrar os vinhos mais próximos do seu paladar e as receitas que combinam com eles."
+          }
+        }
+      }
     },
     "We map each wine on the same eight axes, using its grape, how it was made, time in oak, residual sugar and more." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaliamos cada vinho nos mesmos oito eixos, considerando as uvas, o modo de produção, o tempo em carvalho, o açúcar residual e outros fatores."
+          }
+        }
+      }
     },
     "Welcome" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boas-vindas"
+          }
+        }
+      }
     },
     "Welcome, %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boas-vindas, %@"
+          }
+        }
+      }
     },
     "Where the map points" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que seu mapa indica"
+          }
+        }
+      }
     },
     "Your answers are the starting point: we read them in wine terms and settle them among real wines. That shape is your taste map." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suas respostas são o ponto de partida. Interpretamos o que você gosta em termos de vinho e comparamos com vinhos reais. Assim nasce o mapa do seu paladar."
+          }
+        }
+      }
     },
     "Your answers were the starting point. We read them in wine terms and settled them among real wines, so your map points to bottles that exist. What you lean toward stays: love floral, and your map leans to the more floral wines." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suas respostas foram o ponto de partida. Interpretamos suas preferências em termos de vinho e comparamos com vinhos reais para indicar garrafas que você pode encontrar. Se você adora aromas florais, por exemplo, seu mapa aponta para vinhos mais florais."
+          }
+        }
+      }
     },
     "Your palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu paladar"
+          }
+        }
+      }
     },
     "Your readings" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suas respostas"
+          }
+        }
+      }
     },
     "Your taste in wine is" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu paladar para vinhos é"
+          }
+        }
+      }
     },
     "Your taste is" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu paladar é"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

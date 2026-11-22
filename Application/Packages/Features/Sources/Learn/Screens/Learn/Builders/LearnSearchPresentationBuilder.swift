@@ -47,15 +47,17 @@ struct LearnSearchPresentationBuilder {
     }
 
     private static func fields(of course: Course) -> [String] {
-        [course.title] + course.countries + course.grapes + [course.level].compactMap(\.self)
+        let localizedCountries = course.countries.map(LearnResourcesUIModel.countryLabel)
+        let levels = [course.level, course.level.map(LearnListPresentationBuilder.levelLabel)].compactMap(\.self)
+        return [course.title] + course.countries + localizedCountries + course.grapes + levels
     }
 
     private static func result(_ course: Course) -> SearchResultUIModel {
         let detail: String = switch course.kind {
-        case .region: course.countries.first ?? ""
+        case .region: course.countries.first.map(LearnResourcesUIModel.countryLabel) ?? ""
         case .grape: ([course.color == "red" ? String(localized: "Red", bundle: .module) : String(localized: "White", bundle: .module)]
-                      + course.countries.prefix(2)).joined(separator: " · ")
-        case .path: course.level ?? ""
+                      + course.countries.prefix(2).map(LearnResourcesUIModel.countryLabel)).joined(separator: " · ")
+        case .path: course.level.map(LearnListPresentationBuilder.levelLabel) ?? ""
         }
         return SearchResultUIModel(id: course.id, title: course.title, detail: detail, target: .course(id: course.id))
     }

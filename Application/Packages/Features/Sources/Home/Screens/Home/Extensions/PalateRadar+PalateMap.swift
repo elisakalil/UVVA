@@ -1,3 +1,4 @@
+import Match
 import Core
 import DesignSystem
 
@@ -6,6 +7,6 @@ extension PalateRadar {
     init(map: PalateMap, highlight: PalateAxis? = nil) {
         self.init(values: map.chartValues,
                   highlight: highlight.flatMap { PalateAxis.allCases.firstIndex(of: $0) },
-                  highlightLabel: highlight?.label)
+                  highlightLabel: highlight?.localizedLabel)
     }
 }

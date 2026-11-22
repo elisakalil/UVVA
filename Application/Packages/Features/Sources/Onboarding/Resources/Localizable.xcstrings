@@ -2,208 +2,684 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "‹" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "‹"
+          }
+        }
+      }
     },
     "›" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "›"
+          }
+        }
+      }
     },
     "%lld of your contacts are on UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld dos seus contatos estão na UVVA"
+          }
+        }
+      }
     },
     "1 of your contacts is on UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 dos seus contatos está na UVVA"
+          }
+        }
+      }
     },
     "Add" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
+          }
+        }
+      }
     },
     "Add your closest friends to start comparing palates." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione seus amigos mais próximos para começar a comparar paladares."
+          }
+        }
+      }
     },
     "And what should we call you?" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E como podemos chamar você?"
+          }
+        }
+      }
     },
     "At least two letters" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pelo menos duas letras"
+          }
+        }
+      }
     },
     "Back" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar"
+          }
+        }
+      }
     },
     "By continuing you agree to the [Terms](uvva-legal://terms) and the [Privacy Policy](uvva-legal://privacy)." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ao continuar, você aceita os [Termos de Uso](uvva-legal://terms) e a [Política de Privacidade](uvva-legal://privacy)."
+          }
+        }
+      }
     },
     "Changes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alterações"
+          }
+        }
+      }
     },
     "Contacts" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contatos"
+          }
+        }
+      }
     },
     "Content" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conteúdo"
+          }
+        }
+      }
     },
     "Continue" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        }
+      }
     },
     "Continue with Apple" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar com a Apple"
+          }
+        }
+      }
     },
     "Continue with Google" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar com o Google"
+          }
+        }
+      }
     },
     "Could not reach Apple. Check your connection and try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível se conectar à Apple. Verifique sua conexão e tente novamente."
+          }
+        }
+      }
     },
     "Country, %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "País, %@"
+          }
+        }
+      }
     },
     "Delete" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir"
+          }
+        }
+      }
     },
     "Done" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concluir"
+          }
+        }
+      }
     },
     "Find friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encontrar amigos"
+          }
+        }
+      }
     },
     "I understand" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entendi"
+          }
+        }
+      }
     },
     "If you add your number, we publish a code made from it, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se você adicionar seu número, publicaremos um código gerado a partir dele, sem divulgar o número em si. Assim, amigos que têm você nos contatos podem encontrar você. Qualquer pessoa que saiba seu número pode verificar se ele está na UVVA."
+          }
+        }
+      }
     },
     "Invite" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convidar"
+          }
+        }
+      }
     },
     "Invite contacts who aren't on UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convide contatos que ainda não estão na UVVA"
+          }
+        }
+      }
     },
     "Invited" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convite enviado"
+          }
+        }
+      }
     },
     "Last updated 12 August 2026" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última atualização em 12 de agosto de 2026"
+          }
+        }
+      }
     },
     "Legal" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informações legais"
+          }
+        }
+      }
     },
     "Lessons, illustrations and texts belong to UVVA. Your tasting notes belong to you. Do not redistribute the lessons." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As lições, ilustrações e textos pertencem à UVVA. Suas notas de degustação pertencem a você. Não redistribua as lições."
+          }
+        }
+      }
     },
     "Map your taste in wine with me" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubra seu paladar para vinhos comigo"
+          }
+        }
+      }
     },
     "Map your taste in wine with me on UVVA." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubra seu paladar para vinhos comigo na UVVA."
+          }
+        }
+      }
     },
     "Next" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avançar"
+          }
+        }
+      }
     },
     "Nice to meet you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prazer em conhecer você"
+          }
+        }
+      }
     },
     "No contacts match “%@”" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum contato corresponde a “%@”"
+          }
+        }
+      }
     },
     "One account per person, signed in with Apple or Google. Anything done from your account is your responsibility." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cada pessoa pode ter uma conta, com login pela Apple ou pelo Google. Você é responsável por tudo o que for feito na sua conta."
+          }
+        }
+      }
     },
     "Optional. You can still add friends with your invite link." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opcional. Você também pode adicionar amigos pelo seu link de convite."
+          }
+        }
+      }
     },
     "Privacy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacidade"
+          }
+        }
+      }
     },
     "Privacy Policy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de Privacidade"
+          }
+        }
+      }
     },
     "Requested" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solicitação enviada"
+          }
+        }
+      }
     },
     "Search contacts" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar contatos"
+          }
+        }
+      }
     },
     "Sharing" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhamento"
+          }
+        }
+      }
     },
     "Skip for now" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pular por enquanto"
+          }
+        }
+      }
     },
     "So friends who have you in their contacts can find you here. We never send you a code or a message." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assim, amigos que têm você nos contatos podem encontrar você aqui. Nunca enviamos códigos nem mensagens para você."
+          }
+        }
+      }
     },
     "Stored with your account. Your name and, if you choose, your map are public to the people you add as friends." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esses dados ficam salvos na sua conta. Seu nome e, se você quiser, seu mapa ficam visíveis para as pessoas que você adiciona como amigas."
+          }
+        }
+      }
     },
     "Terms" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termos"
+          }
+        }
+      }
     },
     "Terms of Use" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termos de Uso"
+          }
+        }
+      }
     },
     "The service" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O serviço"
+          }
+        }
+      }
     },
     "This is my wine palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos"
+          }
+        }
+      }
     },
     "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos. Mapeie o seu na UVVA e vamos encontrar o vinho perfeito para beber juntos."
+          }
+        }
+      }
     },
     "To continue with Apple, sign in to iCloud in Settings, then come back." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para continuar com a Apple, entre no iCloud nos Ajustes e volte para cá."
+          }
+        }
+      }
     },
     "UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UVVA"
+          }
+        }
+      }
     },
     "UVVA gives you wine lessons, a map of your palate and a place to keep tasting notes." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A UVVA oferece lições sobre vinho, um mapa do seu paladar e um espaço para guardar suas notas de degustação."
+          }
+        }
+      }
     },
     "UVVA is better with friends. Add them now and, once they accept, you will see where your palates meet and what to open together." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A UVVA fica melhor com amigos. Adicione seus amigos agora. Quando aceitarem, vocês vão descobrir o que têm em comum e qual vinho abrir juntos."
+          }
+        }
+      }
     },
     "We do not sell your data and we have no servers of our own." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não vendemos seus dados e não temos servidores próprios."
+          }
+        }
+      }
     },
     "We may update these terms. If a change is material, we tell you in the app before it takes effect." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podemos atualizar estes termos. Se houver uma mudança significativa, avisaremos no app antes que ela entre em vigor."
+          }
+        }
+      }
     },
     "We will never do anything creepy like spam or auto-add your friends." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca vamos enviar spam nem adicionar seus amigos automaticamente."
+          }
+        }
+      }
     },
     "Welcome. Let's find the wines you'll love." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boas-vindas! Vamos descobrir quais vinhos você vai adorar."
+          }
+        }
+      }
     },
     "What is your phone number?" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual é seu número de telefone?"
+          }
+        }
+      }
     },
     "What we collect" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que coletamos"
+          }
+        }
+      }
     },
     "When you read a label, the wine's facts (its name, producer, vintage, grapes and what the label says) go to UVVA's public wine catalog, never your photos, notes or ratings. Once two people have read the same wine, everyone can find it. Deleting your account deletes what you sent; the wines already in the catalog stay." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ao ler um rótulo, os dados do vinho (nome, produtor, safra, uvas e o que está escrito no rótulo) vão para o catálogo público da UVVA. Suas fotos, notas e avaliações ficam de fora. Depois que duas pessoas leem o mesmo vinho, qualquer pessoa pode encontrá-lo. Ao excluir sua conta, você exclui o que enviou. Os vinhos que já estão no catálogo permanecem lá."
+          }
+        }
+      }
     },
     "Where it lives" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onde os dados ficam"
+          }
+        }
+      }
     },
     "Wine labels" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rótulos de vinho"
+          }
+        }
+      }
     },
     "Your account" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua conta"
+          }
+        }
+      }
     },
     "Your account could not be saved. Try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível salvar sua conta. Tente novamente."
+          }
+        }
+      }
     },
     "Your first name is enough." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Só precisamos do seu primeiro nome."
+          }
+        }
+      }
     },
     "Your first name, your phone number if you add it, your palate map, the lessons you open and the tasting notes you write. Nothing else." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu primeiro nome, seu número de telefone se você o adicionar, seu mapa do paladar, as lições que você abre e as notas de degustação que escreve. Nada além disso."
+          }
+        }
+      }
     },
     "Your phone" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu telefone"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

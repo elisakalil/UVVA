@@ -32,15 +32,24 @@ struct QuizPresentationBuilder {
 
     func readingModel(_ index: Int, bank: QuizQuestionBank) -> QuizReadingUIModel {
         let axis = QuizFlow.order[index]
-        let question = bank.question(axis, version: flow.version(of: axis))
+        let version = flow.version(of: axis)
+        let question = bank.question(axis, version: version)
+        let questionKey = "\(axis.rawValue).v\(version)"
         let selection = flow.selection
         return QuizReadingUIModel(
             index: index,
             count: QuizFlow.order.count,
             counter: String(localized: "\(index + 1) of \(QuizFlow.order.count)", bundle: .module),
-            prompt: question?.prompt ?? "",
-            answer: selection.flatMap { question?.answers[$0] },
-            axisName: axis.label,
+            prompt: question.map {
+                Bundle.module.localizedString(forKey: "\(questionKey).prompt", value: $0.prompt, table: "QuizQuestions")
+            } ?? "",
+            answer: selection.flatMap { index in
+                question.map {
+                    Bundle.module.localizedString(forKey: "\(questionKey).answer.\(index)",
+                                                  value: $0.answers[index], table: "QuizQuestions")
+                }
+            },
+            axisName: axis.localizedLabel,
             selection: selection,
             button: flow.isLastReading ? String(localized: "Draw the map", bundle: .module)
                                        : String(localized: "Next", bundle: .module),
@@ -58,7 +67,7 @@ struct QuizPresentationBuilder {
             caption: reading.caption,
             readings: PalateAxis.allCases.map { axis in
                 let level = MapReading.level(map, axis)
-                return QuizReadingRowUIModel(name: axis.label, level: level, word: MapReading.levelWord(level, on: axis),
+                return QuizReadingRowUIModel(name: axis.localizedLabel, level: level, word: MapReading.levelWord(level, on: axis),
                                              isStrong: reading.leaders(3).contains(axis))
             },
             narrative: reading.narrative,

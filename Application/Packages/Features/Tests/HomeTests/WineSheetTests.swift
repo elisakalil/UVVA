@@ -1,4 +1,5 @@
 import Core
+import CoreUI
 import Foundation
 import Match
 import Testing
@@ -134,5 +135,20 @@ struct WineDetailUIModelTests {
         #expect(model(bare, .discovery(.familiar, index: 0, count: 1)).showsServing)
         bare.serving = nil
         #expect(!model(bare, .discovery(.familiar, index: 0, count: 1)).showsServing)
+    }
+
+    @Test func theSheet_tellsTheGrapeAndTheRegion_onceTheCellarIsRead() {
+        let suggestion = PalateWineSuggestion(wine: wine(), axis: .acidity, level: .high)
+        var detail = model(suggestion.wine, .palate(suggestion))
+        #expect(detail.insights.isEmpty)
+        let rated = (0..<3).map { index in
+            CellarEntry(id: "a\(index)", name: "A", region: "Douro", grapes: ["Alvarinho"], status: .tasted,
+                        verdict: .yes, createdAt: now)
+        }
+        detail.history = TasteHistory(entries: rated)
+        #expect(detail.insights.map(\.icon) == [.grape, .region, .palate])
+        #expect(detail.insights[0].text == "You like **Alvarinho**")
+        #expect(detail.insights[1].text == "**Monção e Melgaço** is new to you, worth exploring")
+        #expect(detail.matchPercent == Similarity.percent(suggestion.wine.profile, flat(5)))
     }
 }

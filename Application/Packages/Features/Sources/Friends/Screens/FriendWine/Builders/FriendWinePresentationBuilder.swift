@@ -178,7 +178,7 @@ struct FriendWinePresentationBuilder {
             .init(label: paper.styleText, value: paper.type(wine.type)),
             .init(label: paper.vintageText, value: paper.vintageLine(wine.vintage, now: now)),
             .init(label: paper.grapesText, value: wine.grapes.joined(separator: ", ")),
-            .init(label: paper.notesText, value: wine.note ?? "")
+            .init(label: paper.notesText, value: WineCatalogText.notes(wine.note))
         ]
     }
 }

@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%@  +%@" : {
       "localizations" : {
@@ -11,11 +18,24 @@
             "state" : "new",
             "value" : "%1$@  +%2$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@  +%2$@"
+          }
         }
       }
     },
     "%@ now knows" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ agora sabe"
+          }
+        }
+      }
     },
     "%@, %@" : {
       "localizations" : {
@@ -24,11 +44,24 @@
             "state" : "new",
             "value" : "%1$@, %2$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, %2$@"
+          }
         }
       }
     },
     "%lld bottles" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld garrafas"
+          }
+        }
+      }
     },
     "%lld lessons · %lld min" : {
       "localizations" : {
@@ -37,26 +70,74 @@
             "state" : "new",
             "value" : "%1$lld lessons · %2$lld min"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld lições · %2$lld min"
+          }
         }
       }
     },
     "1 bottle" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 garrafa"
+          }
+        }
+      }
     },
     "A course for you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um curso para você"
+          }
+        }
+      }
     },
     "Add" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
+          }
+        }
+      }
     },
     "Another time" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outro horário"
+          }
+        }
+      }
     },
     "Anyone with your link can see your palate map." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qualquer pessoa com seu link pode ver seu mapa do paladar."
+          }
+        }
+      }
     },
     "Around lunch" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na hora do almoço"
+          }
+        }
+      }
     },
     "At %@ on %@." : {
       "localizations" : {
@@ -65,242 +146,794 @@
             "state" : "new",
             "value" : "At %1$@ on %2$@."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Às %1$@ em %2$@."
+          }
         }
       }
     },
     "At least two letters" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pelo menos duas letras"
+          }
+        }
+      }
     },
     "At the advanced stage of The Path, connections like these are becoming part of how you read a wine." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No nível avançado da Trilha, essas relações começam a fazer parte da maneira como você interpreta um vinho."
+          }
+        }
+      }
     },
     "At the expert stage of The Path, the details of place and grape are becoming part of your own reading of wine." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No nível especialista da Trilha, as particularidades da origem e da casta passam a fazer parte da sua leitura do vinho."
+          }
+        }
+      }
     },
     "At the intermediate stage of The Path, these studies are giving you more ways to connect what you learn to what’s in the glass." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No nível intermediário da Trilha, você começa a conectar melhor seus estudos ao que encontra na taça."
+          }
+        }
+      }
     },
     "Back" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar"
+          }
+        }
+      }
     },
     "Before dinner" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antes do jantar"
+          }
+        }
+      }
     },
     "Bottles" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Garrafas"
+          }
+        }
+      }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
     },
     "Certificates" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Certificados"
+          }
+        }
+      }
     },
     "Change photo" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trocar foto"
+          }
+        }
+      }
     },
     "Choose a photo" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolher uma foto"
+          }
+        }
+      }
     },
     "Close" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
+          }
+        }
+      }
     },
     "Daily reminder" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembrete diário"
+          }
+        }
+      }
     },
     "Days" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dias"
+          }
+        }
+      }
     },
     "Delete account" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir conta"
+          }
+        }
+      }
     },
     "Delete my account" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir minha conta"
+          }
+        }
+      }
     },
     "Delete your account?" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excluir sua conta?"
+          }
+        }
+      }
     },
     "Every wine story begins somewhere. Finish your first course and see where yours takes you." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toda história com o vinho tem um começo. Conclua seu primeiro curso e veja aonde ele leva."
+          }
+        }
+      }
     },
     "Explore Learn" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explorar Aprender"
+          }
+        }
+      }
     },
     "Friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amigos"
+          }
+        }
+      }
     },
     "From %@, you’re getting to know wine through the places that make it. Your map already crosses borders." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A partir de %@, você está conhecendo o vinho pelos lugares onde ele é feito. Seu mapa já atravessa fronteiras."
+          }
+        }
+      }
     },
     "From %@, you’re learning to hear the different voices a grape can bring to wine. Variety is the thread running through your studies." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A partir de %@, você está descobrindo as diferentes expressões que uma casta pode ter no vinho. A variedade conecta seus estudos."
+          }
+        }
+      }
     },
     "Grape" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Casta"
+          }
+        }
+      }
     },
     "Grapes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Castas"
+          }
+        }
+      }
     },
     "How your map is drawn" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como seu mapa é criado"
+          }
+        }
+      }
     },
     "I just finished %@ on UVVA." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acabei de concluir %@ na UVVA."
+          }
+        }
+      }
     },
     "Keep my account" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manter minha conta"
+          }
+        }
+      }
     },
     "Late, with a glass" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais tarde, com uma taça"
+          }
+        }
+      }
     },
     "Make chart public" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tornar o mapa público"
+          }
+        }
+      }
     },
     "Map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa"
+          }
+        }
+      }
     },
     "Maybe again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talvez beberia de novo"
+          }
+        }
+      }
     },
     "Module" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Módulo"
+          }
+        }
+      }
     },
     "Modules" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Módulos"
+          }
+        }
+      }
     },
     "My Map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meu mapa"
+          }
+        }
+      }
     },
     "Name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome"
+          }
+        }
+      }
     },
     "Nice to meet you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prazer em conhecer você"
+          }
+        }
+      }
     },
     "No reminders. You open the app whenever you feel like it." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lembretes desativados. Abra a app quando quiser."
+          }
+        }
+      }
     },
     "Not again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não beberia de novo"
+          }
+        }
+      }
     },
     "Nothing was removed. Check your connection and try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus dados continuam salvos. Verifique sua conexão e tente novamente."
+          }
+        }
+      }
     },
     "Notifications" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificações"
+          }
+        }
+      }
     },
     "Notifications, unread" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notificações não lidas"
+          }
+        }
+      }
     },
     "Now I know" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agora eu sei"
+          }
+        }
+      }
     },
     "On the beginner stretch of The Path, these discoveries are giving the basics a place to take root." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nos primeiros passos da Trilha, essas descobertas ajudam a consolidar os fundamentos."
+          }
+        }
+      }
     },
     "Only friends you share a table with can see your map." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apenas amigos com quem você compartilha uma mesa podem ver seu mapa."
+          }
+        }
+      }
     },
     "Open" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir"
+          }
+        }
+      }
     },
     "Opens the map full screen" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre o mapa em tela cheia"
+          }
+        }
+      }
     },
     "Other modules" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outros módulos"
+          }
+        }
+      }
     },
     "Other wines" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outros vinhos"
+          }
+        }
+      }
     },
     "Over time" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ao longo do tempo"
+          }
+        }
+      }
     },
     "Palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paladar"
+          }
+        }
+      }
     },
     "Phone number" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de telefone"
+          }
+        }
+      }
     },
     "Pick a moment and at least one day." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha um horário e pelo menos um dia."
+          }
+        }
+      }
     },
     "Pick the moment of the day and the days of the week. Change it whenever you like." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha um horário e os dias da semana. Você pode mudar quando quiser."
+          }
+        }
+      }
     },
     "Pinch · tap" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoom · toque"
+          }
+        }
+      }
     },
     "Pinch to zoom, tap a place to see its wines" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faça o gesto de pinça para ampliar e toque em um lugar para ver seus vinhos"
+          }
+        }
+      }
     },
     "Profile photo" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto de perfil"
+          }
+        }
+      }
     },
     "Progress" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progresso"
+          }
+        }
+      }
     },
     "Public" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Público"
+          }
+        }
+      }
     },
     "Red grapes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Castas tintas"
+          }
+        }
+      }
     },
     "Redo the map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refazer o mapa"
+          }
+        }
+      }
     },
     "Region" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Região"
+          }
+        }
+      }
     },
     "Regions" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Regiões"
+          }
+        }
+      }
     },
     "Remove photo" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover foto"
+          }
+        }
+      }
     },
     "Reset" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redefinir"
+          }
+        }
+      }
     },
     "Reset the map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redefinir o mapa"
+          }
+        }
+      }
     },
     "Save" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar"
+          }
+        }
+      }
     },
     "Set a time" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Definir um horário"
+          }
+        }
+      }
     },
     "Settings" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurações"
+          }
+        }
+      }
     },
     "Share my map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhar meu mapa"
+          }
+        }
+      }
     },
     "Shared with friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhado com amigos"
+          }
+        }
+      }
     },
     "Sign out" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sair"
+          }
+        }
+      }
     },
     "Sign out of UVVA?" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sair da UVVA?"
+          }
+        }
+      }
     },
     "Signed in with" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sessão iniciada com"
+          }
+        }
+      }
     },
     "So friends who have you in their contacts can find you here. Leave it empty to remove it." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assim, amigos que têm você nos contatos podem encontrar você aqui. Deixe em branco para remover."
+          }
+        }
+      }
     },
     "Specialist in" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Especialista em"
+          }
+        }
+      }
     },
     "Start the course" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Começar o curso"
+          }
+        }
+      }
     },
     "Tables" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesas"
+          }
+        }
+      }
     },
     "That photo could not be opened. Try another one." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível abrir essa foto. Tente outra."
+          }
+        }
+      }
     },
     "The grapes you’ve studied lead to %@. With %@ as your guide, that corner of the wine map is coming into focus." : {
       "localizations" : {
@@ -309,50 +942,154 @@
             "state" : "new",
             "value" : "The grapes you’ve studied lead to %1$@. With %2$@ as your guide, that corner of the wine map is coming into focus."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As castas que você estudou levam a %1$@. Com %2$@ como guia, você começa a conhecer melhor esse canto do mundo do vinho."
+          }
         }
       }
     },
     "The Path" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A trilha"
+          }
+        }
+      }
     },
     "The photo next to your name. Change it whenever you like." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "É a foto que aparece ao lado do seu nome. Troque quando quiser."
+          }
+        }
+      }
     },
     "The reminder could not be saved. Try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível salvar o lembrete. Tente novamente."
+          }
+        }
+      }
     },
     "There are no new course suggestions right now." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No momento, você não tem novas sugestões de cursos."
+          }
+        }
+      }
     },
     "This is my wine palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos"
+          }
+        }
+      }
     },
     "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together. %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos. Mapeie o seu na UVVA e vamos encontrar o vinho perfeito para beber juntos. %@"
+          }
+        }
+      }
     },
     "This permanently removes your palate map, cellar, tables and certificates. It cannot be undone." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isso exclui permanentemente seu mapa do paladar, sua adega, suas mesas e seus certificados. A ação é irreversível."
+          }
+        }
+      }
     },
     "Turn reminders off" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desativar lembretes"
+          }
+        }
+      }
     },
     "What you have built in UVVA, ready to share." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que você construiu na UVVA, pronto para compartilhar."
+          }
+        }
+      }
     },
     "Where the map points" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que seu mapa indica"
+          }
+        }
+      }
     },
     "Where your glass has been" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por onde sua taça passou"
+          }
+        }
+      }
     },
     "White grapes" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Castas brancas"
+          }
+        }
+      }
     },
     "With my coffee" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com meu café"
+          }
+        }
+      }
     },
     "World map: %lld regions" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa mundial: %lld regiões"
+          }
+        }
+      }
     },
     "World map: %lld regions and %lld tasted wines" : {
       "localizations" : {
@@ -361,17 +1098,44 @@
             "state" : "new",
             "value" : "World map: %1$lld regions and %2$lld tasted wines"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa mundial: %1$lld regiões e %2$lld vinhos degustados"
+          }
         }
       }
     },
     "World map: %lld tasted wines" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa mundial: %lld vinhos degustados"
+          }
+        }
+      }
     },
     "Would drink again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beberia de novo"
+          }
+        }
+      }
     },
     "XP" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XP"
+          }
+        }
+      }
     },
     "You know %@ from its vineyards down to the grape. With %@ as your guide, you can follow a thread from the landscape into the glass." : {
       "localizations" : {
@@ -379,6 +1143,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "You know %1$@ from its vineyards down to the grape. With %2$@ as your guide, you can follow a thread from the landscape into the glass."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você conhece %1$@ dos vinhedos às castas. Com %2$@ como guia, pode ligar o que vê na paisagem ao que sente na taça."
           }
         }
       }
@@ -390,6 +1160,12 @@
             "state" : "new",
             "value" : "You know %1$@ from the ground up. Follow %2$@ and the landscape begins to make sense in the glass."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você conhece %1$@ desde o solo. Ao acompanhar %2$@ pela região, fica mais fácil reconhecer a paisagem na taça."
+          }
         }
       }
     },
@@ -400,23 +1176,64 @@
             "state" : "new",
             "value" : "You know %1$@ well enough to follow %2$@ across borders. The same grape gives you a way to read each place."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você conhece %1$@ bem o suficiente para seguir %2$@ além das fronteiras. A mesma casta ajuda a entender cada lugar."
+          }
         }
       }
     },
     "You know %@, different corners of the same wine country. Your studies give you a way to read the differences from one vineyard to the next." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você conhece %@, diferentes cantos do mesmo país vinícola. Seus estudos ajudam a perceber as diferenças de um vinhedo para outro."
+          }
+        }
+      }
     },
     "You open the app whenever you feel like it." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abra a app quando quiser."
+          }
+        }
+      }
     },
     "You’re at the advanced stage of The Path. A glass is becoming a set of clues you can trace back through the cellar and the vineyard." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está no nível avançado da Trilha. O que aparece na taça começa a dar pistas sobre a vinícola e o vinhedo."
+          }
+        }
+      }
     },
     "You’re at the expert stage of The Path. The smallest details in the glass can open up the longest stories." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está no nível especialista da Trilha. Os menores detalhes na taça podem revelar histórias que vêm de longe."
+          }
+        }
+      }
     },
     "You’re at the intermediate stage of The Path. The pieces are starting to fit together, from what happens in the vineyard to what finally shows up in the glass." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está no nível intermediário da Trilha. As peças começam a se encaixar, do que acontece no vinhedo ao que chega à taça."
+          }
+        }
+      }
     },
     "You’re getting to know %@ by following its grapes. %@ give you different ways into the same wine country." : {
       "localizations" : {
@@ -424,6 +1241,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "You’re getting to know %1$@ by following its grapes. %2$@ give you different ways into the same wine country."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está conhecendo %1$@ por suas castas. %2$@ ajudam a entender o mesmo país vinícola por perspectivas diferentes."
           }
         }
       }
@@ -435,6 +1258,12 @@
             "state" : "new",
             "value" : "You’re getting to know %1$@ through its grapes. %2$@ are voices in a blend you’re learning to hear."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está conhecendo %1$@ por suas castas. Com %2$@, começa a reconhecer as diferentes contribuições de cada uva num corte."
+          }
         }
       }
     },
@@ -445,53 +1274,164 @@
             "state" : "new",
             "value" : "You’re getting to know %1$@ through its vineyards. Your studies also follow %2$@, another thread to pull as your map grows."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está conhecendo %1$@ por seus vinhedos. Seus estudos também passam por %2$@ e ampliam seu mapa."
+          }
         }
       }
     },
     "You’re getting to know %@, where the story in the glass begins in the vineyard." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está conhecendo %@, onde a história do que chega à taça começa no vinhedo."
+          }
+        }
+      }
     },
     "You’re on the beginner stretch of The Path. The next glass already has a little more to tell you." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está nos primeiros passos da Trilha. A próxima taça já vai ter algo a mais para contar."
+          }
+        }
+      }
     },
     "You’ve found a first thread in %@. Follow it and a whole corner of the wine world begins to open up." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você encontrou um ponto de partida em %@. A partir daí, pode explorar todo um canto do mundo do vinho."
+          }
+        }
+      }
     },
     "Your account could not be deleted" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível excluir sua conta"
+          }
+        }
+      }
     },
     "Your answers to the Quiz were the starting point. We read them in wine terms and settled them among real wines, so your map points to bottles that exist. What you lean toward stays: love floral, and your map leans to the more floral wines. Every wine you rate moves it from there." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suas respostas ao quiz foram o ponto de partida. Interpretamos seus gostos em termos de vinho e os comparamos com vinhos reais. Assim, seu mapa aponta para garrafas que você pode encontrar. Suas preferências dão a direção. Se você gosta de aromas florais, o mapa aponta para vinhos mais florais. Cada vinho que você avalia ajusta o mapa a partir daí."
+          }
+        }
+      }
     },
     "Your changes could not be saved. Try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível salvar suas alterações. Tente novamente."
+          }
+        }
+      }
     },
     "Your course suggestion is temporarily unavailable." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua sugestão de curso está temporariamente indisponível."
+          }
+        }
+      }
     },
     "Your first name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu primeiro nome"
+          }
+        }
+      }
     },
     "Your journey through wine has a first landmark in %@." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua jornada pelo mundo do vinho tem um primeiro marco em %@."
+          }
+        }
+      }
     },
     "Your last wine lowered your %@." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu último vinho reduziu a intensidade de %@ no seu mapa."
+          }
+        }
+      }
     },
     "Your last wine raised your %@." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu último vinho aumentou a intensidade de %@ no seu mapa."
+          }
+        }
+      }
     },
     "Your palate map, cellar and certificates stay saved to your account." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa do paladar, sua adega e seus certificados continuam salvos na sua conta."
+          }
+        }
+      }
     },
     "Your phone number" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu número de telefone"
+          }
+        }
+      }
     },
     "Your readings" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suas leituras"
+          }
+        }
+      }
     },
     "Your studies follow %@ through the wine world. Each grape gives you a different way to read the glass." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus estudos acompanham %@ pelo mundo do vinho. Cada casta oferece uma maneira diferente de interpretar o que está na taça."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

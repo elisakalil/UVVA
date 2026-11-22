@@ -6,6 +6,8 @@ import Match
 struct NewNotePresentationBuilder {
     var flow: NewNoteFlow
     var palate: PalateMap?
+    /// The wines the user rated, for what they know of the grape and the region. Nil until it loads.
+    var history: TasteHistory?
     var resources = NewNoteResourcesUIModel()
 
     func build(into model: inout NewNoteUIModel) {
@@ -68,7 +70,7 @@ struct NewNotePresentationBuilder {
         model.photoFront = flow.photoFront
         model.photoBack = flow.photoBack
         guard let wine = flow.wine else { return }
-        let content = NotePaperContent(wine: wine, palate: palate, resources: resources.paper)
+        let content = NotePaperContent(wine: wine, palate: palate, history: history, resources: resources.paper)
         model.content = content
         model.title = content.title
         model.facts = content.facts

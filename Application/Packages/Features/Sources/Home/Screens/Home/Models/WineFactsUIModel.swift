@@ -1,4 +1,5 @@
 import Core
+import CoreUI
 import Foundation
 
 struct WineFactsUIModel {
@@ -26,14 +27,14 @@ struct WineFactsUIModel {
         // A wine known only by its country shows the country alone: a line on a whole country says little.
         let hasRegion = !(wine.region ?? "").isEmpty
         return Fact(label: resources.wineFactsOriginTitle, value: wine.originLine,
-                    insight: hasRegion ? wine.originInsight : nil)
+                    insight: hasRegion ? wine.originInsight.map(WineCatalogText.editorial) : nil)
     }
 
     /// A plain origin label (a regional DOC, an IGT) says nothing the origin does not; only a notable one shows.
     var appellation: Fact? {
         guard wine.hasNotableAppellation, !wine.classification.isEmpty else { return nil }
         return Fact(label: resources.wineFactsAppellationTitle, value: wine.classification,
-                    insight: wine.appellationInsight)
+                    insight: wine.appellationInsight.map(WineCatalogText.editorial))
     }
 
     var grapes: Fact? {
@@ -43,7 +44,7 @@ struct WineFactsUIModel {
 
     var notes: Fact? {
         guard let note = wine.note, !note.isEmpty else { return nil }
-        return Fact(label: resources.wineFactsNotesTitle, value: note)
+        return Fact(label: resources.wineFactsNotesTitle, value: WineCatalogText.notes(note))
     }
 
     var serving: Fact? {

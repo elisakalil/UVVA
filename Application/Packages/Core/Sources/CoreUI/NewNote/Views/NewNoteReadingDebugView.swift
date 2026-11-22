@@ -17,7 +17,7 @@ struct NewNoteReadingDebugView: View {
                 withAnimation(.smooth(duration: 0.25)) { isOpen.toggle() }
             } label: {
                 HStack(spacing: 8) {
-                    NoteEyebrow(text: "Label reading · debug")
+                    NoteEyebrow(text: String(localized: "Label reading · debug", bundle: .module))
                     Image(systemName: isOpen ? "chevron.up" : "chevron.down")
                         .font(.system(size: 9))
                         .opacity(0.55)
@@ -28,8 +28,8 @@ struct NewNoteReadingDebugView: View {
             .buttonStyle(.plain)
             if isOpen {
                 if let export {
-                    ShareLink(item: export, preview: SharePreview("Label scan")) {
-                        Label("Export scan", systemImage: "square.and.arrow.up")
+                    ShareLink(item: export, preview: SharePreview(String(localized: "Label scan", bundle: .module))) {
+                        Label(String(localized: "Export scan", bundle: .module), systemImage: "square.and.arrow.up")
                             .font(.system(size: 12))
                             .frame(minHeight: 44)
                     }

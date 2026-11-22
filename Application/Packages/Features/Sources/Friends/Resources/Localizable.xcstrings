@@ -8,26 +8,74 @@
             "state" : "new",
             "value" : "%1$@ and %2$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ e %2$@"
+          }
         }
       }
     },
     "%@ is now your friend." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ agora faz parte da sua lista de amigos."
+          }
+        }
+      }
     },
     "%@ Map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa de %@"
+          }
+        }
+      }
     },
     "%@ sent you a wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ enviou um vinho para você"
+          }
+        }
+      }
     },
     "%@ sent you this wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ enviou este vinho para você"
+          }
+        }
+      }
     },
     "%@ usually drinks" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ costuma beber"
+          }
+        }
+      }
     },
     "%@ won't be told. You can add each other again later." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ não receberá um aviso. Vocês podem se adicionar novamente mais tarde."
+          }
+        }
+      }
     },
     "%@. %@ %lld of 10, %@ %lld of 10" : {
       "localizations" : {
@@ -35,6 +83,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@. %2$@ %3$lld of 10, %4$@ %5$lld of 10"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@. %2$@ %3$lld de 10, %4$@ %5$lld de 10"
           }
         }
       }
@@ -46,17 +100,44 @@
             "state" : "new",
             "value" : "%1$@. %2$@. %3$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@. %2$@. %3$@"
+          }
         }
       }
     },
     "%@'s map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa de %@"
+          }
+        }
+      }
     },
     "%lld friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld amigos"
+          }
+        }
+      }
     },
     "%lld maps · one bottle" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld mapas · uma garrafa"
+          }
+        }
+      }
     },
     "%lld%% match across all %lld palate maps at the table" : {
       "localizations" : {
@@ -64,6 +145,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$lld%% match across all %2$lld palate maps at the table"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld%% de match entre os %2$lld mapas do paladar à mesa"
           }
         }
       }
@@ -75,131 +162,424 @@
             "state" : "new",
             "value" : "%1$lld%% of your palate map matches %2$@"
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld%% de match entre seu mapa e o de %2$@"
+          }
         }
       }
     },
     "1 friend" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 amigo"
+          }
+        }
+      }
     },
     "A table seats you and %lld friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma mesa para você e %lld amigos"
+          }
+        }
+      }
     },
     "Accept" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceitar"
+          }
+        }
+      }
     },
     "Add" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar"
+          }
+        }
+      }
     },
     "Add at least two friends to set a table." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione pelo menos dois amigos para montar uma mesa."
+          }
+        }
+      }
     },
     "Add the people you drink with. Once they accept, you will see where your palates meet and what to open together." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione as pessoas com quem você costuma beber. Quando aceitarem, vocês vão descobrir o que têm em comum e qual vinho abrir juntos."
+          }
+        }
+      }
     },
     "Add to cellar" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar à adega"
+          }
+        }
+      }
     },
     "Added" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionado"
+          }
+        }
+      }
     },
     "Allow contacts" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permitir acesso aos contatos"
+          }
+        }
+      }
     },
     "Anything" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qualquer opção"
+          }
+        }
+      }
     },
     "Apart" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diferenças"
+          }
+        }
+      }
     },
     "Ask for: %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peça por: %@"
+          }
+        }
+      }
     },
     "Autumn" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outono"
+          }
+        }
+      }
     },
     "Back" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar"
+          }
+        }
+      }
     },
     "Bolder than %@, which has no high axis." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais intenso que %@, onde nenhum eixo tem intensidade alta."
+          }
+        }
+      }
     },
     "Build a table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montar uma mesa"
+          }
+        }
+      }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        }
+      }
     },
     "Cheese" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo"
+          }
+        }
+      }
     },
     "Choose how the evening goes and we set the table: a dish for every course, and a bottle for every dish." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha como quer o jantar e a UVVA monta a mesa, com um prato para cada etapa e uma garrafa para cada prato."
+          }
+        }
+      }
     },
     "Close" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
+          }
+        }
+      }
     },
     "Close enough to share a bottle." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paladares próximos o suficiente para dividir uma garrafa."
+          }
+        }
+      }
     },
     "Close to %@ on every axis." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo de %@ em todos os eixos."
+          }
+        }
+      }
     },
     "Closest" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais próximo"
+          }
+        }
+      }
     },
     "Collapse" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recolher"
+          }
+        }
+      }
     },
     "Compatibility" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compatibilidade"
+          }
+        }
+      }
     },
     "Courses" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etapas do jantar"
+          }
+        }
+      }
     },
     "Decline" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recusar"
+          }
+        }
+      }
     },
     "Dessert" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobremesa"
+          }
+        }
+      }
     },
     "Different from the strongest axes on %@." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diferente dos eixos mais fortes de %@."
+          }
+        }
+      }
     },
     "Dinner at mine? I built the menu from all our palate maps. Three courses, three bottles." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jantar na minha casa? Montei um cardápio a partir dos nossos mapas do paladar. Três pratos, três garrafas."
+          }
+        }
+      }
     },
     "Dinner at mine? I built the menu from both our palate maps. Three courses, three bottles." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jantar na minha casa? Montei o cardápio a partir dos nossos dois mapas do paladar. Três pratos, três garrafas."
+          }
+        }
+      }
     },
     "Dinner, read from your maps." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um jantar inspirado nos seus mapas."
+          }
+        }
+      }
     },
     "Everyone reads it the same way." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todo mundo percebe esse eixo de forma parecida."
+          }
+        }
+      }
     },
     "Expand" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expandir"
+          }
+        }
+      }
     },
     "Find a bottle for these %lld" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encontrar uma garrafa para essas %lld pessoas"
+          }
+        }
+      }
     },
     "Find out what your friends like to drink" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descubra o que seus amigos gostam de beber"
+          }
+        }
+      }
     },
     "Find the wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encontrar o vinho"
+          }
+        }
+      }
     },
     "Fish" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peixe"
+          }
+        }
+      }
     },
     "Full body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encorpado"
+          }
+        }
+      }
     },
     "Got it" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entendi"
+          }
+        }
+      }
     },
     "High %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ em alta intensidade"
+          }
+        }
+      }
     },
     "High in %@ and %@, like %@." : {
       "localizations" : {
@@ -207,6 +587,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "High in %1$@ and %2$@, like %3$@."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alta intensidade em %1$@ e %2$@, como em %3$@."
           }
         }
       }
@@ -218,47 +604,144 @@
             "state" : "new",
             "value" : "High in %1$@, like %2$@."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alta intensidade em %1$@, como em %2$@."
+          }
         }
       }
     },
     "How the perfect dinner works" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como funciona o jantar perfeito"
+          }
+        }
+      }
     },
     "How to make it" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de preparo"
+          }
+        }
+      }
     },
     "How to serve" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como servir"
+          }
+        }
+      }
     },
     "In common" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em comum"
+          }
+        }
+      }
     },
     "In season · %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Da estação · %@"
+          }
+        }
+      }
     },
     "In season brings recipes of this time of year; Under 45 min keeps every dish quick. If nothing fits, a dish lets go of the season first, then the time." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A opção Da estação prioriza receitas da época. A opção Em até 45 min limita o tempo de cada prato. Se nada encaixar, a UVVA flexibiliza primeiro a estação e depois o tempo."
+          }
+        }
+      }
     },
     "In your cellar" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na sua adega"
+          }
+        }
+      }
     },
     "Instagram" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instagram"
+          }
+        }
+      }
     },
     "Invite friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convidar amigos"
+          }
+        }
+      }
     },
     "Invite your friends and find out what they like to drink." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convide seus amigos e descubra o que eles gostam de beber."
+          }
+        }
+      }
     },
     "Invited" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convidado"
+          }
+        }
+      }
     },
     "It did not send. Try again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível enviar. Tente novamente."
+          }
+        }
+      }
     },
     "Leans on %@, the strongest reading at the table." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Destaca %@, o eixo mais intenso da mesa."
+          }
+        }
+      }
     },
     "Less %@ than %@." : {
       "localizations" : {
@@ -267,41 +750,124 @@
             "state" : "new",
             "value" : "Less %1$@ than %2$@."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menos %1$@ do que %2$@."
+          }
         }
       }
     },
     "Light body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo leve"
+          }
+        }
+      }
     },
     "Low %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ em baixa intensidade"
+          }
+        }
+      }
     },
     "Main" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prato principal"
+          }
+        }
+      }
     },
     "Map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa"
+          }
+        }
+      }
     },
     "match across all %lld palate maps at the table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de match entre os %lld mapas do paladar à mesa"
+          }
+        }
+      }
     },
     "match with %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de match com %@"
+          }
+        }
+      }
     },
     "Meat" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne"
+          }
+        }
+      }
     },
     "Medium %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ em intensidade média"
+          }
+        }
+      }
     },
     "Medium body" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corpo médio"
+          }
+        }
+      }
     },
     "Method" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de preparo"
+          }
+        }
+      }
     },
     "Middle" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intermediário"
+          }
+        }
+      }
     },
     "More %@ than %@." : {
       "localizations" : {
@@ -310,17 +876,44 @@
             "state" : "new",
             "value" : "More %1$@ than %2$@."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais %1$@ do que %2$@."
+          }
         }
       }
     },
     "No bottle on your phone fits this table yet." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma garrafa disponível no seu aparelho combina com esta mesa por enquanto."
+          }
+        }
+      }
     },
     "No friend by that name." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum amigo encontrado com esse nome."
+          }
+        }
+      }
     },
     "No rush" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem pressa"
+          }
+        }
+      }
     },
     "Not high in %@, the strongest axis on %@." : {
       "localizations" : {
@@ -329,302 +922,994 @@
             "state" : "new",
             "value" : "Not high in %1$@, the strongest axis on %2$@."
           }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intensidade mais baixa em %1$@, o eixo mais forte de %2$@."
+          }
         }
       }
     },
     "Not now" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agora não"
+          }
+        }
+      }
     },
     "Nothing lines up across all %lld — the menu is built on compromise." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os %lld paladares têm poucos pontos em comum, então o cardápio busca um meio-termo."
+          }
+        }
+      }
     },
     "of your palate map matches %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de match do seu mapa do paladar com %@"
+          }
+        }
+      }
     },
     "On the table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À mesa"
+          }
+        }
+      }
     },
     "Open Settings" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes"
+          }
+        }
+      }
     },
     "Open the menu on UVVA · uvva.app" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abra o cardápio na UVVA · uvva.app"
+          }
+        }
+      }
     },
     "Open this together" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir este vinho juntos"
+          }
+        }
+      }
     },
     "Opposed" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opostos"
+          }
+        }
+      }
     },
     "Pairings" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harmonizações"
+          }
+        }
+      }
     },
     "Pasta" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Massas"
+          }
+        }
+      }
     },
     "Pick at least two friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha pelo menos dois amigos"
+          }
+        }
+      }
     },
     "Pick the courses you want, from starter to dessert. Each one comes to the table with its own bottle." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha as etapas do jantar, da entrada à sobremesa. Cada prato vem com a sua garrafa."
+          }
+        }
+      }
     },
     "Pick who’s coming. We’ll set the perfect table: the bottles and the dinner everyone will love." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha quem vem. A UVVA monta a mesa com garrafas e pratos para agradar todo mundo."
+          }
+        }
+      }
     },
     "Picks for %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugestões para %@"
+          }
+        }
+      }
     },
     "Pork" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne suína"
+          }
+        }
+      }
     },
     "Poultry" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aves"
+          }
+        }
+      }
     },
     "Quick add" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicionar rapidamente"
+          }
+        }
+      }
     },
     "Quiet on every axis, like %@." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfil discreto em todos os eixos, como em %@."
+          }
+        }
+      }
     },
     "Range at the table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variação à mesa"
+          }
+        }
+      }
     },
     "Read from all %lld palate maps · UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com base nos %lld mapas do paladar · UVVA"
+          }
+        }
+      }
     },
     "Read from both palate maps · UVVA" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Com base nos dois mapas do paladar · UVVA"
+          }
+        }
+      }
     },
     "Reading by reading" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eixo por eixo"
+          }
+        }
+      }
     },
     "Reading the maps at the table…" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Analisando os mapas da mesa…"
+          }
+        }
+      }
     },
     "Remove %@?" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover %@?"
+          }
+        }
+      }
     },
     "Remove friend" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover amigo"
+          }
+        }
+      }
     },
     "Requested" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solicitação enviada"
+          }
+        }
+      }
     },
     "Requests" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solicitações"
+          }
+        }
+      }
     },
     "Risotto" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Risoto"
+          }
+        }
+      }
     },
     "Same" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Igual"
+          }
+        }
+      }
     },
     "Save image" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvar imagem"
+          }
+        }
+      }
     },
     "Scan a wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escanear um vinho"
+          }
+        }
+      }
     },
     "Seafood" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutos do mar"
+          }
+        }
+      }
     },
     "Search by name" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar por nome"
+          }
+        }
+      }
     },
     "See which of your contacts are already on UVVA. Their numbers never leave your phone." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veja quais contatos já usam a UVVA. Os números deles ficam no seu aparelho."
+          }
+        }
+      }
     },
     "Send to %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar para %@"
+          }
+        }
+      }
     },
     "Send to the table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar para a mesa"
+          }
+        }
+      }
     },
     "Sending…" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviando…"
+          }
+        }
+      }
     },
     "Sent to %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviado para %@"
+          }
+        }
+      }
     },
     "Sent to the table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviado para a mesa"
+          }
+        }
+      }
     },
     "Sent to you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviado para você"
+          }
+        }
+      }
     },
     "Set it again" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montar outra vez"
+          }
+        }
+      }
     },
     "Set the perfect dinner" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montar o jantar perfeito"
+          }
+        }
+      }
     },
     "Share this table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhar esta mesa"
+          }
+        }
+      }
     },
     "Share your palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhe seu paladar"
+          }
+        }
+      }
     },
     "Some give" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um pouco de flexibilidade"
+          }
+        }
+      }
     },
     "Someone gives a little here." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aqui, alguém cede um pouco."
+          }
+        }
+      }
     },
     "Spring" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primavera"
+          }
+        }
+      }
     },
     "Starter" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrada"
+          }
+        }
+      }
     },
     "Summer" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verão"
+          }
+        }
+      }
     },
     "Takes the request back" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancela a solicitação"
+          }
+        }
+      }
     },
     "the %lld of you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vocês %lld"
+          }
+        }
+      }
     },
     "The %lld of you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vocês %lld"
+          }
+        }
+      }
     },
     "the %lld of you usually drink" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vocês %lld costumam beber"
+          }
+        }
+      }
     },
     "The boldest reading" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O eixo mais intenso"
+          }
+        }
+      }
     },
     "The bottles" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As garrafas"
+          }
+        }
+      }
     },
     "The button opens the menu, how to make each dish and a way to share it. Change your choices and set it again." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O botão abre o cardápio, o modo de preparo dos pratos e as opções de compartilhamento. Mude suas escolhas para montar outra mesa."
+          }
+        }
+      }
     },
     "The dishes follow your choices; the bottles follow every palate map at the table, so each glass suits all of you." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os pratos seguem suas escolhas. As garrafas levam em conta todos os mapas do paladar à mesa para agradar a todos."
+          }
+        }
+      }
     },
     "The map of this wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O mapa deste vinho"
+          }
+        }
+      }
     },
     "The perfect dinner for" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O jantar perfeito para"
+          }
+        }
+      }
     },
     "The perfect dinner for The %lld of you" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O jantar perfeito para vocês %lld"
+          }
+        }
+      }
     },
     "The perfect dinner for You & %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O jantar perfeito para você e %@"
+          }
+        }
+      }
     },
     "The perfect table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A mesa perfeita"
+          }
+        }
+      }
     },
     "The table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A mesa"
+          }
+        }
+      }
     },
     "This is my wine palate" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos"
+          }
+        }
+      }
     },
     "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together. %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é meu paladar para vinhos. Mapeie o seu na UVVA e vamos encontrar o vinho perfeito para beber juntos. %@"
+          }
+        }
+      }
     },
     "This is where the table splits." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "É aqui que os paladares mais divergem."
+          }
+        }
+      }
     },
     "This wine" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este vinho"
+          }
+        }
+      }
     },
     "This wine and %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este vinho e %@"
+          }
+        }
+      }
     },
     "Tonight's table" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A mesa de hoje"
+          }
+        }
+      }
     },
     "Under %lld min" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em até %lld min"
+          }
+        }
+      }
     },
     "UVVA can't see your contacts. Allow it in Settings to find friends who are already here." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A UVVA não tem acesso aos seus contatos. Permita o acesso nos Ajustes para encontrar amigos que já usam a app."
+          }
+        }
+      }
     },
     "Vegan" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegano"
+          }
+        }
+      }
     },
     "Vegetarian" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetariano"
+          }
+        }
+      }
     },
     "Vegetarian and Vegan hold for every dish. Pasta, fish, meat and the rest choose what the main is made of; the other dishes stay different, so dinner is never pasta three times." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As opções Vegetariano e Vegano valem para todos os pratos. Massas, peixes, carnes e as outras opções definem o prato principal. As demais etapas variam para manter o jantar diverso."
+          }
+        }
+      }
     },
     "What to buy" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que comprar"
+          }
+        }
+      }
     },
     "WhatsApp" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhatsApp"
+          }
+        }
+      }
     },
     "When" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando"
+          }
+        }
+      }
     },
     "Where the table lands" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O perfil da mesa"
+          }
+        }
+      }
     },
     "Where your maps meet: %@." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onde seus mapas se encontram: %@."
+          }
+        }
+      }
     },
     "Widest" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais amplo"
+          }
+        }
+      }
     },
     "Winter" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inverno"
+          }
+        }
+      }
     },
     "You" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você"
+          }
+        }
+      }
     },
     "You & %@" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você e %@"
+          }
+        }
+      }
     },
     "You all want %@ in a glass." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todo mundo à mesa aprecia %@ em um vinho."
+          }
+        }
+      }
     },
     "You barely overlap — you like different things." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus paladares têm pouco em comum e vocês apreciam características diferentes."
+          }
+        }
+      }
     },
     "You both want %@ in a glass." : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vocês dois apreciam %@ em um vinho."
+          }
+        }
+      }
     },
     "you two" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vocês dois"
+          }
+        }
+      }
     },
     "you two usually drink" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vocês dois costumam beber"
+          }
+        }
+      }
     },
     "you usually drink" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "você costuma beber"
+          }
+        }
+      }
     },
     "You'll need" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você vai precisar de"
+          }
+        }
+      }
     },
     "You're invited to dinner" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você está convidado para jantar"
+          }
+        }
+      }
     },
     "your %lld maps" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "seus %lld mapas"
+          }
+        }
+      }
     },
     "Your %lld maps" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus %lld mapas"
+          }
+        }
+      }
     },
     "Your Friends" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus amigos"
+          }
+        }
+      }
     },
     "your map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "seu mapa"
+          }
+        }
+      }
     },
     "Your map" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu mapa"
+          }
+        }
+      }
     },
     "your two maps" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "seus dois mapas"
+          }
+        }
+      }
     },
     "Your two maps" : {
-
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seus dois mapas"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -51,6 +51,7 @@ public struct HomeFactory: HomeFactoryProtocol {
             addWineToCellarUseCase: AddWineToCellarUseCase(cellar: cellar),
             loadNotificationsUseCase: LoadNotificationsUseCase(notifications: notifications, profiles: profiles,
                                                                friends: friends, social: social, sharing: sharing),
+            loadTasteHistoryUseCase: LoadTasteHistoryUseCase(cellar: cellar),
             coordinator: coordinator, now: now, calendar: calendar
         )
     }

@@ -17,7 +17,7 @@ struct DevicePairingSuggester: PairingSuggesting {
 private struct FoundationPairingSuggester {
     @Generable
     struct Suggestion {
-        @Guide(description: "Three dishes that pair well with this wine and are not in the list of pairings already given, each a short, specific dish in English, such as grilled lamb chops", .count(3))
+        @Guide(description: "Three dishes that pair well with this wine and are not in the list of pairings already given, each a short, specific dish in the requested language", .count(3))
         var dishes: [String]
     }
 
@@ -66,11 +66,12 @@ private struct FoundationPairingSuggester {
         ]
         let facts = rows.compactMap { label, value in value.map { "\(label): \($0)" } }.joined(separator: "\n")
         let given = wine.pairings.isEmpty ? "none" : wine.pairings.joined(separator: ", ")
+        let language = Bundle.main.preferredLocalizations.first == "pt-BR" ? "Brazilian Portuguese" : "English"
         return """
             \(facts)
             Pairings already given: \(given)
 
-            Suggest three more dishes for this wine.
+            Suggest three more dishes for this wine. Write the dish names in \(language).
             """
     }
 

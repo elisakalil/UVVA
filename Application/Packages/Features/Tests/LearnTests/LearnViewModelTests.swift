@@ -273,9 +273,44 @@ struct LearnViewModelTests {
         #expect(model.grapeGroups[0].rows[0].cta == "Review")
         await model.openCourse(id: "grape-tannat")
         #expect(model.player?.lesson.id == "grape-tannat-l01")
-        #expect(model.player?.stepIndex == 5)
+        #expect(model.player?.playerState == .cover)
         #expect(model.player?.isReview == true)
         #expect(learning.issued.count == 1)
+    }
+
+    @Test func LEARN_R19a_reviewingAModule_startsEachLessonOnItsCover_andEarnsXPForEachOneFinished() async throws {
+        let course = Fixture.course("grape-tannat", lessons: 2)
+        let done = course.lessons.map {
+            LessonProgress(lessonID: $0.id, courseID: course.id, currentStep: 5, completedAt: Fixture.day, lastOpenedAt: Fixture.day, xp: 15)
+        }
+        let learning = LearningSpy(done)
+        let model = viewModel([course], learning: learning)
+        await model.load()
+        await model.openCourse(id: "grape-tannat")
+        let first = try #require(model.player)
+        #expect(first.playerState == .cover)
+        first.begin()
+        for _ in 0..<12 where !first.isSummary {
+            if case .button(_, false) = first.footer, let index = first.stepIndex {
+                if case .fillBlank = first.lesson.steps[index] { first.tapWord("must") } else { first.tapOption(0) }
+            }
+            first.primary()
+        }
+        await eventually { first.hasSavedSummary && !model.uiModel.isLoadingLesson }
+        #expect(learning.saved["grape-tannat-l01"]?.xp == 30)
+        first.primary()
+        await eventually { model.players.count == 2 }
+        #expect(model.player?.lesson.id == "grape-tannat-l02")
+        #expect(model.player?.playerState == .cover)
+        model.player?.begin()
+        model.player?.close()
+        await eventually { model.players.isEmpty }
+        #expect(learning.saved["grape-tannat-l01"]?.xp == 30)
+        #expect(learning.saved["grape-tannat-l01"]?.currentStep == 5)
+        #expect(learning.saved["grape-tannat-l02"] == done[1])
+        await model.openCourse(id: "grape-tannat")
+        #expect(model.player?.lesson.id == "grape-tannat-l01")
+        #expect(model.player?.playerState == .cover)
     }
 
     // MARK: LEARN-R14 · Voltar entre lições

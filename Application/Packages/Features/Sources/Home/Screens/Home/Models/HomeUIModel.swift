@@ -8,6 +8,8 @@ public struct HomeUIModel {
     var cellarWineKeys: Set<String> = []
     /// HOME-R24: the verdict of each wine rated since the Quiz.
     var ratedVerdicts: [String: Verdict] = [:]
+    /// The wines the user rated, read when the wine sheet opens; nil until then.
+    var tasteHistory: TasteHistory?
     var isLoading = true
     /// The Hero and "Wines for your palate" are being read again on a map that moved (HOME-R10c): each shows its
     /// curtain until the new wines are in.

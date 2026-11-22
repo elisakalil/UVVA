@@ -20,11 +20,13 @@ struct WineDetailUIModel: Equatable {
     let wine: Wine
     let source: Source
     let palateMap: PalateMap
+    /// The wines the user rated: the grape and region lines wait for it.
+    var history: TasteHistory?
     var now = Date()
     var resources = HomeResourcesUIModel()
 
     static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.wine == rhs.wine && lhs.source == rhs.source && lhs.palateMap == rhs.palateMap
+        lhs.wine == rhs.wine && lhs.source == rhs.source && lhs.palateMap == rhs.palateMap && lhs.history == rhs.history
     }
 
     private var match: PalateMatchUIModel { PalateMatchUIModel(wine: wine.profile, palate: palateMap) }
@@ -69,6 +71,12 @@ struct WineDetailUIModel: Equatable {
     /// The match with the map, as everywhere else, "Surprise me" included: a surprise reads low, and says so.
     var percentage: String { "\(match.percent)%" }
     var percentageCaption: String { resources.palateMatchCaption }
+    var matchPercent: Int { match.percent }
+
+    /// The grape, the region and why it suits the map, as on a note; empty until the Cellar is read.
+    var insights: [NoteInsightUIModel] {
+        history.map { NoteInsightUIModel.lines(wine: wine, palate: palateMap, history: $0) } ?? []
+    }
     var sharedLine: String { match.shared }
     var apartLine: String { match.apart }
 
@@ -81,12 +89,12 @@ struct WineDetailUIModel: Equatable {
             Fact(label: resources.wineDetailStyleTitle, value: resources.wineFilterLabel(wine.type)),
             Fact(label: resources.wineFactsVintageTitle, value: vintageLine),
             Fact(label: resources.wineFactsGrapesTitle, value: wine.grapes.joined(separator: ", ")),
-            Fact(label: resources.wineFactsNotesTitle, value: wine.note ?? "")
+            Fact(label: resources.wineFactsNotesTitle, value: WineCatalogText.notes(wine.note))
         ]
     }
 
     var pairings: String? {
-        wine.pairings.isEmpty ? nil : wine.pairings.joined(separator: ", ")
+        wine.pairings.isEmpty ? nil : wine.pairings.map(WineCatalogText.editorial).joined(separator: ", ")
     }
 
     /// "2023 · 3 years", or "Non-vintage".

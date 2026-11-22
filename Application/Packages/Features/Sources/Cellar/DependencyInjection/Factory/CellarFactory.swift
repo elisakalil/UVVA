@@ -54,7 +54,7 @@ public struct CellarFactory: CellarFactoryProtocol {
             onNoteChange: onNoteChange,
             onEditNote: onEditNote
         ) { entry, owner in
-            NoteViewModel(entry: entry, loadNote: load, deleteNote: delete, maps: maps, now: now,
+            NoteViewModel(entry: entry, loadNote: load, deleteNote: delete, maps: maps, cellar: cellar, now: now,
                           onChange: { [weak owner] deleted in
                               if deleted {
                                   owner?.noteDeleted(entry.id)
