@@ -9,7 +9,7 @@ struct SignUpHeader: View {
 
     var body: some View {
         HStack {
-            BackChevron(uiModel: uiModel, action: onBack)
+            BackPillButton(title: uiModel.backTitle, action: onBack)
             Spacer()
             HStack(spacing: 9) {
                 Text(uiModel.brand).font(UVVAFont.whiteGrape(15)).tracking(1.5).opacity(0.55)

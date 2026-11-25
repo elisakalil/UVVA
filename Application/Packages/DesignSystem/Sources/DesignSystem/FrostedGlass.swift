@@ -128,8 +128,8 @@ public struct FrostedGlass: View {
         GeometryReader { proxy in
             let cap = radius + Self.edgeReach
             if min(proxy.size.width, proxy.size.height) > 2 * cap,
-               let image = EdgeLight.image(radius: radius, dense: dense, innerGlow: pinsPhoto,
-                                           strongerHaze: sharesBackdrop, scale: displayScale) {
+               let image = EdgeLightImage.image(radius: radius, dense: dense, innerGlow: pinsPhoto,
+                                                strongerHaze: sharesBackdrop, scale: displayScale) {
                 Image(uiImage: image)
                     .resizable(capInsets: EdgeInsets(top: cap, leading: cap, bottom: cap, trailing: cap))
             } else {
@@ -209,6 +209,7 @@ public struct FrostedGlass: View {
 
 /// The haze and the light at the edge of a pane: a whitish haze stepping down in three zones from the edge in, and
 /// light gathered along the rim. Past `FrostedGlass.edgeReach` from the edge it is even.
+/// Drawn live only on panes too small to stretch its image; `EdgeLightImage` draws the same layers as that image.
 struct EdgeLight: View {
     var radius: CGFloat
     /// Even haze across the thin chrome (the tab bar).
@@ -227,8 +228,8 @@ struct EdgeLight: View {
             }
             // Light gathers at the edges of thick frosted glass.
             shape
-                .stroke(.white.opacity(innerGlow ? 0.12 : 0.05), lineWidth: 12)
-                .blur(radius: 7)
+                .stroke(.white.opacity(innerGlow ? 0.12 : 0.05), lineWidth: EdgeLightImage.glowWidth)
+                .blur(radius: EdgeLightImage.glowBlur)
         }
         .clipShape(shape)
     }
@@ -259,33 +260,5 @@ struct EdgeLight: View {
                 .blendMode(.destinationOut)
         }
         .compositingGroup()
-    }
-
-    private struct Key: Hashable {
-        var radius: CGFloat
-        var dense: Bool
-        var innerGlow: Bool
-        var strongerHaze: Bool
-        var scale: CGFloat
-    }
-
-    @MainActor private static var images: [Key: UIImage] = [:]
-
-    /// The edge light of a pane just big enough to hold its corners and the even middle: one point wider and
-    /// taller than the two corners, so that middle point is what stretches over a bigger pane.
-    @MainActor static func image(radius: CGFloat, dense: Bool, innerGlow: Bool, strongerHaze: Bool,
-                                 scale: CGFloat) -> UIImage? {
-        let key = Key(radius: radius, dense: dense, innerGlow: innerGlow, strongerHaze: strongerHaze, scale: scale)
-        if let image = images[key] { return image }
-        let side = 2 * (radius + FrostedGlass.edgeReach) + 1
-        let renderer = ImageRenderer(
-            content: EdgeLight(radius: radius, dense: dense, innerGlow: innerGlow, strongerHaze: strongerHaze)
-                .frame(width: side, height: side)
-        )
-        renderer.scale = scale
-        renderer.isOpaque = false
-        let image = renderer.uiImage
-        images[key] = image
-        return image
     }
 }

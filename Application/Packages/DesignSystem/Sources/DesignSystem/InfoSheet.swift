@@ -40,8 +40,13 @@ public struct InfoSheet: View {
 
     public init(title: String, text: String, style: Style = .plain) {
         self.title = title
-        self.text = text
+        self.text = Self.sentencePerLine(text)
         self.style = style
+    }
+
+    /// Every new sentence starts on a new line: the space after ".", "!", "?" or "…" becomes a line break.
+    static func sentencePerLine(_ text: String) -> String {
+        text.replacingOccurrences(of: #"(?<=[.!?…])\s+(?=\S)"#, with: "\n", options: .regularExpression)
     }
 
     public var body: some View {

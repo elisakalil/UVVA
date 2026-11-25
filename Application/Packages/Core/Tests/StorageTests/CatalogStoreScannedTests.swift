@@ -140,4 +140,25 @@ struct CatalogStoreScannedTests {
         try await store.addScanned(read)
         #expect(try await pending()["a"]?.awards == ["Gold · Decanter World Wine Awards · 2023"])
     }
+
+    @Test func CELLAR_R23_timeInOak_isKept_andTheWoodsAddUp() async throws {
+        var oaked = scanned
+        oaked.oakAging = .sixToTwelve
+        oaked.oakWoods = ["French oak"]
+        try await store.addScanned(oaked)
+        var again = scanned
+        again.oakAging = .overTwentyFour
+        again.oakWoods = ["American oak"]
+        try await store.addScanned(again)
+        let found = try #require(try await store.wines(keys: [scanned.id])[scanned.id])
+        #expect(found.oakAging == .sixToTwelve)
+        #expect(found.oakWoods == ["French oak", "American oak"])
+        // And the public catalog's copy carries them, as JSON a newer value does not break.
+        let data = CatalogWineData(found)
+        #expect(data.oakAging == "6to12")
+        #expect(data.wine.oakAging == .sixToTwelve)
+        var future = data
+        future.oakAging = "barrel-of-the-future"
+        #expect(future.wine.oakAging == nil)
+    }
 }

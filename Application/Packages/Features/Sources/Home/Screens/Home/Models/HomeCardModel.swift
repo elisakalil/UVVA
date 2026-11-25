@@ -49,7 +49,6 @@ enum HomeCardModel: Equatable, Sendable {
         // With friends, the match card comes first and takes the spotlight.
         case .friends(.hasFriends): nil
         case .friends: HomeSpotlightID.friends
-        case .chooseYourWine: HomeSpotlightID.chooseYourWine
         default: nil
         }
     }

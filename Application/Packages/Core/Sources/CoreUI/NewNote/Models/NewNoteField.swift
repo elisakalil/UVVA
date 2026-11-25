@@ -1,6 +1,6 @@
 import Foundation
 
-/// A field of "Fill in by hand" (CELLAR-R23).
+/// The fields of "Fill in by hand" that are typed (CELLAR-R23); the rest are chosen from lists.
 public enum NewNoteField: CaseIterable, Sendable {
-    case name, producer, region, vintage, grape
+    case name, producer, vintage, alcohol
 }

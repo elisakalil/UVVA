@@ -21,6 +21,7 @@ on:
     branches: [main]
     paths:
       - "Application/Data/UVVAWines.json"
+      - "Application/Data/Localizations/pt-BR/catalog.json"
       - "Application/Robot/**"
       - "Application/Packages/Core/Sources/Core/**"
       - "Application/Packages/Core/Sources/Match/**"
@@ -65,6 +66,7 @@ jobs:
           PRODUCTION_KEY_ID: ${{ secrets.CLOUDKIT_PRODUCTION_KEY_ID }}
           PRODUCTION_PRIVATE_KEY: ${{ secrets.CLOUDKIT_PRODUCTION_PRIVATE_KEY }}
           CATALOG_SEED: ${{ runner.temp }}/seed.json
+          ENABLE_CATALOG_PT_BR_PILOT: ${{ vars.ENABLE_CATALOG_PT_BR_PILOT }}
           DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
         run: |
           if [ "$CLOUDKIT_ENVIRONMENT" = production ]; then
@@ -76,5 +78,8 @@ jobs:
           if [ -z "$CLOUDKIT_KEY_ID" ] || [ -z "$CLOUDKIT_PRIVATE_KEY" ]; then
             echo "No key for $CLOUDKIT_ENVIRONMENT: skipped."
             exit 0
+          fi
+          if [ "$CLOUDKIT_ENVIRONMENT" = development ] && [ "$ENABLE_CATALOG_PT_BR_PILOT" = true ]; then
+            export CATALOG_TEXTS_PT_BR="$GITHUB_WORKSPACE/Application/Data/Localizations/pt-BR/catalog.json"
           fi
           swift run -c release catalog-robot $DRY_RUN

@@ -18,6 +18,14 @@ public struct NewNoteUIModel {
     // MARK: By hand
     var manualFields: [NewNoteManualFieldUIModel] = []
     var types: [NewNoteTypeUIModel] = []
+    /// Region, appellation, legal term, grapes and notes, chosen from the catalog's lists.
+    var manualChipRows: [NewNoteManualChipRowUIModel] = []
+    var oakAgings: [NewNoteOakUIModel] = []
+    /// The woods, once some time in wood is chosen.
+    var oakWoodsRow: NewNoteManualChipRowUIModel?
+    var awards: [NewNoteAwardUIModel] = []
+    /// Why there is no map yet (CELLAR-R23a); nil once there is a base for it.
+    var mapBasisHint: String?
     var canContinue = false
 
     // MARK: The note

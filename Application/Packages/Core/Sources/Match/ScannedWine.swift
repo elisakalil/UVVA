@@ -18,6 +18,6 @@ public enum ScannedWine {
                     classification: [facts.appellation, strength].compactMap { $0 }.joined(separator: " · "),
                     profile: profile, note: facts.notes.isEmpty ? nil : facts.notes.joined(separator: ", "),
                     serving: facts.serving, pairings: facts.pairings, designation: facts.designation,
-                    awards: facts.awards)
+                    awards: facts.awards, oakAging: facts.oakAging, oakWoods: facts.oakWoods)
     }
 }

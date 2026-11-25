@@ -32,6 +32,9 @@ public final class WineEntity {
     public var designation: String?
     /// The medals and scores read on a scanned wine's bottle, as `WineAward.text`.
     public var awards: [String] = []
+    /// `OakAging.rawValue`, read on a label or chosen by hand (CELLAR-R23).
+    public var oakAging: String?
+    public var oakWoods: [String] = []
     public var floral: Double
     public var body: Double
     public var tannin: Double
@@ -106,6 +109,8 @@ public final class WineEntity {
         howToServe = data.howToServe
         designation = data.designation
         awards = data.awards ?? []
+        oakAging = data.oakAging
+        oakWoods = data.oakWoods ?? []
         floral = data.map.floral
         body = data.map.body
         tannin = data.map.tannin

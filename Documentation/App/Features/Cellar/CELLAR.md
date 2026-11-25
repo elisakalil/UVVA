@@ -73,7 +73,7 @@ struct CellarEntry {
 ### 3.3 Grade e lista
 
 **CELLAR-R06 · Duas vistas.**
-- **Grade (padrão):** grade magazine de capas. A capa é a foto da frente do rótulo, sob o véu de 58%, com o veredito em RedGrapes branco.
+- **Grade (padrão):** grade magazine de capas. A capa é a foto da frente do rótulo, sob o véu de 58%, com o veredito em RedGrapes branco. Toda capa mostra, sempre no canto inferior esquerdo, o nome do vinho e logo acima dele o match em grande, só "82%" (sem "match"); sem mapa, só o nome. O veredito ocupa o espaço que sobra acima, com tamanho e posição que variam de capa para capa, sem nunca cobrir o nome (2026-11-25).
 - **Lista:** cada linha tem o nome, o ano, a origem, o veredito e um chevron.
 
 **CELLAR-R07 · Vista guardada.** A escolha entre grade e lista fica guardada e é a vista com que o Cellar abre da próxima vez.
@@ -97,7 +97,7 @@ struct CellarEntry {
 
 ### 3.5 Pesquisa
 
-**CELLAR-R11 · Pesquisa.** "Search your cellar" aparece ao rolar o Cellar. A pesquisa procura no nome do vinho, na casta, na região e no produtor, sem diferenciar maiúsculas, minúsculas ou acentos. Os resultados mostram "[n] notes" e as linhas encontradas. Tocar num resultado abre a nota.
+**CELLAR-R11 · Pesquisa.** "Search your cellar" aparece ao rolar o Cellar, ou ao tocar na lupa à esquerda do + no cabeçalho, que abre a pesquisa já com o teclado (2026-11-25). A pesquisa procura no nome do vinho, na casta, na região e no produtor, sem diferenciar maiúsculas, minúsculas ou acentos. Os resultados mostram "[n] notes" e as linhas encontradas. Tocar num resultado abre a nota.
 
 **CELLAR-R12 · Sem resultados.** Sem resultados, mostra o estado vazio da pesquisa. "Cancel" fecha a pesquisa e volta ao Cellar.
 
@@ -168,7 +168,7 @@ struct CellarEntry {
 1. O texto do rótulo é lido nas duas fotos.
 2. A UVVA procura o vinho no catálogo. Se o encontrar, os dados e a leitura vêm do catálogo, somados ao que o rótulo trouxe de novo: as castas, as notas e as harmonizações que o catálogo ainda não tinha entram depois das dele, sem repetir. A temperatura de servir e o álcool do catálogo ficam; os do rótulo só entram quando o catálogo não os tem.
 3. Se não o encontrar, os dados vêm do texto lido, e o mapa do vinho é a média dos vinhos do catálogo mais parecidos (mesma casta e tipo; depois região e tipo; depois só tipo). Basta ter lido o nome: a nota abre logo, preenchida com o que foi lido, sem passar pelo preenchimento à mão.
-4. O preenchimento à mão (CELLAR-R23) só aparece quando a leitura não dá para uma nota: nenhum nome lido (abre com o que mais tiver sido lido, se houver) ou, pela CELLAR-R21, nada lido.
+4. O preenchimento à mão (CELLAR-R23) só aparece quando a leitura não dá para uma nota: nenhum nome lido, ou nada de onde tirar o mapa (CELLAR-R23a), e abre com o que mais tiver sido lido, se houver; ou, pela CELLAR-R21, nada lido.
 
 O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaReading).
 
@@ -208,6 +208,18 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 - Na nota guardada (CELLAR-R26), "Save rating" guarda na hora e recalcula o mapa pelo veredito. Se falhar, a folha fica aberta com "The rating wasn't saved. Try again.".
 - **Ordem da nota nova (2026-11-14):** nome e produtor; fotos; card da certificação (CELLAR-R30); "X% match with your map"; os mapas; as frases ("High in body, like your map.", "Close to your map on every axis."); os factos; os chips (Grapes, Notes, Pairings); e a intensidade, com menos espaço entre as secções que antes. "Your note" não fica mais na página: está na folha de avaliação. No pé, fixos e sempre visíveis, com o papel a desvanecer por baixo: o botão de avaliação (contorno, fundo transparente, letra desenhada: "Rate this wine" ou "Your rating: Yes · 4/5"), que abre a folha, e "Save note" por baixo; a nota nova não tem "Find the wine".
 
+**CELLAR-R18a · Escrever um chip (2026-11-25).** As folhas de chips (castas, notas e harmonizações na nota nova; região, denominação, castas e notas no preenchimento à mão) aceitam uma palavra escrita pelo usuário. O que se escreve não filtra as sugestões; "Add" ("Adicionar") verifica a palavra antes de a aceitar:
+- **Não é um nome:** com algarismos, símbolos ou uma letra só, conta como palavra inválida (ver abaixo).
+- **Está nas listas da UVVA:** as do catálogo, as do vocabulário de aromas e as palavras aceitas antes no telefone. A comparação ignora maiúsculas e acentos e também aceita o nome na língua do telefone ("goiaba" é Guava). A palavra entra escrita como a lista a escreve.
+- **Quase igual a uma palavra da lista** (1 letra de diferença até 6 letras, 2 acima disso): aparece "Did you mean" ("Você quis dizer") com a palavra da lista; tocar nela adiciona-a.
+- **Fora das listas:** quem decide é o modelo da Apple no telefone (iOS 26 com Apple Intelligence), que responde se é uma casta, um aroma, um prato, uma região de vinho ou uma denominação reais. Há três erros (2026-11-25):
+  - **Palavra inválida** (o modelo diz que não): "This doesn’t look like a valid grape. Try another." ("Esse termo não parece ser nenhuma casta válida, tente outro."), com o nome de cada campo: aroma, prato, região de vinho, denominação.
+  - **Modelo indisponível** (iOS anterior ao 26, Apple Intelligence desligado ou ainda a descarregar, iPhone sem suporte, idioma que o modelo não tem): "We couldn’t read it on this iPhone. Turn on Apple Intelligence and try again." ("Não conseguimos ler neste iPhone, ative o Apple Intelligence e tente novamente.").
+  - **Erro desconhecido** (o modelo funciona mas não respondeu desta vez): "Something went wrong checking this word. Try again." ("Algo deu errado ao verificar esse termo. Tente novamente.").
+  - Em builds de debug, os dois últimos mostram por baixo o motivo exato e o contexto do modelo ("iOS 26.1 · pt-PT · language supported"), que também vai para o log.
+- **Aceita:** a palavra entra na nota (numa escolha única, substitui a anterior) e a folha fecha. Se só o modelo a conhecia, fica guardada no telefone e passa a aparecer primeiro nas sugestões das notas seguintes. Chega ao catálogo público com o vinho. Lá, a regra do robô é a mesma de sempre: uma casta, região ou denominação que o catálogo não conhece só entra num vinho quando dois leitores a dão.
+- As listas fixas (termo legal, madeiras) só se escolhem: não têm campo de escrita.
+
 **CELLAR-R19 · Guardar.** "Save note" é o único botão no fim da nota e está sempre ativo (2026-11-11). Guarda a entrada no topo do Cellar e mostra "Note saved": Tasted com o veredito, que gera uma avaliação e recalcula o mapa (SHARED-R09, QUIZ-R22); Want to try sem veredito (2026-11-14: a folha de avaliação dá o veredito junto com o "provei", então não existe mais "Yes" sem veredito).
 
 **CELLAR-R20 · Nota livre opcional.** O veredito é obrigatório ("Required"); "Your note" é opcional ("What stood out in the glass?"). A nota não é só para o usuário: poderá ser mostrada a outras pessoas no futuro, por isso o texto de ajuda não promete privacidade (2026-11-11). Dá para guardar só com o veredito.
@@ -226,9 +238,23 @@ O resultado preenche os dados do vinho (WineFacts) e a leitura da UVVA (UvvaRead
 
 "Try again" volta à foto da frente. "Fill in by hand" abre o preenchimento à mão.
 
+**CELLAR-R21a · Não é um vinho.** (2026-11-25) Se houver texto, mas nada nele disser vinho, a leitura para depois do parser: não pergunta ao modelo nem procura no catálogo (que cresce com os scans), e mostra "This doesn't look like a wine", "UVVA read the label, but found no grape, no alcohol by volume and nothing else a wine label says. Photograph the bottle's labels, front and back.", sem as dicas de luz. "Try again" e "Fill in by hand" como na CELLAR-R21. Só conta o que foi lido nas fotos, nunca a leitura do modelo (`WineEvidence`):
+- Basta um sinal forte: uma casta, uma palavra para vinho ("vinho", "vin", "espumante"…) ou o álcool escrito como no vinho ("13,5% vol", entre 4,5 e 23%).
+- Sem sinal forte, são precisos três fracos: denominação ou região, categoria (DOC, IGP), cor ("branco"), palavra de produtor de vinho ("Quinta", "Château"), sulfitos, termo de envelhecimento, medalha.
+- Cerveja, destilados, sidra, vinagre e sumo também têm "% vol" ou "tinto": com uma dessas palavras, só uma casta ou uma palavra para vinho fazem dele um vinho.
+
 **CELLAR-R22 · Câmara recusada.** Se o usuário recusar a câmara, o `+` passa a abrir "The camera is off", "UVVA needs the camera to read labels. Turn it on in Settings, or add the wine by hand." "Open Settings" abre os Ajustes do iOS. "Fill in by hand" abre o preenchimento à mão.
 
-**CELLAR-R23 · Preencher à mão.** "Add what you can read on the label. Only the name is needed." Os campos são nome, produtor, ano, região, casta e tipo (Red, White, …). Só o nome é obrigatório: "Continue" fica ativo assim que há um nome. A UVVA faz a leitura a partir dos dados escritos, e o fluxo segue no vinho em papel (CELLAR-R18).
+**CELLAR-R23 · Preencher à mão.** (revisto em 2026-11-25) "Type the name and choose the rest from the lists. The type and one more detail draw the map."
+- **Escritos:** nome, produtor, ano e álcool. O ano vai de 1900 ao ano corrente e o álcool de 4,5 a 23% vol; fora disso, o campo diz o intervalo e "Continue" fica desativado.
+- **Escolhidos em listas (chips):** tipo; região, denominação, castas e notas de prova, com as palavras aceitas antes no telefone e depois os valores do próprio catálogo, os mais frequentes primeiro; nestes quatro também se pode escrever uma palavra, verificada como na CELLAR-R18a; termo legal (Reserva, Grande Reserva…); tempo em madeira (sem madeira, até 6, 6–12, 12–24, mais de 24 meses); madeiras (carvalho francês, americano…), só com tempo em madeira; prémios (concurso ou crítico da lista da CELLAR-R30, medalha ou pontos, ano opcional).
+- O rótulo lido preenche o que trouxer, incluindo o tempo em madeira e as madeiras ("18 meses em barricas de carvalho francês").
+- A UVVA faz a leitura a partir dos dados, e o fluxo segue no vinho em papel (CELLAR-R18). Ao guardar, o vinho vai para o catálogo público como qualquer leitura; o robô trata do resto. O tempo em madeira e as madeiras aparecem nos factos da nota ("Time in oak").
+
+**CELLAR-R23a · Sem base, não há mapa.** (2026-11-25) O mapa de um vinho fora do catálogo só é desenhado com o tipo e pelo menos uma destas coisas que o catálogo conheça: casta, região ou denominação, nota de prova, tempo em madeira. Nunca é a média do catálogo inteiro nem a média só do tipo. Por ordem: vinhos do tipo com mais castas em comum (da região, se forem pelo menos 3), depois os da região, depois os com mais notas em comum. O tempo em madeira define o eixo Madeira (0,5 / 3 / 5 / 6,5 / 8); sozinho com o tipo, aplica-se à média do tipo.
+- No preenchimento à mão, "Continue" fica desativado sem essa base, com a dica "To draw the map, choose the type and at least a grape, region, appellation, tasting note or time in oak." Se o que foi escolhido não encontra nenhum vinho do tipo, a mesma frase aparece como erro.
+- Num rótulo lido, um vinho com nome mas sem base abre o preenchimento à mão com o que foi lido.
+- O robô aplica a mesma regra a um vinho novo do catálogo público: sem base, espera.
 
 **CELLAR-R24 · A foto da nota (2026-11-11).** O topo da nova nota mostra a foto da frente do rótulo. Sem foto (um vinho vindo da Home, ou preenchido à mão), mostra a imagem de fundo da Home com "ADD PHOTO +". Tocar na foto, ou na imagem, abre a câmara para uma foto nova, com a galeria ao lado; a foto nova substitui a do topo e o resto da nota (leitura, respostas e nota) fica como estava. Não há "Redo": substitui o botão que apagava as fotos e a leitura.
 

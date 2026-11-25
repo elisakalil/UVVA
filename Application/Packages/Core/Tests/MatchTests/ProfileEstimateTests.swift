@@ -56,4 +56,40 @@ struct ProfileEstimateTests {
         #expect(map == flat(3))
         #expect(ProfileEstimate.estimate(grapes: ["Syrah"], type: "Red", region: nil, in: []) == nil)
     }
+
+    // MARK: CELLAR-R23a · Sem base, não há mapa
+
+    private func facts(type: String? = "Red", region: String? = nil, grapes: [String] = [], notes: [String] = [],
+                       oak: OakAging? = nil) -> LabelFacts {
+        LabelFacts(name: "x", type: type, region: region, grapes: grapes, notes: notes, oakAging: oak)
+    }
+
+    @Test func CELLAR_R23a_typeAlone_orNothingTheCatalogKnows_hasNoMap() {
+        #expect(ProfileEstimate.estimate(facts(), in: catalog) == nil)
+        #expect(ProfileEstimate.estimate(facts(type: nil, grapes: ["Syrah"]), in: catalog) == nil)
+        #expect(ProfileEstimate.estimate(facts(region: "Labubu", grapes: ["Cabudi"], notes: ["Glitter"]), in: catalog) == nil)
+    }
+
+    @Test func CELLAR_R23a_grapes_thenRegion_thenNotes() throws {
+        let grapes = try #require(ProfileEstimate.estimate(facts(grapes: ["Syrah", "Touriga Nacional"]), in: catalog))
+        #expect(grapes == PalateMap([.body: 6, .fruit: 8]))
+        let region = try #require(ProfileEstimate.estimate(facts(type: "White", region: "Alentejo"), in: catalog))
+        #expect(region == PalateMap([.acidity: 5]))
+        let noted = [
+            Wine(id: "n1", name: "n1", type: "Red", origin: "", profile: flat(2), note: "Plum, Violet"),
+            Wine(id: "n2", name: "n2", type: "Red", origin: "", profile: flat(4), note: "plum"),
+            Wine(id: "n3", name: "n3", type: "Red", origin: "", profile: flat(9), note: "Cedar")
+        ]
+        let notes = try #require(ProfileEstimate.estimate(facts(notes: ["Plum", "violet"]), in: noted))
+        #expect(notes == flat(2))
+    }
+
+    @Test func CELLAR_R23a_timeInOak_setsTheOakAxis() throws {
+        let withGrapes = try #require(ProfileEstimate.estimate(facts(grapes: ["Syrah"], oak: .overTwentyFour), in: catalog))
+        #expect(withGrapes[.oak] == 8)
+        #expect(withGrapes[.body] == 6)
+        let alone = try #require(ProfileEstimate.estimate(facts(type: "White", oak: OakAging.none), in: catalog))
+        #expect(alone[.oak] == 0.5)
+        #expect(alone[.acidity] == 5)
+    }
 }

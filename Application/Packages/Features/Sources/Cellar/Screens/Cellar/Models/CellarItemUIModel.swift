@@ -8,6 +8,8 @@ public struct CellarItemUIModel: Identifiable, Equatable {
     var vintage: String
     /// "82% match", or empty without a map or a profile to compare.
     var match: String
+    /// "82%", large by the name on a cover; empty as `match` is.
+    var percent: String = ""
     /// The region, or the country when there is no region.
     var place: String
     /// Yes, Maybe, No or Not yet.

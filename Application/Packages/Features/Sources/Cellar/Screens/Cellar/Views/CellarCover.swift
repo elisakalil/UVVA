@@ -18,24 +18,13 @@ struct CellarCover: View {
             }
             .overlay { CellarPalette.coverVeil }
             .overlay {
-                Text(model.tag.uppercased())
-                    .font(UVVAFont.redGrapes(model.cover.size))
-                    .tracking(model.cover.size * 0.04)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.4)
-                    .foregroundStyle(.white)
-                    .shadow(color: .black.opacity(0.45), radius: 4, y: 1)
-                    .padding(12)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
-            }
-            .overlay {
-                // Without a label to look at, the cover names the wine, on the side the tag leaves free; the match
-                // shows under it, or alone over a label.
-                if photo == nil || !model.match.isEmpty {
-                    caption
-                        .padding(12)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: captionAlignment)
+                // The match and the name always close the cover at the lower left;
+                // the tag takes whatever space they leave above, so the two never overlap.
+                VStack(alignment: .leading, spacing: 6) {
+                    tag.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: tagAlignment)
+                    caption.frame(maxWidth: .infinity, alignment: .leading)
                 }
+                .padding(12)
             }
             .frame(height: 200)
             .clipped()
@@ -47,41 +36,44 @@ struct CellarCover: View {
             .accessibilityLabel(model.accessibilityLabel)
     }
 
-    /// The name, on as many lines as it needs: never cut short with "…". Under it, the match.
+    /// The match, large ("82%"), over the name, on as many lines as it needs: never cut short with "…".
     private var caption: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            if photo == nil {
-                Text(model.name)
-                    .font(UVVAFont.sans(13))
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .multilineTextAlignment(.leading)
-            }
-            if !model.match.isEmpty {
-                Text(model.match)
-                    .font(UVVAFont.sans(11))
+        VStack(alignment: .leading, spacing: 2) {
+            if !model.percent.isEmpty {
+                Text(model.percent)
+                    .font(UVVAFont.sans(26, .light))
+                    .monospacedDigit()
                     .lineLimit(1)
-                    .opacity(0.85)
             }
+            Text(model.name)
+                .font(UVVAFont.sans(13))
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.leading)
         }
         .foregroundStyle(.white)
         .shadow(color: .black.opacity(0.45), radius: 3, y: 1)
     }
 
-    /// The caption takes the edge the tag does not: the top when the tag is at the bottom, the bottom otherwise.
-    private var captionAlignment: Alignment {
-        switch model.cover.corner {
-        case .bottomLeading, .bottomTrailing: .topLeading
-        case .topLeading, .topTrailing, .trailing: .bottomLeading
-        }
+    /// The tag in RedGrapes, at the size of its cover; it shrinks rather than crowd the caption.
+    private var tag: some View {
+        Text(model.tag.uppercased())
+            .font(UVVAFont.redGrapes(model.cover.size))
+            .tracking(model.cover.size * 0.04)
+            .lineLimit(1)
+            .minimumScaleFactor(0.4)
+            .foregroundStyle(.white)
+            .shadow(color: .black.opacity(0.45), radius: 4, y: 1)
     }
 
-    private var alignment: Alignment {
-        switch model.cover.corner {
+    /// Where the tag sits within the space above the caption.
+    private var tagAlignment: Alignment {
+        switch model.cover.placement {
         case .topLeading: .topLeading
+        case .top: .top
         case .topTrailing: .topTrailing
+        case .center: .center
         case .trailing: .trailing
-        case .bottomLeading: .bottomLeading
         case .bottomTrailing: .bottomTrailing
         }
     }

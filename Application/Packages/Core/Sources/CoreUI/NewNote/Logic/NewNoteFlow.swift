@@ -6,8 +6,9 @@ import Foundation
 ///
 /// ```
 /// checkingCamera → front → back → reading ─┬ read ────→ note
-///      └ denied → cameraDenied             ├ nameless → manual (filled) ─ Continue → note
-///                                          └ failed ──→ readFailed
+///      └ denied → cameraDenied             ├ incomplete → manual (filled) ─ Continue → note
+///                                          ├ failed ──→ readFailed
+///                                          └ notWine ─→ notWine
 /// ```
 /// A wine the app already knows, from the Home's wine sheet, starts at `note` (CELLAR-R14a). The sheet is dragged
 /// down to close at any step, and nothing is kept (CELLAR-R25).
@@ -62,22 +63,23 @@ struct NewNoteFlow: Equatable {
         guard step == .reading else { return }
         switch result {
         case let .read(wine): show(wine)
-        case let .nameless(facts):
+        case let .incomplete(facts):
             manual = NewNoteManualForm(facts)
             step = .manual
         case .failed: step = .readFailed
+        case .notWine: step = .notWine
         }
     }
 
-    /// "Try again" (CELLAR-R21): back to the front photo, without the old ones.
+    /// "Try again" (CELLAR-R21, R21a): back to the front photo, without the old ones.
     mutating func tryAgain() {
-        guard step == .readFailed else { return }
+        guard step == .readFailed || step == .notWine else { return }
         startOver()
     }
 
     /// "Fill in by hand" from a failed reading or with the camera off (CELLAR-R21, R22).
     mutating func fillInByHand() {
-        guard step == .readFailed || step == .cameraDenied else { return }
+        guard step == .readFailed || step == .notWine || step == .cameraDenied else { return }
         manual = NewNoteManualForm()
         step = .manual
     }

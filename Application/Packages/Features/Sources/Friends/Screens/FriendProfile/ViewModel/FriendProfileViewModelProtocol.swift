@@ -25,6 +25,9 @@ public protocol FriendProfileViewModelProtocol: ObservableObject, Identifiable {
     func closeWine()
     /// FRI-R11b: "Send to [name]" sends the open wine to the friend, who is told by a push.
     func sendWine() async
+    /// "Add to cellar" on a wine for the two: Friend Wine closes, and once it is gone the Cellar's new note opens.
+    func addWineToCellar()
+    func wineDismissed()
     /// FRI-R12a: "Scan a wine" opens the label scanner; the wine it reads opens in Friend Wine once it is gone.
     func scanWine()
     func closeScanner()

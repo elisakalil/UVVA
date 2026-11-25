@@ -13,6 +13,7 @@ public extension LabelFacts {
                    notes: notes.isEmpty ? other.notes : notes,
                    pairings: pairings.isEmpty ? other.pairings : pairings,
                    serving: serving ?? other.serving, designation: designation ?? other.designation,
-                   awards: awards.adding(other.awards))
+                   awards: awards.adding(other.awards), oakAging: oakAging ?? other.oakAging,
+                   oakWoods: oakWoods.isEmpty ? other.oakWoods : oakWoods)
     }
 }

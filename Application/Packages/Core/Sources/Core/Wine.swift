@@ -37,6 +37,10 @@ public struct Wine: Identifiable, Equatable, Sendable {
     public var designation: String?
     /// The medals and critics' scores shown on the bottle (CELLAR-R30).
     public var awards: [WineAward]
+    /// How long it rested in wood, read on the label or chosen by hand (CELLAR-R23).
+    public var oakAging: OakAging?
+    /// The woods it rested in, as `OakWood` writes them.
+    public var oakWoods: [String]
 
     /// The appellation without the alcohol content appended to the classification.
     public var appellation: String? {
@@ -53,7 +57,7 @@ public struct Wine: Identifiable, Equatable, Sendable {
                 profile: PalateMap, dish: Dish? = nil, note: String? = nil, serving: ClosedRange<Int>? = nil,
                 originInsight: String? = nil, appellationInsight: String? = nil, hasNotableAppellation: Bool = false,
                 howToServe: String? = nil, pairings: [String] = [], designation: String? = nil,
-                awards: [WineAward] = []) {
+                awards: [WineAward] = [], oakAging: OakAging? = nil, oakWoods: [String] = []) {
         self.id = id
         self.name = name
         self.producer = producer
@@ -76,5 +80,7 @@ public struct Wine: Identifiable, Equatable, Sendable {
         self.howToServe = howToServe
         self.designation = designation
         self.awards = awards
+        self.oakAging = oakAging
+        self.oakWoods = oakWoods
     }
 }

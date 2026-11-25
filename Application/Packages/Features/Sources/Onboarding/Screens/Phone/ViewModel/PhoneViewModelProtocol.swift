@@ -8,6 +8,5 @@ protocol PhoneViewModelProtocol: ObservableObject {
     func press(_ digit: Character)
     func deleteDigit()
     func select(_ country: PhoneCountry)
-    func skipPhone() async
     func continueWithPhone() async
 }

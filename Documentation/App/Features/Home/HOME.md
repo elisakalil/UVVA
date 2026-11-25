@@ -65,7 +65,7 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
 
 **HOME-R02 · Saudação.** Mostra "Welcome back, [primeiro nome]".
 
-**HOME-R03 · Botão +.** Sempre visível. Abre o fluxo de nova nota do Cellar (câmera: frente, contrarrótulo, leitura). Ver `CELLAR.md`.
+**HOME-R03 · Botão +.** Sempre visível. Abre o scan com dois modos no topo: **Label**, o fluxo de nova nota do Cellar (câmera: frente, contrarrótulo, leitura; ver `CELLAR.md`), e **Wine list**, a carta de vinhos do restaurante (ver [`WINELIST.md`](WINELIST.md)).
 
 **HOME-R04 · Sino.**
 - O sino está sempre visível.
@@ -144,7 +144,7 @@ HomeCardsBuilder.build(from: HomeState, now: Date, calendar: Calendar) -> [HomeC
   - nenhum, sem eixo alto no mapa nem no vinho: "Nothing runs high on your map, and nothing runs high on this wine.";
   - nenhum nos outros casos: sem frase.
 
-**HOME-R10b · With your palate (2026-11-01).** O match em % (QUIZ-R21) e duas linhas:
+**HOME-R10b · With your palate (2026-11-01).** O match em % (QUIZ-R21) e duas linhas. No card hero, ao lado do número só "match", em tamanho maior ("81% match"); a folha do vinho (HOME-R28a) mantém "match with your map" (2026-11-25).
 - **Em comum:**
   - "High in [a] and [b], like your map." / "High in [a], like your map.";
   - sem eixo alto no mapa: "Bolder than your map, which has no high axis." se o vinho tem algum eixo alto, ou então "Quiet on every axis, like your map.";
@@ -302,20 +302,19 @@ func shouldShowTour(quizExit: QuizExit?, seenTours: Set<String>) -> Bool
 
 **HOME-R30 · Intro.** "Your map is ready", "Welcome in, [primeiro nome]", "A short walk through where things live in UVVA.", "A quick look around" e o botão "Show me", que abre o passo 1.
 
-**HOME-R31 · Passos.** São 6 passos, cada um destacando uma área da Home:
+**HOME-R31 · Passos.** São 5 passos, cada um destacando uma área da Home (2026-11-23: saiu o passo "Choose your wine", sobre o card "Choose yourself", e os textos foram reescritos):
 
 | # | Passo | Título | Texto | Área destacada |
 | --- | --- | --- | --- | --- |
-| 1 | Today | A pairing drawn for your palate | Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else. | Melhor match (4.2) |
-| 2 | Your wine | Choose your wine | Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight. | Escolha o seu vinho (4.9) |
-| 3 | Scan | Scan a label | Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map. | Botão + (HOME-R03) |
-| 4 | Learn | Learn the wines you love | Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time. | Aba Learn |
-| 5 | Cellar | Your cellar | Wines you have tasted and wines you want to try, each one measured against your map. | Aba Cellar |
-| 6 | Friends | Set a table | Invite the people you drink with. UVVA reads every map at the table and suggests one bottle for all of you. | Aba Friends |
+| 1 | Hero | Your best match | First on your Home is the wine with the highest match to your map, with a dish to pour it with. It changes as your map does. | Melhor match (4.2) |
+| 2 | Scan | Scan a label | Tap + and photograph the front and back of a bottle. UVVA reads the label and keeps the wine in your cellar. Every wine you rate moves your map. | Botão + (HOME-R03) |
+| 3 | Learn | Learn about wine | Short lessons on regions, grapes and tasting, a few minutes at a time. Finish a course and share your certificate. | Aba Learn |
+| 4 | Cellar | Your cellar | The wines you have tasted, with your rating, and the ones you want to try, each with its match to your map. | Aba Cellar |
+| 5 | Friends | Set a table | Add friends and see how your palates compare. Set a table and UVVA picks three bottles and a dinner menu for everyone. | Aba Friends |
 
-No passo 2, a Home rola até o card "Escolha o seu vinho", que fica no fim da lista, e o destaque segue a posição dele.
+Sem melhor match (HOME-R10), o passo 1 destaca o card de amigos.
 
-**HOME-R32 · Navegação.** O contador mostra "N of 6" (na intro, "Tour"). "Next" avança; no passo 6, o botão diz "Start". `‹` volta um passo; no passo 1, volta à intro. Tocar num dos 6 pontos de progresso abre esse passo. Durante o tour, a Home por baixo não responde a toques.
+**HOME-R32 · Navegação.** O contador mostra "N of 5" (na intro, "Tour"). "Next" avança; no passo 5, o botão diz "Start". `‹` volta um passo; no passo 1, volta à intro. Tocar num dos 5 pontos de progresso abre esse passo. Durante o tour, a Home por baixo não responde a toques.
 
 **HOME-R33 · Fim.** "Start" fecha o tour, mostra a Home no topo e marca o tour como visto na conta (acrescenta `"home"` a `seenTours`).
 
@@ -323,9 +322,9 @@ No passo 2, a Home rola até o card "Escolha o seu vinho", que fica no fim da li
 - Dada a saída do Quiz na entrada "primeiro mapa" e `seenTours` sem `"home"`, então a Home abre com a intro do tour.
 - Dada a saída do Quiz na entrada "refazer", então o tour não aparece.
 - Dado `seenTours` com `"home"`, quando a Home abre, então o tour não aparece.
-- Dada a intro, quando o usuário toca em "Show me", então abre o passo 1 e o contador mostra "1 of 6".
+- Dada a intro, quando o usuário toca em "Show me", então abre o passo 1 e o contador mostra "1 of 5".
 - Dado o passo 1, então o botão diz "Next"; quando o usuário toca em `‹`, então volta à intro.
-- Dado o passo 6, então o botão diz "Start".
+- Dado o passo 5, então o botão diz "Start".
 - Dado o passo 4, quando o usuário toca no ponto 2, então abre o passo 2.
 - Quando o usuário toca em "Start", então o tour fecha, abre a Home e `seenTours` passa a ter `"home"`.
 

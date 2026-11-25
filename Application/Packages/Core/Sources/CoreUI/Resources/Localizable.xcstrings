@@ -11,6 +11,496 @@
         }
       }
     },
+    "% vol" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "% vol"
+          }
+        }
+      }
+    },
+    "%lld pts" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld pts"
+          }
+        }
+      }
+    },
+    "12–24 months" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "12–24 meses"
+          }
+        }
+      }
+    },
+    "6–12 months" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6–12 meses"
+          }
+        }
+      }
+    },
+    "A year from 1900 to %lld" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um ano de 1900 a %lld"
+          }
+        }
+      }
+    },
+    "Acacia" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acácia"
+          }
+        }
+      }
+    },
+    "Alcohol" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Álcool"
+          }
+        }
+      }
+    },
+    "American oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho americano"
+          }
+        }
+      }
+    },
+    "Between 4.5 and 23% vol" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entre 4,5 e 23% vol"
+          }
+        }
+      }
+    },
+    "Bronze" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bronze"
+          }
+        }
+      }
+    },
+    "Caucasian oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho do Cáucaso"
+          }
+        }
+      }
+    },
+    "Checking…" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verificando…"
+          }
+        }
+      }
+    },
+    "Chestnut" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Castanheiro"
+          }
+        }
+      }
+    },
+    "Commended" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menção honrosa"
+          }
+        }
+      }
+    },
+    "Competition or critic" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concurso ou crítico"
+          }
+        }
+      }
+    },
+    "Did you mean" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você quis dizer"
+          }
+        }
+      }
+    },
+    "Double Gold" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grande Ouro"
+          }
+        }
+      }
+    },
+    "French oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho francês"
+          }
+        }
+      }
+    },
+    "Gold" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouro"
+          }
+        }
+      }
+    },
+    "Hungarian oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho húngaro"
+          }
+        }
+      }
+    },
+    "Medal" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medalha"
+          }
+        }
+      }
+    },
+    "No oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem madeira"
+          }
+        }
+      }
+    },
+    "No suggestions yet" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda sem sugestões"
+          }
+        }
+      }
+    },
+    "Over 24 months" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais de 24 meses"
+          }
+        }
+      }
+    },
+    "Platinum" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platina"
+          }
+        }
+      }
+    },
+    "Portuguese oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho português"
+          }
+        }
+      }
+    },
+    "Remove" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remover"
+          }
+        }
+      }
+    },
+    "Silver" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prata"
+          }
+        }
+      }
+    },
+    "Slavonian oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carvalho da Eslavônia"
+          }
+        }
+      }
+    },
+    "Something went wrong checking this word. Try again." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo deu errado ao verificar esse termo. Tente novamente."
+          }
+        }
+      }
+    },
+    "Tasting notes" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas de prova"
+          }
+        }
+      }
+    },
+    "This doesn’t look like a valid appellation. Try another." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse termo não parece ser nenhuma denominação válida, tente outro."
+          }
+        }
+      }
+    },
+    "This doesn’t look like a valid aroma. Try another." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse termo não parece ser nenhum aroma válido, tente outro."
+          }
+        }
+      }
+    },
+    "This doesn’t look like a valid dish. Try another." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse termo não parece ser nenhum prato válido, tente outro."
+          }
+        }
+      }
+    },
+    "This doesn’t look like a valid grape. Try another." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse termo não parece ser nenhuma casta válida, tente outro."
+          }
+        }
+      }
+    },
+    "This doesn’t look like a valid wine region. Try another." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse termo não parece ser nenhuma região de vinho válida, tente outro."
+          }
+        }
+      }
+    },
+    "Time in oak" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tempo em madeira"
+          }
+        }
+      }
+    },
+    "To draw the map, choose the type and at least a grape, region, appellation, tasting note or time in oak." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para desenhar o mapa, escolha o tipo e pelo menos uma casta, região, denominação, nota de prova ou tempo em madeira."
+          }
+        }
+      }
+    },
+    "Trophy" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Troféu"
+          }
+        }
+      }
+    },
+    "Type the name and choose the rest from the lists. The type and one more detail draw the map." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite o nome e escolha o resto nas listas. O tipo e mais um dado desenham o mapa."
+          }
+        }
+      }
+    },
+    "Up to 6 months" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Até 6 meses"
+          }
+        }
+      }
+    },
+    "We couldn’t read it on this iPhone. Turn on Apple Intelligence and try again." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não conseguimos ler neste iPhone, ative o Apple Intelligence e tente novamente."
+          }
+        }
+      }
+    },
+    "Wood" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Madeira"
+          }
+        }
+      }
+    },
+    "Write a dish" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escreva um prato"
+          }
+        }
+      }
+    },
+    "Write a grape" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escreva uma casta"
+          }
+        }
+      }
+    },
+    "Write a region" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escreva uma região"
+          }
+        }
+      }
+    },
+    "Write an appellation" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escreva uma denominação"
+          }
+        }
+      }
+    },
+    "Write an aroma" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escreva um aroma"
+          }
+        }
+      }
+    },
+    "Year" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ano"
+          }
+        }
+      }
+    },
     "–" : {
       "localizations" : {
         "pt-BR" : {
@@ -121,6 +611,9 @@
         }
       }
     },
+    "%" : {
+
+    },
     "%@ · %lld years" : {
       "localizations" : {
         "en" : {
@@ -223,6 +716,19 @@
         }
       }
     },
+    "%lld" : {
+
+    },
+    "%lld already fit your palate. Turn the page if there’s more." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld já combinam com seu paladar. Vire a página se houver mais."
+          }
+        }
+      }
+    },
     "%lld awards" : {
       "localizations" : {
         "pt-BR" : {
@@ -263,6 +769,26 @@
         }
       }
     },
+    "%lld wines found" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld vinhos encontrados"
+          }
+        }
+      }
+    },
+    "%lld wines on the list" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld vinhos na carta"
+          }
+        }
+      }
+    },
     "%lld%%" : {
       "localizations" : {
         "pt-BR" : {
@@ -299,6 +825,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 vinho avaliado até agora"
+          }
+        }
+      }
+    },
+    "1 wine found" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 vinho encontrado"
+          }
+        }
+      }
+    },
+    "1 wine on the list" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 vinho na carta"
+          }
+        }
+      }
+    },
+    "A bottle, up to" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uma garrafa, até"
           }
         }
       }
@@ -384,12 +940,12 @@
         }
       }
     },
-    "Add what you can read on the label. Only the name is needed." : {
+    "Also on the list" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Preencha o que conseguir ler no rótulo. Basta informar o nome."
+            "value" : "Também na carta"
           }
         }
       }
@@ -410,6 +966,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entre os %lld%% melhores vinhos do mundo"
+          }
+        }
+      }
+    },
+    "any price" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "qualquer preço"
           }
         }
       }
@@ -450,6 +1016,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prêmios"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voltar"
           }
         }
       }
@@ -535,6 +1111,26 @@
         }
       }
     },
+    "Cheese" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queijo"
+          }
+        }
+      }
+    },
+    "Chicken" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frango"
+          }
+        }
+      }
+    },
     "Choose from library" : {
       "localizations" : {
         "pt-BR" : {
@@ -555,12 +1151,42 @@
         }
       }
     },
+    "Close" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
+          }
+        }
+      }
+    },
+    "Close second" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo atrás"
+          }
+        }
+      }
+    },
     "Close to your map on every axis." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Próximo do seu mapa em todos os eixos."
+          }
+        }
+      }
+    },
+    "Close to your palate on every axis." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perto do seu paladar em todos os eixos."
           }
         }
       }
@@ -581,6 +1207,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pode ser que sim"
+          }
+        }
+      }
+    },
+    "Dessert" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobremesa"
           }
         }
       }
@@ -666,6 +1302,26 @@
         }
       }
     },
+    "Fish" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peixe"
+          }
+        }
+      }
+    },
+    "Fit one page in the frame, flat and in the light." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enquadre uma página, plana e com boa luz."
+          }
+        }
+      }
+    },
     "Fit the whole label inside the frame, flat and in focus." : {
       "localizations" : {
         "pt-BR" : {
@@ -697,6 +1353,16 @@
         }
       }
     },
+    "For %lld" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para %lld"
+          }
+        }
+      }
+    },
     "For you" : {
       "localizations" : {
         "pt-BR" : {
@@ -713,6 +1379,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fortificado"
+          }
+        }
+      }
+    },
+    "Friends with a palate map are read together." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os mapas do paladar dos amigos são lidos juntos."
           }
         }
       }
@@ -758,6 +1434,16 @@
         }
       }
     },
+    "Game" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caça"
+          }
+        }
+      }
+    },
     "Germany's top vineyards." : {
       "localizations" : {
         "pt-BR" : {
@@ -784,16 +1470,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Casta"
-          }
-        }
-      }
-    },
-    "Grape or blend" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Casta ou corte"
           }
         }
       }
@@ -880,6 +1556,22 @@
         }
       }
     },
+    "High in %@ and %@, like your palate." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "High in %1$@ and %2$@, like your palate."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forte em %1$@ e %2$@, como o seu paladar."
+          }
+        }
+      }
+    },
     "High in %@, like your map." : {
       "localizations" : {
         "pt-BR" : {
@@ -890,12 +1582,42 @@
         }
       }
     },
+    "High in %@, like your palate." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forte em %@, como o seu paladar."
+          }
+        }
+      }
+    },
+    "Holds up to %@." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acompanha bem %@."
+          }
+        }
+      }
+    },
     "How loud is it?" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qual é o volume?"
+          }
+        }
+      }
+    },
+    "How to ask for it" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Como pedir"
           }
         }
       }
@@ -970,6 +1692,16 @@
         }
       }
     },
+    "It’s on the table · add to Cellar" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Está na mesa · guardar na Adega"
+          }
+        }
+      }
+    },
     "Italy's top level, with an official tasting." : {
       "localizations" : {
         "pt-BR" : {
@@ -986,6 +1718,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Logo abaixo do Grand Cru."
+          }
+        }
+      }
+    },
+    "Label" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rótulo"
           }
         }
       }
@@ -1052,6 +1794,16 @@
         }
       }
     },
+    "Less %@ than you usually like." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menos %@ do que você costuma gostar."
+          }
+        }
+      }
+    },
     "Light" : {
       "localizations" : {
         "pt-BR" : {
@@ -1091,6 +1843,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Procure baunilha, torrada ou madeira no aroma e no final. Um sopro de torrada fica baixo. Se a madeira e o tostado ficam na boca e dominam, marque alto."
+          }
+        }
+      }
+    },
+    "Made for %@." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feito para %@."
           }
         }
       }
@@ -1145,6 +1907,16 @@
         }
       }
     },
+    "More %@ than you usually like." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mais %@ do que você costuma gostar."
+          }
+        }
+      }
+    },
     "Move somewhere brighter and keep the label out of shadow." : {
       "localizations" : {
         "pt-BR" : {
@@ -1185,12 +1957,12 @@
         }
       }
     },
-    "No matching suggestions" : {
+    "No limit" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nenhuma sugestão encontrada"
+            "value" : "Sem limite"
           }
         }
       }
@@ -1201,6 +1973,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sem nota"
+          }
+        }
+      }
+    },
+    "No wine on this list fits the budget. These are the closest." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum vinho desta carta cabe no orçamento. Estes são os mais próximos."
+          }
+        }
+      }
+    },
+    "No wine to suggest" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum vinho para sugerir"
+          }
+        }
+      }
+    },
+    "No wines on this page. Try it closer, flat and in the light." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhum vinho nesta página. Tente mais perto, com a página plana e boa luz."
+          }
+        }
+      }
+    },
+    "No. %lld in %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "No. %1$lld in %2$@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nº %1$lld em %2$@"
           }
         }
       }
@@ -1231,6 +2049,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ainda não provei"
+          }
+        }
+      }
+    },
+    "Not the obvious match for %@." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não é o par óbvio para %@."
           }
         }
       }
@@ -1318,6 +2146,16 @@
         }
       }
     },
+    "One already fits your palate. Turn the page if there’s more." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um já combina com seu paladar. Vire a página se houver mais."
+          }
+        }
+      }
+    },
     "Only %lld%% of wines." : {
       "localizations" : {
         "pt-BR" : {
@@ -1348,12 +2186,42 @@
         }
       }
     },
+    "Order this" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peça este"
+          }
+        }
+      }
+    },
     "Origin" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Origem"
+          }
+        }
+      }
+    },
+    "Over budget" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acima do orçamento"
+          }
+        }
+      }
+    },
+    "Page %lld" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Página %lld"
           }
         }
       }
@@ -1384,6 +2252,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fotografe o vinho"
+          }
+        }
+      }
+    },
+    "Pick what you ordered. Skip anything you don’t know yet." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha o que pediu. Pule o que ainda não sabe."
+          }
+        }
+      }
+    },
+    "Pork" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Porco"
           }
         }
       }
@@ -1428,12 +2316,58 @@
         }
       }
     },
+    "Read from %lld palate maps · %lld wines" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Read from %1$lld palate maps · %2$lld wines"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lido de %1$lld mapas do paladar · %2$lld vinhos"
+          }
+        }
+      }
+    },
+    "Read from the list" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lido da carta"
+          }
+        }
+      }
+    },
+    "Read from your palate map · %lld wines" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lido do seu mapa do paladar · %lld vinhos"
+          }
+        }
+      }
+    },
     "Reading" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Leitura"
+          }
+        }
+      }
+    },
+    "Reading the list" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lendo a carta"
           }
         }
       }
@@ -1478,22 +2412,22 @@
         }
       }
     },
+    "Red meat" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carne vermelha"
+          }
+        }
+      }
+    },
     "Region" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Região"
-          }
-        }
-      }
-    },
-    "Region or appellation" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Região ou denominação"
           }
         }
       }
@@ -1515,6 +2449,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Passe a língua pela gengiva depois do gole. Se ela prende só um pouco, marque baixo. Se a boca fica seca como depois de um chá preto forte, marque alto."
+          }
+        }
+      }
+    },
+    "Same feel, less money" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesmo estilo, mais barato"
           }
         }
       }
@@ -1549,6 +2493,16 @@
         }
       }
     },
+    "Seafood" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frutos do mar"
+          }
+        }
+      }
+    },
     "Shown" : {
       "localizations" : {
         "pt-BR" : {
@@ -1566,6 +2520,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Procure fruta no aroma e confirme no gole. Um toque de maçã fica baixo. Uma tigela inteira de frutas vermelhas sobe na escala."
+          }
+        }
+      }
+    },
+    "Something different" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo diferente"
           }
         }
       }
@@ -1753,12 +2717,42 @@
         }
       }
     },
+    "Tell me what to order" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diga o que pedir"
+          }
+        }
+      }
+    },
     "The camera is off" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "A câmera está desativada"
+          }
+        }
+      }
+    },
+    "The closest to all %lld palate maps." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O mais próximo dos %lld mapas do paladar."
+          }
+        }
+      }
+    },
+    "The dish" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O prato"
           }
         }
       }
@@ -1803,6 +2797,16 @@
         }
       }
     },
+    "The wine list" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A carta de vinhos"
+          }
+        }
+      }
+    },
     "Think petals. A faint violet is low. If it smells like you walked into a flower shop, go high." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1810,6 +2814,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pense em pétalas. Um toque de violeta fica no começo da linha. Se parece que você entrou numa floricultura, vá para o outro extremo."
+          }
+        }
+      }
+    },
+    "This doesn’t look like a wine" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isso não parece ser um vinho"
           }
         }
       }
@@ -1854,6 +2868,16 @@
         }
       }
     },
+    "Turn the page if there’s more." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vire a página se houver mais."
+          }
+        }
+      }
+    },
     "Type" : {
       "localizations" : {
         "pt-BR" : {
@@ -1870,6 +2894,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Interpretando o rótulo"
+          }
+        }
+      }
+    },
+    "up to %@" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "até %@"
+          }
+        }
+      }
+    },
+    "Use this list" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar esta carta"
           }
         }
       }
@@ -1894,12 +2938,42 @@
         }
       }
     },
+    "UVVA needs the camera to read the wine list. Turn it on in Settings." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A UVVA precisa da câmera para ler a carta de vinhos. Ative-a nos Ajustes."
+          }
+        }
+      }
+    },
+    "UVVA read the label, but found no grape, no alcohol by volume and nothing else a wine label says. Photograph the bottle’s labels, front and back." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A UVVA leu o rótulo, mas não encontrou uva, teor alcoólico nem nada que um rótulo de vinho traga. Fotografe os rótulos da garrafa, frente e verso."
+          }
+        }
+      }
+    },
     "UVVA seal of quality" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Selo de qualidade UVVA"
+          }
+        }
+      }
+    },
+    "Vegetables" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legumes"
           }
         }
       }
@@ -1914,12 +2988,32 @@
         }
       }
     },
+    "We couldn’t read this page. Try again." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não conseguimos ler esta página. Tente de novo."
+          }
+        }
+      }
+    },
     "We couldn’t read your label" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Não conseguimos ler seu rótulo"
+          }
+        }
+      }
+    },
+    "We couldn’t tell any wine on this list apart. Try another photo of it." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não conseguimos identificar nenhum vinho nesta carta. Tente outra foto."
           }
         }
       }
@@ -1934,12 +3028,32 @@
         }
       }
     },
+    "What’s on the table?" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que tem na mesa?"
+          }
+        }
+      }
+    },
     "White" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Branco"
+          }
+        }
+      }
+    },
+    "Who’s drinking" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quem vai beber"
           }
         }
       }
@@ -1964,6 +3078,16 @@
         }
       }
     },
+    "Wine list" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carta de vinhos"
+          }
+        }
+      }
+    },
     "Would you drink it again?" : {
       "localizations" : {
         "pt-BR" : {
@@ -1974,22 +3098,22 @@
         }
       }
     },
-    "Write your own" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escrever minha nota"
-          }
-        }
-      }
-    },
     "Yes" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sim"
+          }
+        }
+      }
+    },
+    "You" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Você"
           }
         }
       }

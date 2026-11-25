@@ -11,6 +11,8 @@ struct NewNotePaperView: View {
     var onNote: (String) -> Void
     var onAddChip: (String, NewNoteChipField) -> Void
     var loadChipOptions: (NewNoteChipField) async -> [String]
+    /// A word typed for grapes, notes or pairings, checked by "Add" (CELLAR-R18a).
+    var validateChip: (String, NewNoteChipField) async -> ChipWordResult
     var onIntensity: (Double, PalateAxis) -> Void
     var onReplacePhoto: (Data, NewNotePhotoSide) -> Void
     var onSave: () -> Void
@@ -95,6 +97,8 @@ struct NewNotePaperView: View {
         .sheet(item: $chipField) { field in
             NewNoteChipSheet(title: chipTitle(field), resources: resources,
                              existing: model.wine.map { field.values(in: $0) } ?? [],
+                             writing: NewNoteChipWriting(kind: field.wordKind) { await validateChip($0, field) },
+                             display: field == .notes ? { WineCatalogText.notes($0) } : { $0 },
                              loadOptions: { await loadChipOptions(field) }) { values in
                 for value in values { onAddChip(value, field) }
             }

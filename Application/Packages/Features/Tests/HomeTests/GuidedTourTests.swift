@@ -43,15 +43,15 @@ struct GuidedTourTests {
         tour.pick(4)
         tour.pick(2)
         #expect(tour.step == 2)
-        tour.pick(9)
+        tour.pick(6)
         #expect(tour.step == 2)
     }
 
     // MARK: HOME-R33 · Fim
 
-    @Test func HOME_R33_nextOnStepSix_finishes() {
+    @Test func HOME_R33_nextOnStepFive_finishes() {
         var tour = GuidedTour()
-        tour.pick(6)
+        tour.pick(5)
         #expect(!tour.isFinished)
         tour.next()
         #expect(tour.isFinished)
@@ -63,20 +63,23 @@ struct GuidedTourTests {
         let viewModel = GuidedTourViewModel(firstName: "Elisa") { finished = true }
         #expect(viewModel.uiModel.counter == "Tour")
         viewModel.next()
-        #expect(viewModel.uiModel.counter == "1 of 6")
+        #expect(viewModel.uiModel.counter == "1 of 5")
         #expect(viewModel.uiModel.nextTitle == "Next")
-        viewModel.pick(6)
+        viewModel.pick(5)
         #expect(viewModel.uiModel.nextTitle == "Start")
         viewModel.next()
         #expect(finished)
     }
 
     @MainActor
-    @Test func HOME_R31_stepTwo_pointsAtChooseYourWine_andTheTabsComeLast() {
+    @Test func HOME_R31_fiveSteps_heroFirst_scanSecond_andTheTabsComeLast() {
         let viewModel = GuidedTourViewModel(firstName: "Elisa") {}
+        #expect(GuidedTour.stepCount == 5)
+        viewModel.pick(1)
+        #expect(viewModel.uiModel.current?.target == HomeSpotlightID.today)
         viewModel.pick(2)
-        #expect(viewModel.uiModel.current?.target == HomeSpotlightID.chooseYourWine)
-        viewModel.pick(6)
+        #expect(viewModel.uiModel.current?.target == HomeSpotlightID.scan)
+        viewModel.pick(5)
         #expect(viewModel.uiModel.current?.target == "tab.friends")
     }
 
@@ -89,10 +92,10 @@ struct GuidedTourTests {
         defer { subscription.cancel() }
         model.next()
         model.pick(2)
-        #expect(presentations.last?.current?.target == HomeSpotlightID.chooseYourWine)
+        #expect(presentations.last?.current?.target == HomeSpotlightID.scan)
         model.back()
         #expect(presentations.last?.step == 1)
-        model.pick(6)
+        model.pick(5)
         model.next()
         #expect(presentations.first?.counter == "Tour")
         #expect(presentations.last?.isFinished == true)
@@ -103,7 +106,7 @@ struct GuidedTourTests {
     @Test func completedTour_ignoresFurtherActionsAndFinishesOnce() {
         var completions = 0
         let model = GuidedTourViewModel(firstName: "Elisa") { completions += 1 }
-        model.pick(6)
+        model.pick(5)
         model.next()
         model.next()
         model.back()
@@ -111,7 +114,7 @@ struct GuidedTourTests {
         model.next()
         #expect(completions == 1)
         #expect(model.uiModel.isFinished)
-        #expect(model.uiModel.step == 6)
+        #expect(model.uiModel.step == 5)
     }
 
 }

@@ -4,6 +4,8 @@ import Foundation
 /// a scanned wine, so every line says whose.
 struct FriendWineResourcesUIModel {
     var findWineText = String(localized: "Find the wine", bundle: .module)
+    /// "Find the wine" as a magnifying glass, beside "Add to cellar".
+    var findIcon = "magnifyingglass"
     var backText = String(localized: "Back", bundle: .module)
     var addToCellarText = String(localized: "Add to cellar", bundle: .module)
     var inCellarText = String(localized: "In your cellar", bundle: .module)

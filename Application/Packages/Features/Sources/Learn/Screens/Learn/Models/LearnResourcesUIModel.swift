@@ -19,6 +19,7 @@ struct LearnResourcesUIModel {
     var leaveTheLessonText = String(localized: "Leave the lesson", bundle: .module)
     var previousScreenText = String(localized: "Previous screen", bundle: .module)
     var backIcon = "chevron.left"
+    var searchIcon = "magnifyingglass"
     var continueText = String(localized: "Continue", bundle: .module)
 
     func noResults(_ query: String) -> String {

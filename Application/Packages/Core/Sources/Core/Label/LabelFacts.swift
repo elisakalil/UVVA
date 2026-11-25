@@ -26,11 +26,16 @@ public struct LabelFacts: Equatable, Sendable {
     public var designation: String?
     /// The medals and critics' scores on the bottle (CELLAR-R30).
     public var awards: [WineAward]
+    /// How long the wine rested in wood, "12 meses em barricas" (CELLAR-R23).
+    public var oakAging: OakAging?
+    /// The woods it rested in, as `OakWood` writes them.
+    public var oakWoods: [String]
 
     public init(name: String? = nil, producer: String? = nil, vintage: Int? = nil, type: String? = nil,
                 appellation: String? = nil, region: String? = nil, country: String? = nil, grapes: [String] = [],
                 alcohol: Double? = nil, titleLines: [String] = [], notes: [String] = [], pairings: [String] = [],
-                serving: ClosedRange<Int>? = nil, designation: String? = nil, awards: [WineAward] = []) {
+                serving: ClosedRange<Int>? = nil, designation: String? = nil, awards: [WineAward] = [],
+                oakAging: OakAging? = nil, oakWoods: [String] = []) {
         self.name = name
         self.producer = producer
         self.vintage = vintage
@@ -46,6 +51,8 @@ public struct LabelFacts: Equatable, Sendable {
         self.serving = serving
         self.designation = designation
         self.awards = awards
+        self.oakAging = oakAging
+        self.oakWoods = oakWoods
     }
 
     /// Without a name there is nothing to save (CELLAR-R23).

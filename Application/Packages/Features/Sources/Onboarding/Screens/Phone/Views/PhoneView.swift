@@ -6,6 +6,8 @@ import SwiftUI
 struct PhoneView<ViewModel: PhoneViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     @State private var choosingCountry = false
+    /// Bumped by a tap on the number, so the keypad shows it is where to type.
+    @State private var keypadHint = 0
 
     var body: some View {
         let model = viewModel.uiModel
@@ -29,15 +31,30 @@ struct PhoneView<ViewModel: PhoneViewModelProtocol>: View {
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel(Text(model.countryAccessibility))
+                    // The keypad below is always the input: the field shows it is live with a caret and a
+                    // bright line, and a tap on it lights the keypad up instead of doing nothing.
+                    // The caret sits before the example while it is empty and after the last digit once typing.
                     Text(model.number)
                         .font(UVVAFont.sans(22))
                         .tracking(0.9)
                         .opacity(model.isEmpty ? 0.35 : 1)
                         .lineLimit(1)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentTransition(.numericText())
+                        .animation(.snappy(duration: 0.2), value: model.number)
+                        .overlay(alignment: model.isEmpty ? .leading : .trailing) {
+                            PhoneCaret().offset(x: model.isEmpty ? -5 : 5)
+                        }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
+                    .onTapGesture { keypadHint += 1 }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text(model.numberAccessibility))
+                    .accessibilityValue(Text(model.isEmpty ? "" : model.number))
                 }
                 .padding(.bottom, 13)
-                .overlay(alignment: .bottom) { Rectangle().opacity(0.3).frame(height: 0.5) }
+                .overlay(alignment: .bottom) {
+                    Rectangle().fill(UVVAColor.creamFill).opacity(0.85).frame(height: 1)
+                }
                 .padding(.top, 40)
 
                 if let notice = viewModel.uiModel.notice {
@@ -47,38 +64,17 @@ struct PhoneView<ViewModel: PhoneViewModelProtocol>: View {
 
                 Spacer(minLength: 12)
 
-                ZStack {
-                    VStack(spacing: 14) {
-                        Text(viewModel.uiModel.optionalYouCanStillAddFriendsText)
-                            .font(UVVAFont.sans(12)).lineSpacing(5).opacity(0.6)
-                            .multilineTextAlignment(.center).frame(maxWidth: 260)
-                        Button { Task { await viewModel.skipPhone() } } label: {
-                            Text(viewModel.uiModel.skipForNowText.uppercased())
-                                .font(UVVAFont.sans(9.5, .semibold)).tracking(2.85)
-                                .frame(minHeight: 44).padding(.horizontal, 20).contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                    }
-                    .opacity(model.isEmpty ? 1 : 0)
-                    .offset(y: model.isEmpty ? 0 : 10)
-                    .allowsHitTesting(model.isEmpty)
-
-                    ActionButton(viewModel.uiModel.continueText,
-                                 isEnabled: model.canContinue && !model.isSaving) {
-                        Task { await viewModel.continueWithPhone() }
-                    }
-                    .opacity(model.isEmpty ? 0 : 1)
-                    .offset(y: model.isEmpty ? 10 : 0)
-                    .allowsHitTesting(!model.isEmpty)
+                ActionButton(viewModel.uiModel.continueText,
+                             isEnabled: model.canContinue && !model.isSaving) {
+                    Task { await viewModel.continueWithPhone() }
                 }
                 .frame(height: 96)
-                .animation(.easeOut(duration: 0.5), value: model.isEmpty)
             }
             .padding(.horizontal, 30)
             .padding(.top, 16)
             .padding(.bottom, 18)
 
-            PhoneKeypad(onDigit: viewModel.press, onDelete: viewModel.deleteDigit)
+            PhoneKeypad(hint: keypadHint, onDigit: viewModel.press, onDelete: viewModel.deleteDigit)
         }
         .sheet(isPresented: $choosingCountry) {
             CountryPicker(selected: model.country) { country in
@@ -88,5 +84,21 @@ struct PhoneView<ViewModel: PhoneViewModelProtocol>: View {
             .presentationDetents([.medium, .large])
             .presentationBackground(UVVAColor.mossDeep)
         }
+    }
+}
+
+/// The blinking text cursor of the number field.
+private struct PhoneCaret: View {
+    @State private var visible = true
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 1)
+            .fill(UVVAColor.creamFill)
+            .frame(width: 2, height: 24)
+            .opacity(visible ? 1 : 0)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true)) { visible = false }
+            }
+            .accessibilityHidden(true)
     }
 }

@@ -6,7 +6,7 @@
 
 ## 1. Objetivo
 
-O Onboarding é a criação da conta: leva a pessoa da primeira abertura da app até ter uma sessão. Mostra o Splash e a Welcome, entra com Apple ou Google, pede o primeiro nome e, opcionalmente, o telefone, e oferece encontrar amigos nos contatos.
+O Onboarding é a criação da conta: leva a pessoa da primeira abertura da app até ter uma sessão. Mostra o Splash e a Welcome, entra com Apple ou Google, pede o primeiro nome e o telefone, e oferece encontrar amigos nos contatos.
 
 Não há SMS, senha nem e-mail: a conta não tem nenhum custo por usuário (ARCHITECTURE §6). Os dados da conta ficam no iCloud do usuário.
 
@@ -31,7 +31,7 @@ Splash
   ├── conta já existe ──→ ver ONB-R27
   ↓ conta nova
   → Nome
-  → Telefone ──(Continue / Skip for now)──→ sessão começa (ONB-R02a)
+  → Telefone ──(Continue)──→ sessão começa (ONB-R02a)
   → Find friends ──(Continue)──→ pedido de acesso aos contatos
   → Contacts ──(Next)──→ fim do Onboarding → Quiz (QUIZZ.md)
 ```
@@ -65,7 +65,7 @@ As validações são funções puras e separadas: `NameValidator`, `PhoneValidat
 | Com sessão e com mapa do paladar | Home |
 | Com sessão e sem mapa (o Quiz não foi concluído) | Quiz, na Intro (QUIZ-R13a) |
 
-**ONB-R02a · Quando a sessão começa.** A sessão é guardada quando o usuário sai do Telefone, com "Continue" ou com "Skip for now". Antes disso, nada fica guardado: se a app fechar na Welcome, no login ou no Nome, o cadastro recomeça da Welcome. Depois disso, a sessão existe e não tem mapa, por isso a app abre na Intro do Quiz (ONB-R02); Find friends e Contacts não voltam a aparecer, e os amigos passam a ser adicionados pela aba Friends.
+**ONB-R02a · Quando a sessão começa.** A sessão é guardada quando o usuário sai do Telefone, com "Continue". Antes disso, nada fica guardado: se a app fechar na Welcome, no login ou no Nome, o cadastro recomeça da Welcome. Depois disso, a sessão existe e não tem mapa, por isso a app abre na Intro do Quiz (ONB-R02); Find friends e Contacts não voltam a aparecer, e os amigos passam a ser adicionados pela aba Friends.
 
 **Critérios**
 - Dada uma instalação nova, então depois do Splash abre a Welcome.
@@ -133,18 +133,20 @@ Depois do login, uma conta nova segue para o Nome; uma conta que já existe segu
 
 **ONB-R05 · Validação.** "Continue" só fica ativo quando o campo tem 12 dígitos, indicativo incluído.
 
-**ONB-R35 · Opcional.** Enquanto o campo está vazio, aparecem "Optional. You can still add friends with your invite link." e "Skip for now". Ao digitar o primeiro dígito, esse bloco some e "Continue" aparece no lugar; ao apagar tudo, volta.
+**ONB-R35 · Obrigatório.** O telefone é obrigatório: não há "Skip for now". "Continue" aparece sempre e fica inativo até o número ser válido (ONB-R05).
 
-**ONB-R07 · Guardar.** "Continue" guarda o número no perfil, em E.164, e publica a chave de contato (ARCHITECTURE §4.4). "Skip for now" segue sem número e sem chave. Os dois começam a sessão (ONB-R02a) e abrem Find friends.
+**ONB-R35a · Campo ativo.** O teclado é o da própria tela e está sempre aberto, por isso o campo mostra que já está pronto para digitar: um cursor piscando (antes do exemplo quando vazio, depois do último dígito ao digitar) e a linha de baixo acesa. Tocar no campo acende o teclado por um instante, com um toque háptico, para indicar onde digitar.
+
+**ONB-R07 · Guardar.** "Continue" guarda o número no perfil, em E.164, e publica a chave de contato (ARCHITECTURE §4.4). Começa a sessão (ONB-R02a) e abre Find friends.
 
 **ONB-R07a · Número já usado.** Se outra conta já registou a mesma chave, o número fica guardado só no perfil, sem chave, e a conta não aparece no Quick add por esse número (ver D20).
 
 **Critérios**
-- Dado o campo vazio, então aparecem "Optional…" e "Skip for now", e "Continue" não aparece.
-- Dado "3" digitado, então "Skip for now" some e "Continue" aparece, inativo.
+- Dado o campo vazio, então "Continue" aparece inativo e não há "Skip for now".
+- Dado "3" digitado, então "Continue" continua inativo.
+- Quando o usuário toca no campo, então o teclado acende por um instante.
 - Dado "351912345678" (12 dígitos), então "Continue" está ativo.
 - Dados 12 dígitos, quando o usuário toca em mais um, então o campo continua com 12.
-- Quando o usuário toca em "Skip for now", então a sessão começa sem telefone e abre Find friends.
 - Dado "351912345678", quando o usuário toca em "Continue", então o perfil guarda "+351912345678" e é publicada 1 chave de contato.
 
 ### 4.4 Find friends
@@ -161,21 +163,24 @@ Depois do login, uma conta nova segue para o Nome; uma conta que já existe segu
 
 Uma barra de A a Z permite saltar na lista. "Next" acaba o Onboarding (ONB-R21).
 
+**ONB-R37c · Carregando.** Enquanto os contatos carregam, só aparecem as uvas animadas: o título, o voltar, "Next" e a barra de A a Z ficam escondidos e voltam quando as listas chegam.
+
 **ONB-R37a · Convite por SMS.** "Invite" abre a folha de mensagem do iOS já preenchida: para o primeiro número do contato, com o texto, o link `uvva.app/invite/<id>` e a imagem do convite. O usuário só toca em Enviar (o iOS não deixa uma app enviar SMS sozinha). Enviado, o botão passa a "Invited"; cancelado, fica "Invite".
 - **Texto e imagem:** no Onboarding ainda não há mapa (o Quiz vem depois), por isso o texto é "Map your taste in wine with me on UVVA." e a imagem é a vinha com as uvas e "Map your taste in wine with me". Aberto pela aba Friends (FRI-R06), com mapa, o texto é "This is my wine palate. Map yours on UVVA and we'll find the perfect wine to drink together." e a imagem é o cartão do paladar do usuário (SHARED-R20).
 - **Sem Mensagens:** num aparelho que não envia mensagens (`canSendText` falso, como no Simulador), o convite abre a partilha do iOS com a imagem e o texto, e o botão passa logo a "Invited".
 
-**ONB-R37b · Aberto pela aba Friends.** A mesma tela abre pelo botão "Invite friends" do Friends vazio (FRI-R06), com "Done" em vez de "Next". `‹` e "Done" fecham-na e voltam à aba.
+**ONB-R37b · Aberto pela aba Friends.** A mesma tela abre pelo botão "Invite friends" do Friends vazio (FRI-R06), com "Done" em vez de "Next". "Back" e "Done" fecham-na e voltam à aba.
 
 **Critérios**
 - Dado um contato com conta e mapa, então ele aparece na primeira lista.
 - Dado um contato com conta e sem mapa, então ele não aparece em nenhuma das listas (FRI-R01).
 - Quando o usuário toca em "Add" num contato, então é criado 1 pedido de amizade e o botão diz "Requested".
+- Enquanto os contatos carregam, então não aparecem título, voltar, "Next" nem a barra de A a Z.
 - Quando o usuário toca em "Invite" num contato com o número 912 000 003, então a mensagem vai para 912 000 003, com o texto e o link do convite.
 
 ### 4.6 Voltar
 
-**ONB-R20 · Voltar.** No Nome, voltar abre a Welcome (e o login tem de ser feito de novo). No Telefone, voltar abre o Nome com o valor digitado. Find friends não tem voltar, porque a sessão já começou. Em Contacts, voltar abre Find friends.
+**ONB-R20 · Voltar.** Em todas as telas, o voltar é "Back" numa pílula com contorno, o mesmo do topo de um amigo (2026-11-23). No Nome, voltar abre a Welcome (e o login tem de ser feito de novo). No Telefone, voltar abre o Nome com o valor digitado. Find friends não tem voltar, porque a sessão já começou. Em Contacts, voltar abre Find friends.
 
 ### 4.7 Fim do Onboarding
 
@@ -237,7 +242,7 @@ Uma barra de A a Z permite saltar na lista. "Next" acaba o Onboarding (ONB-R21).
 | D7 | Sair no meio do cadastro | Recomeça da Welcome, até a sessão começar | ONB-R02a |
 | D13 | Senha | Não há senha | — |
 | D18 | Como criar a conta sem custo | Apple ou Google, sem SMS nem e-mail (2026-10-31) | ONB-R29 |
-| D22 | Telefone | Opcional e não verificado, só para o Quick add (2026-10-31) | ONB-R03a, R35 |
+| D22 | Telefone | Obrigatório (2026-11-23; era opcional desde 2026-10-31) e não verificado, só para o Quick add | ONB-R03a, R35 |
 
 As dúvidas D3, D3b, D4, D5, D11, D14, D15, D16 e D17 da v0.4 deixaram de existir com a v0.5.
 

@@ -12,15 +12,16 @@ struct GroupTableTests {
 
     let sharing = SharingFake()
 
-    func makeList() -> FriendsViewModel {
+    func makeList(onAddToCellar: @escaping (Wine) -> Void = { _ in }) -> FriendsViewModel {
         FriendsFactory(profiles: ProfilesStub(), maps: MapStub(map: userMap), friends: repository, catalog: CatalogStub(),
                        social: social, contacts: ContactsFake(access: .denied), sharing: sharing, wines: WineLookupStub())
-            .makeViewModel()
+            .makeViewModel(onAddToCellar: onAddToCellar)
     }
 
     /// The table of the friends named, loaded.
-    func loadedTable(_ names: [String]) async throws -> GroupTableViewModel {
-        let list = await loadedList(names)
+    func loadedTable(_ names: [String],
+                     onAddToCellar: @escaping (Wine) -> Void = { _ in }) async throws -> GroupTableViewModel {
+        let list = await loadedList(names, onAddToCellar: onAddToCellar)
         list.startSelecting()
         for name in names { list.toggle(name.lowercased()) }
         list.findBottle()
@@ -38,9 +39,9 @@ struct GroupTableTests {
         }
     }
 
-    func loadedList(_ names: [String]) async -> FriendsViewModel {
+    func loadedList(_ names: [String], onAddToCellar: @escaping (Wine) -> Void = { _ in }) async -> FriendsViewModel {
         befriend(names)
-        let list = makeList()
+        let list = makeList(onAddToCellar: onAddToCellar)
         await list.load()
         return list
     }
@@ -205,6 +206,24 @@ struct GroupTableTests {
         sharing.failSending(to: [])
         await table.sendWine()
         #expect(sharing.records.map(\.to) == ["marina", "bia"])
+    }
+
+    @Test func aBottleToOpenTogether_addToCellar_closesIt_thenOpensTheNewNote() async throws {
+        var added: [String] = []
+        let table = try await loadedTable(["Marina", "Bia"], onAddToCellar: { added.append($0.id) })
+        let bottle = try #require(table.uiModel.togetherWines?.first)
+        table.openTableWine(bottle.id)
+        #expect(table.uiModel.friendWine?.cellar == .add)
+        table.addWineToCellar()
+        #expect(table.uiModel.friendWine == nil)
+        #expect(added.isEmpty)
+        table.wineDismissed()
+        #expect(added == [bottle.id])
+        // Closed any other way, nothing opens.
+        table.openTableWine(bottle.id)
+        table.closeWine()
+        table.wineDismissed()
+        #expect(added == [bottle.id])
     }
 
     @Test func scannedWine_readsTheMatchOnEveryMap_andEachOne() {

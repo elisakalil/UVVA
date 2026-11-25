@@ -223,16 +223,6 @@
         }
       }
     },
-    "A pairing drawn for your palate" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Uma harmonização para o seu paladar"
-          }
-        }
-      }
-    },
     "A quick\nlook around" : {
       "localizations" : {
         "pt-BR" : {
@@ -259,6 +249,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Um vinho para cada traço forte do seu mapa"
+          }
+        }
+      }
+    },
+    "Add friends and see how your palates compare. Set a table and UVVA picks three bottles and a dinner menu for everyone." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adicione amigos e veja como os paladares se comparam. Monte uma mesa e a UVVA escolhe três garrafas e um menu de jantar para todos."
           }
         }
       }
@@ -424,6 +424,7 @@
       }
     },
     "Choose your wine" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
@@ -559,16 +560,6 @@
         }
       }
     },
-    "Every day UVVA designs a full experience around your map: a wine that hits the notes you love loudest, and a recipe built to balance everything else." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Todos os dias, a UVVA usa seu mapa para criar uma experiência completa: um vinho com as notas que você mais gosta e uma receita que equilibra os demais sabores."
-          }
-        }
-      }
-    },
     "Expect a bright, tangy sip." : {
       "localizations" : {
         "pt-BR" : {
@@ -625,6 +616,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Encontrar o vinho"
+          }
+        }
+      }
+    },
+    "First on your Home is the wine with the highest match to your map, with a dish to pour it with. It changes as your map does." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No topo da sua Home está o vinho com o maior match com o seu mapa, com um prato para acompanhar. Ele muda quando o seu mapa muda."
           }
         }
       }
@@ -741,16 +742,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alemanha"
-          }
-        }
-      }
-    },
-    "Get to know the region you keep coming back to, the grape behind your favourite bottle, and what to look for in the glass. Five minutes at a time." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conheça melhor a região à qual você sempre volta, a uva do seu vinho favorito e o que observar na taça. Cinco minutos de cada vez."
           }
         }
       }
@@ -1018,16 +1009,6 @@
         }
       }
     },
-    "Invite the people you drink with. UVVA reads every map at the table and suggests one bottle for all of you." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Convide quem vai beber com você. A UVVA compara os mapas de todos à mesa e sugere uma garrafa para o grupo."
-          }
-        }
-      }
-    },
     "It feels full and substantial on the palate." : {
       "localizations" : {
         "pt-BR" : {
@@ -1129,12 +1110,12 @@
         }
       }
     },
-    "Learn the wines you love" : {
+    "Learn about wine" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aprenda sobre os vinhos que você adora"
+            "value" : "Aprenda sobre vinho"
           }
         }
       }
@@ -1316,6 +1297,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "de match com %@"
+          }
+        }
+      }
+    },
+    "match" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "de match"
           }
         }
       }
@@ -1549,16 +1540,6 @@
         }
       }
     },
-    "Pick a direction, a type, a region and up to three notes. UVVA finds the bottle closest to your map for tonight." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Escolha uma direção, um tipo, uma região e até três notas. A UVVA encontra o vinho que mais combina com seu mapa para hoje à noite."
-          }
-        }
-      }
-    },
     "Pick up to three" : {
       "localizations" : {
         "pt-BR" : {
@@ -1768,6 +1749,16 @@
         }
       }
     },
+    "Short lessons on regions, grapes and tasting, a few minutes at a time. Finish a course and share your certificate." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lições curtas sobre regiões, castas e degustação, poucos minutos de cada vez. Termine um curso e compartilhe o seu certificado."
+          }
+        }
+      }
+    },
     "Show another ›" : {
       "localizations" : {
         "pt-BR" : {
@@ -1956,12 +1947,12 @@
         }
       }
     },
-    "Tap + and point the camera at any bottle. UVVA reads the label, classifies the wine and adds it to your cellar. Every note you save moves your map." : {
+    "Tap + and photograph the front and back of a bottle. UVVA reads the label and keeps the wine in your cellar. Every wine you rate moves your map." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toque em + e aponte a câmera para uma garrafa. A UVVA lê o rótulo, classifica o vinho e o adiciona à sua adega. Cada nota que você salva atualiza seu mapa."
+            "value" : "Toque em + e fotografe a frente e o verso de uma garrafa. A UVVA lê o rótulo e guarda o vinho na sua adega. Cada vinho que você avalia move o seu mapa."
           }
         }
       }
@@ -2202,6 +2193,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Os taninos dão uma boa pegada nesse vinho."
+          }
+        }
+      }
+    },
+    "The wines you have tasted, with your rating, and the ones you want to try, each with its match to your map." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Os vinhos que você provou, com a sua nota, e os que quer provar, cada um com o seu match com o seu mapa."
           }
         }
       }
@@ -2735,16 +2736,6 @@
         }
       }
     },
-    "Wines you have tasted and wines you want to try, each one measured against your map." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Veja os vinhos que você já provou e os que quer experimentar, com o match de cada um com seu mapa."
-          }
-        }
-      }
-    },
     "With your palate" : {
       "localizations" : {
         "pt-BR" : {
@@ -2801,6 +2792,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dá pra sentir bem o carvalho nesse vinho."
+          }
+        }
+      }
+    },
+    "Your best match" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seu melhor match"
           }
         }
       }

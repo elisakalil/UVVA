@@ -40,20 +40,40 @@ struct NewNotePresentationBuilder {
     // MARK: By hand (CELLAR-R23)
 
     private func buildManual(into model: inout NewNoteUIModel) {
+        let form = flow.manual
         let labels: [NewNoteField: (String, String)] = [
             .name: (resources.wineFieldText, ""), .producer: (resources.producerFieldText, ""),
-            .region: (resources.regionFieldText, resources.regionPromptText),
-            .vintage: (resources.vintageFieldText, ""), .grape: (resources.grapeFieldText, resources.grapePromptText)
+            .vintage: (resources.vintageFieldText, ""), .alcohol: (resources.alcoholFieldText, resources.alcoholPromptText)
         ]
-        // The artboard's order: Wine, Producer, Region, Vintage, Grape.
-        model.manualFields = [NewNoteField.name, .producer, .region, .vintage, .grape].map { field in
-            NewNoteManualFieldUIModel(field: field, label: labels[field]?.0 ?? "", text: flow.manual[field],
-                                      prompt: labels[field]?.1 ?? "")
+        let hints = ([
+            .vintage: form.isVintageValid ? nil : resources.vintageHint(form.currentYear),
+            .alcohol: form.isAlcoholValid ? nil : resources.alcoholHintText
+        ] as [NewNoteField: String?]).compactMapValues { $0 }
+        // What is typed; then the type; then what is chosen from the catalog's lists (CELLAR-R23).
+        model.manualFields = [NewNoteField.name, .producer, .vintage, .alcohol].map { field in
+            NewNoteManualFieldUIModel(field: field, label: labels[field]?.0 ?? "", text: form[field],
+                                      prompt: labels[field]?.1 ?? "", hint: hints[field])
         }
         model.types = NewNoteResourcesUIModel.types.map {
-            NewNoteTypeUIModel(type: $0, label: resources.type($0), isSelected: flow.manual.type == $0)
+            NewNoteTypeUIModel(type: $0, label: resources.type($0), isSelected: form.type == $0)
         }
+        model.manualChipRows = [NewNoteManualChipField.region, .appellation, .designation, .grapes, .notes]
+            .map { chipRow($0, form: form) }
+        model.oakAgings = OakAging.allCases.map {
+            NewNoteOakUIModel(aging: $0, label: resources.oakAging($0), isSelected: form.oakAging == $0)
+        }
+        model.oakWoodsRow = form.oakAging == nil || form.oakAging == OakAging.none ? nil : chipRow(.oakWoods, form: form)
+        model.awards = form.awards.map { NewNoteAwardUIModel(award: $0, label: resources.award($0)) }
+        model.mapBasisHint = form.hasMapBasis ? nil : resources.mapBasisText
         model.canContinue = flow.canContinueManual
+    }
+
+    private func chipRow(_ field: NewNoteManualChipField, form: NewNoteManualForm) -> NewNoteManualChipRowUIModel {
+        let label = resources.manualChipField(field)
+        return NewNoteManualChipRowUIModel(
+            field: field, label: label,
+            chips: form.chips(field).map { NewNoteManualChipUIModel(value: $0, label: resources.manualChip($0, field: field)) },
+            addLabel: resources.paper.addText(label))
     }
 
     // MARK: The note (CELLAR-R18 to R20, R24)

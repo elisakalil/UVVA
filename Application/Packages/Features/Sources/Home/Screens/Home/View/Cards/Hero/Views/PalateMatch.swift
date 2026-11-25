@@ -18,8 +18,8 @@ struct PalateMatch: View {
                 Text(uiModel.percentage)
                     .font(UVVAFont.sans(40, .ultraLight))
                     .tracking(-1.2)
-                Text(resources.palateMatchCaption)
-                    .font(UVVAFont.sans(12.5, .regular))
+                Text(resources.heroMatchCaption)
+                    .font(UVVAFont.sans(22, .light))
                     .foregroundStyle(.white)
             }
             VStack(alignment: .leading, spacing: 6) {

@@ -12,6 +12,7 @@
       }
     },
     "‹" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
@@ -231,16 +232,6 @@
         }
       }
     },
-    "If you add your number, we publish a code made from it, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA." : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se você adicionar seu número, publicaremos um código gerado a partir dele, sem divulgar o número em si. Assim, amigos que têm você nos contatos podem encontrar você. Qualquer pessoa que saiba seu número pode verificar se ele está na UVVA."
-          }
-        }
-      }
-    },
     "Invite" : {
       "localizations" : {
         "pt-BR" : {
@@ -361,12 +352,12 @@
         }
       }
     },
-    "Optional. You can still add friends with your invite link." : {
+    "Phone number" : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opcional. Você também pode adicionar amigos pelo seu link de convite."
+            "value" : "Número de telefone"
           }
         }
       }
@@ -417,16 +408,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compartilhamento"
-          }
-        }
-      }
-    },
-    "Skip for now" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pular por enquanto"
           }
         }
       }
@@ -561,6 +542,16 @@
         }
       }
     },
+    "We publish a code made from your number, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA." : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publicamos um código gerado a partir do seu número, sem divulgar o número em si. Assim, amigos que têm você nos contatos podem encontrar você. Qualquer pessoa que saiba seu número pode verificar se ele está na UVVA."
+          }
+        }
+      }
+    },
     "We will never do anything creepy like spam or auto-add your friends." : {
       "localizations" : {
         "pt-BR" : {
@@ -661,12 +652,12 @@
         }
       }
     },
-    "Your first name, your phone number if you add it, your palate map, the lessons you open and the tasting notes you write. Nothing else." : {
+    "Your first name, your phone number, your palate map, the lessons you open and the tasting notes you write. Nothing else." : {
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seu primeiro nome, seu número de telefone se você o adicionar, seu mapa do paladar, as lições que você abre e as notas de degustação que escreve. Nada além disso."
+            "value" : "Seu primeiro nome, seu número de telefone, seu mapa do paladar, as lições que você abre e as notas de degustação que escreve. Nada além disso."
           }
         }
       }

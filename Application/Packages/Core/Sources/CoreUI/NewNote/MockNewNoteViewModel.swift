@@ -21,12 +21,13 @@ final class MockNewNoteViewModel: NewNoteViewModelProtocol {
         case .checkingCamera: break
         case .cameraDenied: flow.cameraChecked(.denied)
         case .front: flow.cameraChecked(.authorized)
-        case .back, .reading, .readFailed, .manual, .note:
+        case .back, .reading, .readFailed, .notWine, .manual, .note:
             flow.cameraChecked(.authorized)
             flow.capture(Data())
             if step != .back { flow.capture(Data()) }
             if step == .readFailed { flow.labelRead(.failed) }
-            if step == .manual { flow.labelRead(.nameless(LabelFacts(producer: "Ravasqueira", vintage: 2024))) }
+            if step == .notWine { flow.labelRead(.notWine) }
+            if step == .manual { flow.labelRead(.incomplete(LabelFacts(producer: "Ravasqueira", vintage: 2024))) }
             if step == .note { flow.labelRead(.read(Self.wine)) }
         }
         refresh()
@@ -49,6 +50,25 @@ final class MockNewNoteViewModel: NewNoteViewModelProtocol {
     func fillInByHand() { flow.fillInByHand() }
     func updateManual(_ field: NewNoteField, text: String) { flow.manual[field] = text }
     func pickType(_ type: String) { flow.manual.type = type }
+    func manualChipOptions(for field: NewNoteManualChipField) async -> [String] {
+        switch field {
+        case .region: ["Alentejo", "Douro", "Dão", "Lisboa"]
+        case .appellation: ["Alentejo DOC", "Douro DOC", "Vinho Regional Alentejano"]
+        case .grapes: ["Touriga Nacional", "Aragonez", "Trincadeira", "Alicante Bouschet"]
+        case .notes: ["Blackberry", "Cedar", "Cherry", "Licorice", "Vanilla"]
+        case .designation, .oakWoods: field.options(in: [])
+        }
+    }
+    func validateManualChip(_ typed: String, for field: NewNoteManualChipField) async -> ChipWordResult {
+        guard let kind = field.wordKind else { return .rejected(.notAWord) }
+        return await ChipWordValidator(known: await manualChipOptions(for: field), kind: kind)
+            .validate(typed, checker: NoChipWordChecker())
+    }
+    func chooseManual(_ values: [String], for field: NewNoteManualChipField) { flow.manual.choose(values, for: field) }
+    func removeManual(_ value: String, from field: NewNoteManualChipField) { flow.manual.remove(value, from: field) }
+    func pickOakAging(_ aging: OakAging) { flow.manual.pick(aging) }
+    func addAward(_ award: WineAward) { flow.manual.add(award) }
+    func removeAward(_ award: WineAward) { flow.manual.remove(award) }
     func continueManual() async { flow.manualRead(Self.wine) }
     func replacePhoto(_ photo: Data, side: NewNotePhotoSide) { flow.replacePhoto(photo, side: side) }
     func answer(hasTasted: Bool) { flow.answer(hasTasted: hasTasted) }
@@ -61,6 +81,10 @@ final class MockNewNoteViewModel: NewNoteViewModelProtocol {
         case .notes: ["Blackberry", "Cedar", "Cherry", "Licorice", "Vanilla"]
         case .pairings: ["Grilled meat", "Mushrooms", "Roast vegetables", "Hard cheeses"]
         }
+    }
+    func validateChip(_ typed: String, for field: NewNoteChipField) async -> ChipWordResult {
+        await ChipWordValidator(known: await chipOptions(for: field), kind: field.wordKind)
+            .validate(typed, checker: NoChipWordChecker())
     }
     func addChip(_ value: String, to field: NewNoteChipField) { flow.addChip(value, to: field) }
     func setIntensity(_ value: Double, for axis: PalateAxis) { flow.setIntensity(value, for: axis) }

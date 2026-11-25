@@ -117,7 +117,8 @@ public struct ShareScreen<Card: View>: View {
     }
 
     private func render(_ format: ShareFormat) -> UIImage? {
-        let renderer = ImageRenderer(content: card(format).environment(\.colorScheme, .dark))
+        let renderer = ImageRenderer(content: card(format).environment(\.colorScheme, .dark)
+            .environment(\.isRenderingShareImage, true))
         renderer.scale = ShareFormat.renderScale
         return renderer.uiImage
     }
@@ -135,7 +136,8 @@ public struct ShareScreen<Card: View>: View {
 
     private func save() {
         if let savedCard {
-            let renderer = ImageRenderer(content: savedCard().environment(\.colorScheme, .dark))
+            let renderer = ImageRenderer(content: savedCard().environment(\.colorScheme, .dark)
+                .environment(\.isRenderingShareImage, true))
             renderer.scale = ShareFormat.renderScale
             if let image = renderer.uiImage { UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil) }
         } else if let image = render(.story) {

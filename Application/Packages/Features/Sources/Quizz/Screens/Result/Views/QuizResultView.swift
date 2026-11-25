@@ -110,7 +110,9 @@ struct QuizResultView: View {
             }
         }
         .sheet(isPresented: $isExplainingMap) {
-            InfoSheet(title: resources.howTheMapIsDrawnText, text: resources.answersStartingPointText)
+            // The same sheet as You › Map.
+            InfoSheet(title: resources.howTheMapIsDrawnText, text: resources.answersStartingPointText,
+                      style: .handwritten)
         }
     }
 }

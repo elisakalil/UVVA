@@ -12,6 +12,14 @@ public struct FriendWineUIModel: Identifiable {
         case addToCellar(isInCellar: Bool)
     }
 
+    /// A wine for the user and the friend(s): "Add to cellar" beside the magnifying glass of "Find the wine", in the
+    /// place of "Find the wine" alone.
+    enum Cellar: Equatable {
+        case add
+        /// Already kept: "In your cellar", not tappable.
+        case inCellar
+    }
+
     /// One person's match with the wine, for a scanned wine: "You 68%", "Marina 81%".
     struct PersonMatch: Identifiable, Equatable {
         var name: String
@@ -28,5 +36,8 @@ public struct FriendWineUIModel: Identifiable {
     /// "MARINA SENT YOU THIS WINE", over the name of a wine received.
     var note: String?
     var footer: Footer
+    /// The wine read for the user and the friend(s) (FRI-R12a, R19): it can be kept in the Cellar too. Nil for a
+    /// wine of the friend's Map and for a wine received, whose "Add to cellar" is the footer itself.
+    var cellar: Cellar?
     var resources = FriendWineResourcesUIModel()
 }

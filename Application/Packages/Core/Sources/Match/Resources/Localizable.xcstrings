@@ -84,7 +84,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um floral delicado"
+            "value" : "Floral sutil"
           }
         }
       }
@@ -104,7 +104,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um toque de carvalho"
+            "value" : "Carvalho sutil"
           }
         }
       }
@@ -134,7 +134,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um toque de pimenta"
+            "value" : "Toque de pimenta"
           }
         }
       }
@@ -154,7 +154,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leve secura"
+            "value" : "Tanino sutil"
           }
         }
       }
@@ -204,7 +204,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quase sem adstringência"
+            "value" : "Quase sem tanino"
           }
         }
       }
@@ -214,7 +214,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quase sem carvalho"
+            "value" : "Carvalho mínimo"
           }
         }
       }
@@ -224,7 +224,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quase sem aroma floral"
+            "value" : "Quase sem flores"
           }
         }
       }
@@ -234,7 +234,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quase sem especiarias"
+            "value" : "Pouco especiado"
           }
         }
       }
@@ -274,7 +274,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Explosão de fruta"
+            "value" : "Explosão frutada"
           }
         }
       }
@@ -304,7 +304,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Especiarias evidentes"
+            "value" : "Bem especiado"
           }
         }
       }
@@ -344,7 +344,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seco, com um toque de açúcar"
+            "value" : "Seco, toque doce"
           }
         }
       }
@@ -374,7 +374,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leve como uma pluma"
+            "value" : "Levíssimo"
           }
         }
       }
@@ -394,7 +394,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Firme e adstringente"
+            "value" : "Firme e seco"
           }
         }
       }
@@ -404,7 +404,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sem vivacidade, muito suave"
+            "value" : "Sem frescor"
           }
         }
       }
@@ -464,7 +464,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Encorpado e amplo"
+            "value" : "Encorpado, amplo"
           }
         }
       }
@@ -484,7 +484,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adstringência suave"
+            "value" : "Tanino suave"
           }
         }
       }
@@ -504,7 +504,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Especiarias delicadas"
+            "value" : "Especiado suave"
           }
         }
       }
@@ -624,7 +624,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carvalho discreto"
+            "value" : "Carvalho leve"
           }
         }
       }
@@ -634,7 +634,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De leve a médio"
+            "value" : "Leve a médio"
           }
         }
       }
@@ -654,7 +654,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Levemente condimentado"
+            "value" : "Leve especiaria"
           }
         }
       }
@@ -664,7 +664,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Intensamente doce"
+            "value" : "Muito doce"
           }
         }
       }
@@ -694,7 +694,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adstringência média"
+            "value" : "Tanino médio"
           }
         }
       }
@@ -724,7 +724,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De médio a encorpado"
+            "value" : "Médio-encorpado"
           }
         }
       }
@@ -734,7 +734,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De leve a médio"
+            "value" : "Médio-leve"
           }
         }
       }
@@ -774,7 +774,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carvalho novo em destaque"
+            "value" : "Carvalho novo"
           }
         }
       }
@@ -784,7 +784,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sem aromas florais"
+            "value" : "Sem flores"
           }
         }
       }
@@ -794,7 +794,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sem adstringência, como um branco"
+            "value" : "Sem tanino"
           }
         }
       }
@@ -824,7 +824,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carvalho perceptível"
+            "value" : "Carvalho nítido"
           }
         }
       }
@@ -854,7 +854,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carvalho marcado, com baunilha e tostado"
+            "value" : "Baunilha e tosta"
           }
         }
       }
@@ -864,7 +864,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Levemente adocicado"
+            "value" : "Leve doçura"
           }
         }
       }
@@ -874,7 +874,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carvalho antigo, quase imperceptível"
+            "value" : "Carvalho velho"
           }
         }
       }
@@ -884,7 +884,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apimentado e intenso"
+            "value" : "Pimenta intensa"
           }
         }
       }
@@ -934,7 +934,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Potente, seca a boca"
+            "value" : "Potente e seco"
           }
         }
       }
@@ -984,7 +984,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vibrante, faz salivar"
+            "value" : "Faz salivar"
           }
         }
       }
@@ -994,7 +994,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Discreto, com pouca fruta"
+            "value" : "Pouca fruta"
           }
         }
       }
@@ -1024,7 +1024,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Macio, como um tinto leve"
+            "value" : "Tanino macio"
           }
         }
       }
@@ -1044,7 +1044,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um pouco de fruta"
+            "value" : "Alguma fruta"
           }
         }
       }
@@ -1054,7 +1054,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um pouco de carvalho"
+            "value" : "Algum carvalho"
           }
         }
       }
@@ -1064,7 +1064,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um pouco de especiarias"
+            "value" : "Algo especiado"
           }
         }
       }
@@ -1084,7 +1084,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Condimentado"
+            "value" : "Especiado"
           }
         }
       }
@@ -1154,7 +1154,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sem passagem por carvalho"
+            "value" : "Sem carvalho"
           }
         }
       }
@@ -1194,7 +1194,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Muitas especiarias"
+            "value" : "Muito especiado"
           }
         }
       }

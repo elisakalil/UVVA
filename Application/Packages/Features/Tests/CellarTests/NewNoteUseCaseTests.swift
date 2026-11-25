@@ -63,10 +63,19 @@ struct NewNoteUseCaseTests {
         #expect(wine.profile == Maps.flat(7))
     }
 
-    @Test func CELLAR_R17_noNameRead_isNameless_withWhatWasRead() async {
+    @Test func CELLAR_R23a_aNameWithNothingForTheMap_isCompletedByHand() async {
+        // A wine (its alcohol says so) whose label gave a name but no type, grape, region or note.
+        let text = LabelText([LabelLine("Vinha Imaginária", height: 0.1), LabelLine("13% vol", side: .back)])
+        let result = await readLabel(text).execute(front: Data(), back: Data(), backScan: nil)
+        guard case let .incomplete(facts) = result else { Issue.record("\(result)"); return }
+        #expect(facts.name == "Vinha Imaginária")
+        #expect(facts.alcohol == 13)
+    }
+
+    @Test func CELLAR_R17_noNameRead_isIncomplete_withWhatWasRead() async {
         let text = LabelText([LabelLine("Syrah", side: .back), LabelLine("2022", side: .back)])
         let result = await readLabel(text).execute(front: Data(), back: Data(), backScan: nil)
-        guard case let .nameless(facts) = result else { Issue.record("\(result)"); return }
+        guard case let .incomplete(facts) = result else { Issue.record("\(result)"); return }
         #expect(!facts.hasName)
         #expect(facts.grapes == ["Syrah"])
     }
@@ -101,7 +110,8 @@ struct NewNoteUseCaseTests {
 
     @Test func CELLAR_R17_withoutTheModel_theLogSaysSo() async throws {
         let log = LabelReadingLog()
-        let read = ReadLabelUseCase(reader: ReaderStub(text: LabelText([LabelLine("Vinha Imaginária", height: 0.1)])),
+        let label = LabelText([LabelLine("Vinha Imaginária", height: 0.1), LabelLine("13% vol", side: .back)])
+        let read = ReadLabelUseCase(reader: ReaderStub(text: label),
                                     structurer: StructurerStub(), pairer: PairerStub(),
                                     catalog: LabelCatalogCache(catalog: LabelCatalogStub(Labels.catalog)),
                                     now: { [now] in now }, log: log)
@@ -118,6 +128,37 @@ struct NewNoteUseCaseTests {
     @Test func CELLAR_R21_nothingRead_orReaderFails_isFailed() async {
         #expect(await readLabel(LabelText([LabelLine("  ")])).execute(front: Data(), back: Data(), backScan: nil) == .failed)
         #expect(await readLabel(nil).execute(front: Data(), back: Data(), backScan: nil) == .failed)
+    }
+
+    // MARK: CELLAR-R21a · Não é um vinho
+
+    /// A bag of sugar: a name in big type, "branco", a producer, a nutrition table, a best-before year.
+    private let sugarBag = LabelText([
+        LabelLine("SIDUL", height: 0.14), LabelLine("Açúcar Branco", height: 0.1), LabelLine("1 kg", height: 0.05),
+        LabelLine("Produzido por Sidul Açúcares, Lisboa", side: .back),
+        LabelLine("Hidratos de carbono 100 g 38%", side: .back), LabelLine("Consumir de preferência antes de 12/2026", side: .back)
+    ])
+
+    @Test func CELLAR_R21a_somethingElse_isNotAWine_andNeitherModelNorCatalogAreAsked() async throws {
+        let log = LabelReadingLog()
+        let catalog = LabelCatalogStub(Labels.catalog)
+        let pairer = PairerStub()
+        let result = await readLabel(sugarBag, structured: LabelFacts(name: "Açúcar Branco", type: "White"),
+                                     catalog: catalog, pairer: pairer, log: log)
+            .execute(front: Data(), back: Data(), backScan: nil)
+        #expect(result == .notWine)
+        #expect(await pairer.asked.isEmpty)
+        let entry = try #require(log.last)
+        #expect(entry.notWine)
+        #expect(entry.structured == nil)
+        #expect(LabelReadingLog.text(entry).contains("NOT A WINE"))
+    }
+
+    @Test func CELLAR_R21a_aCatalogWineScannedBefore_stillNeedsItsLabelToSayWine() async {
+        // The public catalog grows with every scan: a sugar bag saved once must not be found again.
+        let result = await readLabel(LabelText([LabelLine("Ponto Forte", height: 0.12), LabelLine("RAVASQUEIRA")]))
+            .execute(front: Data(), back: Data(), backScan: nil)
+        #expect(result == .notWine)
     }
 
     @Test func catalog_isReadOncePerNewNote() async {
@@ -228,10 +269,27 @@ struct NewNoteUseCaseTests {
         #expect(wine.profile == Maps.flat(2))
     }
 
-    @Test func CELLAR_R23_onlyTheName_isEnough() async throws {
-        let wine = try await readManual().execute(LabelFacts(name: "Mistério"))
-        #expect(wine.id == "misterio")
-        #expect(wine.profile == Maps.flat(16.0 / 3))
+    @Test func CELLAR_R23a_withoutABase_thereIsNoMap() async {
+        // Only the name; the type alone; a made-up region and grape (the "labubu" and "cabudi" case).
+        for facts in [LabelFacts(name: "Mistério"), LabelFacts(name: "Mistério", type: "Red"),
+                      LabelFacts(name: "Mistério", type: "Red", region: "Labubu", grapes: ["Cabudi"])] {
+            await #expect(throws: ReadManualUseCase.Failure.noMapBasis) {
+                try await readManual().execute(facts)
+            }
+        }
+    }
+
+    @Test func CELLAR_R23a_theTimeInOak_setsTheOakAxis() async throws {
+        let wine = try await readManual().execute(LabelFacts(name: "Mistério", type: "Red", grapes: ["syrah"],
+                                                             oakAging: .twelveToTwentyFour, oakWoods: ["French oak"]))
+        #expect(wine.profile[.oak] == OakAging.twelveToTwentyFour.oakIntensity)
+        #expect(wine.profile[.body] == 7)
+        #expect(wine.oakAging == .twelveToTwentyFour)
+        #expect(wine.oakWoods == ["French oak"])
+        // Alone with the type, it sets the axis on the type's average.
+        let oakOnly = try await readManual().execute(LabelFacts(name: "Mistério", type: "Red", oakAging: .upToSix))
+        #expect(oakOnly.profile[.oak] == OakAging.upToSix.oakIntensity)
+        #expect(oakOnly.profile[.body] == 7)
     }
 
     // MARK: CELLAR-R19 · Guardar / CELLAR-R13b

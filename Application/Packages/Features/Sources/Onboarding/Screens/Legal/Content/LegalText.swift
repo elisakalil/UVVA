@@ -20,12 +20,12 @@ enum LegalText {
         case .privacy:
             [
                 LegalSection(title: String(localized: "What we collect", bundle: .module),
-                             body: String(localized: "Your first name, your phone number if you add it, your palate map, the lessons you open and the tasting notes you write. Nothing else.", bundle: .module)),
+                             body: String(localized: "Your first name, your phone number, your palate map, the lessons you open and the tasting notes you write. Nothing else.", bundle: .module)),
                 // TODO: say where the data lives once storage for Google accounts is decided (and recheck "no servers of our own").
                 LegalSection(title: String(localized: "Where it lives", bundle: .module),
                              body: String(localized: "Stored with your account. Your name and, if you choose, your map are public to the people you add as friends.", bundle: .module)),
                 LegalSection(title: String(localized: "Your phone", bundle: .module),
-                             body: String(localized: "If you add your number, we publish a code made from it, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA.", bundle: .module)),
+                             body: String(localized: "We publish a code made from your number, never the number itself, so friends who have you in their contacts can find you. Anyone who knows your number can tell that it is on UVVA.", bundle: .module)),
                 LegalSection(title: String(localized: "Wine labels", bundle: .module),
                              body: String(localized: "When you read a label, the wine's facts (its name, producer, vintage, grapes and what the label says) go to UVVA's public wine catalog, never your photos, notes or ratings. Once two people have read the same wine, everyone can find it. Deleting your account deletes what you sent; the wines already in the catalog stay.", bundle: .module)),
                 LegalSection(title: String(localized: "Sharing", bundle: .module),

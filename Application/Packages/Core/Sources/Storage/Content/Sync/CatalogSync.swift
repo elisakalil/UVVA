@@ -1,6 +1,7 @@
 import Core
 import Foundation
 import Match
+import OSLog
 
 /// Keeps the phone's copy of the public catalog and sends the user's readings to it (ARCHITECTURE §4.1, §4.3).
 ///
@@ -9,15 +10,19 @@ import Match
 /// - Over `CatalogSchema.deviceCap` wines, those furthest from the palate leave the phone.
 /// - Every label read is queued (`CatalogStore.addScanned`) and sent as the user's `WineContribution`.
 public final class CatalogSync: Sendable {
+    private static let logger = Logger(subsystem: "app.uvva", category: "catalog-texts")
+
     private let cloud: any CatalogCloudService
     private let writer: CatalogWriter
+    private let texts: CatalogTextCache?
     private let cap: Int
     private let interval: TimeInterval
 
     public init(cloud: any CatalogCloudService, writer: CatalogWriter, cap: Int = CatalogSchema.deviceCap,
-                interval: TimeInterval = 24 * 3600) {
+                interval: TimeInterval = 24 * 3600, texts: CatalogTextCache? = nil) {
         self.cloud = cloud
         self.writer = writer
+        self.texts = texts
         self.cap = cap
         self.interval = interval
     }
@@ -42,7 +47,10 @@ public final class CatalogSync: Sendable {
     public func sync(protecting protected: Set<String>, map: PalateMap?, now: Date = Date()) async throws {
         var state = try await writer.state()
         let first = state.lastChange == nil
-        if !first, let lastCheck = state.lastCheck, now.timeIntervalSince(lastCheck) < interval { return }
+        if !first, let lastCheck = state.lastCheck, now.timeIntervalSince(lastCheck) < interval {
+            if let version = state.snapshotVersion { await syncTexts(version: version) }
+            return
+        }
 
         guard let info = try await cloud.snapshotInfo() else {
             if first { throw CatalogCloudError.noSnapshot }
@@ -67,6 +75,20 @@ public final class CatalogSync: Sendable {
             QualityPrevalence.use(prevalence)
         }
         try await writer.save(state)
+        await syncTexts(version: info.version)
+    }
+
+    private func syncTexts(version: String) async {
+        guard let texts, texts.version != version else { return }
+        do {
+            let translations = try await cloud.portugueseTexts()
+            try Task.checkCancellation()
+            try texts.save(translations, version: version)
+        } catch is CancellationError {
+            return
+        } catch {
+            Self.logger.error("Catalog translations could not be refreshed: \(error.localizedDescription, privacy: .public)")
+        }
     }
 
     /// Sends every reading waiting, as this user's contributions. Without an iCloud account or a network it throws,

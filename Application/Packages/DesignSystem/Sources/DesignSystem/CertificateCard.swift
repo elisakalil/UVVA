@@ -100,6 +100,6 @@ public struct CertificateCard: View {
         .frame(width: size.width, height: size.height, alignment: .topLeading)
         .foregroundStyle(UVVAColor.creamFill)
         .background(CertificateBackground())
-        .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+        .shareCardCorners(cornerRadius, style: .continuous)
     }
 }

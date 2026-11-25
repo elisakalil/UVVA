@@ -64,7 +64,7 @@ A **posição** é o caminho inverso: o valor da régua lido como a resposta que
 
 As respostas e a versão da régua ficam guardadas com o Quiz no histórico do mapa, fora da vista, para o mapa poder ser refeito se a régua mudar.
 
-**QUIZ-R05 · Nível exibido.** Os pips de um eixo usam `round(posição)` (QUIZ-R04a), de 0 a 9, no mapa do usuário, no dos amigos e no dos vinhos. A palavra ao lado diz o que esse nível quer dizer num copo, por eixo (`AxisLevels`), a mesma para um vinho e para um mapa: um mapa em floral 8 pede um vinho muito floral; um vinho em floral 8 é um.
+**QUIZ-R05 · Nível exibido.** Os pips de um eixo usam `round(posição)` (QUIZ-R04a), de 0 a 9, no mapa do usuário, no dos amigos e no dos vinhos. A palavra ao lado diz o que esse nível quer dizer num copo, por eixo (`AxisLevels`), a mesma para um vinho e para um mapa: um mapa em floral 8 pede um vinho muito floral; um vinho em floral 8 é um. A palavra cabe numa linha ao lado dos pips: em português, no máximo 16 caracteres (2026-11-23).
 
 | Nível | Floral | Body | Tannin | Spice |
 | --- | --- | --- | --- | --- |
@@ -128,7 +128,7 @@ struct PalateMap: Equatable {
 | Primeiro mapa | Fim do cadastro (ONB-R21), ou sessão sem mapa ao abrir a app ou ao entrar numa conta (ONB-R02, ONB-R27) | Não |
 | Refazer | You › Map › "Redo the map" (YOU-R13) | Sim |
 
-**QUIZ-R25 · Saídas.** Depois da folha de partilha (3.4), seja qual for a ação escolhida, incluindo "Not now":
+**QUIZ-R25 · Saídas.** A folha de partilha (3.4) só termina com "Not now". Partilhar ou guardar a imagem deixa o usuário na folha (2026-11-23). "Not now" leva a:
 
 | Entrada | Vai para |
 | --- | --- |
@@ -148,7 +148,8 @@ func exit(for entry: QuizEntry) -> QuizExit
 
 **Critérios**
 - Dada a entrada "primeiro mapa", quando o usuário toca em "Not now" na folha de partilha, então abre a Home com o tour guiado.
-- Dada a entrada "refazer", quando o usuário toca em "Save image" na folha de partilha, então abre You › Map e o tour não aparece.
+- Dada a entrada "refazer", quando o usuário toca em "Not now" na folha de partilha, então abre You › Map e o tour não aparece.
+- Quando o usuário partilha ou toca em "Save image", então volta à folha de partilha e o Quiz não termina.
 - Dada a entrada "refazer", quando o usuário sai do Quiz na Leitura 5, então o mapa guardado é o mesmo de antes.
 
 ### 3.1 Intro
@@ -173,7 +174,7 @@ func exit(for entry: QuizEntry) -> QuizExit
 
 **QUIZ-R11 · Avançar.** O botão diz "Next" nas leituras 1 a 7 e "Draw the map" na leitura 8. Ele só fica ativo com uma posição selecionada.
 
-**QUIZ-R12 · Voltar.** O `‹` volta à leitura anterior, com a resposta dada e a versão da pergunta preservadas. Na Leitura 1, volta à Intro.
+**QUIZ-R12 · Voltar.** O "Back", numa pílula com contorno como no topo de um amigo (2026-11-23), volta à leitura anterior, com a resposta dada e a versão da pergunta preservadas. Na Leitura 1, volta à Intro.
 
 **QUIZ-R13 · Rodapé.** Todas as leituras mostram "Answer for the food, not the bottle."
 
@@ -222,7 +223,7 @@ func exit(for entry: QuizEntry) -> QuizExit
   - Base: se a base não é baixa, "nada baixo". Se 3 ou mais eixos empatam na base, "a maior parte baixa". Senão, o texto "baixo" de cada eixo da base (1 ou 2).
   - Um texto "alto" nunca sai para um eixo que não é alto, nem um "baixo" para um eixo que não é baixo.
 
-**QUIZ-R16 · Leituras.** Lista os 8 eixos na ordem do gráfico, cada um com a palavra do nível (QUIZ-R05) e 10 pips. Os líderes até 3 (QUIZ-R14a) aparecem em destaque; no gráfico, os líderes até 2. Mapa plano: nenhum destaque. O título "Where the map points" tem um botão de info (ⓘ) ao lado; tocar no título ou no botão abre uma folha, "How your map is drawn", que explica que o mapa vem das respostas lidas em termos de vinho e assentadas entre vinhos reais: "Your answers were the starting point. We read them in wine terms and settled them among real wines, so your map points to bottles that exist. What you lean toward stays: love floral, and your map leans to the more floral wines."
+**QUIZ-R16 · Leituras.** Lista os 8 eixos na ordem do gráfico, cada um com a palavra do nível (QUIZ-R05) e 10 pips. Os líderes até 3 (QUIZ-R14a) aparecem em destaque; no gráfico, os líderes até 2. Mapa plano: nenhum destaque. O título "Where the map points" tem um botão de info (ⓘ) ao lado; tocar no título ou no botão abre uma folha, "How your map is drawn", igual à de You › Map (YOU-R11: todo o texto em Red Grapes, título de 34 pt, folha da altura do texto; 2026-11-23), que explica que o mapa vem das respostas lidas em termos de vinho e assentadas entre vinhos reais: "Your answers were the starting point. We read them in wine terms and settled them among real wines, so your map points to bottles that exist. What you lean toward stays: love floral, and your map leans to the more floral wines."
 
 **QUIZ-R17 · O mapa se move.** O resultado mostra "This map keeps moving": o mapa é recalculado a cada avaliação de vinho (QUIZ-R22).
 
@@ -257,7 +258,7 @@ func exit(for entry: QuizEntry) -> QuizExit
 
 ### 3.4 Partilhar o mapa
 
-A folha abre sempre depois de "Keep this map" (QUIZ-R18). Partilhar é opcional: qualquer ação, incluindo "Not now", leva à saída do Quiz (QUIZ-R25).
+A folha abre sempre depois de "Keep this map" (QUIZ-R18). Partilhar é opcional. Depois de partilhar ou guardar, o usuário volta à folha; só "Not now" leva à saída do Quiz (QUIZ-R25).
 
 **QUIZ-R19 · Conteúdo.** Um cartão com "[primeiro nome] taste in wine is", a frase dominante, o radar e duas linhas:
 - **Loves:** "[nome] drinks for […]." ("Drinks for […]." sem nome), em que […] é:
@@ -362,7 +363,7 @@ Os pesos são constantes num único lugar (`RatingWeights`), para que possam ser
 
 - [x] Onde fica o botão para refazer o Quiz: em You › Map › "Redo the map" (YOU-R13).
 - [ ] **D9 · Intro ao refazer.** Na entrada "refazer", a Intro é a mesma ("Welcome, [nome]" e os três passos), ou uma versão curta que vai direto às leituras?
-- [ ] **D10 · Como sair ao refazer.** O canvas não tem botão de fechar na Intro nem nas leituras. Na entrada "refazer", onde fica a saída (um ✕ no topo, o `‹` da Intro)? Pede confirmação se já houver respostas?
+- [ ] **D10 · Como sair ao refazer.** O canvas não tem botão de fechar na Intro nem nas leituras. Na entrada "refazer", onde fica a saída (um ✕ no topo, o "Back" da Intro)? Pede confirmação se já houver respostas?
 - [ ] **D11 · Partilha ao refazer.** Na entrada "refazer", a folha de partilha também abre depois de "Keep this map", ou o Quiz volta direto a You › Map?
 
 ---

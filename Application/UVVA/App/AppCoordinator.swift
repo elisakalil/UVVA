@@ -27,6 +27,8 @@ final class AppCoordinator {
     private(set) var addFriends: AddFriendsModule?
     /// The originating feature presents the note (CELLAR-R14).
     private(set) var newNote: (origin: AppTab, model: NewNoteViewModel)?
+    /// WINELIST-R01: the Home's scan reads a label or a restaurant's wine list; the list's side of the sheet.
+    private(set) var wineList: WineListViewModel?
     /// The open note came from the Hero's "Add to cellar": once saved, the Home goes back to its top (HOME-R10c).
     private var newNoteReturnsHomeToTop = false
     private(set) var profile: Profile?
@@ -206,7 +208,7 @@ final class AppCoordinator {
             onOpenLesson: { [weak self] suggestion in
                 self?.openCourse(suggestion.courseID, lessonID: suggestion.lessonID)
             },
-            onScan: { [weak self] in self?.openNewNote(from: .home) },
+            onScan: { [weak self] in self?.openNewNote(from: .home, readsWineList: true) },
             onOpenCellarNote: { [weak self] wine, ratedVerdict, fromHero in
                 self?.openNewNote(from: .home, for: wine, ratedVerdict: ratedVerdict, returnsHomeToTop: fromHero)
             },
@@ -365,17 +367,38 @@ final class AppCoordinator {
     /// CELLAR-R14: the same new note from the Home and the Cellar. With a wine, from the Home's Hero or wine sheet, it
     /// opens on paper with that wine, asking about it; "Rate it again?" when it was rated before (CELLAR-R14a).
     /// `returnsHomeToTop`: the note comes from the Hero, and the Home goes back to its top once it is saved.
+    /// `readsWineList`: the Home's `+`, where the camera also reads a restaurant's wine list (WINELIST-R01).
     private func openNewNote(from origin: AppTab, for wine: Wine? = nil, ratedVerdict: Verdict? = nil,
-                             editing: CellarEntry? = nil, returnsHomeToTop: Bool = false) {
+                             editing: CellarEntry? = nil, returnsHomeToTop: Bool = false,
+                             readsWineList: Bool = false) {
         guard newNote == nil else { return }
         newNoteReturnsHomeToTop = returnsHomeToTop
+        wineList = readsWineList ? makeWineList() : nil
         let model = NewNoteViewModel(
             wine: wine, ratedVerdict: ratedVerdict, editing: editing,
             cellar: cellar, maps: maps, labelCatalog: catalog, reader: VisionLabelReader(),
-            structurer: DeviceLabelStructurer(), pairer: DevicePairingSuggester(), camera: DeviceCamera(),
+            structurer: DeviceLabelStructurer(), pairer: DevicePairingSuggester(),
+            wordChecker: DeviceChipWordChecker(), camera: DeviceCamera(),
             rewriter: maps, wines: catalog,
             onSaved: { [weak self] wineKey in self?.newNoteSaved(wineKey) })
         newNote = (origin, model)
+    }
+
+    /// WINELIST.md: the wine list of a restaurant, read by the camera and ranked for tonight.
+    private func makeWineList() -> WineListViewModel {
+        WineListViewModel(maps: maps, friends: friendsStore, recipes: catalog, labelCatalog: catalog,
+                          reader: VisionWineListReader(), camera: DeviceCamera(),
+                          onAddToCellar: { [weak self] wine in self?.wineListOrdered(wine) })
+    }
+
+    /// WINELIST-R08: the wine ordered from the list goes to a new note, on paper, as from the Home's wine sheet. The
+    /// scan's sheet closes first, as it was; the note opens once it is gone. Each `+` makes the list anew.
+    private func wineListOrdered(_ wine: Wine) {
+        newNote = nil
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .milliseconds(450))
+            self?.openNewNote(from: .home, for: wine)
+        }
     }
 
     /// FRI-R11c: with a friend, the user is asked for notifications, and the wines sent to them push.
@@ -399,7 +422,8 @@ final class AppCoordinator {
                                      onScanned: @escaping (Wine) -> Void) -> NewNoteViewModel {
         NewNoteViewModel(
             cellar: cellar, maps: maps, labelCatalog: catalog, reader: VisionLabelReader(),
-            structurer: DeviceLabelStructurer(), pairer: DevicePairingSuggester(), camera: DeviceCamera(),
+            structurer: DeviceLabelStructurer(), pairer: DevicePairingSuggester(),
+            wordChecker: DeviceChipWordChecker(), camera: DeviceCamera(),
             rewriter: maps, wines: catalog, onScanned: onScanned, onSaved: { _ in })
     }
 
@@ -575,6 +599,7 @@ final class AppCoordinator {
         friends = nil
         addFriends = nil
         newNote = nil
+        wineList = nil
         tour = nil
         selectedTab = .home
     }

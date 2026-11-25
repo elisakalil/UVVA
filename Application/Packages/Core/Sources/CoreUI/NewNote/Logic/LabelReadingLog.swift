@@ -29,6 +29,8 @@ final class LabelReadingLog {
         var pairingsFound: [String] = []
         /// What the model added to them; nil when it was not asked.
         var pairingSuggestion: PairingSuggestionResult?
+        /// Nothing read said wine (CELLAR-R21a): the reading stopped after the parser.
+        var notWine = false
     }
 
     private(set) var last: Entry?
@@ -47,6 +49,10 @@ final class LabelReadingLog {
         }
         parts.append("BACK · \(entry.back.count) lines\(scan)\n" + lines(back))
         parts.append("PARSER\n" + (entry.parsed.map(facts) ?? "—"))
+        if entry.notWine {
+            parts.append("NOT A WINE\nNo grape, no word for wine, no “% vol”, too few other signs: neither the model nor the catalog was asked.")
+            return parts.joined(separator: "\n\n")
+        }
         let model = entry.structured.map(facts) ?? "No answer: \(entry.modelFailure ?? "no reason given.")"
         parts.append("ON-DEVICE MODEL\n" + [entry.modelContext, model].compactMap { $0 }.joined(separator: "\n"))
         parts.append("CATALOG\n" + (entry.match.map { "Taken for \($0)" } ?? "No confident match: the wine is made from what was read."))
@@ -81,7 +87,8 @@ final class LabelReadingLog {
             ("alcohol", facts.alcohol.map { "\($0)%" }), ("notes", list(facts.notes)),
             ("pairings", list(facts.pairings)),
             ("serving", facts.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" }),
-            ("designation", facts.designation), ("awards", list(facts.awards.map(\.text)))
+            ("designation", facts.designation), ("awards", list(facts.awards.map(\.text))),
+            ("oak", facts.oakAging?.rawValue), ("woods", list(facts.oakWoods))
         ]
         return rows.map { "\($0.0): \($0.1 ?? "—")" }.joined(separator: "\n")
     }

@@ -39,7 +39,8 @@ public enum LabelParser {
                           type: type, appellation: certified(lines, name: appellation ?? region) ?? appellation,
                           region: region, country: country, grapes: grapes, alcohol: alcohol(in: lines),
                           titleLines: titles, serving: serving(in: lines), designation: designation,
-                          awards: awards(in: lines, currentYear: currentYear))
+                          awards: awards(in: lines, currentYear: currentYear), oakAging: oakAging(in: lines),
+                          oakWoods: oakWoods(in: lines))
     }
 
     // MARK: Certification (CELLAR-R30)
@@ -121,6 +122,42 @@ public enum LabelParser {
         }?.type
     }
 
+    // MARK: Wood (CELLAR-R23)
+
+    /// The words around months in wood: "estagiou 12 meses em barricas de carvalho", "aged 18 months in oak".
+    private static let woodWords: Set<String> = [
+        "barrica", "barricas", "barril", "barris", "carvalho", "madeira", "tonel", "toneis", "oak", "barrel",
+        "barrels", "cask", "casks", "barrique", "barriques", "fut", "futs", "chene", "bois", "botte", "botti",
+        "rovere", "legno", "roble", "eiche", "holzfass", "fass"
+    ]
+
+    /// The months in wood a label prints, the first it names; "sem madeira" and "unoaked" are none.
+    static func oakAging(in lines: [LabelLine]) -> OakAging? {
+        let folded = WineText.folded(lines.map(\.text).joined(separator: " "))
+        let unoaked = [" sem madeira ", " sem estagio em madeira ", " unoaked ", " no oak ", " sans bois ",
+                       " senza legno ", " sin madera ", " inox ", " stainless steel "]
+        if unoaked.contains(where: folded.contains) { return OakAging.none }
+        let tokens = WineText.tokens(lines.map(\.text).joined(separator: " "))
+        let monthWords: Set<String> = ["meses", "mes", "months", "month", "mois", "mesi", "monate", "monaten"]
+        let yearWords: Set<String> = ["anos", "ano", "years", "year", "ans", "anni", "jahre", "jahren"]
+        for index in tokens.indices {
+            guard let count = Int(tokens[index]), (1...120).contains(count), index + 1 < tokens.count else { continue }
+            let unit = tokens[index + 1]
+            let months = monthWords.contains(unit) ? count : yearWords.contains(unit) && count <= 10 ? count * 12 : nil
+            guard let months else { continue }
+            // The wood within the next few words: "12 meses em barricas", "18 months in French oak".
+            let after = tokens[(index + 2)..<min(tokens.count, index + 8)]
+            if after.contains(where: woodWords.contains) { return OakAging(months: months) }
+        }
+        return nil
+    }
+
+    /// The woods the label names, in `OakWood.all`'s spelling.
+    static func oakWoods(in lines: [LabelLine]) -> [String] {
+        let folded = WineText.folded(lines.map(\.text).joined(separator: " "))
+        return OakWood.phrases.filter { folded.contains(" \($0.phrase) ") }.map(\.wood).adding([])
+    }
+
     // MARK: Vintage and alcohol
 
     /// The first plausible year, front before back, skipping founding dates ("Since 1887").
@@ -160,18 +197,25 @@ public enum LabelParser {
     /// percentage between 5 and 23 on a line without a grape share ("85% Syrah").
     private static func alcohol(in lines: [LabelLine]) -> Double? {
         let plausible = 5.0...23.0
+        if let value = labeledAlcohol(in: lines, within: plausible) { return value }
         let texts = lines.map { $0.text.lowercased().folding(options: .diacriticInsensitive, locale: nil) }
-        let withWord = /(?:alc|alcohol|alcool|grad)[^0-9%]{0,12}([0-9]{1,2}(?:[.,][0-9]{1,2})?)\s*%|([0-9]{1,2}(?:[.,][0-9]{1,2})?)\s*%\s*(?:vol|alc|abv|v\/v|by vol)/
-        for text in texts {
-            for match in text.matches(of: withWord) {
-                let raw = match.output.1 ?? match.output.2
-                if let value = raw.flatMap(number), plausible.contains(value) { return value }
-            }
-        }
         let bare = /([0-9]{1,2}(?:[.,][0-9]{1,2})?)\s*%\s*([a-z]*)/
         for text in texts {
             for match in text.matches(of: bare) where match.output.2.isEmpty {
                 if let value = number(match.output.1), plausible.contains(value) { return value }
+            }
+        }
+        return nil
+    }
+
+    /// The first percentage in `range` with an alcohol word around it, "13,5% vol", "Alc. 14% by vol.": a bare
+    /// percentage may be a grape's share or a nutrient's.
+    static func labeledAlcohol(in lines: [LabelLine], within range: ClosedRange<Double>) -> Double? {
+        let withWord = /(?:alc|alcohol|alcool|grad)[^0-9%]{0,12}([0-9]{1,2}(?:[.,][0-9]{1,2})?)\s*%|([0-9]{1,2}(?:[.,][0-9]{1,2})?)\s*%\s*(?:vol|alc|abv|v\/v|by vol)/
+        for line in lines {
+            let text = line.text.lowercased().folding(options: .diacriticInsensitive, locale: nil)
+            for match in text.matches(of: withWord) {
+                if let value = (match.output.1 ?? match.output.2).flatMap(number), range.contains(value) { return value }
             }
         }
         return nil

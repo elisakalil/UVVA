@@ -29,6 +29,8 @@ public enum CatalogSchema {
         public static let prevalence = "prevalence"
         /// `CatalogWinesFile` as zlib-compressed JSON (an asset).
         public static let wines = "wines"
+        /// Exact source strings and pt-BR translations as zlib-compressed JSON (an asset).
+        public static let portugueseTexts = "textsPtBR"
         /// The robot's own state, zlib-compressed JSON (an asset). The app never reads it.
         public static let state = "state"
     }

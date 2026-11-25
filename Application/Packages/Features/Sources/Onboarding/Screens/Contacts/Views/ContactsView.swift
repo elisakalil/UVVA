@@ -35,14 +35,18 @@ struct ContactsView<ViewModel: ContactsViewModelProtocol>: View {
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: 0) {
+                        // While loading only the grapes show: no title, back, "Next" or A–Z bar.
                         ZStack {
-                            HStack { BackChevron { viewModel.back() }; Spacer() }
+                            HStack { BackPillButton { viewModel.back() }; Spacer() }
                             if let title = model.title {
                                 Text(title.uppercased())
                                     .font(UVVAFont.sans(10)).tracking(3).opacity(0.8)
                             }
                         }
                         .padding(.horizontal, 24)
+                        .opacity(model.isLoading ? 0 : 1)
+                        .allowsHitTesting(!model.isLoading)
+                        .accessibilityHidden(model.isLoading)
 
                         if model.noResults {
                             Text(viewModel.uiModel.noResultsMessage)
@@ -96,10 +100,12 @@ struct ContactsView<ViewModel: ContactsViewModelProtocol>: View {
                     }
                 }
                 .overlay(alignment: .trailing) {
-                    AlphabetIndex(letters: model.letters) { letter in
-                        withAnimation { proxy.scrollTo("letter-\(letter)", anchor: .top) }
+                    if !model.isLoading {
+                        AlphabetIndex(letters: model.letters) { letter in
+                            withAnimation { proxy.scrollTo("letter-\(letter)", anchor: .top) }
+                        }
+                        .padding(.trailing, 6)
                     }
-                    .padding(.trailing, 6)
                 }
                 // Fixed at the foot of the screen; the list ends just above it.
                 .safeAreaInset(edge: .bottom, spacing: 0) {
@@ -107,9 +113,13 @@ struct ContactsView<ViewModel: ContactsViewModelProtocol>: View {
                         .shadow(color: Color(hex: 0x12180E).opacity(0.45), radius: 15, y: 10)
                         .padding(.horizontal, 30)
                         .padding(.bottom, 12)
+                        .opacity(model.isLoading ? 0 : 1)
+                        .allowsHitTesting(!model.isLoading)
+                        .accessibilityHidden(model.isLoading)
                 }
             }
         }
+        .animation(.easeOut(duration: 0.3), value: model.isLoading)
         .task { await viewModel.loadContacts() }
         .sheet(item: $sharing) { invite in
             Group {

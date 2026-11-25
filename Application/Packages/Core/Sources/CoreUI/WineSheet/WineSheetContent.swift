@@ -107,7 +107,7 @@ public extension WineSheetContent {
                   sharedLine: match?.shared, apartLine: match?.apart, facts: facts,
                   pairings: wine.pairings.isEmpty ? nil : wine.pairings.map(WineCatalogText.editorial).joined(separator: ", "),
                   servingTemperature: wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" },
-                  howToServe: (wine.howToServe ?? "").isEmpty ? nil : wine.howToServe,
+                  howToServe: wine.howToServe.flatMap { $0.isEmpty ? nil : WineCatalogText.editorial($0) },
                   profile: wine.profile, palate: palate, certificate: WineCertificateUIModel(wine: wine))
         findURL = WineSearch.url(for: wine)
     }

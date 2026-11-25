@@ -6,11 +6,25 @@ public enum NewNoteChipField: String, Identifiable, Sendable {
 
     public var id: String { rawValue }
 
+    /// What a word typed for it must name (CELLAR-R18a).
+    var wordKind: ChipWordKind {
+        switch self {
+        case .grapes: .grape
+        case .notes: .aroma
+        case .pairings: .pairing
+        }
+    }
+
     func options(in wines: [Wine]) -> [String] {
+        Self.ranked(wines, values: values(in:))
+    }
+
+    /// The values the wines have, the most frequent first, each once whatever its case.
+    static func ranked(_ wines: [Wine], values: (Wine) -> [String]) -> [String] {
         var counts: [String: Int] = [:]
         var labels: [String: String] = [:]
         for wine in wines {
-            for value in values(in: wine) {
+            for value in values(wine) {
                 let label = value.trimmingCharacters(in: .whitespacesAndNewlines)
                 guard !label.isEmpty else { continue }
                 let key = label.lowercased()

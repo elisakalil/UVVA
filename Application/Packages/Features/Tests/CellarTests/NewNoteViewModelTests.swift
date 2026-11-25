@@ -27,10 +27,12 @@ final class ReadLabelStub: ReadLabelUseCaseProtocol {
 @MainActor
 final class ReadManualStub: ReadManualUseCaseProtocol {
     var wine: Wine?
+    var error: Error?
     private(set) var facts: [LabelFacts] = []
     init(_ wine: Wine?) { self.wine = wine }
     func execute(_ facts: LabelFacts) async throws -> Wine {
         self.facts.append(facts)
+        if let error { throw error }
         guard let wine else { throw ReaderStub.Failure.offline }
         return wine
     }
@@ -144,7 +146,7 @@ struct NewNoteViewModelTests {
     // MARK: CELLAR-R23 · Preencher à mão
 
     @Test func CELLAR_R23_noName_fillsTheForm_continueReadsIt() async {
-        read.result = .nameless(LabelFacts(producer: "Ravasqueira"))
+        read.result = .incomplete(LabelFacts(producer: "Ravasqueira"))
         let viewModel = make()
         await viewModel.start()
         await viewModel.capture(Data([1]))
@@ -153,9 +155,13 @@ struct NewNoteViewModelTests {
         #expect(viewModel.uiModel.manualFields.map(\.text).contains("Ravasqueira"))
         #expect(!viewModel.uiModel.canContinue)
         viewModel.updateManual(.name, text: "Ponto Forte")
-        #expect(viewModel.uiModel.canContinue)
+        #expect(!viewModel.uiModel.canContinue)
+        #expect(viewModel.uiModel.mapBasisHint == viewModel.uiModel.resources.mapBasisText)
         viewModel.updateManual(.vintage, text: "20x24")
         viewModel.pickType("Red")
+        viewModel.chooseManual(["Syrah"], for: .grapes)
+        #expect(viewModel.uiModel.canContinue)
+        #expect(viewModel.uiModel.mapBasisHint == nil)
         await viewModel.continueManual()
         #expect(manual.facts.first?.vintage == 2024)
         #expect(manual.facts.first?.type == "Red")
@@ -166,11 +172,54 @@ struct NewNoteViewModelTests {
         let viewModel = make(.denied)
         await viewModel.start()
         viewModel.fillInByHand()
+        viewModel.pickType("Red")
+        viewModel.pickOakAging(.upToSix)
         #expect(!viewModel.uiModel.canContinue)
         await viewModel.continueManual()
         #expect(manual.facts.isEmpty)
         viewModel.updateManual(.name, text: "Ponto Forte")
         #expect(viewModel.uiModel.canContinue)
+    }
+
+    @Test func CELLAR_R23_aWrongVintageOrAlcohol_saysWhy() async {
+        let viewModel = make(.denied)
+        await viewModel.start()
+        viewModel.fillInByHand()
+        viewModel.updateManual(.vintage, text: "1457")
+        viewModel.updateManual(.alcohol, text: "40")
+        let hints = Dictionary(uniqueKeysWithValues: viewModel.uiModel.manualFields.map { ($0.field, $0.hint) })
+        #expect(hints[.vintage]??.contains("1900") == true)
+        #expect(hints[.alcohol] ?? nil == viewModel.uiModel.resources.alcoholHintText)
+        #expect(hints[.name] ?? nil == nil)
+    }
+
+    @Test func CELLAR_R23_theWoodsShow_onceThereIsTimeInOak() async {
+        let viewModel = make(.denied)
+        await viewModel.start()
+        viewModel.fillInByHand()
+        #expect(viewModel.uiModel.oakWoodsRow == nil)
+        viewModel.pickOakAging(.none)
+        #expect(viewModel.uiModel.oakWoodsRow == nil)
+        viewModel.pickOakAging(.overTwentyFour)
+        viewModel.chooseManual(["French oak"], for: .oakWoods)
+        #expect(viewModel.uiModel.oakWoodsRow?.chips.map(\.value) == ["French oak"])
+        viewModel.addAward(WineAward(competition: "Robert Parker", points: 95))
+        #expect(viewModel.uiModel.awards.count == 1)
+        viewModel.removeAward(WineAward(competition: "Robert Parker", points: 95))
+        #expect(viewModel.uiModel.awards.isEmpty)
+    }
+
+    @Test func CELLAR_R23a_noWineToDrawTheMapFrom_saysWhatIsMissing() async {
+        manual.error = ReadManualUseCase.Failure.noMapBasis
+        let viewModel = make(.denied)
+        await viewModel.start()
+        viewModel.fillInByHand()
+        viewModel.updateManual(.name, text: "Vinha")
+        viewModel.pickType("Red")
+        viewModel.chooseManual(["Syrah"], for: .grapes)
+        await viewModel.continueManual()
+        #expect(viewModel.uiModel.step == .manual)
+        #expect(viewModel.uiModel.errorText == viewModel.uiModel.resources.mapBasisText)
     }
 
     @Test func CELLAR_R23_readingFails_showsAnError_andStays() async {
@@ -179,6 +228,8 @@ struct NewNoteViewModelTests {
         await viewModel.start()
         viewModel.fillInByHand()
         viewModel.updateManual(.name, text: "Ponto Forte")
+        viewModel.pickType("Red")
+        viewModel.chooseManual(["Syrah"], for: .grapes)
         await viewModel.continueManual()
         #expect(viewModel.uiModel.step == .manual)
         #expect(viewModel.uiModel.errorText == viewModel.uiModel.resources.manualErrorText)

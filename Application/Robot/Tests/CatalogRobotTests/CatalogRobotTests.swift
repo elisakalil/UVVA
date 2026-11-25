@@ -73,6 +73,61 @@ struct CatalogMergeTests {
         #expect(wine.map == Self.seedWine.map)
     }
 
+    @Test func aNewWine_withNothingTheSeedKnows_waits() throws {
+        // CELLAR-R23a: a made-up grape in a region the seed has no red of gives no map.
+        let entry = try #require(CatalogMerge.entry([Self.reading("a", grapes: ["Cabudi"]),
+                                                     Self.reading("b", grapes: ["Cabudi"])], previous: nil))
+        let seed = [Self.seedWine].map { wine in
+            var wine = wine
+            wine.region = "Dão"
+            return wine
+        }
+        #expect(CatalogMerge.catalog(seed: seed, entries: [entry.wineKey: entry]).count == 1)
+    }
+
+    @Test func theTimeInOak_twoReadersAgreeOn_isKept_andSetsTheMap() throws {
+        func oaked(_ user: String, _ aging: OakAging, woods: [String], minutes: Double) -> Contribution {
+            // Read at different times: the first reading writes the words.
+            var reading = Self.reading(user, minutes: minutes)
+            reading.wine.oakAging = aging.rawValue
+            reading.wine.oakWoods = woods
+            return reading
+        }
+        let entry = try #require(CatalogMerge.entry([
+            oaked("a", .twelveToTwentyFour, woods: ["French oak", "American oak"], minutes: 0),
+            oaked("b", .twelveToTwentyFour, woods: ["french oak"], minutes: 1)
+        ], previous: nil))
+        #expect(entry.facts.oakAging == "12to24")
+        #expect(entry.facts.oakWoods == ["French oak"])
+        let wine = try #require(CatalogMerge.catalog(seed: [Self.seedWine], entries: [entry.wineKey: entry])
+            .first { $0.id == entry.wineKey })
+        #expect(wine.map.oak == OakAging.twelveToTwentyFour.oakIntensity)
+    }
+
+    @Test func oneReadersUnknownGrapeAndRegion_waitForASecond() throws {
+        // CELLAR-R18a: a grape and a region only one reader typed, which the seed does not know, stay out.
+        var first = Self.reading("a", grapes: ["Touriga Nacional", "Cabudi"])
+        first.wine.region = "Labubu"
+        let second = Self.reading("b", grapes: ["Baga"], minutes: 1)
+        let entry = try #require(CatalogMerge.entry([first, second], previous: nil))
+        let wine = try #require(CatalogMerge.catalog(seed: [Self.seedWine], entries: [entry.wineKey: entry])
+            .first { $0.id == entry.wineKey })
+        #expect(wine.grapes == ["Touriga Nacional"])
+        #expect(wine.region == nil)
+    }
+
+    @Test func aRegionTwoReadersType_entersTheWine() throws {
+        let readings = [Self.reading("a"), Self.reading("b", minutes: 1)].map { reading in
+            var reading = reading
+            reading.wine.region = "Labubu"
+            return reading
+        }
+        let entry = try #require(CatalogMerge.entry(readings, previous: nil))
+        let wine = try #require(CatalogMerge.catalog(seed: [Self.seedWine], entries: [entry.wineKey: entry])
+            .first { $0.id == entry.wineKey })
+        #expect(wine.region == "Labubu")
+    }
+
     @Test func aWineOfNoKnownType_waits() throws {
         let entry = try #require(CatalogMerge.entry([Self.reading("a", type: ""), Self.reading("b", type: "")],
                                                     previous: nil))
@@ -95,6 +150,9 @@ struct ContributionRulesTests {
         #expect(!ContributionRules.isValid(CatalogMergeTests.reading("a", alcohol: 60)))
         #expect(!ContributionRules.isValid(CatalogMergeTests.reading("a", vintage: 1700)))
         #expect(!ContributionRules.isValid(CatalogMergeTests.reading("a", type: "Blue")))
+        var oak = CatalogMergeTests.reading("a")
+        oak.wine.oakAging = "forever"
+        #expect(!ContributionRules.isValid(oak))
     }
 
     @Test func oneUsersDay_countsUpToTheLimit() {

@@ -161,6 +161,8 @@ private extension CellarEntryEntity {
         classification = wine.classification
         designation = wine.designation
         awards = wine.awards.map(\.text)
+        oakAging = wine.oakAging?.rawValue
+        oakWoods = wine.oakWoods
         // The "Top X%" as the new note showed it, kept as it is (CELLAR-R30).
         certificateTop = Certification.make(for: wine)?.topPercent ?? 0
     }
@@ -186,6 +188,7 @@ private extension CellarEntryEntity {
                            createdAt: createdAt, updatedAt: updatedAt,
                            wineProfile: profile, wineNotes: wineNotes, pairings: pairings, designation: designation,
                            awards: awards?.compactMap(WineAward.init(text:)), certificateTop: certificateTop,
-                           score: score)
+                           score: score, oakAging: oakAging.flatMap(OakAging.init(rawValue:)),
+                           oakWoods: oakWoods ?? [])
     }
 }

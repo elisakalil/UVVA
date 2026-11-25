@@ -75,11 +75,12 @@ struct FriendProfilePresentationBuilder {
 
     /// Friend Wine: a wine of the friend's Map against the friend's map (FRI-R11a), or a bottle of "Open this
     /// together" or a scanned one against the two maps (FRI-R12a).
-    func friendWine(_ wine: Wine, isForBoth: Bool, sending: FriendWinePresentationBuilder.Sending) -> FriendWineUIModel {
+    func friendWine(_ wine: Wine, isForBoth: Bool, sending: FriendWinePresentationBuilder.Sending,
+                    isInCellar: Bool = false) -> FriendWineUIModel {
         let reader: FriendWinePresentationBuilder.Reader = isForBoth
             ? .both(friendName: firstName, userMap: userMap, friendMap: friend.map)
             : .friend(name: firstName, map: friend.map)
-        return FriendWinePresentationBuilder(wine: wine, reader: reader, sending: sending).build()
+        return FriendWinePresentationBuilder(wine: wine, reader: reader, sending: sending, isInCellar: isInCellar).build()
     }
 
     /// FRI-R12 "Reading by reading": both readings of every axis on one line, and how far apart they are.

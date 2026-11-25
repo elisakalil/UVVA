@@ -25,6 +25,12 @@ struct OnboardingModuleTests {
         digits.forEach(module.phone.press)
     }
 
+    /// The phone is required (ONB-R35): types a valid number and continues.
+    private func enterPhone(into module: OnboardingModule) async {
+        type("912345678", into: module)
+        await module.phone.continueWithPhone()
+    }
+
     // MARK: ONB-R29, R14a · Login
 
     @Test func ONB_R14a_newAccount_opensTheName_filledWithTheProviderName() async {
@@ -97,9 +103,10 @@ struct OnboardingModuleTests {
 
     // MARK: ONB-R35, R05 · Telefone
 
-    @Test func ONB_R35_emptyPhone_showsSkip_andTypingShowsContinue() async {
+    @Test func ONB_R35_emptyPhone_cannotContinue_untilTheNumberIsComplete() async {
         let module = await makeModule()
         #expect(module.phone.uiModel.isEmpty)
+        #expect(!module.phone.uiModel.canContinue)
         type("9", into: module)
         #expect(!module.phone.uiModel.isEmpty)
         #expect(!module.phone.uiModel.canContinue)
@@ -131,17 +138,17 @@ struct OnboardingModuleTests {
         #expect(social.publishedPhones == ["+351912345678"])
     }
 
-    @Test func ONB_R35_skip_startsTheSessionWithoutPhoneOrKey() async throws {
+    @Test func ONB_R35_phoneIsRequired_continueWithoutAValidNumberDoesNothing() async {
         let profiles = ProfileRepositorySpy()
-        let social = SocialSpy()
-        let module = await makeModule(profiles: profiles, social: social)
+        let module = await makeModule(profiles: profiles)
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
-        #expect(module.coordinator.step == .findFriends)
-        #expect(profiles.saved.first?.phone == nil)
-        try await Task.sleep(for: .milliseconds(50))
-        #expect(social.publishedPhones.isEmpty)
+        #expect(!module.phone.uiModel.canContinue)
+        await module.phone.continueWithPhone()
+        type("9123", into: module)
+        await module.phone.continueWithPhone()
+        #expect(module.coordinator.step == .phone)
+        #expect(profiles.saved.isEmpty)
     }
 
     // MARK: ONB-R36a, R37 · Amigos
@@ -151,7 +158,7 @@ struct OnboardingModuleTests {
         let module = await makeModule(contacts: ContactsStub(granted: false)) { result = $0 }
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         guard case let .newAccount(profile) = result else { Issue.record("not finished"); return }
@@ -171,10 +178,13 @@ struct OnboardingModuleTests {
         let module = await makeModule(social: social, contacts: ContactsStub(contacts: contacts))
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
+        // Starts loading, so the title, back, "Next" and the A–Z bar stay hidden until the lists arrive.
+        #expect(module.contacts.uiModel.isLoading)
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         let model = module.contacts.uiModel
+        #expect(!model.isLoading)
         #expect(model.onUVVA.map(\.name) == ["Marina Alves"])
         #expect(model.onUVVATitle == "1 of your contacts is on UVVA")
         #expect(model.title == "Contacts")
@@ -187,7 +197,7 @@ struct OnboardingModuleTests {
         let module = await makeModule(contacts: contacts)
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         let model = module.contacts.uiModel
@@ -208,7 +218,7 @@ struct OnboardingModuleTests {
         let module = await makeModule(social: social, contacts: ContactsStub(contacts: contacts))
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
 
@@ -234,7 +244,7 @@ struct OnboardingModuleTests {
         let module = await makeModule(social: social, contacts: contacts)
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         await module.contacts.add("1")
@@ -248,7 +258,7 @@ struct OnboardingModuleTests {
         let module = await makeModule(contacts: contacts)
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         module.contacts.markInvited("3")
@@ -262,7 +272,7 @@ struct OnboardingModuleTests {
         let module = await makeModule(contacts: contacts)
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
         if module.coordinator.step == .contacts { await module.contacts.loadContacts() }
         let model = module.contacts.uiModel
@@ -278,7 +288,7 @@ struct OnboardingModuleTests {
         let module = await makeModule(profiles: profiles, social: social)
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
 
         #expect(module.coordinator.step == .phone)
         #expect(module.phone.uiModel.notice != nil)
@@ -306,7 +316,7 @@ struct OnboardingModuleTests {
         let module = await makeModule { results.append($0) }
         await module.welcome.signIn()
         module.name.continueFromName()
-        await module.phone.skipPhone()
+        await enterPhone(into: module)
         await module.findFriends.findFriends()
         module.contacts.finishContacts()
         module.contacts.finishContacts()

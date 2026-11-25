@@ -30,11 +30,15 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
                 Task { await viewModel.capture(photo.kept, reading: photo.reading, scan: scan) }
             })
                 .transition(.opacity)
-        case .readFailed, .cameraDenied:
+        case .readFailed, .notWine, .cameraDenied:
             NewNoteMessageView(model: model, onPrimary: viewModel.tryAgain, onFillInByHand: viewModel.fillInByHand)
                 .transition(.opacity)
         case .manual:
             NewNoteManualView(model: model, onChange: viewModel.updateManual(_:text:), onPickType: viewModel.pickType,
+                              loadOptions: viewModel.manualChipOptions(for:),
+                              validate: viewModel.validateManualChip(_:for:), onChoose: viewModel.chooseManual(_:for:),
+                              onRemove: viewModel.removeManual(_:from:), onPickOak: viewModel.pickOakAging,
+                              onAddAward: viewModel.addAward, onRemoveAward: viewModel.removeAward,
                               onContinue: { Task { await viewModel.continueManual() } })
                 .transition(.opacity)
         case .note where model.isScanOnly:
@@ -43,7 +47,8 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
         case .note:
             NewNotePaperView(model: model, onAnswer: viewModel.answer(hasTasted:), onRate: viewModel.rate(_:score:),
                              onNote: viewModel.updateNote, onAddChip: viewModel.addChip,
-                             loadChipOptions: viewModel.chipOptions, onIntensity: viewModel.setIntensity,
+                             loadChipOptions: viewModel.chipOptions, validateChip: viewModel.validateChip(_:for:),
+                             onIntensity: viewModel.setIntensity,
                              onReplacePhoto: viewModel.replacePhoto(_:side:),
                              onSave: { Task { await viewModel.save() } })
                 .transition(.opacity)
@@ -52,12 +57,19 @@ public struct NewNoteView<ViewModel: NewNoteViewModelProtocol>: View {
 }
 
 public extension View {
-    func newNoteSheet(_ note: Binding<NewNoteViewModel?>) -> some View {
+    /// With `wineList`, the Home's scan: the label or the wine list, chosen at the top (WINELIST-R01).
+    func newNoteSheet(_ note: Binding<NewNoteViewModel?>, wineList: WineListViewModel? = nil) -> some View {
         sheet(item: note) { viewModel in
-            NewNoteView(viewModel: viewModel)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
-                .presentationCornerRadius(28)
+            Group {
+                if let wineList {
+                    ScanView(note: viewModel, wineList: wineList)
+                } else {
+                    NewNoteView(viewModel: viewModel)
+                }
+            }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+            .presentationCornerRadius(28)
         }
     }
 }
@@ -73,6 +85,10 @@ public extension View {
 
 #Preview("Read failed") {
     NewNoteView(viewModel: MockNewNoteViewModel(step: .readFailed))
+}
+
+#Preview("Not a wine") {
+    NewNoteView(viewModel: MockNewNoteViewModel(step: .notWine))
 }
 
 #Preview("Camera") {

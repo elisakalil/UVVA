@@ -6,7 +6,7 @@ import OSLog
 /// CELLAR-R17: the text of the photos (Vision), sorted by the model on the phone when there is one, filled in by the
 /// parser, then looked up in the catalog on the phone, and in the public catalog when the phone does not have it
 /// (the only step that needs a network, and one the reading does without). A catalog wine gains what the label adds to it; a wine
-/// the catalog does not have is made from what was read, as soon as there is a name. Either way the model then adds
+/// the catalog does not have is made from what was read, once there is a name and something to draw its map from. Either way the model then adds
 /// dishes to the pairings found.
 @MainActor
 struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
@@ -50,6 +50,13 @@ struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
             let year = Calendar(identifier: .gregorian).component(.year, from: now())
             onStage(.wine)
             let parsed = LabelParser.parse(text, vocabulary: prepared.vocabulary, currentYear: year)
+            entry.parsed = parsed
+            // CELLAR-R21a: judged before the catalog, whose wines grow with every scan, and before the model, which
+            // makes a wine of anything. The allergens the cleaning dropped still count: "contém sulfitos".
+            guard WineEvidence.isWine(read, facts: parsed) else {
+                entry.notWine = true
+                return .notWine
+            }
             // The model's window is small: it gets the back label's surest lines, not all of them.
             let result = await structurer.structure(LabelTextCleaner.forModel(text))
             var structured = result.facts
@@ -57,7 +64,6 @@ struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
             if let serving = structured?.serving, !ServingEvidence.isRead(serving, in: text.lines) {
                 structured?.serving = nil
             }
-            entry.parsed = parsed
             entry.structured = structured
             entry.modelFailure = result.failure
             entry.modelContext = result.context
@@ -72,11 +78,11 @@ struct ReadLabelUseCase: ReadLabelUseCaseProtocol {
             } else if let match = await catalog.publicMatch(for: facts) {
                 entry.match = match.wine.displayName
                 wine = prepared.vocabulary.cleaning(match.wine)
-            } else if facts.hasName, let profile = ProfileEstimate.estimate(grapes: facts.grapes, type: facts.type,
-                                                                            region: facts.region, in: prepared.wines) {
+            } else if facts.hasName, let profile = ProfileEstimate.estimate(facts, in: prepared.wines) {
                 wine = ScannedWine.make(facts, profile: profile)
             } else {
-                return .nameless(facts)
+                // CELLAR-R23a: no name, or nothing to draw the map from: the person completes it by hand.
+                return .incomplete(facts)
             }
             entry.pairingsFound = wine.pairings
             onStage(.pairings)

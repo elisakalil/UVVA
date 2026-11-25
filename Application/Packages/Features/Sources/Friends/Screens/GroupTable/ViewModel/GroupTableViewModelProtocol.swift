@@ -20,6 +20,9 @@ public protocol GroupTableViewModelProtocol: ObservableObject, Identifiable {
     func closeWine()
     /// Sends the open wine to everyone at the table.
     func sendWine() async
+    /// "Add to cellar" on a wine for the table: Friend Wine closes, and once it is gone the Cellar's new note opens.
+    func addWineToCellar()
+    func wineDismissed()
     /// `+`: the label scanner; the wine it reads opens in Friend Wine once it is gone.
     func scanWine()
     func closeScanner()

@@ -10,7 +10,7 @@ struct LegalView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                BackChevron(action: onBack)
+                BackPillButton(action: onBack)
                 Spacer()
                 Text(uiModel.legalText.uppercased())
                     .font(UVVAFont.sans(9)).tracking(2.7).opacity(0.45)

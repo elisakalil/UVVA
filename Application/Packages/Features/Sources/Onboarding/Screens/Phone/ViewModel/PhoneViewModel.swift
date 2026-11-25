@@ -47,19 +47,9 @@ final class PhoneViewModel: PhoneViewModelProtocol {
         refresh()
     }
 
-    /// "Continue" (ONB-R07).
+    /// "Continue" (ONB-R07). The phone is required (ONB-R35): without a valid number nothing happens.
     func continueWithPhone() async {
-        guard let phone = phoneE164 else { return }
-        await startSession(phone: phone)
-    }
-
-    /// "Skip for now" (ONB-R35).
-    func skipPhone() async {
-        await startSession(phone: nil)
-    }
-
-    private func startSession(phone: String?) async {
-        guard let identity = draft.identity, !uiModel.isSaving else { return }
+        guard let phone = phoneE164, let identity = draft.identity, !uiModel.isSaving else { return }
         uiModel.isSaving = true
         uiModel.notice = nil
         defer { uiModel.isSaving = false }

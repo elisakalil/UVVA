@@ -109,7 +109,7 @@ As tabelas da Loja Pessoal (2.1), criadas e sincronizadas pelo SwiftData. Ficam 
 | Tabela | recordName | Campos | Quem escreve |
 | --- | --- | --- | --- |
 | `CatalogWine` | wineKey | `data` (o vinho em JSON, `CatalogWineData`), `status` (`active` ou `removed`), `tokens` (palavras do nome e do produtor) | Só o robô |
-| `CatalogSnapshot` | `current` | `version`, `builtAt`, `wineCount`, `prevalence` (Top X%), `wines` (asset: o catálogo inteiro, JSON zlib), `state` (asset: o estado do robô) | Só o robô |
+| `CatalogSnapshot` | `current` | `version`, `builtAt`, `wineCount`, `prevalence` (Top X%), `wines` (asset: o catálogo inteiro, JSON zlib), `state` (asset: o estado do robô), `textsPtBR` (asset opcional com traduções) | Só o robô |
 | `WineContribution` | SHA-256(wineKey + id do usuário) | `wineKey`, `contributor` (id do usuário), `data` (o vinho como o rótulo o mostrou) | O usuário que leu; só ele e o robô a leem |
 | `PublicProfile` | id do usuário | firstName, avatar, values (vazio se o mapa não é público) | O dono |
 | `ContactKey` | SHA-256(telefone E.164 + sal) | userID | O dono |
@@ -195,13 +195,19 @@ Cada corrida:
 2. **Segredos no GitHub** (Settings › Secrets and variables › Actions): `CLOUDKIT_DEVELOPMENT_KEY_ID`, `CLOUDKIT_DEVELOPMENT_PRIVATE_KEY` (o conteúdo de `eckey.pem`) e os dois `CLOUDKIT_PRODUCTION_…`. Um ambiente sem segredos é saltado.
 3. **Tabelas** (Schema › Record Types, em Development). Uma chave de servidor não cria tabelas, então o robô precisa delas antes da primeira corrida:
    - `CatalogWine`: `data` (String), `status` (String), `tokens` (String List).
-   - `CatalogSnapshot`: `version` (String), `builtAt` (Date/Time), `wineCount` (Int(64)), `prevalence` (String), `wines` (Asset), `state` (Asset).
+   - `CatalogSnapshot`: `version` (String), `builtAt` (Date/Time), `wineCount` (Int(64)), `prevalence` (String), `wines` (Asset), `state` (Asset), `textsPtBR` (Asset opcional com as traduções em pt-BR).
    - A `WineContribution` nasce com a primeira nota guardada num build de Debug com iCloud.
    - `SharedWine` (enviar um vinho a um amigo, FRIENDS FRI-R11b): `from`, `fromName`, `to`, `wineID`, `wineName`, `snapshot` (String), `sentAt` (Date/Time). Ainda por fazer: ver a nota "Falta no CloudKit" no FRIENDS.md.
 4. **Índices** (Schema › Indexes), *queryable*: `recordName` e `modificationDate` em `CatalogWine` e `WineContribution`; `CatalogWine.status`, `CatalogWine.tokens`; `WineContribution.wineKey`, `WineContribution.contributor`. Sem o de `modificationDate`, o robô para com «Field '___modTime' is not marked queryable». Depois disso, *Run workflow* publica os 10 000 vinhos em Development.
    - `SharedWine` (FRIENDS FRI-R11b) nasce com o primeiro vinho enviado num build de Debug com iCloud; precisa de `recordName`, `to` e `from` *queryable* e `sentAt` *sortable*. Sem o de `to`, nem a lista "Sent to you" nem a subscrição das notificações funcionam.
 5. **Permissões** (Schema › Security Roles): em `CatalogWine` e `CatalogSnapshot`, `_icloud` só lê (sem *create*); um papel `Robot` com *create* e *write* nas duas, dado ao usuário dono da chave. Em `WineContribution`, `_world` sem nada, `_icloud` *create*, `_creator` *read* e *write*, e `Robot` *read*. Em `SharedWine`, `_icloud` *create* e *read* (quem recebe lê o registo de quem enviou), `_creator` *write*.
 6. **Deploy Schema Changes** para Production, e correr o workflow outra vez para publicar em Production. Só então um build de TestFlight ou da App Store tem catálogo.
+
+### Tradução do catálogo em pt-BR
+
+Em Development, adicione o campo `textsPtBR` do tipo Asset em `CatalogSnapshot` e configure a variável de repositório `ENABLE_CATALOG_PT_BR_PILOT=true` no GitHub Actions. O workflow publica nesse ambiente as traduções de `Application/Data/Localizations/pt-BR/catalog.json` cujos textos de origem ainda aparecem no catálogo. O arquivo cobre as notas de prova, harmonizações, instruções de serviço e textos de origem e denominação do catálogo inicial. O robô registra a cobertura por texto distinto.
+
+Com o app em pt-BR no iOS, sincronize o catálogo e abra uma ficha com textos do catálogo traduzido. Confirme que os textos aparecem em português e continuam disponíveis offline ao reabrir o app. Valide também a exibição dos textos originais em inglês e dos textos sem tradução.
 
 ## 5. Notificações
 

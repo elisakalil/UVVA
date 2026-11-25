@@ -65,6 +65,9 @@ public struct CatalogWineData: Codable, Equatable, Sendable {
     public var designation: String?
     /// `WineAward.text` of each award.
     public var awards: [String]?
+    /// `OakAging.rawValue`; a string, so a value a newer app writes does not break an older one's reading.
+    public var oakAging: String?
+    public var oakWoods: [String]?
     public var map: Axes
 
     public init(_ wine: Wine, findIt: String? = nil) {
@@ -89,6 +92,8 @@ public struct CatalogWineData: Codable, Equatable, Sendable {
         howToServe = wine.howToServe
         designation = wine.designation
         awards = wine.awards.isEmpty ? nil : wine.awards.map(\.text)
+        oakAging = wine.oakAging?.rawValue
+        oakWoods = wine.oakWoods.isEmpty ? nil : wine.oakWoods
         map = Axes(wine.profile)
     }
 
@@ -99,7 +104,8 @@ public struct CatalogWineData: Codable, Equatable, Sendable {
              serving: servingTemperature.flatMap { $0.min <= $0.max ? $0.min...$0.max : nil },
              originInsight: originInsight, appellationInsight: appellationInsight,
              hasNotableAppellation: hasNotableAppellation ?? false, howToServe: howToServe, pairings: pairings,
-             designation: designation, awards: (awards ?? []).compactMap(WineAward.init(text:)))
+             designation: designation, awards: (awards ?? []).compactMap(WineAward.init(text:)),
+             oakAging: oakAging.flatMap(OakAging.init(rawValue:)), oakWoods: oakWoods ?? [])
     }
 
     /// The words a label of this wine is looked up by in the public catalog (`CatalogWine.tokens`): those of its

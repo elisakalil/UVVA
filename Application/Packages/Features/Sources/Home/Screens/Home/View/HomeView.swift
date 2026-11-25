@@ -8,6 +8,8 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     @ObservedObject private var viewModel: ViewModel
     var tour: GuidedTourViewModel?
     @Binding private var newNote: NewNoteViewModel?
+    /// WINELIST-R01: the `+` reads a label or a restaurant's wine list.
+    private var wineList: WineListViewModel?
 
     @State private var glossaryViewModel: GlossaryViewModel?
     @State private var inviting = false
@@ -16,10 +18,11 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
     @State private var cellarNote: Wine?
 
     public init(viewModel: ViewModel, tour: GuidedTourViewModel? = nil,
-                newNote: Binding<NewNoteViewModel?> = .constant(nil)) {
+                newNote: Binding<NewNoteViewModel?> = .constant(nil), wineList: WineListViewModel? = nil) {
         self.viewModel = viewModel
         self.tour = tour
         self._newNote = newNote
+        self.wineList = wineList
     }
 
     public var body: some View {
@@ -69,7 +72,7 @@ public struct HomeView<ViewModel: HomeViewModelProtocol>: View {
                 .task { await viewModel.loadTasteHistory() }
             }
         }
-        .newNoteSheet($newNote)
+        .newNoteSheet($newNote, wineList: wineList)
         .overlay(alignment: .top) { HomeNoticeView(text: wineSheet == nil ? viewModel.uiModel.notice : nil) }
     }
 

@@ -93,6 +93,17 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
                 .tracking(-0.47)
                 .accessibilityAddTraits(.isHeader)
             Spacer()
+            // Opens "Search your cellar" straight away, without scrolling the header out first (CELLAR-R11).
+            Button { isSearchFocused = true } label: {
+                Image(systemName: resources.searchIcon)
+                    .font(.system(size: 21, weight: .ultraLight))
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(resources.searchPromptText)
+            .padding(.top, -8)
+            .padding(.trailing, -16)
             Button(action: viewModel.add) {
                 Text(verbatim: "+")
                     .font(UVVAFont.sans(38, .ultraLight))
@@ -107,6 +118,10 @@ public struct CellarView<ViewModel: CellarViewModelProtocol>: View {
         .padding(.horizontal, 30)
         .padding(.top, 36)
         .padding(.bottom, 14)
+        // The search bar comes down over the header: the title and its buttons step aside while it is open.
+        .opacity(isSearchFocused || model.isSearching ? 0 : 1)
+        .allowsHitTesting(!(isSearchFocused || model.isSearching))
+        .animation(.easeOut(duration: 0.2), value: isSearchFocused)
         .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { headerHeight = $0 }
     }
 

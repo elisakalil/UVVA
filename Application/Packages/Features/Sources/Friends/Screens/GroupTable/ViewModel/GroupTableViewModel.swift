@@ -31,6 +31,9 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
     /// FRI-R12a: the label scanner, while it is open, and the wine it read, until it is gone.
     private var scanner: NewNoteViewModel? { didSet { refresh() } }
     private var scannedWine: Wine?
+    /// The wines the Cellar holds, read when a wine opens, and the one handed to the new note once Friend Wine is gone.
+    private var cellarWineKeys: Set<String> = [] { didSet { refresh() } }
+    private var wineForCellar: Wine?
 
     private enum OpenedWine {
         /// A bottle of "Open this together".
@@ -45,6 +48,9 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
     private let lastTable: any LastTableUseCaseProtocol
     private let shareWine: any ShareWineUseCaseProtocol
     private let makeWineScan: ((@escaping (Wine) -> Void) -> NewNoteViewModel)?
+    private let cellarWines: any CellarWinesUseCaseProtocol
+    /// "Add to cellar" on a wine for the table: the app opens the Cellar's new note over it.
+    private let onAddToCellar: (Wine) -> Void
     private let onClose: () -> Void
     private let logger = Logger(subsystem: "app.uvva", category: "friends")
 
@@ -52,6 +58,8 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
          lastTable: any LastTableUseCaseProtocol,
          shareWine: any ShareWineUseCaseProtocol = ShareWineUseCase(sharing: nil, wines: nil),
          makeWineScan: ((@escaping (Wine) -> Void) -> NewNoteViewModel)? = nil,
+         cellarWines: any CellarWinesUseCaseProtocol = CellarWinesUseCase(cellar: nil),
+         onAddToCellar: @escaping (Wine) -> Void = { _ in },
          onClose: @escaping () -> Void = {}) {
         id = friends.map(\.id).joined(separator: "+")
         self.friends = friends
@@ -60,6 +68,8 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
         self.lastTable = lastTable
         self.shareWine = shareWine
         self.makeWineScan = makeWineScan
+        self.cellarWines = cellarWines
+        self.onAddToCellar = onAddToCellar
         self.onClose = onClose
         refresh()
     }
@@ -114,9 +124,29 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
 
     // MARK: Friend Wine
 
-    public func openTableWine(_ id: String) { openedWine = .table(id) }
+    public func openTableWine(_ id: String) {
+        openedWine = .table(id)
+        readCellar()
+    }
 
     public func closeWine() { openedWine = nil }
+
+    /// "Add to cellar" on a wine for the table: Friend Wine closes, then the Cellar's new note opens.
+    public func addWineToCellar() {
+        wineForCellar = openedWine.flatMap(wine)
+        openedWine = nil
+    }
+
+    public func wineDismissed() {
+        guard let wine = wineForCellar else { return }
+        wineForCellar = nil
+        onAddToCellar(wine)
+    }
+
+    /// The Cellar may have changed since the last wine (a note saved from here): read again as each wine opens.
+    private func readCellar() {
+        Task { cellarWineKeys = await cellarWines.wineKeys() }
+    }
 
     /// Sends the open wine to everyone at the table; a failure says so and lets it be sent again, to those it did
     /// not reach.
@@ -160,6 +190,7 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
         guard let wine = scannedWine else { return }
         scannedWine = nil
         openedWine = .scanned(wine)
+        readCellar()
     }
 
     // MARK: FRI-R21 · Partilhar
@@ -175,7 +206,9 @@ public final class GroupTableViewModel: GroupTableViewModelProtocol {
         let builder = GroupTablePresentationBuilder(userMap: user.map, userName: user.firstName, friends: friends,
                                                     bottles: bottles, resources: model.resources)
         builder.build(into: &model)
-        model.friendWine = openedWine.flatMap(wine).map { builder.friendWine($0, sending: sending[$0.id] ?? .idle) }
+        model.friendWine = openedWine.flatMap(wine).map {
+            builder.friendWine($0, sending: sending[$0.id] ?? .idle, isInCellar: cellarWineKeys.contains($0.id))
+        }
         model.scanner = scanner
         model.canScan = makeWineScan != nil
         model.isReadingsExpanded = isReadingsExpanded

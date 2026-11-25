@@ -7,6 +7,9 @@ public struct UVVATabBar: View {
     /// Tabs with something new behind them: a small dot beside the name (You, for an unread notification).
     var marked: Set<AppTab>
 
+    /// Corner radius of the bar's glass.
+    static let glassRadius: CGFloat = 21
+
     public init(active: Binding<AppTab>, marked: Set<AppTab> = []) {
         _active = active
         self.marked = marked
@@ -56,8 +59,8 @@ public struct UVVATabBar: View {
         .padding(.horizontal, 5)
         .background {
             // A touch brighter than the cards: a faint white veil over the same glass.
-            FrostedGlass(radius: 21, dense: true)
-                .overlay(RoundedRectangle(cornerRadius: 21, style: .continuous).fill(.white.opacity(0.07)))
+            FrostedGlass(radius: Self.glassRadius, dense: true)
+                .overlay(RoundedRectangle(cornerRadius: Self.glassRadius, style: .continuous).fill(.white.opacity(0.07)))
         }
     }
 }

@@ -109,6 +109,17 @@ struct FriendProfileTests {
                                                     "\(Similarity.percent(wine.profile, friendMap))%"])
     }
 
+    @Test func aWineForTheTwo_canGoToTheCellar_besideTheMagnifyingGlass() {
+        let wine = CatalogStub.wines[1]
+        let friendMap = PalateMap.positions([.tannin: 8, .oak: 7])
+        let both = FriendWinePresentationBuilder.Reader.both(friendName: "Marina", userMap: userMap, friendMap: friendMap)
+        #expect(FriendWinePresentationBuilder(wine: wine, reader: both).build().cellar == .add)
+        #expect(FriendWinePresentationBuilder(wine: wine, reader: both, isInCellar: true).build().cellar == .inCellar)
+        // A wine of the friend's Map keeps "Find the wine" alone; a wine received is kept from its footer.
+        #expect(FriendWinePresentationBuilder(wine: wine, reader: .friend(name: "Marina", map: friendMap)).build().cellar == nil)
+        #expect(FriendWinePresentationBuilder(wine: wine, reader: .you(senderName: "Marina", map: userMap)).build().cellar == nil)
+    }
+
     @Test func FRI_R12a_withoutAScanner_thereIsNoScan() async throws {
         befriend("marina", "Marina", map: userMap)
         let list = makeList()

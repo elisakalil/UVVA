@@ -142,6 +142,7 @@ struct CellarPresentationBuilderTests {
                                                 filters: [:], openFacet: nil, query: "")
         matched.palate = Maps.flat(5)
         #expect(matched.items.map(\.match) == ["100% match", "78% match", ""])
+        #expect(matched.items.map(\.percent) == ["100%", "78%", ""])
         #expect(matched.items.map(\.place) == ["Douro", "Italy", "Dão"])
     }
 

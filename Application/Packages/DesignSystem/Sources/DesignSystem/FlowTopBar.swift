@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The top of a flow screen: `‹` on the left, and on the right the small wordmark, a hairline and a caption
+/// The top of a flow screen: "Back" in a pill on the left (as at the top of a friend), and on the right the small wordmark, a hairline and a caption
 /// ("UVVA | 3 OF 8", "UVVA | PALATE MAP").
 public struct FlowTopBar: View {
     var caption: String
@@ -14,15 +14,8 @@ public struct FlowTopBar: View {
     public var body: some View {
         HStack(spacing: 14) {
             if let onBack {
-                Button(action: onBack) {
-                    Text("‹")
-                        .font(UVVAFont.sans(26, .ultraLight))
-                        .foregroundStyle(UVVAColor.creamFill.opacity(0.6))
-                        .frame(width: 30, height: 30, alignment: .leading)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(Text("Back", bundle: .module))
+                BackPillButton(action: onBack)
+                    .foregroundStyle(UVVAColor.creamFill)
             }
             Spacer(minLength: 0)
             HStack(spacing: 9) {

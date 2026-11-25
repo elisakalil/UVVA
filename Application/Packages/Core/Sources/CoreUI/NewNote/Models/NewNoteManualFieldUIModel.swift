@@ -6,5 +6,7 @@ struct NewNoteManualFieldUIModel: Identifiable, Equatable {
     var label: String
     var text: String
     var prompt: String
+    /// What is wrong with what was typed, "A year from 1900 to 2026"; nil when it is right.
+    var hint: String?
     var id: NewNoteField { field }
 }

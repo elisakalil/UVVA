@@ -11,6 +11,7 @@ final class FakeCatalogCloud: CatalogCloudService {
     struct State {
         var info: CatalogSnapshotInfo?
         var snapshot: [CatalogWineData] = []
+        var portugueseTexts: [String: String] = [:]
         var changes: [CatalogChange] = []
         var calls: [String] = []
         var contributed: [String: [CatalogWineData]] = [:]
@@ -25,6 +26,13 @@ final class FakeCatalogCloud: CatalogCloudService {
 
     func snapshotWines() async throws -> [CatalogWineData] {
         state.withLock { $0.calls.append("snapshot"); return $0.snapshot }
+    }
+
+    func portugueseTexts() async throws -> [String: String] {
+        state.withLock {
+            $0.calls.append("portugueseTexts")
+            return $0.portugueseTexts
+        }
     }
 
     func changes(since date: Date) async throws -> [CatalogChange] {
@@ -85,6 +93,33 @@ struct CatalogSyncTests {
 
     let scanned = Wine(id: "casa-nova-tinto", name: "Tinto", producer: "Casa Nova", type: "Red", origin: "Douro",
                        profile: PalateMap([.acidity: 5]))
+
+    @Test func translatedCatalogUsesOfflineCacheAndFallsBackToSourceText() async throws {
+        let directory = FileManager.default.temporaryDirectory.appending(path: UUID().uuidString)
+        defer { try? FileManager.default.removeItem(at: directory) }
+        let url = directory.appending(path: "pt-BR.json")
+        cloud.state.withLock {
+            $0.snapshot[0].note = "Violet"
+            $0.snapshot[0].pairings = ["Beef", "Unknown dish"]
+            $0.portugueseTexts = ["Violet": "Violeta", "Beef": "Carne bovina"]
+        }
+
+        try await sync.sync(protecting: [], map: nil, now: builtAt)
+        #expect(!cloud.state.withLock { $0.calls.contains("portugueseTexts") })
+
+        let localizedSync = CatalogSync(cloud: cloud, writer: writer, texts: CatalogTextCache(url: url))
+        try await localizedSync.sync(protecting: [], map: nil, now: builtAt)
+        try await localizedSync.sync(protecting: [], map: nil, now: builtAt)
+        #expect(cloud.state.withLock { $0.calls.filter { $0 == "portugueseTexts" }.count } == 1)
+
+        let offline = CatalogTextCache(url: url)
+        #expect(offline.translation(for: "Violet") == "Violeta")
+        #expect(offline.translation(for: "Beef") == "Carne bovina")
+        #expect(offline.translation(for: "Unknown dish") == nil)
+        let original = try #require(try await CatalogStore(modelContainer: container).wines(keys: ["a"])["a"])
+        #expect(original.note == "Violet")
+        #expect(original.pairings == ["Beef", "Unknown dish"])
+    }
 
     // MARK: First sync
 

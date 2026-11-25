@@ -131,12 +131,12 @@ struct NewNoteFlowTests {
 
     @Test func CELLAR_R17_noName_opensFillByHand_withWhatWasRead() {
         var flow = reading()
-        flow.labelRead(.nameless(LabelFacts(vintage: 2024, grapes: ["Syrah", "Alicante Bouschet"])))
+        flow.labelRead(.incomplete(LabelFacts(vintage: 2024, grapes: ["Syrah", "Alicante Bouschet"])))
         #expect(flow.step == .manual)
         #expect(flow.manual.name.isEmpty)
         #expect(!flow.canContinueManual)
         #expect(flow.manual.vintage == "2024")
-        #expect(flow.manual.grape == "Syrah, Alicante Bouschet")
+        #expect(flow.manual.grapes == ["Syrah", "Alicante Bouschet"])
         #expect(flow.photoFront == front)
     }
 
@@ -160,9 +160,26 @@ struct NewNoteFlowTests {
         #expect(flow.manual.isEmpty)
     }
 
+    // MARK: CELLAR-R21a · Não é um vinho
+
+    @Test func CELLAR_R21a_notWine_showsItsOwnMessage_andBothWaysOn() {
+        var flow = reading()
+        flow.labelRead(.notWine)
+        #expect(flow.step == .notWine)
+        flow.tryAgain()
+        #expect(flow.step == .front)
+        #expect(flow.photoFront == nil)
+
+        var byHand = reading()
+        byHand.labelRead(.notWine)
+        byHand.fillInByHand()
+        #expect(byHand.step == .manual)
+        #expect(byHand.manual.isEmpty)
+    }
+
     // MARK: CELLAR-R23 · Preencher à mão
 
-    @Test func CELLAR_R23_continue_onlyWithAName() {
+    @Test func CELLAR_R23a_continue_needsAName_theType_andOneMoreDetail() {
         var flow = NewNoteFlow()
         flow.cameraChecked(.denied)
         flow.fillInByHand()
@@ -170,23 +187,137 @@ struct NewNoteFlowTests {
         flow.manual.name = "   "
         #expect(!flow.canContinueManual)
         flow.manual.name = "Ponto Forte"
+        #expect(!flow.canContinueManual)
+        flow.manual.type = "Red"
+        #expect(!flow.canContinueManual)
+        flow.manual.choose(["Syrah"], for: .grapes)
         #expect(flow.canContinueManual)
         flow.manualRead(Labels.pontoForte)
         #expect(flow.step == .note)
+    }
+
+    @Test func CELLAR_R23a_anyOneDetail_isABaseForTheMap() {
+        var form = NewNoteManualForm()
+        form.type = "Red"
+        #expect(!form.hasMapBasis)
+        for field in [NewNoteManualChipField.grapes, .region, .appellation, .notes] {
+            var withOne = form
+            withOne.choose(["X"], for: field)
+            #expect(withOne.hasMapBasis, "\(field)")
+        }
+        var oak = form
+        oak.pick(.twelveToTwentyFour)
+        #expect(oak.hasMapBasis)
+        // A legal term or a wood says nothing of the taste.
+        var term = form
+        term.choose(["Reserva"], for: .designation)
+        term.choose(["French oak"], for: .oakWoods)
+        #expect(!term.hasMapBasis)
+        var untyped = NewNoteManualForm()
+        untyped.choose(["Syrah"], for: .grapes)
+        #expect(!untyped.hasMapBasis)
+    }
+
+    @Test func CELLAR_R23_vintage_isAYearFrom1900ToThisOne() {
+        var form = NewNoteManualForm()
+        form.currentYear = 2026
+        #expect(form.isVintageValid)
+        for (typed, valid) in [("1457", false), ("1899", false), ("1900", true), ("2024", true), ("2026", true),
+                               ("2027", false), ("12", false)] {
+            form[.vintage] = typed
+            #expect(form.isVintageValid == valid, "\(typed)")
+        }
+    }
+
+    @Test func CELLAR_R23_alcohol_isAWinesStrength() {
+        var form = NewNoteManualForm()
+        #expect(form.isAlcoholValid)
+        for (typed, valid) in [("13,5", true), ("13.5", true), ("4.5", true), ("23", true), ("4", false), ("40", false),
+                               ("0,5", false)] {
+            form[.alcohol] = typed
+            #expect(form.isAlcoholValid == valid, "\(typed)")
+        }
+        form[.alcohol] = "12a,5%"
+        #expect(form.alcohol == "12,5")
+        #expect(form.alcoholValue == 12.5)
+    }
+
+    @Test func CELLAR_R23a_anInvalidVintageOrAlcohol_blocksContinue() {
+        var form = NewNoteManualForm()
+        form.name = "Vinha"
+        form.type = "Red"
+        form.choose(["Syrah"], for: .grapes)
+        #expect(form.canContinue)
+        form[.vintage] = "1457"
+        #expect(!form.canContinue)
+        form[.vintage] = "2020"
+        form[.alcohol] = "40"
+        #expect(!form.canContinue)
+    }
+
+    @Test func CELLAR_R23_lists_oneReplacesTheOther_manyAddUp() {
+        var form = NewNoteManualForm()
+        form.choose(["Douro"], for: .region)
+        form.choose(["Alentejo"], for: .region)
+        #expect(form.region == "Alentejo")
+        form.choose(["Syrah"], for: .grapes)
+        form.choose(["syrah", "Touriga Nacional"], for: .grapes)
+        #expect(form.grapes == ["Syrah", "Touriga Nacional"])
+        form.remove("Syrah", from: .grapes)
+        #expect(form.grapes == ["Touriga Nacional"])
+        form.remove("Alentejo", from: .region)
+        #expect(form.region == nil)
+    }
+
+    @Test func CELLAR_R23_noOak_hasNoWoods_andTappingAgainClearsIt() {
+        var form = NewNoteManualForm()
+        form.pick(.sixToTwelve)
+        form.choose(["French oak"], for: .oakWoods)
+        form.pick(.none)
+        #expect(form.oakAging == OakAging.none)
+        #expect(form.oakWoods.isEmpty)
+        form.pick(.none)
+        #expect(form.oakAging == nil)
     }
 
     @Test func CELLAR_R23_typedFacts() {
         var form = NewNoteManualForm()
         form.name = " Ponto Forte "
         form.vintage = "2024"
-        form.grape = "Syrah, , Alicante Bouschet"
+        form.alcohol = "13,5"
         form.type = "Red"
+        form.choose(["Syrah", "Alicante Bouschet"], for: .grapes)
+        form.choose(["Vinho Regional Alentejano"], for: .appellation)
+        form.choose(["Reserva"], for: .designation)
+        form.choose(["Plum"], for: .notes)
+        form.pick(.twelveToTwentyFour)
+        form.choose(["French oak"], for: .oakWoods)
+        let award = WineAward(competition: "Decanter World Wine Awards", medal: .gold, year: 2025)
+        form.add(award)
+        form.add(award)
         let facts = form.facts
         #expect(facts.name == "Ponto Forte")
         #expect(facts.producer == nil)
         #expect(facts.vintage == 2024)
+        #expect(facts.alcohol == 13.5)
         #expect(facts.grapes == ["Syrah", "Alicante Bouschet"])
         #expect(facts.type == "Red")
+        #expect(facts.appellation == "Vinho Regional Alentejano")
+        #expect(facts.designation == "Reserva")
+        #expect(facts.notes == ["Plum"])
+        #expect(facts.oakAging == .twelveToTwentyFour)
+        #expect(facts.oakWoods == ["French oak"])
+        #expect(facts.awards == [award])
+    }
+
+    @Test func CELLAR_R23_aReadingFillsTheLists() {
+        let form = NewNoteManualForm(LabelFacts(type: "Red", region: "Douro", alcohol: 14, notes: ["Plum"],
+                                                oakAging: .sixToTwelve, oakWoods: ["French oak"]))
+        #expect(form.region == "Douro")
+        #expect(form.notes == ["Plum"])
+        #expect(form.oakAging == .sixToTwelve)
+        #expect(form.oakWoods == ["French oak"])
+        #expect(form.alcoholValue == 14)
     }
 
     // MARK: CELLAR-R24 · A foto da nota

@@ -50,7 +50,7 @@ struct WineFactsUIModel {
     var serving: Fact? {
         guard let serving = wine.serving else { return nil }
         return Fact(label: resources.wineFactsServingTitle, value: "\(serving.lowerBound)–\(serving.upperBound) °C",
-                    insight: wine.howToServe)
+                    insight: wine.howToServe.map(WineCatalogText.editorial))
     }
 
     /// "2023 · 3 years"

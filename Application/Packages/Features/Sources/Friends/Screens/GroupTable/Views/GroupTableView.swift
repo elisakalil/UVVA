@@ -7,6 +7,8 @@ import SwiftUI
 /// the dinner, which opens in its own sheet (FRI-R15a).
 struct GroupTableView<ViewModel: GroupTableViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
+    /// The Cellar's new note, for "Add to cellar" on a wine for the table: it opens over the table.
+    var newNote: Binding<NewNoteViewModel?> = .constant(nil)
     /// The pill that opened the share screen (FRI-R21).
     @State private var shareFormat: ShareFormat = .story
 
@@ -36,9 +38,12 @@ struct GroupTableView<ViewModel: GroupTableViewModelProtocol>: View {
         .environment(\.glassPhoto, .hills)
         .task { await viewModel.load() }
         // A bottle or a scanned wine, read on every map at the table, to send to them all.
-        .sheet(item: Binding(get: { model.friendWine }, set: { if $0 == nil { viewModel.closeWine() } })) { wine in
-            FriendWineView(model: wine, onPrimary: { Task { await viewModel.sendWine() } })
+        .sheet(item: Binding(get: { model.friendWine }, set: { if $0 == nil { viewModel.closeWine() } }),
+               onDismiss: viewModel.wineDismissed) { wine in
+            FriendWineView(model: wine, onPrimary: { Task { await viewModel.sendWine() } },
+                           onAddToCellar: viewModel.addWineToCellar)
         }
+        .newNoteSheet(newNote)
         // The label scanner; the wine it reads opens in Friend Wine once it is gone.
         .sheet(item: Binding(get: { model.scanner }, set: { if $0 == nil { viewModel.closeScanner() } }),
                onDismiss: viewModel.scannerDismissed) { scanner in
@@ -173,7 +178,7 @@ struct GroupTableView<ViewModel: GroupTableViewModelProtocol>: View {
                 FriendsCardTitle(text: resources.readingByReadingText)
                 Spacer(minLength: 0)
                 Button { withAnimation(.easeOut(duration: 0.25)) { viewModel.toggleReadings() } } label: {
-                    FriendsPillLabel(text: model.isReadingsExpanded ? resources.collapseText : resources.expandText)
+                    PillLabel(text: model.isReadingsExpanded ? resources.collapseText : resources.expandText)
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
                 }

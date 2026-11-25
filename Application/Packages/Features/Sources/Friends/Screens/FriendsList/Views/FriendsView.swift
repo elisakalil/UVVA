@@ -14,10 +14,13 @@ public struct FriendsView<ViewModel: FriendsViewModelProtocol>: View {
     @State private var scrolled: CGFloat = 0
     @State private var headerHeight: CGFloat = 0
     @State private var position = ScrollPosition()
-    /// The Cellar's new note, from "Add to cellar" on a wine a friend sent (FRI-R11c).
+    /// The Cellar's new note, from "Add to cellar" on a wine a friend sent (FRI-R11c), or on a wine for the user and
+    /// the friend(s), opened over the friend or the group table.
     @Binding private var newNote: NewNoteViewModel?
 
     private var model: FriendsUIModel { viewModel.uiModel }
+    /// A friend or a group table is open over the tab: the new note is theirs to show.
+    private var isCovered: Bool { viewModel.profile != nil || viewModel.groupTable != nil }
     private var resources: FriendsResourcesUIModel { model.resources }
 
     public init(viewModel: ViewModel, newNote: Binding<NewNoteViewModel?> = .constant(nil)) {
@@ -50,17 +53,18 @@ public struct FriendsView<ViewModel: FriendsViewModelProtocol>: View {
         }
         .task { await viewModel.load() }
         .fullScreenCover(item: Binding(get: { viewModel.groupTable }, set: { if $0 == nil { viewModel.closeGroupTable() } })) { table in
-            GroupTableView(viewModel: table)
+            GroupTableView(viewModel: table, newNote: $newNote)
         }
         .fullScreenCover(item: Binding(get: { viewModel.profile }, set: { if $0 == nil { viewModel.closeFriend() } })) { profile in
-            FriendProfileView(viewModel: profile)
+            FriendProfileView(viewModel: profile, newNote: $newNote)
         }
         // FRI-R11c: a wine a friend sent, full screen; "Add to cellar" opens the new note once it is gone.
         .fullScreenCover(item: Binding(get: { model.receivedWine }, set: { if $0 == nil { viewModel.closeReceived() } }),
                          onDismiss: viewModel.receivedDismissed) { wine in
             FriendWineView(model: wine, onPrimary: viewModel.addReceivedToCellar, onClose: viewModel.closeReceived)
         }
-        .newNoteSheet($newNote)
+        // Over a friend or a group table, the new note opens over them instead.
+        .newNoteSheet(Binding(get: { isCovered ? nil : newNote }, set: { newNote = $0 }))
         .fullScreenCover(isPresented: Binding(get: { model.isInviting }, set: { if !$0 { viewModel.closeInvite() } })) {
             if let invite = model.invite { FriendsInviteView(invite: invite, onFinish: viewModel.closeInvite) }
         }
@@ -105,6 +109,7 @@ public struct FriendsView<ViewModel: FriendsViewModelProtocol>: View {
                     .accessibilityAddTraits(.isHeader)
                     .accessibilityValue(model.friends.isEmpty ? "" : model.countText)
                 Spacer()
+                searchButton
                 tableButton
             }
             if model.isEmpty {
@@ -120,7 +125,26 @@ public struct FriendsView<ViewModel: FriendsViewModelProtocol>: View {
         }
         .padding(.top, 36)
         .padding(.bottom, 6)
+        // The search bar comes down over the header: the title and its buttons step aside while it is open.
+        .opacity(isSearchFocused || model.isSearching ? 0 : 1)
+        .allowsHitTesting(!(isSearchFocused || model.isSearching))
+        .animation(.easeOut(duration: 0.2), value: isSearchFocused)
         .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { headerHeight = $0 }
+    }
+
+    /// Opens "Search by name" straight away, without scrolling the header out first.
+    private var searchButton: some View {
+        Button { isSearchFocused = true } label: {
+            Image(systemName: resources.searchIcon)
+                .font(.system(size: 21, weight: .ultraLight))
+                .frame(width: 44, height: 44)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(resources.searchPromptText)
+        // The same overflow as the table button beside it, so the two sit on one line.
+        .padding(.vertical, -5)
+        .padding(.trailing, -10)
     }
 
     /// The three figures at a table: starts the choice of who comes (FRI-R18), and ends it.

@@ -84,13 +84,9 @@ struct HomeContent: View {
                         reachedTop = true
                     }
                 }
-                .onChange(of: tourTarget) { _, target in
+                .onChange(of: tourTarget) { _, _ in
                     withAnimation(.spring(response: 0.5, dampingFraction: 0.9)) {
-                        if target == HomeSpotlightID.chooseYourWine {
-                            proxy.scrollTo(HomeSpotlightID.chooseYourWine, anchor: .bottom)
-                        } else {
-                            proxy.scrollTo(Self.topID, anchor: .top)
-                        }
+                        proxy.scrollTo(Self.topID, anchor: .top)
                     }
                 }
             }

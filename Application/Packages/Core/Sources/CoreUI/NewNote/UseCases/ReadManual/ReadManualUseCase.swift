@@ -4,7 +4,10 @@ import Match
 
 @MainActor
 struct ReadManualUseCase: ReadManualUseCaseProtocol {
-    enum Failure: Error { case emptyCatalog }
+    enum Failure: Error {
+        /// Nothing typed that the catalog knows to draw the map from (CELLAR-R23a).
+        case noMapBasis
+    }
 
     let catalog: LabelCatalogCache
     let pairer: any PairingSuggesting
@@ -19,8 +22,7 @@ struct ReadManualUseCase: ReadManualUseCaseProtocol {
         } else if let match = await catalog.publicMatch(for: typed) {
             wine = match.wine
         } else {
-            guard let profile = ProfileEstimate.estimate(grapes: typed.grapes, type: typed.type, region: typed.region,
-                                                         in: prepared.wines) else { throw Failure.emptyCatalog }
+            guard let profile = ProfileEstimate.estimate(typed, in: prepared.wines) else { throw Failure.noMapBasis }
             wine = ScannedWine.make(typed, profile: profile)
         }
         // The model adds dishes to the pairings, as for a label (CELLAR-R17).

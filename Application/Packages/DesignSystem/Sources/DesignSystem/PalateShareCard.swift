@@ -83,7 +83,7 @@ public struct PalateShareCard: View {
         .frame(width: size.width, height: size.height)
         .foregroundStyle(Color(hex: 0xF9F4E8))
         .background(UVVAColor.night)
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .shareCardCorners(14, style: .continuous)
     }
 
     /// The map scaled to fit the room it is given, centred in it.

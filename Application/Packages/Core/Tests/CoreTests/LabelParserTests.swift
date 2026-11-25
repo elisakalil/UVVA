@@ -201,4 +201,33 @@ struct LabelParserTests {
         #expect(facts.awards.isEmpty)
         #expect(facts.designation == nil)
     }
+
+    // MARK: CELLAR-R23 · Madeira
+
+    @Test func CELLAR_R23_monthsInWood_andTheWoods_areRead() {
+        let facts = parse([
+            LabelLine("Vinha Imaginária", height: 0.1),
+            LabelLine("Estagiou 18 meses em barricas de carvalho francês e americano.", side: .back)
+        ])
+        #expect(facts.oakAging == .twelveToTwentyFour)
+        #expect(facts.oakWoods == ["French oak"])
+        #expect(parse([LabelLine("Aged 6 months in American oak barrels", side: .back)]).oakAging == .upToSix)
+        #expect(parse([LabelLine("Élevé 2 ans en fûts de chêne", side: .back)]).oakAging == .twelveToTwentyFour)
+        #expect(parse([LabelLine("Fermentado em inox, sem madeira", side: .back)]).oakAging == OakAging.none)
+    }
+
+    @Test func CELLAR_R23_monthsWithoutWood_areNotTimeInOak() {
+        // "Consumir em 12 meses", a bottle's age or a guarantee are not time in wood.
+        #expect(parse([LabelLine("Consumir até 12 meses após aberto", side: .back)]).oakAging == nil)
+        #expect(parse([LabelLine("12 meses em garrafa", side: .back)]).oakAging == nil)
+    }
+
+    @Test func CELLAR_R23_months_makeTheRanges() {
+        #expect(OakAging(months: 0) == OakAging.none)
+        #expect(OakAging(months: 6) == .upToSix)
+        #expect(OakAging(months: 7) == .sixToTwelve)
+        #expect(OakAging(months: 12) == .sixToTwelve)
+        #expect(OakAging(months: 24) == .twelveToTwentyFour)
+        #expect(OakAging(months: 36) == .overTwentyFour)
+    }
 }

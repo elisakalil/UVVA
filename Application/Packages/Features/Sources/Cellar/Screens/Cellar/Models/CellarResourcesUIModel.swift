@@ -17,6 +17,7 @@ struct CellarResourcesUIModel {
     var bannerTitleText = String(localized: "Every wine you rate moves your map", bundle: .module)
     var bannerBodyText = String(localized: "Bottles marked Not yet wait in your cellar until you taste them.", bundle: .module)
     var searchHintText = String(localized: "Search by wine, grape, region or producer.", bundle: .module)
+    var searchIcon = "magnifyingglass"
     var gridIcon = "square.grid.2x2"
     var listIcon = "line.3.horizontal"
     var chipIcon = "chevron.down"

@@ -44,12 +44,13 @@ struct GroupTablePresentationBuilder {
     }
 
     /// Friend Wine: a bottle of "Open this together" or a scanned wine, read on every map at the table.
-    func friendWine(_ wine: Wine, sending: FriendWinePresentationBuilder.Sending) -> FriendWineUIModel {
+    func friendWine(_ wine: Wine, sending: FriendWinePresentationBuilder.Sending,
+                    isInCellar: Bool = false) -> FriendWineUIModel {
         // "Marina", from "Marina Lopes", as on a friend.
         let names = friends.map { $0.name.split(separator: " ").first.map(String.init) ?? $0.name }
         let reader = FriendWinePresentationBuilder.Reader.table(friendNames: names, userMap: userMap,
                                                                 friendMaps: friends.map(\.map))
-        return FriendWinePresentationBuilder(wine: wine, reader: reader, sending: sending).build()
+        return FriendWinePresentationBuilder(wine: wine, reader: reader, sending: sending, isInCellar: isInCellar).build()
     }
 
     /// "You, Marina, Bia and Rui".

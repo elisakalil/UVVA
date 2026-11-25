@@ -40,6 +40,10 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     private let readingSettle: Duration
     /// What the last reading saw, for the debug section of the note (CELLAR-R17).
     private let readingLog: LabelReadingLog?
+    /// The model on the phone, for a typed chip UVVA's lists do not have (CELLAR-R18a).
+    private let wordChecker: any ChipWordChecking
+    /// The typed chips UVVA took, kept on the phone (CELLAR-R18a).
+    private let learnedWords: LearnedChipWords
     private var readingDebugText: String? { didSet { refresh() } }
     private var readingExportText: String? { didSet { refresh() } }
     private let logger = Logger(subsystem: "app.uvva", category: "cellar")
@@ -52,6 +56,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
          readManual: any ReadManualUseCaseProtocol, saveNewNote: any SaveNewNoteUseCaseProtocol,
          maps: (any PalateMapRepository)? = nil, cellar: (any CellarRepository)? = nil,
          catalog: LabelCatalogCache? = nil, readingLog: LabelReadingLog? = nil, readingSettle: Duration = .milliseconds(450),
+         wordChecker: any ChipWordChecking = NoChipWordChecker(), learnedWords: LearnedChipWords = LearnedChipWords(),
          onScanned: ((Wine) -> Void)? = nil, onSaved: @escaping (String) -> Void) {
         if let wine, let entry = editing {
             flow = NewNoteFlow(editing: wine, verdict: entry.verdict, score: entry.score, note: entry.note,
@@ -60,6 +65,8 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             flow = NewNoteFlow(wine: wine, ratedVerdict: ratedVerdict)
         }
         self.readingLog = readingLog
+        self.wordChecker = wordChecker
+        self.learnedWords = learnedWords
         self.readingSettle = readingSettle
         self.maps = maps
         self.cellar = cellar
@@ -77,6 +84,7 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
                             editing: CellarEntry? = nil, cellar: any CellarRepository, maps: any PalateMapRepository,
                             labelCatalog: any LabelCatalogRepository, reader: any LabelReading,
                             structurer: any LabelStructuring, pairer: any PairingSuggesting,
+                            wordChecker: any ChipWordChecking = NoChipWordChecker(),
                             camera: any CameraAuthorizing,
                             rewriter: any PalateHistoryRewriting, wines: any WineLookup,
                             now: @escaping () -> Date = Date.init,
@@ -97,7 +105,8 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             readManual: ReadManualUseCase(catalog: catalog, pairer: pairer),
             saveNewNote: SaveNewNoteUseCase(cellar: cellar, catalog: labelCatalog, maps: maps,
                                             recalculate: recalculate, now: now),
-            maps: maps, cellar: cellar, catalog: catalog, readingLog: readingLog, onScanned: onScanned, onSaved: onSaved)
+            maps: maps, cellar: cellar, catalog: catalog, readingLog: readingLog, wordChecker: wordChecker,
+            onScanned: onScanned, onSaved: onSaved)
     }
 
     public func start() async {
@@ -152,6 +161,37 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     /// Tapping the chosen type again clears it.
     public func pickType(_ type: String) { flow.manual.type = flow.manual.type == type ? nil : type }
 
+    public func manualChipOptions(for field: NewNoteManualChipField) async -> [String] {
+        let learned = field.wordKind.map(learnedWords.words) ?? []
+        guard let prepared = try? await catalog?.load() else { return learned }
+        let wines = prepared.wines
+        let options = await Task.detached(priority: .userInitiated) { field.options(in: wines) }.value
+        return learned.adding(options)
+    }
+
+    public func validateManualChip(_ typed: String, for field: NewNoteManualChipField) async -> ChipWordResult {
+        guard let kind = field.wordKind else { return .rejected(.notAWord) }
+        return await validate(typed, as: kind, known: await manualChipOptions(for: field)) {
+            field == .notes ? WineCatalogText.notes($0) : $0
+        }
+    }
+
+    public func chooseManual(_ values: [String], for field: NewNoteManualChipField) {
+        errorText = nil
+        flow.manual.choose(values, for: field)
+    }
+
+    public func removeManual(_ value: String, from field: NewNoteManualChipField) { flow.manual.remove(value, from: field) }
+
+    public func pickOakAging(_ aging: OakAging) {
+        errorText = nil
+        flow.manual.pick(aging)
+    }
+
+    public func addAward(_ award: WineAward) { flow.manual.add(award) }
+
+    public func removeAward(_ award: WineAward) { flow.manual.remove(award) }
+
     public func continueManual() async {
         guard flow.canContinueManual, !isWorking else { return }
         isWorking = true
@@ -161,6 +201,9 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
             errorText = nil
             flow.manualRead(wine)
             handOverIfScanned()
+        } catch ReadManualUseCase.Failure.noMapBasis {
+            // CELLAR-R23a: what was chosen matches no wine of that type in the catalog.
+            errorText = uiModel.resources.mapBasisText
         } catch {
             logger.error("Wine not read by hand: \(error.localizedDescription, privacy: .public)")
             errorText = uiModel.resources.manualErrorText
@@ -187,12 +230,32 @@ public final class NewNoteViewModel: NewNoteViewModelProtocol, Identifiable {
     public func updateNote(_ text: String) { flow.note = text }
 
     public func chipOptions(for field: NewNoteChipField) async -> [String] {
-        guard let prepared = try? await catalog?.load() else { return [] }
+        let learned = learnedWords.words(field.wordKind)
+        guard let prepared = try? await catalog?.load() else { return learned }
         let wines = prepared.wines
-        return await Task.detached(priority: .userInitiated) { field.options(in: wines) }.value
+        let options = await Task.detached(priority: .userInitiated) { field.options(in: wines) }.value
+        return learned.adding(options)
+    }
+
+    public func validateChip(_ typed: String, for field: NewNoteChipField) async -> ChipWordResult {
+        await validate(typed, as: field.wordKind, known: await chipOptions(for: field)) {
+            field == .notes ? WineCatalogText.notes($0) : $0
+        }
     }
 
     public func addChip(_ value: String, to field: NewNoteChipField) { flow.addChip(value, to: field) }
+
+    /// A typed chip (CELLAR-R18a): the lists first, then the model; a word only the model knew is kept on the phone.
+    private func validate(_ typed: String, as kind: ChipWordKind, known: [String],
+                          display: @escaping @Sendable (String) -> String) async -> ChipWordResult {
+        // Every aroma UVVA names, also those no wine on the phone has yet.
+        let known = kind == .aroma ? known.adding(AromaVocabulary.common.values.sorted()) : known
+        let validator = ChipWordValidator(known: known, kind: kind, display: display)
+        let result = await validator.validate(typed, checker: wordChecker)
+        // A word of the list comes back as the list writes it; any other was taken by the model.
+        if case let .accepted(word) = result, !known.contains(word) { learnedWords.learn(word, as: kind) }
+        return result
+    }
 
     public func setIntensity(_ value: Double, for axis: PalateAxis) { flow.setIntensity(value, for: axis) }
 

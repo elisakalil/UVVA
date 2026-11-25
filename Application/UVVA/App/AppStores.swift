@@ -1,4 +1,6 @@
 import Core
+import CoreUI
+import Foundation
 import Storage
 import SwiftData
 
@@ -40,6 +42,11 @@ struct AppStores: Sendable {
     static func make(container: ModelContainer) async -> AppStores {
         await Task.detached(priority: .userInitiated) {
             let catalogCloud = CloudKitCatalogService()
+            let textCache = Bundle.main.preferredLocalizations.first == "pt-BR"
+                ? CatalogTextCache(url: ContentStore.defaultURL.deletingLastPathComponent()
+                    .appending(path: "CatalogTexts-pt-BR.json"))
+                : nil
+            WineCatalogText.usePublishedTranslations { textCache?.translation(for: $0) }
             return AppStores(maps: PalateMapStore(modelContainer: container),
                       questions: QuizQuestionStore(modelContainer: container),
                       profiles: ProfileStore(modelContainer: container),
@@ -51,7 +58,8 @@ struct AppStores: Sendable {
                       friends: FriendsStore(modelContainer: container),
                       notifications: NotificationStore(modelContainer: container),
                       social: makeSocial(),
-                      catalogSync: CatalogSync(cloud: catalogCloud, writer: CatalogWriter(modelContainer: container)))
+                      catalogSync: CatalogSync(cloud: catalogCloud, writer: CatalogWriter(modelContainer: container),
+                                               texts: textCache))
         }.value
     }
 }

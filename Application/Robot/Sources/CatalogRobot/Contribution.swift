@@ -47,12 +47,13 @@ public enum ContributionRules {
               wine.vintage.map({ (1900...year + 1).contains($0) }) ?? true,
               wine.type.isEmpty || CatalogSchema.wineTypes.contains(wine.type),
               wine.alcohol.map({ (3...25).contains($0) }) ?? true,
-              wine.servingTemperature.map({ $0.min <= $0.max && $0.min >= 0 && $0.max <= 25 }) ?? true else {
+              wine.servingTemperature.map({ $0.min <= $0.max && $0.min >= 0 && $0.max <= 25 }) ?? true,
+              wine.oakAging.map({ OakAging(rawValue: $0) != nil }) ?? true else {
             return false
         }
         let texts = [wine.name, wine.producer, wine.origin, wine.region ?? "", wine.country ?? "", wine.classification,
                      wine.designation ?? ""]
-        let lists = [wine.grapes, wine.pairings, wine.awards ?? [], noteItems(wine)]
+        let lists = [wine.grapes, wine.pairings, wine.awards ?? [], noteItems(wine), wine.oakWoods ?? []]
         guard texts.allSatisfy({ $0.count <= maxText }),
               lists.allSatisfy({ $0.count <= maxItems && $0.allSatisfy { $0.count <= maxItem } }) else { return false }
         return !(texts + lists.flatMap { $0 }).contains(where: looksLikeSpam)

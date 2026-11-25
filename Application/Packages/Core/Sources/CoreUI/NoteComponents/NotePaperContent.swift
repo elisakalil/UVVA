@@ -47,6 +47,39 @@ public struct NotePaperResources {
     }
 
     /// "Add to Grapes", the last chip of a section that can grow.
+    public var oakText = String(localized: "Time in oak", bundle: .module)
+
+    public func oakAging(_ aging: OakAging) -> String {
+        switch aging {
+        case .none: String(localized: "No oak", bundle: .module)
+        case .upToSix: String(localized: "Up to 6 months", bundle: .module)
+        case .sixToTwelve: String(localized: "6–12 months", bundle: .module)
+        case .twelveToTwentyFour: String(localized: "12–24 months", bundle: .module)
+        case .overTwentyFour: String(localized: "Over 24 months", bundle: .module)
+        }
+    }
+
+    public func oakWood(_ wood: String) -> String {
+        switch wood {
+        case "French oak": String(localized: "French oak", bundle: .module)
+        case "American oak": String(localized: "American oak", bundle: .module)
+        case "Hungarian oak": String(localized: "Hungarian oak", bundle: .module)
+        case "Portuguese oak": String(localized: "Portuguese oak", bundle: .module)
+        case "Slavonian oak": String(localized: "Slavonian oak", bundle: .module)
+        case "Caucasian oak": String(localized: "Caucasian oak", bundle: .module)
+        case "Chestnut": String(localized: "Chestnut", bundle: .module)
+        case "Acacia": String(localized: "Acacia", bundle: .module)
+        default: wood
+        }
+    }
+
+    /// "12–24 months · French oak, American oak"; nil when the time in wood is unknown.
+    public func oak(_ wine: Wine) -> String? {
+        guard let aging = wine.oakAging else { return nil }
+        let woods = wine.oakWoods.map(oakWood).joined(separator: ", ")
+        return [oakAging(aging), woods.isEmpty ? nil : woods].compactMap { $0 }.joined(separator: " · ")
+    }
+
     public func addText(_ section: String) -> String {
         String(localized: "Add to \(section)", bundle: .module)
     }
@@ -109,8 +142,9 @@ public struct NotePaperContent: Equatable {
             NoteFactUIModel(label: resources.styleText, value: resources.type(wine.type)),
             NoteFactUIModel(label: resources.vintageText, value: wine.vintage.map(String.init) ?? resources.nonVintageText)
         ]
+        if let oak = resources.oak(wine) { facts.append(NoteFactUIModel(label: resources.oakText, value: oak)) }
         let temperature = wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" }
-        serving = [temperature, wine.howToServe].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: "\n")
+        serving = [temperature, wine.howToServe.map(WineCatalogText.editorial)].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: "\n")
         let fit = palate.map { PalateMatchUIModel(wine: wine.profile, palate: $0) }
         match = fit?.percent
         matchShared = fit?.shared

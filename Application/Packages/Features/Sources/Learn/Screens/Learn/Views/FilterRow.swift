@@ -6,6 +6,8 @@ struct FilterRow: View {
     var filters: [FilterUIModel]
     var onSelect: (String) -> Void
 
+    private var selectedID: String? { filters.first(where: \.isSelected)?.id }
+
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {
@@ -27,7 +29,10 @@ struct FilterRow: View {
                 .padding(.horizontal, 24)
             }
             .scrollIndicators(.hidden)
-            .onChange(of: filters.first(where: \.isSelected)?.id) { _, id in
+            // The selected filter sits in the middle of the row, as if scrolled to by hand: also when the row
+            // comes in with it already chosen, like a region opened from the search (Italy, Spain…).
+            .onAppear { proxy.scrollTo(selectedID, anchor: .center) }
+            .onChange(of: selectedID) { _, id in
                 withAnimation { proxy.scrollTo(id, anchor: .center) }
             }
         }

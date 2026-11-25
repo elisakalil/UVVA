@@ -63,7 +63,7 @@ Regras e conceitos usados por mais de uma feature. Cada feature aponta para cá 
 
 ## 8a. Partilha
 
-- **SHARED-R20 · Formatos.** Toda partilha da app (mapa do paladar, convite da Home, certificados e mesas) tem os mesmos três formatos: **Story** (Instagram, imagem 9:16), **WhatsApp** (imagem 4:5 com mensagem) e **Save image** (guarda nas fotos). "Not now" fecha. Não existe formato Link.
+- **SHARED-R20 · Formatos.** Toda partilha da app (mapa do paladar, convite da Home, certificados e mesas) tem os mesmos três formatos: **Story** (Instagram, imagem 9:16), **WhatsApp** (imagem 4:5 com mensagem) e **Save image** (guarda nas fotos). "Not now" fecha. Não existe formato Link. A imagem partilhada ou guardada tem cantos retos: o arredondado do cartão é só na tela (2026-11-23).
 
 ---
 

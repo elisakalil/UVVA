@@ -1,9 +1,9 @@
 import Core
 import Foundation
 
-/// The Home tour as a pure state machine (HOME-R29 to R33). Step 0 is the intro; 1...6 are the steps.
+/// The Home tour as a pure state machine (HOME-R29 to R33). Step 0 is the intro; 1...5 are the steps.
 public struct GuidedTour: Equatable, Sendable {
-    public static let stepCount = 6
+    public static var stepCount: Int { TourStep.all.count }
     public static let tourID = "home"
 
     public private(set) var step = 0

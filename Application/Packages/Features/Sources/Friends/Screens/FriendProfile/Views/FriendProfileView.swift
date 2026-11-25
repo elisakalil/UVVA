@@ -6,6 +6,8 @@ import SwiftUI
 /// top, as on You; only the tab's page scrolls under them.
 struct FriendProfileView<ViewModel: FriendProfileViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
+    /// The Cellar's new note, for "Add to cellar" on a wine for the two: it opens over the friend.
+    var newNote: Binding<NewNoteViewModel?> = .constant(nil)
     /// The pill that opened the share screen (FRI-R21).
     @State private var shareFormat: ShareFormat = .story
 
@@ -42,9 +44,12 @@ struct FriendProfileView<ViewModel: FriendProfileViewModelProtocol>: View {
         .environment(\.glassPhoto, .hills)
         .task { await viewModel.load() }
         // FRI-R11a: Friend Wine, whose foot sends the wine to the friend (FRI-R11b).
-        .sheet(item: Binding(get: { model.friendWine }, set: { if $0 == nil { viewModel.closeWine() } })) { wine in
-            FriendWineView(model: wine, onPrimary: { Task { await viewModel.sendWine() } })
+        .sheet(item: Binding(get: { model.friendWine }, set: { if $0 == nil { viewModel.closeWine() } }),
+               onDismiss: viewModel.wineDismissed) { wine in
+            FriendWineView(model: wine, onPrimary: { Task { await viewModel.sendWine() } },
+                           onAddToCellar: viewModel.addWineToCellar)
         }
+        .newNoteSheet(newNote)
         // FRI-R12a: the label scanner; the wine it reads opens in Friend Wine once it is gone.
         .sheet(item: Binding(get: { model.scanner }, set: { if $0 == nil { viewModel.closeScanner() } }),
                onDismiss: viewModel.scannerDismissed) { scanner in

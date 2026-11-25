@@ -54,6 +54,8 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
         entity.pairings = wine.pairings
         entity.designation = wine.designation
         entity.awards = wine.awards.map(\.text)
+        entity.oakAging = wine.oakAging?.rawValue
+        entity.oakWoods = wine.oakWoods
         entity.appellationInsight = wine.appellationInsight
         entity.hasNotableAppellation = wine.hasNotableAppellation
         // An unknown serving temperature stays min > max, which reads back as none.
@@ -100,7 +102,8 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
 
     /// CELLAR-R17, R30: every reading of a scanned wine leaves it richer. Its grapes, notes, pairings and awards gain
     /// the new ones; the serving temperature, alcohol and legal term are kept once known, and the appellation gains
-    /// its category when a reading brings it; its name, producer and map stay as first read.
+    /// its category when a reading brings it; the time in wood is kept once known and the woods add up; its name,
+    /// producer and map stay as first read.
     private static func accumulate(_ wine: Wine, into entity: WineEntity) {
         let stored = Self.wine(entity)
         entity.grapes = stored.grapes.adding(wine.grapes)
@@ -113,6 +116,8 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
         if entity.alcohol == nil { entity.alcohol = wine.alcohol }
         entity.awards = stored.awards.adding(wine.awards).map(\.text)
         if entity.designation == nil { entity.designation = wine.designation }
+        if entity.oakAging == nil { entity.oakAging = wine.oakAging?.rawValue }
+        entity.oakWoods = stored.oakWoods.adding(wine.oakWoods)
         if let kept = CertificationKeywords.appellation(stored.appellation, adding: wine.appellation),
            kept != stored.appellation {
             entity.classification = stored.settingAppellation(kept).classification
@@ -179,6 +184,7 @@ public actor CatalogStore: StoreActor, CatalogRepository, WineLookup, LabelCatal
              serving: entity.servingMin <= entity.servingMax ? entity.servingMin...entity.servingMax : nil,
              originInsight: entity.originInsight, appellationInsight: entity.appellationInsight,
              hasNotableAppellation: entity.hasNotableAppellation, howToServe: entity.howToServe, pairings: entity.pairings,
-             designation: entity.designation, awards: entity.awards.compactMap(WineAward.init(text:)))
+             designation: entity.designation, awards: entity.awards.compactMap(WineAward.init(text:)),
+             oakAging: entity.oakAging.flatMap(OakAging.init(rawValue:)), oakWoods: entity.oakWoods)
     }
 }

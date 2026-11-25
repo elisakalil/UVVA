@@ -3,7 +3,8 @@ import DesignSystem
 import SwiftUI
 import UIKit
 
-/// "We couldn't read your label" (CELLAR-R21) and "The camera is off" (CELLAR-R22): what went wrong, and two ways on.
+/// "We couldn't read your label" (CELLAR-R21), "This doesn't look like a wine" (CELLAR-R21a) and "The camera is off"
+/// (CELLAR-R22): what went wrong, and two ways on.
 struct NewNoteMessageView: View {
     var model: NewNoteUIModel
     var onPrimary: () -> Void
@@ -12,7 +13,23 @@ struct NewNoteMessageView: View {
     @Environment(\.openURL) private var openURL
 
     private var resources: NewNoteResourcesUIModel { model.resources }
-    private var isError: Bool { model.step == .readFailed }
+    private var isError: Bool { model.step == .readFailed || model.step == .notWine }
+
+    private var title: String {
+        switch model.step {
+        case .notWine: resources.notWineTitleText
+        case .readFailed: resources.errorTitleText
+        default: resources.deniedTitleText
+        }
+    }
+
+    private var message: String {
+        switch model.step {
+        case .notWine: resources.notWineBodyText
+        case .readFailed: resources.errorBodyText
+        default: resources.deniedBodyText
+        }
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -24,12 +41,12 @@ struct NewNoteMessageView: View {
                         .frame(width: 52, height: 52)
                         .overlay { Circle().strokeBorder(UVVAColor.creamFill, lineWidth: 1) }
                         .accessibilityHidden(true)
-                    Text(isError ? resources.errorTitleText : resources.deniedTitleText)
+                    Text(title)
                         .font(UVVAFont.sans(23, .ultraLight))
                         .tracking(-0.45)
                         .padding(.top, 18)
                         .accessibilityAddTraits(.isHeader)
-                    Text(isError ? resources.errorBodyText : resources.deniedBodyText)
+                    Text(message)
                         .font(UVVAFont.sans(12))
                         .lineSpacing(4)
                         .opacity(0.78)
@@ -37,7 +54,8 @@ struct NewNoteMessageView: View {
                         .padding(.top, 8)
                 }
                 .multilineTextAlignment(.center)
-                if isError {
+                // Light and framing do not make a bag of sugar a wine.
+                if model.step == .readFailed {
                     VStack(alignment: .leading, spacing: 4) {
                         tip(1, resources.lightTitleText, resources.lightBodyText)
                         tip(2, resources.wholeLabelTitleText, resources.wholeLabelBodyText)

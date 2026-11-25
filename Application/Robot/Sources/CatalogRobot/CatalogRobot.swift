@@ -30,15 +30,18 @@ public struct CatalogRobot: Sendable {
     public var cloud: CloudKitWeb
     /// `Data/UVVAWines.json` as `pack_content.py --seed` checks and packs it.
     public var seed: [CatalogWineData]
+    public var portugueseTexts: [String: String]
     /// Prints what it would write, and writes nothing.
     public var dryRun: Bool
     public var log: @Sendable (String) -> Void
 
     public init(cloud: CloudKitWeb, seed: [CatalogWineData], dryRun: Bool = false,
+                portugueseTexts: [String: String] = [:],
                 log: @escaping @Sendable (String) -> Void = { print($0) }) {
         self.cloud = cloud
         self.seed = seed
         self.dryRun = dryRun
+        self.portugueseTexts = portugueseTexts
         self.log = log
     }
 
@@ -97,6 +100,14 @@ public struct CatalogRobot: Sendable {
         state.builtAt = now
         state.published = hashes
         let wines = try Self.compress(encoder.encode(CatalogWinesFile(wines: catalog)))
+        let sourceTexts = Set(catalog.flatMap { wine in
+            wine.pairings + [wine.note, wine.howToServe, wine.originInsight, wine.appellationInsight].compactMap { $0 }
+        })
+        let translations = portugueseTexts.filter {
+            sourceTexts.contains($0.key) && !$0.value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+        let translatedFile = translations.isEmpty ? nil : try Self.compress(encoder.encode(translations))
+        log("pt-BR: \(translations.count) of \(sourceTexts.count) distinct texts translated")
         let stateFile = try Self.compress(encoder.encode(state))
         let prevalence = QualityPrevalence.measure(catalog.map(\.wine))
         guard !dryRun else {
@@ -111,12 +122,17 @@ public struct CatalogRobot: Sendable {
         let stateAsset = try await cloud.uploadAsset(stateFile, recordType: Snapshot.type,
                                                      recordName: Snapshot.recordName, field: Snapshot.state)
         var fields: [String: JSON] = [
-            Snapshot.version: .field(.string(String(Self.hash(wines).prefix(16)))),
+            Snapshot.version: .field(.string(String(Self.hash(wines + (translatedFile ?? Data())).prefix(16)))),
             Snapshot.builtAt: .timestamp(now),
             Snapshot.wineCount: .field(.number(Double(catalog.count))),
             Snapshot.wines: .field(winesAsset),
             Snapshot.state: .field(stateAsset)
         ]
+        if let translatedFile {
+            let asset = try await cloud.uploadAsset(translatedFile, recordType: Snapshot.type,
+                                                    recordName: Snapshot.recordName, field: Snapshot.portugueseTexts)
+            fields[Snapshot.portugueseTexts] = .field(asset)
+        }
         if let prevalence {
             fields[Snapshot.prevalence] = .field(.string(String(decoding: try encoder.encode(prevalence), as: UTF8.self)))
         }

@@ -4,6 +4,5 @@ import Foundation
 enum HomeSpotlightID {
     static let today = "home.today"
     static let friends = "home.friends"
-    static let chooseYourWine = "home.chooseYourWine"
     static let scan = "home.scan"
 }

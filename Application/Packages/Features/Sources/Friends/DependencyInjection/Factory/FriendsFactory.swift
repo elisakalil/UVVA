@@ -42,7 +42,8 @@ public struct FriendsFactory: FriendsFactoryProtocol {
     }
 
     /// The tab. `onFriendsChange` lets the app refresh the Home's friends card (HOME-R11); `onAddToCellar` opens the
-    /// Cellar's new note for a wine a friend sent (FRI-R11c); `onHasFriends` lets the app ask for pushes.
+    /// Cellar's new note for a wine a friend sent (FRI-R11c) or one read for the user and the friend(s);
+    /// `onHasFriends` lets the app ask for pushes.
     public func makeViewModel(onFriendsChange: @escaping () -> Void = {},
                               onAddFriends: @escaping () -> Void = {},
                               onAddToCellar: @escaping (Wine) -> Void = { _ in },
@@ -68,13 +69,15 @@ public struct FriendsFactory: FriendsFactoryProtocol {
             makeProfile: { friend, user, setsTable, owner in
                 FriendProfileViewModel(friend: friend, user: user, setsTable: setsTable, buildTable: buildTable,
                                        lastTable: lastTable, removeFriend: remove, shareWine: shareWine,
-                                       makeWineScan: makeWineScan,
+                                       makeWineScan: makeWineScan, cellarWines: cellarWines,
+                                       onAddToCellar: onAddToCellar,
                                        onRemoved: { [weak owner] id in owner?.friendRemoved(id) },
                                        onClose: { [weak owner] in owner?.closeFriend() })
             },
             makeGroupTable: { members, user, owner in
                 GroupTableViewModel(friends: members, user: user, buildTable: buildTable, lastTable: lastTable,
-                                    shareWine: shareWine, makeWineScan: makeWineScan,
+                                    shareWine: shareWine, makeWineScan: makeWineScan, cellarWines: cellarWines,
+                                    onAddToCellar: onAddToCellar,
                                     onClose: { [weak owner] in owner?.closeGroupTable() })
             },
             now: now,

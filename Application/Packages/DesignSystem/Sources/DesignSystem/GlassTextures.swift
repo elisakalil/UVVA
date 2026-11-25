@@ -39,14 +39,16 @@ public enum GlassTextures {
     /// One Core Image context for all the glass: each one is slow to create.
     static let context = CIContext()
 
-    /// Renders every texture off the main thread, so the first glass on screen finds them ready.
-    public static func prepare() async {
+    /// Renders every texture off the main thread, so the first glass on screen finds them ready, together with the
+    /// edge light of the panes on screen after the Splash, at the screen's `scale`.
+    public static func prepare(scale: CGFloat) async {
         await Task.detached(priority: .userInitiated) {
             _ = blurredPhoto
             _ = lightlyBlurredPhoto
             _ = blurredHills
             _ = lightlyBlurredHills
             _ = grain
+            EdgeLightImage.prepare(scale: scale)
         }.value
     }
 

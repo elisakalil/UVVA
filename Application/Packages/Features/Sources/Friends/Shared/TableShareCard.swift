@@ -45,7 +45,7 @@ struct TableShareCard: View {
         .frame(width: size.width, height: size.height)
         .foregroundStyle(ink)
         .background(Color(hex: 0xF3EDDF))
-        .clipShape(RoundedRectangle(cornerRadius: 6))
+        .shareCardCorners(6)
     }
 
     private func courseView(_ course: TableShareCourseUIModel) -> some View {

@@ -8,9 +8,17 @@ public extension Wine {
         }.filter { !$0.isEmpty } ?? []
     }
 
+    /// The wine's facts as a label gives them, to place a wine on the map as one read (CELLAR-R23a).
+    var readFacts: LabelFacts {
+        LabelFacts(name: name, producer: producer, vintage: vintage, type: type.isEmpty ? nil : type,
+                   appellation: appellation, region: region, country: country, grapes: grapes, alcohol: alcohol,
+                   notes: noteItems, pairings: pairings, serving: serving, designation: designation, awards: awards,
+                   oakAging: oakAging, oakWoods: oakWoods)
+    }
+
     /// This wine with what a label adds to it (CELLAR-R17, R30): the grapes, notes, pairings and awards it did not
     /// have yet go after its own, so every reading leaves the wine richer and none takes away what was there. What
-    /// cannot be added up (the serving temperature, the alcohol, the appellation, the legal term) is read only when
+    /// cannot be added up (the serving temperature, the alcohol, the appellation, the legal term, the time in wood) is read only when
     /// the wine has none.
     func adding(_ facts: LabelFacts) -> Wine {
         var wine = self
@@ -21,6 +29,8 @@ public extension Wine {
         wine.alcohol = alcohol ?? facts.alcohol
         wine.designation = designation ?? facts.designation
         wine.awards = awards.adding(facts.awards)
+        wine.oakAging = oakAging ?? facts.oakAging
+        wine.oakWoods = oakWoods.adding(facts.oakWoods)
         if let kept = CertificationKeywords.appellation(appellation, adding: facts.appellation), kept != appellation {
             wine = wine.settingAppellation(kept)
         }

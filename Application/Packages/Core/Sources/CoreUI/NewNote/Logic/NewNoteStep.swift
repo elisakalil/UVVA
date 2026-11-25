@@ -13,6 +13,8 @@ enum NewNoteStep: Equatable {
     case reading
     /// "We couldn't read your label" (CELLAR-R21).
     case readFailed
+    /// "This doesn't look like a wine" (CELLAR-R21a): text was read, but nothing in it says wine.
+    case notWine
     /// "Fill in by hand" (CELLAR-R23).
     case manual
     /// The wine on paper, with "Have you had this wine?" (CELLAR-R18).

@@ -46,6 +46,13 @@ public final class CloudKitCatalogService: CatalogCloudService {
         return try JSONDecoder().decode(CatalogWinesFile.self, from: json).wines
     }
 
+    public func portugueseTexts() async throws -> [String: String] {
+        guard let record = try await snapshot(keys: [Snapshot.portugueseTexts]),
+              let url = (record[Snapshot.portugueseTexts] as? CKAsset)?.fileURL else { return [:] }
+        let json = try (Data(contentsOf: url) as NSData).decompressed(using: .zlib) as Data
+        return try JSONDecoder().decode([String: String].self, from: json)
+    }
+
     public func changes(since date: Date) async throws -> [CatalogChange] {
         let predicate = NSPredicate(format: "modificationDate > %@", date as NSDate)
         return try await query(Wine.type, predicate, keys: [Wine.data, Wine.status]).compactMap(Self.change)

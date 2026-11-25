@@ -22,6 +22,7 @@ struct FriendsResourcesUIModel {
     var openSettingsText = String(localized: "Open Settings", bundle: .module)
     var inviteFriendsText = String(localized: "Invite your friends and find out what they like to drink.", bundle: .module)
     var dismissIcon = "xmark"
+    var searchIcon = "magnifyingglass"
     var pickPromptText = String(localized: "Pick who’s coming. We’ll set the perfect table: the bottles and the dinner everyone will love.", bundle: .module)
     var buildTableText = String(localized: "Build a table", bundle: .module)
     var cancelText = String(localized: "Cancel", bundle: .module)

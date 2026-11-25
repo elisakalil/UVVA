@@ -27,6 +27,9 @@ public final class CellarEntryEntity {
     public var awards: [String]?
     /// The "Top X%" the note was saved with: 0 for none, nil for an entry saved before it was kept (CELLAR-R30).
     public var certificateTop: Int?
+    /// `OakAging.rawValue` and the woods, as the note was saved (CELLAR-R23).
+    public var oakAging: String?
+    public var oakWoods: [String]?
     /// `tasted` or `wantToTry` (CELLAR-R01).
     public var status = Status.wantToTry.rawValue
     /// `yes`, `maybe` or `no`; only when tasted.

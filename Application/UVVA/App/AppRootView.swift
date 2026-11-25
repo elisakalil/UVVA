@@ -14,6 +14,8 @@ struct AppRootView: View {
     /// still: the Home faded in under an opacity animation had its whole tree of glass panes (blurs, masks, Liquid
     /// Glass) drawn again offscreen on every frame, while it was still laying out, and the fade crawled on a phone.
     @State private var revealed = false
+    /// The glass is drawn during the Splash at the screen's own scale.
+    @Environment(\.displayScale) private var displayScale
 
     private var errorMessage: String? {
         failure ?? coordinator?.launchError
@@ -130,7 +132,7 @@ struct AppRootView: View {
                 UVVAFont.register()
             }.value
 
-            async let glass: Void = GlassTextures.prepare()
+            async let glass: Void = GlassTextures.prepare(scale: displayScale)
 
             let container = try await ContentLoader.openStores()
             let stores = await AppStores.make(container: container)

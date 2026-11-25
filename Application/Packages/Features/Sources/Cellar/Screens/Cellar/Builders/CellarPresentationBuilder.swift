@@ -28,10 +28,12 @@ struct CellarPresentationBuilder {
         filtered.enumerated().map { index, entry in
             let tag = resources.tag(CellarTag(entry))
             let vintage = entry.vintage.map(String.init) ?? ""
-            let match = CellarMatch.percent(entry, palate: palate).map(resources.match) ?? ""
+            let percent = CellarMatch.percent(entry, palate: palate)
+            let match = percent.map(resources.match) ?? ""
             let place = [entry.region, entry.country].compactMap { $0 }.first { !$0.isEmpty } ?? ""
             return CellarItemUIModel(
-                id: entry.id, name: entry.name, vintage: vintage, match: match, place: place,
+                id: entry.id, name: entry.name, vintage: vintage, match: match,
+                percent: percent.map { "\($0)%" } ?? "", place: place,
                 tag: tag, photo: entry.photoFront, updatedAt: entry.updatedAt,
                 cover: .at(index),
                 accessibilityLabel: [entry.name, vintage, match, place, tag].filter { !$0.isEmpty }.joined(separator: ", ")

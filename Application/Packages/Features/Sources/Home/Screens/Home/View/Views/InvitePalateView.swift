@@ -71,7 +71,7 @@ private struct InvitePalateCard: View {
         .frame(width: format.cardSize.width, height: format.cardSize.height)
         .foregroundStyle(ink)
         .background(Color(hex: 0xF3EDDF))
-        .clipShape(RoundedRectangle(cornerRadius: 6))
+        .shareCardCorners(6)
     }
 }
 

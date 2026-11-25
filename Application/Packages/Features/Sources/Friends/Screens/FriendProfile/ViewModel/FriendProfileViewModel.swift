@@ -30,6 +30,9 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
     /// FRI-R12a: the label scanner, while it is open, and the wine it read, until it is gone.
     private var scanner: NewNoteViewModel? { didSet { refresh() } }
     private var scannedWine: Wine?
+    /// The wines the Cellar holds, read when a wine opens, and the one handed to the new note once Friend Wine is gone.
+    private var cellarWineKeys: Set<String> = [] { didSet { refresh() } }
+    private var wineForCellar: Wine?
 
     private enum OpenedWine {
         /// A wine of "Picks for [name]", read on the friend's map.
@@ -47,6 +50,9 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
     private let removeFriend: any RemoveFriendUseCaseProtocol
     private let shareWine: any ShareWineUseCaseProtocol
     private let makeWineScan: ((@escaping (Wine) -> Void) -> NewNoteViewModel)?
+    private let cellarWines: any CellarWinesUseCaseProtocol
+    /// "Add to cellar" on a wine for the two: the app opens the Cellar's new note over the friend.
+    private let onAddToCellar: (Wine) -> Void
     private let onRemoved: (String) -> Void
     private let onClose: () -> Void
     private let logger = Logger(subsystem: "app.uvva", category: "friends")
@@ -57,6 +63,8 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
          removeFriend: any RemoveFriendUseCaseProtocol,
          shareWine: any ShareWineUseCaseProtocol = ShareWineUseCase(sharing: nil, wines: nil),
          makeWineScan: ((@escaping (Wine) -> Void) -> NewNoteViewModel)? = nil,
+         cellarWines: any CellarWinesUseCaseProtocol = CellarWinesUseCase(cellar: nil),
+         onAddToCellar: @escaping (Wine) -> Void = { _ in },
          onRemoved: @escaping (String) -> Void = { _ in }, onClose: @escaping () -> Void = {}) {
         id = friend.id
         self.friend = friend
@@ -70,6 +78,8 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
         self.removeFriend = removeFriend
         self.shareWine = shareWine
         self.makeWineScan = makeWineScan
+        self.cellarWines = cellarWines
+        self.onAddToCellar = onAddToCellar
         self.onRemoved = onRemoved
         self.onClose = onClose
         refresh()
@@ -138,9 +148,31 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
 
     public func openWine(_ id: String) { openedWine = .gift(id) }
 
-    public func openTableWine(_ id: String) { openedWine = .table(id) }
+    public func openTableWine(_ id: String) {
+        openedWine = .table(id)
+        readCellar()
+    }
 
     public func closeWine() { openedWine = nil }
+
+    // MARK: Add to cellar
+
+    /// "Add to cellar" on a wine for the two: Friend Wine closes, then the Cellar's new note opens.
+    public func addWineToCellar() {
+        wineForCellar = openedWine.flatMap(wine)
+        openedWine = nil
+    }
+
+    public func wineDismissed() {
+        guard let wine = wineForCellar else { return }
+        wineForCellar = nil
+        onAddToCellar(wine)
+    }
+
+    /// The Cellar may have changed since the last wine (a note saved from here): read again as each wine opens.
+    private func readCellar() {
+        Task { cellarWineKeys = await cellarWines.wineKeys() }
+    }
 
     // MARK: FRI-R11b · Send to [name]
 
@@ -182,6 +214,7 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
         guard let wine = scannedWine else { return }
         scannedWine = nil
         openedWine = .scanned(wine)
+        readCellar()
     }
 
     // MARK: D4 · Remover
@@ -216,7 +249,8 @@ public final class FriendProfileViewModel: FriendProfileViewModelProtocol {
         model.friendWine = openedWine.flatMap { opened in
             wine(opened).map { wine in
                 let isForBoth = if case .gift = opened { false } else { true }
-                return builder.friendWine(wine, isForBoth: isForBoth, sending: sending[wine.id] ?? .idle)
+                return builder.friendWine(wine, isForBoth: isForBoth, sending: sending[wine.id] ?? .idle,
+                                          isInCellar: cellarWineKeys.contains(wine.id))
             }
         }
         model.scanner = scanner

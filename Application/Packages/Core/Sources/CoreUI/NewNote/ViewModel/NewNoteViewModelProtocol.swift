@@ -15,6 +15,17 @@ public protocol NewNoteViewModelProtocol: ObservableObject {
     func fillInByHand()
     func updateManual(_ field: NewNoteField, text: String)
     func pickType(_ type: String)
+    /// The suggestions of a list field of "Fill in by hand": the words this person typed before, then the catalog's
+    /// (CELLAR-R23).
+    func manualChipOptions(for field: NewNoteManualChipField) async -> [String]
+    /// A word typed in a field of "Fill in by hand", checked when "Add" is tapped (CELLAR-R18a).
+    func validateManualChip(_ typed: String, for field: NewNoteManualChipField) async -> ChipWordResult
+    func chooseManual(_ values: [String], for field: NewNoteManualChipField)
+    func removeManual(_ value: String, from field: NewNoteManualChipField)
+    /// The time in wood; tapping the chosen one again clears it.
+    func pickOakAging(_ aging: OakAging)
+    func addAward(_ award: WineAward)
+    func removeAward(_ award: WineAward)
     func continueManual() async
     /// A new photo of the wine over the note, from the camera or the library (CELLAR-R24).
     func replacePhoto(_ photo: Data, side: NewNotePhotoSide)
@@ -24,6 +35,8 @@ public protocol NewNoteViewModelProtocol: ObservableObject {
     func rate(_ verdict: Verdict, score: Int?)
     func updateNote(_ text: String)
     func chipOptions(for field: NewNoteChipField) async -> [String]
+    /// A word typed for grapes, notes or pairings, checked when "Add" is tapped (CELLAR-R18a).
+    func validateChip(_ typed: String, for field: NewNoteChipField) async -> ChipWordResult
     func addChip(_ value: String, to field: NewNoteChipField)
     func setIntensity(_ value: Double, for axis: PalateAxis)
     /// "Save note".

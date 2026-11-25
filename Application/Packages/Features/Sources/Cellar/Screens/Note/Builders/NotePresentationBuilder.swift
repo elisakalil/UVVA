@@ -34,7 +34,8 @@ struct NotePresentationBuilder {
              // The certification as the note was saved (CELLAR-R30): only an entry saved before it was kept falls
              // back on the catalog's.
              designation: isCertified ? entry.designation : wine?.designation,
-             awards: entry.awards ?? wine?.awards ?? [])
+             awards: entry.awards ?? wine?.awards ?? [], oakAging: entry.oakAging ?? wine?.oakAging,
+             oakWoods: entry.oakWoods.isEmpty ? wine?.oakWoods ?? [] : entry.oakWoods)
     }
 
     /// The entry was saved with its certification: what it kept is the note's, even when it kept nothing.

@@ -13,22 +13,33 @@ public struct CommunityEntry: Codable, Equatable, Sendable {
     public var facts: CatalogWineData
     /// The lists as every reader saw them, for a new wine whose readers agree on none of an item.
     public var allGrapes: [String]
+    /// How many readers gave the region and the appellation of `facts`: one reader's word the catalog does not
+    /// know waits for a second (CELLAR-R18a). Nil in entries counted before they were kept.
+    public var regionReaders: Int?
+    public var appellationReaders: Int?
 
-    public init(wineKey: String, contributors: Int, promoted: Bool, facts: CatalogWineData, allGrapes: [String]) {
+    public init(wineKey: String, contributors: Int, promoted: Bool, facts: CatalogWineData, allGrapes: [String],
+                regionReaders: Int? = nil, appellationReaders: Int? = nil) {
         self.wineKey = wineKey
         self.contributors = contributors
         self.promoted = promoted
         self.facts = facts
         self.allGrapes = allGrapes
+        self.regionReaders = regionReaders
+        self.appellationReaders = appellationReaders
     }
 }
 
 /// How the robot turns the users' readings into the catalog (ARCHITECTURE §4.3), without anyone to approve them:
 ///
 /// - A wine the catalog does not have enters it once `quorum` different users read it.
-/// - A catalog wine gains a grape, a pairing, an aroma or an award once `quorum` users read it on the label, and a
-///   fact it lacks (alcohol, serving temperature, legal term) once `quorum` users agree on it. What the seed says is
-///   never replaced.
+/// - A catalog wine gains a grape, a pairing, an aroma, an award or a wood once `quorum` users read it on the label,
+///   and a fact it lacks (alcohol, serving temperature, legal term, time in wood) once `quorum` users agree on it.
+///   What the seed says is never replaced.
+/// - A new wine needs a map drawn from what its readers agree on (CELLAR-R23a): the type and a grape, region, note
+///   or time in wood the catalog knows. Until then it waits.
+/// - A grape, region or appellation the catalog does not know, typed by one person (CELLAR-R18a), enters a new wine
+///   only once `quorum` of its readers give it; the lists need that already.
 public enum CatalogMerge {
     public static let quorum = 2
 
@@ -54,6 +65,8 @@ public enum CatalogMerge {
         facts.alcohol = majority(wines.compactMap(\.alcohol), atLeast: quorum)
         facts.servingTemperature = majority(wines.compactMap(\.servingTemperature), atLeast: quorum)
         facts.designation = majority(wines.compactMap(\.designation), atLeast: quorum)
+        facts.oakAging = majority(wines.compactMap(\.oakAging), atLeast: quorum)
+        facts.oakWoods = agreed(wines.map { $0.oakWoods ?? [] }).nilIfEmpty
         facts.grapes = agreed(wines.map(\.grapes))
         facts.pairings = agreed(wines.map(\.pairings))
         facts.awards = agreed(wines.map { $0.awards ?? [] }).nilIfEmpty
@@ -64,7 +77,9 @@ public enum CatalogMerge {
         facts.originInsight = nil
         return CommunityEntry(wineKey: first.wineKey, contributors: count,
                               promoted: (previous?.promoted ?? false) || count >= quorum, facts: facts,
-                              allGrapes: wines.map(\.grapes).reduce([]) { $0.adding($1) })
+                              allGrapes: wines.map(\.grapes).reduce([]) { $0.adding($1) },
+                              regionReaders: readers(of: facts.region, in: wines.map(\.region)),
+                              appellationReaders: readers(of: facts.wine.appellation, in: wines.map(\.wine.appellation)))
     }
 
     /// The catalog: the seed, each wine with what its readers agree on, and the wines enough users made known.
@@ -92,6 +107,8 @@ public enum CatalogMerge {
         wine.alcohol = wine.alcohol ?? facts.alcohol
         wine.serving = wine.serving ?? facts.serving
         wine.designation = wine.designation ?? facts.designation
+        wine.oakAging = wine.oakAging ?? facts.oakAging
+        wine.oakWoods = wine.oakWoods.adding(facts.oakWoods)
         guard wine != seed.wine else { return seed }
         var result = CatalogWineData(wine, findIt: seed.findIt)
         result.hasNotableAppellation = seed.hasNotableAppellation
@@ -101,15 +118,32 @@ public enum CatalogMerge {
     /// A wine the catalog did not have, with its map estimated from the wines most like it, as the app does for a
     /// label it does not find. Nil while too little is known to place it.
     static func newWine(_ entry: CommunityEntry, reference: [Wine], vocabulary: LabelVocabulary) -> CatalogWineData? {
+        let known = KnownNames(reference)
         var facts = entry.facts
-        if facts.grapes.isEmpty { facts.grapes = entry.allGrapes }
+        // One reader's grapes, region or appellation, when the catalog does not know them, wait for a second.
+        if facts.grapes.isEmpty { facts.grapes = entry.allGrapes.filter(known.grapes.knows) }
+        if let region = facts.region, (entry.regionReaders ?? 0) < quorum, !known.regions.knows(region) {
+            facts.region = nil
+        }
+        var read = facts.wine
+        if let appellation = read.appellation, (entry.appellationReaders ?? 0) < quorum,
+           !known.appellations.knows(appellation) {
+            read.classification = read.classification.components(separatedBy: " · ").dropFirst()
+                .joined(separator: " · ")
+        }
         guard CatalogSchema.wineTypes.contains(facts.type), !facts.name.isEmpty,
-              let map = ProfileEstimate.estimate(grapes: facts.grapes, type: facts.type, region: facts.region,
-                                                 in: reference) else { return nil }
-        var wine = facts.wine
+              let map = ProfileEstimate.estimate(read.readFacts, in: reference) else { return nil }
+        var wine = read
         wine.profile = map
         wine = vocabulary.describingAppellation(of: wine)
         return CatalogWineData(wine)
+    }
+
+    /// How many readers saw `value`, whatever the case and the accents.
+    static func readers(of value: String?, in values: [String?]) -> Int {
+        guard let value else { return 0 }
+        let key = WineText.tokens(value).joined(separator: " ")
+        return values.filter { $0.map { WineText.tokens($0).joined(separator: " ") } == key }.count
     }
 
     /// The value most of the readers saw, the earliest reading winning a tie; nil when fewer than `atLeast` saw it.
@@ -134,4 +168,32 @@ public enum CatalogMerge {
 
 extension Array {
     var nilIfEmpty: Self? { isEmpty ? nil : self }
+}
+
+/// The grapes, regions and appellations the catalog has, folded, to tell one person's new word from a known one.
+struct KnownNames {
+    struct Names {
+        var keys: Set<String>
+
+        init(_ values: some Sequence<String>) {
+            keys = Set(values.map(Self.key).filter { !$0.isEmpty })
+        }
+
+        func knows(_ value: String) -> Bool { keys.contains(Self.key(value)) }
+
+        /// "Douro DOC" and "douro" are one appellation.
+        static func key(_ value: String) -> String {
+            WineText.tokens(CertificationKeywords.split(value).name ?? value).joined(separator: " ")
+        }
+    }
+
+    var grapes: Names
+    var regions: Names
+    var appellations: Names
+
+    init(_ wines: [Wine]) {
+        grapes = Names(wines.flatMap(\.grapes))
+        regions = Names(wines.compactMap(\.region))
+        appellations = Names(wines.compactMap(\.appellation))
+    }
 }

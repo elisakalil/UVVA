@@ -87,7 +87,8 @@ struct RootTabView: View {
         switch tab {
         case .home:
             if let home = coordinator.home {
-                HomeView(viewModel: home, tour: coordinator.tour, newNote: newNote(from: .home))
+                HomeView(viewModel: home, tour: coordinator.tour, newNote: newNote(from: .home),
+                         wineList: coordinator.wineList)
             }
         case .learn:
             if let learn = coordinator.learn { LearnView(viewModel: learn) }

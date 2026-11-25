@@ -52,6 +52,8 @@ final class MockGroupTableViewModel: GroupTableViewModelProtocol {
     func openTableWine(_ id: String) {}
     func closeWine() {}
     func sendWine() async {}
+    func addWineToCellar() {}
+    func wineDismissed() {}
     func scanWine() {}
     func closeScanner() {}
     func scannerDismissed() {}

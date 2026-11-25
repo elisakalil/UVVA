@@ -15,7 +15,7 @@ struct FriendsTopBar<Trailing: View>: View {
         HStack(spacing: 14) {
             Button(action: onBack) {
                 if caption == nil {
-                    FriendsPillLabel(text: backText)
+                    PillLabel(text: backText)
                         .frame(minHeight: 44)
                         .contentShape(Rectangle())
                 } else {
@@ -46,21 +46,6 @@ struct FriendsTopBar<Trailing: View>: View {
             trailing
         }
         .padding(.leading, -2)
-    }
-}
-
-/// A small word in caps inside a thin outlined pill: the table's "Expand" and a friend's "Back".
-struct FriendsPillLabel: View {
-    var text: String
-
-    var body: some View {
-        Text(text.uppercased())
-            .font(UVVAFont.sans(7.5, .semibold))
-            .tracking(1.65)
-            .opacity(0.75)
-            .padding(.vertical, 6)
-            .padding(.horizontal, 12)
-            .overlay(Capsule().strokeBorder(UVVAColor.creamFill.opacity(0.32), lineWidth: 0.5))
     }
 }
 

@@ -11,6 +11,17 @@
         }
       }
     },
+    "‹" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "‹"
+          }
+        }
+      }
+    },
     "%lld of %lld" : {
       "localizations" : {
         "en" : {
@@ -223,16 +234,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Você"
-          }
-        }
-      }
-    },
-    "‹" : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "‹"
           }
         }
       }

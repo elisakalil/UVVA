@@ -27,7 +27,7 @@ struct FriendWinePresentationBuilder {
     var reader: Reader
     /// A wine to send (the friend's Map, a scan): how far the sending got. Ignored for a wine received.
     var sending = Sending.idle
-    /// A wine received: already in the Cellar.
+    /// Already in the Cellar: a wine received, or one read for the user and the friend(s).
     var isInCellar = false
     var now = Date()
     var resources = FriendWineResourcesUIModel()
@@ -74,9 +74,9 @@ struct FriendWinePresentationBuilder {
             percentage: "\(Similarity.percent(wine.profile, map))%",
             percentageCaption: resources.matchCaption(mapName),
             sharedLine: sharedLine, apartLine: apartLine, facts: facts,
-            pairings: wine.pairings.isEmpty ? nil : wine.pairings.joined(separator: ", "),
+            pairings: wine.pairings.isEmpty ? nil : wine.pairings.map(WineCatalogText.editorial).joined(separator: ", "),
             servingTemperature: wine.serving.map { "\($0.lowerBound)–\($0.upperBound) °C" },
-            howToServe: (wine.howToServe ?? "").isEmpty ? nil : wine.howToServe,
+            howToServe: wine.howToServe.flatMap { $0.isEmpty ? nil : WineCatalogText.editorial($0) },
             profile: wine.profile, palate: map, certificate: WineCertificateUIModel(wine: wine))
         content.findURL = WineSearch.url(for: wine)
         let who: String
@@ -100,7 +100,7 @@ struct FriendWinePresentationBuilder {
             wineMap: resources.wineMapText, comparison: resources.comparison(who),
             wineLegend: resources.wineLegendText, palateLegend: legend, overlapLegend: resources.overlapLegendText)
         return FriendWineUIModel(id: wine.id, content: content, strings: strings, people: people, note: note,
-                                 footer: footer, resources: resources)
+                                 footer: footer, cellar: cellar, resources: resources)
     }
 
     /// "Marina sent you this wine", over a wine received.
@@ -116,6 +116,14 @@ struct FriendWinePresentationBuilder {
             return send(to: resources.sendTo(name), sent: resources.sentTo(name))
         case .table:
             return send(to: resources.sendToTableText, sent: resources.sentToTableText)
+        }
+    }
+
+    /// A wine for the user and the friend(s), scanned or one of the bottles to open together, can go to the Cellar.
+    private var cellar: FriendWineUIModel.Cellar? {
+        switch reader {
+        case .both, .table: isInCellar ? .inCellar : .add
+        case .friend, .you: nil
         }
     }
 

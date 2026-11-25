@@ -76,6 +76,8 @@ struct HomeResourcesUIModel {
 
     var palateMatchTitle = String(localized: "With your palate", bundle: .module)
     var palateMatchCaption = String(localized: "match with your map", bundle: .module)
+    /// The hero card says just "82% match", larger, beside the percentage.
+    var heroMatchCaption = String(localized: "match", bundle: .module)
     var plateImage: Image { UVVAIllustration.plate }
     var maximumNotes = 3
 

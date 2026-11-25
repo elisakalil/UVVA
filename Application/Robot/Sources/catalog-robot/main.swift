@@ -8,6 +8,7 @@ import Foundation
 /// - `CLOUDKIT_ENVIRONMENT`: `development` or `production`.
 /// - `CLOUDKIT_CONTAINER`: `iCloud.app.uvva` unless given.
 /// - `CATALOG_SEED`: the file `pack_content.py --seed` wrote.
+/// - `CATALOG_TEXTS_PT_BR`: optional JSON mapping source text to translated text.
 let environment = ProcessInfo.processInfo.environment
 
 func required(_ name: String) -> String {
@@ -25,7 +26,11 @@ do {
                                 privateKeyPEM: required("CLOUDKIT_PRIVATE_KEY"))
     let seed = try JSONDecoder().decode(CatalogWinesFile.self,
                                         from: Data(contentsOf: URL(fileURLWithPath: required("CATALOG_SEED")))).wines
-    let robot = CatalogRobot(cloud: cloud, seed: seed, dryRun: CommandLine.arguments.contains("--dry-run"))
+    let portugueseTexts = try environment["CATALOG_TEXTS_PT_BR"].map {
+        try JSONDecoder().decode([String: String].self, from: Data(contentsOf: URL(fileURLWithPath: $0)))
+    } ?? [:]
+    let robot = CatalogRobot(cloud: cloud, seed: seed, dryRun: CommandLine.arguments.contains("--dry-run"),
+                             portugueseTexts: portugueseTexts)
     try await robot.run()
 } catch {
     let message = "Robot failed: \(error.localizedDescription)"

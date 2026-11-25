@@ -4,12 +4,14 @@ import Combine
 
 @MainActor
 final class ContactsViewModel: ContactsViewModelProtocol {
-    @Published private(set) var uiModel = ContactsUIModel(isLoading: false, title: nil, onUVVATitle: "",
+    /// Starts loading, so the title, back, "Next" and the A–Z bar never show before the contacts do.
+    @Published private(set) var uiModel = ContactsUIModel(isLoading: true, title: nil, onUVVATitle: "",
                                                          onUVVA: [], toInvite: [], letters: [], noResults: false)
     private var discovered = DiscoveredContacts() { didSet { refresh() } }
     private var requested: Set<String> = [] { didSet { refresh() } }
     private var invited: Set<String> = [] { didSet { refresh() } }
     private var profileSubscription: AnyCancellable?
+    private var isFetching = false
 
     private let draft: OnboardingDraft
     /// "Next" in the Onboarding; "Done" when opened from the Friends tab.
@@ -42,9 +44,11 @@ final class ContactsViewModel: ContactsViewModelProtocol {
     func back() { coordinator?.back() }
 
     func loadContacts() async {
-        guard !uiModel.isLoading else { return }
+        guard !isFetching else { return }
+        isFetching = true
         uiModel.isLoading = true
         defer {
+            isFetching = false
             uiModel.isLoading = false
             refresh()
         }

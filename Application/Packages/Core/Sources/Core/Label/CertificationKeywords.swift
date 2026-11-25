@@ -141,6 +141,9 @@ public enum CertificationKeywords {
         ("reserva", "Reserva"), ("crianza", "Crianza"), ("reserve", "Reserve")
     ]
 
+    /// The legal terms, as the card writes them, for choosing one by hand (CELLAR-R23).
+    public static var designationNames: [String] { designations.map(\.designation) }
+
     /// The legal term found in a text, as the card writes it: "GRANDE RESERVA" → "Grande Reserva". "Reservado" is
     /// not one.
     public static func designation(in text: String) -> String? {

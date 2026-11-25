@@ -105,6 +105,34 @@
         }
       ]
     },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/WineAromas.xcstrings" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/Resources/WineAromas.xcstrings"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/WineAromas.xcstrings"
+        }
+      ]
+    },
+    "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/WineEditorial.xcstrings" : {
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/Resources/WineEditorial.xcstrings"
+        }
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_CoreUI.bundle/WineEditorial.xcstrings"
+        }
+      ]
+    },
     "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core_Match.bundle/Info.plist" : {
       "inputs" : [
         {
@@ -319,6 +347,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/TasteHistory.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsAccess.swift"
         },
         {
@@ -352,6 +384,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/Friendship.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/InvitedContact.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/SharedWine.swift"
         },
         {
           "kind" : "file",
@@ -547,6 +587,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/NotificationsRepository.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift"
         },
         {
@@ -639,6 +683,42 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/MenuDish.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListEntry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListLine.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListParser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPick.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPrice.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListReading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListSection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListWine.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift"
         },
         {
@@ -679,6 +759,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/CellarRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/NewNoteDraft.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/RecalculateMapUseCaseProtocol.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/TasteHistory.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ContactsAccess.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ContactsProviding.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/DeviceContact.swift.o",
@@ -688,6 +769,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/FriendRequestRecord.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/FriendsRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Friendship.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/InvitedContact.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/SharedWine.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/TableBottle.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/TableCourse.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/GlossaryTerm.swift.o",
@@ -736,6 +819,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChange.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MapChangeCause.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/NotificationsRepository.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateHistoryRewriting.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateMap.swift.o",
@@ -759,6 +843,15 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Verdict.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Wine.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineAward.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MenuDish.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListEntry.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListLine.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListParser.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListPick.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListPrice.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListReading.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListSection.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListWine.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineRuler.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineSearch.swift.o"
@@ -884,6 +977,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/TasteHistory.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ContactsAccess.swift.o"
         },
         {
@@ -917,6 +1014,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/Friendship.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/InvitedContact.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/SharedWine.swift.o"
         },
         {
           "kind" : "file",
@@ -1112,6 +1217,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/NotificationsRepository.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/PalateAxis.swift.o"
         },
         {
@@ -1204,6 +1313,42 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MenuDish.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListEntry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListLine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListPick.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListPrice.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListReading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListSection.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListWine.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineLookup.swift.o"
         },
         {
@@ -1238,6 +1383,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/NewNoteDraft.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/RecalculateMapUseCaseProtocol.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/TasteHistory.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsAccess.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsProviding.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/DeviceContact.swift",
@@ -1247,6 +1393,8 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/FriendRequestRecord.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/FriendsRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/Friendship.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/InvitedContact.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/SharedWine.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/TableBottle.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/TableCourse.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift",
@@ -1295,6 +1443,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/NotificationsRepository.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
@@ -1318,6 +1467,15 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineAward.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/MenuDish.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListEntry.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListLine.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListParser.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPick.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPrice.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListReading.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListSection.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListWine.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift"
@@ -1479,6 +1637,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/TasteHistoryTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/WineKeyTests.swift"
         },
         {
@@ -1509,6 +1671,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PalateMapTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/PhoneNumberTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/QuizExitTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/TasteHistoryTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/WineKeyTests.swift.o"
       ],
       "otherArguments" : [
@@ -1607,6 +1770,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/TasteHistoryTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/WineKeyTests.swift.o"
         },
         {
@@ -1627,6 +1794,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/PalateMapTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/PhoneNumberTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/QuizExitTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/TasteHistoryTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/WineKeyTests.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build",
@@ -1648,6 +1816,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadStage.swift"
         },
         {
           "kind" : "file",
@@ -1747,6 +1919,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/CaptureShutter.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCamera.swift"
         },
         {
@@ -1819,6 +1995,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteInsightUIModel.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteIntensityView.swift"
         },
         {
@@ -1828,6 +2008,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperContent.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperInsights.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperPersonal.swift"
         },
         {
           "kind" : "file",
@@ -1852,6 +2040,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/PalateMatchUIModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineCatalogText.swift"
         },
         {
           "kind" : "file",
@@ -1893,6 +2085,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNotePresentationBuilder.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelCatalogCache.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelReadResult.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelReadStage.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelReadingLog.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteFlow.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteManualForm.swift.o",
@@ -1917,6 +2110,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/SaveNewNoteUseCaseProtocol.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteViewModel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NewNoteViewModelProtocol.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/CaptureShutter.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelCamera.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelCameraPreview.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelCameraSample.swift.o",
@@ -1935,15 +2129,19 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/CellarPaperSheet.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteEyebrow.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteFactUIModel.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteInsightUIModel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteIntensityView.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePalette.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperContent.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperInsights.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperPersonal.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperViews.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePhotoPair.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteRating.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteVerdictUIModel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/WineCertificateUIModel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/PalateMatchUIModel.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/WineCatalogText.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/WineSheetBody.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/WineSheetContent.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/resource_bundle_accessor.swift.o"
@@ -2010,6 +2208,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelReadResult.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelReadStage.swift.o"
         },
         {
           "kind" : "file",
@@ -2109,6 +2311,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/CaptureShutter.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/LabelCamera.swift.o"
         },
         {
@@ -2181,6 +2387,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteInsightUIModel.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NoteIntensityView.swift.o"
         },
         {
@@ -2190,6 +2400,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperContent.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperInsights.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/NotePaperPersonal.swift.o"
         },
         {
           "kind" : "file",
@@ -2217,6 +2435,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/WineCatalogText.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/WineSheetBody.swift.o"
         },
         {
@@ -2237,6 +2459,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Builders/NewNotePresentationBuilder.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelCatalogCache.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadResult.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadStage.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadingLog.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/NewNoteFlow.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/NewNoteManualForm.swift",
@@ -2261,6 +2484,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/UseCases/SaveNewNote/SaveNewNoteUseCaseProtocol.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/ViewModel/NewNoteViewModel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/ViewModel/NewNoteViewModelProtocol.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/CaptureShutter.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCamera.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCameraPreview.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCameraSample.swift",
@@ -2279,15 +2503,19 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/CellarPaperSheet.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteEyebrow.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteFactUIModel.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteInsightUIModel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteIntensityView.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePalette.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperContent.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperInsights.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperPersonal.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperViews.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePhotoPair.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteRating.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteVerdictUIModel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/WineCertificateUIModel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/PalateMatchUIModel.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineCatalogText.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineSheetBody.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineSheetContent.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/DerivedSources/resource_bundle_accessor.swift"
@@ -2319,6 +2547,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Avatar.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/BackPillButton.swift"
         },
         {
           "kind" : "file",
@@ -2354,7 +2586,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/DisabledPill.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+BackdropFrame.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+ShareImage.swift"
         },
         {
           "kind" : "file",
@@ -2399,6 +2639,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GrapeLoop.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/InfoSheet.swift"
         },
         {
           "kind" : "file",
@@ -2486,7 +2730,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/StepDots.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/String+Dots.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/TabBarHidden.swift"
         },
         {
           "kind" : "file",
@@ -2566,6 +2818,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/ActivityShareSheet.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/AppTab.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/Avatar.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/BackPillButton.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/BellIcon.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/Caption.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/CardCurtain.swift.o",
@@ -2574,7 +2827,9 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/CertificateUIModel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/Chip.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/Color+Hex.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/DisabledPill.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/EnvironmentValues+BackdropFrame.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/EnvironmentValues+ShareImage.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/Eyebrow.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/FlowLayout.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/FlowRow.swift.o",
@@ -2586,6 +2841,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/GlassTextures.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/GrapeCurtain.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/GrapeLoop.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/InfoSheet.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/InstagramStorySharing.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/PageBackground.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/PalateMapChart.swift.o",
@@ -2607,7 +2863,9 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/ShareScreen.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/SharedImage.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/SpotlightAnchors.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/StepDots.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/String+Dots.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/TabBarHidden.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/TextAction.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/UVVAColor.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/UVVAFont.swift.o",
@@ -2696,6 +2954,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/BackPillButton.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/BellIcon.swift.o"
         },
         {
@@ -2728,7 +2990,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/DisabledPill.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/EnvironmentValues+BackdropFrame.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/EnvironmentValues+ShareImage.swift.o"
         },
         {
           "kind" : "file",
@@ -2773,6 +3043,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/GrapeLoop.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/InfoSheet.swift.o"
         },
         {
           "kind" : "file",
@@ -2860,7 +3134,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/StepDots.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/String+Dots.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/DesignSystem.build/TabBarHidden.swift.o"
         },
         {
           "kind" : "file",
@@ -2930,6 +3212,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/ActivityShareSheet.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/AppTab.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Avatar.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/BackPillButton.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/BellIcon.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Caption.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/CardCurtain.swift",
@@ -2938,7 +3221,9 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/CertificateUIModel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Chip.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Color+Hex.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/DisabledPill.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+BackdropFrame.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+ShareImage.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Eyebrow.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/FlowLayout.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/FlowRow.swift",
@@ -2950,6 +3235,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GlassTextures.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GrapeCurtain.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GrapeLoop.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/InfoSheet.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/InstagramStorySharing.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/PageBackground.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/PalateMapChart.swift",
@@ -2971,7 +3257,9 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/ShareScreen.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/SharedImage.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/SpotlightAnchors.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/StepDots.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/String+Dots.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/TabBarHidden.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/TextAction.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/UVVAColor.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/UVVAFont.swift",
@@ -3057,6 +3345,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLevels.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLore.swift"
         },
         {
@@ -3074,6 +3366,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapSnapshot.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/PalateAxis+LocalizedLabel.swift"
         },
         {
           "kind" : "file",
@@ -3098,6 +3394,18 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineFit.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListIdentifier.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListRanking.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineOutlook.swift"
         },
         {
           "kind" : "file",
@@ -3139,17 +3447,22 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QualityPrevalence+Packed.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/QuizMapBuilder.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RatingWeights.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisLevels.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapEvolution.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapReading.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapShape.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/PalateAxis+LocalizedLabel.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecalculateMapUseCase.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/RecordWineRatingUseCase.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/ScannedWine.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/Similarity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/TableMatch.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineFit.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineListIdentifier.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineListRanking.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineOutlook.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
       ],
       "otherArguments" : [
@@ -3265,6 +3578,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisLevels.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisLore.swift.o"
         },
         {
@@ -3282,6 +3599,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/MapSnapshot.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/PalateAxis+LocalizedLabel.swift.o"
         },
         {
           "kind" : "file",
@@ -3309,6 +3630,18 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineListIdentifier.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineListRanking.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineOutlook.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/resource_bundle_accessor.swift.o"
         },
         {
@@ -3333,17 +3666,22 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Packed.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLevels.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapEvolution.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapReading.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapShape.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapSnapshot.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/PalateAxis+LocalizedLabel.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecalculateMapUseCase.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/ScannedWine.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Similarity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/TableMatch.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineFit.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListIdentifier.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListRanking.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineOutlook.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build",
@@ -3412,6 +3750,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineOutlookTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift"
         },
         {
@@ -3449,6 +3791,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/SimilarityTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/TableMatchTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineFitTests.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineOutlookTests.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swift.o"
       ],
       "otherArguments" : [
@@ -3559,6 +3902,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineOutlookTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swift.o"
         },
         {
@@ -3582,6 +3929,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/SimilarityTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/TableMatchTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineFitTests.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineOutlookTests.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift"
       ],
       "tempsPath" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build",
@@ -3607,6 +3955,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitCatalogService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitSocialService+SharedWines.swift"
         },
         {
           "kind" : "file",
@@ -3766,6 +4118,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/InvitedContactEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LastTableEntity.swift"
         },
         {
@@ -3786,6 +4142,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReadNotificationEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReminderEntity.swift"
         },
         {
@@ -3803,6 +4163,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/LearningStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/NotificationStore.swift"
         },
         {
           "kind" : "file",
@@ -3845,6 +4209,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/Array+Chunked.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CatalogCloudService.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CloudKitCatalogService.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService+SharedWines.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ContactKey.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ICloudAccountStatus.swift.o",
@@ -3884,16 +4249,19 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/DeclinedRequestEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/DismissedSuggestionEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/FriendEntity.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/InvitedContactEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LastTableEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LessonProgressEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PalateMapEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ProfileEntity.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ReadNotificationEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PersonalStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CellarStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/FriendsStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LearningStore.swift.o",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/NotificationStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/PalateMapStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ProfileStore.swift.o",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ReminderStore.swift.o",
@@ -3965,6 +4333,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CloudKitCatalogService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService+SharedWines.swift.o"
         },
         {
           "kind" : "file",
@@ -4124,6 +4496,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/InvitedContactEntity.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LastTableEntity.swift.o"
         },
         {
@@ -4144,6 +4520,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ReadNotificationEntity.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ReminderEntity.swift.o"
         },
         {
@@ -4161,6 +4541,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/LearningStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/NotificationStore.swift.o"
         },
         {
           "kind" : "file",
@@ -4189,6 +4573,7 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/Array+Chunked.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CatalogCloudService.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitCatalogService.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitSocialService+SharedWines.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitSocialService.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/ContactKey.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/ICloudAccountStatus.swift",
@@ -4228,16 +4613,19 @@
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/DeclinedRequestEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/DismissedSuggestionEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/FriendEntity.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/InvitedContactEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LastTableEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LessonProgressEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/PalateMapEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ProfileEntity.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReadNotificationEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReminderEntity.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/PersonalStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/CellarStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/FriendsStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/LearningStore.swift",
+        "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/NotificationStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/PalateMapStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/ProfileStore.swift",
         "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/ReminderStore.swift",
@@ -4523,6 +4911,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/NewNoteDraft.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/RecalculateMapUseCaseProtocol.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/TasteHistory.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsAccess.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsProviding.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/DeviceContact.swift",
@@ -4532,6 +4921,8 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/FriendRequestRecord.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/FriendsRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/Friendship.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/InvitedContact.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/SharedWine.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/TableBottle.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/TableCourse.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift",
@@ -4580,6 +4971,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/NotificationsRepository.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift",
@@ -4603,6 +4995,15 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineAward.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/MenuDish.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListEntry.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListLine.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListParser.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPick.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPrice.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListReading.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListSection.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListWine.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift",
@@ -4736,6 +5137,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/PalateMapTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/PhoneNumberTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/QuizExitTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/TasteHistoryTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/WineKeyTests.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules",
@@ -4798,6 +5200,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Builders/NewNotePresentationBuilder.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelCatalogCache.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadResult.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadStage.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadingLog.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/NewNoteFlow.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/NewNoteManualForm.swift",
@@ -4822,6 +5225,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/UseCases/SaveNewNote/SaveNewNoteUseCaseProtocol.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/ViewModel/NewNoteViewModel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/ViewModel/NewNoteViewModelProtocol.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/CaptureShutter.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCamera.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCameraPreview.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCameraSample.swift",
@@ -4840,15 +5244,19 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/CellarPaperSheet.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteEyebrow.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteFactUIModel.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteInsightUIModel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteIntensityView.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePalette.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperContent.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperInsights.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperPersonal.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperViews.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePhotoPair.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteRating.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteVerdictUIModel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/WineCertificateUIModel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/PalateMatchUIModel.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineCatalogText.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineSheetBody.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineSheetContent.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreUI.build/DerivedSources/resource_bundle_accessor.swift",
@@ -4916,6 +5324,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/ActivityShareSheet.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/AppTab.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Avatar.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/BackPillButton.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/BellIcon.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Caption.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/CardCurtain.swift",
@@ -4924,7 +5333,9 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/CertificateUIModel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Chip.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Color+Hex.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/DisabledPill.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+BackdropFrame.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+ShareImage.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/Eyebrow.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/FlowLayout.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/FlowRow.swift",
@@ -4936,6 +5347,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GlassTextures.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GrapeCurtain.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GrapeLoop.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/InfoSheet.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/InstagramStorySharing.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/PageBackground.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/PalateMapChart.swift",
@@ -4957,7 +5369,9 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/ShareScreen.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/SharedImage.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/SpotlightAnchors.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/StepDots.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/String+Dots.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/TabBarHidden.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/TextAction.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/UVVAColor.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/UVVAFont.swift",
@@ -5046,17 +5460,22 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QualityPrevalence+Packed.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/QuizMapBuilder.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RatingWeights.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLevels.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapEvolution.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapReading.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapShape.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapSnapshot.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/PalateAxis+LocalizedLabel.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecalculateMapUseCase.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/RecordWineRatingUseCase.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/ScannedWine.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Similarity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/TableMatch.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineFit.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListIdentifier.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListRanking.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineOutlook.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/DerivedSources/resource_bundle_accessor.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules",
@@ -5131,6 +5550,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/SimilarityTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/TableMatchTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineFitTests.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineOutlookTests.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift",
       "-I",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Modules",
@@ -5194,6 +5614,7 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/Array+Chunked.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CatalogCloudService.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitCatalogService.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitSocialService+SharedWines.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitSocialService.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/ContactKey.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/ICloudAccountStatus.swift",
@@ -5233,16 +5654,19 @@
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/DeclinedRequestEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/DismissedSuggestionEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/FriendEntity.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/InvitedContactEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LastTableEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LessonProgressEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ModuleProgressEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/PalateMapEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ProfileEntity.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReadNotificationEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReminderEntity.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/PersonalStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/CellarStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/FriendsStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/LearningStore.swift",
+      "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/NotificationStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/PalateMapStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/ProfileStore.swift",
       "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/ReminderStore.swift",
@@ -5512,6 +5936,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/TasteHistory.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsAccess.swift"
         },
         {
@@ -5545,6 +5973,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/Friendship.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/InvitedContact.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/SharedWine.swift"
         },
         {
           "kind" : "file",
@@ -5740,6 +6176,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/NotificationsRepository.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift"
         },
         {
@@ -5829,6 +6269,42 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineAward.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/MenuDish.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListEntry.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListLine.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListParser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPick.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPrice.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListReading.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListSection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListWine.swift"
         },
         {
           "kind" : "file",
@@ -6004,6 +6480,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/InvitedContact.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/LabelCatalogRepository.swift.o"
         },
         {
@@ -6108,11 +6588,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/MenuDish.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/ModuleProgress.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/NewNoteDraft.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/NotificationsRepository.swift.o"
         },
         {
           "kind" : "file",
@@ -6220,6 +6708,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/SharedWine.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/SocialService.swift.o"
         },
         {
@@ -6229,6 +6721,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/TableCourse.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/TasteHistory.swift.o"
         },
         {
           "kind" : "file",
@@ -6249,6 +6745,38 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineKey.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListEntry.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListLine.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListParser.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListPick.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListPrice.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListReading.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListSection.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Core.build/WineListWine.swift.o"
         },
         {
           "kind" : "file",
@@ -6316,11 +6844,19 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/TasteHistoryTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/CoreTests.build/WineKeyTests.swift.o"
         },
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisChange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/AxisLevels.swift.o"
         },
         {
           "kind" : "file",
@@ -6376,6 +6912,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/PalateAxis+LocalizedLabel.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/ProfileEstimate.swift.o"
         },
         {
@@ -6421,6 +6961,18 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineFit.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineListIdentifier.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineListRanking.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Match.build/WineOutlook.swift.o"
         },
         {
           "kind" : "file",
@@ -6484,6 +7036,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineOutlookTests.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/MatchTests.build/WineRulerTests.swift.o"
         },
         {
@@ -6533,6 +7089,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CloudKitCatalogService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/CloudKitSocialService+SharedWines.swift.o"
         },
         {
           "kind" : "file",
@@ -6588,6 +7148,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/InvitedContactEntity.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/JSONValue.swift.o"
         },
         {
@@ -6613,6 +7177,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ModuleProgressEntity.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/NotificationStore.swift.o"
         },
         {
           "kind" : "file",
@@ -6693,6 +7261,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/QuizQuestionStore.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/.build/arm64-apple-macosx/debug/Storage.build/ReadNotificationEntity.swift.o"
         },
         {
           "kind" : "file",
@@ -6834,6 +7406,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/TasteHistoryTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/CoreTests/WineKeyTests.swift"
         }
       ],
@@ -6857,6 +7433,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadResult.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Logic/LabelReadStage.swift"
         },
         {
           "kind" : "file",
@@ -6956,6 +7536,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/CaptureShutter.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NewNote/Views/Camera/LabelCamera.swift"
         },
         {
@@ -7028,6 +7612,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteInsightUIModel.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NoteIntensityView.swift"
         },
         {
@@ -7037,6 +7625,14 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperContent.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperInsights.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/NoteComponents/NotePaperPersonal.swift"
         },
         {
           "kind" : "file",
@@ -7061,6 +7657,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/PalateMatchUIModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/CoreUI/WineSheet/WineCatalogText.swift"
         },
         {
           "kind" : "file",
@@ -7106,6 +7706,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/BackPillButton.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/BellIcon.swift"
         },
         {
@@ -7138,7 +7742,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/DisabledPill.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+BackdropFrame.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/EnvironmentValues+ShareImage.swift"
         },
         {
           "kind" : "file",
@@ -7183,6 +7795,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/GrapeLoop.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/InfoSheet.swift"
         },
         {
           "kind" : "file",
@@ -7270,7 +7886,15 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/StepDots.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/String+Dots.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/DesignSystem/Sources/DesignSystem/TabBarHidden.swift"
         },
         {
           "kind" : "file",
@@ -7400,6 +8024,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLevels.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/AxisLore.swift"
         },
         {
@@ -7417,6 +8045,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/MapSnapshot.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/Reading/PalateAxis+LocalizedLabel.swift"
         },
         {
           "kind" : "file",
@@ -7441,6 +8073,18 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineFit.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListIdentifier.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineListRanking.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Match/WineOutlook.swift"
         },
         {
           "kind" : "file",
@@ -7514,6 +8158,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineOutlookTests.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Tests/MatchTests/WineRulerTests.swift"
         }
       ],
@@ -7541,6 +8189,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitCatalogService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Cloud/CloudKitSocialService+SharedWines.swift"
         },
         {
           "kind" : "file",
@@ -7700,6 +8352,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/InvitedContactEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/LastTableEntity.swift"
         },
         {
@@ -7720,6 +8376,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReadNotificationEntity.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Models/ReminderEntity.swift"
         },
         {
@@ -7737,6 +8397,10 @@
         {
           "kind" : "file",
           "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/LearningStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Storage/Personal/Repositories/NotificationStore.swift"
         },
         {
           "kind" : "file",

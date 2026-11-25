@@ -15,6 +15,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/CellarRepository.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/NewNoteDraft.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/RecalculateMapUseCaseProtocol.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Cellar/TasteHistory.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsAccess.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/ContactsProviding.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Contacts/DeviceContact.swift
@@ -24,6 +25,8 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/FriendRequestRecord.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/FriendsRepository.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/Friendship.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/InvitedContact.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/SharedWine.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/TableBottle.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Friends/TableCourse.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/GlossaryTerm.swift
@@ -72,6 +75,7 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Learn/ModuleProgress.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChange.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/MapChangeCause.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/NotificationsRepository.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateAxis.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateHistoryRewriting.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/PalateMap.swift
@@ -95,6 +99,15 @@
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Verdict.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/Wine.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineAward.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/MenuDish.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListEntry.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListLine.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListParser.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPick.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListPrice.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListReading.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListSection.swift
+/Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineList/WineListWine.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineLookup.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineRuler.swift
 /Users/elisaelias/Documents/UVVA/Application/Packages/Core/Sources/Core/WineSearch.swift

@@ -38,10 +38,16 @@ public protocol CatalogCloudService: Sendable {
     func snapshotInfo() async throws -> CatalogSnapshotInfo?
     /// Every wine of the snapshot.
     func snapshotWines() async throws -> [CatalogWineData]
+    /// Exact source strings mapped to their pt-BR variants.
+    func portugueseTexts() async throws -> [String: String]
     /// Every `CatalogWine` changed after this date.
     func changes(since date: Date) async throws -> [CatalogChange]
     /// The catalog's wines with any of these words in their name or producer.
     func wines(sharing tokens: Set<String>) async throws -> [CatalogWineData]
     /// Sends these readings as the user's contributions; returns the wineKeys CloudKit kept.
     func contribute(_ wines: [CatalogWineData], userID: String) async throws -> Set<String>
+}
+
+extension CatalogCloudService {
+    public func portugueseTexts() async throws -> [String: String] { [:] }
 }

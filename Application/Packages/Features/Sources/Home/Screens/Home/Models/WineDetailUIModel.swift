@@ -110,7 +110,7 @@ struct WineDetailUIModel: Equatable {
 
     var howToServe: String? {
         guard let line = wine.howToServe, !line.isEmpty else { return nil }
-        return line
+        return WineCatalogText.editorial(line)
     }
 
     /// "How to serve" shows with the temperature, the line on serving, or both.

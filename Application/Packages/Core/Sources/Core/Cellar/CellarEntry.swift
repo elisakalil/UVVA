@@ -35,6 +35,9 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
     /// The "Top X%" the note was saved with (CELLAR-R30): 0 when it had none, nil for an entry saved before it was
     /// kept. A saved note shows this one; only a new note works it out again.
     public var certificateTop: Int?
+    /// How long the wine rested in wood, and in which woods (CELLAR-R23).
+    public var oakAging: OakAging?
+    public var oakWoods: [String]
     /// The front and back labels, when the wine was photographed.
     public var photoFront: Data?
     public var photoBack: Data?
@@ -47,7 +50,8 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
                 classification: String = "", photoFront: Data? = nil, photoBack: Data? = nil,
                 createdAt: Date, updatedAt: Date? = nil, wineProfile: PalateMap? = nil,
                 wineNotes: String? = nil, pairings: [String]? = nil, designation: String? = nil,
-                awards: [WineAward]? = nil, certificateTop: Int? = nil, score: Int? = nil) {
+                awards: [WineAward]? = nil, certificateTop: Int? = nil, score: Int? = nil,
+                oakAging: OakAging? = nil, oakWoods: [String] = []) {
         self.id = id
         self.name = name
         self.producer = producer
@@ -69,6 +73,8 @@ public struct CellarEntry: Identifiable, Equatable, Sendable {
         self.designation = designation
         self.awards = awards
         self.certificateTop = certificateTop
+        self.oakAging = oakAging
+        self.oakWoods = oakWoods
         self.photoFront = photoFront
         self.photoBack = photoBack
         self.createdAt = createdAt

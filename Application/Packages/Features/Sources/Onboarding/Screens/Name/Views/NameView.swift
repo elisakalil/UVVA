@@ -6,6 +6,8 @@ struct NameView<ViewModel: NameViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     @FocusState private var focused: Bool
     @State private var leaving = false
+    /// The bottom inset with the keyboard up, kept while leaving so "Continue" stays put as the keyboard goes.
+    @State private var bottomInset: CGFloat = 0
 
     /// About how long the system keyboard takes to slide away.
     static var keyboardHide: Duration { .milliseconds(250) }
@@ -39,12 +41,23 @@ struct NameView<ViewModel: NameViewModelProtocol>: View {
                 .contentTransition(.opacity)
 
             Spacer(minLength: 20)
-            ActionButton(viewModel.uiModel.continueText, isEnabled: viewModel.uiModel.isValid && !leaving,
-                         action: next)
+            // Stays filled while leaving: `next()` already ignores a second tap.
+            ActionButton(viewModel.uiModel.continueText, isEnabled: viewModel.uiModel.isValid, action: next)
         }
         .padding(.horizontal, 30)
         .padding(.top, 16)
-        .padding(.bottom, 16)
+        // While leaving, the keyboard slides away: the page stops following it and keeps the room it had,
+        // so "Continue" doesn't drop down before the Phone step comes in.
+        .padding(.bottom, 16 + (leaving ? bottomInset : 0))
+        .ignoresSafeArea(leaving ? [.container, .keyboard] : [], edges: .bottom)
+        // Measured on a layer that reaches the screen's edge, where the inset is the keyboard's height.
+        .background {
+            Color.clear
+                .ignoresSafeArea()
+                .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.bottom } action: { inset in
+                    if !leaving { bottomInset = inset }
+                }
+        }
         .onAppear { focused = true }
     }
 

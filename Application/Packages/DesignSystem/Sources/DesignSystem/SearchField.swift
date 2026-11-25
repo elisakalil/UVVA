@@ -11,6 +11,9 @@ public struct SearchField: View {
     /// Below 1 the glass lets more of the page through, where it would read too white.
     var glassOpacity: Double
 
+    /// Corner radius of the field's glass.
+    static let glassRadius: CGFloat = 20
+
     public init(text: Binding<String>, prompt: String, isFocused: FocusState<Bool>.Binding, glassOpacity: Double = 1, showsCancelButton: Bool = true,
                 onCancel: @escaping () -> Void) {
         _text = text
@@ -50,7 +53,7 @@ public struct SearchField: View {
             .padding(.leading, 14)
             .padding(.trailing, 8)
             .frame(height: 40)
-            .background { FrostedGlass(radius: 20).opacity(glassOpacity) }
+            .background { FrostedGlass(radius: Self.glassRadius).opacity(glassOpacity) }
             .contentShape(Capsule())
             .onTapGesture { isFocused.wrappedValue = true }
 
